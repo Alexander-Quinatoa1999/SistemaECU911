@@ -7,11 +7,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>ECU 911</title>
-    <link rel="stylesheet" href="../../vendors/iconfonts/font-awesome/css/all.min.css" />
-    <link rel="stylesheet" href="../../vendors/css/vendor.bundle.base.css" />
-    <link rel="stylesheet" href="../../vendors/css/vendor.bundle.addons.css" />
-    <link rel="stylesheet" href="../../css/style.css" />
-    <link rel="shortcut icon" href="../../images/favicon.png" />
+    <link rel="stylesheet" href="Template/Template Login/vendors/iconfonts/font-awesome/css/all.min.css" />
+    <link rel="stylesheet" href="Template/Template Login/vendors/css/vendor.bundle.base.css" />
+    <link rel="stylesheet" href="Template/Template Login/vendors/css/vendor.bundle.addons.css" />
+    <link rel="stylesheet" href="Template/Template Login/css/style.css" />
+    <link rel="shortcut icon" href="Template/Template Login/images/favicon.png" />
 </head>
 <body>
     <div class="container-scroller">
@@ -20,7 +20,10 @@
                 <div class="row flex-grow">
                     <div class="col-lg-6 d-flex align-items-center justify-content-center">
                         <div class="auth-form-transparent text-left p-3">
-                            <h4>Bienvenido!</h4>
+                            <div class="brand-logo">
+                                <img src="Template/Template Login/images/imgtitulo.png" alt="logo"/>
+                            </div>
+                            <h3>Bienvenido al Sistema!</h3>
                             <h6 class="font-weight-light">Un gusto verte de nuevo!</h6>
                             <form class="pt-3" runat="server">
                                 <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
@@ -66,18 +69,18 @@
                         </div>
                     </div>
                     <div class="col-lg-6 login-half-bg d-flex flex-row">
-                        <p class="text-white font-weight-medium text-center flex-grow align-self-end">Copyright &copy; 2021  Todos los derechos reservados.</p>
+                        <p class="text-black font-weight-medium text-center flex-grow align-self-end">Copyright &copy; 2021  Todos los derechos reservados.</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <script src="../../vendors/js/vendor.bundle.base.js"></script>
-    <script src="../../vendors/js/vendor.bundle.addons.js"></script>
-    <script src="../../js/off-canvas.js"></script>
-    <script src="../../js/hoverable-collapse.js"></script>
-    <script src="../../js/misc.js"></script>
-    <script src="../../js/settings.js"></script>
-    <script src="../../js/todolist.js"></script>
+    <script src="Template/Template Login/vendors/js/vendor.bundle.base.js"></script>
+    <script src="Template/Template Login/vendors/js/vendor.bundle.addons.js"></script>
+    <script src="Template/Template Login/js/off-canvas.js"></script>
+    <script src="Template/Template Login/js/hoverable-collapse.js"></script>
+    <script src="Template/Template Login/js/misc.js"></script>
+    <script src="Template/Template Login/js/settings.js"></script>
+    <script src="Template/Template Login/js/todolist.js"></script>
 </body>
 </html>
