@@ -8,7 +8,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Melody Admin</title>
-    <link rel="stylesheet" href="../Template Principal/vendors/iconfonts/font-awesome/css/all.min.css"/>
+    <link rel="stylesheet" href="../Template Principal/vendors/iconfonts/font-awesome/css/all.min.css" />
     <link rel="stylesheet" href="../Template Principal/vendors/css/vendor.bundle.base.css">
     <link rel="stylesheet" href="../Template Principal/vendors/css/vendor.bundle.addons.css">
     <link rel="stylesheet" href="../Template Principal/css/style.css">
@@ -46,7 +46,7 @@
                         <a class="nav-link" href="#">
                             <span class="btn btn-primary">+ Crear Nuevo </span>
                         </a>
-                    </li>                
+                    </li>
                     <li class="nav-item nav-profile dropdown">
                         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
                             <img src="../Template Principal/images/faces/face5.jpg" alt="profile" />
@@ -76,10 +76,12 @@
                     <p class="settings-heading">SIDEBAR SKINS</p>
                     <div class="sidebar-bg-options selected" id="sidebar-light-theme">
                         <div class="img-ss rounded-circle bg-light border mr-3"></div>
-                        Light</div>
+                        Light
+                    </div>
                     <div class="sidebar-bg-options" id="sidebar-dark-theme">
                         <div class="img-ss rounded-circle bg-dark border mr-3"></div>
-                        Dark</div>
+                        Dark
+                    </div>
                     <p class="settings-heading mt-2">HEADER SKINS</p>
                     <div class="color-tiles mx-0 px-4">
                         <div class="tiles primary"></div>
@@ -110,7 +112,7 @@
                     <li class="nav-item nav-profile">
                         <div class="nav-link">
                             <div class="profile-image">
-                               <img src="../Template Principal/images/faces/face5.jpg" alt="image" />
+                                <img src="../Template Principal/images/faces/face5.jpg" alt="image" />
                             </div>
                             <div class="profile-name">
                                 <p class="name">
@@ -128,7 +130,13 @@
                             <i class="fa fa-home menu-icon"></i>
                             <span class="menu-title">Inicio</span>
                         </a>
-                    </li>                    
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fas fa-ambulance menu-icon"></i>
+                            <span class="menu-title">Pacientes</span>
+                        </a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="collapse" href="#ui-advanced" aria-expanded="false" aria-controls="ui-advanced">
                             <i class="fas fa-clipboard-list menu-icon"></i>
@@ -154,7 +162,7 @@
                                 <li class="nav-item"><a class="nav-link" href="pages/forms/advanced_elements.html">Advanced Elements</a></li>
                             </ul>
                         </div>
-                    </li>                    
+                    </li>
                 </ul>
             </nav>
             <!-- partial -->
@@ -162,7 +170,7 @@
                 <div class="content-wrapper">
                     <div class="page-header">
                         <h3 class="page-title">Inicio
-            </h3>
+                        </h3>
                     </div>
                     <div class="row grid-margin">
                         <div class="col-12">
@@ -235,7 +243,7 @@
                                     <h4 class="card-title">
                                         <i class="fas fa-gift"></i>
                                         Orders
-                  </h4>
+                                    </h4>
                                     <canvas id="orders-chart"></canvas>
                                     <div id="orders-chart-legend" class="orders-chart-legend"></div>
                                 </div>
@@ -247,7 +255,7 @@
                                     <h4 class="card-title">
                                         <i class="fas fa-chart-line"></i>
                                         Sales
-                  </h4>
+                                    </h4>
                                     <h2 class="mb-5">56000 <span class="text-muted h4 font-weight-normal">Sales</span></h2>
                                     <canvas id="sales-chart"></canvas>
                                 </div>
@@ -261,7 +269,7 @@
                                     <h4 class="card-title">
                                         <i class="fas fa-chart-pie"></i>
                                         Sales status
-                  </h4>
+                                    </h4>
                                     <div class="flex-grow-1 d-flex flex-column justify-content-between">
                                         <canvas id="sales-status-chart" class="mt-3"></canvas>
                                         <div class="pt-4">
@@ -277,7 +285,7 @@
                                     <h4 class="card-title">
                                         <i class="far fa-futbol"></i>
                                         Activity
-                  </h4>
+                                    </h4>
                                     <ul class="solid-bullet-list">
                                         <li>
                                             <h5>4 people shared a post
@@ -326,7 +334,7 @@
                                     <h4 class="card-title">
                                         <i class="fas fa-tachometer-alt"></i>
                                         Daily Sales
-                  </h4>
+                                    </h4>
                                     <p class="card-description">Daily sales for the past one month</p>
                                     <div class="flex-grow-1 d-flex flex-column justify-content-between">
                                         <canvas id="daily-sales-chart" class="mt-3 mb-3 mb-md-0"></canvas>
@@ -343,7 +351,7 @@
                                     <h4 class="card-title">
                                         <i class="fas fa-envelope"></i>
                                         Inbox(31)
-                  </h4>
+                                    </h4>
                                     <div class="table-responsive">
                                         <table class="table">
                                             <tbody>
@@ -359,12 +367,12 @@
                                                         <img src="images/faces/face13.jpg" alt="profile" class="img-sm rounded-circle" />
                                                     </td>
                                                     <td class="font-weight-bold">Andrew Bowen
-                          </td>
+                                                    </td>
                                                     <td>
                                                         <label class="badge badge-light badge-pill">Development</label>
                                                     </td>
                                                     <td>The required fields are added in the database
-                          </td>
+                                                    </td>
                                                     <td>
                                                         <i class="fas fa-ellipsis-v"></i>
                                                     </td>
@@ -381,12 +389,12 @@
                                                         <img src="images/faces/face2.jpg" alt="profile" class="img-sm rounded-circle" />
                                                     </td>
                                                     <td class="font-weight-bold">Mae Saunders
-                          </td>
+                                                    </td>
                                                     <td>
                                                         <label class="badge badge-light badge-pill">Development</label>
                                                     </td>
                                                     <td>The application will be completed by tomorrow
-                          </td>
+                                                    </td>
                                                     <td>
                                                         <i class="fas fa-ellipsis-v"></i>
                                                     </td>
@@ -403,12 +411,12 @@
                                                         <div class="img-sm rounded-circle bg-warning profile-image-text">M</div>
                                                     </td>
                                                     <td class="font-weight-bold">Manuel Yates
-                          </td>
+                                                    </td>
                                                     <td>
                                                         <label class="badge badge-light badge-pill">Design</label>
                                                     </td>
                                                     <td>The new design is uploaded in zeplin
-                          </td>
+                                                    </td>
                                                     <td>
                                                         <i class="fas fa-ellipsis-v"></i>
                                                     </td>
@@ -425,12 +433,12 @@
                                                         <img src="images/faces/face11.html" alt="profile" class="img-sm rounded-circle" />
                                                     </td>
                                                     <td class="font-weight-bold">Marguerite Phillips
-                          </td>
+                                                    </td>
                                                     <td>
                                                         <label class="badge badge-light badge-pill">Development</label>
                                                     </td>
                                                     <td>Please send me the latest requirements
-                          </td>
+                                                    </td>
                                                     <td>
                                                         <i class="fas fa-ellipsis-v"></i>
                                                     </td>
@@ -447,12 +455,12 @@
                                                         <div class="img-sm rounded-circle bg-info profile-image-text">C</div>
                                                     </td>
                                                     <td class="font-weight-bold">Clifford Wilson
-                          </td>
+                                                    </td>
                                                     <td>
                                                         <label class="badge badge-light badge-pill">Testing</label>
                                                     </td>
                                                     <td>The issues are documented in the shared sheet
-                          </td>
+                                                    </td>
                                                     <td>
                                                         <i class="fas fa-ellipsis-v"></i>
                                                     </td>
@@ -471,7 +479,7 @@
                                     <h4 class="card-title">
                                         <i class="fas fa-table"></i>
                                         Sales Data
-                  </h4>
+                                    </h4>
                                     <div class="table-responsive">
                                         <table class="table">
                                             <thead>
@@ -485,55 +493,55 @@
                                             <tbody>
                                                 <tr>
                                                     <td class="font-weight-bold">Clifford Wilson
-                          </td>
+                                                    </td>
                                                     <td class="text-muted">PT613
-                          </td>
+                                                    </td>
                                                     <td>350
-                          </td>
+                                                    </td>
                                                     <td>
                                                         <label class="badge badge-success badge-pill">Dispatched</label>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td class="font-weight-bold">Mary Payne
-                          </td>
+                                                    </td>
                                                     <td class="text-muted">ST456
-                          </td>
+                                                    </td>
                                                     <td>520
-                          </td>
+                                                    </td>
                                                     <td>
                                                         <label class="badge badge-warning badge-pill">Processing</label>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td class="font-weight-bold">Adelaide Blake
-                          </td>
+                                                    </td>
                                                     <td class="text-muted">CS789
-                          </td>
+                                                    </td>
                                                     <td>830
-                          </td>
+                                                    </td>
                                                     <td>
                                                         <label class="badge badge-danger badge-pill">Failed</label>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td class="font-weight-bold">Adeline King
-                          </td>
+                                                    </td>
                                                     <td class="text-muted">LP908
-                          </td>
+                                                    </td>
                                                     <td>579
-                          </td>
+                                                    </td>
                                                     <td>
                                                         <label class="badge badge-primary badge-pill">Delivered</label>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td class="font-weight-bold">Bertie Robbins
-                          </td>
+                                                    </td>
                                                     <td class="text-muted">HF675
-                          </td>
+                                                    </td>
                                                     <td>790
-                          </td>
+                                                    </td>
                                                     <td>
                                                         <label class="badge badge-info badge-pill">On Hold</label>
                                                     </td>
@@ -550,7 +558,7 @@
                                     <h4 class="card-title">
                                         <i class="fas fa-calendar-alt"></i>
                                         Calendar
-                  </h4>
+                                    </h4>
                                     <div id="inline-datepicker-example" class="datepicker"></div>
                                 </div>
                             </div>
@@ -563,7 +571,7 @@
                                     <h4 class="card-title">
                                         <i class="fas fa-thumbtack"></i>
                                         Todo
-                  </h4>
+                                    </h4>
                                     <div class="add-items d-flex">
                                         <input type="text" class="form-control todo-list-input" placeholder="What do you need to do today?">
                                         <button class="add btn btn-primary font-weight-bold todo-list-add-btn" id="add-task">Add</button>
@@ -641,17 +649,17 @@
                                     <h4 class="card-title">
                                         <i class="fas fa-rocket"></i>
                                         Projects
-                  </h4>
+                                    </h4>
                                     <div class="table-responsive">
                                         <table class="table">
                                             <thead>
                                                 <tr>
                                                     <th>Assigned to
-                          </th>
+                                                    </th>
                                                     <th>Project name
-                          </th>
+                                                    </th>
                                                     <th>Priority
-                          </th>
+                                                    </th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -660,7 +668,7 @@
                                                         <img src="images/faces/face1.jpg" alt="profile" class="img-sm rounded-circle" />
                                                     </td>
                                                     <td>South Shyanne
-                          </td>
+                                                    </td>
                                                     <td>
                                                         <label class="badge badge-warning badge-pill">Medium</label>
                                                     </td>
@@ -670,7 +678,7 @@
                                                         <img src="images/faces/face2.jpg" alt="profile" class="img-sm rounded-circle" />
                                                     </td>
                                                     <td>New Trystan
-                          </td>
+                                                    </td>
                                                     <td>
                                                         <label class="badge badge-danger badge-pill">High</label>
                                                     </td>
@@ -680,7 +688,7 @@
                                                         <img src="images/faces/face3.jpg" alt="profile" class="img-sm rounded-circle" />
                                                     </td>
                                                     <td>East Helga
-                          </td>
+                                                    </td>
                                                     <td>
                                                         <label class="badge badge-success badge-pill">Low</label>
                                                     </td>
@@ -690,7 +698,7 @@
                                                         <img src="images/faces/face4.jpg" alt="profile" class="img-sm rounded-circle" />
                                                     </td>
                                                     <td>Omerbury
-                          </td>
+                                                    </td>
                                                     <td>
                                                         <label class="badge badge-warning badge-pill">Medium</label>
                                                     </td>
