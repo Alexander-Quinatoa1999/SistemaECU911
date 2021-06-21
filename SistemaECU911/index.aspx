@@ -7,10 +7,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>ECU 911</title>
-    <link rel="stylesheet" href="Template/Template Login/vendors/iconfonts/font-awesome/css/all.min.css" />
-    <link rel="stylesheet" href="Template/Template Login/vendors/css/vendor.bundle.base.css" />
-    <link rel="stylesheet" href="Template/Template Login/vendors/css/vendor.bundle.addons.css" />
-    <link rel="stylesheet" href="Template/Template Login/css/style.css" />
+    <link rel="stylesheet" href="Template/Template Principal/vendors/iconfonts/font-awesome/css/all.min.css" />
+    <link rel="stylesheet" href="Template/Template Principal/vendors/css/vendor.bundle.base.css" />
+    <link rel="stylesheet" href="Template/Template Principal/vendors/css/vendor.bundle.addons.css" />
+    <link rel="stylesheet" href="Template/Template Principal/css/style.css" />
+    <link rel="shortcut icon" href="Template/Template Principal/images/favicon.png" />
 </head>
 <body>
     <div class="container-scroller">
@@ -20,7 +21,7 @@
                     <div class="col-lg-6 d-flex align-items-center justify-content-center">
                         <div class="auth-form-transparent text-left p-3">
                             <div class="brand-logo">
-                                <img src="Template/Template Login/images/imgtitulo.png" alt="logo"/>
+                                <img src="Template/Template Principal/images/imgtitulo.png" alt="logo"/>
                             </div>
                             <h3>Bienvenido al Sistema!</h3>
                             <h6 class="font-weight-light">Un gusto verte de nuevo!</h6>
@@ -74,12 +75,12 @@
             </div>
         </div>
     </div>
-    <script src="Template/Template Login/vendors/js/vendor.bundle.base.js"></script>
-    <script src="Template/Template Login/vendors/js/vendor.bundle.addons.js"></script>
-    <script src="Template/Template Login/js/off-canvas.js"></script>
-    <script src="Template/Template Login/js/hoverable-collapse.js"></script>
-    <script src="Template/Template Login/js/misc.js"></script>
-    <script src="Template/Template Login/js/settings.js"></script>
-    <script src="Template/Template Login/js/todolist.js"></script>
+    <script src="Template/Template Principal/vendors/js/vendor.bundle.base.js"></script>
+    <script src="Template/Template Principal/vendors/js/vendor.bundle.addons.js"></script>
+    <script src="Template/Template Principal/js/off-canvas.js"></script>
+    <script src="Template/Template Principal/js/hoverable-collapse.js"></script>
+    <script src="Template/Template Principal/js/misc.js"></script>
+    <script src="Template/Template Principal/js/settings.js"></script>
+    <script src="Template/Template Principal/js/todolist.js"></script>
 </body>
 </html>
