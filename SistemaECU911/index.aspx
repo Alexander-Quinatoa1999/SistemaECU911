@@ -61,7 +61,7 @@
                                             <a href="#" class="auth-link text-black">Olvidaste tu contraseña?</a>
                                         </div>
                                         <div class="my-3">
-                                            <asp:Button ID="btn_ingresar" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" type="submit" runat="server" Text="INGRESAR" />
+                                            <asp:Button ID="btn_ingresar" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" type="submit" runat="server" Text="INGRESAR" OnClick="btn_ingresar_Click" />
                                         </div>
                                     </ContentTemplate>
                                 </asp:UpdatePanel>
