@@ -15,7 +15,7 @@ namespace SistemaECU911
 
         protected void btn_ingresar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Template/Views/WebForm1.aspx");
+            Response.Redirect("Template/Views/Principal.aspx");
         }
     }
 }
