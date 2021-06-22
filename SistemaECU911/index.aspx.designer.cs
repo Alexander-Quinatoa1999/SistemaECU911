@@ -69,24 +69,6 @@ namespace SistemaECU911
         protected global::System.Web.UI.WebControls.TextBox txt_pass;
 
         /// <summary>
-        /// Control lbl_check.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_check;
-
-        /// <summary>
-        /// Control cb_recordarpass.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox cb_recordarpass;
-
-        /// <summary>
         /// Control btn_ingresar.
         /// </summary>
         /// <remarks>

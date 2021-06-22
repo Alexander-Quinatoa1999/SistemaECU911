@@ -51,12 +51,6 @@
                                             </div>
                                         </div>
                                         <div class="my-2 d-flex justify-content-between align-items-center">
-                                            <div class="form-check">
-                                                <asp:Label ID="lbl_check" class="form-check-label text-muted" runat="server">
-                                                    <asp:CheckBox ID="cb_recordarpass" class="form-check-input" runat="server" />
-                                                    Recuerdame                                                              
-                                                </asp:Label>
-                                            </div>
                                             <a href="#" class="auth-link text-black">Olvidaste tu contraseña?</a>
                                         </div>
                                         <div class="my-3">
