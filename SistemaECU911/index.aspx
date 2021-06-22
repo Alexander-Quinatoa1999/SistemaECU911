@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="Template/Template Principal/vendors/css/vendor.bundle.base.css" />
     <link rel="stylesheet" href="Template/Template Principal/vendors/css/vendor.bundle.addons.css" />
     <link rel="stylesheet" href="Template/Template Principal/css/style.css" />
-    <link rel="shortcut icon" href="Template/Template Principal/images/favicon.png" />
 </head>
 <body>
     <div class="container-scroller">
