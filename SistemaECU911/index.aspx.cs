@@ -48,7 +48,7 @@ namespace SistemaECU911
                 }
                 else
                 {
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Usuario y/o Contraseña Incorrecta va " + contador + " intentos')", true);
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Contraseña Incorrecta va " + contador + " intentos')", true);
                     contador++;
 
                     if (contador > 3)
