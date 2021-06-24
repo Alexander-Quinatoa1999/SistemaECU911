@@ -34,12 +34,14 @@ namespace SistemaECU911
 
         private void logear(string usu, string pass)
         {
-
+            //Tbl_Usuario usuario = new Tbl_Usuario();
             var query1 = dc.Autentificacion_Usuario(usu, pass);
             var query = dc.Validar_Existencia(usu);
 
             if (query.ToList().Count == 1)
             {
+                //Session["Usuario"] = usuario.usu_nombre.ToString();
+                //Response.Redirect("~/Template/Views/Secundario.aspx");
 
                 if (query1.ToList().Count > 0)
                 {
@@ -51,6 +53,7 @@ namespace SistemaECU911
                     ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Contraseña Incorrecta va " + contador + " intentos')", true);                   
                     contador++;
                     txt_pass.Text = "";
+
                     if (contador > 3)
                     {
                         ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Supero el limite te intentos')", true);
