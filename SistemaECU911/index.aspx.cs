@@ -48,13 +48,13 @@ namespace SistemaECU911
                 }
                 else
                 {
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Contraseña Incorrecta va " + contador + " intentos')", true);
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Contraseña Incorrecta va " + contador + " intentos')", true);                   
                     contador++;
-
+                    txt_pass.Text = "";
                     if (contador > 3)
                     {
                         ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Supero el limite te intentos')", true);
-                        limpiar();
+                        limpiar();                      
                         btn_ingresar.Visible = false;
                     }
                 }
@@ -63,6 +63,7 @@ namespace SistemaECU911
             else
             {
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('El usuario no existe !!')", true);
+                limpiar();
             }
         }
 
