@@ -753,6 +753,7 @@
     <Content Include="Template\Template Principal\vendors\tinymce\themes\modern\theme.js" />
     <Content Include="Template\Template Principal\vendors\tinymce\tinymce.min.js" />
     <Content Include="Template\Views\Principal.aspx" />
+    <Content Include="Template\Views\Secundario.aspx" />
     <Content Include="Template\Views\WebForm1.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -778,6 +779,13 @@
     </Compile>
     <Compile Include="Template\Views\Principal.Master.designer.cs">
       <DependentUpon>Principal.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Template\Views\Secundario.aspx.cs">
+      <DependentUpon>Secundario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Template\Views\Secundario.aspx.designer.cs">
+      <DependentUpon>Secundario.aspx</DependentUpon>
     </Compile>
     <Compile Include="Template\Views\WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
