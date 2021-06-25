@@ -12,12 +12,17 @@ namespace SistemaECU911
     {
 
         private static int contador = 1;
+        
 
         //Instanciamos la BD
         DataClassesECU911DataContext dc = new DataClassesECU911DataContext();
         
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+
+            }
         }
 
         protected void btn_ingresar_Click(object sender, EventArgs e)
@@ -34,19 +39,27 @@ namespace SistemaECU911
 
         private void logear(string usu, string pass)
         {
-            //Tbl_Usuario usuario = new Tbl_Usuario();
+            
+            var query2 = dc.Identificar_rol();
             var query1 = dc.Autentificacion_Usuario(usu, pass);
             var query = dc.Validar_Existencia(usu);
 
             if (query.ToList().Count == 1)
             {
-                //Session["Usuario"] = usuario.usu_nombre.ToString();
-                //Response.Redirect("~/Template/Views/Secundario.aspx");
 
                 if (query1.ToList().Count > 0)
                 {
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Bienvenido')", true);
-                    Response.Redirect("~/Template/Views/Principal.aspx");
+                    if (query1 == 1)
+                    {
+                        Session["Admin"] = usuario.usu_nombre.ToString();
+                        Response.Redirect("~/Template/Views/Principal.aspx");
+                    }
+
+                    if (query2 == 2)
+                    {
+                        Session["Usuario"] = usuario.usu_nombre.ToString();
+                        Response.Redirect("~/Template/Views/Secundario.aspx");
+                    }
                 }
                 else
                 {
