@@ -39,7 +39,7 @@ namespace CapaDatos
     #endregion
 		
 		public DataClassesECU911DataContext() : 
-				base(global::CapaDatos.Properties.Settings.Default.SistemaECU911ConnectionString2, mappingSource)
+				base(global::CapaDatos.Properties.Settings.Default.SistemaECU911ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -91,18 +91,18 @@ namespace CapaDatos
 			return ((ISingleResult<Autentificacion_UsuarioResult>)(result.ReturnValue));
 		}
 		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Identificar_rol")]
+		public ISingleResult<Identificar_rolResult> Identificar_rol([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> tusu)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), tusu);
+			return ((ISingleResult<Identificar_rolResult>)(result.ReturnValue));
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Validar_Existencia")]
 		public ISingleResult<Validar_ExistenciaResult> Validar_Existencia([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string usuario)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), usuario);
 			return ((ISingleResult<Validar_ExistenciaResult>)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Identificar_rol")]
-		public ISingleResult<Identificar_rolResult> Identificar_rol()
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
-			return ((ISingleResult<Identificar_rolResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -631,6 +631,32 @@ namespace CapaDatos
 		}
 	}
 	
+	public partial class Identificar_rolResult
+	{
+		
+		private string _usu_nombre;
+		
+		public Identificar_rolResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_nombre", DbType="VarChar(150)")]
+		public string usu_nombre
+		{
+			get
+			{
+				return this._usu_nombre;
+			}
+			set
+			{
+				if ((this._usu_nombre != value))
+				{
+					this._usu_nombre = value;
+				}
+			}
+		}
+	}
+	
 	public partial class Validar_ExistenciaResult
 	{
 		
@@ -656,32 +682,6 @@ namespace CapaDatos
 					this._usu_nombre = value;
 				}
 			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tusu_id", DbType="Int")]
-		public System.Nullable<int> tusu_id
-		{
-			get
-			{
-				return this._tusu_id;
-			}
-			set
-			{
-				if ((this._tusu_id != value))
-				{
-					this._tusu_id = value;
-				}
-			}
-		}
-	}
-	
-	public partial class Identificar_rolResult
-	{
-		
-		private System.Nullable<int> _tusu_id;
-		
-		public Identificar_rolResult()
-		{
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tusu_id", DbType="Int")]

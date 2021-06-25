@@ -12,7 +12,7 @@ namespace SistemaECU911
     {
 
         private static int contador = 1;
-        
+        private static int rol = 1;
 
         //Instanciamos la BD
         DataClassesECU911DataContext dc = new DataClassesECU911DataContext();
@@ -38,9 +38,8 @@ namespace SistemaECU911
         }
 
         private void logear(string usu, string pass)
-        {
-            
-            var query2 = dc.Identificar_rol();
+        {            
+            var query2 = dc.Identificar_rol(rol);
             var query1 = dc.Autentificacion_Usuario(usu, pass);
             var query = dc.Validar_Existencia(usu);
 
@@ -49,15 +48,15 @@ namespace SistemaECU911
 
                 if (query1.ToList().Count > 0)
                 {
-                    if (query1 == 1)
+                    if (query2.ToList().Count == 1)
                     {
-                        Session["Admin"] = usuario.usu_nombre.ToString();
+                        Session["Admin"] = query.ToString();
                         Response.Redirect("~/Template/Views/Principal.aspx");
                     }
 
-                    if (query2 == 2)
+                    if (query2.ToList().Count == 2)
                     {
-                        Session["Usuario"] = usuario.usu_nombre.ToString();
+                        Session["Usuario"] = query.ToString();
                         Response.Redirect("~/Template/Views/Secundario.aspx");
                     }
                 }
