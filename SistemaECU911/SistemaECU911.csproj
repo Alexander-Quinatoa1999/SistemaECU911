@@ -752,6 +752,7 @@
     <Content Include="Template\Template Principal\vendors\summernote\dist\summernote-bs4.min.js" />
     <Content Include="Template\Template Principal\vendors\tinymce\themes\modern\theme.js" />
     <Content Include="Template\Template Principal\vendors\tinymce\tinymce.min.js" />
+    <Content Include="Template\Views\Historial.aspx" />
     <Content Include="Template\Views\Principal.aspx" />
     <Content Include="Template\Views\Secundario.aspx" />
     <Content Include="Template\Views\WebForm1.aspx" />
@@ -766,6 +767,13 @@
       <DependentUpon>index.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Template\Views\Historial.aspx.cs">
+      <DependentUpon>Historial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Template\Views\Historial.aspx.designer.cs">
+      <DependentUpon>Historial.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Template\Views\Principal.aspx.cs">
       <DependentUpon>Principal.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
