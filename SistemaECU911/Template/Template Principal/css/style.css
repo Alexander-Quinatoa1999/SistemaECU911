@@ -8872,6 +8872,7 @@ svg:not(:root) {
 
 table {
   border-collapse: collapse;
+    width: 1330px;
 }
 
 caption {
