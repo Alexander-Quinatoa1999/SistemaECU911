@@ -51,7 +51,7 @@ namespace SistemaECU911
                     if (query2.ToList().Count == 1)
                     {
                         Session["Admin"] = query.ToString();
-                        Response.Redirect("~/Template/Views/Principal.aspx");
+                        Response.Redirect("~/Template/Views/Inicio.aspx");
                     }
 
                     if (query2.ToList().Count == 2)

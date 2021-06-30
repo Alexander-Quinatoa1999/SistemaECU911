@@ -21,9 +21,9 @@
         <div class="container-scroller">
             <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row default-layout-navbar">
                 <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-                    <a class="navbar-brand brand-logo" href="index-2.html">
+                    <a class="navbar-brand brand-logo" href="Inicio.aspx">
                         <img src="../Template Principal/images/ic1.png" alt="logo" /></a>
-                    <a class="navbar-brand brand-logo-mini" href="index-2.html">
+                    <a class="navbar-brand brand-logo-mini" href="Inicio.aspx">
                         <img src="../Template Principal/images/ic2.jpg" alt="logo" /></a>
                 </div>
                 <div class="navbar-menu-wrapper d-flex align-items-stretch">
@@ -124,7 +124,7 @@
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="WebForm1.aspx">
+                            <a class="nav-link" href="Inicio.aspx">
                                 <i class="fa fa-home menu-icon"></i>
                                 <span class="menu-title">Inicio</span>
                             </a>
