@@ -1,6 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Template/Views/Principal.Master" AutoEventWireup="true" CodeBehind="Inicial.aspx.cs" Inherits="SistemaECU911.Template.Views.Inicial" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style type="text/css">
+        .auto-style1 {
+            width: 1256px;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
@@ -152,7 +157,7 @@
                                         <tbody>
                                             <tr>
                                                 <td>
-                                                    <textarea id="txt_descrip" rows="3" class="auto-style122"></textarea>
+                                                    <textarea id="txt_descrip" rows="3" class="auto-style1"></textarea>
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -176,7 +181,7 @@
                                         <tbody>
                                             <tr>
                                                 <td>
-                                                    <textarea id="txt_desant" rows="3" class="auto-style121"></textarea>
+                                                    <textarea id="txt_desant" rows="3" class="auto-style1"></textarea>
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -678,7 +683,7 @@
                                     <tbody>
                                         <tr>
                                             <td>
-                                                <textarea id="txt_obsaccidente" rows="3" class="auto-style121"></textarea>
+                                                <textarea id="txt_obsaccidente" rows="3" class="auto-style1"></textarea>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -717,7 +722,7 @@
                                     <tbody>
                                         <tr>
                                             <td>
-                                                <textarea id="txt_obsprof" rows="3" class="auto-style121"></textarea>
+                                                <textarea id="txt_obsprof" rows="3" class="auto-style1"></textarea>
                                             </td>
                                         </tr>
                                     </tbody>
