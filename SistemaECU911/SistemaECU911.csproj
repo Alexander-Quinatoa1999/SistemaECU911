@@ -754,6 +754,8 @@
     <Content Include="Template\Template Principal\vendors\tinymce\themes\modern\theme.js" />
     <Content Include="Template\Template Principal\vendors\tinymce\tinymce.min.js" />
     <Content Include="Template\Views\HCL.aspx" />
+    <Content Include="Template\Views\Historial.aspx" />
+    <Content Include="Template\Views\Inicial.aspx" />
     <Content Include="Template\Views\PedidoExamenes.aspx" />
     <Content Include="Template\Views\Principal.aspx" />
     <Content Include="Template\Views\Secundario.aspx" />
@@ -775,6 +777,20 @@
     </Compile>
     <Compile Include="Template\Views\HCL.aspx.designer.cs">
       <DependentUpon>HCL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Template\Views\Historial.aspx.cs">
+      <DependentUpon>Historial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Template\Views\Historial.aspx.designer.cs">
+      <DependentUpon>Historial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Template\Views\Inicial.aspx.cs">
+      <DependentUpon>Inicial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Template\Views\Inicial.aspx.designer.cs">
+      <DependentUpon>Inicial.aspx</DependentUpon>
     </Compile>
     <Compile Include="Template\Views\PedidoExamenes.aspx.cs">
       <DependentUpon>PedidoExamenes.aspx</DependentUpon>

@@ -7,11 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace SistemaECU911.Template.Views
 {
-	public partial class Inicial : System.Web.UI.Page
-	{
-		protected void Page_Load(object sender, EventArgs e)
-		{
+    public partial class Historial : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
 
-		}
-	}
+        }
+    }
 }
