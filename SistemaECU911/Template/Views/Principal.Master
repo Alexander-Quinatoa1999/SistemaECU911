@@ -57,10 +57,10 @@
                                 Configuración
                             </a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="../../index.aspx">
+                            <asp:LinkButton ID="Lnb_CerrarSesion" OnClick="Lnb_CerrarSesion_Click" class="dropdown-item" runat="server">
                                 <i class="fas fa-power-off text-primary"></i>
                                 Cerrar Sesión
-                            </a>
+                            </asp:LinkButton>
                         </div>
                     </li>
                 </ul>
@@ -153,7 +153,7 @@
                         <div class="collapse" id="form-elements">
                             <ul class="nav flex-column sub-menu">
                                 <li class="nav-item"><a class="nav-link" href="pages/forms/basic_elements.html">Historial 1</a></li>
-                                <li class="nav-item"><a class="nav-link" href="pages/forms/advanced_elements.html">Historial 2</a></li>
+                                <li class="nav-item"><a class="nav-link" href="PedidoExamenes.aspx">Pedido Examenes</a></li>
                             </ul>
                         </div>
                     </li>
@@ -162,25 +162,27 @@
             <div class="main-panel">
                 <div class="content-wrapper">
                     <form id="fmr" runat="server">
-                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-                    </asp:ContentPlaceHolder>
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
                     </form>
                 </div>
                 <footer class="footer">
                     <div class="d-sm-flex justify-content-center justify-content-sm-between">
-                        <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2021. Todos los derechos reservados.</span>                       
+                        <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2021. Todos los derechos reservados.</span>
                     </div>
                 </footer>
             </div>
         </div>
-        </div>
-        <script src="../Template Principal/vendors/js/vendor.bundle.base.js"></script>
-        <script src="../Template Principal/vendors/js/vendor.bundle.addons.js"></script>
-        <script src="../Template Principal/js/off-canvas.js"></script>
-        <script src="../Template Principal/js/hoverable-collapse.js"></script>
-        <script src="../Template Principal/js/misc.js"></script>
-        <script src="../Template Principal/js/settings.js"></script>
-        <script src="../Template Principal/js/todolist.js"></script>
-        <script src="../Template Principal/js/dashboard.js"></script>
+    </div>
+    <script src="../Template Principal/vendors/js/vendor.bundle.base.js"></script>
+    <script src="../Template Principal/vendors/js/vendor.bundle.addons.js"></script>
+    <script src="../Template Principal/js/off-canvas.js"></script>
+    <script src="../Template Principal/js/hoverable-collapse.js"></script>
+    <script src="../Template Principal/js/misc.js"></script>
+    <script src="../Template Principal/js/settings.js"></script>
+    <script src="../Template Principal/js/todolist.js"></script>
+    <script src="../Template Principal/js/dashboard.js"></script>
+    <asp:ContentPlaceHolder ID="footer" runat="server">
+    </asp:ContentPlaceHolder>
 </body>
 </html>

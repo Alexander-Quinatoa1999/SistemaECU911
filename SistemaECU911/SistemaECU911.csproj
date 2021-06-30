@@ -69,6 +69,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Template\Template Principal\css\style.css" />
+    <Content Include="Template\Template Principal\css\Style_Prueba.css" />
     <Content Include="Template\Template Principal\fonts\PT_Sans\PTSans-Bold.html" />
     <Content Include="Template\Template Principal\images\auth\img2.jpg" />
     <Content Include="Template\Template Principal\images\auth\lockscreen-bg.jpg" />
@@ -753,6 +754,7 @@
     <Content Include="Template\Template Principal\vendors\tinymce\themes\modern\theme.js" />
     <Content Include="Template\Template Principal\vendors\tinymce\tinymce.min.js" />
     <Content Include="Template\Views\HCL.aspx" />
+    <Content Include="Template\Views\PedidoExamenes.aspx" />
     <Content Include="Template\Views\Principal.aspx" />
     <Content Include="Template\Views\Secundario.aspx" />
     <Content Include="Template\Views\WebForm1.aspx" />
@@ -773,6 +775,13 @@
     </Compile>
     <Compile Include="Template\Views\HCL.aspx.designer.cs">
       <DependentUpon>HCL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Template\Views\PedidoExamenes.aspx.cs">
+      <DependentUpon>PedidoExamenes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Template\Views\PedidoExamenes.aspx.designer.cs">
+      <DependentUpon>PedidoExamenes.aspx</DependentUpon>
     </Compile>
     <Compile Include="Template\Views\Principal.aspx.cs">
       <DependentUpon>Principal.aspx</DependentUpon>

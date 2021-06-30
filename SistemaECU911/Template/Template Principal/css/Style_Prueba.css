@@ -1,0 +1,60 @@
+﻿body {
+    margin: 0px;
+    padding: 0px;
+}
+
+div#HEMATOLOGIA {
+    width: 300px;
+    height: 130px;
+}
+
+div#ELECTROLITOS {
+    width: 300px;
+    height: 170px;
+}
+
+div#TUMORALES {
+    width: 300px;
+    height: 270px;
+}
+
+div#INMUNOHEMATOLOGIA {
+    width: 300px;
+    height: 130px;
+}
+
+div#SEROLOGIA {
+    margin-top: -135px;
+    width: 300px;
+    height: 170px;
+}
+
+div#MICROBIOLOGIA {
+    margin-top: -110px;
+    width: 300px;
+    height: 180px;
+}
+
+div#COAGULACION {
+    margin-top: -5px;
+    width: 300px;
+    height: 260px;
+}
+
+div#HORMONAS {
+    margin-top: -130px;
+    width: 300px;
+    height: 480px;
+}
+
+div#ESPECIALES {
+    margin-top: -325px;
+    width: 300px;
+    height: 130px;
+}
+
+div#SANGUINEA {
+    margin-top: -305px;
+    width: 300px;
+    height: 1300px;
+}

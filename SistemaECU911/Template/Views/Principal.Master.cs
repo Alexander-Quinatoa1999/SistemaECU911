@@ -23,5 +23,10 @@ namespace SistemaECU911.Template.Views
             }
         }
 
+        protected void Lnb_CerrarSesion_Click(object sender, EventArgs e)
+        {
+            Session.RemoveAll();
+            Response.Redirect("../../index.aspx");
+        }
     }
 }
