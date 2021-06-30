@@ -6,7 +6,7 @@
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>
-            <div class="container-fluid" style="background-color: white">
+            <div class="container" style="background-color: white">
                 <img src="../Template Principal/images/ic1.png" alt="logo" />
                 <hr size="3px" color="black" />
                 <div class="container-fluid">
@@ -15,7 +15,7 @@
                             <asp:Table ID="Table1" runat="server">
                                 <asp:TableRow>
                                     <asp:TableHeaderCell>
-                                        <div class="card" style="width: auto;">
+                                        <div class="card card-responsive" style="width: auto;">
                                           <div class="card-header">
                                             ESTABLECIMIENTO DE SALUD
                                           </div>
@@ -25,7 +25,7 @@
                                         </div>
                                     </asp:TableHeaderCell>
                                     <asp:TableHeaderCell>
-                                        <div class="card" style="width: auto;">
+                                        <div class="card card-responsive" style="width: auto;">
                                           <div class="card-header">
                                             NOMBRE
                                           </div>
@@ -35,7 +35,7 @@
                                         </div>
                                     </asp:TableHeaderCell>
                                     <asp:TableHeaderCell>
-                                        <div class="card" style="width: auto;">
+                                        <div class="card card-responsive" style="width: auto;">
                                           <div class="card-header">
                                             APELLIDO
                                           </div>
@@ -45,7 +45,7 @@
                                         </div>
                                     </asp:TableHeaderCell>
                                     <asp:TableHeaderCell>
-                                        <div class="card" style="width: auto;">
+                                        <div class="card card-responsive" style="width: auto;">
                                           <div class="card-header">
                                             SEXO
                                           </div>
@@ -55,7 +55,7 @@
                                         </div>
                                     </asp:TableHeaderCell>
                                     <asp:TableHeaderCell>
-                                        <div class="card" style="width: auto;">
+                                        <div class="card card-responsive" style="width: auto;">
                                           <div class="card-header">
                                             EDAD
                                           </div>
@@ -65,7 +65,7 @@
                                         </div>
                                     </asp:TableHeaderCell>
                                     <asp:TableHeaderCell>
-                                        <div class="card" style="width: auto;">
+                                        <div class="card card-responsive" style="width: auto;">
                                           <div class="card-header">
                                             N° HISTORIA CLÍNICA
                                           </div>
@@ -81,7 +81,7 @@
                 </div>
                 <br />
                 <div class="container-fluid">
-                    <div class="card" style="width: auto;">
+                    <div class="card card-responsive" style="width: auto;">
                         <div class="card-header">
                             1. MOTIVO DE CONSULTA
                         </div>
@@ -89,7 +89,7 @@
                             <asp:Table runat="server">
                                 <asp:TableRow>
                                     <asp:TableHeaderCell>
-                                        <div class="card" style="width: auto">
+                                        <div class="card card-responsive" style="width: auto">
                                             <div class="card-header">
                                                 MOTIVO DE CONSULTA
                                             </div>
@@ -99,7 +99,7 @@
                                         </div>
                                     </asp:TableHeaderCell>
                                     <asp:TableHeaderCell>
-                                        <div class="card" style="width: auto;">
+                                        <div class="card card-responsive" style="width: auto;">
                                             <div class="card-header">                                        
                                                 MOTIVO DE CONSULTA (según acompañante)
                                             </div>
@@ -115,7 +115,7 @@
                 </div>
                 <br />
                 <div class="container-fluid">
-                    <div class="card" style="width: auto;">
+                    <div class="card card-responsive" style="width: auto;">
                         <div class="card-header">
                             2. ANTECEDENTES PERSONALES
                         </div>
@@ -123,7 +123,7 @@
                             <asp:Table runat="server">
                                 <asp:TableRow>
                                     <asp:TableHeaderCell>
-                                        <div class="card" style="width: auto">
+                                        <div class="card card-responsive" style="width: auto">
                                             <div class="card-header">
                                                 TIPO DE ANTECEDENTE
                                             </div>
@@ -133,7 +133,7 @@
                                         </div>
                                     </asp:TableHeaderCell>
                                     <asp:TableHeaderCell>
-                                        <div class="card" style="width: auto">
+                                        <div class="card card-responsive" style="width: auto">
                                             <div class="card-header">
                                                 ANTECEDENTE
                                             </div>
@@ -143,7 +143,7 @@
                                         </div>
                                     </asp:TableHeaderCell>
                                     <asp:TableHeaderCell>
-                                        <div class="card" style="width: auto">
+                                        <div class="card card-responsive" style="width: auto">
                                             <div class="card-header">
                                                 DESCRIPCIÓN
                                             </div>
@@ -159,7 +159,7 @@
                 </div>
                 <br />
                 <div class="container-fluid">
-                    <div class="card" style="width: auto;">
+                    <div class="card card-responsive" style="width: auto;">
                         <div class="card-header">
                             3. ANTECEDENTES FAMILIARES
                         </div>
@@ -167,7 +167,7 @@
                             <asp:Table runat="server">
                                 <asp:TableRow>
                                     <asp:TableHeaderCell>
-                                        <div class="card" style="width: auto">
+                                        <div class="card card-responsive" style="width: auto">
                                             <div class="card-header">
                                                 TIPO DE ANTECEDENTE
                                             </div>
@@ -177,7 +177,7 @@
                                         </div>
                                     </asp:TableHeaderCell>
                                     <asp:TableHeaderCell>
-                                        <div class="card" style="width: auto">
+                                        <div class="card card-responsive" style="width: auto">
                                             <div class="card-header">
                                                 ANTECEDENTE
                                             </div>
@@ -187,7 +187,7 @@
                                         </div>
                                     </asp:TableHeaderCell>
                                     <asp:TableHeaderCell>
-                                        <div class="card" style="width: auto">
+                                        <div class="card card-responsive" style="width: auto">
                                             <div class="card-header">
                                                 DESCRIPCIÓN
                                             </div>
@@ -203,7 +203,7 @@
                 </div>
                 <br />
                 <div class="container-fluid">
-                    <div class="card" style="width: auto;">
+                    <div class="card card-responsive" style="width: auto;">
                         <div class="card-header">
                             4. ENFERMEDAD ACTUAL
                         </div>
@@ -214,12 +214,12 @@
                 </div>
                 <br />
                 <div class="container-fluid">
-                    <div class="card" style="width: auto;">
+                    <div class="card card-responsive" style="width: auto;">
                         <div class="card-header">
                             5. REVISIÓN DE ÓRGANOS Y SISTEMAS
                         </div>
                         <div class="list-group list-group-flush" style="padding: 10px">
-                            <asp:Table class="table table-bordered" runat="server">
+                            <asp:Table class="table table-bordered table-responsive" runat="server">
                                 <asp:TableRow Style="text-align: center; background-color: #DAFEF9">
                                     <asp:TableHeaderCell Text="ÓRGANOS  Y SISTEMAS"></asp:TableHeaderCell>
                                     <asp:TableHeaderCell Text="EVIDENCIA PATOLÓGICA"></asp:TableHeaderCell>
@@ -339,13 +339,13 @@
                 </div>
                 <br />
                 <div class="container-fluid">
-                    <div class="card" style="width: auto">
+                    <div class="card card-responsive" style="width: auto">
                         <div class="card-header">
                             6. SIGNOS VITALES Y ANTROPOMÉTRICOS 
                         </div>
                         <div class="list-group list-group-flush" style="padding: 10px; width: auto">
                             <div class="container">
-                                <asp:Table CssClass="table table-bordered" runat="server">
+                                <asp:Table CssClass="table table-bordered table-responsive" runat="server">
                                     <asp:TableRow>
                                         <asp:TableCell Style="background-color: #DAFEF9; width: 100px" Text="FECHA:"></asp:TableCell>
                                         <asp:TableCell>
@@ -367,7 +367,7 @@
                                 </asp:Table>
                             </div>
                             <div class="container" style="padding-top: 10px">
-                                <asp:Table CssClass="table table-bordered" runat="server">
+                                <asp:Table CssClass="table table-bordered table-responsive" runat="server">
                                     <asp:TableRow>
                                         <asp:TableCell Style="width: auto" Text="FC"></asp:TableCell>
                                         <asp:TableCell Style="width: auto" Text="84"></asp:TableCell>
@@ -386,7 +386,7 @@
                                     </asp:TableRow>
                                 </asp:Table>
                                 <br />
-                                <asp:Table CssClass="table table-bordered" runat="server">
+                                <asp:Table CssClass="table table-bordered table-responsive" runat="server">
                                     <asp:TableRow>
                                         <asp:TableCell Style="width: auto" Text="FC"></asp:TableCell>
                                         <asp:TableCell Style="width: auto" Text="76"></asp:TableCell>
@@ -410,12 +410,12 @@
                 </div>
                 <br />
                 <div class="container-fluid">
-                    <div class="card" style="width: auto;">
+                    <div class="card card-responsive" style="width: auto;">
                         <div class="card-header">
                             7. EXAMEN FÍSICO
                         </div>
                         <div class="list-group list-group-flush" style="padding: 10px">
-                            <asp:Table class="table table-light" runat="server">
+                            <asp:Table class="table table-light table-responsive" runat="server">
                                 <asp:TableRow Style="text-align: center">
                                     <asp:TableHeaderCell Text="EXAMEN/REGIÓN ANATÓMICA"></asp:TableHeaderCell>
                                     <asp:TableHeaderCell Text="EVIDENCIA PATOLÓGICA"></asp:TableHeaderCell>
@@ -445,12 +445,12 @@
                 </div>
                 <br />
                 <div class="container-fluid">
-                    <div class="card" style="width: auto;">
+                    <div class="card card-responsive" style="width: auto;">
                         <div class="card-header">
                             8. DIAGNÓSTICOS
                         </div>
                         <div class="list-group list-group-flush" style="padding: 10px">
-                            <asp:Table class="table table-light" runat="server">
+                            <asp:Table class="table table-light table-responsive" runat="server">
                                 <asp:TableRow Style="text-align: center">
                                     <asp:TableHeaderCell Text="DIAGNÓSTICOS"></asp:TableHeaderCell>
                                     <asp:TableHeaderCell Text="CÓDIGO"></asp:TableHeaderCell>
@@ -485,7 +485,7 @@
                 </div>
                 <br />
                 <div class="container-fluid">
-                    <div class="card" style="width: auto;">
+                    <div class="card card-responsive" style="width: auto;">
                         <div class="card-header">
                             9. PLAN DE TRATAMIENTO
                         </div>
@@ -496,7 +496,7 @@
                 </div>
                 <br />
                 <div class="container-fluid">
-                    <div class="card" style="width: auto;">
+                    <div class="card card-responsive" style="width: auto;">
                         <div class="card-header">
                             10. EVOLUCIÓN
                         </div>
@@ -507,7 +507,7 @@
                 </div>
                 <br />
                 <div class="container-fluid">
-                    <div class="card" style="width: auto;">
+                    <div class="card card-responsive" style="width: auto;">
                         <div class="card-header">
                             11. PRESCRIPCIONES
                         </div>
@@ -517,9 +517,9 @@
                     </div>
                 </div>
                 <br />
-                <div class="card" style="width: auto">
+                <div class="card card-responsive" style="width: auto">
                     <div class="list-group list-group-flush" style="padding: 10px">
-                        <asp:Table class="table table-light" runat="server">
+                        <asp:Table class="table table-light table-responsive" runat="server">
                             <asp:TableRow Style="text-align: center">
                                 <asp:TableHeaderCell Text="FECHA"></asp:TableHeaderCell>
                                 <asp:TableHeaderCell Text="HORA"></asp:TableHeaderCell>
