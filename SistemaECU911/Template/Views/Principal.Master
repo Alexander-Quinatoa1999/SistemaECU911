@@ -112,8 +112,7 @@
                             </div>
                             <div class="profile-name">
                                 <p class="name">
-                                    Bienvenido Jane
-               
+                                    <asp:Label ID="lbl_nombre" runat="server" Text=""></asp:Label>
                                 </p>
                                 <p class="designation">
                                     Administrador

@@ -39,7 +39,7 @@ namespace CapaDatos
     #endregion
 		
 		public DataClassesECU911DataContext() : 
-				base(global::CapaDatos.Properties.Settings.Default.SistemaECU911ConnectionString, mappingSource)
+				base(global::CapaDatos.Properties.Settings.Default.SistemaECU911ConnectionString2, mappingSource)
 		{
 			OnCreated();
 		}
@@ -84,18 +84,18 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Autentificacion_Usuario")]
-		public ISingleResult<Autentificacion_UsuarioResult> Autentificacion_Usuario([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string usuario, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string pass)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), usuario, pass);
-			return ((ISingleResult<Autentificacion_UsuarioResult>)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Identificar_rol")]
 		public ISingleResult<Identificar_rolResult> Identificar_rol([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> tusu)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), tusu);
 			return ((ISingleResult<Identificar_rolResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Autentificacion_Usuario")]
+		public ISingleResult<Autentificacion_UsuarioResult> Autentificacion_Usuario([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string usuario, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string pass)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), usuario, pass);
+			return ((ISingleResult<Autentificacion_UsuarioResult>)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Validar_Existencia")]
@@ -587,50 +587,6 @@ namespace CapaDatos
 		}
 	}
 	
-	public partial class Autentificacion_UsuarioResult
-	{
-		
-		private string _usu_nombre;
-		
-		private System.Nullable<int> _tusu_id;
-		
-		public Autentificacion_UsuarioResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_nombre", DbType="VarChar(150)")]
-		public string usu_nombre
-		{
-			get
-			{
-				return this._usu_nombre;
-			}
-			set
-			{
-				if ((this._usu_nombre != value))
-				{
-					this._usu_nombre = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tusu_id", DbType="Int")]
-		public System.Nullable<int> tusu_id
-		{
-			get
-			{
-				return this._tusu_id;
-			}
-			set
-			{
-				if ((this._tusu_id != value))
-				{
-					this._tusu_id = value;
-				}
-			}
-		}
-	}
-	
 	public partial class Identificar_rolResult
 	{
 		
@@ -652,6 +608,212 @@ namespace CapaDatos
 				if ((this._usu_nombre != value))
 				{
 					this._usu_nombre = value;
+				}
+			}
+		}
+	}
+	
+	public partial class Autentificacion_UsuarioResult
+	{
+		
+		private int _usu_id;
+		
+		private string _usu_nombre;
+		
+		private string _usu_apellido;
+		
+		private string _usu_direccion;
+		
+		private string _usu_telefono;
+		
+		private string _usu_nomlogin;
+		
+		private string _usu_pass;
+		
+		private string _usu_correo;
+		
+		private System.Nullable<System.DateTime> _usu_fechacreacion;
+		
+		private System.Nullable<char> _usu_estado;
+		
+		private System.Nullable<int> _tusu_id;
+		
+		public Autentificacion_UsuarioResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_id", DbType="Int NOT NULL")]
+		public int usu_id
+		{
+			get
+			{
+				return this._usu_id;
+			}
+			set
+			{
+				if ((this._usu_id != value))
+				{
+					this._usu_id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_nombre", DbType="VarChar(150)")]
+		public string usu_nombre
+		{
+			get
+			{
+				return this._usu_nombre;
+			}
+			set
+			{
+				if ((this._usu_nombre != value))
+				{
+					this._usu_nombre = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_apellido", DbType="VarChar(150)")]
+		public string usu_apellido
+		{
+			get
+			{
+				return this._usu_apellido;
+			}
+			set
+			{
+				if ((this._usu_apellido != value))
+				{
+					this._usu_apellido = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_direccion", DbType="VarChar(250)")]
+		public string usu_direccion
+		{
+			get
+			{
+				return this._usu_direccion;
+			}
+			set
+			{
+				if ((this._usu_direccion != value))
+				{
+					this._usu_direccion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_telefono", DbType="VarChar(15)")]
+		public string usu_telefono
+		{
+			get
+			{
+				return this._usu_telefono;
+			}
+			set
+			{
+				if ((this._usu_telefono != value))
+				{
+					this._usu_telefono = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_nomlogin", DbType="VarChar(100)")]
+		public string usu_nomlogin
+		{
+			get
+			{
+				return this._usu_nomlogin;
+			}
+			set
+			{
+				if ((this._usu_nomlogin != value))
+				{
+					this._usu_nomlogin = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_pass", DbType="VarChar(100)")]
+		public string usu_pass
+		{
+			get
+			{
+				return this._usu_pass;
+			}
+			set
+			{
+				if ((this._usu_pass != value))
+				{
+					this._usu_pass = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_correo", DbType="VarChar(250)")]
+		public string usu_correo
+		{
+			get
+			{
+				return this._usu_correo;
+			}
+			set
+			{
+				if ((this._usu_correo != value))
+				{
+					this._usu_correo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_fechacreacion", DbType="DateTime")]
+		public System.Nullable<System.DateTime> usu_fechacreacion
+		{
+			get
+			{
+				return this._usu_fechacreacion;
+			}
+			set
+			{
+				if ((this._usu_fechacreacion != value))
+				{
+					this._usu_fechacreacion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_estado", DbType="Char(1)")]
+		public System.Nullable<char> usu_estado
+		{
+			get
+			{
+				return this._usu_estado;
+			}
+			set
+			{
+				if ((this._usu_estado != value))
+				{
+					this._usu_estado = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tusu_id", DbType="Int")]
+		public System.Nullable<int> tusu_id
+		{
+			get
+			{
+				return this._tusu_id;
+			}
+			set
+			{
+				if ((this._tusu_id != value))
+				{
+					this._tusu_id = value;
 				}
 			}
 		}
