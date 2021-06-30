@@ -11,7 +11,7 @@ namespace SistemaECU911.Template.Views
 {
 
 
-    public partial class Principal1
+    public partial class Inicio
     {
 
         /// <summary>

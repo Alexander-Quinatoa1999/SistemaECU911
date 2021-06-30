@@ -756,8 +756,8 @@
     <Content Include="Template\Views\HCL.aspx" />
     <Content Include="Template\Views\Historial.aspx" />
     <Content Include="Template\Views\Inicial.aspx" />
+    <Content Include="Template\Views\Inicio.aspx" />
     <Content Include="Template\Views\PedidoExamenes.aspx" />
-    <Content Include="Template\Views\Principal.aspx" />
     <Content Include="Template\Views\Secundario.aspx" />
     <Content Include="Template\Views\WebForm1.aspx" />
     <Content Include="Web.config" />
@@ -792,19 +792,19 @@
     <Compile Include="Template\Views\Inicial.aspx.designer.cs">
       <DependentUpon>Inicial.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Template\Views\Inicio.aspx.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Template\Views\Inicio.aspx.designer.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Template\Views\PedidoExamenes.aspx.cs">
       <DependentUpon>PedidoExamenes.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Template\Views\PedidoExamenes.aspx.designer.cs">
       <DependentUpon>PedidoExamenes.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Template\Views\Principal.aspx.cs">
-      <DependentUpon>Principal.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Template\Views\Principal.aspx.designer.cs">
-      <DependentUpon>Principal.aspx</DependentUpon>
     </Compile>
     <Compile Include="Template\Views\Principal.Master.cs">
       <DependentUpon>Principal.Master</DependentUpon>
