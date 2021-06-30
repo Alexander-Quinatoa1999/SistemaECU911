@@ -2,8 +2,176 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
-        .auto-style1 {
-            width: 1256px;
+        .auto-style3 {
+            width: 1000px;
+        }
+        .auto-style4 {
+            width: 1049px;
+        }
+        .auto-style7 {
+            width: 311px;
+        }
+        .auto-style8 {
+            width: 188px;
+        }
+        .auto-style9 {
+            width: 236px;
+        }
+        .auto-style10 {
+            width: 448px;
+        }
+        .auto-style11 {
+            width: 235px;
+        }
+        .auto-style12 {
+            width: 163px;
+        }
+        .auto-style13 {
+            width: 169px;
+        }
+        .auto-style15 {
+            width: 94px;
+        }
+        .auto-style18 {
+            width: 160px;
+        }
+        .auto-style19 {
+            width: 164px;
+        }
+        .auto-style22 {
+            width: 214px;
+        }
+        .auto-style25 {
+            width: 198px;
+        }
+        .auto-style27 {
+            width: 180px;
+        }
+        .auto-style31 {
+            width: 49px;
+        }
+        .auto-style32 {
+            width: 51px;
+        }
+        .auto-style33 {
+            width: 48px;
+        }
+        .auto-style34 {
+            width: 62px;
+        }
+        .auto-style35 {
+            width: 61px;
+        }
+        .auto-style40 {
+            width: 135px;
+        }
+        .auto-style41 {
+            width: 134px;
+        }
+        .auto-style42 {
+            width: 120px;
+        }
+        .auto-style43 {
+            width: 287px;
+        }
+        .auto-style44 {
+            width: 281px;
+        }
+        .auto-style49 {
+            width: 200px;
+        }
+        .auto-style51 {
+            width: 109px;
+        }
+        .auto-style53 {
+            width: 280px;
+        }
+        .auto-style54 {
+            width: 474px;
+        }
+        .auto-style59 {
+            width: 80px;
+        }
+        .auto-style60 {
+            width: 39px;
+        }
+        .auto-style61 {
+            width: 69px;
+        }
+        .auto-style63 {
+            width: 203px;
+        }
+        .auto-style64 {
+            width: 131px;
+        }
+        .auto-style68 {
+            width: 284px;
+        }
+        .auto-style75 {
+            width: 93px;
+        }
+        .auto-style78 {
+            width: 361px;
+        }
+        .auto-style79 {
+            width: 398px;
+        }
+        .auto-style81 {
+            width: 149px;
+        }
+        .auto-style83 {
+            width: 66px;
+        }
+        .auto-style84 {
+            width: 161px;
+        }
+        .auto-style87 {
+            width: 256px;
+        }
+        .auto-style91 {
+            width: 513px;
+        }
+        .auto-style92 {
+            width: 45px;
+        }
+        .auto-style93 {
+            width: 103px;
+        }
+        .auto-style99 {
+            width: 763px;
+        }
+        .auto-style100 {
+            width: 908px;
+        }
+        .auto-style102 {
+            width: 1053px;
+        }
+        .auto-style103 {
+            width: 2px;
+        }
+        .auto-style104 {
+            width: 35px;
+        }
+        .auto-style106 {
+            width: 301px;
+        }
+        .auto-style107 {
+            width: 150px;
+        }
+        .auto-style108 {
+            width: 258px;
+        }
+        .auto-style109 {
+            width: 152px;
+        }
+        .auto-style110 {
+            width: 268px;
+        }
+        .auto-style111 {
+            width: 244px;
+        }
+        .auto-style112 {
+            width: 331px;
         }
     </style>
 </asp:Content>
@@ -22,7 +190,7 @@
                     <br />
                     <div>
                         <!--Datos de las empresa  y usuario-->
-                        <div class="card">
+                        <div class="card bg-transparent">
                             <div class="card-body">
                                 <h5 class="card text-dark bg-light mb-3">A. DATOS DEL ESTABLECIMIENTO - EMPRESA Y USUARIO
                                 </h5>
@@ -143,12 +311,12 @@
                             </div>
                         </div>
                         <!--Motivo de Consulta-->
-                        <div class="card">
+                        <div class="card bg-transparent">
                             <div class="card-body">
                                 <h5 class="card text-dark bg-light mb-3">B. MOTIVO DE CONSULTA
                                 </h5>
                                 <div class="table-responsive">
-                                    <table>
+                                    <table class="auto-style3" >
                                         <thead>
                                             <tr>
                                                 <td class="auto-style15">Descripción</td>
@@ -157,7 +325,7 @@
                                         <tbody>
                                             <tr>
                                                 <td>
-                                                    <textarea id="txt_descrip" rows="3" class="auto-style1"></textarea>
+                                                    <textarea id="txt_descrip" rows="3" class="auto-style4"></textarea>
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -166,7 +334,7 @@
                             </div>
                         </div>
                         <!--Antecedentes personales-->
-                        <div class="card">
+                        <div class="card bg-transparent">
                             <div class="card-body">
                                 <h5 class="card text-dark bg-light mb-3">C. ANTECEDENTES PERSONALES
                                 </h5>
@@ -181,7 +349,7 @@
                                         <tbody>
                                             <tr>
                                                 <td>
-                                                    <textarea id="txt_desant" rows="3" class="auto-style1"></textarea>
+                                                    <textarea id="txt_desant" rows="3" class="auto-style4"></textarea>
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -222,35 +390,36 @@
                                     <table>
                                         <thead>
                                             <tr>
-                                                <td class="auto-style93">Hijos</td>
-                                                <td class="auto-style92">Vida Sexual Activa</td>
-                                                <td class="auto-style35">Método de planificación familiar</td>
+                                                <td class="auto-style22">Hijos</td>
+                                                <td class="auto-style49">Vida Sexual Activa</td>
+                                                <td class="auto-style53">Método de planificación familiar</td>
+                                                <td></td>
                                             </tr>
                                         </thead>
                                     </table>
                                     <table>
                                         <thead>
                                             <tr>
-                                                <td class="auto-style53">Vivos</td>
-                                                <td class="auto-style55">Muertos</td>
+                                                <td class="auto-style60">Vivos</td>
+                                                <td class="auto-style61">Muertos</td>
                                                 <td class="auto-style64">Seleccione</td>
-                                                <td class="auto-style66">Seleccione</td>
+                                                <td class="auto-style59">Seleccione</td>
                                                 <td class="auto-style54">Tipo</td>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td class="auto-style52">
+                                                <td class="auto-style60">
                                                     <asp:TextBox ID="txt_vivo" runat="server" Width="50px"></asp:TextBox></td>
-                                                <td class="auto-style63">
+                                                <td class="auto-style61">
                                                     <asp:TextBox ID="txt_muerto" runat="server" Width="65px"></asp:TextBox></td>
-                                                <td class="auto-style65">
-                                                    <select id="sl_option1" class="auto-style68">
+                                                <td class="auto-style64">
+                                                    <select id="sl_option1" class="auto-style51">
                                                         <option>Si</option>
                                                         <option>No</option>
                                                     </select>
                                                 </td>
-                                                <td class="auto-style67">
+                                                <td class="auto-style59">
                                                     <select id="sl_optin2" class="auto-style68">
                                                         <option>Si</option>
                                                         <option>No</option>
@@ -265,72 +434,72 @@
                                     <table>
                                         <thead>
                                             <tr>
-                                                <td class="auto-style83">Papanicolaou</td>
-                                                <td class="auto-style84">Tiempo</td>
-                                                <td class="auto-style63">Colposcopia</td>
-                                                <td class="auto-style84">Tiempo</td>
-                                                <td class="auto-style63">Eco Mamario</td>
-                                                <td class="auto-style84">Tiempo</td>
+                                                <td class="auto-style40">Papanicolaou</td>
+                                                <td class="auto-style27">Tiempo</td>
+                                                <td class="auto-style41">Colposcopia</td>
+                                                <td class="auto-style27">Tiempo</td>
+                                                <td class="auto-style42">Eco Mamario</td>
+                                                <td class="auto-style27">Tiempo</td>
                                                 <td class="auto-style63">Mamografía</td>
                                                 <td class="auto-style35">Tiempo</td>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td class="auto-style83">
+                                                <td class="auto-style40">
                                                     <select id="sl_papa" class="auto-style81">
                                                         <option>Si</option>
                                                         <option>No</option>
                                                     </select>
                                                 </td>
-                                                <td class="auto-style84">
-                                                    <asp:TextBox ID="txt_tiempopapa" runat="server" Width="150px"></asp:TextBox></td>
-                                                <td class="auto-style63">
+                                                <td class="auto-style27">
+                                                    <asp:TextBox ID="txt_tiempopapa" runat="server" Width="105px"></asp:TextBox></td>
+                                                <td class="auto-style41">
                                                     <select id="sl_colp" class="auto-style81">
                                                         <option>Si</option>
                                                         <option>No</option>
                                                     </select>
                                                 </td>
-                                                <td class="auto-style84">
-                                                    <asp:TextBox ID="txt_tiempocolp" runat="server" Width="150px"></asp:TextBox></td>
-                                                <td class="auto-style63">
+                                                <td class="auto-style27">
+                                                    <asp:TextBox ID="txt_tiempocolp" runat="server" Width="105px"></asp:TextBox></td>
+                                                <td class="auto-style42">
                                                     <select id="sl_eco" class="auto-style81">
                                                         <option>Si</option>
                                                         <option>No</option>
                                                     </select>
                                                 </td>
-                                                <td class="auto-style84">
-                                                    <asp:TextBox ID="txt_tiempoeco" runat="server" Width="150px"></asp:TextBox></td>
+                                                <td class="auto-style27">
+                                                    <asp:TextBox ID="txt_tiempoeco" runat="server" Width="105px"></asp:TextBox></td>
                                                 <td class="auto-style63">
-                                                    <select id="sl_mamo" class="auto-style81">
+                                                    <select id="sl_mamo" class="auto-style34">
                                                         <option>Si</option>
                                                         <option>No</option>
                                                     </select>
                                                 </td>
                                                 <td class="auto-style10">
-                                                    <asp:TextBox ID="txt_tiempomamo" runat="server" Width="150px"></asp:TextBox></td>
+                                                    <asp:TextBox ID="txt_tiempomamo" runat="server" Width="105px"></asp:TextBox></td>
                                             </tr>
                                         </tbody>
                                     </table>
                                     <table>
                                         <thead>
                                             <tr>
-                                                <td class="auto-style94">Resultados</td>
-                                                <td class="auto-style99">Resultados</td>
-                                                <td class="auto-style100">Resultados</td>
+                                                <td class="auto-style112">Resultados</td>
+                                                <td class="auto-style43">Resultados</td>
+                                                <td class="auto-style44">Resultados</td>
                                                 <td class="auto-style75">Resultados</td>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td class="auto-style94">
-                                                    <textarea id="txt_res1" rows="2" class="auto-style87"></textarea></td>
-                                                <td class="auto-style99">
-                                                    <textarea id="txt_res2" rows="2" class="auto-style95"></textarea></td>
-                                                <td class="auto-style100">
-                                                    <textarea id="txt_res3" rows="2" class="auto-style97"></textarea></td>
+                                                <td class="auto-style112">
+                                                    <textarea id="txt_res1" rows="2" class="auto-style106"></textarea></td>
+                                                <td class="auto-style43">
+                                                    <textarea id="txt_res2" rows="2" class="auto-style87"></textarea></td>
+                                                <td class="auto-style44">
+                                                    <textarea id="txt_res3" rows="2" class="auto-style87"></textarea></td>
                                                 <td class="auto-style75">
-                                                    <textarea id="txt_res4" rows="2" class="auto-style88"></textarea></td>
+                                                    <textarea id="txt_res4" rows="2" class="auto-style87"></textarea></td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -340,57 +509,56 @@
                                     <table>
                                         <thead>
                                             <tr>
-                                                <td class="auto-style120">Ant. Prostático</td>
-                                                <td class="auto-style110">Tiempo</td>
-                                                <td class="auto-style106">Eco Prostático</td>
-                                                <td class="auto-style84">Tiempo</td>
-                                                <td class="auto-style84">Método de planificacion familiar</td>
-                                                <td class="auto-style84">Tipo</td>
+                                                <td class="auto-style104">Ant. Prostático</td>
+                                                <td class="auto-style93">Tiempo</td>
+                                                <td class="auto-style92">Eco Prostático</td>
+                                                <td class="auto-style103">Tiempo</td>
+                                                <td class="auto-style25">Método de planificacion familiar</td>                                               
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td class="auto-style120">
-                                                    <select id="sl_antigeno" class="auto-style81">
+                                                <td class="auto-style104">
+                                                    <select id="sl_antigeno" class="auto-style84">
                                                         <option>Si</option>
                                                         <option>No</option>
                                                     </select>
                                                 </td>
-                                                <td class="auto-style110">
+                                                <td class="auto-style93">
                                                     <asp:TextBox ID="TextBox1" runat="server" Width="150px"></asp:TextBox></td>
-                                                <td class="auto-style106">
-                                                    <select id="sl_ecopro" class="auto-style81">
+                                                <td class="auto-style41">
+                                                    <select id="sl_ecopro" class="auto-style84">
                                                         <option>Si</option>
                                                         <option>No</option>
                                                     </select>
                                                 </td>
-                                                <td class="auto-style10">
+                                                <td class="auto-style103">
                                                     <asp:TextBox ID="TextBox4" runat="server" Width="150px"></asp:TextBox></td>
-                                                <td class="auto-style106">
-                                                    <select id="sl_metoplan" class="auto-style81">
+                                                <td class="auto-style41">
+                                                    <select id="sl_metoplan" class="auto-style84">
                                                         <option>Si</option>
                                                         <option>No</option>
                                                     </select>
-                                                </td>
-                                                <td class="auto-style10">
-                                                    <asp:TextBox ID="txt_metoplan" runat="server" Width="150px"></asp:TextBox></td>
+                                                </td>                                               
                                             </tr>
                                         </tbody>
                                     </table>
                                     <table>
                                         <thead>
                                             <tr>
-                                                <td class="auto-style99">Resultados</td>
-                                                <td class="auto-style99">Resultados</td>
-                                                <td></td>
+                                                <td class="auto-style102">Resultados</td>
+                                                <td class="auto-style100">Resultados</td>
+                                                <td class="auto-style91">Tipo</td>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td class="auto-style99">
-                                                    <textarea id="txt_resantigeno" rows="2" class="auto-style105"></textarea></td>
-                                                <td class="auto-style99">
-                                                    <textarea id="txt_resecopro" rows="2" class="auto-style114"></textarea></td>
+                                                <td class="auto-style102">
+                                                    <textarea id="txt_resantigeno" rows="3" class="auto-style7"></textarea></td>
+                                                <td class="auto-style100">
+                                                    <textarea id="txt_resecopro" rows="3" class="auto-style7"></textarea></td>
+                                                <td class="auto-style10">
+                                                    <textarea id="txt_metoplan" rows="3" class="auto-style7"></textarea></td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -480,27 +648,27 @@
                                     <table>
                                         <thead>
                                             <tr>
-                                                <td class="auto-style118">Estilo</td>
-                                                <td></td>
+                                                <td class="auto-style8">Estilo</td>
+                                                <td class="auto-style9"></td>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td class="auto-style118">Actividad Física</td>
-                                                <td class="auto-style115">¿Cuál?</td>
-                                                <td class="auto-style116">Tiempo</td>
+                                                <td class="auto-style8">Actividad Física</td>
+                                                <td class="auto-style9">¿Cuál?</td>
+                                                <td class="auto-style11">Tiempo</td>
                                                 <td class="auto-style117">Cantidad</td>
                                             </tr>
                                             <tr>
-                                                <td class="auto-style118">
+                                                <td class="auto-style8">
                                                     <select id="sl_actividadfisica" class="auto-style119">
                                                         <option>Si</option>
                                                         <option>No</option>
                                                     </select>
                                                 </td>
-                                                <td class="auto-style115">
+                                                <td class="auto-style9">
                                                     <asp:TextBox ID="txt_cualact" runat="server" Width="208px"></asp:TextBox></td>
-                                                <td class="auto-style116">
+                                                <td class="auto-style11">
                                                     <asp:TextBox ID="txt_tiempoact" runat="server" Width="208px"></asp:TextBox></td>
                                                 <td class="auto-style117">
                                                     <asp:TextBox ID="txt_cantidadact" runat="server" Width="208px"></asp:TextBox></td>
@@ -508,21 +676,21 @@
                                         </tbody>
                                         <tbody>
                                             <tr>
-                                                <td class="auto-style118">Medicación Habitual</td>
-                                                <td class="auto-style115">¿Cuál?</td>
-                                                <td class="auto-style116">Tiempo</td>
+                                                <td class="auto-style8">Medicación Habitual</td>
+                                                <td class="auto-style9">¿Cuál?</td>
+                                                <td class="auto-style11">Tiempo</td>
                                                 <td class="auto-style117">Cantidad</td>
                                             </tr>
                                             <tr>
-                                                <td class="auto-style118">
+                                                <td class="auto-style8">
                                                     <select id="sl_medicahab" class="auto-style119">
                                                         <option>Si</option>
                                                         <option>No</option>
                                                     </select>
                                                 </td>
-                                                <td class="auto-style115">
+                                                <td class="auto-style9">
                                                     <asp:TextBox ID="txt_cualmed" runat="server" Width="208px"></asp:TextBox></td>
-                                                <td class="auto-style116">
+                                                <td class="auto-style11">
                                                     <asp:TextBox ID="txt_tiempomed" runat="server" Width="208px"></asp:TextBox></td>
                                                 <td class="auto-style117">
                                                     <asp:TextBox ID="txt_cantidadmed" runat="server" Width="208px"></asp:TextBox></td>
@@ -533,7 +701,7 @@
                             </div>
                         </div>
                         <!--Antecedentes de trabajo-->
-                        <div class="card">
+                        <div class="card bg-transparent">
                             <div class="card-body">
                                 <h5 class="card text-dark bg-light mb-3">D. ANTECEDENTES DE TRABAJO
                                 </h5>
@@ -654,14 +822,14 @@
                                 <table>
                                     <thead>
                                         <tr>
-                                            <td></td>
-                                            <td class="auto-style118">Especificar (en caso de seleccionar si)</td>
-                                            <td class="auto-style118">Fecha</td>
+                                            <td class="auto-style83"></td>
+                                            <td class="auto-style83">Especificar (en caso de seleccionar si)</td>
+                                            <td class="auto-style58">Fecha</td>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td class="auto-style118">
+                                            <td class="auto-style83">
                                                 <select id="sl_acctra" class="auto-style119">
                                                     <option>Si</option>
                                                     <option>No</option>
@@ -670,7 +838,7 @@
                                             <td class="auto-style31">
                                                 <asp:TextBox ID="txt_especif" runat="server" Width="345px"></asp:TextBox></td>
                                             <td class="auto-style31">
-                                                <asp:TextBox ID="txt_fechatraba" runat="server" Width="345px"></asp:TextBox></td>
+                                                <asp:TextBox ID="txt_fechatraba" runat="server" Width="241px"></asp:TextBox></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -683,7 +851,7 @@
                                     <tbody>
                                         <tr>
                                             <td>
-                                                <textarea id="txt_obsaccidente" rows="3" class="auto-style1"></textarea>
+                                                <textarea id="txt_obsaccidente" rows="3" class="auto-style4"></textarea>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -693,9 +861,9 @@
                                 <table>
                                     <thead>
                                         <tr>
-                                            <td></td>
-                                            <td class="auto-style118">Especificar (en caso de seleccionar si)</td>
-                                            <td class="auto-style118">Fecha</td>
+                                            <td class="auto-style83"></td>
+                                            <td class="auto-style83">Especificar (en caso de seleccionar si)</td>
+                                            <td class="auto-style58">Fecha</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -709,7 +877,7 @@
                                             <td class="auto-style31">
                                                 <asp:TextBox ID="txt_espprof" runat="server" Width="345px"></asp:TextBox></td>
                                             <td class="auto-style31">
-                                                <asp:TextBox ID="txt_fechaprof" runat="server" Width="345px"></asp:TextBox></td>
+                                                <asp:TextBox ID="txt_fechaprof" runat="server" Width="241px"></asp:TextBox></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -722,7 +890,7 @@
                                     <tbody>
                                         <tr>
                                             <td>
-                                                <textarea id="txt_obsprof" rows="3" class="auto-style1"></textarea>
+                                                <textarea id="txt_obsprof" rows="3" class="auto-style4"></textarea>
                                             </td>
                                         </tr>
                                     </tbody>
