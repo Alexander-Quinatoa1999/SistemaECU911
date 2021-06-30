@@ -10,9 +10,9 @@
     <link rel="stylesheet" href="../Template Principal/vendors/css/vendor.bundle.base.css">
     <link rel="stylesheet" href="../Template Principal/vendors/css/vendor.bundle.addons.css">
     <link rel="stylesheet" href="../Template Principal/css/style.css">
-    <link href="../Template Principal/css/Style_Prueba.css" rel="stylesheet"/>
+    <link href="../Template Principal/css/Style_Prueba.css" rel="stylesheet" />
     <link rel="shortcut icon" href="http://www.urbanui.com/" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -143,20 +143,26 @@
                             </a>
                             <div class="collapse" id="ui-advanced">
                                 <ul class="nav flex-column sub-menu">
-                                    <li class="nav-item"><a class="nav-link" href="Historial.aspx">Historial 1</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="Historial.aspx">Ficha Médica</a></li>
                                 </ul>
                             </div>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" data-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
                                 <i class="fab fa-wpforms menu-icon"></i>
-                                <span class="menu-title">Historial 2.0</span>
+                                <span class="menu-title">HC Ocupacional</span>
                                 <i class="menu-arrow"></i>
                             </a>
                             <div class="collapse" id="form-elements">
                                 <ul class="nav flex-column sub-menu">
-                                    <li class="nav-item"><a class="nav-link" href="pages/forms/basic_elements.html">Historial 1</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="PedidoExamenes.aspx">Pedido Examenes</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="Inicial.aspx">HC Inicial</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#">HC Periódica</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#">HC Reintegro</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#">HC Retiro</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#">HC Certificado</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#">HC Inmunizaciones</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#">HC Evolución</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="PedidoExamenes.aspx">HC Pedido Examenes</a></li>
                                 </ul>
                             </div>
                         </li>
