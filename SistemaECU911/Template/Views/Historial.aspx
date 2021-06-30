@@ -12,69 +12,35 @@
                 <div class="container-fluid">
                     <div class="card" style="width: auto;">
                         <div class="list-group list-group-flush" style="text-align: center; padding: 10px">
-                            <asp:Table ID="Table1" runat="server">
+                            <asp:Table CssClass="table-bordered" ID="Table1" runat="server">
                                 <asp:TableRow>
-                                    <asp:TableHeaderCell>
-                                        <div class="card card-responsive" style="width: auto;">
-                                          <div class="card-header">
-                                            ESTABLECIMIENTO DE SALUD
-                                          </div>
-                                          <ul class="list-group list-group-flush">
-                                              <asp:TextBox runat="server" BorderStyle="None"></asp:TextBox>
-                                          </ul>
-                                        </div>
-                                    </asp:TableHeaderCell>
-                                    <asp:TableHeaderCell>
-                                        <div class="card card-responsive" style="width: auto;">
-                                          <div class="card-header">
-                                            NOMBRE
-                                          </div>
-                                          <ul class="list-group list-group-flush">
-                                              <asp:TextBox runat="server" BorderStyle="None"></asp:TextBox>
-                                          </ul>
-                                        </div>
-                                    </asp:TableHeaderCell>
-                                    <asp:TableHeaderCell>
-                                        <div class="card card-responsive" style="width: auto;">
-                                          <div class="card-header">
-                                            APELLIDO
-                                          </div>
-                                          <ul class="list-group list-group-flush">
-                                              <asp:TextBox runat="server" BorderStyle="None"></asp:TextBox>
-                                          </ul>
-                                        </div>
-                                    </asp:TableHeaderCell>
-                                    <asp:TableHeaderCell>
-                                        <div class="card card-responsive" style="width: auto;">
-                                          <div class="card-header">
-                                            SEXO
-                                          </div>
-                                          <ul class="list-group list-group-flush">
-                                              <asp:TextBox runat="server" BorderStyle="None"></asp:TextBox>
-                                          </ul>
-                                        </div>
-                                    </asp:TableHeaderCell>
-                                    <asp:TableHeaderCell>
-                                        <div class="card card-responsive" style="width: auto;">
-                                          <div class="card-header">
-                                            EDAD
-                                          </div>
-                                          <ul class="list-group list-group-flush">
-                                              <asp:TextBox runat="server" BorderStyle="None"></asp:TextBox>
-                                          </ul>
-                                        </div>
-                                    </asp:TableHeaderCell>
-                                    <asp:TableHeaderCell>
-                                        <div class="card card-responsive" style="width: auto;">
-                                          <div class="card-header">
-                                            N° HISTORIA CLÍNICA
-                                          </div>
-                                          <ul class="list-group list-group-flush">
-                                              <asp:TextBox runat="server" BorderStyle="None"></asp:TextBox>
-                                          </ul>
-                                        </div>
-                                    </asp:TableHeaderCell>
-                                </asp:TableRow>
+                                    <asp:TableCell style="background-color: #DAFEF9" Text="ESTABLECIMIENTO DE SALUD"></asp:TableCell>
+                                    <asp:TableCell style="background-color: #DAFEF9" Text="NOMBRE"></asp:TableCell>
+                                    <asp:TableCell style="background-color: #DAFEF9" Text="APELLIDO"></asp:TableCell>
+                                    <asp:TableCell style="background-color: #DAFEF9" Text="SEXO"></asp:TableCell>
+                                    <asp:TableCell style="background-color: #DAFEF9" Text="EDAD"></asp:TableCell>
+                                    <asp:TableCell style="background-color: #DAFEF9" Text="N° HISTORIA CLÍNICA"></asp:TableCell>
+                                 </asp:TableRow>
+                                 <asp:TableRow>                                     
+                                     <asp:TableCell>
+                                         <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%"></asp:TextBox>
+                                     </asp:TableCell>
+                                     <asp:TableCell>
+                                         <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%"></asp:TextBox>
+                                     </asp:TableCell>
+                                     <asp:TableCell>
+                                         <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%"></asp:TextBox>
+                                     </asp:TableCell>
+                                     <asp:TableCell>
+                                         <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%"></asp:TextBox>
+                                     </asp:TableCell>
+                                     <asp:TableCell>
+                                         <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%"></asp:TextBox>
+                                     </asp:TableCell>
+                                     <asp:TableCell>
+                                         <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%"></asp:TextBox>
+                                     </asp:TableCell>
+                                 </asp:TableRow>                                
                             </asp:Table>
                         </div>
                     </div>
@@ -85,30 +51,20 @@
                         <div class="card-header">
                             1. MOTIVO DE CONSULTA
                         </div>
-                        <div class="list-group list-group-flush" style="padding: 10px; text-align: center">
-                            <asp:Table runat="server">
+                        <div class="list-group list-group-flush" style="padding: 10px;">
+                            <asp:Table CssClass="table-bordered text-center" runat="server">
                                 <asp:TableRow>
-                                    <asp:TableHeaderCell>
-                                        <div class="card card-responsive" style="width: auto">
-                                            <div class="card-header">
-                                                MOTIVO DE CONSULTA
-                                            </div>
-                                            <ul class="list-group list-group-flush">
-                                                <asp:TextBox runat="server" BorderStyle="None"></asp:TextBox>
-                                            </ul>
-                                        </div>
-                                    </asp:TableHeaderCell>
-                                    <asp:TableHeaderCell>
-                                        <div class="card card-responsive" style="width: auto;">
-                                            <div class="card-header">                                        
-                                                MOTIVO DE CONSULTA (según acompañante)
-                                            </div>
-                                            <ul class="list-group list-group-flush">
-                                                <asp:TextBox runat="server" BorderStyle="None"></asp:TextBox>
-                                            </ul>
-                                        </div>
-                                    </asp:TableHeaderCell>
+                                    <asp:TableCell style="background-color: #DAFEF9" Text="MOTIVO DE CONSULTA"></asp:TableCell>
+                                    <asp:TableCell style="background-color: #DAFEF9" Text="MOTIVO DE CONSULTA (según acompañante)"></asp:TableCell>
                                 </asp:TableRow>
+                                <asp:TableRow>
+                                    <asp:TableCell>
+                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%"></asp:TextBox>
+                                    </asp:TableCell>
+                                    <asp:TableCell>
+                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%"></asp:TextBox>
+                                    </asp:TableCell>
+                                </asp:TableRow>                                
                             </asp:Table>
                         </div>
                     </div>
@@ -120,39 +76,23 @@
                             2. ANTECEDENTES PERSONALES
                         </div>
                         <div class="list-group list-group-flush" style="padding: 10px; text-align: center">
-                            <asp:Table runat="server">
+                            <asp:Table CssClass="table-bordered text-center" runat="server">
                                 <asp:TableRow>
-                                    <asp:TableHeaderCell>
-                                        <div class="card card-responsive" style="width: auto">
-                                            <div class="card-header">
-                                                TIPO DE ANTECEDENTE
-                                            </div>
-                                            <ul class="list-group list-group-flush">
-                                                <asp:TextBox runat="server" BorderStyle="None"></asp:TextBox>
-                                            </ul>
-                                        </div>
-                                    </asp:TableHeaderCell>
-                                    <asp:TableHeaderCell>
-                                        <div class="card card-responsive" style="width: auto">
-                                            <div class="card-header">
-                                                ANTECEDENTE
-                                            </div>
-                                            <ul class="list-group list-group-flush">
-                                                <asp:TextBox runat="server" BorderStyle="None"></asp:TextBox>
-                                            </ul>
-                                        </div>
-                                    </asp:TableHeaderCell>
-                                    <asp:TableHeaderCell>
-                                        <div class="card card-responsive" style="width: auto">
-                                            <div class="card-header">
-                                                DESCRIPCIÓN
-                                            </div>
-                                            <ul class="list-group list-group-flush">
-                                                <asp:TextBox runat="server" BorderStyle="None"></asp:TextBox>
-                                            </ul>
-                                        </div>
-                                    </asp:TableHeaderCell>
+                                    <asp:TableCell style="background-color: #DAFEF9" Text="TIPO DE ANTECEDENTE"></asp:TableCell>
+                                    <asp:TableCell style="background-color: #DAFEF9" Text="ANTECEDENTE"></asp:TableCell>
+                                    <asp:TableCell style="background-color: #DAFEF9" Text="DESCRIPCIÓN"></asp:TableCell>
                                 </asp:TableRow>
+                                <asp:TableRow>
+                                    <asp:TableCell>
+                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%"></asp:TextBox>
+                                    </asp:TableCell>
+                                    <asp:TableCell>
+                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%"></asp:TextBox>
+                                    </asp:TableCell>
+                                    <asp:TableCell>
+                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%"></asp:TextBox>
+                                    </asp:TableCell>
+                                </asp:TableRow>                                
                             </asp:Table>
                         </div>
                     </div>
@@ -163,40 +103,24 @@
                         <div class="card-header">
                             3. ANTECEDENTES FAMILIARES
                         </div>
-                        <div class="list-group list-group-flush" style="padding: 10px; text-align: center">
-                            <asp:Table runat="server">
+                        <div class="list-group list-group-flush" style="padding: 10px; text-align:center">
+                            <asp:Table CssClass="table-bordered text-center" runat="server">
                                 <asp:TableRow>
-                                    <asp:TableHeaderCell>
-                                        <div class="card card-responsive" style="width: auto">
-                                            <div class="card-header">
-                                                TIPO DE ANTECEDENTE
-                                            </div>
-                                            <ul class="list-group list-group-flush">
-                                                <asp:TextBox runat="server" BorderStyle="None"></asp:TextBox>
-                                            </ul>
-                                        </div>
-                                    </asp:TableHeaderCell>
-                                    <asp:TableHeaderCell>
-                                        <div class="card card-responsive" style="width: auto">
-                                            <div class="card-header">
-                                                ANTECEDENTE
-                                            </div>
-                                            <ul class="list-group list-group-flush">
-                                                <asp:TextBox runat="server" BorderStyle="None"></asp:TextBox>
-                                            </ul>
-                                        </div>
-                                    </asp:TableHeaderCell>
-                                    <asp:TableHeaderCell>
-                                        <div class="card card-responsive" style="width: auto">
-                                            <div class="card-header">
-                                                DESCRIPCIÓN
-                                            </div>
-                                            <ul class="list-group list-group-flush">
-                                                <asp:TextBox runat="server" BorderStyle="None"></asp:TextBox>
-                                            </ul>
-                                        </div>
-                                    </asp:TableHeaderCell>
+                                    <asp:TableCell style="background-color: #DAFEF9" Text="TIPO DE ANTECEDENTE"></asp:TableCell>
+                                    <asp:TableCell style="background-color: #DAFEF9" Text="ANTECEDENTE"></asp:TableCell>
+                                    <asp:TableCell style="background-color: #DAFEF9" Text="DESCRIPCIÓN"></asp:TableCell>
                                 </asp:TableRow>
+                                <asp:TableRow>
+                                    <asp:TableCell>
+                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%"></asp:TextBox>
+                                    </asp:TableCell>
+                                    <asp:TableCell>
+                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%"></asp:TextBox>
+                                    </asp:TableCell>
+                                    <asp:TableCell>
+                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%"></asp:TextBox>
+                                    </asp:TableCell>
+                                </asp:TableRow>                              
                             </asp:Table>
                         </div>
                     </div>
@@ -219,7 +143,7 @@
                             5. REVISIÓN DE ÓRGANOS Y SISTEMAS
                         </div>
                         <div class="list-group list-group-flush" style="padding: 10px">
-                            <asp:Table class="table table-bordered table-responsive" runat="server">
+                            <asp:Table class="table table-bordered text-center" runat="server">
                                 <asp:TableRow Style="text-align: center; background-color: #DAFEF9">
                                     <asp:TableHeaderCell Text="ÓRGANOS  Y SISTEMAS"></asp:TableHeaderCell>
                                     <asp:TableHeaderCell Text="EVIDENCIA PATOLÓGICA"></asp:TableHeaderCell>
@@ -345,7 +269,7 @@
                         </div>
                         <div class="list-group list-group-flush" style="padding: 10px; width: auto">
                             <div class="container">
-                                <asp:Table CssClass="table table-bordered table-responsive" runat="server">
+                                <asp:Table CssClass="table table-bordered text-center" runat="server">
                                     <asp:TableRow>
                                         <asp:TableCell Style="background-color: #DAFEF9; width: 100px" Text="FECHA:"></asp:TableCell>
                                         <asp:TableCell>
@@ -367,7 +291,7 @@
                                 </asp:Table>
                             </div>
                             <div class="container" style="padding-top: 10px">
-                                <asp:Table CssClass="table table-bordered table-responsive" runat="server">
+                                <asp:Table CssClass="table table-bordered" runat="server">
                                     <asp:TableRow>
                                         <asp:TableCell Style="width: auto" Text="FC"></asp:TableCell>
                                         <asp:TableCell Style="width: auto" Text="84"></asp:TableCell>
@@ -386,7 +310,7 @@
                                     </asp:TableRow>
                                 </asp:Table>
                                 <br />
-                                <asp:Table CssClass="table table-bordered table-responsive" runat="server">
+                                <asp:Table CssClass="table table-bordered" runat="server">
                                     <asp:TableRow>
                                         <asp:TableCell Style="width: auto" Text="FC"></asp:TableCell>
                                         <asp:TableCell Style="width: auto" Text="76"></asp:TableCell>
@@ -414,9 +338,9 @@
                         <div class="card-header">
                             7. EXAMEN FÍSICO
                         </div>
-                        <div class="list-group list-group-flush" style="padding: 10px">
-                            <asp:Table class="table table-light table-responsive" runat="server">
-                                <asp:TableRow Style="text-align: center">
+                        <div class="list-group list-group-flush" style="padding: 10px; text-align:center">
+                            <asp:Table class="table table-light text-center" runat="server">
+                                <asp:TableRow>
                                     <asp:TableHeaderCell Text="EXAMEN/REGIÓN ANATÓMICA"></asp:TableHeaderCell>
                                     <asp:TableHeaderCell Text="EVIDENCIA PATOLÓGICA"></asp:TableHeaderCell>
                                     <asp:TableHeaderCell Text="DESCRIPCIÓN"></asp:TableHeaderCell>
@@ -445,12 +369,12 @@
                 </div>
                 <br />
                 <div class="container-fluid">
-                    <div class="card card-responsive" style="width: auto;">
+                    <div class="card" style="width: auto;">
                         <div class="card-header">
                             8. DIAGNÓSTICOS
                         </div>
-                        <div class="list-group list-group-flush" style="padding: 10px">
-                            <asp:Table class="table table-light table-responsive" runat="server">
+                        <div class="list-group list-group-flush" style="padding: 10px; text-align:center">
+                            <asp:Table class="table table-light text-center" runat="server">
                                 <asp:TableRow Style="text-align: center">
                                     <asp:TableHeaderCell Text="DIAGNÓSTICOS"></asp:TableHeaderCell>
                                     <asp:TableHeaderCell Text="CÓDIGO"></asp:TableHeaderCell>
@@ -485,7 +409,7 @@
                 </div>
                 <br />
                 <div class="container-fluid">
-                    <div class="card card-responsive" style="width: auto;">
+                    <div class="card" style="width: auto;">
                         <div class="card-header">
                             9. PLAN DE TRATAMIENTO
                         </div>
@@ -496,7 +420,7 @@
                 </div>
                 <br />
                 <div class="container-fluid">
-                    <div class="card card-responsive" style="width: auto;">
+                    <div class="card" style="width: auto;">
                         <div class="card-header">
                             10. EVOLUCIÓN
                         </div>
@@ -507,7 +431,7 @@
                 </div>
                 <br />
                 <div class="container-fluid">
-                    <div class="card card-responsive" style="width: auto;">
+                    <div class="card" style="width: auto;">
                         <div class="card-header">
                             11. PRESCRIPCIONES
                         </div>
@@ -517,10 +441,10 @@
                     </div>
                 </div>
                 <br />
-                <div class="card card-responsive" style="width: auto">
-                    <div class="list-group list-group-flush" style="padding: 10px">
-                        <asp:Table class="table table-light table-responsive" runat="server">
-                            <asp:TableRow Style="text-align: center">
+                <div class="card" style="width: auto">
+                    <div class="list-group list-group-flush" style="padding: 10px; text-align:center">
+                        <asp:Table class="table table-light text-center" runat="server">
+                            <asp:TableRow>
                                 <asp:TableHeaderCell Text="FECHA"></asp:TableHeaderCell>
                                 <asp:TableHeaderCell Text="HORA"></asp:TableHeaderCell>
                                 <asp:TableHeaderCell Text="ESPECIALIDAD"></asp:TableHeaderCell>
