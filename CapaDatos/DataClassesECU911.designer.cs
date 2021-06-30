@@ -39,7 +39,7 @@ namespace CapaDatos
     #endregion
 		
 		public DataClassesECU911DataContext() : 
-				base(global::CapaDatos.Properties.Settings.Default.SistemaECU911ConnectionString1, mappingSource)
+				base(global::CapaDatos.Properties.Settings.Default.SistemaECU911ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -89,6 +89,13 @@ namespace CapaDatos
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), usuario, pass);
 			return ((ISingleResult<Autentificacion_UsuarioResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Identificar_rol")]
+		public ISingleResult<Identificar_rolResult> Identificar_rol([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> tusu)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), tusu);
+			return ((ISingleResult<Identificar_rolResult>)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Validar_Existencia")]
@@ -619,6 +626,32 @@ namespace CapaDatos
 				if ((this._tusu_id != value))
 				{
 					this._tusu_id = value;
+				}
+			}
+		}
+	}
+	
+	public partial class Identificar_rolResult
+	{
+		
+		private string _usu_nombre;
+		
+		public Identificar_rolResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_nombre", DbType="VarChar(150)")]
+		public string usu_nombre
+		{
+			get
+			{
+				return this._usu_nombre;
+			}
+			set
+			{
+				if ((this._usu_nombre != value))
+				{
+					this._usu_nombre = value;
 				}
 			}
 		}

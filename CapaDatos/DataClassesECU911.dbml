@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SistemaECU911" Class="DataClassesECU911DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=ZOCAPO;Initial Catalog=SistemaECU911;Integrated Security=True" SettingsObjectName="CapaDatos.Properties.Settings" SettingsPropertyName="SistemaECU911ConnectionString1" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=ANDRES-SOSA;Initial Catalog=SistemaECU911;Integrated Security=True" SettingsObjectName="CapaDatos.Properties.Settings" SettingsPropertyName="SistemaECU911ConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Tbl_TipoUsuario" Member="Tbl_TipoUsuario">
     <Type Name="Tbl_TipoUsuario">
       <Column Name="tusu_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -30,6 +30,12 @@
     <ElementType Name="Autentificacion_UsuarioResult">
       <Column Name="usu_nombre" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
       <Column Name="tusu_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Identificar_rol" Method="Identificar_rol">
+    <Parameter Name="tusu" Type="System.Int32" DbType="Int" />
+    <ElementType Name="Identificar_rolResult">
+      <Column Name="usu_nombre" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
     </ElementType>
   </Function>
   <Function Name="dbo.Validar_Existencia" Method="Validar_Existencia">

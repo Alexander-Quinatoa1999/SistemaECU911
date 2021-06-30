@@ -57,7 +57,7 @@
                                 Configuración
                             </a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item">
+                            <a class="dropdown-item" href="../../index.aspx">
                                 <i class="fas fa-power-off text-primary"></i>
                                 Cerrar Sesión
                             </a>
@@ -141,8 +141,7 @@
                         </a>
                         <div class="collapse" id="ui-advanced">
                             <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"><a class="nav-link" href="pages/ui-features/dragula.html">Historial 1</a></li>
-                                <li class="nav-item"><a class="nav-link" href="pages/ui-features/clipboard.html">Historial 2</a></li>
+                                <li class="nav-item"><a class="nav-link" href="Historial.aspx">Historial 1</a></li>
                             </ul>
                         </div>
                     </li>
