@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="HCL_Inicial.aspx.cs" Inherits="SistemaECU911.Template.Views.HCL_Inicial" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="HCL.aspx.cs" Inherits="SistemaECU911.Template.Views.HCL" %>
 
 <!DOCTYPE html>
 
@@ -1106,3 +1106,4 @@
 
 
 </html>
+

@@ -11,7 +11,7 @@ namespace SistemaECU911.Template.Views
 {
 
 
-    public partial class HCL_Inicial
+    public partial class HCL
     {
 
         /// <summary>
