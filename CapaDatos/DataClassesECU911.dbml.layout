@@ -2,23 +2,23 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DataClassesECU911">
   <DataContextMoniker Name="/DataClassesECU911DataContext" />
   <nestedChildShapes>
-    <classShape Id="e956d940-f597-4da1-a699-8f1c8eb557c4" absoluteBounds="4, 1.125, 2, 1.3862939453125">
+    <classShape Id="64b32cd0-2593-4d30-a30e-f55f36ad8957" absoluteBounds="1.5, 1.5, 2, 1.3862939453125">
       <DataClassMoniker Name="/DataClassesECU911DataContext/Tbl_TipoUsuario" />
       <nestedChildShapes>
-        <elementListCompartment Id="312934db-5405-4e15-90b4-1c18cf562d1a" absoluteBounds="4.015, 1.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="243f3668-c8ab-4239-bdca-9ec7b46aef82" absoluteBounds="1.5150000000000001, 1.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="10a81412-4476-4229-81b5-d118a4494ee8" absoluteBounds="1.25, 0.75, 2, 2.9247054036458331">
+    <classShape Id="d8336772-c0d4-4851-bfc4-a7483845a27d" absoluteBounds="4.5, 1.375, 2, 2.9247054036458331">
       <DataClassMoniker Name="/DataClassesECU911DataContext/Tbl_Usuario" />
       <nestedChildShapes>
-        <elementListCompartment Id="15254f90-ba5b-4f69-badf-a3c3b14f49a6" absoluteBounds="1.2649999999999997, 1.21, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="df3a23d6-6e7d-4251-b39d-720faa6451c0" absoluteBounds="4.515, 1.835, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(2.75 : 2.44314697265625); (3.5 : 2.44314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(3.5 : 2.19314697265625); (4.5 : 2.19314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DataClassesECU911DataContext/Tbl_TipoUsuario/Tbl_TipoUsuario_Tbl_Usuario" />
       <nodes>
-        <classShapeMoniker Id="e956d940-f597-4da1-a699-8f1c8eb557c4" />
-        <classShapeMoniker Id="10a81412-4476-4229-81b5-d118a4494ee8" />
+        <classShapeMoniker Id="64b32cd0-2593-4d30-a30e-f55f36ad8957" />
+        <classShapeMoniker Id="d8336772-c0d4-4851-bfc4-a7483845a27d" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>
