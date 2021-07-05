@@ -32,17 +32,17 @@
       <Column Name="tusu_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.Identificar_rol" Method="Identificar_rol">
-    <Parameter Name="tusu" Type="System.Int32" DbType="Int" />
-    <ElementType Name="Identificar_rolResult">
-      <Column Name="usu_nombre" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.Validar_Existencia" Method="Validar_Existencia">
     <Parameter Name="usuario" Type="System.String" DbType="VarChar(100)" />
     <ElementType Name="Validar_ExistenciaResult">
       <Column Name="usu_nombre" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
       <Column Name="tusu_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Identificar_rol" Method="Identificar_rol">
+    <Parameter Name="tusu" Type="System.Int32" DbType="Int" />
+    <ElementType Name="Identificar_rolResult">
+      <Column Name="usu_nombre" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
     </ElementType>
   </Function>
 </Database>

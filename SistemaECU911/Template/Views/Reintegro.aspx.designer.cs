@@ -11,7 +11,7 @@ namespace SistemaECU911.Template.Views
 {
 
 
-    public partial class Historial
+    public partial class Reintegro
     {
 
         /// <summary>
