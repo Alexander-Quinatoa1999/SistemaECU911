@@ -12,14 +12,14 @@
                 <div class="container">
                     <div class="card" style="width: auto;">                        
                         <div class="list-group list-group-flush" style="padding: 10px; text-align:center">
-                            <asp:Table class="table table-light text-center" runat="server">
+                            <asp:Table class="table table-bordered table-light table-responsive text-center" runat="server">
                                 <asp:TableRow Style="text-align: center">
-                                    <asp:TableHeaderCell Text="ESTABLECIMIENTO DE SALUD"></asp:TableHeaderCell>
-                                    <asp:TableHeaderCell Text="NOMBRE"></asp:TableHeaderCell>
-                                    <asp:TableHeaderCell Text="APELLIDO"></asp:TableHeaderCell>
-                                    <asp:TableHeaderCell Text="SEXO"></asp:TableHeaderCell>
-                                    <asp:TableHeaderCell Text="EDAD"></asp:TableHeaderCell>
-                                    <asp:TableHeaderCell Text="N° HISTORIA CLÍNICA"></asp:TableHeaderCell>
+                                    <asp:TableCell Text="ESTABLECIMIENTO DE SALUD"></asp:TableCell>
+                                    <asp:TableCell Text="NOMBRE"></asp:TableCell>
+                                    <asp:TableCell Text="APELLIDO"></asp:TableCell>
+                                    <asp:TableCell Text="SEXO"></asp:TableCell>
+                                    <asp:TableCell Text="EDAD"></asp:TableCell>
+                                    <asp:TableCell Text="N° HISTORIA CLÍNICA"></asp:TableCell>
                                 </asp:TableRow>
                                 <asp:TableRow>
                                     <asp:TableCell>
@@ -52,10 +52,10 @@
                             1. MOTIVO DE CONSULTA
                         </div>
                         <div class="list-group list-group-flush" style="padding: 10px; text-align:center">
-                            <asp:Table class="table table-light text-center" runat="server">
+                            <asp:Table class="table table-bordered table-light table-responsive text-center" runat="server">
                                 <asp:TableRow Style="text-align: center">
-                                    <asp:TableHeaderCell Text="MOTIVO DE CONSULTA"></asp:TableHeaderCell>
-                                    <asp:TableHeaderCell Text="MOTIVO DE CONSULTA (según acompañante)"></asp:TableHeaderCell>
+                                    <asp:TableCell Text="MOTIVO DE CONSULTA"></asp:TableCell>
+                                    <asp:TableCell Text="MOTIVO DE CONSULTA (según acompañante)"></asp:TableCell>
                                 </asp:TableRow>
                                 <asp:TableRow>
                                     <asp:TableCell>
@@ -76,11 +76,11 @@
                             2. ANTECEDENTES PERSONALES
                         </div>
                         <div class="list-group list-group-flush" style="padding: 10px; text-align:center">
-                            <asp:Table class="table table-light text-center" runat="server">
+                            <asp:Table class="table table-bordered table-light table-responsive text-center" runat="server">
                                 <asp:TableRow Style="text-align: center">
-                                    <asp:TableHeaderCell Text="TIPO DE ANTECEDENTE"></asp:TableHeaderCell>
-                                    <asp:TableHeaderCell Text="ANTECEDENTE"></asp:TableHeaderCell>
-                                    <asp:TableHeaderCell Text="DESCRIPCIÓN"></asp:TableHeaderCell>
+                                    <asp:TableCell Text="TIPO DE ANTECEDENTE"></asp:TableCell>
+                                    <asp:TableCell Text="ANTECEDENTE"></asp:TableCell>
+                                    <asp:TableCell Text="DESCRIPCIÓN"></asp:TableCell>
                                 </asp:TableRow>
                                 <asp:TableRow>
                                     <asp:TableCell>
@@ -104,11 +104,11 @@
                             3. ANTECEDENTES FAMILIARES
                         </div>
                         <div class="list-group list-group-flush" style="padding: 10px; text-align:center">
-                            <asp:Table class="table table-light text-center" runat="server">
+                            <asp:Table class="table table-bordered table-light table-responsive text-center" runat="server">
                                 <asp:TableRow Style="text-align: center">
-                                    <asp:TableHeaderCell Text="TIPO DE ANTECEDENTE"></asp:TableHeaderCell>
-                                    <asp:TableHeaderCell Text="ANTECEDENTE"></asp:TableHeaderCell>
-                                    <asp:TableHeaderCell Text="DESCRIPCIÓN"></asp:TableHeaderCell>
+                                    <asp:TableCell Text="TIPO DE ANTECEDENTE"></asp:TableCell>
+                                    <asp:TableCell Text="ANTECEDENTE"></asp:TableCell>
+                                    <asp:TableCell Text="DESCRIPCIÓN"></asp:TableCell>
                                 </asp:TableRow>
                                 <asp:TableRow>
                                     <asp:TableCell>
@@ -145,9 +145,9 @@
                         <div class="list-group list-group-flush" style="padding: 10px">
                             <asp:Table class="table table-bordered table-light" runat="server">
                                 <asp:TableRow Style="text-align: center; background-color: #DAFEF9">
-                                    <asp:TableHeaderCell Text="ÓRGANOS  Y SISTEMAS"></asp:TableHeaderCell>
-                                    <asp:TableHeaderCell Text="EVIDENCIA PATOLÓGICA"></asp:TableHeaderCell>
-                                    <asp:TableHeaderCell Text="DESCRIPCIÓN"></asp:TableHeaderCell>
+                                    <asp:TableCell Text="ÓRGANOS  Y SISTEMAS"></asp:TableCell>
+                                    <asp:TableCell Text="EVIDENCIA PATOLÓGICA"></asp:TableCell>
+                                    <asp:TableCell Text="DESCRIPCIÓN"></asp:TableCell>
                                 </asp:TableRow>
                                 <asp:TableRow>
                                     <asp:TableCell Text="Órganos de los Sentidos"></asp:TableCell>
@@ -271,21 +271,21 @@
                             <div class="container">
                                 <asp:Table CssClass="table table-bordered table-light" runat="server">
                                     <asp:TableRow>
-                                        <asp:TableHeaderCell Style="width: 100px" Text="FECHA:"></asp:TableHeaderCell>
+                                        <asp:TableCell Style="width: 100px" Text="FECHA:"></asp:TableCell>
                                         <asp:TableCell>
-                                            <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
+                                            <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%" TextMode="Date"></asp:TextBox>
                                         </asp:TableCell>
                                     </asp:TableRow>
                                     <asp:TableRow>
-                                        <asp:TableHeaderCell Style="background-color: #DAFEF9" Text="PROFESIONAL:"></asp:TableHeaderCell>
+                                        <asp:TableCell Style="background-color: #DAFEF9" Text="PROFESIONAL:"></asp:TableCell>
                                         <asp:TableCell>
-                                            <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
+                                            <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%"></asp:TextBox>
                                         </asp:TableCell>
                                     </asp:TableRow>
                                     <asp:TableRow>
-                                        <asp:TableHeaderCell Style="background-color: #DAFEF9" Text="ESPECIALIDAD:"></asp:TableHeaderCell>
+                                        <asp:TableCell Style="background-color: #DAFEF9" Text="ESPECIALIDAD:"></asp:TableCell>
                                         <asp:TableCell>
-                                            <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
+                                            <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%"></asp:TextBox>
                                         </asp:TableCell>
                                     </asp:TableRow>
                                 </asp:Table>
@@ -359,11 +359,11 @@
                             7. EXAMEN FÍSICO
                         </div>
                         <div class="list-group list-group-flush" style="padding: 10px; text-align:center">
-                            <asp:Table class="table table-light" style="text-align: center" runat="server">
+                            <asp:Table class="table table-bordered table-light" style="text-align: center" runat="server">
                                 <asp:TableRow>
-                                    <asp:TableHeaderCell Text="EXAMEN/REGIÓN ANATÓMICA"></asp:TableHeaderCell>
-                                    <asp:TableHeaderCell Text="EVIDENCIA PATOLÓGICA"></asp:TableHeaderCell>
-                                    <asp:TableHeaderCell Text="DESCRIPCIÓN"></asp:TableHeaderCell>
+                                    <asp:TableCell Text="EXAMEN/REGIÓN ANATÓMICA"></asp:TableCell>
+                                    <asp:TableCell Text="EVIDENCIA PATOLÓGICA"></asp:TableCell>
+                                    <asp:TableCell Text="DESCRIPCIÓN"></asp:TableCell>
                                 </asp:TableRow>
                                 <asp:TableRow>
                                     <asp:TableCell>
@@ -398,34 +398,34 @@
                             8. DIAGNÓSTICOS
                         </div>
                         <div class="list-group list-group-flush" style="padding: 10px; text-align:center">
-                            <asp:Table class="table table-light" style="text-align: center" runat="server">
+                            <asp:Table class="table table-bordered table-light" style="text-align: center" runat="server">
                                 <asp:TableRow>
-                                    <asp:TableHeaderCell Text="DIAGNÓSTICOS"></asp:TableHeaderCell>
-                                    <asp:TableHeaderCell Text="CÓDIGO"></asp:TableHeaderCell>
-                                    <asp:TableHeaderCell Text="TIPO"></asp:TableHeaderCell>
-                                    <asp:TableHeaderCell Text="CONDICIÓN"></asp:TableHeaderCell>
-                                    <asp:TableHeaderCell Text="CRONOLOGÍA"></asp:TableHeaderCell>
-                                    <asp:TableHeaderCell Text="DESCRIPCIÓN"></asp:TableHeaderCell>
+                                    <asp:TableCell Text="DIAGNÓSTICOS"></asp:TableCell>
+                                    <asp:TableCell Text="CÓDIGO"></asp:TableCell>
+                                    <asp:TableCell Text="TIPO"></asp:TableCell>
+                                    <asp:TableCell Text="CONDICIÓN"></asp:TableCell>
+                                    <asp:TableCell Text="CRONOLOGÍA"></asp:TableCell>
+                                    <asp:TableCell Text="DESCRIPCIÓN"></asp:TableCell>
                                 </asp:TableRow>
                                 <asp:TableRow>
-                                    <asp:TableHeaderCell>
-                                <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
-                                    </asp:TableHeaderCell>
                                     <asp:TableCell>
                                 <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
                                     </asp:TableCell>
-                                    <asp:TableHeaderCell>
-                                <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
-                                    </asp:TableHeaderCell>
-                                    <asp:TableHeaderCell>
-                                <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
-                                    </asp:TableHeaderCell>
                                     <asp:TableCell>
                                 <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
                                     </asp:TableCell>
-                                    <asp:TableHeaderCell>
+                                    <asp:TableCell>
                                 <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
-                                    </asp:TableHeaderCell>
+                                    </asp:TableCell>
+                                    <asp:TableCell>
+                                <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
+                                    </asp:TableCell>
+                                    <asp:TableCell>
+                                <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
+                                    </asp:TableCell>
+                                    <asp:TableCell>
+                                <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
+                                    </asp:TableCell>
                                 </asp:TableRow>
                             </asp:Table>
                         </div>
@@ -468,21 +468,21 @@
                 <div class="container">
                     <div class="card" style="width: auto;">                        
                         <div class="list-group list-group-flush" style="padding: 10px;">
-                            <asp:Table class="table table-light text-center" style="text-align: center" runat="server">
+                            <asp:Table class="table table-bordered table-light table-responsive text-center" style="text-align: center" runat="server">
                                 <asp:TableRow>
-                                    <asp:TableHeaderCell Text="FECHA"></asp:TableHeaderCell>
-                                    <asp:TableHeaderCell Text="HORA"></asp:TableHeaderCell>
-                                    <asp:TableHeaderCell Text="ESPECIALIDAD"></asp:TableHeaderCell>
-                                    <asp:TableHeaderCell Text="NOMBRE DEL PROFESIONAL"></asp:TableHeaderCell>
-                                    <asp:TableHeaderCell Text="CÓDIGO"></asp:TableHeaderCell>
-                                    <asp:TableHeaderCell Text="FIRMA" style="width:150px"></asp:TableHeaderCell>
+                                    <asp:TableCell Text="FECHA"></asp:TableCell>
+                                    <asp:TableCell Text="HORA"></asp:TableCell>
+                                    <asp:TableCell Text="ESPECIALIDAD"></asp:TableCell>
+                                    <asp:TableCell Text="NOMBRE DEL PROFESIONAL"></asp:TableCell>
+                                    <asp:TableCell Text="CÓDIGO"></asp:TableCell>
+                                    <asp:TableCell Text="FIRMA" style="width:150px"></asp:TableCell>
                                 </asp:TableRow>
                                 <asp:TableRow>
                                     <asp:TableCell>
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center">    </asp:TextBox>
+                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center" TextMode="Date"></asp:TextBox>
                                     </asp:TableCell>
                                     <asp:TableCell>
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
+                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center" TextMode="Time"></asp:TextBox>
                                     </asp:TableCell>
                                     <asp:TableCell>
                                         <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>

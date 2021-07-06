@@ -156,7 +156,7 @@
                                 <ul class="nav flex-column sub-menu">
                                     <li class="nav-item"><a class="nav-link" href="Inicial.aspx">HC Inicial</a></li>
                                     <li class="nav-item"><a class="nav-link" href="#">HC Periódica</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="#">HC Reintegro</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="Reintegro.aspx">HC Reintegro</a></li>
                                     <li class="nav-item"><a class="nav-link" href="#">HC Retiro</a></li>
                                     <li class="nav-item"><a class="nav-link" href="#">HC Certificado</a></li>
                                     <li class="nav-item"><a class="nav-link" href="#">HC Inmunizaciones</a></li>
