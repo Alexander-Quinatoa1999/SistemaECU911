@@ -84,18 +84,18 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Autentificacion_Usuario")]
-		public ISingleResult<Autentificacion_UsuarioResult> Autentificacion_Usuario([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string usuario, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string pass)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), usuario, pass);
-			return ((ISingleResult<Autentificacion_UsuarioResult>)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Validar_Existencia")]
 		public ISingleResult<Validar_ExistenciaResult> Validar_Existencia([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string usuario)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), usuario);
 			return ((ISingleResult<Validar_ExistenciaResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Autentificacion_Usuario")]
+		public ISingleResult<Autentificacion_UsuarioResult> Autentificacion_Usuario([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string usuario, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string pass)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), usuario, pass);
+			return ((ISingleResult<Autentificacion_UsuarioResult>)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Identificar_rol")]
@@ -587,14 +587,14 @@ namespace CapaDatos
 		}
 	}
 	
-	public partial class Autentificacion_UsuarioResult
+	public partial class Validar_ExistenciaResult
 	{
 		
 		private string _usu_nombre;
 		
 		private System.Nullable<int> _tusu_id;
 		
-		public Autentificacion_UsuarioResult()
+		public Validar_ExistenciaResult()
 		{
 		}
 		
@@ -631,14 +631,14 @@ namespace CapaDatos
 		}
 	}
 	
-	public partial class Validar_ExistenciaResult
+	public partial class Autentificacion_UsuarioResult
 	{
 		
 		private string _usu_nombre;
 		
 		private System.Nullable<int> _tusu_id;
 		
-		public Validar_ExistenciaResult()
+		public Autentificacion_UsuarioResult()
 		{
 		}
 		
