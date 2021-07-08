@@ -11,6 +11,9 @@
                 <div class="container">
                     <div class="card text-center">
                         <div class="card-header">
+                            GESTIÓN DE SEGURIDAD Y SALUD OCUPACIONAL                           
+                        </div>
+                        <div>
                             HISTORIA CLÍNICA OCUPACIONAL - INICIAL
                         </div>
                     </div>
