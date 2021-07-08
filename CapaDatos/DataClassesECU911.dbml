@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SistemaECU911" Class="DataClassesECU911DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=ZOCAPO;Initial Catalog=SistemaECU911;Integrated Security=True" SettingsObjectName="CapaDatos.Properties.Settings" SettingsPropertyName="SistemaECU911ConnectionString1" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-ECJQ4MB;Initial Catalog=SistemaECU911;Integrated Security=True" SettingsObjectName="CapaDatos.Properties.Settings" SettingsPropertyName="SistemaECU911ConnectionString2" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Tbl_Usuario" Member="Tbl_Usuario">
     <Type Name="Tbl_Usuario">
       <Column Name="usu_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -24,10 +24,20 @@
       <Association Name="Tbl_TipoUsuario_Tbl_Usuario" Member="Tbl_Usuario" ThisKey="tusu_id" OtherKey="tusu_id" Type="Tbl_Usuario" />
     </Type>
   </Table>
-  <Function Name="dbo.Validar_Existencia" Method="Validar_Existencia">
+  <Function Name="dbo.Autentificacion_Usuario" Method="Autentificacion_Usuario">
     <Parameter Name="usuario" Type="System.String" DbType="VarChar(100)" />
-    <ElementType Name="Validar_ExistenciaResult">
+    <Parameter Name="pass" Type="System.String" DbType="VarChar(100)" />
+    <ElementType Name="Autentificacion_UsuarioResult">
+      <Column Name="usu_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="usu_nombre" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="usu_apellido" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="usu_direccion" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="usu_telefono" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="usu_nomlogin" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="usu_pass" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="usu_correo" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="usu_fechacreacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="usu_estado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
       <Column Name="tusu_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </ElementType>
   </Function>
@@ -37,10 +47,9 @@
       <Column Name="usu_nombre" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.Autentificacion_Usuario" Method="Autentificacion_Usuario">
+  <Function Name="dbo.Validar_Existencia" Method="Validar_Existencia">
     <Parameter Name="usuario" Type="System.String" DbType="VarChar(100)" />
-    <Parameter Name="pass" Type="System.String" DbType="VarChar(100)" />
-    <ElementType Name="Autentificacion_UsuarioResult">
+    <ElementType Name="Validar_ExistenciaResult">
       <Column Name="usu_nombre" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
       <Column Name="tusu_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </ElementType>

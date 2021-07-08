@@ -2,23 +2,23 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DataClassesECU911">
   <DataContextMoniker Name="/DataClassesECU911DataContext" />
   <nestedChildShapes>
-    <classShape Id="93ef7353-494f-4086-9330-17958e74067a" absoluteBounds="3.5, 1, 2, 2.9247054036458326">
+    <classShape Id="3021fa86-3554-4a81-8a8f-ae65f0186e17" absoluteBounds="3.5, 1, 2, 2.9247054036458326">
       <DataClassMoniker Name="/DataClassesECU911DataContext/Tbl_Usuario" />
       <nestedChildShapes>
-        <elementListCompartment Id="4f5598a8-435d-450d-8096-c8b9e796c34d" absoluteBounds="3.515, 1.46, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="b9e0d8a0-843f-4736-a5a9-7e9276e94e9c" absoluteBounds="3.515, 1.46, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="b3c6597e-a187-4aa4-a71a-4cdc56f96802" absoluteBounds="0.75, 1.75, 2, 1.3862939453125003">
+    <classShape Id="585a9b3c-114d-428b-9161-bb7d6b63e9a9" absoluteBounds="0.75, 1.75, 2, 1.3862939453125003">
       <DataClassMoniker Name="/DataClassesECU911DataContext/Tbl_TipoUsuario" />
       <nestedChildShapes>
-        <elementListCompartment Id="c8f9f578-5701-46c1-98ff-f4c35ca178b0" absoluteBounds="0.765, 2.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="8f8fa388-2688-424b-a5bb-9f0194eb963c" absoluteBounds="0.765, 2.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
     <associationConnector edgePoints="[(2.75 : 2.44314697265625); (3.5 : 2.44314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DataClassesECU911DataContext/Tbl_TipoUsuario/Tbl_TipoUsuario_Tbl_Usuario" />
       <nodes>
-        <classShapeMoniker Id="b3c6597e-a187-4aa4-a71a-4cdc56f96802" />
-        <classShapeMoniker Id="93ef7353-494f-4086-9330-17958e74067a" />
+        <classShapeMoniker Id="585a9b3c-114d-428b-9161-bb7d6b63e9a9" />
+        <classShapeMoniker Id="3021fa86-3554-4a81-8a8f-ae65f0186e17" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>
