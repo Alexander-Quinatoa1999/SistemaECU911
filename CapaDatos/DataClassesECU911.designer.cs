@@ -30,16 +30,16 @@ namespace CapaDatos
 		
     #region Definiciones de métodos de extensibilidad
     partial void OnCreated();
-    partial void InsertTbl_TipoUsuario(Tbl_TipoUsuario instance);
-    partial void UpdateTbl_TipoUsuario(Tbl_TipoUsuario instance);
-    partial void DeleteTbl_TipoUsuario(Tbl_TipoUsuario instance);
     partial void InsertTbl_Usuario(Tbl_Usuario instance);
     partial void UpdateTbl_Usuario(Tbl_Usuario instance);
     partial void DeleteTbl_Usuario(Tbl_Usuario instance);
+    partial void InsertTbl_TipoUsuario(Tbl_TipoUsuario instance);
+    partial void UpdateTbl_TipoUsuario(Tbl_TipoUsuario instance);
+    partial void DeleteTbl_TipoUsuario(Tbl_TipoUsuario instance);
     #endregion
 		
 		public DataClassesECU911DataContext() : 
-				base(global::CapaDatos.Properties.Settings.Default.SistemaECU911ConnectionString, mappingSource)
+				base(global::CapaDatos.Properties.Settings.Default.SistemaECU911ConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
@@ -68,19 +68,19 @@ namespace CapaDatos
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<Tbl_TipoUsuario> Tbl_TipoUsuario
-		{
-			get
-			{
-				return this.GetTable<Tbl_TipoUsuario>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Tbl_Usuario> Tbl_Usuario
 		{
 			get
 			{
 				return this.GetTable<Tbl_Usuario>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Tbl_TipoUsuario> Tbl_TipoUsuario
+		{
+			get
+			{
+				return this.GetTable<Tbl_TipoUsuario>();
 			}
 		}
 		
@@ -91,156 +91,18 @@ namespace CapaDatos
 			return ((ISingleResult<Validar_ExistenciaResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Autentificacion_Usuario")]
-		public ISingleResult<Autentificacion_UsuarioResult> Autentificacion_Usuario([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string usuario, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string pass)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), usuario, pass);
-			return ((ISingleResult<Autentificacion_UsuarioResult>)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Identificar_rol")]
 		public ISingleResult<Identificar_rolResult> Identificar_rol([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> tusu)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), tusu);
 			return ((ISingleResult<Identificar_rolResult>)(result.ReturnValue));
 		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_TipoUsuario")]
-	public partial class Tbl_TipoUsuario : INotifyPropertyChanging, INotifyPropertyChanged
-	{
 		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _tusu_id;
-		
-		private string _tusu_nombre;
-		
-		private System.Nullable<char> _tusu_estado;
-		
-		private EntitySet<Tbl_Usuario> _Tbl_Usuario;
-		
-    #region Definiciones de métodos de extensibilidad
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void Ontusu_idChanging(int value);
-    partial void Ontusu_idChanged();
-    partial void Ontusu_nombreChanging(string value);
-    partial void Ontusu_nombreChanged();
-    partial void Ontusu_estadoChanging(System.Nullable<char> value);
-    partial void Ontusu_estadoChanged();
-    #endregion
-		
-		public Tbl_TipoUsuario()
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Autentificacion_Usuario")]
+		public ISingleResult<Autentificacion_UsuarioResult> Autentificacion_Usuario([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string usuario, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string pass)
 		{
-			this._Tbl_Usuario = new EntitySet<Tbl_Usuario>(new Action<Tbl_Usuario>(this.attach_Tbl_Usuario), new Action<Tbl_Usuario>(this.detach_Tbl_Usuario));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tusu_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int tusu_id
-		{
-			get
-			{
-				return this._tusu_id;
-			}
-			set
-			{
-				if ((this._tusu_id != value))
-				{
-					this.Ontusu_idChanging(value);
-					this.SendPropertyChanging();
-					this._tusu_id = value;
-					this.SendPropertyChanged("tusu_id");
-					this.Ontusu_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tusu_nombre", DbType="VarChar(100)")]
-		public string tusu_nombre
-		{
-			get
-			{
-				return this._tusu_nombre;
-			}
-			set
-			{
-				if ((this._tusu_nombre != value))
-				{
-					this.Ontusu_nombreChanging(value);
-					this.SendPropertyChanging();
-					this._tusu_nombre = value;
-					this.SendPropertyChanged("tusu_nombre");
-					this.Ontusu_nombreChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tusu_estado", DbType="Char(1)")]
-		public System.Nullable<char> tusu_estado
-		{
-			get
-			{
-				return this._tusu_estado;
-			}
-			set
-			{
-				if ((this._tusu_estado != value))
-				{
-					this.Ontusu_estadoChanging(value);
-					this.SendPropertyChanging();
-					this._tusu_estado = value;
-					this.SendPropertyChanged("tusu_estado");
-					this.Ontusu_estadoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_TipoUsuario_Tbl_Usuario", Storage="_Tbl_Usuario", ThisKey="tusu_id", OtherKey="tusu_id")]
-		public EntitySet<Tbl_Usuario> Tbl_Usuario
-		{
-			get
-			{
-				return this._Tbl_Usuario;
-			}
-			set
-			{
-				this._Tbl_Usuario.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Tbl_Usuario(Tbl_Usuario entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tbl_TipoUsuario = this;
-		}
-		
-		private void detach_Tbl_Usuario(Tbl_Usuario entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tbl_TipoUsuario = null;
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), usuario, pass);
+			return ((ISingleResult<Autentificacion_UsuarioResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -587,35 +449,40 @@ namespace CapaDatos
 		}
 	}
 	
-	public partial class Validar_ExistenciaResult
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_TipoUsuario")]
+	public partial class Tbl_TipoUsuario : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
-		private string _usu_nombre;
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private System.Nullable<int> _tusu_id;
+		private int _tusu_id;
 		
-		public Validar_ExistenciaResult()
+		private string _tusu_nombre;
+		
+		private System.Nullable<char> _tusu_estado;
+		
+		private EntitySet<Tbl_Usuario> _Tbl_Usuario;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Ontusu_idChanging(int value);
+    partial void Ontusu_idChanged();
+    partial void Ontusu_nombreChanging(string value);
+    partial void Ontusu_nombreChanged();
+    partial void Ontusu_estadoChanging(System.Nullable<char> value);
+    partial void Ontusu_estadoChanged();
+    #endregion
+		
+		public Tbl_TipoUsuario()
 		{
+			this._Tbl_Usuario = new EntitySet<Tbl_Usuario>(new Action<Tbl_Usuario>(this.attach_Tbl_Usuario), new Action<Tbl_Usuario>(this.detach_Tbl_Usuario));
+			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_nombre", DbType="VarChar(150)")]
-		public string usu_nombre
-		{
-			get
-			{
-				return this._usu_nombre;
-			}
-			set
-			{
-				if ((this._usu_nombre != value))
-				{
-					this._usu_nombre = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tusu_id", DbType="Int")]
-		public System.Nullable<int> tusu_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tusu_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int tusu_id
 		{
 			get
 			{
@@ -625,20 +492,109 @@ namespace CapaDatos
 			{
 				if ((this._tusu_id != value))
 				{
+					this.Ontusu_idChanging(value);
+					this.SendPropertyChanging();
 					this._tusu_id = value;
+					this.SendPropertyChanged("tusu_id");
+					this.Ontusu_idChanged();
 				}
 			}
 		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tusu_nombre", DbType="VarChar(100)")]
+		public string tusu_nombre
+		{
+			get
+			{
+				return this._tusu_nombre;
+			}
+			set
+			{
+				if ((this._tusu_nombre != value))
+				{
+					this.Ontusu_nombreChanging(value);
+					this.SendPropertyChanging();
+					this._tusu_nombre = value;
+					this.SendPropertyChanged("tusu_nombre");
+					this.Ontusu_nombreChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tusu_estado", DbType="Char(1)")]
+		public System.Nullable<char> tusu_estado
+		{
+			get
+			{
+				return this._tusu_estado;
+			}
+			set
+			{
+				if ((this._tusu_estado != value))
+				{
+					this.Ontusu_estadoChanging(value);
+					this.SendPropertyChanging();
+					this._tusu_estado = value;
+					this.SendPropertyChanged("tusu_estado");
+					this.Ontusu_estadoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_TipoUsuario_Tbl_Usuario", Storage="_Tbl_Usuario", ThisKey="tusu_id", OtherKey="tusu_id")]
+		public EntitySet<Tbl_Usuario> Tbl_Usuario
+		{
+			get
+			{
+				return this._Tbl_Usuario;
+			}
+			set
+			{
+				this._Tbl_Usuario.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Tbl_Usuario(Tbl_Usuario entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_TipoUsuario = this;
+		}
+		
+		private void detach_Tbl_Usuario(Tbl_Usuario entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_TipoUsuario = null;
+		}
 	}
 	
-	public partial class Autentificacion_UsuarioResult
+	public partial class Validar_ExistenciaResult
 	{
 		
 		private string _usu_nombre;
 		
 		private System.Nullable<int> _tusu_id;
 		
-		public Autentificacion_UsuarioResult()
+		public Validar_ExistenciaResult()
 		{
 		}
 		
@@ -696,6 +652,50 @@ namespace CapaDatos
 				if ((this._usu_nombre != value))
 				{
 					this._usu_nombre = value;
+				}
+			}
+		}
+	}
+	
+	public partial class Autentificacion_UsuarioResult
+	{
+		
+		private string _usu_nombre;
+		
+		private System.Nullable<int> _tusu_id;
+		
+		public Autentificacion_UsuarioResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_nombre", DbType="VarChar(150)")]
+		public string usu_nombre
+		{
+			get
+			{
+				return this._usu_nombre;
+			}
+			set
+			{
+				if ((this._usu_nombre != value))
+				{
+					this._usu_nombre = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tusu_id", DbType="Int")]
+		public System.Nullable<int> tusu_id
+		{
+			get
+			{
+				return this._tusu_id;
+			}
+			set
+			{
+				if ((this._tusu_id != value))
+				{
+					this._tusu_id = value;
 				}
 			}
 		}

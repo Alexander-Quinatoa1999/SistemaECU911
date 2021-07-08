@@ -8,6 +8,14 @@
         <ContentTemplate>
             <div class="container" style="background-color: white">
                 <br />
+                <div class="container">
+                    <div class="card text-center">
+                        <div class="card-header">
+                            HISTORIA CLÍNICA OCUPACIONAL - RETIRO
+                        </div>
+                    </div>
+                </div>
+                <br />
                 <div class="card" style="width: auto;">
                     <div class="card-header">
                         A. DATOS DEL ESTABLECIMIENTO - EMPRESA Y USUARIO
@@ -610,7 +618,7 @@
                 </div>
                 <br />
                 <div class="container">
-                    <p>
+                    <p align="center">
                         <strong>"CERTIFICO QUE LO ANTERIORMENTE EXPRESADO EN RELACIÓN A MI ESTADO DE SALUD ES VERDAD. SE ME HA INFORMADO MI ESTADO ACTUAL DE 
                                                 SALUD Y LAS RECOMENDACIONES PERTINENTES."</strong>
                     </p>
@@ -629,7 +637,7 @@
                                 </asp:TableCell>
                                 <asp:TableCell Style="width: 60px">HORA</asp:TableCell>
                                 <asp:TableCell Style="width: 75px">
-                                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
+                                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center" TextMode="Time"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="width: 100px">NOMBRES Y APELLIDOS</asp:TableCell>
                                 <asp:TableCell Style="width: 300px">
@@ -654,7 +662,7 @@
                             J. FIRMA DEL USUARIO
                         </div>
                         <div class="list-group list-group-flush">
-                            <asp:TextBox runat="server" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center" Rows="2"></asp:TextBox>
+                            <asp:Label ID="Label24" runat="server" Text="" Style="height: 80px"></asp:Label>
                         </div>
                     </div>
                 </div>

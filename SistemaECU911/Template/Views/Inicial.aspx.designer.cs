@@ -33,741 +33,849 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.UpdatePanel UpdatePanel1;
 
         /// <summary>
-        /// Control txt_empresa.
+        /// Control lbl_catolica.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_empresa;
+        protected global::System.Web.UI.WebControls.Label lbl_catolica;
 
         /// <summary>
-        /// Control txt_ruc.
+        /// Control Label1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_ruc;
+        protected global::System.Web.UI.WebControls.Label Label1;
 
         /// <summary>
-        /// Control txt_ciiu.
+        /// Control Label2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_ciiu;
+        protected global::System.Web.UI.WebControls.Label Label2;
 
         /// <summary>
-        /// Control txt_establecimiento.
+        /// Control Label3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_establecimiento;
+        protected global::System.Web.UI.WebControls.Label Label3;
 
         /// <summary>
-        /// Control txt_hclinica.
+        /// Control Label4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_hclinica;
+        protected global::System.Web.UI.WebControls.Label Label4;
 
         /// <summary>
-        /// Control txt_narchivo.
+        /// Control Label5.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_narchivo;
+        protected global::System.Web.UI.WebControls.Label Label5;
 
         /// <summary>
-        /// Control txt_ced.
+        /// Control Label6.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_ced;
+        protected global::System.Web.UI.WebControls.Label Label6;
 
         /// <summary>
-        /// Control txt_priapellido.
+        /// Control Label7.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_priapellido;
+        protected global::System.Web.UI.WebControls.Label Label7;
 
         /// <summary>
-        /// Control txt_secapellido.
+        /// Control Label8.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_secapellido;
+        protected global::System.Web.UI.WebControls.Label Label8;
 
         /// <summary>
-        /// Control txt_prinombre.
+        /// Control Label9.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_prinombre;
+        protected global::System.Web.UI.WebControls.Label Label9;
 
         /// <summary>
-        /// Control txt_secnombre.
+        /// Control Label10.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_secnombre;
+        protected global::System.Web.UI.WebControls.Label Label10;
 
         /// <summary>
-        /// Control txt_sexo.
+        /// Control Label11.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_sexo;
+        protected global::System.Web.UI.WebControls.Label Label11;
 
         /// <summary>
-        /// Control txt_edad.
+        /// Control Label12.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_edad;
+        protected global::System.Web.UI.WebControls.Label Label12;
 
         /// <summary>
-        /// Control txt_religion.
+        /// Control Label13.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_religion;
+        protected global::System.Web.UI.WebControls.Label Label13;
 
         /// <summary>
-        /// Control txt_gruposanguineo.
+        /// Control Label14.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_gruposanguineo;
+        protected global::System.Web.UI.WebControls.Label Label14;
 
         /// <summary>
-        /// Control txt_lateralidad.
+        /// Control Label15.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_lateralidad;
+        protected global::System.Web.UI.WebControls.Label Label15;
 
         /// <summary>
-        /// Control txt_orsexual.
+        /// Control Label16.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_orsexual;
+        protected global::System.Web.UI.WebControls.Label Label16;
 
         /// <summary>
-        /// Control txt_idengenero.
+        /// Control Label17.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_idengenero;
+        protected global::System.Web.UI.WebControls.Label Label17;
 
         /// <summary>
-        /// Control txt_discap.
+        /// Control Label18.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_discap;
+        protected global::System.Web.UI.WebControls.Label Label18;
 
         /// <summary>
-        /// Control txt_fecha.
+        /// Control Label19.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_fecha;
+        protected global::System.Web.UI.WebControls.Label Label19;
 
         /// <summary>
-        /// Control txt_puesto.
+        /// Control Label20.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_puesto;
+        protected global::System.Web.UI.WebControls.Label Label20;
 
         /// <summary>
-        /// Control txt_area.
+        /// Control Label21.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_area;
+        protected global::System.Web.UI.WebControls.Label Label21;
 
         /// <summary>
-        /// Control txt_actividad.
+        /// Control Label22.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_actividad;
+        protected global::System.Web.UI.WebControls.Label Label22;
 
         /// <summary>
-        /// Control txt_menaquia.
+        /// Control Label23.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_menaquia;
+        protected global::System.Web.UI.WebControls.Label Label23;
 
         /// <summary>
-        /// Control txt_ciclos.
+        /// Control Label24.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_ciclos;
+        protected global::System.Web.UI.WebControls.Label Label24;
 
         /// <summary>
-        /// Control txt_fechamenst.
+        /// Control Label25.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_fechamenst;
+        protected global::System.Web.UI.WebControls.Label Label25;
 
         /// <summary>
-        /// Control txt_gestas.
+        /// Control Label26.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_gestas;
+        protected global::System.Web.UI.WebControls.Label Label26;
 
         /// <summary>
-        /// Control txt_partos.
+        /// Control Label27.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_partos;
+        protected global::System.Web.UI.WebControls.Label Label27;
 
         /// <summary>
-        /// Control txt_cesareas.
+        /// Control Label28.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_cesareas;
+        protected global::System.Web.UI.WebControls.Label Label28;
 
         /// <summary>
-        /// Control txt_abortos.
+        /// Control Label29.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_abortos;
+        protected global::System.Web.UI.WebControls.Label Label29;
 
         /// <summary>
-        /// Control txt_vivo.
+        /// Control Label30.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_vivo;
+        protected global::System.Web.UI.WebControls.Label Label30;
 
         /// <summary>
-        /// Control txt_muerto.
+        /// Control Label31.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_muerto;
+        protected global::System.Web.UI.WebControls.Label Label31;
 
         /// <summary>
-        /// Control txt_metodo.
+        /// Control Label32.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_metodo;
+        protected global::System.Web.UI.WebControls.Label Label32;
 
         /// <summary>
-        /// Control txt_tiempopapa.
+        /// Control Label33.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_tiempopapa;
+        protected global::System.Web.UI.WebControls.Label Label33;
 
         /// <summary>
-        /// Control txt_tiempocolp.
+        /// Control Label34.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_tiempocolp;
+        protected global::System.Web.UI.WebControls.Label Label34;
 
         /// <summary>
-        /// Control txt_tiempoeco.
+        /// Control Label35.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_tiempoeco;
+        protected global::System.Web.UI.WebControls.Label Label35;
 
         /// <summary>
-        /// Control txt_tiempomamo.
+        /// Control Label36.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_tiempomamo;
+        protected global::System.Web.UI.WebControls.Label Label36;
 
         /// <summary>
-        /// Control TextBox1.
+        /// Control Label37.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.Label Label37;
 
         /// <summary>
-        /// Control TextBox4.
+        /// Control Label38.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox4;
+        protected global::System.Web.UI.WebControls.Label Label38;
 
         /// <summary>
-        /// Control txt_tiempoconsumo.
+        /// Control Label39.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_tiempoconsumo;
+        protected global::System.Web.UI.WebControls.Label Label39;
 
         /// <summary>
-        /// Control txt_cantconsumo.
+        /// Control Label40.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_cantconsumo;
+        protected global::System.Web.UI.WebControls.Label Label40;
 
         /// <summary>
-        /// Control txt_exconsumidor.
+        /// Control Label41.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_exconsumidor;
+        protected global::System.Web.UI.WebControls.Label Label41;
 
         /// <summary>
-        /// Control txt_tiempoabstinencia.
+        /// Control Label42.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_tiempoabstinencia;
+        protected global::System.Web.UI.WebControls.Label Label42;
 
         /// <summary>
-        /// Control txt_tiempoalcohol.
+        /// Control Label43.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_tiempoalcohol;
+        protected global::System.Web.UI.WebControls.Label Label43;
 
         /// <summary>
-        /// Control txt_cantidadalcohol.
+        /// Control Label44.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_cantidadalcohol;
+        protected global::System.Web.UI.WebControls.Label Label44;
 
         /// <summary>
-        /// Control txt_exconsalcohol.
+        /// Control Label45.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_exconsalcohol;
+        protected global::System.Web.UI.WebControls.Label Label45;
 
         /// <summary>
-        /// Control txt_tieabtalcohol.
+        /// Control Label46.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_tieabtalcohol;
+        protected global::System.Web.UI.WebControls.Label Label46;
 
         /// <summary>
-        /// Control txt_otra.
+        /// Control Label47.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_otra;
+        protected global::System.Web.UI.WebControls.Label Label47;
 
         /// <summary>
-        /// Control txt_tempootra.
+        /// Control Label48.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_tempootra;
+        protected global::System.Web.UI.WebControls.Label Label48;
 
         /// <summary>
-        /// Control txt_cantidaotra.
+        /// Control Label49.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_cantidaotra;
+        protected global::System.Web.UI.WebControls.Label Label49;
 
         /// <summary>
-        /// Control txt_exconotra.
+        /// Control Label50.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_exconotra;
+        protected global::System.Web.UI.WebControls.Label Label50;
 
         /// <summary>
-        /// Control txt_tiempootra.
+        /// Control Label51.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_tiempootra;
+        protected global::System.Web.UI.WebControls.Label Label51;
 
         /// <summary>
-        /// Control txt_cualact.
+        /// Control Label52.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_cualact;
+        protected global::System.Web.UI.WebControls.Label Label52;
 
         /// <summary>
-        /// Control txt_tiempoact.
+        /// Control Label53.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_tiempoact;
+        protected global::System.Web.UI.WebControls.Label Label53;
 
         /// <summary>
-        /// Control txt_cantidadact.
+        /// Control Label54.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_cantidadact;
+        protected global::System.Web.UI.WebControls.Label Label54;
 
         /// <summary>
-        /// Control txt_cualmed.
+        /// Control Label55.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_cualmed;
+        protected global::System.Web.UI.WebControls.Label Label55;
 
         /// <summary>
-        /// Control txt_tiempomed.
+        /// Control Label56.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_tiempomed;
+        protected global::System.Web.UI.WebControls.Label Label56;
 
         /// <summary>
-        /// Control txt_cantidadmed.
+        /// Control Label57.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_cantidadmed;
+        protected global::System.Web.UI.WebControls.Label Label57;
 
         /// <summary>
-        /// Control txt_nomempresa.
+        /// Control Label58.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_nomempresa;
+        protected global::System.Web.UI.WebControls.Label Label58;
 
         /// <summary>
-        /// Control txt_puesttra.
+        /// Control Label59.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_puesttra;
+        protected global::System.Web.UI.WebControls.Label Label59;
 
         /// <summary>
-        /// Control txt_actvdes.
+        /// Control Label60.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_actvdes;
+        protected global::System.Web.UI.WebControls.Label Label60;
 
         /// <summary>
-        /// Control txt_tiempotra.
+        /// Control Label61.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_tiempotra;
+        protected global::System.Web.UI.WebControls.Label Label61;
 
         /// <summary>
-        /// Control txt_obervtra.
+        /// Control Label62.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_obervtra;
+        protected global::System.Web.UI.WebControls.Label Label62;
 
         /// <summary>
-        /// Control txt_nomempresa2.
+        /// Control Label63.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_nomempresa2;
+        protected global::System.Web.UI.WebControls.Label Label63;
 
         /// <summary>
-        /// Control txt_puesttra2.
+        /// Control Label64.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_puesttra2;
+        protected global::System.Web.UI.WebControls.Label Label64;
 
         /// <summary>
-        /// Control txt_actvdes2.
+        /// Control Label65.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_actvdes2;
+        protected global::System.Web.UI.WebControls.Label Label65;
 
         /// <summary>
-        /// Control txt_tiempotra2.
+        /// Control Label66.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_tiempotra2;
+        protected global::System.Web.UI.WebControls.Label Label66;
 
         /// <summary>
-        /// Control TextBox7.
+        /// Control Label67.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox7;
+        protected global::System.Web.UI.WebControls.Label Label67;
 
         /// <summary>
-        /// Control txt_nomempresa3.
+        /// Control Label68.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_nomempresa3;
+        protected global::System.Web.UI.WebControls.Label Label68;
 
         /// <summary>
-        /// Control txt_puesttra3.
+        /// Control Label69.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_puesttra3;
+        protected global::System.Web.UI.WebControls.Label Label69;
 
         /// <summary>
-        /// Control txt_actvdes3.
+        /// Control Label70.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_actvdes3;
+        protected global::System.Web.UI.WebControls.Label Label70;
 
         /// <summary>
-        /// Control txt_tiempotra3.
+        /// Control Label71.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_tiempotra3;
+        protected global::System.Web.UI.WebControls.Label Label71;
 
         /// <summary>
-        /// Control TextBox12.
+        /// Control Label72.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox12;
+        protected global::System.Web.UI.WebControls.Label Label72;
 
         /// <summary>
-        /// Control txt_nomempresa4.
+        /// Control Label73.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_nomempresa4;
+        protected global::System.Web.UI.WebControls.Label Label73;
 
         /// <summary>
-        /// Control txt_puesttra4.
+        /// Control Label74.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_puesttra4;
+        protected global::System.Web.UI.WebControls.Label Label74;
 
         /// <summary>
-        /// Control txt_actvdes4.
+        /// Control Label75.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_actvdes4;
+        protected global::System.Web.UI.WebControls.Label Label75;
 
         /// <summary>
-        /// Control txt_tiempotra4.
+        /// Control Label76.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_tiempotra4;
+        protected global::System.Web.UI.WebControls.Label Label76;
 
         /// <summary>
-        /// Control TextBox17.
+        /// Control Label77.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox17;
+        protected global::System.Web.UI.WebControls.Label Label77;
 
         /// <summary>
-        /// Control txt_especif.
+        /// Control Label78.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_especif;
+        protected global::System.Web.UI.WebControls.Label Label78;
 
         /// <summary>
-        /// Control txt_fechatraba.
+        /// Control Label79.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_fechatraba;
+        protected global::System.Web.UI.WebControls.Label Label79;
 
         /// <summary>
-        /// Control txt_espprof.
+        /// Control Label80.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_espprof;
+        protected global::System.Web.UI.WebControls.Label Label80;
 
         /// <summary>
-        /// Control txt_fechaprof.
+        /// Control Label81.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_fechaprof;
+        protected global::System.Web.UI.WebControls.Label Label81;
+
+        /// <summary>
+        /// Control Label82.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label82;
+
+        /// <summary>
+        /// Control Label83.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label83;
+
+        /// <summary>
+        /// Control Label84.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label84;
+
+        /// <summary>
+        /// Control Label85.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label85;
+
+        /// <summary>
+        /// Control Label86.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label86;
+
+        /// <summary>
+        /// Control Label87.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label87;
+
+        /// <summary>
+        /// Control Label88.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label88;
+
+        /// <summary>
+        /// Control Label89.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label89;
+
+        /// <summary>
+        /// Control Label90.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label90;
+
+        /// <summary>
+        /// Control Label91.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label91;
+
+        /// <summary>
+        /// Control Label92.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label92;
+
+        /// <summary>
+        /// Control Label93.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label93;
     }
 }

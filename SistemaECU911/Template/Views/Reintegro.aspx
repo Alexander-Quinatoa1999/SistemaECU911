@@ -8,6 +8,14 @@
         <ContentTemplate>
             <div class="container" style="background-color: white">
                 <br />
+                <div class="container">
+                    <div class="card text-center">
+                        <div class="card-header">
+                            HISTORIA CLÍNICA OCUPACIONAL - REINTEGRO
+                        </div>
+                    </div>
+                </div>
+                <br />
                 <div class="card" style="width: auto;">
                     <div class="card-header">
                         A. DATOS DEL ESTABLECIMIENTO - EMPRESA Y USUARIO
@@ -133,6 +141,9 @@
                                 <asp:TableCell Text="PERÍMETRO ABDOMINAL(cm)"></asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
+                                <asp:TableCell>
+                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
+                                </asp:TableCell>
                                 <asp:TableCell>
                                         <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
                                 </asp:TableCell>
@@ -383,7 +394,8 @@
                                 </asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
-                                <asp:TableCell Style="text-align: left" ColumnSpan="12">CON EVIDENCIA DE PATOLOGÍA MARCAR CON "X" Y DESCRIBIR EN LA SIGUIENTE SECCIÓN ANOTANDO EL NUMERAL</asp:TableCell>
+                                <asp:TableCell Style="text-align: left" ColumnSpan="6">CP = CON EVIDENCIA DE PATOLOGÍA:  MARCAR "X" Y DESCRIBIR EN LA SIGUIENTE SECCIÓN</asp:TableCell>
+                                <asp:TableCell Style="text-align: left" ColumnSpan="6">SP = SIN EVIDENCIA DE PATOLOGÍA:  MARCAR "X" Y NO DESCRIBIR</asp:TableCell>
                                 <asp:TableCell CssClass="REI-CONTENT">d. Reflejos</asp:TableCell>
                                 <asp:TableCell CssClass="REI-BOX">
                                                         <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
@@ -543,9 +555,9 @@
                 </div>
                 <br />
                 <div class="container">
-                    <p>
-                        <strong>"CERTIFICO QUE LO ANTERIORMENTE EXPRESADO EN RELACIÓN A MI ESTADO DE SALUD ES VERDAD. SE ME HA INFORMADO LAS MEDIDAS PREVENTIVAS 
-                                           A TOMAR PARA DISMINUIR O MITIGAR LOS RIESGOS"</strong>
+                    <p align="center">
+                        <strong>CERTIFICO QUE LO ANTERIORMENTE EXPRESADO EN RELACIÓN A MI ESTADO DE SALUD ES VERDAD. SE ME HA INFORMADO LAS MEDIDAS PREVENTIVAS
+                            A TOMAR PARA DISMINUIR O MITIGAR LOS RIESGOS RELACIONADOS CON MI ACTIVIDAD LABORAL.</strong>
                     </p>
                 </div>
                 <br />
@@ -554,7 +566,7 @@
                         J. DATOS DEL PROFESIONAL 
                     </div>
                     <div class="list-group list-group-flush">
-                        <asp:Table class="table table-bordered table-light table-responsive text-center" runat="server">
+                        <asp:Table class="table table-bordered table-light text-center" runat="server">
                             <asp:TableRow>
                                 <asp:TableCell Style="width: 60px">FECHA</asp:TableCell>
                                 <asp:TableCell Style="width: 75px">
@@ -562,7 +574,7 @@
                                 </asp:TableCell>
                                 <asp:TableCell Style="width: 60px">HORA</asp:TableCell>
                                 <asp:TableCell Style="width: 75px">
-                                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
+                                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center" TextMode="Time"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="width: 100px">NOMBRES Y APELLIDOS</asp:TableCell>
                                 <asp:TableCell Style="width: 300px">
@@ -587,7 +599,7 @@
                             K. FIRMA DEL USUARIO
                         </div>
                         <div class="list-group list-group-flush">
-                            <asp:TextBox runat="server" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center" Rows="2"></asp:TextBox>
+                            <asp:Label ID="Label24" runat="server" Text="" Style="height: 80px"></asp:Label>
                         </div>
                     </div>
                 </div>

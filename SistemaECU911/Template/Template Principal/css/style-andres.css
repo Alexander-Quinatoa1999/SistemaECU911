@@ -6,6 +6,12 @@
     transform: rotate(180deg);
 }
 
+.in-column {
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    font-size: 10px;
+}
+
 .REI-BOX {
     width: 40px;
 }
