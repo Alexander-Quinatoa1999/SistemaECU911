@@ -11,7 +11,7 @@ namespace SistemaECU911.Template.Views
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Session.Timeout = 10;
+            Session.Timeout = 1;
             if (Session["Admin"] != null)
             {
                 string usulogeado = Session["Admin"].ToString();
