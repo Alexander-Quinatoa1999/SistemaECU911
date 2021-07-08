@@ -161,8 +161,8 @@
                                     <li class="nav-item"><a class="nav-link" href="Reintegro.aspx">HC Reintegro</a></li>
                                     <li class="nav-item"><a class="nav-link" href="Retiro.aspx">HC Retiro</a></li>
                                     <li class="nav-item"><a class="nav-link" href="Certificado.aspx">HC Certificado</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="#">HC Inmunizaciones</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="#">HC Evolución</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="Inmunizaciones.aspx">HC Inmunizaciones</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="Evolucion.aspx">HC Evolución</a></li>
                                     <li class="nav-item"><a class="nav-link" href="PedidoExamenes.aspx">HC Pedido Examenes</a></li>
                                 </ul>
                             </div>

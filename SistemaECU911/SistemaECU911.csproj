@@ -755,9 +755,11 @@
     <Content Include="Template\Template Principal\vendors\tinymce\themes\modern\theme.js" />
     <Content Include="Template\Template Principal\vendors\tinymce\tinymce.min.js" />
     <Content Include="Template\Views\Certificado.aspx" />
+    <Content Include="Template\Views\Evolucion.aspx" />
     <Content Include="Template\Views\Historial.aspx" />
     <Content Include="Template\Views\Inicial.aspx" />
     <Content Include="Template\Views\Inicio.aspx" />
+    <Content Include="Template\Views\Inmunizaciones.aspx" />
     <Content Include="Template\Views\PedidoExamenes.aspx" />
     <Content Include="Template\Views\Periodica.aspx" />
     <Content Include="Template\Views\Reintegro.aspx" />
@@ -782,6 +784,13 @@
     <Compile Include="Template\Views\Certificado.aspx.designer.cs">
       <DependentUpon>Certificado.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Template\Views\Evolucion.aspx.cs">
+      <DependentUpon>Evolucion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Template\Views\Evolucion.aspx.designer.cs">
+      <DependentUpon>Evolucion.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Template\Views\Historial.aspx.cs">
       <DependentUpon>Historial.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -802,6 +811,13 @@
     </Compile>
     <Compile Include="Template\Views\Inicio.aspx.designer.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Template\Views\Inmunizaciones.aspx.cs">
+      <DependentUpon>Inmunizaciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Template\Views\Inmunizaciones.aspx.designer.cs">
+      <DependentUpon>Inmunizaciones.aspx</DependentUpon>
     </Compile>
     <Compile Include="Template\Views\PedidoExamenes.aspx.cs">
       <DependentUpon>PedidoExamenes.aspx</DependentUpon>
