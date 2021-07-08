@@ -13,7 +13,7 @@
             </div>
         </div>
         <br />
-        <div class="card border-0" style="width: auto;">
+        <div class="card" style="width: auto;">
             <div class="card-header">
                 A. DATOS DEL ESTABLECIMIENTO - EMPRESA Y USUARIO
             </div>
