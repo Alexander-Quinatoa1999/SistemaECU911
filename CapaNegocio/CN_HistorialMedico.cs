@@ -12,8 +12,30 @@ namespace CapaNegocio
 
         private static DataClassesECU911DataContext dc = new DataClassesECU911DataContext();
 
+        //metodo traer para todos los usuarios
+        public static List<Tbl_Personas> obtenerPersonas()
+        {
+            var listaPer = dc.Tbl_Personas.Where(per => per. == 'A');
+            return listaPer.ToList();
+        }
+
+        //Metodo para guardar datos Persona
+        public static void guardarPersona(Tbl_Personas per)
+        {
+            try
+            {
+                per.Per_estado = 'A';
+                dc.Tbl_Personas.InsertOnSubmit(per);
+                dc.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException("Datos no guardados <br/>" + ex.Message);
+            }
+        }
+
         //Obtener los datos para historial medico
-        public static List<>
+
     }
 
     
