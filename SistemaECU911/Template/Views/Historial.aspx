@@ -32,7 +32,7 @@
                                         </asp:TableRow>
                                         <asp:TableRow>
                                             <asp:TableCell>
-                                        <asp:TextBox runat="server" ID="txt_nomEmpresa" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center">    </asp:TextBox>
+                                        <asp:TextBox runat="server" ID="txt_nomEmpresa" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
                                             </asp:TableCell>
                                             <asp:TableCell>
                                         <asp:TextBox runat="server" ID="txt_priNombre" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
@@ -41,7 +41,7 @@
                                         <asp:TextBox runat="server" ID="txt_priApellido" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
                                             </asp:TableCell>
                                             <asp:TableCell>
-                                        <asp:TextBox runat="server" ID="txt_sexo" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
+                                        <asp:TextBox runat="server" ID="txt_sexo" TextMode="SingleLine" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
                                             </asp:TableCell>
                                             <asp:TableCell>
                                         <asp:TextBox runat="server" ID="txt_edad" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>

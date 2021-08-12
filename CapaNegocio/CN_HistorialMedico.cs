@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CapaDatos;
+using System.Data.Linq;
 
 namespace CapaNegocio
 {
@@ -15,7 +16,7 @@ namespace CapaNegocio
         //metodo traer para todos los usuarios
         public static List<Tbl_Personas> obtenerPersonas()
         {
-            var listaPer = dc.Tbl_Personas.Where(per => per. == 'A');
+            var listaPer = dc.Tbl_Personas.Where(per => per.Per_estado == 'A');
             return listaPer.ToList();
         }
 
