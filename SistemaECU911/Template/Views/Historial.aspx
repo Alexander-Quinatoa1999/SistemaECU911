@@ -67,12 +67,12 @@
                     <div class="list-group list-group-flush" style="padding: 10px; text-align: center">
                         <asp:Table class="table table-bordered table-light text-center" runat="server">
                             <asp:TableRow>
-                                <asp:TableCell Text="MOTIVO DE CONSULTA" Style="width: 600px"></asp:TableCell>
-                                <asp:TableCell Text="MOTIVO DE CONSULTA (según acompañante)" Style="width: 700px"></asp:TableCell>
+                                <asp:TableCell Text="MOTIVO DE CONSULTA" Style="width: 1100px"></asp:TableCell>
+                                <asp:TableCell Text="MOTIVO DE CONSULTA (según acompañante)" Style="width: 200px"></asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
                                 <asp:TableCell>
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
+                                        <asp:TextBox runat="server" ID="txt_moConsulta" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell>
                                         <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
@@ -89,16 +89,26 @@
                     <div class="list-group list-group-flush" style="padding: 10px; text-align: center">
                         <asp:Table class="table table-bordered table-light text-center" runat="server">
                             <asp:TableRow Style="text-align: center">
-                                <asp:TableCell Text="TIPO DE ANTECEDENTE"></asp:TableCell>
-                                <asp:TableCell Text="ANTECEDENTE"></asp:TableCell>
-                                <asp:TableCell Text="DESCRIPCIÓN"></asp:TableCell>
+                                <asp:TableCell Text="TIPO DE ANTECEDENTE" Style="width: 300px"></asp:TableCell>
+                                <asp:TableCell Text="ANTECEDENTE" Style="width: 800px"></asp:TableCell>
+                                <asp:TableCell Text="DESCRIPCIÓN" Style="width: 200px"></asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
                                 <asp:TableCell>
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
+                                        <select class="form-control" id="cb" style="background-color:transparent; width:100%; text-align:center; border:none">
+                                            <option selected>Seleccione...</option>
+                                            <option>ENFERMEDAD CARDIO-VASCULAR</option>
+                                            <option>ENFERMEDAD METABÓLICA</option>
+                                            <option>ENFERMEDAD NEUROLÓGICA</option>
+                                            <option>ENFERMEDAD ONCOLÓGICA</option>
+                                            <option>ENFERMEDAD INFECCIOSA</option>
+                                            <option>ENFERMEDAD HEREDITARIA / CONGÉNITA</option>
+                                            <option>DISCAPACIDADES</option>
+                                            <option>OTROS</option>
+                                        </select>
                                 </asp:TableCell>
                                 <asp:TableCell>
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
+                                    <textarea id="txt_antePersonales" rows="3" cols="15" style="background-color: transparent; width: 100%; text-align: left; border: none"></textarea>
                                 </asp:TableCell>
                                 <asp:TableCell>
                                         <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
@@ -115,16 +125,26 @@
                     <div class="list-group list-group-flush" style="padding: 10px; text-align: center">
                         <asp:Table class="table table-bordered table-light text-center" runat="server">
                             <asp:TableRow Style="text-align: center">
-                                <asp:TableCell Text="TIPO DE ANTECEDENTE"></asp:TableCell>
-                                <asp:TableCell Text="ANTECEDENTE"></asp:TableCell>
-                                <asp:TableCell Text="DESCRIPCIÓN"></asp:TableCell>
+                                <asp:TableCell Text="TIPO DE ANTECEDENTE" Style="width: 300px"></asp:TableCell>
+                                <asp:TableCell Text="ANTECEDENTE" Style="width: 800px"></asp:TableCell>
+                                <asp:TableCell Text="DESCRIPCIÓN" Style="width: 200px"></asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
                                 <asp:TableCell>
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
+                                        <select class="form-control" id="exampleFormControlSelect1" style="background-color:transparent; width:100%; text-align:center; border:none">
+                                            <option selected>Seleccione...</option>
+                                            <option>ENFERMEDAD CARDIO-VASCULAR</option>
+                                            <option>ENFERMEDAD METABÓLICA</option>
+                                            <option>ENFERMEDAD NEUROLÓGICA</option>
+                                            <option>ENFERMEDAD ONCOLÓGICA</option>
+                                            <option>ENFERMEDAD INFECCIOSA</option>
+                                            <option>ENFERMEDAD HEREDITARIA / CONGÉNITA</option>
+                                            <option>DISCAPACIDADES</option>
+                                            <option>OTROS</option>
+                                        </select>
                                 </asp:TableCell>
                                 <asp:TableCell>
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
+                                    <textarea id="txt_anteFamiliares" rows="3" cols="15" style="background-color: transparent; width: 100%; text-align: left; border: none"></textarea>
                                 </asp:TableCell>
                                 <asp:TableCell>
                                         <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>

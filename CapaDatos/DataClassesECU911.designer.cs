@@ -42,9 +42,6 @@ namespace CapaDatos
     partial void InsertTbl_Empresa(Tbl_Empresa instance);
     partial void UpdateTbl_Empresa(Tbl_Empresa instance);
     partial void DeleteTbl_Empresa(Tbl_Empresa instance);
-    partial void InsertTbl_Personas(Tbl_Personas instance);
-    partial void UpdateTbl_Personas(Tbl_Personas instance);
-    partial void DeleteTbl_Personas(Tbl_Personas instance);
     partial void InsertTbl_Religion(Tbl_Religion instance);
     partial void UpdateTbl_Religion(Tbl_Religion instance);
     partial void DeleteTbl_Religion(Tbl_Religion instance);
@@ -138,6 +135,9 @@ namespace CapaDatos
     partial void InsertTbl_Prescipciones(Tbl_Prescipciones instance);
     partial void UpdateTbl_Prescipciones(Tbl_Prescipciones instance);
     partial void DeleteTbl_Prescipciones(Tbl_Prescipciones instance);
+    partial void InsertTbl_Personas(Tbl_Personas instance);
+    partial void UpdateTbl_Personas(Tbl_Personas instance);
+    partial void DeleteTbl_Personas(Tbl_Personas instance);
     #endregion
 		
 		public DataClassesECU911DataContext() : 
@@ -199,14 +199,6 @@ namespace CapaDatos
 			get
 			{
 				return this.GetTable<Tbl_Empresa>();
-			}
-		}
-		
-		public System.Data.Linq.Table<Tbl_Personas> Tbl_Personas
-		{
-			get
-			{
-				return this.GetTable<Tbl_Personas>();
 			}
 		}
 		
@@ -455,6 +447,14 @@ namespace CapaDatos
 			get
 			{
 				return this.GetTable<Tbl_Prescipciones>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Tbl_Personas> Tbl_Personas
+		{
+			get
+			{
+				return this.GetTable<Tbl_Personas>();
 			}
 		}
 		
@@ -973,9 +973,9 @@ namespace CapaDatos
 		
 		private System.Nullable<int> _Per_id;
 		
-		private EntitySet<Tbl_Personas> _Tbl_Personas;
-		
 		private EntityRef<Tbl_Empresa> _Tbl_Empresa;
+		
+		private EntityRef<Tbl_Personas> _Tbl_Personas;
 		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
@@ -991,8 +991,8 @@ namespace CapaDatos
 		
 		public Tbl_Emp_Per()
 		{
-			this._Tbl_Personas = new EntitySet<Tbl_Personas>(new Action<Tbl_Personas>(this.attach_Tbl_Personas), new Action<Tbl_Personas>(this.detach_Tbl_Personas));
 			this._Tbl_Empresa = default(EntityRef<Tbl_Empresa>);
+			this._Tbl_Personas = default(EntityRef<Tbl_Personas>);
 			OnCreated();
 		}
 		
@@ -1051,25 +1051,16 @@ namespace CapaDatos
 			{
 				if ((this._Per_id != value))
 				{
+					if (this._Tbl_Personas.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnPer_idChanging(value);
 					this.SendPropertyChanging();
 					this._Per_id = value;
 					this.SendPropertyChanged("Per_id");
 					this.OnPer_idChanged();
 				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Emp_Per_Tbl_Personas", Storage="_Tbl_Personas", ThisKey="EmpPer_id", OtherKey="Per_id")]
-		public EntitySet<Tbl_Personas> Tbl_Personas
-		{
-			get
-			{
-				return this._Tbl_Personas;
-			}
-			set
-			{
-				this._Tbl_Personas.Assign(value);
 			}
 		}
 		
@@ -1107,6 +1098,40 @@ namespace CapaDatos
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_Emp_Per", Storage="_Tbl_Personas", ThisKey="Per_id", OtherKey="Per_id", IsForeignKey=true)]
+		public Tbl_Personas Tbl_Personas
+		{
+			get
+			{
+				return this._Tbl_Personas.Entity;
+			}
+			set
+			{
+				Tbl_Personas previousValue = this._Tbl_Personas.Entity;
+				if (((previousValue != value) 
+							|| (this._Tbl_Personas.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Tbl_Personas.Entity = null;
+						previousValue.Tbl_Emp_Per.Remove(this);
+					}
+					this._Tbl_Personas.Entity = value;
+					if ((value != null))
+					{
+						value.Tbl_Emp_Per.Add(this);
+						this._Per_id = value.Per_id;
+					}
+					else
+					{
+						this._Per_id = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Tbl_Personas");
+				}
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -1125,18 +1150,6 @@ namespace CapaDatos
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-		
-		private void attach_Tbl_Personas(Tbl_Personas entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tbl_Emp_Per = this;
-		}
-		
-		private void detach_Tbl_Personas(Tbl_Personas entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tbl_Emp_Per = null;
 		}
 	}
 	
@@ -1347,897 +1360,6 @@ namespace CapaDatos
 		{
 			this.SendPropertyChanging();
 			entity.Tbl_Empresa = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_Personas")]
-	public partial class Tbl_Personas : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private System.Nullable<int> _Per_id;
-		
-		private string _Per_priNombre;
-		
-		private string _Per_segNombre;
-		
-		private string _Per_priApellido;
-		
-		private string _Per_segApellido;
-		
-		private System.Nullable<char> _Per_sexo;
-		
-		private string _Per_Cargo;
-		
-		private System.Nullable<int> _Per_edad;
-		
-		private System.Nullable<int> _Per_CedulaHisCli;
-		
-		private string _Per_NumArchivo;
-		
-		private System.Nullable<int> _Rel_id;
-		
-		private string _Per_groSanguineo;
-		
-		private string _Per_lateralidad;
-		
-		private System.Nullable<int> _OrSex_id;
-		
-		private System.Nullable<int> _IdtGen_id;
-		
-		private System.Nullable<int> _Dis_id;
-		
-		private System.Nullable<System.DateTime> _Per_fechIngTrabajo;
-		
-		private System.Nullable<System.DateTime> _Per_fechSalida;
-		
-		private System.Nullable<int> _Per_tiempo;
-		
-		private string _Per_puesTrabajo;
-		
-		private string _Per_Actividades;
-		
-		private string _Per_facRiesgo;
-		
-		private string _Per_areaTrabajo;
-		
-		private string _Per_actsRelevantes;
-		
-		private int _Act_id;
-		
-		private int _FacR_id;
-		
-		private System.Nullable<char> _Per_estado;
-		
-		private EntityRef<Tbl_Emp_Per> _Tbl_Emp_Per;
-		
-		private EntityRef<Tbl_Religion> _Tbl_Religion;
-		
-		private EntityRef<Tbl_OrientacionSexual> _Tbl_OrientacionSexual;
-		
-		private EntityRef<Tbl_Identidad_de_Genero> _Tbl_Identidad_de_Genero;
-		
-		private EntityRef<Tbl_Discapacidad> _Tbl_Discapacidad;
-		
-    #region Definiciones de métodos de extensibilidad
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnPer_idChanging(System.Nullable<int> value);
-    partial void OnPer_idChanged();
-    partial void OnPer_priNombreChanging(string value);
-    partial void OnPer_priNombreChanged();
-    partial void OnPer_segNombreChanging(string value);
-    partial void OnPer_segNombreChanged();
-    partial void OnPer_priApellidoChanging(string value);
-    partial void OnPer_priApellidoChanged();
-    partial void OnPer_segApellidoChanging(string value);
-    partial void OnPer_segApellidoChanged();
-    partial void OnPer_sexoChanging(System.Nullable<char> value);
-    partial void OnPer_sexoChanged();
-    partial void OnPer_CargoChanging(string value);
-    partial void OnPer_CargoChanged();
-    partial void OnPer_edadChanging(System.Nullable<int> value);
-    partial void OnPer_edadChanged();
-    partial void OnPer_CedulaHisCliChanging(System.Nullable<int> value);
-    partial void OnPer_CedulaHisCliChanged();
-    partial void OnPer_NumArchivoChanging(string value);
-    partial void OnPer_NumArchivoChanged();
-    partial void OnRel_idChanging(System.Nullable<int> value);
-    partial void OnRel_idChanged();
-    partial void OnPer_groSanguineoChanging(string value);
-    partial void OnPer_groSanguineoChanged();
-    partial void OnPer_lateralidadChanging(string value);
-    partial void OnPer_lateralidadChanged();
-    partial void OnOrSex_idChanging(System.Nullable<int> value);
-    partial void OnOrSex_idChanged();
-    partial void OnIdtGen_idChanging(System.Nullable<int> value);
-    partial void OnIdtGen_idChanged();
-    partial void OnDis_idChanging(System.Nullable<int> value);
-    partial void OnDis_idChanged();
-    partial void OnPer_fechIngTrabajoChanging(System.Nullable<System.DateTime> value);
-    partial void OnPer_fechIngTrabajoChanged();
-    partial void OnPer_fechSalidaChanging(System.Nullable<System.DateTime> value);
-    partial void OnPer_fechSalidaChanged();
-    partial void OnPer_tiempoChanging(System.Nullable<int> value);
-    partial void OnPer_tiempoChanged();
-    partial void OnPer_puesTrabajoChanging(string value);
-    partial void OnPer_puesTrabajoChanged();
-    partial void OnPer_ActividadesChanging(string value);
-    partial void OnPer_ActividadesChanged();
-    partial void OnPer_facRiesgoChanging(string value);
-    partial void OnPer_facRiesgoChanged();
-    partial void OnPer_areaTrabajoChanging(string value);
-    partial void OnPer_areaTrabajoChanged();
-    partial void OnPer_actsRelevantesChanging(string value);
-    partial void OnPer_actsRelevantesChanged();
-    partial void OnAct_idChanging(int value);
-    partial void OnAct_idChanged();
-    partial void OnFacR_idChanging(int value);
-    partial void OnFacR_idChanged();
-    partial void OnPer_estadoChanging(System.Nullable<char> value);
-    partial void OnPer_estadoChanged();
-    #endregion
-		
-		public Tbl_Personas()
-		{
-			this._Tbl_Emp_Per = default(EntityRef<Tbl_Emp_Per>);
-			this._Tbl_Religion = default(EntityRef<Tbl_Religion>);
-			this._Tbl_OrientacionSexual = default(EntityRef<Tbl_OrientacionSexual>);
-			this._Tbl_Identidad_de_Genero = default(EntityRef<Tbl_Identidad_de_Genero>);
-			this._Tbl_Discapacidad = default(EntityRef<Tbl_Discapacidad>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_id", DbType="Int")]
-		public System.Nullable<int> Per_id
-		{
-			get
-			{
-				return this._Per_id;
-			}
-			set
-			{
-				if ((this._Per_id != value))
-				{
-					if (this._Tbl_Emp_Per.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnPer_idChanging(value);
-					this.SendPropertyChanging();
-					this._Per_id = value;
-					this.SendPropertyChanged("Per_id");
-					this.OnPer_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_priNombre", DbType="VarChar(100)")]
-		public string Per_priNombre
-		{
-			get
-			{
-				return this._Per_priNombre;
-			}
-			set
-			{
-				if ((this._Per_priNombre != value))
-				{
-					this.OnPer_priNombreChanging(value);
-					this.SendPropertyChanging();
-					this._Per_priNombre = value;
-					this.SendPropertyChanged("Per_priNombre");
-					this.OnPer_priNombreChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_segNombre", DbType="VarChar(100)")]
-		public string Per_segNombre
-		{
-			get
-			{
-				return this._Per_segNombre;
-			}
-			set
-			{
-				if ((this._Per_segNombre != value))
-				{
-					this.OnPer_segNombreChanging(value);
-					this.SendPropertyChanging();
-					this._Per_segNombre = value;
-					this.SendPropertyChanged("Per_segNombre");
-					this.OnPer_segNombreChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_priApellido", DbType="VarChar(100)")]
-		public string Per_priApellido
-		{
-			get
-			{
-				return this._Per_priApellido;
-			}
-			set
-			{
-				if ((this._Per_priApellido != value))
-				{
-					this.OnPer_priApellidoChanging(value);
-					this.SendPropertyChanging();
-					this._Per_priApellido = value;
-					this.SendPropertyChanged("Per_priApellido");
-					this.OnPer_priApellidoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_segApellido", DbType="VarChar(100)")]
-		public string Per_segApellido
-		{
-			get
-			{
-				return this._Per_segApellido;
-			}
-			set
-			{
-				if ((this._Per_segApellido != value))
-				{
-					this.OnPer_segApellidoChanging(value);
-					this.SendPropertyChanging();
-					this._Per_segApellido = value;
-					this.SendPropertyChanged("Per_segApellido");
-					this.OnPer_segApellidoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_sexo", DbType="Char(1)")]
-		public System.Nullable<char> Per_sexo
-		{
-			get
-			{
-				return this._Per_sexo;
-			}
-			set
-			{
-				if ((this._Per_sexo != value))
-				{
-					this.OnPer_sexoChanging(value);
-					this.SendPropertyChanging();
-					this._Per_sexo = value;
-					this.SendPropertyChanged("Per_sexo");
-					this.OnPer_sexoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_Cargo", DbType="VarChar(250)")]
-		public string Per_Cargo
-		{
-			get
-			{
-				return this._Per_Cargo;
-			}
-			set
-			{
-				if ((this._Per_Cargo != value))
-				{
-					this.OnPer_CargoChanging(value);
-					this.SendPropertyChanging();
-					this._Per_Cargo = value;
-					this.SendPropertyChanged("Per_Cargo");
-					this.OnPer_CargoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_edad", DbType="Int")]
-		public System.Nullable<int> Per_edad
-		{
-			get
-			{
-				return this._Per_edad;
-			}
-			set
-			{
-				if ((this._Per_edad != value))
-				{
-					this.OnPer_edadChanging(value);
-					this.SendPropertyChanging();
-					this._Per_edad = value;
-					this.SendPropertyChanged("Per_edad");
-					this.OnPer_edadChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_CedulaHisCli", DbType="Int")]
-		public System.Nullable<int> Per_CedulaHisCli
-		{
-			get
-			{
-				return this._Per_CedulaHisCli;
-			}
-			set
-			{
-				if ((this._Per_CedulaHisCli != value))
-				{
-					this.OnPer_CedulaHisCliChanging(value);
-					this.SendPropertyChanging();
-					this._Per_CedulaHisCli = value;
-					this.SendPropertyChanged("Per_CedulaHisCli");
-					this.OnPer_CedulaHisCliChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_NumArchivo", DbType="VarChar(100)")]
-		public string Per_NumArchivo
-		{
-			get
-			{
-				return this._Per_NumArchivo;
-			}
-			set
-			{
-				if ((this._Per_NumArchivo != value))
-				{
-					this.OnPer_NumArchivoChanging(value);
-					this.SendPropertyChanging();
-					this._Per_NumArchivo = value;
-					this.SendPropertyChanged("Per_NumArchivo");
-					this.OnPer_NumArchivoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Rel_id", DbType="Int")]
-		public System.Nullable<int> Rel_id
-		{
-			get
-			{
-				return this._Rel_id;
-			}
-			set
-			{
-				if ((this._Rel_id != value))
-				{
-					if (this._Tbl_Religion.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnRel_idChanging(value);
-					this.SendPropertyChanging();
-					this._Rel_id = value;
-					this.SendPropertyChanged("Rel_id");
-					this.OnRel_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_groSanguineo", DbType="VarChar(100)")]
-		public string Per_groSanguineo
-		{
-			get
-			{
-				return this._Per_groSanguineo;
-			}
-			set
-			{
-				if ((this._Per_groSanguineo != value))
-				{
-					this.OnPer_groSanguineoChanging(value);
-					this.SendPropertyChanging();
-					this._Per_groSanguineo = value;
-					this.SendPropertyChanged("Per_groSanguineo");
-					this.OnPer_groSanguineoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_lateralidad", DbType="VarChar(100)")]
-		public string Per_lateralidad
-		{
-			get
-			{
-				return this._Per_lateralidad;
-			}
-			set
-			{
-				if ((this._Per_lateralidad != value))
-				{
-					this.OnPer_lateralidadChanging(value);
-					this.SendPropertyChanging();
-					this._Per_lateralidad = value;
-					this.SendPropertyChanged("Per_lateralidad");
-					this.OnPer_lateralidadChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OrSex_id", DbType="Int")]
-		public System.Nullable<int> OrSex_id
-		{
-			get
-			{
-				return this._OrSex_id;
-			}
-			set
-			{
-				if ((this._OrSex_id != value))
-				{
-					if (this._Tbl_OrientacionSexual.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnOrSex_idChanging(value);
-					this.SendPropertyChanging();
-					this._OrSex_id = value;
-					this.SendPropertyChanged("OrSex_id");
-					this.OnOrSex_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdtGen_id", DbType="Int")]
-		public System.Nullable<int> IdtGen_id
-		{
-			get
-			{
-				return this._IdtGen_id;
-			}
-			set
-			{
-				if ((this._IdtGen_id != value))
-				{
-					if (this._Tbl_Identidad_de_Genero.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnIdtGen_idChanging(value);
-					this.SendPropertyChanging();
-					this._IdtGen_id = value;
-					this.SendPropertyChanged("IdtGen_id");
-					this.OnIdtGen_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Dis_id", DbType="Int")]
-		public System.Nullable<int> Dis_id
-		{
-			get
-			{
-				return this._Dis_id;
-			}
-			set
-			{
-				if ((this._Dis_id != value))
-				{
-					if (this._Tbl_Discapacidad.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnDis_idChanging(value);
-					this.SendPropertyChanging();
-					this._Dis_id = value;
-					this.SendPropertyChanged("Dis_id");
-					this.OnDis_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_fechIngTrabajo", DbType="Date")]
-		public System.Nullable<System.DateTime> Per_fechIngTrabajo
-		{
-			get
-			{
-				return this._Per_fechIngTrabajo;
-			}
-			set
-			{
-				if ((this._Per_fechIngTrabajo != value))
-				{
-					this.OnPer_fechIngTrabajoChanging(value);
-					this.SendPropertyChanging();
-					this._Per_fechIngTrabajo = value;
-					this.SendPropertyChanged("Per_fechIngTrabajo");
-					this.OnPer_fechIngTrabajoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_fechSalida", DbType="Date")]
-		public System.Nullable<System.DateTime> Per_fechSalida
-		{
-			get
-			{
-				return this._Per_fechSalida;
-			}
-			set
-			{
-				if ((this._Per_fechSalida != value))
-				{
-					this.OnPer_fechSalidaChanging(value);
-					this.SendPropertyChanging();
-					this._Per_fechSalida = value;
-					this.SendPropertyChanged("Per_fechSalida");
-					this.OnPer_fechSalidaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_tiempo", DbType="Int")]
-		public System.Nullable<int> Per_tiempo
-		{
-			get
-			{
-				return this._Per_tiempo;
-			}
-			set
-			{
-				if ((this._Per_tiempo != value))
-				{
-					this.OnPer_tiempoChanging(value);
-					this.SendPropertyChanging();
-					this._Per_tiempo = value;
-					this.SendPropertyChanged("Per_tiempo");
-					this.OnPer_tiempoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_puesTrabajo", DbType="VarChar(100)")]
-		public string Per_puesTrabajo
-		{
-			get
-			{
-				return this._Per_puesTrabajo;
-			}
-			set
-			{
-				if ((this._Per_puesTrabajo != value))
-				{
-					this.OnPer_puesTrabajoChanging(value);
-					this.SendPropertyChanging();
-					this._Per_puesTrabajo = value;
-					this.SendPropertyChanged("Per_puesTrabajo");
-					this.OnPer_puesTrabajoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_Actividades", DbType="VarChar(250)")]
-		public string Per_Actividades
-		{
-			get
-			{
-				return this._Per_Actividades;
-			}
-			set
-			{
-				if ((this._Per_Actividades != value))
-				{
-					this.OnPer_ActividadesChanging(value);
-					this.SendPropertyChanging();
-					this._Per_Actividades = value;
-					this.SendPropertyChanged("Per_Actividades");
-					this.OnPer_ActividadesChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_facRiesgo", DbType="Text", UpdateCheck=UpdateCheck.Never)]
-		public string Per_facRiesgo
-		{
-			get
-			{
-				return this._Per_facRiesgo;
-			}
-			set
-			{
-				if ((this._Per_facRiesgo != value))
-				{
-					this.OnPer_facRiesgoChanging(value);
-					this.SendPropertyChanging();
-					this._Per_facRiesgo = value;
-					this.SendPropertyChanged("Per_facRiesgo");
-					this.OnPer_facRiesgoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_areaTrabajo", DbType="VarChar(100)")]
-		public string Per_areaTrabajo
-		{
-			get
-			{
-				return this._Per_areaTrabajo;
-			}
-			set
-			{
-				if ((this._Per_areaTrabajo != value))
-				{
-					this.OnPer_areaTrabajoChanging(value);
-					this.SendPropertyChanging();
-					this._Per_areaTrabajo = value;
-					this.SendPropertyChanged("Per_areaTrabajo");
-					this.OnPer_areaTrabajoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_actsRelevantes", DbType="VarChar(255)")]
-		public string Per_actsRelevantes
-		{
-			get
-			{
-				return this._Per_actsRelevantes;
-			}
-			set
-			{
-				if ((this._Per_actsRelevantes != value))
-				{
-					this.OnPer_actsRelevantesChanging(value);
-					this.SendPropertyChanging();
-					this._Per_actsRelevantes = value;
-					this.SendPropertyChanged("Per_actsRelevantes");
-					this.OnPer_actsRelevantesChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Act_id", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int Act_id
-		{
-			get
-			{
-				return this._Act_id;
-			}
-			set
-			{
-				if ((this._Act_id != value))
-				{
-					this.OnAct_idChanging(value);
-					this.SendPropertyChanging();
-					this._Act_id = value;
-					this.SendPropertyChanged("Act_id");
-					this.OnAct_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FacR_id", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int FacR_id
-		{
-			get
-			{
-				return this._FacR_id;
-			}
-			set
-			{
-				if ((this._FacR_id != value))
-				{
-					this.OnFacR_idChanging(value);
-					this.SendPropertyChanging();
-					this._FacR_id = value;
-					this.SendPropertyChanged("FacR_id");
-					this.OnFacR_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_estado", DbType="Char(1)")]
-		public System.Nullable<char> Per_estado
-		{
-			get
-			{
-				return this._Per_estado;
-			}
-			set
-			{
-				if ((this._Per_estado != value))
-				{
-					this.OnPer_estadoChanging(value);
-					this.SendPropertyChanging();
-					this._Per_estado = value;
-					this.SendPropertyChanged("Per_estado");
-					this.OnPer_estadoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Emp_Per_Tbl_Personas", Storage="_Tbl_Emp_Per", ThisKey="Per_id", OtherKey="EmpPer_id", IsForeignKey=true)]
-		public Tbl_Emp_Per Tbl_Emp_Per
-		{
-			get
-			{
-				return this._Tbl_Emp_Per.Entity;
-			}
-			set
-			{
-				Tbl_Emp_Per previousValue = this._Tbl_Emp_Per.Entity;
-				if (((previousValue != value) 
-							|| (this._Tbl_Emp_Per.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Tbl_Emp_Per.Entity = null;
-						previousValue.Tbl_Personas.Remove(this);
-					}
-					this._Tbl_Emp_Per.Entity = value;
-					if ((value != null))
-					{
-						value.Tbl_Personas.Add(this);
-						this._Per_id = value.EmpPer_id;
-					}
-					else
-					{
-						this._Per_id = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Tbl_Emp_Per");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Religion_Tbl_Personas", Storage="_Tbl_Religion", ThisKey="Rel_id", OtherKey="Rel_id", IsForeignKey=true)]
-		public Tbl_Religion Tbl_Religion
-		{
-			get
-			{
-				return this._Tbl_Religion.Entity;
-			}
-			set
-			{
-				Tbl_Religion previousValue = this._Tbl_Religion.Entity;
-				if (((previousValue != value) 
-							|| (this._Tbl_Religion.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Tbl_Religion.Entity = null;
-						previousValue.Tbl_Personas.Remove(this);
-					}
-					this._Tbl_Religion.Entity = value;
-					if ((value != null))
-					{
-						value.Tbl_Personas.Add(this);
-						this._Rel_id = value.Rel_id;
-					}
-					else
-					{
-						this._Rel_id = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Tbl_Religion");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_OrientacionSexual_Tbl_Personas", Storage="_Tbl_OrientacionSexual", ThisKey="OrSex_id", OtherKey="OrSex_id", IsForeignKey=true)]
-		public Tbl_OrientacionSexual Tbl_OrientacionSexual
-		{
-			get
-			{
-				return this._Tbl_OrientacionSexual.Entity;
-			}
-			set
-			{
-				Tbl_OrientacionSexual previousValue = this._Tbl_OrientacionSexual.Entity;
-				if (((previousValue != value) 
-							|| (this._Tbl_OrientacionSexual.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Tbl_OrientacionSexual.Entity = null;
-						previousValue.Tbl_Personas.Remove(this);
-					}
-					this._Tbl_OrientacionSexual.Entity = value;
-					if ((value != null))
-					{
-						value.Tbl_Personas.Add(this);
-						this._OrSex_id = value.OrSex_id;
-					}
-					else
-					{
-						this._OrSex_id = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Tbl_OrientacionSexual");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Identidad_de_Genero_Tbl_Personas", Storage="_Tbl_Identidad_de_Genero", ThisKey="IdtGen_id", OtherKey="IdtGen_id", IsForeignKey=true)]
-		public Tbl_Identidad_de_Genero Tbl_Identidad_de_Genero
-		{
-			get
-			{
-				return this._Tbl_Identidad_de_Genero.Entity;
-			}
-			set
-			{
-				Tbl_Identidad_de_Genero previousValue = this._Tbl_Identidad_de_Genero.Entity;
-				if (((previousValue != value) 
-							|| (this._Tbl_Identidad_de_Genero.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Tbl_Identidad_de_Genero.Entity = null;
-						previousValue.Tbl_Personas.Remove(this);
-					}
-					this._Tbl_Identidad_de_Genero.Entity = value;
-					if ((value != null))
-					{
-						value.Tbl_Personas.Add(this);
-						this._IdtGen_id = value.IdtGen_id;
-					}
-					else
-					{
-						this._IdtGen_id = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Tbl_Identidad_de_Genero");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Discapacidad_Tbl_Personas", Storage="_Tbl_Discapacidad", ThisKey="Dis_id", OtherKey="Dis_id", IsForeignKey=true)]
-		public Tbl_Discapacidad Tbl_Discapacidad
-		{
-			get
-			{
-				return this._Tbl_Discapacidad.Entity;
-			}
-			set
-			{
-				Tbl_Discapacidad previousValue = this._Tbl_Discapacidad.Entity;
-				if (((previousValue != value) 
-							|| (this._Tbl_Discapacidad.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Tbl_Discapacidad.Entity = null;
-						previousValue.Tbl_Personas.Remove(this);
-					}
-					this._Tbl_Discapacidad.Entity = value;
-					if ((value != null))
-					{
-						value.Tbl_Personas.Add(this);
-						this._Dis_id = value.Dis_id;
-					}
-					else
-					{
-						this._Dis_id = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Tbl_Discapacidad");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
 		}
 	}
 	
@@ -8757,6 +7879,884 @@ namespace CapaDatos
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_Personas")]
+	public partial class Tbl_Personas : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Per_id;
+		
+		private string _Per_priNombre;
+		
+		private string _Per_segNombre;
+		
+		private string _Per_priApellido;
+		
+		private string _Per_segApellido;
+		
+		private string _Per_sexo;
+		
+		private string _Per_Cargo;
+		
+		private System.Nullable<int> _Per_edad;
+		
+		private System.Nullable<int> _Per_CedulaHisCli;
+		
+		private string _Per_NumArchivo;
+		
+		private System.Nullable<int> _Rel_id;
+		
+		private string _Per_groSanguineo;
+		
+		private string _Per_lateralidad;
+		
+		private System.Nullable<int> _OrSex_id;
+		
+		private System.Nullable<int> _IdtGen_id;
+		
+		private System.Nullable<int> _Dis_id;
+		
+		private System.Nullable<System.DateTime> _Per_fechIngTrabajo;
+		
+		private System.Nullable<System.DateTime> _Per_fechSalida;
+		
+		private System.Nullable<int> _Per_tiempo;
+		
+		private string _Per_puesTrabajo;
+		
+		private string _Per_Actividades;
+		
+		private string _Per_facRiesgo;
+		
+		private string _Per_areaTrabajo;
+		
+		private string _Per_actsRelevantes;
+		
+		private System.Nullable<int> _Act_id;
+		
+		private System.Nullable<int> _FacR_id;
+		
+		private System.Nullable<char> _Per_estado;
+		
+		private EntitySet<Tbl_Emp_Per> _Tbl_Emp_Per;
+		
+		private EntityRef<Tbl_Discapacidad> _Tbl_Discapacidad;
+		
+		private EntityRef<Tbl_Identidad_de_Genero> _Tbl_Identidad_de_Genero;
+		
+		private EntityRef<Tbl_OrientacionSexual> _Tbl_OrientacionSexual;
+		
+		private EntityRef<Tbl_Religion> _Tbl_Religion;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnPer_idChanging(int value);
+    partial void OnPer_idChanged();
+    partial void OnPer_priNombreChanging(string value);
+    partial void OnPer_priNombreChanged();
+    partial void OnPer_segNombreChanging(string value);
+    partial void OnPer_segNombreChanged();
+    partial void OnPer_priApellidoChanging(string value);
+    partial void OnPer_priApellidoChanged();
+    partial void OnPer_segApellidoChanging(string value);
+    partial void OnPer_segApellidoChanged();
+    partial void OnPer_sexoChanging(string value);
+    partial void OnPer_sexoChanged();
+    partial void OnPer_CargoChanging(string value);
+    partial void OnPer_CargoChanged();
+    partial void OnPer_edadChanging(System.Nullable<int> value);
+    partial void OnPer_edadChanged();
+    partial void OnPer_CedulaHisCliChanging(System.Nullable<int> value);
+    partial void OnPer_CedulaHisCliChanged();
+    partial void OnPer_NumArchivoChanging(string value);
+    partial void OnPer_NumArchivoChanged();
+    partial void OnRel_idChanging(System.Nullable<int> value);
+    partial void OnRel_idChanged();
+    partial void OnPer_groSanguineoChanging(string value);
+    partial void OnPer_groSanguineoChanged();
+    partial void OnPer_lateralidadChanging(string value);
+    partial void OnPer_lateralidadChanged();
+    partial void OnOrSex_idChanging(System.Nullable<int> value);
+    partial void OnOrSex_idChanged();
+    partial void OnIdtGen_idChanging(System.Nullable<int> value);
+    partial void OnIdtGen_idChanged();
+    partial void OnDis_idChanging(System.Nullable<int> value);
+    partial void OnDis_idChanged();
+    partial void OnPer_fechIngTrabajoChanging(System.Nullable<System.DateTime> value);
+    partial void OnPer_fechIngTrabajoChanged();
+    partial void OnPer_fechSalidaChanging(System.Nullable<System.DateTime> value);
+    partial void OnPer_fechSalidaChanged();
+    partial void OnPer_tiempoChanging(System.Nullable<int> value);
+    partial void OnPer_tiempoChanged();
+    partial void OnPer_puesTrabajoChanging(string value);
+    partial void OnPer_puesTrabajoChanged();
+    partial void OnPer_ActividadesChanging(string value);
+    partial void OnPer_ActividadesChanged();
+    partial void OnPer_facRiesgoChanging(string value);
+    partial void OnPer_facRiesgoChanged();
+    partial void OnPer_areaTrabajoChanging(string value);
+    partial void OnPer_areaTrabajoChanged();
+    partial void OnPer_actsRelevantesChanging(string value);
+    partial void OnPer_actsRelevantesChanged();
+    partial void OnAct_idChanging(System.Nullable<int> value);
+    partial void OnAct_idChanged();
+    partial void OnFacR_idChanging(System.Nullable<int> value);
+    partial void OnFacR_idChanged();
+    partial void OnPer_estadoChanging(System.Nullable<char> value);
+    partial void OnPer_estadoChanged();
+    #endregion
+		
+		public Tbl_Personas()
+		{
+			this._Tbl_Emp_Per = new EntitySet<Tbl_Emp_Per>(new Action<Tbl_Emp_Per>(this.attach_Tbl_Emp_Per), new Action<Tbl_Emp_Per>(this.detach_Tbl_Emp_Per));
+			this._Tbl_Discapacidad = default(EntityRef<Tbl_Discapacidad>);
+			this._Tbl_Identidad_de_Genero = default(EntityRef<Tbl_Identidad_de_Genero>);
+			this._Tbl_OrientacionSexual = default(EntityRef<Tbl_OrientacionSexual>);
+			this._Tbl_Religion = default(EntityRef<Tbl_Religion>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Per_id
+		{
+			get
+			{
+				return this._Per_id;
+			}
+			set
+			{
+				if ((this._Per_id != value))
+				{
+					this.OnPer_idChanging(value);
+					this.SendPropertyChanging();
+					this._Per_id = value;
+					this.SendPropertyChanged("Per_id");
+					this.OnPer_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_priNombre", DbType="VarChar(100)")]
+		public string Per_priNombre
+		{
+			get
+			{
+				return this._Per_priNombre;
+			}
+			set
+			{
+				if ((this._Per_priNombre != value))
+				{
+					this.OnPer_priNombreChanging(value);
+					this.SendPropertyChanging();
+					this._Per_priNombre = value;
+					this.SendPropertyChanged("Per_priNombre");
+					this.OnPer_priNombreChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_segNombre", DbType="VarChar(100)")]
+		public string Per_segNombre
+		{
+			get
+			{
+				return this._Per_segNombre;
+			}
+			set
+			{
+				if ((this._Per_segNombre != value))
+				{
+					this.OnPer_segNombreChanging(value);
+					this.SendPropertyChanging();
+					this._Per_segNombre = value;
+					this.SendPropertyChanged("Per_segNombre");
+					this.OnPer_segNombreChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_priApellido", DbType="VarChar(100)")]
+		public string Per_priApellido
+		{
+			get
+			{
+				return this._Per_priApellido;
+			}
+			set
+			{
+				if ((this._Per_priApellido != value))
+				{
+					this.OnPer_priApellidoChanging(value);
+					this.SendPropertyChanging();
+					this._Per_priApellido = value;
+					this.SendPropertyChanged("Per_priApellido");
+					this.OnPer_priApellidoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_segApellido", DbType="VarChar(100)")]
+		public string Per_segApellido
+		{
+			get
+			{
+				return this._Per_segApellido;
+			}
+			set
+			{
+				if ((this._Per_segApellido != value))
+				{
+					this.OnPer_segApellidoChanging(value);
+					this.SendPropertyChanging();
+					this._Per_segApellido = value;
+					this.SendPropertyChanged("Per_segApellido");
+					this.OnPer_segApellidoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_sexo", DbType="VarChar(1)")]
+		public string Per_sexo
+		{
+			get
+			{
+				return this._Per_sexo;
+			}
+			set
+			{
+				if ((this._Per_sexo != value))
+				{
+					this.OnPer_sexoChanging(value);
+					this.SendPropertyChanging();
+					this._Per_sexo = value;
+					this.SendPropertyChanged("Per_sexo");
+					this.OnPer_sexoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_Cargo", DbType="VarChar(250)")]
+		public string Per_Cargo
+		{
+			get
+			{
+				return this._Per_Cargo;
+			}
+			set
+			{
+				if ((this._Per_Cargo != value))
+				{
+					this.OnPer_CargoChanging(value);
+					this.SendPropertyChanging();
+					this._Per_Cargo = value;
+					this.SendPropertyChanged("Per_Cargo");
+					this.OnPer_CargoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_edad", DbType="Int")]
+		public System.Nullable<int> Per_edad
+		{
+			get
+			{
+				return this._Per_edad;
+			}
+			set
+			{
+				if ((this._Per_edad != value))
+				{
+					this.OnPer_edadChanging(value);
+					this.SendPropertyChanging();
+					this._Per_edad = value;
+					this.SendPropertyChanged("Per_edad");
+					this.OnPer_edadChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_CedulaHisCli", DbType="Int")]
+		public System.Nullable<int> Per_CedulaHisCli
+		{
+			get
+			{
+				return this._Per_CedulaHisCli;
+			}
+			set
+			{
+				if ((this._Per_CedulaHisCli != value))
+				{
+					this.OnPer_CedulaHisCliChanging(value);
+					this.SendPropertyChanging();
+					this._Per_CedulaHisCli = value;
+					this.SendPropertyChanged("Per_CedulaHisCli");
+					this.OnPer_CedulaHisCliChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_NumArchivo", DbType="VarChar(100)")]
+		public string Per_NumArchivo
+		{
+			get
+			{
+				return this._Per_NumArchivo;
+			}
+			set
+			{
+				if ((this._Per_NumArchivo != value))
+				{
+					this.OnPer_NumArchivoChanging(value);
+					this.SendPropertyChanging();
+					this._Per_NumArchivo = value;
+					this.SendPropertyChanged("Per_NumArchivo");
+					this.OnPer_NumArchivoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Rel_id", DbType="Int")]
+		public System.Nullable<int> Rel_id
+		{
+			get
+			{
+				return this._Rel_id;
+			}
+			set
+			{
+				if ((this._Rel_id != value))
+				{
+					if (this._Tbl_Religion.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnRel_idChanging(value);
+					this.SendPropertyChanging();
+					this._Rel_id = value;
+					this.SendPropertyChanged("Rel_id");
+					this.OnRel_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_groSanguineo", DbType="VarChar(100)")]
+		public string Per_groSanguineo
+		{
+			get
+			{
+				return this._Per_groSanguineo;
+			}
+			set
+			{
+				if ((this._Per_groSanguineo != value))
+				{
+					this.OnPer_groSanguineoChanging(value);
+					this.SendPropertyChanging();
+					this._Per_groSanguineo = value;
+					this.SendPropertyChanged("Per_groSanguineo");
+					this.OnPer_groSanguineoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_lateralidad", DbType="VarChar(100)")]
+		public string Per_lateralidad
+		{
+			get
+			{
+				return this._Per_lateralidad;
+			}
+			set
+			{
+				if ((this._Per_lateralidad != value))
+				{
+					this.OnPer_lateralidadChanging(value);
+					this.SendPropertyChanging();
+					this._Per_lateralidad = value;
+					this.SendPropertyChanged("Per_lateralidad");
+					this.OnPer_lateralidadChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OrSex_id", DbType="Int")]
+		public System.Nullable<int> OrSex_id
+		{
+			get
+			{
+				return this._OrSex_id;
+			}
+			set
+			{
+				if ((this._OrSex_id != value))
+				{
+					if (this._Tbl_OrientacionSexual.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnOrSex_idChanging(value);
+					this.SendPropertyChanging();
+					this._OrSex_id = value;
+					this.SendPropertyChanged("OrSex_id");
+					this.OnOrSex_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdtGen_id", DbType="Int")]
+		public System.Nullable<int> IdtGen_id
+		{
+			get
+			{
+				return this._IdtGen_id;
+			}
+			set
+			{
+				if ((this._IdtGen_id != value))
+				{
+					if (this._Tbl_Identidad_de_Genero.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnIdtGen_idChanging(value);
+					this.SendPropertyChanging();
+					this._IdtGen_id = value;
+					this.SendPropertyChanged("IdtGen_id");
+					this.OnIdtGen_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Dis_id", DbType="Int")]
+		public System.Nullable<int> Dis_id
+		{
+			get
+			{
+				return this._Dis_id;
+			}
+			set
+			{
+				if ((this._Dis_id != value))
+				{
+					if (this._Tbl_Discapacidad.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnDis_idChanging(value);
+					this.SendPropertyChanging();
+					this._Dis_id = value;
+					this.SendPropertyChanged("Dis_id");
+					this.OnDis_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_fechIngTrabajo", DbType="Date")]
+		public System.Nullable<System.DateTime> Per_fechIngTrabajo
+		{
+			get
+			{
+				return this._Per_fechIngTrabajo;
+			}
+			set
+			{
+				if ((this._Per_fechIngTrabajo != value))
+				{
+					this.OnPer_fechIngTrabajoChanging(value);
+					this.SendPropertyChanging();
+					this._Per_fechIngTrabajo = value;
+					this.SendPropertyChanged("Per_fechIngTrabajo");
+					this.OnPer_fechIngTrabajoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_fechSalida", DbType="Date")]
+		public System.Nullable<System.DateTime> Per_fechSalida
+		{
+			get
+			{
+				return this._Per_fechSalida;
+			}
+			set
+			{
+				if ((this._Per_fechSalida != value))
+				{
+					this.OnPer_fechSalidaChanging(value);
+					this.SendPropertyChanging();
+					this._Per_fechSalida = value;
+					this.SendPropertyChanged("Per_fechSalida");
+					this.OnPer_fechSalidaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_tiempo", DbType="Int")]
+		public System.Nullable<int> Per_tiempo
+		{
+			get
+			{
+				return this._Per_tiempo;
+			}
+			set
+			{
+				if ((this._Per_tiempo != value))
+				{
+					this.OnPer_tiempoChanging(value);
+					this.SendPropertyChanging();
+					this._Per_tiempo = value;
+					this.SendPropertyChanged("Per_tiempo");
+					this.OnPer_tiempoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_puesTrabajo", DbType="VarChar(100)")]
+		public string Per_puesTrabajo
+		{
+			get
+			{
+				return this._Per_puesTrabajo;
+			}
+			set
+			{
+				if ((this._Per_puesTrabajo != value))
+				{
+					this.OnPer_puesTrabajoChanging(value);
+					this.SendPropertyChanging();
+					this._Per_puesTrabajo = value;
+					this.SendPropertyChanged("Per_puesTrabajo");
+					this.OnPer_puesTrabajoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_Actividades", DbType="VarChar(250)")]
+		public string Per_Actividades
+		{
+			get
+			{
+				return this._Per_Actividades;
+			}
+			set
+			{
+				if ((this._Per_Actividades != value))
+				{
+					this.OnPer_ActividadesChanging(value);
+					this.SendPropertyChanging();
+					this._Per_Actividades = value;
+					this.SendPropertyChanged("Per_Actividades");
+					this.OnPer_ActividadesChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_facRiesgo", DbType="Text", UpdateCheck=UpdateCheck.Never)]
+		public string Per_facRiesgo
+		{
+			get
+			{
+				return this._Per_facRiesgo;
+			}
+			set
+			{
+				if ((this._Per_facRiesgo != value))
+				{
+					this.OnPer_facRiesgoChanging(value);
+					this.SendPropertyChanging();
+					this._Per_facRiesgo = value;
+					this.SendPropertyChanged("Per_facRiesgo");
+					this.OnPer_facRiesgoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_areaTrabajo", DbType="VarChar(100)")]
+		public string Per_areaTrabajo
+		{
+			get
+			{
+				return this._Per_areaTrabajo;
+			}
+			set
+			{
+				if ((this._Per_areaTrabajo != value))
+				{
+					this.OnPer_areaTrabajoChanging(value);
+					this.SendPropertyChanging();
+					this._Per_areaTrabajo = value;
+					this.SendPropertyChanged("Per_areaTrabajo");
+					this.OnPer_areaTrabajoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_actsRelevantes", DbType="VarChar(255)")]
+		public string Per_actsRelevantes
+		{
+			get
+			{
+				return this._Per_actsRelevantes;
+			}
+			set
+			{
+				if ((this._Per_actsRelevantes != value))
+				{
+					this.OnPer_actsRelevantesChanging(value);
+					this.SendPropertyChanging();
+					this._Per_actsRelevantes = value;
+					this.SendPropertyChanged("Per_actsRelevantes");
+					this.OnPer_actsRelevantesChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Act_id", DbType="Int")]
+		public System.Nullable<int> Act_id
+		{
+			get
+			{
+				return this._Act_id;
+			}
+			set
+			{
+				if ((this._Act_id != value))
+				{
+					this.OnAct_idChanging(value);
+					this.SendPropertyChanging();
+					this._Act_id = value;
+					this.SendPropertyChanged("Act_id");
+					this.OnAct_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FacR_id", DbType="Int")]
+		public System.Nullable<int> FacR_id
+		{
+			get
+			{
+				return this._FacR_id;
+			}
+			set
+			{
+				if ((this._FacR_id != value))
+				{
+					this.OnFacR_idChanging(value);
+					this.SendPropertyChanging();
+					this._FacR_id = value;
+					this.SendPropertyChanged("FacR_id");
+					this.OnFacR_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_estado", DbType="Char(1)")]
+		public System.Nullable<char> Per_estado
+		{
+			get
+			{
+				return this._Per_estado;
+			}
+			set
+			{
+				if ((this._Per_estado != value))
+				{
+					this.OnPer_estadoChanging(value);
+					this.SendPropertyChanging();
+					this._Per_estado = value;
+					this.SendPropertyChanged("Per_estado");
+					this.OnPer_estadoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_Emp_Per", Storage="_Tbl_Emp_Per", ThisKey="Per_id", OtherKey="Per_id")]
+		public EntitySet<Tbl_Emp_Per> Tbl_Emp_Per
+		{
+			get
+			{
+				return this._Tbl_Emp_Per;
+			}
+			set
+			{
+				this._Tbl_Emp_Per.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Discapacidad_Tbl_Personas", Storage="_Tbl_Discapacidad", ThisKey="Dis_id", OtherKey="Dis_id", IsForeignKey=true)]
+		public Tbl_Discapacidad Tbl_Discapacidad
+		{
+			get
+			{
+				return this._Tbl_Discapacidad.Entity;
+			}
+			set
+			{
+				Tbl_Discapacidad previousValue = this._Tbl_Discapacidad.Entity;
+				if (((previousValue != value) 
+							|| (this._Tbl_Discapacidad.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Tbl_Discapacidad.Entity = null;
+						previousValue.Tbl_Personas.Remove(this);
+					}
+					this._Tbl_Discapacidad.Entity = value;
+					if ((value != null))
+					{
+						value.Tbl_Personas.Add(this);
+						this._Dis_id = value.Dis_id;
+					}
+					else
+					{
+						this._Dis_id = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Tbl_Discapacidad");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Identidad_de_Genero_Tbl_Personas", Storage="_Tbl_Identidad_de_Genero", ThisKey="IdtGen_id", OtherKey="IdtGen_id", IsForeignKey=true)]
+		public Tbl_Identidad_de_Genero Tbl_Identidad_de_Genero
+		{
+			get
+			{
+				return this._Tbl_Identidad_de_Genero.Entity;
+			}
+			set
+			{
+				Tbl_Identidad_de_Genero previousValue = this._Tbl_Identidad_de_Genero.Entity;
+				if (((previousValue != value) 
+							|| (this._Tbl_Identidad_de_Genero.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Tbl_Identidad_de_Genero.Entity = null;
+						previousValue.Tbl_Personas.Remove(this);
+					}
+					this._Tbl_Identidad_de_Genero.Entity = value;
+					if ((value != null))
+					{
+						value.Tbl_Personas.Add(this);
+						this._IdtGen_id = value.IdtGen_id;
+					}
+					else
+					{
+						this._IdtGen_id = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Tbl_Identidad_de_Genero");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_OrientacionSexual_Tbl_Personas", Storage="_Tbl_OrientacionSexual", ThisKey="OrSex_id", OtherKey="OrSex_id", IsForeignKey=true)]
+		public Tbl_OrientacionSexual Tbl_OrientacionSexual
+		{
+			get
+			{
+				return this._Tbl_OrientacionSexual.Entity;
+			}
+			set
+			{
+				Tbl_OrientacionSexual previousValue = this._Tbl_OrientacionSexual.Entity;
+				if (((previousValue != value) 
+							|| (this._Tbl_OrientacionSexual.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Tbl_OrientacionSexual.Entity = null;
+						previousValue.Tbl_Personas.Remove(this);
+					}
+					this._Tbl_OrientacionSexual.Entity = value;
+					if ((value != null))
+					{
+						value.Tbl_Personas.Add(this);
+						this._OrSex_id = value.OrSex_id;
+					}
+					else
+					{
+						this._OrSex_id = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Tbl_OrientacionSexual");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Religion_Tbl_Personas", Storage="_Tbl_Religion", ThisKey="Rel_id", OtherKey="Rel_id", IsForeignKey=true)]
+		public Tbl_Religion Tbl_Religion
+		{
+			get
+			{
+				return this._Tbl_Religion.Entity;
+			}
+			set
+			{
+				Tbl_Religion previousValue = this._Tbl_Religion.Entity;
+				if (((previousValue != value) 
+							|| (this._Tbl_Religion.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Tbl_Religion.Entity = null;
+						previousValue.Tbl_Personas.Remove(this);
+					}
+					this._Tbl_Religion.Entity = value;
+					if ((value != null))
+					{
+						value.Tbl_Personas.Add(this);
+						this._Rel_id = value.Rel_id;
+					}
+					else
+					{
+						this._Rel_id = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Tbl_Religion");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Tbl_Emp_Per(Tbl_Emp_Per entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Personas = this;
+		}
+		
+		private void detach_Tbl_Emp_Per(Tbl_Emp_Per entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Personas = null;
 		}
 	}
 	

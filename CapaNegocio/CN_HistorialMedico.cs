@@ -31,7 +31,22 @@ namespace CapaNegocio
             }
             catch (Exception ex)
             {
-                throw new ArgumentException("Datos no guardados <br/>" + ex.Message);
+                throw new ArgumentException("Datos No Guardados" + ex.Message);
+            }
+        }
+
+        //Metodo para guardar datos motivo de consulta
+        public static void guardarMotiConsulta(Tbl_MotivoConsulta motcons)
+        {
+            try
+            {
+                motcons.Mcon_estado = 'A';
+                dc.Tbl_MotivoConsulta.InsertOnSubmit(motcons);
+                dc.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException("Datos No Guardados" + ex.Message);
             }
         }
 
@@ -39,5 +54,5 @@ namespace CapaNegocio
 
     }
 
-    
+
 }
