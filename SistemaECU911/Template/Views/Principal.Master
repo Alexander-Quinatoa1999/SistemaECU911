@@ -131,6 +131,12 @@
                             </a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="SocioEconomico.aspx">
+                                <i class="fas fa-address-book menu-icon"></i>
+                                <span class="menu-title">Socio Economico</span>
+                            </a>
+                        </li> 
+                        <li class="nav-item">
                             <a class="nav-link" href="#">
                                 <i class="fas fa-ambulance menu-icon"></i>
                                 <span class="menu-title">Pacientes</span>
@@ -166,7 +172,7 @@
                                     <li class="nav-item"><a class="nav-link" href="PedidoExamenes.aspx">HC Pedido Examenes</a></li>
                                 </ul>
                             </div>
-                        </li>
+                        </li>                                               
                     </ul>
                 </nav>
                 <div class="main-panel">

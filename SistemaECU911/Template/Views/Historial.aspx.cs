@@ -18,7 +18,9 @@ namespace SistemaECU911.Template.Views
         //Objeto de la tabla personas
         private Tbl_Personas per = new Tbl_Personas();
         //Objeto de la tabla motivo de consulta
-        private Tbl_MotivoConsulta motcons = new Tbl_MotivoConsulta(); 
+        private Tbl_MotivoConsulta motcons = new Tbl_MotivoConsulta();
+        //Objeto de la tabla motivo de consulta
+        //private Tbl_AntePersonales antper = new Tbl_AntePersonales();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -39,7 +41,8 @@ namespace SistemaECU911.Template.Views
                 {
                     per = new Tbl_Personas();
                     motcons = new Tbl_MotivoConsulta();
-                    
+                    //antper = new Tbl_AntePersonales();
+
                     //captura de datos tbl_personas
                     per.Per_priNombre = txt_priNombre.Text;
                     per.Per_priApellido = txt_priApellido.Text;
@@ -53,6 +56,8 @@ namespace SistemaECU911.Template.Views
                     CN_HistorialMedico.guardarPersona(per);
                     //metodo de guardar motivo de consulta
                     CN_HistorialMedico.guardarMotiConsulta(motcons);
+                    //metodo de guardar antecedentes personales
+                    //CN_HistorialMedico.guardarAntecedentesPersonales(antper);
 
                     ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos Guardados Exitosamente')", true);
 

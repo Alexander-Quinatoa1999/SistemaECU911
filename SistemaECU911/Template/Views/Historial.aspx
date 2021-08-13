@@ -89,8 +89,8 @@
                     <div class="list-group list-group-flush" style="padding: 10px; text-align: center">
                         <asp:Table class="table table-bordered table-light text-center" runat="server">
                             <asp:TableRow Style="text-align: center">
-                                <asp:TableCell Text="TIPO DE ANTECEDENTE" Style="width: 300px"></asp:TableCell>
-                                <asp:TableCell Text="ANTECEDENTE" Style="width: 800px"></asp:TableCell>
+                                <asp:TableCell Text="TIPO DE ANTECEDENTE" Style="width: 350px"></asp:TableCell>
+                                <asp:TableCell Text="ANTECEDENTE" Style="width: 750px"></asp:TableCell>
                                 <asp:TableCell Text="DESCRIPCIÓN" Style="width: 200px"></asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
@@ -111,7 +111,7 @@
                                     <textarea id="txt_antePersonales" rows="3" cols="15" style="background-color: transparent; width: 100%; text-align: left; border: none"></textarea>
                                 </asp:TableCell>
                                 <asp:TableCell>
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
+                                    <textarea id="txt_antePersonalesDes" rows="3" cols="5" style="background-color: transparent; width: 100%; text-align: left; border: none"></textarea>
                                 </asp:TableCell>
                             </asp:TableRow>
                         </asp:Table>
@@ -144,10 +144,10 @@
                                         </select>
                                 </asp:TableCell>
                                 <asp:TableCell>
-                                    <textarea id="txt_anteFamiliares" rows="3" cols="15" style="background-color: transparent; width: 100%; text-align: left; border: none"></textarea>
+                                    <textarea id="txt_anteFamiliares" rows="3" cols="15" style="background-color: transparent; width: 100%; text-align: left; border: none" ></textarea>
                                 </asp:TableCell>
                                 <asp:TableCell>
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
+                                    <textarea ID="txt_anteFamiliaresDes" rows="3" cols="5" style="background-color: transparent; width: 100%; text-align: left; border: none"></textarea>
                                 </asp:TableCell>
                             </asp:TableRow>
                         </asp:Table>

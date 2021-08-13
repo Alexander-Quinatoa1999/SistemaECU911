@@ -50,6 +50,21 @@ namespace CapaNegocio
             }
         }
 
+        //Metodo para guardar datos antecedentes personales
+        public static void guardarAntecedentesPersonales(Tbl_AntePersonales antper)
+        {
+            try
+            {
+                antper.AntPer_estado = 'A';
+                dc.Tbl_AntePersonales.InsertOnSubmit(antper);
+                dc.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException("Datos No Guardados" + ex.Message);
+            }
+        }
+
         //Obtener los datos para historial medico
 
     }
