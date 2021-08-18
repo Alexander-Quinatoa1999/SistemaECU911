@@ -24,7 +24,9 @@ namespace SistemaECU911.Template.Views
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            txt_fecha.Text = DateTime.Now.ToString("yyyy-MM-dd");
+            txt_fecha2.Text = DateTime.Now.ToString("yyyy-MM-dd");
+            txt_hora.Text = DateTime.Now.ToString("HH:mm");
         }
 
         protected void btn_guardar_Click(object sender, EventArgs e)
@@ -79,6 +81,7 @@ namespace SistemaECU911.Template.Views
         {
             Response.Redirect("~/Template/Views/Inicio.aspx");
         }
+
     }
 
 

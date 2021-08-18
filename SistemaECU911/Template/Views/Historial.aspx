@@ -31,23 +31,23 @@
                                             <asp:TableCell Text="N° HISTORIA CLÍNICA"></asp:TableCell>
                                         </asp:TableRow>
                                         <asp:TableRow>
-                                            <asp:TableCell>
-                                        <asp:TextBox runat="server" ID="txt_nomEmpresa" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
+                                            <asp:TableCell style="background-color: white">
+                                        <asp:TextBox runat="server" ID="txt_nomEmpresa" BorderStyle="None" style="width:100%; text-align:center"></asp:TextBox>
                                             </asp:TableCell>
-                                            <asp:TableCell>
-                                        <asp:TextBox runat="server" ID="txt_priNombre" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
+                                            <asp:TableCell style="background-color: white">
+                                        <asp:TextBox runat="server" ID="txt_priNombre" BorderStyle="None" style="width:100%; text-align:center"></asp:TextBox>
                                             </asp:TableCell>
-                                            <asp:TableCell>
-                                        <asp:TextBox runat="server" ID="txt_priApellido" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
+                                            <asp:TableCell style="background-color: white">
+                                        <asp:TextBox runat="server" ID="txt_priApellido" BorderStyle="None" style="width:100%; text-align:center"></asp:TextBox>
                                             </asp:TableCell>
-                                            <asp:TableCell>
-                                        <asp:TextBox runat="server" ID="txt_sexo" TextMode="SingleLine" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
+                                            <asp:TableCell style="background-color: white">
+                                        <asp:TextBox runat="server" ID="txt_sexo" BorderStyle="None" style="width:100%; text-align:center"></asp:TextBox>
                                             </asp:TableCell>
-                                            <asp:TableCell>
-                                        <asp:TextBox runat="server" ID="txt_edad" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
+                                            <asp:TableCell style="background-color: white">
+                                        <asp:TextBox runat="server" ID="txt_edad" BorderStyle="None" style="width:100%; text-align:center"></asp:TextBox>
                                             </asp:TableCell>
-                                            <asp:TableCell>
-                                        <asp:TextBox runat="server" ID="txt_numHClinica" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
+                                            <asp:TableCell style="background-color: white">
+                                        <asp:TextBox runat="server" ID="txt_numHClinica" BorderStyle="None" style="width:100%; text-align:center"></asp:TextBox>
                                             </asp:TableCell>
                                         </asp:TableRow>
                                     </asp:Table>
@@ -71,11 +71,11 @@
                                 <asp:TableCell Text="MOTIVO DE CONSULTA (según acompañante)" Style="width: 200px"></asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
-                                <asp:TableCell>
-                                    <asp:TextBox runat="server" ID="txt_moConsulta" BorderStyle="None" style="background-color:transparent; width:100%" TextMode="MultiLine" Rows="3"></asp:TextBox>       
+                                <asp:TableCell style="background-color: white">
+                                    <asp:TextBox runat="server" ID="txt_moConsulta" BorderStyle="None" style="width:100%" TextMode="MultiLine" Rows="3"></asp:TextBox>       
                                 </asp:TableCell>
-                                <asp:TableCell>
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
+                                <asp:TableCell style="background-color: white">
+                                    <asp:TextBox runat="server" BorderStyle="None" style="width:100%" TextMode="MultiLine" Rows="3"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                         </asp:Table>
@@ -94,8 +94,8 @@
                                 <asp:TableCell Text="DESCRIPCIÓN" Style="width: 200px"></asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
-                                <asp:TableCell>
-                                        <select class="form-control" id="cb" style="background-color:transparent; width:100%; text-align:center; border:none">
+                                <asp:TableCell style="background-color: white">
+                                        <select class="form-control" id="cb" style="width:100%; text-align:center; border:none">
                                             <option selected>Seleccione...</option>
                                             <option>ENFERMEDAD CARDIO-VASCULAR</option>
                                             <option>ENFERMEDAD METABÓLICA</option>
@@ -107,11 +107,11 @@
                                             <option>OTROS</option>
                                         </select>
                                 </asp:TableCell>
-                                <asp:TableCell>
-                                    <asp:TextBox runat="server" ID="txt_antePersonales" BorderStyle="None" style="background-color:transparent; width:100%" TextMode="MultiLine" Rows="4"></asp:TextBox>
+                                <asp:TableCell style="background-color: white">
+                                    <asp:TextBox runat="server" ID="txt_antePersonales" BorderStyle="None" style="width:100%" TextMode="MultiLine" Rows="4"></asp:TextBox>
                                 </asp:TableCell>
-                                <asp:TableCell>
-                                    <asp:TextBox runat="server" ID="txt_antePersonalesDes" BorderStyle="None" style="background-color:transparent; width:100%" TextMode="MultiLine" Rows="4"></asp:TextBox>                                    
+                                <asp:TableCell style="background-color: white">
+                                    <asp:TextBox runat="server" ID="txt_antePersonalesDes" BorderStyle="None" style="width:100%" TextMode="MultiLine" Rows="4"></asp:TextBox>                                    
                                 </asp:TableCell>
                             </asp:TableRow>
                         </asp:Table>
@@ -130,8 +130,8 @@
                                 <asp:TableCell Text="DESCRIPCIÓN" Style="width: 200px"></asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
-                                <asp:TableCell>
-                                        <select class="form-control" id="exampleFormControlSelect1" style="background-color:transparent; width:100%; text-align:center; border:none">
+                                <asp:TableCell style="background-color: white">
+                                        <select class="form-control" id="exampleFormControlSelect1" style="width:100%; text-align:center; border:none">
                                             <option selected>Seleccione...</option>
                                             <option>ENFERMEDAD CARDIO-VASCULAR</option>
                                             <option>ENFERMEDAD METABÓLICA</option>
@@ -143,11 +143,11 @@
                                             <option>OTROS</option>
                                         </select>
                                 </asp:TableCell>
-                                <asp:TableCell>
-                                    <asp:TextBox runat="server" ID="txt_anteFamiliares" BorderStyle="None" style="background-color:transparent; width:100%" TextMode="MultiLine" Rows="4"></asp:TextBox>
+                                <asp:TableCell style="background-color: white">
+                                    <asp:TextBox runat="server" ID="txt_anteFamiliares" BorderStyle="None" style="width:100%" TextMode="MultiLine" Rows="4"></asp:TextBox>
                                 </asp:TableCell>
-                                <asp:TableCell>
-                                    <asp:TextBox runat="server" ID="txt_anteFamiliaresDes" BorderStyle="None" style="background-color:transparent; width:100%" TextMode="MultiLine" Rows="4"></asp:TextBox>
+                                <asp:TableCell style="background-color: white">
+                                    <asp:TextBox runat="server" ID="txt_anteFamiliaresDes" BorderStyle="None" style="width:100%" TextMode="MultiLine" Rows="4"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                         </asp:Table>
@@ -159,7 +159,7 @@
                         4. ENFERMEDAD ACTUAL
                     </div>
                     <div class="list-group list-group-flush" style="height: auto; width: auto;">
-                        <asp:TextBox runat="server" ID="txt_enfeActual" BorderStyle="None" style="background-color:transparent; width:100%" TextMode="MultiLine" Rows="4"></asp:TextBox>
+                        <asp:TextBox runat="server" ID="txt_enfeActual" BorderStyle="None" style="width:100%" TextMode="MultiLine" Rows="4"></asp:TextBox>
                     </div>
                 </div>
                 <br />
@@ -176,158 +176,158 @@
                             </asp:TableRow>
                             <asp:TableRow>
                                 <asp:TableCell Text="Órganos de los Sentidos"></asp:TableCell>
-                                <asp:TableCell>
-                                        <select class="form-control" id="exampleFormControlSelect2" style="background-color:transparent; width:100%; text-align:center; border:none">
+                                <asp:TableCell style="background-color: white">
+                                        <select class="form-control" id="exampleFormControlSelect2" style="width:100%; text-align:center; border:none">
                                             <option selected>Seleccione...</option>
                                             <option>Sin Patología</option>
                                             <option>Con Patología</option>
                                         </select>
                                 </asp:TableCell>
-                                <asp:TableCell>
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%" TextMode="MultiLine" Rows="3"></asp:TextBox>
+                                <asp:TableCell style="background-color: white">
+                                        <asp:TextBox runat="server" BorderStyle="None" style="width:100%" TextMode="MultiLine" Rows="3"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
                                 <asp:TableCell Text="Respiratorio"></asp:TableCell>
-                                <asp:TableCell>
-                                        <select class="form-control" id="exampleFormControlSelect3" style="background-color:transparent; width:100%; text-align:center; border:none">
+                                <asp:TableCell style="background-color: white">
+                                        <select class="form-control" id="exampleFormControlSelect3" style="width:100%; text-align:center; border:none">
                                             <option selected>Seleccione...</option>
                                             <option>Sin Patología</option>
                                             <option>Con Patología</option>
                                         </select>
                                 </asp:TableCell>
-                                <asp:TableCell>
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%" TextMode="MultiLine" Rows="3"></asp:TextBox>
+                                <asp:TableCell style="background-color: white">
+                                        <asp:TextBox runat="server" BorderStyle="None" style="width:100%" TextMode="MultiLine" Rows="3"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
                                 <asp:TableCell Text="Cardio Vascular"></asp:TableCell>
-                                <asp:TableCell>
-                                        <select class="form-control" id="exampleFormControlSelect4" style="background-color:transparent; width:100%; text-align:center; border:none">
+                                <asp:TableCell style="background-color: white">
+                                        <select class="form-control" id="exampleFormControlSelect4" style="width:100%; text-align:center; border:none">
                                             <option selected>Seleccione...</option>
                                             <option>Sin Patología</option>
                                             <option>Con Patología</option>
                                         </select>
                                 </asp:TableCell>
-                                <asp:TableCell>
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%" TextMode="MultiLine" Rows="3"></asp:TextBox>
+                                <asp:TableCell style="background-color: white">
+                                        <asp:TextBox runat="server" BorderStyle="None" style="width:100%" TextMode="MultiLine" Rows="3"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
                                 <asp:TableCell Text="Digestivo"></asp:TableCell>
-                                <asp:TableCell>
-                                        <select class="form-control" id="exampleFormControlSelect5" style="background-color:transparent; width:100%; text-align:center; border:none">
+                                <asp:TableCell style="background-color: white">
+                                        <select class="form-control" id="exampleFormControlSelect5" style="width:100%; text-align:center; border:none">
                                             <option selected>Seleccione...</option>
                                             <option>Sin Patología</option>
                                             <option>Con Patología</option>
                                         </select>
                                 </asp:TableCell>
-                                <asp:TableCell>
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%" TextMode="MultiLine" Rows="3"></asp:TextBox>
+                                <asp:TableCell style="background-color: white">
+                                        <asp:TextBox runat="server" BorderStyle="None" style="width:100%" TextMode="MultiLine" Rows="3"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
                                 <asp:TableCell Text="Genital"></asp:TableCell>
-                                <asp:TableCell>
-                                        <select class="form-control" id="exampleFormControlSelect6" style="background-color:transparent; width:100%; text-align:center; border:none">
+                                <asp:TableCell style="background-color: white">
+                                        <select class="form-control" id="exampleFormControlSelect6" style="width:100%; text-align:center; border:none">
                                             <option selected>Seleccione...</option>
                                             <option>Sin Patología</option>
                                             <option>Con Patología</option>
                                         </select>
                                 </asp:TableCell>
-                                <asp:TableCell>
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%" TextMode="MultiLine" Rows="3"></asp:TextBox>
+                                <asp:TableCell style="background-color: white">
+                                        <asp:TextBox runat="server" BorderStyle="None" style="width:100%" TextMode="MultiLine" Rows="3"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
                                 <asp:TableCell Text="Urinario"></asp:TableCell>
-                                <asp:TableCell>
-                                        <select class="form-control" id="exampleFormControlSelect7" style="background-color:transparent; width:100%; text-align:center; border:none">
+                                <asp:TableCell style="background-color: white">
+                                        <select class="form-control" id="exampleFormControlSelect7" style="width:100%; text-align:center; border:none">
                                             <option selected>Seleccione...</option>
                                             <option>Sin Patología</option>
                                             <option>Con Patología</option>
                                         </select>
                                 </asp:TableCell>
-                                <asp:TableCell>
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%" TextMode="MultiLine" Rows="3"></asp:TextBox>
+                                <asp:TableCell style="background-color: white">
+                                        <asp:TextBox runat="server" BorderStyle="None" style="width:100%" TextMode="MultiLine" Rows="3"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
                                 <asp:TableCell Text="Muscular"></asp:TableCell>
-                                <asp:TableCell>
-                                        <select class="form-control" id="exampleFormControlSelect8" style="background-color:transparent; width:100%; text-align:center; border:none">
+                                <asp:TableCell style="background-color: white">
+                                        <select class="form-control" id="exampleFormControlSelect8" style="width:100%; text-align:center; border:none">
                                             <option selected>Seleccione...</option>
                                             <option>Sin Patología</option>
                                             <option>Con Patología</option>
                                         </select>
                                 </asp:TableCell>
-                                <asp:TableCell>
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%" TextMode="MultiLine" Rows="3"></asp:TextBox>
+                                <asp:TableCell style="background-color: white">
+                                        <asp:TextBox runat="server" BorderStyle="None" style="width:100%" TextMode="MultiLine" Rows="3"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
                                 <asp:TableCell Text="Esquelético"></asp:TableCell>
-                                <asp:TableCell>
-                                        <select class="form-control" id="exampleFormControlSelect9" style="background-color:transparent; width:100%; text-align:center; border:none">
+                                <asp:TableCell style="background-color: white">
+                                        <select class="form-control" id="exampleFormControlSelect9" style="width:100%; text-align:center; border:none">
                                             <option selected>Seleccione...</option>
                                             <option>Sin Patología</option>
                                             <option>Con Patología</option>
                                         </select>
                                 </asp:TableCell>
-                                <asp:TableCell>
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%" TextMode="MultiLine" Rows="3"></asp:TextBox>
+                                <asp:TableCell style="background-color: white">
+                                        <asp:TextBox runat="server" BorderStyle="None" style="width:100%" TextMode="MultiLine" Rows="3"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
                                 <asp:TableCell Text="Nervioso"></asp:TableCell>
-                                <asp:TableCell>
-                                        <select class="form-control" id="exampleFormControlSelect10" style="background-color:transparent; width:100%; text-align:center; border:none">
+                                <asp:TableCell style="background-color: white">
+                                        <select class="form-control" id="exampleFormControlSelect10" style="width:100%; text-align:center; border:none">
                                             <option selected>Seleccione...</option>
                                             <option>Sin Patología</option>
                                             <option>Con Patología</option>
                                         </select>
                                 </asp:TableCell>
-                                <asp:TableCell>
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%" TextMode="MultiLine" Rows="3"></asp:TextBox>
+                                <asp:TableCell style="background-color: white">
+                                        <asp:TextBox runat="server" BorderStyle="None" style="width:100%" TextMode="MultiLine" Rows="3"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
                                 <asp:TableCell Text="Endocrino"></asp:TableCell>
-                                <asp:TableCell>
-                                        <select class="form-control" id="exampleFormControlSelect11" style="background-color:transparent; width:100%; text-align:center; border:none">
+                                <asp:TableCell style="background-color: white">
+                                        <select class="form-control" id="exampleFormControlSelect11" style="width:100%; text-align:center; border:none">
                                             <option selected>Seleccione...</option>
                                             <option>Sin Patología</option>
                                             <option>Con Patología</option>
                                         </select>
                                 </asp:TableCell>
-                                <asp:TableCell>
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%" TextMode="MultiLine" Rows="3"></asp:TextBox>
+                                <asp:TableCell style="background-color: white">
+                                        <asp:TextBox runat="server" BorderStyle="None" style="width:100%" TextMode="MultiLine" Rows="3"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
                                 <asp:TableCell Text="Hemo Linfático"></asp:TableCell>
-                                <asp:TableCell>
-                                        <select class="form-control" id="exampleFormControlSelect12" style="background-color:transparent; width:100%; text-align:center; border:none">
+                                <asp:TableCell style="background-color: white">
+                                        <select class="form-control" id="exampleFormControlSelect12" style="width:100%; text-align:center; border:none">
                                             <option selected>Seleccione...</option>
                                             <option>Sin Patología</option>
                                             <option>Con Patología</option>
                                         </select>
                                 </asp:TableCell>
-                                <asp:TableCell>
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%" TextMode="MultiLine" Rows="3"></asp:TextBox>
+                                <asp:TableCell style="background-color: white">
+                                        <asp:TextBox runat="server" BorderStyle="None" style="width:100%" TextMode="MultiLine" Rows="3"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
                                 <asp:TableCell Text="Tegumentario (Piel y Faneras)"></asp:TableCell>
-                                <asp:TableCell>
-                                        <select class="form-control" id="exampleFormControlSelect13" style="background-color:transparent; width:100%; text-align:center; border:none">
+                                <asp:TableCell style="background-color: white">
+                                        <select class="form-control" id="exampleFormControlSelect13" style="width:100%; text-align:center; border:none">
                                             <option selected>Seleccione...</option>
                                             <option>Sin Patología</option>
                                             <option>Con Patología</option>
                                         </select>
                                 </asp:TableCell>
-                                <asp:TableCell>
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%" TextMode="MultiLine" Rows="3"></asp:TextBox>
+                                <asp:TableCell style="background-color: white">
+                                        <asp:TextBox runat="server" BorderStyle="None" style="width:100%" TextMode="MultiLine" Rows="3"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                         </asp:Table>
@@ -343,16 +343,16 @@
                             <asp:Table CssClass="table table-bordered table-light" runat="server">
                                 <asp:TableRow>
                                     <asp:TableCell Style="width: 100px" Text="FECHA:"></asp:TableCell>
-                                    <asp:TableCell>
-                                            <asp:TextBox runat="server" ID="txt_fecha" BorderStyle="None" style="background-color:transparent; width:100%" TextMode="Date"></asp:TextBox>
+                                    <asp:TableCell style="background-color: white">
+                                            <asp:TextBox runat="server" ID="txt_fecha" BorderStyle="None" style="width:100%" TextMode="Date"></asp:TextBox>
                                     </asp:TableCell>
-                                    <asp:TableCell Style="background-color: #DAFEF9" Text="PROFESIONAL:"></asp:TableCell>
-                                    <asp:TableCell>
-                                            <asp:TextBox runat="server" ID="txt_profesional" BorderStyle="None" style="background-color:transparent; width:100%"></asp:TextBox>
+                                    <asp:TableCell Text="PROFESIONAL:"></asp:TableCell>
+                                    <asp:TableCell style="background-color: white">
+                                            <asp:TextBox runat="server" ID="txt_profesional" BorderStyle="None" style="width:100%"></asp:TextBox>
                                     </asp:TableCell>
                                     <asp:TableCell Text="ESPECIALIDAD:"></asp:TableCell>
-                                    <asp:TableCell>
-                                            <asp:TextBox runat="server" ID="txt_especialidad" BorderStyle="None" style="background-color:transparent; width:100%"></asp:TextBox>
+                                    <asp:TableCell style="background-color: white">
+                                            <asp:TextBox runat="server" ID="txt_especialidad" BorderStyle="None" style="width:100%"></asp:TextBox>
                                     </asp:TableCell>
                                 </asp:TableRow>
                             </asp:Table>
@@ -431,8 +431,8 @@
                                 <asp:TableCell Text="DESCRIPCIÓN" style="width: 700px"></asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
-                                <asp:TableCell>
-                                    <select class="form-control" id="exampleFormControlSelect14" style="background-color:transparent; width:100%; text-align:center; border:none">
+                                <asp:TableCell style="background-color: white">
+                                    <select class="form-control" id="exampleFormControlSelect14" style="width:100%; text-align:center; border:none">
                                         <option selected>Seleccione...</option>
                                         <option>Piel</option>
                                         <option>Ojos</option>
@@ -449,16 +449,16 @@
                                         <option>Neurológico</option>
                                     </select>                                        
                                 </asp:TableCell>
-                                <asp:TableCell>
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%"></asp:TextBox>
+                                <asp:TableCell style="background-color: white">
+                                        <asp:TextBox runat="server" BorderStyle="None" style="width:100%"></asp:TextBox>
                                 </asp:TableCell>
-                                <asp:TableCell>
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%" TextMode="MultiLine" Rows="3"></asp:TextBox>
+                                <asp:TableCell style="background-color: white">
+                                        <asp:TextBox runat="server" BorderStyle="None" style="width:100%" TextMode="MultiLine" Rows="3"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
-                                <asp:TableCell>
-                                    <select class="form-control" id="exampleFormControlSelect15" style="background-color:transparent; width:100%; text-align:center; border:none">
+                                <asp:TableCell style="background-color: white">
+                                    <select class="form-control" id="exampleFormControlSelect15" style="width:100%; text-align:center; border:none">
                                         <option selected>Seleccione...</option>
                                         <option>Piel</option>
                                         <option>Ojos</option>
@@ -475,11 +475,11 @@
                                         <option>Neurológico</option>
                                     </select>
                                 </asp:TableCell>
-                                <asp:TableCell>
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%"></asp:TextBox>
+                                <asp:TableCell style="background-color: white">
+                                        <asp:TextBox runat="server" BorderStyle="None" style="width:100%"></asp:TextBox>
                                 </asp:TableCell>
-                                <asp:TableCell>
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%" TextMode="MultiLine" Rows="3"></asp:TextBox>
+                                <asp:TableCell style="background-color: white">
+                                        <asp:TextBox runat="server" BorderStyle="None" style="width:100%" TextMode="MultiLine" Rows="3"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                         </asp:Table>
@@ -501,23 +501,23 @@
                                 <asp:TableCell Text="DESCRIPCIÓN"></asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
-                                <asp:TableCell>
-                                <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
+                                <asp:TableCell style="background-color: white">
+                                <asp:TextBox runat="server" BorderStyle="None" style="width:100%; text-align:center"></asp:TextBox>
                                 </asp:TableCell>
-                                <asp:TableCell>
-                                <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
+                                <asp:TableCell style="background-color: white">
+                                <asp:TextBox runat="server" BorderStyle="None" style="width:100%; text-align:center"></asp:TextBox>
                                 </asp:TableCell>
-                                <asp:TableCell>
-                                <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
+                                <asp:TableCell style="background-color: white">
+                                <asp:TextBox runat="server" BorderStyle="None" style="width:100%; text-align:center"></asp:TextBox>
                                 </asp:TableCell>
-                                <asp:TableCell>
-                                <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
+                                <asp:TableCell style="background-color: white">
+                                <asp:TextBox runat="server" BorderStyle="None" style="width:100%; text-align:center"></asp:TextBox>
                                 </asp:TableCell>
-                                <asp:TableCell>
-                                <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
+                                <asp:TableCell style="background-color: white">
+                                <asp:TextBox runat="server" BorderStyle="None" style="width:100%; text-align:center"></asp:TextBox>
                                 </asp:TableCell>
-                                <asp:TableCell>
-                                <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
+                                <asp:TableCell style="background-color: white">
+                                <asp:TextBox runat="server" BorderStyle="None" style="width:100%; text-align:center"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                         </asp:Table>
@@ -563,22 +563,22 @@
                                 <asp:TableCell Text="FIRMA" Style="width: 150px"></asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
-                                <asp:TableCell>
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center" TextMode="Date"></asp:TextBox>
+                                <asp:TableCell style="background-color: white">
+                                        <asp:TextBox runat="server" ID="txt_fecha2" BorderStyle="None" style="width:100%; text-align:center" TextMode="Date"></asp:TextBox>
                                 </asp:TableCell>
-                                <asp:TableCell>
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center" TextMode="Time"></asp:TextBox>
+                                <asp:TableCell style="background-color: white">
+                                        <asp:TextBox runat="server" ID="txt_hora" BorderStyle="None" style="width:100%; text-align:center" TextMode="Time"></asp:TextBox>
                                 </asp:TableCell>
-                                <asp:TableCell>
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
+                                <asp:TableCell style="background-color: white">
+                                        <asp:TextBox runat="server" BorderStyle="None" style="width:100%; text-align:center"></asp:TextBox>
                                 </asp:TableCell>
-                                <asp:TableCell>
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
+                                <asp:TableCell style="background-color: white">
+                                        <asp:TextBox runat="server" BorderStyle="None" style="width:100%; text-align:center"></asp:TextBox>
                                 </asp:TableCell>
-                                <asp:TableCell>
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
+                                <asp:TableCell style="background-color: white">
+                                        <asp:TextBox runat="server" BorderStyle="None" style="width:100%; text-align:center"></asp:TextBox>
                                 </asp:TableCell>
-                                <asp:TableCell Style="width: 150px"></asp:TableCell>
+                                <asp:TableCell Style="width: 150px; background-color: white"></asp:TableCell>
                             </asp:TableRow>
                         </asp:Table>
                     </div>
