@@ -23,16 +23,16 @@
                                 <div class="col">
                                     <asp:Table class="table table-bordered table-light text-center" runat="server" align="left">
                                         <asp:TableRow Style="text-align: center">
-                                            <asp:TableCell Text="ESTABLECIMIENTO DE SALUD"></asp:TableCell>
-                                            <asp:TableCell Text="NOMBRE"></asp:TableCell>
-                                            <asp:TableCell Text="APELLIDO"></asp:TableCell>
-                                            <asp:TableCell Text="SEXO"></asp:TableCell>
-                                            <asp:TableCell Text="EDAD"></asp:TableCell>
-                                            <asp:TableCell Text="N° HISTORIA CLÍNICA"></asp:TableCell>
+                                            <asp:TableCell Text="ESTABLECIMIENTO DE SALUD" style="width: 210px"></asp:TableCell>
+                                            <asp:TableCell Text="NOMBRE" style="width: 175px"></asp:TableCell>
+                                            <asp:TableCell Text="APELLIDO" style="width: 175px"></asp:TableCell>
+                                            <asp:TableCell Text="SEXO" style="width: 50px"></asp:TableCell>
+                                            <asp:TableCell Text="EDAD" style="width: 50px"></asp:TableCell>
+                                            <asp:TableCell Text="N° HISTORIA CLÍNICA" style="width: 150px"></asp:TableCell>
                                         </asp:TableRow>
                                         <asp:TableRow>
                                             <asp:TableCell style="background-color: white">
-                                        <asp:TextBox runat="server" ID="txt_nomEmpresa" BorderStyle="None" style="width:100%; text-align:center"></asp:TextBox>
+                                        <asp:TextBox runat="server" ID="txt_nomEmpresa" BorderStyle="None" style="width:100%; text-align:center" Text="Servicio Integrado de Seguridad" ReadOnly="True"></asp:TextBox>
                                             </asp:TableCell>
                                             <asp:TableCell style="background-color: white">
                                         <asp:TextBox runat="server" ID="txt_priNombre" BorderStyle="None" style="width:100%; text-align:center"></asp:TextBox>
@@ -111,7 +111,7 @@
                                     <asp:TextBox runat="server" ID="txt_antePersonales" BorderStyle="None" style="width:100%" TextMode="MultiLine" Rows="4"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell style="background-color: white">
-                                    <asp:TextBox runat="server" ID="txt_antePersonalesDes" BorderStyle="None" style="width:100%" TextMode="MultiLine" Rows="4"></asp:TextBox>                                    
+                                    <asp:TextBox runat="server" BorderStyle="None" style="width:100%" TextMode="MultiLine" Rows="4"></asp:TextBox>                                    
                                 </asp:TableCell>
                             </asp:TableRow>
                         </asp:Table>
@@ -147,7 +147,7 @@
                                     <asp:TextBox runat="server" ID="txt_anteFamiliares" BorderStyle="None" style="width:100%" TextMode="MultiLine" Rows="4"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell style="background-color: white">
-                                    <asp:TextBox runat="server" ID="txt_anteFamiliaresDes" BorderStyle="None" style="width:100%" TextMode="MultiLine" Rows="4"></asp:TextBox>
+                                    <asp:TextBox runat="server" BorderStyle="None" style="width:100%" TextMode="MultiLine" Rows="4"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                         </asp:Table>
@@ -348,11 +348,11 @@
                                     </asp:TableCell>
                                     <asp:TableCell Text="PROFESIONAL:"></asp:TableCell>
                                     <asp:TableCell style="background-color: white">
-                                            <asp:TextBox runat="server" ID="txt_profesional" BorderStyle="None" style="width:100%"></asp:TextBox>
+                                            <asp:TextBox runat="server" BorderStyle="None" style="width:100%"></asp:TextBox>
                                     </asp:TableCell>
                                     <asp:TableCell Text="ESPECIALIDAD:"></asp:TableCell>
                                     <asp:TableCell style="background-color: white">
-                                            <asp:TextBox runat="server" ID="txt_especialidad" BorderStyle="None" style="width:100%"></asp:TextBox>
+                                            <asp:TextBox runat="server" BorderStyle="None" style="width:100%"></asp:TextBox>
                                     </asp:TableCell>
                                 </asp:TableRow>
                             </asp:Table>
@@ -453,35 +453,9 @@
                                         <asp:TextBox runat="server" BorderStyle="None" style="width:100%"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell style="background-color: white">
-                                        <asp:TextBox runat="server" BorderStyle="None" style="width:100%" TextMode="MultiLine" Rows="3"></asp:TextBox>
+                                        <asp:TextBox runat="server" ID="txt_exafisdescripcion" BorderStyle="None" style="width:100%" TextMode="MultiLine" Rows="3"></asp:TextBox>
                                 </asp:TableCell>
-                            </asp:TableRow>
-                            <asp:TableRow>
-                                <asp:TableCell style="background-color: white">
-                                    <select class="form-control" id="exampleFormControlSelect15" style="width:100%; text-align:center; border:none">
-                                        <option selected>Seleccione...</option>
-                                        <option>Piel</option>
-                                        <option>Ojos</option>
-                                        <option>Oido</option>
-                                        <option>Oro faringe</option>
-                                        <option>Nariz</option>
-                                        <option>Cuello</option>
-                                        <option>Tórax</option>
-                                        <option>Tórax 2</option>
-                                        <option>Abdomen</option>
-                                        <option>Columna</option>
-                                        <option>Pelvis</option>
-                                        <option>Extremidades</option>
-                                        <option>Neurológico</option>
-                                    </select>
-                                </asp:TableCell>
-                                <asp:TableCell style="background-color: white">
-                                        <asp:TextBox runat="server" BorderStyle="None" style="width:100%"></asp:TextBox>
-                                </asp:TableCell>
-                                <asp:TableCell style="background-color: white">
-                                        <asp:TextBox runat="server" BorderStyle="None" style="width:100%" TextMode="MultiLine" Rows="3"></asp:TextBox>
-                                </asp:TableCell>
-                            </asp:TableRow>
+                            </asp:TableRow>                            
                         </asp:Table>
                     </div>
                 </div>
@@ -501,13 +475,13 @@
                                 <asp:TableCell Text="DESCRIPCIÓN"></asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
-                                <asp:TableCell style="background-color: white">
+                                <asp:TableCell style="width: 250px; background-color: white">
                                 <asp:TextBox runat="server" BorderStyle="None" style="width:100%; text-align:center"></asp:TextBox>
                                 </asp:TableCell>
-                                <asp:TableCell style="background-color: white">
+                                <asp:TableCell style="width: 75px; background-color: white">
                                 <asp:TextBox runat="server" BorderStyle="None" style="width:100%; text-align:center"></asp:TextBox>
                                 </asp:TableCell>
-                                <asp:TableCell style="background-color: white">
+                                <asp:TableCell style="width: 100px; background-color: white">
                                 <asp:TextBox runat="server" BorderStyle="None" style="width:100%; text-align:center"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell style="background-color: white">
@@ -529,7 +503,7 @@
                         9. PLAN DE TRATAMIENTO
                     </div>
                     <div class="list-group list-group-flush">
-                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%" TextMode="MultiLine" Rows="4"></asp:TextBox>
+                        <asp:TextBox runat="server" ID="txt_tratamiento" BorderStyle="None" style="background-color:transparent; width:100%" TextMode="MultiLine" Rows="4"></asp:TextBox>
                     </div>
                 </div>
                 <br />
@@ -538,7 +512,7 @@
                         10. EVOLUCIÓN
                     </div>
                     <div class="list-group list-group-flush">
-                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%" TextMode="MultiLine" Rows="4"></asp:TextBox>
+                        <asp:TextBox runat="server" ID="txt_evolucion" BorderStyle="None" style="background-color:transparent; width:100%" TextMode="MultiLine" Rows="4"></asp:TextBox>
                     </div>
                 </div>
                 <br />
@@ -547,7 +521,7 @@
                         11. PRESCRIPCIONES
                     </div>
                     <div class="list-group list-group-flush">
-                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%" TextMode="MultiLine" Rows="4"></asp:TextBox>
+                        <asp:TextBox runat="server" ID="txt_prescipciones" BorderStyle="None" style="background-color:transparent; width:100%" TextMode="MultiLine" Rows="4"></asp:TextBox>
                     </div>
                 </div>
                 <br />
@@ -563,20 +537,20 @@
                                 <asp:TableCell Text="FIRMA" Style="width: 150px"></asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
-                                <asp:TableCell style="background-color: white">
+                                <asp:TableCell style="width: 70px; background-color: white">
                                         <asp:TextBox runat="server" ID="txt_fecha2" BorderStyle="None" style="width:100%; text-align:center" TextMode="Date"></asp:TextBox>
                                 </asp:TableCell>
-                                <asp:TableCell style="background-color: white">
+                                <asp:TableCell style="width: 65px; background-color: white">
                                         <asp:TextBox runat="server" ID="txt_hora" BorderStyle="None" style="width:100%; text-align:center" TextMode="Time"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell style="background-color: white">
-                                        <asp:TextBox runat="server" BorderStyle="None" style="width:100%; text-align:center"></asp:TextBox>
+                                        <asp:TextBox runat="server" ID="txt_especialidad" BorderStyle="None" style="width:100%; text-align:center"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell style="background-color: white">
-                                        <asp:TextBox runat="server" BorderStyle="None" style="width:100%; text-align:center"></asp:TextBox>
+                                        <asp:TextBox runat="server" ID="txt_nombreProf" BorderStyle="None" style="width:100%; text-align:center"></asp:TextBox>
                                 </asp:TableCell>
-                                <asp:TableCell style="background-color: white">
-                                        <asp:TextBox runat="server" BorderStyle="None" style="width:100%; text-align:center"></asp:TextBox>
+                                <asp:TableCell style="width: 150px; background-color: white">
+                                        <asp:TextBox runat="server" ID="txt_codigo" BorderStyle="None" style="width:100%; text-align:center"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="width: 150px; background-color: white"></asp:TableCell>
                             </asp:TableRow>

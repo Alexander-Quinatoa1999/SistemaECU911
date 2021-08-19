@@ -11,7 +11,7 @@ namespace SistemaECU911.Template.Views
 {
 
 
-    public partial class SocioEconomico
+    public partial class SocioEconomico1
     {
 
         /// <summary>
