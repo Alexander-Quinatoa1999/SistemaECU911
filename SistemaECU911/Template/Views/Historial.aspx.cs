@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
@@ -13,7 +14,7 @@ namespace SistemaECU911.Template.Views
     public partial class Historial : System.Web.UI.Page
     {
 
-        SqlConnection con = new SqlConnection(@"Data Source=ANDRES-SOSA;Initial Catalog=SistemaECU911;Integrated Security=True");
+        DataClassesECU911DataContext db = new DataClassesECU911DataContext();
 
         //Objeto de la tabla personas
         private Tbl_Personas per = new Tbl_Personas();
@@ -25,6 +26,8 @@ namespace SistemaECU911.Template.Views
         private Tbl_AnteFamiliares antfam = new Tbl_AnteFamiliares();
         //Objeto de la tabla enfermedad actual
         private Tbl_EnfermedadActual enfact = new Tbl_EnfermedadActual();
+        //Objeto de la tabla signos vitales y antropometricos
+        private Tbl_ConsVitAntro consvit = new Tbl_ConsVitAntro();
         //Objeto de la tabla examen fisico
         private Tbl_ExaFisRegional exafis = new Tbl_ExaFisRegional();
         //Objeto de la tabla plan de tratamiento
@@ -41,24 +44,159 @@ namespace SistemaECU911.Template.Views
             if (!IsPostBack)
             {
                 txt_fecha.Text = DateTime.Now.ToString("yyyy-MM-dd");
-                txt_fecha2.Text = DateTime.Now.ToString("yyyy-MM-dd");
-                txt_hora.Text = DateTime.Now.ToString("HH:mm");
+                txt_fecha2.Text = DateTime.Now.ToString(" dd/MM/yyyy " + " HH:mm ");
+
+                cargarDatosDefecto();
+
+                cargarTipoAntecedentePersonal();
+                cargarTipoAntecedenteFamiliar();
+                cargarProfesional();
+                cargarEspecialidad();
+                cargarProf();
+                cargarEspe();
+                cargarRegion();
             }            
+        }
+
+        private void cargarDatosDefecto()
+        {
+
+            SqlConnection con = new SqlConnection(@"Data Source=ANDRES-SOSA\SQLEXPRESS;Initial Catalog=SistemaECU911;Integrated Security=True");
+            con.Open();
+
+            SqlCommand cmd = new SqlCommand("SELECT Emp_nombre FROM Tbl_Empresa WHERE Emp_estado = 'A' ", con);
+            SqlDataReader consulta = cmd.ExecuteReader();
+
+            if (consulta.Read())
+            {
+                txt_nomEmpresa.Text = consulta.ToString();
+            }
+
+            consulta.Close();
+            con.Close();
+
+        }
+
+        private void cargarTipoAntecedentePersonal()
+        {
+            List<Tbl_Tipos_de_Enfermedades> listaTipoAnte = new List<Tbl_Tipos_de_Enfermedades>();
+            listaTipoAnte = CN_HistorialMedico.obtenerTipoAntecedente();
+            listaTipoAnte.Insert(0, new Tbl_Tipos_de_Enfermedades() { TiEnf_nombre = "Seleccione ........" });
+
+            ddl_tipoAntPer.DataSource = listaTipoAnte;
+            ddl_tipoAntPer.DataTextField = "TiEnf_nombre";
+            ddl_tipoAntPer.DataValueField = "TiEnf_id";
+            ddl_tipoAntPer.DataBind();
+        }
+
+        private void cargarTipoAntecedenteFamiliar()
+        {
+            List<Tbl_Tipos_de_Enfermedades> listaTipoAnte = new List<Tbl_Tipos_de_Enfermedades>();
+            listaTipoAnte = CN_HistorialMedico.obtenerTipoAntecedente();
+            listaTipoAnte.Insert(0, new Tbl_Tipos_de_Enfermedades() { TiEnf_nombre = "Seleccione ........" });
+
+            ddl_tipoAntFam.DataSource = listaTipoAnte;
+            ddl_tipoAntFam.DataTextField = "TiEnf_nombre";
+            ddl_tipoAntFam.DataValueField = "TiEnf_id";
+            ddl_tipoAntFam.DataBind();
+        }
+
+        private void cargarRegion()
+        {
+            List<Tbl_Regiones> listaReg = new List<Tbl_Regiones>();
+            listaReg = CN_HistorialMedico.obtenerRegion();
+            listaReg.Insert(0, new Tbl_Regiones() { Regiones_nombres = "Seleccione ........" });
+
+            ddl_region.DataSource = listaReg;
+            ddl_region.DataTextField = "Regiones_nombres";
+            ddl_region.DataValueField = "Regiones_id";
+            ddl_region.DataBind();
+            ddl_tipoRegion.Items.Insert(0, new ListItem("Seleccione ........", "0"));
+
+        }
+
+        protected void ddl_region_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int regionid = Convert.ToInt32(ddl_region.SelectedValue);
+
+            var query = from tipreg in db.Tbl_TipoExaFisRegional where tipreg.Regiones_id == regionid select tipreg;
+
+            ddl_tipoRegion.DataSource = query.ToList();
+            ddl_tipoRegion.DataTextField = "tipoExa_nombres";
+            ddl_tipoRegion.DataValueField = "tipoExa_id";
+            ddl_tipoRegion.DataBind();
+            ddl_tipoRegion.Items.Insert(0, new ListItem("Seleccione ........", "0"));
+        }
+
+
+        private void cargarProf()
+        {
+            List<Tbl_Profesional> listaProf = new List<Tbl_Profesional>();
+            listaProf = CN_HistorialMedico.obtenerProfesional();
+            listaProf.Insert(0, new Tbl_Profesional() { prof_NomApe = "Seleccione ........" });
+
+            ddl_prof.DataSource = listaProf;
+            ddl_prof.DataTextField = "prof_NomApe";
+            ddl_prof.DataValueField = "prof_id";
+            ddl_prof.DataBind();
+        }
+
+        private void cargarEspe()
+        {
+            List<Tbl_Especialidad> listaEspec = new List<Tbl_Especialidad>();
+            listaEspec = CN_HistorialMedico.obtenerEspecialidad();
+            listaEspec.Insert(0, new Tbl_Especialidad() { espec_nombre = "Seleccione ........" });
+
+            ddl_espe.DataSource = listaEspec;
+            ddl_espe.DataTextField = "espec_nombre";
+            ddl_espe.DataValueField = "espec_id";
+            ddl_espe.DataBind();
+        }
+
+        private void cargarProfesional()
+        {
+            List<Tbl_Profesional> listaProf = new List<Tbl_Profesional>();
+            listaProf = CN_HistorialMedico.obtenerProfesional();
+            listaProf.Insert(0, new Tbl_Profesional() { prof_NomApe = "Seleccione ........" });
+
+            ddl_profesional.DataSource = listaProf;
+            ddl_profesional.DataTextField = "prof_NomApe";
+            ddl_profesional.DataValueField = "prof_id";
+            ddl_profesional.DataBind();
+        }
+
+        private void cargarEspecialidad()
+        {
+            List<Tbl_Especialidad> listaEspec = new List<Tbl_Especialidad>();
+            listaEspec = CN_HistorialMedico.obtenerEspecialidad();
+            listaEspec.Insert(0, new Tbl_Especialidad() { espec_nombre = "Seleccione ........" });
+
+            ddl_especialidad.DataSource = listaEspec;
+            ddl_especialidad.DataTextField = "espec_nombre";
+            ddl_especialidad.DataValueField = "espec_id";
+            ddl_especialidad.DataBind();
         }
 
         protected void btn_guardar_Click(object sender, EventArgs e)
         {
-            GuardarHistorial();                          
+            GuardarHistorial();
         }
 
         private void GuardarHistorial()
-        {            
+        {
             try
             {
                 //Guardar Persona
                 if (string.IsNullOrEmpty(txt_priNombre.Text) || string.IsNullOrEmpty(txt_priApellido.Text) ||
                     string.IsNullOrEmpty(txt_sexo.Text) || string.IsNullOrEmpty(txt_edad.Text) || string.IsNullOrEmpty(txt_numHClinica.Text) ||
-                    string.IsNullOrEmpty(txt_moConsulta.Text) || string.IsNullOrEmpty(txt_antePersonales.Text) || string.IsNullOrEmpty(txt_anteFamiliares.Text))
+                    string.IsNullOrEmpty(txt_moConsulta.Text) || string.IsNullOrEmpty(txt_antePersonales.Text) ||
+                    string.IsNullOrEmpty(txt_anteFamiliares.Text) || ddl_tipoAntPer.SelectedValue == "0" || ddl_tipoAntFam.SelectedValue == "0"
+                    || ddl_espe.SelectedValue == "0" || ddl_prof.SelectedValue == "0" || ddl_region.SelectedValue == "0" ||
+                    ddl_especialidad.SelectedValue == "0" || ddl_profesional.SelectedValue == "0" || string.IsNullOrEmpty(txt_presArterial.Text)
+                    || string.IsNullOrEmpty(txt_temperatura.Text) || string.IsNullOrEmpty(txt_frecCardiaca.Text) ||
+                    string.IsNullOrEmpty(txt_satOxigeno.Text) || string.IsNullOrEmpty(txt_frecRespiratoria.Text) ||
+                    string.IsNullOrEmpty(txt_peso.Text) || string.IsNullOrEmpty(txt_talla.Text) || string.IsNullOrEmpty(txt_indMasCorporal.Text)
+                    || string.IsNullOrEmpty(txt_perAbdominal.Text))
                 {
                     ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Complete los campos')", true);
                 }
@@ -69,6 +207,7 @@ namespace SistemaECU911.Template.Views
                     antper = new Tbl_AntePersonales();
                     antfam = new Tbl_AnteFamiliares();
                     enfact = new Tbl_EnfermedadActual();
+                    consvit = new Tbl_ConsVitAntro();
                     exafis = new Tbl_ExaFisRegional();
                     rectra = new Tbl_RecoTratamiento();
                     evo = new Tbl_Evolucion();
@@ -84,11 +223,23 @@ namespace SistemaECU911.Template.Views
                     //captura de datos tbl_motivoconsulta
                     motcons.Mcon_descripcion = txt_moConsulta.Text;
                     //captura de datos tbl_antepersonales
+                    antper.TiEnf_id = Convert.ToInt32(ddl_tipoAntPer.SelectedValue);
                     antper.AntPer_descripcion = txt_antePersonales.Text;
                     //captura de datos tbl_antefamiliares
+                    antfam.TiEnf_id = Convert.ToInt32(ddl_tipoAntFam.SelectedValue);
                     antfam.AntFami_descripcion = txt_anteFamiliares.Text;
                     //captura de datos Tbl_EnfermedadActual
                     enfact.EnfActu_descrip = txt_enfeActual.Text;
+                    //captura de datos Tbl_ConsVitAntro
+                    consvit.ConsVitAntro_preArterial = txt_presArterial.Text;
+                    consvit.ConsVitAntro_temperatura = txt_temperatura.Text;
+                    consvit.ConsVitAntro_frecCardiacan = txt_frecCardiaca.Text;
+                    consvit.ConsVitAntro_satOxigenon = txt_satOxigeno.Text;
+                    consvit.ConsVitAntro_frecRespiratorian = txt_frecRespiratoria.Text;
+                    consvit.ConsVitAntro_peson = txt_peso.Text;
+                    consvit.ConsVitAntro_tallan = txt_talla.Text;
+                    consvit.ConsVitAntro_indMasCorporaln = txt_indMasCorporal.Text;
+                    consvit.ConsVitAntro_perAbdominaln = txt_perAbdominal.Text;
                     //captura de datos Tbl_ExaFisRegional
                     exafis.ExaFisRegional_observaciones = txt_exafisdescripcion.Text;
                     //captura de datos Tbl_RecoTratamiento
@@ -97,9 +248,12 @@ namespace SistemaECU911.Template.Views
                     evo.Evolucion_notas = txt_evolucion.Text;
                     //captura de datos Tbl_Prescipciones
                     pres.Press_descripcion = txt_prescipciones.Text;
-                    //captura de datos Tbl_Prescipciones
-                    prof.Profe_fecha = Convert.ToDateTime(txt_fecha2.Text);
-                    prof.Profe_hora = Convert.ToDateTime(txt_hora.Text);
+                    //captura de datos Tbl_Profesional
+                    prof.DatProfe_fecha_hora = Convert.ToDateTime(txt_fecha2.Text);
+                    prof.prof_id = Convert.ToInt32(ddl_profesional.SelectedValue);
+                    prof.espec_id = Convert.ToInt32(ddl_especialidad.SelectedValue);
+                    prof.DatProfe_cod = txt_codigo.Text;
+
 
                     //metodo de guardar personas
                     CN_HistorialMedico.guardarPersona(per);
@@ -111,6 +265,8 @@ namespace SistemaECU911.Template.Views
                     CN_HistorialMedico.guardarAntecedentesFamiliares(antfam);
                     //metodo de guardar enfermedad actual
                     CN_HistorialMedico.guardarEnfermedadActual(enfact);
+                    //metodo de guardar enfermedad actual
+                    CN_HistorialMedico.guardarSisgnosVitalesAntropometricos2(consvit);
                     //metodo de guardar examen fisico
                     CN_HistorialMedico.guardarExamenFisico(exafis);
                     //metodo de guardar tratamiento
@@ -135,19 +291,43 @@ namespace SistemaECU911.Template.Views
             {
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos No Guardados')", true);
             }
-                        
-        }       
+
+        }
 
         private void limpiar()
         {
-            txt_priNombre.Text = txt_priApellido.Text = txt_sexo.Text = txt_edad.Text = txt_numHClinica.Text = txt_moConsulta.Text = 
+            txt_priNombre.Text = txt_priApellido.Text = txt_sexo.Text = txt_edad.Text = txt_numHClinica.Text = txt_moConsulta.Text =
                 txt_antePersonales.Text = txt_anteFamiliares.Text = txt_enfeActual.Text = txt_exafisdescripcion.Text = txt_tratamiento.Text =
-                txt_evolucion.Text = txt_prescipciones.Text = "";
+                txt_evolucion.Text = txt_prescipciones.Text = txt_presArterial.Text = txt_temperatura.Text = txt_frecCardiaca.Text =
+                txt_satOxigeno.Text = txt_frecRespiratoria.Text = txt_peso.Text = txt_talla.Text = txt_indMasCorporal.Text =
+                txt_perAbdominal.Text = "";
+
+            ddl_espe.ClearSelection();
+            ddl_especialidad.ClearSelection();
+            ddl_prof.ClearSelection();
+            ddl_profesional.ClearSelection();
+            ddl_region.ClearSelection();
+            ddl_tipoAntFam.ClearSelection();
+            ddl_tipoAntPer.ClearSelection();
+            ddl_tipoRegion.ClearSelection();
         }
 
         protected void btn_cancelar_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/Template/Views/Inicio.aspx");
+        }
+
+        public DataSet Consultar(string consultaSQL)
+        {
+            SqlConnection con = new SqlConnection(@"Data Source=ANDRES-SOSA;Initial Catalog=SistemaECU911;Integrated Security=True");
+            con.Open();
+            SqlCommand cmd = new SqlCommand(consultaSQL, con);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            con.Close();
+
+            return ds;
         }
 
     }

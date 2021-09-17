@@ -27,6 +27,41 @@ namespace CapaNegocio
             return listaPer.ToList();
         }
 
+        //metodo traer para tipo de antecedente
+        public static List<Tbl_Tipos_de_Enfermedades> obtenerTipoAntecedente()
+        {
+            var lista = dc.Tbl_Tipos_de_Enfermedades.Where(tipant => tipant.TiEnf_estado == "A");
+            return lista.ToList();
+        }
+
+        //metodo para traer regiones de examenes
+        public static List<Tbl_Regiones> obtenerRegion()
+        {
+            var lista = dc.Tbl_Regiones.Where(reg => reg.Regiones_estado == "A");
+            return lista.ToList();
+        }
+
+        ////metodo para traer tipos de regiones de examenes
+        //public static List<Tbl_TipoExaFisRegional> obtenerTipoExamenRegionxId(int regionid)
+        //{
+        //    var lista = dc.Tbl_TipoExaFisRegional.Where(tipreg => tipreg.Regiones_id.Equals(regionid) && tipreg.tipoExa_estado == "A");
+        //    return lista.ToList();
+        //}
+
+        //metodo traer especialidad
+        public static List<Tbl_Especialidad> obtenerEspecialidad()
+        {
+            var lista = dc.Tbl_Especialidad.Where(espec => espec.espec_estado == "A");
+            return lista.ToList();
+        }
+
+        //metodo para traer profesional
+        public static List<Tbl_Profesional> obtenerProfesional()
+        {
+            var lista = dc.Tbl_Profesional.Where(prof => prof.prof_estado == "A");
+            return lista.ToList();
+        }
+
         //Metodo para guardar datos Persona
         public static void guardarPersona(Tbl_Personas per)
         {
@@ -117,13 +152,13 @@ namespace CapaNegocio
             }
         }
 
-        //6. Metodo para guardar datos signos vitales y antropometricos
-        public static void guardarSisgnosVitalesAntropometricos(Tbl_RevisionOrganosSistemasPrincipal revOrSisPrin)
+        //6. Metodo para guardar datos signos vitales y antropometricos 2
+        public static void guardarSisgnosVitalesAntropometricos2(Tbl_ConsVitAntro consVitAntro)
         {
             try
             {
-                revOrSisPrin.RevOrgSisPrin_estado = 'A';
-                dc.Tbl_RevisionOrganosSistemasPrincipal.InsertOnSubmit(revOrSisPrin);
+                consVitAntro.ConsVitAntro_estado = "A";
+                dc.Tbl_ConsVitAntro.InsertOnSubmit(consVitAntro);
                 dc.SubmitChanges();
             }
             catch (Exception ex)
@@ -137,7 +172,7 @@ namespace CapaNegocio
         {
             try
             {
-                exafis.ExaFisRegional_estado = 'A';
+                exafis.ExaFisRegional_estado = "A";
                 dc.Tbl_ExaFisRegional.InsertOnSubmit(exafis);
                 dc.SubmitChanges();
             }
@@ -197,7 +232,7 @@ namespace CapaNegocio
         {
             try
             {
-                prof.Profe_estado = 'A';
+                prof.DatProfe_estado = "A";
                 dc.Tbl_DatProfesional.InsertOnSubmit(prof);
                 dc.SubmitChanges();
             }
