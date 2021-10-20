@@ -11,6 +11,7 @@ namespace CapaNegocio
     public class CN_HistorialMedico
     {
 
+        //private static DataClassesECU911DataContext dc = new DataClassesECU911DataContext();
         private static DataClassesECU911DataContext dc = new DataClassesECU911DataContext();
 
         //metodo traer para la empresa
@@ -23,8 +24,22 @@ namespace CapaNegocio
         //metodo traer para todos los usuarios
         public static List<Tbl_Personas> obtenerPersonas()
         {
-            var listaPer = dc.Tbl_Personas.Where(per => per.Per_estado == 'A');
+            var listaPer = dc.Tbl_Personas.Where(per => per.Per_estado == "A");
             return listaPer.ToList();
+        }
+
+        //metodo traer para todos los usuarios x ID
+        public static Tbl_Personas obtenerPersonasxId(int personaid)
+        {
+            var perid = dc.Tbl_Personas.FirstOrDefault(per => per.Per_id.Equals(personaid) && per.Per_estado == "A");
+            return perid;
+        }
+
+        //metodo para traer motivo de consulta x ID
+        public static Tbl_MotivoConsulta obtenerMotivoConsultaxid(int motivoconsid)
+        {
+            var motconsid = dc.Tbl_MotivoConsulta.FirstOrDefault(motcons => motcons.Mcon_id.Equals(motivoconsid) && motcons.Mcon_estado == "A");
+            return motconsid;
         }
 
         //metodo traer para tipo de antecedente
@@ -62,13 +77,28 @@ namespace CapaNegocio
             return lista.ToList();
         }
 
-        //Metodo para guardar datos Persona
-        public static void guardarPersona(Tbl_Personas per)
+        ////Metodo para guardar datos Persona
+        //public static void guardarPersona(Tbl_Personas per)
+        //{
+        //    try
+        //    {
+        //        per.Per_estado = 'A';
+        //        dc.Tbl_Personas.InsertOnSubmit(per);
+        //        dc.SubmitChanges();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw new ArgumentException("Datos No Guardados" + ex.Message);
+        //    }
+        //}
+
+        //1. Metodo para guardar datos motivo de consulta
+        public static void guardarMotiConsulta(Tbl_MotivoConsulta motcons)
         {
             try
             {
-                per.Per_estado = 'A';
-                dc.Tbl_Personas.InsertOnSubmit(per);
+                motcons.Mcon_estado = "A";
+                dc.Tbl_MotivoConsulta.InsertOnSubmit(motcons);
                 dc.SubmitChanges();
             }
             catch (Exception ex)
@@ -77,18 +107,16 @@ namespace CapaNegocio
             }
         }
 
-        //1. Metodo para guardar datos motivo de consulta
-        public static void guardarMotiConsulta(Tbl_MotivoConsulta motcons)
+        //1.1. Metodo para modificar datos motivo de consulta
+        public static void modificarMotiConsulta(Tbl_MotivoConsulta motcons)
         {
             try
             {
-                motcons.Mcon_estado = 'A';
-                dc.Tbl_MotivoConsulta.InsertOnSubmit(motcons);
                 dc.SubmitChanges();
             }
             catch (Exception ex)
             {
-                throw new ArgumentException("Datos No Guardados" + ex.Message);
+                throw new ArgumentException("Los datos no han sido modificados <br/>" + ex.Message);
             }
         }
 

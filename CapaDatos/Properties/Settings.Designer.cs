@@ -64,5 +64,36 @@ namespace CapaDatos.Properties {
                 return ((string)(this["SistemaECU911ConnectionString3"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=ANDRES-SOSA\\SQLEXPRESS;Initial Catalog=ECU911;Integrated Security=Tru" +
+            "e")]
+        public string ECU911ConnectionString {
+            get {
+                return ((string)(this["ECU911ConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=RRHHECU911;Integrated Security=True")]
+        public string RRHHECU911ConnectionString {
+            get {
+                return ((string)(this["RRHHECU911ConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=SistemaECU911;Integrated Security=True")]
+        public string SistemaECU911ConnectionString4 {
+            get {
+                return ((string)(this["SistemaECU911ConnectionString4"]));
+            }
+        }
     }
 }

@@ -46,7 +46,7 @@
                     </ul>
                     <ul class="navbar-nav navbar-nav-right">
                         <li class="nav-item d-none d-lg-flex">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="Historial.aspx">
                                 <span class="btn btn-primary">+ Crear Nuevo </span>
                             </a>
                         </li>

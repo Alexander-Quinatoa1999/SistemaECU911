@@ -32,22 +32,22 @@
                                         </asp:TableRow>
                                         <asp:TableRow>
                                             <asp:TableCell Style="background-color: white">
-                                                <asp:TextBox runat="server" ID="txt_nomEmpresa" BorderStyle="None" Style="width: 100%; text-align: center"></asp:TextBox>
+                                                <asp:TextBox runat="server" ID="txt_nomEmpresa" BorderStyle="None" Style="width: 100%; text-align: center" Text="Servicio integrado de seguridad" ReadOnly="True"></asp:TextBox>
                                             </asp:TableCell>
                                             <asp:TableCell Style="background-color: white">
-                                                <asp:TextBox runat="server" ID="txt_priNombre" BorderStyle="None" Style="width: 100%; text-align: center"></asp:TextBox>
+                                                <asp:TextBox runat="server" ID="txt_priNombre" BorderStyle="None" Style="width: 100%; text-align: center" ReadOnly="True"></asp:TextBox>
                                             </asp:TableCell>
                                             <asp:TableCell Style="background-color: white">
-                                                <asp:TextBox runat="server" ID="txt_priApellido" BorderStyle="None" Style="width: 100%; text-align: center"></asp:TextBox>
+                                                <asp:TextBox runat="server" ID="txt_priApellido" BorderStyle="None" Style="width: 100%; text-align: center" ReadOnly="True"></asp:TextBox>
                                             </asp:TableCell>
                                             <asp:TableCell Style="background-color: white">
-                                                <asp:TextBox runat="server" ID="txt_sexo" BorderStyle="None" Style="width: 100%; text-align: center"></asp:TextBox>
+                                                <asp:TextBox runat="server" ID="txt_sexo" BorderStyle="None" Style="width: 100%; text-align: center" ReadOnly="True"></asp:TextBox>
                                             </asp:TableCell>
                                             <asp:TableCell Style="background-color: white">
-                                                <asp:TextBox runat="server" ID="txt_edad" BorderStyle="None" Style="width: 100%; text-align: center"></asp:TextBox>
+                                                <asp:TextBox runat="server" ID="txt_edad" BorderStyle="None" Style="width: 100%; text-align: center" ReadOnly="True"></asp:TextBox>
                                             </asp:TableCell>
                                             <asp:TableCell Style="background-color: white">
-                                                <asp:TextBox runat="server" ID="txt_numHClinica" BorderStyle="None" Style="width: 100%; text-align: center"></asp:TextBox>
+                                                <asp:TextBox runat="server" ID="txt_numHClinica" BorderStyle="None" Style="width: 100%; text-align: center" ReadOnly="True"></asp:TextBox>
                                             </asp:TableCell>
                                         </asp:TableRow>
                                     </asp:Table>
@@ -403,7 +403,7 @@
                             </asp:TableRow>
                             <asp:TableRow>
                                 <asp:TableCell Style="background-color: white">
-                                    <asp:DropDownList ID="ddl_region" CssClass="form-check" Style="width: 100%; border: none" runat="server" OnSelectedIndexChanged="ddl_region_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
+                                    <asp:DropDownList ID="ddl_region" CssClass="form-check" Style="width: 100%; border: none" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddl_region_SelectedIndexChanged"></asp:DropDownList>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white">
                                     <asp:DropDownList ID="ddl_tipoRegion" CssClass="form-check" Style="width: 100%; border: none" runat="server"></asp:DropDownList>
@@ -512,6 +512,7 @@
                 <br />
                 <div class="container" align="center">
                     <asp:Button CssClass="btn btn-primary" ID="btn_guardar" runat="server" Text="Guardar" OnClick="btn_guardar_Click" />
+                    <asp:Button CssClass="btn btn-primary" ID="btn_modificar" runat="server" Text="Modificar" OnClick="btn_modificar_Click"  />
                     <asp:Button CssClass="btn btn-secondary" ID="btn_cancelar" runat="server" Text="Cancelar" OnClick="btn_cancelar_Click" />
                 </div>
                 <br />

@@ -15,57 +15,49 @@
                         </div>
                     </div>
                 </div>
-                <br />
+                <hr />
+                <div class="row  justify-content-center">
+                    <ul class="navbar-nav">
+                        <li class="nav-item nav-search d-none d-md-flex">
+                            <div class="nav-link">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="fas fa-search"></i>
+                                        </span>
+                                    </div>
+                                    <asp:TextBox class="form-control" ID="txt_buscar" OnTextChanged="txt_buscar_TextChanged" placeholder="Buscar..." AutoPostBack="true" aria-label="Search" runat="server"></asp:TextBox>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <hr />
                 <div class="card" style="width: auto;">
                     <div class="list-group list-group-flush" style="padding: 10px; text-align: center">
                         <div class="container">
-                            <div class="row">
-                                <div class="col">
-                                    <asp:GridView ID="grvPacientes" AutoGenerateColumns="false" Width="100%" CssClass="table table-bordered table-light text-center" GridLines="None" runat="server">
+                            <div class="row justify-content-center">
+                                <div class="col-auto">
+                                    <asp:GridView ID="grvPacientes" OnRowCommand="grvPacientes_RowCommand" AutoGenerateColumns="false" PageSize="5" AllowPaging="true" AllowCustomPaging="true"  OnPageIndexChanging="grvPacientes_PageIndexChanging" Width="100%" CssClass="table table-hover text-center table-responsive" GridLines="None" runat="server" Style="margin-right: 0px">
                                         <Columns>
-                                            <asp:TemplateField HeaderText="Codigo">
-                                                <ItemTemplate>
-                                                    <asp:Label ID="Per_id" runat="server" Text='<%#Eval("Per_id")%>'></asp:Label>
-                                                </ItemTemplate>
-                                            </asp:TemplateField>
-                                            <asp:TemplateField HeaderText="Primer Nombre">
-                                                <ItemTemplate>
-                                                    <asp:Label ID="Per_priNombre" runat="server" Text='<%#Eval("Per_priNombre")%>'></asp:Label>
-                                                </ItemTemplate>
-                                            </asp:TemplateField>
-                                            <asp:TemplateField HeaderText="Segundo Nombre">
-                                                <ItemTemplate>
-                                                    <asp:Label ID="Per_segNombre" runat="server" Text='<%#Eval("Per_segNombre")%>'></asp:Label>
-                                                </ItemTemplate>
-                                            </asp:TemplateField>
-                                            <asp:TemplateField HeaderText="Sexo">
-                                                <ItemTemplate>
-                                                    <asp:Label ID="Per_sexo" runat="server" Text='<%#Eval("Per_sexo")%>'></asp:Label>
-                                                </ItemTemplate>
-                                            </asp:TemplateField>
-                                            <asp:TemplateField HeaderText="Edad">
-                                                <ItemTemplate>
-                                                    <asp:Label ID="Per_edad" runat="server" Text='<%#Eval("Per_edad")%>'></asp:Label>
-                                                </ItemTemplate>
-                                            </asp:TemplateField>
-                                            <asp:TemplateField HeaderText="Grupo Sanguineo">
-                                                <ItemTemplate>
-                                                    <asp:Label ID="Per_groSanguineo" runat="server" Text='<%#Eval("Per_groSanguineo")%>'></asp:Label>
-                                                </ItemTemplate>
-                                            </asp:TemplateField>
-                                            <asp:TemplateField HeaderText="Cargo">
-                                                <ItemTemplate>
-                                                    <asp:Label ID="Per_Cargo" runat="server" Text='<%#Eval("Per_Cargo")%>'></asp:Label>
-                                                </ItemTemplate>
-                                            </asp:TemplateField>
-                                            <asp:TemplateField HeaderText="Numero de Archivo">
-                                                <ItemTemplate>
-                                                    <asp:Label ID="Per_NumArchivo" runat="server" Text='<%#Eval("Per_NumArchivo")%>'></asp:Label>
-                                                </ItemTemplate>
-                                            </asp:TemplateField>
                                             <asp:TemplateField HeaderText="Historia Clinica / Cedula">
                                                 <ItemTemplate>
-                                                    <asp:Label ID="Per_CedulaHisCli" runat="server" Text='<%#Eval("Per_CedulaHisCli")%>'></asp:Label>
+                                                    <asp:Label ID="Per_CedulaHisCli" runat="server" Text='<%#Eval("Per_Cedula")%>'></asp:Label>
+                                                </ItemTemplate>
+                                            </asp:TemplateField>
+                                            <asp:TemplateField HeaderText="Nombre">
+                                                <ItemTemplate>
+                                                    <asp:Label ID="Per_Nombre" runat="server" Text='<%#Eval("Per_priNombre")%>'></asp:Label>
+                                                </ItemTemplate>
+                                            </asp:TemplateField>
+                                            <asp:TemplateField HeaderText="Apellido">
+                                                <ItemTemplate>
+                                                    <asp:Label ID="Per_priApellido" runat="server" Text='<%#Eval("Per_priApellido")%>'></asp:Label>
+                                                </ItemTemplate>
+                                            </asp:TemplateField>
+                                            <asp:TemplateField HeaderText="Genero">
+                                                <ItemTemplate>
+                                                    <asp:Label ID="Per_sexo" runat="server" Text='<%#Eval("Per_genero")%>'></asp:Label>
                                                 </ItemTemplate>
                                             </asp:TemplateField>
                                             <asp:TemplateField HeaderText="Estado">
@@ -73,15 +65,24 @@
                                                     <asp:Label ID="Per_estado" runat="server" Text='<%#Eval("Per_estado")%>'></asp:Label>
                                                 </ItemTemplate>
                                             </asp:TemplateField>
+                                            <asp:TemplateField ItemStyle-Width="17" HeaderStyle-Width="17" HeaderText="">
+                                                <ItemTemplate>
+                                                    <asp:LinkButton ID="lnbEditar" Width="16" Height="16" CommandArgument='<%#Eval("Per_id")%>' CommandName="Editar" runat="server"><i class="fas fa-pen"></i></asp:LinkButton>
+                                                </ItemTemplate>
+                                                <HeaderStyle Width="17px" />
+                                                <ItemStyle Width="17px" />
+                                            </asp:TemplateField>                                            
                                         </Columns>
+                                        <PagerSettings Mode="NumericFirstLast" PageButtonCount="8" FirstPageText="Primero" LastPageText="Ultimo" />
+                                        <PagerStyle CssClass="pagination-ys" HorizontalAlign="Center" />
                                     </asp:GridView>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <br>
             </div>
-            <br />
         </ContentTemplate>
     </asp:UpdatePanel>
 </asp:Content>

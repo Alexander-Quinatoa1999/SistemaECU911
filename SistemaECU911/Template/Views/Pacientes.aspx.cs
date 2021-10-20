@@ -11,11 +11,14 @@ namespace SistemaECU911.Template.Views
 {
     public partial class Pacientes : System.Web.UI.Page
     {
+        DataClassesECU911DataContext dc = new DataClassesECU911DataContext();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
                 cargarPaciente();
+                //grvPacientes.VirtualItemCount = Count();
             }
         }
 
@@ -27,6 +30,44 @@ namespace SistemaECU911.Template.Views
             {
                 grvPacientes.DataSource = listaPer;
                 grvPacientes.DataBind();
+            }
+        }
+
+        protected void grvPacientes_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            int codigo = Convert.ToInt32(e.CommandArgument);
+            if (e.CommandName == "Editar")
+            {
+                Response.Redirect("~/Template/Views/Historial.aspx?cod=" + codigo, true);
+            }            
+        }
+
+        protected void grvPacientes_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+
+        }
+
+        protected void txt_buscar_TextChanged(object sender, EventArgs e)
+        {
+            if (txt_buscar.Text == "")
+            {
+                cargarPaciente();
+            }
+            else
+            {
+                var query = from p in dc.Tbl_Personas
+                            where p.Per_Cedula == Convert.ToInt32(txt_buscar.Text)
+                            select new { p.Per_Cedula, p.Per_priNombre, p.Per_priApellido, p.Per_genero, p.Per_estado, p.Per_id };
+
+                if (query != null)
+                {
+                    grvPacientes.DataSource = query.ToList();
+                    grvPacientes.DataBind();
+                }
+                else
+                {
+                    cargarPaciente();
+                }
             }
         }
     }
