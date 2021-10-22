@@ -77,20 +77,33 @@ namespace CapaNegocio
             return lista.ToList();
         }
 
-        ////Metodo para guardar datos Persona
-        //public static void guardarPersona(Tbl_Personas per)
-        //{
-        //    try
-        //    {
-        //        per.Per_estado = 'A';
-        //        dc.Tbl_Personas.InsertOnSubmit(per);
-        //        dc.SubmitChanges();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw new ArgumentException("Datos No Guardados" + ex.Message);
-        //    }
-        //}
+        //Metodo para guardar datos Persona
+        public static void guardarPersona(Tbl_Personas per)
+        {
+            try
+            {
+                per.Per_estado = "A";
+                dc.Tbl_Personas.InsertOnSubmit(per);
+                dc.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException("Datos No Guardados" + ex.Message);
+            }
+        }
+
+        //Metodo para modificar datos Persona
+        public static void modificarPersona(Tbl_Personas per)
+        {
+            try
+            {
+                dc.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException("Datos No Guardados" + ex.Message);
+            }
+        }
 
         //1. Metodo para guardar datos motivo de consulta
         public static void guardarMotiConsulta(Tbl_MotivoConsulta motcons)

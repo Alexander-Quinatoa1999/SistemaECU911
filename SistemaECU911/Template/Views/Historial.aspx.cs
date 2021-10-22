@@ -43,21 +43,22 @@ namespace SistemaECU911.Template.Views
         {
             if (!IsPostBack)
             {
-                if (Request["cod_per"] != null || Request["cod_motcons"] != null)
+                if (Request["cod"] != null /*|| Request["cod_motcons"] != null*/)
                 {
-                    int codigo_per = Convert.ToInt32(Request["cod_per"]);
-                    int codigo_motcons = Convert.ToInt32(Request["cod_motcons"]);
-                    per = CN_HistorialMedico.obtenerPersonasxId(codigo_per);
-                    motcons = CN_HistorialMedico.obtenerMotivoConsultaxid(codigo_motcons);
+                    int codigo = Convert.ToInt32(Request["cod"]);
+                    //int codigo_motcons = Convert.ToInt32(Request["cod_motcons"]);
+                    per = CN_HistorialMedico.obtenerPersonasxId(codigo);
+                    //motcons = CN_HistorialMedico.obtenerMotivoConsultaxid(codigo_motcons);
                     btn_guardar.Visible = true;
 
-                    if (per != null || motcons != null)
+                    if (per != null /*|| motcons != null*/)
                     {
                         txt_priNombre.Text = per.Per_priNombre.ToString();
                         txt_priApellido.Text = per.Per_priApellido.ToString();
                         txt_numHClinica.Text = per.Per_Cedula.ToString();
+                        txt_sexo.Text = per.Per_genero.ToString();
 
-                        txt_moConsulta.Text = motcons.Mcon_descripcion.ToString();
+                        //txt_moConsulta.Text = motcons.Mcon_descripcion.ToString();
 
                         btn_guardar.Visible = false;
                     }
@@ -78,19 +79,19 @@ namespace SistemaECU911.Template.Views
             }            
         }
 
-        private void guardar_modificar_datos(int personaid, int motivoconsid)
+        private void guardar_modificar_datos(int personaid/*, int motivoconsid*/)
         {
-            if (personaid == 0 || motivoconsid == 0)
+            if (personaid == 0 /*|| motivoconsid == 0*/)
             {
                 GuardarHistorial();
             }
             else
             {
                 per = CN_HistorialMedico.obtenerPersonasxId(personaid);
-                motcons = CN_HistorialMedico.obtenerMotivoConsultaxid(motivoconsid);
-                if (per != null || motcons != null)
+                //motcons = CN_HistorialMedico.obtenerMotivoConsultaxid(motivoconsid);
+                if (per != null /*|| motcons != null*/)
                 {
-                    Modificar(per, motcons);
+                    Modificar(per/*, motcons*/);
                 }
             }
         }
@@ -100,12 +101,20 @@ namespace SistemaECU911.Template.Views
             try
             {
                 //Guardar Persona
-                if (string.IsNullOrEmpty(txt_moConsulta.Text) )
+                if (string.IsNullOrEmpty(txt_moConsulta.Text) || string.IsNullOrEmpty(txt_antePersonales.Text) ||
+                    string.IsNullOrEmpty(txt_anteFamiliares.Text) || ddl_tipoAntPer.SelectedValue == "0" || ddl_tipoAntFam.SelectedValue == "0"
+                    || ddl_espe.SelectedValue == "0" || ddl_prof.SelectedValue == "0" || ddl_region.SelectedValue == "0" ||
+                    ddl_especialidad.SelectedValue == "0" || ddl_profesional.SelectedValue == "0" || string.IsNullOrEmpty(txt_presArterial.Text)
+                    || string.IsNullOrEmpty(txt_temperatura.Text) || string.IsNullOrEmpty(txt_frecCardiaca.Text) ||
+                    string.IsNullOrEmpty(txt_satOxigeno.Text) || string.IsNullOrEmpty(txt_frecRespiratoria.Text) ||
+                    string.IsNullOrEmpty(txt_peso.Text) || string.IsNullOrEmpty(txt_talla.Text) || string.IsNullOrEmpty(txt_indMasCorporal.Text)
+                    || string.IsNullOrEmpty(txt_perAbdominal.Text))
                 {
                     ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Complete los campos')", true);
                 }
                 else
                 {
+                    per = new Tbl_Personas();
                     motcons = new Tbl_MotivoConsulta();
                     antper = new Tbl_AntePersonales();
                     antfam = new Tbl_AnteFamiliares();
@@ -117,6 +126,10 @@ namespace SistemaECU911.Template.Views
                     pres = new Tbl_Prescipciones();
                     prof = new Tbl_DatProfesional();
 
+                    per.Per_priNombre = txt_priNombre.Text;
+                    per.Per_priApellido = txt_priApellido.Text;
+                    per.Per_Cedula = Convert.ToInt32(txt_numHClinica.Text);
+                    per.Per_genero = txt_sexo.Text;
                     //captura de datos tbl_motivoconsulta
                     motcons.Mcon_descripcion = txt_moConsulta.Text;
                     //captura de datos tbl_antepersonales
@@ -151,6 +164,8 @@ namespace SistemaECU911.Template.Views
                     prof.espec_id = Convert.ToInt32(ddl_especialidad.SelectedValue);
                     prof.DatProfe_cod = txt_codigo.Text;
 
+
+                    CN_HistorialMedico.guardarPersona(per);
                     //metodo de guardar motivo de consulta
                     CN_HistorialMedico.guardarMotiConsulta(motcons);
                     //metodo de guardar antecedentes personales
@@ -189,10 +204,11 @@ namespace SistemaECU911.Template.Views
 
         }
 
-        private void Modificar(Tbl_Personas per, Tbl_MotivoConsulta motcons)
+        private void Modificar(Tbl_Personas per/*, Tbl_MotivoConsulta motcons*/)
         {
             try
             {
+                per = new Tbl_Personas();
                 motcons = new Tbl_MotivoConsulta();
                 //antper = new Tbl_AntePersonales();
                 //antfam = new Tbl_AnteFamiliares();
@@ -204,6 +220,11 @@ namespace SistemaECU911.Template.Views
                 //pres = new Tbl_Prescipciones();
                 //prof = new Tbl_DatProfesional();
 
+
+                per.Per_priNombre = txt_priNombre.Text;
+                per.Per_priApellido = txt_priApellido.Text;
+                per.Per_Cedula =Convert.ToInt32(txt_numHClinica.Text);
+                per.Per_genero = txt_sexo.Text;
                 //captura de datos tbl_motivoconsulta
                 motcons.Mcon_descripcion = txt_moConsulta.Text;
                 ////captura de datos tbl_antepersonales
@@ -238,6 +259,8 @@ namespace SistemaECU911.Template.Views
                 //prof.espec_id = Convert.ToInt32(ddl_especialidad.SelectedValue);
                 //prof.DatProfe_cod = txt_codigo.Text;
 
+
+                CN_HistorialMedico.modificarPersona(per);
                 //metodo de guardar motivo de consulta
                 CN_HistorialMedico.modificarMotiConsulta(motcons);
                 ////metodo de guardar antecedentes personales
@@ -456,12 +479,12 @@ namespace SistemaECU911.Template.Views
 
         protected void btn_guardar_Click(object sender, EventArgs e)
         {
-            guardar_modificar_datos(Convert.ToInt32(Request["cod_per"]), Convert.ToInt32(Request["cod_motcons"]));
+            guardar_modificar_datos(Convert.ToInt32(Request["cod"])/*, Convert.ToInt32(Request["cod_motcons"])*/);
         }
 
         protected void btn_modificar_Click(object sender, EventArgs e)
         {
-            guardar_modificar_datos(Convert.ToInt32(Request["cod_per"]), Convert.ToInt32(Request["cod_motcons"]));
+            guardar_modificar_datos(Convert.ToInt32(Request["cod"])/*, Convert.ToInt32(Request["cod_motcons"])*/);
         }
 
         protected void btn_cancelar_Click(object sender, EventArgs e)
@@ -486,14 +509,7 @@ namespace SistemaECU911.Template.Views
 
 }
 
-//|| string.IsNullOrEmpty(txt_antePersonales.Text) ||
-//                    string.IsNullOrEmpty(txt_anteFamiliares.Text) || ddl_tipoAntPer.SelectedValue == "0" || ddl_tipoAntFam.SelectedValue == "0"
-//                    || ddl_espe.SelectedValue == "0" || ddl_prof.SelectedValue == "0" || ddl_region.SelectedValue == "0" ||
-//                    ddl_especialidad.SelectedValue == "0" || ddl_profesional.SelectedValue == "0" || string.IsNullOrEmpty(txt_presArterial.Text)
-//                    || string.IsNullOrEmpty(txt_temperatura.Text) || string.IsNullOrEmpty(txt_frecCardiaca.Text) ||
-//                    string.IsNullOrEmpty(txt_satOxigeno.Text) || string.IsNullOrEmpty(txt_frecRespiratoria.Text) ||
-//                    string.IsNullOrEmpty(txt_peso.Text) || string.IsNullOrEmpty(txt_talla.Text) || string.IsNullOrEmpty(txt_indMasCorporal.Text)
-//                    || string.IsNullOrEmpty(txt_perAbdominal.Text)
+
 
 
 //if (string.IsNullOrEmpty(txt_priNombre.Text) || string.IsNullOrEmpty(txt_priApellido.Text) || string.IsNullOrEmpty(txt_sexo.Text)
