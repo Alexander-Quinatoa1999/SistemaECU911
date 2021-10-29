@@ -73,6 +73,7 @@
   <ItemGroup>
     <Content Include="Template\Template Principal\css\style-andres.css" />
     <Content Include="Template\Template Principal\css\style.css" />
+    <Content Include="Template\Template Principal\css\StyleForm.css" />
     <Content Include="Template\Template Principal\css\Style_Prueba.css" />
     <Content Include="Template\Template Principal\fonts\PT_Sans\PTSans-Bold.html" />
     <Content Include="Template\Template Principal\images\auth\img2.jpg" />
@@ -176,6 +177,7 @@
     <Content Include="Template\Template Principal\js\form-addons.js" />
     <Content Include="Template\Template Principal\js\form-repeater.js" />
     <Content Include="Template\Template Principal\js\form-validation.js" />
+    <Content Include="Template\Template Principal\js\Form.js" />
     <Content Include="Template\Template Principal\js\formpickers.js" />
     <Content Include="Template\Template Principal\js\google-charts.js" />
     <Content Include="Template\Template Principal\js\google-maps.js" />
@@ -772,6 +774,7 @@
     <Content Include="Template\Views\Secundario.aspx" />
     <Content Include="Template\Views\SocioEconomico.aspx" />
     <Content Include="Template\Views\WebForm1.aspx" />
+    <Content Include="Template\Views\WebForm2.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -887,6 +890,13 @@
     </Compile>
     <Compile Include="Template\Views\WebForm1.aspx.designer.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Template\Views\WebForm2.aspx.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Template\Views\WebForm2.aspx.designer.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

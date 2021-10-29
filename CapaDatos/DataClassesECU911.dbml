@@ -1,13 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SistemaECU911" Class="DataClassesECU911DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=SistemaECU911;Integrated Security=True" SettingsObjectName="CapaDatos.Properties.Settings" SettingsPropertyName="SistemaECU911ConnectionString4" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.Tbl_VidaSexualActiva" Member="Tbl_VidaSexualActiva">
-    <Type Name="Tbl_VidaSexualActiva">
-      <Column Name="VidSexAct_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="VidSexAct_opcion" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="VidSexAct_estado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
-      <Association Name="Tbl_VidaSexualActiva_Tbl_AntecedentesGinObste" Member="Tbl_AntecedentesGinObste" ThisKey="VidSexAct_id" OtherKey="VidSexAct_id" Type="Tbl_AntecedentesGinObste" />
-    </Type>
-  </Table>
   <Table Name="dbo.Tbl_AccidentesTrabajoDesc" Member="Tbl_AccidentesTrabajoDesc">
     <Type Name="Tbl_AccidentesTrabajoDesc">
       <Column Name="AntTrabDesc_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -43,10 +35,10 @@
       <Column Name="ExamRealizados_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="AntGinObst_estado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
       <Association Name="Tbl_AntecedentesGinObste_Tbl_AntecedentesPersonales" Member="Tbl_AntecedentesPersonales" ThisKey="AntGinObst_id" OtherKey="AntGinObst_id" Type="Tbl_AntecedentesPersonales" />
-      <Association Name="Tbl_VidaSexualActiva_Tbl_AntecedentesGinObste" Member="Tbl_VidaSexualActiva" ThisKey="VidSexAct_id" OtherKey="VidSexAct_id" Type="Tbl_VidaSexualActiva" IsForeignKey="true" />
       <Association Name="Tbl_ExamenesRealizados_Tbl_AntecedentesGinObste" Member="Tbl_ExamenesRealizados" ThisKey="ExamRealizados_id" OtherKey="ExamRealizados_id" Type="Tbl_ExamenesRealizados" IsForeignKey="true" />
       <Association Name="Tbl_Hijos_Tbl_AntecedentesGinObste" Member="Tbl_Hijos" ThisKey="Hijs_id" OtherKey="Hijs_id" Type="Tbl_Hijos" IsForeignKey="true" />
       <Association Name="Tbl_MetodoPlanificacionFamiliar_Tbl_AntecedentesGinObste" Member="Tbl_MetodoPlanificacionFamiliar" ThisKey="MePlaFamiliar_id" OtherKey="MePlaFamiliar_id" Type="Tbl_MetodoPlanificacionFamiliar" IsForeignKey="true" />
+      <Association Name="Tbl_VidaSexualActiva_Tbl_AntecedentesGinObste" Member="Tbl_VidaSexualActiva" ThisKey="VidSexAct_id" OtherKey="VidSexAct_id" Type="Tbl_VidaSexualActiva" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Tbl_AntecedentesPersonales" Member="Tbl_AntecedentesPersonales">
@@ -228,13 +220,6 @@
       <Association Name="Tbl_Inicial_Tbl_Emp_Per" Member="Tbl_Inicial" ThisKey="Per_id" OtherKey="inicial_id" Type="Tbl_Inicial" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.Tbl_EnfermedadActual" Member="Tbl_EnfermedadActual">
-    <Type Name="Tbl_EnfermedadActual">
-      <Column Name="EnfActu_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="EnfActu_descrip" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
-      <Column Name="EnfActu_estado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.Tbl_Empresa" Member="Tbl_Empresa">
     <Type Name="Tbl_Empresa">
       <Column Name="Emp_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -246,6 +231,21 @@
       <Association Name="Tbl_Empresa_Tbl_Emp_Per" Member="Tbl_Emp_Per" ThisKey="Emp_id" OtherKey="Emp_id" Type="Tbl_Emp_Per" />
     </Type>
   </Table>
+  <Table Name="dbo.Tbl_EnfermedadActual" Member="Tbl_EnfermedadActual">
+    <Type Name="Tbl_EnfermedadActual">
+      <Column Name="EnfActu_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EnfActu_descrip" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="EnfActu_estado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tbl_Especialidad" Member="Tbl_Especialidad">
+    <Type Name="Tbl_Especialidad">
+      <Column Name="espec_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="espec_nombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="espec_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Association Name="Tbl_Especialidad_Tbl_DatProfesional" Member="Tbl_DatProfesional" ThisKey="espec_id" OtherKey="espec_id" Type="Tbl_DatProfesional" />
+    </Type>
+  </Table>
   <Table Name="dbo.Tbl_EnfermedadesProfesionales" Member="Tbl_EnfermedadesProfesionales">
     <Type Name="Tbl_EnfermedadesProfesionales">
       <Column Name="EnfProfesionales_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -255,14 +255,6 @@
       <Column Name="EnfProfesionales_estado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
       <Association Name="Tbl_EnfermedadesProfesionales_Tbl_AntecedentesPersonales" Member="Tbl_AntecedentesPersonales" ThisKey="EnfProfesionales_id" OtherKey="EnfProfesionales_id" Type="Tbl_AntecedentesPersonales" />
       <Association Name="Tbl_CalificacionIESS_Tbl_EnfermedadesProfesionales" Member="Tbl_CalificacionIESS" ThisKey="Cali_id" OtherKey="Cali_id" Type="Tbl_CalificacionIESS" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Tbl_Especialidad" Member="Tbl_Especialidad">
-    <Type Name="Tbl_Especialidad">
-      <Column Name="espec_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="espec_nombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="espec_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-      <Association Name="Tbl_Especialidad_Tbl_DatProfesional" Member="Tbl_DatProfesional" ThisKey="espec_id" OtherKey="espec_id" Type="Tbl_DatProfesional" />
     </Type>
   </Table>
   <Table Name="dbo.Tbl_Estilo" Member="Tbl_Estilo">
@@ -294,20 +286,20 @@
       <Association Name="Tbl_EstrcuturaUno_Tbl_Personas" Member="Tbl_Personas" ThisKey="EstructuraUno_id" OtherKey="EstructuraUno_id" Type="Tbl_Personas" />
     </Type>
   </Table>
-  <Table Name="dbo.Tbl_EstructuraDos" Member="Tbl_EstructuraDos">
-    <Type Name="Tbl_EstructuraDos">
-      <Column Name="EstructuraDos_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="EstructuraDos_nom" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="EstructuraDos_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-      <Association Name="Tbl_EstructuraDos_Tbl_Personas" Member="Tbl_Personas" ThisKey="EstructuraDos_id" OtherKey="EstructuraDos_id" Type="Tbl_Personas" />
-    </Type>
-  </Table>
   <Table Name="dbo.Tbl_EstructuraProgramatica" Member="Tbl_EstructuraProgramatica">
     <Type Name="Tbl_EstructuraProgramatica">
       <Column Name="EstrucProgra_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="EstrucProgra_nom" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
       <Column Name="EstrucProgra_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
       <Association Name="Tbl_EstructuraProgramatica_Tbl_Personas" Member="Tbl_Personas" ThisKey="EstrucProgra_id" OtherKey="EstrucProgra_id" Type="Tbl_Personas" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tbl_EstructuraDos" Member="Tbl_EstructuraDos">
+    <Type Name="Tbl_EstructuraDos">
+      <Column Name="EstructuraDos_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EstructuraDos_nom" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="EstructuraDos_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Association Name="Tbl_EstructuraDos_Tbl_Personas" Member="Tbl_Personas" ThisKey="EstructuraDos_id" OtherKey="EstructuraDos_id" Type="Tbl_Personas" />
     </Type>
   </Table>
   <Table Name="dbo.Tbl_Evolucion" Member="Tbl_Evolucion">
@@ -328,6 +320,13 @@
       <Association Name="Tbl_Regiones_Tbl_ExaFisRegional" Member="Tbl_Regiones" ThisKey="Regiones_id" OtherKey="Regiones_id" Type="Tbl_Regiones" IsForeignKey="true" />
     </Type>
   </Table>
+  <Table Name="dbo.Tbl_Grado" Member="Tbl_Grado">
+    <Type Name="Tbl_Grado">
+      <Column Name="Grado_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Grado_Per" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Association Name="Tbl_Grado_Tbl_Personas" Member="Tbl_Personas" ThisKey="Grado_id" OtherKey="Grado_id" Type="Tbl_Personas" />
+    </Type>
+  </Table>
   <Table Name="dbo.Tbl_ExamenesRealizados" Member="Tbl_ExamenesRealizados">
     <Type Name="Tbl_ExamenesRealizados">
       <Column Name="ExamRealizados_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -339,11 +338,12 @@
       <Association Name="Tbl_ExamenesRealizados_Tbl_AntecedentesReproductivosMasculinos" Member="Tbl_AntecedentesReproductivosMasculinos" ThisKey="ExamRealizados_id" OtherKey="ExamRealizados_id" Type="Tbl_AntecedentesReproductivosMasculinos" />
     </Type>
   </Table>
-  <Table Name="dbo.Tbl_Grado" Member="Tbl_Grado">
-    <Type Name="Tbl_Grado">
-      <Column Name="Grado_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Grado_Per" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Association Name="Tbl_Grado_Tbl_Personas" Member="Tbl_Personas" ThisKey="Grado_id" OtherKey="Grado_id" Type="Tbl_Personas" />
+  <Table Name="dbo.Tbl_GrupoEtnico" Member="Tbl_GrupoEtnico">
+    <Type Name="Tbl_GrupoEtnico">
+      <Column Name="GrupoEtni_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="GrupoEtni_nom" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="GrupoEtni_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Association Name="Tbl_GrupoEtnico_Tbl_Personas" Member="Tbl_Personas" ThisKey="GrupoEtni_id" OtherKey="GrupoEtni_id" Type="Tbl_Personas" />
     </Type>
   </Table>
   <Table Name="dbo.Tbl_GrupoOcupacional" Member="Tbl_GrupoOcupacional">
@@ -351,14 +351,6 @@
       <Column Name="GrpOcupacional_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="GrpOcupacional_nom" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
       <Association Name="Tbl_GrupoOcupacional_Tbl_Personas" Member="Tbl_Personas" ThisKey="GrpOcupacional_id" OtherKey="GrpOcupacional_id" Type="Tbl_Personas" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Tbl_GrupoEtnico" Member="Tbl_GrupoEtnico">
-    <Type Name="Tbl_GrupoEtnico">
-      <Column Name="GrupoEtni_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="GrupoEtni_nom" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="GrupoEtni_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-      <Association Name="Tbl_GrupoEtnico_Tbl_Personas" Member="Tbl_Personas" ThisKey="GrupoEtni_id" OtherKey="GrupoEtni_id" Type="Tbl_Personas" />
     </Type>
   </Table>
   <Table Name="dbo.Tbl_HabitosToxicos" Member="Tbl_HabitosToxicos">
@@ -377,6 +369,16 @@
       <Column Name="Hijs_estado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
       <Association Name="Tbl_Hijos_Tbl_AntecedentesGinObste" Member="Tbl_AntecedentesGinObste" ThisKey="Hijs_id" OtherKey="Hijs_id" Type="Tbl_AntecedentesGinObste" />
       <Association Name="Tbl_Hijos_Tbl_AntecedentesReproductivosMasculinos" Member="Tbl_AntecedentesReproductivosMasculinos" ThisKey="Hijs_id" OtherKey="Hijs_id" Type="Tbl_AntecedentesReproductivosMasculinos" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tbl_HistorialMed" Member="Tbl_HistorialMed">
+    <Type Name="Tbl_HistorialMed">
+      <Column Name="histo_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="per_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Mcon_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="histo_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Association Name="Tbl_MotivoConsulta_Tbl_HistorialMed" Member="Tbl_MotivoConsulta" ThisKey="Mcon_id" OtherKey="Mcon_id" Type="Tbl_MotivoConsulta" IsForeignKey="true" />
+      <Association Name="Tbl_Personas_Tbl_HistorialMed" Member="Tbl_Personas" ThisKey="per_id" OtherKey="Per_id" Type="Tbl_Personas" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Tbl_Identidad_de_Genero" Member="Tbl_Identidad_de_Genero">
@@ -451,11 +453,13 @@
       <Association Name="Tbl_OrientacionSexual_Tbl_Inicial" Member="Tbl_Inicial" ThisKey="OrSex_id" OtherKey="OrSex_id" Type="Tbl_Inicial" />
     </Type>
   </Table>
-  <Table Name="dbo.Tbl_Prescipciones" Member="Tbl_Prescipciones">
-    <Type Name="Tbl_Prescipciones">
-      <Column Name="Press_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Press_descripcion" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
-      <Column Name="Pres_estado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+  <Table Name="dbo.Tbl_MotivoConsulta" Member="Tbl_MotivoConsulta">
+    <Type Name="Tbl_MotivoConsulta">
+      <Column Name="Mcon_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Mcon_descripcion" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Mcon_Situacion" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="Mcon_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Association Name="Tbl_MotivoConsulta_Tbl_HistorialMed" Member="Tbl_HistorialMed" ThisKey="Mcon_id" OtherKey="Mcon_id" Type="Tbl_HistorialMed" />
     </Type>
   </Table>
   <Table Name="dbo.Tbl_Personas" Member="Tbl_Personas">
@@ -505,6 +509,7 @@
       <Column Name="Per_observaciones" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
       <Column Name="inicial_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Per_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Association Name="Tbl_Personas_Tbl_HistorialMed" Member="Tbl_HistorialMed" ThisKey="Per_id" OtherKey="per_id" Type="Tbl_HistorialMed" />
       <Association Name="Tbl_CargoInstitucional_Tbl_Personas" Member="Tbl_CargoInstitucional" ThisKey="CargoInsti_id" OtherKey="CargoIntsi_id" Type="Tbl_CargoInstitucional" IsForeignKey="true" />
       <Association Name="Tbl_CorreoIntitucional_Tbl_Personas" Member="Tbl_CorreoIntitucional" ThisKey="CorreoInts_id" OtherKey="CorreoInts_id" Type="Tbl_CorreoIntitucional" IsForeignKey="true" />
       <Association Name="Tbl_DireccionInstitucional_Tbl_Personas" Member="Tbl_DireccionInstitucional" ThisKey="DirInsti_Id" OtherKey="DirInsti_Id" Type="Tbl_DireccionInstitucional" IsForeignKey="true" />
@@ -518,9 +523,16 @@
       <Association Name="Tbl_ModalidadLaboral_Tbl_Personas" Member="Tbl_ModalidadLaboral" ThisKey="Per_modLaboral_id" OtherKey="Per_modLaboral_id" Type="Tbl_ModalidadLaboral" IsForeignKey="true" />
       <Association Name="Tbl_ProcesoInterno_Tbl_Personas" Member="Tbl_ProcesoInterno" ThisKey="ProcesoInt_id" OtherKey="ProcesoInt_id" Type="Tbl_ProcesoInterno" IsForeignKey="true" />
       <Association Name="Tbl_Rmu_Tbl_Personas" Member="Tbl_Rmu" ThisKey="Rmu_id" OtherKey="Rmu_id" Type="Tbl_Rmu" IsForeignKey="true" />
-      <Association Name="Tbl_Sede_Tbl_Personas" Member="Tbl_Sede" ThisKey="Sede_id" OtherKey="Sede_id" Type="Tbl_Sede" IsForeignKey="true" />
       <Association Name="Tbl_TelefonoIntitucional_Tbl_Personas" Member="Tbl_TelefonoIntitucional" ThisKey="TelfInts_id" OtherKey="TelfInts_id" Type="Tbl_TelefonoIntitucional" IsForeignKey="true" />
+      <Association Name="Tbl_Sede_Tbl_Personas" Member="Tbl_Sede" ThisKey="Sede_id" OtherKey="Sede_id" Type="Tbl_Sede" IsForeignKey="true" />
       <Association Name="Tbl_Zona_Tbl_Personas" Member="Tbl_Zona" ThisKey="Zona_id" OtherKey="Zona_id" Type="Tbl_Zona" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tbl_Prescipciones" Member="Tbl_Prescipciones">
+    <Type Name="Tbl_Prescipciones">
+      <Column Name="Press_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Press_descripcion" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Pres_estado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.Tbl_ProcesoInterno" Member="Tbl_ProcesoInterno">
@@ -531,19 +543,19 @@
       <Association Name="Tbl_ProcesoInterno_Tbl_Personas" Member="Tbl_Personas" ThisKey="ProcesoInt_id" OtherKey="ProcesoInt_id" Type="Tbl_Personas" />
     </Type>
   </Table>
-  <Table Name="dbo.Tbl_RecoTratamiento" Member="Tbl_RecoTratamiento">
-    <Type Name="Tbl_RecoTratamiento">
-      <Column Name="RecTra_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="RecTra_descripcion" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
-      <Column Name="RecTra_estado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.Tbl_Profesional" Member="Tbl_Profesional">
     <Type Name="Tbl_Profesional">
       <Column Name="prof_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="prof_NomApe" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
       <Column Name="prof_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
       <Association Name="Tbl_Profesional_Tbl_DatProfesional" Member="Tbl_DatProfesional" ThisKey="prof_id" OtherKey="prof_id" Type="Tbl_DatProfesional" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tbl_RecoTratamiento" Member="Tbl_RecoTratamiento">
+    <Type Name="Tbl_RecoTratamiento">
+      <Column Name="RecTra_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RecTra_descripcion" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="RecTra_estado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.Tbl_Regiones" Member="Tbl_Regiones">
@@ -590,14 +602,6 @@
       <Association Name="Tbl_Rmu_Tbl_Personas" Member="Tbl_Personas" ThisKey="Rmu_id" OtherKey="Rmu_id" Type="Tbl_Personas" />
     </Type>
   </Table>
-  <Table Name="dbo.Tbl_Sede" Member="Tbl_Sede">
-    <Type Name="Tbl_Sede">
-      <Column Name="Sede_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Sede_nom" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="Sede_Estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-      <Association Name="Tbl_Sede_Tbl_Personas" Member="Tbl_Personas" ThisKey="Sede_id" OtherKey="Sede_id" Type="Tbl_Personas" />
-    </Type>
-  </Table>
   <Table Name="dbo.Tbl_TelefonoIntitucional" Member="Tbl_TelefonoIntitucional">
     <Type Name="Tbl_TelefonoIntitucional">
       <Column Name="TelfInts_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -605,6 +609,14 @@
       <Column Name="TelfInts_exten" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="TelfInst_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
       <Association Name="Tbl_TelefonoIntitucional_Tbl_Personas" Member="Tbl_Personas" ThisKey="TelfInts_id" OtherKey="TelfInts_id" Type="Tbl_Personas" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tbl_Sede" Member="Tbl_Sede">
+    <Type Name="Tbl_Sede">
+      <Column Name="Sede_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Sede_nom" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Sede_Estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Association Name="Tbl_Sede_Tbl_Personas" Member="Tbl_Personas" ThisKey="Sede_id" OtherKey="Sede_id" Type="Tbl_Personas" />
     </Type>
   </Table>
   <Table Name="dbo.Tbl_TipoExaFisRegional" Member="Tbl_TipoExaFisRegional">
@@ -659,20 +671,20 @@
       <Association Name="Tbl_TipoUsuario_Tbl_Usuario" Member="Tbl_TipoUsuario" ThisKey="tusu_id" OtherKey="tusu_id" Type="Tbl_TipoUsuario" IsForeignKey="true" DeleteRule="CASCADE" />
     </Type>
   </Table>
+  <Table Name="dbo.Tbl_VidaSexualActiva" Member="Tbl_VidaSexualActiva">
+    <Type Name="Tbl_VidaSexualActiva">
+      <Column Name="VidSexAct_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="VidSexAct_opcion" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="VidSexAct_estado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Association Name="Tbl_VidaSexualActiva_Tbl_AntecedentesGinObste" Member="Tbl_AntecedentesGinObste" ThisKey="VidSexAct_id" OtherKey="VidSexAct_id" Type="Tbl_AntecedentesGinObste" />
+    </Type>
+  </Table>
   <Table Name="dbo.Tbl_Zona" Member="Tbl_Zona">
     <Type Name="Tbl_Zona">
       <Column Name="Zona_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Zona_nom" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="Zona_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
       <Association Name="Tbl_Zona_Tbl_Personas" Member="Tbl_Personas" ThisKey="Zona_id" OtherKey="Zona_id" Type="Tbl_Personas" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Tbl_MotivoConsulta" Member="Tbl_MotivoConsulta">
-    <Type Name="Tbl_MotivoConsulta">
-      <Column Name="Mcon_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Mcon_descripcion" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
-      <Column Name="Mcon_Situacion" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-      <Column Name="Mcon_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
     </Type>
   </Table>
   <Function Name="dbo.Autentificacion_Usuario" Method="Autentificacion_Usuario">
@@ -687,9 +699,8 @@
     <Parameter Name="priNombre" Type="System.String" DbType="VarChar(100)" />
     <Parameter Name="priApellido" Type="System.String" DbType="VarChar(100)" />
     <Parameter Name="sexo" Type="System.String" DbType="VarChar(1)" />
-    <Parameter Name="edad" Type="System.Int32" DbType="Int" />
     <Parameter Name="CedulaHisCli" Parameter="cedulaHisCli" Type="System.Int32" DbType="Int" />
-    <Parameter Name="estado" Type="System.Char" DbType="Char(1)" />
+    <Parameter Name="estado" Type="System.String" DbType="VarChar(1)" />
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.Identificar_rol" Method="Identificar_rol">

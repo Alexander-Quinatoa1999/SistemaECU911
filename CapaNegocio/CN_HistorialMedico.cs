@@ -14,6 +14,13 @@ namespace CapaNegocio
         //private static DataClassesECU911DataContext dc = new DataClassesECU911DataContext();
         private static DataClassesECU911DataContext dc = new DataClassesECU911DataContext();
 
+        //metodo para traer valores a modificar
+        public static Tbl_HistorialMed obtenerHistorialMedxId(int hismedid)
+        {
+            var histoid = dc.Tbl_HistorialMed.FirstOrDefault(hismed => hismed.histo_id.Equals(hismedid) && hismed.histo_estado == "A");
+            return histoid;
+        }
+
         //metodo traer para la empresa
         public static List<Tbl_Empresa> obtenerEmpresa()
         {

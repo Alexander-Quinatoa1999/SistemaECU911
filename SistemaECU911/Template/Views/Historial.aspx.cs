@@ -14,8 +14,9 @@ namespace SistemaECU911.Template.Views
     public partial class Historial : System.Web.UI.Page
     {
 
-        DataClassesECU911DataContext db = new DataClassesECU911DataContext();
+        DataClassesECU911DataContext dc = new DataClassesECU911DataContext();
 
+        private Tbl_HistorialMed histoid = new Tbl_HistorialMed();
         //Objeto de la tabla personas
         private Tbl_Personas per = new Tbl_Personas();
         //Objeto de la tabla motivo de consulta
@@ -43,22 +44,37 @@ namespace SistemaECU911.Template.Views
         {
             if (!IsPostBack)
             {
-                if (Request["cod"] != null /*|| Request["cod_motcons"] != null*/)
+                if (Request["cod"] != null /*|| Request["cod2"] != null*/)
                 {
                     int codigo = Convert.ToInt32(Request["cod"]);
-                    //int codigo_motcons = Convert.ToInt32(Request["cod_motcons"]);
-                    per = CN_HistorialMedico.obtenerPersonasxId(codigo);
-                    //motcons = CN_HistorialMedico.obtenerMotivoConsultaxid(codigo_motcons);
+
+                    var query = from hm in dc.Tbl_HistorialMed
+                                join p in dc.Tbl_Personas on hm.per_id equals p.Per_id
+                                join m in dc.Tbl_MotivoConsulta on hm.Mcon_id equals m.Mcon_id
+                                where hm.histo_id == codigo
+                                select new 
+                                {
+                                    hm.histo_id,
+                                    p.Per_priNombre,
+                                    p.Per_priApellido,
+                                    p.Per_genero,
+                                    p.Per_Cedula,
+                                    m.Mcon_descripcion
+                                };
+
+                    //int codigo2 = Convert.ToInt32(Request["cod2"]);
+                    histoid = CN_HistorialMedico.obtenerHistorialMedxId(codigo);
+                    //motcons = CN_HistorialMedico.obtenerMotivoConsultaxid(codigo2);
                     btn_guardar.Visible = true;
 
-                    if (per != null /*|| motcons != null*/)
+                    if (histoid != null /*|| motcons != null*/)
                     {
-                        txt_priNombre.Text = per.Per_priNombre.ToString();
+                        txt_priNombre.Text = 
                         txt_priApellido.Text = per.Per_priApellido.ToString();
                         txt_numHClinica.Text = per.Per_Cedula.ToString();
                         txt_sexo.Text = per.Per_genero.ToString();
 
-                        //txt_moConsulta.Text = motcons.Mcon_descripcion.ToString();
+                        txt_moConsulta.Text = motcons.Mcon_descripcion.ToString();
 
                         btn_guardar.Visible = false;
                     }
@@ -79,19 +95,19 @@ namespace SistemaECU911.Template.Views
             }            
         }
 
-        private void guardar_modificar_datos(int personaid/*, int motivoconsid*/)
+        private void guardar_modificar_datos(int hismedid/*int personaid/*, int motivoconsid*/)
         {
-            if (personaid == 0 /*|| motivoconsid == 0*/)
+            if (hismedid == 0 /*|| motivoconsid == 0*/)
             {
                 GuardarHistorial();
             }
             else
             {
-                per = CN_HistorialMedico.obtenerPersonasxId(personaid);
+                histoid = CN_HistorialMedico.obtenerHistorialMedxId(hismedid);
                 //motcons = CN_HistorialMedico.obtenerMotivoConsultaxid(motivoconsid);
-                if (per != null /*|| motcons != null*/)
+                if (histoid != null /*|| motcons != null*/)
                 {
-                    Modificar(per/*, motcons*/);
+                    Modificar(histoid/*, motcons*/);
                 }
             }
         }
@@ -204,10 +220,11 @@ namespace SistemaECU911.Template.Views
 
         }
 
-        private void Modificar(Tbl_Personas per/*, Tbl_MotivoConsulta motcons*/)
+        private void Modificar(Tbl_HistorialMed histoid/*, Tbl_MotivoConsulta motcons*/)
         {
             try
             {
+                histoid = new Tbl_HistorialMed();
                 per = new Tbl_Personas();
                 motcons = new Tbl_MotivoConsulta();
                 //antper = new Tbl_AntePersonales();
@@ -401,7 +418,7 @@ namespace SistemaECU911.Template.Views
         {
             int regionid = Convert.ToInt32(ddl_region.SelectedValue);
 
-            var query = from tipreg in db.Tbl_TipoExaFisRegional where tipreg.Regiones_id == regionid select tipreg;
+            var query = from tipreg in dc.Tbl_TipoExaFisRegional where tipreg.Regiones_id == regionid select tipreg;
 
             ddl_tipoRegion.DataSource = query.ToList();
             ddl_tipoRegion.DataTextField = "tipoExa_nombres";
@@ -479,12 +496,12 @@ namespace SistemaECU911.Template.Views
 
         protected void btn_guardar_Click(object sender, EventArgs e)
         {
-            guardar_modificar_datos(Convert.ToInt32(Request["cod"])/*, Convert.ToInt32(Request["cod_motcons"])*/);
+            guardar_modificar_datos(Convert.ToInt32(Request["cod"])/*, Convert.ToInt32(Request["cod2"])*/);
         }
 
         protected void btn_modificar_Click(object sender, EventArgs e)
         {
-            guardar_modificar_datos(Convert.ToInt32(Request["cod"])/*, Convert.ToInt32(Request["cod_motcons"])*/);
+            guardar_modificar_datos(Convert.ToInt32(Request["cod"])/*, Convert.ToInt32(Request["cod2"])*/);
         }
 
         protected void btn_cancelar_Click(object sender, EventArgs e)

@@ -346,7 +346,7 @@
                                     </asp:TableCell>
                                     <asp:TableCell Style="width: auto" Text="Temperatura"></asp:TableCell>
                                     <asp:TableCell Style="width: 75px;">
-                                        <asp:TextBox ID="txt_temperatura" runat="server" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                                            <asp:TextBox ID="txt_temperatura" runat="server" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
                                     </asp:TableCell>
                                 </asp:TableRow>
                                 <asp:TableRow>

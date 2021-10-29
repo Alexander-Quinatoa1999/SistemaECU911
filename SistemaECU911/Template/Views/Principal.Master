@@ -142,6 +142,12 @@
                             </a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="WebForm2.aspx">
+                                <i class="fas fa-apple menu-icon"></i>
+                                <span class="menu-title">Form</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" data-toggle="collapse" href="#ui-advanced" aria-expanded="false" aria-controls="ui-advanced">
                                 <i class="fas fa-clipboard-list menu-icon"></i>
                                 <span class="menu-title">Historial</span>
@@ -190,7 +196,8 @@
             </div>
         </div>
     </form>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>    
     <script src="../Template Principal/vendors/js/vendor.bundle.base.js"></script>
     <script src="../Template Principal/vendors/js/vendor.bundle.addons.js"></script>
     <script src="../Template Principal/js/off-canvas.js"></script>
@@ -199,6 +206,8 @@
     <script src="../Template Principal/js/settings.js"></script>
     <script src="../Template Principal/js/todolist.js"></script>
     <script src="../Template Principal/js/dashboard.js"></script>
+    <script src="../Template Principal/js/Form.js"></script>
+    <script src="../Template Principal/js/wizard.js"></script>
     <asp:ContentPlaceHolder ID="footer" runat="server">
     </asp:ContentPlaceHolder>
 </body>
