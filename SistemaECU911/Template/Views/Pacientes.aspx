@@ -41,24 +41,39 @@
 
                                     <asp:GridView ID="grvPacientes" OnRowCommand="grvPacientes_RowCommand" AutoGenerateColumns="false" PageSize="5" AllowPaging="true" AllowCustomPaging="true"  OnPageIndexChanging="grvPacientes_PageIndexChanging" Width="100%" CssClass="table table-hover text-center table-responsive" GridLines="None" runat="server" Style="margin-right: 0px">
                                         <Columns>
+                                            <asp:TemplateField HeaderText="ID">
+                                                <ItemTemplate>
+                                                    <asp:Label ID="Per_Id" runat="server" Text='<%#Eval("Per_id")%>'></asp:Label>
+                                                </ItemTemplate>
+                                            </asp:TemplateField>
                                             <asp:TemplateField HeaderText="Historia Clinica / Cedula">
                                                 <ItemTemplate>
-                                                    <asp:Label ID="Per_CedulaHisCli" runat="server" Text='<%#Eval("histo_id")%>'></asp:Label>
+                                                    <asp:Label ID="Per_CedulaHisCli" runat="server" Text='<%#Eval("Per_Cedula")%>'></asp:Label>
                                                 </ItemTemplate>
                                             </asp:TemplateField>
                                             <asp:TemplateField HeaderText="Nombre">
                                                 <ItemTemplate>
-                                                    <asp:Label ID="Per_Nombre" runat="server" Text='<%#Eval("per_id")%>'></asp:Label>
+                                                    <asp:Label ID="Per_Nombre" runat="server" Text='<%#Eval("Per_priNombre")%>'></asp:Label>
                                                 </ItemTemplate>
                                             </asp:TemplateField>
                                             <asp:TemplateField HeaderText="Apellido">
                                                 <ItemTemplate>
-                                                    <asp:Label ID="Per_priApellido" runat="server" Text='<%#Eval("Mcon_id")%>'></asp:Label>
+                                                    <asp:Label ID="Per_priApellido" runat="server" Text='<%#Eval("Per_priApellido")%>'></asp:Label>
+                                                </ItemTemplate>
+                                            </asp:TemplateField>
+                                            <asp:TemplateField HeaderText="Fecha Nacimiento">
+                                                <ItemTemplate>
+                                                    <asp:Label ID="Per_priFechaNaci" runat="server" Text='<%#Eval("Per_fechNacimiento")%>'></asp:Label>
+                                                </ItemTemplate>
+                                            </asp:TemplateField>
+                                            <asp:TemplateField HeaderText="Genero">
+                                                <ItemTemplate>
+                                                    <asp:Label ID="Per_priGenero" runat="server" Text='<%#Eval("Per_genero")%>'></asp:Label>
                                                 </ItemTemplate>
                                             </asp:TemplateField>                                            
                                             <asp:TemplateField ItemStyle-Width="17" HeaderStyle-Width="17" HeaderText="">
                                                 <ItemTemplate>
-                                                    <asp:LinkButton ID="lnbEditar" Width="16" Height="16" CommandArgument='<%#Eval("histo_id")%>' CommandName="Editar" runat="server"><i class="fas fa-pen"></i></asp:LinkButton>
+                                                    <asp:LinkButton ID="lnbEditar" Width="16" Height="16" CommandArgument='<%#Eval("Per_id")%>' CommandName="Editar" runat="server"><i class="fas fa-pen"></i></asp:LinkButton>
                                                 </ItemTemplate>
                                                 <HeaderStyle Width="17px" />
                                                 <ItemStyle Width="17px" />

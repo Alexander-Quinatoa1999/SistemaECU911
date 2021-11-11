@@ -114,6 +114,15 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_antePersonales;
 
         /// <summary>
+        /// Control txt_antePerDescripcion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_antePerDescripcion;
+
+        /// <summary>
         /// Control ddl_tipoAntFam.
         /// </summary>
         /// <remarks>
@@ -130,6 +139,15 @@ namespace SistemaECU911.Template.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_anteFamiliares;
+
+        /// <summary>
+        /// Control txt_anteFamDescripcion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_anteFamDescripcion;
 
         /// <summary>
         /// Control txt_enfeActual.

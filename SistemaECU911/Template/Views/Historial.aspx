@@ -32,22 +32,22 @@
                                         </asp:TableRow>
                                         <asp:TableRow>
                                             <asp:TableCell Style="background-color: white">
-                                                <asp:TextBox runat="server" ID="txt_nomEmpresa" BorderStyle="None" Style="width: 100%; text-align: center" Text="Servicio integrado de seguridad" ReadOnly="True"></asp:TextBox>
+                                                <asp:TextBox runat="server" ID="txt_nomEmpresa" BorderStyle="None" Style="width: 100%; text-align: center" Text="Servicio integrado de seguridad" ReadOnly="False"></asp:TextBox>
                                             </asp:TableCell>
                                             <asp:TableCell Style="background-color: white">
-                                                <asp:TextBox runat="server" ID="txt_priNombre" BorderStyle="None" Style="width: 100%; text-align: center" ReadOnly="True"></asp:TextBox>
+                                                <asp:TextBox runat="server" ID="txt_priNombre" BorderStyle="None" Style="width: 100%; text-align: center" ReadOnly="False"></asp:TextBox>
                                             </asp:TableCell>
                                             <asp:TableCell Style="background-color: white">
-                                                <asp:TextBox runat="server" ID="txt_priApellido" BorderStyle="None" Style="width: 100%; text-align: center" ReadOnly="True"></asp:TextBox>
+                                                <asp:TextBox runat="server" ID="txt_priApellido" BorderStyle="None" Style="width: 100%; text-align: center" ReadOnly="False"></asp:TextBox>
                                             </asp:TableCell>
                                             <asp:TableCell Style="background-color: white">
-                                                <asp:TextBox runat="server" ID="txt_sexo" BorderStyle="None" Style="width: 100%; text-align: center" ReadOnly="True"></asp:TextBox>
+                                                <asp:TextBox runat="server" ID="txt_sexo" BorderStyle="None" Style="width: 100%; text-align: center" ReadOnly="False"></asp:TextBox>
                                             </asp:TableCell>
                                             <asp:TableCell Style="background-color: white">
-                                                <asp:TextBox runat="server" ID="txt_edad" BorderStyle="None" Style="width: 100%; text-align: center" ReadOnly="True"></asp:TextBox>
+                                                <asp:TextBox runat="server" ID="txt_edad" BorderStyle="None" Style="width: 100%; text-align: center" ReadOnly="False"></asp:TextBox>
                                             </asp:TableCell>
                                             <asp:TableCell Style="background-color: white">
-                                                <asp:TextBox runat="server" ID="txt_numHClinica" BorderStyle="None" Style="width: 100%; text-align: center" ReadOnly="True"></asp:TextBox>
+                                                <asp:TextBox runat="server" ID="txt_numHClinica" BorderStyle="None" Style="width: 100%; text-align: center" ReadOnly="False"></asp:TextBox>
                                             </asp:TableCell>
                                         </asp:TableRow>
                                     </asp:Table>
@@ -101,7 +101,7 @@
                                     <asp:TextBox runat="server" ID="txt_antePersonales" BorderStyle="None" Style="width: 100%" TextMode="MultiLine" Rows="4"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white">
-                                    <asp:TextBox runat="server" BorderStyle="None" style="width:100%" TextMode="MultiLine" Rows="4"></asp:TextBox>                                    
+                                    <asp:TextBox runat="server" ID="txt_antePerDescripcion" BorderStyle="None" style="width:100%" TextMode="MultiLine" Rows="4"></asp:TextBox>                                    
                                 </asp:TableCell>
                             </asp:TableRow>
                         </asp:Table>
@@ -127,7 +127,7 @@
                                     <asp:TextBox runat="server" ID="txt_anteFamiliares" BorderStyle="None" Style="width: 100%" TextMode="MultiLine" Rows="4"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white">
-                                    <asp:TextBox runat="server" BorderStyle="None" style="width:100%" TextMode="MultiLine" Rows="4"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_anteFamDescripcion" BorderStyle="None" style="width:100%" TextMode="MultiLine" Rows="4"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                         </asp:Table>

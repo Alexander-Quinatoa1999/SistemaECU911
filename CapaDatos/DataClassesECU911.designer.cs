@@ -33,6 +33,9 @@ namespace CapaDatos
     partial void InsertTbl_AccidentesTrabajoDesc(Tbl_AccidentesTrabajoDesc instance);
     partial void UpdateTbl_AccidentesTrabajoDesc(Tbl_AccidentesTrabajoDesc instance);
     partial void DeleteTbl_AccidentesTrabajoDesc(Tbl_AccidentesTrabajoDesc instance);
+    partial void InsertTbl_Zona(Tbl_Zona instance);
+    partial void UpdateTbl_Zona(Tbl_Zona instance);
+    partial void DeleteTbl_Zona(Tbl_Zona instance);
     partial void InsertTbl_AntecedentesCliQuiru(Tbl_AntecedentesCliQuiru instance);
     partial void UpdateTbl_AntecedentesCliQuiru(Tbl_AntecedentesCliQuiru instance);
     partial void DeleteTbl_AntecedentesCliQuiru(Tbl_AntecedentesCliQuiru instance);
@@ -93,12 +96,12 @@ namespace CapaDatos
     partial void InsertTbl_EnfermedadActual(Tbl_EnfermedadActual instance);
     partial void UpdateTbl_EnfermedadActual(Tbl_EnfermedadActual instance);
     partial void DeleteTbl_EnfermedadActual(Tbl_EnfermedadActual instance);
-    partial void InsertTbl_Especialidad(Tbl_Especialidad instance);
-    partial void UpdateTbl_Especialidad(Tbl_Especialidad instance);
-    partial void DeleteTbl_Especialidad(Tbl_Especialidad instance);
     partial void InsertTbl_EnfermedadesProfesionales(Tbl_EnfermedadesProfesionales instance);
     partial void UpdateTbl_EnfermedadesProfesionales(Tbl_EnfermedadesProfesionales instance);
     partial void DeleteTbl_EnfermedadesProfesionales(Tbl_EnfermedadesProfesionales instance);
+    partial void InsertTbl_Especialidad(Tbl_Especialidad instance);
+    partial void UpdateTbl_Especialidad(Tbl_Especialidad instance);
+    partial void DeleteTbl_Especialidad(Tbl_Especialidad instance);
     partial void InsertTbl_Estilo(Tbl_Estilo instance);
     partial void UpdateTbl_Estilo(Tbl_Estilo instance);
     partial void DeleteTbl_Estilo(Tbl_Estilo instance);
@@ -108,24 +111,24 @@ namespace CapaDatos
     partial void InsertTbl_EstrcuturaUno(Tbl_EstrcuturaUno instance);
     partial void UpdateTbl_EstrcuturaUno(Tbl_EstrcuturaUno instance);
     partial void DeleteTbl_EstrcuturaUno(Tbl_EstrcuturaUno instance);
-    partial void InsertTbl_EstructuraProgramatica(Tbl_EstructuraProgramatica instance);
-    partial void UpdateTbl_EstructuraProgramatica(Tbl_EstructuraProgramatica instance);
-    partial void DeleteTbl_EstructuraProgramatica(Tbl_EstructuraProgramatica instance);
     partial void InsertTbl_EstructuraDos(Tbl_EstructuraDos instance);
     partial void UpdateTbl_EstructuraDos(Tbl_EstructuraDos instance);
     partial void DeleteTbl_EstructuraDos(Tbl_EstructuraDos instance);
+    partial void InsertTbl_EstructuraProgramatica(Tbl_EstructuraProgramatica instance);
+    partial void UpdateTbl_EstructuraProgramatica(Tbl_EstructuraProgramatica instance);
+    partial void DeleteTbl_EstructuraProgramatica(Tbl_EstructuraProgramatica instance);
     partial void InsertTbl_Evolucion(Tbl_Evolucion instance);
     partial void UpdateTbl_Evolucion(Tbl_Evolucion instance);
     partial void DeleteTbl_Evolucion(Tbl_Evolucion instance);
     partial void InsertTbl_ExaFisRegional(Tbl_ExaFisRegional instance);
     partial void UpdateTbl_ExaFisRegional(Tbl_ExaFisRegional instance);
     partial void DeleteTbl_ExaFisRegional(Tbl_ExaFisRegional instance);
-    partial void InsertTbl_Grado(Tbl_Grado instance);
-    partial void UpdateTbl_Grado(Tbl_Grado instance);
-    partial void DeleteTbl_Grado(Tbl_Grado instance);
     partial void InsertTbl_ExamenesRealizados(Tbl_ExamenesRealizados instance);
     partial void UpdateTbl_ExamenesRealizados(Tbl_ExamenesRealizados instance);
     partial void DeleteTbl_ExamenesRealizados(Tbl_ExamenesRealizados instance);
+    partial void InsertTbl_Grado(Tbl_Grado instance);
+    partial void UpdateTbl_Grado(Tbl_Grado instance);
+    partial void DeleteTbl_Grado(Tbl_Grado instance);
     partial void InsertTbl_GrupoEtnico(Tbl_GrupoEtnico instance);
     partial void UpdateTbl_GrupoEtnico(Tbl_GrupoEtnico instance);
     partial void DeleteTbl_GrupoEtnico(Tbl_GrupoEtnico instance);
@@ -138,9 +141,6 @@ namespace CapaDatos
     partial void InsertTbl_Hijos(Tbl_Hijos instance);
     partial void UpdateTbl_Hijos(Tbl_Hijos instance);
     partial void DeleteTbl_Hijos(Tbl_Hijos instance);
-    partial void InsertTbl_HistorialMed(Tbl_HistorialMed instance);
-    partial void UpdateTbl_HistorialMed(Tbl_HistorialMed instance);
-    partial void DeleteTbl_HistorialMed(Tbl_HistorialMed instance);
     partial void InsertTbl_Identidad_de_Genero(Tbl_Identidad_de_Genero instance);
     partial void UpdateTbl_Identidad_de_Genero(Tbl_Identidad_de_Genero instance);
     partial void DeleteTbl_Identidad_de_Genero(Tbl_Identidad_de_Genero instance);
@@ -156,12 +156,12 @@ namespace CapaDatos
     partial void InsertTbl_ModalidadLaboral(Tbl_ModalidadLaboral instance);
     partial void UpdateTbl_ModalidadLaboral(Tbl_ModalidadLaboral instance);
     partial void DeleteTbl_ModalidadLaboral(Tbl_ModalidadLaboral instance);
-    partial void InsertTbl_OrientacionSexual(Tbl_OrientacionSexual instance);
-    partial void UpdateTbl_OrientacionSexual(Tbl_OrientacionSexual instance);
-    partial void DeleteTbl_OrientacionSexual(Tbl_OrientacionSexual instance);
     partial void InsertTbl_MotivoConsulta(Tbl_MotivoConsulta instance);
     partial void UpdateTbl_MotivoConsulta(Tbl_MotivoConsulta instance);
     partial void DeleteTbl_MotivoConsulta(Tbl_MotivoConsulta instance);
+    partial void InsertTbl_OrientacionSexual(Tbl_OrientacionSexual instance);
+    partial void UpdateTbl_OrientacionSexual(Tbl_OrientacionSexual instance);
+    partial void DeleteTbl_OrientacionSexual(Tbl_OrientacionSexual instance);
     partial void InsertTbl_Personas(Tbl_Personas instance);
     partial void UpdateTbl_Personas(Tbl_Personas instance);
     partial void DeleteTbl_Personas(Tbl_Personas instance);
@@ -192,12 +192,12 @@ namespace CapaDatos
     partial void InsertTbl_Rmu(Tbl_Rmu instance);
     partial void UpdateTbl_Rmu(Tbl_Rmu instance);
     partial void DeleteTbl_Rmu(Tbl_Rmu instance);
-    partial void InsertTbl_TelefonoIntitucional(Tbl_TelefonoIntitucional instance);
-    partial void UpdateTbl_TelefonoIntitucional(Tbl_TelefonoIntitucional instance);
-    partial void DeleteTbl_TelefonoIntitucional(Tbl_TelefonoIntitucional instance);
     partial void InsertTbl_Sede(Tbl_Sede instance);
     partial void UpdateTbl_Sede(Tbl_Sede instance);
     partial void DeleteTbl_Sede(Tbl_Sede instance);
+    partial void InsertTbl_TelefonoIntitucional(Tbl_TelefonoIntitucional instance);
+    partial void UpdateTbl_TelefonoIntitucional(Tbl_TelefonoIntitucional instance);
+    partial void DeleteTbl_TelefonoIntitucional(Tbl_TelefonoIntitucional instance);
     partial void InsertTbl_TipoExaFisRegional(Tbl_TipoExaFisRegional instance);
     partial void UpdateTbl_TipoExaFisRegional(Tbl_TipoExaFisRegional instance);
     partial void DeleteTbl_TipoExaFisRegional(Tbl_TipoExaFisRegional instance);
@@ -216,9 +216,6 @@ namespace CapaDatos
     partial void InsertTbl_VidaSexualActiva(Tbl_VidaSexualActiva instance);
     partial void UpdateTbl_VidaSexualActiva(Tbl_VidaSexualActiva instance);
     partial void DeleteTbl_VidaSexualActiva(Tbl_VidaSexualActiva instance);
-    partial void InsertTbl_Zona(Tbl_Zona instance);
-    partial void UpdateTbl_Zona(Tbl_Zona instance);
-    partial void DeleteTbl_Zona(Tbl_Zona instance);
     #endregion
 		
 		public DataClassesECU911DataContext() : 
@@ -256,6 +253,14 @@ namespace CapaDatos
 			get
 			{
 				return this.GetTable<Tbl_AccidentesTrabajoDesc>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Tbl_Zona> Tbl_Zona
+		{
+			get
+			{
+				return this.GetTable<Tbl_Zona>();
 			}
 		}
 		
@@ -419,19 +424,19 @@ namespace CapaDatos
 			}
 		}
 		
-		public System.Data.Linq.Table<Tbl_Especialidad> Tbl_Especialidad
-		{
-			get
-			{
-				return this.GetTable<Tbl_Especialidad>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Tbl_EnfermedadesProfesionales> Tbl_EnfermedadesProfesionales
 		{
 			get
 			{
 				return this.GetTable<Tbl_EnfermedadesProfesionales>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Tbl_Especialidad> Tbl_Especialidad
+		{
+			get
+			{
+				return this.GetTable<Tbl_Especialidad>();
 			}
 		}
 		
@@ -459,19 +464,19 @@ namespace CapaDatos
 			}
 		}
 		
-		public System.Data.Linq.Table<Tbl_EstructuraProgramatica> Tbl_EstructuraProgramatica
-		{
-			get
-			{
-				return this.GetTable<Tbl_EstructuraProgramatica>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Tbl_EstructuraDos> Tbl_EstructuraDos
 		{
 			get
 			{
 				return this.GetTable<Tbl_EstructuraDos>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Tbl_EstructuraProgramatica> Tbl_EstructuraProgramatica
+		{
+			get
+			{
+				return this.GetTable<Tbl_EstructuraProgramatica>();
 			}
 		}
 		
@@ -491,19 +496,19 @@ namespace CapaDatos
 			}
 		}
 		
-		public System.Data.Linq.Table<Tbl_Grado> Tbl_Grado
-		{
-			get
-			{
-				return this.GetTable<Tbl_Grado>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Tbl_ExamenesRealizados> Tbl_ExamenesRealizados
 		{
 			get
 			{
 				return this.GetTable<Tbl_ExamenesRealizados>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Tbl_Grado> Tbl_Grado
+		{
+			get
+			{
+				return this.GetTable<Tbl_Grado>();
 			}
 		}
 		
@@ -536,14 +541,6 @@ namespace CapaDatos
 			get
 			{
 				return this.GetTable<Tbl_Hijos>();
-			}
-		}
-		
-		public System.Data.Linq.Table<Tbl_HistorialMed> Tbl_HistorialMed
-		{
-			get
-			{
-				return this.GetTable<Tbl_HistorialMed>();
 			}
 		}
 		
@@ -587,19 +584,19 @@ namespace CapaDatos
 			}
 		}
 		
-		public System.Data.Linq.Table<Tbl_OrientacionSexual> Tbl_OrientacionSexual
-		{
-			get
-			{
-				return this.GetTable<Tbl_OrientacionSexual>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Tbl_MotivoConsulta> Tbl_MotivoConsulta
 		{
 			get
 			{
 				return this.GetTable<Tbl_MotivoConsulta>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Tbl_OrientacionSexual> Tbl_OrientacionSexual
+		{
+			get
+			{
+				return this.GetTable<Tbl_OrientacionSexual>();
 			}
 		}
 		
@@ -683,19 +680,19 @@ namespace CapaDatos
 			}
 		}
 		
-		public System.Data.Linq.Table<Tbl_TelefonoIntitucional> Tbl_TelefonoIntitucional
-		{
-			get
-			{
-				return this.GetTable<Tbl_TelefonoIntitucional>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Tbl_Sede> Tbl_Sede
 		{
 			get
 			{
 				return this.GetTable<Tbl_Sede>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Tbl_TelefonoIntitucional> Tbl_TelefonoIntitucional
+		{
+			get
+			{
+				return this.GetTable<Tbl_TelefonoIntitucional>();
 			}
 		}
 		
@@ -747,19 +744,18 @@ namespace CapaDatos
 			}
 		}
 		
-		public System.Data.Linq.Table<Tbl_Zona> Tbl_Zona
-		{
-			get
-			{
-				return this.GetTable<Tbl_Zona>();
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Autentificacion_Usuario")]
 		public ISingleResult<Autentificacion_UsuarioResult> Autentificacion_Usuario([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string usuario, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string pass)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), usuario, pass);
 			return ((ISingleResult<Autentificacion_UsuarioResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Validar_Existencia")]
+		public ISingleResult<Validar_ExistenciaResult> Validar_Existencia([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string usuario)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), usuario);
+			return ((ISingleResult<Validar_ExistenciaResult>)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GuardarPersonasHistorial")]
@@ -774,13 +770,6 @@ namespace CapaDatos
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), tusu);
 			return ((ISingleResult<Identificar_rolResult>)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Validar_Existencia")]
-		public ISingleResult<Validar_ExistenciaResult> Validar_Existencia([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string usuario)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), usuario);
-			return ((ISingleResult<Validar_ExistenciaResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -1008,6 +997,144 @@ namespace CapaDatos
 		{
 			this.SendPropertyChanging();
 			entity.Tbl_AccidentesTrabajoDesc = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_Zona")]
+	public partial class Tbl_Zona : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Zona_id;
+		
+		private string _Zona_nom;
+		
+		private string _Zona_estado;
+		
+		private EntitySet<Tbl_Personas> _Tbl_Personas;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnZona_idChanging(int value);
+    partial void OnZona_idChanged();
+    partial void OnZona_nomChanging(string value);
+    partial void OnZona_nomChanged();
+    partial void OnZona_estadoChanging(string value);
+    partial void OnZona_estadoChanged();
+    #endregion
+		
+		public Tbl_Zona()
+		{
+			this._Tbl_Personas = new EntitySet<Tbl_Personas>(new Action<Tbl_Personas>(this.attach_Tbl_Personas), new Action<Tbl_Personas>(this.detach_Tbl_Personas));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Zona_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Zona_id
+		{
+			get
+			{
+				return this._Zona_id;
+			}
+			set
+			{
+				if ((this._Zona_id != value))
+				{
+					this.OnZona_idChanging(value);
+					this.SendPropertyChanging();
+					this._Zona_id = value;
+					this.SendPropertyChanged("Zona_id");
+					this.OnZona_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Zona_nom", DbType="VarChar(50)")]
+		public string Zona_nom
+		{
+			get
+			{
+				return this._Zona_nom;
+			}
+			set
+			{
+				if ((this._Zona_nom != value))
+				{
+					this.OnZona_nomChanging(value);
+					this.SendPropertyChanging();
+					this._Zona_nom = value;
+					this.SendPropertyChanged("Zona_nom");
+					this.OnZona_nomChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Zona_estado", DbType="VarChar(1)")]
+		public string Zona_estado
+		{
+			get
+			{
+				return this._Zona_estado;
+			}
+			set
+			{
+				if ((this._Zona_estado != value))
+				{
+					this.OnZona_estadoChanging(value);
+					this.SendPropertyChanging();
+					this._Zona_estado = value;
+					this.SendPropertyChanged("Zona_estado");
+					this.OnZona_estadoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Zona_Tbl_Personas", Storage="_Tbl_Personas", ThisKey="Zona_id", OtherKey="Zona_id")]
+		public EntitySet<Tbl_Personas> Tbl_Personas
+		{
+			get
+			{
+				return this._Tbl_Personas;
+			}
+			set
+			{
+				this._Tbl_Personas.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Tbl_Personas(Tbl_Personas entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Zona = this;
+		}
+		
+		private void detach_Tbl_Personas(Tbl_Personas entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Zona = null;
 		}
 	}
 	
@@ -2795,7 +2922,11 @@ namespace CapaDatos
 		
 		private string _AntFami_descripcion;
 		
-		private System.Nullable<char> _AntFami_estado;
+		private System.Nullable<int> _Per_id;
+		
+		private string _AntFami_estado;
+		
+		private EntityRef<Tbl_Personas> _Tbl_Personas;
 		
 		private EntityRef<Tbl_Tipos_de_Enfermedades> _Tbl_Tipos_de_Enfermedades;
 		
@@ -2811,12 +2942,15 @@ namespace CapaDatos
     partial void OnAntFami_antecendenteChanged();
     partial void OnAntFami_descripcionChanging(string value);
     partial void OnAntFami_descripcionChanged();
-    partial void OnAntFami_estadoChanging(System.Nullable<char> value);
+    partial void OnPer_idChanging(System.Nullable<int> value);
+    partial void OnPer_idChanged();
+    partial void OnAntFami_estadoChanging(string value);
     partial void OnAntFami_estadoChanged();
     #endregion
 		
 		public Tbl_AnteFamiliares()
 		{
+			this._Tbl_Personas = default(EntityRef<Tbl_Personas>);
 			this._Tbl_Tipos_de_Enfermedades = default(EntityRef<Tbl_Tipos_de_Enfermedades>);
 			OnCreated();
 		}
@@ -2905,8 +3039,32 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AntFami_estado", DbType="Char(1)")]
-		public System.Nullable<char> AntFami_estado
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_id", DbType="Int")]
+		public System.Nullable<int> Per_id
+		{
+			get
+			{
+				return this._Per_id;
+			}
+			set
+			{
+				if ((this._Per_id != value))
+				{
+					if (this._Tbl_Personas.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnPer_idChanging(value);
+					this.SendPropertyChanging();
+					this._Per_id = value;
+					this.SendPropertyChanged("Per_id");
+					this.OnPer_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AntFami_estado", DbType="VarChar(1)")]
+		public string AntFami_estado
 		{
 			get
 			{
@@ -2921,6 +3079,40 @@ namespace CapaDatos
 					this._AntFami_estado = value;
 					this.SendPropertyChanged("AntFami_estado");
 					this.OnAntFami_estadoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_AnteFamiliares", Storage="_Tbl_Personas", ThisKey="Per_id", OtherKey="Per_id", IsForeignKey=true)]
+		public Tbl_Personas Tbl_Personas
+		{
+			get
+			{
+				return this._Tbl_Personas.Entity;
+			}
+			set
+			{
+				Tbl_Personas previousValue = this._Tbl_Personas.Entity;
+				if (((previousValue != value) 
+							|| (this._Tbl_Personas.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Tbl_Personas.Entity = null;
+						previousValue.Tbl_AnteFamiliares.Remove(this);
+					}
+					this._Tbl_Personas.Entity = value;
+					if ((value != null))
+					{
+						value.Tbl_AnteFamiliares.Add(this);
+						this._Per_id = value.Per_id;
+					}
+					else
+					{
+						this._Per_id = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Tbl_Personas");
 				}
 			}
 		}
@@ -2994,7 +3186,11 @@ namespace CapaDatos
 		
 		private string _AntPer_descripcion;
 		
-		private System.Nullable<char> _AntPer_estado;
+		private System.Nullable<int> _Per_id;
+		
+		private string _AntPer_estado;
+		
+		private EntityRef<Tbl_Personas> _Tbl_Personas;
 		
 		private EntityRef<Tbl_Tipos_de_Enfermedades> _Tbl_Tipos_de_Enfermedades;
 		
@@ -3010,12 +3206,15 @@ namespace CapaDatos
     partial void OnAntPer_antecedenteChanged();
     partial void OnAntPer_descripcionChanging(string value);
     partial void OnAntPer_descripcionChanged();
-    partial void OnAntPer_estadoChanging(System.Nullable<char> value);
+    partial void OnPer_idChanging(System.Nullable<int> value);
+    partial void OnPer_idChanged();
+    partial void OnAntPer_estadoChanging(string value);
     partial void OnAntPer_estadoChanged();
     #endregion
 		
 		public Tbl_AntePersonales()
 		{
+			this._Tbl_Personas = default(EntityRef<Tbl_Personas>);
 			this._Tbl_Tipos_de_Enfermedades = default(EntityRef<Tbl_Tipos_de_Enfermedades>);
 			OnCreated();
 		}
@@ -3104,8 +3303,32 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AntPer_estado", DbType="Char(1)")]
-		public System.Nullable<char> AntPer_estado
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_id", DbType="Int")]
+		public System.Nullable<int> Per_id
+		{
+			get
+			{
+				return this._Per_id;
+			}
+			set
+			{
+				if ((this._Per_id != value))
+				{
+					if (this._Tbl_Personas.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnPer_idChanging(value);
+					this.SendPropertyChanging();
+					this._Per_id = value;
+					this.SendPropertyChanged("Per_id");
+					this.OnPer_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AntPer_estado", DbType="VarChar(1)")]
+		public string AntPer_estado
 		{
 			get
 			{
@@ -3120,6 +3343,40 @@ namespace CapaDatos
 					this._AntPer_estado = value;
 					this.SendPropertyChanged("AntPer_estado");
 					this.OnAntPer_estadoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_AntePersonales", Storage="_Tbl_Personas", ThisKey="Per_id", OtherKey="Per_id", IsForeignKey=true)]
+		public Tbl_Personas Tbl_Personas
+		{
+			get
+			{
+				return this._Tbl_Personas.Entity;
+			}
+			set
+			{
+				Tbl_Personas previousValue = this._Tbl_Personas.Entity;
+				if (((previousValue != value) 
+							|| (this._Tbl_Personas.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Tbl_Personas.Entity = null;
+						previousValue.Tbl_AntePersonales.Remove(this);
+					}
+					this._Tbl_Personas.Entity = value;
+					if ((value != null))
+					{
+						value.Tbl_AntePersonales.Add(this);
+						this._Per_id = value.Per_id;
+					}
+					else
+					{
+						this._Per_id = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Tbl_Personas");
 				}
 			}
 		}
@@ -3815,7 +4072,11 @@ namespace CapaDatos
 		
 		private string _ConsVitAntro_perAbdominaln;
 		
+		private System.Nullable<int> _Per_id;
+		
 		private string _ConsVitAntro_estado;
+		
+		private EntityRef<Tbl_Personas> _Tbl_Personas;
 		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
@@ -3841,12 +4102,15 @@ namespace CapaDatos
     partial void OnConsVitAntro_indMasCorporalnChanged();
     partial void OnConsVitAntro_perAbdominalnChanging(string value);
     partial void OnConsVitAntro_perAbdominalnChanged();
+    partial void OnPer_idChanging(System.Nullable<int> value);
+    partial void OnPer_idChanged();
     partial void OnConsVitAntro_estadoChanging(string value);
     partial void OnConsVitAntro_estadoChanged();
     #endregion
 		
 		public Tbl_ConsVitAntro()
 		{
+			this._Tbl_Personas = default(EntityRef<Tbl_Personas>);
 			OnCreated();
 		}
 		
@@ -4050,6 +4314,30 @@ namespace CapaDatos
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_id", DbType="Int")]
+		public System.Nullable<int> Per_id
+		{
+			get
+			{
+				return this._Per_id;
+			}
+			set
+			{
+				if ((this._Per_id != value))
+				{
+					if (this._Tbl_Personas.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnPer_idChanging(value);
+					this.SendPropertyChanging();
+					this._Per_id = value;
+					this.SendPropertyChanged("Per_id");
+					this.OnPer_idChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ConsVitAntro_estado", DbType="VarChar(1)")]
 		public string ConsVitAntro_estado
 		{
@@ -4066,6 +4354,40 @@ namespace CapaDatos
 					this._ConsVitAntro_estado = value;
 					this.SendPropertyChanged("ConsVitAntro_estado");
 					this.OnConsVitAntro_estadoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_ConsVitAntro", Storage="_Tbl_Personas", ThisKey="Per_id", OtherKey="Per_id", IsForeignKey=true)]
+		public Tbl_Personas Tbl_Personas
+		{
+			get
+			{
+				return this._Tbl_Personas.Entity;
+			}
+			set
+			{
+				Tbl_Personas previousValue = this._Tbl_Personas.Entity;
+				if (((previousValue != value) 
+							|| (this._Tbl_Personas.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Tbl_Personas.Entity = null;
+						previousValue.Tbl_ConsVitAntro.Remove(this);
+					}
+					this._Tbl_Personas.Entity = value;
+					if ((value != null))
+					{
+						value.Tbl_ConsVitAntro.Add(this);
+						this._Per_id = value.Per_id;
+					}
+					else
+					{
+						this._Per_id = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Tbl_Personas");
 				}
 			}
 		}
@@ -4245,9 +4567,13 @@ namespace CapaDatos
 		
 		private string _DatProfe_cod;
 		
+		private System.Nullable<int> _Per_id;
+		
 		private string _DatProfe_estado;
 		
 		private EntityRef<Tbl_Especialidad> _Tbl_Especialidad;
+		
+		private EntityRef<Tbl_Personas> _Tbl_Personas;
 		
 		private EntityRef<Tbl_Profesional> _Tbl_Profesional;
 		
@@ -4265,6 +4591,8 @@ namespace CapaDatos
     partial void Onespec_idChanged();
     partial void OnDatProfe_codChanging(string value);
     partial void OnDatProfe_codChanged();
+    partial void OnPer_idChanging(System.Nullable<int> value);
+    partial void OnPer_idChanged();
     partial void OnDatProfe_estadoChanging(string value);
     partial void OnDatProfe_estadoChanged();
     #endregion
@@ -4272,6 +4600,7 @@ namespace CapaDatos
 		public Tbl_DatProfesional()
 		{
 			this._Tbl_Especialidad = default(EntityRef<Tbl_Especialidad>);
+			this._Tbl_Personas = default(EntityRef<Tbl_Personas>);
 			this._Tbl_Profesional = default(EntityRef<Tbl_Profesional>);
 			OnCreated();
 		}
@@ -4384,7 +4713,31 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DatProfe_estado", DbType="VarChar(50)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_id", DbType="Int")]
+		public System.Nullable<int> Per_id
+		{
+			get
+			{
+				return this._Per_id;
+			}
+			set
+			{
+				if ((this._Per_id != value))
+				{
+					if (this._Tbl_Personas.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnPer_idChanging(value);
+					this.SendPropertyChanging();
+					this._Per_id = value;
+					this.SendPropertyChanged("Per_id");
+					this.OnPer_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DatProfe_estado", DbType="VarChar(1)")]
 		public string DatProfe_estado
 		{
 			get
@@ -4434,6 +4787,40 @@ namespace CapaDatos
 						this._espec_id = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("Tbl_Especialidad");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_DatProfesional", Storage="_Tbl_Personas", ThisKey="Per_id", OtherKey="Per_id", IsForeignKey=true)]
+		public Tbl_Personas Tbl_Personas
+		{
+			get
+			{
+				return this._Tbl_Personas.Entity;
+			}
+			set
+			{
+				Tbl_Personas previousValue = this._Tbl_Personas.Entity;
+				if (((previousValue != value) 
+							|| (this._Tbl_Personas.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Tbl_Personas.Entity = null;
+						previousValue.Tbl_DatProfesional.Remove(this);
+					}
+					this._Tbl_Personas.Entity = value;
+					if ((value != null))
+					{
+						value.Tbl_DatProfesional.Add(this);
+						this._Per_id = value.Per_id;
+					}
+					else
+					{
+						this._Per_id = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Tbl_Personas");
 				}
 			}
 		}
@@ -5638,7 +6025,11 @@ namespace CapaDatos
 		
 		private string _EnfActu_descrip;
 		
-		private System.Nullable<char> _EnfActu_estado;
+		private System.Nullable<int> _Per_id;
+		
+		private string _EnfActu_estado;
+		
+		private EntityRef<Tbl_Personas> _Tbl_Personas;
 		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
@@ -5648,12 +6039,15 @@ namespace CapaDatos
     partial void OnEnfActu_idChanged();
     partial void OnEnfActu_descripChanging(string value);
     partial void OnEnfActu_descripChanged();
-    partial void OnEnfActu_estadoChanging(System.Nullable<char> value);
+    partial void OnPer_idChanging(System.Nullable<int> value);
+    partial void OnPer_idChanged();
+    partial void OnEnfActu_estadoChanging(string value);
     partial void OnEnfActu_estadoChanged();
     #endregion
 		
 		public Tbl_EnfermedadActual()
 		{
+			this._Tbl_Personas = default(EntityRef<Tbl_Personas>);
 			OnCreated();
 		}
 		
@@ -5697,8 +6091,32 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EnfActu_estado", DbType="Char(1)")]
-		public System.Nullable<char> EnfActu_estado
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_id", DbType="Int")]
+		public System.Nullable<int> Per_id
+		{
+			get
+			{
+				return this._Per_id;
+			}
+			set
+			{
+				if ((this._Per_id != value))
+				{
+					if (this._Tbl_Personas.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnPer_idChanging(value);
+					this.SendPropertyChanging();
+					this._Per_id = value;
+					this.SendPropertyChanged("Per_id");
+					this.OnPer_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EnfActu_estado", DbType="VarChar(1)")]
+		public string EnfActu_estado
 		{
 			get
 			{
@@ -5717,129 +6135,37 @@ namespace CapaDatos
 			}
 		}
 		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_Especialidad")]
-	public partial class Tbl_Especialidad : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _espec_id;
-		
-		private string _espec_nombre;
-		
-		private string _espec_estado;
-		
-		private EntitySet<Tbl_DatProfesional> _Tbl_DatProfesional;
-		
-    #region Definiciones de métodos de extensibilidad
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void Onespec_idChanging(int value);
-    partial void Onespec_idChanged();
-    partial void Onespec_nombreChanging(string value);
-    partial void Onespec_nombreChanged();
-    partial void Onespec_estadoChanging(string value);
-    partial void Onespec_estadoChanged();
-    #endregion
-		
-		public Tbl_Especialidad()
-		{
-			this._Tbl_DatProfesional = new EntitySet<Tbl_DatProfesional>(new Action<Tbl_DatProfesional>(this.attach_Tbl_DatProfesional), new Action<Tbl_DatProfesional>(this.detach_Tbl_DatProfesional));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_espec_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int espec_id
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_EnfermedadActual", Storage="_Tbl_Personas", ThisKey="Per_id", OtherKey="Per_id", IsForeignKey=true)]
+		public Tbl_Personas Tbl_Personas
 		{
 			get
 			{
-				return this._espec_id;
+				return this._Tbl_Personas.Entity;
 			}
 			set
 			{
-				if ((this._espec_id != value))
+				Tbl_Personas previousValue = this._Tbl_Personas.Entity;
+				if (((previousValue != value) 
+							|| (this._Tbl_Personas.HasLoadedOrAssignedValue == false)))
 				{
-					this.Onespec_idChanging(value);
 					this.SendPropertyChanging();
-					this._espec_id = value;
-					this.SendPropertyChanged("espec_id");
-					this.Onespec_idChanged();
+					if ((previousValue != null))
+					{
+						this._Tbl_Personas.Entity = null;
+						previousValue.Tbl_EnfermedadActual.Remove(this);
+					}
+					this._Tbl_Personas.Entity = value;
+					if ((value != null))
+					{
+						value.Tbl_EnfermedadActual.Add(this);
+						this._Per_id = value.Per_id;
+					}
+					else
+					{
+						this._Per_id = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Tbl_Personas");
 				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_espec_nombre", DbType="VarChar(100)")]
-		public string espec_nombre
-		{
-			get
-			{
-				return this._espec_nombre;
-			}
-			set
-			{
-				if ((this._espec_nombre != value))
-				{
-					this.Onespec_nombreChanging(value);
-					this.SendPropertyChanging();
-					this._espec_nombre = value;
-					this.SendPropertyChanged("espec_nombre");
-					this.Onespec_nombreChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_espec_estado", DbType="VarChar(1)")]
-		public string espec_estado
-		{
-			get
-			{
-				return this._espec_estado;
-			}
-			set
-			{
-				if ((this._espec_estado != value))
-				{
-					this.Onespec_estadoChanging(value);
-					this.SendPropertyChanging();
-					this._espec_estado = value;
-					this.SendPropertyChanged("espec_estado");
-					this.Onespec_estadoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Especialidad_Tbl_DatProfesional", Storage="_Tbl_DatProfesional", ThisKey="espec_id", OtherKey="espec_id")]
-		public EntitySet<Tbl_DatProfesional> Tbl_DatProfesional
-		{
-			get
-			{
-				return this._Tbl_DatProfesional;
-			}
-			set
-			{
-				this._Tbl_DatProfesional.Assign(value);
 			}
 		}
 		
@@ -5861,18 +6187,6 @@ namespace CapaDatos
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-		
-		private void attach_Tbl_DatProfesional(Tbl_DatProfesional entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tbl_Especialidad = this;
-		}
-		
-		private void detach_Tbl_DatProfesional(Tbl_DatProfesional entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tbl_Especialidad = null;
 		}
 	}
 	
@@ -6100,6 +6414,144 @@ namespace CapaDatos
 		{
 			this.SendPropertyChanging();
 			entity.Tbl_EnfermedadesProfesionales = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_Especialidad")]
+	public partial class Tbl_Especialidad : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _espec_id;
+		
+		private string _espec_nombre;
+		
+		private string _espec_estado;
+		
+		private EntitySet<Tbl_DatProfesional> _Tbl_DatProfesional;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onespec_idChanging(int value);
+    partial void Onespec_idChanged();
+    partial void Onespec_nombreChanging(string value);
+    partial void Onespec_nombreChanged();
+    partial void Onespec_estadoChanging(string value);
+    partial void Onespec_estadoChanged();
+    #endregion
+		
+		public Tbl_Especialidad()
+		{
+			this._Tbl_DatProfesional = new EntitySet<Tbl_DatProfesional>(new Action<Tbl_DatProfesional>(this.attach_Tbl_DatProfesional), new Action<Tbl_DatProfesional>(this.detach_Tbl_DatProfesional));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_espec_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int espec_id
+		{
+			get
+			{
+				return this._espec_id;
+			}
+			set
+			{
+				if ((this._espec_id != value))
+				{
+					this.Onespec_idChanging(value);
+					this.SendPropertyChanging();
+					this._espec_id = value;
+					this.SendPropertyChanged("espec_id");
+					this.Onespec_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_espec_nombre", DbType="VarChar(100)")]
+		public string espec_nombre
+		{
+			get
+			{
+				return this._espec_nombre;
+			}
+			set
+			{
+				if ((this._espec_nombre != value))
+				{
+					this.Onespec_nombreChanging(value);
+					this.SendPropertyChanging();
+					this._espec_nombre = value;
+					this.SendPropertyChanged("espec_nombre");
+					this.Onespec_nombreChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_espec_estado", DbType="VarChar(1)")]
+		public string espec_estado
+		{
+			get
+			{
+				return this._espec_estado;
+			}
+			set
+			{
+				if ((this._espec_estado != value))
+				{
+					this.Onespec_estadoChanging(value);
+					this.SendPropertyChanging();
+					this._espec_estado = value;
+					this.SendPropertyChanged("espec_estado");
+					this.Onespec_estadoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Especialidad_Tbl_DatProfesional", Storage="_Tbl_DatProfesional", ThisKey="espec_id", OtherKey="espec_id")]
+		public EntitySet<Tbl_DatProfesional> Tbl_DatProfesional
+		{
+			get
+			{
+				return this._Tbl_DatProfesional;
+			}
+			set
+			{
+				this._Tbl_DatProfesional.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Tbl_DatProfesional(Tbl_DatProfesional entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Especialidad = this;
+		}
+		
+		private void detach_Tbl_DatProfesional(Tbl_DatProfesional entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Especialidad = null;
 		}
 	}
 	
@@ -6654,144 +7106,6 @@ namespace CapaDatos
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_EstructuraProgramatica")]
-	public partial class Tbl_EstructuraProgramatica : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _EstrucProgra_id;
-		
-		private string _EstrucProgra_nom;
-		
-		private string _EstrucProgra_estado;
-		
-		private EntitySet<Tbl_Personas> _Tbl_Personas;
-		
-    #region Definiciones de métodos de extensibilidad
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnEstrucProgra_idChanging(int value);
-    partial void OnEstrucProgra_idChanged();
-    partial void OnEstrucProgra_nomChanging(string value);
-    partial void OnEstrucProgra_nomChanged();
-    partial void OnEstrucProgra_estadoChanging(string value);
-    partial void OnEstrucProgra_estadoChanged();
-    #endregion
-		
-		public Tbl_EstructuraProgramatica()
-		{
-			this._Tbl_Personas = new EntitySet<Tbl_Personas>(new Action<Tbl_Personas>(this.attach_Tbl_Personas), new Action<Tbl_Personas>(this.detach_Tbl_Personas));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EstrucProgra_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int EstrucProgra_id
-		{
-			get
-			{
-				return this._EstrucProgra_id;
-			}
-			set
-			{
-				if ((this._EstrucProgra_id != value))
-				{
-					this.OnEstrucProgra_idChanging(value);
-					this.SendPropertyChanging();
-					this._EstrucProgra_id = value;
-					this.SendPropertyChanged("EstrucProgra_id");
-					this.OnEstrucProgra_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EstrucProgra_nom", DbType="VarChar(100)")]
-		public string EstrucProgra_nom
-		{
-			get
-			{
-				return this._EstrucProgra_nom;
-			}
-			set
-			{
-				if ((this._EstrucProgra_nom != value))
-				{
-					this.OnEstrucProgra_nomChanging(value);
-					this.SendPropertyChanging();
-					this._EstrucProgra_nom = value;
-					this.SendPropertyChanged("EstrucProgra_nom");
-					this.OnEstrucProgra_nomChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EstrucProgra_estado", DbType="VarChar(1)")]
-		public string EstrucProgra_estado
-		{
-			get
-			{
-				return this._EstrucProgra_estado;
-			}
-			set
-			{
-				if ((this._EstrucProgra_estado != value))
-				{
-					this.OnEstrucProgra_estadoChanging(value);
-					this.SendPropertyChanging();
-					this._EstrucProgra_estado = value;
-					this.SendPropertyChanged("EstrucProgra_estado");
-					this.OnEstrucProgra_estadoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_EstructuraProgramatica_Tbl_Personas", Storage="_Tbl_Personas", ThisKey="EstrucProgra_id", OtherKey="EstrucProgra_id")]
-		public EntitySet<Tbl_Personas> Tbl_Personas
-		{
-			get
-			{
-				return this._Tbl_Personas;
-			}
-			set
-			{
-				this._Tbl_Personas.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Tbl_Personas(Tbl_Personas entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tbl_EstructuraProgramatica = this;
-		}
-		
-		private void detach_Tbl_Personas(Tbl_Personas entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tbl_EstructuraProgramatica = null;
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_EstructuraDos")]
 	public partial class Tbl_EstructuraDos : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -6930,6 +7244,144 @@ namespace CapaDatos
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_EstructuraProgramatica")]
+	public partial class Tbl_EstructuraProgramatica : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _EstrucProgra_id;
+		
+		private string _EstrucProgra_nom;
+		
+		private string _EstrucProgra_estado;
+		
+		private EntitySet<Tbl_Personas> _Tbl_Personas;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnEstrucProgra_idChanging(int value);
+    partial void OnEstrucProgra_idChanged();
+    partial void OnEstrucProgra_nomChanging(string value);
+    partial void OnEstrucProgra_nomChanged();
+    partial void OnEstrucProgra_estadoChanging(string value);
+    partial void OnEstrucProgra_estadoChanged();
+    #endregion
+		
+		public Tbl_EstructuraProgramatica()
+		{
+			this._Tbl_Personas = new EntitySet<Tbl_Personas>(new Action<Tbl_Personas>(this.attach_Tbl_Personas), new Action<Tbl_Personas>(this.detach_Tbl_Personas));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EstrucProgra_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int EstrucProgra_id
+		{
+			get
+			{
+				return this._EstrucProgra_id;
+			}
+			set
+			{
+				if ((this._EstrucProgra_id != value))
+				{
+					this.OnEstrucProgra_idChanging(value);
+					this.SendPropertyChanging();
+					this._EstrucProgra_id = value;
+					this.SendPropertyChanged("EstrucProgra_id");
+					this.OnEstrucProgra_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EstrucProgra_nom", DbType="VarChar(100)")]
+		public string EstrucProgra_nom
+		{
+			get
+			{
+				return this._EstrucProgra_nom;
+			}
+			set
+			{
+				if ((this._EstrucProgra_nom != value))
+				{
+					this.OnEstrucProgra_nomChanging(value);
+					this.SendPropertyChanging();
+					this._EstrucProgra_nom = value;
+					this.SendPropertyChanged("EstrucProgra_nom");
+					this.OnEstrucProgra_nomChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EstrucProgra_estado", DbType="VarChar(1)")]
+		public string EstrucProgra_estado
+		{
+			get
+			{
+				return this._EstrucProgra_estado;
+			}
+			set
+			{
+				if ((this._EstrucProgra_estado != value))
+				{
+					this.OnEstrucProgra_estadoChanging(value);
+					this.SendPropertyChanging();
+					this._EstrucProgra_estado = value;
+					this.SendPropertyChanged("EstrucProgra_estado");
+					this.OnEstrucProgra_estadoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_EstructuraProgramatica_Tbl_Personas", Storage="_Tbl_Personas", ThisKey="EstrucProgra_id", OtherKey="EstrucProgra_id")]
+		public EntitySet<Tbl_Personas> Tbl_Personas
+		{
+			get
+			{
+				return this._Tbl_Personas;
+			}
+			set
+			{
+				this._Tbl_Personas.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Tbl_Personas(Tbl_Personas entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_EstructuraProgramatica = this;
+		}
+		
+		private void detach_Tbl_Personas(Tbl_Personas entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_EstructuraProgramatica = null;
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_Evolucion")]
 	public partial class Tbl_Evolucion : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -6944,7 +7396,11 @@ namespace CapaDatos
 		
 		private string _Evolucion_notas;
 		
-		private System.Nullable<char> _Evolucion_estado;
+		private System.Nullable<int> _Per_id;
+		
+		private string _Evolucion_estado;
+		
+		private EntityRef<Tbl_Personas> _Tbl_Personas;
 		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
@@ -6958,12 +7414,15 @@ namespace CapaDatos
     partial void OnEvolucion_horaChanged();
     partial void OnEvolucion_notasChanging(string value);
     partial void OnEvolucion_notasChanged();
-    partial void OnEvolucion_estadoChanging(System.Nullable<char> value);
+    partial void OnPer_idChanging(System.Nullable<int> value);
+    partial void OnPer_idChanged();
+    partial void OnEvolucion_estadoChanging(string value);
     partial void OnEvolucion_estadoChanged();
     #endregion
 		
 		public Tbl_Evolucion()
 		{
+			this._Tbl_Personas = default(EntityRef<Tbl_Personas>);
 			OnCreated();
 		}
 		
@@ -7047,8 +7506,32 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Evolucion_estado", DbType="Char(1)")]
-		public System.Nullable<char> Evolucion_estado
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_id", DbType="Int")]
+		public System.Nullable<int> Per_id
+		{
+			get
+			{
+				return this._Per_id;
+			}
+			set
+			{
+				if ((this._Per_id != value))
+				{
+					if (this._Tbl_Personas.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnPer_idChanging(value);
+					this.SendPropertyChanging();
+					this._Per_id = value;
+					this.SendPropertyChanged("Per_id");
+					this.OnPer_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Evolucion_estado", DbType="VarChar(1)")]
+		public string Evolucion_estado
 		{
 			get
 			{
@@ -7063,6 +7546,40 @@ namespace CapaDatos
 					this._Evolucion_estado = value;
 					this.SendPropertyChanged("Evolucion_estado");
 					this.OnEvolucion_estadoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_Evolucion", Storage="_Tbl_Personas", ThisKey="Per_id", OtherKey="Per_id", IsForeignKey=true)]
+		public Tbl_Personas Tbl_Personas
+		{
+			get
+			{
+				return this._Tbl_Personas.Entity;
+			}
+			set
+			{
+				Tbl_Personas previousValue = this._Tbl_Personas.Entity;
+				if (((previousValue != value) 
+							|| (this._Tbl_Personas.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Tbl_Personas.Entity = null;
+						previousValue.Tbl_Evolucion.Remove(this);
+					}
+					this._Tbl_Personas.Entity = value;
+					if ((value != null))
+					{
+						value.Tbl_Evolucion.Add(this);
+						this._Per_id = value.Per_id;
+					}
+					else
+					{
+						this._Per_id = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Tbl_Personas");
 				}
 			}
 		}
@@ -7096,11 +7613,15 @@ namespace CapaDatos
 		
 		private int _ExaFisRegional_id;
 		
-		private System.Nullable<int> _Regiones_id;
-		
 		private string _ExaFisRegional_observaciones;
 		
+		private System.Nullable<int> _Per_id;
+		
+		private System.Nullable<int> _Regiones_id;
+		
 		private string _ExaFisRegional_estado;
+		
+		private EntityRef<Tbl_Personas> _Tbl_Personas;
 		
 		private EntityRef<Tbl_Regiones> _Tbl_Regiones;
 		
@@ -7110,16 +7631,19 @@ namespace CapaDatos
     partial void OnCreated();
     partial void OnExaFisRegional_idChanging(int value);
     partial void OnExaFisRegional_idChanged();
-    partial void OnRegiones_idChanging(System.Nullable<int> value);
-    partial void OnRegiones_idChanged();
     partial void OnExaFisRegional_observacionesChanging(string value);
     partial void OnExaFisRegional_observacionesChanged();
+    partial void OnPer_idChanging(System.Nullable<int> value);
+    partial void OnPer_idChanged();
+    partial void OnRegiones_idChanging(System.Nullable<int> value);
+    partial void OnRegiones_idChanged();
     partial void OnExaFisRegional_estadoChanging(string value);
     partial void OnExaFisRegional_estadoChanged();
     #endregion
 		
 		public Tbl_ExaFisRegional()
 		{
+			this._Tbl_Personas = default(EntityRef<Tbl_Personas>);
 			this._Tbl_Regiones = default(EntityRef<Tbl_Regiones>);
 			OnCreated();
 		}
@@ -7140,6 +7664,50 @@ namespace CapaDatos
 					this._ExaFisRegional_id = value;
 					this.SendPropertyChanged("ExaFisRegional_id");
 					this.OnExaFisRegional_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExaFisRegional_observaciones", DbType="Text", UpdateCheck=UpdateCheck.Never)]
+		public string ExaFisRegional_observaciones
+		{
+			get
+			{
+				return this._ExaFisRegional_observaciones;
+			}
+			set
+			{
+				if ((this._ExaFisRegional_observaciones != value))
+				{
+					this.OnExaFisRegional_observacionesChanging(value);
+					this.SendPropertyChanging();
+					this._ExaFisRegional_observaciones = value;
+					this.SendPropertyChanged("ExaFisRegional_observaciones");
+					this.OnExaFisRegional_observacionesChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_id", DbType="Int")]
+		public System.Nullable<int> Per_id
+		{
+			get
+			{
+				return this._Per_id;
+			}
+			set
+			{
+				if ((this._Per_id != value))
+				{
+					if (this._Tbl_Personas.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnPer_idChanging(value);
+					this.SendPropertyChanging();
+					this._Per_id = value;
+					this.SendPropertyChanged("Per_id");
+					this.OnPer_idChanged();
 				}
 			}
 		}
@@ -7168,27 +7736,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExaFisRegional_observaciones", DbType="Text", UpdateCheck=UpdateCheck.Never)]
-		public string ExaFisRegional_observaciones
-		{
-			get
-			{
-				return this._ExaFisRegional_observaciones;
-			}
-			set
-			{
-				if ((this._ExaFisRegional_observaciones != value))
-				{
-					this.OnExaFisRegional_observacionesChanging(value);
-					this.SendPropertyChanging();
-					this._ExaFisRegional_observaciones = value;
-					this.SendPropertyChanged("ExaFisRegional_observaciones");
-					this.OnExaFisRegional_observacionesChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExaFisRegional_estado", DbType="VarChar(50)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExaFisRegional_estado", DbType="VarChar(1)")]
 		public string ExaFisRegional_estado
 		{
 			get
@@ -7204,6 +7752,40 @@ namespace CapaDatos
 					this._ExaFisRegional_estado = value;
 					this.SendPropertyChanged("ExaFisRegional_estado");
 					this.OnExaFisRegional_estadoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_ExaFisRegional", Storage="_Tbl_Personas", ThisKey="Per_id", OtherKey="Per_id", IsForeignKey=true)]
+		public Tbl_Personas Tbl_Personas
+		{
+			get
+			{
+				return this._Tbl_Personas.Entity;
+			}
+			set
+			{
+				Tbl_Personas previousValue = this._Tbl_Personas.Entity;
+				if (((previousValue != value) 
+							|| (this._Tbl_Personas.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Tbl_Personas.Entity = null;
+						previousValue.Tbl_ExaFisRegional.Remove(this);
+					}
+					this._Tbl_Personas.Entity = value;
+					if ((value != null))
+					{
+						value.Tbl_ExaFisRegional.Add(this);
+						this._Per_id = value.Per_id;
+					}
+					else
+					{
+						this._Per_id = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Tbl_Personas");
 				}
 			}
 		}
@@ -7260,120 +7842,6 @@ namespace CapaDatos
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_Grado")]
-	public partial class Tbl_Grado : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _Grado_id;
-		
-		private string _Grado_Per;
-		
-		private EntitySet<Tbl_Personas> _Tbl_Personas;
-		
-    #region Definiciones de métodos de extensibilidad
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnGrado_idChanging(int value);
-    partial void OnGrado_idChanged();
-    partial void OnGrado_PerChanging(string value);
-    partial void OnGrado_PerChanged();
-    #endregion
-		
-		public Tbl_Grado()
-		{
-			this._Tbl_Personas = new EntitySet<Tbl_Personas>(new Action<Tbl_Personas>(this.attach_Tbl_Personas), new Action<Tbl_Personas>(this.detach_Tbl_Personas));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Grado_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int Grado_id
-		{
-			get
-			{
-				return this._Grado_id;
-			}
-			set
-			{
-				if ((this._Grado_id != value))
-				{
-					this.OnGrado_idChanging(value);
-					this.SendPropertyChanging();
-					this._Grado_id = value;
-					this.SendPropertyChanged("Grado_id");
-					this.OnGrado_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Grado_Per", DbType="VarChar(10)")]
-		public string Grado_Per
-		{
-			get
-			{
-				return this._Grado_Per;
-			}
-			set
-			{
-				if ((this._Grado_Per != value))
-				{
-					this.OnGrado_PerChanging(value);
-					this.SendPropertyChanging();
-					this._Grado_Per = value;
-					this.SendPropertyChanged("Grado_Per");
-					this.OnGrado_PerChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Grado_Tbl_Personas", Storage="_Tbl_Personas", ThisKey="Grado_id", OtherKey="Grado_id")]
-		public EntitySet<Tbl_Personas> Tbl_Personas
-		{
-			get
-			{
-				return this._Tbl_Personas;
-			}
-			set
-			{
-				this._Tbl_Personas.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Tbl_Personas(Tbl_Personas entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tbl_Grado = this;
-		}
-		
-		private void detach_Tbl_Personas(Tbl_Personas entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tbl_Grado = null;
 		}
 	}
 	
@@ -7588,6 +8056,120 @@ namespace CapaDatos
 		{
 			this.SendPropertyChanging();
 			entity.Tbl_ExamenesRealizados = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_Grado")]
+	public partial class Tbl_Grado : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Grado_id;
+		
+		private string _Grado_Per;
+		
+		private EntitySet<Tbl_Personas> _Tbl_Personas;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnGrado_idChanging(int value);
+    partial void OnGrado_idChanged();
+    partial void OnGrado_PerChanging(string value);
+    partial void OnGrado_PerChanged();
+    #endregion
+		
+		public Tbl_Grado()
+		{
+			this._Tbl_Personas = new EntitySet<Tbl_Personas>(new Action<Tbl_Personas>(this.attach_Tbl_Personas), new Action<Tbl_Personas>(this.detach_Tbl_Personas));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Grado_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Grado_id
+		{
+			get
+			{
+				return this._Grado_id;
+			}
+			set
+			{
+				if ((this._Grado_id != value))
+				{
+					this.OnGrado_idChanging(value);
+					this.SendPropertyChanging();
+					this._Grado_id = value;
+					this.SendPropertyChanged("Grado_id");
+					this.OnGrado_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Grado_Per", DbType="VarChar(10)")]
+		public string Grado_Per
+		{
+			get
+			{
+				return this._Grado_Per;
+			}
+			set
+			{
+				if ((this._Grado_Per != value))
+				{
+					this.OnGrado_PerChanging(value);
+					this.SendPropertyChanging();
+					this._Grado_Per = value;
+					this.SendPropertyChanged("Grado_Per");
+					this.OnGrado_PerChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Grado_Tbl_Personas", Storage="_Tbl_Personas", ThisKey="Grado_id", OtherKey="Grado_id")]
+		public EntitySet<Tbl_Personas> Tbl_Personas
+		{
+			get
+			{
+				return this._Tbl_Personas;
+			}
+			set
+			{
+				this._Tbl_Personas.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Tbl_Personas(Tbl_Personas entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Grado = this;
+		}
+		
+		private void detach_Tbl_Personas(Tbl_Personas entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Grado = null;
 		}
 	}
 	
@@ -8185,222 +8767,6 @@ namespace CapaDatos
 		{
 			this.SendPropertyChanging();
 			entity.Tbl_Hijos = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_HistorialMed")]
-	public partial class Tbl_HistorialMed : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _histo_id;
-		
-		private System.Nullable<int> _per_id;
-		
-		private System.Nullable<int> _Mcon_id;
-		
-		private string _histo_estado;
-		
-		private EntityRef<Tbl_MotivoConsulta> _Tbl_MotivoConsulta;
-		
-		private EntityRef<Tbl_Personas> _Tbl_Personas;
-		
-    #region Definiciones de métodos de extensibilidad
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void Onhisto_idChanging(int value);
-    partial void Onhisto_idChanged();
-    partial void Onper_idChanging(System.Nullable<int> value);
-    partial void Onper_idChanged();
-    partial void OnMcon_idChanging(System.Nullable<int> value);
-    partial void OnMcon_idChanged();
-    partial void Onhisto_estadoChanging(string value);
-    partial void Onhisto_estadoChanged();
-    #endregion
-		
-		public Tbl_HistorialMed()
-		{
-			this._Tbl_MotivoConsulta = default(EntityRef<Tbl_MotivoConsulta>);
-			this._Tbl_Personas = default(EntityRef<Tbl_Personas>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_histo_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int histo_id
-		{
-			get
-			{
-				return this._histo_id;
-			}
-			set
-			{
-				if ((this._histo_id != value))
-				{
-					this.Onhisto_idChanging(value);
-					this.SendPropertyChanging();
-					this._histo_id = value;
-					this.SendPropertyChanged("histo_id");
-					this.Onhisto_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_per_id", DbType="Int")]
-		public System.Nullable<int> per_id
-		{
-			get
-			{
-				return this._per_id;
-			}
-			set
-			{
-				if ((this._per_id != value))
-				{
-					if (this._Tbl_Personas.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.Onper_idChanging(value);
-					this.SendPropertyChanging();
-					this._per_id = value;
-					this.SendPropertyChanged("per_id");
-					this.Onper_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mcon_id", DbType="Int")]
-		public System.Nullable<int> Mcon_id
-		{
-			get
-			{
-				return this._Mcon_id;
-			}
-			set
-			{
-				if ((this._Mcon_id != value))
-				{
-					if (this._Tbl_MotivoConsulta.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnMcon_idChanging(value);
-					this.SendPropertyChanging();
-					this._Mcon_id = value;
-					this.SendPropertyChanged("Mcon_id");
-					this.OnMcon_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_histo_estado", DbType="VarChar(1)")]
-		public string histo_estado
-		{
-			get
-			{
-				return this._histo_estado;
-			}
-			set
-			{
-				if ((this._histo_estado != value))
-				{
-					this.Onhisto_estadoChanging(value);
-					this.SendPropertyChanging();
-					this._histo_estado = value;
-					this.SendPropertyChanged("histo_estado");
-					this.Onhisto_estadoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_MotivoConsulta_Tbl_HistorialMed", Storage="_Tbl_MotivoConsulta", ThisKey="Mcon_id", OtherKey="Mcon_id", IsForeignKey=true)]
-		public Tbl_MotivoConsulta Tbl_MotivoConsulta
-		{
-			get
-			{
-				return this._Tbl_MotivoConsulta.Entity;
-			}
-			set
-			{
-				Tbl_MotivoConsulta previousValue = this._Tbl_MotivoConsulta.Entity;
-				if (((previousValue != value) 
-							|| (this._Tbl_MotivoConsulta.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Tbl_MotivoConsulta.Entity = null;
-						previousValue.Tbl_HistorialMed.Remove(this);
-					}
-					this._Tbl_MotivoConsulta.Entity = value;
-					if ((value != null))
-					{
-						value.Tbl_HistorialMed.Add(this);
-						this._Mcon_id = value.Mcon_id;
-					}
-					else
-					{
-						this._Mcon_id = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Tbl_MotivoConsulta");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_HistorialMed", Storage="_Tbl_Personas", ThisKey="per_id", OtherKey="Per_id", IsForeignKey=true)]
-		public Tbl_Personas Tbl_Personas
-		{
-			get
-			{
-				return this._Tbl_Personas.Entity;
-			}
-			set
-			{
-				Tbl_Personas previousValue = this._Tbl_Personas.Entity;
-				if (((previousValue != value) 
-							|| (this._Tbl_Personas.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Tbl_Personas.Entity = null;
-						previousValue.Tbl_HistorialMed.Remove(this);
-					}
-					this._Tbl_Personas.Entity = value;
-					if ((value != null))
-					{
-						value.Tbl_HistorialMed.Add(this);
-						this._per_id = value.Per_id;
-					}
-					else
-					{
-						this._per_id = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Tbl_Personas");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
 		}
 	}
 	
@@ -9746,6 +10112,229 @@ namespace CapaDatos
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_MotivoConsulta")]
+	public partial class Tbl_MotivoConsulta : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Mcon_id;
+		
+		private string _Mcon_descripcion;
+		
+		private string _Mcon_Situacion;
+		
+		private System.Nullable<int> _Per_id;
+		
+		private System.Nullable<System.DateTime> _Mcon_fecha_hora;
+		
+		private string _Mcon_estado;
+		
+		private EntityRef<Tbl_Personas> _Tbl_Personas;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMcon_idChanging(int value);
+    partial void OnMcon_idChanged();
+    partial void OnMcon_descripcionChanging(string value);
+    partial void OnMcon_descripcionChanged();
+    partial void OnMcon_SituacionChanging(string value);
+    partial void OnMcon_SituacionChanged();
+    partial void OnPer_idChanging(System.Nullable<int> value);
+    partial void OnPer_idChanged();
+    partial void OnMcon_fecha_horaChanging(System.Nullable<System.DateTime> value);
+    partial void OnMcon_fecha_horaChanged();
+    partial void OnMcon_estadoChanging(string value);
+    partial void OnMcon_estadoChanged();
+    #endregion
+		
+		public Tbl_MotivoConsulta()
+		{
+			this._Tbl_Personas = default(EntityRef<Tbl_Personas>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mcon_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Mcon_id
+		{
+			get
+			{
+				return this._Mcon_id;
+			}
+			set
+			{
+				if ((this._Mcon_id != value))
+				{
+					this.OnMcon_idChanging(value);
+					this.SendPropertyChanging();
+					this._Mcon_id = value;
+					this.SendPropertyChanged("Mcon_id");
+					this.OnMcon_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mcon_descripcion", DbType="Text", UpdateCheck=UpdateCheck.Never)]
+		public string Mcon_descripcion
+		{
+			get
+			{
+				return this._Mcon_descripcion;
+			}
+			set
+			{
+				if ((this._Mcon_descripcion != value))
+				{
+					this.OnMcon_descripcionChanging(value);
+					this.SendPropertyChanging();
+					this._Mcon_descripcion = value;
+					this.SendPropertyChanged("Mcon_descripcion");
+					this.OnMcon_descripcionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mcon_Situacion", DbType="VarChar(1)")]
+		public string Mcon_Situacion
+		{
+			get
+			{
+				return this._Mcon_Situacion;
+			}
+			set
+			{
+				if ((this._Mcon_Situacion != value))
+				{
+					this.OnMcon_SituacionChanging(value);
+					this.SendPropertyChanging();
+					this._Mcon_Situacion = value;
+					this.SendPropertyChanged("Mcon_Situacion");
+					this.OnMcon_SituacionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_id", DbType="Int")]
+		public System.Nullable<int> Per_id
+		{
+			get
+			{
+				return this._Per_id;
+			}
+			set
+			{
+				if ((this._Per_id != value))
+				{
+					if (this._Tbl_Personas.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnPer_idChanging(value);
+					this.SendPropertyChanging();
+					this._Per_id = value;
+					this.SendPropertyChanged("Per_id");
+					this.OnPer_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mcon_fecha_hora", DbType="DateTime")]
+		public System.Nullable<System.DateTime> Mcon_fecha_hora
+		{
+			get
+			{
+				return this._Mcon_fecha_hora;
+			}
+			set
+			{
+				if ((this._Mcon_fecha_hora != value))
+				{
+					this.OnMcon_fecha_horaChanging(value);
+					this.SendPropertyChanging();
+					this._Mcon_fecha_hora = value;
+					this.SendPropertyChanged("Mcon_fecha_hora");
+					this.OnMcon_fecha_horaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mcon_estado", DbType="VarChar(1)")]
+		public string Mcon_estado
+		{
+			get
+			{
+				return this._Mcon_estado;
+			}
+			set
+			{
+				if ((this._Mcon_estado != value))
+				{
+					this.OnMcon_estadoChanging(value);
+					this.SendPropertyChanging();
+					this._Mcon_estado = value;
+					this.SendPropertyChanged("Mcon_estado");
+					this.OnMcon_estadoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_MotivoConsulta", Storage="_Tbl_Personas", ThisKey="Per_id", OtherKey="Per_id", IsForeignKey=true)]
+		public Tbl_Personas Tbl_Personas
+		{
+			get
+			{
+				return this._Tbl_Personas.Entity;
+			}
+			set
+			{
+				Tbl_Personas previousValue = this._Tbl_Personas.Entity;
+				if (((previousValue != value) 
+							|| (this._Tbl_Personas.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Tbl_Personas.Entity = null;
+						previousValue.Tbl_MotivoConsulta.Remove(this);
+					}
+					this._Tbl_Personas.Entity = value;
+					if ((value != null))
+					{
+						value.Tbl_MotivoConsulta.Add(this);
+						this._Per_id = value.Per_id;
+					}
+					else
+					{
+						this._Per_id = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Tbl_Personas");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_OrientacionSexual")]
 	public partial class Tbl_OrientacionSexual : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -9884,168 +10473,6 @@ namespace CapaDatos
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_MotivoConsulta")]
-	public partial class Tbl_MotivoConsulta : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _Mcon_id;
-		
-		private string _Mcon_descripcion;
-		
-		private string _Mcon_Situacion;
-		
-		private string _Mcon_estado;
-		
-		private EntitySet<Tbl_HistorialMed> _Tbl_HistorialMed;
-		
-    #region Definiciones de métodos de extensibilidad
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnMcon_idChanging(int value);
-    partial void OnMcon_idChanged();
-    partial void OnMcon_descripcionChanging(string value);
-    partial void OnMcon_descripcionChanged();
-    partial void OnMcon_SituacionChanging(string value);
-    partial void OnMcon_SituacionChanged();
-    partial void OnMcon_estadoChanging(string value);
-    partial void OnMcon_estadoChanged();
-    #endregion
-		
-		public Tbl_MotivoConsulta()
-		{
-			this._Tbl_HistorialMed = new EntitySet<Tbl_HistorialMed>(new Action<Tbl_HistorialMed>(this.attach_Tbl_HistorialMed), new Action<Tbl_HistorialMed>(this.detach_Tbl_HistorialMed));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mcon_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int Mcon_id
-		{
-			get
-			{
-				return this._Mcon_id;
-			}
-			set
-			{
-				if ((this._Mcon_id != value))
-				{
-					this.OnMcon_idChanging(value);
-					this.SendPropertyChanging();
-					this._Mcon_id = value;
-					this.SendPropertyChanged("Mcon_id");
-					this.OnMcon_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mcon_descripcion", DbType="Text", UpdateCheck=UpdateCheck.Never)]
-		public string Mcon_descripcion
-		{
-			get
-			{
-				return this._Mcon_descripcion;
-			}
-			set
-			{
-				if ((this._Mcon_descripcion != value))
-				{
-					this.OnMcon_descripcionChanging(value);
-					this.SendPropertyChanging();
-					this._Mcon_descripcion = value;
-					this.SendPropertyChanged("Mcon_descripcion");
-					this.OnMcon_descripcionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mcon_Situacion", DbType="VarChar(1)")]
-		public string Mcon_Situacion
-		{
-			get
-			{
-				return this._Mcon_Situacion;
-			}
-			set
-			{
-				if ((this._Mcon_Situacion != value))
-				{
-					this.OnMcon_SituacionChanging(value);
-					this.SendPropertyChanging();
-					this._Mcon_Situacion = value;
-					this.SendPropertyChanged("Mcon_Situacion");
-					this.OnMcon_SituacionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mcon_estado", DbType="VarChar(1)")]
-		public string Mcon_estado
-		{
-			get
-			{
-				return this._Mcon_estado;
-			}
-			set
-			{
-				if ((this._Mcon_estado != value))
-				{
-					this.OnMcon_estadoChanging(value);
-					this.SendPropertyChanging();
-					this._Mcon_estado = value;
-					this.SendPropertyChanged("Mcon_estado");
-					this.OnMcon_estadoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_MotivoConsulta_Tbl_HistorialMed", Storage="_Tbl_HistorialMed", ThisKey="Mcon_id", OtherKey="Mcon_id")]
-		public EntitySet<Tbl_HistorialMed> Tbl_HistorialMed
-		{
-			get
-			{
-				return this._Tbl_HistorialMed;
-			}
-			set
-			{
-				this._Tbl_HistorialMed.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Tbl_HistorialMed(Tbl_HistorialMed entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tbl_MotivoConsulta = this;
-		}
-		
-		private void detach_Tbl_HistorialMed(Tbl_HistorialMed entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tbl_MotivoConsulta = null;
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_Personas")]
 	public partial class Tbl_Personas : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -10142,7 +10569,25 @@ namespace CapaDatos
 		
 		private string _Per_estado;
 		
-		private EntitySet<Tbl_HistorialMed> _Tbl_HistorialMed;
+		private EntitySet<Tbl_AnteFamiliares> _Tbl_AnteFamiliares;
+		
+		private EntitySet<Tbl_AntePersonales> _Tbl_AntePersonales;
+		
+		private EntitySet<Tbl_ConsVitAntro> _Tbl_ConsVitAntro;
+		
+		private EntitySet<Tbl_DatProfesional> _Tbl_DatProfesional;
+		
+		private EntitySet<Tbl_EnfermedadActual> _Tbl_EnfermedadActual;
+		
+		private EntitySet<Tbl_Evolucion> _Tbl_Evolucion;
+		
+		private EntitySet<Tbl_ExaFisRegional> _Tbl_ExaFisRegional;
+		
+		private EntitySet<Tbl_MotivoConsulta> _Tbl_MotivoConsulta;
+		
+		private EntitySet<Tbl_Prescipciones> _Tbl_Prescipciones;
+		
+		private EntitySet<Tbl_RecoTratamiento> _Tbl_RecoTratamiento;
 		
 		private EntityRef<Tbl_CargoInstitucional> _Tbl_CargoInstitucional;
 		
@@ -10166,15 +10611,15 @@ namespace CapaDatos
 		
 		private EntityRef<Tbl_ModalidadLaboral> _Tbl_ModalidadLaboral;
 		
+		private EntityRef<Tbl_Zona> _Tbl_Zona;
+		
 		private EntityRef<Tbl_ProcesoInterno> _Tbl_ProcesoInterno;
 		
 		private EntityRef<Tbl_Rmu> _Tbl_Rmu;
 		
-		private EntityRef<Tbl_TelefonoIntitucional> _Tbl_TelefonoIntitucional;
-		
 		private EntityRef<Tbl_Sede> _Tbl_Sede;
 		
-		private EntityRef<Tbl_Zona> _Tbl_Zona;
+		private EntityRef<Tbl_TelefonoIntitucional> _Tbl_TelefonoIntitucional;
 		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
@@ -10274,7 +10719,16 @@ namespace CapaDatos
 		
 		public Tbl_Personas()
 		{
-			this._Tbl_HistorialMed = new EntitySet<Tbl_HistorialMed>(new Action<Tbl_HistorialMed>(this.attach_Tbl_HistorialMed), new Action<Tbl_HistorialMed>(this.detach_Tbl_HistorialMed));
+			this._Tbl_AnteFamiliares = new EntitySet<Tbl_AnteFamiliares>(new Action<Tbl_AnteFamiliares>(this.attach_Tbl_AnteFamiliares), new Action<Tbl_AnteFamiliares>(this.detach_Tbl_AnteFamiliares));
+			this._Tbl_AntePersonales = new EntitySet<Tbl_AntePersonales>(new Action<Tbl_AntePersonales>(this.attach_Tbl_AntePersonales), new Action<Tbl_AntePersonales>(this.detach_Tbl_AntePersonales));
+			this._Tbl_ConsVitAntro = new EntitySet<Tbl_ConsVitAntro>(new Action<Tbl_ConsVitAntro>(this.attach_Tbl_ConsVitAntro), new Action<Tbl_ConsVitAntro>(this.detach_Tbl_ConsVitAntro));
+			this._Tbl_DatProfesional = new EntitySet<Tbl_DatProfesional>(new Action<Tbl_DatProfesional>(this.attach_Tbl_DatProfesional), new Action<Tbl_DatProfesional>(this.detach_Tbl_DatProfesional));
+			this._Tbl_EnfermedadActual = new EntitySet<Tbl_EnfermedadActual>(new Action<Tbl_EnfermedadActual>(this.attach_Tbl_EnfermedadActual), new Action<Tbl_EnfermedadActual>(this.detach_Tbl_EnfermedadActual));
+			this._Tbl_Evolucion = new EntitySet<Tbl_Evolucion>(new Action<Tbl_Evolucion>(this.attach_Tbl_Evolucion), new Action<Tbl_Evolucion>(this.detach_Tbl_Evolucion));
+			this._Tbl_ExaFisRegional = new EntitySet<Tbl_ExaFisRegional>(new Action<Tbl_ExaFisRegional>(this.attach_Tbl_ExaFisRegional), new Action<Tbl_ExaFisRegional>(this.detach_Tbl_ExaFisRegional));
+			this._Tbl_MotivoConsulta = new EntitySet<Tbl_MotivoConsulta>(new Action<Tbl_MotivoConsulta>(this.attach_Tbl_MotivoConsulta), new Action<Tbl_MotivoConsulta>(this.detach_Tbl_MotivoConsulta));
+			this._Tbl_Prescipciones = new EntitySet<Tbl_Prescipciones>(new Action<Tbl_Prescipciones>(this.attach_Tbl_Prescipciones), new Action<Tbl_Prescipciones>(this.detach_Tbl_Prescipciones));
+			this._Tbl_RecoTratamiento = new EntitySet<Tbl_RecoTratamiento>(new Action<Tbl_RecoTratamiento>(this.attach_Tbl_RecoTratamiento), new Action<Tbl_RecoTratamiento>(this.detach_Tbl_RecoTratamiento));
 			this._Tbl_CargoInstitucional = default(EntityRef<Tbl_CargoInstitucional>);
 			this._Tbl_CorreoIntitucional = default(EntityRef<Tbl_CorreoIntitucional>);
 			this._Tbl_DireccionInstitucional = default(EntityRef<Tbl_DireccionInstitucional>);
@@ -10286,11 +10740,11 @@ namespace CapaDatos
 			this._Tbl_GrupoEtnico = default(EntityRef<Tbl_GrupoEtnico>);
 			this._Tbl_Inicial = default(EntityRef<Tbl_Inicial>);
 			this._Tbl_ModalidadLaboral = default(EntityRef<Tbl_ModalidadLaboral>);
+			this._Tbl_Zona = default(EntityRef<Tbl_Zona>);
 			this._Tbl_ProcesoInterno = default(EntityRef<Tbl_ProcesoInterno>);
 			this._Tbl_Rmu = default(EntityRef<Tbl_Rmu>);
-			this._Tbl_TelefonoIntitucional = default(EntityRef<Tbl_TelefonoIntitucional>);
 			this._Tbl_Sede = default(EntityRef<Tbl_Sede>);
-			this._Tbl_Zona = default(EntityRef<Tbl_Zona>);
+			this._Tbl_TelefonoIntitucional = default(EntityRef<Tbl_TelefonoIntitucional>);
 			OnCreated();
 		}
 		
@@ -11258,16 +11712,133 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_HistorialMed", Storage="_Tbl_HistorialMed", ThisKey="Per_id", OtherKey="per_id")]
-		public EntitySet<Tbl_HistorialMed> Tbl_HistorialMed
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_AnteFamiliares", Storage="_Tbl_AnteFamiliares", ThisKey="Per_id", OtherKey="Per_id")]
+		public EntitySet<Tbl_AnteFamiliares> Tbl_AnteFamiliares
 		{
 			get
 			{
-				return this._Tbl_HistorialMed;
+				return this._Tbl_AnteFamiliares;
 			}
 			set
 			{
-				this._Tbl_HistorialMed.Assign(value);
+				this._Tbl_AnteFamiliares.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_AntePersonales", Storage="_Tbl_AntePersonales", ThisKey="Per_id", OtherKey="Per_id")]
+		public EntitySet<Tbl_AntePersonales> Tbl_AntePersonales
+		{
+			get
+			{
+				return this._Tbl_AntePersonales;
+			}
+			set
+			{
+				this._Tbl_AntePersonales.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_ConsVitAntro", Storage="_Tbl_ConsVitAntro", ThisKey="Per_id", OtherKey="Per_id")]
+		public EntitySet<Tbl_ConsVitAntro> Tbl_ConsVitAntro
+		{
+			get
+			{
+				return this._Tbl_ConsVitAntro;
+			}
+			set
+			{
+				this._Tbl_ConsVitAntro.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_DatProfesional", Storage="_Tbl_DatProfesional", ThisKey="Per_id", OtherKey="Per_id")]
+		public EntitySet<Tbl_DatProfesional> Tbl_DatProfesional
+		{
+			get
+			{
+				return this._Tbl_DatProfesional;
+			}
+			set
+			{
+				this._Tbl_DatProfesional.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_EnfermedadActual", Storage="_Tbl_EnfermedadActual", ThisKey="Per_id", OtherKey="Per_id")]
+		public EntitySet<Tbl_EnfermedadActual> Tbl_EnfermedadActual
+		{
+			get
+			{
+				return this._Tbl_EnfermedadActual;
+			}
+			set
+			{
+				this._Tbl_EnfermedadActual.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_Evolucion", Storage="_Tbl_Evolucion", ThisKey="Per_id", OtherKey="Per_id")]
+		public EntitySet<Tbl_Evolucion> Tbl_Evolucion
+		{
+			get
+			{
+				return this._Tbl_Evolucion;
+			}
+			set
+			{
+				this._Tbl_Evolucion.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_ExaFisRegional", Storage="_Tbl_ExaFisRegional", ThisKey="Per_id", OtherKey="Per_id")]
+		public EntitySet<Tbl_ExaFisRegional> Tbl_ExaFisRegional
+		{
+			get
+			{
+				return this._Tbl_ExaFisRegional;
+			}
+			set
+			{
+				this._Tbl_ExaFisRegional.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_MotivoConsulta", Storage="_Tbl_MotivoConsulta", ThisKey="Per_id", OtherKey="Per_id")]
+		public EntitySet<Tbl_MotivoConsulta> Tbl_MotivoConsulta
+		{
+			get
+			{
+				return this._Tbl_MotivoConsulta;
+			}
+			set
+			{
+				this._Tbl_MotivoConsulta.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_Prescipciones", Storage="_Tbl_Prescipciones", ThisKey="Per_id", OtherKey="Per_id")]
+		public EntitySet<Tbl_Prescipciones> Tbl_Prescipciones
+		{
+			get
+			{
+				return this._Tbl_Prescipciones;
+			}
+			set
+			{
+				this._Tbl_Prescipciones.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_RecoTratamiento", Storage="_Tbl_RecoTratamiento", ThisKey="Per_id", OtherKey="Per_id")]
+		public EntitySet<Tbl_RecoTratamiento> Tbl_RecoTratamiento
+		{
+			get
+			{
+				return this._Tbl_RecoTratamiento;
+			}
+			set
+			{
+				this._Tbl_RecoTratamiento.Assign(value);
 			}
 		}
 		
@@ -11645,6 +12216,40 @@ namespace CapaDatos
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Zona_Tbl_Personas", Storage="_Tbl_Zona", ThisKey="Zona_id", OtherKey="Zona_id", IsForeignKey=true)]
+		public Tbl_Zona Tbl_Zona
+		{
+			get
+			{
+				return this._Tbl_Zona.Entity;
+			}
+			set
+			{
+				Tbl_Zona previousValue = this._Tbl_Zona.Entity;
+				if (((previousValue != value) 
+							|| (this._Tbl_Zona.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Tbl_Zona.Entity = null;
+						previousValue.Tbl_Personas.Remove(this);
+					}
+					this._Tbl_Zona.Entity = value;
+					if ((value != null))
+					{
+						value.Tbl_Personas.Add(this);
+						this._Zona_id = value.Zona_id;
+					}
+					else
+					{
+						this._Zona_id = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Tbl_Zona");
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_ProcesoInterno_Tbl_Personas", Storage="_Tbl_ProcesoInterno", ThisKey="ProcesoInt_id", OtherKey="ProcesoInt_id", IsForeignKey=true)]
 		public Tbl_ProcesoInterno Tbl_ProcesoInterno
 		{
@@ -11713,40 +12318,6 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_TelefonoIntitucional_Tbl_Personas", Storage="_Tbl_TelefonoIntitucional", ThisKey="TelfInts_id", OtherKey="TelfInts_id", IsForeignKey=true)]
-		public Tbl_TelefonoIntitucional Tbl_TelefonoIntitucional
-		{
-			get
-			{
-				return this._Tbl_TelefonoIntitucional.Entity;
-			}
-			set
-			{
-				Tbl_TelefonoIntitucional previousValue = this._Tbl_TelefonoIntitucional.Entity;
-				if (((previousValue != value) 
-							|| (this._Tbl_TelefonoIntitucional.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Tbl_TelefonoIntitucional.Entity = null;
-						previousValue.Tbl_Personas.Remove(this);
-					}
-					this._Tbl_TelefonoIntitucional.Entity = value;
-					if ((value != null))
-					{
-						value.Tbl_Personas.Add(this);
-						this._TelfInts_id = value.TelfInts_id;
-					}
-					else
-					{
-						this._TelfInts_id = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Tbl_TelefonoIntitucional");
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Sede_Tbl_Personas", Storage="_Tbl_Sede", ThisKey="Sede_id", OtherKey="Sede_id", IsForeignKey=true)]
 		public Tbl_Sede Tbl_Sede
 		{
@@ -11781,36 +12352,36 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Zona_Tbl_Personas", Storage="_Tbl_Zona", ThisKey="Zona_id", OtherKey="Zona_id", IsForeignKey=true)]
-		public Tbl_Zona Tbl_Zona
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_TelefonoIntitucional_Tbl_Personas", Storage="_Tbl_TelefonoIntitucional", ThisKey="TelfInts_id", OtherKey="TelfInts_id", IsForeignKey=true)]
+		public Tbl_TelefonoIntitucional Tbl_TelefonoIntitucional
 		{
 			get
 			{
-				return this._Tbl_Zona.Entity;
+				return this._Tbl_TelefonoIntitucional.Entity;
 			}
 			set
 			{
-				Tbl_Zona previousValue = this._Tbl_Zona.Entity;
+				Tbl_TelefonoIntitucional previousValue = this._Tbl_TelefonoIntitucional.Entity;
 				if (((previousValue != value) 
-							|| (this._Tbl_Zona.HasLoadedOrAssignedValue == false)))
+							|| (this._Tbl_TelefonoIntitucional.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._Tbl_Zona.Entity = null;
+						this._Tbl_TelefonoIntitucional.Entity = null;
 						previousValue.Tbl_Personas.Remove(this);
 					}
-					this._Tbl_Zona.Entity = value;
+					this._Tbl_TelefonoIntitucional.Entity = value;
 					if ((value != null))
 					{
 						value.Tbl_Personas.Add(this);
-						this._Zona_id = value.Zona_id;
+						this._TelfInts_id = value.TelfInts_id;
 					}
 					else
 					{
-						this._Zona_id = default(Nullable<int>);
+						this._TelfInts_id = default(Nullable<int>);
 					}
-					this.SendPropertyChanged("Tbl_Zona");
+					this.SendPropertyChanged("Tbl_TelefonoIntitucional");
 				}
 			}
 		}
@@ -11835,13 +12406,121 @@ namespace CapaDatos
 			}
 		}
 		
-		private void attach_Tbl_HistorialMed(Tbl_HistorialMed entity)
+		private void attach_Tbl_AnteFamiliares(Tbl_AnteFamiliares entity)
 		{
 			this.SendPropertyChanging();
 			entity.Tbl_Personas = this;
 		}
 		
-		private void detach_Tbl_HistorialMed(Tbl_HistorialMed entity)
+		private void detach_Tbl_AnteFamiliares(Tbl_AnteFamiliares entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Personas = null;
+		}
+		
+		private void attach_Tbl_AntePersonales(Tbl_AntePersonales entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Personas = this;
+		}
+		
+		private void detach_Tbl_AntePersonales(Tbl_AntePersonales entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Personas = null;
+		}
+		
+		private void attach_Tbl_ConsVitAntro(Tbl_ConsVitAntro entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Personas = this;
+		}
+		
+		private void detach_Tbl_ConsVitAntro(Tbl_ConsVitAntro entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Personas = null;
+		}
+		
+		private void attach_Tbl_DatProfesional(Tbl_DatProfesional entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Personas = this;
+		}
+		
+		private void detach_Tbl_DatProfesional(Tbl_DatProfesional entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Personas = null;
+		}
+		
+		private void attach_Tbl_EnfermedadActual(Tbl_EnfermedadActual entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Personas = this;
+		}
+		
+		private void detach_Tbl_EnfermedadActual(Tbl_EnfermedadActual entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Personas = null;
+		}
+		
+		private void attach_Tbl_Evolucion(Tbl_Evolucion entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Personas = this;
+		}
+		
+		private void detach_Tbl_Evolucion(Tbl_Evolucion entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Personas = null;
+		}
+		
+		private void attach_Tbl_ExaFisRegional(Tbl_ExaFisRegional entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Personas = this;
+		}
+		
+		private void detach_Tbl_ExaFisRegional(Tbl_ExaFisRegional entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Personas = null;
+		}
+		
+		private void attach_Tbl_MotivoConsulta(Tbl_MotivoConsulta entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Personas = this;
+		}
+		
+		private void detach_Tbl_MotivoConsulta(Tbl_MotivoConsulta entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Personas = null;
+		}
+		
+		private void attach_Tbl_Prescipciones(Tbl_Prescipciones entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Personas = this;
+		}
+		
+		private void detach_Tbl_Prescipciones(Tbl_Prescipciones entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Personas = null;
+		}
+		
+		private void attach_Tbl_RecoTratamiento(Tbl_RecoTratamiento entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Personas = this;
+		}
+		
+		private void detach_Tbl_RecoTratamiento(Tbl_RecoTratamiento entity)
 		{
 			this.SendPropertyChanging();
 			entity.Tbl_Personas = null;
@@ -11858,7 +12537,11 @@ namespace CapaDatos
 		
 		private string _Press_descripcion;
 		
-		private System.Nullable<char> _Pres_estado;
+		private System.Nullable<int> _Per_id;
+		
+		private string _Pres_estado;
+		
+		private EntityRef<Tbl_Personas> _Tbl_Personas;
 		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
@@ -11868,12 +12551,15 @@ namespace CapaDatos
     partial void OnPress_idChanged();
     partial void OnPress_descripcionChanging(string value);
     partial void OnPress_descripcionChanged();
-    partial void OnPres_estadoChanging(System.Nullable<char> value);
+    partial void OnPer_idChanging(System.Nullable<int> value);
+    partial void OnPer_idChanged();
+    partial void OnPres_estadoChanging(string value);
     partial void OnPres_estadoChanged();
     #endregion
 		
 		public Tbl_Prescipciones()
 		{
+			this._Tbl_Personas = default(EntityRef<Tbl_Personas>);
 			OnCreated();
 		}
 		
@@ -11917,8 +12603,32 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Pres_estado", DbType="Char(1)")]
-		public System.Nullable<char> Pres_estado
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_id", DbType="Int")]
+		public System.Nullable<int> Per_id
+		{
+			get
+			{
+				return this._Per_id;
+			}
+			set
+			{
+				if ((this._Per_id != value))
+				{
+					if (this._Tbl_Personas.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnPer_idChanging(value);
+					this.SendPropertyChanging();
+					this._Per_id = value;
+					this.SendPropertyChanged("Per_id");
+					this.OnPer_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Pres_estado", DbType="VarChar(1)")]
+		public string Pres_estado
 		{
 			get
 			{
@@ -11933,6 +12643,40 @@ namespace CapaDatos
 					this._Pres_estado = value;
 					this.SendPropertyChanged("Pres_estado");
 					this.OnPres_estadoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_Prescipciones", Storage="_Tbl_Personas", ThisKey="Per_id", OtherKey="Per_id", IsForeignKey=true)]
+		public Tbl_Personas Tbl_Personas
+		{
+			get
+			{
+				return this._Tbl_Personas.Entity;
+			}
+			set
+			{
+				Tbl_Personas previousValue = this._Tbl_Personas.Entity;
+				if (((previousValue != value) 
+							|| (this._Tbl_Personas.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Tbl_Personas.Entity = null;
+						previousValue.Tbl_Prescipciones.Remove(this);
+					}
+					this._Tbl_Personas.Entity = value;
+					if ((value != null))
+					{
+						value.Tbl_Prescipciones.Add(this);
+						this._Per_id = value.Per_id;
+					}
+					else
+					{
+						this._Per_id = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Tbl_Personas");
 				}
 			}
 		}
@@ -12244,7 +12988,11 @@ namespace CapaDatos
 		
 		private string _RecTra_descripcion;
 		
-		private System.Nullable<char> _RecTra_estado;
+		private System.Nullable<int> _Per_id;
+		
+		private string _RecTra_estado;
+		
+		private EntityRef<Tbl_Personas> _Tbl_Personas;
 		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
@@ -12254,12 +13002,15 @@ namespace CapaDatos
     partial void OnRecTra_idChanged();
     partial void OnRecTra_descripcionChanging(string value);
     partial void OnRecTra_descripcionChanged();
-    partial void OnRecTra_estadoChanging(System.Nullable<char> value);
+    partial void OnPer_idChanging(System.Nullable<int> value);
+    partial void OnPer_idChanged();
+    partial void OnRecTra_estadoChanging(string value);
     partial void OnRecTra_estadoChanged();
     #endregion
 		
 		public Tbl_RecoTratamiento()
 		{
+			this._Tbl_Personas = default(EntityRef<Tbl_Personas>);
 			OnCreated();
 		}
 		
@@ -12303,8 +13054,32 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RecTra_estado", DbType="Char(1)")]
-		public System.Nullable<char> RecTra_estado
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_id", DbType="Int")]
+		public System.Nullable<int> Per_id
+		{
+			get
+			{
+				return this._Per_id;
+			}
+			set
+			{
+				if ((this._Per_id != value))
+				{
+					if (this._Tbl_Personas.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnPer_idChanging(value);
+					this.SendPropertyChanging();
+					this._Per_id = value;
+					this.SendPropertyChanged("Per_id");
+					this.OnPer_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RecTra_estado", DbType="VarChar(1)")]
+		public string RecTra_estado
 		{
 			get
 			{
@@ -12319,6 +13094,40 @@ namespace CapaDatos
 					this._RecTra_estado = value;
 					this.SendPropertyChanged("RecTra_estado");
 					this.OnRecTra_estadoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_RecoTratamiento", Storage="_Tbl_Personas", ThisKey="Per_id", OtherKey="Per_id", IsForeignKey=true)]
+		public Tbl_Personas Tbl_Personas
+		{
+			get
+			{
+				return this._Tbl_Personas.Entity;
+			}
+			set
+			{
+				Tbl_Personas previousValue = this._Tbl_Personas.Entity;
+				if (((previousValue != value) 
+							|| (this._Tbl_Personas.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Tbl_Personas.Entity = null;
+						previousValue.Tbl_RecoTratamiento.Remove(this);
+					}
+					this._Tbl_Personas.Entity = value;
+					if ((value != null))
+					{
+						value.Tbl_RecoTratamiento.Add(this);
+						this._Per_id = value.Per_id;
+					}
+					else
+					{
+						this._Per_id = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Tbl_Personas");
 				}
 			}
 		}
@@ -12837,7 +13646,7 @@ namespace CapaDatos
 		
 		private string _RevOrgSisPrin_descripcion;
 		
-		private System.Nullable<char> _RevOrgSisPrin_estado;
+		private string _RevOrgSisPrin_estado;
 		
 		private EntityRef<Tbl_Tipos_de_Organos_y_Sistemas> _Tbl_Tipos_de_Organos_y_Sistemas;
 		
@@ -12853,7 +13662,7 @@ namespace CapaDatos
     partial void OnRevOrgSisPrin_eviPatoChanged();
     partial void OnRevOrgSisPrin_descripcionChanging(string value);
     partial void OnRevOrgSisPrin_descripcionChanged();
-    partial void OnRevOrgSisPrin_estadoChanging(System.Nullable<char> value);
+    partial void OnRevOrgSisPrin_estadoChanging(string value);
     partial void OnRevOrgSisPrin_estadoChanged();
     #endregion
 		
@@ -12947,8 +13756,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RevOrgSisPrin_estado", DbType="Char(1)")]
-		public System.Nullable<char> RevOrgSisPrin_estado
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RevOrgSisPrin_estado", DbType="VarChar(1)")]
+		public string RevOrgSisPrin_estado
 		{
 			get
 			{
@@ -13160,6 +13969,144 @@ namespace CapaDatos
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_Sede")]
+	public partial class Tbl_Sede : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Sede_id;
+		
+		private string _Sede_nom;
+		
+		private string _Sede_Estado;
+		
+		private EntitySet<Tbl_Personas> _Tbl_Personas;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnSede_idChanging(int value);
+    partial void OnSede_idChanged();
+    partial void OnSede_nomChanging(string value);
+    partial void OnSede_nomChanged();
+    partial void OnSede_EstadoChanging(string value);
+    partial void OnSede_EstadoChanged();
+    #endregion
+		
+		public Tbl_Sede()
+		{
+			this._Tbl_Personas = new EntitySet<Tbl_Personas>(new Action<Tbl_Personas>(this.attach_Tbl_Personas), new Action<Tbl_Personas>(this.detach_Tbl_Personas));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Sede_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Sede_id
+		{
+			get
+			{
+				return this._Sede_id;
+			}
+			set
+			{
+				if ((this._Sede_id != value))
+				{
+					this.OnSede_idChanging(value);
+					this.SendPropertyChanging();
+					this._Sede_id = value;
+					this.SendPropertyChanged("Sede_id");
+					this.OnSede_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Sede_nom", DbType="VarChar(100)")]
+		public string Sede_nom
+		{
+			get
+			{
+				return this._Sede_nom;
+			}
+			set
+			{
+				if ((this._Sede_nom != value))
+				{
+					this.OnSede_nomChanging(value);
+					this.SendPropertyChanging();
+					this._Sede_nom = value;
+					this.SendPropertyChanged("Sede_nom");
+					this.OnSede_nomChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Sede_Estado", DbType="VarChar(1)")]
+		public string Sede_Estado
+		{
+			get
+			{
+				return this._Sede_Estado;
+			}
+			set
+			{
+				if ((this._Sede_Estado != value))
+				{
+					this.OnSede_EstadoChanging(value);
+					this.SendPropertyChanging();
+					this._Sede_Estado = value;
+					this.SendPropertyChanged("Sede_Estado");
+					this.OnSede_EstadoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Sede_Tbl_Personas", Storage="_Tbl_Personas", ThisKey="Sede_id", OtherKey="Sede_id")]
+		public EntitySet<Tbl_Personas> Tbl_Personas
+		{
+			get
+			{
+				return this._Tbl_Personas;
+			}
+			set
+			{
+				this._Tbl_Personas.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Tbl_Personas(Tbl_Personas entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Sede = this;
+		}
+		
+		private void detach_Tbl_Personas(Tbl_Personas entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Sede = null;
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_TelefonoIntitucional")]
 	public partial class Tbl_TelefonoIntitucional : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -13319,144 +14266,6 @@ namespace CapaDatos
 		{
 			this.SendPropertyChanging();
 			entity.Tbl_TelefonoIntitucional = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_Sede")]
-	public partial class Tbl_Sede : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _Sede_id;
-		
-		private string _Sede_nom;
-		
-		private string _Sede_Estado;
-		
-		private EntitySet<Tbl_Personas> _Tbl_Personas;
-		
-    #region Definiciones de métodos de extensibilidad
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnSede_idChanging(int value);
-    partial void OnSede_idChanged();
-    partial void OnSede_nomChanging(string value);
-    partial void OnSede_nomChanged();
-    partial void OnSede_EstadoChanging(string value);
-    partial void OnSede_EstadoChanged();
-    #endregion
-		
-		public Tbl_Sede()
-		{
-			this._Tbl_Personas = new EntitySet<Tbl_Personas>(new Action<Tbl_Personas>(this.attach_Tbl_Personas), new Action<Tbl_Personas>(this.detach_Tbl_Personas));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Sede_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int Sede_id
-		{
-			get
-			{
-				return this._Sede_id;
-			}
-			set
-			{
-				if ((this._Sede_id != value))
-				{
-					this.OnSede_idChanging(value);
-					this.SendPropertyChanging();
-					this._Sede_id = value;
-					this.SendPropertyChanged("Sede_id");
-					this.OnSede_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Sede_nom", DbType="VarChar(100)")]
-		public string Sede_nom
-		{
-			get
-			{
-				return this._Sede_nom;
-			}
-			set
-			{
-				if ((this._Sede_nom != value))
-				{
-					this.OnSede_nomChanging(value);
-					this.SendPropertyChanging();
-					this._Sede_nom = value;
-					this.SendPropertyChanged("Sede_nom");
-					this.OnSede_nomChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Sede_Estado", DbType="VarChar(1)")]
-		public string Sede_Estado
-		{
-			get
-			{
-				return this._Sede_Estado;
-			}
-			set
-			{
-				if ((this._Sede_Estado != value))
-				{
-					this.OnSede_EstadoChanging(value);
-					this.SendPropertyChanging();
-					this._Sede_Estado = value;
-					this.SendPropertyChanged("Sede_Estado");
-					this.OnSede_EstadoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Sede_Tbl_Personas", Storage="_Tbl_Personas", ThisKey="Sede_id", OtherKey="Sede_id")]
-		public EntitySet<Tbl_Personas> Tbl_Personas
-		{
-			get
-			{
-				return this._Tbl_Personas;
-			}
-			set
-			{
-				this._Tbl_Personas.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Tbl_Personas(Tbl_Personas entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tbl_Sede = this;
-		}
-		
-		private void detach_Tbl_Personas(Tbl_Personas entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tbl_Sede = null;
 		}
 	}
 	
@@ -14614,144 +15423,6 @@ namespace CapaDatos
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_Zona")]
-	public partial class Tbl_Zona : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _Zona_id;
-		
-		private string _Zona_nom;
-		
-		private string _Zona_estado;
-		
-		private EntitySet<Tbl_Personas> _Tbl_Personas;
-		
-    #region Definiciones de métodos de extensibilidad
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnZona_idChanging(int value);
-    partial void OnZona_idChanged();
-    partial void OnZona_nomChanging(string value);
-    partial void OnZona_nomChanged();
-    partial void OnZona_estadoChanging(string value);
-    partial void OnZona_estadoChanged();
-    #endregion
-		
-		public Tbl_Zona()
-		{
-			this._Tbl_Personas = new EntitySet<Tbl_Personas>(new Action<Tbl_Personas>(this.attach_Tbl_Personas), new Action<Tbl_Personas>(this.detach_Tbl_Personas));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Zona_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int Zona_id
-		{
-			get
-			{
-				return this._Zona_id;
-			}
-			set
-			{
-				if ((this._Zona_id != value))
-				{
-					this.OnZona_idChanging(value);
-					this.SendPropertyChanging();
-					this._Zona_id = value;
-					this.SendPropertyChanged("Zona_id");
-					this.OnZona_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Zona_nom", DbType="VarChar(50)")]
-		public string Zona_nom
-		{
-			get
-			{
-				return this._Zona_nom;
-			}
-			set
-			{
-				if ((this._Zona_nom != value))
-				{
-					this.OnZona_nomChanging(value);
-					this.SendPropertyChanging();
-					this._Zona_nom = value;
-					this.SendPropertyChanged("Zona_nom");
-					this.OnZona_nomChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Zona_estado", DbType="VarChar(1)")]
-		public string Zona_estado
-		{
-			get
-			{
-				return this._Zona_estado;
-			}
-			set
-			{
-				if ((this._Zona_estado != value))
-				{
-					this.OnZona_estadoChanging(value);
-					this.SendPropertyChanging();
-					this._Zona_estado = value;
-					this.SendPropertyChanged("Zona_estado");
-					this.OnZona_estadoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Zona_Tbl_Personas", Storage="_Tbl_Personas", ThisKey="Zona_id", OtherKey="Zona_id")]
-		public EntitySet<Tbl_Personas> Tbl_Personas
-		{
-			get
-			{
-				return this._Tbl_Personas;
-			}
-			set
-			{
-				this._Tbl_Personas.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Tbl_Personas(Tbl_Personas entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tbl_Zona = this;
-		}
-		
-		private void detach_Tbl_Personas(Tbl_Personas entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tbl_Zona = null;
-		}
-	}
-	
 	public partial class Autentificacion_UsuarioResult
 	{
 		
@@ -14760,6 +15431,50 @@ namespace CapaDatos
 		private System.Nullable<int> _tusu_id;
 		
 		public Autentificacion_UsuarioResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_nombre", DbType="VarChar(150)")]
+		public string usu_nombre
+		{
+			get
+			{
+				return this._usu_nombre;
+			}
+			set
+			{
+				if ((this._usu_nombre != value))
+				{
+					this._usu_nombre = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tusu_id", DbType="Int")]
+		public System.Nullable<int> tusu_id
+		{
+			get
+			{
+				return this._tusu_id;
+			}
+			set
+			{
+				if ((this._tusu_id != value))
+				{
+					this._tusu_id = value;
+				}
+			}
+		}
+	}
+	
+	public partial class Validar_ExistenciaResult
+	{
+		
+		private string _usu_nombre;
+		
+		private System.Nullable<int> _tusu_id;
+		
+		public Validar_ExistenciaResult()
 		{
 		}
 		
@@ -14817,50 +15532,6 @@ namespace CapaDatos
 				if ((this._usu_nombre != value))
 				{
 					this._usu_nombre = value;
-				}
-			}
-		}
-	}
-	
-	public partial class Validar_ExistenciaResult
-	{
-		
-		private string _usu_nombre;
-		
-		private System.Nullable<int> _tusu_id;
-		
-		public Validar_ExistenciaResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_nombre", DbType="VarChar(150)")]
-		public string usu_nombre
-		{
-			get
-			{
-				return this._usu_nombre;
-			}
-			set
-			{
-				if ((this._usu_nombre != value))
-				{
-					this._usu_nombre = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tusu_id", DbType="Int")]
-		public System.Nullable<int> tusu_id
-		{
-			get
-			{
-				return this._tusu_id;
-			}
-			set
-			{
-				if ((this._tusu_id != value))
-				{
-					this._tusu_id = value;
 				}
 			}
 		}
