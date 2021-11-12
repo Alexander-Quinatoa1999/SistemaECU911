@@ -47,16 +47,13 @@ namespace SistemaECU911.Template.Views
         {
             if (!IsPostBack)
             {                              
-                txt_fecha.Text = DateTime.Now.ToString("yyyy-MM-dd");
-                txt_fecha2.Text = DateTime.Now.ToString(" dd/MM/yyyy " + " HH:mm ");
+                txt_fechahora.Text = DateTime.Now.ToString(" dd/MM/yyyy " + " HH:mm ");
 
                 CargarDatosModificar();
                 cargarTipoAntecedentePersonal();
                 cargarTipoAntecedenteFamiliar();
                 cargarProfesional();
                 cargarEspecialidad();
-                cargarProf();
-                cargarEspe();
                 cargarRegion();
             }            
         }
@@ -90,11 +87,10 @@ namespace SistemaECU911.Template.Views
                 pres = CN_HistorialMedico.obtenerPrescripcionxPer(perso);
                 prof = CN_HistorialMedico.obtenerProfesionalesxPer(perso);
 
-
                 btn_guardar.Visible = true;
 
                 if (per != null || motcons != null || antper != null || antfam != null || enfact != null || consvit != null || exafis != null
-                    || rectra != null || evo != null || pres != null || prof != null)
+                        || rectra != null || evo != null || pres != null || prof != null)
                 {
                     txt_priNombre.Text = per.Per_priNombre.ToString();
                     txt_priApellido.Text = per.Per_priApellido.ToString();
@@ -134,12 +130,11 @@ namespace SistemaECU911.Template.Views
 
                     txt_prescipciones.Text = pres.Press_descripcion.ToString();
 
-                    txt_fecha2.Text = prof.DatProfe_fecha_hora.ToString();
+                    txt_fechahora.Text = prof.DatProfe_fecha_hora.ToString();
                     ddl_profesional.SelectedValue = prof.prof_id.ToString();
                     ddl_especialidad.SelectedValue = prof.espec_id.ToString();
                     txt_codigo.Text = prof.DatProfe_cod.ToString();
 
-                    btn_guardar.Visible = false;
                 }
                 else
                 {
@@ -148,11 +143,11 @@ namespace SistemaECU911.Template.Views
             }
         }
 
-        private void guardar_modificar_datos(int perid, int motivoconsid, int antperid, int antfamid, int enfactid, int consvitid, int exafisid, 
-            int rectraid, int evoid, int presid, int profid)
+        private void guardar_modificar_datos(int perid, int motivoconsid, int antperid, int antfamid, int enfactid, int consvitid, int exafisid, int rectraid, 
+            int evoid, int presid, int profid)
         {
-            if (perid == 0 || motivoconsid == 0 || antperid == 0 || antfamid == 0 || enfactid == 0 || consvitid == 0 || exafisid == 0 ||
-                rectraid == 0 || evoid == 0 || presid == 0 || profid == 0)
+            if (/*perid == 0 || motivoconsid == 0 || antperid == 0 || antfamid == 0 || enfactid == 0 || consvitid == 0 ||*/ exafisid == 0 || rectraid == 0 || 
+                evoid == 0 || presid == 0 || profid == 0)
             {
                 GuardarHistorial();
             }
@@ -178,10 +173,10 @@ namespace SistemaECU911.Template.Views
                 pres = CN_HistorialMedico.obtenerPrescripcionxPer(perso);
                 prof = CN_HistorialMedico.obtenerProfesionalesxPer(perso);
 
-                if (per != null || motcons != null || antper != null || antfam != null || enfact != null || consvit != null || exafis != null ||
-                    rectra != null || evo != null || pres != null || prof != null)
+                if (per != null || motcons != null || antper != null || antfam != null || enfact != null || consvit != null || exafis != null || reg != null 
+                    || tipreg != null || rectra != null || evo != null || pres != null || prof != null)
                 {
-                    Modificar(per, motcons, antper, antfam, enfact, consvit, exafis, rectra, evo, pres, prof);
+                    ModificarHistorial(per, motcons, antper, antfam, enfact, consvit, exafis, rectra, evo, pres, prof);
                 }
             }
         }
@@ -191,116 +186,114 @@ namespace SistemaECU911.Template.Views
             try
             {
                 //Guardar Persona
-                if (string.IsNullOrEmpty(txt_moConsulta.Text) || string.IsNullOrEmpty(txt_antePersonales.Text) ||
-                    string.IsNullOrEmpty(txt_anteFamiliares.Text) || ddl_tipoAntPer.SelectedValue == "0" || ddl_tipoAntFam.SelectedValue == "0"
-                    || ddl_espe.SelectedValue == "0" || ddl_prof.SelectedValue == "0" || ddl_region.SelectedValue == "0" ||
-                    ddl_especialidad.SelectedValue == "0" || ddl_profesional.SelectedValue == "0" || string.IsNullOrEmpty(txt_presArterial.Text)
-                    || string.IsNullOrEmpty(txt_temperatura.Text) || string.IsNullOrEmpty(txt_frecCardiaca.Text) ||
-                    string.IsNullOrEmpty(txt_satOxigeno.Text) || string.IsNullOrEmpty(txt_frecRespiratoria.Text) ||
-                    string.IsNullOrEmpty(txt_peso.Text) || string.IsNullOrEmpty(txt_talla.Text) || string.IsNullOrEmpty(txt_indMasCorporal.Text)
-                    || string.IsNullOrEmpty(txt_perAbdominal.Text))
+                if (string.IsNullOrEmpty(txt_numHClinica.Text) || string.IsNullOrEmpty(txt_moConsulta.Text) || ddl_tipoAntPer.SelectedValue == "0" ||
+                    string.IsNullOrEmpty(txt_antePersonales.Text) || string.IsNullOrEmpty(txt_antePerDescripcion.Text) || ddl_tipoAntFam.SelectedValue == "0" || 
+                    string.IsNullOrEmpty(txt_anteFamiliares.Text) || string.IsNullOrEmpty(txt_anteFamDescripcion.Text) || 
+                    string.IsNullOrEmpty(txt_moConsulta.Text) || string.IsNullOrEmpty(txt_presArterial.Text) || string.IsNullOrEmpty(txt_temperatura.Text) || 
+                    string.IsNullOrEmpty(txt_frecCardiaca.Text) || string.IsNullOrEmpty(txt_satOxigeno.Text) || string.IsNullOrEmpty(txt_frecRespiratoria.Text) || 
+                    string.IsNullOrEmpty(txt_peso.Text) || string.IsNullOrEmpty(txt_talla.Text) || string.IsNullOrEmpty(txt_indMasCorporal.Text) || 
+                    string.IsNullOrEmpty(txt_perAbdominal.Text) || ddl_region.SelectedValue == "0" || string.IsNullOrEmpty(txt_exafisdescripcion.Text) ||
+                    string.IsNullOrEmpty(txt_tratamiento.Text) || string.IsNullOrEmpty(txt_evolucion.Text) || string.IsNullOrEmpty(txt_prescipciones.Text) || 
+                    string.IsNullOrEmpty(txt_fechahora.Text) || ddl_especialidad.SelectedValue == "0" || ddl_profesional.SelectedValue == "0" || 
+                    string.IsNullOrEmpty(txt_codigo.Text))
                 {
                     ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Complete los campos')", true);
                 }
                 else
                 {
-                    if (Request["cod"] != null)
-                    {
-                        int codigo = Convert.ToInt32(Request["cod"]);
-                        per = CN_HistorialMedico.obtenerPersonasxId(codigo);
-                        int perso = Convert.ToInt32(per.Per_id.ToString());
+                    per = CN_HistorialMedico.obtenerIdPersonasxCedula(Convert.ToInt32(txt_numHClinica.Text));
 
-                        motcons = new Tbl_MotivoConsulta();
-                        antper = new Tbl_AntePersonales();
-                        antfam = new Tbl_AnteFamiliares();
-                        enfact = new Tbl_EnfermedadActual();
-                        consvit = new Tbl_ConsVitAntro();
-                        exafis = new Tbl_ExaFisRegional();
-                        //reg = new Tbl_Regiones();
-                        //tipreg = new Tbl_TipoExaFisRegional();
-                        rectra = new Tbl_RecoTratamiento();
-                        evo = new Tbl_Evolucion();
-                        pres = new Tbl_Prescipciones();
-                        prof = new Tbl_DatProfesional();
+                    int perso = Convert.ToInt32(per.Per_id.ToString());
+
+                    motcons = new Tbl_MotivoConsulta();
+                    antper = new Tbl_AntePersonales();
+                    antfam = new Tbl_AnteFamiliares();
+                    enfact = new Tbl_EnfermedadActual();
+                    consvit = new Tbl_ConsVitAntro();
+                    exafis = new Tbl_ExaFisRegional();
+                    reg = new Tbl_Regiones();
+                    tipreg = new Tbl_TipoExaFisRegional();
+                    rectra = new Tbl_RecoTratamiento();
+                    evo = new Tbl_Evolucion();
+                    pres = new Tbl_Prescipciones();
+                    prof = new Tbl_DatProfesional();
 
 
-                        //captura de datos tbl_motivoconsulta
-                        motcons.Mcon_descripcion = txt_moConsulta.Text;
-                        motcons.Per_id = perso;
-                        //captura de datos tbl_antepersonales
-                        antper.TiEnf_id = Convert.ToInt32(ddl_tipoAntPer.SelectedValue);
-                        antper.AntPer_antecedente = txt_antePersonales.Text;
-                        antper.AntPer_descripcion = txt_antePerDescripcion.Text;
-                        antper.Per_id = perso;
-                        //captura de datos tbl_antefamiliares
-                        antfam.TiEnf_id = Convert.ToInt32(ddl_tipoAntFam.SelectedValue);
-                        antfam.AntFami_antecendente = txt_anteFamiliares.Text;
-                        antfam.AntFami_descripcion = txt_anteFamDescripcion.Text;
-                        antfam.Per_id = perso;
-                        //captura de datos Tbl_EnfermedadActual
-                        enfact.EnfActu_descrip = txt_enfeActual.Text;
-                        enfact.Per_id = perso;
-                        //captura de datos Tbl_ConsVitAntro
-                        consvit.ConsVitAntro_preArterial = txt_presArterial.Text;
-                        consvit.ConsVitAntro_temperatura = txt_temperatura.Text;
-                        consvit.ConsVitAntro_frecCardiacan = txt_frecCardiaca.Text;
-                        consvit.ConsVitAntro_satOxigenon = txt_satOxigeno.Text;
-                        consvit.ConsVitAntro_frecRespiratorian = txt_frecRespiratoria.Text;
-                        consvit.ConsVitAntro_peson = txt_peso.Text;
-                        consvit.ConsVitAntro_tallan = txt_talla.Text;
-                        consvit.ConsVitAntro_indMasCorporaln = txt_indMasCorporal.Text;
-                        consvit.ConsVitAntro_perAbdominaln = txt_perAbdominal.Text;
-                        consvit.Per_id = perso;
-                        //captura de datos Tbl_ExaFisRegional
-                        exafis.Regiones_id = Convert.ToInt32(ddl_region.SelectedValue);
-                        exafis.ExaFisRegional_observaciones = txt_exafisdescripcion.Text;
-                        exafis.Per_id = perso;
-                        //captura de datos Tbl_RecoTratamiento
-                        rectra.RecTra_descripcion = txt_tratamiento.Text;
-                        rectra.Per_id = perso;
-                        //captura de datos Tbl_Evolucion
-                        evo.Evolucion_notas = txt_evolucion.Text;
-                        evo.Per_id = perso;
-                        //captura de datos Tbl_Prescipciones
-                        pres.Press_descripcion = txt_prescipciones.Text;
-                        pres.Per_id = perso;
-                        //captura de datos Tbl_Profesional
-                        prof.DatProfe_fecha_hora = Convert.ToDateTime(txt_fecha2.Text);
-                        prof.prof_id = Convert.ToInt32(ddl_profesional.SelectedValue);
-                        prof.espec_id = Convert.ToInt32(ddl_especialidad.SelectedValue);
-                        prof.DatProfe_cod = txt_codigo.Text;
-                        prof.Per_id = perso;
+                    //captura de datos tbl_motivoconsulta
+                    motcons.Mcon_descripcion = txt_moConsulta.Text;
+                    motcons.Per_id = perso;
+                    //captura de datos tbl_antepersonales
+                    antper.TiEnf_id = Convert.ToInt32(ddl_tipoAntPer.SelectedValue);
+                    antper.AntPer_antecedente = txt_antePersonales.Text;
+                    antper.AntPer_descripcion = txt_antePerDescripcion.Text;
+                    antper.Per_id = perso;
+                    //captura de datos tbl_antefamiliares
+                    antfam.TiEnf_id = Convert.ToInt32(ddl_tipoAntFam.SelectedValue);
+                    antfam.AntFami_antecendente = txt_anteFamiliares.Text;
+                    antfam.AntFami_descripcion = txt_anteFamDescripcion.Text;
+                    antfam.Per_id = perso;
+                    //captura de datos Tbl_EnfermedadActual
+                    enfact.EnfActu_descrip = txt_enfeActual.Text;
+                    enfact.Per_id = perso;
+                    //captura de datos Tbl_ConsVitAntro
+                    consvit.ConsVitAntro_preArterial = txt_presArterial.Text;
+                    consvit.ConsVitAntro_temperatura = txt_temperatura.Text;
+                    consvit.ConsVitAntro_frecCardiacan = txt_frecCardiaca.Text;
+                    consvit.ConsVitAntro_satOxigenon = txt_satOxigeno.Text;
+                    consvit.ConsVitAntro_frecRespiratorian = txt_frecRespiratoria.Text;
+                    consvit.ConsVitAntro_peson = txt_peso.Text;
+                    consvit.ConsVitAntro_tallan = txt_talla.Text;
+                    consvit.ConsVitAntro_indMasCorporaln = txt_indMasCorporal.Text;
+                    consvit.ConsVitAntro_perAbdominaln = txt_perAbdominal.Text;
+                    consvit.Per_id = perso;
+                    //captura de datos Tbl_ExaFisRegional
+                    exafis.Regiones_id = Convert.ToInt32(ddl_region.SelectedValue);
+                    exafis.ExaFisRegional_observaciones = txt_exafisdescripcion.Text;
+                    exafis.Per_id = perso;
+                    //captura de datos Tbl_RecoTratamiento
+                    rectra.RecTra_descripcion = txt_tratamiento.Text;
+                    rectra.Per_id = perso;
+                    //captura de datos Tbl_Evolucion
+                    evo.Evolucion_notas = txt_evolucion.Text;
+                    evo.Per_id = perso;
+                    //captura de datos Tbl_Prescipciones
+                    pres.Press_descripcion = txt_prescipciones.Text;
+                    pres.Per_id = perso;
+                    //captura de datos Tbl_Profesional
+                    prof.DatProfe_fecha_hora = Convert.ToDateTime(txt_fechahora.Text);
+                    prof.prof_id = Convert.ToInt32(ddl_profesional.SelectedValue);
+                    prof.espec_id = Convert.ToInt32(ddl_especialidad.SelectedValue);
+                    prof.DatProfe_cod = txt_codigo.Text;
+                    prof.Per_id = perso;
 
+                    //metodo de guardar motivo de consulta
+                    CN_HistorialMedico.guardarMotiConsulta(motcons);
+                    //metodo de guardar antecedentes personales
+                    CN_HistorialMedico.guardarAntecedentesPersonales(antper);
+                    //metodo de guardar antecedentes familiares
+                    CN_HistorialMedico.guardarAntecedentesFamiliares(antfam);
+                    //metodo de guardar enfermedad actual
+                    CN_HistorialMedico.guardarEnfermedadActual(enfact);
+                    //metodo de guardar enfermedad actual
+                    CN_HistorialMedico.guardarSisgnosVitalesAntropometricos2(consvit);
+                    //metodo de guardar examen fisico
+                    CN_HistorialMedico.guardarExamenFisico(exafis);
+                    //metodo de guardar tratamiento
+                    CN_HistorialMedico.guardarPlanTratamiento(rectra);
+                    //metodo de guardar evolucion
+                    CN_HistorialMedico.guardarEvolucion(evo);
+                    //metodo de guardar prescripciones
+                    CN_HistorialMedico.guardarPrescripcion(pres);
+                    //metodo de guardar profesional
+                    CN_HistorialMedico.guardarProfesional(prof);
 
-                        CN_HistorialMedico.guardarPersona(per);
-                        //metodo de guardar motivo de consulta
-                        CN_HistorialMedico.guardarMotiConsulta(motcons);
-                        //metodo de guardar antecedentes personales
-                        CN_HistorialMedico.guardarAntecedentesPersonales(antper);
-                        //metodo de guardar antecedentes familiares
-                        CN_HistorialMedico.guardarAntecedentesFamiliares(antfam);
-                        //metodo de guardar enfermedad actual
-                        CN_HistorialMedico.guardarEnfermedadActual(enfact);
-                        //metodo de guardar enfermedad actual
-                        CN_HistorialMedico.guardarSisgnosVitalesAntropometricos2(consvit);
-                        //metodo de guardar examen fisico
-                        CN_HistorialMedico.guardarExamenFisico(exafis);
-                        //metodo de guardar tratamiento
-                        CN_HistorialMedico.guardarPlanTratamiento(rectra);
-                        //metodo de guardar evolucion
-                        CN_HistorialMedico.guardarEvolucion(evo);
-                        //metodo de guardar prescripciones
-                        CN_HistorialMedico.guardarPrescripcion(pres);
-                        //metodo de guardar profesional
-                        CN_HistorialMedico.guardarProfesional(prof);
+                    btn_modificar.Visible = false;                  
 
+                    //Mensaje de confirmacion
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos Guardados Exitosamente')", true);
 
-                        //Mensaje de confirmacion
-                        ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos Guardados Exitosamente')", true);
-
-                        Response.Redirect("~/Template/Views/Pacientes.aspx");
-                        limpiar();
-                    }                   
+                    Response.Redirect("~/Template/Views/Pacientes.aspx");
+                    limpiar();
 
                 }
 
@@ -312,7 +305,7 @@ namespace SistemaECU911.Template.Views
 
         }
 
-        private void Modificar(Tbl_Personas per, Tbl_MotivoConsulta motcons, Tbl_AntePersonales antper, Tbl_AnteFamiliares antfam, 
+        private void ModificarHistorial(Tbl_Personas per, Tbl_MotivoConsulta motcons, Tbl_AntePersonales antper, Tbl_AnteFamiliares antfam, 
             Tbl_EnfermedadActual enfact, Tbl_ConsVitAntro consvit, Tbl_ExaFisRegional exafis, Tbl_RecoTratamiento rectra, Tbl_Evolucion evo, 
             Tbl_Prescipciones pres, Tbl_DatProfesional prof)
         {
@@ -366,7 +359,7 @@ namespace SistemaECU911.Template.Views
                 //captura de datos Tbl_Prescipciones
                 pres.Press_descripcion = txt_prescipciones.Text;
                 //captura de datos Tbl_Profesional
-                prof.DatProfe_fecha_hora = Convert.ToDateTime(txt_fecha2.Text);
+                prof.DatProfe_fecha_hora = Convert.ToDateTime(txt_fechahora.Text);
                 prof.prof_id = Convert.ToInt32(ddl_profesional.SelectedValue);
                 prof.espec_id = Convert.ToInt32(ddl_especialidad.SelectedValue);
                 prof.DatProfe_cod = txt_codigo.Text;
@@ -522,31 +515,6 @@ namespace SistemaECU911.Template.Views
             ddl_tipoRegion.Items.Insert(0, new ListItem("Seleccione ........", "0"));
         }
 
-
-        private void cargarProf()
-        {
-            List<Tbl_Profesional> listaProf = new List<Tbl_Profesional>();
-            listaProf = CN_HistorialMedico.obtenerProfesional();
-            listaProf.Insert(0, new Tbl_Profesional() { prof_NomApe = "Seleccione ........" });
-
-            ddl_prof.DataSource = listaProf;
-            ddl_prof.DataTextField = "prof_NomApe";
-            ddl_prof.DataValueField = "prof_id";
-            ddl_prof.DataBind();
-        }
-
-        private void cargarEspe()
-        {
-            List<Tbl_Especialidad> listaEspec = new List<Tbl_Especialidad>();
-            listaEspec = CN_HistorialMedico.obtenerEspecialidad();
-            listaEspec.Insert(0, new Tbl_Especialidad() { espec_nombre = "Seleccione ........" });
-
-            ddl_espe.DataSource = listaEspec;
-            ddl_espe.DataTextField = "espec_nombre";
-            ddl_espe.DataValueField = "espec_id";
-            ddl_espe.DataBind();
-        }
-
         private void cargarProfesional()
         {
             List<Tbl_Profesional> listaProf = new List<Tbl_Profesional>();
@@ -579,9 +547,7 @@ namespace SistemaECU911.Template.Views
                 txt_satOxigeno.Text = txt_frecRespiratoria.Text = txt_peso.Text = txt_talla.Text = txt_indMasCorporal.Text =
                 txt_perAbdominal.Text = "";
 
-            ddl_espe.ClearSelection();
             ddl_especialidad.ClearSelection();
-            ddl_prof.ClearSelection();
             ddl_profesional.ClearSelection();
             ddl_region.ClearSelection();
             ddl_tipoAntFam.ClearSelection();

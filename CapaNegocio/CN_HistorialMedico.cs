@@ -35,6 +35,13 @@ namespace CapaNegocio
             return perid;
         }
 
+        //metodo traer para todos los ID personas x cedula
+        public static Tbl_Personas obtenerIdPersonasxCedula(int perced)
+        {
+            var perid = dc.Tbl_Personas.FirstOrDefault(per => per.Per_Cedula.Equals(perced) && per.Per_estado == "A");
+            return perid;
+        }
+
         //----------------------------------------------------------------------------------------------------------------------------
         //--------------------------------------- METODOS PARA OBTENER DATOS POR PERSONA ---------------------------------------------
         //----------------------------------------------------------------------------------------------------------------------------

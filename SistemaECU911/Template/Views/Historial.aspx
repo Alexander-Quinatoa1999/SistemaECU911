@@ -319,24 +319,6 @@
                         6. SIGNOS VITALES Y ANTROPOMÉTRICOS 
                     </div>
                     <div class="list-group list-group-flush" style="padding: 10px; width: auto">
-                        <div class="container">
-                            <asp:Table CssClass="table table-bordered table-light" runat="server">
-                                <asp:TableRow>
-                                    <asp:TableCell Style="width: 100px" Text="FECHA:"></asp:TableCell>
-                                    <asp:TableCell Style="background-color: white">
-                                        <asp:TextBox runat="server" ID="txt_fecha" BorderStyle="None" Style="width: 100%" TextMode="Date"></asp:TextBox>
-                                    </asp:TableCell>
-                                    <asp:TableCell Text="PROFESIONAL:"></asp:TableCell>
-                                    <asp:TableCell Style="background-color: white">
-                                        <asp:DropDownList ID="ddl_prof" CssClass="form-check" Style="width: 100%; border: none" runat="server"></asp:DropDownList>
-                                    </asp:TableCell>
-                                    <asp:TableCell Text="ESPECIALIDAD:"></asp:TableCell>
-                                    <asp:TableCell Style="background-color: white">
-                                        <asp:DropDownList ID="ddl_espe" CssClass="form-check" Style="width: 100%; border: none" runat="server"></asp:DropDownList>
-                                    </asp:TableCell>
-                                </asp:TableRow>
-                            </asp:Table>
-                        </div>
                         <div class="container" style="padding-top: 10px">
                             <asp:Table CssClass="table table-bordered" runat="server">
                                 <asp:TableRow>
@@ -493,7 +475,7 @@
                             </asp:TableRow>
                             <asp:TableRow>
                                 <asp:TableCell Style="width: 200px; background-color: white">
-                                    <asp:TextBox runat="server" ID="txt_fecha2" BorderStyle="None" Style="width: 100%; text-align: center" TextMode="DateTime"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_fechahora" BorderStyle="None" Style="width: 100%; text-align: center" TextMode="DateTime"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="width: 250px; background-color: white">
                                     <asp:DropDownList ID="ddl_especialidad" CssClass="form-check" Style="width: 100%; border: none" runat="server"></asp:DropDownList>

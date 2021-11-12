@@ -159,33 +159,6 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_enfeActual;
 
         /// <summary>
-        /// Control txt_fecha.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_fecha;
-
-        /// <summary>
-        /// Control ddl_prof.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddl_prof;
-
-        /// <summary>
-        /// Control ddl_espe.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddl_espe;
-
-        /// <summary>
         /// Control txt_presArterial.
         /// </summary>
         /// <remarks>
@@ -321,13 +294,13 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_prescipciones;
 
         /// <summary>
-        /// Control txt_fecha2.
+        /// Control txt_fechahora.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_fecha2;
+        protected global::System.Web.UI.WebControls.TextBox txt_fechahora;
 
         /// <summary>
         /// Control ddl_especialidad.
