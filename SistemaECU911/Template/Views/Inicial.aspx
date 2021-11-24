@@ -253,7 +253,7 @@
                         ANTECEDENTES CLÍNICOS Y QUIRÚRGICOS
                     </div>
                     <div class="list-group list-group-flush">
-                        <textarea id="" cols="20" rows="3" style="border: none" placeholder="Descripción"></textarea>
+                        <asp:TextBox runat="server" ID="txt_antCliQuiDescripcion" BorderStyle="None" Style="width: 100%" TextMode="MultiLine" Rows="3"></asp:TextBox>
                     </div>
                     <div class="card" style="width: auto;">
                         <div class="card-header" style="font-size: 14px">
@@ -2418,6 +2418,12 @@
                             <asp:Label ID="Label93" runat="server" Text="" Style="height: 80px"></asp:Label>
                         </div>
                     </div>
+                </div>
+                <br />
+                <div class="container" align="center">
+                    <asp:Button CssClass="btn btn-primary" ID="btn_guardar" runat="server" Text="Guardar" OnClick="btn_guardar_Click" />
+                    <asp:Button CssClass="btn btn-primary" ID="btn_modificar" runat="server" Text="Modificar" OnClick=""  />
+                    <asp:Button CssClass="btn btn-secondary" ID="btn_cancelar" runat="server" Text="Cancelar" OnClick="btn_cancelar_Click" />
                 </div>
                 <br />
             </div>

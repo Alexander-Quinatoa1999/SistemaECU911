@@ -599,35 +599,3 @@ namespace SistemaECU911.Template.Views
 
 }
 
-
-
-
-//if (string.IsNullOrEmpty(txt_priNombre.Text) || string.IsNullOrEmpty(txt_priApellido.Text) || string.IsNullOrEmpty(txt_sexo.Text)
-//                || string.IsNullOrEmpty(txt_edad.Text) || string.IsNullOrEmpty(txt_numHClinica.Text))
-//{
-//    ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Complete los campos')", true);
-//}
-//else
-//{
-//    try
-//    {
-//        con.Open();
-//        string sql = "insert into Tbl_Usuario values(@priNom,@priApe,@sexo,@edad,@hCli)";
-//        SqlCommand cmd = new SqlCommand(sql, con);
-//        cmd.Parameters.AddWithValue("@priNom", txt_priNombre.Text.Trim());
-//        cmd.Parameters.AddWithValue("@priApe", txt_priApellido.Text.Trim());
-//        cmd.Parameters.AddWithValue("@sexo", txt_sexo.Text.Trim());
-//        cmd.Parameters.AddWithValue("@edad", Convert.ToInt32(txt_edad.Text.Trim()));
-//        cmd.Parameters.AddWithValue("@hCli", Convert.ToInt32(txt_numHClinica.Text.Trim()));
-//        cmd.ExecuteNonQuery();
-
-//        ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos Guardados Exitosamente')", true);
-//        limpiar();
-//    }
-//    catch (Exception)
-//    {
-//        ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos No Guardados')", true);
-//    }
-
-
-//}
