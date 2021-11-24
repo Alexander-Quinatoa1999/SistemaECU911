@@ -47,9 +47,9 @@ namespace CapaNegocio
         //----------------------------------------------------------------------------------------------------------------------------
 
         //metodo traer para traer motivo de consulta x persona
-        public static Tbl_MotivoConsulta obtenerMotivoxPer(int personaid)
+        public static Tbl_MotivoConsulta obtenerMotivoxPerFecha(int personaid, DateTime fechamot)
         {
-            var motid = dc.Tbl_MotivoConsulta.FirstOrDefault(per => per.Per_id.Equals(personaid) && per.Mcon_estado == "A");
+            var motid = dc.Tbl_MotivoConsulta.FirstOrDefault(per => per.Per_id.Equals(personaid) && per.Mcon_fecha_hora.Equals(fechamot) && per.Mcon_estado == "A");
             return motid;
         }
 
