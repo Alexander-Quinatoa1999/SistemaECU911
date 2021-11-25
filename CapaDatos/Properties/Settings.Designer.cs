@@ -95,5 +95,16 @@ namespace CapaDatos.Properties {
                 return ((string)(this["SistemaECU911ConnectionString4"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=ZOCAPO\\SQLEXPRESS;Initial Catalog=SistemaECU911;Integrated Security=T" +
+            "rue")]
+        public string SistemaECU911ConnectionString5 {
+            get {
+                return ((string)(this["SistemaECU911ConnectionString5"]));
+            }
+        }
     }
 }

@@ -17,6 +17,9 @@ namespace CapaNegocio
         //------------------------------------------ METODOS PARA GUARDAR Y MODIFICAR DATOS  -----------------------------------------
         //----------------------------------------------------------------------------------------------------------------------------
 
+
+        //C. ANTECEDENTES PERSONALES
+
         //Metodo para guardar datos ANTECEDENTES CLÍNICOS Y QUIRÚRGICOS
         public static void guardarAntCliniQuirur(Tbl_AntecedentesCliQuiru antcliqui)
         {
@@ -168,6 +171,140 @@ namespace CapaNegocio
         }
 
 
+        //D.ANTECEDENTES DE TRABAJO
 
+        //Metodo para guardar datos ANTECEDENTES DE EMPLEOS ANTERIORES
+        public static void guardarEmpleAnteriores(Tbl_AntecedentesEmplAnteriores emplant)
+        {
+            try
+            {
+                emplant.AntEmpAnte_estado = "A";
+                dc.Tbl_AntecedentesEmplAnteriores.InsertOnSubmit(emplant);
+                dc.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException("Datos No Guardados" + ex.Message);
+            }
+        }
+
+        //Metodo para guardar datos ACCIDENTES DE TRABAJO
+        public static void guardarAccTrabajo(Tbl_AccidentesTrabajoDesc acctrabajo)
+        {
+            try
+            {
+                acctrabajo.AntTrabDesc_estado = "A";
+                dc.Tbl_AccidentesTrabajoDesc.InsertOnSubmit(acctrabajo);
+                dc.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException("Datos No Guardados" + ex.Message);
+            }
+        }
+
+        //Metodo para guardar datos ENFERMEDADES PROFESIONALES
+        public static void guardarEnferProfes(Tbl_EnfermedadesProfesionales enferprof)
+        {
+            try
+            {
+                enferprof.EnfProfesionales_estado = "A";
+                dc.Tbl_EnfermedadesProfesionales.InsertOnSubmit(enferprof);
+                dc.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException("Datos No Guardados" + ex.Message);
+            }
+        }
+
+
+        //F. FACTORES DE RIESGO DEL PUESTO DE TRABAJO ACTUAL
+
+        //Metodo para guardar datos RIESGO DEL PUESTO DE TRABAJO ACTUAL
+        public static void guardarRiesgoPuesTrabaActual(Tbl_FacRiesTrabAct facriesgotractual)
+        {
+            try
+            {
+                facriesgotractual.FacRiesTrabAct_estado = "A";
+                dc.Tbl_FacRiesTrabAct.InsertOnSubmit(facriesgotractual);
+                dc.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException("Datos No Guardados" + ex.Message);
+            }
+        }
+
+
+        //G. ACTIVIDADES EXTRA LABORALES
+
+        //Metodo para guardar datos ACTIVIDADES EXTRA LABORALES
+        public static void guardarActivextralaboral(Tbl_ActividadesExtraLaborales actvextralaboral)
+        {
+            try
+            {
+                actvextralaboral.ActExtLab_estado = "A";
+                dc.Tbl_ActividadesExtraLaborales.InsertOnSubmit(actvextralaboral);
+                dc.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException("Datos No Guardados" + ex.Message);
+            }
+        }
+
+        //L. RESULTADO DE EXAMENES GENERALES Y ESPECIFICOS DE ACUERDO AL RIESGO Y PUESTO DE TRABAJO
+
+        //Metodo para guardar datos RESULTADO DE EXAMENES GENERALES Y ESPECIFICOS DE ACUERDO AL RIESGO Y PUESTO DE TRABAJO
+        public static void guardarExaGenEspeRiesyPues(Tbl_ResExaGenEspRiesTrabajo exagenesperiespues)
+        {
+            try
+            {
+                exagenesperiespues.ResExaGenEspRiesTrabajo_estado = "A";
+                dc.Tbl_ResExaGenEspRiesTrabajo.InsertOnSubmit(exagenesperiespues);
+                dc.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException("Datos No Guardados" + ex.Message);
+            }
+        }
+
+
+        //M. DIAGNÓSTICO
+
+        //Metodo para guardar datos DIAGNÓSTICO
+        public static void guardarDiagnostico(Tbl_Diagnostico diagnostico)
+        {
+            try
+            {
+                diagnostico.Diag_esatdo = "A";
+                dc.Tbl_Diagnostico.InsertOnSubmit(diagnostico);
+                dc.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException("Datos No Guardados" + ex.Message);
+            }
+        }
+
+
+        //N. APTITUD MÉDICA PARA EL TRABAJO
+
+        //Metodo para guardar datos APTITUD MÉDICA PARA EL TRABAJO
+        public static void guardarAptiMediTrabajo(Tbl_AptitudMedica aptitudmedica)
+        {
+            try
+            {
+                aptitudmedica.AptMed_estado = "A";
+                dc.Tbl_AptitudMedica.InsertOnSubmit(aptitudmedica);
+                dc.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException("Datos No Guardados" + ex.Message);
+            }
+        }
     }
 }
