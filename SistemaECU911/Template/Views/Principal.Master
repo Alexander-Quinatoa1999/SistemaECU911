@@ -136,16 +136,31 @@
                                 <span class="menu-title">Socio Economico</span>
                             </a>
                         </li> 
+
                         <li class="nav-item">
-                            <a class="nav-link" href="Pacientes.aspx">
-                                <i class="fas fa-ambulance menu-icon"></i>
+                            <a class="nav-link" data-toggle="collapse" href="#form-elements1" aria-expanded="false" aria-controls="form-elements">
+                                <i class="fab fa-wpforms menu-icon"></i>
                                 <span class="menu-title">Pacientes</span>
+                                <i class="menu-arrow"></i>
                             </a>
+                            <div class="collapse" id="form-elements1">
+                                <ul class="nav flex-column sub-menu">
+                                    <li class="nav-item"><a class="nav-link" href="Pacientes.aspx">Ficha Medica</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="PacientesInicial.aspx">HC Inicial</a></li>
+                                    <%--<li class="nav-item"><a class="nav-link" href="Periodica.aspx">HC Periódica</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="Reintegro.aspx">HC Reintegro</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="Retiro.aspx">HC Retiro</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="Certificado.aspx">HC Certificado</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="Inmunizaciones.aspx">HC Inmunizaciones</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="Evolucion.aspx">HC Evolución</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="PedidoExamenes.aspx">HC Pedido Examenes</a></li>--%>
+                                </ul>
+                            </div>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="WebForm2.aspx">
                                 <i class="fas fa-apple menu-icon"></i>
-                                <span class="menu-title">Form</span>
+                                <span class="menu-title">Formulario 2</span>
                             </a>
                         </li>
                         <li class="nav-item">

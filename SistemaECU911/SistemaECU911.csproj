@@ -767,6 +767,7 @@
     <Content Include="Template\Views\Inicio.aspx" />
     <Content Include="Template\Views\Inmunizaciones.aspx" />
     <Content Include="Template\Views\Pacientes.aspx" />
+    <Content Include="Template\Views\PacientesInicial.aspx" />
     <Content Include="Template\Views\PedidoExamenes.aspx" />
     <Content Include="Template\Views\Periodica.aspx" />
     <Content Include="Template\Views\Reintegro.aspx" />
@@ -834,6 +835,13 @@
     </Compile>
     <Compile Include="Template\Views\Pacientes.aspx.designer.cs">
       <DependentUpon>Pacientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Template\Views\PacientesInicial.aspx.cs">
+      <DependentUpon>PacientesInicial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Template\Views\PacientesInicial.aspx.designer.cs">
+      <DependentUpon>PacientesInicial.aspx</DependentUpon>
     </Compile>
     <Compile Include="Template\Views\PedidoExamenes.aspx.cs">
       <DependentUpon>PedidoExamenes.aspx</DependentUpon>

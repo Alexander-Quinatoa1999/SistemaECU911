@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Template/Views/Principal.Master" AutoEventWireup="true" CodeBehind="Pacientes.aspx.cs" Inherits="SistemaECU911.Template.Views.Pacientes" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Template/Views/Principal.Master" AutoEventWireup="true" CodeBehind="PacientesInicial.aspx.cs" Inherits="SistemaECU911.Template.Views.PacientesInicial" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -16,30 +16,13 @@
                     </div>
                 </div>
                 <hr />
-                <div class="row  justify-content-center">
-                    <ul class="navbar-nav">
-                        <li class="nav-item nav-search d-none d-md-flex">
-                            <div class="nav-link">
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text">
-                                            <i class="fas fa-search"></i>
-                                        </span>
-                                    </div>
-                                    <asp:TextBox class="form-control" ID="txt_buscar" OnTextChanged="txt_buscar_TextChanged" placeholder="Buscar..." AutoPostBack="true" aria-label="Search" runat="server"></asp:TextBox>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <hr />
                 <div class="card" style="width: auto;">
                     <div class="list-group list-group-flush" style="padding: 10px; text-align: center">
                         <div class="container">
                             <div class="row justify-content-center">
                                 <div class="col-auto">
 
-                                    <asp:GridView ID="grvPacientes" OnRowCommand="grvPacientes_RowCommand" AutoGenerateColumns="false" PageSize="5" AllowPaging="true" AllowCustomPaging="true"  OnPageIndexChanging="grvPacientes_PageIndexChanging" Width="100%" CssClass="table table-hover text-center table-responsive" GridLines="None" runat="server" Style="margin-right: 0px">
+                                    <asp:GridView ID="grvPacientesInicial" OnRowCommand="grvPacientesInicial_RowCommand" AutoGenerateColumns="false" PageSize="5" AllowPaging="true" AllowCustomPaging="true" OnPageIndexChanging="grvPacientesInicial_PageIndexChanging" Width="100%" CssClass="table table-hover text-center table-responsive" GridLines="None" runat="server" Style="margin-right: 0px">
                                         <Columns>
                                             <asp:TemplateField HeaderText="ID">
                                                 <ItemTemplate>
@@ -61,29 +44,19 @@
                                                     <asp:Label ID="Per_priApellido" runat="server" Text='<%#Eval("Per_priApellido")%>'></asp:Label>
                                                 </ItemTemplate>
                                             </asp:TemplateField>
-                                            <asp:TemplateField HeaderText="Fecha Nacimiento">
-                                                <ItemTemplate>
-                                                    <asp:Label ID="Per_priFechaNaci" runat="server" Text='<%#Eval("Per_fechNacimiento")%>'></asp:Label>
-                                                </ItemTemplate>
-                                            </asp:TemplateField>
-                                            <asp:TemplateField HeaderText="Genero">
-                                                <ItemTemplate>
-                                                    <asp:Label ID="Per_priGenero" runat="server" Text='<%#Eval("Per_genero")%>'></asp:Label>
-                                                </ItemTemplate>
-                                            </asp:TemplateField>                                            
                                             <asp:TemplateField ItemStyle-Width="17" HeaderStyle-Width="17" HeaderText="">
                                                 <ItemTemplate>
                                                     <asp:LinkButton ID="lnbEditar" Width="16" Height="16" CommandArgument='<%#Eval("Per_id")%>' CommandName="Editar" runat="server"><i class="fas fa-pen"></i></asp:LinkButton>
                                                 </ItemTemplate>
                                                 <HeaderStyle Width="17px" />
                                                 <ItemStyle Width="17px" />
-                                            </asp:TemplateField>                                            
+                                            </asp:TemplateField>
                                         </Columns>
                                         <PagerSettings Mode="NumericFirstLast" PageButtonCount="8" FirstPageText="Primero" LastPageText="Ultimo" />
                                         <PagerStyle CssClass="pagination-ys" HorizontalAlign="Center" />
                                     </asp:GridView>
-                                    
-                                    
+
+
                                     <%--<asp:GridView ID="grvPacientes" OnRowCommand="grvPacientes_RowCommand" AutoGenerateColumns="false" PageSize="5" AllowPaging="true" AllowCustomPaging="true"  OnPageIndexChanging="grvPacientes_PageIndexChanging" Width="100%" CssClass="table table-hover text-center table-responsive" GridLines="None" runat="server" Style="margin-right: 0px">
                                         <Columns>
                                             <asp:TemplateField HeaderText="Historia Clinica / Cedula">
@@ -135,7 +108,7 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="footer" runat="server">
     <script>
         $('document').ready(function () {
-        $('#<%=grvPacientes.ClientID%>').prepend($("<thead></thead>").append($(this).find("tr:first"))).DataTable({
+        $('#<%=grvPacientesInicial.ClientID%>').prepend($("<thead></thead>").append($(this).find("tr:first"))).DataTable({
         //scrollCollapse: true,
         //autoWidth: false,
         //responsive: true,

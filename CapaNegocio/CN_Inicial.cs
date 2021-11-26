@@ -13,6 +13,63 @@ namespace CapaNegocio
         //private static DataClassesECU911DataContext dc = new DataClassesECU911DataContext();
         private static DataClassesECU911DataContext dc = new DataClassesECU911DataContext();
 
+        //metodo traer para traer Antecedentes Emple Anteriores x persona
+        public static Tbl_AntecedentesEmplAnteriores obtenerEmpAntexPer(int personaid)
+        {
+            var emplanteid = dc.Tbl_AntecedentesEmplAnteriores.FirstOrDefault(per => per.Per_id.Equals(personaid) && per.AntEmpAnte_estado == "A");
+            return emplanteid;
+        }
+
+        //metodo traer para traer Accidentes trabajo Desc x persona
+        public static Tbl_AccidentesTrabajoDesc obtenerAcciTraDescxPer(int personaid)
+        {
+            var accitrabid = dc.Tbl_AccidentesTrabajoDesc.FirstOrDefault(per => per.Per_id.Equals(personaid) && per.AntTrabDesc_estado == "A");
+            return accitrabid;
+        }
+
+        //metodo traer para traer Enfermedades Profesionales x persona
+        public static Tbl_EnfermedadesProfesionales obtenerEnfProfxPer(int personaid)
+        {
+            var enfprofid = dc.Tbl_EnfermedadesProfesionales.FirstOrDefault(per => per.Per_id.Equals(personaid) && per.EnfProfesionales_estado == "A");
+            return enfprofid;
+        }
+
+        //metodo traer para traer Factores Riesgo Trab Act x persona
+        public static Tbl_FacRiesTrabAct obtenerFacRiesTrabActxPer(int personaid)
+        {
+            var facriestrabid = dc.Tbl_FacRiesTrabAct.FirstOrDefault(per => per.Per_id.Equals(personaid) && per.FacRiesTrabAct_estado == "A");
+            return facriestrabid;
+        }
+
+        //metodo traer para traer Actividades extra laborales x persona
+        public static Tbl_ActividadesExtraLaborales obtenerActiExtraLabxPer(int personaid)
+        {
+            var actextralabid = dc.Tbl_ActividadesExtraLaborales.FirstOrDefault(per => per.Per_id.Equals(personaid) && per.ActExtLab_estado == "A");
+            return actextralabid;
+        }
+        
+        //metodo traer para traer res Exa Gen Esp Ries Trabajo x persona
+        public static Tbl_ResExaGenEspRiesTrabajo obtenerResExaGenEspRiesTrabaxPer(int personaid)
+        {
+            var resexagenid = dc.Tbl_ResExaGenEspRiesTrabajo.FirstOrDefault(per => per.Per_id.Equals(personaid) && per.ResExaGenEspRiesTrabajo_estado == "A");
+            return resexagenid;
+        }
+        
+        //metodo traer para traer Diagnostico x persona
+        public static Tbl_Diagnostico obtenerDiagnosticoxPer(int personaid)
+        {
+            var diagid = dc.Tbl_Diagnostico.FirstOrDefault(per => per.Per_id.Equals(personaid) && per.Diag_esatdo == "A");
+            return diagid;
+        }
+        
+        //metodo traer para traer Aptitud Medica x persona
+        public static Tbl_AptitudMedica obtenerAptMedicaxPer(int personaid)
+        {
+            var aptmedid = dc.Tbl_AptitudMedica.FirstOrDefault(per => per.Per_id.Equals(personaid) && per.AptMed_estado == "A");
+            return aptmedid;
+        }
+
+
         //----------------------------------------------------------------------------------------------------------------------------
         //------------------------------------------ METODOS PARA GUARDAR Y MODIFICAR DATOS  -----------------------------------------
         //----------------------------------------------------------------------------------------------------------------------------

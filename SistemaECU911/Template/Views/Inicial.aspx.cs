@@ -14,6 +14,8 @@ namespace SistemaECU911.Template.Views
 
 		DataClassesECU911DataContext dc = new DataClassesECU911DataContext();
 
+        //Objeto de la tabla personas
+        private Tbl_Personas per = new Tbl_Personas();
         //Objeto de la tabla motivo de consulta
         private Tbl_AntecedentesCliQuiru antcliqui = new Tbl_AntecedentesCliQuiru();
         //Objeto de la tabla ANTECEDENTES DE EMPLEOS ANTERIORES
@@ -35,8 +37,129 @@ namespace SistemaECU911.Template.Views
 
         protected void Page_Load(object sender, EventArgs e)
 		{
-            
+            if (!IsPostBack)
+            {
+                CargarDatosModificar();
+            }
 		}
+
+        private void CargarDatosModificar()
+        {
+            if (Request["cod"] != null)
+            {
+                int codigo = Convert.ToInt32(Request["cod"]);
+
+                per = CN_HistorialMedico.obtenerPersonasxId(codigo);
+                int perso = Convert.ToInt32(per.Per_id.ToString());
+
+                emplant = new Tbl_AntecedentesEmplAnteriores();
+                acctrabajo = new Tbl_AccidentesTrabajoDesc();
+                enferprof = new Tbl_EnfermedadesProfesionales();
+                facriesgotractual = new Tbl_FacRiesTrabAct();
+                actvextralaboral = new Tbl_ActividadesExtraLaborales();
+                exagenesperiespues = new Tbl_ResExaGenEspRiesTrabajo();
+                diagnostico = new Tbl_Diagnostico();
+                aptitudmedica = new Tbl_AptitudMedica();
+
+                emplant = CN_Inicial.obtenerEmpAntexPer(perso);
+                acctrabajo = CN_Inicial.obtenerAcciTraDescxPer(perso);
+                enferprof = CN_Inicial.obtenerEnfProfxPer(perso);
+                facriesgotractual = CN_Inicial.obtenerFacRiesTrabActxPer(perso);
+                actvextralaboral = CN_Inicial.obtenerActiExtraLabxPer(perso);
+                exagenesperiespues = CN_Inicial.obtenerResExaGenEspRiesTrabaxPer(perso);
+                diagnostico = CN_Inicial.obtenerDiagnosticoxPer(perso);
+                aptitudmedica = CN_Inicial.obtenerAptMedicaxPer(perso);
+
+                btn_guardar.Visible = true;
+
+                if (per != null || emplant != null || acctrabajo != null || enferprof != null || facriesgotractual != null || 
+                    actvextralaboral != null || exagenesperiespues != null || diagnostico != null || aptitudmedica != null)
+                {
+
+                    txt_priApellido.Text = per.Per_priApellido.ToString();
+                    txt_segApellido.Text = per.Per_segApellido.ToString();
+                    txt_priNombre.Text = per.Per_priNombre.ToString();
+                    txt_segNombre.Text = per.Per_segNombre.ToString();
+                    txt_numHClinica.Text = per.Per_Cedula.ToString();
+                    txt_sexo.Text = per.Per_genero.ToString();
+
+                    txt_empresa.Text = emplant.AntEmpAnte_nomEmpresa.ToString();
+                    txt_puestotrabajo.Text = emplant.AntEmpAnte_puestoTrabajo.ToString();
+                    txt_actdesempeña.Text = emplant.AntEmpAnte_actDesemp.ToString();
+                    txt_tiempotrabajo.Text = emplant.AntEmpAnte_tiemTrabajo.ToString();
+                    txt_fisico.Text = emplant.AntEmpAnte_nomEmpresa.ToString();
+                    txt_mecanico.Text = emplant.AntEmpAnte_nomEmpresa.ToString();
+                    txt_quimico.Text = emplant.AntEmpAnte_nomEmpresa.ToString();
+                    txt_biologico.Text = emplant.AntEmpAnte_nomEmpresa.ToString();
+                    txt_ergonomico.Text = emplant.AntEmpAnte_nomEmpresa.ToString();
+                    txt_psicosocial.Text = emplant.AntEmpAnte_nomEmpresa.ToString();
+                    txt_observaciones1.Text = emplant.AntEmpAnte_nomEmpresa.ToString();
+
+                    txt_puestodetrabajo.Text = facriesgotractual.FacRiesTrabAct_area.ToString();
+                    txt_act.Text = facriesgotractual.FacRiesTrabAct_actividades.ToString();
+                    txt_tempaltas.Text = facriesgotractual.FacRiesTrabAct_temAltasFis.ToString();
+                    txt_atrapmaquinas.Text = facriesgotractual.FacRiesTrabAct_atraMaquinasMec.ToString();
+                    txt_solidos.Text = facriesgotractual.FacRiesTrabAct_solidosQui.ToString();
+                    txt_virus.Text = facriesgotractual.FacRiesTrabAct_virusBio.ToString();
+                    txt_manmanualcargas.Text = facriesgotractual.FacRiesTrabAct_maneManCarErg.ToString();
+                    txt_montrabajo.Text = facriesgotractual.FacRiesTrabAct_monoTrabPsi.ToString();
+                    txt_medpreventivas.Text = facriesgotractual.FacRiesTrabAct_medPreventivas.ToString();
+
+                    txt_descrextralaborales.Text = actvextralaboral.ActExtLab_descrip.ToString();
+
+                    txt_examen.Text = exagenesperiespues.ResExaGenEspRiesTrabajo_examen.ToString();
+                    txt_fechaexamen.Text = exagenesperiespues.ResExaGenEspRiesTrabajo_fecha.ToString();
+                    txt_resultadoexamen.Text = exagenesperiespues.ResExaGenEspRiesTrabajo_resultados.ToString();
+                    txt_observacionexamen.Text = exagenesperiespues.ResExaGenEspRiesTrabajo_observaciones.ToString();
+
+                    txt_descripdiagnostico.Text = diagnostico.Diag_descripcion.ToString();
+                    txt_pre.Text = diagnostico.Diag_pre.ToString();
+                    txt_def.Text = diagnostico.Diag_def.ToString();
+
+                    txt_apto.Text = aptitudmedica.AptMed_apto.ToString();
+                    txt_observacionaptitud.Text = aptitudmedica.AptMed_Observ.ToString();
+                    txt_limitacionaptitud.Text = aptitudmedica.AptMed_Limit.ToString();
+
+                }
+                else
+                {
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Error')", true);
+                }
+            }
+        }
+
+        private void guardar_modificar_datos(int perid, int emplanteid, int accitrabid, int enfprofid, int facriestrabid, int actextralabid, 
+            int resexagenid, int diagid, int aptmedid)
+        {
+            if (perid == 0 || emplanteid == 0 || accitrabid == 0 || enfprofid == 0 || facriestrabid == 0 || actextralabid == 0 || resexagenid == 0 ||
+                diagid == 0 || aptmedid == 0)
+            {
+                GuardarHistorial();
+            }
+            else
+            {
+
+                per = CN_HistorialMedico.obtenerPersonasxId(perid);
+                int perso = Convert.ToInt32(per.Per_id.ToString());
+
+                emplant = CN_Inicial.obtenerEmpAntexPer(perso);
+                acctrabajo = CN_Inicial.obtenerAcciTraDescxPer(perso);
+                enferprof = CN_Inicial.obtenerEnfProfxPer(perso);
+                facriesgotractual = CN_Inicial.obtenerFacRiesTrabActxPer(perso);
+                actvextralaboral = CN_Inicial.obtenerActiExtraLabxPer(perso);
+                exagenesperiespues = CN_Inicial.obtenerResExaGenEspRiesTrabaxPer(perso);
+                diagnostico = CN_Inicial.obtenerDiagnosticoxPer(perso);
+                aptitudmedica = CN_Inicial.obtenerAptMedicaxPer(perso);                
+
+                if (per != null || emplant != null || acctrabajo != null || enferprof != null || facriesgotractual != null || 
+                    actvextralaboral != null || exagenesperiespues != null || diagnostico != null || aptitudmedica != null)
+                {
+                    ModificarHistorial(per, emplant, antcliqui, acctrabajo, enferprof, facriesgotractual, actvextralaboral,
+                        exagenesperiespues, diagnostico, aptitudmedica);
+                }
+
+            }
+        }               
 
         private void GuardarHistorial()
         {
@@ -73,6 +196,11 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
+
+                    per = CN_HistorialMedico.obtenerIdPersonasxCedula(Convert.ToInt32(txt_numHClinica.Text));
+
+                    int perso = Convert.ToInt32(per.Per_id.ToString());
+
                     //antcliqui = new Tbl_AntecedentesCliQuiru();
                     emplant = new Tbl_AntecedentesEmplAnteriores();
                     acctrabajo = new Tbl_AccidentesTrabajoDesc();
@@ -98,6 +226,7 @@ namespace SistemaECU911.Template.Views
                     emplant.AntEmpAnte_nomEmpresa = txt_ergonomico.Text;
                     emplant.AntEmpAnte_nomEmpresa = txt_psicosocial.Text;
                     emplant.AntEmpAnte_nomEmpresa = txt_observaciones1.Text;
+                    emplant.Per_id = perso;
 
                     //captura de datos Tbl_AccidentesTrabajoDesc
 
@@ -113,25 +242,30 @@ namespace SistemaECU911.Template.Views
                     facriesgotractual.FacRiesTrabAct_maneManCarErg = txt_manmanualcargas.Text;
                     facriesgotractual.FacRiesTrabAct_monoTrabPsi = txt_montrabajo.Text;
                     facriesgotractual.FacRiesTrabAct_medPreventivas = txt_medpreventivas.Text;
+                    facriesgotractual.Per_id = perso;
 
                     //captura de datos Tbl_ActividadesExtraLaborales
                     actvextralaboral.ActExtLab_descrip = txt_descrextralaborales.Text;
+                    actvextralaboral.Per_id = perso;
 
                     //captura de datos Tbl_ResExaGenEspRiesTrabajo
                     exagenesperiespues.ResExaGenEspRiesTrabajo_examen = txt_examen.Text;
                     exagenesperiespues.ResExaGenEspRiesTrabajo_fecha = Convert.ToDateTime(txt_fechaexamen.Text);
                     exagenesperiespues.ResExaGenEspRiesTrabajo_resultados = txt_resultadoexamen.Text;
                     exagenesperiespues.ResExaGenEspRiesTrabajo_observaciones = txt_observacionexamen.Text;
+                    exagenesperiespues.Per_id = perso;
 
                     //captura de datos Tbl_Diagnostico
                     diagnostico.Diag_descripcion = txt_descripdiagnostico.Text;
                     diagnostico.Diag_pre = txt_pre.Text;
                     diagnostico.Diag_def = txt_def.Text;
+                    diagnostico.Per_id = perso;
 
                     //captura de datos Tbl_AptitudMedica
                     aptitudmedica.AptMed_apto = txt_apto.Text;
-                    aptitudmedica.AptMed_aptoObserva = txt_observacionaptitud.Text;
-                    aptitudmedica.AptMed_aptoLimi = txt_limitacionaptitud.Text;
+                    aptitudmedica.AptMed_Observ = txt_observacionaptitud.Text;
+                    aptitudmedica.AptMed_Limit = txt_limitacionaptitud.Text;
+                    aptitudmedica.Per_id = perso;
 
                     //metodo de guardar Antec. Empleados Anteriores
                     CN_Inicial.guardarEmpleAnteriores(emplant);
@@ -160,7 +294,7 @@ namespace SistemaECU911.Template.Views
                     //Mensaje de confirmacion
                     ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos Guardados Exitosamente')", true);
 
-                    Response.Redirect("~/Template/Views/Pacientes.aspx");
+                    Response.Redirect("~/Template/Views/PacientesInicial.aspx");
                     limpiar();
 
                 }
@@ -171,6 +305,111 @@ namespace SistemaECU911.Template.Views
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos No Guardados')", true);
             }
 
+        }
+
+        private void ModificarHistorial(Tbl_Personas per, Tbl_AntecedentesEmplAnteriores emplant, Tbl_AntecedentesCliQuiru antcliqui, 
+            Tbl_AccidentesTrabajoDesc acctrabajo, Tbl_EnfermedadesProfesionales enferprof, Tbl_FacRiesTrabAct facriesgotractual,
+            Tbl_ActividadesExtraLaborales actvextralaboral, Tbl_ResExaGenEspRiesTrabajo exagenesperiespues, 
+            Tbl_Diagnostico diagnostico, Tbl_AptitudMedica aptitudmedica)
+        {
+
+            try
+            {
+                //antcliqui = new Tbl_AntecedentesCliQuiru();
+                emplant = new Tbl_AntecedentesEmplAnteriores();
+                acctrabajo = new Tbl_AccidentesTrabajoDesc();
+                enferprof = new Tbl_EnfermedadesProfesionales();
+                facriesgotractual = new Tbl_FacRiesTrabAct();
+                actvextralaboral = new Tbl_ActividadesExtraLaborales();
+                exagenesperiespues = new Tbl_ResExaGenEspRiesTrabajo();
+                diagnostico = new Tbl_Diagnostico();
+                aptitudmedica = new Tbl_AptitudMedica();
+
+                //captura de datos tbl_motivoconsulta
+                //antcliqui.AntCliQuiru_descripcion = txt_antCliQuiDescripcion.Text;
+
+                //captura de datos Tbl_AntecedentesEmplAnteriores 
+                emplant.AntEmpAnte_nomEmpresa = txt_empresa.Text;
+                emplant.AntEmpAnte_puestoTrabajo = txt_puestotrabajo.Text;
+                emplant.AntEmpAnte_actDesemp = txt_actdesempeña.Text;
+                emplant.AntEmpAnte_tiemTrabajo = Convert.ToInt32(txt_tiempotrabajo.Text);
+                emplant.AntEmpAnte_nomEmpresa = txt_fisico.Text;
+                emplant.AntEmpAnte_nomEmpresa = txt_mecanico.Text;
+                emplant.AntEmpAnte_nomEmpresa = txt_quimico.Text;
+                emplant.AntEmpAnte_nomEmpresa = txt_biologico.Text;
+                emplant.AntEmpAnte_nomEmpresa = txt_ergonomico.Text;
+                emplant.AntEmpAnte_nomEmpresa = txt_psicosocial.Text;
+                emplant.AntEmpAnte_nomEmpresa = txt_observaciones1.Text;
+
+                //captura de datos Tbl_AccidentesTrabajoDesc
+
+                //captura de datos Tbl_EnfermedadesProfesionales
+
+                //captura de datos Tbl_FacRiesTrabAct
+                facriesgotractual.FacRiesTrabAct_area = txt_puestodetrabajo.Text;
+                facriesgotractual.FacRiesTrabAct_actividades = txt_act.Text;
+                facriesgotractual.FacRiesTrabAct_temAltasFis = txt_tempaltas.Text;
+                facriesgotractual.FacRiesTrabAct_atraMaquinasMec = txt_atrapmaquinas.Text;
+                facriesgotractual.FacRiesTrabAct_solidosQui = txt_solidos.Text;
+                facriesgotractual.FacRiesTrabAct_virusBio = txt_virus.Text;
+                facriesgotractual.FacRiesTrabAct_maneManCarErg = txt_manmanualcargas.Text;
+                facriesgotractual.FacRiesTrabAct_monoTrabPsi = txt_montrabajo.Text;
+                facriesgotractual.FacRiesTrabAct_medPreventivas = txt_medpreventivas.Text;
+
+                //captura de datos Tbl_ActividadesExtraLaborales
+                actvextralaboral.ActExtLab_descrip = txt_descrextralaborales.Text;
+
+                //captura de datos Tbl_ResExaGenEspRiesTrabajo
+                exagenesperiespues.ResExaGenEspRiesTrabajo_examen = txt_examen.Text;
+                exagenesperiespues.ResExaGenEspRiesTrabajo_fecha = Convert.ToDateTime(txt_fechaexamen.Text);
+                exagenesperiespues.ResExaGenEspRiesTrabajo_resultados = txt_resultadoexamen.Text;
+                exagenesperiespues.ResExaGenEspRiesTrabajo_observaciones = txt_observacionexamen.Text;
+
+                //captura de datos Tbl_Diagnostico
+                diagnostico.Diag_descripcion = txt_descripdiagnostico.Text;
+                diagnostico.Diag_pre = txt_pre.Text;
+                diagnostico.Diag_def = txt_def.Text;
+
+                //captura de datos Tbl_AptitudMedica
+                aptitudmedica.AptMed_apto = txt_apto.Text;
+                aptitudmedica.AptMed_Observ = txt_observacionaptitud.Text;
+                aptitudmedica.AptMed_Limit = txt_limitacionaptitud.Text;
+
+                //metodo de guardar Antec. Empleados Anteriores
+                CN_Inicial.guardarEmpleAnteriores(emplant);
+
+                //metodo de guardar Accid. de trabajo
+                //metodo de guardar Enfer. Profesionales
+
+                //metodo de guardar Riesgo Puesto Trabajo Actual
+                CN_Inicial.guardarRiesgoPuesTrabaActual(facriesgotractual);
+
+                //metodo de guardar Actividad Extra Laboral
+                CN_Inicial.guardarActivextralaboral(actvextralaboral);
+
+                //metodo de guardar Resul. Exam. General y Espec de acuerdo al Riesgo y puesto de trabajo
+                CN_Inicial.guardarExaGenEspeRiesyPues(exagenesperiespues);
+
+                //metodo de guardar Diagnostico
+                CN_Inicial.guardarDiagnostico(diagnostico);
+
+                //metodo de guardar Aptitud Medica
+                CN_Inicial.guardarAptiMediTrabajo(aptitudmedica);
+
+                //metodo de guardar motivo de consulta
+                //CN_Inicial.guardarAntCliniQuirur(antcliqui);                    
+
+                //Mensaje de confirmacion
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos Guardados Exitosamente')", true);
+
+                Response.Redirect("~/Template/Views/PacientesInicial.aspx");
+                limpiar();
+            }
+            catch (Exception)
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos No Modificados')", true);
+            }
+            
         }
 
         private void limpiar()
@@ -189,12 +428,23 @@ namespace SistemaECU911.Template.Views
 
         protected void btn_guardar_Click(object sender, EventArgs e)
         {
-            GuardarHistorial();
+            guardar_modificar_datos(Convert.ToInt32(Request["cod"]), Convert.ToInt32(per.Per_id.ToString()), Convert.ToInt32(per.Per_id.ToString()), 
+                Convert.ToInt32(per.Per_id.ToString()), Convert.ToInt32(per.Per_id.ToString()), Convert.ToInt32(per.Per_id.ToString()), 
+                Convert.ToInt32(per.Per_id.ToString()), Convert.ToInt32(per.Per_id.ToString()), Convert.ToInt32(per.Per_id.ToString()));
+        }
+
+        protected void btn_modificar_Click(object sender, EventArgs e)
+        {
+            guardar_modificar_datos(Convert.ToInt32(Request["cod"]), Convert.ToInt32(per.Per_id.ToString()), Convert.ToInt32(per.Per_id.ToString()),
+                Convert.ToInt32(per.Per_id.ToString()), Convert.ToInt32(per.Per_id.ToString()), Convert.ToInt32(per.Per_id.ToString()),
+                Convert.ToInt32(per.Per_id.ToString()), Convert.ToInt32(per.Per_id.ToString()), Convert.ToInt32(per.Per_id.ToString()));
         }
 
         protected void btn_cancelar_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/Template/Views/Inicio.aspx");
         }
+
+        
     }
 }
