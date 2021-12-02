@@ -28,8 +28,10 @@ namespace SistemaECU911.Template.Views
         
         //D. Objeto de la tabla ANTECEDENTES DE EMPLEOS ANTERIORES
         private Tbl_AntecedentesEmplAnteriores emplant = new Tbl_AntecedentesEmplAnteriores();
+
         //Objeto de la tabla ACCIDENTES DE TRABAJO (DESCRIPCIÓN)
         private Tbl_AccidentesTrabajoDesc acctrabajo = new Tbl_AccidentesTrabajoDesc();
+
         //Objeto de la tabla ENFERMEDADES PROFESIONALES 
         private Tbl_EnfermedadesProfesionales enferprof = new Tbl_EnfermedadesProfesionales();
         
@@ -292,7 +294,7 @@ namespace SistemaECU911.Template.Views
                     //motconini.Per_id = perso;
 
                     //C. Captura de datos tbl_AntecedentesCliQuiru(
-                    antcliqui.AntCliQuiru_descripcion = txt_antCliQuiDescripcion.Text;
+                    //antcliqui.AntCliQuiru_descripcion = txt_antCliQuiDescripcion.Text;
 
                     //D. Captura de Datos Tbl_AntecedentesEmplAnteriores 
                     //emplant.AntEmpAnte_nomEmpresa = txt_empresa.Text;
@@ -309,16 +311,16 @@ namespace SistemaECU911.Template.Views
                     //emplant.Per_id = perso;
 
                     //E. Captura de Datos ANTECEDENTES FAMILIARES (DETALLAR EL PARENTESCO)
-                    AnteFamiDetParentesco.AntFamDetPare_enfCarVas = txt_enfermedadcardiovascular.Text;
-                    AnteFamiDetParentesco.AntFamDetPare_enfMeta = txt_enfermedadmetabolica.Text;
-                    AnteFamiDetParentesco.AntFamDetPare_enfNeuro = txt_enfermedadneurologica.Text;
-                    AnteFamiDetParentesco.AntFamDetPare_enfOnco = txt_enfermedadoncologica.Text;
-                    AnteFamiDetParentesco.AntFamDetPare_enfInfe = txt_enfermedadinfecciosa.Text;
-                    AnteFamiDetParentesco.AntFamDetPare_enfHereConge = txt_enfermedadhereditaria.Text;
-                    AnteFamiDetParentesco.AntFamDetPare_discapa = txt_discapacidades.Text;
-                    AnteFamiDetParentesco.AntFamDetPare_otros = txt_otrosenfer.Text;
-                    AnteFamiDetParentesco.AntFamDetPare_descripcion = txt_descripcionantefamiliares.Text;
-                    AnteFamiDetParentesco.Per_id = perso;
+                    //AnteFamiDetParentesco.AntFamDetPare_enfCarVas = txt_enfermedadcardiovascular.Text;
+                    //AnteFamiDetParentesco.AntFamDetPare_enfMeta = txt_enfermedadmetabolica.Text;
+                    //AnteFamiDetParentesco.AntFamDetPare_enfNeuro = txt_enfermedadneurologica.Text;
+                    //AnteFamiDetParentesco.AntFamDetPare_enfOnco = txt_enfermedadoncologica.Text;
+                    //AnteFamiDetParentesco.AntFamDetPare_enfInfe = txt_enfermedadinfecciosa.Text;
+                    //AnteFamiDetParentesco.AntFamDetPare_enfHereConge = txt_enfermedadhereditaria.Text;
+                    //AnteFamiDetParentesco.AntFamDetPare_discapa = txt_discapacidades.Text;
+                    //AnteFamiDetParentesco.AntFamDetPare_otros = txt_otrosenfer.Text;
+                    //AnteFamiDetParentesco.AntFamDetPare_descripcion = txt_descripcionantefamiliares.Text;
+                    //AnteFamiDetParentesco.Per_id = perso;
 
                     //F. Captura de Datos Tbl_FacRiesTrabAct
                     //facriesgotractual.FacRiesTrabAct_area = txt_puestodetrabajo.Text;
@@ -341,18 +343,18 @@ namespace SistemaECU911.Template.Views
                     //enferactualinicial.Per_id = perso;
 
                     //I. Captura de Datos REVISIÓN ACTUAL DE ÓRGANOS Y SISTEMAS
-                    revisionactualorganossistemas.RevActOrgSis_pielAnexos = txt_pielanexos.Text;
-                    revisionactualorganossistemas.RevActOrgSis_orgSentidos = txt_organossentidos.Text;
-                    revisionactualorganossistemas.RevActOrgSis_respiratorio = txt_respiratorio.Text;
-                    revisionactualorganossistemas.RevActOrgSis_cardVascular = txt_cardiovascular.Text;
-                    revisionactualorganossistemas.RevActOrgSis_digestivo = txt_digestivo.Text;
-                    revisionactualorganossistemas.RevActOrgSis_genUrinario = txt_genitourinario.Text;
-                    revisionactualorganossistemas.RevActOrgSis_muscEsqueletico = txt_musculosesqueleticos.Text;
-                    revisionactualorganossistemas.RevActOrgSis_endocrino = txt_musculosesqueleticos.Text;
-                    revisionactualorganossistemas.RevActOrgSis_hemoLimfa = txt_hemolinfatico.Text;
-                    revisionactualorganossistemas.RevActOrgSis_nervioso = txt_nervioso.Text;
-                    revisionactualorganossistemas.RevActOrgSis_descrip = txt_descrorganosysistemas.Text;
-                    revisionactualorganossistemas.Per_id = perso;
+                    //revisionactualorganossistemas.RevActOrgSis_pielAnexos = txt_pielanexos.Text;
+                    //revisionactualorganossistemas.RevActOrgSis_orgSentidos = txt_organossentidos.Text;
+                    //revisionactualorganossistemas.RevActOrgSis_respiratorio = txt_respiratorio.Text;
+                    //revisionactualorganossistemas.RevActOrgSis_cardVascular = txt_cardiovascular.Text;
+                    //revisionactualorganossistemas.RevActOrgSis_digestivo = txt_digestivo.Text;
+                    //revisionactualorganossistemas.RevActOrgSis_genUrinario = txt_genitourinario.Text;
+                    //revisionactualorganossistemas.RevActOrgSis_muscEsqueletico = txt_musculosesqueleticos.Text;
+                    //revisionactualorganossistemas.RevActOrgSis_endocrino = txt_musculosesqueleticos.Text;
+                    //revisionactualorganossistemas.RevActOrgSis_hemoLimfa = txt_hemolinfatico.Text;
+                    //revisionactualorganossistemas.RevActOrgSis_nervioso = txt_nervioso.Text;
+                    //revisionactualorganossistemas.RevActOrgSis_descrip = txt_descrorganosysistemas.Text;
+                    //revisionactualorganossistemas.Per_id = perso;
 
                     //K. Captura de Datos Examen Fisico Regional
                     //examfisregional.exaFisRegInicial_cicatricesPiel = txt_cicatrices.Text;
@@ -416,11 +418,13 @@ namespace SistemaECU911.Template.Views
                     //aptitudmedica.AptMed_aptoObserva = txt_aptoobservacion.Text;
                     //aptitudmedica.AptMed_aptoLimi = txt_aptolimitacion.Text;
                     //aptitudmedica.AptMed_NoApto = txt_noapto.Text;
+                    //aptitudmedica.AptMed_Observ = txt_observacionaptitud.Text;
+                    //aptitudmedica.AptMed_Limit = txt_limitacionaptitud.Text;
                     //aptitudmedica.Per_id = perso;
 
                     //O. Captura de Datos Recomendaciones y/o Tratamiento
-                    //tratamientoinicial.trataInicial_descrip = txt_descripciontratamiento.Text;
-                    //tratamientoinicial.Per_id = perso;
+                    tratamientoinicial.trataInicial_descrip = txt_descripciontratamiento.Text;
+                    tratamientoinicial.Per_id = perso;
 
                     //A . Método para guardar Datos Establecimeinto Empresa Usuarios
                     //CN_Inicial.guardarDatosEstablecimientoEmpresaUsuario(datosestempresausu);
@@ -437,7 +441,7 @@ namespace SistemaECU911.Template.Views
                     //H. Método de guardar Datos Enfermedad Actual
                     //CN_Inicial.guardarEnfermedadActual(enferactualinicial);
                     //I. Método de guardar Datos REVISIÓN ACTUAL DE ÓRGANOS Y SISTEMAS
-                    CN_Inicial.guardarReviActualOrganSistemas(revisionactualorganossistemas);
+                    //CN_Inicial.guardarReviActualOrganSistemas(revisionactualorganossistemas);
                     //K. Método de guardar Datos Examen Fisico Regional
                     //CN_Inicial.guardarExamenFisicoRegional(examfisregional);
                     //L. Método de guardar Datos Resul. Exam. General y Espec de acuerdo al Riesgo y puesto de trabajo
@@ -447,7 +451,7 @@ namespace SistemaECU911.Template.Views
                     //N. Método de guardar Datos Aptitud Medica
                     //CN_Inicial.guardarAptiMediTrabajo(aptitudmedica);
                     //O. Método de guardar Datos Recomendaciones y/o Tratamiento
-                    //CN_Inicial.guardarRecomendacionesTratamiento(tratamientoinicial);
+                    CN_Inicial.guardarRecomendacionesTratamiento(tratamientoinicial);
 
                     //Mensaje de confirmacion
                     ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos Guardados Exitosamente')", true);

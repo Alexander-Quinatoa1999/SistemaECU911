@@ -198,6 +198,9 @@ namespace CapaDatos
     partial void InsertTbl_ExaFisRegional(Tbl_ExaFisRegional instance);
     partial void UpdateTbl_ExaFisRegional(Tbl_ExaFisRegional instance);
     partial void DeleteTbl_ExaFisRegional(Tbl_ExaFisRegional instance);
+    partial void InsertTbl_ExaFisRegionalInicial(Tbl_ExaFisRegionalInicial instance);
+    partial void UpdateTbl_ExaFisRegionalInicial(Tbl_ExaFisRegionalInicial instance);
+    partial void DeleteTbl_ExaFisRegionalInicial(Tbl_ExaFisRegionalInicial instance);
     partial void InsertTbl_ExamenesRealizados1(Tbl_ExamenesRealizados1 instance);
     partial void UpdateTbl_ExamenesRealizados1(Tbl_ExamenesRealizados1 instance);
     partial void DeleteTbl_ExamenesRealizados1(Tbl_ExamenesRealizados1 instance);
@@ -14518,10 +14521,12 @@ namespace CapaDatos
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_ExaFisRegionalInicial")]
-	public partial class Tbl_ExaFisRegionalInicial
+	public partial class Tbl_ExaFisRegionalInicial : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
-		private System.Nullable<int> _exaFisRegInicial_id;
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _exaFisRegInicial_id;
 		
 		private string _exaFisRegInicial_cicatricesPiel;
 		
@@ -14609,12 +14614,110 @@ namespace CapaDatos
 		
 		private string _exaFisRegInicial_estado;
 		
+		private EntityRef<Tbl_Personas> _Tbl_Personas;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnexaFisRegInicial_idChanging(int value);
+    partial void OnexaFisRegInicial_idChanged();
+    partial void OnexaFisRegInicial_cicatricesPielChanging(string value);
+    partial void OnexaFisRegInicial_cicatricesPielChanged();
+    partial void OnexaFisRegInicial_tatuajesPielChanging(string value);
+    partial void OnexaFisRegInicial_tatuajesPielChanged();
+    partial void OnexaFisRegInicial_pielFacerasPielChanging(string value);
+    partial void OnexaFisRegInicial_pielFacerasPielChanged();
+    partial void OnexaFisRegInicial_parpadosOjosChanging(string value);
+    partial void OnexaFisRegInicial_parpadosOjosChanged();
+    partial void OnexaFisRegInicial_conjuntuvasOjosChanging(string value);
+    partial void OnexaFisRegInicial_conjuntuvasOjosChanged();
+    partial void OnexaFisRegInicial_pupilasOjosChanging(string value);
+    partial void OnexaFisRegInicial_pupilasOjosChanged();
+    partial void OnexaFisRegInicial_corneaOjosChanging(string value);
+    partial void OnexaFisRegInicial_corneaOjosChanged();
+    partial void OnexaFisRegInicial_motilidadOjosChanging(string value);
+    partial void OnexaFisRegInicial_motilidadOjosChanged();
+    partial void OnexaFisRegInicial_cAudiExtreOidoChanging(string value);
+    partial void OnexaFisRegInicial_cAudiExtreOidoChanged();
+    partial void OnexaFisRegInicial_pabellonOidoChanging(string value);
+    partial void OnexaFisRegInicial_pabellonOidoChanged();
+    partial void OnexaFisRegInicial_timpanosOidoChanging(string value);
+    partial void OnexaFisRegInicial_timpanosOidoChanged();
+    partial void OnexaFisRegInicial_labiosOroFaChanging(string value);
+    partial void OnexaFisRegInicial_labiosOroFaChanged();
+    partial void OnexaFisRegInicial_lenguaOroFaChanging(string value);
+    partial void OnexaFisRegInicial_lenguaOroFaChanged();
+    partial void OnexaFisRegInicial_faringeOroFaChanging(string value);
+    partial void OnexaFisRegInicial_faringeOroFaChanged();
+    partial void OnexaFisRegInicial_amigdalasOroFaChanging(string value);
+    partial void OnexaFisRegInicial_amigdalasOroFaChanged();
+    partial void OnexaFisRegInicial_dentaduraOroFaChanging(string value);
+    partial void OnexaFisRegInicial_dentaduraOroFaChanged();
+    partial void OnexaFisRegInicial_tabiqueNarizChanging(string value);
+    partial void OnexaFisRegInicial_tabiqueNarizChanged();
+    partial void OnexaFisRegInicial_cornetesNarizChanging(string value);
+    partial void OnexaFisRegInicial_cornetesNarizChanged();
+    partial void OnexaFisRegInicial_mucosasNarizChanging(string value);
+    partial void OnexaFisRegInicial_mucosasNarizChanged();
+    partial void OnexaFisRegInicial_senosParanaNarizChanging(string value);
+    partial void OnexaFisRegInicial_senosParanaNarizChanged();
+    partial void OnexaFisRegInicial_tiroiMasasCuelloChanging(string value);
+    partial void OnexaFisRegInicial_tiroiMasasCuelloChanged();
+    partial void OnexaFisRegInicial_movilidadCuelloChanging(string value);
+    partial void OnexaFisRegInicial_movilidadCuelloChanged();
+    partial void OnexaFisRegInicial_mamasToraxChanging(string value);
+    partial void OnexaFisRegInicial_mamasToraxChanged();
+    partial void OnexaFisRegInicial_corazonToraxChanging(string value);
+    partial void OnexaFisRegInicial_corazonToraxChanged();
+    partial void OnexaFisRegInicial_pulmonesTorax2Changing(string value);
+    partial void OnexaFisRegInicial_pulmonesTorax2Changed();
+    partial void OnexaFisRegInicial_parriCostalTorax2Changing(string value);
+    partial void OnexaFisRegInicial_parriCostalTorax2Changed();
+    partial void OnexaFisRegInicial_viscerasAbdomenChanging(string value);
+    partial void OnexaFisRegInicial_viscerasAbdomenChanged();
+    partial void OnexaFisRegInicial_paredAbdomiAbdomenChanging(string value);
+    partial void OnexaFisRegInicial_paredAbdomiAbdomenChanged();
+    partial void OnexaFisRegInicial_flexibilidadColumnaChanging(string value);
+    partial void OnexaFisRegInicial_flexibilidadColumnaChanged();
+    partial void OnexaFisRegInicial_desviacionColumnaChanging(string value);
+    partial void OnexaFisRegInicial_desviacionColumnaChanged();
+    partial void OnexaFisRegInicial_dolorColumnaChanging(string value);
+    partial void OnexaFisRegInicial_dolorColumnaChanged();
+    partial void OnexaFisRegInicial_pelvisPelvisChanging(string value);
+    partial void OnexaFisRegInicial_pelvisPelvisChanged();
+    partial void OnexaFisRegInicial_genitalesPelvisChanging(string value);
+    partial void OnexaFisRegInicial_genitalesPelvisChanged();
+    partial void OnexaFisRegInicial_vascularExtreChanging(string value);
+    partial void OnexaFisRegInicial_vascularExtreChanged();
+    partial void OnexaFisRegInicial_miemSupeExtreChanging(string value);
+    partial void OnexaFisRegInicial_miemSupeExtreChanged();
+    partial void OnexaFisRegInicial_miemInfeExtreChanging(string value);
+    partial void OnexaFisRegInicial_miemInfeExtreChanged();
+    partial void OnexaFisRegInicial_fuerzaNeuroChanging(string value);
+    partial void OnexaFisRegInicial_fuerzaNeuroChanged();
+    partial void OnexaFisRegInicial_sensibiNeuroChanging(string value);
+    partial void OnexaFisRegInicial_sensibiNeuroChanged();
+    partial void OnexaFisRegInicial_marchaNeuroChanging(string value);
+    partial void OnexaFisRegInicial_marchaNeuroChanged();
+    partial void OnexaFisRegInicial_refleNeuroChanging(string value);
+    partial void OnexaFisRegInicial_refleNeuroChanged();
+    partial void OnexaFisRegInicial_observaChanging(string value);
+    partial void OnexaFisRegInicial_observaChanged();
+    partial void OnPer_idChanging(System.Nullable<int> value);
+    partial void OnPer_idChanged();
+    partial void OnexaFisRegInicial_estadoChanging(string value);
+    partial void OnexaFisRegInicial_estadoChanged();
+    #endregion
+		
 		public Tbl_ExaFisRegionalInicial()
 		{
+			this._Tbl_Personas = default(EntityRef<Tbl_Personas>);
+			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_exaFisRegInicial_id", DbType="Int")]
-		public System.Nullable<int> exaFisRegInicial_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_exaFisRegInicial_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int exaFisRegInicial_id
 		{
 			get
 			{
@@ -14624,7 +14727,11 @@ namespace CapaDatos
 			{
 				if ((this._exaFisRegInicial_id != value))
 				{
+					this.OnexaFisRegInicial_idChanging(value);
+					this.SendPropertyChanging();
 					this._exaFisRegInicial_id = value;
+					this.SendPropertyChanged("exaFisRegInicial_id");
+					this.OnexaFisRegInicial_idChanged();
 				}
 			}
 		}
@@ -14640,7 +14747,11 @@ namespace CapaDatos
 			{
 				if ((this._exaFisRegInicial_cicatricesPiel != value))
 				{
+					this.OnexaFisRegInicial_cicatricesPielChanging(value);
+					this.SendPropertyChanging();
 					this._exaFisRegInicial_cicatricesPiel = value;
+					this.SendPropertyChanged("exaFisRegInicial_cicatricesPiel");
+					this.OnexaFisRegInicial_cicatricesPielChanged();
 				}
 			}
 		}
@@ -14656,7 +14767,11 @@ namespace CapaDatos
 			{
 				if ((this._exaFisRegInicial_tatuajesPiel != value))
 				{
+					this.OnexaFisRegInicial_tatuajesPielChanging(value);
+					this.SendPropertyChanging();
 					this._exaFisRegInicial_tatuajesPiel = value;
+					this.SendPropertyChanged("exaFisRegInicial_tatuajesPiel");
+					this.OnexaFisRegInicial_tatuajesPielChanged();
 				}
 			}
 		}
@@ -14672,7 +14787,11 @@ namespace CapaDatos
 			{
 				if ((this._exaFisRegInicial_pielFacerasPiel != value))
 				{
+					this.OnexaFisRegInicial_pielFacerasPielChanging(value);
+					this.SendPropertyChanging();
 					this._exaFisRegInicial_pielFacerasPiel = value;
+					this.SendPropertyChanged("exaFisRegInicial_pielFacerasPiel");
+					this.OnexaFisRegInicial_pielFacerasPielChanged();
 				}
 			}
 		}
@@ -14688,7 +14807,11 @@ namespace CapaDatos
 			{
 				if ((this._exaFisRegInicial_parpadosOjos != value))
 				{
+					this.OnexaFisRegInicial_parpadosOjosChanging(value);
+					this.SendPropertyChanging();
 					this._exaFisRegInicial_parpadosOjos = value;
+					this.SendPropertyChanged("exaFisRegInicial_parpadosOjos");
+					this.OnexaFisRegInicial_parpadosOjosChanged();
 				}
 			}
 		}
@@ -14704,7 +14827,11 @@ namespace CapaDatos
 			{
 				if ((this._exaFisRegInicial_conjuntuvasOjos != value))
 				{
+					this.OnexaFisRegInicial_conjuntuvasOjosChanging(value);
+					this.SendPropertyChanging();
 					this._exaFisRegInicial_conjuntuvasOjos = value;
+					this.SendPropertyChanged("exaFisRegInicial_conjuntuvasOjos");
+					this.OnexaFisRegInicial_conjuntuvasOjosChanged();
 				}
 			}
 		}
@@ -14720,7 +14847,11 @@ namespace CapaDatos
 			{
 				if ((this._exaFisRegInicial_pupilasOjos != value))
 				{
+					this.OnexaFisRegInicial_pupilasOjosChanging(value);
+					this.SendPropertyChanging();
 					this._exaFisRegInicial_pupilasOjos = value;
+					this.SendPropertyChanged("exaFisRegInicial_pupilasOjos");
+					this.OnexaFisRegInicial_pupilasOjosChanged();
 				}
 			}
 		}
@@ -14736,7 +14867,11 @@ namespace CapaDatos
 			{
 				if ((this._exaFisRegInicial_corneaOjos != value))
 				{
+					this.OnexaFisRegInicial_corneaOjosChanging(value);
+					this.SendPropertyChanging();
 					this._exaFisRegInicial_corneaOjos = value;
+					this.SendPropertyChanged("exaFisRegInicial_corneaOjos");
+					this.OnexaFisRegInicial_corneaOjosChanged();
 				}
 			}
 		}
@@ -14752,7 +14887,11 @@ namespace CapaDatos
 			{
 				if ((this._exaFisRegInicial_motilidadOjos != value))
 				{
+					this.OnexaFisRegInicial_motilidadOjosChanging(value);
+					this.SendPropertyChanging();
 					this._exaFisRegInicial_motilidadOjos = value;
+					this.SendPropertyChanged("exaFisRegInicial_motilidadOjos");
+					this.OnexaFisRegInicial_motilidadOjosChanged();
 				}
 			}
 		}
@@ -14768,7 +14907,11 @@ namespace CapaDatos
 			{
 				if ((this._exaFisRegInicial_cAudiExtreOido != value))
 				{
+					this.OnexaFisRegInicial_cAudiExtreOidoChanging(value);
+					this.SendPropertyChanging();
 					this._exaFisRegInicial_cAudiExtreOido = value;
+					this.SendPropertyChanged("exaFisRegInicial_cAudiExtreOido");
+					this.OnexaFisRegInicial_cAudiExtreOidoChanged();
 				}
 			}
 		}
@@ -14784,7 +14927,11 @@ namespace CapaDatos
 			{
 				if ((this._exaFisRegInicial_pabellonOido != value))
 				{
+					this.OnexaFisRegInicial_pabellonOidoChanging(value);
+					this.SendPropertyChanging();
 					this._exaFisRegInicial_pabellonOido = value;
+					this.SendPropertyChanged("exaFisRegInicial_pabellonOido");
+					this.OnexaFisRegInicial_pabellonOidoChanged();
 				}
 			}
 		}
@@ -14800,7 +14947,11 @@ namespace CapaDatos
 			{
 				if ((this._exaFisRegInicial_timpanosOido != value))
 				{
+					this.OnexaFisRegInicial_timpanosOidoChanging(value);
+					this.SendPropertyChanging();
 					this._exaFisRegInicial_timpanosOido = value;
+					this.SendPropertyChanged("exaFisRegInicial_timpanosOido");
+					this.OnexaFisRegInicial_timpanosOidoChanged();
 				}
 			}
 		}
@@ -14816,7 +14967,11 @@ namespace CapaDatos
 			{
 				if ((this._exaFisRegInicial_labiosOroFa != value))
 				{
+					this.OnexaFisRegInicial_labiosOroFaChanging(value);
+					this.SendPropertyChanging();
 					this._exaFisRegInicial_labiosOroFa = value;
+					this.SendPropertyChanged("exaFisRegInicial_labiosOroFa");
+					this.OnexaFisRegInicial_labiosOroFaChanged();
 				}
 			}
 		}
@@ -14832,7 +14987,11 @@ namespace CapaDatos
 			{
 				if ((this._exaFisRegInicial_lenguaOroFa != value))
 				{
+					this.OnexaFisRegInicial_lenguaOroFaChanging(value);
+					this.SendPropertyChanging();
 					this._exaFisRegInicial_lenguaOroFa = value;
+					this.SendPropertyChanged("exaFisRegInicial_lenguaOroFa");
+					this.OnexaFisRegInicial_lenguaOroFaChanged();
 				}
 			}
 		}
@@ -14848,7 +15007,11 @@ namespace CapaDatos
 			{
 				if ((this._exaFisRegInicial_faringeOroFa != value))
 				{
+					this.OnexaFisRegInicial_faringeOroFaChanging(value);
+					this.SendPropertyChanging();
 					this._exaFisRegInicial_faringeOroFa = value;
+					this.SendPropertyChanged("exaFisRegInicial_faringeOroFa");
+					this.OnexaFisRegInicial_faringeOroFaChanged();
 				}
 			}
 		}
@@ -14864,7 +15027,11 @@ namespace CapaDatos
 			{
 				if ((this._exaFisRegInicial_amigdalasOroFa != value))
 				{
+					this.OnexaFisRegInicial_amigdalasOroFaChanging(value);
+					this.SendPropertyChanging();
 					this._exaFisRegInicial_amigdalasOroFa = value;
+					this.SendPropertyChanged("exaFisRegInicial_amigdalasOroFa");
+					this.OnexaFisRegInicial_amigdalasOroFaChanged();
 				}
 			}
 		}
@@ -14880,7 +15047,11 @@ namespace CapaDatos
 			{
 				if ((this._exaFisRegInicial_dentaduraOroFa != value))
 				{
+					this.OnexaFisRegInicial_dentaduraOroFaChanging(value);
+					this.SendPropertyChanging();
 					this._exaFisRegInicial_dentaduraOroFa = value;
+					this.SendPropertyChanged("exaFisRegInicial_dentaduraOroFa");
+					this.OnexaFisRegInicial_dentaduraOroFaChanged();
 				}
 			}
 		}
@@ -14896,7 +15067,11 @@ namespace CapaDatos
 			{
 				if ((this._exaFisRegInicial_tabiqueNariz != value))
 				{
+					this.OnexaFisRegInicial_tabiqueNarizChanging(value);
+					this.SendPropertyChanging();
 					this._exaFisRegInicial_tabiqueNariz = value;
+					this.SendPropertyChanged("exaFisRegInicial_tabiqueNariz");
+					this.OnexaFisRegInicial_tabiqueNarizChanged();
 				}
 			}
 		}
@@ -14912,7 +15087,11 @@ namespace CapaDatos
 			{
 				if ((this._exaFisRegInicial_cornetesNariz != value))
 				{
+					this.OnexaFisRegInicial_cornetesNarizChanging(value);
+					this.SendPropertyChanging();
 					this._exaFisRegInicial_cornetesNariz = value;
+					this.SendPropertyChanged("exaFisRegInicial_cornetesNariz");
+					this.OnexaFisRegInicial_cornetesNarizChanged();
 				}
 			}
 		}
@@ -14928,7 +15107,11 @@ namespace CapaDatos
 			{
 				if ((this._exaFisRegInicial_mucosasNariz != value))
 				{
+					this.OnexaFisRegInicial_mucosasNarizChanging(value);
+					this.SendPropertyChanging();
 					this._exaFisRegInicial_mucosasNariz = value;
+					this.SendPropertyChanged("exaFisRegInicial_mucosasNariz");
+					this.OnexaFisRegInicial_mucosasNarizChanged();
 				}
 			}
 		}
@@ -14944,7 +15127,11 @@ namespace CapaDatos
 			{
 				if ((this._exaFisRegInicial_senosParanaNariz != value))
 				{
+					this.OnexaFisRegInicial_senosParanaNarizChanging(value);
+					this.SendPropertyChanging();
 					this._exaFisRegInicial_senosParanaNariz = value;
+					this.SendPropertyChanged("exaFisRegInicial_senosParanaNariz");
+					this.OnexaFisRegInicial_senosParanaNarizChanged();
 				}
 			}
 		}
@@ -14960,7 +15147,11 @@ namespace CapaDatos
 			{
 				if ((this._exaFisRegInicial_tiroiMasasCuello != value))
 				{
+					this.OnexaFisRegInicial_tiroiMasasCuelloChanging(value);
+					this.SendPropertyChanging();
 					this._exaFisRegInicial_tiroiMasasCuello = value;
+					this.SendPropertyChanged("exaFisRegInicial_tiroiMasasCuello");
+					this.OnexaFisRegInicial_tiroiMasasCuelloChanged();
 				}
 			}
 		}
@@ -14976,7 +15167,11 @@ namespace CapaDatos
 			{
 				if ((this._exaFisRegInicial_movilidadCuello != value))
 				{
+					this.OnexaFisRegInicial_movilidadCuelloChanging(value);
+					this.SendPropertyChanging();
 					this._exaFisRegInicial_movilidadCuello = value;
+					this.SendPropertyChanged("exaFisRegInicial_movilidadCuello");
+					this.OnexaFisRegInicial_movilidadCuelloChanged();
 				}
 			}
 		}
@@ -14992,7 +15187,11 @@ namespace CapaDatos
 			{
 				if ((this._exaFisRegInicial_mamasTorax != value))
 				{
+					this.OnexaFisRegInicial_mamasToraxChanging(value);
+					this.SendPropertyChanging();
 					this._exaFisRegInicial_mamasTorax = value;
+					this.SendPropertyChanged("exaFisRegInicial_mamasTorax");
+					this.OnexaFisRegInicial_mamasToraxChanged();
 				}
 			}
 		}
@@ -15008,7 +15207,11 @@ namespace CapaDatos
 			{
 				if ((this._exaFisRegInicial_corazonTorax != value))
 				{
+					this.OnexaFisRegInicial_corazonToraxChanging(value);
+					this.SendPropertyChanging();
 					this._exaFisRegInicial_corazonTorax = value;
+					this.SendPropertyChanged("exaFisRegInicial_corazonTorax");
+					this.OnexaFisRegInicial_corazonToraxChanged();
 				}
 			}
 		}
@@ -15024,7 +15227,11 @@ namespace CapaDatos
 			{
 				if ((this._exaFisRegInicial_pulmonesTorax2 != value))
 				{
+					this.OnexaFisRegInicial_pulmonesTorax2Changing(value);
+					this.SendPropertyChanging();
 					this._exaFisRegInicial_pulmonesTorax2 = value;
+					this.SendPropertyChanged("exaFisRegInicial_pulmonesTorax2");
+					this.OnexaFisRegInicial_pulmonesTorax2Changed();
 				}
 			}
 		}
@@ -15040,7 +15247,11 @@ namespace CapaDatos
 			{
 				if ((this._exaFisRegInicial_parriCostalTorax2 != value))
 				{
+					this.OnexaFisRegInicial_parriCostalTorax2Changing(value);
+					this.SendPropertyChanging();
 					this._exaFisRegInicial_parriCostalTorax2 = value;
+					this.SendPropertyChanged("exaFisRegInicial_parriCostalTorax2");
+					this.OnexaFisRegInicial_parriCostalTorax2Changed();
 				}
 			}
 		}
@@ -15056,7 +15267,11 @@ namespace CapaDatos
 			{
 				if ((this._exaFisRegInicial_viscerasAbdomen != value))
 				{
+					this.OnexaFisRegInicial_viscerasAbdomenChanging(value);
+					this.SendPropertyChanging();
 					this._exaFisRegInicial_viscerasAbdomen = value;
+					this.SendPropertyChanged("exaFisRegInicial_viscerasAbdomen");
+					this.OnexaFisRegInicial_viscerasAbdomenChanged();
 				}
 			}
 		}
@@ -15072,7 +15287,11 @@ namespace CapaDatos
 			{
 				if ((this._exaFisRegInicial_paredAbdomiAbdomen != value))
 				{
+					this.OnexaFisRegInicial_paredAbdomiAbdomenChanging(value);
+					this.SendPropertyChanging();
 					this._exaFisRegInicial_paredAbdomiAbdomen = value;
+					this.SendPropertyChanged("exaFisRegInicial_paredAbdomiAbdomen");
+					this.OnexaFisRegInicial_paredAbdomiAbdomenChanged();
 				}
 			}
 		}
@@ -15088,7 +15307,11 @@ namespace CapaDatos
 			{
 				if ((this._exaFisRegInicial_flexibilidadColumna != value))
 				{
+					this.OnexaFisRegInicial_flexibilidadColumnaChanging(value);
+					this.SendPropertyChanging();
 					this._exaFisRegInicial_flexibilidadColumna = value;
+					this.SendPropertyChanged("exaFisRegInicial_flexibilidadColumna");
+					this.OnexaFisRegInicial_flexibilidadColumnaChanged();
 				}
 			}
 		}
@@ -15104,7 +15327,11 @@ namespace CapaDatos
 			{
 				if ((this._exaFisRegInicial_desviacionColumna != value))
 				{
+					this.OnexaFisRegInicial_desviacionColumnaChanging(value);
+					this.SendPropertyChanging();
 					this._exaFisRegInicial_desviacionColumna = value;
+					this.SendPropertyChanged("exaFisRegInicial_desviacionColumna");
+					this.OnexaFisRegInicial_desviacionColumnaChanged();
 				}
 			}
 		}
@@ -15120,7 +15347,11 @@ namespace CapaDatos
 			{
 				if ((this._exaFisRegInicial_dolorColumna != value))
 				{
+					this.OnexaFisRegInicial_dolorColumnaChanging(value);
+					this.SendPropertyChanging();
 					this._exaFisRegInicial_dolorColumna = value;
+					this.SendPropertyChanged("exaFisRegInicial_dolorColumna");
+					this.OnexaFisRegInicial_dolorColumnaChanged();
 				}
 			}
 		}
@@ -15136,7 +15367,11 @@ namespace CapaDatos
 			{
 				if ((this._exaFisRegInicial_pelvisPelvis != value))
 				{
+					this.OnexaFisRegInicial_pelvisPelvisChanging(value);
+					this.SendPropertyChanging();
 					this._exaFisRegInicial_pelvisPelvis = value;
+					this.SendPropertyChanged("exaFisRegInicial_pelvisPelvis");
+					this.OnexaFisRegInicial_pelvisPelvisChanged();
 				}
 			}
 		}
@@ -15152,7 +15387,11 @@ namespace CapaDatos
 			{
 				if ((this._exaFisRegInicial_genitalesPelvis != value))
 				{
+					this.OnexaFisRegInicial_genitalesPelvisChanging(value);
+					this.SendPropertyChanging();
 					this._exaFisRegInicial_genitalesPelvis = value;
+					this.SendPropertyChanged("exaFisRegInicial_genitalesPelvis");
+					this.OnexaFisRegInicial_genitalesPelvisChanged();
 				}
 			}
 		}
@@ -15168,7 +15407,11 @@ namespace CapaDatos
 			{
 				if ((this._exaFisRegInicial_vascularExtre != value))
 				{
+					this.OnexaFisRegInicial_vascularExtreChanging(value);
+					this.SendPropertyChanging();
 					this._exaFisRegInicial_vascularExtre = value;
+					this.SendPropertyChanged("exaFisRegInicial_vascularExtre");
+					this.OnexaFisRegInicial_vascularExtreChanged();
 				}
 			}
 		}
@@ -15184,7 +15427,11 @@ namespace CapaDatos
 			{
 				if ((this._exaFisRegInicial_miemSupeExtre != value))
 				{
+					this.OnexaFisRegInicial_miemSupeExtreChanging(value);
+					this.SendPropertyChanging();
 					this._exaFisRegInicial_miemSupeExtre = value;
+					this.SendPropertyChanged("exaFisRegInicial_miemSupeExtre");
+					this.OnexaFisRegInicial_miemSupeExtreChanged();
 				}
 			}
 		}
@@ -15200,7 +15447,11 @@ namespace CapaDatos
 			{
 				if ((this._exaFisRegInicial_miemInfeExtre != value))
 				{
+					this.OnexaFisRegInicial_miemInfeExtreChanging(value);
+					this.SendPropertyChanging();
 					this._exaFisRegInicial_miemInfeExtre = value;
+					this.SendPropertyChanged("exaFisRegInicial_miemInfeExtre");
+					this.OnexaFisRegInicial_miemInfeExtreChanged();
 				}
 			}
 		}
@@ -15216,7 +15467,11 @@ namespace CapaDatos
 			{
 				if ((this._exaFisRegInicial_fuerzaNeuro != value))
 				{
+					this.OnexaFisRegInicial_fuerzaNeuroChanging(value);
+					this.SendPropertyChanging();
 					this._exaFisRegInicial_fuerzaNeuro = value;
+					this.SendPropertyChanged("exaFisRegInicial_fuerzaNeuro");
+					this.OnexaFisRegInicial_fuerzaNeuroChanged();
 				}
 			}
 		}
@@ -15232,7 +15487,11 @@ namespace CapaDatos
 			{
 				if ((this._exaFisRegInicial_sensibiNeuro != value))
 				{
+					this.OnexaFisRegInicial_sensibiNeuroChanging(value);
+					this.SendPropertyChanging();
 					this._exaFisRegInicial_sensibiNeuro = value;
+					this.SendPropertyChanged("exaFisRegInicial_sensibiNeuro");
+					this.OnexaFisRegInicial_sensibiNeuroChanged();
 				}
 			}
 		}
@@ -15248,7 +15507,11 @@ namespace CapaDatos
 			{
 				if ((this._exaFisRegInicial_marchaNeuro != value))
 				{
+					this.OnexaFisRegInicial_marchaNeuroChanging(value);
+					this.SendPropertyChanging();
 					this._exaFisRegInicial_marchaNeuro = value;
+					this.SendPropertyChanged("exaFisRegInicial_marchaNeuro");
+					this.OnexaFisRegInicial_marchaNeuroChanged();
 				}
 			}
 		}
@@ -15264,7 +15527,11 @@ namespace CapaDatos
 			{
 				if ((this._exaFisRegInicial_refleNeuro != value))
 				{
+					this.OnexaFisRegInicial_refleNeuroChanging(value);
+					this.SendPropertyChanging();
 					this._exaFisRegInicial_refleNeuro = value;
+					this.SendPropertyChanged("exaFisRegInicial_refleNeuro");
+					this.OnexaFisRegInicial_refleNeuroChanged();
 				}
 			}
 		}
@@ -15280,7 +15547,11 @@ namespace CapaDatos
 			{
 				if ((this._exaFisRegInicial_observa != value))
 				{
+					this.OnexaFisRegInicial_observaChanging(value);
+					this.SendPropertyChanging();
 					this._exaFisRegInicial_observa = value;
+					this.SendPropertyChanged("exaFisRegInicial_observa");
+					this.OnexaFisRegInicial_observaChanged();
 				}
 			}
 		}
@@ -15296,7 +15567,15 @@ namespace CapaDatos
 			{
 				if ((this._Per_id != value))
 				{
+					if (this._Tbl_Personas.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnPer_idChanging(value);
+					this.SendPropertyChanging();
 					this._Per_id = value;
+					this.SendPropertyChanged("Per_id");
+					this.OnPer_idChanged();
 				}
 			}
 		}
@@ -15312,8 +15591,66 @@ namespace CapaDatos
 			{
 				if ((this._exaFisRegInicial_estado != value))
 				{
+					this.OnexaFisRegInicial_estadoChanging(value);
+					this.SendPropertyChanging();
 					this._exaFisRegInicial_estado = value;
+					this.SendPropertyChanged("exaFisRegInicial_estado");
+					this.OnexaFisRegInicial_estadoChanged();
 				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_ExaFisRegionalInicial", Storage="_Tbl_Personas", ThisKey="Per_id", OtherKey="Per_id", IsForeignKey=true)]
+		public Tbl_Personas Tbl_Personas
+		{
+			get
+			{
+				return this._Tbl_Personas.Entity;
+			}
+			set
+			{
+				Tbl_Personas previousValue = this._Tbl_Personas.Entity;
+				if (((previousValue != value) 
+							|| (this._Tbl_Personas.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Tbl_Personas.Entity = null;
+						previousValue.Tbl_ExaFisRegionalInicial.Remove(this);
+					}
+					this._Tbl_Personas.Entity = value;
+					if ((value != null))
+					{
+						value.Tbl_ExaFisRegionalInicial.Add(this);
+						this._Per_id = value.Per_id;
+					}
+					else
+					{
+						this._Per_id = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Tbl_Personas");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
@@ -23988,6 +24325,8 @@ namespace CapaDatos
 		
 		private EntitySet<Tbl_ExaFisRegional> _Tbl_ExaFisRegional;
 		
+		private EntitySet<Tbl_ExaFisRegionalInicial> _Tbl_ExaFisRegionalInicial;
+		
 		private EntitySet<Tbl_FacRiesTrabAct> _Tbl_FacRiesTrabAct;
 		
 		private EntitySet<Tbl_MotivoConsulta> _Tbl_MotivoConsulta;
@@ -24003,6 +24342,8 @@ namespace CapaDatos
 		private EntitySet<Tbl_RecoTratamiento> _Tbl_RecoTratamiento;
 		
 		private EntitySet<Tbl_ResExaGenEspRiesTrabajo> _Tbl_ResExaGenEspRiesTrabajo;
+		
+		private EntitySet<Tbl_ReviOrgaSistemasFichMed> _Tbl_ReviOrgaSistemasFichMed;
 		
 		private EntitySet<Tbl_RevisionActualOrganosSistemas> _Tbl_RevisionActualOrganosSistemas;
 		
@@ -24152,6 +24493,7 @@ namespace CapaDatos
 			this._Tbl_EnfermedadesProfesionales = new EntitySet<Tbl_EnfermedadesProfesionales>(new Action<Tbl_EnfermedadesProfesionales>(this.attach_Tbl_EnfermedadesProfesionales), new Action<Tbl_EnfermedadesProfesionales>(this.detach_Tbl_EnfermedadesProfesionales));
 			this._Tbl_Evolucion = new EntitySet<Tbl_Evolucion>(new Action<Tbl_Evolucion>(this.attach_Tbl_Evolucion), new Action<Tbl_Evolucion>(this.detach_Tbl_Evolucion));
 			this._Tbl_ExaFisRegional = new EntitySet<Tbl_ExaFisRegional>(new Action<Tbl_ExaFisRegional>(this.attach_Tbl_ExaFisRegional), new Action<Tbl_ExaFisRegional>(this.detach_Tbl_ExaFisRegional));
+			this._Tbl_ExaFisRegionalInicial = new EntitySet<Tbl_ExaFisRegionalInicial>(new Action<Tbl_ExaFisRegionalInicial>(this.attach_Tbl_ExaFisRegionalInicial), new Action<Tbl_ExaFisRegionalInicial>(this.detach_Tbl_ExaFisRegionalInicial));
 			this._Tbl_FacRiesTrabAct = new EntitySet<Tbl_FacRiesTrabAct>(new Action<Tbl_FacRiesTrabAct>(this.attach_Tbl_FacRiesTrabAct), new Action<Tbl_FacRiesTrabAct>(this.detach_Tbl_FacRiesTrabAct));
 			this._Tbl_MotivoConsulta = new EntitySet<Tbl_MotivoConsulta>(new Action<Tbl_MotivoConsulta>(this.attach_Tbl_MotivoConsulta), new Action<Tbl_MotivoConsulta>(this.detach_Tbl_MotivoConsulta));
 			this._Tbl_MotivoConsultaInicial = new EntitySet<Tbl_MotivoConsultaInicial>(new Action<Tbl_MotivoConsultaInicial>(this.attach_Tbl_MotivoConsultaInicial), new Action<Tbl_MotivoConsultaInicial>(this.detach_Tbl_MotivoConsultaInicial));
@@ -24160,6 +24502,7 @@ namespace CapaDatos
 			this._Tbl_Prescipciones = new EntitySet<Tbl_Prescipciones>(new Action<Tbl_Prescipciones>(this.attach_Tbl_Prescipciones), new Action<Tbl_Prescipciones>(this.detach_Tbl_Prescipciones));
 			this._Tbl_RecoTratamiento = new EntitySet<Tbl_RecoTratamiento>(new Action<Tbl_RecoTratamiento>(this.attach_Tbl_RecoTratamiento), new Action<Tbl_RecoTratamiento>(this.detach_Tbl_RecoTratamiento));
 			this._Tbl_ResExaGenEspRiesTrabajo = new EntitySet<Tbl_ResExaGenEspRiesTrabajo>(new Action<Tbl_ResExaGenEspRiesTrabajo>(this.attach_Tbl_ResExaGenEspRiesTrabajo), new Action<Tbl_ResExaGenEspRiesTrabajo>(this.detach_Tbl_ResExaGenEspRiesTrabajo));
+			this._Tbl_ReviOrgaSistemasFichMed = new EntitySet<Tbl_ReviOrgaSistemasFichMed>(new Action<Tbl_ReviOrgaSistemasFichMed>(this.attach_Tbl_ReviOrgaSistemasFichMed), new Action<Tbl_ReviOrgaSistemasFichMed>(this.detach_Tbl_ReviOrgaSistemasFichMed));
 			this._Tbl_RevisionActualOrganosSistemas = new EntitySet<Tbl_RevisionActualOrganosSistemas>(new Action<Tbl_RevisionActualOrganosSistemas>(this.attach_Tbl_RevisionActualOrganosSistemas), new Action<Tbl_RevisionActualOrganosSistemas>(this.detach_Tbl_RevisionActualOrganosSistemas));
 			this._Tbl_TratamientoInicial = new EntitySet<Tbl_TratamientoInicial>(new Action<Tbl_TratamientoInicial>(this.attach_Tbl_TratamientoInicial), new Action<Tbl_TratamientoInicial>(this.detach_Tbl_TratamientoInicial));
 			this._Tbl_CargoInstitucional = default(EntityRef<Tbl_CargoInstitucional>);
@@ -25354,6 +25697,19 @@ namespace CapaDatos
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_ExaFisRegionalInicial", Storage="_Tbl_ExaFisRegionalInicial", ThisKey="Per_id", OtherKey="Per_id")]
+		public EntitySet<Tbl_ExaFisRegionalInicial> Tbl_ExaFisRegionalInicial
+		{
+			get
+			{
+				return this._Tbl_ExaFisRegionalInicial;
+			}
+			set
+			{
+				this._Tbl_ExaFisRegionalInicial.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_FacRiesTrabAct", Storage="_Tbl_FacRiesTrabAct", ThisKey="Per_id", OtherKey="Per_id")]
 		public EntitySet<Tbl_FacRiesTrabAct> Tbl_FacRiesTrabAct
 		{
@@ -25455,6 +25811,19 @@ namespace CapaDatos
 			set
 			{
 				this._Tbl_ResExaGenEspRiesTrabajo.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_ReviOrgaSistemasFichMed", Storage="_Tbl_ReviOrgaSistemasFichMed", ThisKey="Per_id", OtherKey="Per_id")]
+		public EntitySet<Tbl_ReviOrgaSistemasFichMed> Tbl_ReviOrgaSistemasFichMed
+		{
+			get
+			{
+				return this._Tbl_ReviOrgaSistemasFichMed;
+			}
+			set
+			{
+				this._Tbl_ReviOrgaSistemasFichMed.Assign(value);
 			}
 		}
 		
@@ -26230,6 +26599,18 @@ namespace CapaDatos
 			entity.Tbl_Personas = null;
 		}
 		
+		private void attach_Tbl_ExaFisRegionalInicial(Tbl_ExaFisRegionalInicial entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Personas = this;
+		}
+		
+		private void detach_Tbl_ExaFisRegionalInicial(Tbl_ExaFisRegionalInicial entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Personas = null;
+		}
+		
 		private void attach_Tbl_FacRiesTrabAct(Tbl_FacRiesTrabAct entity)
 		{
 			this.SendPropertyChanging();
@@ -26321,6 +26702,18 @@ namespace CapaDatos
 		}
 		
 		private void detach_Tbl_ResExaGenEspRiesTrabajo(Tbl_ResExaGenEspRiesTrabajo entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Personas = null;
+		}
+		
+		private void attach_Tbl_ReviOrgaSistemasFichMed(Tbl_ReviOrgaSistemasFichMed entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Personas = this;
+		}
+		
+		private void detach_Tbl_ReviOrgaSistemasFichMed(Tbl_ReviOrgaSistemasFichMed entity)
 		{
 			this.SendPropertyChanging();
 			entity.Tbl_Personas = null;
@@ -27962,77 +28355,55 @@ namespace CapaDatos
 		
 		private int _revorgsisFM_id;
 		
-		private string _revorgsisFM_orgSentidos;
-		
 		private System.Nullable<int> _eviPat1_id;
 		
 		private string _revorgsisFM_descOS;
-		
-		private string _revorgsisFM_resp;
 		
 		private System.Nullable<int> _eviPat2_id;
 		
 		private string _revorgsisFM_descR;
 		
-		private string _revorgsisFM_carVascu;
-		
 		private System.Nullable<int> _eviPat3_id;
 		
 		private string _revorgsisFM_descCV;
-		
-		private string _revorgsisFM_diges;
 		
 		private System.Nullable<int> _eviPat4_id;
 		
 		private string _revorgsisFM_descD;
 		
-		private string _revorgsisFM_genital;
-		
 		private System.Nullable<int> _eviPat5_id;
 		
 		private string _revorgsisFM_descG;
-		
-		private string _revorgsisFM_urinario;
 		
 		private System.Nullable<int> _eviPat6_id;
 		
 		private string _revorgsisFM_descU;
 		
-		private string _revorgsisFM_muscular;
-		
 		private System.Nullable<int> _eviPat7_id;
 		
 		private string _revorgsisFM_descM;
-		
-		private string _revorgsisFM_esquelitico;
 		
 		private System.Nullable<int> _eviPat8_id;
 		
 		private string _revorgsisFM_descE;
 		
-		private string _revorgsisFM_nervioso;
-		
 		private System.Nullable<int> _eviPat9_id;
 		
 		private string _revorgsisFM_descN;
-		
-		private string _revorgsisFM_endocrino;
 		
 		private System.Nullable<int> _eviPat10_id;
 		
 		private string _revorgsisFM_descEND;
 		
-		private string _revorgsisFM_hemoLinfa;
-		
 		private System.Nullable<int> _eviPat11_id;
 		
 		private string _revorgsisFM_descHL;
 		
-		private string _revorgsisFM_tegumen;
-		
 		private System.Nullable<int> _eviPat12_id;
 		
 		private string _revorgsisFM_descT;
+		
+		private System.Nullable<int> _Per_id;
 		
 		private string _revorgsisFM_estado;
 		
@@ -28060,84 +28431,64 @@ namespace CapaDatos
 		
 		private EntityRef<Tbl_EviPatologicaFichMed> _Tbl_EviPatologicaFichMed11;
 		
+		private EntityRef<Tbl_Personas> _Tbl_Personas;
+		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
     partial void OnrevorgsisFM_idChanging(int value);
     partial void OnrevorgsisFM_idChanged();
-    partial void OnrevorgsisFM_orgSentidosChanging(string value);
-    partial void OnrevorgsisFM_orgSentidosChanged();
     partial void OneviPat1_idChanging(System.Nullable<int> value);
     partial void OneviPat1_idChanged();
     partial void OnrevorgsisFM_descOSChanging(string value);
     partial void OnrevorgsisFM_descOSChanged();
-    partial void OnrevorgsisFM_respChanging(string value);
-    partial void OnrevorgsisFM_respChanged();
     partial void OneviPat2_idChanging(System.Nullable<int> value);
     partial void OneviPat2_idChanged();
     partial void OnrevorgsisFM_descRChanging(string value);
     partial void OnrevorgsisFM_descRChanged();
-    partial void OnrevorgsisFM_carVascuChanging(string value);
-    partial void OnrevorgsisFM_carVascuChanged();
     partial void OneviPat3_idChanging(System.Nullable<int> value);
     partial void OneviPat3_idChanged();
     partial void OnrevorgsisFM_descCVChanging(string value);
     partial void OnrevorgsisFM_descCVChanged();
-    partial void OnrevorgsisFM_digesChanging(string value);
-    partial void OnrevorgsisFM_digesChanged();
     partial void OneviPat4_idChanging(System.Nullable<int> value);
     partial void OneviPat4_idChanged();
     partial void OnrevorgsisFM_descDChanging(string value);
     partial void OnrevorgsisFM_descDChanged();
-    partial void OnrevorgsisFM_genitalChanging(string value);
-    partial void OnrevorgsisFM_genitalChanged();
     partial void OneviPat5_idChanging(System.Nullable<int> value);
     partial void OneviPat5_idChanged();
     partial void OnrevorgsisFM_descGChanging(string value);
     partial void OnrevorgsisFM_descGChanged();
-    partial void OnrevorgsisFM_urinarioChanging(string value);
-    partial void OnrevorgsisFM_urinarioChanged();
     partial void OneviPat6_idChanging(System.Nullable<int> value);
     partial void OneviPat6_idChanged();
     partial void OnrevorgsisFM_descUChanging(string value);
     partial void OnrevorgsisFM_descUChanged();
-    partial void OnrevorgsisFM_muscularChanging(string value);
-    partial void OnrevorgsisFM_muscularChanged();
     partial void OneviPat7_idChanging(System.Nullable<int> value);
     partial void OneviPat7_idChanged();
     partial void OnrevorgsisFM_descMChanging(string value);
     partial void OnrevorgsisFM_descMChanged();
-    partial void OnrevorgsisFM_esqueliticoChanging(string value);
-    partial void OnrevorgsisFM_esqueliticoChanged();
     partial void OneviPat8_idChanging(System.Nullable<int> value);
     partial void OneviPat8_idChanged();
     partial void OnrevorgsisFM_descEChanging(string value);
     partial void OnrevorgsisFM_descEChanged();
-    partial void OnrevorgsisFM_nerviosoChanging(string value);
-    partial void OnrevorgsisFM_nerviosoChanged();
     partial void OneviPat9_idChanging(System.Nullable<int> value);
     partial void OneviPat9_idChanged();
     partial void OnrevorgsisFM_descNChanging(string value);
     partial void OnrevorgsisFM_descNChanged();
-    partial void OnrevorgsisFM_endocrinoChanging(string value);
-    partial void OnrevorgsisFM_endocrinoChanged();
     partial void OneviPat10_idChanging(System.Nullable<int> value);
     partial void OneviPat10_idChanged();
     partial void OnrevorgsisFM_descENDChanging(string value);
     partial void OnrevorgsisFM_descENDChanged();
-    partial void OnrevorgsisFM_hemoLinfaChanging(string value);
-    partial void OnrevorgsisFM_hemoLinfaChanged();
     partial void OneviPat11_idChanging(System.Nullable<int> value);
     partial void OneviPat11_idChanged();
     partial void OnrevorgsisFM_descHLChanging(string value);
     partial void OnrevorgsisFM_descHLChanged();
-    partial void OnrevorgsisFM_tegumenChanging(string value);
-    partial void OnrevorgsisFM_tegumenChanged();
     partial void OneviPat12_idChanging(System.Nullable<int> value);
     partial void OneviPat12_idChanged();
     partial void OnrevorgsisFM_descTChanging(string value);
     partial void OnrevorgsisFM_descTChanged();
+    partial void OnPer_idChanging(System.Nullable<int> value);
+    partial void OnPer_idChanged();
     partial void OnrevorgsisFM_estadoChanging(string value);
     partial void OnrevorgsisFM_estadoChanged();
     #endregion
@@ -28156,6 +28507,7 @@ namespace CapaDatos
 			this._Tbl_EviPatologicaFichMed9 = default(EntityRef<Tbl_EviPatologicaFichMed>);
 			this._Tbl_EviPatologicaFichMed10 = default(EntityRef<Tbl_EviPatologicaFichMed>);
 			this._Tbl_EviPatologicaFichMed11 = default(EntityRef<Tbl_EviPatologicaFichMed>);
+			this._Tbl_Personas = default(EntityRef<Tbl_Personas>);
 			OnCreated();
 		}
 		
@@ -28175,26 +28527,6 @@ namespace CapaDatos
 					this._revorgsisFM_id = value;
 					this.SendPropertyChanged("revorgsisFM_id");
 					this.OnrevorgsisFM_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_revorgsisFM_orgSentidos", DbType="VarChar(50)")]
-		public string revorgsisFM_orgSentidos
-		{
-			get
-			{
-				return this._revorgsisFM_orgSentidos;
-			}
-			set
-			{
-				if ((this._revorgsisFM_orgSentidos != value))
-				{
-					this.OnrevorgsisFM_orgSentidosChanging(value);
-					this.SendPropertyChanging();
-					this._revorgsisFM_orgSentidos = value;
-					this.SendPropertyChanged("revorgsisFM_orgSentidos");
-					this.OnrevorgsisFM_orgSentidosChanged();
 				}
 			}
 		}
@@ -28243,26 +28575,6 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_revorgsisFM_resp", DbType="VarChar(50)")]
-		public string revorgsisFM_resp
-		{
-			get
-			{
-				return this._revorgsisFM_resp;
-			}
-			set
-			{
-				if ((this._revorgsisFM_resp != value))
-				{
-					this.OnrevorgsisFM_respChanging(value);
-					this.SendPropertyChanging();
-					this._revorgsisFM_resp = value;
-					this.SendPropertyChanged("revorgsisFM_resp");
-					this.OnrevorgsisFM_respChanged();
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_eviPat2_id", DbType="Int")]
 		public System.Nullable<int> eviPat2_id
 		{
@@ -28303,26 +28615,6 @@ namespace CapaDatos
 					this._revorgsisFM_descR = value;
 					this.SendPropertyChanged("revorgsisFM_descR");
 					this.OnrevorgsisFM_descRChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_revorgsisFM_carVascu", DbType="VarChar(50)")]
-		public string revorgsisFM_carVascu
-		{
-			get
-			{
-				return this._revorgsisFM_carVascu;
-			}
-			set
-			{
-				if ((this._revorgsisFM_carVascu != value))
-				{
-					this.OnrevorgsisFM_carVascuChanging(value);
-					this.SendPropertyChanging();
-					this._revorgsisFM_carVascu = value;
-					this.SendPropertyChanged("revorgsisFM_carVascu");
-					this.OnrevorgsisFM_carVascuChanged();
 				}
 			}
 		}
@@ -28371,26 +28663,6 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_revorgsisFM_diges", DbType="VarChar(50)")]
-		public string revorgsisFM_diges
-		{
-			get
-			{
-				return this._revorgsisFM_diges;
-			}
-			set
-			{
-				if ((this._revorgsisFM_diges != value))
-				{
-					this.OnrevorgsisFM_digesChanging(value);
-					this.SendPropertyChanging();
-					this._revorgsisFM_diges = value;
-					this.SendPropertyChanged("revorgsisFM_diges");
-					this.OnrevorgsisFM_digesChanged();
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_eviPat4_id", DbType="Int")]
 		public System.Nullable<int> eviPat4_id
 		{
@@ -28431,26 +28703,6 @@ namespace CapaDatos
 					this._revorgsisFM_descD = value;
 					this.SendPropertyChanged("revorgsisFM_descD");
 					this.OnrevorgsisFM_descDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_revorgsisFM_genital", DbType="VarChar(50)")]
-		public string revorgsisFM_genital
-		{
-			get
-			{
-				return this._revorgsisFM_genital;
-			}
-			set
-			{
-				if ((this._revorgsisFM_genital != value))
-				{
-					this.OnrevorgsisFM_genitalChanging(value);
-					this.SendPropertyChanging();
-					this._revorgsisFM_genital = value;
-					this.SendPropertyChanged("revorgsisFM_genital");
-					this.OnrevorgsisFM_genitalChanged();
 				}
 			}
 		}
@@ -28499,26 +28751,6 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_revorgsisFM_urinario", DbType="VarChar(50)")]
-		public string revorgsisFM_urinario
-		{
-			get
-			{
-				return this._revorgsisFM_urinario;
-			}
-			set
-			{
-				if ((this._revorgsisFM_urinario != value))
-				{
-					this.OnrevorgsisFM_urinarioChanging(value);
-					this.SendPropertyChanging();
-					this._revorgsisFM_urinario = value;
-					this.SendPropertyChanged("revorgsisFM_urinario");
-					this.OnrevorgsisFM_urinarioChanged();
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_eviPat6_id", DbType="Int")]
 		public System.Nullable<int> eviPat6_id
 		{
@@ -28559,26 +28791,6 @@ namespace CapaDatos
 					this._revorgsisFM_descU = value;
 					this.SendPropertyChanged("revorgsisFM_descU");
 					this.OnrevorgsisFM_descUChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_revorgsisFM_muscular", DbType="VarChar(50)")]
-		public string revorgsisFM_muscular
-		{
-			get
-			{
-				return this._revorgsisFM_muscular;
-			}
-			set
-			{
-				if ((this._revorgsisFM_muscular != value))
-				{
-					this.OnrevorgsisFM_muscularChanging(value);
-					this.SendPropertyChanging();
-					this._revorgsisFM_muscular = value;
-					this.SendPropertyChanged("revorgsisFM_muscular");
-					this.OnrevorgsisFM_muscularChanged();
 				}
 			}
 		}
@@ -28627,26 +28839,6 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_revorgsisFM_esquelitico", DbType="VarChar(50)")]
-		public string revorgsisFM_esquelitico
-		{
-			get
-			{
-				return this._revorgsisFM_esquelitico;
-			}
-			set
-			{
-				if ((this._revorgsisFM_esquelitico != value))
-				{
-					this.OnrevorgsisFM_esqueliticoChanging(value);
-					this.SendPropertyChanging();
-					this._revorgsisFM_esquelitico = value;
-					this.SendPropertyChanged("revorgsisFM_esquelitico");
-					this.OnrevorgsisFM_esqueliticoChanged();
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_eviPat8_id", DbType="Int")]
 		public System.Nullable<int> eviPat8_id
 		{
@@ -28687,26 +28879,6 @@ namespace CapaDatos
 					this._revorgsisFM_descE = value;
 					this.SendPropertyChanged("revorgsisFM_descE");
 					this.OnrevorgsisFM_descEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_revorgsisFM_nervioso", DbType="VarChar(50)")]
-		public string revorgsisFM_nervioso
-		{
-			get
-			{
-				return this._revorgsisFM_nervioso;
-			}
-			set
-			{
-				if ((this._revorgsisFM_nervioso != value))
-				{
-					this.OnrevorgsisFM_nerviosoChanging(value);
-					this.SendPropertyChanging();
-					this._revorgsisFM_nervioso = value;
-					this.SendPropertyChanged("revorgsisFM_nervioso");
-					this.OnrevorgsisFM_nerviosoChanged();
 				}
 			}
 		}
@@ -28755,26 +28927,6 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_revorgsisFM_endocrino", DbType="VarChar(50)")]
-		public string revorgsisFM_endocrino
-		{
-			get
-			{
-				return this._revorgsisFM_endocrino;
-			}
-			set
-			{
-				if ((this._revorgsisFM_endocrino != value))
-				{
-					this.OnrevorgsisFM_endocrinoChanging(value);
-					this.SendPropertyChanging();
-					this._revorgsisFM_endocrino = value;
-					this.SendPropertyChanged("revorgsisFM_endocrino");
-					this.OnrevorgsisFM_endocrinoChanged();
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_eviPat10_id", DbType="Int")]
 		public System.Nullable<int> eviPat10_id
 		{
@@ -28815,26 +28967,6 @@ namespace CapaDatos
 					this._revorgsisFM_descEND = value;
 					this.SendPropertyChanged("revorgsisFM_descEND");
 					this.OnrevorgsisFM_descENDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_revorgsisFM_hemoLinfa", DbType="VarChar(50)")]
-		public string revorgsisFM_hemoLinfa
-		{
-			get
-			{
-				return this._revorgsisFM_hemoLinfa;
-			}
-			set
-			{
-				if ((this._revorgsisFM_hemoLinfa != value))
-				{
-					this.OnrevorgsisFM_hemoLinfaChanging(value);
-					this.SendPropertyChanging();
-					this._revorgsisFM_hemoLinfa = value;
-					this.SendPropertyChanged("revorgsisFM_hemoLinfa");
-					this.OnrevorgsisFM_hemoLinfaChanged();
 				}
 			}
 		}
@@ -28883,26 +29015,6 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_revorgsisFM_tegumen", DbType="VarChar(50)")]
-		public string revorgsisFM_tegumen
-		{
-			get
-			{
-				return this._revorgsisFM_tegumen;
-			}
-			set
-			{
-				if ((this._revorgsisFM_tegumen != value))
-				{
-					this.OnrevorgsisFM_tegumenChanging(value);
-					this.SendPropertyChanging();
-					this._revorgsisFM_tegumen = value;
-					this.SendPropertyChanged("revorgsisFM_tegumen");
-					this.OnrevorgsisFM_tegumenChanged();
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_eviPat12_id", DbType="Int")]
 		public System.Nullable<int> eviPat12_id
 		{
@@ -28943,6 +29055,30 @@ namespace CapaDatos
 					this._revorgsisFM_descT = value;
 					this.SendPropertyChanged("revorgsisFM_descT");
 					this.OnrevorgsisFM_descTChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_id", DbType="Int")]
+		public System.Nullable<int> Per_id
+		{
+			get
+			{
+				return this._Per_id;
+			}
+			set
+			{
+				if ((this._Per_id != value))
+				{
+					if (this._Tbl_Personas.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnPer_idChanging(value);
+					this.SendPropertyChanging();
+					this._Per_id = value;
+					this.SendPropertyChanged("Per_id");
+					this.OnPer_idChanged();
 				}
 			}
 		}
@@ -29371,6 +29507,40 @@ namespace CapaDatos
 						this._eviPat10_id = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("Tbl_EviPatologicaFichMed11");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_ReviOrgaSistemasFichMed", Storage="_Tbl_Personas", ThisKey="Per_id", OtherKey="Per_id", IsForeignKey=true)]
+		public Tbl_Personas Tbl_Personas
+		{
+			get
+			{
+				return this._Tbl_Personas.Entity;
+			}
+			set
+			{
+				Tbl_Personas previousValue = this._Tbl_Personas.Entity;
+				if (((previousValue != value) 
+							|| (this._Tbl_Personas.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Tbl_Personas.Entity = null;
+						previousValue.Tbl_ReviOrgaSistemasFichMed.Remove(this);
+					}
+					this._Tbl_Personas.Entity = value;
+					if ((value != null))
+					{
+						value.Tbl_ReviOrgaSistemasFichMed.Add(this);
+						this._Per_id = value.Per_id;
+					}
+					else
+					{
+						this._Per_id = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Tbl_Personas");
 				}
 			}
 		}

@@ -157,157 +157,109 @@
                             <asp:TableRow>
                                 <asp:TableCell Text="Órganos de los Sentidos"></asp:TableCell>
                                 <asp:TableCell Style="background-color: white">
-                                        <select class="form-control" id="exampleFormControlSelect" style="width:100%; text-align:center; border:none">
-                                            <option selected>Seleccione...</option>
-                                            <option>Sin Patología</option>
-                                            <option>Con Patología</option>
-                                        </select>
+                                    <asp:DropDownList ID="ddl_orgSistemas" CssClass="form-check" Style="width: 100%; border: none" runat="server"></asp:DropDownList>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white">
-                                        <asp:TextBox runat="server" BorderStyle="None" style="width:100%" TextMode="MultiLine" Rows="3"></asp:TextBox>
+                                        <asp:TextBox runat="server" ID="txt_descOrgSistemas" BorderStyle="None" style="width:100%" TextMode="MultiLine" Rows="3"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
                                 <asp:TableCell Text="Respiratorio"></asp:TableCell>
                                 <asp:TableCell Style="background-color: white">
-                                        <select class="form-control" id="exampleFormControlSelect1" style="width:100%; text-align:center; border:none">
-                                            <option selected>Seleccione...</option>
-                                            <option>Sin Patología</option>
-                                            <option>Con Patología</option>
-                                        </select>
+                                    <asp:DropDownList ID="ddl_respiratorio" CssClass="form-check" Style="width: 100%; border: none" runat="server"></asp:DropDownList>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white">
-                                        <asp:TextBox runat="server" BorderStyle="None" style="width:100%" TextMode="MultiLine" Rows="3"></asp:TextBox>
+                                        <asp:TextBox runat="server" ID="txt_descRespiratorio" BorderStyle="None" style="width:100%" TextMode="MultiLine" Rows="3"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
                                 <asp:TableCell Text="Cardio Vascular"></asp:TableCell>
                                 <asp:TableCell Style="background-color: white">
-                                        <select class="form-control" id="exampleFormControlSelect2" style="width:100%; text-align:center; border:none">
-                                            <option selected>Seleccione...</option>
-                                            <option>Sin Patología</option>
-                                            <option>Con Patología</option>
-                                        </select>
+                                    <asp:DropDownList ID="ddl_carVascular" CssClass="form-check" Style="width: 100%; border: none" runat="server"></asp:DropDownList>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white">
-                                        <asp:TextBox runat="server" BorderStyle="None" style="width:100%" TextMode="MultiLine" Rows="3"></asp:TextBox>
+                                        <asp:TextBox runat="server" ID="txt_descCarVascular" BorderStyle="None" style="width:100%" TextMode="MultiLine" Rows="3"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
                                 <asp:TableCell Text="Digestivo"></asp:TableCell>
                                 <asp:TableCell Style="background-color: white">
-                                        <select class="form-control" id="exampleFormControlSelect3" style="width:100%; text-align:center; border:none">
-                                            <option selected>Seleccione...</option>
-                                            <option>Sin Patología</option>
-                                            <option>Con Patología</option>
-                                        </select>
+                                    <asp:DropDownList ID="ddl_digestivo" CssClass="form-check" Style="width: 100%; border: none" runat="server"></asp:DropDownList>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white">
-                                        <asp:TextBox runat="server" BorderStyle="None" style="width:100%" TextMode="MultiLine" Rows="3"></asp:TextBox>
+                                        <asp:TextBox runat="server" ID="txt_descDigestivo" BorderStyle="None" style="width:100%" TextMode="MultiLine" Rows="3"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
                                 <asp:TableCell Text="Genital"></asp:TableCell>
                                 <asp:TableCell Style="background-color: white">
-                                        <select class="form-control" id="exampleFormControlSelect4" style="width:100%; text-align:center; border:none">
-                                            <option selected>Seleccione...</option>
-                                            <option>Sin Patología</option>
-                                            <option>Con Patología</option>
-                                        </select>
+                                    <asp:DropDownList ID="ddl_genital" CssClass="form-check" Style="width: 100%; border: none" runat="server"></asp:DropDownList>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white">
-                                        <asp:TextBox runat="server" BorderStyle="None" style="width:100%" TextMode="MultiLine" Rows="3"></asp:TextBox>
+                                        <asp:TextBox runat="server" ID="txt_descGenital" BorderStyle="None" style="width:100%" TextMode="MultiLine" Rows="3"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
                                 <asp:TableCell Text="Urinario"></asp:TableCell>
                                 <asp:TableCell Style="background-color: white">
-                                        <select class="form-control" id="exampleFormControlSelect5" style="width:100%; text-align:center; border:none">
-                                            <option selected>Seleccione...</option>
-                                            <option>Sin Patología</option>
-                                            <option>Con Patología</option>
-                                        </select>
+                                    <asp:DropDownList ID="ddl_urinario" CssClass="form-check" Style="width: 100%; border: none" runat="server"></asp:DropDownList>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white">
-                                        <asp:TextBox runat="server" BorderStyle="None" style="width:100%" TextMode="MultiLine" Rows="3"></asp:TextBox>
+                                        <asp:TextBox runat="server" ID="txt_descUrinario" BorderStyle="None" style="width:100%" TextMode="MultiLine" Rows="3"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
                                 <asp:TableCell Text="Muscular"></asp:TableCell>
                                 <asp:TableCell Style="background-color: white">
-                                        <select class="form-control" id="exampleFormControlSelect6" style="width:100%; text-align:center; border:none">
-                                            <option selected>Seleccione...</option>
-                                            <option>Sin Patología</option>
-                                            <option>Con Patología</option>
-                                        </select>
+                                    <asp:DropDownList ID="ddl_muscular" CssClass="form-check" Style="width: 100%; border: none" runat="server"></asp:DropDownList>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white">
-                                        <asp:TextBox runat="server" BorderStyle="None" style="width:100%" TextMode="MultiLine" Rows="3"></asp:TextBox>
+                                        <asp:TextBox runat="server" ID="txt_descMuscular" BorderStyle="None" style="width:100%" TextMode="MultiLine" Rows="3"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
                                 <asp:TableCell Text="Esquelético"></asp:TableCell>
                                 <asp:TableCell Style="background-color: white">
-                                        <select class="form-control" id="exampleFormControlSelect7" style="width:100%; text-align:center; border:none">
-                                            <option selected>Seleccione...</option>
-                                            <option>Sin Patología</option>
-                                            <option>Con Patología</option>
-                                        </select>
+                                    <asp:DropDownList ID="ddl_esqueletico" CssClass="form-check" Style="width: 100%; border: none" runat="server"></asp:DropDownList>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white">
-                                        <asp:TextBox runat="server" BorderStyle="None" style="width:100%" TextMode="MultiLine" Rows="3"></asp:TextBox>
+                                        <asp:TextBox runat="server" ID="txt_descEsqueletico" BorderStyle="None" style="width:100%" TextMode="MultiLine" Rows="3"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
                                 <asp:TableCell Text="Nervioso"></asp:TableCell>
                                 <asp:TableCell Style="background-color: white">
-                                        <select class="form-control" id="exampleFormControlSelect8" style="width:100%; text-align:center; border:none">
-                                            <option selected>Seleccione...</option>
-                                            <option>Sin Patología</option>
-                                            <option>Con Patología</option>
-                                        </select>
+                                    <asp:DropDownList ID="ddl_nervioso" CssClass="form-check" Style="width: 100%; border: none" runat="server"></asp:DropDownList>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white">
-                                        <asp:TextBox runat="server" BorderStyle="None" style="width:100%" TextMode="MultiLine" Rows="3"></asp:TextBox>
+                                        <asp:TextBox runat="server" ID="txt_descNervioso" BorderStyle="None" style="width:100%" TextMode="MultiLine" Rows="3"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
                                 <asp:TableCell Text="Endocrino"></asp:TableCell>
                                 <asp:TableCell Style="background-color: white">
-                                        <select class="form-control" id="exampleFormControlSelect9" style="width:100%; text-align:center; border:none">
-                                            <option selected>Seleccione...</option>
-                                            <option>Sin Patología</option>
-                                            <option>Con Patología</option>
-                                        </select>
+                                    <asp:DropDownList ID="ddl_endocrino" CssClass="form-check" Style="width: 100%; border: none" runat="server"></asp:DropDownList>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white">
-                                        <asp:TextBox runat="server" BorderStyle="None" style="width:100%" TextMode="MultiLine" Rows="3"></asp:TextBox>
+                                        <asp:TextBox runat="server" ID="txt_descEndocrino" BorderStyle="None" style="width:100%" TextMode="MultiLine" Rows="3"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
                                 <asp:TableCell Text="Hemo Linfático"></asp:TableCell>
                                 <asp:TableCell Style="background-color: white">
-                                        <select class="form-control" id="exampleFormControlSelect10" style="width:100%; text-align:center; border:none">
-                                            <option selected>Seleccione...</option>
-                                            <option>Sin Patología</option>
-                                            <option>Con Patología</option>
-                                        </select>
+                                    <asp:DropDownList ID="ddl_hemoLinfatico" CssClass="form-check" Style="width: 100%; border: none" runat="server"></asp:DropDownList>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white">
-                                        <asp:TextBox runat="server" BorderStyle="None" style="width:100%" TextMode="MultiLine" Rows="3"></asp:TextBox>
+                                        <asp:TextBox runat="server" ID="txt_descHemoLinfatico" BorderStyle="None" style="width:100%" TextMode="MultiLine" Rows="3"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
                                 <asp:TableCell Text="Tegumentario (Piel y Faneras)"></asp:TableCell>
                                 <asp:TableCell Style="background-color: white">
-                                        <select class="form-control" id="exampleFormControlSelect11" style="width:100%; text-align:center; border:none">
-                                            <option selected>Seleccione...</option>
-                                            <option>Sin Patología</option>
-                                            <option>Con Patología</option>
-                                        </select>
+                                    <asp:DropDownList ID="ddl_tegumentario" CssClass="form-check" Style="width: 100%; border: none" runat="server"></asp:DropDownList>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white">
-                                        <asp:TextBox runat="server" BorderStyle="None" style="width:100%" TextMode="MultiLine" Rows="3"></asp:TextBox>
+                                        <asp:TextBox runat="server" ID="txt_descTegumentario" BorderStyle="None" style="width:100%" TextMode="MultiLine" Rows="3"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                         </asp:Table>

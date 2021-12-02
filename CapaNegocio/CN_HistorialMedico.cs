@@ -46,10 +46,17 @@ namespace CapaNegocio
         //--------------------------------------- METODOS PARA OBTENER DATOS POR PERSONA ---------------------------------------------
         //----------------------------------------------------------------------------------------------------------------------------
 
+
         //metodo traer para traer motivo de consulta x persona
         public static Tbl_MotivoConsulta obtenerMotivoxPerFecha(int personaid, DateTime fechamot)
         {
             var motid = dc.Tbl_MotivoConsulta.FirstOrDefault(per => per.Per_id.Equals(personaid) && per.Mcon_fecha_hora.Equals(fechamot) && per.Mcon_estado == "A");
+            return motid;
+        }
+
+        public static Tbl_MotivoConsulta obtenerMotivoxPer(int personaid)
+        {
+            var motid = dc.Tbl_MotivoConsulta.FirstOrDefault(per => per.Per_id.Equals(personaid) && per.Mcon_estado == "A");
             return motid;
         }
 
@@ -158,6 +165,12 @@ namespace CapaNegocio
         public static List<Tbl_Regiones> obtenerRegion()
         {
             var lista = dc.Tbl_Regiones.Where(reg => reg.Regiones_estado == "A");
+            return lista.ToList();
+        }
+
+        public static List<Tbl_EviPatologicaFichMed> obtenerEviPatologica()
+        {
+            var lista = dc.Tbl_EviPatologicaFichMed.Where(evi => evi.eviPat_estado == "A");
             return lista.ToList();
         }
 
@@ -327,12 +340,12 @@ namespace CapaNegocio
         }        
 
         //5. Metodo para guardar datos organos y sistemas
-        public static void guardarRevisionOrganosSistemasPrincipal(Tbl_RevisionOrganosSistemasPrincipal revOrSisPrin)
+        public static void guardarRevisionOrganosSistemas(Tbl_ReviOrgaSistemasFichMed revOrSis)
         {
             try
             {
-                revOrSisPrin.RevOrgSisPrin_estado = "A";
-                dc.Tbl_RevisionOrganosSistemasPrincipal.InsertOnSubmit(revOrSisPrin);
+                revOrSis.revorgsisFM_estado = "A";
+                dc.Tbl_ReviOrgaSistemasFichMed.InsertOnSubmit(revOrSis);
                 dc.SubmitChanges();
             }
             catch (Exception ex)
@@ -342,7 +355,7 @@ namespace CapaNegocio
         }
 
         //5.1. Metodo para modificar datos signos vitales
-        public static void modificarRevisionOrganosSistemasPrincipal(Tbl_RevisionOrganosSistemasPrincipal revOrSisPrin)
+        public static void modificarRevisionOrganosSistemas(Tbl_ReviOrgaSistemasFichMed revOrSis)
         {
             try
             {

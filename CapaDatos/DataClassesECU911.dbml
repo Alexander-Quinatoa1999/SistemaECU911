@@ -640,7 +640,7 @@
   </Table>
   <Table Name="dbo.Tbl_ExaFisRegionalInicial" Member="Tbl_ExaFisRegionalInicial">
     <Type Name="Tbl_ExaFisRegionalInicial">
-      <Column Name="exaFisRegInicial_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="exaFisRegInicial_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="exaFisRegInicial_cicatricesPiel" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
       <Column Name="exaFisRegInicial_tatuajesPiel" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
       <Column Name="exaFisRegInicial_pielFacerasPiel" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
@@ -1171,6 +1171,7 @@
       <Association Name="Tbl_Personas_Tbl_Prescipciones" Member="Tbl_Prescipciones" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Prescipciones" />
       <Association Name="Tbl_Personas_Tbl_RecoTratamiento" Member="Tbl_RecoTratamiento" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_RecoTratamiento" />
       <Association Name="Tbl_Personas_Tbl_ResExaGenEspRiesTrabajo" Member="Tbl_ResExaGenEspRiesTrabajo" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_ResExaGenEspRiesTrabajo" />
+      <Association Name="Tbl_Personas_Tbl_ReviOrgaSistemasFichMed" Member="Tbl_ReviOrgaSistemasFichMed" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_ReviOrgaSistemasFichMed" />
       <Association Name="Tbl_Personas_Tbl_RevisionActualOrganosSistemas" Member="Tbl_RevisionActualOrganosSistemas" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_RevisionActualOrganosSistemas" />
       <Association Name="Tbl_Personas_Tbl_TratamientoInicial" Member="Tbl_TratamientoInicial" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_TratamientoInicial" />
       <Association Name="Tbl_CargoInstitucional_Tbl_Personas" Member="Tbl_CargoInstitucional" ThisKey="CargoInsti_id" OtherKey="CargoIntsi_id" Type="Tbl_CargoInstitucional" IsForeignKey="true" />
@@ -1281,42 +1282,31 @@
   <Table Name="dbo.Tbl_ReviOrgaSistemasFichMed" Member="Tbl_ReviOrgaSistemasFichMed">
     <Type Name="Tbl_ReviOrgaSistemasFichMed">
       <Column Name="revorgsisFM_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="revorgsisFM_orgSentidos" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="eviPat1_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="revorgsisFM_descOS" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
-      <Column Name="revorgsisFM_resp" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="eviPat2_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="revorgsisFM_descR" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
-      <Column Name="revorgsisFM_carVascu" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="eviPat3_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="revorgsisFM_descCV" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
-      <Column Name="revorgsisFM_diges" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="eviPat4_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="revorgsisFM_descD" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
-      <Column Name="revorgsisFM_genital" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="eviPat5_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="revorgsisFM_descG" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
-      <Column Name="revorgsisFM_urinario" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="eviPat6_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="revorgsisFM_descU" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
-      <Column Name="revorgsisFM_muscular" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="eviPat7_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="revorgsisFM_descM" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
-      <Column Name="revorgsisFM_esquelitico" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="eviPat8_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="revorgsisFM_descE" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
-      <Column Name="revorgsisFM_nervioso" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="eviPat9_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="revorgsisFM_descN" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
-      <Column Name="revorgsisFM_endocrino" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="eviPat10_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="revorgsisFM_descEND" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
-      <Column Name="revorgsisFM_hemoLinfa" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="eviPat11_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="revorgsisFM_descHL" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
-      <Column Name="revorgsisFM_tegumen" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="eviPat12_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="revorgsisFM_descT" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Per_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="revorgsisFM_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
       <Association Name="Tbl_EviPatologicaFichMed_Tbl_ReviOrgaSistemasFichMed" Member="Tbl_EviPatologicaFichMed" ThisKey="eviPat1_id" OtherKey="eviPat_id" Type="Tbl_EviPatologicaFichMed" IsForeignKey="true" />
       <Association Name="Tbl_EviPatologicaFichMed_Tbl_ReviOrgaSistemasFichMed1" Member="Tbl_EviPatologicaFichMed1" ThisKey="eviPat2_id" OtherKey="eviPat_id" Type="Tbl_EviPatologicaFichMed" IsForeignKey="true" />
@@ -1330,6 +1320,7 @@
       <Association Name="Tbl_EviPatologicaFichMed_Tbl_ReviOrgaSistemasFichMed9" Member="Tbl_EviPatologicaFichMed9" ThisKey="eviPat8_id" OtherKey="eviPat_id" Type="Tbl_EviPatologicaFichMed" IsForeignKey="true" />
       <Association Name="Tbl_EviPatologicaFichMed_Tbl_ReviOrgaSistemasFichMed10" Member="Tbl_EviPatologicaFichMed10" ThisKey="eviPat9_id" OtherKey="eviPat_id" Type="Tbl_EviPatologicaFichMed" IsForeignKey="true" />
       <Association Name="Tbl_EviPatologicaFichMed_Tbl_ReviOrgaSistemasFichMed11" Member="Tbl_EviPatologicaFichMed11" ThisKey="eviPat10_id" OtherKey="eviPat_id" Type="Tbl_EviPatologicaFichMed" IsForeignKey="true" />
+      <Association Name="Tbl_Personas_Tbl_ReviOrgaSistemasFichMed" Member="Tbl_Personas" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Personas" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Tbl_RevisionActualOrganosSistemas" Member="Tbl_RevisionActualOrganosSistemas">
