@@ -74,6 +74,39 @@ namespace CapaNegocio
         //------------------------------------------ METODOS PARA GUARDAR Y MODIFICAR DATOS  -----------------------------------------
         //----------------------------------------------------------------------------------------------------------------------------
 
+        //A. DATOS DEL ESTABLECIMIENTO - EMPRESA Y USUARIO
+
+        //Metodo para guardar datos DATOS DE EMPRESA Y USUARIO DESDE RELIGION
+        public static void guardarDatosEstablecimientoEmpresaUsuario(Tbl_DatEstableEmpUsu datosestempresausu)
+        {
+            try
+            {
+                datosestempresausu.datEstable_estado = "A";
+                dc.Tbl_DatEstableEmpUsu.InsertOnSubmit(datosestempresausu);
+                dc.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException("Datos No Guardados" + ex.Message);
+            }
+        }
+
+        //B. MOTIVO DE CONSULTA
+
+        //Metodo para guardar datos MOTIVO CONSULTA
+        public static void guardarMotivoConsultaInicial(Tbl_MotivoConsultaInicial motconini)
+        {
+            try
+            {
+                motconini.motConIni_estado = "A";
+                dc.Tbl_MotivoConsultaInicial.InsertOnSubmit(motconini);
+                dc.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException("Datos No Guardados" + ex.Message);
+            }
+        }
 
         //C. ANTECEDENTES PERSONALES
 
@@ -106,7 +139,7 @@ namespace CapaNegocio
                 throw new ArgumentException("Datos No Guardados" + ex.Message);
             }
         }
-        
+
         //Metodo para guardar datos VIDA SEXUAL ACTIVA
         public static void guardarVidSexActiva(Tbl_VidaSexualActiva vidsexact)
         {
@@ -120,7 +153,7 @@ namespace CapaNegocio
             {
                 throw new ArgumentException("Datos No Guardados" + ex.Message);
             }
-        }
+        }   
         
         //Metodo para guardar datos METODO PLANIFICACION FAMILIAR
         public static void guardarMetPlaniFami(Tbl_MetodoPlanificacionFamiliar metplanfam)
@@ -227,7 +260,6 @@ namespace CapaNegocio
             }
         }
 
-
         //D.ANTECEDENTES DE TRABAJO
 
         //Metodo para guardar datos ANTECEDENTES DE EMPLEOS ANTERIORES
@@ -275,6 +307,22 @@ namespace CapaNegocio
             }
         }
 
+        //E. ANTECEDENTES FAMILIARES
+
+        //Metodo para guardar datos ANTECEDENTES FAMILIARES
+        public static void guardarAntecedentesFamiliaresDetParentesco(Tbl_AntecedentesFamiliaresDetParentesco AnteFamiDetParentesco)
+        {
+            try
+            {
+                AnteFamiDetParentesco.AntFamDetPare_estado = "A";
+                dc.Tbl_AntecedentesFamiliaresDetParentesco.InsertOnSubmit(AnteFamiDetParentesco);
+                dc.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException("Datos No Guardados" + ex.Message);
+            }
+        }
 
         //F. FACTORES DE RIESGO DEL PUESTO DE TRABAJO ACTUAL
 
@@ -303,6 +351,57 @@ namespace CapaNegocio
             {
                 actvextralaboral.ActExtLab_estado = "A";
                 dc.Tbl_ActividadesExtraLaborales.InsertOnSubmit(actvextralaboral);
+                dc.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException("Datos No Guardados" + ex.Message);
+            }
+        }
+
+        //H. ENFERMEDAD ACTUAL
+
+        //Metodo para guardar datos Enfermedad Actual
+        public static void guardarEnfermedadActual(Tbl_EnfermedadActualInicial enferactualinicial)
+        {
+            try
+            {
+                enferactualinicial.enfActual_estado = "A";
+                dc.Tbl_EnfermedadActualInicial.InsertOnSubmit(enferactualinicial);
+                dc.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException("Datos No Guardados" + ex.Message);
+            }
+        }
+
+        //I. REVISIÓN ACTUAL DE ÓRGANOS Y SISTEMAS
+
+        //Metodo para guardar datos REVISIÓN ACTUAL DE ÓRGANOS Y SISTEMAS
+        public static void guardarReviActualOrganSistemas(Tbl_RevisionActualOrganosSistemas revisionactualorganossistemas)
+        {
+            try
+            {
+                revisionactualorganossistemas.RevActOrgSis_estado = "A";
+                dc.Tbl_RevisionActualOrganosSistemas.InsertOnSubmit(revisionactualorganossistemas);
+                dc.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException("Datos No Guardados" + ex.Message);
+            }
+        }
+
+        //K. EXAMEN FÍSICO REGIONAL
+
+        //Metodo para guardar datos REVISIÓN ACTUAL DE ÓRGANOS Y SISTEMAS
+        public static void guardarExamenFisicoRegional(Tbl_ExaFisRegionalInicial examfisregional)
+        {
+            try
+            {
+                examfisregional.exaFisRegInicial_estado = "A";
+                dc.Tbl_ExaFisRegionalInicial.InsertOnSubmit(examfisregional);
                 dc.SubmitChanges();
             }
             catch (Exception ex)
@@ -356,6 +455,23 @@ namespace CapaNegocio
             {
                 aptitudmedica.AptMed_estado = "A";
                 dc.Tbl_AptitudMedica.InsertOnSubmit(aptitudmedica);
+                dc.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException("Datos No Guardados" + ex.Message);
+            }
+        }
+
+        //O. RECOMENDACIONES Y/O TRATAMIENTO
+
+        //Metodo para guardar datos APTITUD MÉDICA PARA EL TRABAJO
+        public static void guardarRecomendacionesTratamiento(Tbl_TratamientoInicial tratamientoinicial)
+        {
+            try
+            {
+                tratamientoinicial.trataInicial_estado = "A";
+                dc.Tbl_TratamientoInicial.InsertOnSubmit(tratamientoinicial);
                 dc.SubmitChanges();
             }
             catch (Exception ex)

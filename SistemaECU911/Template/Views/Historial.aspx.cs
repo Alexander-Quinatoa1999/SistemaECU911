@@ -229,12 +229,12 @@ namespace SistemaECU911.Template.Views
                     motcons.Mcon_descripcion = txt_moConsulta.Text;
                     motcons.Per_id = perso;
                     //captura de datos tbl_antepersonales
-                    antper.TiEnf_id = Convert.ToInt32(ddl_tipoAntPer.SelectedValue);
+                    //antper.TiEnf_id = Convert.ToInt32(ddl_tipoAntPer.SelectedValue);
                     antper.AntPer_antecedente = txt_antePersonales.Text;
                     antper.AntPer_descripcion = txt_antePerDescripcion.Text;
                     antper.Per_id = perso;
                     //captura de datos tbl_antefamiliares
-                    antfam.TiEnf_id = Convert.ToInt32(ddl_tipoAntFam.SelectedValue);
+                    //antfam.TiEnf_id = Convert.ToInt32(ddl_tipoAntFam.SelectedValue);
                     antfam.AntFami_antecendente = txt_anteFamiliares.Text;
                     antfam.AntFami_descripcion = txt_anteFamDescripcion.Text;
                     antfam.Per_id = perso;
