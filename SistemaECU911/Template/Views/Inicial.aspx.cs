@@ -156,11 +156,13 @@ namespace SistemaECU911.Template.Views
             }
         }
 
-        private void guardar_modificar_datos(int perid, int emplanteid, int accitrabid, int enfprofid, int facriestrabid, int actextralabid, 
-            int resexagenid, int diagid, int aptmedid)
+        private void guardar_modificar_datos(int perid, int datosestempresausuid, int motconiniid, int antcliquiid, int emplanteid, 
+            int accitrabid, int enfprofid, int AnteFamiDetParid, int facriestrabid, int actextralabid, int enferactualiniid,
+            int revactrgsisid, int resexagenid, int diagid, int aptmedid, int traIniid)
         {
-            if (perid == 0 || emplanteid == 0 || accitrabid == 0 || enfprofid == 0 || facriestrabid == 0 || actextralabid == 0 || resexagenid == 0 ||
-                diagid == 0 || aptmedid == 0)
+            if (perid == 0 || datosestempresausuid == 0 || motconiniid == 0 || antcliquiid == 0 || emplanteid == 0 || 
+                accitrabid == 0 || enfprofid == 0 || AnteFamiDetParid == 0 || facriestrabid == 0 || actextralabid == 0 ||
+                enferactualiniid == 0 || revactrgsisid == 0 || resexagenid == 0 || diagid == 0 || aptmedid == 0 || traIniid == 0)
             {
                 GuardarHistorial();
             }
@@ -228,14 +230,14 @@ namespace SistemaECU911.Template.Views
 
                     per = CN_HistorialMedico.obtenerIdPersonasxCedula(Convert.ToInt32(txt_numHClinica.Text));
 
-                    int perso = Convert.ToInt32(per.Per_id.ToString());
-
-                    //antcliqui = new Tbl_AntecedentesCliQuiru();
+                    int perso = Convert.ToInt32(per.Per_id.ToString());                    
 
                     // A
                     datosestempresausu = new Tbl_DatEstableEmpUsu();
                     // B
                     motconini = new Tbl_MotivoConsultaInicial();
+                    // C
+                    antcliqui = new Tbl_AntecedentesCliQuiru();
                     // D
                     emplant = new Tbl_AntecedentesEmplAnteriores();
                     acctrabajo = new Tbl_AccidentesTrabajoDesc();
@@ -261,24 +263,36 @@ namespace SistemaECU911.Template.Views
                     // O
                     tratamientoinicial = new Tbl_TratamientoInicial();
 
-                    //captura de datos tbl_motivoconsulta
-                    //antcliqui.AntCliQuiru_descripcion = txt_antCliQuiDescripcion.Text;
-
                     //A. Captura de Datos Establecimiento Empresa Usuario
-                    datosestempresausu.datEstable_catolicaRel = txt_catolica.Text;
-                    datosestempresausu.datEstable_groSanguineo = txt_gruposanguineo.Text;
-                    datosestempresausu.datEstable_lateralidad = txt_lateralidad.Text;
-                    datosestempresausu.datEstable_heterosexualOriSex = txt_heterosexual.Text;
-                    datosestempresausu.datEstable_masculinoIdenGen = txt_masculino.Text;
-                    datosestempresausu.datEstable_noDis = txt_nodiscapacidad.Text;
-                    datosestempresausu.datEstable_tipoDis = txt_tipodiscapacidad.Text;
-                    datosestempresausu.datEstable_porcentDis = Convert.ToInt32(txt_porcentajediscapacidad.Text);
-                    datosestempresausu.datEstable_actRelevantesTrabOcupar = txt_actividadesrelevantes.Text;
+                    //datosestempresausu.datEstable_catolicaRel = txt_catolica.Text;
+                    //datosestempresausu.datEstable_evangelicaRel = txt_evangelica.Text;
+                    //datosestempresausu.datEstable_testJehovaRel = txt_testigo.Text;
+                    //datosestempresausu.datEstable_mormonaRel = txt_mormona.Text;
+                    //datosestempresausu.datEstable_otrasRel = txt_otrareligion.Text;
+                    //datosestempresausu.datEstable_groSanguineo = txt_gruposanguineo.Text;
+                    //datosestempresausu.datEstable_lateralidad = txt_lateralidad.Text;
+                    //datosestempresausu.datEstable_gayOriSex = txt_gay.Text;
+                    //datosestempresausu.datEstable_bisexualOriSex = txt_bisexual.Text;
+                    //datosestempresausu.datEstable_heterosexualOriSex = txt_heterosexual.Text;
+                    //datosestempresausu.datEstable_norespondeOriSex = txt_noRespondeOriSex.Text;
+                    //datosestempresausu.datEstable_femeninoIdenGen = txt_femenino.Text;
+                    //datosestempresausu.datEstable_masculinoIdenGen = txt_masculino.Text;
+                    //datosestempresausu.datEstable_transFemeninoIdenGen = txt_transfemenino.Text;
+                    //datosestempresausu.datEstable_transMasculinoIdenGen = txt_transmasculino.Text;
+                    //datosestempresausu.datEstable_norespondeIdenGen = txt_noRespondeIdeGen.Text;
+                    //datosestempresausu.datEstable_siDis = txt_sidiscapacidad.Text;
+                    //datosestempresausu.datEstable_noDis = txt_nodiscapacidad.Text;
+                    //datosestempresausu.datEstable_tipoDis = txt_tipodiscapacidad.Text;
+                    //datosestempresausu.datEstable_porcentDis = Convert.ToInt32(txt_porcentajediscapacidad.Text);
+                    //datosestempresausu.datEstable_actRelevantesTrabOcupar = txt_actividadesrelevantes.Text;
                     //datosestempresausu.Per_id = perso;
 
                     // B. Captura de datos Motivo de Consulta
-                    motconini.motConIni_descrip = txt_motivoconsultainicial.Text;
-                    motconini.Per_id = perso;
+                    //motconini.motConIni_descrip = txt_motivoconsultainicial.Text;
+                    //motconini.Per_id = perso;
+
+                    //C. Captura de datos tbl_AntecedentesCliQuiru(
+                    antcliqui.AntCliQuiru_descripcion = txt_antCliQuiDescripcion.Text;
 
                     //D. Captura de Datos Tbl_AntecedentesEmplAnteriores 
                     //emplant.AntEmpAnte_nomEmpresa = txt_empresa.Text;
@@ -296,8 +310,15 @@ namespace SistemaECU911.Template.Views
 
                     //E. Captura de Datos ANTECEDENTES FAMILIARES (DETALLAR EL PARENTESCO)
                     AnteFamiDetParentesco.AntFamDetPare_enfCarVas = txt_enfermedadcardiovascular.Text;
+                    AnteFamiDetParentesco.AntFamDetPare_enfMeta = txt_enfermedadmetabolica.Text;
+                    AnteFamiDetParentesco.AntFamDetPare_enfNeuro = txt_enfermedadneurologica.Text;
+                    AnteFamiDetParentesco.AntFamDetPare_enfOnco = txt_enfermedadoncologica.Text;
+                    AnteFamiDetParentesco.AntFamDetPare_enfInfe = txt_enfermedadinfecciosa.Text;
+                    AnteFamiDetParentesco.AntFamDetPare_enfHereConge = txt_enfermedadhereditaria.Text;
+                    AnteFamiDetParentesco.AntFamDetPare_discapa = txt_discapacidades.Text;
+                    AnteFamiDetParentesco.AntFamDetPare_otros = txt_otrosenfer.Text;
                     AnteFamiDetParentesco.AntFamDetPare_descripcion = txt_descripcionantefamiliares.Text;
-                    //AnteFamiDetParentesco.Per_id = perso;
+                    AnteFamiDetParentesco.Per_id = perso;
 
                     //F. Captura de Datos Tbl_FacRiesTrabAct
                     //facriesgotractual.FacRiesTrabAct_area = txt_puestodetrabajo.Text;
@@ -316,18 +337,65 @@ namespace SistemaECU911.Template.Views
                     //actvextralaboral.Per_id = perso;
 
                     //H. Captura de Datos Enfermedad Actual
-                    enferactualinicial.enfActual_descrip = txt_enfermedadactualinicial.Text;
+                    //enferactualinicial.enfActual_descrip = txt_enfermedadactualinicial.Text;
                     //enferactualinicial.Per_id = perso;
 
                     //I. Captura de Datos REVISIÓN ACTUAL DE ÓRGANOS Y SISTEMAS
                     revisionactualorganossistemas.RevActOrgSis_pielAnexos = txt_pielanexos.Text;
+                    revisionactualorganossistemas.RevActOrgSis_orgSentidos = txt_organossentidos.Text;
+                    revisionactualorganossistemas.RevActOrgSis_respiratorio = txt_respiratorio.Text;
+                    revisionactualorganossistemas.RevActOrgSis_cardVascular = txt_cardiovascular.Text;
+                    revisionactualorganossistemas.RevActOrgSis_digestivo = txt_digestivo.Text;
+                    revisionactualorganossistemas.RevActOrgSis_genUrinario = txt_genitourinario.Text;
+                    revisionactualorganossistemas.RevActOrgSis_muscEsqueletico = txt_musculosesqueleticos.Text;
+                    revisionactualorganossistemas.RevActOrgSis_endocrino = txt_musculosesqueleticos.Text;
+                    revisionactualorganossistemas.RevActOrgSis_hemoLimfa = txt_hemolinfatico.Text;
+                    revisionactualorganossistemas.RevActOrgSis_nervioso = txt_nervioso.Text;
                     revisionactualorganossistemas.RevActOrgSis_descrip = txt_descrorganosysistemas.Text;
-                    //revisionactualorganossistemas.Per_id = perso;
+                    revisionactualorganossistemas.Per_id = perso;
 
                     //K. Captura de Datos Examen Fisico Regional
-                    examfisregional.exaFisRegInicial_cicatricesPiel = txt_cicatrices.Text;
-                    examfisregional.exaFisRegInicial_corazonTorax = txt_corazon.Text;
-                    examfisregional.exaFisRegInicial_observa = txt_obervexamenfisicoregional.Text;
+                    //examfisregional.exaFisRegInicial_cicatricesPiel = txt_cicatrices.Text;
+                    //examfisregional.exaFisRegInicial_tatuajesPiel = txt_tatuajes.Text;
+                    //examfisregional.exaFisRegInicial_pielFacerasPiel = txt_pielyfaneras.Text;
+                    //examfisregional.exaFisRegInicial_parpadosOjos = txt_parpados.Text;
+                    //examfisregional.exaFisRegInicial_conjuntuvasOjos = txt_conjuntivas.Text;
+                    //examfisregional.exaFisRegInicial_pupilasOjos = txt_pupilas.Text;
+                    //examfisregional.exaFisRegInicial_corneaOjos = txt_cornea.Text;
+                    //examfisregional.exaFisRegInicial_motilidadOjos = txt_motilidad.Text;
+                    //examfisregional.exaFisRegInicial_cAudiExtreOido = txt_auditivoexterno.Text;
+                    //examfisregional.exaFisRegInicial_pabellonOido = txt_pabellon.Text;
+                    //examfisregional.exaFisRegInicial_timpanosOido = txt_timpanos.Text;
+                    //examfisregional.exaFisRegInicial_labiosOroFa = txt_labios.Text;
+                    //examfisregional.exaFisRegInicial_lenguaOroFa = txt_lengua.Text;
+                    //examfisregional.exaFisRegInicial_faringeOroFa = txt_faringe.Text;
+                    //examfisregional.exaFisRegInicial_amigdalasOroFa = txt_amigdalas.Text;
+                    //examfisregional.exaFisRegInicial_dentaduraOroFa = txt_dentadura.Text;
+                    //examfisregional.exaFisRegInicial_tabiqueNariz = txt_tabique.Text;
+                    //examfisregional.exaFisRegInicial_cornetesNariz = txt_cornetes.Text;
+                    //examfisregional.exaFisRegInicial_mucosasNariz = txt_mucosa.Text;
+                    //examfisregional.exaFisRegInicial_senosParanaNariz = txt_senosparanasales.Text;
+                    //examfisregional.exaFisRegInicial_tiroiMasasCuello = txt_tiroides.Text;
+                    //examfisregional.exaFisRegInicial_movilidadCuello = txt_movilidad.Text;
+                    //examfisregional.exaFisRegInicial_mamasTorax = txt_mamas.Text;
+                    //examfisregional.exaFisRegInicial_corazonTorax = txt_corazon.Text;
+                    //examfisregional.exaFisRegInicial_pulmonesTorax2 = txt_pulmones.Text;
+                    //examfisregional.exaFisRegInicial_parriCostalTorax2 = txt_parrillacostal.Text;
+                    //examfisregional.exaFisRegInicial_viscerasAbdomen = txt_visceras.Text;
+                    //examfisregional.exaFisRegInicial_paredAbdomiAbdomen = txt_paredabdominal.Text;
+                    //examfisregional.exaFisRegInicial_flexibilidadColumna = txt_flexibilidad.Text;
+                    //examfisregional.exaFisRegInicial_desviacionColumna = txt_desviacion.Text;
+                    //examfisregional.exaFisRegInicial_dolorColumna = txt_dolor.Text;
+                    //examfisregional.exaFisRegInicial_pelvisPelvis = txt_pelvis.Text;
+                    //examfisregional.exaFisRegInicial_genitalesPelvis = txt_genitales.Text;
+                    //examfisregional.exaFisRegInicial_vascularExtre = txt_vascular.Text;
+                    //examfisregional.exaFisRegInicial_miemSupeExtre = txt_miembrosuperiores.Text;
+                    //examfisregional.exaFisRegInicial_miemInfeExtre = txt_miembrosinferiores.Text;
+                    //examfisregional.exaFisRegInicial_fuerzaNeuro = txt_fuerza.Text;
+                    //examfisregional.exaFisRegInicial_sensibiNeuro = txt_sensibilidad.Text;
+                    //examfisregional.exaFisRegInicial_marchaNeuro = txt_marcha.Text;
+                    //examfisregional.exaFisRegInicial_refleNeuro = txt_reflejos.Text;
+                    //examfisregional.exaFisRegInicial_observa = txt_obervexamenfisicoregional.Text;
                     //examfisregional.Per_id = perso;
 
                     //L. Captura de Datos Tbl_ResExaGenEspRiesTrabajo
@@ -343,34 +411,35 @@ namespace SistemaECU911.Template.Views
                     //diagnostico.Diag_def = txt_def.Text;
                     //diagnostico.Per_id = perso;
 
-                    //N. Captura de Datos Tbl_AptitudMedica
+                    //N.Captura de Datos Tbl_AptitudMedica
                     //aptitudmedica.AptMed_apto = txt_apto.Text;
-                    //aptitudmedica.AptMed_Observ = txt_observacionaptitud.Text;
-                    //aptitudmedica.AptMed_Limit = txt_limitacionaptitud.Text;
+                    //aptitudmedica.AptMed_aptoObserva = txt_aptoobservacion.Text;
+                    //aptitudmedica.AptMed_aptoLimi = txt_aptolimitacion.Text;
+                    //aptitudmedica.AptMed_NoApto = txt_noapto.Text;
                     //aptitudmedica.Per_id = perso;
 
                     //O. Captura de Datos Recomendaciones y/o Tratamiento
-                    tratamientoinicial.trataInicial_descrip = txt_descripciontratamiento.Text;
+                    //tratamientoinicial.trataInicial_descrip = txt_descripciontratamiento.Text;
                     //tratamientoinicial.Per_id = perso;
 
                     //A . Método para guardar Datos Establecimeinto Empresa Usuarios
-                    CN_Inicial.guardarDatosEstablecimientoEmpresaUsuario(datosestempresausu);
+                    //CN_Inicial.guardarDatosEstablecimientoEmpresaUsuario(datosestempresausu);
                     //B . Método para guardar Datos Motivo Consulta
-                    CN_Inicial.guardarMotivoConsultaInicial(motconini);
+                    //CN_Inicial.guardarMotivoConsultaInicial(motconini);
                     //D. Método de guardar Datos Antec. Empleados Anteriores
                     //CN_Inicial.guardarEmpleAnteriores(emplant);
                     //E. Método de guardar Datos ANTECEDENTES FAMILIARES (DETALLAR EL PARENTESCO)
-                    CN_Inicial.guardarAntecedentesFamiliaresDetParentesco(AnteFamiDetParentesco);
+                    //CN_Inicial.guardarAntecedentesFamiliaresDetParentesco(AnteFamiDetParentesco);
                     //F. Método de guardar Datos Riesgo Puesto Trabajo Actual
                     //CN_Inicial.guardarRiesgoPuesTrabaActual(facriesgotractual);
                     //G. Método de guardar Datos Actividad Extra Laboral
                     //CN_Inicial.guardarActivextralaboral(actvextralaboral);
                     //H. Método de guardar Datos Enfermedad Actual
-                    CN_Inicial.guardarEnfermedadActual(enferactualinicial);
+                    //CN_Inicial.guardarEnfermedadActual(enferactualinicial);
                     //I. Método de guardar Datos REVISIÓN ACTUAL DE ÓRGANOS Y SISTEMAS
                     CN_Inicial.guardarReviActualOrganSistemas(revisionactualorganossistemas);
                     //K. Método de guardar Datos Examen Fisico Regional
-                    CN_Inicial.guardarExamenFisicoRegional(examfisregional);
+                    //CN_Inicial.guardarExamenFisicoRegional(examfisregional);
                     //L. Método de guardar Datos Resul. Exam. General y Espec de acuerdo al Riesgo y puesto de trabajo
                     //CN_Inicial.guardarExaGenEspeRiesyPues(exagenesperiespues);
                     //M. Método de guardar Datos Diagnostico
@@ -378,7 +447,7 @@ namespace SistemaECU911.Template.Views
                     //N. Método de guardar Datos Aptitud Medica
                     //CN_Inicial.guardarAptiMediTrabajo(aptitudmedica);
                     //O. Método de guardar Datos Recomendaciones y/o Tratamiento
-                    CN_Inicial.guardarRecomendacionesTratamiento(tratamientoinicial);
+                    //CN_Inicial.guardarRecomendacionesTratamiento(tratamientoinicial);
 
                     //Mensaje de confirmacion
                     ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos Guardados Exitosamente')", true);
@@ -517,16 +586,22 @@ namespace SistemaECU911.Template.Views
 
         protected void btn_guardar_Click(object sender, EventArgs e)
         {
-            guardar_modificar_datos(Convert.ToInt32(Request["cod"]), Convert.ToInt32(per.Per_id.ToString()), Convert.ToInt32(per.Per_id.ToString()), 
+            guardar_modificar_datos(Convert.ToInt32(Request["cod"]), Convert.ToInt32(per.Per_id.ToString()), 
+                Convert.ToInt32(per.Per_id.ToString()), Convert.ToInt32(per.Per_id.ToString()), Convert.ToInt32(per.Per_id.ToString()),
+                Convert.ToInt32(per.Per_id.ToString()), Convert.ToInt32(per.Per_id.ToString()), Convert.ToInt32(per.Per_id.ToString()),
                 Convert.ToInt32(per.Per_id.ToString()), Convert.ToInt32(per.Per_id.ToString()), Convert.ToInt32(per.Per_id.ToString()), 
-                Convert.ToInt32(per.Per_id.ToString()), Convert.ToInt32(per.Per_id.ToString()), Convert.ToInt32(per.Per_id.ToString()));
+                Convert.ToInt32(per.Per_id.ToString()), Convert.ToInt32(per.Per_id.ToString()), Convert.ToInt32(per.Per_id.ToString()), 
+                Convert.ToInt32(per.Per_id.ToString()), Convert.ToInt32(per.Per_id.ToString()));
         }
 
         protected void btn_modificar_Click(object sender, EventArgs e)
         {
-            guardar_modificar_datos(Convert.ToInt32(Request["cod"]), Convert.ToInt32(per.Per_id.ToString()), Convert.ToInt32(per.Per_id.ToString()),
+            guardar_modificar_datos(Convert.ToInt32(Request["cod"]), Convert.ToInt32(per.Per_id.ToString()),
                 Convert.ToInt32(per.Per_id.ToString()), Convert.ToInt32(per.Per_id.ToString()), Convert.ToInt32(per.Per_id.ToString()),
-                Convert.ToInt32(per.Per_id.ToString()), Convert.ToInt32(per.Per_id.ToString()), Convert.ToInt32(per.Per_id.ToString()));
+                Convert.ToInt32(per.Per_id.ToString()), Convert.ToInt32(per.Per_id.ToString()), Convert.ToInt32(per.Per_id.ToString()),
+                Convert.ToInt32(per.Per_id.ToString()), Convert.ToInt32(per.Per_id.ToString()), Convert.ToInt32(per.Per_id.ToString()),
+                Convert.ToInt32(per.Per_id.ToString()), Convert.ToInt32(per.Per_id.ToString()), Convert.ToInt32(per.Per_id.ToString()),
+                Convert.ToInt32(per.Per_id.ToString()), Convert.ToInt32(per.Per_id.ToString()));
         }
 
         protected void btn_cancelar_Click(object sender, EventArgs e)

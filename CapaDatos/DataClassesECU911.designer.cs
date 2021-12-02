@@ -384,7 +384,7 @@ namespace CapaDatos
     #endregion
 		
 		public DataClassesECU911DataContext() : 
-				base(global::CapaDatos.Properties.Settings.Default.SistemaECU911ConnectionString5, mappingSource)
+				base(global::CapaDatos.Properties.Settings.Default.SistemaECU911ConnectionString4, mappingSource)
 		{
 			OnCreated();
 		}
@@ -2650,9 +2650,11 @@ namespace CapaDatos
 		
 		private string _AntFamDetPare_descripcion;
 		
+		private System.Nullable<int> _Per_id;
+		
 		private string _AntFamDetPare_estado;
 		
-		private EntityRef<Tbl_Tipos_de_Enfermedades> _Tbl_Tipos_de_Enfermedades;
+		private EntityRef<Tbl_Personas> _Tbl_Personas;
 		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
@@ -2678,13 +2680,15 @@ namespace CapaDatos
     partial void OnAntFamDetPare_otrosChanged();
     partial void OnAntFamDetPare_descripcionChanging(string value);
     partial void OnAntFamDetPare_descripcionChanged();
+    partial void OnPer_idChanging(System.Nullable<int> value);
+    partial void OnPer_idChanged();
     partial void OnAntFamDetPare_estadoChanging(string value);
     partial void OnAntFamDetPare_estadoChanged();
     #endregion
 		
 		public Tbl_AntecedentesFamiliaresDetParentesco()
 		{
-			this._Tbl_Tipos_de_Enfermedades = default(EntityRef<Tbl_Tipos_de_Enfermedades>);
+			this._Tbl_Personas = default(EntityRef<Tbl_Personas>);
 			OnCreated();
 		}
 		
@@ -2719,10 +2723,6 @@ namespace CapaDatos
 			{
 				if ((this._AntFamDetPare_enfCarVas != value))
 				{
-					if (this._Tbl_Tipos_de_Enfermedades.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.OnAntFamDetPare_enfCarVasChanging(value);
 					this.SendPropertyChanging();
 					this._AntFamDetPare_enfCarVas = value;
@@ -2892,6 +2892,30 @@ namespace CapaDatos
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_id", DbType="Int")]
+		public System.Nullable<int> Per_id
+		{
+			get
+			{
+				return this._Per_id;
+			}
+			set
+			{
+				if ((this._Per_id != value))
+				{
+					if (this._Tbl_Personas.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnPer_idChanging(value);
+					this.SendPropertyChanging();
+					this._Per_id = value;
+					this.SendPropertyChanged("Per_id");
+					this.OnPer_idChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AntFamDetPare_estado", DbType="VarChar(1)")]
 		public string AntFamDetPare_estado
 		{
@@ -2912,36 +2936,36 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Tipos_de_Enfermedades_Tbl_AntecedentesFamiliaresDetParentesco", Storage="_Tbl_Tipos_de_Enfermedades", ThisKey="AntFamDetPare_enfCarVas", OtherKey="TiEnf_id", IsForeignKey=true)]
-		public Tbl_Tipos_de_Enfermedades Tbl_Tipos_de_Enfermedades
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_AntecedentesFamiliaresDetParentesco", Storage="_Tbl_Personas", ThisKey="Per_id", OtherKey="Per_id", IsForeignKey=true)]
+		public Tbl_Personas Tbl_Personas
 		{
 			get
 			{
-				return this._Tbl_Tipos_de_Enfermedades.Entity;
+				return this._Tbl_Personas.Entity;
 			}
 			set
 			{
-				Tbl_Tipos_de_Enfermedades previousValue = this._Tbl_Tipos_de_Enfermedades.Entity;
+				Tbl_Personas previousValue = this._Tbl_Personas.Entity;
 				if (((previousValue != value) 
-							|| (this._Tbl_Tipos_de_Enfermedades.HasLoadedOrAssignedValue == false)))
+							|| (this._Tbl_Personas.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._Tbl_Tipos_de_Enfermedades.Entity = null;
+						this._Tbl_Personas.Entity = null;
 						previousValue.Tbl_AntecedentesFamiliaresDetParentesco.Remove(this);
 					}
-					this._Tbl_Tipos_de_Enfermedades.Entity = value;
+					this._Tbl_Personas.Entity = value;
 					if ((value != null))
 					{
 						value.Tbl_AntecedentesFamiliaresDetParentesco.Add(this);
-						this._AntFamDetPare_enfCarVas = value.TiEnf_id;
+						this._Per_id = value.Per_id;
 					}
 					else
 					{
-						this._AntFamDetPare_enfCarVas = default(string);
+						this._Per_id = default(Nullable<int>);
 					}
-					this.SendPropertyChanged("Tbl_Tipos_de_Enfermedades");
+					this.SendPropertyChanged("Tbl_Personas");
 				}
 			}
 		}
@@ -4733,9 +4757,11 @@ namespace CapaDatos
 		
 		private int _AntFamDetPare_id;
 		
-		private string _TiEnf_id;
+		private int _TiEnf_id;
 		
 		private string _AntFamDetPare_descripcion;
+		
+		private System.Nullable<int> _Per_id;
 		
 		private System.Nullable<char> _AntFamDetPare__estado;
 		
@@ -4747,10 +4773,12 @@ namespace CapaDatos
     partial void OnCreated();
     partial void OnAntFamDetPare_idChanging(int value);
     partial void OnAntFamDetPare_idChanged();
-    partial void OnTiEnf_idChanging(string value);
+    partial void OnTiEnf_idChanging(int value);
     partial void OnTiEnf_idChanged();
     partial void OnAntFamDetPare_descripcionChanging(string value);
     partial void OnAntFamDetPare_descripcionChanged();
+    partial void OnPer_idChanging(System.Nullable<int> value);
+    partial void OnPer_idChanged();
     partial void OnAntFamDetPare__estadoChanging(System.Nullable<char> value);
     partial void OnAntFamDetPare__estadoChanged();
     #endregion
@@ -4781,8 +4809,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TiEnf_id", DbType="VarChar(1) NOT NULL", CanBeNull=false)]
-		public string TiEnf_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TiEnf_id", DbType="Int NOT NULL")]
+		public int TiEnf_id
 		{
 			get
 			{
@@ -4821,6 +4849,26 @@ namespace CapaDatos
 					this._AntFamDetPare_descripcion = value;
 					this.SendPropertyChanged("AntFamDetPare_descripcion");
 					this.OnAntFamDetPare_descripcionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_id", DbType="Int")]
+		public System.Nullable<int> Per_id
+		{
+			get
+			{
+				return this._Per_id;
+			}
+			set
+			{
+				if ((this._Per_id != value))
+				{
+					this.OnPer_idChanging(value);
+					this.SendPropertyChanging();
+					this._Per_id = value;
+					this.SendPropertyChanged("Per_id");
+					this.OnPer_idChanged();
 				}
 			}
 		}
@@ -4872,7 +4920,7 @@ namespace CapaDatos
 					}
 					else
 					{
-						this._TiEnf_id = default(string);
+						this._TiEnf_id = default(int);
 					}
 					this.SendPropertyChanged("Tbl_Tipos_de_Enfermedades");
 				}
@@ -4908,7 +4956,7 @@ namespace CapaDatos
 		
 		private int _AntFami_id;
 		
-		private string _TiEnf_id;
+		private System.Nullable<int> _TiEnf_id;
 		
 		private string _AntFami_antecendente;
 		
@@ -4928,7 +4976,7 @@ namespace CapaDatos
     partial void OnCreated();
     partial void OnAntFami_idChanging(int value);
     partial void OnAntFami_idChanged();
-    partial void OnTiEnf_idChanging(string value);
+    partial void OnTiEnf_idChanging(System.Nullable<int> value);
     partial void OnTiEnf_idChanged();
     partial void OnAntFami_antecendenteChanging(string value);
     partial void OnAntFami_antecendenteChanged();
@@ -4967,8 +5015,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TiEnf_id", DbType="VarChar(1)")]
-		public string TiEnf_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TiEnf_id", DbType="Int")]
+		public System.Nullable<int> TiEnf_id
 		{
 			get
 			{
@@ -5136,7 +5184,7 @@ namespace CapaDatos
 					}
 					else
 					{
-						this._TiEnf_id = default(string);
+						this._TiEnf_id = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("Tbl_Tipos_de_Enfermedades");
 				}
@@ -5172,7 +5220,7 @@ namespace CapaDatos
 		
 		private int _AntPer_id;
 		
-		private string _TiEnf_id;
+		private System.Nullable<int> _TiEnf_id;
 		
 		private string _AntPer_antecedente;
 		
@@ -5192,7 +5240,7 @@ namespace CapaDatos
     partial void OnCreated();
     partial void OnAntPer_idChanging(int value);
     partial void OnAntPer_idChanged();
-    partial void OnTiEnf_idChanging(string value);
+    partial void OnTiEnf_idChanging(System.Nullable<int> value);
     partial void OnTiEnf_idChanged();
     partial void OnAntPer_antecedenteChanging(string value);
     partial void OnAntPer_antecedenteChanged();
@@ -5231,8 +5279,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TiEnf_id", DbType="VarChar(1)")]
-		public string TiEnf_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TiEnf_id", DbType="Int")]
+		public System.Nullable<int> TiEnf_id
 		{
 			get
 			{
@@ -5400,7 +5448,7 @@ namespace CapaDatos
 					}
 					else
 					{
-						this._TiEnf_id = default(string);
+						this._TiEnf_id = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("Tbl_Tipos_de_Enfermedades");
 				}
@@ -7709,7 +7757,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_datEstable_groSanguineo", DbType="VarChar(20)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_datEstable_groSanguineo", DbType="VarChar(10)")]
 		public string datEstable_groSanguineo
 		{
 			get
@@ -14489,7 +14537,7 @@ namespace CapaDatos
 		
 		private string _exaFisRegInicial_corneaOjos;
 		
-		private string _exaFisRegInicial_mobilidadOjos;
+		private string _exaFisRegInicial_motilidadOjos;
 		
 		private string _exaFisRegInicial_cAudiExtreOido;
 		
@@ -14693,18 +14741,18 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_exaFisRegInicial_mobilidadOjos", DbType="VarChar(1)")]
-		public string exaFisRegInicial_mobilidadOjos
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_exaFisRegInicial_motilidadOjos", DbType="VarChar(1)")]
+		public string exaFisRegInicial_motilidadOjos
 		{
 			get
 			{
-				return this._exaFisRegInicial_mobilidadOjos;
+				return this._exaFisRegInicial_motilidadOjos;
 			}
 			set
 			{
-				if ((this._exaFisRegInicial_mobilidadOjos != value))
+				if ((this._exaFisRegInicial_motilidadOjos != value))
 				{
-					this._exaFisRegInicial_mobilidadOjos = value;
+					this._exaFisRegInicial_motilidadOjos = value;
 				}
 			}
 		}
@@ -23910,6 +23958,8 @@ namespace CapaDatos
 		
 		private EntitySet<Tbl_AntecedentesEmplAnteriores> _Tbl_AntecedentesEmplAnteriores;
 		
+		private EntitySet<Tbl_AntecedentesFamiliaresDetParentesco> _Tbl_AntecedentesFamiliaresDetParentesco;
+		
 		private EntitySet<Tbl_AnteFamiliares> _Tbl_AnteFamiliares;
 		
 		private EntitySet<Tbl_AntePersonales> _Tbl_AntePersonales;
@@ -23953,6 +24003,8 @@ namespace CapaDatos
 		private EntitySet<Tbl_RecoTratamiento> _Tbl_RecoTratamiento;
 		
 		private EntitySet<Tbl_ResExaGenEspRiesTrabajo> _Tbl_ResExaGenEspRiesTrabajo;
+		
+		private EntitySet<Tbl_RevisionActualOrganosSistemas> _Tbl_RevisionActualOrganosSistemas;
 		
 		private EntitySet<Tbl_TratamientoInicial> _Tbl_TratamientoInicial;
 		
@@ -24085,6 +24137,7 @@ namespace CapaDatos
 			this._Tbl_AccidentesTrabajoDesc = new EntitySet<Tbl_AccidentesTrabajoDesc>(new Action<Tbl_AccidentesTrabajoDesc>(this.attach_Tbl_AccidentesTrabajoDesc), new Action<Tbl_AccidentesTrabajoDesc>(this.detach_Tbl_AccidentesTrabajoDesc));
 			this._Tbl_ActividadesExtraLaborales = new EntitySet<Tbl_ActividadesExtraLaborales>(new Action<Tbl_ActividadesExtraLaborales>(this.attach_Tbl_ActividadesExtraLaborales), new Action<Tbl_ActividadesExtraLaborales>(this.detach_Tbl_ActividadesExtraLaborales));
 			this._Tbl_AntecedentesEmplAnteriores = new EntitySet<Tbl_AntecedentesEmplAnteriores>(new Action<Tbl_AntecedentesEmplAnteriores>(this.attach_Tbl_AntecedentesEmplAnteriores), new Action<Tbl_AntecedentesEmplAnteriores>(this.detach_Tbl_AntecedentesEmplAnteriores));
+			this._Tbl_AntecedentesFamiliaresDetParentesco = new EntitySet<Tbl_AntecedentesFamiliaresDetParentesco>(new Action<Tbl_AntecedentesFamiliaresDetParentesco>(this.attach_Tbl_AntecedentesFamiliaresDetParentesco), new Action<Tbl_AntecedentesFamiliaresDetParentesco>(this.detach_Tbl_AntecedentesFamiliaresDetParentesco));
 			this._Tbl_AnteFamiliares = new EntitySet<Tbl_AnteFamiliares>(new Action<Tbl_AnteFamiliares>(this.attach_Tbl_AnteFamiliares), new Action<Tbl_AnteFamiliares>(this.detach_Tbl_AnteFamiliares));
 			this._Tbl_AntePersonales = new EntitySet<Tbl_AntePersonales>(new Action<Tbl_AntePersonales>(this.attach_Tbl_AntePersonales), new Action<Tbl_AntePersonales>(this.detach_Tbl_AntePersonales));
 			this._Tbl_AptitudMedica = new EntitySet<Tbl_AptitudMedica>(new Action<Tbl_AptitudMedica>(this.attach_Tbl_AptitudMedica), new Action<Tbl_AptitudMedica>(this.detach_Tbl_AptitudMedica));
@@ -24107,6 +24160,7 @@ namespace CapaDatos
 			this._Tbl_Prescipciones = new EntitySet<Tbl_Prescipciones>(new Action<Tbl_Prescipciones>(this.attach_Tbl_Prescipciones), new Action<Tbl_Prescipciones>(this.detach_Tbl_Prescipciones));
 			this._Tbl_RecoTratamiento = new EntitySet<Tbl_RecoTratamiento>(new Action<Tbl_RecoTratamiento>(this.attach_Tbl_RecoTratamiento), new Action<Tbl_RecoTratamiento>(this.detach_Tbl_RecoTratamiento));
 			this._Tbl_ResExaGenEspRiesTrabajo = new EntitySet<Tbl_ResExaGenEspRiesTrabajo>(new Action<Tbl_ResExaGenEspRiesTrabajo>(this.attach_Tbl_ResExaGenEspRiesTrabajo), new Action<Tbl_ResExaGenEspRiesTrabajo>(this.detach_Tbl_ResExaGenEspRiesTrabajo));
+			this._Tbl_RevisionActualOrganosSistemas = new EntitySet<Tbl_RevisionActualOrganosSistemas>(new Action<Tbl_RevisionActualOrganosSistemas>(this.attach_Tbl_RevisionActualOrganosSistemas), new Action<Tbl_RevisionActualOrganosSistemas>(this.detach_Tbl_RevisionActualOrganosSistemas));
 			this._Tbl_TratamientoInicial = new EntitySet<Tbl_TratamientoInicial>(new Action<Tbl_TratamientoInicial>(this.attach_Tbl_TratamientoInicial), new Action<Tbl_TratamientoInicial>(this.detach_Tbl_TratamientoInicial));
 			this._Tbl_CargoInstitucional = default(EntityRef<Tbl_CargoInstitucional>);
 			this._Tbl_CorreoIntitucional = default(EntityRef<Tbl_CorreoIntitucional>);
@@ -25105,6 +25159,19 @@ namespace CapaDatos
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_AntecedentesFamiliaresDetParentesco", Storage="_Tbl_AntecedentesFamiliaresDetParentesco", ThisKey="Per_id", OtherKey="Per_id")]
+		public EntitySet<Tbl_AntecedentesFamiliaresDetParentesco> Tbl_AntecedentesFamiliaresDetParentesco
+		{
+			get
+			{
+				return this._Tbl_AntecedentesFamiliaresDetParentesco;
+			}
+			set
+			{
+				this._Tbl_AntecedentesFamiliaresDetParentesco.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_AnteFamiliares", Storage="_Tbl_AnteFamiliares", ThisKey="Per_id", OtherKey="Per_id")]
 		public EntitySet<Tbl_AnteFamiliares> Tbl_AnteFamiliares
 		{
@@ -25388,6 +25455,19 @@ namespace CapaDatos
 			set
 			{
 				this._Tbl_ResExaGenEspRiesTrabajo.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_RevisionActualOrganosSistemas", Storage="_Tbl_RevisionActualOrganosSistemas", ThisKey="Per_id", OtherKey="Per_id")]
+		public EntitySet<Tbl_RevisionActualOrganosSistemas> Tbl_RevisionActualOrganosSistemas
+		{
+			get
+			{
+				return this._Tbl_RevisionActualOrganosSistemas;
+			}
+			set
+			{
+				this._Tbl_RevisionActualOrganosSistemas.Assign(value);
 			}
 		}
 		
@@ -25970,6 +26050,18 @@ namespace CapaDatos
 			entity.Tbl_Personas = null;
 		}
 		
+		private void attach_Tbl_AntecedentesFamiliaresDetParentesco(Tbl_AntecedentesFamiliaresDetParentesco entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Personas = this;
+		}
+		
+		private void detach_Tbl_AntecedentesFamiliaresDetParentesco(Tbl_AntecedentesFamiliaresDetParentesco entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Personas = null;
+		}
+		
 		private void attach_Tbl_AnteFamiliares(Tbl_AnteFamiliares entity)
 		{
 			this.SendPropertyChanging();
@@ -26229,6 +26321,18 @@ namespace CapaDatos
 		}
 		
 		private void detach_Tbl_ResExaGenEspRiesTrabajo(Tbl_ResExaGenEspRiesTrabajo entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Personas = null;
+		}
+		
+		private void attach_Tbl_RevisionActualOrganosSistemas(Tbl_RevisionActualOrganosSistemas entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Personas = this;
+		}
+		
+		private void detach_Tbl_RevisionActualOrganosSistemas(Tbl_RevisionActualOrganosSistemas entity)
 		{
 			this.SendPropertyChanging();
 			entity.Tbl_Personas = null;
@@ -29322,9 +29426,11 @@ namespace CapaDatos
 		
 		private string _RevActOrgSis_descrip;
 		
+		private System.Nullable<int> _Per_id;
+		
 		private string _RevActOrgSis_estado;
 		
-		private EntityRef<Tbl_Tipos_de_Organos_y_Sistemas> _Tbl_Tipos_de_Organos_y_Sistemas;
+		private EntityRef<Tbl_Personas> _Tbl_Personas;
 		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
@@ -29354,13 +29460,15 @@ namespace CapaDatos
     partial void OnRevActOrgSis_nerviosoChanged();
     partial void OnRevActOrgSis_descripChanging(string value);
     partial void OnRevActOrgSis_descripChanged();
+    partial void OnPer_idChanging(System.Nullable<int> value);
+    partial void OnPer_idChanged();
     partial void OnRevActOrgSis_estadoChanging(string value);
     partial void OnRevActOrgSis_estadoChanged();
     #endregion
 		
 		public Tbl_RevisionActualOrganosSistemas()
 		{
-			this._Tbl_Tipos_de_Organos_y_Sistemas = default(EntityRef<Tbl_Tipos_de_Organos_y_Sistemas>);
+			this._Tbl_Personas = default(EntityRef<Tbl_Personas>);
 			OnCreated();
 		}
 		
@@ -29395,10 +29503,6 @@ namespace CapaDatos
 			{
 				if ((this._RevActOrgSis_pielAnexos != value))
 				{
-					if (this._Tbl_Tipos_de_Organos_y_Sistemas.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.OnRevActOrgSis_pielAnexosChanging(value);
 					this.SendPropertyChanging();
 					this._RevActOrgSis_pielAnexos = value;
@@ -29608,6 +29712,30 @@ namespace CapaDatos
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_id", DbType="Int")]
+		public System.Nullable<int> Per_id
+		{
+			get
+			{
+				return this._Per_id;
+			}
+			set
+			{
+				if ((this._Per_id != value))
+				{
+					if (this._Tbl_Personas.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnPer_idChanging(value);
+					this.SendPropertyChanging();
+					this._Per_id = value;
+					this.SendPropertyChanged("Per_id");
+					this.OnPer_idChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RevActOrgSis_estado", DbType="VarChar(1)")]
 		public string RevActOrgSis_estado
 		{
@@ -29628,36 +29756,36 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Tipos_de_Organos_y_Sistemas_Tbl_RevisionActualOrganosSistemas", Storage="_Tbl_Tipos_de_Organos_y_Sistemas", ThisKey="RevActOrgSis_pielAnexos", OtherKey="TiOrgSis_id", IsForeignKey=true)]
-		public Tbl_Tipos_de_Organos_y_Sistemas Tbl_Tipos_de_Organos_y_Sistemas
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_RevisionActualOrganosSistemas", Storage="_Tbl_Personas", ThisKey="Per_id", OtherKey="Per_id", IsForeignKey=true)]
+		public Tbl_Personas Tbl_Personas
 		{
 			get
 			{
-				return this._Tbl_Tipos_de_Organos_y_Sistemas.Entity;
+				return this._Tbl_Personas.Entity;
 			}
 			set
 			{
-				Tbl_Tipos_de_Organos_y_Sistemas previousValue = this._Tbl_Tipos_de_Organos_y_Sistemas.Entity;
+				Tbl_Personas previousValue = this._Tbl_Personas.Entity;
 				if (((previousValue != value) 
-							|| (this._Tbl_Tipos_de_Organos_y_Sistemas.HasLoadedOrAssignedValue == false)))
+							|| (this._Tbl_Personas.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._Tbl_Tipos_de_Organos_y_Sistemas.Entity = null;
+						this._Tbl_Personas.Entity = null;
 						previousValue.Tbl_RevisionActualOrganosSistemas.Remove(this);
 					}
-					this._Tbl_Tipos_de_Organos_y_Sistemas.Entity = value;
+					this._Tbl_Personas.Entity = value;
 					if ((value != null))
 					{
 						value.Tbl_RevisionActualOrganosSistemas.Add(this);
-						this._RevActOrgSis_pielAnexos = value.TiOrgSis_id;
+						this._Per_id = value.Per_id;
 					}
 					else
 					{
-						this._RevActOrgSis_pielAnexos = default(string);
+						this._Per_id = default(Nullable<int>);
 					}
-					this.SendPropertyChanged("Tbl_Tipos_de_Organos_y_Sistemas");
+					this.SendPropertyChanged("Tbl_Personas");
 				}
 			}
 		}
@@ -30639,13 +30767,11 @@ namespace CapaDatos
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private string _TiEnf_id;
+		private int _TiEnf_id;
 		
 		private string _TiEnf_nombre;
 		
 		private string _TiEnf_estado;
-		
-		private EntitySet<Tbl_AntecedentesFamiliaresDetParentesco> _Tbl_AntecedentesFamiliaresDetParentesco;
 		
 		private EntitySet<Tbl_AntecendentesFamiliaresDetParentesco> _Tbl_AntecendentesFamiliaresDetParentesco;
 		
@@ -30657,7 +30783,7 @@ namespace CapaDatos
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnTiEnf_idChanging(string value);
+    partial void OnTiEnf_idChanging(int value);
     partial void OnTiEnf_idChanged();
     partial void OnTiEnf_nombreChanging(string value);
     partial void OnTiEnf_nombreChanged();
@@ -30667,15 +30793,14 @@ namespace CapaDatos
 		
 		public Tbl_Tipos_de_Enfermedades()
 		{
-			this._Tbl_AntecedentesFamiliaresDetParentesco = new EntitySet<Tbl_AntecedentesFamiliaresDetParentesco>(new Action<Tbl_AntecedentesFamiliaresDetParentesco>(this.attach_Tbl_AntecedentesFamiliaresDetParentesco), new Action<Tbl_AntecedentesFamiliaresDetParentesco>(this.detach_Tbl_AntecedentesFamiliaresDetParentesco));
 			this._Tbl_AntecendentesFamiliaresDetParentesco = new EntitySet<Tbl_AntecendentesFamiliaresDetParentesco>(new Action<Tbl_AntecendentesFamiliaresDetParentesco>(this.attach_Tbl_AntecendentesFamiliaresDetParentesco), new Action<Tbl_AntecendentesFamiliaresDetParentesco>(this.detach_Tbl_AntecendentesFamiliaresDetParentesco));
 			this._Tbl_AnteFamiliares = new EntitySet<Tbl_AnteFamiliares>(new Action<Tbl_AnteFamiliares>(this.attach_Tbl_AnteFamiliares), new Action<Tbl_AnteFamiliares>(this.detach_Tbl_AnteFamiliares));
 			this._Tbl_AntePersonales = new EntitySet<Tbl_AntePersonales>(new Action<Tbl_AntePersonales>(this.attach_Tbl_AntePersonales), new Action<Tbl_AntePersonales>(this.detach_Tbl_AntePersonales));
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TiEnf_id", DbType="VarChar(1) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string TiEnf_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TiEnf_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int TiEnf_id
 		{
 			get
 			{
@@ -30694,7 +30819,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TiEnf_nombre", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TiEnf_nombre", DbType="VarChar(50)")]
 		public string TiEnf_nombre
 		{
 			get
@@ -30731,19 +30856,6 @@ namespace CapaDatos
 					this.SendPropertyChanged("TiEnf_estado");
 					this.OnTiEnf_estadoChanged();
 				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Tipos_de_Enfermedades_Tbl_AntecedentesFamiliaresDetParentesco", Storage="_Tbl_AntecedentesFamiliaresDetParentesco", ThisKey="TiEnf_id", OtherKey="AntFamDetPare_enfCarVas")]
-		public EntitySet<Tbl_AntecedentesFamiliaresDetParentesco> Tbl_AntecedentesFamiliaresDetParentesco
-		{
-			get
-			{
-				return this._Tbl_AntecedentesFamiliaresDetParentesco;
-			}
-			set
-			{
-				this._Tbl_AntecedentesFamiliaresDetParentesco.Assign(value);
 			}
 		}
 		
@@ -30806,18 +30918,6 @@ namespace CapaDatos
 			}
 		}
 		
-		private void attach_Tbl_AntecedentesFamiliaresDetParentesco(Tbl_AntecedentesFamiliaresDetParentesco entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tbl_Tipos_de_Enfermedades = this;
-		}
-		
-		private void detach_Tbl_AntecedentesFamiliaresDetParentesco(Tbl_AntecedentesFamiliaresDetParentesco entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tbl_Tipos_de_Enfermedades = null;
-		}
-		
 		private void attach_Tbl_AntecendentesFamiliaresDetParentesco(Tbl_AntecendentesFamiliaresDetParentesco entity)
 		{
 			this.SendPropertyChanging();
@@ -30867,8 +30967,6 @@ namespace CapaDatos
 		
 		private string _TiOrgSis_estado;
 		
-		private EntitySet<Tbl_RevisionActualOrganosSistemas> _Tbl_RevisionActualOrganosSistemas;
-		
 		private EntitySet<Tbl_RevisionOrganosSistemasPrincipal> _Tbl_RevisionOrganosSistemasPrincipal;
 		
     #region Definiciones de métodos de extensibilidad
@@ -30885,7 +30983,6 @@ namespace CapaDatos
 		
 		public Tbl_Tipos_de_Organos_y_Sistemas()
 		{
-			this._Tbl_RevisionActualOrganosSistemas = new EntitySet<Tbl_RevisionActualOrganosSistemas>(new Action<Tbl_RevisionActualOrganosSistemas>(this.attach_Tbl_RevisionActualOrganosSistemas), new Action<Tbl_RevisionActualOrganosSistemas>(this.detach_Tbl_RevisionActualOrganosSistemas));
 			this._Tbl_RevisionOrganosSistemasPrincipal = new EntitySet<Tbl_RevisionOrganosSistemasPrincipal>(new Action<Tbl_RevisionOrganosSistemasPrincipal>(this.attach_Tbl_RevisionOrganosSistemasPrincipal), new Action<Tbl_RevisionOrganosSistemasPrincipal>(this.detach_Tbl_RevisionOrganosSistemasPrincipal));
 			OnCreated();
 		}
@@ -30950,19 +31047,6 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Tipos_de_Organos_y_Sistemas_Tbl_RevisionActualOrganosSistemas", Storage="_Tbl_RevisionActualOrganosSistemas", ThisKey="TiOrgSis_id", OtherKey="RevActOrgSis_pielAnexos")]
-		public EntitySet<Tbl_RevisionActualOrganosSistemas> Tbl_RevisionActualOrganosSistemas
-		{
-			get
-			{
-				return this._Tbl_RevisionActualOrganosSistemas;
-			}
-			set
-			{
-				this._Tbl_RevisionActualOrganosSistemas.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Tipos_de_Organos_y_Sistemas_Tbl_RevisionOrganosSistemasPrincipal", Storage="_Tbl_RevisionOrganosSistemasPrincipal", ThisKey="TiOrgSis_id", OtherKey="TiOrgSis_id")]
 		public EntitySet<Tbl_RevisionOrganosSistemasPrincipal> Tbl_RevisionOrganosSistemasPrincipal
 		{
@@ -30994,18 +31078,6 @@ namespace CapaDatos
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-		
-		private void attach_Tbl_RevisionActualOrganosSistemas(Tbl_RevisionActualOrganosSistemas entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tbl_Tipos_de_Organos_y_Sistemas = this;
-		}
-		
-		private void detach_Tbl_RevisionActualOrganosSistemas(Tbl_RevisionActualOrganosSistemas entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tbl_Tipos_de_Organos_y_Sistemas = null;
 		}
 		
 		private void attach_Tbl_RevisionOrganosSistemasPrincipal(Tbl_RevisionOrganosSistemasPrincipal entity)

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SistemaECU911" Class="DataClassesECU911DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=ZOCAPO\SQLEXPRESS;Initial Catalog=SistemaECU911;Integrated Security=True" SettingsObjectName="CapaDatos.Properties.Settings" SettingsPropertyName="SistemaECU911ConnectionString5" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=SistemaECU911;Integrated Security=True" SettingsObjectName="CapaDatos.Properties.Settings" SettingsPropertyName="SistemaECU911ConnectionString4" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Tbl_AccidentesTrabajoDesc" Member="Tbl_AccidentesTrabajoDesc">
     <Type Name="Tbl_AccidentesTrabajoDesc">
       <Column Name="AntTrabDesc_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -72,8 +72,9 @@
       <Column Name="AntFamDetPare_discapa" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
       <Column Name="AntFamDetPare_otros" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="AntFamDetPare_descripcion" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Per_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="AntFamDetPare_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-      <Association Name="Tbl_Tipos_de_Enfermedades_Tbl_AntecedentesFamiliaresDetParentesco" Member="Tbl_Tipos_de_Enfermedades" ThisKey="AntFamDetPare_enfCarVas" OtherKey="TiEnf_id" Type="Tbl_Tipos_de_Enfermedades" IsForeignKey="true" />
+      <Association Name="Tbl_Personas_Tbl_AntecedentesFamiliaresDetParentesco" Member="Tbl_Personas" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Personas" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Tbl_AntecedentesGinObste" Member="Tbl_AntecedentesGinObste">
@@ -149,8 +150,9 @@
   <Table Name="dbo.Tbl_AntecendentesFamiliaresDetParentesco" Member="Tbl_AntecendentesFamiliaresDetParentesco">
     <Type Name="Tbl_AntecendentesFamiliaresDetParentesco">
       <Column Name="AntFamDetPare_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="TiEnf_id" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="TiEnf_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="AntFamDetPare_descripcion" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Per_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="AntFamDetPare__estado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
       <Association Name="Tbl_Tipos_de_Enfermedades_Tbl_AntecendentesFamiliaresDetParentesco" Member="Tbl_Tipos_de_Enfermedades" ThisKey="TiEnf_id" OtherKey="TiEnf_id" Type="Tbl_Tipos_de_Enfermedades" IsForeignKey="true" />
     </Type>
@@ -158,7 +160,7 @@
   <Table Name="dbo.Tbl_AnteFamiliares" Member="Tbl_AnteFamiliares">
     <Type Name="Tbl_AnteFamiliares">
       <Column Name="AntFami_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="TiEnf_id" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="TiEnf_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="AntFami_antecendente" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
       <Column Name="AntFami_descripcion" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
       <Column Name="Per_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
@@ -170,7 +172,7 @@
   <Table Name="dbo.Tbl_AntePersonales" Member="Tbl_AntePersonales">
     <Type Name="Tbl_AntePersonales">
       <Column Name="AntPer_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="TiEnf_id" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="TiEnf_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="AntPer_antecedente" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
       <Column Name="AntPer_descripcion" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
       <Column Name="Per_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
@@ -292,7 +294,7 @@
       <Column Name="datEstable_testJehovaRel" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
       <Column Name="datEstable_mormonaRel" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
       <Column Name="datEstable_otrasRel" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-      <Column Name="datEstable_groSanguineo" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="datEstable_groSanguineo" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Column Name="datEstable_lateralidad" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="datEstable__lesbianaOriSex" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
       <Column Name="datEstable_gayOriSex" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
@@ -646,7 +648,7 @@
       <Column Name="exaFisRegInicial_conjuntuvasOjos" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
       <Column Name="exaFisRegInicial_pupilasOjos" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
       <Column Name="exaFisRegInicial_corneaOjos" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-      <Column Name="exaFisRegInicial_mobilidadOjos" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="exaFisRegInicial_motilidadOjos" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
       <Column Name="exaFisRegInicial_cAudiExtreOido" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
       <Column Name="exaFisRegInicial_pabellonOido" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
       <Column Name="exaFisRegInicial_timpanosOido" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
@@ -1145,6 +1147,7 @@
       <Association Name="Tbl_Personas_Tbl_AccidentesTrabajoDesc" Member="Tbl_AccidentesTrabajoDesc" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_AccidentesTrabajoDesc" />
       <Association Name="Tbl_Personas_Tbl_ActividadesExtraLaborales" Member="Tbl_ActividadesExtraLaborales" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_ActividadesExtraLaborales" />
       <Association Name="Tbl_Personas_Tbl_AntecedentesEmplAnteriores" Member="Tbl_AntecedentesEmplAnteriores" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_AntecedentesEmplAnteriores" />
+      <Association Name="Tbl_Personas_Tbl_AntecedentesFamiliaresDetParentesco" Member="Tbl_AntecedentesFamiliaresDetParentesco" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_AntecedentesFamiliaresDetParentesco" />
       <Association Name="Tbl_Personas_Tbl_AnteFamiliares" Member="Tbl_AnteFamiliares" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_AnteFamiliares" />
       <Association Name="Tbl_Personas_Tbl_AntePersonales" Member="Tbl_AntePersonales" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_AntePersonales" />
       <Association Name="Tbl_Personas_Tbl_AptitudMedica" Member="Tbl_AptitudMedica" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_AptitudMedica" />
@@ -1168,6 +1171,7 @@
       <Association Name="Tbl_Personas_Tbl_Prescipciones" Member="Tbl_Prescipciones" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Prescipciones" />
       <Association Name="Tbl_Personas_Tbl_RecoTratamiento" Member="Tbl_RecoTratamiento" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_RecoTratamiento" />
       <Association Name="Tbl_Personas_Tbl_ResExaGenEspRiesTrabajo" Member="Tbl_ResExaGenEspRiesTrabajo" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_ResExaGenEspRiesTrabajo" />
+      <Association Name="Tbl_Personas_Tbl_RevisionActualOrganosSistemas" Member="Tbl_RevisionActualOrganosSistemas" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_RevisionActualOrganosSistemas" />
       <Association Name="Tbl_Personas_Tbl_TratamientoInicial" Member="Tbl_TratamientoInicial" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_TratamientoInicial" />
       <Association Name="Tbl_CargoInstitucional_Tbl_Personas" Member="Tbl_CargoInstitucional" ThisKey="CargoInsti_id" OtherKey="CargoIntsi_id" Type="Tbl_CargoInstitucional" IsForeignKey="true" />
       <Association Name="Tbl_CorreoIntitucional_Tbl_Personas" Member="Tbl_CorreoIntitucional" ThisKey="CorreoInts_id" OtherKey="CorreoInts_id" Type="Tbl_CorreoIntitucional" IsForeignKey="true" />
@@ -1342,8 +1346,9 @@
       <Column Name="RevActOrgSis_hemoLimfa" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
       <Column Name="RevActOrgSis_nervioso" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
       <Column Name="RevActOrgSis_descrip" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Per_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="RevActOrgSis_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-      <Association Name="Tbl_Tipos_de_Organos_y_Sistemas_Tbl_RevisionActualOrganosSistemas" Member="Tbl_Tipos_de_Organos_y_Sistemas" ThisKey="RevActOrgSis_pielAnexos" OtherKey="TiOrgSis_id" Type="Tbl_Tipos_de_Organos_y_Sistemas" IsForeignKey="true" />
+      <Association Name="Tbl_Personas_Tbl_RevisionActualOrganosSistemas" Member="Tbl_Personas" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Personas" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Tbl_RevisionOrganosSistemasPrincipal" Member="Tbl_RevisionOrganosSistemasPrincipal">
@@ -1400,10 +1405,9 @@
   </Table>
   <Table Name="dbo.Tbl_Tipos_de_Enfermedades" Member="Tbl_Tipos_de_Enfermedades">
     <Type Name="Tbl_Tipos_de_Enfermedades">
-      <Column Name="TiEnf_id" Type="System.String" DbType="VarChar(1) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="TiEnf_nombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TiEnf_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TiEnf_nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="TiEnf_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-      <Association Name="Tbl_Tipos_de_Enfermedades_Tbl_AntecedentesFamiliaresDetParentesco" Member="Tbl_AntecedentesFamiliaresDetParentesco" ThisKey="TiEnf_id" OtherKey="AntFamDetPare_enfCarVas" Type="Tbl_AntecedentesFamiliaresDetParentesco" />
       <Association Name="Tbl_Tipos_de_Enfermedades_Tbl_AntecendentesFamiliaresDetParentesco" Member="Tbl_AntecendentesFamiliaresDetParentesco" ThisKey="TiEnf_id" OtherKey="TiEnf_id" Type="Tbl_AntecendentesFamiliaresDetParentesco" />
       <Association Name="Tbl_Tipos_de_Enfermedades_Tbl_AnteFamiliares" Member="Tbl_AnteFamiliares" ThisKey="TiEnf_id" OtherKey="TiEnf_id" Type="Tbl_AnteFamiliares" />
       <Association Name="Tbl_Tipos_de_Enfermedades_Tbl_AntePersonales" Member="Tbl_AntePersonales" ThisKey="TiEnf_id" OtherKey="TiEnf_id" Type="Tbl_AntePersonales" />
@@ -1414,7 +1418,6 @@
       <Column Name="TiOrgSis_id" Type="System.String" DbType="VarChar(1) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="TiOrgSis_nombre" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="TiOrgSis_estado" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Association Name="Tbl_Tipos_de_Organos_y_Sistemas_Tbl_RevisionActualOrganosSistemas" Member="Tbl_RevisionActualOrganosSistemas" ThisKey="TiOrgSis_id" OtherKey="RevActOrgSis_pielAnexos" Type="Tbl_RevisionActualOrganosSistemas" />
       <Association Name="Tbl_Tipos_de_Organos_y_Sistemas_Tbl_RevisionOrganosSistemasPrincipal" Member="Tbl_RevisionOrganosSistemasPrincipal" ThisKey="TiOrgSis_id" OtherKey="TiOrgSis_id" Type="Tbl_RevisionOrganosSistemasPrincipal" />
     </Type>
   </Table>

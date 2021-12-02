@@ -185,7 +185,7 @@
                                         <asp:TextBox runat="server" ID="txt_heterosexual" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center" placeholder="x"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell>
-                                        <asp:TextBox runat="server" ID="txt_nosabe1" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
+                                        <asp:TextBox runat="server" ID="txt_noRespondeOriSex" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell>
                                         <asp:TextBox runat="server" ID="txt_femenino" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
@@ -200,7 +200,7 @@
                                         <asp:TextBox runat="server" ID="txt_transmasculino" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell>
-                                        <asp:TextBox runat="server" ID="txt_nosabe2" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
+                                        <asp:TextBox runat="server" ID="txt_noRespondeIdeGen" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell>
                                         <asp:TextBox runat="server" ID="txt_sidiscapacidad" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
@@ -1463,7 +1463,7 @@
                             <asp:TableRow>
                                 <asp:TableCell CssClass="REI-CONTENT">e. Motilidad</asp:TableCell>
                                 <asp:TableCell CssClass="REI-BOX">
-                                     <asp:TextBox runat="server" ID="txt_motalidad" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
+                                     <asp:TextBox runat="server" ID="txt_motilidad" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell CssClass="REI-CONTENT">e. Dentadura</asp:TableCell>
                                 <asp:TableCell CssClass="REI-BOX">

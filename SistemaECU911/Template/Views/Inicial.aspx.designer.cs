@@ -339,13 +339,13 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_heterosexual;
 
         /// <summary>
-        /// Control txt_nosabe1.
+        /// Control txt_noRespondeOriSex.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_nosabe1;
+        protected global::System.Web.UI.WebControls.TextBox txt_noRespondeOriSex;
 
         /// <summary>
         /// Control txt_femenino.
@@ -384,13 +384,13 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_transmasculino;
 
         /// <summary>
-        /// Control txt_nosabe2.
+        /// Control txt_noRespondeIdeGen.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_nosabe2;
+        protected global::System.Web.UI.WebControls.TextBox txt_noRespondeIdeGen;
 
         /// <summary>
         /// Control txt_sidiscapacidad.
@@ -2454,13 +2454,13 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_sensibilidad;
 
         /// <summary>
-        /// Control txt_motalidad.
+        /// Control txt_motilidad.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_motalidad;
+        protected global::System.Web.UI.WebControls.TextBox txt_motilidad;
 
         /// <summary>
         /// Control txt_dentadura.
