@@ -21,8 +21,7 @@
                         <div class="container">
                             <div class="row justify-content-center">
                                 <div class="col-auto">
-
-                                    <asp:GridView ID="grvPacientesInicial" OnRowCommand="grvPacientesInicial_RowCommand" AutoGenerateColumns="false" PageSize="5" AllowPaging="true" AllowCustomPaging="true" OnPageIndexChanging="grvPacientesInicial_PageIndexChanging" Width="100%" CssClass="table table-hover text-center table-responsive" GridLines="None" runat="server" Style="margin-right: 0px">
+                                    <asp:GridView ID="grvPacientesInicial" OnRowCommand="grvPacientesInicial_RowCommand" AutoGenerateColumns="false" Width="100%" CssClass="table table-hover text-center table-responsive" GridLines="None" runat="server" Style="margin-right: 0px">
                                         <Columns>
                                             <asp:TemplateField HeaderText="ID">
                                                 <ItemTemplate>
@@ -51,50 +50,8 @@
                                                 <HeaderStyle Width="17px" />
                                                 <ItemStyle Width="17px" />
                                             </asp:TemplateField>
-                                        </Columns>
-                                        <PagerSettings Mode="NumericFirstLast" PageButtonCount="8" FirstPageText="Primero" LastPageText="Ultimo" />
-                                        <PagerStyle CssClass="pagination-ys" HorizontalAlign="Center" />
+                                        </Columns>                                        
                                     </asp:GridView>
-
-
-                                    <%--<asp:GridView ID="grvPacientes" OnRowCommand="grvPacientes_RowCommand" AutoGenerateColumns="false" PageSize="5" AllowPaging="true" AllowCustomPaging="true"  OnPageIndexChanging="grvPacientes_PageIndexChanging" Width="100%" CssClass="table table-hover text-center table-responsive" GridLines="None" runat="server" Style="margin-right: 0px">
-                                        <Columns>
-                                            <asp:TemplateField HeaderText="Historia Clinica / Cedula">
-                                                <ItemTemplate>
-                                                    <asp:Label ID="Per_CedulaHisCli" runat="server" Text='<%#Eval("Per_Cedula")%>'></asp:Label>
-                                                </ItemTemplate>
-                                            </asp:TemplateField>
-                                            <asp:TemplateField HeaderText="Nombre">
-                                                <ItemTemplate>
-                                                    <asp:Label ID="Per_Nombre" runat="server" Text='<%#Eval("Per_priNombre")%>'></asp:Label>
-                                                </ItemTemplate>
-                                            </asp:TemplateField>
-                                            <asp:TemplateField HeaderText="Apellido">
-                                                <ItemTemplate>
-                                                    <asp:Label ID="Per_priApellido" runat="server" Text='<%#Eval("Per_priApellido")%>'></asp:Label>
-                                                </ItemTemplate>
-                                            </asp:TemplateField>
-                                            <asp:TemplateField HeaderText="Genero">
-                                                <ItemTemplate>
-                                                    <asp:Label ID="Per_sexo" runat="server" Text='<%#Eval("Per_genero")%>'></asp:Label>
-                                                </ItemTemplate>
-                                            </asp:TemplateField>
-                                            <asp:TemplateField HeaderText="Estado">
-                                                <ItemTemplate>
-                                                    <asp:Label ID="Per_estado" runat="server" Text='<%#Eval("Per_estado")%>'></asp:Label>
-                                                </ItemTemplate>
-                                            </asp:TemplateField>
-                                            <asp:TemplateField ItemStyle-Width="17" HeaderStyle-Width="17" HeaderText="">
-                                                <ItemTemplate>
-                                                    <asp:LinkButton ID="lnbEditar" Width="16" Height="16" CommandArgument='<%#Eval("Per_id")%>' CommandName="Editar" runat="server"><i class="fas fa-pen"></i></asp:LinkButton>
-                                                </ItemTemplate>
-                                                <HeaderStyle Width="17px" />
-                                                <ItemStyle Width="17px" />
-                                            </asp:TemplateField>                                            
-                                        </Columns>
-                                        <PagerSettings Mode="NumericFirstLast" PageButtonCount="8" FirstPageText="Primero" LastPageText="Ultimo" />
-                                        <PagerStyle CssClass="pagination-ys" HorizontalAlign="Center" />
-                                    </asp:GridView>--%>
                                 </div>
                             </div>
                         </div>

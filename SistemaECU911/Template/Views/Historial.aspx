@@ -47,7 +47,7 @@
                                                 <asp:TextBox runat="server" ID="txt_edad" BorderStyle="None" Style="width: 100%; text-align: center" ReadOnly="False"></asp:TextBox>
                                             </asp:TableCell>
                                             <asp:TableCell Style="background-color: white">
-                                                <asp:TextBox runat="server" ID="txt_numHClinica" BorderStyle="None" Style="width: 100%; text-align: center" ReadOnly="False"></asp:TextBox>
+                                                <asp:TextBox runat="server" ID="txt_numHClinica" OnTextChanged="txt_numHClinica_TextChanged" BorderStyle="None" Style="width: 100%; text-align: center" ReadOnly="False"></asp:TextBox>
                                             </asp:TableCell>
                                         </asp:TableRow>
                                     </asp:Table>

@@ -61,33 +61,6 @@ namespace SistemaECU911.Template.Views
             }            
         }
 
-        protected void grvPacientes_PageIndexChanging(object sender, GridViewPageEventArgs e)
-        {
-
-        }
-
-        protected void txt_buscar_TextChanged(object sender, EventArgs e)
-        {
-            //if (txt_buscar.Text == "")
-            //{
-            //    cargarPaciente();
-            //}
-            //else
-            //{
-            //    var query = from p in dc.Tbl_Personas
-            //                where p.Per_Cedula == Convert.ToInt32(txt_buscar.Text)
-            //                select new { p.Per_Cedula, p.Per_priNombre, p.Per_priApellido, p.Per_genero, p.Per_estado, p.Per_id };
-
-            //    if (query != null)
-            //    {
-            //        grvPacientes.DataSource = query.ToList();
-            //        grvPacientes.DataBind();
-            //    }
-            //    else
-            //    {
-            //        cargarPaciente();
-            //    }
-            //}
-        }
+        
     }
 }

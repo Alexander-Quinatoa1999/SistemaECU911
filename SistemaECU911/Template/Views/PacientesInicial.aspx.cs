@@ -44,9 +44,5 @@ namespace SistemaECU911.Template.Views
             }
         }
 
-        protected void grvPacientesInicial_PageIndexChanging(object sender, GridViewPageEventArgs e)
-        {
-
-        }
     }
 }

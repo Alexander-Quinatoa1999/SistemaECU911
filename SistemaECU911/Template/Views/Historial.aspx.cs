@@ -63,6 +63,19 @@ namespace SistemaECU911.Template.Views
             }            
         }
 
+        protected void txt_numHClinica_TextChanged(object sender, EventArgs e)
+        {
+            per = CN_HistorialMedico.obtenerPersonasxCedula(Convert.ToInt32(txt_numHClinica.Text));
+
+            if (per != null)
+            {
+                txt_priNombre.Text = per.Per_priNombre.ToString();
+                txt_priApellido.Text = per.Per_priApellido.ToString();
+                txt_sexo.Text = per.Per_genero.ToString();
+                txt_edad.Text = per.Per_fechNacimiento.ToString();
+            }
+        }
+
         private void CargarDatosModificar()
         {
             if (Request["cod"] != null)
@@ -85,8 +98,8 @@ namespace SistemaECU911.Template.Views
                 int region = Convert.ToInt32(exafis.Regiones_id);
                 reg = CN_HistorialMedico.obtenerRegionesxid(region);
 
-                //int tiporegion = Convert.ToInt32(reg.Regiones_id);
-                //tipreg = CN_HistorialMedico.obtenerTipoRegionxReg(tiporegion);
+                //int regionid = Convert.ToInt32(ddl_region.SelectedValue);
+                //tipreg = CN_HistorialMedico.obtenerTipoRegionxReg(regionid);
 
                 //int tiporegionid = Convert.ToInt32(tipreg.tipoExa_id);
                 //tipid = CN_HistorialMedico.obtenerTipoRegionxid(tiporegionid);
@@ -211,8 +224,8 @@ namespace SistemaECU911.Template.Views
                 int region = Convert.ToInt32(exafis.Regiones_id);
                 reg = CN_HistorialMedico.obtenerRegionesxid(region);
 
-                //int tiporegion = Convert.ToInt32(reg.Regiones_id);
-                //tipreg = CN_HistorialMedico.obtenerTipoRegionxReg(tiporegion);
+                //int regionid = Convert.ToInt32(ddl_region.SelectedValue);
+                //tipreg = CN_HistorialMedico.obtenerTipoRegionxReg(regionid);
 
                 //int tiporegionid = Convert.ToInt32(tipreg.tipoExa_id);
                 //tipid = CN_HistorialMedico.obtenerTipoRegionxid(tiporegionid);
@@ -618,6 +631,8 @@ namespace SistemaECU911.Template.Views
             ddl_tipoRegion.DataValueField = "tipoExa_id";
             ddl_tipoRegion.DataBind();
             ddl_tipoRegion.Items.Insert(0, new ListItem("Seleccione ........", "0"));
+
+            tipreg = CN_HistorialMedico.obtenerTipoRegionxReg(regionid);
         }
 
         private void cargarEvidenciaPatologica()
