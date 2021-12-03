@@ -366,22 +366,22 @@
                             </asp:TableRow>
                             <asp:TableRow>
                                 <asp:TableCell Style="width: 250px; background-color: white">
-                                <asp:TextBox runat="server" BorderStyle="None" style="width:100%; text-align:center"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_diagnosticosDiagnostico" BorderStyle="None" style="width:100%; text-align:center"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="width: 75px; background-color: white">
-                                <asp:TextBox runat="server" BorderStyle="None" style="width:100%; text-align:center"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_codigoDiagnostico" BorderStyle="None" style="width:100%; text-align:center"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="width: 100px; background-color: white">
-                                <asp:TextBox runat="server" BorderStyle="None" style="width:100%; text-align:center"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_tipoDiagnostico" BorderStyle="None" style="width:100%; text-align:center"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white">
-                                <asp:TextBox runat="server" BorderStyle="None" style="width:100%; text-align:center"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_condicionDiagnostico" BorderStyle="None" style="width:100%; text-align:center"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white">
-                                <asp:TextBox runat="server" BorderStyle="None" style="width:100%; text-align:center"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_cronologiaDiagnostico" BorderStyle="None" style="width:100%; text-align:center"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white">
-                                <asp:TextBox runat="server" BorderStyle="None" style="width:100%; text-align:center"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_descripcionDiagnostico" BorderStyle="None" style="width:100%; text-align:center"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                         </asp:Table>

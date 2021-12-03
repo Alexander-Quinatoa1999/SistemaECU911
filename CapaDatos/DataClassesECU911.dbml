@@ -349,27 +349,28 @@
   </Table>
   <Table Name="dbo.Tbl_Diagnostico" Member="Tbl_Diagnostico">
     <Type Name="Tbl_Diagnostico">
-      <Column Name="Diag_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Diag_id" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="Diag_cie" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
       <Column Name="Diag_pre" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
       <Column Name="Diag_def" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
       <Column Name="Diag_descripcion" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
       <Column Name="Per_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Diag_esatdo" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-      <Association Name="Tbl_Diagnostico_Tbl_DiagnosticoPrin" Member="Tbl_DiagnosticoPrin" ThisKey="Diag_id" OtherKey="Diag_id" Type="Tbl_DiagnosticoPrin" />
       <Association Name="Tbl_Personas_Tbl_Diagnostico" Member="Tbl_Personas" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Personas" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.Tbl_DiagnosticoPrin" Member="Tbl_DiagnosticoPrin">
-    <Type Name="Tbl_DiagnosticoPrin">
-      <Column Name="DiagPrin_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="DiagPrin_diagnostico" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
-      <Column Name="Diag_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="DiagPrin_condicion" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
-      <Column Name="DiagPrin_cronologian" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="DiagPrin_descripcion" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
-      <Column Name="DiagPrin_estado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
-      <Association Name="Tbl_Diagnostico_Tbl_DiagnosticoPrin" Member="Tbl_Diagnostico" ThisKey="Diag_id" OtherKey="Diag_id" Type="Tbl_Diagnostico" IsForeignKey="true" />
+  <Table Name="dbo.Tbl_DiagnosticoFichMed" Member="Tbl_DiagnosticoFichMed">
+    <Type Name="Tbl_DiagnosticoFichMed">
+      <Column Name="diag_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="diag_diagnosticos" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="diag_codigo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="diag_tipo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="diag_condicion" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="diag_cronologian" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="diag_descripcion" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Per_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="diag_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Association Name="Tbl_Personas_Tbl_DiagnosticoFichMed" Member="Tbl_Personas" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Personas" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Tbl_DireccionInstitucional" Member="Tbl_DireccionInstitucional">
@@ -1155,6 +1156,7 @@
       <Association Name="Tbl_Personas_Tbl_DatEstableEmpUsu" Member="Tbl_DatEstableEmpUsu" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_DatEstableEmpUsu" />
       <Association Name="Tbl_Personas_Tbl_DatProfesional" Member="Tbl_DatProfesional" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_DatProfesional" />
       <Association Name="Tbl_Personas_Tbl_Diagnostico" Member="Tbl_Diagnostico" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Diagnostico" />
+      <Association Name="Tbl_Personas_Tbl_DiagnosticoFichMed" Member="Tbl_DiagnosticoFichMed" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_DiagnosticoFichMed" />
       <Association Name="Tbl_Personas_Tbl_EnferActualPeriodica" Member="Tbl_EnferActualPeriodica" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_EnferActualPeriodica" />
       <Association Name="Tbl_Personas_Tbl_EnferActualReintegro" Member="Tbl_EnferActualReintegro" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_EnferActualReintegro" />
       <Association Name="Tbl_Personas_Tbl_EnfermedadActual" Member="Tbl_EnfermedadActual" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_EnfermedadActual" />

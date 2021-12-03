@@ -483,6 +483,60 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_exafisdescripcion;
 
         /// <summary>
+        /// Control txt_diagnosticosDiagnostico.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_diagnosticosDiagnostico;
+
+        /// <summary>
+        /// Control txt_codigoDiagnostico.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_codigoDiagnostico;
+
+        /// <summary>
+        /// Control txt_tipoDiagnostico.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_tipoDiagnostico;
+
+        /// <summary>
+        /// Control txt_condicionDiagnostico.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_condicionDiagnostico;
+
+        /// <summary>
+        /// Control txt_cronologiaDiagnostico.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_cronologiaDiagnostico;
+
+        /// <summary>
+        /// Control txt_descripcionDiagnostico.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_descripcionDiagnostico;
+
+        /// <summary>
         /// Control txt_tratamiento.
         /// </summary>
         /// <remarks>

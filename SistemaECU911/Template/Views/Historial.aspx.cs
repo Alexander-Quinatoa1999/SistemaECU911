@@ -36,6 +36,8 @@ namespace SistemaECU911.Template.Views
         private Tbl_Regiones reg = new Tbl_Regiones();
         //Objeto de la tabla tipo de examen
         private Tbl_TipoExaFisRegional tipreg = new Tbl_TipoExaFisRegional();
+        //Objeto de la tabla tipo de examen
+        private Tbl_DiagnosticoFichMed diag = new Tbl_DiagnosticoFichMed();
         //Objeto de la tabla plan de tratamiento
         private Tbl_RecoTratamiento rectra = new Tbl_RecoTratamiento();
         //Objeto de la tabla evolucion
@@ -76,7 +78,7 @@ namespace SistemaECU911.Template.Views
                 antper = CN_HistorialMedico.obtenerAntePersonalxPer(perso);
                 antfam = CN_HistorialMedico.obtenerAnteFamiliarxPer(perso);
                 enfact = CN_HistorialMedico.obtenerEnferActualxPer(perso);
-
+                revOrSis = CN_HistorialMedico.obtenerRevOrganosSistemasxPer(perso);
                 consvit = CN_HistorialMedico.obtenerConsVitAntroxPer(perso);
                 exafis = CN_HistorialMedico.obtenerExamenFisxPer(perso);
 
@@ -89,6 +91,7 @@ namespace SistemaECU911.Template.Views
                 //int tiporegionid = Convert.ToInt32(tipreg.tipoExa_id);
                 //tipid = CN_HistorialMedico.obtenerTipoRegionxid(tiporegionid);
 
+                diag = CN_HistorialMedico.obtenerDiagnosticoxPer(perso);
                 rectra = CN_HistorialMedico.obtenerPlanTratamientoxPer(perso);
                 evo = CN_HistorialMedico.obtenerEvolucionxPer(perso);
                 pres = CN_HistorialMedico.obtenerPrescripcionxPer(perso);
@@ -96,8 +99,8 @@ namespace SistemaECU911.Template.Views
 
                 btn_guardar.Visible = true;
 
-                if (per != null || motcons != null || antper != null || antfam != null || enfact != null || consvit != null || exafis != null
-                        || rectra != null || evo != null || pres != null || prof != null)
+                if (per != null || motcons != null || antper != null || antfam != null || enfact != null || revOrSis != null || consvit != null || 
+                    exafis != null || diag != null || rectra != null || evo != null || pres != null || prof != null)
                 {
                     txt_priNombre.Text = per.Per_priNombre.ToString();
                     txt_priApellido.Text = per.Per_priApellido.ToString();
@@ -117,7 +120,30 @@ namespace SistemaECU911.Template.Views
 
                     txt_enfeActual.Text = enfact.EnfActu_descrip.ToString();
 
-
+                    ddl_orgSistemas.Text = revOrSis.eviPat1_id.ToString();
+                    txt_descOrgSistemas.Text = revOrSis.revorgsisFM_descOS.ToString();
+                    ddl_respiratorio.Text = revOrSis.eviPat2_id.ToString();
+                    txt_descRespiratorio.Text = revOrSis.revorgsisFM_descR.ToString();
+                    ddl_carVascular.Text = revOrSis.eviPat3_id.ToString();
+                    txt_descCarVascular.Text = revOrSis.revorgsisFM_descCV.ToString();
+                    ddl_digestivo.Text = revOrSis.eviPat4_id.ToString();
+                    txt_descDigestivo.Text = revOrSis.revorgsisFM_descD.ToString();
+                    ddl_genital.Text = revOrSis.eviPat5_id.ToString();
+                    txt_descGenital.Text = revOrSis.revorgsisFM_descG.ToString();
+                    ddl_urinario.Text = revOrSis.eviPat6_id.ToString();
+                    txt_descUrinario.Text = revOrSis.revorgsisFM_descU.ToString();
+                    ddl_muscular.Text = revOrSis.eviPat7_id.ToString();
+                    txt_descMuscular.Text = revOrSis.revorgsisFM_descM.ToString();
+                    ddl_esqueletico.Text = revOrSis.eviPat8_id.ToString();
+                    txt_descEsqueletico.Text = revOrSis.revorgsisFM_descE.ToString();
+                    ddl_nervioso.Text = revOrSis.eviPat9_id.ToString();
+                    txt_descNervioso.Text = revOrSis.revorgsisFM_descN.ToString();
+                    ddl_endocrino.Text = revOrSis.eviPat10_id.ToString();
+                    txt_descEndocrino.Text = revOrSis.revorgsisFM_descEND.ToString();
+                    ddl_hemoLinfatico.Text = revOrSis.eviPat11_id.ToString();
+                    txt_descHemoLinfatico.Text = revOrSis.revorgsisFM_descHL.ToString();
+                    ddl_tegumentario.Text = revOrSis.eviPat12_id.ToString();
+                    txt_descTegumentario.Text = revOrSis.revorgsisFM_descT.ToString();
 
                     txt_presArterial.Text = consvit.ConsVitAntro_preArterial.ToString();
                     txt_temperatura.Text = consvit.ConsVitAntro_temperatura.ToString();
@@ -132,6 +158,13 @@ namespace SistemaECU911.Template.Views
                     ddl_region.Text = reg.Regiones_id.ToString();
                     ddl_tipoRegion.Text = tipreg.tipoExa_id.ToString();
                     txt_exafisdescripcion.Text = exafis.ExaFisRegional_observaciones.ToString();
+
+                    txt_diagnosticosDiagnostico.Text = diag.diag_diagnosticos.ToString();
+                    txt_codigoDiagnostico.Text = diag.diag_codigo.ToString();
+                    txt_tipoDiagnostico.Text = diag.diag_tipo.ToString();
+                    txt_condicionDiagnostico.Text = diag.diag_condicion.ToString();
+                    txt_cronologiaDiagnostico.Text = diag.diag_cronologian.ToString();
+                    txt_descripcionDiagnostico.Text = diag.diag_descripcion.ToString();
 
                     txt_tratamiento.Text = rectra.RecTra_descripcion.ToString();
 
@@ -152,11 +185,11 @@ namespace SistemaECU911.Template.Views
             }
         }
 
-        private void guardar_modificar_datos(int perid, int motivoconsid, int antperid, int antfamid, int enfactid, int consvitid, int exafisid, int rectraid, 
-            int evoid, int presid, int profid)
+        private void guardar_modificar_datos(int perid, int motivoconsid, int antperid, int antfamid, int enfactid, int revOrSisid, int consvitid, 
+            int exafisid, int diagid, int rectraid, int evoid, int presid, int profid)
         {
-            if (perid == 0 || motivoconsid == 0 || antperid == 0 || antfamid == 0 || enfactid == 0 || consvitid == 0 || exafisid == 0 || rectraid == 0 || 
-                evoid == 0 || presid == 0 || profid == 0)
+            if (perid == 0 || motivoconsid == 0 || antperid == 0 || antfamid == 0 || enfactid == 0 || revOrSisid == 0 || consvitid == 0 || 
+                exafisid == 0 || diagid == 0 || rectraid == 0 || evoid == 0 || presid == 0 || profid == 0)
             {
                 GuardarHistorial();
             }
@@ -167,21 +200,24 @@ namespace SistemaECU911.Template.Views
 
                 DateTime fechahora = Convert.ToDateTime(motcons.Mcon_fecha_hora);
 
-                motcons = CN_HistorialMedico.obtenerMotivoxPerFecha(perso, fechahora);
+                motcons = CN_HistorialMedico.obtenerMotivoxPer(perso);
                 antper = CN_HistorialMedico.obtenerAntePersonalxPer(perso);
                 antfam = CN_HistorialMedico.obtenerAnteFamiliarxPer(perso);
                 enfact = CN_HistorialMedico.obtenerEnferActualxPer(perso);
-
-
+                revOrSis = CN_HistorialMedico.obtenerRevOrganosSistemasxPer(perso);
                 consvit = CN_HistorialMedico.obtenerConsVitAntroxPer(perso);
                 exafis = CN_HistorialMedico.obtenerExamenFisxPer(perso);
 
-                int region = Convert.ToInt32(exafis.ExaFisRegional_id);
+                int region = Convert.ToInt32(exafis.Regiones_id);
                 reg = CN_HistorialMedico.obtenerRegionesxid(region);
 
                 int tiporegion = Convert.ToInt32(reg.Regiones_id);
                 tipreg = CN_HistorialMedico.obtenerTipoRegionxReg(tiporegion);
 
+                //int tiporegionid = Convert.ToInt32(tipreg.tipoExa_id);
+                //tipid = CN_HistorialMedico.obtenerTipoRegionxid(tiporegionid);
+
+                diag = CN_HistorialMedico.obtenerDiagnosticoxPer(perso);
                 rectra = CN_HistorialMedico.obtenerPlanTratamientoxPer(perso);
                 evo = CN_HistorialMedico.obtenerEvolucionxPer(perso);
                 pres = CN_HistorialMedico.obtenerPrescripcionxPer(perso);
@@ -200,7 +236,7 @@ namespace SistemaECU911.Template.Views
             try
             {
                 //Guardar Persona
-                if (string.IsNullOrEmpty(txt_numHClinica.Text) /*|| string.IsNullOrEmpty(txt_moConsulta.Text) || 
+                if (string.IsNullOrEmpty(txt_numHClinica.Text) || string.IsNullOrEmpty(txt_moConsulta.Text) || 
                     ddl_tipoAntPer.SelectedValue == "0" || string.IsNullOrEmpty(txt_antePersonales.Text) || 
                     string.IsNullOrEmpty(txt_antePerDescripcion.Text) || ddl_tipoAntFam.SelectedValue == "0" || 
                     string.IsNullOrEmpty(txt_anteFamiliares.Text) || string.IsNullOrEmpty(txt_anteFamDescripcion.Text) || 
@@ -213,7 +249,7 @@ namespace SistemaECU911.Template.Views
                     string.IsNullOrEmpty(txt_tratamiento.Text) || string.IsNullOrEmpty(txt_evolucion.Text) || 
                     string.IsNullOrEmpty(txt_prescipciones.Text) || string.IsNullOrEmpty(txt_fechahora.Text) || 
                     ddl_especialidad.SelectedValue == "0" || ddl_profesional.SelectedValue == "0" || 
-                    string.IsNullOrEmpty(txt_codigo.Text)*/)
+                    string.IsNullOrEmpty(txt_codigo.Text))
                 {
                     ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Complete los campos')", true);
                 }
@@ -232,6 +268,7 @@ namespace SistemaECU911.Template.Views
                     exafis = new Tbl_ExaFisRegional();
                     reg = new Tbl_Regiones();
                     tipreg = new Tbl_TipoExaFisRegional();
+                    diag = new Tbl_DiagnosticoFichMed();
                     rectra = new Tbl_RecoTratamiento();
                     evo = new Tbl_Evolucion();
                     pres = new Tbl_Prescipciones();
@@ -239,24 +276,24 @@ namespace SistemaECU911.Template.Views
 
 
                     //captura de datos tbl_motivoconsulta
-                    //motcons.Mcon_descripcion = txt_moConsulta.Text;
-                    //motcons.Per_id = perso;
+                    motcons.Mcon_descripcion = txt_moConsulta.Text;
+                    motcons.Per_id = perso;
 
                     //captura de datos tbl_antepersonales
-                    //antper.TiEnf_id = Convert.ToInt32(ddl_tipoAntPer.SelectedValue);
-                    //antper.AntPer_antecedente = txt_antePersonales.Text;
-                    //antper.AntPer_descripcion = txt_antePerDescripcion.Text;
-                    //antper.Per_id = perso;
+                    antper.TiEnf_id = Convert.ToInt32(ddl_tipoAntPer.SelectedValue);
+                    antper.AntPer_antecedente = txt_antePersonales.Text;
+                    antper.AntPer_descripcion = txt_antePerDescripcion.Text;
+                    antper.Per_id = perso;
 
                     //captura de datos tbl_antefamiliares
-                    //antfam.TiEnf_id = Convert.ToInt32(ddl_tipoAntFam.SelectedValue);
-                    //antfam.AntFami_antecendente = txt_anteFamiliares.Text;
-                    //antfam.AntFami_descripcion = txt_anteFamDescripcion.Text;
-                    //antfam.Per_id = perso;
+                    antfam.TiEnf_id = Convert.ToInt32(ddl_tipoAntFam.SelectedValue);
+                    antfam.AntFami_antecendente = txt_anteFamiliares.Text;
+                    antfam.AntFami_descripcion = txt_anteFamDescripcion.Text;
+                    antfam.Per_id = perso;
 
                     //captura de datos Tbl_EnfermedadActual
-                    //enfact.EnfActu_descrip = txt_enfeActual.Text;
-                    //enfact.Per_id = perso;
+                    enfact.EnfActu_descrip = txt_enfeActual.Text;
+                    enfact.Per_id = perso;
 
                     //captura de datos Tbl_ReviOrgaSistemasFichMed
                     revOrSis.eviPat1_id = Convert.ToInt32(ddl_orgSistemas.SelectedValue);
@@ -302,6 +339,15 @@ namespace SistemaECU911.Template.Views
                     exafis.ExaFisRegional_observaciones = txt_exafisdescripcion.Text;
                     exafis.Per_id = perso;
 
+                    //captura de datos Tbl_DiagnosticoFichMed
+                    diag.diag_diagnosticos = txt_diagnosticosDiagnostico.Text;
+                    diag.diag_codigo = txt_codigoDiagnostico.Text;
+                    diag.diag_tipo = txt_tipoDiagnostico.Text;
+                    diag.diag_condicion = txt_condicionDiagnostico.Text;
+                    diag.diag_cronologian = txt_cronologiaDiagnostico.Text;
+                    diag.diag_descripcion = txt_descripcionDiagnostico.Text;
+                    diag.Per_id = perso;
+
                     //captura de datos Tbl_RecoTratamiento
                     rectra.RecTra_descripcion = txt_tratamiento.Text;
                     rectra.Per_id = perso;
@@ -335,6 +381,8 @@ namespace SistemaECU911.Template.Views
                     CN_HistorialMedico.guardarSisgnosVitalesAntropometricos2(consvit);
                     //metodo de guardar examen fisico
                     CN_HistorialMedico.guardarExamenFisico(exafis);
+                    //metodo de guardar diagnostico
+                    CN_HistorialMedico.guardarDiagnostico(diag);
                     //metodo de guardar tratamiento
                     CN_HistorialMedico.guardarPlanTratamiento(rectra);
                     //metodo de guardar evolucion
@@ -682,18 +730,20 @@ namespace SistemaECU911.Template.Views
 
         protected void btn_guardar_Click(object sender, EventArgs e)
         {
-            guardar_modificar_datos(Convert.ToInt32(Request["cod"]), Convert.ToInt32(per.Per_id.ToString())/*, Convert.ToInt32(per.Per_id.ToString()), 
+            guardar_modificar_datos(Convert.ToInt32(Request["cod"]), Convert.ToInt32(per.Per_id.ToString()), Convert.ToInt32(per.Per_id.ToString()), 
                 Convert.ToInt32(per.Per_id.ToString()), Convert.ToInt32(per.Per_id.ToString()), Convert.ToInt32(per.Per_id.ToString()), 
                 Convert.ToInt32(per.Per_id.ToString()), Convert.ToInt32(per.Per_id.ToString()), Convert.ToInt32(per.Per_id.ToString()), 
-                Convert.ToInt32(per.Per_id.ToString()), Convert.ToInt32(per.Per_id.ToString())*/);
+                Convert.ToInt32(per.Per_id.ToString()), Convert.ToInt32(per.Per_id.ToString()), Convert.ToInt32(per.Per_id.ToString()), 
+                Convert.ToInt32(per.Per_id.ToString()));
         }
 
         protected void btn_modificar_Click(object sender, EventArgs e)
         {
-            guardar_modificar_datos(Convert.ToInt32(Request["cod"]), Convert.ToInt32(per.Per_id.ToString())/*, Convert.ToInt32(per.Per_id.ToString()), 
+            guardar_modificar_datos(Convert.ToInt32(Request["cod"]), Convert.ToInt32(per.Per_id.ToString()), Convert.ToInt32(per.Per_id.ToString()), 
                 Convert.ToInt32(per.Per_id.ToString()), Convert.ToInt32(per.Per_id.ToString()), Convert.ToInt32(per.Per_id.ToString()), 
                 Convert.ToInt32(per.Per_id.ToString()), Convert.ToInt32(per.Per_id.ToString()), Convert.ToInt32(per.Per_id.ToString()), 
-                Convert.ToInt32(per.Per_id.ToString()), Convert.ToInt32(per.Per_id.ToString())*/);
+                Convert.ToInt32(per.Per_id.ToString()), Convert.ToInt32(per.Per_id.ToString()), Convert.ToInt32(per.Per_id.ToString()), 
+                Convert.ToInt32(per.Per_id.ToString()));
         }
 
         protected void btn_cancelar_Click(object sender, EventArgs e)

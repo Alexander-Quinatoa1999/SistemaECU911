@@ -81,6 +81,13 @@ namespace CapaNegocio
             return enfactid;
         }
 
+        //metodo traer para traer revision organos y sistemas x persona
+        public static Tbl_ReviOrgaSistemasFichMed obtenerRevOrganosSistemasxPer(int personaid)
+        {
+            var revOrgSistid = dc.Tbl_ReviOrgaSistemasFichMed.FirstOrDefault(per => per.Per_id.Equals(personaid) && per.revorgsisFM_estado == "A");
+            return revOrgSistid;
+        }
+
         //metodo traer para traer signos vitales y antropometricos x persona
         public static Tbl_ConsVitAntro obtenerConsVitAntroxPer(int personaid)
         {
@@ -93,6 +100,13 @@ namespace CapaNegocio
         {
             var exafisid = dc.Tbl_ExaFisRegional.FirstOrDefault(per => per.Per_id.Equals(personaid) && per.ExaFisRegional_estado == "A");
             return exafisid;
+        }
+
+        //metodo traer para traer daignostico x persona
+        public static Tbl_DiagnosticoFichMed obtenerDiagnosticoxPer(int personaid)
+        {
+            var diagid = dc.Tbl_DiagnosticoFichMed.FirstOrDefault(per => per.Per_id.Equals(personaid) && per.diag_estado == "A");
+            return diagid;
         }
 
         //metodo traer para traer plan de tratamiento x persona
@@ -415,6 +429,21 @@ namespace CapaNegocio
         {
             try
             {
+                dc.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException("Datos No Guardados" + ex.Message);
+            }
+        }
+
+        //8. Metodo para guardar datos diagnostico
+        public static void guardarDiagnostico(Tbl_DiagnosticoFichMed diag)
+        {
+            try
+            {
+                diag.diag_estado = "A";
+                dc.Tbl_DiagnosticoFichMed.InsertOnSubmit(diag);
                 dc.SubmitChanges();
             }
             catch (Exception ex)

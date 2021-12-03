@@ -111,9 +111,9 @@ namespace CapaDatos
     partial void InsertTbl_Diagnostico(Tbl_Diagnostico instance);
     partial void UpdateTbl_Diagnostico(Tbl_Diagnostico instance);
     partial void DeleteTbl_Diagnostico(Tbl_Diagnostico instance);
-    partial void InsertTbl_DiagnosticoPrin(Tbl_DiagnosticoPrin instance);
-    partial void UpdateTbl_DiagnosticoPrin(Tbl_DiagnosticoPrin instance);
-    partial void DeleteTbl_DiagnosticoPrin(Tbl_DiagnosticoPrin instance);
+    partial void InsertTbl_DiagnosticoFichMed(Tbl_DiagnosticoFichMed instance);
+    partial void UpdateTbl_DiagnosticoFichMed(Tbl_DiagnosticoFichMed instance);
+    partial void DeleteTbl_DiagnosticoFichMed(Tbl_DiagnosticoFichMed instance);
     partial void InsertTbl_DireccionInstitucional(Tbl_DireccionInstitucional instance);
     partial void UpdateTbl_DireccionInstitucional(Tbl_DireccionInstitucional instance);
     partial void DeleteTbl_DireccionInstitucional(Tbl_DireccionInstitucional instance);
@@ -632,11 +632,11 @@ namespace CapaDatos
 			}
 		}
 		
-		public System.Data.Linq.Table<Tbl_DiagnosticoPrin> Tbl_DiagnosticoPrin
+		public System.Data.Linq.Table<Tbl_DiagnosticoFichMed> Tbl_DiagnosticoFichMed
 		{
 			get
 			{
-				return this.GetTable<Tbl_DiagnosticoPrin>();
+				return this.GetTable<Tbl_DiagnosticoFichMed>();
 			}
 		}
 		
@@ -8874,7 +8874,7 @@ namespace CapaDatos
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _Diag_id;
+		private string _Diag_id;
 		
 		private string _Diag_cie;
 		
@@ -8888,15 +8888,13 @@ namespace CapaDatos
 		
 		private string _Diag_esatdo;
 		
-		private EntitySet<Tbl_DiagnosticoPrin> _Tbl_DiagnosticoPrin;
-		
 		private EntityRef<Tbl_Personas> _Tbl_Personas;
 		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnDiag_idChanging(int value);
+    partial void OnDiag_idChanging(string value);
     partial void OnDiag_idChanged();
     partial void OnDiag_cieChanging(string value);
     partial void OnDiag_cieChanged();
@@ -8914,13 +8912,12 @@ namespace CapaDatos
 		
 		public Tbl_Diagnostico()
 		{
-			this._Tbl_DiagnosticoPrin = new EntitySet<Tbl_DiagnosticoPrin>(new Action<Tbl_DiagnosticoPrin>(this.attach_Tbl_DiagnosticoPrin), new Action<Tbl_DiagnosticoPrin>(this.detach_Tbl_DiagnosticoPrin));
 			this._Tbl_Personas = default(EntityRef<Tbl_Personas>);
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Diag_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int Diag_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Diag_id", DbType="VarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string Diag_id
 		{
 			get
 			{
@@ -9063,19 +9060,6 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Diagnostico_Tbl_DiagnosticoPrin", Storage="_Tbl_DiagnosticoPrin", ThisKey="Diag_id", OtherKey="Diag_id")]
-		public EntitySet<Tbl_DiagnosticoPrin> Tbl_DiagnosticoPrin
-		{
-			get
-			{
-				return this._Tbl_DiagnosticoPrin;
-			}
-			set
-			{
-				this._Tbl_DiagnosticoPrin.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_Diagnostico", Storage="_Tbl_Personas", ThisKey="Per_id", OtherKey="Per_id", IsForeignKey=true)]
 		public Tbl_Personas Tbl_Personas
 		{
@@ -9129,242 +9113,278 @@ namespace CapaDatos
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
-		
-		private void attach_Tbl_DiagnosticoPrin(Tbl_DiagnosticoPrin entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tbl_Diagnostico = this;
-		}
-		
-		private void detach_Tbl_DiagnosticoPrin(Tbl_DiagnosticoPrin entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tbl_Diagnostico = null;
-		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_DiagnosticoPrin")]
-	public partial class Tbl_DiagnosticoPrin : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_DiagnosticoFichMed")]
+	public partial class Tbl_DiagnosticoFichMed : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _DiagPrin_id;
+		private int _diag_id;
 		
-		private string _DiagPrin_diagnostico;
+		private string _diag_diagnosticos;
 		
-		private int _Diag_id;
+		private string _diag_codigo;
 		
-		private string _DiagPrin_condicion;
+		private string _diag_tipo;
 		
-		private string _DiagPrin_cronologian;
+		private string _diag_condicion;
 		
-		private string _DiagPrin_descripcion;
+		private string _diag_cronologian;
 		
-		private System.Nullable<char> _DiagPrin_estado;
+		private string _diag_descripcion;
 		
-		private EntityRef<Tbl_Diagnostico> _Tbl_Diagnostico;
+		private System.Nullable<int> _Per_id;
+		
+		private string _diag_estado;
+		
+		private EntityRef<Tbl_Personas> _Tbl_Personas;
 		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnDiagPrin_idChanging(int value);
-    partial void OnDiagPrin_idChanged();
-    partial void OnDiagPrin_diagnosticoChanging(string value);
-    partial void OnDiagPrin_diagnosticoChanged();
-    partial void OnDiag_idChanging(int value);
-    partial void OnDiag_idChanged();
-    partial void OnDiagPrin_condicionChanging(string value);
-    partial void OnDiagPrin_condicionChanged();
-    partial void OnDiagPrin_cronologianChanging(string value);
-    partial void OnDiagPrin_cronologianChanged();
-    partial void OnDiagPrin_descripcionChanging(string value);
-    partial void OnDiagPrin_descripcionChanged();
-    partial void OnDiagPrin_estadoChanging(System.Nullable<char> value);
-    partial void OnDiagPrin_estadoChanged();
+    partial void Ondiag_idChanging(int value);
+    partial void Ondiag_idChanged();
+    partial void Ondiag_diagnosticosChanging(string value);
+    partial void Ondiag_diagnosticosChanged();
+    partial void Ondiag_codigoChanging(string value);
+    partial void Ondiag_codigoChanged();
+    partial void Ondiag_tipoChanging(string value);
+    partial void Ondiag_tipoChanged();
+    partial void Ondiag_condicionChanging(string value);
+    partial void Ondiag_condicionChanged();
+    partial void Ondiag_cronologianChanging(string value);
+    partial void Ondiag_cronologianChanged();
+    partial void Ondiag_descripcionChanging(string value);
+    partial void Ondiag_descripcionChanged();
+    partial void OnPer_idChanging(System.Nullable<int> value);
+    partial void OnPer_idChanged();
+    partial void Ondiag_estadoChanging(string value);
+    partial void Ondiag_estadoChanged();
     #endregion
 		
-		public Tbl_DiagnosticoPrin()
+		public Tbl_DiagnosticoFichMed()
 		{
-			this._Tbl_Diagnostico = default(EntityRef<Tbl_Diagnostico>);
+			this._Tbl_Personas = default(EntityRef<Tbl_Personas>);
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DiagPrin_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int DiagPrin_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_diag_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int diag_id
 		{
 			get
 			{
-				return this._DiagPrin_id;
+				return this._diag_id;
 			}
 			set
 			{
-				if ((this._DiagPrin_id != value))
+				if ((this._diag_id != value))
 				{
-					this.OnDiagPrin_idChanging(value);
+					this.Ondiag_idChanging(value);
 					this.SendPropertyChanging();
-					this._DiagPrin_id = value;
-					this.SendPropertyChanged("DiagPrin_id");
-					this.OnDiagPrin_idChanged();
+					this._diag_id = value;
+					this.SendPropertyChanged("diag_id");
+					this.Ondiag_idChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DiagPrin_diagnostico", DbType="VarChar(250)")]
-		public string DiagPrin_diagnostico
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_diag_diagnosticos", DbType="VarChar(250)")]
+		public string diag_diagnosticos
 		{
 			get
 			{
-				return this._DiagPrin_diagnostico;
+				return this._diag_diagnosticos;
 			}
 			set
 			{
-				if ((this._DiagPrin_diagnostico != value))
+				if ((this._diag_diagnosticos != value))
 				{
-					this.OnDiagPrin_diagnosticoChanging(value);
+					this.Ondiag_diagnosticosChanging(value);
 					this.SendPropertyChanging();
-					this._DiagPrin_diagnostico = value;
-					this.SendPropertyChanged("DiagPrin_diagnostico");
-					this.OnDiagPrin_diagnosticoChanged();
+					this._diag_diagnosticos = value;
+					this.SendPropertyChanged("diag_diagnosticos");
+					this.Ondiag_diagnosticosChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Diag_id", DbType="Int NOT NULL")]
-		public int Diag_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_diag_codigo", DbType="VarChar(50)")]
+		public string diag_codigo
 		{
 			get
 			{
-				return this._Diag_id;
+				return this._diag_codigo;
 			}
 			set
 			{
-				if ((this._Diag_id != value))
+				if ((this._diag_codigo != value))
 				{
-					if (this._Tbl_Diagnostico.HasLoadedOrAssignedValue)
+					this.Ondiag_codigoChanging(value);
+					this.SendPropertyChanging();
+					this._diag_codigo = value;
+					this.SendPropertyChanged("diag_codigo");
+					this.Ondiag_codigoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_diag_tipo", DbType="VarChar(50)")]
+		public string diag_tipo
+		{
+			get
+			{
+				return this._diag_tipo;
+			}
+			set
+			{
+				if ((this._diag_tipo != value))
+				{
+					this.Ondiag_tipoChanging(value);
+					this.SendPropertyChanging();
+					this._diag_tipo = value;
+					this.SendPropertyChanged("diag_tipo");
+					this.Ondiag_tipoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_diag_condicion", DbType="VarChar(150)")]
+		public string diag_condicion
+		{
+			get
+			{
+				return this._diag_condicion;
+			}
+			set
+			{
+				if ((this._diag_condicion != value))
+				{
+					this.Ondiag_condicionChanging(value);
+					this.SendPropertyChanging();
+					this._diag_condicion = value;
+					this.SendPropertyChanged("diag_condicion");
+					this.Ondiag_condicionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_diag_cronologian", DbType="VarChar(100)")]
+		public string diag_cronologian
+		{
+			get
+			{
+				return this._diag_cronologian;
+			}
+			set
+			{
+				if ((this._diag_cronologian != value))
+				{
+					this.Ondiag_cronologianChanging(value);
+					this.SendPropertyChanging();
+					this._diag_cronologian = value;
+					this.SendPropertyChanged("diag_cronologian");
+					this.Ondiag_cronologianChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_diag_descripcion", DbType="VarChar(250)")]
+		public string diag_descripcion
+		{
+			get
+			{
+				return this._diag_descripcion;
+			}
+			set
+			{
+				if ((this._diag_descripcion != value))
+				{
+					this.Ondiag_descripcionChanging(value);
+					this.SendPropertyChanging();
+					this._diag_descripcion = value;
+					this.SendPropertyChanged("diag_descripcion");
+					this.Ondiag_descripcionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_id", DbType="Int")]
+		public System.Nullable<int> Per_id
+		{
+			get
+			{
+				return this._Per_id;
+			}
+			set
+			{
+				if ((this._Per_id != value))
+				{
+					if (this._Tbl_Personas.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
-					this.OnDiag_idChanging(value);
+					this.OnPer_idChanging(value);
 					this.SendPropertyChanging();
-					this._Diag_id = value;
-					this.SendPropertyChanged("Diag_id");
-					this.OnDiag_idChanged();
+					this._Per_id = value;
+					this.SendPropertyChanged("Per_id");
+					this.OnPer_idChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DiagPrin_condicion", DbType="VarChar(150)")]
-		public string DiagPrin_condicion
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_diag_estado", DbType="VarChar(1)")]
+		public string diag_estado
 		{
 			get
 			{
-				return this._DiagPrin_condicion;
+				return this._diag_estado;
 			}
 			set
 			{
-				if ((this._DiagPrin_condicion != value))
+				if ((this._diag_estado != value))
 				{
-					this.OnDiagPrin_condicionChanging(value);
+					this.Ondiag_estadoChanging(value);
 					this.SendPropertyChanging();
-					this._DiagPrin_condicion = value;
-					this.SendPropertyChanged("DiagPrin_condicion");
-					this.OnDiagPrin_condicionChanged();
+					this._diag_estado = value;
+					this.SendPropertyChanged("diag_estado");
+					this.Ondiag_estadoChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DiagPrin_cronologian", DbType="VarChar(100)")]
-		public string DiagPrin_cronologian
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_DiagnosticoFichMed", Storage="_Tbl_Personas", ThisKey="Per_id", OtherKey="Per_id", IsForeignKey=true)]
+		public Tbl_Personas Tbl_Personas
 		{
 			get
 			{
-				return this._DiagPrin_cronologian;
+				return this._Tbl_Personas.Entity;
 			}
 			set
 			{
-				if ((this._DiagPrin_cronologian != value))
-				{
-					this.OnDiagPrin_cronologianChanging(value);
-					this.SendPropertyChanging();
-					this._DiagPrin_cronologian = value;
-					this.SendPropertyChanged("DiagPrin_cronologian");
-					this.OnDiagPrin_cronologianChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DiagPrin_descripcion", DbType="VarChar(250)")]
-		public string DiagPrin_descripcion
-		{
-			get
-			{
-				return this._DiagPrin_descripcion;
-			}
-			set
-			{
-				if ((this._DiagPrin_descripcion != value))
-				{
-					this.OnDiagPrin_descripcionChanging(value);
-					this.SendPropertyChanging();
-					this._DiagPrin_descripcion = value;
-					this.SendPropertyChanged("DiagPrin_descripcion");
-					this.OnDiagPrin_descripcionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DiagPrin_estado", DbType="Char(1)")]
-		public System.Nullable<char> DiagPrin_estado
-		{
-			get
-			{
-				return this._DiagPrin_estado;
-			}
-			set
-			{
-				if ((this._DiagPrin_estado != value))
-				{
-					this.OnDiagPrin_estadoChanging(value);
-					this.SendPropertyChanging();
-					this._DiagPrin_estado = value;
-					this.SendPropertyChanged("DiagPrin_estado");
-					this.OnDiagPrin_estadoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Diagnostico_Tbl_DiagnosticoPrin", Storage="_Tbl_Diagnostico", ThisKey="Diag_id", OtherKey="Diag_id", IsForeignKey=true)]
-		public Tbl_Diagnostico Tbl_Diagnostico
-		{
-			get
-			{
-				return this._Tbl_Diagnostico.Entity;
-			}
-			set
-			{
-				Tbl_Diagnostico previousValue = this._Tbl_Diagnostico.Entity;
+				Tbl_Personas previousValue = this._Tbl_Personas.Entity;
 				if (((previousValue != value) 
-							|| (this._Tbl_Diagnostico.HasLoadedOrAssignedValue == false)))
+							|| (this._Tbl_Personas.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._Tbl_Diagnostico.Entity = null;
-						previousValue.Tbl_DiagnosticoPrin.Remove(this);
+						this._Tbl_Personas.Entity = null;
+						previousValue.Tbl_DiagnosticoFichMed.Remove(this);
 					}
-					this._Tbl_Diagnostico.Entity = value;
+					this._Tbl_Personas.Entity = value;
 					if ((value != null))
 					{
-						value.Tbl_DiagnosticoPrin.Add(this);
-						this._Diag_id = value.Diag_id;
+						value.Tbl_DiagnosticoFichMed.Add(this);
+						this._Per_id = value.Per_id;
 					}
 					else
 					{
-						this._Diag_id = default(int);
+						this._Per_id = default(Nullable<int>);
 					}
-					this.SendPropertyChanged("Tbl_Diagnostico");
+					this.SendPropertyChanged("Tbl_Personas");
 				}
 			}
 		}
@@ -24311,6 +24331,8 @@ namespace CapaDatos
 		
 		private EntitySet<Tbl_Diagnostico> _Tbl_Diagnostico;
 		
+		private EntitySet<Tbl_DiagnosticoFichMed> _Tbl_DiagnosticoFichMed;
+		
 		private EntitySet<Tbl_EnferActualPeriodica> _Tbl_EnferActualPeriodica;
 		
 		private EntitySet<Tbl_EnferActualReintegro> _Tbl_EnferActualReintegro;
@@ -24486,6 +24508,7 @@ namespace CapaDatos
 			this._Tbl_DatEstableEmpUsu = new EntitySet<Tbl_DatEstableEmpUsu>(new Action<Tbl_DatEstableEmpUsu>(this.attach_Tbl_DatEstableEmpUsu), new Action<Tbl_DatEstableEmpUsu>(this.detach_Tbl_DatEstableEmpUsu));
 			this._Tbl_DatProfesional = new EntitySet<Tbl_DatProfesional>(new Action<Tbl_DatProfesional>(this.attach_Tbl_DatProfesional), new Action<Tbl_DatProfesional>(this.detach_Tbl_DatProfesional));
 			this._Tbl_Diagnostico = new EntitySet<Tbl_Diagnostico>(new Action<Tbl_Diagnostico>(this.attach_Tbl_Diagnostico), new Action<Tbl_Diagnostico>(this.detach_Tbl_Diagnostico));
+			this._Tbl_DiagnosticoFichMed = new EntitySet<Tbl_DiagnosticoFichMed>(new Action<Tbl_DiagnosticoFichMed>(this.attach_Tbl_DiagnosticoFichMed), new Action<Tbl_DiagnosticoFichMed>(this.detach_Tbl_DiagnosticoFichMed));
 			this._Tbl_EnferActualPeriodica = new EntitySet<Tbl_EnferActualPeriodica>(new Action<Tbl_EnferActualPeriodica>(this.attach_Tbl_EnferActualPeriodica), new Action<Tbl_EnferActualPeriodica>(this.detach_Tbl_EnferActualPeriodica));
 			this._Tbl_EnferActualReintegro = new EntitySet<Tbl_EnferActualReintegro>(new Action<Tbl_EnferActualReintegro>(this.attach_Tbl_EnferActualReintegro), new Action<Tbl_EnferActualReintegro>(this.detach_Tbl_EnferActualReintegro));
 			this._Tbl_EnfermedadActual = new EntitySet<Tbl_EnfermedadActual>(new Action<Tbl_EnfermedadActual>(this.attach_Tbl_EnfermedadActual), new Action<Tbl_EnfermedadActual>(this.detach_Tbl_EnfermedadActual));
@@ -25606,6 +25629,19 @@ namespace CapaDatos
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_DiagnosticoFichMed", Storage="_Tbl_DiagnosticoFichMed", ThisKey="Per_id", OtherKey="Per_id")]
+		public EntitySet<Tbl_DiagnosticoFichMed> Tbl_DiagnosticoFichMed
+		{
+			get
+			{
+				return this._Tbl_DiagnosticoFichMed;
+			}
+			set
+			{
+				this._Tbl_DiagnosticoFichMed.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_EnferActualPeriodica", Storage="_Tbl_EnferActualPeriodica", ThisKey="Per_id", OtherKey="Per_id")]
 		public EntitySet<Tbl_EnferActualPeriodica> Tbl_EnferActualPeriodica
 		{
@@ -26510,6 +26546,18 @@ namespace CapaDatos
 		}
 		
 		private void detach_Tbl_Diagnostico(Tbl_Diagnostico entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Personas = null;
+		}
+		
+		private void attach_Tbl_DiagnosticoFichMed(Tbl_DiagnosticoFichMed entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Personas = this;
+		}
+		
+		private void detach_Tbl_DiagnosticoFichMed(Tbl_DiagnosticoFichMed entity)
 		{
 			this.SendPropertyChanging();
 			entity.Tbl_Personas = null;
