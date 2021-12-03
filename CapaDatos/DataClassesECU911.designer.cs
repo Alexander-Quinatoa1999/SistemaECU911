@@ -387,7 +387,7 @@ namespace CapaDatos
     #endregion
 		
 		public DataClassesECU911DataContext() : 
-				base(global::CapaDatos.Properties.Settings.Default.SistemaECU911ConnectionString4, mappingSource)
+				base(global::CapaDatos.Properties.Settings.Default.SistemaECU911ConnectionString5, mappingSource)
 		{
 			OnCreated();
 		}
@@ -8874,15 +8874,15 @@ namespace CapaDatos
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private string _Diag_id;
+		private int _Diag_id;
+		
+		private string _Diag_descripcion;
 		
 		private string _Diag_cie;
 		
 		private string _Diag_pre;
 		
 		private string _Diag_def;
-		
-		private string _Diag_descripcion;
 		
 		private System.Nullable<int> _Per_id;
 		
@@ -8894,16 +8894,16 @@ namespace CapaDatos
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnDiag_idChanging(string value);
+    partial void OnDiag_idChanging(int value);
     partial void OnDiag_idChanged();
+    partial void OnDiag_descripcionChanging(string value);
+    partial void OnDiag_descripcionChanged();
     partial void OnDiag_cieChanging(string value);
     partial void OnDiag_cieChanged();
     partial void OnDiag_preChanging(string value);
     partial void OnDiag_preChanged();
     partial void OnDiag_defChanging(string value);
     partial void OnDiag_defChanged();
-    partial void OnDiag_descripcionChanging(string value);
-    partial void OnDiag_descripcionChanged();
     partial void OnPer_idChanging(System.Nullable<int> value);
     partial void OnPer_idChanged();
     partial void OnDiag_esatdoChanging(string value);
@@ -8916,8 +8916,8 @@ namespace CapaDatos
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Diag_id", DbType="VarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string Diag_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Diag_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Diag_id
 		{
 			get
 			{
@@ -8936,7 +8936,27 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Diag_cie", DbType="Text", UpdateCheck=UpdateCheck.Never)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Diag_descripcion", DbType="Text", UpdateCheck=UpdateCheck.Never)]
+		public string Diag_descripcion
+		{
+			get
+			{
+				return this._Diag_descripcion;
+			}
+			set
+			{
+				if ((this._Diag_descripcion != value))
+				{
+					this.OnDiag_descripcionChanging(value);
+					this.SendPropertyChanging();
+					this._Diag_descripcion = value;
+					this.SendPropertyChanged("Diag_descripcion");
+					this.OnDiag_descripcionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Diag_cie", DbType="VarChar(50)")]
 		public string Diag_cie
 		{
 			get
@@ -8992,26 +9012,6 @@ namespace CapaDatos
 					this._Diag_def = value;
 					this.SendPropertyChanged("Diag_def");
 					this.OnDiag_defChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Diag_descripcion", DbType="Text", UpdateCheck=UpdateCheck.Never)]
-		public string Diag_descripcion
-		{
-			get
-			{
-				return this._Diag_descripcion;
-			}
-			set
-			{
-				if ((this._Diag_descripcion != value))
-				{
-					this.OnDiag_descripcionChanging(value);
-					this.SendPropertyChanging();
-					this._Diag_descripcion = value;
-					this.SendPropertyChanged("Diag_descripcion");
-					this.OnDiag_descripcionChanged();
 				}
 			}
 		}

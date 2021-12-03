@@ -13,6 +13,20 @@ namespace CapaNegocio
         //private static DataClassesECU911DataContext dc = new DataClassesECU911DataContext();
         private static DataClassesECU911DataContext dc = new DataClassesECU911DataContext();
 
+        //metodo traer para traer Datos Establecimeinto Empresa Usuario x persona
+        public static Tbl_DatEstableEmpUsu obtenerDatEstEmpreUsuar(int personaid)
+        {
+            var datempusuid = dc.Tbl_DatEstableEmpUsu.FirstOrDefault(per => per.Per_id.Equals(personaid) && per.datEstable_estado == "A");
+            return datempusuid;
+        }
+
+        //metodo traer para traer Motivo Consulta Inicial x persona
+        public static Tbl_MotivoConsultaInicial obtenerMotivoConsultaInicial(int personaid)
+        {
+            var motconini = dc.Tbl_MotivoConsultaInicial.FirstOrDefault(per => per.Per_id.Equals(personaid) && per.motConIni_estado == "A");
+            return motconini;
+        }
+
         //metodo traer para traer Antecedentes Emple Anteriores x persona
         public static Tbl_AntecedentesEmplAnteriores obtenerEmpAntexPer(int personaid)
         {
@@ -41,13 +55,41 @@ namespace CapaNegocio
             return facriestrabid;
         }
 
+        //metodo traer para traer AnteFamiDetParentesco x persona
+        public static Tbl_AntecedentesFamiliaresDetParentesco obtenerAntFamDetPar(int personaid)
+        {
+            var obtantfampar = dc.Tbl_AntecedentesFamiliaresDetParentesco.FirstOrDefault(per => per.Per_id.Equals(personaid) && per.AntFamDetPare_estado == "A");
+            return obtantfampar;
+        }
+
         //metodo traer para traer Actividades extra laborales x persona
         public static Tbl_ActividadesExtraLaborales obtenerActiExtraLabxPer(int personaid)
         {
             var actextralabid = dc.Tbl_ActividadesExtraLaborales.FirstOrDefault(per => per.Per_id.Equals(personaid) && per.ActExtLab_estado == "A");
             return actextralabid;
         }
-        
+
+        //metodo traer para traer Enfermedad Actual Inicial x persona
+        public static Tbl_EnfermedadActualInicial obtenerEnferActInixPer(int personaid)
+        {
+            var enferactini = dc.Tbl_EnfermedadActualInicial.FirstOrDefault(per => per.Per_id.Equals(personaid) && per.enfActual_estado == "A");
+            return enferactini;
+        }
+
+        //metodo traer para traer Revision actual organos y sistemas x persona
+        public static Tbl_RevisionActualOrganosSistemas obtenerRevActOrgSisxPer(int personaid)
+        {
+            var obtrevactorgsis = dc.Tbl_RevisionActualOrganosSistemas.FirstOrDefault(per => per.Per_id.Equals(personaid) && per.RevActOrgSis_estado == "A");
+            return obtrevactorgsis;
+        }
+
+        //metodo traer para traer Examen fisico regional x persona
+        public static Tbl_ExaFisRegionalInicial obtenerExaFisRegPer(int personaid)
+        {
+            var exafisreg = dc.Tbl_ExaFisRegionalInicial.FirstOrDefault(per => per.Per_id.Equals(personaid) && per.exaFisRegInicial_estado == "A");
+            return exafisreg;
+        }
+
         //metodo traer para traer res Exa Gen Esp Ries Trabajo x persona
         public static Tbl_ResExaGenEspRiesTrabajo obtenerResExaGenEspRiesTrabaxPer(int personaid)
         {
@@ -67,6 +109,13 @@ namespace CapaNegocio
         {
             var aptmedid = dc.Tbl_AptitudMedica.FirstOrDefault(per => per.Per_id.Equals(personaid) && per.AptMed_estado == "A");
             return aptmedid;
+        }
+
+        //metodo traer para traer REcomendaciones y tratamiento x persona
+        public static Tbl_TratamientoInicial obtenerTratamientoInixPer(int personaid)
+        {
+            var tratamientoinicial = dc.Tbl_TratamientoInicial.FirstOrDefault(per => per.Per_id.Equals(personaid) && per.trataInicial_estado == "A");
+            return tratamientoinicial;
         }
 
 

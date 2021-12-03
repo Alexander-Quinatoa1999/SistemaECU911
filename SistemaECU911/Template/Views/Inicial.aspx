@@ -241,7 +241,7 @@
                         </div>
                     </div>
                     <div class="list-group list-group-flush">
-                        <asp:TextBox ID="txt_motivoconsultainicial" runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center" placeholder="Descripción: "></asp:TextBox> 
+                        <asp:TextBox ID="txt_motivoconsultainicial" runat="server" BorderStyle="None" style="background-color:transparent; width:100%;" placeholder="Descripción: "></asp:TextBox> 
                     </div>
                 </div>
                 <br />
@@ -638,7 +638,7 @@
                         </asp:TableRow>
                         <asp:TableRow>
                             <asp:TableCell ColumnSpan="9">
-                                <asp:TextBox ID="txt_observaciones2" Text="Observaciones:" runat="server" ></asp:TextBox>
+                                <asp:TextBox ID="txt_observaciones2" BorderStyle="None" style="background-color:transparent; width:100%;" placeholder="Observaciones: " runat="server" ></asp:TextBox>
                             </asp:TableCell>
                         </asp:TableRow>
                     </asp:Table>
@@ -669,7 +669,7 @@
                         </asp:TableRow>
                         <asp:TableRow>
                             <asp:TableCell ColumnSpan="9">
-                                <asp:TextBox ID="txt_observaciones3" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txt_observaciones3" BorderStyle="None" style="background-color:transparent; width:100%;" placeholder="Observaciones: " runat="server"></asp:TextBox>
                             </asp:TableCell>
                         </asp:TableRow>
                     </asp:Table>
@@ -723,7 +723,7 @@
                         </asp:TableRow>
                         <asp:TableRow>
                             <asp:TableCell ColumnSpan="8">
-                                <asp:TextBox ID="txt_descripcionantefamiliares" runat="server" placeholder="x"></asp:TextBox>
+                                <asp:TextBox ID="txt_descripcionantefamiliares" BorderStyle="None" style="background-color:transparent; width:100%;" runat="server" placeholder="Descripción: "></asp:TextBox>
                             </asp:TableCell>
                         </asp:TableRow>
                     </asp:Table>
@@ -1140,7 +1140,7 @@
                         G. ACTIVIDADES EXTRA LABORALES                                            
                     </div>
                     <div class="list-group list-group-flush">
-                        <asp:TextBox ID="txt_descrextralaborales" placeholder="Descripcion extra" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txt_descrextralaborales" BorderStyle="None" style="background-color:transparent; width:100%;" runat="server" placeholder="Descripción: "></asp:TextBox>
                     </div>
                 </div>
                 <br />
@@ -1149,7 +1149,7 @@
                         H. ENFERMEDAD ACTUAL                                           
                     </div>
                     <div class="list-group list-group-flush">
-                        <asp:TextBox ID="txt_enfermedadactualinicial" runat="server" placeholder="x"></asp:TextBox>
+                        <asp:TextBox ID="txt_enfermedadactualinicial" runat="server" BorderStyle="None" style="background-color:transparent; width:100%;" placeholder="Descripción: "></asp:TextBox>
                     </div>
                 </div>
                 <br />
@@ -1209,7 +1209,7 @@
                         </asp:TableRow>
                         <asp:TableRow>
                             <asp:TableCell ColumnSpan="10">
-                                <asp:TextBox ID="txt_descrorganosysistemas" runat="server" placeholder="x"></asp:TextBox>
+                                <asp:TextBox ID="txt_descrorganosysistemas" BorderStyle="None" style="background-color:transparent; width:100%;" runat="server" placeholder="Descripción: "></asp:TextBox>
                             </asp:TableCell>
                         </asp:TableRow>
                     </asp:Table>
@@ -1491,7 +1491,7 @@
                             </asp:TableRow>
                             <asp:TableRow>
                                 <asp:TableCell ColumnSpan="15">
-                                    <asp:TextBox ID="txt_obervexamenfisicoregional" runat="server" placeholder="Observaciones: "></asp:TextBox>
+                                    <asp:TextBox ID="txt_obervexamenfisicoregional" BorderStyle="None" style="background-color:transparent; width:100%;" runat="server" placeholder="Observaciones: "></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                         </asp:Table>
@@ -1523,7 +1523,7 @@
                             
                             <asp:TableRow>
                                 <asp:TableCell ColumnSpan="15">
-                                    <asp:TextBox ID="txt_observacionexamen" placeholder="Observaciones: " runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="txt_observacionexamen" BorderStyle="None" style="background-color:transparent; width:100%;" runat="server" placeholder="Observaciones: "></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                         </asp:Table>
@@ -1608,7 +1608,7 @@
                         O. RECOMENDACIONES Y/O TRATAMIENTO
                     </div>
                     <div class="list-group list-group-flush">
-                        <asp:TextBox ID="txt_descripciontratamiento" runat="server" placeholder="x"></asp:TextBox>
+                        <asp:TextBox ID="txt_descripciontratamiento" BorderStyle="None" style="background-color:transparent; width:100%;" runat="server" placeholder="Descripción:"></asp:TextBox>
                     </div>
                 </div>
                 <br />

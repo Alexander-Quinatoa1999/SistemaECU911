@@ -85,8 +85,8 @@ namespace SistemaECU911.Template.Views
                 int region = Convert.ToInt32(exafis.Regiones_id);
                 reg = CN_HistorialMedico.obtenerRegionesxid(region);
 
-                int tiporegion = Convert.ToInt32(reg.Regiones_id);
-                tipreg = CN_HistorialMedico.obtenerTipoRegionxReg(tiporegion);
+                //int tiporegion = Convert.ToInt32(reg.Regiones_id);
+                //tipreg = CN_HistorialMedico.obtenerTipoRegionxReg(tiporegion);
 
                 //int tiporegionid = Convert.ToInt32(tipreg.tipoExa_id);
                 //tipid = CN_HistorialMedico.obtenerTipoRegionxid(tiporegionid);
@@ -211,8 +211,8 @@ namespace SistemaECU911.Template.Views
                 int region = Convert.ToInt32(exafis.Regiones_id);
                 reg = CN_HistorialMedico.obtenerRegionesxid(region);
 
-                int tiporegion = Convert.ToInt32(reg.Regiones_id);
-                tipreg = CN_HistorialMedico.obtenerTipoRegionxReg(tiporegion);
+                //int tiporegion = Convert.ToInt32(reg.Regiones_id);
+                //tipreg = CN_HistorialMedico.obtenerTipoRegionxReg(tiporegion);
 
                 //int tiporegionid = Convert.ToInt32(tipreg.tipoExa_id);
                 //tipid = CN_HistorialMedico.obtenerTipoRegionxid(tiporegionid);
