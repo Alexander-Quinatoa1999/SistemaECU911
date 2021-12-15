@@ -189,9 +189,42 @@ namespace CapaDatos
     partial void InsertTbl_EvaMedRetiro(Tbl_EvaMedRetiro instance);
     partial void UpdateTbl_EvaMedRetiro(Tbl_EvaMedRetiro instance);
     partial void DeleteTbl_EvaMedRetiro(Tbl_EvaMedRetiro instance);
-    partial void InsertTbl_EviPatologicaFichMed(Tbl_EviPatologicaFichMed instance);
-    partial void UpdateTbl_EviPatologicaFichMed(Tbl_EviPatologicaFichMed instance);
-    partial void DeleteTbl_EviPatologicaFichMed(Tbl_EviPatologicaFichMed instance);
+    partial void InsertTbl_EviPatologica1(Tbl_EviPatologica1 instance);
+    partial void UpdateTbl_EviPatologica1(Tbl_EviPatologica1 instance);
+    partial void DeleteTbl_EviPatologica1(Tbl_EviPatologica1 instance);
+    partial void InsertTbl_EviPatologica10(Tbl_EviPatologica10 instance);
+    partial void UpdateTbl_EviPatologica10(Tbl_EviPatologica10 instance);
+    partial void DeleteTbl_EviPatologica10(Tbl_EviPatologica10 instance);
+    partial void InsertTbl_EviPatologica11(Tbl_EviPatologica11 instance);
+    partial void UpdateTbl_EviPatologica11(Tbl_EviPatologica11 instance);
+    partial void DeleteTbl_EviPatologica11(Tbl_EviPatologica11 instance);
+    partial void InsertTbl_EviPatologica12(Tbl_EviPatologica12 instance);
+    partial void UpdateTbl_EviPatologica12(Tbl_EviPatologica12 instance);
+    partial void DeleteTbl_EviPatologica12(Tbl_EviPatologica12 instance);
+    partial void InsertTbl_EviPatologica2(Tbl_EviPatologica2 instance);
+    partial void UpdateTbl_EviPatologica2(Tbl_EviPatologica2 instance);
+    partial void DeleteTbl_EviPatologica2(Tbl_EviPatologica2 instance);
+    partial void InsertTbl_EviPatologica3(Tbl_EviPatologica3 instance);
+    partial void UpdateTbl_EviPatologica3(Tbl_EviPatologica3 instance);
+    partial void DeleteTbl_EviPatologica3(Tbl_EviPatologica3 instance);
+    partial void InsertTbl_EviPatologica4(Tbl_EviPatologica4 instance);
+    partial void UpdateTbl_EviPatologica4(Tbl_EviPatologica4 instance);
+    partial void DeleteTbl_EviPatologica4(Tbl_EviPatologica4 instance);
+    partial void InsertTbl_EviPatologica5(Tbl_EviPatologica5 instance);
+    partial void UpdateTbl_EviPatologica5(Tbl_EviPatologica5 instance);
+    partial void DeleteTbl_EviPatologica5(Tbl_EviPatologica5 instance);
+    partial void InsertTbl_EviPatologica6(Tbl_EviPatologica6 instance);
+    partial void UpdateTbl_EviPatologica6(Tbl_EviPatologica6 instance);
+    partial void DeleteTbl_EviPatologica6(Tbl_EviPatologica6 instance);
+    partial void InsertTbl_EviPatologica7(Tbl_EviPatologica7 instance);
+    partial void UpdateTbl_EviPatologica7(Tbl_EviPatologica7 instance);
+    partial void DeleteTbl_EviPatologica7(Tbl_EviPatologica7 instance);
+    partial void InsertTbl_EviPatologica8(Tbl_EviPatologica8 instance);
+    partial void UpdateTbl_EviPatologica8(Tbl_EviPatologica8 instance);
+    partial void DeleteTbl_EviPatologica8(Tbl_EviPatologica8 instance);
+    partial void InsertTbl_EviPatologica9(Tbl_EviPatologica9 instance);
+    partial void UpdateTbl_EviPatologica9(Tbl_EviPatologica9 instance);
+    partial void DeleteTbl_EviPatologica9(Tbl_EviPatologica9 instance);
     partial void InsertTbl_Evolucion(Tbl_Evolucion instance);
     partial void UpdateTbl_Evolucion(Tbl_Evolucion instance);
     partial void DeleteTbl_Evolucion(Tbl_Evolucion instance);
@@ -840,11 +873,99 @@ namespace CapaDatos
 			}
 		}
 		
-		public System.Data.Linq.Table<Tbl_EviPatologicaFichMed> Tbl_EviPatologicaFichMed
+		public System.Data.Linq.Table<Tbl_EviPatologica1> Tbl_EviPatologica1
 		{
 			get
 			{
-				return this.GetTable<Tbl_EviPatologicaFichMed>();
+				return this.GetTable<Tbl_EviPatologica1>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Tbl_EviPatologica10> Tbl_EviPatologica10
+		{
+			get
+			{
+				return this.GetTable<Tbl_EviPatologica10>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Tbl_EviPatologica11> Tbl_EviPatologica11
+		{
+			get
+			{
+				return this.GetTable<Tbl_EviPatologica11>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Tbl_EviPatologica12> Tbl_EviPatologica12
+		{
+			get
+			{
+				return this.GetTable<Tbl_EviPatologica12>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Tbl_EviPatologica2> Tbl_EviPatologica2
+		{
+			get
+			{
+				return this.GetTable<Tbl_EviPatologica2>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Tbl_EviPatologica3> Tbl_EviPatologica3
+		{
+			get
+			{
+				return this.GetTable<Tbl_EviPatologica3>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Tbl_EviPatologica4> Tbl_EviPatologica4
+		{
+			get
+			{
+				return this.GetTable<Tbl_EviPatologica4>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Tbl_EviPatologica5> Tbl_EviPatologica5
+		{
+			get
+			{
+				return this.GetTable<Tbl_EviPatologica5>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Tbl_EviPatologica6> Tbl_EviPatologica6
+		{
+			get
+			{
+				return this.GetTable<Tbl_EviPatologica6>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Tbl_EviPatologica7> Tbl_EviPatologica7
+		{
+			get
+			{
+				return this.GetTable<Tbl_EviPatologica7>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Tbl_EviPatologica8> Tbl_EviPatologica8
+		{
+			get
+			{
+				return this.GetTable<Tbl_EviPatologica8>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Tbl_EviPatologica9> Tbl_EviPatologica9
+		{
+			get
+			{
+				return this.GetTable<Tbl_EviPatologica9>();
 			}
 		}
 		
@@ -5042,7 +5163,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AntFami_antecendente", DbType="VarChar(250)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AntFami_antecendente", DbType="Text", UpdateCheck=UpdateCheck.Never)]
 		public string AntFami_antecendente
 		{
 			get
@@ -5062,7 +5183,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AntFami_descripcion", DbType="VarChar(250)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AntFami_descripcion", DbType="Text", UpdateCheck=UpdateCheck.Never)]
 		public string AntFami_descripcion
 		{
 			get
@@ -5306,7 +5427,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AntPer_antecedente", DbType="VarChar(250)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AntPer_antecedente", DbType="Text", UpdateCheck=UpdateCheck.Never)]
 		public string AntPer_antecedente
 		{
 			get
@@ -5326,7 +5447,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AntPer_descripcion", DbType="VarChar(250)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AntPer_descripcion", DbType="Text", UpdateCheck=UpdateCheck.Never)]
 		public string AntPer_descripcion
 		{
 			get
@@ -6970,21 +7091,21 @@ namespace CapaDatos
 		
 		private string _ConsVitAntro_preArterial;
 		
-		private string _ConsVitAntro_temperatura;
+		private System.Nullable<long> _ConsVitAntro_temperatura;
 		
-		private string _ConsVitAntro_frecCardiacan;
+		private System.Nullable<long> _ConsVitAntro_frecCardiacan;
 		
-		private string _ConsVitAntro_satOxigenon;
+		private System.Nullable<long> _ConsVitAntro_satOxigenon;
 		
-		private string _ConsVitAntro_frecRespiratorian;
+		private System.Nullable<long> _ConsVitAntro_frecRespiratorian;
 		
-		private string _ConsVitAntro_peson;
+		private System.Nullable<long> _ConsVitAntro_peson;
 		
-		private string _ConsVitAntro_tallan;
+		private System.Nullable<long> _ConsVitAntro_tallan;
 		
-		private string _ConsVitAntro_indMasCorporaln;
+		private System.Nullable<long> _ConsVitAntro_indMasCorporaln;
 		
-		private string _ConsVitAntro_perAbdominaln;
+		private System.Nullable<long> _ConsVitAntro_perAbdominaln;
 		
 		private System.Nullable<int> _Per_id;
 		
@@ -7000,21 +7121,21 @@ namespace CapaDatos
     partial void OnConsVitAntro_idChanged();
     partial void OnConsVitAntro_preArterialChanging(string value);
     partial void OnConsVitAntro_preArterialChanged();
-    partial void OnConsVitAntro_temperaturaChanging(string value);
+    partial void OnConsVitAntro_temperaturaChanging(System.Nullable<long> value);
     partial void OnConsVitAntro_temperaturaChanged();
-    partial void OnConsVitAntro_frecCardiacanChanging(string value);
+    partial void OnConsVitAntro_frecCardiacanChanging(System.Nullable<long> value);
     partial void OnConsVitAntro_frecCardiacanChanged();
-    partial void OnConsVitAntro_satOxigenonChanging(string value);
+    partial void OnConsVitAntro_satOxigenonChanging(System.Nullable<long> value);
     partial void OnConsVitAntro_satOxigenonChanged();
-    partial void OnConsVitAntro_frecRespiratorianChanging(string value);
+    partial void OnConsVitAntro_frecRespiratorianChanging(System.Nullable<long> value);
     partial void OnConsVitAntro_frecRespiratorianChanged();
-    partial void OnConsVitAntro_pesonChanging(string value);
+    partial void OnConsVitAntro_pesonChanging(System.Nullable<long> value);
     partial void OnConsVitAntro_pesonChanged();
-    partial void OnConsVitAntro_tallanChanging(string value);
+    partial void OnConsVitAntro_tallanChanging(System.Nullable<long> value);
     partial void OnConsVitAntro_tallanChanged();
-    partial void OnConsVitAntro_indMasCorporalnChanging(string value);
+    partial void OnConsVitAntro_indMasCorporalnChanging(System.Nullable<long> value);
     partial void OnConsVitAntro_indMasCorporalnChanged();
-    partial void OnConsVitAntro_perAbdominalnChanging(string value);
+    partial void OnConsVitAntro_perAbdominalnChanging(System.Nullable<long> value);
     partial void OnConsVitAntro_perAbdominalnChanged();
     partial void OnPer_idChanging(System.Nullable<int> value);
     partial void OnPer_idChanged();
@@ -7048,7 +7169,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ConsVitAntro_preArterial", DbType="VarChar(100)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ConsVitAntro_preArterial", DbType="Text", UpdateCheck=UpdateCheck.Never)]
 		public string ConsVitAntro_preArterial
 		{
 			get
@@ -7068,8 +7189,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ConsVitAntro_temperatura", DbType="VarChar(100)")]
-		public string ConsVitAntro_temperatura
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ConsVitAntro_temperatura", DbType="BigInt")]
+		public System.Nullable<long> ConsVitAntro_temperatura
 		{
 			get
 			{
@@ -7088,8 +7209,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ConsVitAntro_frecCardiacan", DbType="VarChar(100)")]
-		public string ConsVitAntro_frecCardiacan
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ConsVitAntro_frecCardiacan", DbType="BigInt")]
+		public System.Nullable<long> ConsVitAntro_frecCardiacan
 		{
 			get
 			{
@@ -7108,8 +7229,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ConsVitAntro_satOxigenon", DbType="VarChar(100)")]
-		public string ConsVitAntro_satOxigenon
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ConsVitAntro_satOxigenon", DbType="BigInt")]
+		public System.Nullable<long> ConsVitAntro_satOxigenon
 		{
 			get
 			{
@@ -7128,8 +7249,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ConsVitAntro_frecRespiratorian", DbType="VarChar(100)")]
-		public string ConsVitAntro_frecRespiratorian
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ConsVitAntro_frecRespiratorian", DbType="BigInt")]
+		public System.Nullable<long> ConsVitAntro_frecRespiratorian
 		{
 			get
 			{
@@ -7148,8 +7269,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ConsVitAntro_peson", DbType="VarChar(100)")]
-		public string ConsVitAntro_peson
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ConsVitAntro_peson", DbType="BigInt")]
+		public System.Nullable<long> ConsVitAntro_peson
 		{
 			get
 			{
@@ -7168,8 +7289,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ConsVitAntro_tallan", DbType="VarChar(100)")]
-		public string ConsVitAntro_tallan
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ConsVitAntro_tallan", DbType="BigInt")]
+		public System.Nullable<long> ConsVitAntro_tallan
 		{
 			get
 			{
@@ -7188,8 +7309,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ConsVitAntro_indMasCorporaln", DbType="VarChar(100)")]
-		public string ConsVitAntro_indMasCorporaln
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ConsVitAntro_indMasCorporaln", DbType="BigInt")]
+		public System.Nullable<long> ConsVitAntro_indMasCorporaln
 		{
 			get
 			{
@@ -7208,8 +7329,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ConsVitAntro_perAbdominaln", DbType="VarChar(100)")]
-		public string ConsVitAntro_perAbdominaln
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ConsVitAntro_perAbdominaln", DbType="BigInt")]
+		public System.Nullable<long> ConsVitAntro_perAbdominaln
 		{
 			get
 			{
@@ -8681,7 +8802,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DatProfe_cod", DbType="VarChar(150)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DatProfe_cod", DbType="Text", UpdateCheck=UpdateCheck.Never)]
 		public string DatProfe_cod
 		{
 			get
@@ -9191,7 +9312,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_diag_diagnosticos", DbType="VarChar(250)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_diag_diagnosticos", DbType="Text", UpdateCheck=UpdateCheck.Never)]
 		public string diag_diagnosticos
 		{
 			get
@@ -9211,7 +9332,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_diag_codigo", DbType="VarChar(50)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_diag_codigo", DbType="Text", UpdateCheck=UpdateCheck.Never)]
 		public string diag_codigo
 		{
 			get
@@ -9231,7 +9352,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_diag_tipo", DbType="VarChar(50)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_diag_tipo", DbType="Text", UpdateCheck=UpdateCheck.Never)]
 		public string diag_tipo
 		{
 			get
@@ -9251,7 +9372,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_diag_condicion", DbType="VarChar(150)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_diag_condicion", DbType="Text", UpdateCheck=UpdateCheck.Never)]
 		public string diag_condicion
 		{
 			get
@@ -9271,7 +9392,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_diag_cronologian", DbType="VarChar(100)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_diag_cronologian", DbType="Text", UpdateCheck=UpdateCheck.Never)]
 		public string diag_cronologian
 		{
 			get
@@ -9291,7 +9412,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_diag_descripcion", DbType="VarChar(250)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_diag_descripcion", DbType="Text", UpdateCheck=UpdateCheck.Never)]
 		public string diag_descripcion
 		{
 			get
@@ -13631,132 +13752,99 @@ namespace CapaDatos
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_EviPatologicaFichMed")]
-	public partial class Tbl_EviPatologicaFichMed : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_EviPatologica1")]
+	public partial class Tbl_EviPatologica1 : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _eviPat_id;
+		private int _eviPat1_id;
 		
-		private string _eviPat_nomOpcion;
+		private string _eviPat1_nomOpcion;
 		
-		private string _eviPat_estado;
+		private string _eviPat1_estado;
 		
 		private EntitySet<Tbl_ReviOrgaSistemasFichMed> _Tbl_ReviOrgaSistemasFichMed;
-		
-		private EntitySet<Tbl_ReviOrgaSistemasFichMed> _Tbl_ReviOrgaSistemasFichMed1;
-		
-		private EntitySet<Tbl_ReviOrgaSistemasFichMed> _Tbl_ReviOrgaSistemasFichMed2;
-		
-		private EntitySet<Tbl_ReviOrgaSistemasFichMed> _Tbl_ReviOrgaSistemasFichMed3;
-		
-		private EntitySet<Tbl_ReviOrgaSistemasFichMed> _Tbl_ReviOrgaSistemasFichMed4;
-		
-		private EntitySet<Tbl_ReviOrgaSistemasFichMed> _Tbl_ReviOrgaSistemasFichMed5;
-		
-		private EntitySet<Tbl_ReviOrgaSistemasFichMed> _Tbl_ReviOrgaSistemasFichMed6;
-		
-		private EntitySet<Tbl_ReviOrgaSistemasFichMed> _Tbl_ReviOrgaSistemasFichMed7;
-		
-		private EntitySet<Tbl_ReviOrgaSistemasFichMed> _Tbl_ReviOrgaSistemasFichMed8;
-		
-		private EntitySet<Tbl_ReviOrgaSistemasFichMed> _Tbl_ReviOrgaSistemasFichMed9;
-		
-		private EntitySet<Tbl_ReviOrgaSistemasFichMed> _Tbl_ReviOrgaSistemasFichMed10;
-		
-		private EntitySet<Tbl_ReviOrgaSistemasFichMed> _Tbl_ReviOrgaSistemasFichMed11;
 		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OneviPat_idChanging(int value);
-    partial void OneviPat_idChanged();
-    partial void OneviPat_nomOpcionChanging(string value);
-    partial void OneviPat_nomOpcionChanged();
-    partial void OneviPat_estadoChanging(string value);
-    partial void OneviPat_estadoChanged();
+    partial void OneviPat1_idChanging(int value);
+    partial void OneviPat1_idChanged();
+    partial void OneviPat1_nomOpcionChanging(string value);
+    partial void OneviPat1_nomOpcionChanged();
+    partial void OneviPat1_estadoChanging(string value);
+    partial void OneviPat1_estadoChanged();
     #endregion
 		
-		public Tbl_EviPatologicaFichMed()
+		public Tbl_EviPatologica1()
 		{
 			this._Tbl_ReviOrgaSistemasFichMed = new EntitySet<Tbl_ReviOrgaSistemasFichMed>(new Action<Tbl_ReviOrgaSistemasFichMed>(this.attach_Tbl_ReviOrgaSistemasFichMed), new Action<Tbl_ReviOrgaSistemasFichMed>(this.detach_Tbl_ReviOrgaSistemasFichMed));
-			this._Tbl_ReviOrgaSistemasFichMed1 = new EntitySet<Tbl_ReviOrgaSistemasFichMed>(new Action<Tbl_ReviOrgaSistemasFichMed>(this.attach_Tbl_ReviOrgaSistemasFichMed1), new Action<Tbl_ReviOrgaSistemasFichMed>(this.detach_Tbl_ReviOrgaSistemasFichMed1));
-			this._Tbl_ReviOrgaSistemasFichMed2 = new EntitySet<Tbl_ReviOrgaSistemasFichMed>(new Action<Tbl_ReviOrgaSistemasFichMed>(this.attach_Tbl_ReviOrgaSistemasFichMed2), new Action<Tbl_ReviOrgaSistemasFichMed>(this.detach_Tbl_ReviOrgaSistemasFichMed2));
-			this._Tbl_ReviOrgaSistemasFichMed3 = new EntitySet<Tbl_ReviOrgaSistemasFichMed>(new Action<Tbl_ReviOrgaSistemasFichMed>(this.attach_Tbl_ReviOrgaSistemasFichMed3), new Action<Tbl_ReviOrgaSistemasFichMed>(this.detach_Tbl_ReviOrgaSistemasFichMed3));
-			this._Tbl_ReviOrgaSistemasFichMed4 = new EntitySet<Tbl_ReviOrgaSistemasFichMed>(new Action<Tbl_ReviOrgaSistemasFichMed>(this.attach_Tbl_ReviOrgaSistemasFichMed4), new Action<Tbl_ReviOrgaSistemasFichMed>(this.detach_Tbl_ReviOrgaSistemasFichMed4));
-			this._Tbl_ReviOrgaSistemasFichMed5 = new EntitySet<Tbl_ReviOrgaSistemasFichMed>(new Action<Tbl_ReviOrgaSistemasFichMed>(this.attach_Tbl_ReviOrgaSistemasFichMed5), new Action<Tbl_ReviOrgaSistemasFichMed>(this.detach_Tbl_ReviOrgaSistemasFichMed5));
-			this._Tbl_ReviOrgaSistemasFichMed6 = new EntitySet<Tbl_ReviOrgaSistemasFichMed>(new Action<Tbl_ReviOrgaSistemasFichMed>(this.attach_Tbl_ReviOrgaSistemasFichMed6), new Action<Tbl_ReviOrgaSistemasFichMed>(this.detach_Tbl_ReviOrgaSistemasFichMed6));
-			this._Tbl_ReviOrgaSistemasFichMed7 = new EntitySet<Tbl_ReviOrgaSistemasFichMed>(new Action<Tbl_ReviOrgaSistemasFichMed>(this.attach_Tbl_ReviOrgaSistemasFichMed7), new Action<Tbl_ReviOrgaSistemasFichMed>(this.detach_Tbl_ReviOrgaSistemasFichMed7));
-			this._Tbl_ReviOrgaSistemasFichMed8 = new EntitySet<Tbl_ReviOrgaSistemasFichMed>(new Action<Tbl_ReviOrgaSistemasFichMed>(this.attach_Tbl_ReviOrgaSistemasFichMed8), new Action<Tbl_ReviOrgaSistemasFichMed>(this.detach_Tbl_ReviOrgaSistemasFichMed8));
-			this._Tbl_ReviOrgaSistemasFichMed9 = new EntitySet<Tbl_ReviOrgaSistemasFichMed>(new Action<Tbl_ReviOrgaSistemasFichMed>(this.attach_Tbl_ReviOrgaSistemasFichMed9), new Action<Tbl_ReviOrgaSistemasFichMed>(this.detach_Tbl_ReviOrgaSistemasFichMed9));
-			this._Tbl_ReviOrgaSistemasFichMed10 = new EntitySet<Tbl_ReviOrgaSistemasFichMed>(new Action<Tbl_ReviOrgaSistemasFichMed>(this.attach_Tbl_ReviOrgaSistemasFichMed10), new Action<Tbl_ReviOrgaSistemasFichMed>(this.detach_Tbl_ReviOrgaSistemasFichMed10));
-			this._Tbl_ReviOrgaSistemasFichMed11 = new EntitySet<Tbl_ReviOrgaSistemasFichMed>(new Action<Tbl_ReviOrgaSistemasFichMed>(this.attach_Tbl_ReviOrgaSistemasFichMed11), new Action<Tbl_ReviOrgaSistemasFichMed>(this.detach_Tbl_ReviOrgaSistemasFichMed11));
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_eviPat_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int eviPat_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_eviPat1_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int eviPat1_id
 		{
 			get
 			{
-				return this._eviPat_id;
+				return this._eviPat1_id;
 			}
 			set
 			{
-				if ((this._eviPat_id != value))
+				if ((this._eviPat1_id != value))
 				{
-					this.OneviPat_idChanging(value);
+					this.OneviPat1_idChanging(value);
 					this.SendPropertyChanging();
-					this._eviPat_id = value;
-					this.SendPropertyChanged("eviPat_id");
-					this.OneviPat_idChanged();
+					this._eviPat1_id = value;
+					this.SendPropertyChanged("eviPat1_id");
+					this.OneviPat1_idChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_eviPat_nomOpcion", DbType="VarChar(25)")]
-		public string eviPat_nomOpcion
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_eviPat1_nomOpcion", DbType="VarChar(25)")]
+		public string eviPat1_nomOpcion
 		{
 			get
 			{
-				return this._eviPat_nomOpcion;
+				return this._eviPat1_nomOpcion;
 			}
 			set
 			{
-				if ((this._eviPat_nomOpcion != value))
+				if ((this._eviPat1_nomOpcion != value))
 				{
-					this.OneviPat_nomOpcionChanging(value);
+					this.OneviPat1_nomOpcionChanging(value);
 					this.SendPropertyChanging();
-					this._eviPat_nomOpcion = value;
-					this.SendPropertyChanged("eviPat_nomOpcion");
-					this.OneviPat_nomOpcionChanged();
+					this._eviPat1_nomOpcion = value;
+					this.SendPropertyChanged("eviPat1_nomOpcion");
+					this.OneviPat1_nomOpcionChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_eviPat_estado", DbType="VarChar(50)")]
-		public string eviPat_estado
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_eviPat1_estado", DbType="VarChar(1)")]
+		public string eviPat1_estado
 		{
 			get
 			{
-				return this._eviPat_estado;
+				return this._eviPat1_estado;
 			}
 			set
 			{
-				if ((this._eviPat_estado != value))
+				if ((this._eviPat1_estado != value))
 				{
-					this.OneviPat_estadoChanging(value);
+					this.OneviPat1_estadoChanging(value);
 					this.SendPropertyChanging();
-					this._eviPat_estado = value;
-					this.SendPropertyChanged("eviPat_estado");
-					this.OneviPat_estadoChanged();
+					this._eviPat1_estado = value;
+					this.SendPropertyChanged("eviPat1_estado");
+					this.OneviPat1_estadoChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_EviPatologicaFichMed_Tbl_ReviOrgaSistemasFichMed", Storage="_Tbl_ReviOrgaSistemasFichMed", ThisKey="eviPat_id", OtherKey="eviPat1_id")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_EviPatologica1_Tbl_ReviOrgaSistemasFichMed", Storage="_Tbl_ReviOrgaSistemasFichMed", ThisKey="eviPat1_id", OtherKey="eviPat1_id")]
 		public EntitySet<Tbl_ReviOrgaSistemasFichMed> Tbl_ReviOrgaSistemasFichMed
 		{
 			get
@@ -13766,149 +13854,6 @@ namespace CapaDatos
 			set
 			{
 				this._Tbl_ReviOrgaSistemasFichMed.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_EviPatologicaFichMed_Tbl_ReviOrgaSistemasFichMed1", Storage="_Tbl_ReviOrgaSistemasFichMed1", ThisKey="eviPat_id", OtherKey="eviPat2_id")]
-		public EntitySet<Tbl_ReviOrgaSistemasFichMed> Tbl_ReviOrgaSistemasFichMed1
-		{
-			get
-			{
-				return this._Tbl_ReviOrgaSistemasFichMed1;
-			}
-			set
-			{
-				this._Tbl_ReviOrgaSistemasFichMed1.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_EviPatologicaFichMed_Tbl_ReviOrgaSistemasFichMed2", Storage="_Tbl_ReviOrgaSistemasFichMed2", ThisKey="eviPat_id", OtherKey="eviPat11_id")]
-		public EntitySet<Tbl_ReviOrgaSistemasFichMed> Tbl_ReviOrgaSistemasFichMed2
-		{
-			get
-			{
-				return this._Tbl_ReviOrgaSistemasFichMed2;
-			}
-			set
-			{
-				this._Tbl_ReviOrgaSistemasFichMed2.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_EviPatologicaFichMed_Tbl_ReviOrgaSistemasFichMed3", Storage="_Tbl_ReviOrgaSistemasFichMed3", ThisKey="eviPat_id", OtherKey="eviPat12_id")]
-		public EntitySet<Tbl_ReviOrgaSistemasFichMed> Tbl_ReviOrgaSistemasFichMed3
-		{
-			get
-			{
-				return this._Tbl_ReviOrgaSistemasFichMed3;
-			}
-			set
-			{
-				this._Tbl_ReviOrgaSistemasFichMed3.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_EviPatologicaFichMed_Tbl_ReviOrgaSistemasFichMed4", Storage="_Tbl_ReviOrgaSistemasFichMed4", ThisKey="eviPat_id", OtherKey="eviPat3_id")]
-		public EntitySet<Tbl_ReviOrgaSistemasFichMed> Tbl_ReviOrgaSistemasFichMed4
-		{
-			get
-			{
-				return this._Tbl_ReviOrgaSistemasFichMed4;
-			}
-			set
-			{
-				this._Tbl_ReviOrgaSistemasFichMed4.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_EviPatologicaFichMed_Tbl_ReviOrgaSistemasFichMed5", Storage="_Tbl_ReviOrgaSistemasFichMed5", ThisKey="eviPat_id", OtherKey="eviPat4_id")]
-		public EntitySet<Tbl_ReviOrgaSistemasFichMed> Tbl_ReviOrgaSistemasFichMed5
-		{
-			get
-			{
-				return this._Tbl_ReviOrgaSistemasFichMed5;
-			}
-			set
-			{
-				this._Tbl_ReviOrgaSistemasFichMed5.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_EviPatologicaFichMed_Tbl_ReviOrgaSistemasFichMed6", Storage="_Tbl_ReviOrgaSistemasFichMed6", ThisKey="eviPat_id", OtherKey="eviPat5_id")]
-		public EntitySet<Tbl_ReviOrgaSistemasFichMed> Tbl_ReviOrgaSistemasFichMed6
-		{
-			get
-			{
-				return this._Tbl_ReviOrgaSistemasFichMed6;
-			}
-			set
-			{
-				this._Tbl_ReviOrgaSistemasFichMed6.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_EviPatologicaFichMed_Tbl_ReviOrgaSistemasFichMed7", Storage="_Tbl_ReviOrgaSistemasFichMed7", ThisKey="eviPat_id", OtherKey="eviPat6_id")]
-		public EntitySet<Tbl_ReviOrgaSistemasFichMed> Tbl_ReviOrgaSistemasFichMed7
-		{
-			get
-			{
-				return this._Tbl_ReviOrgaSistemasFichMed7;
-			}
-			set
-			{
-				this._Tbl_ReviOrgaSistemasFichMed7.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_EviPatologicaFichMed_Tbl_ReviOrgaSistemasFichMed8", Storage="_Tbl_ReviOrgaSistemasFichMed8", ThisKey="eviPat_id", OtherKey="eviPat7_id")]
-		public EntitySet<Tbl_ReviOrgaSistemasFichMed> Tbl_ReviOrgaSistemasFichMed8
-		{
-			get
-			{
-				return this._Tbl_ReviOrgaSistemasFichMed8;
-			}
-			set
-			{
-				this._Tbl_ReviOrgaSistemasFichMed8.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_EviPatologicaFichMed_Tbl_ReviOrgaSistemasFichMed9", Storage="_Tbl_ReviOrgaSistemasFichMed9", ThisKey="eviPat_id", OtherKey="eviPat8_id")]
-		public EntitySet<Tbl_ReviOrgaSistemasFichMed> Tbl_ReviOrgaSistemasFichMed9
-		{
-			get
-			{
-				return this._Tbl_ReviOrgaSistemasFichMed9;
-			}
-			set
-			{
-				this._Tbl_ReviOrgaSistemasFichMed9.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_EviPatologicaFichMed_Tbl_ReviOrgaSistemasFichMed10", Storage="_Tbl_ReviOrgaSistemasFichMed10", ThisKey="eviPat_id", OtherKey="eviPat9_id")]
-		public EntitySet<Tbl_ReviOrgaSistemasFichMed> Tbl_ReviOrgaSistemasFichMed10
-		{
-			get
-			{
-				return this._Tbl_ReviOrgaSistemasFichMed10;
-			}
-			set
-			{
-				this._Tbl_ReviOrgaSistemasFichMed10.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_EviPatologicaFichMed_Tbl_ReviOrgaSistemasFichMed11", Storage="_Tbl_ReviOrgaSistemasFichMed11", ThisKey="eviPat_id", OtherKey="eviPat10_id")]
-		public EntitySet<Tbl_ReviOrgaSistemasFichMed> Tbl_ReviOrgaSistemasFichMed11
-		{
-			get
-			{
-				return this._Tbl_ReviOrgaSistemasFichMed11;
-			}
-			set
-			{
-				this._Tbl_ReviOrgaSistemasFichMed11.Assign(value);
 			}
 		}
 		
@@ -13935,145 +13880,1531 @@ namespace CapaDatos
 		private void attach_Tbl_ReviOrgaSistemasFichMed(Tbl_ReviOrgaSistemasFichMed entity)
 		{
 			this.SendPropertyChanging();
-			entity.Tbl_EviPatologicaFichMed = this;
+			entity.Tbl_EviPatologica1 = this;
 		}
 		
 		private void detach_Tbl_ReviOrgaSistemasFichMed(Tbl_ReviOrgaSistemasFichMed entity)
 		{
 			this.SendPropertyChanging();
-			entity.Tbl_EviPatologicaFichMed = null;
+			entity.Tbl_EviPatologica1 = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_EviPatologica10")]
+	public partial class Tbl_EviPatologica10 : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _eviPat10_id;
+		
+		private string _eviPat10_nomOpcion;
+		
+		private string _eviPat10_estado;
+		
+		private EntitySet<Tbl_ReviOrgaSistemasFichMed> _Tbl_ReviOrgaSistemasFichMed;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OneviPat10_idChanging(int value);
+    partial void OneviPat10_idChanged();
+    partial void OneviPat10_nomOpcionChanging(string value);
+    partial void OneviPat10_nomOpcionChanged();
+    partial void OneviPat10_estadoChanging(string value);
+    partial void OneviPat10_estadoChanged();
+    #endregion
+		
+		public Tbl_EviPatologica10()
+		{
+			this._Tbl_ReviOrgaSistemasFichMed = new EntitySet<Tbl_ReviOrgaSistemasFichMed>(new Action<Tbl_ReviOrgaSistemasFichMed>(this.attach_Tbl_ReviOrgaSistemasFichMed), new Action<Tbl_ReviOrgaSistemasFichMed>(this.detach_Tbl_ReviOrgaSistemasFichMed));
+			OnCreated();
 		}
 		
-		private void attach_Tbl_ReviOrgaSistemasFichMed1(Tbl_ReviOrgaSistemasFichMed entity)
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_eviPat10_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int eviPat10_id
 		{
-			this.SendPropertyChanging();
-			entity.Tbl_EviPatologicaFichMed1 = this;
+			get
+			{
+				return this._eviPat10_id;
+			}
+			set
+			{
+				if ((this._eviPat10_id != value))
+				{
+					this.OneviPat10_idChanging(value);
+					this.SendPropertyChanging();
+					this._eviPat10_id = value;
+					this.SendPropertyChanged("eviPat10_id");
+					this.OneviPat10_idChanged();
+				}
+			}
 		}
 		
-		private void detach_Tbl_ReviOrgaSistemasFichMed1(Tbl_ReviOrgaSistemasFichMed entity)
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_eviPat10_nomOpcion", DbType="VarChar(25)")]
+		public string eviPat10_nomOpcion
 		{
-			this.SendPropertyChanging();
-			entity.Tbl_EviPatologicaFichMed1 = null;
+			get
+			{
+				return this._eviPat10_nomOpcion;
+			}
+			set
+			{
+				if ((this._eviPat10_nomOpcion != value))
+				{
+					this.OneviPat10_nomOpcionChanging(value);
+					this.SendPropertyChanging();
+					this._eviPat10_nomOpcion = value;
+					this.SendPropertyChanged("eviPat10_nomOpcion");
+					this.OneviPat10_nomOpcionChanged();
+				}
+			}
 		}
 		
-		private void attach_Tbl_ReviOrgaSistemasFichMed2(Tbl_ReviOrgaSistemasFichMed entity)
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_eviPat10_estado", DbType="VarChar(1)")]
+		public string eviPat10_estado
 		{
-			this.SendPropertyChanging();
-			entity.Tbl_EviPatologicaFichMed2 = this;
+			get
+			{
+				return this._eviPat10_estado;
+			}
+			set
+			{
+				if ((this._eviPat10_estado != value))
+				{
+					this.OneviPat10_estadoChanging(value);
+					this.SendPropertyChanging();
+					this._eviPat10_estado = value;
+					this.SendPropertyChanged("eviPat10_estado");
+					this.OneviPat10_estadoChanged();
+				}
+			}
 		}
 		
-		private void detach_Tbl_ReviOrgaSistemasFichMed2(Tbl_ReviOrgaSistemasFichMed entity)
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_EviPatologica10_Tbl_ReviOrgaSistemasFichMed", Storage="_Tbl_ReviOrgaSistemasFichMed", ThisKey="eviPat10_id", OtherKey="eviPat10_id")]
+		public EntitySet<Tbl_ReviOrgaSistemasFichMed> Tbl_ReviOrgaSistemasFichMed
 		{
-			this.SendPropertyChanging();
-			entity.Tbl_EviPatologicaFichMed2 = null;
+			get
+			{
+				return this._Tbl_ReviOrgaSistemasFichMed;
+			}
+			set
+			{
+				this._Tbl_ReviOrgaSistemasFichMed.Assign(value);
+			}
 		}
 		
-		private void attach_Tbl_ReviOrgaSistemasFichMed3(Tbl_ReviOrgaSistemasFichMed entity)
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
 		{
-			this.SendPropertyChanging();
-			entity.Tbl_EviPatologicaFichMed3 = this;
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
 		}
 		
-		private void detach_Tbl_ReviOrgaSistemasFichMed3(Tbl_ReviOrgaSistemasFichMed entity)
+		protected virtual void SendPropertyChanged(String propertyName)
 		{
-			this.SendPropertyChanging();
-			entity.Tbl_EviPatologicaFichMed3 = null;
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 		
-		private void attach_Tbl_ReviOrgaSistemasFichMed4(Tbl_ReviOrgaSistemasFichMed entity)
+		private void attach_Tbl_ReviOrgaSistemasFichMed(Tbl_ReviOrgaSistemasFichMed entity)
 		{
 			this.SendPropertyChanging();
-			entity.Tbl_EviPatologicaFichMed4 = this;
+			entity.Tbl_EviPatologica10 = this;
 		}
 		
-		private void detach_Tbl_ReviOrgaSistemasFichMed4(Tbl_ReviOrgaSistemasFichMed entity)
+		private void detach_Tbl_ReviOrgaSistemasFichMed(Tbl_ReviOrgaSistemasFichMed entity)
 		{
 			this.SendPropertyChanging();
-			entity.Tbl_EviPatologicaFichMed4 = null;
+			entity.Tbl_EviPatologica10 = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_EviPatologica11")]
+	public partial class Tbl_EviPatologica11 : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _eviPat11_id;
+		
+		private string _eviPat11_nomOpcion;
+		
+		private string _eviPat11_estado;
+		
+		private EntitySet<Tbl_ReviOrgaSistemasFichMed> _Tbl_ReviOrgaSistemasFichMed;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OneviPat11_idChanging(int value);
+    partial void OneviPat11_idChanged();
+    partial void OneviPat11_nomOpcionChanging(string value);
+    partial void OneviPat11_nomOpcionChanged();
+    partial void OneviPat11_estadoChanging(string value);
+    partial void OneviPat11_estadoChanged();
+    #endregion
+		
+		public Tbl_EviPatologica11()
+		{
+			this._Tbl_ReviOrgaSistemasFichMed = new EntitySet<Tbl_ReviOrgaSistemasFichMed>(new Action<Tbl_ReviOrgaSistemasFichMed>(this.attach_Tbl_ReviOrgaSistemasFichMed), new Action<Tbl_ReviOrgaSistemasFichMed>(this.detach_Tbl_ReviOrgaSistemasFichMed));
+			OnCreated();
 		}
 		
-		private void attach_Tbl_ReviOrgaSistemasFichMed5(Tbl_ReviOrgaSistemasFichMed entity)
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_eviPat11_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int eviPat11_id
 		{
-			this.SendPropertyChanging();
-			entity.Tbl_EviPatologicaFichMed5 = this;
+			get
+			{
+				return this._eviPat11_id;
+			}
+			set
+			{
+				if ((this._eviPat11_id != value))
+				{
+					this.OneviPat11_idChanging(value);
+					this.SendPropertyChanging();
+					this._eviPat11_id = value;
+					this.SendPropertyChanged("eviPat11_id");
+					this.OneviPat11_idChanged();
+				}
+			}
 		}
 		
-		private void detach_Tbl_ReviOrgaSistemasFichMed5(Tbl_ReviOrgaSistemasFichMed entity)
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_eviPat11_nomOpcion", DbType="VarChar(25)")]
+		public string eviPat11_nomOpcion
 		{
-			this.SendPropertyChanging();
-			entity.Tbl_EviPatologicaFichMed5 = null;
+			get
+			{
+				return this._eviPat11_nomOpcion;
+			}
+			set
+			{
+				if ((this._eviPat11_nomOpcion != value))
+				{
+					this.OneviPat11_nomOpcionChanging(value);
+					this.SendPropertyChanging();
+					this._eviPat11_nomOpcion = value;
+					this.SendPropertyChanged("eviPat11_nomOpcion");
+					this.OneviPat11_nomOpcionChanged();
+				}
+			}
 		}
 		
-		private void attach_Tbl_ReviOrgaSistemasFichMed6(Tbl_ReviOrgaSistemasFichMed entity)
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_eviPat11_estado", DbType="VarChar(1)")]
+		public string eviPat11_estado
 		{
-			this.SendPropertyChanging();
-			entity.Tbl_EviPatologicaFichMed6 = this;
+			get
+			{
+				return this._eviPat11_estado;
+			}
+			set
+			{
+				if ((this._eviPat11_estado != value))
+				{
+					this.OneviPat11_estadoChanging(value);
+					this.SendPropertyChanging();
+					this._eviPat11_estado = value;
+					this.SendPropertyChanged("eviPat11_estado");
+					this.OneviPat11_estadoChanged();
+				}
+			}
 		}
 		
-		private void detach_Tbl_ReviOrgaSistemasFichMed6(Tbl_ReviOrgaSistemasFichMed entity)
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_EviPatologica11_Tbl_ReviOrgaSistemasFichMed", Storage="_Tbl_ReviOrgaSistemasFichMed", ThisKey="eviPat11_id", OtherKey="eviPat11_id")]
+		public EntitySet<Tbl_ReviOrgaSistemasFichMed> Tbl_ReviOrgaSistemasFichMed
 		{
-			this.SendPropertyChanging();
-			entity.Tbl_EviPatologicaFichMed6 = null;
+			get
+			{
+				return this._Tbl_ReviOrgaSistemasFichMed;
+			}
+			set
+			{
+				this._Tbl_ReviOrgaSistemasFichMed.Assign(value);
+			}
 		}
 		
-		private void attach_Tbl_ReviOrgaSistemasFichMed7(Tbl_ReviOrgaSistemasFichMed entity)
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
 		{
-			this.SendPropertyChanging();
-			entity.Tbl_EviPatologicaFichMed7 = this;
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
 		}
 		
-		private void detach_Tbl_ReviOrgaSistemasFichMed7(Tbl_ReviOrgaSistemasFichMed entity)
+		protected virtual void SendPropertyChanged(String propertyName)
 		{
-			this.SendPropertyChanging();
-			entity.Tbl_EviPatologicaFichMed7 = null;
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 		
-		private void attach_Tbl_ReviOrgaSistemasFichMed8(Tbl_ReviOrgaSistemasFichMed entity)
+		private void attach_Tbl_ReviOrgaSistemasFichMed(Tbl_ReviOrgaSistemasFichMed entity)
 		{
 			this.SendPropertyChanging();
-			entity.Tbl_EviPatologicaFichMed8 = this;
+			entity.Tbl_EviPatologica11 = this;
 		}
 		
-		private void detach_Tbl_ReviOrgaSistemasFichMed8(Tbl_ReviOrgaSistemasFichMed entity)
+		private void detach_Tbl_ReviOrgaSistemasFichMed(Tbl_ReviOrgaSistemasFichMed entity)
 		{
 			this.SendPropertyChanging();
-			entity.Tbl_EviPatologicaFichMed8 = null;
+			entity.Tbl_EviPatologica11 = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_EviPatologica12")]
+	public partial class Tbl_EviPatologica12 : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _eviPat12_id;
+		
+		private string _eviPat12_nomOpcion;
+		
+		private string _eviPat12_estado;
+		
+		private EntitySet<Tbl_ReviOrgaSistemasFichMed> _Tbl_ReviOrgaSistemasFichMed;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OneviPat12_idChanging(int value);
+    partial void OneviPat12_idChanged();
+    partial void OneviPat12_nomOpcionChanging(string value);
+    partial void OneviPat12_nomOpcionChanged();
+    partial void OneviPat12_estadoChanging(string value);
+    partial void OneviPat12_estadoChanged();
+    #endregion
+		
+		public Tbl_EviPatologica12()
+		{
+			this._Tbl_ReviOrgaSistemasFichMed = new EntitySet<Tbl_ReviOrgaSistemasFichMed>(new Action<Tbl_ReviOrgaSistemasFichMed>(this.attach_Tbl_ReviOrgaSistemasFichMed), new Action<Tbl_ReviOrgaSistemasFichMed>(this.detach_Tbl_ReviOrgaSistemasFichMed));
+			OnCreated();
 		}
 		
-		private void attach_Tbl_ReviOrgaSistemasFichMed9(Tbl_ReviOrgaSistemasFichMed entity)
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_eviPat12_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int eviPat12_id
 		{
-			this.SendPropertyChanging();
-			entity.Tbl_EviPatologicaFichMed9 = this;
+			get
+			{
+				return this._eviPat12_id;
+			}
+			set
+			{
+				if ((this._eviPat12_id != value))
+				{
+					this.OneviPat12_idChanging(value);
+					this.SendPropertyChanging();
+					this._eviPat12_id = value;
+					this.SendPropertyChanged("eviPat12_id");
+					this.OneviPat12_idChanged();
+				}
+			}
 		}
 		
-		private void detach_Tbl_ReviOrgaSistemasFichMed9(Tbl_ReviOrgaSistemasFichMed entity)
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_eviPat12_nomOpcion", DbType="VarChar(25)")]
+		public string eviPat12_nomOpcion
 		{
-			this.SendPropertyChanging();
-			entity.Tbl_EviPatologicaFichMed9 = null;
+			get
+			{
+				return this._eviPat12_nomOpcion;
+			}
+			set
+			{
+				if ((this._eviPat12_nomOpcion != value))
+				{
+					this.OneviPat12_nomOpcionChanging(value);
+					this.SendPropertyChanging();
+					this._eviPat12_nomOpcion = value;
+					this.SendPropertyChanged("eviPat12_nomOpcion");
+					this.OneviPat12_nomOpcionChanged();
+				}
+			}
 		}
 		
-		private void attach_Tbl_ReviOrgaSistemasFichMed10(Tbl_ReviOrgaSistemasFichMed entity)
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_eviPat12_estado", DbType="VarChar(1)")]
+		public string eviPat12_estado
 		{
-			this.SendPropertyChanging();
-			entity.Tbl_EviPatologicaFichMed10 = this;
+			get
+			{
+				return this._eviPat12_estado;
+			}
+			set
+			{
+				if ((this._eviPat12_estado != value))
+				{
+					this.OneviPat12_estadoChanging(value);
+					this.SendPropertyChanging();
+					this._eviPat12_estado = value;
+					this.SendPropertyChanged("eviPat12_estado");
+					this.OneviPat12_estadoChanged();
+				}
+			}
 		}
 		
-		private void detach_Tbl_ReviOrgaSistemasFichMed10(Tbl_ReviOrgaSistemasFichMed entity)
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_EviPatologica12_Tbl_ReviOrgaSistemasFichMed", Storage="_Tbl_ReviOrgaSistemasFichMed", ThisKey="eviPat12_id", OtherKey="eviPat12_id")]
+		public EntitySet<Tbl_ReviOrgaSistemasFichMed> Tbl_ReviOrgaSistemasFichMed
 		{
-			this.SendPropertyChanging();
-			entity.Tbl_EviPatologicaFichMed10 = null;
+			get
+			{
+				return this._Tbl_ReviOrgaSistemasFichMed;
+			}
+			set
+			{
+				this._Tbl_ReviOrgaSistemasFichMed.Assign(value);
+			}
 		}
 		
-		private void attach_Tbl_ReviOrgaSistemasFichMed11(Tbl_ReviOrgaSistemasFichMed entity)
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
 		{
-			this.SendPropertyChanging();
-			entity.Tbl_EviPatologicaFichMed11 = this;
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
 		}
 		
-		private void detach_Tbl_ReviOrgaSistemasFichMed11(Tbl_ReviOrgaSistemasFichMed entity)
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Tbl_ReviOrgaSistemasFichMed(Tbl_ReviOrgaSistemasFichMed entity)
 		{
 			this.SendPropertyChanging();
-			entity.Tbl_EviPatologicaFichMed11 = null;
+			entity.Tbl_EviPatologica12 = this;
+		}
+		
+		private void detach_Tbl_ReviOrgaSistemasFichMed(Tbl_ReviOrgaSistemasFichMed entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_EviPatologica12 = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_EviPatologica2")]
+	public partial class Tbl_EviPatologica2 : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _eviPat2_id;
+		
+		private string _eviPat2_nomOpcion;
+		
+		private string _eviPat2_estado;
+		
+		private EntitySet<Tbl_ReviOrgaSistemasFichMed> _Tbl_ReviOrgaSistemasFichMed;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OneviPat2_idChanging(int value);
+    partial void OneviPat2_idChanged();
+    partial void OneviPat2_nomOpcionChanging(string value);
+    partial void OneviPat2_nomOpcionChanged();
+    partial void OneviPat2_estadoChanging(string value);
+    partial void OneviPat2_estadoChanged();
+    #endregion
+		
+		public Tbl_EviPatologica2()
+		{
+			this._Tbl_ReviOrgaSistemasFichMed = new EntitySet<Tbl_ReviOrgaSistemasFichMed>(new Action<Tbl_ReviOrgaSistemasFichMed>(this.attach_Tbl_ReviOrgaSistemasFichMed), new Action<Tbl_ReviOrgaSistemasFichMed>(this.detach_Tbl_ReviOrgaSistemasFichMed));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_eviPat2_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int eviPat2_id
+		{
+			get
+			{
+				return this._eviPat2_id;
+			}
+			set
+			{
+				if ((this._eviPat2_id != value))
+				{
+					this.OneviPat2_idChanging(value);
+					this.SendPropertyChanging();
+					this._eviPat2_id = value;
+					this.SendPropertyChanged("eviPat2_id");
+					this.OneviPat2_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_eviPat2_nomOpcion", DbType="VarChar(25)")]
+		public string eviPat2_nomOpcion
+		{
+			get
+			{
+				return this._eviPat2_nomOpcion;
+			}
+			set
+			{
+				if ((this._eviPat2_nomOpcion != value))
+				{
+					this.OneviPat2_nomOpcionChanging(value);
+					this.SendPropertyChanging();
+					this._eviPat2_nomOpcion = value;
+					this.SendPropertyChanged("eviPat2_nomOpcion");
+					this.OneviPat2_nomOpcionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_eviPat2_estado", DbType="VarChar(1)")]
+		public string eviPat2_estado
+		{
+			get
+			{
+				return this._eviPat2_estado;
+			}
+			set
+			{
+				if ((this._eviPat2_estado != value))
+				{
+					this.OneviPat2_estadoChanging(value);
+					this.SendPropertyChanging();
+					this._eviPat2_estado = value;
+					this.SendPropertyChanged("eviPat2_estado");
+					this.OneviPat2_estadoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_EviPatologica2_Tbl_ReviOrgaSistemasFichMed", Storage="_Tbl_ReviOrgaSistemasFichMed", ThisKey="eviPat2_id", OtherKey="eviPat2_id")]
+		public EntitySet<Tbl_ReviOrgaSistemasFichMed> Tbl_ReviOrgaSistemasFichMed
+		{
+			get
+			{
+				return this._Tbl_ReviOrgaSistemasFichMed;
+			}
+			set
+			{
+				this._Tbl_ReviOrgaSistemasFichMed.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Tbl_ReviOrgaSistemasFichMed(Tbl_ReviOrgaSistemasFichMed entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_EviPatologica2 = this;
+		}
+		
+		private void detach_Tbl_ReviOrgaSistemasFichMed(Tbl_ReviOrgaSistemasFichMed entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_EviPatologica2 = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_EviPatologica3")]
+	public partial class Tbl_EviPatologica3 : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _eviPat3_id;
+		
+		private string _eviPat3_nomOpcion;
+		
+		private string _eviPat3_estado;
+		
+		private EntitySet<Tbl_ReviOrgaSistemasFichMed> _Tbl_ReviOrgaSistemasFichMed;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OneviPat3_idChanging(int value);
+    partial void OneviPat3_idChanged();
+    partial void OneviPat3_nomOpcionChanging(string value);
+    partial void OneviPat3_nomOpcionChanged();
+    partial void OneviPat3_estadoChanging(string value);
+    partial void OneviPat3_estadoChanged();
+    #endregion
+		
+		public Tbl_EviPatologica3()
+		{
+			this._Tbl_ReviOrgaSistemasFichMed = new EntitySet<Tbl_ReviOrgaSistemasFichMed>(new Action<Tbl_ReviOrgaSistemasFichMed>(this.attach_Tbl_ReviOrgaSistemasFichMed), new Action<Tbl_ReviOrgaSistemasFichMed>(this.detach_Tbl_ReviOrgaSistemasFichMed));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_eviPat3_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int eviPat3_id
+		{
+			get
+			{
+				return this._eviPat3_id;
+			}
+			set
+			{
+				if ((this._eviPat3_id != value))
+				{
+					this.OneviPat3_idChanging(value);
+					this.SendPropertyChanging();
+					this._eviPat3_id = value;
+					this.SendPropertyChanged("eviPat3_id");
+					this.OneviPat3_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_eviPat3_nomOpcion", DbType="VarChar(25)")]
+		public string eviPat3_nomOpcion
+		{
+			get
+			{
+				return this._eviPat3_nomOpcion;
+			}
+			set
+			{
+				if ((this._eviPat3_nomOpcion != value))
+				{
+					this.OneviPat3_nomOpcionChanging(value);
+					this.SendPropertyChanging();
+					this._eviPat3_nomOpcion = value;
+					this.SendPropertyChanged("eviPat3_nomOpcion");
+					this.OneviPat3_nomOpcionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_eviPat3_estado", DbType="VarChar(1)")]
+		public string eviPat3_estado
+		{
+			get
+			{
+				return this._eviPat3_estado;
+			}
+			set
+			{
+				if ((this._eviPat3_estado != value))
+				{
+					this.OneviPat3_estadoChanging(value);
+					this.SendPropertyChanging();
+					this._eviPat3_estado = value;
+					this.SendPropertyChanged("eviPat3_estado");
+					this.OneviPat3_estadoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_EviPatologica3_Tbl_ReviOrgaSistemasFichMed", Storage="_Tbl_ReviOrgaSistemasFichMed", ThisKey="eviPat3_id", OtherKey="eviPat3_id")]
+		public EntitySet<Tbl_ReviOrgaSistemasFichMed> Tbl_ReviOrgaSistemasFichMed
+		{
+			get
+			{
+				return this._Tbl_ReviOrgaSistemasFichMed;
+			}
+			set
+			{
+				this._Tbl_ReviOrgaSistemasFichMed.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Tbl_ReviOrgaSistemasFichMed(Tbl_ReviOrgaSistemasFichMed entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_EviPatologica3 = this;
+		}
+		
+		private void detach_Tbl_ReviOrgaSistemasFichMed(Tbl_ReviOrgaSistemasFichMed entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_EviPatologica3 = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_EviPatologica4")]
+	public partial class Tbl_EviPatologica4 : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _eviPat4_id;
+		
+		private string _eviPat4_nomOpcion;
+		
+		private string _eviPat4_estado;
+		
+		private EntitySet<Tbl_ReviOrgaSistemasFichMed> _Tbl_ReviOrgaSistemasFichMed;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OneviPat4_idChanging(int value);
+    partial void OneviPat4_idChanged();
+    partial void OneviPat4_nomOpcionChanging(string value);
+    partial void OneviPat4_nomOpcionChanged();
+    partial void OneviPat4_estadoChanging(string value);
+    partial void OneviPat4_estadoChanged();
+    #endregion
+		
+		public Tbl_EviPatologica4()
+		{
+			this._Tbl_ReviOrgaSistemasFichMed = new EntitySet<Tbl_ReviOrgaSistemasFichMed>(new Action<Tbl_ReviOrgaSistemasFichMed>(this.attach_Tbl_ReviOrgaSistemasFichMed), new Action<Tbl_ReviOrgaSistemasFichMed>(this.detach_Tbl_ReviOrgaSistemasFichMed));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_eviPat4_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int eviPat4_id
+		{
+			get
+			{
+				return this._eviPat4_id;
+			}
+			set
+			{
+				if ((this._eviPat4_id != value))
+				{
+					this.OneviPat4_idChanging(value);
+					this.SendPropertyChanging();
+					this._eviPat4_id = value;
+					this.SendPropertyChanged("eviPat4_id");
+					this.OneviPat4_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_eviPat4_nomOpcion", DbType="VarChar(25)")]
+		public string eviPat4_nomOpcion
+		{
+			get
+			{
+				return this._eviPat4_nomOpcion;
+			}
+			set
+			{
+				if ((this._eviPat4_nomOpcion != value))
+				{
+					this.OneviPat4_nomOpcionChanging(value);
+					this.SendPropertyChanging();
+					this._eviPat4_nomOpcion = value;
+					this.SendPropertyChanged("eviPat4_nomOpcion");
+					this.OneviPat4_nomOpcionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_eviPat4_estado", DbType="VarChar(1)")]
+		public string eviPat4_estado
+		{
+			get
+			{
+				return this._eviPat4_estado;
+			}
+			set
+			{
+				if ((this._eviPat4_estado != value))
+				{
+					this.OneviPat4_estadoChanging(value);
+					this.SendPropertyChanging();
+					this._eviPat4_estado = value;
+					this.SendPropertyChanged("eviPat4_estado");
+					this.OneviPat4_estadoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_EviPatologica4_Tbl_ReviOrgaSistemasFichMed", Storage="_Tbl_ReviOrgaSistemasFichMed", ThisKey="eviPat4_id", OtherKey="eviPat4_id")]
+		public EntitySet<Tbl_ReviOrgaSistemasFichMed> Tbl_ReviOrgaSistemasFichMed
+		{
+			get
+			{
+				return this._Tbl_ReviOrgaSistemasFichMed;
+			}
+			set
+			{
+				this._Tbl_ReviOrgaSistemasFichMed.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Tbl_ReviOrgaSistemasFichMed(Tbl_ReviOrgaSistemasFichMed entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_EviPatologica4 = this;
+		}
+		
+		private void detach_Tbl_ReviOrgaSistemasFichMed(Tbl_ReviOrgaSistemasFichMed entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_EviPatologica4 = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_EviPatologica5")]
+	public partial class Tbl_EviPatologica5 : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _eviPat5_id;
+		
+		private string _eviPat5_nomOpcion;
+		
+		private string _eviPat5_estado;
+		
+		private EntitySet<Tbl_ReviOrgaSistemasFichMed> _Tbl_ReviOrgaSistemasFichMed;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OneviPat5_idChanging(int value);
+    partial void OneviPat5_idChanged();
+    partial void OneviPat5_nomOpcionChanging(string value);
+    partial void OneviPat5_nomOpcionChanged();
+    partial void OneviPat5_estadoChanging(string value);
+    partial void OneviPat5_estadoChanged();
+    #endregion
+		
+		public Tbl_EviPatologica5()
+		{
+			this._Tbl_ReviOrgaSistemasFichMed = new EntitySet<Tbl_ReviOrgaSistemasFichMed>(new Action<Tbl_ReviOrgaSistemasFichMed>(this.attach_Tbl_ReviOrgaSistemasFichMed), new Action<Tbl_ReviOrgaSistemasFichMed>(this.detach_Tbl_ReviOrgaSistemasFichMed));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_eviPat5_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int eviPat5_id
+		{
+			get
+			{
+				return this._eviPat5_id;
+			}
+			set
+			{
+				if ((this._eviPat5_id != value))
+				{
+					this.OneviPat5_idChanging(value);
+					this.SendPropertyChanging();
+					this._eviPat5_id = value;
+					this.SendPropertyChanged("eviPat5_id");
+					this.OneviPat5_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_eviPat5_nomOpcion", DbType="VarChar(25)")]
+		public string eviPat5_nomOpcion
+		{
+			get
+			{
+				return this._eviPat5_nomOpcion;
+			}
+			set
+			{
+				if ((this._eviPat5_nomOpcion != value))
+				{
+					this.OneviPat5_nomOpcionChanging(value);
+					this.SendPropertyChanging();
+					this._eviPat5_nomOpcion = value;
+					this.SendPropertyChanged("eviPat5_nomOpcion");
+					this.OneviPat5_nomOpcionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_eviPat5_estado", DbType="VarChar(1)")]
+		public string eviPat5_estado
+		{
+			get
+			{
+				return this._eviPat5_estado;
+			}
+			set
+			{
+				if ((this._eviPat5_estado != value))
+				{
+					this.OneviPat5_estadoChanging(value);
+					this.SendPropertyChanging();
+					this._eviPat5_estado = value;
+					this.SendPropertyChanged("eviPat5_estado");
+					this.OneviPat5_estadoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_EviPatologica5_Tbl_ReviOrgaSistemasFichMed", Storage="_Tbl_ReviOrgaSistemasFichMed", ThisKey="eviPat5_id", OtherKey="eviPat5_id")]
+		public EntitySet<Tbl_ReviOrgaSistemasFichMed> Tbl_ReviOrgaSistemasFichMed
+		{
+			get
+			{
+				return this._Tbl_ReviOrgaSistemasFichMed;
+			}
+			set
+			{
+				this._Tbl_ReviOrgaSistemasFichMed.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Tbl_ReviOrgaSistemasFichMed(Tbl_ReviOrgaSistemasFichMed entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_EviPatologica5 = this;
+		}
+		
+		private void detach_Tbl_ReviOrgaSistemasFichMed(Tbl_ReviOrgaSistemasFichMed entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_EviPatologica5 = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_EviPatologica6")]
+	public partial class Tbl_EviPatologica6 : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _eviPat6_id;
+		
+		private string _eviPat6_nomOpcion;
+		
+		private string _eviPat6_estado;
+		
+		private EntitySet<Tbl_ReviOrgaSistemasFichMed> _Tbl_ReviOrgaSistemasFichMed;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OneviPat6_idChanging(int value);
+    partial void OneviPat6_idChanged();
+    partial void OneviPat6_nomOpcionChanging(string value);
+    partial void OneviPat6_nomOpcionChanged();
+    partial void OneviPat6_estadoChanging(string value);
+    partial void OneviPat6_estadoChanged();
+    #endregion
+		
+		public Tbl_EviPatologica6()
+		{
+			this._Tbl_ReviOrgaSistemasFichMed = new EntitySet<Tbl_ReviOrgaSistemasFichMed>(new Action<Tbl_ReviOrgaSistemasFichMed>(this.attach_Tbl_ReviOrgaSistemasFichMed), new Action<Tbl_ReviOrgaSistemasFichMed>(this.detach_Tbl_ReviOrgaSistemasFichMed));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_eviPat6_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int eviPat6_id
+		{
+			get
+			{
+				return this._eviPat6_id;
+			}
+			set
+			{
+				if ((this._eviPat6_id != value))
+				{
+					this.OneviPat6_idChanging(value);
+					this.SendPropertyChanging();
+					this._eviPat6_id = value;
+					this.SendPropertyChanged("eviPat6_id");
+					this.OneviPat6_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_eviPat6_nomOpcion", DbType="VarChar(25)")]
+		public string eviPat6_nomOpcion
+		{
+			get
+			{
+				return this._eviPat6_nomOpcion;
+			}
+			set
+			{
+				if ((this._eviPat6_nomOpcion != value))
+				{
+					this.OneviPat6_nomOpcionChanging(value);
+					this.SendPropertyChanging();
+					this._eviPat6_nomOpcion = value;
+					this.SendPropertyChanged("eviPat6_nomOpcion");
+					this.OneviPat6_nomOpcionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_eviPat6_estado", DbType="VarChar(1)")]
+		public string eviPat6_estado
+		{
+			get
+			{
+				return this._eviPat6_estado;
+			}
+			set
+			{
+				if ((this._eviPat6_estado != value))
+				{
+					this.OneviPat6_estadoChanging(value);
+					this.SendPropertyChanging();
+					this._eviPat6_estado = value;
+					this.SendPropertyChanged("eviPat6_estado");
+					this.OneviPat6_estadoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_EviPatologica6_Tbl_ReviOrgaSistemasFichMed", Storage="_Tbl_ReviOrgaSistemasFichMed", ThisKey="eviPat6_id", OtherKey="eviPat6_id")]
+		public EntitySet<Tbl_ReviOrgaSistemasFichMed> Tbl_ReviOrgaSistemasFichMed
+		{
+			get
+			{
+				return this._Tbl_ReviOrgaSistemasFichMed;
+			}
+			set
+			{
+				this._Tbl_ReviOrgaSistemasFichMed.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Tbl_ReviOrgaSistemasFichMed(Tbl_ReviOrgaSistemasFichMed entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_EviPatologica6 = this;
+		}
+		
+		private void detach_Tbl_ReviOrgaSistemasFichMed(Tbl_ReviOrgaSistemasFichMed entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_EviPatologica6 = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_EviPatologica7")]
+	public partial class Tbl_EviPatologica7 : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _eviPat7_id;
+		
+		private string _eviPat7_nomOpcion;
+		
+		private string _eviPat7_estado;
+		
+		private EntitySet<Tbl_ReviOrgaSistemasFichMed> _Tbl_ReviOrgaSistemasFichMed;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OneviPat7_idChanging(int value);
+    partial void OneviPat7_idChanged();
+    partial void OneviPat7_nomOpcionChanging(string value);
+    partial void OneviPat7_nomOpcionChanged();
+    partial void OneviPat7_estadoChanging(string value);
+    partial void OneviPat7_estadoChanged();
+    #endregion
+		
+		public Tbl_EviPatologica7()
+		{
+			this._Tbl_ReviOrgaSistemasFichMed = new EntitySet<Tbl_ReviOrgaSistemasFichMed>(new Action<Tbl_ReviOrgaSistemasFichMed>(this.attach_Tbl_ReviOrgaSistemasFichMed), new Action<Tbl_ReviOrgaSistemasFichMed>(this.detach_Tbl_ReviOrgaSistemasFichMed));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_eviPat7_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int eviPat7_id
+		{
+			get
+			{
+				return this._eviPat7_id;
+			}
+			set
+			{
+				if ((this._eviPat7_id != value))
+				{
+					this.OneviPat7_idChanging(value);
+					this.SendPropertyChanging();
+					this._eviPat7_id = value;
+					this.SendPropertyChanged("eviPat7_id");
+					this.OneviPat7_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_eviPat7_nomOpcion", DbType="VarChar(25)")]
+		public string eviPat7_nomOpcion
+		{
+			get
+			{
+				return this._eviPat7_nomOpcion;
+			}
+			set
+			{
+				if ((this._eviPat7_nomOpcion != value))
+				{
+					this.OneviPat7_nomOpcionChanging(value);
+					this.SendPropertyChanging();
+					this._eviPat7_nomOpcion = value;
+					this.SendPropertyChanged("eviPat7_nomOpcion");
+					this.OneviPat7_nomOpcionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_eviPat7_estado", DbType="VarChar(1)")]
+		public string eviPat7_estado
+		{
+			get
+			{
+				return this._eviPat7_estado;
+			}
+			set
+			{
+				if ((this._eviPat7_estado != value))
+				{
+					this.OneviPat7_estadoChanging(value);
+					this.SendPropertyChanging();
+					this._eviPat7_estado = value;
+					this.SendPropertyChanged("eviPat7_estado");
+					this.OneviPat7_estadoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_EviPatologica7_Tbl_ReviOrgaSistemasFichMed", Storage="_Tbl_ReviOrgaSistemasFichMed", ThisKey="eviPat7_id", OtherKey="eviPat7_id")]
+		public EntitySet<Tbl_ReviOrgaSistemasFichMed> Tbl_ReviOrgaSistemasFichMed
+		{
+			get
+			{
+				return this._Tbl_ReviOrgaSistemasFichMed;
+			}
+			set
+			{
+				this._Tbl_ReviOrgaSistemasFichMed.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Tbl_ReviOrgaSistemasFichMed(Tbl_ReviOrgaSistemasFichMed entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_EviPatologica7 = this;
+		}
+		
+		private void detach_Tbl_ReviOrgaSistemasFichMed(Tbl_ReviOrgaSistemasFichMed entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_EviPatologica7 = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_EviPatologica8")]
+	public partial class Tbl_EviPatologica8 : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _eviPat8_id;
+		
+		private string _eviPat8_nomOpcion;
+		
+		private string _eviPat8_estado;
+		
+		private EntitySet<Tbl_ReviOrgaSistemasFichMed> _Tbl_ReviOrgaSistemasFichMed;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OneviPat8_idChanging(int value);
+    partial void OneviPat8_idChanged();
+    partial void OneviPat8_nomOpcionChanging(string value);
+    partial void OneviPat8_nomOpcionChanged();
+    partial void OneviPat8_estadoChanging(string value);
+    partial void OneviPat8_estadoChanged();
+    #endregion
+		
+		public Tbl_EviPatologica8()
+		{
+			this._Tbl_ReviOrgaSistemasFichMed = new EntitySet<Tbl_ReviOrgaSistemasFichMed>(new Action<Tbl_ReviOrgaSistemasFichMed>(this.attach_Tbl_ReviOrgaSistemasFichMed), new Action<Tbl_ReviOrgaSistemasFichMed>(this.detach_Tbl_ReviOrgaSistemasFichMed));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_eviPat8_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int eviPat8_id
+		{
+			get
+			{
+				return this._eviPat8_id;
+			}
+			set
+			{
+				if ((this._eviPat8_id != value))
+				{
+					this.OneviPat8_idChanging(value);
+					this.SendPropertyChanging();
+					this._eviPat8_id = value;
+					this.SendPropertyChanged("eviPat8_id");
+					this.OneviPat8_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_eviPat8_nomOpcion", DbType="VarChar(25)")]
+		public string eviPat8_nomOpcion
+		{
+			get
+			{
+				return this._eviPat8_nomOpcion;
+			}
+			set
+			{
+				if ((this._eviPat8_nomOpcion != value))
+				{
+					this.OneviPat8_nomOpcionChanging(value);
+					this.SendPropertyChanging();
+					this._eviPat8_nomOpcion = value;
+					this.SendPropertyChanged("eviPat8_nomOpcion");
+					this.OneviPat8_nomOpcionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_eviPat8_estado", DbType="VarChar(1)")]
+		public string eviPat8_estado
+		{
+			get
+			{
+				return this._eviPat8_estado;
+			}
+			set
+			{
+				if ((this._eviPat8_estado != value))
+				{
+					this.OneviPat8_estadoChanging(value);
+					this.SendPropertyChanging();
+					this._eviPat8_estado = value;
+					this.SendPropertyChanged("eviPat8_estado");
+					this.OneviPat8_estadoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_EviPatologica8_Tbl_ReviOrgaSistemasFichMed", Storage="_Tbl_ReviOrgaSistemasFichMed", ThisKey="eviPat8_id", OtherKey="eviPat8_id")]
+		public EntitySet<Tbl_ReviOrgaSistemasFichMed> Tbl_ReviOrgaSistemasFichMed
+		{
+			get
+			{
+				return this._Tbl_ReviOrgaSistemasFichMed;
+			}
+			set
+			{
+				this._Tbl_ReviOrgaSistemasFichMed.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Tbl_ReviOrgaSistemasFichMed(Tbl_ReviOrgaSistemasFichMed entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_EviPatologica8 = this;
+		}
+		
+		private void detach_Tbl_ReviOrgaSistemasFichMed(Tbl_ReviOrgaSistemasFichMed entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_EviPatologica8 = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_EviPatologica9")]
+	public partial class Tbl_EviPatologica9 : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _eviPat9_id;
+		
+		private string _eviPat9_nomOpcion;
+		
+		private string _eviPat9_estado;
+		
+		private EntitySet<Tbl_ReviOrgaSistemasFichMed> _Tbl_ReviOrgaSistemasFichMed;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OneviPat9_idChanging(int value);
+    partial void OneviPat9_idChanged();
+    partial void OneviPat9_nomOpcionChanging(string value);
+    partial void OneviPat9_nomOpcionChanged();
+    partial void OneviPat9_estadoChanging(string value);
+    partial void OneviPat9_estadoChanged();
+    #endregion
+		
+		public Tbl_EviPatologica9()
+		{
+			this._Tbl_ReviOrgaSistemasFichMed = new EntitySet<Tbl_ReviOrgaSistemasFichMed>(new Action<Tbl_ReviOrgaSistemasFichMed>(this.attach_Tbl_ReviOrgaSistemasFichMed), new Action<Tbl_ReviOrgaSistemasFichMed>(this.detach_Tbl_ReviOrgaSistemasFichMed));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_eviPat9_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int eviPat9_id
+		{
+			get
+			{
+				return this._eviPat9_id;
+			}
+			set
+			{
+				if ((this._eviPat9_id != value))
+				{
+					this.OneviPat9_idChanging(value);
+					this.SendPropertyChanging();
+					this._eviPat9_id = value;
+					this.SendPropertyChanged("eviPat9_id");
+					this.OneviPat9_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_eviPat9_nomOpcion", DbType="VarChar(25)")]
+		public string eviPat9_nomOpcion
+		{
+			get
+			{
+				return this._eviPat9_nomOpcion;
+			}
+			set
+			{
+				if ((this._eviPat9_nomOpcion != value))
+				{
+					this.OneviPat9_nomOpcionChanging(value);
+					this.SendPropertyChanging();
+					this._eviPat9_nomOpcion = value;
+					this.SendPropertyChanged("eviPat9_nomOpcion");
+					this.OneviPat9_nomOpcionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_eviPat9_estado", DbType="VarChar(1)")]
+		public string eviPat9_estado
+		{
+			get
+			{
+				return this._eviPat9_estado;
+			}
+			set
+			{
+				if ((this._eviPat9_estado != value))
+				{
+					this.OneviPat9_estadoChanging(value);
+					this.SendPropertyChanging();
+					this._eviPat9_estado = value;
+					this.SendPropertyChanged("eviPat9_estado");
+					this.OneviPat9_estadoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_EviPatologica9_Tbl_ReviOrgaSistemasFichMed", Storage="_Tbl_ReviOrgaSistemasFichMed", ThisKey="eviPat9_id", OtherKey="eviPat9_id")]
+		public EntitySet<Tbl_ReviOrgaSistemasFichMed> Tbl_ReviOrgaSistemasFichMed
+		{
+			get
+			{
+				return this._Tbl_ReviOrgaSistemasFichMed;
+			}
+			set
+			{
+				this._Tbl_ReviOrgaSistemasFichMed.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Tbl_ReviOrgaSistemasFichMed(Tbl_ReviOrgaSistemasFichMed entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_EviPatologica9 = this;
+		}
+		
+		private void detach_Tbl_ReviOrgaSistemasFichMed(Tbl_ReviOrgaSistemasFichMed entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_EviPatologica9 = null;
 		}
 	}
 	
@@ -28455,29 +29786,29 @@ namespace CapaDatos
 		
 		private string _revorgsisFM_estado;
 		
-		private EntityRef<Tbl_EviPatologicaFichMed> _Tbl_EviPatologicaFichMed;
+		private EntityRef<Tbl_EviPatologica1> _Tbl_EviPatologica1;
 		
-		private EntityRef<Tbl_EviPatologicaFichMed> _Tbl_EviPatologicaFichMed1;
+		private EntityRef<Tbl_EviPatologica10> _Tbl_EviPatologica10;
 		
-		private EntityRef<Tbl_EviPatologicaFichMed> _Tbl_EviPatologicaFichMed2;
+		private EntityRef<Tbl_EviPatologica11> _Tbl_EviPatologica11;
 		
-		private EntityRef<Tbl_EviPatologicaFichMed> _Tbl_EviPatologicaFichMed3;
+		private EntityRef<Tbl_EviPatologica12> _Tbl_EviPatologica12;
 		
-		private EntityRef<Tbl_EviPatologicaFichMed> _Tbl_EviPatologicaFichMed4;
+		private EntityRef<Tbl_EviPatologica2> _Tbl_EviPatologica2;
 		
-		private EntityRef<Tbl_EviPatologicaFichMed> _Tbl_EviPatologicaFichMed5;
+		private EntityRef<Tbl_EviPatologica3> _Tbl_EviPatologica3;
 		
-		private EntityRef<Tbl_EviPatologicaFichMed> _Tbl_EviPatologicaFichMed6;
+		private EntityRef<Tbl_EviPatologica4> _Tbl_EviPatologica4;
 		
-		private EntityRef<Tbl_EviPatologicaFichMed> _Tbl_EviPatologicaFichMed7;
+		private EntityRef<Tbl_EviPatologica5> _Tbl_EviPatologica5;
 		
-		private EntityRef<Tbl_EviPatologicaFichMed> _Tbl_EviPatologicaFichMed8;
+		private EntityRef<Tbl_EviPatologica6> _Tbl_EviPatologica6;
 		
-		private EntityRef<Tbl_EviPatologicaFichMed> _Tbl_EviPatologicaFichMed9;
+		private EntityRef<Tbl_EviPatologica7> _Tbl_EviPatologica7;
 		
-		private EntityRef<Tbl_EviPatologicaFichMed> _Tbl_EviPatologicaFichMed10;
+		private EntityRef<Tbl_EviPatologica8> _Tbl_EviPatologica8;
 		
-		private EntityRef<Tbl_EviPatologicaFichMed> _Tbl_EviPatologicaFichMed11;
+		private EntityRef<Tbl_EviPatologica9> _Tbl_EviPatologica9;
 		
 		private EntityRef<Tbl_Personas> _Tbl_Personas;
 		
@@ -28543,18 +29874,18 @@ namespace CapaDatos
 		
 		public Tbl_ReviOrgaSistemasFichMed()
 		{
-			this._Tbl_EviPatologicaFichMed = default(EntityRef<Tbl_EviPatologicaFichMed>);
-			this._Tbl_EviPatologicaFichMed1 = default(EntityRef<Tbl_EviPatologicaFichMed>);
-			this._Tbl_EviPatologicaFichMed2 = default(EntityRef<Tbl_EviPatologicaFichMed>);
-			this._Tbl_EviPatologicaFichMed3 = default(EntityRef<Tbl_EviPatologicaFichMed>);
-			this._Tbl_EviPatologicaFichMed4 = default(EntityRef<Tbl_EviPatologicaFichMed>);
-			this._Tbl_EviPatologicaFichMed5 = default(EntityRef<Tbl_EviPatologicaFichMed>);
-			this._Tbl_EviPatologicaFichMed6 = default(EntityRef<Tbl_EviPatologicaFichMed>);
-			this._Tbl_EviPatologicaFichMed7 = default(EntityRef<Tbl_EviPatologicaFichMed>);
-			this._Tbl_EviPatologicaFichMed8 = default(EntityRef<Tbl_EviPatologicaFichMed>);
-			this._Tbl_EviPatologicaFichMed9 = default(EntityRef<Tbl_EviPatologicaFichMed>);
-			this._Tbl_EviPatologicaFichMed10 = default(EntityRef<Tbl_EviPatologicaFichMed>);
-			this._Tbl_EviPatologicaFichMed11 = default(EntityRef<Tbl_EviPatologicaFichMed>);
+			this._Tbl_EviPatologica1 = default(EntityRef<Tbl_EviPatologica1>);
+			this._Tbl_EviPatologica10 = default(EntityRef<Tbl_EviPatologica10>);
+			this._Tbl_EviPatologica11 = default(EntityRef<Tbl_EviPatologica11>);
+			this._Tbl_EviPatologica12 = default(EntityRef<Tbl_EviPatologica12>);
+			this._Tbl_EviPatologica2 = default(EntityRef<Tbl_EviPatologica2>);
+			this._Tbl_EviPatologica3 = default(EntityRef<Tbl_EviPatologica3>);
+			this._Tbl_EviPatologica4 = default(EntityRef<Tbl_EviPatologica4>);
+			this._Tbl_EviPatologica5 = default(EntityRef<Tbl_EviPatologica5>);
+			this._Tbl_EviPatologica6 = default(EntityRef<Tbl_EviPatologica6>);
+			this._Tbl_EviPatologica7 = default(EntityRef<Tbl_EviPatologica7>);
+			this._Tbl_EviPatologica8 = default(EntityRef<Tbl_EviPatologica8>);
+			this._Tbl_EviPatologica9 = default(EntityRef<Tbl_EviPatologica9>);
 			this._Tbl_Personas = default(EntityRef<Tbl_Personas>);
 			OnCreated();
 		}
@@ -28590,7 +29921,7 @@ namespace CapaDatos
 			{
 				if ((this._eviPat1_id != value))
 				{
-					if (this._Tbl_EviPatologicaFichMed.HasLoadedOrAssignedValue)
+					if (this._Tbl_EviPatologica1.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
@@ -28634,7 +29965,7 @@ namespace CapaDatos
 			{
 				if ((this._eviPat2_id != value))
 				{
-					if (this._Tbl_EviPatologicaFichMed1.HasLoadedOrAssignedValue)
+					if (this._Tbl_EviPatologica2.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
@@ -28678,7 +30009,7 @@ namespace CapaDatos
 			{
 				if ((this._eviPat3_id != value))
 				{
-					if (this._Tbl_EviPatologicaFichMed4.HasLoadedOrAssignedValue)
+					if (this._Tbl_EviPatologica3.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
@@ -28722,7 +30053,7 @@ namespace CapaDatos
 			{
 				if ((this._eviPat4_id != value))
 				{
-					if (this._Tbl_EviPatologicaFichMed5.HasLoadedOrAssignedValue)
+					if (this._Tbl_EviPatologica4.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
@@ -28766,7 +30097,7 @@ namespace CapaDatos
 			{
 				if ((this._eviPat5_id != value))
 				{
-					if (this._Tbl_EviPatologicaFichMed6.HasLoadedOrAssignedValue)
+					if (this._Tbl_EviPatologica5.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
@@ -28810,7 +30141,7 @@ namespace CapaDatos
 			{
 				if ((this._eviPat6_id != value))
 				{
-					if (this._Tbl_EviPatologicaFichMed7.HasLoadedOrAssignedValue)
+					if (this._Tbl_EviPatologica6.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
@@ -28854,7 +30185,7 @@ namespace CapaDatos
 			{
 				if ((this._eviPat7_id != value))
 				{
-					if (this._Tbl_EviPatologicaFichMed8.HasLoadedOrAssignedValue)
+					if (this._Tbl_EviPatologica7.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
@@ -28898,7 +30229,7 @@ namespace CapaDatos
 			{
 				if ((this._eviPat8_id != value))
 				{
-					if (this._Tbl_EviPatologicaFichMed9.HasLoadedOrAssignedValue)
+					if (this._Tbl_EviPatologica8.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
@@ -28942,7 +30273,7 @@ namespace CapaDatos
 			{
 				if ((this._eviPat9_id != value))
 				{
-					if (this._Tbl_EviPatologicaFichMed10.HasLoadedOrAssignedValue)
+					if (this._Tbl_EviPatologica9.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
@@ -28986,7 +30317,7 @@ namespace CapaDatos
 			{
 				if ((this._eviPat10_id != value))
 				{
-					if (this._Tbl_EviPatologicaFichMed11.HasLoadedOrAssignedValue)
+					if (this._Tbl_EviPatologica10.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
@@ -29030,7 +30361,7 @@ namespace CapaDatos
 			{
 				if ((this._eviPat11_id != value))
 				{
-					if (this._Tbl_EviPatologicaFichMed2.HasLoadedOrAssignedValue)
+					if (this._Tbl_EviPatologica11.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
@@ -29074,7 +30405,7 @@ namespace CapaDatos
 			{
 				if ((this._eviPat12_id != value))
 				{
-					if (this._Tbl_EviPatologicaFichMed3.HasLoadedOrAssignedValue)
+					if (this._Tbl_EviPatologica12.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
@@ -29151,410 +30482,410 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_EviPatologicaFichMed_Tbl_ReviOrgaSistemasFichMed", Storage="_Tbl_EviPatologicaFichMed", ThisKey="eviPat1_id", OtherKey="eviPat_id", IsForeignKey=true)]
-		public Tbl_EviPatologicaFichMed Tbl_EviPatologicaFichMed
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_EviPatologica1_Tbl_ReviOrgaSistemasFichMed", Storage="_Tbl_EviPatologica1", ThisKey="eviPat1_id", OtherKey="eviPat1_id", IsForeignKey=true)]
+		public Tbl_EviPatologica1 Tbl_EviPatologica1
 		{
 			get
 			{
-				return this._Tbl_EviPatologicaFichMed.Entity;
+				return this._Tbl_EviPatologica1.Entity;
 			}
 			set
 			{
-				Tbl_EviPatologicaFichMed previousValue = this._Tbl_EviPatologicaFichMed.Entity;
+				Tbl_EviPatologica1 previousValue = this._Tbl_EviPatologica1.Entity;
 				if (((previousValue != value) 
-							|| (this._Tbl_EviPatologicaFichMed.HasLoadedOrAssignedValue == false)))
+							|| (this._Tbl_EviPatologica1.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._Tbl_EviPatologicaFichMed.Entity = null;
+						this._Tbl_EviPatologica1.Entity = null;
 						previousValue.Tbl_ReviOrgaSistemasFichMed.Remove(this);
 					}
-					this._Tbl_EviPatologicaFichMed.Entity = value;
+					this._Tbl_EviPatologica1.Entity = value;
 					if ((value != null))
 					{
 						value.Tbl_ReviOrgaSistemasFichMed.Add(this);
-						this._eviPat1_id = value.eviPat_id;
+						this._eviPat1_id = value.eviPat1_id;
 					}
 					else
 					{
 						this._eviPat1_id = default(Nullable<int>);
 					}
-					this.SendPropertyChanged("Tbl_EviPatologicaFichMed");
+					this.SendPropertyChanged("Tbl_EviPatologica1");
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_EviPatologicaFichMed_Tbl_ReviOrgaSistemasFichMed1", Storage="_Tbl_EviPatologicaFichMed1", ThisKey="eviPat2_id", OtherKey="eviPat_id", IsForeignKey=true)]
-		public Tbl_EviPatologicaFichMed Tbl_EviPatologicaFichMed1
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_EviPatologica10_Tbl_ReviOrgaSistemasFichMed", Storage="_Tbl_EviPatologica10", ThisKey="eviPat10_id", OtherKey="eviPat10_id", IsForeignKey=true)]
+		public Tbl_EviPatologica10 Tbl_EviPatologica10
 		{
 			get
 			{
-				return this._Tbl_EviPatologicaFichMed1.Entity;
+				return this._Tbl_EviPatologica10.Entity;
 			}
 			set
 			{
-				Tbl_EviPatologicaFichMed previousValue = this._Tbl_EviPatologicaFichMed1.Entity;
+				Tbl_EviPatologica10 previousValue = this._Tbl_EviPatologica10.Entity;
 				if (((previousValue != value) 
-							|| (this._Tbl_EviPatologicaFichMed1.HasLoadedOrAssignedValue == false)))
+							|| (this._Tbl_EviPatologica10.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._Tbl_EviPatologicaFichMed1.Entity = null;
-						previousValue.Tbl_ReviOrgaSistemasFichMed1.Remove(this);
+						this._Tbl_EviPatologica10.Entity = null;
+						previousValue.Tbl_ReviOrgaSistemasFichMed.Remove(this);
 					}
-					this._Tbl_EviPatologicaFichMed1.Entity = value;
+					this._Tbl_EviPatologica10.Entity = value;
 					if ((value != null))
 					{
-						value.Tbl_ReviOrgaSistemasFichMed1.Add(this);
-						this._eviPat2_id = value.eviPat_id;
-					}
-					else
-					{
-						this._eviPat2_id = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Tbl_EviPatologicaFichMed1");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_EviPatologicaFichMed_Tbl_ReviOrgaSistemasFichMed2", Storage="_Tbl_EviPatologicaFichMed2", ThisKey="eviPat11_id", OtherKey="eviPat_id", IsForeignKey=true)]
-		public Tbl_EviPatologicaFichMed Tbl_EviPatologicaFichMed2
-		{
-			get
-			{
-				return this._Tbl_EviPatologicaFichMed2.Entity;
-			}
-			set
-			{
-				Tbl_EviPatologicaFichMed previousValue = this._Tbl_EviPatologicaFichMed2.Entity;
-				if (((previousValue != value) 
-							|| (this._Tbl_EviPatologicaFichMed2.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Tbl_EviPatologicaFichMed2.Entity = null;
-						previousValue.Tbl_ReviOrgaSistemasFichMed2.Remove(this);
-					}
-					this._Tbl_EviPatologicaFichMed2.Entity = value;
-					if ((value != null))
-					{
-						value.Tbl_ReviOrgaSistemasFichMed2.Add(this);
-						this._eviPat11_id = value.eviPat_id;
-					}
-					else
-					{
-						this._eviPat11_id = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Tbl_EviPatologicaFichMed2");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_EviPatologicaFichMed_Tbl_ReviOrgaSistemasFichMed3", Storage="_Tbl_EviPatologicaFichMed3", ThisKey="eviPat12_id", OtherKey="eviPat_id", IsForeignKey=true)]
-		public Tbl_EviPatologicaFichMed Tbl_EviPatologicaFichMed3
-		{
-			get
-			{
-				return this._Tbl_EviPatologicaFichMed3.Entity;
-			}
-			set
-			{
-				Tbl_EviPatologicaFichMed previousValue = this._Tbl_EviPatologicaFichMed3.Entity;
-				if (((previousValue != value) 
-							|| (this._Tbl_EviPatologicaFichMed3.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Tbl_EviPatologicaFichMed3.Entity = null;
-						previousValue.Tbl_ReviOrgaSistemasFichMed3.Remove(this);
-					}
-					this._Tbl_EviPatologicaFichMed3.Entity = value;
-					if ((value != null))
-					{
-						value.Tbl_ReviOrgaSistemasFichMed3.Add(this);
-						this._eviPat12_id = value.eviPat_id;
-					}
-					else
-					{
-						this._eviPat12_id = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Tbl_EviPatologicaFichMed3");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_EviPatologicaFichMed_Tbl_ReviOrgaSistemasFichMed4", Storage="_Tbl_EviPatologicaFichMed4", ThisKey="eviPat3_id", OtherKey="eviPat_id", IsForeignKey=true)]
-		public Tbl_EviPatologicaFichMed Tbl_EviPatologicaFichMed4
-		{
-			get
-			{
-				return this._Tbl_EviPatologicaFichMed4.Entity;
-			}
-			set
-			{
-				Tbl_EviPatologicaFichMed previousValue = this._Tbl_EviPatologicaFichMed4.Entity;
-				if (((previousValue != value) 
-							|| (this._Tbl_EviPatologicaFichMed4.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Tbl_EviPatologicaFichMed4.Entity = null;
-						previousValue.Tbl_ReviOrgaSistemasFichMed4.Remove(this);
-					}
-					this._Tbl_EviPatologicaFichMed4.Entity = value;
-					if ((value != null))
-					{
-						value.Tbl_ReviOrgaSistemasFichMed4.Add(this);
-						this._eviPat3_id = value.eviPat_id;
-					}
-					else
-					{
-						this._eviPat3_id = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Tbl_EviPatologicaFichMed4");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_EviPatologicaFichMed_Tbl_ReviOrgaSistemasFichMed5", Storage="_Tbl_EviPatologicaFichMed5", ThisKey="eviPat4_id", OtherKey="eviPat_id", IsForeignKey=true)]
-		public Tbl_EviPatologicaFichMed Tbl_EviPatologicaFichMed5
-		{
-			get
-			{
-				return this._Tbl_EviPatologicaFichMed5.Entity;
-			}
-			set
-			{
-				Tbl_EviPatologicaFichMed previousValue = this._Tbl_EviPatologicaFichMed5.Entity;
-				if (((previousValue != value) 
-							|| (this._Tbl_EviPatologicaFichMed5.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Tbl_EviPatologicaFichMed5.Entity = null;
-						previousValue.Tbl_ReviOrgaSistemasFichMed5.Remove(this);
-					}
-					this._Tbl_EviPatologicaFichMed5.Entity = value;
-					if ((value != null))
-					{
-						value.Tbl_ReviOrgaSistemasFichMed5.Add(this);
-						this._eviPat4_id = value.eviPat_id;
-					}
-					else
-					{
-						this._eviPat4_id = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Tbl_EviPatologicaFichMed5");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_EviPatologicaFichMed_Tbl_ReviOrgaSistemasFichMed6", Storage="_Tbl_EviPatologicaFichMed6", ThisKey="eviPat5_id", OtherKey="eviPat_id", IsForeignKey=true)]
-		public Tbl_EviPatologicaFichMed Tbl_EviPatologicaFichMed6
-		{
-			get
-			{
-				return this._Tbl_EviPatologicaFichMed6.Entity;
-			}
-			set
-			{
-				Tbl_EviPatologicaFichMed previousValue = this._Tbl_EviPatologicaFichMed6.Entity;
-				if (((previousValue != value) 
-							|| (this._Tbl_EviPatologicaFichMed6.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Tbl_EviPatologicaFichMed6.Entity = null;
-						previousValue.Tbl_ReviOrgaSistemasFichMed6.Remove(this);
-					}
-					this._Tbl_EviPatologicaFichMed6.Entity = value;
-					if ((value != null))
-					{
-						value.Tbl_ReviOrgaSistemasFichMed6.Add(this);
-						this._eviPat5_id = value.eviPat_id;
-					}
-					else
-					{
-						this._eviPat5_id = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Tbl_EviPatologicaFichMed6");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_EviPatologicaFichMed_Tbl_ReviOrgaSistemasFichMed7", Storage="_Tbl_EviPatologicaFichMed7", ThisKey="eviPat6_id", OtherKey="eviPat_id", IsForeignKey=true)]
-		public Tbl_EviPatologicaFichMed Tbl_EviPatologicaFichMed7
-		{
-			get
-			{
-				return this._Tbl_EviPatologicaFichMed7.Entity;
-			}
-			set
-			{
-				Tbl_EviPatologicaFichMed previousValue = this._Tbl_EviPatologicaFichMed7.Entity;
-				if (((previousValue != value) 
-							|| (this._Tbl_EviPatologicaFichMed7.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Tbl_EviPatologicaFichMed7.Entity = null;
-						previousValue.Tbl_ReviOrgaSistemasFichMed7.Remove(this);
-					}
-					this._Tbl_EviPatologicaFichMed7.Entity = value;
-					if ((value != null))
-					{
-						value.Tbl_ReviOrgaSistemasFichMed7.Add(this);
-						this._eviPat6_id = value.eviPat_id;
-					}
-					else
-					{
-						this._eviPat6_id = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Tbl_EviPatologicaFichMed7");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_EviPatologicaFichMed_Tbl_ReviOrgaSistemasFichMed8", Storage="_Tbl_EviPatologicaFichMed8", ThisKey="eviPat7_id", OtherKey="eviPat_id", IsForeignKey=true)]
-		public Tbl_EviPatologicaFichMed Tbl_EviPatologicaFichMed8
-		{
-			get
-			{
-				return this._Tbl_EviPatologicaFichMed8.Entity;
-			}
-			set
-			{
-				Tbl_EviPatologicaFichMed previousValue = this._Tbl_EviPatologicaFichMed8.Entity;
-				if (((previousValue != value) 
-							|| (this._Tbl_EviPatologicaFichMed8.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Tbl_EviPatologicaFichMed8.Entity = null;
-						previousValue.Tbl_ReviOrgaSistemasFichMed8.Remove(this);
-					}
-					this._Tbl_EviPatologicaFichMed8.Entity = value;
-					if ((value != null))
-					{
-						value.Tbl_ReviOrgaSistemasFichMed8.Add(this);
-						this._eviPat7_id = value.eviPat_id;
-					}
-					else
-					{
-						this._eviPat7_id = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Tbl_EviPatologicaFichMed8");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_EviPatologicaFichMed_Tbl_ReviOrgaSistemasFichMed9", Storage="_Tbl_EviPatologicaFichMed9", ThisKey="eviPat8_id", OtherKey="eviPat_id", IsForeignKey=true)]
-		public Tbl_EviPatologicaFichMed Tbl_EviPatologicaFichMed9
-		{
-			get
-			{
-				return this._Tbl_EviPatologicaFichMed9.Entity;
-			}
-			set
-			{
-				Tbl_EviPatologicaFichMed previousValue = this._Tbl_EviPatologicaFichMed9.Entity;
-				if (((previousValue != value) 
-							|| (this._Tbl_EviPatologicaFichMed9.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Tbl_EviPatologicaFichMed9.Entity = null;
-						previousValue.Tbl_ReviOrgaSistemasFichMed9.Remove(this);
-					}
-					this._Tbl_EviPatologicaFichMed9.Entity = value;
-					if ((value != null))
-					{
-						value.Tbl_ReviOrgaSistemasFichMed9.Add(this);
-						this._eviPat8_id = value.eviPat_id;
-					}
-					else
-					{
-						this._eviPat8_id = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Tbl_EviPatologicaFichMed9");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_EviPatologicaFichMed_Tbl_ReviOrgaSistemasFichMed10", Storage="_Tbl_EviPatologicaFichMed10", ThisKey="eviPat9_id", OtherKey="eviPat_id", IsForeignKey=true)]
-		public Tbl_EviPatologicaFichMed Tbl_EviPatologicaFichMed10
-		{
-			get
-			{
-				return this._Tbl_EviPatologicaFichMed10.Entity;
-			}
-			set
-			{
-				Tbl_EviPatologicaFichMed previousValue = this._Tbl_EviPatologicaFichMed10.Entity;
-				if (((previousValue != value) 
-							|| (this._Tbl_EviPatologicaFichMed10.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Tbl_EviPatologicaFichMed10.Entity = null;
-						previousValue.Tbl_ReviOrgaSistemasFichMed10.Remove(this);
-					}
-					this._Tbl_EviPatologicaFichMed10.Entity = value;
-					if ((value != null))
-					{
-						value.Tbl_ReviOrgaSistemasFichMed10.Add(this);
-						this._eviPat9_id = value.eviPat_id;
-					}
-					else
-					{
-						this._eviPat9_id = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Tbl_EviPatologicaFichMed10");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_EviPatologicaFichMed_Tbl_ReviOrgaSistemasFichMed11", Storage="_Tbl_EviPatologicaFichMed11", ThisKey="eviPat10_id", OtherKey="eviPat_id", IsForeignKey=true)]
-		public Tbl_EviPatologicaFichMed Tbl_EviPatologicaFichMed11
-		{
-			get
-			{
-				return this._Tbl_EviPatologicaFichMed11.Entity;
-			}
-			set
-			{
-				Tbl_EviPatologicaFichMed previousValue = this._Tbl_EviPatologicaFichMed11.Entity;
-				if (((previousValue != value) 
-							|| (this._Tbl_EviPatologicaFichMed11.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Tbl_EviPatologicaFichMed11.Entity = null;
-						previousValue.Tbl_ReviOrgaSistemasFichMed11.Remove(this);
-					}
-					this._Tbl_EviPatologicaFichMed11.Entity = value;
-					if ((value != null))
-					{
-						value.Tbl_ReviOrgaSistemasFichMed11.Add(this);
-						this._eviPat10_id = value.eviPat_id;
+						value.Tbl_ReviOrgaSistemasFichMed.Add(this);
+						this._eviPat10_id = value.eviPat10_id;
 					}
 					else
 					{
 						this._eviPat10_id = default(Nullable<int>);
 					}
-					this.SendPropertyChanged("Tbl_EviPatologicaFichMed11");
+					this.SendPropertyChanged("Tbl_EviPatologica10");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_EviPatologica11_Tbl_ReviOrgaSistemasFichMed", Storage="_Tbl_EviPatologica11", ThisKey="eviPat11_id", OtherKey="eviPat11_id", IsForeignKey=true)]
+		public Tbl_EviPatologica11 Tbl_EviPatologica11
+		{
+			get
+			{
+				return this._Tbl_EviPatologica11.Entity;
+			}
+			set
+			{
+				Tbl_EviPatologica11 previousValue = this._Tbl_EviPatologica11.Entity;
+				if (((previousValue != value) 
+							|| (this._Tbl_EviPatologica11.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Tbl_EviPatologica11.Entity = null;
+						previousValue.Tbl_ReviOrgaSistemasFichMed.Remove(this);
+					}
+					this._Tbl_EviPatologica11.Entity = value;
+					if ((value != null))
+					{
+						value.Tbl_ReviOrgaSistemasFichMed.Add(this);
+						this._eviPat11_id = value.eviPat11_id;
+					}
+					else
+					{
+						this._eviPat11_id = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Tbl_EviPatologica11");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_EviPatologica12_Tbl_ReviOrgaSistemasFichMed", Storage="_Tbl_EviPatologica12", ThisKey="eviPat12_id", OtherKey="eviPat12_id", IsForeignKey=true)]
+		public Tbl_EviPatologica12 Tbl_EviPatologica12
+		{
+			get
+			{
+				return this._Tbl_EviPatologica12.Entity;
+			}
+			set
+			{
+				Tbl_EviPatologica12 previousValue = this._Tbl_EviPatologica12.Entity;
+				if (((previousValue != value) 
+							|| (this._Tbl_EviPatologica12.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Tbl_EviPatologica12.Entity = null;
+						previousValue.Tbl_ReviOrgaSistemasFichMed.Remove(this);
+					}
+					this._Tbl_EviPatologica12.Entity = value;
+					if ((value != null))
+					{
+						value.Tbl_ReviOrgaSistemasFichMed.Add(this);
+						this._eviPat12_id = value.eviPat12_id;
+					}
+					else
+					{
+						this._eviPat12_id = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Tbl_EviPatologica12");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_EviPatologica2_Tbl_ReviOrgaSistemasFichMed", Storage="_Tbl_EviPatologica2", ThisKey="eviPat2_id", OtherKey="eviPat2_id", IsForeignKey=true)]
+		public Tbl_EviPatologica2 Tbl_EviPatologica2
+		{
+			get
+			{
+				return this._Tbl_EviPatologica2.Entity;
+			}
+			set
+			{
+				Tbl_EviPatologica2 previousValue = this._Tbl_EviPatologica2.Entity;
+				if (((previousValue != value) 
+							|| (this._Tbl_EviPatologica2.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Tbl_EviPatologica2.Entity = null;
+						previousValue.Tbl_ReviOrgaSistemasFichMed.Remove(this);
+					}
+					this._Tbl_EviPatologica2.Entity = value;
+					if ((value != null))
+					{
+						value.Tbl_ReviOrgaSistemasFichMed.Add(this);
+						this._eviPat2_id = value.eviPat2_id;
+					}
+					else
+					{
+						this._eviPat2_id = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Tbl_EviPatologica2");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_EviPatologica3_Tbl_ReviOrgaSistemasFichMed", Storage="_Tbl_EviPatologica3", ThisKey="eviPat3_id", OtherKey="eviPat3_id", IsForeignKey=true)]
+		public Tbl_EviPatologica3 Tbl_EviPatologica3
+		{
+			get
+			{
+				return this._Tbl_EviPatologica3.Entity;
+			}
+			set
+			{
+				Tbl_EviPatologica3 previousValue = this._Tbl_EviPatologica3.Entity;
+				if (((previousValue != value) 
+							|| (this._Tbl_EviPatologica3.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Tbl_EviPatologica3.Entity = null;
+						previousValue.Tbl_ReviOrgaSistemasFichMed.Remove(this);
+					}
+					this._Tbl_EviPatologica3.Entity = value;
+					if ((value != null))
+					{
+						value.Tbl_ReviOrgaSistemasFichMed.Add(this);
+						this._eviPat3_id = value.eviPat3_id;
+					}
+					else
+					{
+						this._eviPat3_id = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Tbl_EviPatologica3");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_EviPatologica4_Tbl_ReviOrgaSistemasFichMed", Storage="_Tbl_EviPatologica4", ThisKey="eviPat4_id", OtherKey="eviPat4_id", IsForeignKey=true)]
+		public Tbl_EviPatologica4 Tbl_EviPatologica4
+		{
+			get
+			{
+				return this._Tbl_EviPatologica4.Entity;
+			}
+			set
+			{
+				Tbl_EviPatologica4 previousValue = this._Tbl_EviPatologica4.Entity;
+				if (((previousValue != value) 
+							|| (this._Tbl_EviPatologica4.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Tbl_EviPatologica4.Entity = null;
+						previousValue.Tbl_ReviOrgaSistemasFichMed.Remove(this);
+					}
+					this._Tbl_EviPatologica4.Entity = value;
+					if ((value != null))
+					{
+						value.Tbl_ReviOrgaSistemasFichMed.Add(this);
+						this._eviPat4_id = value.eviPat4_id;
+					}
+					else
+					{
+						this._eviPat4_id = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Tbl_EviPatologica4");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_EviPatologica5_Tbl_ReviOrgaSistemasFichMed", Storage="_Tbl_EviPatologica5", ThisKey="eviPat5_id", OtherKey="eviPat5_id", IsForeignKey=true)]
+		public Tbl_EviPatologica5 Tbl_EviPatologica5
+		{
+			get
+			{
+				return this._Tbl_EviPatologica5.Entity;
+			}
+			set
+			{
+				Tbl_EviPatologica5 previousValue = this._Tbl_EviPatologica5.Entity;
+				if (((previousValue != value) 
+							|| (this._Tbl_EviPatologica5.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Tbl_EviPatologica5.Entity = null;
+						previousValue.Tbl_ReviOrgaSistemasFichMed.Remove(this);
+					}
+					this._Tbl_EviPatologica5.Entity = value;
+					if ((value != null))
+					{
+						value.Tbl_ReviOrgaSistemasFichMed.Add(this);
+						this._eviPat5_id = value.eviPat5_id;
+					}
+					else
+					{
+						this._eviPat5_id = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Tbl_EviPatologica5");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_EviPatologica6_Tbl_ReviOrgaSistemasFichMed", Storage="_Tbl_EviPatologica6", ThisKey="eviPat6_id", OtherKey="eviPat6_id", IsForeignKey=true)]
+		public Tbl_EviPatologica6 Tbl_EviPatologica6
+		{
+			get
+			{
+				return this._Tbl_EviPatologica6.Entity;
+			}
+			set
+			{
+				Tbl_EviPatologica6 previousValue = this._Tbl_EviPatologica6.Entity;
+				if (((previousValue != value) 
+							|| (this._Tbl_EviPatologica6.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Tbl_EviPatologica6.Entity = null;
+						previousValue.Tbl_ReviOrgaSistemasFichMed.Remove(this);
+					}
+					this._Tbl_EviPatologica6.Entity = value;
+					if ((value != null))
+					{
+						value.Tbl_ReviOrgaSistemasFichMed.Add(this);
+						this._eviPat6_id = value.eviPat6_id;
+					}
+					else
+					{
+						this._eviPat6_id = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Tbl_EviPatologica6");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_EviPatologica7_Tbl_ReviOrgaSistemasFichMed", Storage="_Tbl_EviPatologica7", ThisKey="eviPat7_id", OtherKey="eviPat7_id", IsForeignKey=true)]
+		public Tbl_EviPatologica7 Tbl_EviPatologica7
+		{
+			get
+			{
+				return this._Tbl_EviPatologica7.Entity;
+			}
+			set
+			{
+				Tbl_EviPatologica7 previousValue = this._Tbl_EviPatologica7.Entity;
+				if (((previousValue != value) 
+							|| (this._Tbl_EviPatologica7.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Tbl_EviPatologica7.Entity = null;
+						previousValue.Tbl_ReviOrgaSistemasFichMed.Remove(this);
+					}
+					this._Tbl_EviPatologica7.Entity = value;
+					if ((value != null))
+					{
+						value.Tbl_ReviOrgaSistemasFichMed.Add(this);
+						this._eviPat7_id = value.eviPat7_id;
+					}
+					else
+					{
+						this._eviPat7_id = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Tbl_EviPatologica7");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_EviPatologica8_Tbl_ReviOrgaSistemasFichMed", Storage="_Tbl_EviPatologica8", ThisKey="eviPat8_id", OtherKey="eviPat8_id", IsForeignKey=true)]
+		public Tbl_EviPatologica8 Tbl_EviPatologica8
+		{
+			get
+			{
+				return this._Tbl_EviPatologica8.Entity;
+			}
+			set
+			{
+				Tbl_EviPatologica8 previousValue = this._Tbl_EviPatologica8.Entity;
+				if (((previousValue != value) 
+							|| (this._Tbl_EviPatologica8.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Tbl_EviPatologica8.Entity = null;
+						previousValue.Tbl_ReviOrgaSistemasFichMed.Remove(this);
+					}
+					this._Tbl_EviPatologica8.Entity = value;
+					if ((value != null))
+					{
+						value.Tbl_ReviOrgaSistemasFichMed.Add(this);
+						this._eviPat8_id = value.eviPat8_id;
+					}
+					else
+					{
+						this._eviPat8_id = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Tbl_EviPatologica8");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_EviPatologica9_Tbl_ReviOrgaSistemasFichMed", Storage="_Tbl_EviPatologica9", ThisKey="eviPat9_id", OtherKey="eviPat9_id", IsForeignKey=true)]
+		public Tbl_EviPatologica9 Tbl_EviPatologica9
+		{
+			get
+			{
+				return this._Tbl_EviPatologica9.Entity;
+			}
+			set
+			{
+				Tbl_EviPatologica9 previousValue = this._Tbl_EviPatologica9.Entity;
+				if (((previousValue != value) 
+							|| (this._Tbl_EviPatologica9.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Tbl_EviPatologica9.Entity = null;
+						previousValue.Tbl_ReviOrgaSistemasFichMed.Remove(this);
+					}
+					this._Tbl_EviPatologica9.Entity = value;
+					if ((value != null))
+					{
+						value.Tbl_ReviOrgaSistemasFichMed.Add(this);
+						this._eviPat9_id = value.eviPat9_id;
+					}
+					else
+					{
+						this._eviPat9_id = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Tbl_EviPatologica9");
 				}
 			}
 		}

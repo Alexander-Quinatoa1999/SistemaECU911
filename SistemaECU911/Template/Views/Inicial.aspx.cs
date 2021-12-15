@@ -318,34 +318,9 @@ namespace SistemaECU911.Template.Views
             try
             {
                 //Guardar Persona D - F - G - L - M - N
-                if (string.IsNullOrEmpty(txt_catolica.Text)) 
-                //   || string.IsNullOrEmpty(txt_puestotrabajo.Text) || string.IsNullOrEmpty(txt_actdesempeña.Text) ||
-                //    string.IsNullOrEmpty(txt_tiempotrabajo.Text) || string.IsNullOrEmpty(txt_fisico.Text) || string.IsNullOrEmpty(txt_mecanico.Text) || 
-                //    string.IsNullOrEmpty(txt_quimico.Text) || string.IsNullOrEmpty(txt_biologico.Text) || string.IsNullOrEmpty(txt_ergonomico.Text) ||
-                //    string.IsNullOrEmpty(txt_psicosocial.Text) || string.IsNullOrEmpty(txt_observaciones1.Text) || 
-
-                //    /*string.IsNullOrEmpty(txt_si.Text) || string.IsNullOrEmpty(txt_especificar.Text) || string.IsNullOrEmpty(txt_no.Text) || 
-                //    string.IsNullOrEmpty(txt_fecha.Text) || string.IsNullOrEmpty(txt_observaciones2.Text) || 
-
-                //    string.IsNullOrEmpty(txt_siprofesional.Text) || string.IsNullOrEmpty(txt_espeprofesional.Text) || string.IsNullOrEmpty(txt_noprofesional.Text) || 
-                //    string.IsNullOrEmpty(txt_fechaprofesional.Text) || string.IsNullOrEmpty(txt_observaciones3.Text) ||*/
-
-                //    string.IsNullOrEmpty(txt_puestodetrabajo.Text) || string.IsNullOrEmpty(txt_act.Text) || string.IsNullOrEmpty(txt_tempaltas.Text) ||
-                //    string.IsNullOrEmpty(txt_atrapmaquinas.Text) || string.IsNullOrEmpty(txt_solidos.Text) ||
-
-                //    string.IsNullOrEmpty(txt_puestodetrabajo2.Text) || string.IsNullOrEmpty(txt_act2.Text) || string.IsNullOrEmpty(txt_virus.Text) ||
-                //    string.IsNullOrEmpty(txt_manmanualcargas.Text) || string.IsNullOrEmpty(txt_montrabajo.Text) || string.IsNullOrEmpty(txt_medpreventivas.Text) ||
-
-                //    string.IsNullOrEmpty(txt_descrextralaborales.Text) ||
-
-                //    string.IsNullOrEmpty(txt_examen.Text) || string.IsNullOrEmpty(txt_fechaexamen.Text) || string.IsNullOrEmpty(txt_resultadoexamen.Text) ||
-                //    string.IsNullOrEmpty(txt_observacionexamen.Text) ||
-
-                //    string.IsNullOrEmpty(txt_descripdiagnostico.Text) ||  string.IsNullOrEmpty(txt_pre.Text) || string.IsNullOrEmpty(txt_def.Text) ||
-
-                //    string.IsNullOrEmpty(txt_apto.Text) || string.IsNullOrEmpty(txt_observacionaptitud.Text) || string.IsNullOrEmpty(txt_limitacionaptitud.Text))
+                if (string.IsNullOrEmpty(txt_numHClinica.Text))
                 {
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Complete los campos')", true);
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Complete el Número de Historia Clinica')", true);
                 }
                 else
                 {

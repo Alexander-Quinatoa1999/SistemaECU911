@@ -189,9 +189,66 @@ namespace CapaNegocio
             return lista.ToList();
         }
 
-        public static List<Tbl_EviPatologicaFichMed> obtenerEviPatologica()
+        public static List<Tbl_EviPatologica1> obtenerEviPatologica1()
         {
-            var lista = dc.Tbl_EviPatologicaFichMed.Where(evi => evi.eviPat_estado == "A");
+            var lista = dc.Tbl_EviPatologica1.Where(evi => evi.eviPat1_estado == "A");
+            return lista.ToList();
+        }
+
+        public static List<Tbl_EviPatologica2> obtenerEviPatologica2()
+        {
+            var lista = dc.Tbl_EviPatologica2.Where(evi => evi.eviPat2_estado == "A");
+            return lista.ToList();
+        }
+
+        public static List<Tbl_EviPatologica3> obtenerEviPatologica3()
+        {
+            var lista = dc.Tbl_EviPatologica3.Where(evi => evi.eviPat3_estado == "A");
+            return lista.ToList();
+        }
+        public static List<Tbl_EviPatologica4> obtenerEviPatologica4()
+        {
+            var lista = dc.Tbl_EviPatologica4.Where(evi => evi.eviPat4_estado == "A");
+            return lista.ToList();
+        }
+        public static List<Tbl_EviPatologica5> obtenerEviPatologica5()
+        {
+            var lista = dc.Tbl_EviPatologica5.Where(evi => evi.eviPat5_estado == "A");
+            return lista.ToList();
+        }
+        public static List<Tbl_EviPatologica6> obtenerEviPatologica6()
+        {
+            var lista = dc.Tbl_EviPatologica6.Where(evi => evi.eviPat6_estado == "A");
+            return lista.ToList();
+        }
+        public static List<Tbl_EviPatologica7> obtenerEviPatologica7()
+        {
+            var lista = dc.Tbl_EviPatologica7.Where(evi => evi.eviPat7_estado == "A");
+            return lista.ToList();
+        }
+        public static List<Tbl_EviPatologica8> obtenerEviPatologica8()
+        {
+            var lista = dc.Tbl_EviPatologica8.Where(evi => evi.eviPat8_estado == "A");
+            return lista.ToList();
+        }
+        public static List<Tbl_EviPatologica9> obtenerEviPatologica9()
+        {
+            var lista = dc.Tbl_EviPatologica9.Where(evi => evi.eviPat9_estado == "A");
+            return lista.ToList();
+        }
+        public static List<Tbl_EviPatologica10> obtenerEviPatologica10()
+        {
+            var lista = dc.Tbl_EviPatologica10.Where(evi => evi.eviPat10_estado == "A");
+            return lista.ToList();
+        }
+        public static List<Tbl_EviPatologica11> obtenerEviPatologica11()
+        {
+            var lista = dc.Tbl_EviPatologica11.Where(evi => evi.eviPat11_estado == "A");
+            return lista.ToList();
+        }
+        public static List<Tbl_EviPatologica12> obtenerEviPatologica12()
+        {
+            var lista = dc.Tbl_EviPatologica12.Where(evi => evi.eviPat12_estado == "A");
             return lista.ToList();
         }
 
@@ -220,8 +277,9 @@ namespace CapaNegocio
         //------------------------------------------ METODOS PARA GUARDAR Y MODIFICAR DATOS  -----------------------------------------
         //----------------------------------------------------------------------------------------------------------------------------
 
-        //Metodo para guardar datos Persona
-        public static void guardarPersona(Tbl_Personas per)
+
+        //1. Metodo para guardar datos motivo de consulta
+        public static void guardarPersonas(Tbl_Personas per)
         {
             try
             {
@@ -231,20 +289,7 @@ namespace CapaNegocio
             }
             catch (Exception ex)
             {
-                throw new ArgumentException("Datos No Guardados" + ex.Message);
-            }
-        }
-
-        //Metodo para modificar datos Persona
-        public static void modificarPersona(Tbl_Personas per)
-        {
-            try
-            {
-                dc.SubmitChanges();
-            }
-            catch (Exception ex)
-            {
-                throw new ArgumentException("Datos No Guardados" + ex.Message);
+                throw new ArgumentException("Verifique los datos de Persona" + ex.Message);
             }
         }
 
@@ -259,7 +304,7 @@ namespace CapaNegocio
             }
             catch (Exception ex)
             {
-                throw new ArgumentException("Datos No Guardados" + ex.Message);
+                throw new ArgumentException("Verifique los datos de Motivo de Consulta" + ex.Message);
             }
         }
 
@@ -272,7 +317,7 @@ namespace CapaNegocio
             }
             catch (Exception ex)
             {
-                throw new ArgumentException("Los datos no han sido modificados <br/>" + ex.Message);
+                throw ex;
             }
         }
 
@@ -287,7 +332,7 @@ namespace CapaNegocio
             }
             catch (Exception ex)
             {
-                throw new ArgumentException("Datos No Guardados" + ex.Message);
+                throw new ArgumentException("Verifique los datos de Antecedentes Personales" + ex.Message);
             }
         }
 
@@ -300,7 +345,7 @@ namespace CapaNegocio
             }
             catch (Exception ex)
             {
-                throw new ArgumentException("Los datos no han sido modificados <br/>" + ex.Message);
+                throw ex;
             }
         }
 
@@ -315,7 +360,7 @@ namespace CapaNegocio
             }
             catch (Exception ex)
             {
-                throw new ArgumentException("Datos No Guardados" + ex.Message);
+                throw new ArgumentException("Verifique los datos de Antecedentes Familiares" + ex.Message);
             }
         }
 
@@ -328,7 +373,7 @@ namespace CapaNegocio
             }
             catch (Exception ex)
             {
-                throw new ArgumentException("Datos No Guardados" + ex.Message);
+                throw ex;
             }
         }
 
@@ -343,7 +388,7 @@ namespace CapaNegocio
             }
             catch (Exception ex)
             {
-                throw new ArgumentException("Datos No Guardados" + ex.Message);
+                throw new ArgumentException("Verifique los datos de Enfermedad Actual" + ex.Message);
             }
         }
 
@@ -356,7 +401,7 @@ namespace CapaNegocio
             }
             catch (Exception ex)
             {
-                throw new ArgumentException("Datos No Guardados" + ex.Message);
+                throw ex;
             }
         }        
 
@@ -371,7 +416,7 @@ namespace CapaNegocio
             }
             catch (Exception ex)
             {
-                throw new ArgumentException("Datos No Guardados" + ex.Message);
+                throw new ArgumentException("Verifique los datos de Revision Organos y Sistemas" + ex.Message);
             }
         }
 
@@ -384,7 +429,7 @@ namespace CapaNegocio
             }
             catch (Exception ex)
             {
-                throw new ArgumentException("Datos No Guardados" + ex.Message);
+                throw ex;
             }
         }
 
@@ -399,7 +444,7 @@ namespace CapaNegocio
             }
             catch (Exception ex)
             {
-                throw new ArgumentException("Datos No Guardados" + ex.Message);
+                throw new ArgumentException("Verifique los datos de Signos Vitales" + ex.Message);
             }
         }
 
@@ -412,7 +457,7 @@ namespace CapaNegocio
             }
             catch (Exception ex)
             {
-                throw new ArgumentException("Datos No Guardados" + ex.Message);
+                throw ex;
             }
         }
 
@@ -427,7 +472,7 @@ namespace CapaNegocio
             }
             catch (Exception ex)
             {
-                throw new ArgumentException("Datos No Guardados" + ex.Message);
+                throw new ArgumentException("Verifique los datos de Examen Fisico" + ex.Message);
             }
         }
 
@@ -440,7 +485,7 @@ namespace CapaNegocio
             }
             catch (Exception ex)
             {
-                throw new ArgumentException("Datos No Guardados" + ex.Message);
+                throw ex;
             }
         }
 
@@ -455,7 +500,20 @@ namespace CapaNegocio
             }
             catch (Exception ex)
             {
-                throw new ArgumentException("Datos No Guardados" + ex.Message);
+                throw new ArgumentException("Verifique los datos de Diagnostico" + ex.Message);
+            }
+        }
+
+        //8.1. Metodo para modificar datos diagnostico
+        public static void modificarDiagnostico(Tbl_DiagnosticoFichMed diag)
+        {
+            try
+            {
+                dc.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
         }
 
@@ -470,7 +528,7 @@ namespace CapaNegocio
             }
             catch (Exception ex)
             {
-                throw new ArgumentException("Datos No Guardados" + ex.Message);
+                throw new ArgumentException("Verifique los datos de Plan de Tratamiento" + ex.Message);
             }
         }
 
@@ -483,7 +541,7 @@ namespace CapaNegocio
             }
             catch (Exception ex)
             {
-                throw new ArgumentException("Datos No Guardados" + ex.Message);
+                throw ex;
             }
         }
 
@@ -498,7 +556,7 @@ namespace CapaNegocio
             }
             catch (Exception ex)
             {
-                throw new ArgumentException("Datos No Guardados" + ex.Message);
+                throw new ArgumentException("Verifique los datos de Evolución" + ex.Message);
             }
         }
 
@@ -511,7 +569,7 @@ namespace CapaNegocio
             }
             catch (Exception ex)
             {
-                throw new ArgumentException("Datos No Guardados" + ex.Message);
+                throw ex;
             }
         }
 
@@ -526,7 +584,7 @@ namespace CapaNegocio
             }
             catch (Exception ex)
             {
-                throw new ArgumentException("Datos No Guardados" + ex.Message);
+                throw new ArgumentException("Verifique los datos de Prescripciones " + ex.Message);
             }
         }
 
@@ -539,7 +597,7 @@ namespace CapaNegocio
             }
             catch (Exception ex)
             {
-                throw new ArgumentException("Datos No Guardados" + ex.Message);
+                throw ex;
             }
         }
 
@@ -554,7 +612,7 @@ namespace CapaNegocio
             }
             catch (Exception ex)
             {
-                throw new ArgumentException("Datos No Guardados" + ex.Message);
+                throw new ArgumentException("Verifique los datos del Profesional" + ex.Message);
             }
         }
 
@@ -567,7 +625,7 @@ namespace CapaNegocio
             }
             catch (Exception ex)
             {
-                throw new ArgumentException("Datos No Guardados" + ex.Message);
+                throw ex;
             }
         }
 

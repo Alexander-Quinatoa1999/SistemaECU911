@@ -161,8 +161,8 @@
     <Type Name="Tbl_AnteFamiliares">
       <Column Name="AntFami_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="TiEnf_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="AntFami_antecendente" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
-      <Column Name="AntFami_descripcion" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="AntFami_antecendente" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="AntFami_descripcion" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
       <Column Name="Per_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="AntFami_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
       <Association Name="Tbl_Personas_Tbl_AnteFamiliares" Member="Tbl_Personas" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Personas" IsForeignKey="true" />
@@ -173,8 +173,8 @@
     <Type Name="Tbl_AntePersonales">
       <Column Name="AntPer_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="TiEnf_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="AntPer_antecedente" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
-      <Column Name="AntPer_descripcion" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="AntPer_antecedente" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="AntPer_descripcion" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
       <Column Name="Per_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="AntPer_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
       <Association Name="Tbl_Personas_Tbl_AntePersonales" Member="Tbl_Personas" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Personas" IsForeignKey="true" />
@@ -263,15 +263,15 @@
   <Table Name="dbo.Tbl_ConsVitAntro" Member="Tbl_ConsVitAntro">
     <Type Name="Tbl_ConsVitAntro">
       <Column Name="ConsVitAntro_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="ConsVitAntro_preArterial" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="ConsVitAntro_temperatura" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="ConsVitAntro_frecCardiacan" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="ConsVitAntro_satOxigenon" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="ConsVitAntro_frecRespiratorian" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="ConsVitAntro_peson" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="ConsVitAntro_tallan" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="ConsVitAntro_indMasCorporaln" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="ConsVitAntro_perAbdominaln" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ConsVitAntro_preArterial" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ConsVitAntro_temperatura" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="ConsVitAntro_frecCardiacan" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="ConsVitAntro_satOxigenon" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="ConsVitAntro_frecRespiratorian" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="ConsVitAntro_peson" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="ConsVitAntro_tallan" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="ConsVitAntro_indMasCorporaln" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="ConsVitAntro_perAbdominaln" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
       <Column Name="Per_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="ConsVitAntro_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
       <Association Name="Tbl_Personas_Tbl_ConsVitAntro" Member="Tbl_Personas" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Personas" IsForeignKey="true" />
@@ -339,7 +339,7 @@
       <Column Name="DatProfe_fecha_hora" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="prof_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="espec_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DatProfe_cod" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="DatProfe_cod" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
       <Column Name="Per_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="DatProfe_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
       <Association Name="Tbl_Especialidad_Tbl_DatProfesional" Member="Tbl_Especialidad" ThisKey="espec_id" OtherKey="espec_id" Type="Tbl_Especialidad" IsForeignKey="true" />
@@ -362,12 +362,12 @@
   <Table Name="dbo.Tbl_DiagnosticoFichMed" Member="Tbl_DiagnosticoFichMed">
     <Type Name="Tbl_DiagnosticoFichMed">
       <Column Name="diag_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="diag_diagnosticos" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
-      <Column Name="diag_codigo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="diag_tipo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="diag_condicion" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
-      <Column Name="diag_cronologian" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="diag_descripcion" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="diag_diagnosticos" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="diag_codigo" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="diag_tipo" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="diag_condicion" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="diag_cronologian" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="diag_descripcion" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
       <Column Name="Per_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="diag_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
       <Association Name="Tbl_Personas_Tbl_DiagnosticoFichMed" Member="Tbl_Personas" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Personas" IsForeignKey="true" />
@@ -598,23 +598,100 @@
       <Association Name="Tbl_ConSalud_Tbl_EvaMedRetiro" Member="Tbl_ConSalud" ThisKey="ConSal_id" OtherKey="ConSal_id" Type="Tbl_ConSalud" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.Tbl_EviPatologicaFichMed" Member="Tbl_EviPatologicaFichMed">
-    <Type Name="Tbl_EviPatologicaFichMed">
-      <Column Name="eviPat_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="eviPat_nomOpcion" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
-      <Column Name="eviPat_estado" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Association Name="Tbl_EviPatologicaFichMed_Tbl_ReviOrgaSistemasFichMed" Member="Tbl_ReviOrgaSistemasFichMed" ThisKey="eviPat_id" OtherKey="eviPat1_id" Type="Tbl_ReviOrgaSistemasFichMed" />
-      <Association Name="Tbl_EviPatologicaFichMed_Tbl_ReviOrgaSistemasFichMed1" Member="Tbl_ReviOrgaSistemasFichMed1" ThisKey="eviPat_id" OtherKey="eviPat2_id" Type="Tbl_ReviOrgaSistemasFichMed" />
-      <Association Name="Tbl_EviPatologicaFichMed_Tbl_ReviOrgaSistemasFichMed2" Member="Tbl_ReviOrgaSistemasFichMed2" ThisKey="eviPat_id" OtherKey="eviPat11_id" Type="Tbl_ReviOrgaSistemasFichMed" />
-      <Association Name="Tbl_EviPatologicaFichMed_Tbl_ReviOrgaSistemasFichMed3" Member="Tbl_ReviOrgaSistemasFichMed3" ThisKey="eviPat_id" OtherKey="eviPat12_id" Type="Tbl_ReviOrgaSistemasFichMed" />
-      <Association Name="Tbl_EviPatologicaFichMed_Tbl_ReviOrgaSistemasFichMed4" Member="Tbl_ReviOrgaSistemasFichMed4" ThisKey="eviPat_id" OtherKey="eviPat3_id" Type="Tbl_ReviOrgaSistemasFichMed" />
-      <Association Name="Tbl_EviPatologicaFichMed_Tbl_ReviOrgaSistemasFichMed5" Member="Tbl_ReviOrgaSistemasFichMed5" ThisKey="eviPat_id" OtherKey="eviPat4_id" Type="Tbl_ReviOrgaSistemasFichMed" />
-      <Association Name="Tbl_EviPatologicaFichMed_Tbl_ReviOrgaSistemasFichMed6" Member="Tbl_ReviOrgaSistemasFichMed6" ThisKey="eviPat_id" OtherKey="eviPat5_id" Type="Tbl_ReviOrgaSistemasFichMed" />
-      <Association Name="Tbl_EviPatologicaFichMed_Tbl_ReviOrgaSistemasFichMed7" Member="Tbl_ReviOrgaSistemasFichMed7" ThisKey="eviPat_id" OtherKey="eviPat6_id" Type="Tbl_ReviOrgaSistemasFichMed" />
-      <Association Name="Tbl_EviPatologicaFichMed_Tbl_ReviOrgaSistemasFichMed8" Member="Tbl_ReviOrgaSistemasFichMed8" ThisKey="eviPat_id" OtherKey="eviPat7_id" Type="Tbl_ReviOrgaSistemasFichMed" />
-      <Association Name="Tbl_EviPatologicaFichMed_Tbl_ReviOrgaSistemasFichMed9" Member="Tbl_ReviOrgaSistemasFichMed9" ThisKey="eviPat_id" OtherKey="eviPat8_id" Type="Tbl_ReviOrgaSistemasFichMed" />
-      <Association Name="Tbl_EviPatologicaFichMed_Tbl_ReviOrgaSistemasFichMed10" Member="Tbl_ReviOrgaSistemasFichMed10" ThisKey="eviPat_id" OtherKey="eviPat9_id" Type="Tbl_ReviOrgaSistemasFichMed" />
-      <Association Name="Tbl_EviPatologicaFichMed_Tbl_ReviOrgaSistemasFichMed11" Member="Tbl_ReviOrgaSistemasFichMed11" ThisKey="eviPat_id" OtherKey="eviPat10_id" Type="Tbl_ReviOrgaSistemasFichMed" />
+  <Table Name="dbo.Tbl_EviPatologica1" Member="Tbl_EviPatologica1">
+    <Type Name="Tbl_EviPatologica1">
+      <Column Name="eviPat1_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="eviPat1_nomOpcion" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="eviPat1_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Association Name="Tbl_EviPatologica1_Tbl_ReviOrgaSistemasFichMed" Member="Tbl_ReviOrgaSistemasFichMed" ThisKey="eviPat1_id" OtherKey="eviPat1_id" Type="Tbl_ReviOrgaSistemasFichMed" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tbl_EviPatologica10" Member="Tbl_EviPatologica10">
+    <Type Name="Tbl_EviPatologica10">
+      <Column Name="eviPat10_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="eviPat10_nomOpcion" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="eviPat10_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Association Name="Tbl_EviPatologica10_Tbl_ReviOrgaSistemasFichMed" Member="Tbl_ReviOrgaSistemasFichMed" ThisKey="eviPat10_id" OtherKey="eviPat10_id" Type="Tbl_ReviOrgaSistemasFichMed" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tbl_EviPatologica11" Member="Tbl_EviPatologica11">
+    <Type Name="Tbl_EviPatologica11">
+      <Column Name="eviPat11_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="eviPat11_nomOpcion" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="eviPat11_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Association Name="Tbl_EviPatologica11_Tbl_ReviOrgaSistemasFichMed" Member="Tbl_ReviOrgaSistemasFichMed" ThisKey="eviPat11_id" OtherKey="eviPat11_id" Type="Tbl_ReviOrgaSistemasFichMed" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tbl_EviPatologica12" Member="Tbl_EviPatologica12">
+    <Type Name="Tbl_EviPatologica12">
+      <Column Name="eviPat12_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="eviPat12_nomOpcion" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="eviPat12_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Association Name="Tbl_EviPatologica12_Tbl_ReviOrgaSistemasFichMed" Member="Tbl_ReviOrgaSistemasFichMed" ThisKey="eviPat12_id" OtherKey="eviPat12_id" Type="Tbl_ReviOrgaSistemasFichMed" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tbl_EviPatologica2" Member="Tbl_EviPatologica2">
+    <Type Name="Tbl_EviPatologica2">
+      <Column Name="eviPat2_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="eviPat2_nomOpcion" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="eviPat2_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Association Name="Tbl_EviPatologica2_Tbl_ReviOrgaSistemasFichMed" Member="Tbl_ReviOrgaSistemasFichMed" ThisKey="eviPat2_id" OtherKey="eviPat2_id" Type="Tbl_ReviOrgaSistemasFichMed" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tbl_EviPatologica3" Member="Tbl_EviPatologica3">
+    <Type Name="Tbl_EviPatologica3">
+      <Column Name="eviPat3_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="eviPat3_nomOpcion" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="eviPat3_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Association Name="Tbl_EviPatologica3_Tbl_ReviOrgaSistemasFichMed" Member="Tbl_ReviOrgaSistemasFichMed" ThisKey="eviPat3_id" OtherKey="eviPat3_id" Type="Tbl_ReviOrgaSistemasFichMed" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tbl_EviPatologica4" Member="Tbl_EviPatologica4">
+    <Type Name="Tbl_EviPatologica4">
+      <Column Name="eviPat4_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="eviPat4_nomOpcion" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="eviPat4_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Association Name="Tbl_EviPatologica4_Tbl_ReviOrgaSistemasFichMed" Member="Tbl_ReviOrgaSistemasFichMed" ThisKey="eviPat4_id" OtherKey="eviPat4_id" Type="Tbl_ReviOrgaSistemasFichMed" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tbl_EviPatologica5" Member="Tbl_EviPatologica5">
+    <Type Name="Tbl_EviPatologica5">
+      <Column Name="eviPat5_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="eviPat5_nomOpcion" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="eviPat5_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Association Name="Tbl_EviPatologica5_Tbl_ReviOrgaSistemasFichMed" Member="Tbl_ReviOrgaSistemasFichMed" ThisKey="eviPat5_id" OtherKey="eviPat5_id" Type="Tbl_ReviOrgaSistemasFichMed" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tbl_EviPatologica6" Member="Tbl_EviPatologica6">
+    <Type Name="Tbl_EviPatologica6">
+      <Column Name="eviPat6_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="eviPat6_nomOpcion" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="eviPat6_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Association Name="Tbl_EviPatologica6_Tbl_ReviOrgaSistemasFichMed" Member="Tbl_ReviOrgaSistemasFichMed" ThisKey="eviPat6_id" OtherKey="eviPat6_id" Type="Tbl_ReviOrgaSistemasFichMed" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tbl_EviPatologica7" Member="Tbl_EviPatologica7">
+    <Type Name="Tbl_EviPatologica7">
+      <Column Name="eviPat7_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="eviPat7_nomOpcion" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="eviPat7_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Association Name="Tbl_EviPatologica7_Tbl_ReviOrgaSistemasFichMed" Member="Tbl_ReviOrgaSistemasFichMed" ThisKey="eviPat7_id" OtherKey="eviPat7_id" Type="Tbl_ReviOrgaSistemasFichMed" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tbl_EviPatologica8" Member="Tbl_EviPatologica8">
+    <Type Name="Tbl_EviPatologica8">
+      <Column Name="eviPat8_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="eviPat8_nomOpcion" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="eviPat8_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Association Name="Tbl_EviPatologica8_Tbl_ReviOrgaSistemasFichMed" Member="Tbl_ReviOrgaSistemasFichMed" ThisKey="eviPat8_id" OtherKey="eviPat8_id" Type="Tbl_ReviOrgaSistemasFichMed" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tbl_EviPatologica9" Member="Tbl_EviPatologica9">
+    <Type Name="Tbl_EviPatologica9">
+      <Column Name="eviPat9_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="eviPat9_nomOpcion" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="eviPat9_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Association Name="Tbl_EviPatologica9_Tbl_ReviOrgaSistemasFichMed" Member="Tbl_ReviOrgaSistemasFichMed" ThisKey="eviPat9_id" OtherKey="eviPat9_id" Type="Tbl_ReviOrgaSistemasFichMed" />
     </Type>
   </Table>
   <Table Name="dbo.Tbl_Evolucion" Member="Tbl_Evolucion">
@@ -1310,18 +1387,18 @@
       <Column Name="revorgsisFM_descT" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
       <Column Name="Per_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="revorgsisFM_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-      <Association Name="Tbl_EviPatologicaFichMed_Tbl_ReviOrgaSistemasFichMed" Member="Tbl_EviPatologicaFichMed" ThisKey="eviPat1_id" OtherKey="eviPat_id" Type="Tbl_EviPatologicaFichMed" IsForeignKey="true" />
-      <Association Name="Tbl_EviPatologicaFichMed_Tbl_ReviOrgaSistemasFichMed1" Member="Tbl_EviPatologicaFichMed1" ThisKey="eviPat2_id" OtherKey="eviPat_id" Type="Tbl_EviPatologicaFichMed" IsForeignKey="true" />
-      <Association Name="Tbl_EviPatologicaFichMed_Tbl_ReviOrgaSistemasFichMed2" Member="Tbl_EviPatologicaFichMed2" ThisKey="eviPat11_id" OtherKey="eviPat_id" Type="Tbl_EviPatologicaFichMed" IsForeignKey="true" />
-      <Association Name="Tbl_EviPatologicaFichMed_Tbl_ReviOrgaSistemasFichMed3" Member="Tbl_EviPatologicaFichMed3" ThisKey="eviPat12_id" OtherKey="eviPat_id" Type="Tbl_EviPatologicaFichMed" IsForeignKey="true" />
-      <Association Name="Tbl_EviPatologicaFichMed_Tbl_ReviOrgaSistemasFichMed4" Member="Tbl_EviPatologicaFichMed4" ThisKey="eviPat3_id" OtherKey="eviPat_id" Type="Tbl_EviPatologicaFichMed" IsForeignKey="true" />
-      <Association Name="Tbl_EviPatologicaFichMed_Tbl_ReviOrgaSistemasFichMed5" Member="Tbl_EviPatologicaFichMed5" ThisKey="eviPat4_id" OtherKey="eviPat_id" Type="Tbl_EviPatologicaFichMed" IsForeignKey="true" />
-      <Association Name="Tbl_EviPatologicaFichMed_Tbl_ReviOrgaSistemasFichMed6" Member="Tbl_EviPatologicaFichMed6" ThisKey="eviPat5_id" OtherKey="eviPat_id" Type="Tbl_EviPatologicaFichMed" IsForeignKey="true" />
-      <Association Name="Tbl_EviPatologicaFichMed_Tbl_ReviOrgaSistemasFichMed7" Member="Tbl_EviPatologicaFichMed7" ThisKey="eviPat6_id" OtherKey="eviPat_id" Type="Tbl_EviPatologicaFichMed" IsForeignKey="true" />
-      <Association Name="Tbl_EviPatologicaFichMed_Tbl_ReviOrgaSistemasFichMed8" Member="Tbl_EviPatologicaFichMed8" ThisKey="eviPat7_id" OtherKey="eviPat_id" Type="Tbl_EviPatologicaFichMed" IsForeignKey="true" />
-      <Association Name="Tbl_EviPatologicaFichMed_Tbl_ReviOrgaSistemasFichMed9" Member="Tbl_EviPatologicaFichMed9" ThisKey="eviPat8_id" OtherKey="eviPat_id" Type="Tbl_EviPatologicaFichMed" IsForeignKey="true" />
-      <Association Name="Tbl_EviPatologicaFichMed_Tbl_ReviOrgaSistemasFichMed10" Member="Tbl_EviPatologicaFichMed10" ThisKey="eviPat9_id" OtherKey="eviPat_id" Type="Tbl_EviPatologicaFichMed" IsForeignKey="true" />
-      <Association Name="Tbl_EviPatologicaFichMed_Tbl_ReviOrgaSistemasFichMed11" Member="Tbl_EviPatologicaFichMed11" ThisKey="eviPat10_id" OtherKey="eviPat_id" Type="Tbl_EviPatologicaFichMed" IsForeignKey="true" />
+      <Association Name="Tbl_EviPatologica1_Tbl_ReviOrgaSistemasFichMed" Member="Tbl_EviPatologica1" ThisKey="eviPat1_id" OtherKey="eviPat1_id" Type="Tbl_EviPatologica1" IsForeignKey="true" />
+      <Association Name="Tbl_EviPatologica10_Tbl_ReviOrgaSistemasFichMed" Member="Tbl_EviPatologica10" ThisKey="eviPat10_id" OtherKey="eviPat10_id" Type="Tbl_EviPatologica10" IsForeignKey="true" />
+      <Association Name="Tbl_EviPatologica11_Tbl_ReviOrgaSistemasFichMed" Member="Tbl_EviPatologica11" ThisKey="eviPat11_id" OtherKey="eviPat11_id" Type="Tbl_EviPatologica11" IsForeignKey="true" />
+      <Association Name="Tbl_EviPatologica12_Tbl_ReviOrgaSistemasFichMed" Member="Tbl_EviPatologica12" ThisKey="eviPat12_id" OtherKey="eviPat12_id" Type="Tbl_EviPatologica12" IsForeignKey="true" />
+      <Association Name="Tbl_EviPatologica2_Tbl_ReviOrgaSistemasFichMed" Member="Tbl_EviPatologica2" ThisKey="eviPat2_id" OtherKey="eviPat2_id" Type="Tbl_EviPatologica2" IsForeignKey="true" />
+      <Association Name="Tbl_EviPatologica3_Tbl_ReviOrgaSistemasFichMed" Member="Tbl_EviPatologica3" ThisKey="eviPat3_id" OtherKey="eviPat3_id" Type="Tbl_EviPatologica3" IsForeignKey="true" />
+      <Association Name="Tbl_EviPatologica4_Tbl_ReviOrgaSistemasFichMed" Member="Tbl_EviPatologica4" ThisKey="eviPat4_id" OtherKey="eviPat4_id" Type="Tbl_EviPatologica4" IsForeignKey="true" />
+      <Association Name="Tbl_EviPatologica5_Tbl_ReviOrgaSistemasFichMed" Member="Tbl_EviPatologica5" ThisKey="eviPat5_id" OtherKey="eviPat5_id" Type="Tbl_EviPatologica5" IsForeignKey="true" />
+      <Association Name="Tbl_EviPatologica6_Tbl_ReviOrgaSistemasFichMed" Member="Tbl_EviPatologica6" ThisKey="eviPat6_id" OtherKey="eviPat6_id" Type="Tbl_EviPatologica6" IsForeignKey="true" />
+      <Association Name="Tbl_EviPatologica7_Tbl_ReviOrgaSistemasFichMed" Member="Tbl_EviPatologica7" ThisKey="eviPat7_id" OtherKey="eviPat7_id" Type="Tbl_EviPatologica7" IsForeignKey="true" />
+      <Association Name="Tbl_EviPatologica8_Tbl_ReviOrgaSistemasFichMed" Member="Tbl_EviPatologica8" ThisKey="eviPat8_id" OtherKey="eviPat8_id" Type="Tbl_EviPatologica8" IsForeignKey="true" />
+      <Association Name="Tbl_EviPatologica9_Tbl_ReviOrgaSistemasFichMed" Member="Tbl_EviPatologica9" ThisKey="eviPat9_id" OtherKey="eviPat9_id" Type="Tbl_EviPatologica9" IsForeignKey="true" />
       <Association Name="Tbl_Personas_Tbl_ReviOrgaSistemasFichMed" Member="Tbl_Personas" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Personas" IsForeignKey="true" />
     </Type>
   </Table>
