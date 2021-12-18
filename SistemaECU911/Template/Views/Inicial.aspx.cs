@@ -151,6 +151,7 @@ namespace SistemaECU911.Template.Views
                     txt_otrareligion.Text = datosestempresausu.datEstable_otrasRel.ToString();
                     txt_gruposanguineo.Text = datosestempresausu.datEstable_groSanguineo.ToString();
                     txt_lateralidad.Text = datosestempresausu.datEstable_lateralidad.ToString();
+                    txt_lesbiana.Text = datosestempresausu.datEstable__lesbianaOriSex.ToString();
                     txt_gay.Text = datosestempresausu.datEstable_gayOriSex.ToString();
                     txt_bisexual.Text = datosestempresausu.datEstable_bisexualOriSex.ToString();
                     txt_heterosexual.Text = datosestempresausu.datEstable_heterosexualOriSex.ToString();
@@ -174,13 +175,13 @@ namespace SistemaECU911.Template.Views
                     txt_puestotrabajo.Text = emplant.AntEmpAnte_puestoTrabajo.ToString();
                     txt_actdesempeña.Text = emplant.AntEmpAnte_actDesemp.ToString();
                     txt_tiempotrabajo.Text = emplant.AntEmpAnte_tiemTrabajo.ToString();
-                    txt_fisico.Text = emplant.AntEmpAnte_nomEmpresa.ToString();
-                    txt_mecanico.Text = emplant.AntEmpAnte_nomEmpresa.ToString();
-                    txt_quimico.Text = emplant.AntEmpAnte_nomEmpresa.ToString();
-                    txt_biologico.Text = emplant.AntEmpAnte_nomEmpresa.ToString();
-                    txt_ergonomico.Text = emplant.AntEmpAnte_nomEmpresa.ToString();
-                    txt_psicosocial.Text = emplant.AntEmpAnte_nomEmpresa.ToString();
-                    txt_observaciones1.Text = emplant.AntEmpAnte_nomEmpresa.ToString();
+                    txt_fisico.Text = emplant.AntEmpAnte_fisicoRies.ToString();
+                    txt_mecanico.Text = emplant.AntEmpAnte_mecanicoRies.ToString();
+                    txt_quimico.Text = emplant.AntEmpAnte_quimicoRies.ToString();
+                    txt_biologico.Text = emplant.AntEmpAnte_biologicoRies.ToString();
+                    txt_ergonomico.Text = emplant.AntEmpAnte_ergonomicoRies.ToString();
+                    txt_psicosocial.Text = emplant.AntEmpAnte_psicosocial.ToString();
+                    txt_obseantempleanteriores.Text = emplant.AntEmpAnte_observaciones.ToString();
 
                     //E
                     txt_enfermedadcardiovascular.Text = AnteFamiDetParentesco.AntFamDetPare_enfCarVas.ToString();
@@ -218,7 +219,7 @@ namespace SistemaECU911.Template.Views
                     txt_digestivo.Text = revisionactualorganossistemas.RevActOrgSis_digestivo.ToString();
                     txt_genitourinario.Text = revisionactualorganossistemas.RevActOrgSis_genUrinario.ToString();
                     txt_musculosesqueleticos.Text = revisionactualorganossistemas.RevActOrgSis_muscEsqueletico.ToString();
-                    txt_musculosesqueleticos.Text = revisionactualorganossistemas.RevActOrgSis_endocrino.ToString();
+                    txt_endocrino.Text = revisionactualorganossistemas.RevActOrgSis_endocrino.ToString();
                     txt_hemolinfatico.Text = revisionactualorganossistemas.RevActOrgSis_hemoLimfa.ToString();
                     txt_nervioso.Text = revisionactualorganossistemas.RevActOrgSis_nervioso.ToString();
                     txt_descrorganosysistemas.Text = revisionactualorganossistemas.RevActOrgSis_descrip.ToString();
@@ -274,6 +275,7 @@ namespace SistemaECU911.Template.Views
 
                     //M
                     txt_descripdiagnostico.Text = diagnostico.Diag_descripcion.ToString();
+                    txt_cie.Text = diagnostico.Diag_cie.ToString();
                     txt_pre.Text = diagnostico.Diag_pre.ToString();
                     txt_def.Text = diagnostico.Diag_def.ToString();
 
@@ -375,6 +377,7 @@ namespace SistemaECU911.Template.Views
                 datosestempresausu.datEstable_otrasRel = txt_otrareligion.Text;
                 datosestempresausu.datEstable_groSanguineo = txt_gruposanguineo.Text;
                 datosestempresausu.datEstable_lateralidad = txt_lateralidad.Text;
+                datosestempresausu.datEstable__lesbianaOriSex = txt_lesbiana.Text;
                 datosestempresausu.datEstable_gayOriSex = txt_gay.Text;
                 datosestempresausu.datEstable_bisexualOriSex = txt_bisexual.Text;
                 datosestempresausu.datEstable_heterosexualOriSex = txt_heterosexual.Text;
@@ -402,14 +405,14 @@ namespace SistemaECU911.Template.Views
                 emplant.AntEmpAnte_nomEmpresa = txt_empresa.Text;
                 emplant.AntEmpAnte_puestoTrabajo = txt_puestotrabajo.Text;
                 emplant.AntEmpAnte_actDesemp = txt_actdesempeña.Text;
-                emplant.AntEmpAnte_tiemTrabajo = Convert.ToInt32(txt_tiempotrabajo.Text);
-                emplant.AntEmpAnte_nomEmpresa = txt_fisico.Text;
-                emplant.AntEmpAnte_nomEmpresa = txt_mecanico.Text;
-                emplant.AntEmpAnte_nomEmpresa = txt_quimico.Text;
-                emplant.AntEmpAnte_nomEmpresa = txt_biologico.Text;
-                emplant.AntEmpAnte_nomEmpresa = txt_ergonomico.Text;
-                emplant.AntEmpAnte_nomEmpresa = txt_psicosocial.Text;
-                emplant.AntEmpAnte_nomEmpresa = txt_observaciones1.Text;
+                emplant.AntEmpAnte_tiemTrabajo = txt_tiempotrabajo.Text;
+                emplant.AntEmpAnte_fisicoRies = txt_fisico.Text;
+                emplant.AntEmpAnte_mecanicoRies = txt_mecanico.Text;
+                emplant.AntEmpAnte_quimicoRies = txt_quimico.Text;
+                emplant.AntEmpAnte_biologicoRies = txt_biologico.Text;
+                emplant.AntEmpAnte_ergonomicoRies = txt_ergonomico.Text;
+                emplant.AntEmpAnte_psicosocial = txt_psicosocial.Text;
+                emplant.AntEmpAnte_observaciones = txt_obseantempleanteriores.Text;
                 emplant.Per_id = perso;
 
                 //E. Captura de Datos ANTECEDENTES FAMILIARES (DETALLAR EL PARENTESCO)
@@ -452,7 +455,7 @@ namespace SistemaECU911.Template.Views
                 revisionactualorganossistemas.RevActOrgSis_digestivo = txt_digestivo.Text;
                 revisionactualorganossistemas.RevActOrgSis_genUrinario = txt_genitourinario.Text;
                 revisionactualorganossistemas.RevActOrgSis_muscEsqueletico = txt_musculosesqueleticos.Text;
-                revisionactualorganossistemas.RevActOrgSis_endocrino = txt_musculosesqueleticos.Text;
+                revisionactualorganossistemas.RevActOrgSis_endocrino = txt_endocrino.Text;
                 revisionactualorganossistemas.RevActOrgSis_hemoLimfa = txt_hemolinfatico.Text;
                 revisionactualorganossistemas.RevActOrgSis_nervioso = txt_nervioso.Text;
                 revisionactualorganossistemas.RevActOrgSis_descrip = txt_descrorganosysistemas.Text;
@@ -511,15 +514,13 @@ namespace SistemaECU911.Template.Views
 
                 //M. Captura de Datos Tbl_Diagnostico
                 diagnostico.Diag_descripcion = txt_descripdiagnostico.Text;
+                diagnostico.Diag_cie = txt_cie.Text;
                 diagnostico.Diag_pre = txt_pre.Text;
                 diagnostico.Diag_def = txt_def.Text;
                 diagnostico.Per_id = perso;
 
                 //N.Captura de Datos Tbl_AptitudMedica
-                aptitudmedica.AptMed_apto = txt_apto.Text;
-                aptitudmedica.AptMed_aptoObserva = txt_aptoobservacion.Text;
-                aptitudmedica.AptMed_aptoLimi = txt_aptolimitacion.Text;
-                aptitudmedica.AptMed_NoApto = txt_noapto.Text;
+                aptitudmedica.AptMed_apto = txt_apto.Text;              
                 aptitudmedica.AptMed_Observ = txt_observacionaptitud.Text;
                 aptitudmedica.AptMed_Limit = txt_limitacionaptitud.Text;
                 aptitudmedica.Per_id = perso;
@@ -593,14 +594,14 @@ namespace SistemaECU911.Template.Views
                 emplant.AntEmpAnte_nomEmpresa = txt_empresa.Text;
                 emplant.AntEmpAnte_puestoTrabajo = txt_puestotrabajo.Text;
                 emplant.AntEmpAnte_actDesemp = txt_actdesempeña.Text;
-                emplant.AntEmpAnte_tiemTrabajo = Convert.ToInt32(txt_tiempotrabajo.Text);
-                emplant.AntEmpAnte_nomEmpresa = txt_fisico.Text;
-                emplant.AntEmpAnte_nomEmpresa = txt_mecanico.Text;
-                emplant.AntEmpAnte_nomEmpresa = txt_quimico.Text;
-                emplant.AntEmpAnte_nomEmpresa = txt_biologico.Text;
-                emplant.AntEmpAnte_nomEmpresa = txt_ergonomico.Text;
-                emplant.AntEmpAnte_nomEmpresa = txt_psicosocial.Text;
-                emplant.AntEmpAnte_nomEmpresa = txt_observaciones1.Text;
+                emplant.AntEmpAnte_tiemTrabajo = txt_tiempotrabajo.Text;
+                emplant.AntEmpAnte_fisicoRies = txt_fisico.Text;
+                emplant.AntEmpAnte_mecanicoRies = txt_mecanico.Text;
+                emplant.AntEmpAnte_quimicoRies = txt_quimico.Text;
+                emplant.AntEmpAnte_biologicoRies = txt_biologico.Text;
+                emplant.AntEmpAnte_ergonomicoRies = txt_ergonomico.Text;
+                emplant.AntEmpAnte_psicosocial = txt_psicosocial.Text;
+                emplant.AntEmpAnte_observaciones = txt_obseantempleanteriores.Text;
 
                 //captura de datos Tbl_AccidentesTrabajoDesc
 
@@ -628,6 +629,7 @@ namespace SistemaECU911.Template.Views
 
                 //captura de datos Tbl_Diagnostico
                 diagnostico.Diag_descripcion = txt_descripdiagnostico.Text;
+                diagnostico.Diag_cie = txt_cie.Text;
                 diagnostico.Diag_pre = txt_pre.Text;
                 diagnostico.Diag_def = txt_def.Text;
 
@@ -656,9 +658,7 @@ namespace SistemaECU911.Template.Views
 
                 //metodo de guardar Aptitud Medica
                 CN_Inicial.guardarAptiMediTrabajo(aptitudmedica);
-
-                //metodo de guardar motivo de consulta
-                //CN_Inicial.guardarAntCliniQuirur(antcliqui);                    
+                 
 
                 //Mensaje de confirmacion
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos Guardados Exitosamente')", true);
@@ -677,7 +677,7 @@ namespace SistemaECU911.Template.Views
         {
             txt_antCliQuiDescripcion.Text = "";
             txt_empresa.Text = txt_puestotrabajo.Text = txt_actdesempeña.Text = txt_tiempotrabajo.Text = txt_fisico.Text = txt_mecanico.Text=
-            txt_quimico.Text = txt_biologico.Text = txt_ergonomico.Text = txt_psicosocial.Text = txt_observaciones1.Text = txt_si.Text =
+            txt_quimico.Text = txt_biologico.Text = txt_ergonomico.Text = txt_psicosocial.Text = txt_obseantempleanteriores.Text = txt_si.Text =
             txt_especificar.Text = txt_no.Text = txt_fecha.Text = txt_observaciones2.Text = txt_siprofesional.Text = txt_espeprofesional.Text =
             txt_noprofesional.Text = txt_fechaprofesional.Text = txt_observaciones3.Text = txt_puestodetrabajo.Text = txt_act.Text = 
             txt_tempaltas.Text = txt_atrapmaquinas.Text = txt_solidos.Text = txt_puestodetrabajo2.Text = txt_act2.Text = txt_virus.Text = 

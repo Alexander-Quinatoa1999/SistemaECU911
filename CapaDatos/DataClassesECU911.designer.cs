@@ -2319,7 +2319,7 @@ namespace CapaDatos
 		
 		private string _AntEmpAnte_actDesemp;
 		
-		private System.Nullable<int> _AntEmpAnte_tiemTrabajo;
+		private string _AntEmpAnte_tiemTrabajo;
 		
 		private string _AntEmpAnte_fisicoRies;
 		
@@ -2355,7 +2355,7 @@ namespace CapaDatos
     partial void OnAntEmpAnte_puestoTrabajoChanged();
     partial void OnAntEmpAnte_actDesempChanging(string value);
     partial void OnAntEmpAnte_actDesempChanged();
-    partial void OnAntEmpAnte_tiemTrabajoChanging(System.Nullable<int> value);
+    partial void OnAntEmpAnte_tiemTrabajoChanging(string value);
     partial void OnAntEmpAnte_tiemTrabajoChanged();
     partial void OnAntEmpAnte_fisicoRiesChanging(string value);
     partial void OnAntEmpAnte_fisicoRiesChanged();
@@ -2424,7 +2424,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AntEmpAnte_puestoTrabajo", DbType="VarChar(100)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AntEmpAnte_puestoTrabajo", DbType="VarChar(150)")]
 		public string AntEmpAnte_puestoTrabajo
 		{
 			get
@@ -2444,7 +2444,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AntEmpAnte_actDesemp", DbType="VarChar(150)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AntEmpAnte_actDesemp", DbType="VarChar(250)")]
 		public string AntEmpAnte_actDesemp
 		{
 			get
@@ -2464,8 +2464,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AntEmpAnte_tiemTrabajo", DbType="Int")]
-		public System.Nullable<int> AntEmpAnte_tiemTrabajo
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AntEmpAnte_tiemTrabajo", DbType="VarChar(150)")]
+		public string AntEmpAnte_tiemTrabajo
 		{
 			get
 			{
@@ -2604,7 +2604,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AntEmpAnte_observaciones", DbType="VarChar(200)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AntEmpAnte_observaciones", DbType="VarChar(250)")]
 		public string AntEmpAnte_observaciones
 		{
 			get
@@ -2976,7 +2976,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AntFamDetPare_otros", DbType="VarChar(50)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AntFamDetPare_otros", DbType="VarChar(150)")]
 		public string AntFamDetPare_otros
 		{
 			get
@@ -5746,8 +5746,6 @@ namespace CapaDatos
 		
 		private int _AptMed_Id;
 		
-		private string _AptMed_calificada;
-		
 		private string _AptMed_apto;
 		
 		private string _AptMed_aptoObserva;
@@ -5772,8 +5770,6 @@ namespace CapaDatos
     partial void OnCreated();
     partial void OnAptMed_IdChanging(int value);
     partial void OnAptMed_IdChanged();
-    partial void OnAptMed_calificadaChanging(string value);
-    partial void OnAptMed_calificadaChanged();
     partial void OnAptMed_aptoChanging(string value);
     partial void OnAptMed_aptoChanged();
     partial void OnAptMed_aptoObservaChanging(string value);
@@ -5814,26 +5810,6 @@ namespace CapaDatos
 					this._AptMed_Id = value;
 					this.SendPropertyChanged("AptMed_Id");
 					this.OnAptMed_IdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AptMed_calificada", DbType="VarChar(250)")]
-		public string AptMed_calificada
-		{
-			get
-			{
-				return this._AptMed_calificada;
-			}
-			set
-			{
-				if ((this._AptMed_calificada != value))
-				{
-					this.OnAptMed_calificadaChanging(value);
-					this.SendPropertyChanging();
-					this._AptMed_calificada = value;
-					this.SendPropertyChanged("AptMed_calificada");
-					this.OnAptMed_calificadaChanged();
 				}
 			}
 		}
@@ -7881,7 +7857,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_datEstable_groSanguineo", DbType="VarChar(10)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_datEstable_groSanguineo", DbType="VarChar(20)")]
 		public string datEstable_groSanguineo
 		{
 			get
@@ -7901,7 +7877,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_datEstable_lateralidad", DbType="VarChar(50)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_datEstable_lateralidad", DbType="VarChar(100)")]
 		public string datEstable_lateralidad
 		{
 			get
@@ -8161,7 +8137,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_datEstable_tipoDis", DbType="VarChar(50)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_datEstable_tipoDis", DbType="VarChar(100)")]
 		public string datEstable_tipoDis
 		{
 			get
@@ -8281,7 +8257,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_datEstable_causaSalidaReintegro", DbType="VarChar(100)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_datEstable_causaSalidaReintegro", DbType="VarChar(250)")]
 		public string datEstable_causaSalidaReintegro
 		{
 			get
@@ -8321,7 +8297,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_datEstable_actividadesRetiro", DbType="VarChar(100)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_datEstable_actividadesRetiro", DbType="VarChar(250)")]
 		public string datEstable_actividadesRetiro
 		{
 			get
@@ -19108,7 +19084,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FacRiesTrabAct_medPreventivas", DbType="VarChar(150)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FacRiesTrabAct_medPreventivas", DbType="VarChar(250)")]
 		public string FacRiesTrabAct_medPreventivas
 		{
 			get

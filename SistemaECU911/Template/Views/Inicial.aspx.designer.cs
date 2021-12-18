@@ -654,13 +654,13 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_psicosocial;
 
         /// <summary>
-        /// Control txt_observaciones1.
+        /// Control txt_obseantempleanteriores.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_observaciones1;
+        protected global::System.Web.UI.WebControls.TextBox txt_obseantempleanteriores;
 
         /// <summary>
         /// Control txt_si.
