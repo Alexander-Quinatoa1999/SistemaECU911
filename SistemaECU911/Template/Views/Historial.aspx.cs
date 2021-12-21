@@ -367,12 +367,12 @@ namespace SistemaECU911.Template.Views
                 pres.Press_descripcion = txt_prescipciones.Text;
                 pres.Per_id = perso;
 
-                ////captura de datos Tbl_Profesional
-                //prof.DatProfe_fecha_hora = Convert.ToDateTime(txt_fechahora.Text);
-                //prof.prof_id = Convert.ToInt32(ddl_profesional.SelectedValue);
-                //prof.espec_id = Convert.ToInt32(ddl_especialidad.SelectedValue);
-                //prof.DatProfe_cod = txt_codigo.Text;
-                //prof.Per_id = perso;
+                //captura de datos Tbl_Profesional
+                prof.DatProfe_fecha_hora = Convert.ToDateTime(txt_fechahora.Text);
+                prof.prof_id = Convert.ToInt32(ddl_profesional.SelectedValue);
+                prof.espec_id = Convert.ToInt32(ddl_especialidad.SelectedValue);
+                prof.DatProfe_cod = txt_codigo.Text;
+                prof.Per_id = perso;
 
                 //metodo de guardar motivo de consulta
                 CN_HistorialMedico.guardarMotiConsulta(motcons);
@@ -397,7 +397,7 @@ namespace SistemaECU911.Template.Views
                 //metodo de guardar prescripciones
                 CN_HistorialMedico.guardarPrescripcion(pres);
                 ////metodo de guardar profesional
-                //CN_HistorialMedico.guardarProfesional(prof);
+                CN_HistorialMedico.guardarProfesional(prof);
 
                 btn_modificar.Visible = false;                  
 
