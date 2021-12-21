@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SistemaECU911" Class="DataClassesECU911DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=ZOCAPO\SQLEXPRESS;Initial Catalog=SistemaECU911;Integrated Security=True" SettingsObjectName="CapaDatos.Properties.Settings" SettingsPropertyName="SistemaECU911ConnectionString5" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=SistemaECU911;Integrated Security=True" SettingsObjectName="CapaDatos.Properties.Settings" SettingsPropertyName="SistemaECU911ConnectionString4" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Tbl_AccidentesTrabajoDesc" Member="Tbl_AccidentesTrabajoDesc">
     <Type Name="Tbl_AccidentesTrabajoDesc">
       <Column Name="AntTrabDesc_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -31,29 +31,20 @@
       <Association Name="Tbl_Personas_Tbl_ActividadesExtraLaborales" Member="Tbl_Personas" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Personas" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.Tbl_AntecedentesCliQuiru" Member="Tbl_AntecedentesCliQuiru">
-    <Type Name="Tbl_AntecedentesCliQuiru">
-      <Column Name="AntCliQuiru_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="AntCliQuiru_descripcion" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
-      <Column Name="Per_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="AntCliQuiru_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-      <Association Name="Tbl_AntecedentesCliQuiru_Tbl_AntecedentesPersonales" Member="Tbl_AntecedentesPersonales" ThisKey="AntCliQuiru_id" OtherKey="AntCliQuiru_id" Type="Tbl_AntecedentesPersonales" />
-    </Type>
-  </Table>
   <Table Name="dbo.Tbl_AntecedentesEmplAnteriores" Member="Tbl_AntecedentesEmplAnteriores">
     <Type Name="Tbl_AntecedentesEmplAnteriores">
       <Column Name="AntEmpAnte_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="AntEmpAnte_nomEmpresa" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
-      <Column Name="AntEmpAnte_puestoTrabajo" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
-      <Column Name="AntEmpAnte_actDesemp" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
-      <Column Name="AntEmpAnte_tiemTrabajo" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="AntEmpAnte_puestoTrabajo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="AntEmpAnte_actDesemp" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="AntEmpAnte_tiemTrabajo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
       <Column Name="AntEmpAnte_fisicoRies" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
       <Column Name="AntEmpAnte_mecanicoRies" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
       <Column Name="AntEmpAnte_quimicoRies" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
       <Column Name="AntEmpAnte_biologicoRies" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
       <Column Name="AntEmpAnte_ergonomicoRies" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
       <Column Name="AntEmpAnte_psicosocial" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-      <Column Name="AntEmpAnte_observaciones" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="AntEmpAnte_observaciones" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
       <Column Name="Per_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="AntEmpAnte_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
       <Association Name="Tbl_AntecedentesEmplAnteriores_Tbl_AntecedentesTrabajo" Member="Tbl_AntecedentesTrabajo" ThisKey="AntEmpAnte_id" OtherKey="AntEmpAnte_id" Type="Tbl_AntecedentesTrabajo" />
@@ -70,7 +61,7 @@
       <Column Name="AntFamDetPare_enfInfe" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
       <Column Name="AntFamDetPare_enfHereConge" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
       <Column Name="AntFamDetPare_discapa" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-      <Column Name="AntFamDetPare_otros" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="AntFamDetPare_otros" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="AntFamDetPare_descripcion" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
       <Column Name="Per_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="AntFamDetPare_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
@@ -113,13 +104,100 @@
       <Column Name="EnfProfesionales_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="AntPer_estado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
       <Association Name="Tbl_AccidentesTrabajoDesc_Tbl_AntecedentesPersonales" Member="Tbl_AccidentesTrabajoDesc" ThisKey="AntTrabDesc_id" OtherKey="AntTrabDesc_id" Type="Tbl_AccidentesTrabajoDesc" IsForeignKey="true" />
-      <Association Name="Tbl_AntecedentesCliQuiru_Tbl_AntecedentesPersonales" Member="Tbl_AntecedentesCliQuiru" ThisKey="AntCliQuiru_id" OtherKey="AntCliQuiru_id" Type="Tbl_AntecedentesCliQuiru" IsForeignKey="true" />
       <Association Name="Tbl_AntecedentesGinObste_Tbl_AntecedentesPersonales" Member="Tbl_AntecedentesGinObste" ThisKey="AntGinObst_id" OtherKey="AntGinObst_id" Type="Tbl_AntecedentesGinObste" IsForeignKey="true" />
       <Association Name="Tbl_AntecedentesReproductivosMasculinos_Tbl_AntecedentesPersonales" Member="Tbl_AntecedentesReproductivosMasculinos" ThisKey="AntRepMas_id" OtherKey="AntRepMas_id" Type="Tbl_AntecedentesReproductivosMasculinos" IsForeignKey="true" />
       <Association Name="Tbl_EnfermedadesProfesionales_Tbl_AntecedentesPersonales" Member="Tbl_EnfermedadesProfesionales" ThisKey="EnfProfesionales_id" OtherKey="EnfProfesionales_id" Type="Tbl_EnfermedadesProfesionales" IsForeignKey="true" />
       <Association Name="Tbl_Estilo_de_Vida_Tbl_AntecedentesPersonales" Member="Tbl_Estilo_de_Vida" ThisKey="EstVida_id" OtherKey="EstVida_id" Type="Tbl_Estilo_de_Vida" IsForeignKey="true" />
       <Association Name="Tbl_HabitosToxicos_Tbl_AntecedentesPersonales" Member="Tbl_HabitosToxicos" ThisKey="HabTox_id" OtherKey="HaToxi_id" Type="Tbl_HabitosToxicos" IsForeignKey="true" />
       <Association Name="Tbl_Incidentes_Tbl_AntecedentesPersonales" Member="Tbl_Incidentes" ThisKey="Inci_id" OtherKey="Inci_id" Type="Tbl_Incidentes" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tbl_AntecedentesPersonalesInicial" Member="Tbl_AntecedentesPersonalesInicial">
+    <Type Name="Tbl_AntecedentesPersonalesInicial">
+      <Column Name="antPerInicial_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="antPerInicial_descripcion" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="antPerInicial_menarquia" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="antPerInicial_ciclos" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="antPerInicial_fechUltiMenstrua" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="antPerInicial_gestas" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="antPerInicial_partos" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="antPerInicial_cesareas" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="antPerInicial_abortos" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="antPerInicial_vivosHij" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="antPerInicial_muertosHij" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="antPerInicial_siVidaSexActiva" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="antPerInicial_noVidaSexActiva" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="antPerInicial_siMetPlanifiFamiliar" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="antPerInicial_noMetPlanifiFamiliar" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="antPerInicial_tipoMetPlanifiFamiliar" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="antPerInicial_siExaRealiPapanicolaou" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="antPerInicial_siExaRealiColposcopia" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="antPerInicial_noExaRealiPapanicolaou" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="antPerInicial_noExaRealiColposcopia" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="antPerInicial_tiempoExaRealiPapanicolaou" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="antPerInicial_tiempoExaRealiColposcopia" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="antPerInicial_resultadoExaRealiPapanicolaou" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="antPerInicial_resultadoExaRealiColposcopia" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="antPerInicial_siExaRealiEcoMamario" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="antPerInicial_siExaRealiMamografia" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="antPerInicial_noExaRealiEcoMamario" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="antPerInicial_noExaRealiMamografia" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="antPerInicial_tiempoExaRealiEcoMamario" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="antPerInicial_tiempoExaRealiMamografia" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="antPerInicial_resultadoExaRealiEcoMamario" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="antPerInicial_resultadoExaRealiMamografia" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="antPerInicial_siExaRealiAntiProstatico" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="antPerInicial_siExaRealiEcoProstatico" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="antPerInicial_noExaRealiAntiProstatico" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="antPerInicial_noExaRealiEcoProstatico" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="antPerInicial_tiempoExaRealiAntiProstatico" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="antPerInicial_tiempoExaRealiEcoProstatico" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="antPerInicial_resultadoExaRealiAntiProstatico" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="antPerInicial_resultadoExaRealiEcoProstatico" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="antPerInicial_siMetPlanifiFamiAntReproMascu" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="antPerInicial_noMetPlanifiFamiAntReproMascu" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="antPerInicial_tipo1MetPlanifiFamiAntReproMascu" Type="System.String" DbType="VarChar(350)" CanBeNull="true" />
+      <Column Name="antPerInicial_tipo2MetPlanifiFamiAntReproMascu" Type="System.String" DbType="VarChar(350)" CanBeNull="true" />
+      <Column Name="antPerInicial_vivosHijAntReproMascu" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="antPerInicial_muertosHijAntReproMascu" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="antPerInicial_siConsuNocivosTabaco" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="antPerInicial_siConsuNocivosAlcohol" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="antPerInicial_siConsuNocivosOtrasDrogas" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="antPerInicial_otrasConsuNocivos" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="antPerInicial_noConsuNocivosTabaco" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="antPerInicial_noConsuNocivosAlcohol" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="antPerInicial_noConsuNocivosOtrasDrogas" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="antPerInicial_tiempoConsuConsuNocivosTabaco" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="antPerInicial_tiempoConsuConsuNocivosAlcohol" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="antPerInicial_tiempoConsu1ConsuNocivosOtrasDrogas" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="antPerInicial_tiempoConsu2ConsuNocivosOtrasDrogas" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="antPerInicial_cantidadConsuNocivosTabaco" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="antPerInicial_cantidadConsuNocivosAlcohol" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="antPerInicial_cantidad1ConsuNocivosOtrasDrogas" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="antPerInicial_cantidad2ConsuNocivosOtrasDrogas" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="antPerInicial_exConsumiConsuNocivosTabaco" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="antPerInicial_exConsumiConsuNocivosAlcohol" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="antPerInicial_exConsumi1ConsuNocivosOtrasDrogas" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="antPerInicial_exConsumi2ConsuNocivosOtrasDrogas" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="antPerInicial_tiempoAbstiConsuNocivosTabaco" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="antPerInicial_tiempoAbstiConsuNocivosAlcohol" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="antPerInicial_tiempoAbsti1ConsuNocivosOtrasDrogas" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="antPerInicial_tiempoAbsti2ConsuNocivosOtrasDrogas" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="antPerInicial_siEstiVidaActFisica" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="antPerInicial_siEstiVidaMediHabitual" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="antPerInicial_noEstiVidaActFisica" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="antPerInicial_noEstiVidaMediHabitual" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="antPerInicial_cualEstiVidaActFisica" Type="System.String" DbType="VarChar(350)" CanBeNull="true" />
+      <Column Name="antPerInicial_cual1EstiVidaMediHabitual" Type="System.String" DbType="VarChar(350)" CanBeNull="true" />
+      <Column Name="antPerInicial_cual2EstiVidaMediHabitual" Type="System.String" DbType="VarChar(350)" CanBeNull="true" />
+      <Column Name="antPerInicial_cual3EstiVidaMediHabitual" Type="System.String" DbType="VarChar(350)" CanBeNull="true" />
+      <Column Name="[antPerInicial_tiem/cantEstiVidaActFisica]" Member="antPerInicial_tiem_cantEstiVidaActFisica" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="[antPerInicial_tiem/cant1EstiVidaMediHabitual]" Member="antPerInicial_tiem_cant1EstiVidaMediHabitual" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="[antPerInicial_tiem/cant2EstiVidaMediHabitual]" Member="antPerInicial_tiem_cant2EstiVidaMediHabitual" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="[antPerInicial_tiem/cant3EstiVidaMediHabitual]" Member="antPerInicial_tiem_cant3EstiVidaMediHabitual" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Per_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="antPerInicial_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Association Name="Tbl_Personas_Tbl_AntecedentesPersonalesInicial" Member="Tbl_Personas" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Personas" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Tbl_AntecedentesReproductivosMasculinos" Member="Tbl_AntecedentesReproductivosMasculinos">
@@ -192,6 +270,7 @@
   <Table Name="dbo.Tbl_AptitudMedica" Member="Tbl_AptitudMedica">
     <Type Name="Tbl_AptitudMedica">
       <Column Name="AptMed_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AptMed_calificada" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
       <Column Name="AptMed_apto" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
       <Column Name="AptMed_aptoObserva" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
       <Column Name="AptMed_aptoLimi" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
@@ -293,8 +372,8 @@
       <Column Name="datEstable_testJehovaRel" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
       <Column Name="datEstable_mormonaRel" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
       <Column Name="datEstable_otrasRel" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-      <Column Name="datEstable_groSanguineo" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="datEstable_lateralidad" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="datEstable_groSanguineo" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="datEstable_lateralidad" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="datEstable__lesbianaOriSex" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
       <Column Name="datEstable_gayOriSex" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
       <Column Name="datEstable_bisexualOriSex" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
@@ -307,15 +386,15 @@
       <Column Name="datEstable_norespondeIdenGen" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
       <Column Name="datEstable_siDis" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
       <Column Name="datEstable_noDis" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-      <Column Name="datEstable_tipoDis" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="datEstable_tipoDis" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="datEstable_porcentDis" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="datEstable_actRelevantesTrabOcupar" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
       <Column Name="datEstable_fechUltLabReintegro" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="datEstable_fechReinReintegro" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="datEstable_totalReintegro" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="datEstable_causaSalidaReintegro" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="datEstable_causaSalidaReintegro" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
       <Column Name="datEstable_tiempoRetiro" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="datEstable_actividadesRetiro" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="datEstable_actividadesRetiro" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
       <Column Name="datEstable_facRiesRetiro" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
       <Column Name="Per_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="datEstable_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
@@ -859,7 +938,7 @@
       <Column Name="FacRiesTrabAct_relInterperPsi" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
       <Column Name="FacRiesTrabAct_inesLabPsi" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
       <Column Name="FacRiesTrabAct_otrosPsi" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-      <Column Name="FacRiesTrabAct_medPreventivas" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="FacRiesTrabAct_medPreventivas" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
       <Column Name="Per_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="FacRiesTrabAct_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
       <Association Name="Tbl_Personas_Tbl_FacRiesTrabAct" Member="Tbl_Personas" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Personas" IsForeignKey="true" />
@@ -1225,6 +1304,7 @@
       <Association Name="Tbl_Personas_Tbl_ActividadesExtraLaborales" Member="Tbl_ActividadesExtraLaborales" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_ActividadesExtraLaborales" />
       <Association Name="Tbl_Personas_Tbl_AntecedentesEmplAnteriores" Member="Tbl_AntecedentesEmplAnteriores" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_AntecedentesEmplAnteriores" />
       <Association Name="Tbl_Personas_Tbl_AntecedentesFamiliaresDetParentesco" Member="Tbl_AntecedentesFamiliaresDetParentesco" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_AntecedentesFamiliaresDetParentesco" />
+      <Association Name="Tbl_Personas_Tbl_AntecedentesPersonalesInicial" Member="Tbl_AntecedentesPersonalesInicial" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_AntecedentesPersonalesInicial" />
       <Association Name="Tbl_Personas_Tbl_AnteFamiliares" Member="Tbl_AnteFamiliares" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_AnteFamiliares" />
       <Association Name="Tbl_Personas_Tbl_AntePersonales" Member="Tbl_AntePersonales" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_AntePersonales" />
       <Association Name="Tbl_Personas_Tbl_AptitudMedica" Member="Tbl_AptitudMedica" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_AptitudMedica" />

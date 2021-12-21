@@ -27,6 +27,13 @@ namespace CapaNegocio
             return motconini;
         }
 
+        //metodo traer para traer Antecedentes personales x persona
+        public static Tbl_AntecedentesPersonalesInicial obtenerAntecedentesPersonalesInicial(int personaid)
+        {
+            var antper = dc.Tbl_AntecedentesPersonalesInicial.FirstOrDefault(per => per.Per_id.Equals(personaid) && per.antPerInicial_estado == "A");
+            return antper;
+        }
+
         //metodo traer para traer Antecedentes Emple Anteriores x persona
         public static Tbl_AntecedentesEmplAnteriores obtenerEmpAntexPer(int personaid)
         {
@@ -160,12 +167,12 @@ namespace CapaNegocio
         //C. ANTECEDENTES PERSONALES
 
         //Metodo para guardar datos ANTECEDENTES CLÍNICOS Y QUIRÚRGICOS
-        public static void guardarAntCliniQuirur(Tbl_AntecedentesCliQuiru antcliqui)
+        public static void guardarAntPersonales(Tbl_AntecedentesPersonalesInicial antper)
         {
             try
             {
-                antcliqui.AntCliQuiru_estado = "A";
-                dc.Tbl_AntecedentesCliQuiru.InsertOnSubmit(antcliqui);
+                antper.antPerInicial_estado = "A";
+                dc.Tbl_AntecedentesPersonalesInicial.InsertOnSubmit(antper);
                 dc.SubmitChanges();
             }
             catch (Exception ex)

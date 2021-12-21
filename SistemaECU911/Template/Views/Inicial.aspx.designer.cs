@@ -510,6 +510,717 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_antCliQuiDescripcion;
 
         /// <summary>
+        /// Control txt_menarquiaAntGinObste.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_menarquiaAntGinObste;
+
+        /// <summary>
+        /// Control txt_ciclosAntGinObste.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_ciclosAntGinObste;
+
+        /// <summary>
+        /// Control txt_fechUltiMensAntGinObste.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_fechUltiMensAntGinObste;
+
+        /// <summary>
+        /// Control txt_gestasAntGinObste.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_gestasAntGinObste;
+
+        /// <summary>
+        /// Control txt_partosAntGinObste.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_partosAntGinObste;
+
+        /// <summary>
+        /// Control txt_cesareasAntGinObste.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_cesareasAntGinObste;
+
+        /// <summary>
+        /// Control txt_abortosAntGinObste.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_abortosAntGinObste;
+
+        /// <summary>
+        /// Control txt_vivosAntGinObste.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_vivosAntGinObste;
+
+        /// <summary>
+        /// Control txt_muertosAntGinObste.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_muertosAntGinObste;
+
+        /// <summary>
+        /// Control txt_siVidSexAntGinObste.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_siVidSexAntGinObste;
+
+        /// <summary>
+        /// Control txt_noVidSexAntGinObste.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_noVidSexAntGinObste;
+
+        /// <summary>
+        /// Control txt_siMetPlaniAntGinObste.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_siMetPlaniAntGinObste;
+
+        /// <summary>
+        /// Control txt_noMetPlaniAntGinObste.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_noMetPlaniAntGinObste;
+
+        /// <summary>
+        /// Control txt_tipoMetPlaniAntGinObste.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_tipoMetPlaniAntGinObste;
+
+        /// <summary>
+        /// Control txt_siPapaniAntGinObste.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_siPapaniAntGinObste;
+
+        /// <summary>
+        /// Control txt_noPapaniAntGinObste.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_noPapaniAntGinObste;
+
+        /// <summary>
+        /// Control txt_tiempoPapaniAntGinObste.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_tiempoPapaniAntGinObste;
+
+        /// <summary>
+        /// Control txt_resultadoPapaniAntGinObste.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_resultadoPapaniAntGinObste;
+
+        /// <summary>
+        /// Control txt_siEcoMamaAntGinObste.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_siEcoMamaAntGinObste;
+
+        /// <summary>
+        /// Control txt_noEcoMamaAntGinObste.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_noEcoMamaAntGinObste;
+
+        /// <summary>
+        /// Control txt_tiempoEcoMamaAntGinObste.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_tiempoEcoMamaAntGinObste;
+
+        /// <summary>
+        /// Control txt_resultadoEcoMamaAntGinObste.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_resultadoEcoMamaAntGinObste;
+
+        /// <summary>
+        /// Control txt_siColposAntGinObste.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_siColposAntGinObste;
+
+        /// <summary>
+        /// Control txt_noColposAntGinObste.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_noColposAntGinObste;
+
+        /// <summary>
+        /// Control txt_tiempoColposAntGinObste.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_tiempoColposAntGinObste;
+
+        /// <summary>
+        /// Control txt_resultadoColposAntGinObste.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_resultadoColposAntGinObste;
+
+        /// <summary>
+        /// Control txt_siMamograAntGinObste.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_siMamograAntGinObste;
+
+        /// <summary>
+        /// Control txt_noMamograAntGinObste.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_noMamograAntGinObste;
+
+        /// <summary>
+        /// Control txt_tiempoMamograAntGinObste.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_tiempoMamograAntGinObste;
+
+        /// <summary>
+        /// Control txt_resultadoMamograAntGinObste.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_resultadoMamograAntGinObste;
+
+        /// <summary>
+        /// Control txt_siExaRealiAntProstaAntReproMascu.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_siExaRealiAntProstaAntReproMascu;
+
+        /// <summary>
+        /// Control txt_noExaRealiAntProstaAntReproMascu.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_noExaRealiAntProstaAntReproMascu;
+
+        /// <summary>
+        /// Control txt_tiempoExaRealiAntProstaAntReproMascu.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_tiempoExaRealiAntProstaAntReproMascu;
+
+        /// <summary>
+        /// Control txt_resultadoExaRealiAntProstaAntReproMascu.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_resultadoExaRealiAntProstaAntReproMascu;
+
+        /// <summary>
+        /// Control txt_siMetPlaniAntReproMascu.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_siMetPlaniAntReproMascu;
+
+        /// <summary>
+        /// Control txt_noMetPlaniAntReproMascu.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_noMetPlaniAntReproMascu;
+
+        /// <summary>
+        /// Control txt_tipo1MetPlaniAntReproMascu.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_tipo1MetPlaniAntReproMascu;
+
+        /// <summary>
+        /// Control txt_vivosHijosAntReproMascu.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_vivosHijosAntReproMascu;
+
+        /// <summary>
+        /// Control txt_muertosHijosAntReproMascu.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_muertosHijosAntReproMascu;
+
+        /// <summary>
+        /// Control txt_siExaRealiEcoProstaAntReproMascu.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_siExaRealiEcoProstaAntReproMascu;
+
+        /// <summary>
+        /// Control txt_noExaRealiEcoProstaAntReproMascu.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_noExaRealiEcoProstaAntReproMascu;
+
+        /// <summary>
+        /// Control txt_tiempoExaRealiEcoProstaAntReproMascu.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_tiempoExaRealiEcoProstaAntReproMascu;
+
+        /// <summary>
+        /// Control txt_resultadoExaRealiEcoProstaAntReproMascu.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_resultadoExaRealiEcoProstaAntReproMascu;
+
+        /// <summary>
+        /// Control txt_tipo2MetPlaniAntReproMascu.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_tipo2MetPlaniAntReproMascu;
+
+        /// <summary>
+        /// Control txt_siConsuNociTabaHabToxi.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_siConsuNociTabaHabToxi;
+
+        /// <summary>
+        /// Control txt_noConsuNociTabaHabToxi.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_noConsuNociTabaHabToxi;
+
+        /// <summary>
+        /// Control txt_tiemConConsuNociTabaHabToxi.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_tiemConConsuNociTabaHabToxi;
+
+        /// <summary>
+        /// Control txt_cantiConsuNociTabaHabToxi.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_cantiConsuNociTabaHabToxi;
+
+        /// <summary>
+        /// Control txt_exConsumiConsuNociTabaHabToxi.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_exConsumiConsuNociTabaHabToxi;
+
+        /// <summary>
+        /// Control txt_tiemAbstiConsuNociTabaHabToxi.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_tiemAbstiConsuNociTabaHabToxi;
+
+        /// <summary>
+        /// Control txt_siConsuNociAlcoHabToxi.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_siConsuNociAlcoHabToxi;
+
+        /// <summary>
+        /// Control txt_noConsuNociAlcoHabToxi.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_noConsuNociAlcoHabToxi;
+
+        /// <summary>
+        /// Control txt_tiemConConsuNociAlcoHabToxi.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_tiemConConsuNociAlcoHabToxi;
+
+        /// <summary>
+        /// Control txt_cantiConsuNociAlcoHabToxi.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_cantiConsuNociAlcoHabToxi;
+
+        /// <summary>
+        /// Control txt_exConsumiConsuNociAlcoHabToxi.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_exConsumiConsuNociAlcoHabToxi;
+
+        /// <summary>
+        /// Control txt_tiemAbstiConsuNociAlcoHabToxi.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_tiemAbstiConsuNociAlcoHabToxi;
+
+        /// <summary>
+        /// Control txt_siConsuNociOtrasDroHabToxi.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_siConsuNociOtrasDroHabToxi;
+
+        /// <summary>
+        /// Control txt_noConsuNociOtrasDroHabToxi.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_noConsuNociOtrasDroHabToxi;
+
+        /// <summary>
+        /// Control txt_tiemCon1ConsuNociOtrasDroHabToxi.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_tiemCon1ConsuNociOtrasDroHabToxi;
+
+        /// <summary>
+        /// Control txt_canti1ConsuNociOtrasDroHabToxi.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_canti1ConsuNociOtrasDroHabToxi;
+
+        /// <summary>
+        /// Control txt_exConsumi1ConsuNociOtrasDroHabToxi.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_exConsumi1ConsuNociOtrasDroHabToxi;
+
+        /// <summary>
+        /// Control txt_tiemAbsti1ConsuNociOtrasDroHabToxi.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_tiemAbsti1ConsuNociOtrasDroHabToxi;
+
+        /// <summary>
+        /// Control txt_otrasConsuNociOtrasDroHabToxi.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_otrasConsuNociOtrasDroHabToxi;
+
+        /// <summary>
+        /// Control txt_tiemCon2ConsuNociOtrasDroHabToxi.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_tiemCon2ConsuNociOtrasDroHabToxi;
+
+        /// <summary>
+        /// Control txt_canti2ConsuNociOtrasDroHabToxi.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_canti2ConsuNociOtrasDroHabToxi;
+
+        /// <summary>
+        /// Control txt_exConsumi2ConsuNociOtrasDroHabToxi.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_exConsumi2ConsuNociOtrasDroHabToxi;
+
+        /// <summary>
+        /// Control txt_tiemAbsti2ConsuNociOtrasDroHabToxi.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_tiemAbsti2ConsuNociOtrasDroHabToxi;
+
+        /// <summary>
+        /// Control txt_siEstVidaActFisiEstVida.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_siEstVidaActFisiEstVida;
+
+        /// <summary>
+        /// Control txt_noEstVidaActFisiEstVida.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_noEstVidaActFisiEstVida;
+
+        /// <summary>
+        /// Control txt_cualEstVidaActFisiEstVida.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_cualEstVidaActFisiEstVida;
+
+        /// <summary>
+        /// Control txt_tiemCanEstVidaActFisiEstVida.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_tiemCanEstVidaActFisiEstVida;
+
+        /// <summary>
+        /// Control txt_siEstVidaMedHabiEstVida.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_siEstVidaMedHabiEstVida;
+
+        /// <summary>
+        /// Control txt_noEstVidaMedHabiEstVida.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_noEstVidaMedHabiEstVida;
+
+        /// <summary>
+        /// Control txt_cual1EstVidaMedHabiEstVida.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_cual1EstVidaMedHabiEstVida;
+
+        /// <summary>
+        /// Control txt_tiemCan1EstVidaMedHabiEstVida.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_tiemCan1EstVidaMedHabiEstVida;
+
+        /// <summary>
+        /// Control txt_cual2EstVidaMedHabiEstVida.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_cual2EstVidaMedHabiEstVida;
+
+        /// <summary>
+        /// Control txt_tiemCan2EstVidaMedHabiEstVida.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_tiemCan2EstVidaMedHabiEstVida;
+
+        /// <summary>
+        /// Control txt_cual3EstVidaMedHabiEstVida.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_cual3EstVidaMedHabiEstVida;
+
+        /// <summary>
+        /// Control txt_tiemCan3EstVidaMedHabiEstVida.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_tiemCan3EstVidaMedHabiEstVida;
+
+        /// <summary>
         /// Control Label15.
         /// </summary>
         /// <remarks>
