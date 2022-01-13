@@ -2112,13 +2112,13 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_polvos;
 
         /// <summary>
-        /// Control txt_humedos.
+        /// Control txt_humos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_humedos;
+        protected global::System.Web.UI.WebControls.TextBox txt_humos;
 
         /// <summary>
         /// Control txt_liquidos.
@@ -2517,13 +2517,13 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_trabajopvd;
 
         /// <summary>
-        /// Control otros5.
+        /// Control txt_otros5.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox otros5;
+        protected global::System.Web.UI.WebControls.TextBox txt_otros5;
 
         /// <summary>
         /// Control txt_montrabajo.
@@ -3388,6 +3388,33 @@ namespace SistemaECU911.Template.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_descripciontratamiento;
+
+        /// <summary>
+        /// Control txt_fechaDatProf.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_fechaDatProf;
+
+        /// <summary>
+        /// Control ddl_profesional.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddl_profesional;
+
+        /// <summary>
+        /// Control txt_codigoDatProf.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_codigoDatProf;
 
         /// <summary>
         /// Control Label93.

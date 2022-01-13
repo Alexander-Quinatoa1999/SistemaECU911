@@ -37,7 +37,7 @@ namespace CapaNegocio
         //metodo traer para traer Antecedentes Emple Anteriores x persona
         public static Tbl_AntecedentesEmplAnteriores obtenerEmpAntexPer(int personaid)
         {
-            var emplanteid = dc.Tbl_AntecedentesEmplAnteriores.FirstOrDefault(per => per.Per_id.Equals(personaid) && per.AntEmpAnte_estado == "A");
+            var emplanteid = dc.Tbl_AntecedentesEmplAnteriores.FirstOrDefault(per => per.Per_id.Equals(personaid) && per.AntTrabajoInicial_estado == "A");
             return emplanteid;
         }
 
@@ -323,7 +323,7 @@ namespace CapaNegocio
         {
             try
             {
-                emplant.AntEmpAnte_estado = "A";
+                emplant.AntTrabajoInicial_estado = "A";
                 dc.Tbl_AntecedentesEmplAnteriores.InsertOnSubmit(emplant);
                 dc.SubmitChanges();
             }
@@ -528,6 +528,23 @@ namespace CapaNegocio
             {
                 tratamientoinicial.trataInicial_estado = "A";
                 dc.Tbl_TratamientoInicial.InsertOnSubmit(tratamientoinicial);
+                dc.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException("Datos No Guardados" + ex.Message);
+            }
+        }
+
+        //P. DATOS DEL PROFESIONAL
+
+        //Metodo para guardar datos APTITUD MÉDICA PARA EL TRABAJO
+        public static void guardarDatosProfesional(Tbl_DatProfesionalInicial datprofinicial)
+        {
+            try
+            {
+                datprofinicial.DatProfeInicial_estado = "A";
+                dc.Tbl_DatProfesionalInicial.InsertOnSubmit(datprofinicial);
                 dc.SubmitChanges();
             }
             catch (Exception ex)

@@ -65,6 +65,9 @@ namespace SistemaECU911.Template.Views
         //O. Objeto de la tabla RECOMENDACIONES Y/O TRATAMIENTO
         private Tbl_TratamientoInicial tratamientoinicial = new Tbl_TratamientoInicial();
 
+        //P. Objeto de la tabla DATOS DEL PROFESIONAL
+        private Tbl_DatProfesionalInicial datosProfesional = new Tbl_DatProfesionalInicial();
+
         protected void Page_Load(object sender, EventArgs e)
 		{
             if (!IsPostBack)
@@ -257,17 +260,26 @@ namespace SistemaECU911.Template.Views
                         txt_tiemCan3EstVidaMedHabiEstVida.Text = antper.antPerInicial_tiem_cant3EstiVidaMediHabitual.ToString();
 
                         //D
-                        txt_empresa.Text = emplant.AntEmpAnte_nomEmpresa.ToString();
-                        txt_puestotrabajo.Text = emplant.AntEmpAnte_puestoTrabajo.ToString();
-                        txt_actdesempeña.Text = emplant.AntEmpAnte_actDesemp.ToString();
-                        txt_tiempotrabajo.Text = emplant.AntEmpAnte_tiemTrabajo.ToString();
-                        txt_fisico.Text = emplant.AntEmpAnte_fisicoRies.ToString();
-                        txt_mecanico.Text = emplant.AntEmpAnte_mecanicoRies.ToString();
-                        txt_quimico.Text = emplant.AntEmpAnte_quimicoRies.ToString();
-                        txt_biologico.Text = emplant.AntEmpAnte_biologicoRies.ToString();
-                        txt_ergonomico.Text = emplant.AntEmpAnte_ergonomicoRies.ToString();
-                        txt_psicosocial.Text = emplant.AntEmpAnte_psicosocial.ToString();
-                        txt_obseantempleanteriores.Text = emplant.AntEmpAnte_observaciones.ToString();
+                        txt_empresa.Text = emplant.AntTrabajoInicial_nomEmpresa.ToString();
+                        txt_puestotrabajo.Text = emplant.AntTrabajoInicial_puestoTrabajo.ToString();
+                        txt_actdesempeña.Text = emplant.AntTrabajoInicial_actDesemp.ToString();
+                        txt_tiempotrabajo.Text = emplant.AntTrabajoInicial_tiemTrabajo.ToString();
+                        txt_fisico.Text = emplant.AntTrabajoInicial_fisicoRies.ToString();
+                        txt_mecanico.Text = emplant.AntTrabajoInicial_mecanicoRies.ToString();
+                        txt_quimico.Text = emplant.AntTrabajoInicial_quimicoRies.ToString();
+                        txt_biologico.Text = emplant.AntTrabajoInicial_biologicoRies.ToString();
+                        txt_ergonomico.Text = emplant.AntTrabajoInicial_ergonomicoRies.ToString();
+                        txt_psicosocial.Text = emplant.AntTrabajoInicial_psicosocial.ToString();
+                        txt_obseantempleanteriores.Text = emplant.AntTrabajoInicial_observaciones.ToString();
+                        txt_si.Text = emplant.AntTrabajoInicial_siCalificadoIESSAcciTrabajo.ToString();
+                        txt_especificar.Text = emplant.AntTrabajoInicial_especificarCalificadoIESSAcciTrabajo.ToString();
+                        txt_no.Text = emplant.AntTrabajoInicial_noCalificadoIESSAcciTrabajo.ToString();
+                        txt_fecha.Text = emplant.AntTrabajoInicial_fechaCalificadoIESSAcciTrabajo.ToString();
+                        txt_observaciones2.Text = emplant.AntTrabajoInicial_obserAcciTrabajo.ToString();
+                        txt_siprofesional.Text = emplant.AntTrabajoInicial_siCalificadoIESSEnfProfesionales.ToString();
+                        txt_espeprofesional.Text = emplant.AntTrabajoInicial_especificarCalificadoIESSEnfProfesionales.ToString();
+                        txt_noprofesional.Text = emplant.AntTrabajoInicial_noCalificadoIESSEnfProfesionales.ToString();
+                        txt_fechaprofesional.Text = emplant.AntTrabajoInicial_fechaCalificadoIESSEnfProfesionales.ToString();
 
                         //E
                         txt_enfermedadcardiovascular.Text = AnteFamiDetParentesco.AntFamDetPare_enfCarVas.ToString();
@@ -283,12 +295,64 @@ namespace SistemaECU911.Template.Views
                         //F
                         txt_puestodetrabajo.Text = facriesgotractual.FacRiesTrabAct_area.ToString();
                         txt_act.Text = facriesgotractual.FacRiesTrabAct_actividades.ToString();
-                        txt_tempaltas.Text = facriesgotractual.FacRiesTrabAct_temAltasFis.ToString();
+                        txt_tempbajas.Text = facriesgotractual.FacRiesTrabAct_temBajasFis.ToString();
+                        txt_radiacion.Text = facriesgotractual.FacRiesTrabAct_radIonizanteFis.ToString();
+                        txt_noradiacion.Text = facriesgotractual.FacRiesTrabAct_radNoIonizanteFis.ToString();
+                        txt_ruido.Text = facriesgotractual.FacRiesTrabAct_ruidoFis.ToString();
+                        txt_vibracion.Text = facriesgotractual.FacRiesTrabAct_vibracionFis.ToString();
+                        txt_iluminacion.Text = facriesgotractual.FacRiesTrabAct_iluminacionFis.ToString();
+                        txt_ventilacion.Text = facriesgotractual.FacRiesTrabAct_ventilacionFis.ToString();
+                        txt_fluidoelectrico.Text = facriesgotractual.FacRiesTrabAct_fluElectricoFis.ToString();
+                        txt_otros1.Text = facriesgotractual.FacRiesTrabAct_otrosFis.ToString();
                         txt_atrapmaquinas.Text = facriesgotractual.FacRiesTrabAct_atraMaquinasMec.ToString();
+                        txt_atrapsuperficie.Text = facriesgotractual.FacRiesTrabAct_atraSuperfiiesMec.ToString();
+                        txt_atrapobjetos.Text = facriesgotractual.FacRiesTrabAct_atraObjetosMec.ToString();
+                        txt_caidaobjetos.Text = facriesgotractual.FacRiesTrabAct_caidaObjetosMec.ToString();
+                        txt_caidamisnivel.Text = facriesgotractual.FacRiesTrabAct_caidaMisNivelMec.ToString();
+                        txt_caidadifnivel.Text = facriesgotractual.FacRiesTrabAct_caidaDifNivelMec.ToString();
+                        txt_contaelectrico.Text = facriesgotractual.FacRiesTrabAct_contactoElecMec.ToString();
+                        txt_contasuptrabajo.Text = facriesgotractual.FacRiesTrabAct_conSuperTrabaMec.ToString();
+                        txt_proyparticulas.Text = facriesgotractual.FacRiesTrabAct_proPartiFragMec.ToString();
+                        txt_proyefluidos.Text = facriesgotractual.FacRiesTrabAct_proFluidosMec.ToString();
+                        txt_pinchazos.Text = facriesgotractual.FacRiesTrabAct_pinchazosMec.ToString();
+                        txt_cortes.Text = facriesgotractual.FacRiesTrabAct_cortesMec.ToString();
+                        txt_atroporvehiculos.Text = facriesgotractual.FacRiesTrabAct_atropeVehiMec.ToString();
+                        txt_choques.Text = facriesgotractual.FacRiesTrabAct_coliVehiMec.ToString();
+                        txt_otros2.Text = facriesgotractual.FacRiesTrabAct_otrosMec.ToString();
                         txt_solidos.Text = facriesgotractual.FacRiesTrabAct_solidosQui.ToString();
+                        txt_polvos.Text = facriesgotractual.FacRiesTrabAct_polvosQui.ToString();
+                        txt_humos.Text = facriesgotractual.FacRiesTrabAct_humosQui.ToString();
+                        txt_liquidos.Text = facriesgotractual.FacRiesTrabAct_liquidosQui.ToString();
+                        txt_vapores.Text = facriesgotractual.FacRiesTrabAct_vaporesQui.ToString();
+                        txt_aerosoles.Text = facriesgotractual.FacRiesTrabAct_aerosolesQui.ToString();
+                        txt_neblinas.Text = facriesgotractual.FacRiesTrabAct_neblinasQui.ToString();
+                        txt_gaseosos.Text = facriesgotractual.FacRiesTrabAct_gaseososQui.ToString();
+                        txt_otros3.Text = facriesgotractual.FacRiesTrabAct_otrosBio.ToString();
                         txt_virus.Text = facriesgotractual.FacRiesTrabAct_virusBio.ToString();
+                        txt_hongos.Text = facriesgotractual.FacRiesTrabAct_hongosBio.ToString();
+                        txt_bacterias.Text = facriesgotractual.FacRiesTrabAct_bacteriasBio.ToString();
+                        txt_parasitos.Text = facriesgotractual.FacRiesTrabAct_parasitosBio.ToString();
+                        txt_expoavectores.Text = facriesgotractual.FacRiesTrabAct_expVectBio.ToString();
+                        txt_expoanimselvaticos.Text = facriesgotractual.FacRiesTrabAct_expAniSelvaBio.ToString();
+                        txt_otros4.Text = facriesgotractual.FacRiesTrabAct_otrosBio.ToString();
                         txt_manmanualcargas.Text = facriesgotractual.FacRiesTrabAct_maneManCarErg.ToString();
+                        txt_movrepetitivo.Text = facriesgotractual.FacRiesTrabAct_movRepeErg.ToString();
+                        txt_postforzadas.Text = facriesgotractual.FacRiesTrabAct_posForzaErg.ToString();
+                        txt_trabajopvd.Text = facriesgotractual.FacRiesTrabAct_trabPvdErg.ToString();
+                        txt_otros5.Text = facriesgotractual.FacRiesTrabAct_otrosErg.ToString();
                         txt_montrabajo.Text = facriesgotractual.FacRiesTrabAct_monoTrabPsi.ToString();
+                        txt_sobrecargalaboral.Text = facriesgotractual.FacRiesTrabAct_sobrecarLabPsi.ToString();
+                        txt_minustarea.Text = facriesgotractual.FacRiesTrabAct_minuTareaPsi.ToString();
+                        txt_altarespon.Text = facriesgotractual.FacRiesTrabAct_altaResponPsi.ToString();
+                        txt_automadesiciones.Text = facriesgotractual.FacRiesTrabAct_autoTomaDesiPsi.ToString();
+                        txt_supyestdireficiente.Text = facriesgotractual.FacRiesTrabAct_supEstDirecDefiPsi.ToString();
+                        txt_conflictorol.Text = facriesgotractual.FacRiesTrabAct_conflicRolPsi.ToString();
+                        txt_faltaclarfunciones.Text = facriesgotractual.FacRiesTrabAct_falClariFunPsi.ToString();
+                        txt_incorrdistrabajo.Text = facriesgotractual.FacRiesTrabAct_incoDistriTrabPsi.ToString();
+                        txt_turnorotat.Text = facriesgotractual.FacRiesTrabAct_turnosRotaPsi.ToString();
+                        txt_relacinterpersonales.Text = facriesgotractual.FacRiesTrabAct_relInterperPsi.ToString();
+                        txt_inestalaboral.Text = facriesgotractual.FacRiesTrabAct_inesLabPsi.ToString();
+                        txt_otros6.Text = facriesgotractual.FacRiesTrabAct_otrosPsi.ToString();
                         txt_medpreventivas.Text = facriesgotractual.FacRiesTrabAct_medPreventivas.ToString();
 
                         //G
@@ -375,6 +439,11 @@ namespace SistemaECU911.Template.Views
 
                         //O
                         txt_descripciontratamiento.Text = tratamientoinicial.trataInicial_descrip.ToString();
+
+                        //P
+                        txt_fechaDatProf.Text = datosProfesional.DatProfeInicial_fecha_hora.ToString();
+                        ddl_profesional.SelectedValue = datosProfesional.prof_id.ToString();
+                        txt_codigoDatProf.Text = datosProfesional.DatProfeInicial_cod.ToString();
                     }
                     else
                     {
@@ -536,7 +605,7 @@ namespace SistemaECU911.Template.Views
                 antper.antPerInicial_vivosHijAntReproMascu = Convert.ToInt32(txt_vivosHijosAntReproMascu.Text);
                 antper.antPerInicial_muertosHijAntReproMascu = Convert.ToInt32(txt_muertosHijosAntReproMascu.Text);
                 antper.antPerInicial_siExaRealiEcoProstatico = txt_siExaRealiEcoProstaAntReproMascu.Text;
-                antper.antPerInicial_noExaRealiEcoProstatico = txt_noExaRealiEcoProstaAntReproMascu.Text;                
+                antper.antPerInicial_noExaRealiEcoProstatico = txt_noExaRealiEcoProstaAntReproMascu.Text;
                 antper.antPerInicial_tiempoExaRealiEcoProstatico = Convert.ToInt32(txt_tiempoExaRealiEcoProstaAntReproMascu.Text);
                 antper.antPerInicial_resultadoExaRealiEcoProstatico = txt_resultadoExaRealiEcoProstaAntReproMascu.Text;
                 antper.antPerInicial_tipo2MetPlanifiFamiAntReproMascu = txt_tipo2MetPlaniAntReproMascu.Text;
@@ -578,17 +647,26 @@ namespace SistemaECU911.Template.Views
                 antper.Per_id = perso;
 
                 //D. Captura de Datos Tbl_AntecedentesEmplAnteriores 
-                emplant.AntEmpAnte_nomEmpresa = txt_empresa.Text;
-                emplant.AntEmpAnte_puestoTrabajo = txt_puestotrabajo.Text;
-                emplant.AntEmpAnte_actDesemp = txt_actdesempeña.Text;
-                emplant.AntEmpAnte_tiemTrabajo = txt_tiempotrabajo.Text;
-                emplant.AntEmpAnte_fisicoRies = txt_fisico.Text;
-                emplant.AntEmpAnte_mecanicoRies = txt_mecanico.Text;
-                emplant.AntEmpAnte_quimicoRies = txt_quimico.Text;
-                emplant.AntEmpAnte_biologicoRies = txt_biologico.Text;
-                emplant.AntEmpAnte_ergonomicoRies = txt_ergonomico.Text;
-                emplant.AntEmpAnte_psicosocial = txt_psicosocial.Text;
-                emplant.AntEmpAnte_observaciones = txt_obseantempleanteriores.Text;
+                emplant.AntTrabajoInicial_nomEmpresa = txt_empresa.Text;
+                emplant.AntTrabajoInicial_puestoTrabajo = txt_puestotrabajo.Text;
+                emplant.AntTrabajoInicial_actDesemp = txt_actdesempeña.Text;
+                emplant.AntTrabajoInicial_tiemTrabajo = txt_tiempotrabajo.Text;
+                emplant.AntTrabajoInicial_fisicoRies = txt_fisico.Text;
+                emplant.AntTrabajoInicial_mecanicoRies = txt_mecanico.Text;
+                emplant.AntTrabajoInicial_quimicoRies = txt_quimico.Text;
+                emplant.AntTrabajoInicial_biologicoRies = txt_biologico.Text;
+                emplant.AntTrabajoInicial_ergonomicoRies = txt_ergonomico.Text;
+                emplant.AntTrabajoInicial_psicosocial = txt_psicosocial.Text;
+                emplant.AntTrabajoInicial_observaciones = txt_obseantempleanteriores.Text;
+                emplant.AntTrabajoInicial_siCalificadoIESSAcciTrabajo = txt_si.Text;
+                emplant.AntTrabajoInicial_especificarCalificadoIESSAcciTrabajo = txt_especificar.Text;
+                emplant.AntTrabajoInicial_noCalificadoIESSAcciTrabajo = txt_no.Text;
+                emplant.AntTrabajoInicial_fechaCalificadoIESSAcciTrabajo = Convert.ToDateTime(txt_fecha.Text);
+                emplant.AntTrabajoInicial_obserAcciTrabajo = txt_observaciones2.Text;
+                emplant.AntTrabajoInicial_siCalificadoIESSEnfProfesionales = txt_siprofesional.Text;
+                emplant.AntTrabajoInicial_especificarCalificadoIESSEnfProfesionales = txt_espeprofesional.Text;
+                emplant.AntTrabajoInicial_noCalificadoIESSEnfProfesionales = txt_noprofesional.Text;
+                emplant.AntTrabajoInicial_fechaCalificadoIESSEnfProfesionales = Convert.ToDateTime(txt_fechaprofesional.Text);
                 emplant.Per_id = perso;
 
                 //E. Captura de Datos ANTECEDENTES FAMILIARES (DETALLAR EL PARENTESCO)
@@ -607,11 +685,64 @@ namespace SistemaECU911.Template.Views
                 facriesgotractual.FacRiesTrabAct_area = txt_puestodetrabajo.Text;
                 facriesgotractual.FacRiesTrabAct_actividades = txt_act.Text;
                 facriesgotractual.FacRiesTrabAct_temAltasFis = txt_tempaltas.Text;
+                facriesgotractual.FacRiesTrabAct_temBajasFis = txt_tempbajas.Text;
+                facriesgotractual.FacRiesTrabAct_radIonizanteFis = txt_radiacion.Text;
+                facriesgotractual.FacRiesTrabAct_radNoIonizanteFis = txt_noradiacion.Text;
+                facriesgotractual.FacRiesTrabAct_ruidoFis = txt_ruido.Text;
+                facriesgotractual.FacRiesTrabAct_vibracionFis = txt_vibracion.Text;
+                facriesgotractual.FacRiesTrabAct_iluminacionFis = txt_iluminacion.Text;
+                facriesgotractual.FacRiesTrabAct_ventilacionFis = txt_ventilacion.Text;
+                facriesgotractual.FacRiesTrabAct_fluElectricoFis = txt_fluidoelectrico.Text;
+                facriesgotractual.FacRiesTrabAct_otrosFis = txt_otros1.Text;
                 facriesgotractual.FacRiesTrabAct_atraMaquinasMec = txt_atrapmaquinas.Text;
+                facriesgotractual.FacRiesTrabAct_atraSuperfiiesMec = txt_atrapsuperficie.Text;
+                facriesgotractual.FacRiesTrabAct_atraObjetosMec = txt_atrapobjetos.Text;
+                facriesgotractual.FacRiesTrabAct_caidaObjetosMec = txt_caidaobjetos.Text;
+                facriesgotractual.FacRiesTrabAct_caidaMisNivelMec = txt_caidamisnivel.Text;
+                facriesgotractual.FacRiesTrabAct_caidaDifNivelMec = txt_caidadifnivel.Text;
+                facriesgotractual.FacRiesTrabAct_contactoElecMec = txt_contaelectrico.Text;
+                facriesgotractual.FacRiesTrabAct_conSuperTrabaMec = txt_contasuptrabajo.Text;
+                facriesgotractual.FacRiesTrabAct_proPartiFragMec = txt_proyparticulas.Text;
+                facriesgotractual.FacRiesTrabAct_proFluidosMec = txt_proyefluidos.Text;
+                facriesgotractual.FacRiesTrabAct_pinchazosMec = txt_pinchazos.Text;
+                facriesgotractual.FacRiesTrabAct_cortesMec = txt_cortes.Text;
+                facriesgotractual.FacRiesTrabAct_atropeVehiMec = txt_atroporvehiculos.Text;
+                facriesgotractual.FacRiesTrabAct_coliVehiMec = txt_choques.Text;
+                facriesgotractual.FacRiesTrabAct_otrosMec = txt_otros2.Text;
                 facriesgotractual.FacRiesTrabAct_solidosQui = txt_solidos.Text;
+                facriesgotractual.FacRiesTrabAct_polvosQui = txt_polvos.Text;
+                facriesgotractual.FacRiesTrabAct_humosQui = txt_humos.Text;
+                facriesgotractual.FacRiesTrabAct_liquidosQui = txt_liquidos.Text;
+                facriesgotractual.FacRiesTrabAct_vaporesQui = txt_vapores.Text;
+                facriesgotractual.FacRiesTrabAct_aerosolesQui = txt_aerosoles.Text;
+                facriesgotractual.FacRiesTrabAct_neblinasQui = txt_neblinas.Text;
+                facriesgotractual.FacRiesTrabAct_gaseososQui = txt_gaseosos.Text;
+                facriesgotractual.FacRiesTrabAct_otrosBio = txt_otros3.Text;
                 facriesgotractual.FacRiesTrabAct_virusBio = txt_virus.Text;
+                facriesgotractual.FacRiesTrabAct_hongosBio = txt_hongos.Text;
+                facriesgotractual.FacRiesTrabAct_bacteriasBio = txt_bacterias.Text;
+                facriesgotractual.FacRiesTrabAct_parasitosBio = txt_parasitos.Text;
+                facriesgotractual.FacRiesTrabAct_expVectBio = txt_expoavectores.Text;
+                facriesgotractual.FacRiesTrabAct_expAniSelvaBio = txt_expoanimselvaticos.Text;
+                facriesgotractual.FacRiesTrabAct_otrosBio = txt_otros4.Text;
                 facriesgotractual.FacRiesTrabAct_maneManCarErg = txt_manmanualcargas.Text;
+                facriesgotractual.FacRiesTrabAct_movRepeErg = txt_movrepetitivo.Text;
+                facriesgotractual.FacRiesTrabAct_posForzaErg = txt_postforzadas.Text;
+                facriesgotractual.FacRiesTrabAct_trabPvdErg = txt_trabajopvd.Text;
+                facriesgotractual.FacRiesTrabAct_otrosErg = txt_otros5.Text;
                 facriesgotractual.FacRiesTrabAct_monoTrabPsi = txt_montrabajo.Text;
+                facriesgotractual.FacRiesTrabAct_sobrecarLabPsi = txt_sobrecargalaboral.Text;
+                facriesgotractual.FacRiesTrabAct_minuTareaPsi = txt_minustarea.Text;
+                facriesgotractual.FacRiesTrabAct_altaResponPsi = txt_altarespon.Text;
+                facriesgotractual.FacRiesTrabAct_autoTomaDesiPsi = txt_automadesiciones.Text;
+                facriesgotractual.FacRiesTrabAct_supEstDirecDefiPsi = txt_supyestdireficiente.Text;
+                facriesgotractual.FacRiesTrabAct_conflicRolPsi = txt_conflictorol.Text;
+                facriesgotractual.FacRiesTrabAct_falClariFunPsi = txt_faltaclarfunciones.Text;
+                facriesgotractual.FacRiesTrabAct_incoDistriTrabPsi = txt_incorrdistrabajo.Text;
+                facriesgotractual.FacRiesTrabAct_turnosRotaPsi = txt_turnorotat.Text;
+                facriesgotractual.FacRiesTrabAct_relInterperPsi = txt_relacinterpersonales.Text;
+                facriesgotractual.FacRiesTrabAct_inesLabPsi = txt_inestalaboral.Text;
+                facriesgotractual.FacRiesTrabAct_otrosPsi = txt_otros6.Text;
                 facriesgotractual.FacRiesTrabAct_medPreventivas = txt_medpreventivas.Text;
                 facriesgotractual.Per_id = perso;
 
@@ -708,6 +839,12 @@ namespace SistemaECU911.Template.Views
                 tratamientoinicial.trataInicial_descrip = txt_descripciontratamiento.Text;
                 tratamientoinicial.Per_id = perso;
 
+                //P
+                datosProfesional.DatProfeInicial_fecha_hora = Convert.ToDateTime(txt_fechaDatProf.Text);
+                datosProfesional.prof_id = Convert.ToInt32(ddl_profesional.SelectedValue);
+                datosProfesional.DatProfeInicial_cod = txt_codigoDatProf.Text;
+                datosProfesional.Per_id = perso;
+
                 //A . Método para guardar Datos Establecimeinto Empresa Usuarios
                 CN_Inicial.guardarDatosEstablecimientoEmpresaUsuario(datosestempresausu);
                 //B . Método para guardar Datos Motivo Consulta
@@ -736,6 +873,8 @@ namespace SistemaECU911.Template.Views
                 CN_Inicial.guardarAptiMediTrabajo(aptitudmedica);
                 //O. Método de guardar Datos Recomendaciones y/o Tratamiento
                 CN_Inicial.guardarRecomendacionesTratamiento(tratamientoinicial);
+                //P. Método de guardar Datos del Profesional
+                CN_Inicial.guardarDatosProfesional(datosProfesional);
 
                 //Mensaje de confirmacion
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos Guardados Exitosamente')", true);
@@ -772,17 +911,17 @@ namespace SistemaECU911.Template.Views
                 //antcliqui.AntCliQuiru_descripcion = txt_antCliQuiDescripcion.Text;
 
                 //captura de datos Tbl_AntecedentesEmplAnteriores 
-                emplant.AntEmpAnte_nomEmpresa = txt_empresa.Text;
-                emplant.AntEmpAnte_puestoTrabajo = txt_puestotrabajo.Text;
-                emplant.AntEmpAnte_actDesemp = txt_actdesempeña.Text;
-                emplant.AntEmpAnte_tiemTrabajo = txt_tiempotrabajo.Text;
-                emplant.AntEmpAnte_fisicoRies = txt_fisico.Text;
-                emplant.AntEmpAnte_mecanicoRies = txt_mecanico.Text;
-                emplant.AntEmpAnte_quimicoRies = txt_quimico.Text;
-                emplant.AntEmpAnte_biologicoRies = txt_biologico.Text;
-                emplant.AntEmpAnte_ergonomicoRies = txt_ergonomico.Text;
-                emplant.AntEmpAnte_psicosocial = txt_psicosocial.Text;
-                emplant.AntEmpAnte_observaciones = txt_obseantempleanteriores.Text;
+                emplant.AntTrabajoInicial_nomEmpresa = txt_empresa.Text;
+                emplant.AntTrabajoInicial_puestoTrabajo = txt_puestotrabajo.Text;
+                emplant.AntTrabajoInicial_actDesemp = txt_actdesempeña.Text;
+                emplant.AntTrabajoInicial_tiemTrabajo = txt_tiempotrabajo.Text;
+                emplant.AntTrabajoInicial_fisicoRies = txt_fisico.Text;
+                emplant.AntTrabajoInicial_mecanicoRies = txt_mecanico.Text;
+                emplant.AntTrabajoInicial_quimicoRies = txt_quimico.Text;
+                emplant.AntTrabajoInicial_biologicoRies = txt_biologico.Text;
+                emplant.AntTrabajoInicial_ergonomicoRies = txt_ergonomico.Text;
+                emplant.AntTrabajoInicial_psicosocial = txt_psicosocial.Text;
+                emplant.AntTrabajoInicial_observaciones = txt_obseantempleanteriores.Text;
 
                 //captura de datos Tbl_AccidentesTrabajoDesc
 
@@ -852,6 +991,18 @@ namespace SistemaECU911.Template.Views
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos No Modificados')", true);
             }
             
+        }
+
+        private void cargarProfesional()
+        {
+            List<Tbl_Profesional> listaProf = new List<Tbl_Profesional>();
+            listaProf = CN_HistorialMedico.obtenerProfesional();
+            listaProf.Insert(0, new Tbl_Profesional() { prof_NomApe = "Seleccione ........" });
+
+            ddl_profesional.DataSource = listaProf;
+            ddl_profesional.DataTextField = "prof_NomApe";
+            ddl_profesional.DataValueField = "prof_id";
+            ddl_profesional.DataBind();
         }
 
         private void limpiar()

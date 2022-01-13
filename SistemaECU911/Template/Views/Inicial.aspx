@@ -1022,7 +1022,7 @@
                                         <asp:TextBox runat="server" ID="txt_polvos" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell>
-                                        <asp:TextBox runat="server" ID="txt_humedos" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
+                                        <asp:TextBox runat="server" ID="txt_humos" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell>
                                         <asp:TextBox runat="server" ID="txt_liquidos" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
@@ -1173,7 +1173,7 @@
                                         <asp:TextBox runat="server" ID="txt_trabajopvd" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell>
-                                        <asp:TextBox runat="server" ID="otros5" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
+                                        <asp:TextBox runat="server" ID="txt_otros5" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell>
                                         <asp:TextBox runat="server" ID="txt_montrabajo" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center" placeholder="-"></asp:TextBox>
@@ -1713,21 +1713,16 @@
                     <div class="list-group list-group-flush">
                         <asp:Table class="table table-bordered table-light text-center" runat="server">
                             <asp:TableRow>
-                                <asp:TableCell Style="width: 60px">FECHA</asp:TableCell>
-                                <asp:TableCell Style="width: 75px">
-                                     <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center" TextMode="Date"></asp:TextBox>
-                                </asp:TableCell>
-                                <asp:TableCell Style="width: 60px">HORA</asp:TableCell>
-                                <asp:TableCell Style="width: 75px">
-                                     <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center" TextMode="Time"></asp:TextBox>
-                                </asp:TableCell>
+                                <asp:TableCell Style="width: 60px">FECHA Y HORA</asp:TableCell>
+                                <asp:TableCell Style="width: 150px">
+                                     <asp:TextBox runat="server" BorderStyle="None" ID="txt_fechaDatProf" TextMode="DateTime" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
+                                </asp:TableCell>                                
                                 <asp:TableCell Style="width: 100px">NOMBRES Y APELLIDOS</asp:TableCell>
                                 <asp:TableCell Style="width: 300px">
-                                     <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
-                                </asp:TableCell>
+                                     <asp:DropDownList ID="ddl_profesional" CssClass="form-check" Style="width: 100%; border: none" runat="server"></asp:DropDownList>                                     
                                 <asp:TableCell Style="width: 75px">CÓDIGO</asp:TableCell>
                                 <asp:TableCell Style="width: 125px">
-                                     <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
+                                     <asp:TextBox runat="server" BorderStyle="None" ID="txt_codigoDatProf" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="width: 100px">FIRMA Y SELLO</asp:TableCell>
                                 <asp:TableCell Style="width: 175px">
