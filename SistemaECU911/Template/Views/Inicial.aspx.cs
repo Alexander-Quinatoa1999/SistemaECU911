@@ -73,6 +73,7 @@ namespace SistemaECU911.Template.Views
             if (!IsPostBack)
             {
                 CargarDatosModificar();
+                cargarProfesional();
             }
 		}
 
