@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SistemaECU911" Class="DataClassesECU911DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=SistemaECU911;Integrated Security=True" SettingsObjectName="CapaDatos.Properties.Settings" SettingsPropertyName="SistemaECU911ConnectionString4" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=ZOCAPO\SQLEXPRESS;Initial Catalog=SistemaECU911;Integrated Security=True" SettingsObjectName="CapaDatos.Properties.Settings" SettingsPropertyName="SistemaECU911ConnectionString5" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Tbl_AccidentesTrabajoDesc" Member="Tbl_AccidentesTrabajoDesc">
     <Type Name="Tbl_AccidentesTrabajoDesc">
       <Column Name="AntTrabDesc_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -1279,7 +1279,7 @@
       <Column Name="FacRiesTrabActPeriodica_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="FacRiesTrabActPeriodica_area" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
       <Column Name="FacRiesTrabActPeriodica_actividades" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
-      <Column Name="FacRiesTrabActPeriodica_tiemTrabPeriodica" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FacRiesTrabActPeriodica_tiemTrabPeriodica" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
       <Column Name="FacRiesTrabActPeriodica_temAltasFis" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
       <Column Name="FacRiesTrabActPeriodica_temBajasFis" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
       <Column Name="FacRiesTrabActPeriodica_radIonizanteFis" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />

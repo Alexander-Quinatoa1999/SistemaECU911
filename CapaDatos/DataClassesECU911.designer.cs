@@ -483,7 +483,7 @@ namespace CapaDatos
     #endregion
 		
 		public DataClassesECU911DataContext() : 
-				base(global::CapaDatos.Properties.Settings.Default.SistemaECU911ConnectionString4, mappingSource)
+				base(global::CapaDatos.Properties.Settings.Default.SistemaECU911ConnectionString5, mappingSource)
 		{
 			OnCreated();
 		}
@@ -28757,7 +28757,7 @@ namespace CapaDatos
 		
 		private string _FacRiesTrabActPeriodica_actividades;
 		
-		private System.Nullable<int> _FacRiesTrabActPeriodica_tiemTrabPeriodica;
+		private string _FacRiesTrabActPeriodica_tiemTrabPeriodica;
 		
 		private string _FacRiesTrabActPeriodica_temAltasFis;
 		
@@ -28895,7 +28895,7 @@ namespace CapaDatos
     partial void OnFacRiesTrabActPeriodica_areaChanged();
     partial void OnFacRiesTrabActPeriodica_actividadesChanging(string value);
     partial void OnFacRiesTrabActPeriodica_actividadesChanged();
-    partial void OnFacRiesTrabActPeriodica_tiemTrabPeriodicaChanging(System.Nullable<int> value);
+    partial void OnFacRiesTrabActPeriodica_tiemTrabPeriodicaChanging(string value);
     partial void OnFacRiesTrabActPeriodica_tiemTrabPeriodicaChanged();
     partial void OnFacRiesTrabActPeriodica_temAltasFisChanging(string value);
     partial void OnFacRiesTrabActPeriodica_temAltasFisChanged();
@@ -29089,8 +29089,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FacRiesTrabActPeriodica_tiemTrabPeriodica", DbType="Int")]
-		public System.Nullable<int> FacRiesTrabActPeriodica_tiemTrabPeriodica
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FacRiesTrabActPeriodica_tiemTrabPeriodica", DbType="VarChar(100)")]
+		public string FacRiesTrabActPeriodica_tiemTrabPeriodica
 		{
 			get
 			{

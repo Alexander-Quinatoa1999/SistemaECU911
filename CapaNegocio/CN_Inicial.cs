@@ -118,7 +118,7 @@ namespace CapaNegocio
             return aptmedid;
         }
 
-        //metodo traer para traer REcomendaciones y tratamiento x persona
+        //metodo traer para traer Recomendaciones y tratamiento x persona
         public static Tbl_TratamientoInicial obtenerTratamientoInixPer(int personaid)
         {
             var tratamientoinicial = dc.Tbl_TratamientoInicial.FirstOrDefault(per => per.Per_id.Equals(personaid) && per.trataInicial_estado == "A");
