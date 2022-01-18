@@ -28,12 +28,6 @@ namespace SistemaECU911.Template.Views
         
         //D. Objeto de la tabla ANTECEDENTES DE EMPLEOS ANTERIORES
         private Tbl_AntecedentesEmplAnteriores emplant = new Tbl_AntecedentesEmplAnteriores();
-
-        //Objeto de la tabla ACCIDENTES DE TRABAJO (DESCRIPCIÓN)
-        private Tbl_AccidentesTrabajoDesc acctrabajo = new Tbl_AccidentesTrabajoDesc();
-
-        //Objeto de la tabla ENFERMEDADES PROFESIONALES 
-        private Tbl_EnfermedadesProfesionales enferprof = new Tbl_EnfermedadesProfesionales();
         
         //E. Objeto de la tabla ANTECEDENTES FAMILIARES
         private Tbl_AntecedentesFamiliaresDetParentesco AnteFamiDetParentesco = new Tbl_AntecedentesFamiliaresDetParentesco();
@@ -103,29 +97,10 @@ namespace SistemaECU911.Template.Views
                     per = CN_HistorialMedico.obtenerPersonasxId(codigo);
                     int perso = Convert.ToInt32(per.Per_id.ToString());
 
-                    datosestempresausu = new Tbl_DatEstableEmpUsu();
-                    motconini = new Tbl_MotivoConsultaInicial();
-                    antper = new Tbl_AntecedentesPersonalesInicial();
-                    emplant = new Tbl_AntecedentesEmplAnteriores();
-                    acctrabajo = new Tbl_AccidentesTrabajoDesc();
-                    enferprof = new Tbl_EnfermedadesProfesionales();
-                    AnteFamiDetParentesco = new Tbl_AntecedentesFamiliaresDetParentesco();
-                    facriesgotractual = new Tbl_FacRiesTrabAct();
-                    actvextralaboral = new Tbl_ActividadesExtraLaborales();
-                    enferactualinicial = new Tbl_EnfermedadActualInicial();
-                    revisionactualorganossistemas = new Tbl_RevisionActualOrganosSistemas();
-                    examfisregional = new Tbl_ExaFisRegionalInicial();
-                    exagenesperiespues = new Tbl_ResExaGenEspRiesTrabajo();
-                    diagnostico = new Tbl_Diagnostico();
-                    aptitudmedica = new Tbl_AptitudMedica();
-                    tratamientoinicial = new Tbl_TratamientoInicial();
-
                     datosestempresausu = CN_Inicial.obtenerDatEstEmpreUsuar(perso);
                     motconini = CN_Inicial.obtenerMotivoConsultaInicial(perso);
                     antper = CN_Inicial.obtenerAntecedentesPersonalesInicial(perso);
                     emplant = CN_Inicial.obtenerEmpAntexPer(perso);
-                    acctrabajo = CN_Inicial.obtenerAcciTraDescxPer(perso);
-                    enferprof = CN_Inicial.obtenerEnfProfxPer(perso);
                     AnteFamiDetParentesco = CN_Inicial.obtenerAntFamDetPar(perso);
                     facriesgotractual = CN_Inicial.obtenerFacRiesTrabActxPer(perso);
                     actvextralaboral = CN_Inicial.obtenerActiExtraLabxPer(perso);
@@ -136,11 +111,12 @@ namespace SistemaECU911.Template.Views
                     diagnostico = CN_Inicial.obtenerDiagnosticoxPer(perso);
                     aptitudmedica = CN_Inicial.obtenerAptMedicaxPer(perso);
                     tratamientoinicial = CN_Inicial.obtenerTratamientoInixPer(perso);
+                    datosProfesional = CN_Inicial.obtenerDatosProfesionalxPer(perso);
 
                     btn_guardar.Visible = true;
 
-                    if (per != null || datosestempresausu != null || motconini != null || antper != null || emplant != null || acctrabajo != null ||
-                        enferprof != null || AnteFamiDetParentesco != null || facriesgotractual != null || actvextralaboral != null ||
+                    if (per != null || datosestempresausu != null || motconini != null || antper != null || emplant != null || 
+                        AnteFamiDetParentesco != null || facriesgotractual != null || actvextralaboral != null ||
                         enferactualinicial != null || revisionactualorganossistemas != null || examfisregional != null ||
                         exagenesperiespues != null || diagnostico != null || aptitudmedica != null || tratamientoinicial != null)
                     {
@@ -477,19 +453,29 @@ namespace SistemaECU911.Template.Views
                 per = CN_HistorialMedico.obtenerPersonasxId(perid);
                 int perso = Convert.ToInt32(per.Per_id.ToString());
 
+                datosestempresausu = CN_Inicial.obtenerDatEstEmpreUsuar(perso);
+                motconini = CN_Inicial.obtenerMotivoConsultaInicial(perso);
+                antper = CN_Inicial.obtenerAntecedentesPersonalesInicial(perso);
                 emplant = CN_Inicial.obtenerEmpAntexPer(perso);
-                acctrabajo = CN_Inicial.obtenerAcciTraDescxPer(perso);
-                enferprof = CN_Inicial.obtenerEnfProfxPer(perso);
+                AnteFamiDetParentesco = CN_Inicial.obtenerAntFamDetPar(perso);
                 facriesgotractual = CN_Inicial.obtenerFacRiesTrabActxPer(perso);
                 actvextralaboral = CN_Inicial.obtenerActiExtraLabxPer(perso);
+                enferactualinicial = CN_Inicial.obtenerEnferActInixPer(perso);
+                revisionactualorganossistemas = CN_Inicial.obtenerRevActOrgSisxPer(perso);
+                examfisregional = CN_Inicial.obtenerExaFisRegPer(perso);
                 exagenesperiespues = CN_Inicial.obtenerResExaGenEspRiesTrabaxPer(perso);
                 diagnostico = CN_Inicial.obtenerDiagnosticoxPer(perso);
-                aptitudmedica = CN_Inicial.obtenerAptMedicaxPer(perso);                
+                aptitudmedica = CN_Inicial.obtenerAptMedicaxPer(perso);
+                tratamientoinicial = CN_Inicial.obtenerTratamientoInixPer(perso);
+                datosProfesional = CN_Inicial.obtenerDatosProfesionalxPer(perso);
 
-                if (per != null || emplant != null || acctrabajo != null || enferprof != null || facriesgotractual != null || 
-                    actvextralaboral != null || exagenesperiespues != null || diagnostico != null || aptitudmedica != null)
+                if (per != null || datosestempresausu != null || motconini != null || antper != null || emplant != null || 
+                    AnteFamiDetParentesco != null || facriesgotractual != null || 
+                    actvextralaboral != null || enferactualinicial != null || revisionactualorganossistemas != null ||
+                    examfisregional != null || exagenesperiespues != null || diagnostico != null || aptitudmedica != null || 
+                    tratamientoinicial != null || datosProfesional != null)
                 {
-                    ModificarHistorial(per, emplant, antper, acctrabajo, enferprof, facriesgotractual, actvextralaboral,
+                    ModificarHistorial(per, emplant, antper, facriesgotractual, actvextralaboral,
                         exagenesperiespues, diagnostico, aptitudmedica);
                 }
 
@@ -512,8 +498,6 @@ namespace SistemaECU911.Template.Views
                 antper = new Tbl_AntecedentesPersonalesInicial();
                 // D
                 emplant = new Tbl_AntecedentesEmplAnteriores();
-                acctrabajo = new Tbl_AccidentesTrabajoDesc();
-                enferprof = new Tbl_EnfermedadesProfesionales();
                 // E
                 AnteFamiDetParentesco = new Tbl_AntecedentesFamiliaresDetParentesco();
                 // F
@@ -885,14 +869,13 @@ namespace SistemaECU911.Template.Views
             }
             catch (Exception)
             {
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos No Guardados')", true);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos No Guardados Correctamente')", true);
             }
 
         }
 
         private void ModificarHistorial(Tbl_Personas per, Tbl_AntecedentesEmplAnteriores emplant, Tbl_AntecedentesPersonalesInicial antper, 
-            Tbl_AccidentesTrabajoDesc acctrabajo, Tbl_EnfermedadesProfesionales enferprof, Tbl_FacRiesTrabAct facriesgotractual,
-            Tbl_ActividadesExtraLaborales actvextralaboral, Tbl_ResExaGenEspRiesTrabajo exagenesperiespues, 
+            Tbl_FacRiesTrabAct facriesgotractual, Tbl_ActividadesExtraLaborales actvextralaboral, Tbl_ResExaGenEspRiesTrabajo exagenesperiespues, 
             Tbl_Diagnostico diagnostico, Tbl_AptitudMedica aptitudmedica)
         {
 
@@ -900,8 +883,6 @@ namespace SistemaECU911.Template.Views
             {
                 //antcliqui = new Tbl_AntecedentesCliQuiru();
                 emplant = new Tbl_AntecedentesEmplAnteriores();
-                acctrabajo = new Tbl_AccidentesTrabajoDesc();
-                enferprof = new Tbl_EnfermedadesProfesionales();
                 facriesgotractual = new Tbl_FacRiesTrabAct();
                 actvextralaboral = new Tbl_ActividadesExtraLaborales();
                 exagenesperiespues = new Tbl_ResExaGenEspRiesTrabajo();

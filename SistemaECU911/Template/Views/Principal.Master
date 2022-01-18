@@ -147,8 +147,8 @@
                                 <ul class="nav flex-column sub-menu">
                                     <li class="nav-item"><a class="nav-link" href="Pacientes.aspx">Ficha Medica</a></li>
                                     <li class="nav-item"><a class="nav-link" href="PacientesInicial.aspx">HC Inicial</a></li>
-                                    <%--<li class="nav-item"><a class="nav-link" href="Periodica.aspx">HC Periódica</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="Reintegro.aspx">HC Reintegro</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="PacientesPeriodica.aspx">HC Periódica</a></li>
+                                    <%--<li class="nav-item"><a class="nav-link" href="Reintegro.aspx">HC Reintegro</a></li>
                                     <li class="nav-item"><a class="nav-link" href="Retiro.aspx">HC Retiro</a></li>
                                     <li class="nav-item"><a class="nav-link" href="Certificado.aspx">HC Certificado</a></li>
                                     <li class="nav-item"><a class="nav-link" href="Inmunizaciones.aspx">HC Inmunizaciones</a></li>

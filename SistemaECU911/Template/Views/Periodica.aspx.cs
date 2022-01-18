@@ -16,9 +16,6 @@ namespace SistemaECU911.Template.Views
         //Objeto de la tabla personas
         private Tbl_Personas per = new Tbl_Personas();
 
-        //A. Objeto de la tabla DATOS DEL ESTABLECIMIENTO - EMPRESA Y USUARIO (DESDE RELIGION)
-        private Tbl_DatEstableEmpUsu datempusuid = new Tbl_DatEstableEmpUsu();
-
         //B. Objeto de la tabla MOTIVO CONSULTA
         private Tbl_MotivoConsultaPeriodica motconper = new Tbl_MotivoConsultaPeriodica();
 
@@ -26,7 +23,7 @@ namespace SistemaECU911.Template.Views
         private Tbl_AntecedentesPersonalesPeriodica antpersperiodica = new Tbl_AntecedentesPersonalesPeriodica();
 
         //D. Objeto de la tabla ANTECEDENTES FAMILIARES
-        private Tbl_AntecedentesFamiliaresDetParentescoPeriodica obtantfamparperiodica = new Tbl_AntecedentesFamiliaresDetParentescoPeriodica();
+        private Tbl_AntecedentesFamiliaresDetParentescoPeriodica antfamparperiodica = new Tbl_AntecedentesFamiliaresDetParentescoPeriodica();
 
         //E. Objeto de la tabla RIESGO DEL PUESTO DE TRABAJO ACTUAL
         private Tbl_FacRiesTrabActPeriodica facriestrabperiodica = new Tbl_FacRiesTrabActPeriodica();
@@ -35,7 +32,7 @@ namespace SistemaECU911.Template.Views
         private Tbl_EnfermedadActualPeriodica enferactperiodica = new Tbl_EnfermedadActualPeriodica();
 
         //G. Objeto de la tabla REVISIÓN ACTUAL DE ÓRGANOS Y SISTEMAS
-        private Tbl_RevisionActualOrganosSistemasPeriodica obtrevactorgsisperiodica = new Tbl_RevisionActualOrganosSistemasPeriodica();
+        private Tbl_RevisionActualOrganosSistemasPeriodica revactorgsisperiodica = new Tbl_RevisionActualOrganosSistemasPeriodica();
 
         //I. Objeto de la tabla EXAMEN FÍSICO REGIONAL
         private Tbl_ExaFisRegionalPeriodica exafisregperiodica = new Tbl_ExaFisRegionalPeriodica();
@@ -59,8 +56,8 @@ namespace SistemaECU911.Template.Views
         {
             if (!IsPostBack)
             {
-                //CargarDatosModificar();
-                //cargarProfesional();
+                CargarDatosModificar();
+                cargarProfesional();
             }
         }
 
@@ -75,6 +72,286 @@ namespace SistemaECU911.Template.Views
                 txt_priApellido.Text = per.Per_priApellido.ToString();
                 txt_segApellido.Text = per.Per_segApellido.ToString();
                 txt_sexo.Text = per.Per_genero.ToString();
+                txt_sexo.Text = per.Per_fechNacimiento.ToString();
+            }
+        }
+
+        private void CargarDatosModificar()
+        {
+            try
+            {
+                if (Request["cod"] != null)
+                {
+                    int codigo = Convert.ToInt32(Request["cod"]);
+
+                    per = CN_HistorialMedico.obtenerPersonasxId(codigo);
+                    int perso = Convert.ToInt32(per.Per_id.ToString());
+
+                    motconper = CN_Periodica.obtenerMotivoConsultaxPerPeriodica(perso);
+                    antpersperiodica = CN_Periodica.obtenerAntecedentesPersonalesxPerPeriodica(perso);
+                    antfamparperiodica = CN_Periodica.obtenerAntFamDetParxPerPeriodica(perso);
+                    facriestrabperiodica = CN_Periodica.obtenerFacRiesTrabActxPerPeriodica(perso);
+                    enferactperiodica = CN_Periodica.obtenerEnferActxPerPeriodica(perso);
+                    revactorgsisperiodica = CN_Periodica.obtenerRevActOrgSisxPerPeriodica(perso);
+                    exafisregperiodica = CN_Periodica.obtenerExaFisRegxPerPeriodica(perso);
+                    resexagenperiodica = CN_Periodica.obtenerResExaGenEspRiesTrabaxPerPeriodica(perso);
+                    diagperiodica = CN_Periodica.obtenerDiagnosticoxPerPeriodica(perso);
+                    aptmedperiodica = CN_Periodica.obtenerAptMedicaxPerPeriodica(perso);
+                    tratamientoperiodica = CN_Periodica.obtenerTratamientoxPerPeriodica(perso);
+                    datosProfesionalPeriodica = CN_Periodica.obtenerDatosProfesionalxPerPeriodica(perso);
+
+                    btn_guardarperiodica.Visible = true;
+
+                    if (per != null || motconper != null || antpersperiodica != null || antfamparperiodica != null || 
+                        facriestrabperiodica != null || enferactperiodica != null || revactorgsisperiodica != null || 
+                        exafisregperiodica != null || resexagenperiodica != null || diagperiodica != null ||
+                        aptmedperiodica != null || tratamientoperiodica != null || datosProfesionalPeriodica != null)
+                    {
+                        //A
+                        txt_priNombre.Text = per.Per_priNombre.ToString();
+                        txt_segNombre.Text = per.Per_segNombre.ToString();
+                        txt_priApellido.Text = per.Per_priApellido.ToString();
+                        txt_segApellido.Text = per.Per_segApellido.ToString();
+                        txt_sexo.Text = per.Per_genero.ToString();
+                        txt_sexo.Text = per.Per_fechNacimiento.ToString();
+                        txt_numHClinica.Text = per.Per_Cedula.ToString();
+
+                        //B
+                        txt_motivoconsultaperiodica.Text = motconper.motConPeriodica_descrip.ToString();
+
+                        //C
+                        txt_antCliQuiDescripcion.Text = antpersperiodica.antPerPeriodica_descripcion.ToString();
+
+                        txt_siConsuNociTabaHabToxi.Text = antpersperiodica.antPerPeriodica_siConsuNocivosTabaco.ToString();
+                        txt_noConsuNociTabaHabToxi.Text = antpersperiodica.antPerPeriodica_noConsuNocivosTabaco.ToString();
+                        txt_tiemConConsuNociTabaHabToxi.Text = antpersperiodica.antPerPeriodica_tiempoConsuConsuNocivosTabaco.ToString();
+                        txt_cantiConsuNociTabaHabToxi.Text = antpersperiodica.antPerPeriodica_cantidadConsuNocivosTabaco.ToString();
+                        txt_exConsumiConsuNociTabaHabToxi.Text = antpersperiodica.antPerPeriodica_exConsumiConsuNocivosTabaco.ToString();
+                        txt_tiemAbstiConsuNociTabaHabToxi.Text = antpersperiodica.antPerPeriodica_tiempoAbstiConsuNocivosTabaco.ToString();
+
+                        txt_siConsuNociAlcoHabToxi.Text = antpersperiodica.antPerPeriodica_siConsuNocivosAlcohol.ToString();
+                        txt_noConsuNociAlcoHabToxi.Text = antpersperiodica.antPerPeriodica_noConsuNocivosAlcohol.ToString();
+                        txt_tiemConConsuNociAlcoHabToxi.Text = antpersperiodica.antPerPeriodica_tiempoConsuConsuNocivosAlcohol.ToString();
+                        txt_cantiConsuNociAlcoHabToxi.Text = antpersperiodica.antPerPeriodica_cantidadConsuNocivosAlcohol.ToString();
+                        txt_exConsumiConsuNociAlcoHabToxi.Text = antpersperiodica.antPerPeriodica_exConsumiConsuNocivosAlcohol.ToString();
+                        txt_tiemAbstiConsuNociAlcoHabToxi.Text = antpersperiodica.antPerPeriodica_tiempoAbstiConsuNocivosAlcohol.ToString();
+
+                        txt_siConsuNociOtrasDroHabToxi.Text = antpersperiodica.antPerPeriodica_siConsuNocivosOtrasDrogas.ToString();
+                        txt_noConsuNociOtrasDroHabToxi.Text = antpersperiodica.antPerPeriodica_noConsuNocivosOtrasDrogas.ToString();
+                        txt_tiemCon1ConsuNociOtrasDroHabToxi.Text = antpersperiodica.antPerPeriodica_tiempoConsu1ConsuNocivosOtrasDrogas.ToString();
+                        txt_canti1ConsuNociOtrasDroHabToxi.Text = antpersperiodica.antPerPeriodica_cantidad1ConsuNocivosOtrasDrogas.ToString();
+                        txt_exConsumi1ConsuNociOtrasDroHabToxi.Text = antpersperiodica.antPerPeriodica_exConsumi1ConsuNocivosOtrasDrogas.ToString();
+                        txt_tiemAbsti1ConsuNociOtrasDroHabToxi.Text = antpersperiodica.antPerPeriodica_tiempoAbsti1ConsuNocivosOtrasDrogas.ToString();
+                        txt_otrasConsuNociOtrasDroHabToxi.Text = antpersperiodica.antPerPeriodica_otrasConsuNocivos.ToString();
+                        txt_tiemCon2ConsuNociOtrasDroHabToxi.Text = antpersperiodica.antPerPeriodica_tiempoConsu2ConsuNocivosOtrasDrogas.ToString();
+                        txt_canti2ConsuNociOtrasDroHabToxi.Text = antpersperiodica.antPerPeriodica_cantidad2ConsuNocivosOtrasDrogas.ToString();
+                        txt_exConsumi2ConsuNociOtrasDroHabToxi.Text = antpersperiodica.antPerPeriodica_exConsumi2ConsuNocivosOtrasDrogas.ToString();
+                        txt_tiemAbsti2ConsuNociOtrasDroHabToxi.Text = antpersperiodica.antPerPeriodica_tiempoAbsti2ConsuNocivosOtrasDrogas.ToString();
+
+                        txt_siEstVidaActFisiEstVida.Text = antpersperiodica.antPerPeriodica_siEstiVidaActFisica.ToString();
+                        txt_noEstVidaActFisiEstVida.Text = antpersperiodica.antPerPeriodica_noEstiVidaActFisica.ToString();
+                        txt_cualEstVidaActFisiEstVida.Text = antpersperiodica.antPerPeriodica_cualEstiVidaActFisica.ToString();
+                        txt_tiemCanEstVidaActFisiEstVida.Text = antpersperiodica.antPerPeriodica_tiem_cantEstiVidaActFisica.ToString();
+
+                        txt_siEstVidaMedHabiEstVida.Text = antpersperiodica.antPerPeriodica_siEstiVidaMediHabitual.ToString();
+                        txt_noEstVidaMedHabiEstVida.Text = antpersperiodica.antPerPeriodica_noEstiVidaMediHabitual.ToString();
+                        txt_cual1EstVidaMedHabiEstVida.Text = antpersperiodica.antPerPeriodica_cual1EstiVidaMediHabitual.ToString();
+                        txt_tiemCan1EstVidaMedHabiEstVida.Text = antpersperiodica.antPerPeriodica_tiem_cant1EstiVidaMediHabitual.ToString();
+                        txt_cual2EstVidaMedHabiEstVida.Text = antpersperiodica.antPerPeriodica_cual2EstiVidaMediHabitual.ToString();
+                        txt_tiemCan2EstVidaMedHabiEstVida.Text = antpersperiodica.antPerPeriodica_tiem_cant2EstiVidaMediHabitual.ToString();
+                        txt_cual3EstVidaMedHabiEstVida.Text = antpersperiodica.antPerPeriodica_cual3EstiVidaMediHabitual.ToString();
+                        txt_tiemCan3EstVidaMedHabiEstVida.Text = antpersperiodica.antPerPeriodica_tiem_cant3EstiVidaMediHabitual.ToString();
+
+                        txt_incidentesperiodica.Text = antpersperiodica.antPerPeriodica_descripIncidentes.ToString();
+
+                        txt_sicalificadotrabajo.Text = antpersperiodica.antPerPeriodica_siCalificadoIESSAcciTrabajo.ToString();
+                        txt_especificarcalificadotrabajo.Text = antpersperiodica.antPerPeriodica_EspecifiCalificadoIESSAcciTrabajo.ToString();
+                        txt_nocalificadotrabajo.Text = antpersperiodica.antPerPeriodica_noCalificadoIESSAcciTrabajo.ToString();
+                        txt_fechacalificadotrabajo.Text = antpersperiodica.antPerPeriodica_fechaCalificadoIESSAcciTrabajo.ToString();
+                        txt_obsercalificadotrabajo.Text = antpersperiodica.antPerPeriodica_observacionesAcciTrabajo.ToString();
+
+                        txt_sicalificadoprofesional.Text = antpersperiodica.antPerPeriodica_siCalificadoIESSEnferProfesionales.ToString();
+                        txt_especificarcalificadoprofesional.Text = antpersperiodica.antPerPeriodica_EspecifiCalificadoIESSEnferProfesionales.ToString();
+                        txt_nocalificadoprofesional.Text = antpersperiodica.antPerPeriodica_noCalificadoIESSEnferProfesionales.ToString();
+                        txt_fechacalificadoprofesional.Text = antpersperiodica.antPerPeriodica_fechaCalificadoIESSEnferProfesionales.ToString();
+                        txt_obsercalificadoprofesional.Text = antpersperiodica.antPerPeriodica_observacionesEnferProfesionales.ToString();
+
+                        //D
+                        txt_enfermedadcardiovascular.Text = antfamparperiodica.AntFamDetParePeriodica_enfCarVas.ToString();
+                        txt_enfermedadmetabolica.Text = antfamparperiodica.AntFamDetParePeriodica_enfMeta.ToString();
+                        txt_enfermedadneurologica.Text = antfamparperiodica.AntFamDetParePeriodica_enfNeuro.ToString();
+                        txt_enfermedadoncologica.Text = antfamparperiodica.AntFamDetParePeriodica_enfOnco.ToString();
+                        txt_enfermedadinfecciosa.Text = antfamparperiodica.AntFamDetParePeriodica_enfInfe.ToString();
+                        txt_enfermedadhereditaria.Text = antfamparperiodica.AntFamDetParePeriodica_enfHereConge.ToString();
+                        txt_discapacidades.Text = antfamparperiodica.AntFamDetParePeriodica_discapa.ToString();
+                        txt_otrosenfer.Text = antfamparperiodica.AntFamDetParePeriodica_otros.ToString();
+                        txt_descripcionantefamiliares.Text = antfamparperiodica.AntFamDetParePeriodica_descripcion.ToString();
+
+                        ////E
+                        //facriestrabperiodica.FacRiesTrabActPeriodica_area = txt_puestotrabajoperiodica.Text;
+                        //facriestrabperiodica.FacRiesTrabActPeriodica_actividades = txt_act.Text;
+                        //facriestrabperiodica.FacRiesTrabActPeriodica_tiemTrabPeriodica = txt_tiempotrabajo.Text;
+                        //facriestrabperiodica.FacRiesTrabActPeriodica_temAltasFis = txt_tempaltas.Text;
+                        //facriestrabperiodica.FacRiesTrabActPeriodica_temBajasFis = txt_tempbajas.Text;
+                        //facriestrabperiodica.FacRiesTrabActPeriodica_radIonizanteFis = txt_radiacion.Text;
+                        //facriestrabperiodica.FacRiesTrabActPeriodica_radNoIonizanteFis = txt_noradiacion.Text;
+                        //facriestrabperiodica.FacRiesTrabActPeriodica_ruidoFis = txt_ruido.Text;
+                        //facriestrabperiodica.FacRiesTrabActPeriodica_vibracionFis = txt_vibracion.Text;
+                        //facriestrabperiodica.FacRiesTrabActPeriodica_iluminacionFis = txt_iluminacion.Text;
+                        //facriestrabperiodica.FacRiesTrabActPeriodica_ventilacionFis = txt_ventilacion.Text;
+                        //facriestrabperiodica.FacRiesTrabActPeriodica_fluElectricoFis = txt_fluidoelectrico.Text;
+                        //facriestrabperiodica.FacRiesTrabActPeriodica_otrosFis = txt_otros1.Text;
+                        //facriestrabperiodica.FacRiesTrabActPeriodica_atraMaquinasMec = txt_atrapmaquinas.Text;
+                        //facriestrabperiodica.FacRiesTrabActPeriodica_atraSuperfiiesMec = txt_atrapsuperficie.Text;
+                        //facriestrabperiodica.FacRiesTrabActPeriodica_atraObjetosMec = txt_atrapobjetos.Text;
+                        //facriestrabperiodica.FacRiesTrabActPeriodica_caidaObjetosMec = txt_caidaobjetos.Text;
+                        //facriestrabperiodica.FacRiesTrabActPeriodica_caidaMisNivelMec = txt_caidamisnivel.Text;
+                        //facriestrabperiodica.FacRiesTrabActPeriodica_caidaDifNivelMec = txt_caidadifnivel.Text;
+                        //facriestrabperiodica.FacRiesTrabActPeriodica_contactoElecMec = txt_contaelectrico.Text;
+                        //facriestrabperiodica.FacRiesTrabActPeriodica_conSuperTrabaMec = txt_contasuptrabajo.Text;
+                        //facriestrabperiodica.FacRiesTrabActPeriodica_proPartiFragMec = txt_proyparticulas.Text;
+                        //facriestrabperiodica.FacRiesTrabActPeriodica_proFluidosMec = txt_proyefluidos.Text;
+                        //facriestrabperiodica.FacRiesTrabActPeriodica_pinchazosMec = txt_pinchazos.Text;
+                        //facriestrabperiodica.FacRiesTrabActPeriodica_cortesMec = txt_cortes.Text;
+                        //facriestrabperiodica.FacRiesTrabActPeriodica_atropeVehiMec = txt_atroporvehiculos.Text;
+                        //facriestrabperiodica.FacRiesTrabActPeriodica_coliVehiMec = txt_choques.Text;
+                        //facriestrabperiodica.FacRiesTrabActPeriodica_otrosMec = txt_otros2.Text;
+                        //facriestrabperiodica.FacRiesTrabActPeriodica_solidosQui = txt_solidos.Text;
+                        //facriestrabperiodica.FacRiesTrabActPeriodica_polvosQui = txt_polvos.Text;
+                        //facriestrabperiodica.FacRiesTrabActPeriodica_humosQui = txt_humos.Text;
+                        //facriestrabperiodica.FacRiesTrabActPeriodica_liquidosQui = txt_liquidos.Text;
+                        //facriestrabperiodica.FacRiesTrabActPeriodica_vaporesQui = txt_vapores.Text;
+                        //facriestrabperiodica.FacRiesTrabActPeriodica_aerosolesQui = txt_aerosoles.Text;
+                        //facriestrabperiodica.FacRiesTrabActPeriodica_neblinasQui = txt_neblinas.Text;
+                        //facriestrabperiodica.FacRiesTrabActPeriodica_gaseososQui = txt_gaseosos.Text;
+                        //facriestrabperiodica.FacRiesTrabActPeriodica_otrosBio = txt_otros3.Text;
+                        //facriestrabperiodica.FacRiesTrabActPeriodica_virusBio = txt_virus.Text;
+                        //facriestrabperiodica.FacRiesTrabActPeriodica_hongosBio = txt_hongos.Text;
+                        //facriestrabperiodica.FacRiesTrabActPeriodica_bacteriasBio = txt_bacterias.Text;
+                        //facriestrabperiodica.FacRiesTrabActPeriodica_parasitosBio = txt_parasitos.Text;
+                        //facriestrabperiodica.FacRiesTrabActPeriodica_expVectBio = txt_expoavectores.Text;
+                        //facriestrabperiodica.FacRiesTrabActPeriodica_expAniSelvaBio = txt_expoanimselvaticos.Text;
+                        //facriestrabperiodica.FacRiesTrabActPeriodica_otrosBio = txt_otros4.Text;
+                        //facriestrabperiodica.FacRiesTrabActPeriodica_maneManCarErg = txt_manmanualcargas.Text;
+                        //facriestrabperiodica.FacRiesTrabActPeriodica_movRepeErg = txt_movrepetitivo.Text;
+                        //facriestrabperiodica.FacRiesTrabActPeriodica_posForzaErg = txt_postforzadas.Text;
+                        //facriestrabperiodica.FacRiesTrabActPeriodica_trabPvdErg = txt_trabajopvd.Text;
+                        //facriestrabperiodica.FacRiesTrabActPeriodica_otrosErg = txt_otros5.Text;
+                        //facriestrabperiodica.FacRiesTrabActPeriodica_monoTrabPsi = txt_montrabajo.Text;
+                        //facriestrabperiodica.FacRiesTrabActPeriodica_sobrecarLabPsi = txt_sobrecargalaboral.Text;
+                        //facriestrabperiodica.FacRiesTrabActPeriodica_minuTareaPsi = txt_minustarea.Text;
+                        //facriestrabperiodica.FacRiesTrabActPeriodica_altaResponPsi = txt_altarespon.Text;
+                        //facriestrabperiodica.FacRiesTrabActPeriodica_autoTomaDesiPsi = txt_automadesiciones.Text;
+                        //facriestrabperiodica.FacRiesTrabActPeriodica_supEstDirecDefiPsi = txt_supyestdireficiente.Text;
+                        //facriestrabperiodica.FacRiesTrabActPeriodica_conflicRolPsi = txt_conflictorol.Text;
+                        //facriestrabperiodica.FacRiesTrabActPeriodica_falClariFunPsi = txt_faltaclarfunciones.Text;
+                        //facriestrabperiodica.FacRiesTrabActPeriodica_incoDistriTrabPsi = txt_incorrdistrabajo.Text;
+                        //facriestrabperiodica.FacRiesTrabActPeriodica_turnosRotaPsi = txt_turnorotat.Text;
+                        //facriestrabperiodica.FacRiesTrabActPeriodica_relInterperPsi = txt_relacinterpersonales.Text;
+                        //facriestrabperiodica.FacRiesTrabActPeriodica_inesLabPsi = txt_inestalaboral.Text;
+                        //facriestrabperiodica.FacRiesTrabActPeriodica_otrosPsi = txt_otros6.Text;
+                        //facriestrabperiodica.FacRiesTrabActPeriodica_medPreventivas = txt_medpreventivas.Text;
+                        //facriestrabperiodica.Per_id = perso;
+
+                        //F
+                        txt_enfermedadactualperiodica.Text = enferactperiodica.enfActualPeriodica_descrip.ToString();
+
+                        //G
+                        txt_pielanexos.Text = revactorgsisperiodica.RevActOrgSisPeriodica_pielAnexos.ToString();
+                        txt_organossentidos.Text = revactorgsisperiodica.RevActOrgSisPeriodica_orgSentidos.ToString();
+                        txt_respiratorio.Text = revactorgsisperiodica.RevActOrgSisPeriodica_respiratorio.ToString();
+                        txt_cardiovascular.Text = revactorgsisperiodica.RevActOrgSisPeriodica_cardVascular.ToString();
+                        txt_digestivo.Text = revactorgsisperiodica.RevActOrgSisPeriodica_digestivo.ToString();
+                        txt_genitourinario.Text = revactorgsisperiodica.RevActOrgSisPeriodica_genUrinario.ToString();
+                        txt_musculosesqueleticos.Text = revactorgsisperiodica.RevActOrgSisPeriodica_muscEsqueletico.ToString();
+                        txt_endocrino.Text = revactorgsisperiodica.RevActOrgSisPeriodica_endocrino.ToString();
+                        txt_hemolinfatico.Text = revactorgsisperiodica.RevActOrgSisPeriodica_hemoLimfa.ToString();
+                        txt_nervioso.Text = revactorgsisperiodica.RevActOrgSisPeriodica_nervioso.ToString();
+                        txt_descrorganosysistemasperiodica.Text = revactorgsisperiodica.RevActOrgSisPeriodica_descrip.ToString();
+
+                        ////I
+                        //exafisregperiodica.exaFisRegPeriodica_cicatricesPiel = txt_cicatrices.Text;
+                        //exafisregperiodica.exaFisRegPeriodica_tatuajesPiel = txt_tatuajes.Text;
+                        //exafisregperiodica.exaFisRegPeriodica_pielFacerasPiel = txt_pielyfaneras.Text;
+                        //exafisregperiodica.exaFisRegPeriodica_parpadosOjos = txt_parpados.Text;
+                        //exafisregperiodica.exaFisRegPeriodica_conjuntuvasOjos = txt_conjuntivas.Text;
+                        //exafisregperiodica.exaFisRegPeriodica_pupilasOjos = txt_pupilas.Text;
+                        //exafisregperiodica.exaFisRegPeriodica_corneaOjos = txt_cornea.Text;
+                        //exafisregperiodica.exaFisRegPeriodica_motilidadOjos = txt_motilidad.Text;
+                        //exafisregperiodica.exaFisRegPeriodica_cAudiExtreOido = txt_auditivoexterno.Text;
+                        //exafisregperiodica.exaFisRegPeriodica_pabellonOido = txt_pabellon.Text;
+                        //exafisregperiodica.exaFisRegPeriodica_timpanosOido = txt_timpanos.Text;
+                        //exafisregperiodica.exaFisRegPeriodica_labiosOroFa = txt_labios.Text;
+                        //exafisregperiodica.exaFisRegPeriodica_lenguaOroFa = txt_lengua.Text;
+                        //exafisregperiodica.exaFisRegPeriodica_faringeOroFa = txt_faringe.Text;
+                        //exafisregperiodica.exaFisRegPeriodica_amigdalasOroFa = txt_amigdalas.Text;
+                        //exafisregperiodica.exaFisRegPeriodica_dentaduraOroFa = txt_dentadura.Text;
+                        //exafisregperiodica.exaFisRegPeriodica_tabiqueNariz = txt_tabique.Text;
+                        //exafisregperiodica.exaFisRegPeriodica_cornetesNariz = txt_cornetes.Text;
+                        //exafisregperiodica.exaFisRegPeriodica_mucosasNariz = txt_mucosa.Text;
+                        //exafisregperiodica.exaFisRegPeriodica_senosParanaNariz = txt_senosparanasales.Text;
+                        //exafisregperiodica.exaFisRegPeriodica_tiroiMasasCuello = txt_tiroides.Text;
+                        //exafisregperiodica.exaFisRegPeriodica_movilidadCuello = txt_movilidad.Text;
+                        //exafisregperiodica.exaFisRegPeriodica_mamasTorax = txt_mamas.Text;
+                        //exafisregperiodica.exaFisRegPeriodica_corazonTorax = txt_corazon.Text;
+                        //exafisregperiodica.exaFisRegPeriodica_pulmonesTorax2 = txt_pulmones.Text;
+                        //exafisregperiodica.exaFisRegPeriodica_parriCostalTorax2 = txt_parrillacostal.Text;
+                        //exafisregperiodica.exaFisRegPeriodica_viscerasAbdomen = txt_visceras.Text;
+                        //exafisregperiodica.exaFisRegPeriodica_paredAbdomiAbdomen = txt_paredabdominal.Text;
+                        //exafisregperiodica.exaFisRegPeriodica_flexibilidadColumna = txt_flexibilidad.Text;
+                        //exafisregperiodica.exaFisRegPeriodica_desviacionColumna = txt_desviacion.Text;
+                        //exafisregperiodica.exaFisRegPeriodica_dolorColumna = txt_dolor.Text;
+                        //exafisregperiodica.exaFisRegPeriodica_pelvisPelvis = txt_pelvis.Text;
+                        //exafisregperiodica.exaFisRegPeriodica_genitalesPelvis = txt_genitales.Text;
+                        //exafisregperiodica.exaFisRegPeriodica_vascularExtre = txt_vascular.Text;
+                        //exafisregperiodica.exaFisRegPeriodica_miemSupeExtre = txt_miembrosuperiores.Text;
+                        //exafisregperiodica.exaFisRegPeriodica_miemInfeExtre = txt_miembrosinferiores.Text;
+                        //exafisregperiodica.exaFisRegPeriodica_fuerzaNeuro = txt_fuerza.Text;
+                        //exafisregperiodica.exaFisRegPeriodica_sensibiNeuro = txt_sensibilidad.Text;
+                        //exafisregperiodica.exaFisRegPeriodica_marchaNeuro = txt_marcha.Text;
+                        //exafisregperiodica.exaFisRegPeriodica_refleNeuro = txt_reflejos.Text;
+                        //exafisregperiodica.exaFisRegPeriodica_observa = txt_obervexamenfisicoregional.Text;
+                        //exafisregperiodica.Per_id = perso;
+
+                        //J
+                        txt_examen.Text = resexagenperiodica.ResExaGenEspRiesTrabajoPeriodica_examen.ToString();
+                        txt_fechaexamen.Text = resexagenperiodica.ResExaGenEspRiesTrabajoPeriodica_fecha.ToString();
+                        txt_resultadoexamen.Text = resexagenperiodica.ResExaGenEspRiesTrabajoPeriodica_resultados.ToString();
+                        txt_observacionexamen.Text = resexagenperiodica.ResExaGenEspRiesTrabajoPeriodica_observaciones.ToString();
+
+                        //K
+                        txt_descripdiagnostico.Text = diagperiodica.DiagPeriodica_descripcion.ToString();
+                        txt_cie.Text = diagperiodica.DiagPeriodica_cie.ToString();
+                        txt_pre.Text = diagperiodica.DiagPeriodica_pre.ToString();
+                        txt_def.Text = diagperiodica.DiagPeriodica_def.ToString();
+
+                        //L
+                        txt_apto.Text = aptmedperiodica.AptMedPeriodica_apto.ToString();
+                        txt_aptoobservacion.Text = aptmedperiodica.AptMedPeriodica_aptoObserva.ToString();
+                        txt_aptolimitacion.Text = aptmedperiodica.AptMedPeriodica_aptoLimi.ToString();
+                        txt_noapto.Text = aptmedperiodica.AptMedPeriodica_NoApto.ToString();
+                        txt_observacionaptitud.Text = aptmedperiodica.AptMedPeriodica_Observ.ToString();
+                        txt_limitacionaptitud.Text = aptmedperiodica.AptMedPeriodica_Limit.ToString();
+
+                        //M
+                        txt_descripciontratamientoperiodica.Text = tratamientoperiodica.RecTraPeriodica_descripcion.ToString();
+
+                        //N
+                        txt_fechaDatProf.Text = datosProfesionalPeriodica.DatProfePeriodica_fecha_hora.ToString();
+                        ddl_profesional.SelectedValue = datosProfesionalPeriodica.prof_id.ToString();
+                        txt_codigoDatProf.Text = datosProfesionalPeriodica.DatProfePeriodica_cod.ToString();
+
+                    }
+                    else
+                    {
+                        ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Error')", true);
+                    }
+
+                }
+            }
+            catch (Exception)
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos Guardados Incompletos')", true);
             }
         }
 
@@ -90,12 +367,34 @@ namespace SistemaECU911.Template.Views
             }
             else
             {
+                per = CN_HistorialMedico.obtenerPersonasxId(perid);
+                int perso = Convert.ToInt32(per.Per_id.ToString());
 
-                //per = CN_HistorialMedico.obtenerPersonasxId(perid);
-                //int perso = Convert.ToInt32(per.Per_id.ToString());              
+                motconper = CN_Periodica.obtenerMotivoConsultaxPerPeriodica(perso);
+                antpersperiodica = CN_Periodica.obtenerAntecedentesPersonalesxPerPeriodica(perso);
+                antfamparperiodica = CN_Periodica.obtenerAntFamDetParxPerPeriodica(perso);
+                facriestrabperiodica = CN_Periodica.obtenerFacRiesTrabActxPerPeriodica(perso);
+                enferactperiodica = CN_Periodica.obtenerEnferActxPerPeriodica(perso);
+                revactorgsisperiodica = CN_Periodica.obtenerRevActOrgSisxPerPeriodica(perso);
+                exafisregperiodica = CN_Periodica.obtenerExaFisRegxPerPeriodica(perso);
+                resexagenperiodica = CN_Periodica.obtenerResExaGenEspRiesTrabaxPerPeriodica(perso);
+                diagperiodica = CN_Periodica.obtenerDiagnosticoxPerPeriodica(perso);
+                aptmedperiodica = CN_Periodica.obtenerAptMedicaxPerPeriodica(perso);
+                tratamientoperiodica = CN_Periodica.obtenerTratamientoxPerPeriodica(perso);
+                datosProfesionalPeriodica = CN_Periodica.obtenerDatosProfesionalxPerPeriodica(perso);
+
+                if (per != null || motconper != null || antpersperiodica != null || antfamparperiodica != null || 
+                    facriestrabperiodica != null || enferactperiodica != null || revactorgsisperiodica != null ||
+                    exafisregperiodica != null || resexagenperiodica != null || diagperiodica != null ||
+                    aptmedperiodica != null || tratamientoperiodica != null || datosProfesionalPeriodica != null)
+                {
+                    //ModificarHistorial(per, emplant, antper, acctrabajo, enferprof, facriesgotractual, actvextralaboral,
+                    //    exagenesperiespues, diagnostico, aptitudmedica);
+                }
 
             }
         }
+
         private void GuardarPeriodica()
         {
             try
@@ -104,20 +403,18 @@ namespace SistemaECU911.Template.Views
 
                 int perso = Convert.ToInt32(per.Per_id.ToString());
 
-                // A
-                datempusuid = new Tbl_DatEstableEmpUsu();
                 // B
                 motconper = new Tbl_MotivoConsultaPeriodica();
                 // C
                 antpersperiodica = new Tbl_AntecedentesPersonalesPeriodica();
                 // D
-                obtantfamparperiodica = new Tbl_AntecedentesFamiliaresDetParentescoPeriodica();
+                antfamparperiodica = new Tbl_AntecedentesFamiliaresDetParentescoPeriodica();
                 // E
                 facriestrabperiodica = new Tbl_FacRiesTrabActPeriodica();
                 // F
                 enferactperiodica = new Tbl_EnfermedadActualPeriodica();
                 // G
-                obtrevactorgsisperiodica = new Tbl_RevisionActualOrganosSistemasPeriodica();
+                revactorgsisperiodica = new Tbl_RevisionActualOrganosSistemasPeriodica();
                 // I
                 exafisregperiodica = new Tbl_ExaFisRegionalPeriodica();
                 // J
@@ -130,8 +427,6 @@ namespace SistemaECU911.Template.Views
                 tratamientoperiodica = new Tbl_RecoTratamientoPeriodica();
                 // N
                 datosProfesionalPeriodica = new Tbl_DatProfesionalPeriodica();
-
-                //A. Captura de Datos Establecimiento Empresa Usuario
 
                 //B. Captura de datos Motivo de Consulta
                 motconper.motConPeriodica_descrip = txt_motivoconsultaperiodica.Text;
@@ -197,18 +492,18 @@ namespace SistemaECU911.Template.Views
                 antpersperiodica.Per_id = perso;
 
                 //D. Captura de Datos ANTECEDENTES FAMILIARES (DETALLAR EL PARENTESCO)
-                obtantfamparperiodica.AntFamDetParePeriodica_enfCarVas = txt_enfermedadcardiovascular.Text;
-                obtantfamparperiodica.AntFamDetParePeriodica_enfMeta = txt_enfermedadmetabolica.Text;
-                obtantfamparperiodica.AntFamDetParePeriodica_enfNeuro = txt_enfermedadneurologica.Text;
-                obtantfamparperiodica.AntFamDetParePeriodica_enfOnco = txt_enfermedadoncologica.Text;
-                obtantfamparperiodica.AntFamDetParePeriodica_enfInfe = txt_enfermedadinfecciosa.Text;
-                obtantfamparperiodica.AntFamDetParePeriodica_enfHereConge = txt_enfermedadhereditaria.Text;
-                obtantfamparperiodica.AntFamDetParePeriodica_discapa = txt_discapacidades.Text;
-                obtantfamparperiodica.AntFamDetParePeriodica_otros = txt_otrosenfer.Text;
-                obtantfamparperiodica.AntFamDetParePeriodica_descripcion = txt_descripcionantefamiliares.Text;
-                obtantfamparperiodica.Per_id = perso;
+                antfamparperiodica.AntFamDetParePeriodica_enfCarVas = txt_enfermedadcardiovascular.Text;
+                antfamparperiodica.AntFamDetParePeriodica_enfMeta = txt_enfermedadmetabolica.Text;
+                antfamparperiodica.AntFamDetParePeriodica_enfNeuro = txt_enfermedadneurologica.Text;
+                antfamparperiodica.AntFamDetParePeriodica_enfOnco = txt_enfermedadoncologica.Text;
+                antfamparperiodica.AntFamDetParePeriodica_enfInfe = txt_enfermedadinfecciosa.Text;
+                antfamparperiodica.AntFamDetParePeriodica_enfHereConge = txt_enfermedadhereditaria.Text;
+                antfamparperiodica.AntFamDetParePeriodica_discapa = txt_discapacidades.Text;
+                antfamparperiodica.AntFamDetParePeriodica_otros = txt_otrosenfer.Text;
+                antfamparperiodica.AntFamDetParePeriodica_descripcion = txt_descripcionantefamiliares.Text;
+                antfamparperiodica.Per_id = perso;
 
-                //E. Captura de Datos Tbl_FacRiesTrabAct
+                //E. Captura de Datos Tbl_FacRiesTrabActPeriodica
                 facriestrabperiodica.FacRiesTrabActPeriodica_area = txt_puestotrabajoperiodica.Text;
                 facriestrabperiodica.FacRiesTrabActPeriodica_actividades = txt_act.Text;
                 facriestrabperiodica.FacRiesTrabActPeriodica_tiemTrabPeriodica = txt_tiempotrabajo.Text;
@@ -279,18 +574,18 @@ namespace SistemaECU911.Template.Views
                 enferactperiodica.Per_id = perso;
 
                 //G. Captura de Datos REVISIÓN ACTUAL DE ÓRGANOS Y SISTEMAS
-                obtrevactorgsisperiodica.RevActOrgSisPeriodica_pielAnexos = txt_pielanexos.Text;
-                obtrevactorgsisperiodica.RevActOrgSisPeriodica_orgSentidos = txt_organossentidos.Text;
-                obtrevactorgsisperiodica.RevActOrgSisPeriodica_respiratorio = txt_respiratorio.Text;
-                obtrevactorgsisperiodica.RevActOrgSisPeriodica_cardVascular = txt_cardiovascular.Text;
-                obtrevactorgsisperiodica.RevActOrgSisPeriodica_digestivo = txt_digestivo.Text;
-                obtrevactorgsisperiodica.RevActOrgSisPeriodica_genUrinario = txt_genitourinario.Text;
-                obtrevactorgsisperiodica.RevActOrgSisPeriodica_muscEsqueletico = txt_musculosesqueleticos.Text;
-                obtrevactorgsisperiodica.RevActOrgSisPeriodica_endocrino = txt_endocrino.Text;
-                obtrevactorgsisperiodica.RevActOrgSisPeriodica_hemoLimfa = txt_hemolinfatico.Text;
-                obtrevactorgsisperiodica.RevActOrgSisPeriodica_nervioso = txt_nervioso.Text;
-                obtrevactorgsisperiodica.RevActOrgSisPeriodica_descrip = txt_descrorganosysistemasperiodica.Text;
-                obtrevactorgsisperiodica.Per_id = perso;
+                revactorgsisperiodica.RevActOrgSisPeriodica_pielAnexos = txt_pielanexos.Text;
+                revactorgsisperiodica.RevActOrgSisPeriodica_orgSentidos = txt_organossentidos.Text;
+                revactorgsisperiodica.RevActOrgSisPeriodica_respiratorio = txt_respiratorio.Text;
+                revactorgsisperiodica.RevActOrgSisPeriodica_cardVascular = txt_cardiovascular.Text;
+                revactorgsisperiodica.RevActOrgSisPeriodica_digestivo = txt_digestivo.Text;
+                revactorgsisperiodica.RevActOrgSisPeriodica_genUrinario = txt_genitourinario.Text;
+                revactorgsisperiodica.RevActOrgSisPeriodica_muscEsqueletico = txt_musculosesqueleticos.Text;
+                revactorgsisperiodica.RevActOrgSisPeriodica_endocrino = txt_endocrino.Text;
+                revactorgsisperiodica.RevActOrgSisPeriodica_hemoLimfa = txt_hemolinfatico.Text;
+                revactorgsisperiodica.RevActOrgSisPeriodica_nervioso = txt_nervioso.Text;
+                revactorgsisperiodica.RevActOrgSisPeriodica_descrip = txt_descrorganosysistemasperiodica.Text;
+                revactorgsisperiodica.Per_id = perso;
 
                 //I. Captura de Datos Examen Fisico Regional
                 exafisregperiodica.exaFisRegPeriodica_cicatricesPiel = txt_cicatrices.Text;
@@ -369,20 +664,18 @@ namespace SistemaECU911.Template.Views
                 datosProfesionalPeriodica.DatProfePeriodica_cod = txt_codigoDatProf.Text;
                 datosProfesionalPeriodica.Per_id = perso;
 
-                //A . Método para guardar Datos Establecimeinto Empresa Usuarios
-                CN_Periodica.guardarDatEstEmpreUsuarPeriodica(datempusuid);
                 //B . Método para guardar Datos Motivo Consulta
                 CN_Periodica.guardarMotivoConsultaPeriodica(motconper);
                 //C . Método para guardar Datos Antecedentes Personales
                 CN_Periodica.guardarAntPersonalesPeriodica(antpersperiodica);
                 //D. Método de guardar Datos ANTECEDENTES FAMILIARES (DETALLAR EL PARENTESCO)
-                CN_Periodica.guardarAntecedentesFamiliaresDetParentescoPeriodica(obtantfamparperiodica);
-                //E. Método de guardar Datos Riesgo Puesto Trabajo Actual
+                CN_Periodica.guardarAntecedentesFamiliaresDetParentescoPeriodica(antfamparperiodica);
+                //E. Método de guardar Datos Factores de Riesgo Puesto Trabajo
                 CN_Periodica.guardarRiesgoPuesTrabaActualPeriodica(facriestrabperiodica);
                 //F. Método de guardar Datos Enfermedad Actual
                 CN_Periodica.guardarEnfermedadActualPeriodica(enferactperiodica);
                 //G. Método de guardar Datos REVISIÓN ACTUAL DE ÓRGANOS Y SISTEMAS
-                CN_Periodica.guardarReviActualOrganSistemasPeriodica(obtrevactorgsisperiodica);
+                CN_Periodica.guardarReviActualOrganSistemasPeriodica(revactorgsisperiodica);
                 //I. Método de guardar Datos Examen Fisico Regional
                 CN_Periodica.guardarExamenFisicoRegionalPeriodica(exafisregperiodica);
                 //J. Método de guardar Datos Resul. Exam. General y Espec de acuerdo al Riesgo y puesto de trabajo
@@ -400,7 +693,7 @@ namespace SistemaECU911.Template.Views
                 //Mensaje de confirmacion
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos Guardados Exitosamente')", true);
 
-                Response.Redirect("~/Template/Views/PacientesInicial.aspx");
+                Response.Redirect("~/Template/Views/PacientesPeriodica.aspx");
                 limpiar();
             }
             catch (Exception)
@@ -445,5 +738,6 @@ namespace SistemaECU911.Template.Views
         {
             Response.Redirect("~/Template/Views/Inicio.aspx");
         }
+
     }
 }

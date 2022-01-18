@@ -12,13 +12,6 @@ namespace CapaNegocio
         //private static DataClassesECU911DataContext dc = new DataClassesECU911DataContext();
         private static DataClassesECU911DataContext dc = new DataClassesECU911DataContext();
 
-        //metodo traer para traer Datos Establecimeinto Empresa Usuario Periodica x persona
-        public static Tbl_DatEstableEmpUsu obtenerDatEstEmpreUsuarxPerPeriodica(int personaid)
-        {
-            var datempusuid = dc.Tbl_DatEstableEmpUsu.FirstOrDefault(per => per.Per_id.Equals(personaid) && per.datEstable_estado == "A");
-            return datempusuid;
-        }
-
         //metodo traer para traer Motivo Consulta Periodica x persona
         public static Tbl_MotivoConsultaPeriodica obtenerMotivoConsultaxPerPeriodica(int personaid)
         {
@@ -93,6 +86,13 @@ namespace CapaNegocio
         public static Tbl_RecoTratamientoPeriodica obtenerTratamientoxPerPeriodica(int personaid)
         {
             var tratamientoperiodica = dc.Tbl_RecoTratamientoPeriodica.FirstOrDefault(per => per.Per_id.Equals(personaid) && per.RecTraPeriodica_estado == "A");
+            return tratamientoperiodica;
+        }
+
+        //metodo traer para traer datos profesional x persona
+        public static Tbl_DatProfesionalPeriodica obtenerDatosProfesionalxPerPeriodica(int personaid)
+        {
+            var tratamientoperiodica = dc.Tbl_DatProfesionalPeriodica.FirstOrDefault(per => per.Per_id.Equals(personaid) && per.DatProfePeriodica_estado == "A");
             return tratamientoperiodica;
         }
 

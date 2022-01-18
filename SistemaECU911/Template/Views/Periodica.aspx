@@ -35,19 +35,19 @@
                             </asp:TableRow>
                             <asp:TableRow>
                                 <asp:TableCell>
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center; "  ></asp:TextBox>
+                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center;" Text="Servicio Integrado de Seguridad" ReadOnly="true"></asp:TextBox>
+                                </asp:TableCell>
+                                <asp:TableCell>
+                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center" Text="1768174880001" ReadOnly="true"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell>
                                         <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell>
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
+                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center" Text="Consultorio Médico" ReadOnly="true"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell>
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
-                                </asp:TableCell>
-                                <asp:TableCell>
-                                    <asp:TextBox ID="txt_numHClinica" runat="server" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_numHClinica" OnTextChanged="txt_numHClinica_TextChanged" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center" AutoPostBack="true"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell>
                                         <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
@@ -278,7 +278,7 @@
                     </div>
                     <asp:Table class="table table-bordered table-light table-responsive text-center" runat="server">
                         <asp:TableRow>
-                            <asp:TableCell Style="width: 45%">FUE CALIFICADO POR EL INSTITUTO DE SEGURIDAD SOCIAL CORRESPONDIENTE: </asp:TableCell>
+                            <asp:TableCell Style="width: 40%">FUE CALIFICADO POR EL INSTITUTO DE SEGURIDAD SOCIAL CORRESPONDIENTE: </asp:TableCell>
                             <asp:TableCell>SI</asp:TableCell>
                             <asp:TableCell>
                                 <asp:TextBox runat="server" ID="txt_sicalificadotrabajo" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
@@ -309,7 +309,7 @@
                     </div>
                     <asp:Table class="table table-bordered table-light table-responsive text-center" runat="server">
                         <asp:TableRow>
-                            <asp:TableCell Style="width: 45%">FUE CALIFICADO POR EL INSTITUTO DE SEGURIDAD SOCIAL CORRESPONDIENTE: </asp:TableCell>
+                            <asp:TableCell Style="width: 40%">FUE CALIFICADO POR EL INSTITUTO DE SEGURIDAD SOCIAL CORRESPONDIENTE: </asp:TableCell>
                             <asp:TableCell>SI</asp:TableCell>
                             <asp:TableCell>
                                 <asp:TextBox runat="server" ID="txt_sicalificadoprofesional" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
@@ -710,6 +710,15 @@
                         </asp:TableRow>
                         <asp:TableRow>
                             <asp:TableCell>1. </asp:TableCell>
+                            <asp:TableCell>
+                                        <asp:TextBox runat="server" ID="TextBox1" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
+                            </asp:TableCell>
+                            <asp:TableCell>
+                                        <asp:TextBox runat="server" ID="TextBox2" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
+                            </asp:TableCell>
+                            <asp:TableCell>
+                                        <asp:TextBox runat="server" ID="TextBox3" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
+                            </asp:TableCell>
                             <asp:TableCell>
                                         <asp:TextBox runat="server" ID="txt_virus" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
                             </asp:TableCell>

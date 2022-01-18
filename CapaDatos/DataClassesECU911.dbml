@@ -1,5 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SistemaECU911" Class="DataClassesECU911DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=ZOCAPO\SQLEXPRESS;Initial Catalog=SistemaECU911;Integrated Security=True" SettingsObjectName="CapaDatos.Properties.Settings" SettingsPropertyName="SistemaECU911ConnectionString5" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=SistemaECU911;Integrated Security=True" SettingsObjectName="CapaDatos.Properties.Settings" SettingsPropertyName="SistemaECU911ConnectionString4" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Tbl_Zona" Member="Tbl_Zona">
+    <Type Name="Tbl_Zona">
+      <Column Name="Zona_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Zona_nom" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Zona_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Association Name="Tbl_Zona_Tbl_Personas" Member="Tbl_Personas" ThisKey="Zona_id" OtherKey="Zona_id" Type="Tbl_Personas" />
+    </Type>
+  </Table>
   <Table Name="dbo.Tbl_AccidentesTrabajoDesc" Member="Tbl_AccidentesTrabajoDesc">
     <Type Name="Tbl_AccidentesTrabajoDesc">
       <Column Name="AntTrabDesc_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -12,14 +20,6 @@
       <Association Name="Tbl_AccidentesTrabajoDesc_Tbl_AntecedentesTrabajo" Member="Tbl_AntecedentesTrabajo" ThisKey="AntTrabDesc_id" OtherKey="AntTrabDesc_id" Type="Tbl_AntecedentesTrabajo" />
       <Association Name="Tbl_CalificacionIESS_Tbl_AccidentesTrabajoDesc" Member="Tbl_CalificacionIESS" ThisKey="Cali_id" OtherKey="Cali_id" Type="Tbl_CalificacionIESS" IsForeignKey="true" />
       <Association Name="Tbl_Personas_Tbl_AccidentesTrabajoDesc" Member="Tbl_Personas" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Personas" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Tbl_Zona" Member="Tbl_Zona">
-    <Type Name="Tbl_Zona">
-      <Column Name="Zona_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Zona_nom" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Zona_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-      <Association Name="Tbl_Zona_Tbl_Personas" Member="Tbl_Personas" ThisKey="Zona_id" OtherKey="Zona_id" Type="Tbl_Personas" />
     </Type>
   </Table>
   <Table Name="dbo.Tbl_ActividadesExtraLaborales" Member="Tbl_ActividadesExtraLaborales">
@@ -63,7 +63,7 @@
   </Table>
   <Table Name="dbo.Tbl_AntecedentesFamiliaresDetParentesco" Member="Tbl_AntecedentesFamiliaresDetParentesco">
     <Type Name="Tbl_AntecedentesFamiliaresDetParentesco">
-      <Column Name="AntFamDetPare_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AntFamDetPare_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="AntFamDetPare_enfCarVas" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
       <Column Name="AntFamDetPare_enfMeta" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
       <Column Name="AntFamDetPare_enfNeuro" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
@@ -1279,7 +1279,7 @@
       <Column Name="FacRiesTrabActPeriodica_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="FacRiesTrabActPeriodica_area" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
       <Column Name="FacRiesTrabActPeriodica_actividades" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
-      <Column Name="FacRiesTrabActPeriodica_tiemTrabPeriodica" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="FacRiesTrabActPeriodica_tiemTrabPeriodica" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
       <Column Name="FacRiesTrabActPeriodica_temAltasFis" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
       <Column Name="FacRiesTrabActPeriodica_temBajasFis" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
       <Column Name="FacRiesTrabActPeriodica_radIonizanteFis" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />

@@ -125,6 +125,12 @@ namespace CapaNegocio
             return tratamientoinicial;
         }
 
+        //metodo traer para traer datos profesional x persona
+        public static Tbl_DatProfesionalInicial obtenerDatosProfesionalxPer(int personaid)
+        {
+            var tratamientoperiodica = dc.Tbl_DatProfesionalInicial.FirstOrDefault(per => per.Per_id.Equals(personaid) && per.DatProfeInicial_estado == "A");
+            return tratamientoperiodica;
+        }
 
         //----------------------------------------------------------------------------------------------------------------------------
         //------------------------------------------ METODOS PARA GUARDAR Y MODIFICAR DATOS  -----------------------------------------

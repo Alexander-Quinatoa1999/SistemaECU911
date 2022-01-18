@@ -30,12 +30,12 @@ namespace CapaDatos
 		
     #region Definiciones de métodos de extensibilidad
     partial void OnCreated();
-    partial void InsertTbl_AccidentesTrabajoDesc(Tbl_AccidentesTrabajoDesc instance);
-    partial void UpdateTbl_AccidentesTrabajoDesc(Tbl_AccidentesTrabajoDesc instance);
-    partial void DeleteTbl_AccidentesTrabajoDesc(Tbl_AccidentesTrabajoDesc instance);
     partial void InsertTbl_Zona(Tbl_Zona instance);
     partial void UpdateTbl_Zona(Tbl_Zona instance);
     partial void DeleteTbl_Zona(Tbl_Zona instance);
+    partial void InsertTbl_AccidentesTrabajoDesc(Tbl_AccidentesTrabajoDesc instance);
+    partial void UpdateTbl_AccidentesTrabajoDesc(Tbl_AccidentesTrabajoDesc instance);
+    partial void DeleteTbl_AccidentesTrabajoDesc(Tbl_AccidentesTrabajoDesc instance);
     partial void InsertTbl_ActividadesExtraLaborales(Tbl_ActividadesExtraLaborales instance);
     partial void UpdateTbl_ActividadesExtraLaborales(Tbl_ActividadesExtraLaborales instance);
     partial void DeleteTbl_ActividadesExtraLaborales(Tbl_ActividadesExtraLaborales instance);
@@ -483,7 +483,7 @@ namespace CapaDatos
     #endregion
 		
 		public DataClassesECU911DataContext() : 
-				base(global::CapaDatos.Properties.Settings.Default.SistemaECU911ConnectionString5, mappingSource)
+				base(global::CapaDatos.Properties.Settings.Default.SistemaECU911ConnectionString4, mappingSource)
 		{
 			OnCreated();
 		}
@@ -512,19 +512,19 @@ namespace CapaDatos
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<Tbl_AccidentesTrabajoDesc> Tbl_AccidentesTrabajoDesc
-		{
-			get
-			{
-				return this.GetTable<Tbl_AccidentesTrabajoDesc>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Tbl_Zona> Tbl_Zona
 		{
 			get
 			{
 				return this.GetTable<Tbl_Zona>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Tbl_AccidentesTrabajoDesc> Tbl_AccidentesTrabajoDesc
+		{
+			get
+			{
+				return this.GetTable<Tbl_AccidentesTrabajoDesc>();
 			}
 		}
 		
@@ -1741,6 +1741,144 @@ namespace CapaDatos
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_Zona")]
+	public partial class Tbl_Zona : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Zona_id;
+		
+		private string _Zona_nom;
+		
+		private string _Zona_estado;
+		
+		private EntitySet<Tbl_Personas> _Tbl_Personas;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnZona_idChanging(int value);
+    partial void OnZona_idChanged();
+    partial void OnZona_nomChanging(string value);
+    partial void OnZona_nomChanged();
+    partial void OnZona_estadoChanging(string value);
+    partial void OnZona_estadoChanged();
+    #endregion
+		
+		public Tbl_Zona()
+		{
+			this._Tbl_Personas = new EntitySet<Tbl_Personas>(new Action<Tbl_Personas>(this.attach_Tbl_Personas), new Action<Tbl_Personas>(this.detach_Tbl_Personas));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Zona_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Zona_id
+		{
+			get
+			{
+				return this._Zona_id;
+			}
+			set
+			{
+				if ((this._Zona_id != value))
+				{
+					this.OnZona_idChanging(value);
+					this.SendPropertyChanging();
+					this._Zona_id = value;
+					this.SendPropertyChanged("Zona_id");
+					this.OnZona_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Zona_nom", DbType="VarChar(50)")]
+		public string Zona_nom
+		{
+			get
+			{
+				return this._Zona_nom;
+			}
+			set
+			{
+				if ((this._Zona_nom != value))
+				{
+					this.OnZona_nomChanging(value);
+					this.SendPropertyChanging();
+					this._Zona_nom = value;
+					this.SendPropertyChanged("Zona_nom");
+					this.OnZona_nomChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Zona_estado", DbType="VarChar(1)")]
+		public string Zona_estado
+		{
+			get
+			{
+				return this._Zona_estado;
+			}
+			set
+			{
+				if ((this._Zona_estado != value))
+				{
+					this.OnZona_estadoChanging(value);
+					this.SendPropertyChanging();
+					this._Zona_estado = value;
+					this.SendPropertyChanged("Zona_estado");
+					this.OnZona_estadoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Zona_Tbl_Personas", Storage="_Tbl_Personas", ThisKey="Zona_id", OtherKey="Zona_id")]
+		public EntitySet<Tbl_Personas> Tbl_Personas
+		{
+			get
+			{
+				return this._Tbl_Personas;
+			}
+			set
+			{
+				this._Tbl_Personas.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Tbl_Personas(Tbl_Personas entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Zona = this;
+		}
+		
+		private void detach_Tbl_Personas(Tbl_Personas entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Zona = null;
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_AccidentesTrabajoDesc")]
 	public partial class Tbl_AccidentesTrabajoDesc : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -2058,144 +2196,6 @@ namespace CapaDatos
 		{
 			this.SendPropertyChanging();
 			entity.Tbl_AccidentesTrabajoDesc = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_Zona")]
-	public partial class Tbl_Zona : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _Zona_id;
-		
-		private string _Zona_nom;
-		
-		private string _Zona_estado;
-		
-		private EntitySet<Tbl_Personas> _Tbl_Personas;
-		
-    #region Definiciones de métodos de extensibilidad
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnZona_idChanging(int value);
-    partial void OnZona_idChanged();
-    partial void OnZona_nomChanging(string value);
-    partial void OnZona_nomChanged();
-    partial void OnZona_estadoChanging(string value);
-    partial void OnZona_estadoChanged();
-    #endregion
-		
-		public Tbl_Zona()
-		{
-			this._Tbl_Personas = new EntitySet<Tbl_Personas>(new Action<Tbl_Personas>(this.attach_Tbl_Personas), new Action<Tbl_Personas>(this.detach_Tbl_Personas));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Zona_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int Zona_id
-		{
-			get
-			{
-				return this._Zona_id;
-			}
-			set
-			{
-				if ((this._Zona_id != value))
-				{
-					this.OnZona_idChanging(value);
-					this.SendPropertyChanging();
-					this._Zona_id = value;
-					this.SendPropertyChanged("Zona_id");
-					this.OnZona_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Zona_nom", DbType="VarChar(50)")]
-		public string Zona_nom
-		{
-			get
-			{
-				return this._Zona_nom;
-			}
-			set
-			{
-				if ((this._Zona_nom != value))
-				{
-					this.OnZona_nomChanging(value);
-					this.SendPropertyChanging();
-					this._Zona_nom = value;
-					this.SendPropertyChanged("Zona_nom");
-					this.OnZona_nomChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Zona_estado", DbType="VarChar(1)")]
-		public string Zona_estado
-		{
-			get
-			{
-				return this._Zona_estado;
-			}
-			set
-			{
-				if ((this._Zona_estado != value))
-				{
-					this.OnZona_estadoChanging(value);
-					this.SendPropertyChanging();
-					this._Zona_estado = value;
-					this.SendPropertyChanged("Zona_estado");
-					this.OnZona_estadoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Zona_Tbl_Personas", Storage="_Tbl_Personas", ThisKey="Zona_id", OtherKey="Zona_id")]
-		public EntitySet<Tbl_Personas> Tbl_Personas
-		{
-			get
-			{
-				return this._Tbl_Personas;
-			}
-			set
-			{
-				this._Tbl_Personas.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Tbl_Personas(Tbl_Personas entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tbl_Zona = this;
-		}
-		
-		private void detach_Tbl_Personas(Tbl_Personas entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tbl_Zona = null;
 		}
 	}
 	
@@ -3125,7 +3125,7 @@ namespace CapaDatos
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AntFamDetPare_id", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AntFamDetPare_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int AntFamDetPare_id
 		{
 			get
@@ -29089,7 +29089,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FacRiesTrabActPeriodica_tiemTrabPeriodica", DbType="VarChar(100)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FacRiesTrabActPeriodica_tiemTrabPeriodica", DbType="VarChar(150)")]
 		public string FacRiesTrabActPeriodica_tiemTrabPeriodica
 		{
 			get
