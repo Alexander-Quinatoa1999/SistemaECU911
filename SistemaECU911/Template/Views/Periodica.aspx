@@ -1306,7 +1306,6 @@
                 <br />
                 <div align="center">
                     <div class="card" style="width: 400px">
-
                         <div class="card-header">
                             O. FIRMA DEL USUARIO    
                         </div>
