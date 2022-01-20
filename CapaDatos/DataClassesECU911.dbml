@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SistemaECU911" Class="DataClassesECU911DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=SistemaECU911;Integrated Security=True" SettingsObjectName="CapaDatos.Properties.Settings" SettingsPropertyName="SistemaECU911ConnectionString4" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=ZOCAPO\SQLEXPRESS;Initial Catalog=SistemaECU911;Integrated Security=True" SettingsObjectName="CapaDatos.Properties.Settings" SettingsPropertyName="SistemaECU911ConnectionString5" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Tbl_AccidentesTrabajoDesc" Member="Tbl_AccidentesTrabajoDesc">
     <Type Name="Tbl_AccidentesTrabajoDesc">
       <Column Name="AntTrabDesc_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -238,10 +238,10 @@
       <Column Name="antPerPeriodica_noConsuNocivosTabaco" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
       <Column Name="antPerPeriodica_noConsuNocivosAlcohol" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
       <Column Name="antPerPeriodica_noConsuNocivosOtrasDrogas" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-      <Column Name="antPerPeriodica_tiempoConsuConsuNocivosTabaco" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="antPerPeriodica_tiempoConsuConsuNocivosAlcohol" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="antPerPeriodica_tiempoConsu1ConsuNocivosOtrasDrogas" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="antPerPeriodica_tiempoConsu2ConsuNocivosOtrasDrogas" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="antPerPeriodica_tiempoConsuConsuNocivosTabaco" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="antPerPeriodica_tiempoConsuConsuNocivosAlcohol" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="antPerPeriodica_tiempoConsu1ConsuNocivosOtrasDrogas" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="antPerPeriodica_tiempoConsu2ConsuNocivosOtrasDrogas" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
       <Column Name="antPerPeriodica_cantidadConsuNocivosTabaco" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
       <Column Name="antPerPeriodica_cantidadConsuNocivosAlcohol" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
       <Column Name="antPerPeriodica_cantidad1ConsuNocivosOtrasDrogas" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
@@ -250,10 +250,10 @@
       <Column Name="antPerPeriodica_exConsumiConsuNocivosAlcohol" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
       <Column Name="antPerPeriodica_exConsumi1ConsuNocivosOtrasDrogas" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
       <Column Name="antPerPeriodica_exConsumi2ConsuNocivosOtrasDrogas" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
-      <Column Name="antPerPeriodica_tiempoAbstiConsuNocivosTabaco" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="antPerPeriodica_tiempoAbstiConsuNocivosAlcohol" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="antPerPeriodica_tiempoAbsti1ConsuNocivosOtrasDrogas" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="antPerPeriodica_tiempoAbsti2ConsuNocivosOtrasDrogas" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="antPerPeriodica_tiempoAbstiConsuNocivosTabaco" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="antPerPeriodica_tiempoAbstiConsuNocivosAlcohol" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="antPerPeriodica_tiempoAbsti1ConsuNocivosOtrasDrogas" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="antPerPeriodica_tiempoAbsti2ConsuNocivosOtrasDrogas" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
       <Column Name="antPerPeriodica_siEstiVidaActFisica" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
       <Column Name="antPerPeriodica_siEstiVidaMediHabitual" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
       <Column Name="antPerPeriodica_noEstiVidaActFisica" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />

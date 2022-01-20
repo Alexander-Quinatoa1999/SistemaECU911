@@ -525,7 +525,7 @@ namespace CapaDatos
     #endregion
 		
 		public DataClassesECU911DataContext() : 
-				base(global::CapaDatos.Properties.Settings.Default.SistemaECU911ConnectionString4, mappingSource)
+				base(global::CapaDatos.Properties.Settings.Default.SistemaECU911ConnectionString5, mappingSource)
 		{
 			OnCreated();
 		}
@@ -7167,13 +7167,13 @@ namespace CapaDatos
 		
 		private string _antPerPeriodica_noConsuNocivosOtrasDrogas;
 		
-		private System.Nullable<int> _antPerPeriodica_tiempoConsuConsuNocivosTabaco;
+		private string _antPerPeriodica_tiempoConsuConsuNocivosTabaco;
 		
-		private System.Nullable<int> _antPerPeriodica_tiempoConsuConsuNocivosAlcohol;
+		private string _antPerPeriodica_tiempoConsuConsuNocivosAlcohol;
 		
-		private System.Nullable<int> _antPerPeriodica_tiempoConsu1ConsuNocivosOtrasDrogas;
+		private string _antPerPeriodica_tiempoConsu1ConsuNocivosOtrasDrogas;
 		
-		private System.Nullable<int> _antPerPeriodica_tiempoConsu2ConsuNocivosOtrasDrogas;
+		private string _antPerPeriodica_tiempoConsu2ConsuNocivosOtrasDrogas;
 		
 		private string _antPerPeriodica_cantidadConsuNocivosTabaco;
 		
@@ -7191,13 +7191,13 @@ namespace CapaDatos
 		
 		private string _antPerPeriodica_exConsumi2ConsuNocivosOtrasDrogas;
 		
-		private System.Nullable<int> _antPerPeriodica_tiempoAbstiConsuNocivosTabaco;
+		private string _antPerPeriodica_tiempoAbstiConsuNocivosTabaco;
 		
-		private System.Nullable<int> _antPerPeriodica_tiempoAbstiConsuNocivosAlcohol;
+		private string _antPerPeriodica_tiempoAbstiConsuNocivosAlcohol;
 		
-		private System.Nullable<int> _antPerPeriodica_tiempoAbsti1ConsuNocivosOtrasDrogas;
+		private string _antPerPeriodica_tiempoAbsti1ConsuNocivosOtrasDrogas;
 		
-		private System.Nullable<int> _antPerPeriodica_tiempoAbsti2ConsuNocivosOtrasDrogas;
+		private string _antPerPeriodica_tiempoAbsti2ConsuNocivosOtrasDrogas;
 		
 		private string _antPerPeriodica_siEstiVidaActFisica;
 		
@@ -7273,13 +7273,13 @@ namespace CapaDatos
     partial void OnantPerPeriodica_noConsuNocivosAlcoholChanged();
     partial void OnantPerPeriodica_noConsuNocivosOtrasDrogasChanging(string value);
     partial void OnantPerPeriodica_noConsuNocivosOtrasDrogasChanged();
-    partial void OnantPerPeriodica_tiempoConsuConsuNocivosTabacoChanging(System.Nullable<int> value);
+    partial void OnantPerPeriodica_tiempoConsuConsuNocivosTabacoChanging(string value);
     partial void OnantPerPeriodica_tiempoConsuConsuNocivosTabacoChanged();
-    partial void OnantPerPeriodica_tiempoConsuConsuNocivosAlcoholChanging(System.Nullable<int> value);
+    partial void OnantPerPeriodica_tiempoConsuConsuNocivosAlcoholChanging(string value);
     partial void OnantPerPeriodica_tiempoConsuConsuNocivosAlcoholChanged();
-    partial void OnantPerPeriodica_tiempoConsu1ConsuNocivosOtrasDrogasChanging(System.Nullable<int> value);
+    partial void OnantPerPeriodica_tiempoConsu1ConsuNocivosOtrasDrogasChanging(string value);
     partial void OnantPerPeriodica_tiempoConsu1ConsuNocivosOtrasDrogasChanged();
-    partial void OnantPerPeriodica_tiempoConsu2ConsuNocivosOtrasDrogasChanging(System.Nullable<int> value);
+    partial void OnantPerPeriodica_tiempoConsu2ConsuNocivosOtrasDrogasChanging(string value);
     partial void OnantPerPeriodica_tiempoConsu2ConsuNocivosOtrasDrogasChanged();
     partial void OnantPerPeriodica_cantidadConsuNocivosTabacoChanging(string value);
     partial void OnantPerPeriodica_cantidadConsuNocivosTabacoChanged();
@@ -7297,13 +7297,13 @@ namespace CapaDatos
     partial void OnantPerPeriodica_exConsumi1ConsuNocivosOtrasDrogasChanged();
     partial void OnantPerPeriodica_exConsumi2ConsuNocivosOtrasDrogasChanging(string value);
     partial void OnantPerPeriodica_exConsumi2ConsuNocivosOtrasDrogasChanged();
-    partial void OnantPerPeriodica_tiempoAbstiConsuNocivosTabacoChanging(System.Nullable<int> value);
+    partial void OnantPerPeriodica_tiempoAbstiConsuNocivosTabacoChanging(string value);
     partial void OnantPerPeriodica_tiempoAbstiConsuNocivosTabacoChanged();
-    partial void OnantPerPeriodica_tiempoAbstiConsuNocivosAlcoholChanging(System.Nullable<int> value);
+    partial void OnantPerPeriodica_tiempoAbstiConsuNocivosAlcoholChanging(string value);
     partial void OnantPerPeriodica_tiempoAbstiConsuNocivosAlcoholChanged();
-    partial void OnantPerPeriodica_tiempoAbsti1ConsuNocivosOtrasDrogasChanging(System.Nullable<int> value);
+    partial void OnantPerPeriodica_tiempoAbsti1ConsuNocivosOtrasDrogasChanging(string value);
     partial void OnantPerPeriodica_tiempoAbsti1ConsuNocivosOtrasDrogasChanged();
-    partial void OnantPerPeriodica_tiempoAbsti2ConsuNocivosOtrasDrogasChanging(System.Nullable<int> value);
+    partial void OnantPerPeriodica_tiempoAbsti2ConsuNocivosOtrasDrogasChanging(string value);
     partial void OnantPerPeriodica_tiempoAbsti2ConsuNocivosOtrasDrogasChanged();
     partial void OnantPerPeriodica_siEstiVidaActFisicaChanging(string value);
     partial void OnantPerPeriodica_siEstiVidaActFisicaChanged();
@@ -7543,8 +7543,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_antPerPeriodica_tiempoConsuConsuNocivosTabaco", DbType="Int")]
-		public System.Nullable<int> antPerPeriodica_tiempoConsuConsuNocivosTabaco
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_antPerPeriodica_tiempoConsuConsuNocivosTabaco", DbType="VarChar(150)")]
+		public string antPerPeriodica_tiempoConsuConsuNocivosTabaco
 		{
 			get
 			{
@@ -7563,8 +7563,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_antPerPeriodica_tiempoConsuConsuNocivosAlcohol", DbType="Int")]
-		public System.Nullable<int> antPerPeriodica_tiempoConsuConsuNocivosAlcohol
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_antPerPeriodica_tiempoConsuConsuNocivosAlcohol", DbType="VarChar(150)")]
+		public string antPerPeriodica_tiempoConsuConsuNocivosAlcohol
 		{
 			get
 			{
@@ -7583,8 +7583,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_antPerPeriodica_tiempoConsu1ConsuNocivosOtrasDrogas", DbType="Int")]
-		public System.Nullable<int> antPerPeriodica_tiempoConsu1ConsuNocivosOtrasDrogas
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_antPerPeriodica_tiempoConsu1ConsuNocivosOtrasDrogas", DbType="VarChar(150)")]
+		public string antPerPeriodica_tiempoConsu1ConsuNocivosOtrasDrogas
 		{
 			get
 			{
@@ -7603,8 +7603,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_antPerPeriodica_tiempoConsu2ConsuNocivosOtrasDrogas", DbType="Int")]
-		public System.Nullable<int> antPerPeriodica_tiempoConsu2ConsuNocivosOtrasDrogas
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_antPerPeriodica_tiempoConsu2ConsuNocivosOtrasDrogas", DbType="VarChar(150)")]
+		public string antPerPeriodica_tiempoConsu2ConsuNocivosOtrasDrogas
 		{
 			get
 			{
@@ -7783,8 +7783,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_antPerPeriodica_tiempoAbstiConsuNocivosTabaco", DbType="Int")]
-		public System.Nullable<int> antPerPeriodica_tiempoAbstiConsuNocivosTabaco
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_antPerPeriodica_tiempoAbstiConsuNocivosTabaco", DbType="VarChar(150)")]
+		public string antPerPeriodica_tiempoAbstiConsuNocivosTabaco
 		{
 			get
 			{
@@ -7803,8 +7803,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_antPerPeriodica_tiempoAbstiConsuNocivosAlcohol", DbType="Int")]
-		public System.Nullable<int> antPerPeriodica_tiempoAbstiConsuNocivosAlcohol
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_antPerPeriodica_tiempoAbstiConsuNocivosAlcohol", DbType="VarChar(150)")]
+		public string antPerPeriodica_tiempoAbstiConsuNocivosAlcohol
 		{
 			get
 			{
@@ -7823,8 +7823,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_antPerPeriodica_tiempoAbsti1ConsuNocivosOtrasDrogas", DbType="Int")]
-		public System.Nullable<int> antPerPeriodica_tiempoAbsti1ConsuNocivosOtrasDrogas
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_antPerPeriodica_tiempoAbsti1ConsuNocivosOtrasDrogas", DbType="VarChar(150)")]
+		public string antPerPeriodica_tiempoAbsti1ConsuNocivosOtrasDrogas
 		{
 			get
 			{
@@ -7843,8 +7843,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_antPerPeriodica_tiempoAbsti2ConsuNocivosOtrasDrogas", DbType="Int")]
-		public System.Nullable<int> antPerPeriodica_tiempoAbsti2ConsuNocivosOtrasDrogas
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_antPerPeriodica_tiempoAbsti2ConsuNocivosOtrasDrogas", DbType="VarChar(150)")]
+		public string antPerPeriodica_tiempoAbsti2ConsuNocivosOtrasDrogas
 		{
 			get
 			{

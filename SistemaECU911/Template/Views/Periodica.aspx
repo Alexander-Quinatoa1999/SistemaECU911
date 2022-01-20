@@ -130,7 +130,7 @@
                                 <asp:TextBox runat="server" ID="txt_noConsuNociTabaHabToxi" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell>
-                                <asp:TextBox runat="server" ID="txt_tiemConConsuNociTabaHabToxi" TextMode="Number" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_tiemConConsuNociTabaHabToxi" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell>
                                 <asp:TextBox runat="server" ID="txt_cantiConsuNociTabaHabToxi" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
@@ -139,7 +139,7 @@
                                 <asp:TextBox runat="server" ID="txt_exConsumiConsuNociTabaHabToxi" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell>
-                                <asp:TextBox runat="server" ID="txt_tiemAbstiConsuNociTabaHabToxi" TextMode="Number" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_tiemAbstiConsuNociTabaHabToxi" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
                             </asp:TableCell>
                         </asp:TableRow>
                         <asp:TableRow>
@@ -151,7 +151,7 @@
                                 <asp:TextBox runat="server" ID="txt_noConsuNociAlcoHabToxi" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell>
-                                <asp:TextBox runat="server" ID="txt_tiemConConsuNociAlcoHabToxi" TextMode="Number" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_tiemConConsuNociAlcoHabToxi" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell>
                                 <asp:TextBox runat="server" ID="txt_cantiConsuNociAlcoHabToxi" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
@@ -160,7 +160,7 @@
                                 <asp:TextBox runat="server" ID="txt_exConsumiConsuNociAlcoHabToxi" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell>
-                                <asp:TextBox runat="server" ID="txt_tiemAbstiConsuNociAlcoHabToxi" TextMode="Number" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_tiemAbstiConsuNociAlcoHabToxi" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
                             </asp:TableCell>
                         </asp:TableRow>
                         <asp:TableRow>
@@ -172,7 +172,7 @@
                                 <asp:TextBox runat="server" ID="txt_noConsuNociOtrasDroHabToxi" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell>
-                                <asp:TextBox runat="server" ID="txt_tiemCon1ConsuNociOtrasDroHabToxi" TextMode="Number" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_tiemCon1ConsuNociOtrasDroHabToxi" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell>
                                 <asp:TextBox runat="server" ID="txt_canti1ConsuNociOtrasDroHabToxi" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
@@ -181,7 +181,7 @@
                                 <asp:TextBox runat="server" ID="txt_exConsumi1ConsuNociOtrasDroHabToxi" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell>
-                                <asp:TextBox runat="server" ID="txt_tiemAbsti1ConsuNociOtrasDroHabToxi" TextMode="Number" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_tiemAbsti1ConsuNociOtrasDroHabToxi" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
                             </asp:TableCell>
                         </asp:TableRow>
                         <asp:TableRow>
@@ -189,7 +189,7 @@
                                 <asp:TextBox runat="server" ID="txt_otrasConsuNociOtrasDroHabToxi" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell>
-                                <asp:TextBox runat="server" ID="txt_tiemCon2ConsuNociOtrasDroHabToxi" TextMode="Number" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_tiemCon2ConsuNociOtrasDroHabToxi" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell>
                                 <asp:TextBox runat="server" ID="txt_canti2ConsuNociOtrasDroHabToxi" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
@@ -198,7 +198,7 @@
                                 <asp:TextBox runat="server" ID="txt_exConsumi2ConsuNociOtrasDroHabToxi" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell>
-                                <asp:TextBox runat="server" ID="txt_tiemAbsti2ConsuNociOtrasDroHabToxi" TextMode="Number" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_tiemAbsti2ConsuNociOtrasDroHabToxi" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
                             </asp:TableCell>
                         </asp:TableRow>
                     </asp:Table>
@@ -399,8 +399,7 @@
                             <asp:TableCell Style="width: 20%" RowSpan="2">ACTIVIDADES</asp:TableCell>
                             <asp:TableCell Style="width: 20%" RowSpan="2">TIEMPO DE TRABAJO (MESES)</asp:TableCell>
                             <asp:TableCell Style="width: 15%" ColumnSpan="10">FÍSICO</asp:TableCell>
-                            <asp:TableCell Style="width: 15%" ColumnSpan="15">MECÁNICO</asp:TableCell>
-                            <asp:TableCell Style="width: 15%" ColumnSpan="9">QUÍMICO</asp:TableCell>
+                            <asp:TableCell Style="width: 15%" ColumnSpan="15">MECÁNICO</asp:TableCell>                           
                         </asp:TableRow>
                         <asp:TableRow>
                             <asp:TableCell>
@@ -477,34 +476,7 @@
                             </asp:TableCell>
                             <asp:TableCell>
                                 <asp:Label CssClass="in-column" ID="Label47" runat="server" Text="Otros __________"></asp:Label>
-                            </asp:TableCell>
-                            <asp:TableCell>
-                                <asp:Label CssClass="in-column" ID="Label48" runat="server" Text="Sólidos"></asp:Label>
-                            </asp:TableCell>
-                            <asp:TableCell>
-                                <asp:Label CssClass="in-column" ID="Label49" runat="server" Text="Polvos"></asp:Label>
-                            </asp:TableCell>
-                            <asp:TableCell>
-                                <asp:Label CssClass="in-column" ID="Label50" runat="server" Text="Humos"></asp:Label>
-                            </asp:TableCell>
-                            <asp:TableCell>
-                                <asp:Label CssClass="in-column" ID="Label51" runat="server" Text="Líquidos"></asp:Label>
-                            </asp:TableCell>
-                            <asp:TableCell>
-                                <asp:Label CssClass="in-column" ID="Label52" runat="server" Text="Vapores"></asp:Label>
-                            </asp:TableCell>
-                            <asp:TableCell>
-                                <asp:Label CssClass="in-column" ID="Label53" runat="server" Text="Aerosoles"></asp:Label>
-                            </asp:TableCell>
-                            <asp:TableCell>
-                                <asp:Label CssClass="in-column" ID="Label54" runat="server" Text="Neblinas"></asp:Label>
-                            </asp:TableCell>
-                            <asp:TableCell>
-                                <asp:Label CssClass="in-column" ID="Label55" runat="server" Text="Gaseosos"></asp:Label>
-                            </asp:TableCell>
-                            <asp:TableCell>
-                                <asp:Label CssClass="in-column" ID="Label56" runat="server" Text="Otros __________"></asp:Label>
-                            </asp:TableCell>
+                            </asp:TableCell>                        
                         </asp:TableRow>
                         <asp:TableRow>
                             <asp:TableCell>1. </asp:TableCell>
@@ -592,33 +564,7 @@
                             <asp:TableCell>
                                         <asp:TextBox runat="server" ID="txt_otros2" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
                             </asp:TableCell>
-                            <asp:TableCell>
-                                        <asp:TextBox runat="server" ID="txt_solidos" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
-                            </asp:TableCell>
-                            <asp:TableCell>
-                                        <asp:TextBox runat="server" ID="txt_polvos" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
-                            </asp:TableCell>
-                            <asp:TableCell>
-                                        <asp:TextBox runat="server" ID="txt_humos" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
-                            </asp:TableCell>
-                            <asp:TableCell>
-                                        <asp:TextBox runat="server" ID="txt_liquidos" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
-                            </asp:TableCell>
-                            <asp:TableCell>
-                                        <asp:TextBox runat="server" ID="txt_vapores" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
-                            </asp:TableCell>
-                            <asp:TableCell>
-                                        <asp:TextBox runat="server" ID="txt_aerosoles" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
-                            </asp:TableCell>
-                            <asp:TableCell>
-                                        <asp:TextBox runat="server" ID="txt_neblinas" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
-                            </asp:TableCell>
-                            <asp:TableCell>
-                                        <asp:TextBox runat="server" ID="txt_gaseosos" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
-                            </asp:TableCell>
-                            <asp:TableCell>
-                                        <asp:TextBox runat="server" ID="txt_otros3" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
-                            </asp:TableCell>
+                            
                         </asp:TableRow>
                     </asp:Table>
                     <asp:Table class="table table-bordered table-light table-responsive text-center" runat="server">
@@ -626,12 +572,38 @@
                             <asp:TableCell Style="width: 20%" RowSpan="2" ColumnSpan="2">PUESTO DE TRABAJO / ÁREA</asp:TableCell>
                             <asp:TableCell Style="width: 20%" RowSpan="2">ACTIVIDADES</asp:TableCell>
                             <asp:TableCell Style="width: 20%" RowSpan="2">TIEMPO DE TRABAJO (MESES)</asp:TableCell>
+                            <asp:TableCell Style="width: 15%" ColumnSpan="9">QUÍMICO</asp:TableCell>
                             <asp:TableCell Style="width: 15%" ColumnSpan="7">BIÓLOGO</asp:TableCell>
-                            <asp:TableCell Style="width: 15%" ColumnSpan="5">ERGONÓMICO</asp:TableCell>
-                            <asp:TableCell Style="width: 15%" ColumnSpan="13">PSICOSOCIAL</asp:TableCell>
-                            <asp:TableCell Style="width: 25%" RowSpan="2">MEDIDAS PREVENTIVAS</asp:TableCell>
+                            <asp:TableCell Style="width: 15%" ColumnSpan="5">ERGONÓMICO</asp:TableCell>                            
                         </asp:TableRow>
                         <asp:TableRow>
+                            <asp:TableCell>
+                                <asp:Label CssClass="in-column" ID="Label48" runat="server" Text="Sólidos"></asp:Label>
+                            </asp:TableCell>
+                            <asp:TableCell>
+                                <asp:Label CssClass="in-column" ID="Label49" runat="server" Text="Polvos"></asp:Label>
+                            </asp:TableCell>
+                            <asp:TableCell>
+                                <asp:Label CssClass="in-column" ID="Label50" runat="server" Text="Humos"></asp:Label>
+                            </asp:TableCell>
+                            <asp:TableCell>
+                                <asp:Label CssClass="in-column" ID="Label51" runat="server" Text="Líquidos"></asp:Label>
+                            </asp:TableCell>
+                            <asp:TableCell>
+                                <asp:Label CssClass="in-column" ID="Label52" runat="server" Text="Vapores"></asp:Label>
+                            </asp:TableCell>
+                            <asp:TableCell>
+                                <asp:Label CssClass="in-column" ID="Label53" runat="server" Text="Aerosoles"></asp:Label>
+                            </asp:TableCell>
+                            <asp:TableCell>
+                                <asp:Label CssClass="in-column" ID="Label54" runat="server" Text="Neblinas"></asp:Label>
+                            </asp:TableCell>
+                            <asp:TableCell>
+                                <asp:Label CssClass="in-column" ID="Label55" runat="server" Text="Gaseosos"></asp:Label>
+                            </asp:TableCell>
+                            <asp:TableCell>
+                                <asp:Label CssClass="in-column" ID="Label56" runat="server" Text="Otros __________"></asp:Label>
+                            </asp:TableCell>
                             <asp:TableCell>
                                 <asp:Label CssClass="in-column" ID="Label57" runat="server" Text="Virus"></asp:Label>
                             </asp:TableCell>
@@ -667,7 +639,91 @@
                             </asp:TableCell>
                             <asp:TableCell>
                                 <asp:Label CssClass="in-column" ID="Label68" runat="server" Text="Otros __________"></asp:Label>
+                            </asp:TableCell>                            
+                        </asp:TableRow>
+                        <asp:TableRow>
+                            <asp:TableCell>1. </asp:TableCell>
+                            <asp:TableCell>
+                                        <asp:TextBox runat="server" ID="TextBox1" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
                             </asp:TableCell>
+                            <asp:TableCell>
+                                        <asp:TextBox runat="server" ID="TextBox2" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
+                            </asp:TableCell>
+                            <asp:TableCell>
+                                        <asp:TextBox runat="server" ID="TextBox3" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
+                            </asp:TableCell>
+                            <asp:TableCell>
+                                        <asp:TextBox runat="server" ID="txt_solidos" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
+                            </asp:TableCell>
+                            <asp:TableCell>
+                                        <asp:TextBox runat="server" ID="txt_polvos" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
+                            </asp:TableCell>
+                            <asp:TableCell>
+                                        <asp:TextBox runat="server" ID="txt_humos" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
+                            </asp:TableCell>
+                            <asp:TableCell>
+                                        <asp:TextBox runat="server" ID="txt_liquidos" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
+                            </asp:TableCell>
+                            <asp:TableCell>
+                                        <asp:TextBox runat="server" ID="txt_vapores" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
+                            </asp:TableCell>
+                            <asp:TableCell>
+                                        <asp:TextBox runat="server" ID="txt_aerosoles" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
+                            </asp:TableCell>
+                            <asp:TableCell>
+                                        <asp:TextBox runat="server" ID="txt_neblinas" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
+                            </asp:TableCell>
+                            <asp:TableCell>
+                                        <asp:TextBox runat="server" ID="txt_gaseosos" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
+                            </asp:TableCell>
+                            <asp:TableCell>
+                                        <asp:TextBox runat="server" ID="txt_otros3" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
+                            </asp:TableCell>
+                            <asp:TableCell>
+                                        <asp:TextBox runat="server" ID="txt_virus" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
+                            </asp:TableCell>
+                            <asp:TableCell>
+                                        <asp:TextBox runat="server" ID="txt_hongos" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
+                            </asp:TableCell>
+                            <asp:TableCell>
+                                        <asp:TextBox runat="server" ID="txt_bacterias" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
+                            </asp:TableCell>
+                            <asp:TableCell>
+                                        <asp:TextBox runat="server" ID="txt_parasitos" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
+                            </asp:TableCell>
+                            <asp:TableCell>
+                                        <asp:TextBox runat="server" ID="txt_expoavectores" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
+                            </asp:TableCell>
+                            <asp:TableCell>
+                                        <asp:TextBox runat="server" ID="txt_expoanimselvaticos" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
+                            </asp:TableCell>
+                            <asp:TableCell>
+                                        <asp:TextBox runat="server" ID="txt_otros4" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
+                            </asp:TableCell>
+                            <asp:TableCell>
+                                        <asp:TextBox runat="server" ID="txt_manmanualcargas" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
+                            </asp:TableCell>
+                            <asp:TableCell>
+                                        <asp:TextBox runat="server" ID="txt_movrepetitivo" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
+                            </asp:TableCell>
+                            <asp:TableCell>
+                                        <asp:TextBox runat="server" ID="txt_postforzadas" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
+                            </asp:TableCell>
+                            <asp:TableCell>
+                                        <asp:TextBox runat="server" ID="txt_trabajopvd" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
+                            </asp:TableCell>
+                            <asp:TableCell>
+                                        <asp:TextBox runat="server" ID="txt_otros5" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
+                            </asp:TableCell>
+                            
+                        </asp:TableRow>
+                    </asp:Table>
+                    <asp:Table class="table table-bordered table-light table-responsive text-center" runat="server">
+                        <asp:TableRow>
+                            <asp:TableCell Style="width: 15%" ColumnSpan="13">PSICOSOCIAL</asp:TableCell>
+                            <asp:TableCell Style="width: 25%" RowSpan="2">MEDIDAS PREVENTIVAS</asp:TableCell>
+                        </asp:TableRow>
+                        <asp:TableRow>
                             <asp:TableCell>
                                 <asp:Label CssClass="in-column" ID="Label69" runat="server" Text="Monotonía del trabajo "></asp:Label>
                             </asp:TableCell>
@@ -709,52 +765,6 @@
                             </asp:TableCell>
                         </asp:TableRow>
                         <asp:TableRow>
-                            <asp:TableCell>1. </asp:TableCell>
-                            <asp:TableCell>
-                                        <asp:TextBox runat="server" ID="TextBox1" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
-                            </asp:TableCell>
-                            <asp:TableCell>
-                                        <asp:TextBox runat="server" ID="TextBox2" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
-                            </asp:TableCell>
-                            <asp:TableCell>
-                                        <asp:TextBox runat="server" ID="TextBox3" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
-                            </asp:TableCell>
-                            <asp:TableCell>
-                                        <asp:TextBox runat="server" ID="txt_virus" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
-                            </asp:TableCell>
-                            <asp:TableCell>
-                                        <asp:TextBox runat="server" ID="txt_hongos" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
-                            </asp:TableCell>
-                            <asp:TableCell>
-                                        <asp:TextBox runat="server" ID="txt_bacterias" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
-                            </asp:TableCell>
-                            <asp:TableCell>
-                                        <asp:TextBox runat="server" ID="txt_parasitos" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
-                            </asp:TableCell>
-                            <asp:TableCell>
-                                        <asp:TextBox runat="server" ID="txt_expoavectores" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
-                            </asp:TableCell>
-                            <asp:TableCell>
-                                        <asp:TextBox runat="server" ID="txt_expoanimselvaticos" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
-                            </asp:TableCell>
-                            <asp:TableCell>
-                                        <asp:TextBox runat="server" ID="txt_otros4" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
-                            </asp:TableCell>
-                            <asp:TableCell>
-                                        <asp:TextBox runat="server" ID="txt_manmanualcargas" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
-                            </asp:TableCell>
-                            <asp:TableCell>
-                                        <asp:TextBox runat="server" ID="txt_movrepetitivo" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
-                            </asp:TableCell>
-                            <asp:TableCell>
-                                        <asp:TextBox runat="server" ID="txt_postforzadas" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
-                            </asp:TableCell>
-                            <asp:TableCell>
-                                        <asp:TextBox runat="server" ID="txt_trabajopvd" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
-                            </asp:TableCell>
-                            <asp:TableCell>
-                                        <asp:TextBox runat="server" ID="txt_otros5" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
-                            </asp:TableCell>
                             <asp:TableCell>
                                         <asp:TextBox runat="server" ID="txt_montrabajo" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
                             </asp:TableCell>

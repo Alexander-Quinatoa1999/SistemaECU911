@@ -150,8 +150,8 @@
                                     <li class="nav-item"><a class="nav-link" href="PacientesPeriodica.aspx">HC Periódica</a></li>
                                     <li class="nav-item"><a class="nav-link" href="PacientesReintegro.aspx">HC Reintegro</a></li>
                                     <li class="nav-item"><a class="nav-link" href="PacientesRetiro.aspx">HC Retiro</a></li>
-                                    <%--<li class="nav-item"><a class="nav-link" href="Certificado.aspx">HC Certificado</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="Inmunizaciones.aspx">HC Inmunizaciones</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="PacientesCertificado.aspx">HC Certificado</a></li>
+                                    <%--<li class="nav-item"><a class="nav-link" href="Inmunizaciones.aspx">HC Inmunizaciones</a></li>
                                     <li class="nav-item"><a class="nav-link" href="Evolucion.aspx">HC Evolución</a></li>
                                     <li class="nav-item"><a class="nav-link" href="PedidoExamenes.aspx">HC Pedido Examenes</a></li>--%>
                                 </ul>
