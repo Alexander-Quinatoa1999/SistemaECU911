@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SistemaECU911" Class="DataClassesECU911DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=ZOCAPO\SQLEXPRESS;Initial Catalog=SistemaECU911;Integrated Security=True" SettingsObjectName="CapaDatos.Properties.Settings" SettingsPropertyName="SistemaECU911ConnectionString5" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=SistemaECU911;Integrated Security=True" SettingsObjectName="CapaDatos.Properties.Settings" SettingsPropertyName="SistemaECU911ConnectionString4" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Tbl_AccidentesTrabajoDesc" Member="Tbl_AccidentesTrabajoDesc">
     <Type Name="Tbl_AccidentesTrabajoDesc">
       <Column Name="AntTrabDesc_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -300,6 +300,7 @@
       <Column Name="antPerRetiro_detalleEnferProfesionales" Type="System.String" DbType="VarChar(350)" CanBeNull="true" />
       <Column Name="Per_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="antPerRetiro_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Association Name="Tbl_Personas_Tbl_AntecedentesPersonalesRetiro" Member="Tbl_Personas" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Personas" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Tbl_AntecedentesReproductivosMasculinos" Member="Tbl_AntecedentesReproductivosMasculinos">
@@ -395,6 +396,7 @@
       <Column Name="AptMedCertificado_Observ" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
       <Column Name="Per_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="AptMedCertificado_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Association Name="Tbl_Personas_Tbl_AptitudMedicaCertificado" Member="Tbl_Personas" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Personas" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Tbl_AptitudMedicaPeriodica" Member="Tbl_AptitudMedicaPeriodica">
@@ -547,6 +549,7 @@
       <Column Name="ConsVitAntroRetiro_perAbdominaln" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
       <Column Name="Per_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="ConsVitAntroRetiro_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Association Name="Tbl_Personas_Tbl_ConsVitAntroRetiro" Member="Tbl_Personas" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Personas" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Tbl_CorreoIntitucional" Member="Tbl_CorreoIntitucional">
@@ -605,6 +608,7 @@
       <Column Name="datEstable_causaSalida" Type="System.String" DbType="VarChar(350)" CanBeNull="true" />
       <Column Name="Per_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="datEstable_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Association Name="Tbl_Personas_Tbl_DatEstableEmpUsuReintegro" Member="Tbl_Personas" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Personas" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Tbl_DatEstableEmpUsuRetiro" Member="Tbl_DatEstableEmpUsuRetiro">
@@ -617,6 +621,7 @@
       <Column Name="datEstable_facRiesgo" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
       <Column Name="Per_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="datEstable_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Association Name="Tbl_Personas_Tbl_DatEstableEmpUsuRetiro" Member="Tbl_Personas" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Personas" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Tbl_DatosGenerales" Member="Tbl_DatosGenerales">
@@ -638,6 +643,7 @@
       <Column Name="datGen_retiro" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="Per_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="datGen_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Association Name="Tbl_Personas_Tbl_DatosGeneralesCertificado" Member="Tbl_Personas" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Personas" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Tbl_DatProfesional" Member="Tbl_DatProfesional">
@@ -661,6 +667,7 @@
       <Column Name="DatProfeCertificado_cod" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
       <Column Name="Per_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="DatProfeCertificado_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Association Name="Tbl_Personas_Tbl_DatProfesionalCertificado" Member="Tbl_Personas" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Personas" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Tbl_DatProfesionalInicial" Member="Tbl_DatProfesionalInicial">
@@ -714,6 +721,7 @@
       <Column Name="DatProfeRetiro_cod" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
       <Column Name="Per_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="DatProfeRetiro_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Association Name="Tbl_Personas_Tbl_DatProfesionalRetiro" Member="Tbl_Personas" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Personas" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Tbl_Diagnostico" Member="Tbl_Diagnostico">
@@ -775,6 +783,7 @@
       <Column Name="DiagRetiro_def" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
       <Column Name="Per_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="DiagRetiro_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Association Name="Tbl_Personas_Tbl_DiagnosticoRetiro" Member="Tbl_Personas" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Personas" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Tbl_DireccionInstitucional" Member="Tbl_DireccionInstitucional">
@@ -1003,10 +1012,11 @@
       <Column Name="evaMedRet_observaciones" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
       <Column Name="Per_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="evaMedRet_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Association Name="Tbl_Personas_Tbl_EvaluacionMedicaRetiro" Member="Tbl_Personas" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Personas" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.Tbl_EvaMeciaRetiroCertificado" Member="Tbl_EvaMeciaRetiroCertificado">
-    <Type Name="Tbl_EvaMeciaRetiroCertificado">
+  <Table Name="dbo.Tbl_EvaMedicaRetiroCertificado" Member="Tbl_EvaMedicaRetiroCertificado">
+    <Type Name="Tbl_EvaMedicaRetiroCertificado">
       <Column Name="evaMedRet_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="evaMedRet_siUsuEvaMed" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
       <Column Name="evaMedRet_noUsuEvaMed" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
@@ -1018,6 +1028,7 @@
       <Column Name="evaMedRet_noAplicaCondiSalud" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
       <Column Name="Per_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="evaMedRet_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Association Name="Tbl_Personas_Tbl_EvaMedicaRetiroCertificado" Member="Tbl_Personas" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Personas" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Tbl_EvaMedRet" Member="Tbl_EvaMedRet">
@@ -1026,15 +1037,6 @@
       <Column Name="EvaM_opcion" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="EvaM_observacion" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
       <Column Name="EvaM_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Tbl_EvaMedRetCertificado" Member="Tbl_EvaMedRetCertificado">
-    <Type Name="Tbl_EvaMedRetCertificado">
-      <Column Name="EvaMedRetCer_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="EvaMedRetCer_opcion1" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="EvaMedRetCer_opcion2" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="EvaMedRetCer_opcion3" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="EvaMedRetCer_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.Tbl_EvaMedRetiro" Member="Tbl_EvaMedRetiro">
@@ -1359,6 +1361,7 @@
       <Column Name="exaFisRegRetiro_observa" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
       <Column Name="Per_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="exaFisRegRetiro_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Association Name="Tbl_Personas_Tbl_ExaFisRegionalRetiro" Member="Tbl_Personas" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Personas" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Tbl_ExamenesRealizados1" Member="Tbl_ExamenesRealizados1">
@@ -1680,8 +1683,15 @@
       <Column Name="inmu_nomCompleResponVacuSarampion" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
       <Column Name="inmu_estaSaludColocoVacuSarampion" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
       <Column Name="inmu_observaSarampion" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="inmu_1fechaInmuAcuerTipoEmpRies" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="inmu_1loteInmuAcuerTipoEmpRies" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="inmu_1esqueCompleInmuAcuerTipoEmpRies" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="inmu_1nomCompleResponVacuInmuAcuerTipoEmpRies" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="inmu_1estaSaludColocoVacuInmuAcuerTipoEmpRies" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="inmu_1observaInmuAcuerTipoEmpRies" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
       <Column Name="Per_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="inmu_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Association Name="Tbl_Personas_Tbl_InmunizacionesInmunizaciones" Member="Tbl_Personas" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Personas" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Tbl_InmunoHematologia" Member="Tbl_InmunoHematologia">
@@ -1938,23 +1948,32 @@
       <Association Name="Tbl_Personas_Tbl_AntecedentesFamiliaresDetParentescoPeriodica" Member="Tbl_AntecedentesFamiliaresDetParentescoPeriodica" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_AntecedentesFamiliaresDetParentescoPeriodica" />
       <Association Name="Tbl_Personas_Tbl_AntecedentesPersonalesInicial" Member="Tbl_AntecedentesPersonalesInicial" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_AntecedentesPersonalesInicial" />
       <Association Name="Tbl_Personas_Tbl_AntecedentesPersonalesPeriodica" Member="Tbl_AntecedentesPersonalesPeriodica" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_AntecedentesPersonalesPeriodica" />
+      <Association Name="Tbl_Personas_Tbl_AntecedentesPersonalesRetiro" Member="Tbl_AntecedentesPersonalesRetiro" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_AntecedentesPersonalesRetiro" />
       <Association Name="Tbl_Personas_Tbl_AnteFamiliares" Member="Tbl_AnteFamiliares" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_AnteFamiliares" />
       <Association Name="Tbl_Personas_Tbl_AntePersonales" Member="Tbl_AntePersonales" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_AntePersonales" />
       <Association Name="Tbl_Personas_Tbl_AptitudMedica" Member="Tbl_AptitudMedica" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_AptitudMedica" />
+      <Association Name="Tbl_Personas_Tbl_AptitudMedicaCertificado" Member="Tbl_AptitudMedicaCertificado" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_AptitudMedicaCertificado" />
       <Association Name="Tbl_Personas_Tbl_AptitudMedicaPeriodica" Member="Tbl_AptitudMedicaPeriodica" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_AptitudMedicaPeriodica" />
       <Association Name="Tbl_Personas_Tbl_AptitudMedicaReintegro" Member="Tbl_AptitudMedicaReintegro" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_AptitudMedicaReintegro" />
       <Association Name="Tbl_Personas_Tbl_ConsVitAntro" Member="Tbl_ConsVitAntro" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_ConsVitAntro" />
       <Association Name="Tbl_Personas_Tbl_ConsVitAntroPeriodica" Member="Tbl_ConsVitAntroPeriodica" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_ConsVitAntroPeriodica" />
       <Association Name="Tbl_Personas_Tbl_ConsVitAntroReintegro" Member="Tbl_ConsVitAntroReintegro" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_ConsVitAntroReintegro" />
+      <Association Name="Tbl_Personas_Tbl_ConsVitAntroRetiro" Member="Tbl_ConsVitAntroRetiro" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_ConsVitAntroRetiro" />
       <Association Name="Tbl_Personas_Tbl_DatEstableEmpUsu" Member="Tbl_DatEstableEmpUsu" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_DatEstableEmpUsu" />
+      <Association Name="Tbl_Personas_Tbl_DatEstableEmpUsuReintegro" Member="Tbl_DatEstableEmpUsuReintegro" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_DatEstableEmpUsuReintegro" />
+      <Association Name="Tbl_Personas_Tbl_DatEstableEmpUsuRetiro" Member="Tbl_DatEstableEmpUsuRetiro" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_DatEstableEmpUsuRetiro" />
+      <Association Name="Tbl_Personas_Tbl_DatosGeneralesCertificado" Member="Tbl_DatosGeneralesCertificado" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_DatosGeneralesCertificado" />
       <Association Name="Tbl_Personas_Tbl_DatProfesional" Member="Tbl_DatProfesional" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_DatProfesional" />
+      <Association Name="Tbl_Personas_Tbl_DatProfesionalCertificado" Member="Tbl_DatProfesionalCertificado" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_DatProfesionalCertificado" />
       <Association Name="Tbl_Personas_Tbl_DatProfesionalInicial" Member="Tbl_DatProfesionalInicial" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_DatProfesionalInicial" />
       <Association Name="Tbl_Personas_Tbl_DatProfesionalPeriodica" Member="Tbl_DatProfesionalPeriodica" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_DatProfesionalPeriodica" />
       <Association Name="Tbl_Personas_Tbl_DatProfesionalReintegro" Member="Tbl_DatProfesionalReintegro" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_DatProfesionalReintegro" />
+      <Association Name="Tbl_Personas_Tbl_DatProfesionalRetiro" Member="Tbl_DatProfesionalRetiro" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_DatProfesionalRetiro" />
       <Association Name="Tbl_Personas_Tbl_Diagnostico" Member="Tbl_Diagnostico" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Diagnostico" />
       <Association Name="Tbl_Personas_Tbl_DiagnosticoFichMed" Member="Tbl_DiagnosticoFichMed" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_DiagnosticoFichMed" />
       <Association Name="Tbl_Personas_Tbl_DiagnosticoPeriodica" Member="Tbl_DiagnosticoPeriodica" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_DiagnosticoPeriodica" />
       <Association Name="Tbl_Personas_Tbl_DiagnosticoReintegro" Member="Tbl_DiagnosticoReintegro" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_DiagnosticoReintegro" />
+      <Association Name="Tbl_Personas_Tbl_DiagnosticoRetiro" Member="Tbl_DiagnosticoRetiro" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_DiagnosticoRetiro" />
       <Association Name="Tbl_Personas_Tbl_EnferActualPeriodica" Member="Tbl_EnferActualPeriodica" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_EnferActualPeriodica" />
       <Association Name="Tbl_Personas_Tbl_EnferActualReintegro" Member="Tbl_EnferActualReintegro" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_EnferActualReintegro" />
       <Association Name="Tbl_Personas_Tbl_EnfermedadActual" Member="Tbl_EnfermedadActual" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_EnfermedadActual" />
@@ -1962,24 +1981,31 @@
       <Association Name="Tbl_Personas_Tbl_EnfermedadActualPeriodica" Member="Tbl_EnfermedadActualPeriodica" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_EnfermedadActualPeriodica" />
       <Association Name="Tbl_Personas_Tbl_EnfermedadActualReintegro" Member="Tbl_EnfermedadActualReintegro" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_EnfermedadActualReintegro" />
       <Association Name="Tbl_Personas_Tbl_EnfermedadesProfesionales" Member="Tbl_EnfermedadesProfesionales" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_EnfermedadesProfesionales" />
+      <Association Name="Tbl_Personas_Tbl_EvaluacionMedicaRetiro" Member="Tbl_EvaluacionMedicaRetiro" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_EvaluacionMedicaRetiro" />
+      <Association Name="Tbl_Personas_Tbl_EvaMedicaRetiroCertificado" Member="Tbl_EvaMedicaRetiroCertificado" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_EvaMedicaRetiroCertificado" />
       <Association Name="Tbl_Personas_Tbl_Evolucion" Member="Tbl_Evolucion" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Evolucion" />
       <Association Name="Tbl_Personas_Tbl_ExaFisRegional" Member="Tbl_ExaFisRegional" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_ExaFisRegional" />
       <Association Name="Tbl_Personas_Tbl_ExaFisRegionalInicial" Member="Tbl_ExaFisRegionalInicial" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_ExaFisRegionalInicial" />
       <Association Name="Tbl_Personas_Tbl_ExaFisRegionalPeriodica" Member="Tbl_ExaFisRegionalPeriodica" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_ExaFisRegionalPeriodica" />
       <Association Name="Tbl_Personas_Tbl_ExaFisRegionalReintegro" Member="Tbl_ExaFisRegionalReintegro" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_ExaFisRegionalReintegro" />
+      <Association Name="Tbl_Personas_Tbl_ExaFisRegionalRetiro" Member="Tbl_ExaFisRegionalRetiro" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_ExaFisRegionalRetiro" />
       <Association Name="Tbl_Personas_Tbl_FacRiesTrabAct" Member="Tbl_FacRiesTrabAct" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_FacRiesTrabAct" />
       <Association Name="Tbl_Personas_Tbl_FacRiesTrabActPeriodica" Member="Tbl_FacRiesTrabActPeriodica" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_FacRiesTrabActPeriodica" />
+      <Association Name="Tbl_Personas_Tbl_InmunizacionesInmunizaciones" Member="Tbl_InmunizacionesInmunizaciones" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_InmunizacionesInmunizaciones" />
       <Association Name="Tbl_Personas_Tbl_MotivoConsulta" Member="Tbl_MotivoConsulta" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_MotivoConsulta" />
       <Association Name="Tbl_Personas_Tbl_MotivoConsultaInicial" Member="Tbl_MotivoConsultaInicial" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_MotivoConsultaInicial" />
       <Association Name="Tbl_Personas_Tbl_MotivoConsultaPeriodica" Member="Tbl_MotivoConsultaPeriodica" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_MotivoConsultaPeriodica" />
       <Association Name="Tbl_Personas_Tbl_MotivoConsultaReintegro" Member="Tbl_MotivoConsultaReintegro" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_MotivoConsultaReintegro" />
       <Association Name="Tbl_Personas_Tbl_Prescipciones" Member="Tbl_Prescipciones" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Prescipciones" />
+      <Association Name="Tbl_Personas_Tbl_RecomendacionesCertificado" Member="Tbl_RecomendacionesCertificado" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_RecomendacionesCertificado" />
       <Association Name="Tbl_Personas_Tbl_RecoTratamiento" Member="Tbl_RecoTratamiento" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_RecoTratamiento" />
       <Association Name="Tbl_Personas_Tbl_RecoTratamientoPeriodica" Member="Tbl_RecoTratamientoPeriodica" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_RecoTratamientoPeriodica" />
       <Association Name="Tbl_Personas_Tbl_RecoTratamientoReintegro" Member="Tbl_RecoTratamientoReintegro" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_RecoTratamientoReintegro" />
+      <Association Name="Tbl_Personas_Tbl_RecoTratamientoRetiro" Member="Tbl_RecoTratamientoRetiro" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_RecoTratamientoRetiro" />
       <Association Name="Tbl_Personas_Tbl_ResExaGenEspRiesTrabajo" Member="Tbl_ResExaGenEspRiesTrabajo" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_ResExaGenEspRiesTrabajo" />
       <Association Name="Tbl_Personas_Tbl_ResExaGenEspRiesTrabajoPeriodica" Member="Tbl_ResExaGenEspRiesTrabajoPeriodica" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_ResExaGenEspRiesTrabajoPeriodica" />
       <Association Name="Tbl_Personas_Tbl_ResExaGenEspRiesTrabajoReintegro" Member="Tbl_ResExaGenEspRiesTrabajoReintegro" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_ResExaGenEspRiesTrabajoReintegro" />
+      <Association Name="Tbl_Personas_Tbl_ResExaGenEspRiesTrabajoRetiro" Member="Tbl_ResExaGenEspRiesTrabajoRetiro" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_ResExaGenEspRiesTrabajoRetiro" />
       <Association Name="Tbl_Personas_Tbl_ReviOrgaSistemasFichMed" Member="Tbl_ReviOrgaSistemasFichMed" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_ReviOrgaSistemasFichMed" />
       <Association Name="Tbl_Personas_Tbl_RevisionActualOrganosSistemas" Member="Tbl_RevisionActualOrganosSistemas" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_RevisionActualOrganosSistemas" />
       <Association Name="Tbl_Personas_Tbl_RevisionActualOrganosSistemasPeriodica" Member="Tbl_RevisionActualOrganosSistemasPeriodica" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_RevisionActualOrganosSistemasPeriodica" />
@@ -2055,19 +2081,13 @@
       <Association Name="Tbl_QuimicaSanguinea_Tbl_PedidoExamnes" Member="Tbl_PedidoExamnes" ThisKey="QuiSan_id" OtherKey="QuiSan_id" Type="Tbl_PedidoExamnes" />
     </Type>
   </Table>
-  <Table Name="dbo.Tbl_RecomenCertificado" Member="Tbl_RecomenCertificado">
-    <Type Name="Tbl_RecomenCertificado">
-      <Column Name="recCer_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="recCer_descripcion" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
-      <Column Name="recCer_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.Tbl_RecomendacionesCertificado" Member="Tbl_RecomendacionesCertificado">
     <Type Name="Tbl_RecomendacionesCertificado">
       <Column Name="reco_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="reco_descripcion" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
       <Column Name="Per_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="reco_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Association Name="Tbl_Personas_Tbl_RecomendacionesCertificado" Member="Tbl_Personas" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Personas" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Tbl_RecoTratamiento" Member="Tbl_RecoTratamiento">
@@ -2103,6 +2123,7 @@
       <Column Name="RecTraRetiro_descripcion" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
       <Column Name="Per_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="RecTraRetiro_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Association Name="Tbl_Personas_Tbl_RecoTratamientoRetiro" Member="Tbl_Personas" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Personas" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Tbl_Regiones" Member="Tbl_Regiones">
@@ -2159,6 +2180,7 @@
       <Column Name="ResExaGenEspRiesTrabajoRetiro_observaciones" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
       <Column Name="Per_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="ResExaGenEspRiesTrabajoRetiro_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Association Name="Tbl_Personas_Tbl_ResExaGenEspRiesTrabajoRetiro" Member="Tbl_Personas" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Personas" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Tbl_ReviOrgaSistemasFichMed" Member="Tbl_ReviOrgaSistemasFichMed">

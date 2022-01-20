@@ -16,6 +16,9 @@ namespace SistemaECU911.Template.Views
         //Objeto de la tabla personas
         private Tbl_Personas per = new Tbl_Personas();
 
+        //A. Objeto de la tabla Datos del establecimiento Emp - Usu
+        private Tbl_DatEstableEmpUsuReintegro datestable = new Tbl_DatEstableEmpUsuReintegro();
+
         //B. Objeto de la tabla MOTIVO CONSULTA 
         private Tbl_MotivoConsultaReintegro motconreintegro = new Tbl_MotivoConsultaReintegro();
 
@@ -75,6 +78,7 @@ namespace SistemaECU911.Template.Views
                     per = CN_HistorialMedico.obtenerPersonasxId(codigo);
                     int perso = Convert.ToInt32(per.Per_id.ToString());
 
+                    datestable = CN_Reintegro.obtenerDatEstEmpUsuReintegro(perso);
                     motconreintegro = CN_Reintegro.obtenerMotivoConsultaxPerReintegro(perso);
                     enferactreintegro = CN_Reintegro.obtenerEnferActxPerReintegro(perso);
                     exafisregreintegro = CN_Reintegro.obtenerExaFisRegxPerReintegro(perso);
@@ -86,7 +90,7 @@ namespace SistemaECU911.Template.Views
 
                     btn_guardareintegro.Visible = true;
 
-                    if (per != null || motconreintegro != null || enferactreintegro != null || exafisregreintegro != null ||
+                    if (per != null || datestable != null || motconreintegro != null || enferactreintegro != null || exafisregreintegro != null ||
                         resexamenreintegro != null || diagreintegro != null || aptmedreintegro != null ||
                         tratamientoreintegro != null || datprofreintegro != null)
                     {
@@ -97,6 +101,12 @@ namespace SistemaECU911.Template.Views
                         txt_segApellido.Text = per.Per_segApellido.ToString();
                         txt_sexo.Text = per.Per_genero.ToString();
                         txt_numHClinica.Text = per.Per_Cedula.ToString();
+
+                        //A
+                        txt_fechaUltiDiaLaboral.Text = datestable.datEstable__fechUltDiaLaboral.ToString();
+                        txt_fechaReingreso.Text = datestable.datEstable_fechReingreso.ToString();
+                        txt_total.Text = datestable.datEstable_total.ToString();
+                        txt_causaSalida.Text = datestable.datEstable_causaSalida.ToString();
 
                         //B
                         txt_motivoconsultareintegro.Text = motconreintegro.motConReintegro_descrip.ToString();
@@ -231,6 +241,8 @@ namespace SistemaECU911.Template.Views
 
                 int perso = Convert.ToInt32(per.Per_id.ToString());
 
+                //A
+                datestable = new Tbl_DatEstableEmpUsuReintegro();
                 // B
                 motconreintegro = new Tbl_MotivoConsultaReintegro();
                 // C
@@ -247,6 +259,12 @@ namespace SistemaECU911.Template.Views
                 tratamientoreintegro = new Tbl_RecoTratamientoReintegro();
                 // J
                 datprofreintegro = new Tbl_DatProfesionalReintegro();
+
+                //A. Captura de datos Datos Establecimiento
+                datestable.datEstable__fechUltDiaLaboral = Convert.ToDateTime(txt_fechaUltiDiaLaboral.Text);
+                datestable.datEstable_fechReingreso = Convert.ToDateTime(txt_fechaReingreso.Text);
+                datestable.datEstable_total = Convert.ToInt32(txt_total.Text);
+                datestable.datEstable_causaSalida = txt_causaSalida.Text;
 
                 //B. Captura de datos Motivo de Consulta
                 motconreintegro.motConReintegro_descrip = txt_motivoconsultareintegro.Text;
@@ -334,6 +352,9 @@ namespace SistemaECU911.Template.Views
                 datprofreintegro.DatProfeReintegro_cod = txt_codigoDatProf.Text;
                 datprofreintegro.Per_id = perso;
 
+
+                //A. Metodo para guardar Datos Establecimiento
+                CN_Reintegro.guardarDatEstEmpreUsuarReintegro(datestable);
                 //B . Método para guardar Datos Motivo Consulta
                 CN_Reintegro.guardarMotivoConsultaReintegro(motconreintegro);
                 //F. Método de guardar Datos Enfermedad Actual

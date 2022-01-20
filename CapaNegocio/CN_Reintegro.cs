@@ -13,9 +13,9 @@ namespace CapaNegocio
         private static DataClassesECU911DataContext dc = new DataClassesECU911DataContext();
 
         //metodo traer para traer Datos Establecimeinto Empresa Usuario x persona
-        public static Tbl_DatEstableEmpUsu obtenerDatEstEmpreUsuar(int personaid)
+        public static Tbl_DatEstableEmpUsuReintegro obtenerDatEstEmpUsuReintegro(int personaid)
         {
-            var datempusuid = dc.Tbl_DatEstableEmpUsu.FirstOrDefault(per => per.Per_id.Equals(personaid) && per.datEstable_estado == "A");
+            var datempusuid = dc.Tbl_DatEstableEmpUsuReintegro.FirstOrDefault(per => per.Per_id.Equals(personaid) && per.datEstable_estado == "A");
             return datempusuid;
         }
 
@@ -82,12 +82,12 @@ namespace CapaNegocio
         //A. DATOS DEL ESTABLECIMIENTO - EMPRESA Y USUARIO
 
         //Metodo para guardar datos DATOS DE EMPRESA Y USUARIO
-        public static void guardarDatEstEmpreUsuarReintegro(Tbl_DatEstableEmpUsu datosestempresausu)
+        public static void guardarDatEstEmpreUsuarReintegro(Tbl_DatEstableEmpUsuReintegro datosestempresausu)
         {
             try
             {
                 datosestempresausu.datEstable_estado = "A";
-                dc.Tbl_DatEstableEmpUsu.InsertOnSubmit(datosestempresausu);
+                dc.Tbl_DatEstableEmpUsuReintegro.InsertOnSubmit(datosestempresausu);
                 dc.SubmitChanges();
             }
             catch (Exception ex)
@@ -217,7 +217,7 @@ namespace CapaNegocio
 
         //J. DATOS DEL PROFESIONAL
 
-        //Metodo para guardar datos APTITUD MÉDICA PARA EL TRABAJO
+        //Metodo para guardar datos DATOS DEL PROFESIONAL
         public static void guardarDatosProfesionalReintegro(Tbl_DatProfesionalReintegro datprofreintegro)
         {
             try

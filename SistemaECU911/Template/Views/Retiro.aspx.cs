@@ -16,6 +16,9 @@ namespace SistemaECU911.Template.Views
         //Objeto de la tabla personas
         private Tbl_Personas per = new Tbl_Personas();
 
+        //A. Objeto de la tabla Datos Establecimiento
+        private Tbl_DatEstableEmpUsuRetiro datestable = new Tbl_DatEstableEmpUsuRetiro();
+
         //B. Objeto de la tabla ANTECEDENTES PERSONALES
         private Tbl_AntecedentesPersonalesRetiro antperetiro = new Tbl_AntecedentesPersonalesRetiro();
 
@@ -71,6 +74,7 @@ namespace SistemaECU911.Template.Views
                     per = CN_HistorialMedico.obtenerPersonasxId(codigo);
                     int perso = Convert.ToInt32(per.Per_id.ToString());
 
+                    datestable = CN_Retiro.obtenerDatEstEmpUsuRetiro(perso);
                     antperetiro = CN_Retiro.obtenerAntecedentesPersonalesxPerRetiro(perso);
                     exafisregretiro = CN_Retiro.obtenerExaFisRegxPerRetiro(perso);
                     resexagenretiro = CN_Retiro.obtenerResExaGenEspRiesTrabaxPerRetiro(perso);
@@ -91,6 +95,13 @@ namespace SistemaECU911.Template.Views
                         txt_segApellido.Text = per.Per_segApellido.ToString();
                         txt_sexo.Text = per.Per_genero.ToString();
                         txt_numHClinica.Text = per.Per_Cedula.ToString();
+
+                        //A
+                        txt_fechaIniLabores.Text = datestable.datEstable__fechIniLabores.ToString();
+                        txt_fechaSalida.Text = datestable.datEstable_fechSalida.ToString();
+                        txt_tiempo.Text = datestable.datEstable_tiempo.ToString();
+                        txt_actividades1.Text = datestable.datEstable_actividades.ToString();
+                        txt_facRiesgo1.Text = datestable.datEstable_facRiesgo.ToString();
 
                         //B
                         txt_descripcionantiqui.Text = antperetiro.antPerRetiro_descripAntCliQuiru.ToString();
@@ -230,6 +241,8 @@ namespace SistemaECU911.Template.Views
 
                 int perso = Convert.ToInt32(per.Per_id.ToString());
 
+                // A
+                datestable = new Tbl_DatEstableEmpUsuRetiro();
                 // B
                 antperetiro = new Tbl_AntecedentesPersonalesRetiro();
                 // D
@@ -244,6 +257,13 @@ namespace SistemaECU911.Template.Views
                 tratamientoretiro = new Tbl_RecoTratamientoRetiro();
                 // I
                 datprofretiro = new Tbl_DatProfesionalRetiro();
+
+                //A. Captura de datos Datos Establecimiento
+                datestable.datEstable__fechIniLabores = Convert.ToDateTime(txt_fechaIniLabores.Text);
+                datestable.datEstable_fechSalida = Convert.ToDateTime(txt_fechaSalida.Text);
+                datestable.datEstable_tiempo = Convert.ToInt32(txt_tiempo.Text);
+                datestable.datEstable_actividades = txt_actividades1.Text;
+                datestable.datEstable_facRiesgo = txt_facRiesgo1.Text;
 
                 //B. Captura de datos Antecedenetes personales
                 antperetiro.antPerRetiro_descripAntCliQuiru = txt_descripcionantiqui.Text;
@@ -337,6 +357,8 @@ namespace SistemaECU911.Template.Views
                 datprofretiro.DatProfeRetiro_cod = txt_codigoDatProf.Text;
                 datprofretiro.Per_id = perso;
 
+                //A. Método para guardar Datos Establecimiento
+                CN_Retiro.guardarDatEstEmpUsuRetiro(datestable);
                 //B . Método para guardar Datos Antecedentes personales
                 CN_Retiro.guardarAntPersonalesRetiro(antperetiro);
                 //D. Método de guardar Datos Examen fisico regional

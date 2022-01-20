@@ -249,15 +249,12 @@ namespace CapaDatos
     partial void InsertTbl_EvaluacionMedicaRetiro(Tbl_EvaluacionMedicaRetiro instance);
     partial void UpdateTbl_EvaluacionMedicaRetiro(Tbl_EvaluacionMedicaRetiro instance);
     partial void DeleteTbl_EvaluacionMedicaRetiro(Tbl_EvaluacionMedicaRetiro instance);
-    partial void InsertTbl_EvaMeciaRetiroCertificado(Tbl_EvaMeciaRetiroCertificado instance);
-    partial void UpdateTbl_EvaMeciaRetiroCertificado(Tbl_EvaMeciaRetiroCertificado instance);
-    partial void DeleteTbl_EvaMeciaRetiroCertificado(Tbl_EvaMeciaRetiroCertificado instance);
+    partial void InsertTbl_EvaMedicaRetiroCertificado(Tbl_EvaMedicaRetiroCertificado instance);
+    partial void UpdateTbl_EvaMedicaRetiroCertificado(Tbl_EvaMedicaRetiroCertificado instance);
+    partial void DeleteTbl_EvaMedicaRetiroCertificado(Tbl_EvaMedicaRetiroCertificado instance);
     partial void InsertTbl_EvaMedRet(Tbl_EvaMedRet instance);
     partial void UpdateTbl_EvaMedRet(Tbl_EvaMedRet instance);
     partial void DeleteTbl_EvaMedRet(Tbl_EvaMedRet instance);
-    partial void InsertTbl_EvaMedRetCertificado(Tbl_EvaMedRetCertificado instance);
-    partial void UpdateTbl_EvaMedRetCertificado(Tbl_EvaMedRetCertificado instance);
-    partial void DeleteTbl_EvaMedRetCertificado(Tbl_EvaMedRetCertificado instance);
     partial void InsertTbl_EvaMedRetiro(Tbl_EvaMedRetiro instance);
     partial void UpdateTbl_EvaMedRetiro(Tbl_EvaMedRetiro instance);
     partial void DeleteTbl_EvaMedRetiro(Tbl_EvaMedRetiro instance);
@@ -447,9 +444,6 @@ namespace CapaDatos
     partial void InsertTbl_QuimicaSanguinea(Tbl_QuimicaSanguinea instance);
     partial void UpdateTbl_QuimicaSanguinea(Tbl_QuimicaSanguinea instance);
     partial void DeleteTbl_QuimicaSanguinea(Tbl_QuimicaSanguinea instance);
-    partial void InsertTbl_RecomenCertificado(Tbl_RecomenCertificado instance);
-    partial void UpdateTbl_RecomenCertificado(Tbl_RecomenCertificado instance);
-    partial void DeleteTbl_RecomenCertificado(Tbl_RecomenCertificado instance);
     partial void InsertTbl_RecomendacionesCertificado(Tbl_RecomendacionesCertificado instance);
     partial void UpdateTbl_RecomendacionesCertificado(Tbl_RecomendacionesCertificado instance);
     partial void DeleteTbl_RecomendacionesCertificado(Tbl_RecomendacionesCertificado instance);
@@ -531,7 +525,7 @@ namespace CapaDatos
     #endregion
 		
 		public DataClassesECU911DataContext() : 
-				base(global::CapaDatos.Properties.Settings.Default.SistemaECU911ConnectionString5, mappingSource)
+				base(global::CapaDatos.Properties.Settings.Default.SistemaECU911ConnectionString4, mappingSource)
 		{
 			OnCreated();
 		}
@@ -1144,11 +1138,11 @@ namespace CapaDatos
 			}
 		}
 		
-		public System.Data.Linq.Table<Tbl_EvaMeciaRetiroCertificado> Tbl_EvaMeciaRetiroCertificado
+		public System.Data.Linq.Table<Tbl_EvaMedicaRetiroCertificado> Tbl_EvaMedicaRetiroCertificado
 		{
 			get
 			{
-				return this.GetTable<Tbl_EvaMeciaRetiroCertificado>();
+				return this.GetTable<Tbl_EvaMedicaRetiroCertificado>();
 			}
 		}
 		
@@ -1157,14 +1151,6 @@ namespace CapaDatos
 			get
 			{
 				return this.GetTable<Tbl_EvaMedRet>();
-			}
-		}
-		
-		public System.Data.Linq.Table<Tbl_EvaMedRetCertificado> Tbl_EvaMedRetCertificado
-		{
-			get
-			{
-				return this.GetTable<Tbl_EvaMedRetCertificado>();
 			}
 		}
 		
@@ -1669,14 +1655,6 @@ namespace CapaDatos
 			get
 			{
 				return this.GetTable<Tbl_QuimicaSanguinea>();
-			}
-		}
-		
-		public System.Data.Linq.Table<Tbl_RecomenCertificado> Tbl_RecomenCertificado
-		{
-			get
-			{
-				return this.GetTable<Tbl_RecomenCertificado>();
 			}
 		}
 		
@@ -8482,6 +8460,8 @@ namespace CapaDatos
 		
 		private string _antPerRetiro_estado;
 		
+		private EntityRef<Tbl_Personas> _Tbl_Personas;
+		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -8522,6 +8502,7 @@ namespace CapaDatos
 		
 		public Tbl_AntecedentesPersonalesRetiro()
 		{
+			this._Tbl_Personas = default(EntityRef<Tbl_Personas>);
 			OnCreated();
 		}
 		
@@ -8816,6 +8797,10 @@ namespace CapaDatos
 			{
 				if ((this._Per_id != value))
 				{
+					if (this._Tbl_Personas.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnPer_idChanging(value);
 					this.SendPropertyChanging();
 					this._Per_id = value;
@@ -8841,6 +8826,40 @@ namespace CapaDatos
 					this._antPerRetiro_estado = value;
 					this.SendPropertyChanged("antPerRetiro_estado");
 					this.OnantPerRetiro_estadoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_AntecedentesPersonalesRetiro", Storage="_Tbl_Personas", ThisKey="Per_id", OtherKey="Per_id", IsForeignKey=true)]
+		public Tbl_Personas Tbl_Personas
+		{
+			get
+			{
+				return this._Tbl_Personas.Entity;
+			}
+			set
+			{
+				Tbl_Personas previousValue = this._Tbl_Personas.Entity;
+				if (((previousValue != value) 
+							|| (this._Tbl_Personas.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Tbl_Personas.Entity = null;
+						previousValue.Tbl_AntecedentesPersonalesRetiro.Remove(this);
+					}
+					this._Tbl_Personas.Entity = value;
+					if ((value != null))
+					{
+						value.Tbl_AntecedentesPersonalesRetiro.Add(this);
+						this._Per_id = value.Per_id;
+					}
+					else
+					{
+						this._Per_id = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Tbl_Personas");
 				}
 			}
 		}
@@ -10664,6 +10683,8 @@ namespace CapaDatos
 		
 		private string _AptMedCertificado_estado;
 		
+		private EntityRef<Tbl_Personas> _Tbl_Personas;
+		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -10690,6 +10711,7 @@ namespace CapaDatos
 		
 		public Tbl_AptitudMedicaCertificado()
 		{
+			this._Tbl_Personas = default(EntityRef<Tbl_Personas>);
 			OnCreated();
 		}
 		
@@ -10844,6 +10866,10 @@ namespace CapaDatos
 			{
 				if ((this._Per_id != value))
 				{
+					if (this._Tbl_Personas.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnPer_idChanging(value);
 					this.SendPropertyChanging();
 					this._Per_id = value;
@@ -10869,6 +10895,40 @@ namespace CapaDatos
 					this._AptMedCertificado_estado = value;
 					this.SendPropertyChanged("AptMedCertificado_estado");
 					this.OnAptMedCertificado_estadoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_AptitudMedicaCertificado", Storage="_Tbl_Personas", ThisKey="Per_id", OtherKey="Per_id", IsForeignKey=true)]
+		public Tbl_Personas Tbl_Personas
+		{
+			get
+			{
+				return this._Tbl_Personas.Entity;
+			}
+			set
+			{
+				Tbl_Personas previousValue = this._Tbl_Personas.Entity;
+				if (((previousValue != value) 
+							|| (this._Tbl_Personas.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Tbl_Personas.Entity = null;
+						previousValue.Tbl_AptitudMedicaCertificado.Remove(this);
+					}
+					this._Tbl_Personas.Entity = value;
+					if ((value != null))
+					{
+						value.Tbl_AptitudMedicaCertificado.Add(this);
+						this._Per_id = value.Per_id;
+					}
+					else
+					{
+						this._Per_id = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Tbl_Personas");
 				}
 			}
 		}
@@ -13663,6 +13723,8 @@ namespace CapaDatos
 		
 		private string _ConsVitAntroRetiro_estado;
 		
+		private EntityRef<Tbl_Personas> _Tbl_Personas;
+		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -13695,6 +13757,7 @@ namespace CapaDatos
 		
 		public Tbl_ConsVitAntroRetiro()
 		{
+			this._Tbl_Personas = default(EntityRef<Tbl_Personas>);
 			OnCreated();
 		}
 		
@@ -13909,6 +13972,10 @@ namespace CapaDatos
 			{
 				if ((this._Per_id != value))
 				{
+					if (this._Tbl_Personas.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnPer_idChanging(value);
 					this.SendPropertyChanging();
 					this._Per_id = value;
@@ -13934,6 +14001,40 @@ namespace CapaDatos
 					this._ConsVitAntroRetiro_estado = value;
 					this.SendPropertyChanged("ConsVitAntroRetiro_estado");
 					this.OnConsVitAntroRetiro_estadoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_ConsVitAntroRetiro", Storage="_Tbl_Personas", ThisKey="Per_id", OtherKey="Per_id", IsForeignKey=true)]
+		public Tbl_Personas Tbl_Personas
+		{
+			get
+			{
+				return this._Tbl_Personas.Entity;
+			}
+			set
+			{
+				Tbl_Personas previousValue = this._Tbl_Personas.Entity;
+				if (((previousValue != value) 
+							|| (this._Tbl_Personas.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Tbl_Personas.Entity = null;
+						previousValue.Tbl_ConsVitAntroRetiro.Remove(this);
+					}
+					this._Tbl_Personas.Entity = value;
+					if ((value != null))
+					{
+						value.Tbl_ConsVitAntroRetiro.Add(this);
+						this._Per_id = value.Per_id;
+					}
+					else
+					{
+						this._Per_id = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Tbl_Personas");
 				}
 			}
 		}
@@ -15016,6 +15117,8 @@ namespace CapaDatos
 		
 		private string _datEstable_estado;
 		
+		private EntityRef<Tbl_Personas> _Tbl_Personas;
+		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -15038,6 +15141,7 @@ namespace CapaDatos
 		
 		public Tbl_DatEstableEmpUsuReintegro()
 		{
+			this._Tbl_Personas = default(EntityRef<Tbl_Personas>);
 			OnCreated();
 		}
 		
@@ -15152,6 +15256,10 @@ namespace CapaDatos
 			{
 				if ((this._Per_id != value))
 				{
+					if (this._Tbl_Personas.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnPer_idChanging(value);
 					this.SendPropertyChanging();
 					this._Per_id = value;
@@ -15177,6 +15285,40 @@ namespace CapaDatos
 					this._datEstable_estado = value;
 					this.SendPropertyChanged("datEstable_estado");
 					this.OndatEstable_estadoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_DatEstableEmpUsuReintegro", Storage="_Tbl_Personas", ThisKey="Per_id", OtherKey="Per_id", IsForeignKey=true)]
+		public Tbl_Personas Tbl_Personas
+		{
+			get
+			{
+				return this._Tbl_Personas.Entity;
+			}
+			set
+			{
+				Tbl_Personas previousValue = this._Tbl_Personas.Entity;
+				if (((previousValue != value) 
+							|| (this._Tbl_Personas.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Tbl_Personas.Entity = null;
+						previousValue.Tbl_DatEstableEmpUsuReintegro.Remove(this);
+					}
+					this._Tbl_Personas.Entity = value;
+					if ((value != null))
+					{
+						value.Tbl_DatEstableEmpUsuReintegro.Add(this);
+						this._Per_id = value.Per_id;
+					}
+					else
+					{
+						this._Per_id = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Tbl_Personas");
 				}
 			}
 		}
@@ -15224,6 +15366,8 @@ namespace CapaDatos
 		
 		private string _datEstable_estado;
 		
+		private EntityRef<Tbl_Personas> _Tbl_Personas;
+		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -15248,6 +15392,7 @@ namespace CapaDatos
 		
 		public Tbl_DatEstableEmpUsuRetiro()
 		{
+			this._Tbl_Personas = default(EntityRef<Tbl_Personas>);
 			OnCreated();
 		}
 		
@@ -15382,6 +15527,10 @@ namespace CapaDatos
 			{
 				if ((this._Per_id != value))
 				{
+					if (this._Tbl_Personas.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnPer_idChanging(value);
 					this.SendPropertyChanging();
 					this._Per_id = value;
@@ -15407,6 +15556,40 @@ namespace CapaDatos
 					this._datEstable_estado = value;
 					this.SendPropertyChanged("datEstable_estado");
 					this.OndatEstable_estadoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_DatEstableEmpUsuRetiro", Storage="_Tbl_Personas", ThisKey="Per_id", OtherKey="Per_id", IsForeignKey=true)]
+		public Tbl_Personas Tbl_Personas
+		{
+			get
+			{
+				return this._Tbl_Personas.Entity;
+			}
+			set
+			{
+				Tbl_Personas previousValue = this._Tbl_Personas.Entity;
+				if (((previousValue != value) 
+							|| (this._Tbl_Personas.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Tbl_Personas.Entity = null;
+						previousValue.Tbl_DatEstableEmpUsuRetiro.Remove(this);
+					}
+					this._Tbl_Personas.Entity = value;
+					if ((value != null))
+					{
+						value.Tbl_DatEstableEmpUsuRetiro.Add(this);
+						this._Per_id = value.Per_id;
+					}
+					else
+					{
+						this._Per_id = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Tbl_Personas");
 				}
 			}
 		}
@@ -15629,6 +15812,8 @@ namespace CapaDatos
 		
 		private string _datGen_estado;
 		
+		private EntityRef<Tbl_Personas> _Tbl_Personas;
+		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -15653,6 +15838,7 @@ namespace CapaDatos
 		
 		public Tbl_DatosGeneralesCertificado()
 		{
+			this._Tbl_Personas = default(EntityRef<Tbl_Personas>);
 			OnCreated();
 		}
 		
@@ -15787,6 +15973,10 @@ namespace CapaDatos
 			{
 				if ((this._Per_id != value))
 				{
+					if (this._Tbl_Personas.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnPer_idChanging(value);
 					this.SendPropertyChanging();
 					this._Per_id = value;
@@ -15812,6 +16002,40 @@ namespace CapaDatos
 					this._datGen_estado = value;
 					this.SendPropertyChanged("datGen_estado");
 					this.OndatGen_estadoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_DatosGeneralesCertificado", Storage="_Tbl_Personas", ThisKey="Per_id", OtherKey="Per_id", IsForeignKey=true)]
+		public Tbl_Personas Tbl_Personas
+		{
+			get
+			{
+				return this._Tbl_Personas.Entity;
+			}
+			set
+			{
+				Tbl_Personas previousValue = this._Tbl_Personas.Entity;
+				if (((previousValue != value) 
+							|| (this._Tbl_Personas.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Tbl_Personas.Entity = null;
+						previousValue.Tbl_DatosGeneralesCertificado.Remove(this);
+					}
+					this._Tbl_Personas.Entity = value;
+					if ((value != null))
+					{
+						value.Tbl_DatosGeneralesCertificado.Add(this);
+						this._Per_id = value.Per_id;
+					}
+					else
+					{
+						this._Per_id = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Tbl_Personas");
 				}
 			}
 		}
@@ -16182,6 +16406,8 @@ namespace CapaDatos
 		
 		private string _DatProfeCertificado_estado;
 		
+		private EntityRef<Tbl_Personas> _Tbl_Personas;
+		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -16200,6 +16426,7 @@ namespace CapaDatos
 		
 		public Tbl_DatProfesionalCertificado()
 		{
+			this._Tbl_Personas = default(EntityRef<Tbl_Personas>);
 			OnCreated();
 		}
 		
@@ -16274,6 +16501,10 @@ namespace CapaDatos
 			{
 				if ((this._Per_id != value))
 				{
+					if (this._Tbl_Personas.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnPer_idChanging(value);
 					this.SendPropertyChanging();
 					this._Per_id = value;
@@ -16299,6 +16530,40 @@ namespace CapaDatos
 					this._DatProfeCertificado_estado = value;
 					this.SendPropertyChanged("DatProfeCertificado_estado");
 					this.OnDatProfeCertificado_estadoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_DatProfesionalCertificado", Storage="_Tbl_Personas", ThisKey="Per_id", OtherKey="Per_id", IsForeignKey=true)]
+		public Tbl_Personas Tbl_Personas
+		{
+			get
+			{
+				return this._Tbl_Personas.Entity;
+			}
+			set
+			{
+				Tbl_Personas previousValue = this._Tbl_Personas.Entity;
+				if (((previousValue != value) 
+							|| (this._Tbl_Personas.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Tbl_Personas.Entity = null;
+						previousValue.Tbl_DatProfesionalCertificado.Remove(this);
+					}
+					this._Tbl_Personas.Entity = value;
+					if ((value != null))
+					{
+						value.Tbl_DatProfesionalCertificado.Add(this);
+						this._Per_id = value.Per_id;
+					}
+					else
+					{
+						this._Per_id = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Tbl_Personas");
 				}
 			}
 		}
@@ -17331,6 +17596,8 @@ namespace CapaDatos
 		
 		private string _DatProfeRetiro_estado;
 		
+		private EntityRef<Tbl_Personas> _Tbl_Personas;
+		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -17353,6 +17620,7 @@ namespace CapaDatos
 		
 		public Tbl_DatProfesionalRetiro()
 		{
+			this._Tbl_Personas = default(EntityRef<Tbl_Personas>);
 			OnCreated();
 		}
 		
@@ -17467,6 +17735,10 @@ namespace CapaDatos
 			{
 				if ((this._Per_id != value))
 				{
+					if (this._Tbl_Personas.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnPer_idChanging(value);
 					this.SendPropertyChanging();
 					this._Per_id = value;
@@ -17492,6 +17764,40 @@ namespace CapaDatos
 					this._DatProfeRetiro_estado = value;
 					this.SendPropertyChanged("DatProfeRetiro_estado");
 					this.OnDatProfeRetiro_estadoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_DatProfesionalRetiro", Storage="_Tbl_Personas", ThisKey="Per_id", OtherKey="Per_id", IsForeignKey=true)]
+		public Tbl_Personas Tbl_Personas
+		{
+			get
+			{
+				return this._Tbl_Personas.Entity;
+			}
+			set
+			{
+				Tbl_Personas previousValue = this._Tbl_Personas.Entity;
+				if (((previousValue != value) 
+							|| (this._Tbl_Personas.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Tbl_Personas.Entity = null;
+						previousValue.Tbl_DatProfesionalRetiro.Remove(this);
+					}
+					this._Tbl_Personas.Entity = value;
+					if ((value != null))
+					{
+						value.Tbl_DatProfesionalRetiro.Add(this);
+						this._Per_id = value.Per_id;
+					}
+					else
+					{
+						this._Per_id = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Tbl_Personas");
 				}
 			}
 		}
@@ -18573,6 +18879,8 @@ namespace CapaDatos
 		
 		private string _DiagRetiro_estado;
 		
+		private EntityRef<Tbl_Personas> _Tbl_Personas;
+		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -18595,6 +18903,7 @@ namespace CapaDatos
 		
 		public Tbl_DiagnosticoRetiro()
 		{
+			this._Tbl_Personas = default(EntityRef<Tbl_Personas>);
 			OnCreated();
 		}
 		
@@ -18709,6 +19018,10 @@ namespace CapaDatos
 			{
 				if ((this._Per_id != value))
 				{
+					if (this._Tbl_Personas.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnPer_idChanging(value);
 					this.SendPropertyChanging();
 					this._Per_id = value;
@@ -18734,6 +19047,40 @@ namespace CapaDatos
 					this._DiagRetiro_estado = value;
 					this.SendPropertyChanged("DiagRetiro_estado");
 					this.OnDiagRetiro_estadoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_DiagnosticoRetiro", Storage="_Tbl_Personas", ThisKey="Per_id", OtherKey="Per_id", IsForeignKey=true)]
+		public Tbl_Personas Tbl_Personas
+		{
+			get
+			{
+				return this._Tbl_Personas.Entity;
+			}
+			set
+			{
+				Tbl_Personas previousValue = this._Tbl_Personas.Entity;
+				if (((previousValue != value) 
+							|| (this._Tbl_Personas.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Tbl_Personas.Entity = null;
+						previousValue.Tbl_DiagnosticoRetiro.Remove(this);
+					}
+					this._Tbl_Personas.Entity = value;
+					if ((value != null))
+					{
+						value.Tbl_DiagnosticoRetiro.Add(this);
+						this._Per_id = value.Per_id;
+					}
+					else
+					{
+						this._Per_id = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Tbl_Personas");
 				}
 			}
 		}
@@ -22900,6 +23247,8 @@ namespace CapaDatos
 		
 		private string _evaMedRet_estado;
 		
+		private EntityRef<Tbl_Personas> _Tbl_Personas;
+		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -22920,6 +23269,7 @@ namespace CapaDatos
 		
 		public Tbl_EvaluacionMedicaRetiro()
 		{
+			this._Tbl_Personas = default(EntityRef<Tbl_Personas>);
 			OnCreated();
 		}
 		
@@ -23014,6 +23364,10 @@ namespace CapaDatos
 			{
 				if ((this._Per_id != value))
 				{
+					if (this._Tbl_Personas.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnPer_idChanging(value);
 					this.SendPropertyChanging();
 					this._Per_id = value;
@@ -23043,6 +23397,40 @@ namespace CapaDatos
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_EvaluacionMedicaRetiro", Storage="_Tbl_Personas", ThisKey="Per_id", OtherKey="Per_id", IsForeignKey=true)]
+		public Tbl_Personas Tbl_Personas
+		{
+			get
+			{
+				return this._Tbl_Personas.Entity;
+			}
+			set
+			{
+				Tbl_Personas previousValue = this._Tbl_Personas.Entity;
+				if (((previousValue != value) 
+							|| (this._Tbl_Personas.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Tbl_Personas.Entity = null;
+						previousValue.Tbl_EvaluacionMedicaRetiro.Remove(this);
+					}
+					this._Tbl_Personas.Entity = value;
+					if ((value != null))
+					{
+						value.Tbl_EvaluacionMedicaRetiro.Add(this);
+						this._Per_id = value.Per_id;
+					}
+					else
+					{
+						this._Per_id = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Tbl_Personas");
+				}
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -23064,8 +23452,8 @@ namespace CapaDatos
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_EvaMeciaRetiroCertificado")]
-	public partial class Tbl_EvaMeciaRetiroCertificado : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_EvaMedicaRetiroCertificado")]
+	public partial class Tbl_EvaMedicaRetiroCertificado : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -23091,6 +23479,8 @@ namespace CapaDatos
 		private System.Nullable<int> _Per_id;
 		
 		private string _evaMedRet_estado;
+		
+		private EntityRef<Tbl_Personas> _Tbl_Personas;
 		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
@@ -23120,8 +23510,9 @@ namespace CapaDatos
     partial void OnevaMedRet_estadoChanged();
     #endregion
 		
-		public Tbl_EvaMeciaRetiroCertificado()
+		public Tbl_EvaMedicaRetiroCertificado()
 		{
+			this._Tbl_Personas = default(EntityRef<Tbl_Personas>);
 			OnCreated();
 		}
 		
@@ -23316,6 +23707,10 @@ namespace CapaDatos
 			{
 				if ((this._Per_id != value))
 				{
+					if (this._Tbl_Personas.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnPer_idChanging(value);
 					this.SendPropertyChanging();
 					this._Per_id = value;
@@ -23341,6 +23736,40 @@ namespace CapaDatos
 					this._evaMedRet_estado = value;
 					this.SendPropertyChanged("evaMedRet_estado");
 					this.OnevaMedRet_estadoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_EvaMedicaRetiroCertificado", Storage="_Tbl_Personas", ThisKey="Per_id", OtherKey="Per_id", IsForeignKey=true)]
+		public Tbl_Personas Tbl_Personas
+		{
+			get
+			{
+				return this._Tbl_Personas.Entity;
+			}
+			set
+			{
+				Tbl_Personas previousValue = this._Tbl_Personas.Entity;
+				if (((previousValue != value) 
+							|| (this._Tbl_Personas.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Tbl_Personas.Entity = null;
+						previousValue.Tbl_EvaMedicaRetiroCertificado.Remove(this);
+					}
+					this._Tbl_Personas.Entity = value;
+					if ((value != null))
+					{
+						value.Tbl_EvaMedicaRetiroCertificado.Add(this);
+						this._Per_id = value.Per_id;
+					}
+					else
+					{
+						this._Per_id = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Tbl_Personas");
 				}
 			}
 		}
@@ -23475,164 +23904,6 @@ namespace CapaDatos
 					this._EvaM_estado = value;
 					this.SendPropertyChanged("EvaM_estado");
 					this.OnEvaM_estadoChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_EvaMedRetCertificado")]
-	public partial class Tbl_EvaMedRetCertificado : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _EvaMedRetCer_id;
-		
-		private System.Nullable<bool> _EvaMedRetCer_opcion1;
-		
-		private System.Nullable<bool> _EvaMedRetCer_opcion2;
-		
-		private System.Nullable<bool> _EvaMedRetCer_opcion3;
-		
-		private string _EvaMedRetCer_estado;
-		
-    #region Definiciones de métodos de extensibilidad
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnEvaMedRetCer_idChanging(int value);
-    partial void OnEvaMedRetCer_idChanged();
-    partial void OnEvaMedRetCer_opcion1Changing(System.Nullable<bool> value);
-    partial void OnEvaMedRetCer_opcion1Changed();
-    partial void OnEvaMedRetCer_opcion2Changing(System.Nullable<bool> value);
-    partial void OnEvaMedRetCer_opcion2Changed();
-    partial void OnEvaMedRetCer_opcion3Changing(System.Nullable<bool> value);
-    partial void OnEvaMedRetCer_opcion3Changed();
-    partial void OnEvaMedRetCer_estadoChanging(string value);
-    partial void OnEvaMedRetCer_estadoChanged();
-    #endregion
-		
-		public Tbl_EvaMedRetCertificado()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EvaMedRetCer_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int EvaMedRetCer_id
-		{
-			get
-			{
-				return this._EvaMedRetCer_id;
-			}
-			set
-			{
-				if ((this._EvaMedRetCer_id != value))
-				{
-					this.OnEvaMedRetCer_idChanging(value);
-					this.SendPropertyChanging();
-					this._EvaMedRetCer_id = value;
-					this.SendPropertyChanged("EvaMedRetCer_id");
-					this.OnEvaMedRetCer_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EvaMedRetCer_opcion1", DbType="Bit")]
-		public System.Nullable<bool> EvaMedRetCer_opcion1
-		{
-			get
-			{
-				return this._EvaMedRetCer_opcion1;
-			}
-			set
-			{
-				if ((this._EvaMedRetCer_opcion1 != value))
-				{
-					this.OnEvaMedRetCer_opcion1Changing(value);
-					this.SendPropertyChanging();
-					this._EvaMedRetCer_opcion1 = value;
-					this.SendPropertyChanged("EvaMedRetCer_opcion1");
-					this.OnEvaMedRetCer_opcion1Changed();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EvaMedRetCer_opcion2", DbType="Bit")]
-		public System.Nullable<bool> EvaMedRetCer_opcion2
-		{
-			get
-			{
-				return this._EvaMedRetCer_opcion2;
-			}
-			set
-			{
-				if ((this._EvaMedRetCer_opcion2 != value))
-				{
-					this.OnEvaMedRetCer_opcion2Changing(value);
-					this.SendPropertyChanging();
-					this._EvaMedRetCer_opcion2 = value;
-					this.SendPropertyChanged("EvaMedRetCer_opcion2");
-					this.OnEvaMedRetCer_opcion2Changed();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EvaMedRetCer_opcion3", DbType="Bit")]
-		public System.Nullable<bool> EvaMedRetCer_opcion3
-		{
-			get
-			{
-				return this._EvaMedRetCer_opcion3;
-			}
-			set
-			{
-				if ((this._EvaMedRetCer_opcion3 != value))
-				{
-					this.OnEvaMedRetCer_opcion3Changing(value);
-					this.SendPropertyChanging();
-					this._EvaMedRetCer_opcion3 = value;
-					this.SendPropertyChanged("EvaMedRetCer_opcion3");
-					this.OnEvaMedRetCer_opcion3Changed();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EvaMedRetCer_estado", DbType="VarChar(1)")]
-		public string EvaMedRetCer_estado
-		{
-			get
-			{
-				return this._EvaMedRetCer_estado;
-			}
-			set
-			{
-				if ((this._EvaMedRetCer_estado != value))
-				{
-					this.OnEvaMedRetCer_estadoChanging(value);
-					this.SendPropertyChanging();
-					this._EvaMedRetCer_estado = value;
-					this.SendPropertyChanged("EvaMedRetCer_estado");
-					this.OnEvaMedRetCer_estadoChanged();
 				}
 			}
 		}
@@ -29516,6 +29787,8 @@ namespace CapaDatos
 		
 		private string _exaFisRegRetiro_estado;
 		
+		private EntityRef<Tbl_Personas> _Tbl_Personas;
+		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -29612,6 +29885,7 @@ namespace CapaDatos
 		
 		public Tbl_ExaFisRegionalRetiro()
 		{
+			this._Tbl_Personas = default(EntityRef<Tbl_Personas>);
 			OnCreated();
 		}
 		
@@ -30466,6 +30740,10 @@ namespace CapaDatos
 			{
 				if ((this._Per_id != value))
 				{
+					if (this._Tbl_Personas.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnPer_idChanging(value);
 					this.SendPropertyChanging();
 					this._Per_id = value;
@@ -30491,6 +30769,40 @@ namespace CapaDatos
 					this._exaFisRegRetiro_estado = value;
 					this.SendPropertyChanged("exaFisRegRetiro_estado");
 					this.OnexaFisRegRetiro_estadoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_ExaFisRegionalRetiro", Storage="_Tbl_Personas", ThisKey="Per_id", OtherKey="Per_id", IsForeignKey=true)]
+		public Tbl_Personas Tbl_Personas
+		{
+			get
+			{
+				return this._Tbl_Personas.Entity;
+			}
+			set
+			{
+				Tbl_Personas previousValue = this._Tbl_Personas.Entity;
+				if (((previousValue != value) 
+							|| (this._Tbl_Personas.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Tbl_Personas.Entity = null;
+						previousValue.Tbl_ExaFisRegionalRetiro.Remove(this);
+					}
+					this._Tbl_Personas.Entity = value;
+					if ((value != null))
+					{
+						value.Tbl_ExaFisRegionalRetiro.Add(this);
+						this._Per_id = value.Per_id;
+					}
+					else
+					{
+						this._Per_id = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Tbl_Personas");
 				}
 			}
 		}
@@ -36573,9 +36885,23 @@ namespace CapaDatos
 		
 		private string _inmu_observaSarampion;
 		
+		private System.Nullable<System.DateTime> _inmu_1fechaInmuAcuerTipoEmpRies;
+		
+		private string _inmu_1loteInmuAcuerTipoEmpRies;
+		
+		private string _inmu_1esqueCompleInmuAcuerTipoEmpRies;
+		
+		private string _inmu_1nomCompleResponVacuInmuAcuerTipoEmpRies;
+		
+		private string _inmu_1estaSaludColocoVacuInmuAcuerTipoEmpRies;
+		
+		private string _inmu_1observaInmuAcuerTipoEmpRies;
+		
 		private System.Nullable<int> _Per_id;
 		
 		private string _inmu_estado;
+		
+		private EntityRef<Tbl_Personas> _Tbl_Personas;
 		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
@@ -36655,6 +36981,18 @@ namespace CapaDatos
     partial void Oninmu_estaSaludColocoVacuSarampionChanged();
     partial void Oninmu_observaSarampionChanging(string value);
     partial void Oninmu_observaSarampionChanged();
+    partial void Oninmu_1fechaInmuAcuerTipoEmpRiesChanging(System.Nullable<System.DateTime> value);
+    partial void Oninmu_1fechaInmuAcuerTipoEmpRiesChanged();
+    partial void Oninmu_1loteInmuAcuerTipoEmpRiesChanging(string value);
+    partial void Oninmu_1loteInmuAcuerTipoEmpRiesChanged();
+    partial void Oninmu_1esqueCompleInmuAcuerTipoEmpRiesChanging(string value);
+    partial void Oninmu_1esqueCompleInmuAcuerTipoEmpRiesChanged();
+    partial void Oninmu_1nomCompleResponVacuInmuAcuerTipoEmpRiesChanging(string value);
+    partial void Oninmu_1nomCompleResponVacuInmuAcuerTipoEmpRiesChanged();
+    partial void Oninmu_1estaSaludColocoVacuInmuAcuerTipoEmpRiesChanging(string value);
+    partial void Oninmu_1estaSaludColocoVacuInmuAcuerTipoEmpRiesChanged();
+    partial void Oninmu_1observaInmuAcuerTipoEmpRiesChanging(string value);
+    partial void Oninmu_1observaInmuAcuerTipoEmpRiesChanged();
     partial void OnPer_idChanging(System.Nullable<int> value);
     partial void OnPer_idChanged();
     partial void Oninmu_estadoChanging(string value);
@@ -36663,6 +37001,7 @@ namespace CapaDatos
 		
 		public Tbl_InmunizacionesInmunizaciones()
 		{
+			this._Tbl_Personas = default(EntityRef<Tbl_Personas>);
 			OnCreated();
 		}
 		
@@ -37406,6 +37745,126 @@ namespace CapaDatos
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_1fechaInmuAcuerTipoEmpRies", DbType="Date")]
+		public System.Nullable<System.DateTime> inmu_1fechaInmuAcuerTipoEmpRies
+		{
+			get
+			{
+				return this._inmu_1fechaInmuAcuerTipoEmpRies;
+			}
+			set
+			{
+				if ((this._inmu_1fechaInmuAcuerTipoEmpRies != value))
+				{
+					this.Oninmu_1fechaInmuAcuerTipoEmpRiesChanging(value);
+					this.SendPropertyChanging();
+					this._inmu_1fechaInmuAcuerTipoEmpRies = value;
+					this.SendPropertyChanged("inmu_1fechaInmuAcuerTipoEmpRies");
+					this.Oninmu_1fechaInmuAcuerTipoEmpRiesChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_1loteInmuAcuerTipoEmpRies", DbType="VarChar(150)")]
+		public string inmu_1loteInmuAcuerTipoEmpRies
+		{
+			get
+			{
+				return this._inmu_1loteInmuAcuerTipoEmpRies;
+			}
+			set
+			{
+				if ((this._inmu_1loteInmuAcuerTipoEmpRies != value))
+				{
+					this.Oninmu_1loteInmuAcuerTipoEmpRiesChanging(value);
+					this.SendPropertyChanging();
+					this._inmu_1loteInmuAcuerTipoEmpRies = value;
+					this.SendPropertyChanged("inmu_1loteInmuAcuerTipoEmpRies");
+					this.Oninmu_1loteInmuAcuerTipoEmpRiesChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_1esqueCompleInmuAcuerTipoEmpRies", DbType="VarChar(150)")]
+		public string inmu_1esqueCompleInmuAcuerTipoEmpRies
+		{
+			get
+			{
+				return this._inmu_1esqueCompleInmuAcuerTipoEmpRies;
+			}
+			set
+			{
+				if ((this._inmu_1esqueCompleInmuAcuerTipoEmpRies != value))
+				{
+					this.Oninmu_1esqueCompleInmuAcuerTipoEmpRiesChanging(value);
+					this.SendPropertyChanging();
+					this._inmu_1esqueCompleInmuAcuerTipoEmpRies = value;
+					this.SendPropertyChanged("inmu_1esqueCompleInmuAcuerTipoEmpRies");
+					this.Oninmu_1esqueCompleInmuAcuerTipoEmpRiesChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_1nomCompleResponVacuInmuAcuerTipoEmpRies", DbType="VarChar(150)")]
+		public string inmu_1nomCompleResponVacuInmuAcuerTipoEmpRies
+		{
+			get
+			{
+				return this._inmu_1nomCompleResponVacuInmuAcuerTipoEmpRies;
+			}
+			set
+			{
+				if ((this._inmu_1nomCompleResponVacuInmuAcuerTipoEmpRies != value))
+				{
+					this.Oninmu_1nomCompleResponVacuInmuAcuerTipoEmpRiesChanging(value);
+					this.SendPropertyChanging();
+					this._inmu_1nomCompleResponVacuInmuAcuerTipoEmpRies = value;
+					this.SendPropertyChanged("inmu_1nomCompleResponVacuInmuAcuerTipoEmpRies");
+					this.Oninmu_1nomCompleResponVacuInmuAcuerTipoEmpRiesChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_1estaSaludColocoVacuInmuAcuerTipoEmpRies", DbType="VarChar(150)")]
+		public string inmu_1estaSaludColocoVacuInmuAcuerTipoEmpRies
+		{
+			get
+			{
+				return this._inmu_1estaSaludColocoVacuInmuAcuerTipoEmpRies;
+			}
+			set
+			{
+				if ((this._inmu_1estaSaludColocoVacuInmuAcuerTipoEmpRies != value))
+				{
+					this.Oninmu_1estaSaludColocoVacuInmuAcuerTipoEmpRiesChanging(value);
+					this.SendPropertyChanging();
+					this._inmu_1estaSaludColocoVacuInmuAcuerTipoEmpRies = value;
+					this.SendPropertyChanged("inmu_1estaSaludColocoVacuInmuAcuerTipoEmpRies");
+					this.Oninmu_1estaSaludColocoVacuInmuAcuerTipoEmpRiesChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_1observaInmuAcuerTipoEmpRies", DbType="VarChar(300)")]
+		public string inmu_1observaInmuAcuerTipoEmpRies
+		{
+			get
+			{
+				return this._inmu_1observaInmuAcuerTipoEmpRies;
+			}
+			set
+			{
+				if ((this._inmu_1observaInmuAcuerTipoEmpRies != value))
+				{
+					this.Oninmu_1observaInmuAcuerTipoEmpRiesChanging(value);
+					this.SendPropertyChanging();
+					this._inmu_1observaInmuAcuerTipoEmpRies = value;
+					this.SendPropertyChanged("inmu_1observaInmuAcuerTipoEmpRies");
+					this.Oninmu_1observaInmuAcuerTipoEmpRiesChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_id", DbType="Int")]
 		public System.Nullable<int> Per_id
 		{
@@ -37417,6 +37876,10 @@ namespace CapaDatos
 			{
 				if ((this._Per_id != value))
 				{
+					if (this._Tbl_Personas.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnPer_idChanging(value);
 					this.SendPropertyChanging();
 					this._Per_id = value;
@@ -37442,6 +37905,40 @@ namespace CapaDatos
 					this._inmu_estado = value;
 					this.SendPropertyChanged("inmu_estado");
 					this.Oninmu_estadoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_InmunizacionesInmunizaciones", Storage="_Tbl_Personas", ThisKey="Per_id", OtherKey="Per_id", IsForeignKey=true)]
+		public Tbl_Personas Tbl_Personas
+		{
+			get
+			{
+				return this._Tbl_Personas.Entity;
+			}
+			set
+			{
+				Tbl_Personas previousValue = this._Tbl_Personas.Entity;
+				if (((previousValue != value) 
+							|| (this._Tbl_Personas.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Tbl_Personas.Entity = null;
+						previousValue.Tbl_InmunizacionesInmunizaciones.Remove(this);
+					}
+					this._Tbl_Personas.Entity = value;
+					if ((value != null))
+					{
+						value.Tbl_InmunizacionesInmunizaciones.Add(this);
+						this._Per_id = value.Per_id;
+					}
+					else
+					{
+						this._Per_id = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Tbl_Personas");
 				}
 			}
 		}
@@ -41777,11 +42274,15 @@ namespace CapaDatos
 		
 		private EntitySet<Tbl_AntecedentesPersonalesPeriodica> _Tbl_AntecedentesPersonalesPeriodica;
 		
+		private EntitySet<Tbl_AntecedentesPersonalesRetiro> _Tbl_AntecedentesPersonalesRetiro;
+		
 		private EntitySet<Tbl_AnteFamiliares> _Tbl_AnteFamiliares;
 		
 		private EntitySet<Tbl_AntePersonales> _Tbl_AntePersonales;
 		
 		private EntitySet<Tbl_AptitudMedica> _Tbl_AptitudMedica;
+		
+		private EntitySet<Tbl_AptitudMedicaCertificado> _Tbl_AptitudMedicaCertificado;
 		
 		private EntitySet<Tbl_AptitudMedicaPeriodica> _Tbl_AptitudMedicaPeriodica;
 		
@@ -41793,15 +42294,27 @@ namespace CapaDatos
 		
 		private EntitySet<Tbl_ConsVitAntroReintegro> _Tbl_ConsVitAntroReintegro;
 		
+		private EntitySet<Tbl_ConsVitAntroRetiro> _Tbl_ConsVitAntroRetiro;
+		
 		private EntitySet<Tbl_DatEstableEmpUsu> _Tbl_DatEstableEmpUsu;
 		
+		private EntitySet<Tbl_DatEstableEmpUsuReintegro> _Tbl_DatEstableEmpUsuReintegro;
+		
+		private EntitySet<Tbl_DatEstableEmpUsuRetiro> _Tbl_DatEstableEmpUsuRetiro;
+		
+		private EntitySet<Tbl_DatosGeneralesCertificado> _Tbl_DatosGeneralesCertificado;
+		
 		private EntitySet<Tbl_DatProfesional> _Tbl_DatProfesional;
+		
+		private EntitySet<Tbl_DatProfesionalCertificado> _Tbl_DatProfesionalCertificado;
 		
 		private EntitySet<Tbl_DatProfesionalInicial> _Tbl_DatProfesionalInicial;
 		
 		private EntitySet<Tbl_DatProfesionalPeriodica> _Tbl_DatProfesionalPeriodica;
 		
 		private EntitySet<Tbl_DatProfesionalReintegro> _Tbl_DatProfesionalReintegro;
+		
+		private EntitySet<Tbl_DatProfesionalRetiro> _Tbl_DatProfesionalRetiro;
 		
 		private EntitySet<Tbl_Diagnostico> _Tbl_Diagnostico;
 		
@@ -41810,6 +42323,8 @@ namespace CapaDatos
 		private EntitySet<Tbl_DiagnosticoPeriodica> _Tbl_DiagnosticoPeriodica;
 		
 		private EntitySet<Tbl_DiagnosticoReintegro> _Tbl_DiagnosticoReintegro;
+		
+		private EntitySet<Tbl_DiagnosticoRetiro> _Tbl_DiagnosticoRetiro;
 		
 		private EntitySet<Tbl_EnferActualPeriodica> _Tbl_EnferActualPeriodica;
 		
@@ -41825,6 +42340,10 @@ namespace CapaDatos
 		
 		private EntitySet<Tbl_EnfermedadesProfesionales> _Tbl_EnfermedadesProfesionales;
 		
+		private EntitySet<Tbl_EvaluacionMedicaRetiro> _Tbl_EvaluacionMedicaRetiro;
+		
+		private EntitySet<Tbl_EvaMedicaRetiroCertificado> _Tbl_EvaMedicaRetiroCertificado;
+		
 		private EntitySet<Tbl_Evolucion> _Tbl_Evolucion;
 		
 		private EntitySet<Tbl_ExaFisRegional> _Tbl_ExaFisRegional;
@@ -41835,9 +42354,13 @@ namespace CapaDatos
 		
 		private EntitySet<Tbl_ExaFisRegionalReintegro> _Tbl_ExaFisRegionalReintegro;
 		
+		private EntitySet<Tbl_ExaFisRegionalRetiro> _Tbl_ExaFisRegionalRetiro;
+		
 		private EntitySet<Tbl_FacRiesTrabAct> _Tbl_FacRiesTrabAct;
 		
 		private EntitySet<Tbl_FacRiesTrabActPeriodica> _Tbl_FacRiesTrabActPeriodica;
+		
+		private EntitySet<Tbl_InmunizacionesInmunizaciones> _Tbl_InmunizacionesInmunizaciones;
 		
 		private EntitySet<Tbl_MotivoConsulta> _Tbl_MotivoConsulta;
 		
@@ -41849,17 +42372,23 @@ namespace CapaDatos
 		
 		private EntitySet<Tbl_Prescipciones> _Tbl_Prescipciones;
 		
+		private EntitySet<Tbl_RecomendacionesCertificado> _Tbl_RecomendacionesCertificado;
+		
 		private EntitySet<Tbl_RecoTratamiento> _Tbl_RecoTratamiento;
 		
 		private EntitySet<Tbl_RecoTratamientoPeriodica> _Tbl_RecoTratamientoPeriodica;
 		
 		private EntitySet<Tbl_RecoTratamientoReintegro> _Tbl_RecoTratamientoReintegro;
 		
+		private EntitySet<Tbl_RecoTratamientoRetiro> _Tbl_RecoTratamientoRetiro;
+		
 		private EntitySet<Tbl_ResExaGenEspRiesTrabajo> _Tbl_ResExaGenEspRiesTrabajo;
 		
 		private EntitySet<Tbl_ResExaGenEspRiesTrabajoPeriodica> _Tbl_ResExaGenEspRiesTrabajoPeriodica;
 		
 		private EntitySet<Tbl_ResExaGenEspRiesTrabajoReintegro> _Tbl_ResExaGenEspRiesTrabajoReintegro;
+		
+		private EntitySet<Tbl_ResExaGenEspRiesTrabajoRetiro> _Tbl_ResExaGenEspRiesTrabajoRetiro;
 		
 		private EntitySet<Tbl_ReviOrgaSistemasFichMed> _Tbl_ReviOrgaSistemasFichMed;
 		
@@ -42002,23 +42531,32 @@ namespace CapaDatos
 			this._Tbl_AntecedentesFamiliaresDetParentescoPeriodica = new EntitySet<Tbl_AntecedentesFamiliaresDetParentescoPeriodica>(new Action<Tbl_AntecedentesFamiliaresDetParentescoPeriodica>(this.attach_Tbl_AntecedentesFamiliaresDetParentescoPeriodica), new Action<Tbl_AntecedentesFamiliaresDetParentescoPeriodica>(this.detach_Tbl_AntecedentesFamiliaresDetParentescoPeriodica));
 			this._Tbl_AntecedentesPersonalesInicial = new EntitySet<Tbl_AntecedentesPersonalesInicial>(new Action<Tbl_AntecedentesPersonalesInicial>(this.attach_Tbl_AntecedentesPersonalesInicial), new Action<Tbl_AntecedentesPersonalesInicial>(this.detach_Tbl_AntecedentesPersonalesInicial));
 			this._Tbl_AntecedentesPersonalesPeriodica = new EntitySet<Tbl_AntecedentesPersonalesPeriodica>(new Action<Tbl_AntecedentesPersonalesPeriodica>(this.attach_Tbl_AntecedentesPersonalesPeriodica), new Action<Tbl_AntecedentesPersonalesPeriodica>(this.detach_Tbl_AntecedentesPersonalesPeriodica));
+			this._Tbl_AntecedentesPersonalesRetiro = new EntitySet<Tbl_AntecedentesPersonalesRetiro>(new Action<Tbl_AntecedentesPersonalesRetiro>(this.attach_Tbl_AntecedentesPersonalesRetiro), new Action<Tbl_AntecedentesPersonalesRetiro>(this.detach_Tbl_AntecedentesPersonalesRetiro));
 			this._Tbl_AnteFamiliares = new EntitySet<Tbl_AnteFamiliares>(new Action<Tbl_AnteFamiliares>(this.attach_Tbl_AnteFamiliares), new Action<Tbl_AnteFamiliares>(this.detach_Tbl_AnteFamiliares));
 			this._Tbl_AntePersonales = new EntitySet<Tbl_AntePersonales>(new Action<Tbl_AntePersonales>(this.attach_Tbl_AntePersonales), new Action<Tbl_AntePersonales>(this.detach_Tbl_AntePersonales));
 			this._Tbl_AptitudMedica = new EntitySet<Tbl_AptitudMedica>(new Action<Tbl_AptitudMedica>(this.attach_Tbl_AptitudMedica), new Action<Tbl_AptitudMedica>(this.detach_Tbl_AptitudMedica));
+			this._Tbl_AptitudMedicaCertificado = new EntitySet<Tbl_AptitudMedicaCertificado>(new Action<Tbl_AptitudMedicaCertificado>(this.attach_Tbl_AptitudMedicaCertificado), new Action<Tbl_AptitudMedicaCertificado>(this.detach_Tbl_AptitudMedicaCertificado));
 			this._Tbl_AptitudMedicaPeriodica = new EntitySet<Tbl_AptitudMedicaPeriodica>(new Action<Tbl_AptitudMedicaPeriodica>(this.attach_Tbl_AptitudMedicaPeriodica), new Action<Tbl_AptitudMedicaPeriodica>(this.detach_Tbl_AptitudMedicaPeriodica));
 			this._Tbl_AptitudMedicaReintegro = new EntitySet<Tbl_AptitudMedicaReintegro>(new Action<Tbl_AptitudMedicaReintegro>(this.attach_Tbl_AptitudMedicaReintegro), new Action<Tbl_AptitudMedicaReintegro>(this.detach_Tbl_AptitudMedicaReintegro));
 			this._Tbl_ConsVitAntro = new EntitySet<Tbl_ConsVitAntro>(new Action<Tbl_ConsVitAntro>(this.attach_Tbl_ConsVitAntro), new Action<Tbl_ConsVitAntro>(this.detach_Tbl_ConsVitAntro));
 			this._Tbl_ConsVitAntroPeriodica = new EntitySet<Tbl_ConsVitAntroPeriodica>(new Action<Tbl_ConsVitAntroPeriodica>(this.attach_Tbl_ConsVitAntroPeriodica), new Action<Tbl_ConsVitAntroPeriodica>(this.detach_Tbl_ConsVitAntroPeriodica));
 			this._Tbl_ConsVitAntroReintegro = new EntitySet<Tbl_ConsVitAntroReintegro>(new Action<Tbl_ConsVitAntroReintegro>(this.attach_Tbl_ConsVitAntroReintegro), new Action<Tbl_ConsVitAntroReintegro>(this.detach_Tbl_ConsVitAntroReintegro));
+			this._Tbl_ConsVitAntroRetiro = new EntitySet<Tbl_ConsVitAntroRetiro>(new Action<Tbl_ConsVitAntroRetiro>(this.attach_Tbl_ConsVitAntroRetiro), new Action<Tbl_ConsVitAntroRetiro>(this.detach_Tbl_ConsVitAntroRetiro));
 			this._Tbl_DatEstableEmpUsu = new EntitySet<Tbl_DatEstableEmpUsu>(new Action<Tbl_DatEstableEmpUsu>(this.attach_Tbl_DatEstableEmpUsu), new Action<Tbl_DatEstableEmpUsu>(this.detach_Tbl_DatEstableEmpUsu));
+			this._Tbl_DatEstableEmpUsuReintegro = new EntitySet<Tbl_DatEstableEmpUsuReintegro>(new Action<Tbl_DatEstableEmpUsuReintegro>(this.attach_Tbl_DatEstableEmpUsuReintegro), new Action<Tbl_DatEstableEmpUsuReintegro>(this.detach_Tbl_DatEstableEmpUsuReintegro));
+			this._Tbl_DatEstableEmpUsuRetiro = new EntitySet<Tbl_DatEstableEmpUsuRetiro>(new Action<Tbl_DatEstableEmpUsuRetiro>(this.attach_Tbl_DatEstableEmpUsuRetiro), new Action<Tbl_DatEstableEmpUsuRetiro>(this.detach_Tbl_DatEstableEmpUsuRetiro));
+			this._Tbl_DatosGeneralesCertificado = new EntitySet<Tbl_DatosGeneralesCertificado>(new Action<Tbl_DatosGeneralesCertificado>(this.attach_Tbl_DatosGeneralesCertificado), new Action<Tbl_DatosGeneralesCertificado>(this.detach_Tbl_DatosGeneralesCertificado));
 			this._Tbl_DatProfesional = new EntitySet<Tbl_DatProfesional>(new Action<Tbl_DatProfesional>(this.attach_Tbl_DatProfesional), new Action<Tbl_DatProfesional>(this.detach_Tbl_DatProfesional));
+			this._Tbl_DatProfesionalCertificado = new EntitySet<Tbl_DatProfesionalCertificado>(new Action<Tbl_DatProfesionalCertificado>(this.attach_Tbl_DatProfesionalCertificado), new Action<Tbl_DatProfesionalCertificado>(this.detach_Tbl_DatProfesionalCertificado));
 			this._Tbl_DatProfesionalInicial = new EntitySet<Tbl_DatProfesionalInicial>(new Action<Tbl_DatProfesionalInicial>(this.attach_Tbl_DatProfesionalInicial), new Action<Tbl_DatProfesionalInicial>(this.detach_Tbl_DatProfesionalInicial));
 			this._Tbl_DatProfesionalPeriodica = new EntitySet<Tbl_DatProfesionalPeriodica>(new Action<Tbl_DatProfesionalPeriodica>(this.attach_Tbl_DatProfesionalPeriodica), new Action<Tbl_DatProfesionalPeriodica>(this.detach_Tbl_DatProfesionalPeriodica));
 			this._Tbl_DatProfesionalReintegro = new EntitySet<Tbl_DatProfesionalReintegro>(new Action<Tbl_DatProfesionalReintegro>(this.attach_Tbl_DatProfesionalReintegro), new Action<Tbl_DatProfesionalReintegro>(this.detach_Tbl_DatProfesionalReintegro));
+			this._Tbl_DatProfesionalRetiro = new EntitySet<Tbl_DatProfesionalRetiro>(new Action<Tbl_DatProfesionalRetiro>(this.attach_Tbl_DatProfesionalRetiro), new Action<Tbl_DatProfesionalRetiro>(this.detach_Tbl_DatProfesionalRetiro));
 			this._Tbl_Diagnostico = new EntitySet<Tbl_Diagnostico>(new Action<Tbl_Diagnostico>(this.attach_Tbl_Diagnostico), new Action<Tbl_Diagnostico>(this.detach_Tbl_Diagnostico));
 			this._Tbl_DiagnosticoFichMed = new EntitySet<Tbl_DiagnosticoFichMed>(new Action<Tbl_DiagnosticoFichMed>(this.attach_Tbl_DiagnosticoFichMed), new Action<Tbl_DiagnosticoFichMed>(this.detach_Tbl_DiagnosticoFichMed));
 			this._Tbl_DiagnosticoPeriodica = new EntitySet<Tbl_DiagnosticoPeriodica>(new Action<Tbl_DiagnosticoPeriodica>(this.attach_Tbl_DiagnosticoPeriodica), new Action<Tbl_DiagnosticoPeriodica>(this.detach_Tbl_DiagnosticoPeriodica));
 			this._Tbl_DiagnosticoReintegro = new EntitySet<Tbl_DiagnosticoReintegro>(new Action<Tbl_DiagnosticoReintegro>(this.attach_Tbl_DiagnosticoReintegro), new Action<Tbl_DiagnosticoReintegro>(this.detach_Tbl_DiagnosticoReintegro));
+			this._Tbl_DiagnosticoRetiro = new EntitySet<Tbl_DiagnosticoRetiro>(new Action<Tbl_DiagnosticoRetiro>(this.attach_Tbl_DiagnosticoRetiro), new Action<Tbl_DiagnosticoRetiro>(this.detach_Tbl_DiagnosticoRetiro));
 			this._Tbl_EnferActualPeriodica = new EntitySet<Tbl_EnferActualPeriodica>(new Action<Tbl_EnferActualPeriodica>(this.attach_Tbl_EnferActualPeriodica), new Action<Tbl_EnferActualPeriodica>(this.detach_Tbl_EnferActualPeriodica));
 			this._Tbl_EnferActualReintegro = new EntitySet<Tbl_EnferActualReintegro>(new Action<Tbl_EnferActualReintegro>(this.attach_Tbl_EnferActualReintegro), new Action<Tbl_EnferActualReintegro>(this.detach_Tbl_EnferActualReintegro));
 			this._Tbl_EnfermedadActual = new EntitySet<Tbl_EnfermedadActual>(new Action<Tbl_EnfermedadActual>(this.attach_Tbl_EnfermedadActual), new Action<Tbl_EnfermedadActual>(this.detach_Tbl_EnfermedadActual));
@@ -42026,24 +42564,31 @@ namespace CapaDatos
 			this._Tbl_EnfermedadActualPeriodica = new EntitySet<Tbl_EnfermedadActualPeriodica>(new Action<Tbl_EnfermedadActualPeriodica>(this.attach_Tbl_EnfermedadActualPeriodica), new Action<Tbl_EnfermedadActualPeriodica>(this.detach_Tbl_EnfermedadActualPeriodica));
 			this._Tbl_EnfermedadActualReintegro = new EntitySet<Tbl_EnfermedadActualReintegro>(new Action<Tbl_EnfermedadActualReintegro>(this.attach_Tbl_EnfermedadActualReintegro), new Action<Tbl_EnfermedadActualReintegro>(this.detach_Tbl_EnfermedadActualReintegro));
 			this._Tbl_EnfermedadesProfesionales = new EntitySet<Tbl_EnfermedadesProfesionales>(new Action<Tbl_EnfermedadesProfesionales>(this.attach_Tbl_EnfermedadesProfesionales), new Action<Tbl_EnfermedadesProfesionales>(this.detach_Tbl_EnfermedadesProfesionales));
+			this._Tbl_EvaluacionMedicaRetiro = new EntitySet<Tbl_EvaluacionMedicaRetiro>(new Action<Tbl_EvaluacionMedicaRetiro>(this.attach_Tbl_EvaluacionMedicaRetiro), new Action<Tbl_EvaluacionMedicaRetiro>(this.detach_Tbl_EvaluacionMedicaRetiro));
+			this._Tbl_EvaMedicaRetiroCertificado = new EntitySet<Tbl_EvaMedicaRetiroCertificado>(new Action<Tbl_EvaMedicaRetiroCertificado>(this.attach_Tbl_EvaMedicaRetiroCertificado), new Action<Tbl_EvaMedicaRetiroCertificado>(this.detach_Tbl_EvaMedicaRetiroCertificado));
 			this._Tbl_Evolucion = new EntitySet<Tbl_Evolucion>(new Action<Tbl_Evolucion>(this.attach_Tbl_Evolucion), new Action<Tbl_Evolucion>(this.detach_Tbl_Evolucion));
 			this._Tbl_ExaFisRegional = new EntitySet<Tbl_ExaFisRegional>(new Action<Tbl_ExaFisRegional>(this.attach_Tbl_ExaFisRegional), new Action<Tbl_ExaFisRegional>(this.detach_Tbl_ExaFisRegional));
 			this._Tbl_ExaFisRegionalInicial = new EntitySet<Tbl_ExaFisRegionalInicial>(new Action<Tbl_ExaFisRegionalInicial>(this.attach_Tbl_ExaFisRegionalInicial), new Action<Tbl_ExaFisRegionalInicial>(this.detach_Tbl_ExaFisRegionalInicial));
 			this._Tbl_ExaFisRegionalPeriodica = new EntitySet<Tbl_ExaFisRegionalPeriodica>(new Action<Tbl_ExaFisRegionalPeriodica>(this.attach_Tbl_ExaFisRegionalPeriodica), new Action<Tbl_ExaFisRegionalPeriodica>(this.detach_Tbl_ExaFisRegionalPeriodica));
 			this._Tbl_ExaFisRegionalReintegro = new EntitySet<Tbl_ExaFisRegionalReintegro>(new Action<Tbl_ExaFisRegionalReintegro>(this.attach_Tbl_ExaFisRegionalReintegro), new Action<Tbl_ExaFisRegionalReintegro>(this.detach_Tbl_ExaFisRegionalReintegro));
+			this._Tbl_ExaFisRegionalRetiro = new EntitySet<Tbl_ExaFisRegionalRetiro>(new Action<Tbl_ExaFisRegionalRetiro>(this.attach_Tbl_ExaFisRegionalRetiro), new Action<Tbl_ExaFisRegionalRetiro>(this.detach_Tbl_ExaFisRegionalRetiro));
 			this._Tbl_FacRiesTrabAct = new EntitySet<Tbl_FacRiesTrabAct>(new Action<Tbl_FacRiesTrabAct>(this.attach_Tbl_FacRiesTrabAct), new Action<Tbl_FacRiesTrabAct>(this.detach_Tbl_FacRiesTrabAct));
 			this._Tbl_FacRiesTrabActPeriodica = new EntitySet<Tbl_FacRiesTrabActPeriodica>(new Action<Tbl_FacRiesTrabActPeriodica>(this.attach_Tbl_FacRiesTrabActPeriodica), new Action<Tbl_FacRiesTrabActPeriodica>(this.detach_Tbl_FacRiesTrabActPeriodica));
+			this._Tbl_InmunizacionesInmunizaciones = new EntitySet<Tbl_InmunizacionesInmunizaciones>(new Action<Tbl_InmunizacionesInmunizaciones>(this.attach_Tbl_InmunizacionesInmunizaciones), new Action<Tbl_InmunizacionesInmunizaciones>(this.detach_Tbl_InmunizacionesInmunizaciones));
 			this._Tbl_MotivoConsulta = new EntitySet<Tbl_MotivoConsulta>(new Action<Tbl_MotivoConsulta>(this.attach_Tbl_MotivoConsulta), new Action<Tbl_MotivoConsulta>(this.detach_Tbl_MotivoConsulta));
 			this._Tbl_MotivoConsultaInicial = new EntitySet<Tbl_MotivoConsultaInicial>(new Action<Tbl_MotivoConsultaInicial>(this.attach_Tbl_MotivoConsultaInicial), new Action<Tbl_MotivoConsultaInicial>(this.detach_Tbl_MotivoConsultaInicial));
 			this._Tbl_MotivoConsultaPeriodica = new EntitySet<Tbl_MotivoConsultaPeriodica>(new Action<Tbl_MotivoConsultaPeriodica>(this.attach_Tbl_MotivoConsultaPeriodica), new Action<Tbl_MotivoConsultaPeriodica>(this.detach_Tbl_MotivoConsultaPeriodica));
 			this._Tbl_MotivoConsultaReintegro = new EntitySet<Tbl_MotivoConsultaReintegro>(new Action<Tbl_MotivoConsultaReintegro>(this.attach_Tbl_MotivoConsultaReintegro), new Action<Tbl_MotivoConsultaReintegro>(this.detach_Tbl_MotivoConsultaReintegro));
 			this._Tbl_Prescipciones = new EntitySet<Tbl_Prescipciones>(new Action<Tbl_Prescipciones>(this.attach_Tbl_Prescipciones), new Action<Tbl_Prescipciones>(this.detach_Tbl_Prescipciones));
+			this._Tbl_RecomendacionesCertificado = new EntitySet<Tbl_RecomendacionesCertificado>(new Action<Tbl_RecomendacionesCertificado>(this.attach_Tbl_RecomendacionesCertificado), new Action<Tbl_RecomendacionesCertificado>(this.detach_Tbl_RecomendacionesCertificado));
 			this._Tbl_RecoTratamiento = new EntitySet<Tbl_RecoTratamiento>(new Action<Tbl_RecoTratamiento>(this.attach_Tbl_RecoTratamiento), new Action<Tbl_RecoTratamiento>(this.detach_Tbl_RecoTratamiento));
 			this._Tbl_RecoTratamientoPeriodica = new EntitySet<Tbl_RecoTratamientoPeriodica>(new Action<Tbl_RecoTratamientoPeriodica>(this.attach_Tbl_RecoTratamientoPeriodica), new Action<Tbl_RecoTratamientoPeriodica>(this.detach_Tbl_RecoTratamientoPeriodica));
 			this._Tbl_RecoTratamientoReintegro = new EntitySet<Tbl_RecoTratamientoReintegro>(new Action<Tbl_RecoTratamientoReintegro>(this.attach_Tbl_RecoTratamientoReintegro), new Action<Tbl_RecoTratamientoReintegro>(this.detach_Tbl_RecoTratamientoReintegro));
+			this._Tbl_RecoTratamientoRetiro = new EntitySet<Tbl_RecoTratamientoRetiro>(new Action<Tbl_RecoTratamientoRetiro>(this.attach_Tbl_RecoTratamientoRetiro), new Action<Tbl_RecoTratamientoRetiro>(this.detach_Tbl_RecoTratamientoRetiro));
 			this._Tbl_ResExaGenEspRiesTrabajo = new EntitySet<Tbl_ResExaGenEspRiesTrabajo>(new Action<Tbl_ResExaGenEspRiesTrabajo>(this.attach_Tbl_ResExaGenEspRiesTrabajo), new Action<Tbl_ResExaGenEspRiesTrabajo>(this.detach_Tbl_ResExaGenEspRiesTrabajo));
 			this._Tbl_ResExaGenEspRiesTrabajoPeriodica = new EntitySet<Tbl_ResExaGenEspRiesTrabajoPeriodica>(new Action<Tbl_ResExaGenEspRiesTrabajoPeriodica>(this.attach_Tbl_ResExaGenEspRiesTrabajoPeriodica), new Action<Tbl_ResExaGenEspRiesTrabajoPeriodica>(this.detach_Tbl_ResExaGenEspRiesTrabajoPeriodica));
 			this._Tbl_ResExaGenEspRiesTrabajoReintegro = new EntitySet<Tbl_ResExaGenEspRiesTrabajoReintegro>(new Action<Tbl_ResExaGenEspRiesTrabajoReintegro>(this.attach_Tbl_ResExaGenEspRiesTrabajoReintegro), new Action<Tbl_ResExaGenEspRiesTrabajoReintegro>(this.detach_Tbl_ResExaGenEspRiesTrabajoReintegro));
+			this._Tbl_ResExaGenEspRiesTrabajoRetiro = new EntitySet<Tbl_ResExaGenEspRiesTrabajoRetiro>(new Action<Tbl_ResExaGenEspRiesTrabajoRetiro>(this.attach_Tbl_ResExaGenEspRiesTrabajoRetiro), new Action<Tbl_ResExaGenEspRiesTrabajoRetiro>(this.detach_Tbl_ResExaGenEspRiesTrabajoRetiro));
 			this._Tbl_ReviOrgaSistemasFichMed = new EntitySet<Tbl_ReviOrgaSistemasFichMed>(new Action<Tbl_ReviOrgaSistemasFichMed>(this.attach_Tbl_ReviOrgaSistemasFichMed), new Action<Tbl_ReviOrgaSistemasFichMed>(this.detach_Tbl_ReviOrgaSistemasFichMed));
 			this._Tbl_RevisionActualOrganosSistemas = new EntitySet<Tbl_RevisionActualOrganosSistemas>(new Action<Tbl_RevisionActualOrganosSistemas>(this.attach_Tbl_RevisionActualOrganosSistemas), new Action<Tbl_RevisionActualOrganosSistemas>(this.detach_Tbl_RevisionActualOrganosSistemas));
 			this._Tbl_RevisionActualOrganosSistemasPeriodica = new EntitySet<Tbl_RevisionActualOrganosSistemasPeriodica>(new Action<Tbl_RevisionActualOrganosSistemasPeriodica>(this.attach_Tbl_RevisionActualOrganosSistemasPeriodica), new Action<Tbl_RevisionActualOrganosSistemasPeriodica>(this.detach_Tbl_RevisionActualOrganosSistemasPeriodica));
@@ -43097,6 +43642,19 @@ namespace CapaDatos
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_AntecedentesPersonalesRetiro", Storage="_Tbl_AntecedentesPersonalesRetiro", ThisKey="Per_id", OtherKey="Per_id")]
+		public EntitySet<Tbl_AntecedentesPersonalesRetiro> Tbl_AntecedentesPersonalesRetiro
+		{
+			get
+			{
+				return this._Tbl_AntecedentesPersonalesRetiro;
+			}
+			set
+			{
+				this._Tbl_AntecedentesPersonalesRetiro.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_AnteFamiliares", Storage="_Tbl_AnteFamiliares", ThisKey="Per_id", OtherKey="Per_id")]
 		public EntitySet<Tbl_AnteFamiliares> Tbl_AnteFamiliares
 		{
@@ -43133,6 +43691,19 @@ namespace CapaDatos
 			set
 			{
 				this._Tbl_AptitudMedica.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_AptitudMedicaCertificado", Storage="_Tbl_AptitudMedicaCertificado", ThisKey="Per_id", OtherKey="Per_id")]
+		public EntitySet<Tbl_AptitudMedicaCertificado> Tbl_AptitudMedicaCertificado
+		{
+			get
+			{
+				return this._Tbl_AptitudMedicaCertificado;
+			}
+			set
+			{
+				this._Tbl_AptitudMedicaCertificado.Assign(value);
 			}
 		}
 		
@@ -43201,6 +43772,19 @@ namespace CapaDatos
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_ConsVitAntroRetiro", Storage="_Tbl_ConsVitAntroRetiro", ThisKey="Per_id", OtherKey="Per_id")]
+		public EntitySet<Tbl_ConsVitAntroRetiro> Tbl_ConsVitAntroRetiro
+		{
+			get
+			{
+				return this._Tbl_ConsVitAntroRetiro;
+			}
+			set
+			{
+				this._Tbl_ConsVitAntroRetiro.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_DatEstableEmpUsu", Storage="_Tbl_DatEstableEmpUsu", ThisKey="Per_id", OtherKey="Per_id")]
 		public EntitySet<Tbl_DatEstableEmpUsu> Tbl_DatEstableEmpUsu
 		{
@@ -43214,6 +43798,45 @@ namespace CapaDatos
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_DatEstableEmpUsuReintegro", Storage="_Tbl_DatEstableEmpUsuReintegro", ThisKey="Per_id", OtherKey="Per_id")]
+		public EntitySet<Tbl_DatEstableEmpUsuReintegro> Tbl_DatEstableEmpUsuReintegro
+		{
+			get
+			{
+				return this._Tbl_DatEstableEmpUsuReintegro;
+			}
+			set
+			{
+				this._Tbl_DatEstableEmpUsuReintegro.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_DatEstableEmpUsuRetiro", Storage="_Tbl_DatEstableEmpUsuRetiro", ThisKey="Per_id", OtherKey="Per_id")]
+		public EntitySet<Tbl_DatEstableEmpUsuRetiro> Tbl_DatEstableEmpUsuRetiro
+		{
+			get
+			{
+				return this._Tbl_DatEstableEmpUsuRetiro;
+			}
+			set
+			{
+				this._Tbl_DatEstableEmpUsuRetiro.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_DatosGeneralesCertificado", Storage="_Tbl_DatosGeneralesCertificado", ThisKey="Per_id", OtherKey="Per_id")]
+		public EntitySet<Tbl_DatosGeneralesCertificado> Tbl_DatosGeneralesCertificado
+		{
+			get
+			{
+				return this._Tbl_DatosGeneralesCertificado;
+			}
+			set
+			{
+				this._Tbl_DatosGeneralesCertificado.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_DatProfesional", Storage="_Tbl_DatProfesional", ThisKey="Per_id", OtherKey="Per_id")]
 		public EntitySet<Tbl_DatProfesional> Tbl_DatProfesional
 		{
@@ -43224,6 +43847,19 @@ namespace CapaDatos
 			set
 			{
 				this._Tbl_DatProfesional.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_DatProfesionalCertificado", Storage="_Tbl_DatProfesionalCertificado", ThisKey="Per_id", OtherKey="Per_id")]
+		public EntitySet<Tbl_DatProfesionalCertificado> Tbl_DatProfesionalCertificado
+		{
+			get
+			{
+				return this._Tbl_DatProfesionalCertificado;
+			}
+			set
+			{
+				this._Tbl_DatProfesionalCertificado.Assign(value);
 			}
 		}
 		
@@ -43263,6 +43899,19 @@ namespace CapaDatos
 			set
 			{
 				this._Tbl_DatProfesionalReintegro.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_DatProfesionalRetiro", Storage="_Tbl_DatProfesionalRetiro", ThisKey="Per_id", OtherKey="Per_id")]
+		public EntitySet<Tbl_DatProfesionalRetiro> Tbl_DatProfesionalRetiro
+		{
+			get
+			{
+				return this._Tbl_DatProfesionalRetiro;
+			}
+			set
+			{
+				this._Tbl_DatProfesionalRetiro.Assign(value);
 			}
 		}
 		
@@ -43315,6 +43964,19 @@ namespace CapaDatos
 			set
 			{
 				this._Tbl_DiagnosticoReintegro.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_DiagnosticoRetiro", Storage="_Tbl_DiagnosticoRetiro", ThisKey="Per_id", OtherKey="Per_id")]
+		public EntitySet<Tbl_DiagnosticoRetiro> Tbl_DiagnosticoRetiro
+		{
+			get
+			{
+				return this._Tbl_DiagnosticoRetiro;
+			}
+			set
+			{
+				this._Tbl_DiagnosticoRetiro.Assign(value);
 			}
 		}
 		
@@ -43409,6 +44071,32 @@ namespace CapaDatos
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_EvaluacionMedicaRetiro", Storage="_Tbl_EvaluacionMedicaRetiro", ThisKey="Per_id", OtherKey="Per_id")]
+		public EntitySet<Tbl_EvaluacionMedicaRetiro> Tbl_EvaluacionMedicaRetiro
+		{
+			get
+			{
+				return this._Tbl_EvaluacionMedicaRetiro;
+			}
+			set
+			{
+				this._Tbl_EvaluacionMedicaRetiro.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_EvaMedicaRetiroCertificado", Storage="_Tbl_EvaMedicaRetiroCertificado", ThisKey="Per_id", OtherKey="Per_id")]
+		public EntitySet<Tbl_EvaMedicaRetiroCertificado> Tbl_EvaMedicaRetiroCertificado
+		{
+			get
+			{
+				return this._Tbl_EvaMedicaRetiroCertificado;
+			}
+			set
+			{
+				this._Tbl_EvaMedicaRetiroCertificado.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_Evolucion", Storage="_Tbl_Evolucion", ThisKey="Per_id", OtherKey="Per_id")]
 		public EntitySet<Tbl_Evolucion> Tbl_Evolucion
 		{
@@ -43474,6 +44162,19 @@ namespace CapaDatos
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_ExaFisRegionalRetiro", Storage="_Tbl_ExaFisRegionalRetiro", ThisKey="Per_id", OtherKey="Per_id")]
+		public EntitySet<Tbl_ExaFisRegionalRetiro> Tbl_ExaFisRegionalRetiro
+		{
+			get
+			{
+				return this._Tbl_ExaFisRegionalRetiro;
+			}
+			set
+			{
+				this._Tbl_ExaFisRegionalRetiro.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_FacRiesTrabAct", Storage="_Tbl_FacRiesTrabAct", ThisKey="Per_id", OtherKey="Per_id")]
 		public EntitySet<Tbl_FacRiesTrabAct> Tbl_FacRiesTrabAct
 		{
@@ -43497,6 +44198,19 @@ namespace CapaDatos
 			set
 			{
 				this._Tbl_FacRiesTrabActPeriodica.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_InmunizacionesInmunizaciones", Storage="_Tbl_InmunizacionesInmunizaciones", ThisKey="Per_id", OtherKey="Per_id")]
+		public EntitySet<Tbl_InmunizacionesInmunizaciones> Tbl_InmunizacionesInmunizaciones
+		{
+			get
+			{
+				return this._Tbl_InmunizacionesInmunizaciones;
+			}
+			set
+			{
+				this._Tbl_InmunizacionesInmunizaciones.Assign(value);
 			}
 		}
 		
@@ -43565,6 +44279,19 @@ namespace CapaDatos
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_RecomendacionesCertificado", Storage="_Tbl_RecomendacionesCertificado", ThisKey="Per_id", OtherKey="Per_id")]
+		public EntitySet<Tbl_RecomendacionesCertificado> Tbl_RecomendacionesCertificado
+		{
+			get
+			{
+				return this._Tbl_RecomendacionesCertificado;
+			}
+			set
+			{
+				this._Tbl_RecomendacionesCertificado.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_RecoTratamiento", Storage="_Tbl_RecoTratamiento", ThisKey="Per_id", OtherKey="Per_id")]
 		public EntitySet<Tbl_RecoTratamiento> Tbl_RecoTratamiento
 		{
@@ -43604,6 +44331,19 @@ namespace CapaDatos
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_RecoTratamientoRetiro", Storage="_Tbl_RecoTratamientoRetiro", ThisKey="Per_id", OtherKey="Per_id")]
+		public EntitySet<Tbl_RecoTratamientoRetiro> Tbl_RecoTratamientoRetiro
+		{
+			get
+			{
+				return this._Tbl_RecoTratamientoRetiro;
+			}
+			set
+			{
+				this._Tbl_RecoTratamientoRetiro.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_ResExaGenEspRiesTrabajo", Storage="_Tbl_ResExaGenEspRiesTrabajo", ThisKey="Per_id", OtherKey="Per_id")]
 		public EntitySet<Tbl_ResExaGenEspRiesTrabajo> Tbl_ResExaGenEspRiesTrabajo
 		{
@@ -43640,6 +44380,19 @@ namespace CapaDatos
 			set
 			{
 				this._Tbl_ResExaGenEspRiesTrabajoReintegro.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_ResExaGenEspRiesTrabajoRetiro", Storage="_Tbl_ResExaGenEspRiesTrabajoRetiro", ThisKey="Per_id", OtherKey="Per_id")]
+		public EntitySet<Tbl_ResExaGenEspRiesTrabajoRetiro> Tbl_ResExaGenEspRiesTrabajoRetiro
+		{
+			get
+			{
+				return this._Tbl_ResExaGenEspRiesTrabajoRetiro;
+			}
+			set
+			{
+				this._Tbl_ResExaGenEspRiesTrabajoRetiro.Assign(value);
 			}
 		}
 		
@@ -44309,6 +45062,18 @@ namespace CapaDatos
 			entity.Tbl_Personas = null;
 		}
 		
+		private void attach_Tbl_AntecedentesPersonalesRetiro(Tbl_AntecedentesPersonalesRetiro entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Personas = this;
+		}
+		
+		private void detach_Tbl_AntecedentesPersonalesRetiro(Tbl_AntecedentesPersonalesRetiro entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Personas = null;
+		}
+		
 		private void attach_Tbl_AnteFamiliares(Tbl_AnteFamiliares entity)
 		{
 			this.SendPropertyChanging();
@@ -44340,6 +45105,18 @@ namespace CapaDatos
 		}
 		
 		private void detach_Tbl_AptitudMedica(Tbl_AptitudMedica entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Personas = null;
+		}
+		
+		private void attach_Tbl_AptitudMedicaCertificado(Tbl_AptitudMedicaCertificado entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Personas = this;
+		}
+		
+		private void detach_Tbl_AptitudMedicaCertificado(Tbl_AptitudMedicaCertificado entity)
 		{
 			this.SendPropertyChanging();
 			entity.Tbl_Personas = null;
@@ -44405,6 +45182,18 @@ namespace CapaDatos
 			entity.Tbl_Personas = null;
 		}
 		
+		private void attach_Tbl_ConsVitAntroRetiro(Tbl_ConsVitAntroRetiro entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Personas = this;
+		}
+		
+		private void detach_Tbl_ConsVitAntroRetiro(Tbl_ConsVitAntroRetiro entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Personas = null;
+		}
+		
 		private void attach_Tbl_DatEstableEmpUsu(Tbl_DatEstableEmpUsu entity)
 		{
 			this.SendPropertyChanging();
@@ -44417,6 +45206,42 @@ namespace CapaDatos
 			entity.Tbl_Personas = null;
 		}
 		
+		private void attach_Tbl_DatEstableEmpUsuReintegro(Tbl_DatEstableEmpUsuReintegro entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Personas = this;
+		}
+		
+		private void detach_Tbl_DatEstableEmpUsuReintegro(Tbl_DatEstableEmpUsuReintegro entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Personas = null;
+		}
+		
+		private void attach_Tbl_DatEstableEmpUsuRetiro(Tbl_DatEstableEmpUsuRetiro entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Personas = this;
+		}
+		
+		private void detach_Tbl_DatEstableEmpUsuRetiro(Tbl_DatEstableEmpUsuRetiro entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Personas = null;
+		}
+		
+		private void attach_Tbl_DatosGeneralesCertificado(Tbl_DatosGeneralesCertificado entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Personas = this;
+		}
+		
+		private void detach_Tbl_DatosGeneralesCertificado(Tbl_DatosGeneralesCertificado entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Personas = null;
+		}
+		
 		private void attach_Tbl_DatProfesional(Tbl_DatProfesional entity)
 		{
 			this.SendPropertyChanging();
@@ -44424,6 +45249,18 @@ namespace CapaDatos
 		}
 		
 		private void detach_Tbl_DatProfesional(Tbl_DatProfesional entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Personas = null;
+		}
+		
+		private void attach_Tbl_DatProfesionalCertificado(Tbl_DatProfesionalCertificado entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Personas = this;
+		}
+		
+		private void detach_Tbl_DatProfesionalCertificado(Tbl_DatProfesionalCertificado entity)
 		{
 			this.SendPropertyChanging();
 			entity.Tbl_Personas = null;
@@ -44460,6 +45297,18 @@ namespace CapaDatos
 		}
 		
 		private void detach_Tbl_DatProfesionalReintegro(Tbl_DatProfesionalReintegro entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Personas = null;
+		}
+		
+		private void attach_Tbl_DatProfesionalRetiro(Tbl_DatProfesionalRetiro entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Personas = this;
+		}
+		
+		private void detach_Tbl_DatProfesionalRetiro(Tbl_DatProfesionalRetiro entity)
 		{
 			this.SendPropertyChanging();
 			entity.Tbl_Personas = null;
@@ -44508,6 +45357,18 @@ namespace CapaDatos
 		}
 		
 		private void detach_Tbl_DiagnosticoReintegro(Tbl_DiagnosticoReintegro entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Personas = null;
+		}
+		
+		private void attach_Tbl_DiagnosticoRetiro(Tbl_DiagnosticoRetiro entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Personas = this;
+		}
+		
+		private void detach_Tbl_DiagnosticoRetiro(Tbl_DiagnosticoRetiro entity)
 		{
 			this.SendPropertyChanging();
 			entity.Tbl_Personas = null;
@@ -44597,6 +45458,30 @@ namespace CapaDatos
 			entity.Tbl_Personas = null;
 		}
 		
+		private void attach_Tbl_EvaluacionMedicaRetiro(Tbl_EvaluacionMedicaRetiro entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Personas = this;
+		}
+		
+		private void detach_Tbl_EvaluacionMedicaRetiro(Tbl_EvaluacionMedicaRetiro entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Personas = null;
+		}
+		
+		private void attach_Tbl_EvaMedicaRetiroCertificado(Tbl_EvaMedicaRetiroCertificado entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Personas = this;
+		}
+		
+		private void detach_Tbl_EvaMedicaRetiroCertificado(Tbl_EvaMedicaRetiroCertificado entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Personas = null;
+		}
+		
 		private void attach_Tbl_Evolucion(Tbl_Evolucion entity)
 		{
 			this.SendPropertyChanging();
@@ -44657,6 +45542,18 @@ namespace CapaDatos
 			entity.Tbl_Personas = null;
 		}
 		
+		private void attach_Tbl_ExaFisRegionalRetiro(Tbl_ExaFisRegionalRetiro entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Personas = this;
+		}
+		
+		private void detach_Tbl_ExaFisRegionalRetiro(Tbl_ExaFisRegionalRetiro entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Personas = null;
+		}
+		
 		private void attach_Tbl_FacRiesTrabAct(Tbl_FacRiesTrabAct entity)
 		{
 			this.SendPropertyChanging();
@@ -44676,6 +45573,18 @@ namespace CapaDatos
 		}
 		
 		private void detach_Tbl_FacRiesTrabActPeriodica(Tbl_FacRiesTrabActPeriodica entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Personas = null;
+		}
+		
+		private void attach_Tbl_InmunizacionesInmunizaciones(Tbl_InmunizacionesInmunizaciones entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Personas = this;
+		}
+		
+		private void detach_Tbl_InmunizacionesInmunizaciones(Tbl_InmunizacionesInmunizaciones entity)
 		{
 			this.SendPropertyChanging();
 			entity.Tbl_Personas = null;
@@ -44741,6 +45650,18 @@ namespace CapaDatos
 			entity.Tbl_Personas = null;
 		}
 		
+		private void attach_Tbl_RecomendacionesCertificado(Tbl_RecomendacionesCertificado entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Personas = this;
+		}
+		
+		private void detach_Tbl_RecomendacionesCertificado(Tbl_RecomendacionesCertificado entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Personas = null;
+		}
+		
 		private void attach_Tbl_RecoTratamiento(Tbl_RecoTratamiento entity)
 		{
 			this.SendPropertyChanging();
@@ -44777,6 +45698,18 @@ namespace CapaDatos
 			entity.Tbl_Personas = null;
 		}
 		
+		private void attach_Tbl_RecoTratamientoRetiro(Tbl_RecoTratamientoRetiro entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Personas = this;
+		}
+		
+		private void detach_Tbl_RecoTratamientoRetiro(Tbl_RecoTratamientoRetiro entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Personas = null;
+		}
+		
 		private void attach_Tbl_ResExaGenEspRiesTrabajo(Tbl_ResExaGenEspRiesTrabajo entity)
 		{
 			this.SendPropertyChanging();
@@ -44808,6 +45741,18 @@ namespace CapaDatos
 		}
 		
 		private void detach_Tbl_ResExaGenEspRiesTrabajoReintegro(Tbl_ResExaGenEspRiesTrabajoReintegro entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Personas = null;
+		}
+		
+		private void attach_Tbl_ResExaGenEspRiesTrabajoRetiro(Tbl_ResExaGenEspRiesTrabajoRetiro entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Personas = this;
+		}
+		
+		private void detach_Tbl_ResExaGenEspRiesTrabajoRetiro(Tbl_ResExaGenEspRiesTrabajoRetiro entity)
 		{
 			this.SendPropertyChanging();
 			entity.Tbl_Personas = null;
@@ -45851,116 +46796,6 @@ namespace CapaDatos
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_RecomenCertificado")]
-	public partial class Tbl_RecomenCertificado : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _recCer_id;
-		
-		private string _recCer_descripcion;
-		
-		private string _recCer_estado;
-		
-    #region Definiciones de métodos de extensibilidad
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnrecCer_idChanging(int value);
-    partial void OnrecCer_idChanged();
-    partial void OnrecCer_descripcionChanging(string value);
-    partial void OnrecCer_descripcionChanged();
-    partial void OnrecCer_estadoChanging(string value);
-    partial void OnrecCer_estadoChanged();
-    #endregion
-		
-		public Tbl_RecomenCertificado()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_recCer_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int recCer_id
-		{
-			get
-			{
-				return this._recCer_id;
-			}
-			set
-			{
-				if ((this._recCer_id != value))
-				{
-					this.OnrecCer_idChanging(value);
-					this.SendPropertyChanging();
-					this._recCer_id = value;
-					this.SendPropertyChanged("recCer_id");
-					this.OnrecCer_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_recCer_descripcion", DbType="Text", UpdateCheck=UpdateCheck.Never)]
-		public string recCer_descripcion
-		{
-			get
-			{
-				return this._recCer_descripcion;
-			}
-			set
-			{
-				if ((this._recCer_descripcion != value))
-				{
-					this.OnrecCer_descripcionChanging(value);
-					this.SendPropertyChanging();
-					this._recCer_descripcion = value;
-					this.SendPropertyChanged("recCer_descripcion");
-					this.OnrecCer_descripcionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_recCer_estado", DbType="VarChar(1)")]
-		public string recCer_estado
-		{
-			get
-			{
-				return this._recCer_estado;
-			}
-			set
-			{
-				if ((this._recCer_estado != value))
-				{
-					this.OnrecCer_estadoChanging(value);
-					this.SendPropertyChanging();
-					this._recCer_estado = value;
-					this.SendPropertyChanged("recCer_estado");
-					this.OnrecCer_estadoChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_RecomendacionesCertificado")]
 	public partial class Tbl_RecomendacionesCertificado : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -45974,6 +46809,8 @@ namespace CapaDatos
 		private System.Nullable<int> _Per_id;
 		
 		private string _reco_estado;
+		
+		private EntityRef<Tbl_Personas> _Tbl_Personas;
 		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
@@ -45991,6 +46828,7 @@ namespace CapaDatos
 		
 		public Tbl_RecomendacionesCertificado()
 		{
+			this._Tbl_Personas = default(EntityRef<Tbl_Personas>);
 			OnCreated();
 		}
 		
@@ -46045,6 +46883,10 @@ namespace CapaDatos
 			{
 				if ((this._Per_id != value))
 				{
+					if (this._Tbl_Personas.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnPer_idChanging(value);
 					this.SendPropertyChanging();
 					this._Per_id = value;
@@ -46070,6 +46912,40 @@ namespace CapaDatos
 					this._reco_estado = value;
 					this.SendPropertyChanged("reco_estado");
 					this.Onreco_estadoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_RecomendacionesCertificado", Storage="_Tbl_Personas", ThisKey="Per_id", OtherKey="Per_id", IsForeignKey=true)]
+		public Tbl_Personas Tbl_Personas
+		{
+			get
+			{
+				return this._Tbl_Personas.Entity;
+			}
+			set
+			{
+				Tbl_Personas previousValue = this._Tbl_Personas.Entity;
+				if (((previousValue != value) 
+							|| (this._Tbl_Personas.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Tbl_Personas.Entity = null;
+						previousValue.Tbl_RecomendacionesCertificado.Remove(this);
+					}
+					this._Tbl_Personas.Entity = value;
+					if ((value != null))
+					{
+						value.Tbl_RecomendacionesCertificado.Add(this);
+						this._Per_id = value.Per_id;
+					}
+					else
+					{
+						this._Per_id = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Tbl_Personas");
 				}
 			}
 		}
@@ -46634,6 +47510,8 @@ namespace CapaDatos
 		
 		private string _RecTraRetiro_estado;
 		
+		private EntityRef<Tbl_Personas> _Tbl_Personas;
+		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -46650,6 +47528,7 @@ namespace CapaDatos
 		
 		public Tbl_RecoTratamientoRetiro()
 		{
+			this._Tbl_Personas = default(EntityRef<Tbl_Personas>);
 			OnCreated();
 		}
 		
@@ -46704,6 +47583,10 @@ namespace CapaDatos
 			{
 				if ((this._Per_id != value))
 				{
+					if (this._Tbl_Personas.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnPer_idChanging(value);
 					this.SendPropertyChanging();
 					this._Per_id = value;
@@ -46729,6 +47612,40 @@ namespace CapaDatos
 					this._RecTraRetiro_estado = value;
 					this.SendPropertyChanged("RecTraRetiro_estado");
 					this.OnRecTraRetiro_estadoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_RecoTratamientoRetiro", Storage="_Tbl_Personas", ThisKey="Per_id", OtherKey="Per_id", IsForeignKey=true)]
+		public Tbl_Personas Tbl_Personas
+		{
+			get
+			{
+				return this._Tbl_Personas.Entity;
+			}
+			set
+			{
+				Tbl_Personas previousValue = this._Tbl_Personas.Entity;
+				if (((previousValue != value) 
+							|| (this._Tbl_Personas.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Tbl_Personas.Entity = null;
+						previousValue.Tbl_RecoTratamientoRetiro.Remove(this);
+					}
+					this._Tbl_Personas.Entity = value;
+					if ((value != null))
+					{
+						value.Tbl_RecoTratamientoRetiro.Add(this);
+						this._Per_id = value.Per_id;
+					}
+					else
+					{
+						this._Per_id = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Tbl_Personas");
 				}
 			}
 		}
@@ -47681,6 +48598,8 @@ namespace CapaDatos
 		
 		private string _ResExaGenEspRiesTrabajoRetiro_estado;
 		
+		private EntityRef<Tbl_Personas> _Tbl_Personas;
+		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -47703,6 +48622,7 @@ namespace CapaDatos
 		
 		public Tbl_ResExaGenEspRiesTrabajoRetiro()
 		{
+			this._Tbl_Personas = default(EntityRef<Tbl_Personas>);
 			OnCreated();
 		}
 		
@@ -47817,6 +48737,10 @@ namespace CapaDatos
 			{
 				if ((this._Per_id != value))
 				{
+					if (this._Tbl_Personas.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnPer_idChanging(value);
 					this.SendPropertyChanging();
 					this._Per_id = value;
@@ -47842,6 +48766,40 @@ namespace CapaDatos
 					this._ResExaGenEspRiesTrabajoRetiro_estado = value;
 					this.SendPropertyChanged("ResExaGenEspRiesTrabajoRetiro_estado");
 					this.OnResExaGenEspRiesTrabajoRetiro_estadoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_ResExaGenEspRiesTrabajoRetiro", Storage="_Tbl_Personas", ThisKey="Per_id", OtherKey="Per_id", IsForeignKey=true)]
+		public Tbl_Personas Tbl_Personas
+		{
+			get
+			{
+				return this._Tbl_Personas.Entity;
+			}
+			set
+			{
+				Tbl_Personas previousValue = this._Tbl_Personas.Entity;
+				if (((previousValue != value) 
+							|| (this._Tbl_Personas.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Tbl_Personas.Entity = null;
+						previousValue.Tbl_ResExaGenEspRiesTrabajoRetiro.Remove(this);
+					}
+					this._Tbl_Personas.Entity = value;
+					if ((value != null))
+					{
+						value.Tbl_ResExaGenEspRiesTrabajoRetiro.Add(this);
+						this._Per_id = value.Per_id;
+					}
+					else
+					{
+						this._Per_id = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Tbl_Personas");
 				}
 			}
 		}

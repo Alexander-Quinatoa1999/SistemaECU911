@@ -12,9 +12,9 @@ namespace CapaNegocio
         private static DataClassesECU911DataContext dc = new DataClassesECU911DataContext();
 
         //metodo traer para traer Datos Establecimeinto Empresa Usuario x persona
-        public static Tbl_DatEstableEmpUsu obtenerDatEstEmpreUsuar(int personaid)
+        public static Tbl_DatEstableEmpUsuRetiro obtenerDatEstEmpUsuRetiro(int personaid)
         {
-            var datempusuid = dc.Tbl_DatEstableEmpUsu.FirstOrDefault(per => per.Per_id.Equals(personaid) && per.datEstable_estado == "A");
+            var datempusuid = dc.Tbl_DatEstableEmpUsuRetiro.FirstOrDefault(per => per.Per_id.Equals(personaid) && per.datEstable_estado == "A");
             return datempusuid;
         }
 
@@ -74,12 +74,12 @@ namespace CapaNegocio
         //A. DATOS DEL ESTABLECIMIENTO - EMPRESA Y USUARIO
 
         //Metodo para guardar datos DATOS DE EMPRESA Y USUARIO
-        public static void guardarDatEstEmpreUsuarRetiro(Tbl_DatEstableEmpUsu datosestempresausu)
+        public static void guardarDatEstEmpUsuRetiro(Tbl_DatEstableEmpUsuRetiro datosestempresausu)
         {
             try
             {
                 datosestempresausu.datEstable_estado = "A";
-                dc.Tbl_DatEstableEmpUsu.InsertOnSubmit(datosestempresausu);
+                dc.Tbl_DatEstableEmpUsuRetiro.InsertOnSubmit(datosestempresausu);
                 dc.SubmitChanges();
             }
             catch (Exception ex)

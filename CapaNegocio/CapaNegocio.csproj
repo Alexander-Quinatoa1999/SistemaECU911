@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CN_Certificado.cs" />
     <Compile Include="CN_HistorialMedico.cs" />
     <Compile Include="CN_Inicial.cs" />
     <Compile Include="CN_Periodica.cs" />
