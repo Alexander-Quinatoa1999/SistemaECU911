@@ -12,6 +12,13 @@ namespace CapaNegocio
         //private static DataClassesECU911DataContext dc = new DataClassesECU911DataContext();
         private static DataClassesECU911DataContext dc = new DataClassesECU911DataContext();
 
+        //metodo traer para traer Datos Establecimeinto Empresa Usuario x persona
+        public static Tbl_DatEstableEmpUsu obtenerDatEstEmpreUsuar(int personaid)
+        {
+            var datempusuid = dc.Tbl_DatEstableEmpUsu.FirstOrDefault(per => per.Per_id.Equals(personaid) && per.datEstable_estado == "A");
+            return datempusuid;
+        }
+
         //metodo traer para traer Motivo Consulta Periodica x persona
         public static Tbl_MotivoConsultaPeriodica obtenerMotivoConsultaxPerPeriodica(int personaid)
         {
@@ -290,7 +297,7 @@ namespace CapaNegocio
 
         //O. RECOMENDACIONES Y/O TRATAMIENTO
 
-        //Metodo para guardar datos APTITUD MÉDICA PARA EL TRABAJO
+        //Metodo para guardar datos recomendacion y tratamiento
         public static void guardarRecomendacionesTratamientoPeriodica(Tbl_RecoTratamientoPeriodica tratamientoperiodica)
         {
             try
@@ -307,7 +314,7 @@ namespace CapaNegocio
 
         //P. DATOS DEL PROFESIONAL
 
-        //Metodo para guardar datos APTITUD MÉDICA PARA EL TRABAJO
+        //Metodo para guardar datos profesional
         public static void guardarDatosProfesionalPeriodica(Tbl_DatProfesionalPeriodica datprofperiodica)
         {
             try
