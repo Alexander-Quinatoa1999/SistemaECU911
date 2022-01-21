@@ -265,6 +265,7 @@ namespace SistemaECU911.Template.Views
                 datestable.datEstable_fechReingreso = Convert.ToDateTime(txt_fechaReingreso.Text);
                 datestable.datEstable_total = Convert.ToInt32(txt_total.Text);
                 datestable.datEstable_causaSalida = txt_causaSalida.Text;
+                datestable.Per_id = perso;
 
                 //B. Captura de datos Motivo de Consulta
                 motconreintegro.motConReintegro_descrip = txt_motivoconsultareintegro.Text;
@@ -376,7 +377,7 @@ namespace SistemaECU911.Template.Views
                 //Mensaje de confirmacion
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos Guardados Exitosamente')", true);
 
-                Response.Redirect("~/Template/Views/PacientesPeriodica.aspx");
+                Response.Redirect("~/Template/Views/PacientesReintegro.aspx");
                 limpiar();
             }
             catch (Exception)

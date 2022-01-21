@@ -264,6 +264,7 @@ namespace SistemaECU911.Template.Views
                 datestable.datEstable_tiempo = Convert.ToInt32(txt_tiempo.Text);
                 datestable.datEstable_actividades = txt_actividades1.Text;
                 datestable.datEstable_facRiesgo = txt_facRiesgo1.Text;
+                datestable.Per_id = perso;
 
                 //B. Captura de datos Antecedenetes personales
                 antperetiro.antPerRetiro_descripAntCliQuiru = txt_descripcionantiqui.Text;

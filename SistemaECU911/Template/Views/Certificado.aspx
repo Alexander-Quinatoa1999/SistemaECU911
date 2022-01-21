@@ -35,16 +35,16 @@
                             </asp:TableRow>
                             <asp:TableRow>
                                 <asp:TableCell>
-                                    <asp:TextBox runat="server" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center;"></asp:TextBox>
+                                    <asp:TextBox runat="server" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center;" Text="Servicio Integrado de Seguridad Sis Ecu 911"></asp:TextBox>
+                                </asp:TableCell>
+                                <asp:TableCell>
+                                    <asp:TextBox runat="server" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center" Text="1768174880001"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell>
                                     <asp:TextBox runat="server" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell>
-                                    <asp:TextBox runat="server" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
-                                </asp:TableCell>
-                                <asp:TableCell>
-                                    <asp:TextBox runat="server" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                                    <asp:TextBox runat="server" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center" Text="Consultorio Médico"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell>
                                     <asp:TextBox runat="server" ID="txt_numHClinica" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center" OnTextChanged="txt_numHistoCli_TextChanged" AutoPostBack="true"></asp:TextBox>
@@ -151,7 +151,7 @@
                             </asp:TableRow>
                             <asp:TableRow>
                                 <asp:TableCell ColumnSpan="8">
-                                    <asp:TextBox runat="server" ID="txt_detaObservaAptiMedLaboral" BorderStyle="None" Style="width: 100%" TextMode="MultiLine" Rows="3" placeholder="Detalle de Observaciones:"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_detaObservaAptiMedLaboral" BorderStyle="None" Style="background-color: transparent; width: 100%" TextMode="MultiLine" Rows="3" placeholder="Detalle de Observaciones:"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                         </asp:Table>
