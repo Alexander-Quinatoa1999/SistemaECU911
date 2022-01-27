@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SistemaECU911" Class="DataClassesECU911DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=SistemaECU911;Integrated Security=True" SettingsObjectName="CapaDatos.Properties.Settings" SettingsPropertyName="SistemaECU911ConnectionString4" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=ZOCAPO\SQLEXPRESS;Initial Catalog=SistemaECU911;Integrated Security=True" SettingsObjectName="CapaDatos.Properties.Settings" SettingsPropertyName="SistemaECU911ConnectionString5" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Tbl_AccidentesTrabajoDesc" Member="Tbl_AccidentesTrabajoDesc">
     <Type Name="Tbl_AccidentesTrabajoDesc">
       <Column Name="AntTrabDesc_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -1703,152 +1703,152 @@
       <Column Name="inmu_fechaTetanos1" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="inmu_loteTetanos1" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
       <Column Name="inmu_esqueCompleTetanos1" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
-      <Column Name="inmu_nomCompleResponVacuTetanos1" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
-      <Column Name="inmu_estaSaludColocoVacuTetanos1" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="inmu_nomCompleResponVacuTetanos1" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="inmu_estaSaludColocoVacuTetanos1" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
       <Column Name="inmu_observaTetanos1" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
       <Column Name="inmu_fechaTetanos2" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="inmu_loteTetanos2" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
       <Column Name="inmu_esqueCompleTetanos2" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
-      <Column Name="inmu_nomCompleResponVacuTetanos2" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
-      <Column Name="inmu_estaSaludColocoVacuTetanos2" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="inmu_nomCompleResponVacuTetanos2" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="inmu_estaSaludColocoVacuTetanos2" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
       <Column Name="inmu_observaTetanos2" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
       <Column Name="inmu_fechaTetanos3" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="inmu_loteTetanos3" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
       <Column Name="inmu_esqueCompleTetanos3" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
-      <Column Name="inmu_nomCompleResponVacuTetanos3" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
-      <Column Name="inmu_estaSaludColocoVacuTetanos3" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="inmu_nomCompleResponVacuTetanos3" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="inmu_estaSaludColocoVacuTetanos3" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
       <Column Name="inmu_observaTetanos3" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
       <Column Name="inmu_fechaTetanos4" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="inmu_loteTetanos4" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
       <Column Name="inmu_esqueCompleTetanos4" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
-      <Column Name="inmu_nomCompleResponVacuTetanos4" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
-      <Column Name="inmu_estaSaludColocoVacuTetanos4" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="inmu_nomCompleResponVacuTetanos4" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="inmu_estaSaludColocoVacuTetanos4" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
       <Column Name="inmu_observaTetanos4" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
       <Column Name="inmu_fechaTetanos5" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="inmu_loteTetanos5" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
       <Column Name="inmu_esqueCompleTetanos5" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
-      <Column Name="inmu_nomCompleResponVacuTetanos5" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
-      <Column Name="inmu_estaSaludColocoVacuTetanos5" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="inmu_nomCompleResponVacuTetanos5" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="inmu_estaSaludColocoVacuTetanos5" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
       <Column Name="inmu_observaTetanos5" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
       <Column Name="inmu_fechaHepatitisA1" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="inmu_loteHepatitisA1" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
       <Column Name="inmu_esqueCompleHepatitisA1" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
-      <Column Name="inmu_nomCompleResponVacuHepatitisA1" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
-      <Column Name="inmu_estaSaludColocoVaciHepatitisA1" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="inmu_nomCompleResponVacuHepatitisA1" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="inmu_estaSaludColocoVaciHepatitisA1" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
       <Column Name="inmu_observaHepatitisA1" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
       <Column Name="inmu_fechaHepatitisA2" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="inmu_loteHepatitisA2" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
       <Column Name="inmu_esqueCompleHepatitisA2" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
-      <Column Name="inmu_nomCompleResponVacuHepatitisA2" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
-      <Column Name="inmu_estaSaludColocoVaciHepatitisA2" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="inmu_nomCompleResponVacuHepatitisA2" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="inmu_estaSaludColocoVaciHepatitisA2" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
       <Column Name="inmu_observaHepatitisA2" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
       <Column Name="inmu_fechaHepatitisA3" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="inmu_loteHepatitisA3" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
       <Column Name="inmu_esqueCompleHepatitisA3" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
-      <Column Name="inmu_nomCompleResponVacuHepatitisA3" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
-      <Column Name="inmu_estaSaludColocoVaciHepatitisA3" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="inmu_nomCompleResponVacuHepatitisA3" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="inmu_estaSaludColocoVaciHepatitisA3" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
       <Column Name="inmu_observaHepatitisA3" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
       <Column Name="inmu_fechaHepatitisB1" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="inmu_loteHepatitisB1" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
       <Column Name="inmu_esqueCompleHepatitisB1" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
-      <Column Name="inmu_nomCompleResponVacuHepatitisB1" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
-      <Column Name="inmu_estaSaludColocoVaciHepatitisB1" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="inmu_nomCompleResponVacuHepatitisB1" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="inmu_estaSaludColocoVaciHepatitisB1" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
       <Column Name="inmu_observaHepatitisB1" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
       <Column Name="inmu_fechaHepatitisB2" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="inmu_loteHepatitisB2" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
       <Column Name="inmu_esqueCompleHepatitisB2" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
-      <Column Name="inmu_nomCompleResponVacuHepatitisB2" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
-      <Column Name="inmu_estaSaludColocoVaciHepatitisB2" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="inmu_nomCompleResponVacuHepatitisB2" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="inmu_estaSaludColocoVaciHepatitisB2" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
       <Column Name="inmu_observaHepatitisB2" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
       <Column Name="inmu_fechaHepatitisB3" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="inmu_loteHepatitisB3" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
       <Column Name="inmu_esqueCompleHepatitisB3" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
-      <Column Name="inmu_nomCompleResponVacuHepatitisB3" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
-      <Column Name="inmu_estaSaludColocoVaciHepatitisB3" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="inmu_nomCompleResponVacuHepatitisB3" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="inmu_estaSaludColocoVaciHepatitisB3" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
       <Column Name="inmu_observaHepatitisB3" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
       <Column Name="inmu_fechaInfluenza" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="inmu_loteInfluenza" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
       <Column Name="inmu_esqueCompleInfluenza" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
-      <Column Name="inmu_nomCompleResponVacuInfluenza" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
-      <Column Name="inmu_estaSaludColocoVacuInfluenza" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="inmu_nomCompleResponVacuInfluenza" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="inmu_estaSaludColocoVacuInfluenza" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
       <Column Name="inmu_observaInfluenza" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
       <Column Name="inmu_fechaFiebreAmarilla" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="inmu_loteFiebreAmarilla" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
       <Column Name="inmu_esqueCompleFiebreAmarilla" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
-      <Column Name="inmu_nomCompleResponVacuFiebreAmarilla" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
-      <Column Name="inmu_estaSaludColocoVacuFiebreAmarilla" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="inmu_nomCompleResponVacuFiebreAmarilla" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="inmu_estaSaludColocoVacuFiebreAmarilla" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
       <Column Name="inmu_observaFiebreAmarilla" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
       <Column Name="inmu_fechaSarampion1" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
       <Column Name="inmu_loteSarampion1" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
       <Column Name="inmu_esqueCompleSarampion1" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
-      <Column Name="inmu_nomCompleResponVacuSarampion1" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
-      <Column Name="inmu_estaSaludColocoVacuSarampion1" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="inmu_nomCompleResponVacuSarampion1" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="inmu_estaSaludColocoVacuSarampion1" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
       <Column Name="inmu_observaSarampion1" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
       <Column Name="inmu_fechaSarampion2" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="inmu_loteSarampion2" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
       <Column Name="inmu_esqueCompleSarampion2" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
-      <Column Name="inmu_nomCompleResponVacuSarampion2" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
-      <Column Name="inmu_estaSaludColocoVacuSarampion2" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="inmu_nomCompleResponVacuSarampion2" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="inmu_estaSaludColocoVacuSarampion2" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
       <Column Name="inmu_observaSarampion2" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
       <Column Name="inmu_1fechaInmuAcuerTipoEmpRies1" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="inmu_1loteInmuAcuerTipoEmpRies1" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
       <Column Name="inmu_1esqueCompleInmuAcuerTipoEmpRies1" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
-      <Column Name="inmu_1nomCompleResponVacuInmuAcuerTipoEmpRies1" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
-      <Column Name="inmu_1estaSaludColocoVacuInmuAcuerTipoEmpRies1" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="inmu_1nomCompleResponVacuInmuAcuerTipoEmpRies1" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="inmu_1estaSaludColocoVacuInmuAcuerTipoEmpRies1" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
       <Column Name="inmu_1observaInmuAcuerTipoEmpRies1" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
       <Column Name="inmu_1fechaInmuAcuerTipoEmpRies2" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="inmu_1loteInmuAcuerTipoEmpRies2" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
       <Column Name="inmu_1esqueCompleInmuAcuerTipoEmpRies2" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
-      <Column Name="inmu_1nomCompleResponVacuInmuAcuerTipoEmpRies2" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
-      <Column Name="inmu_1estaSaludColocoVacuInmuAcuerTipoEmpRies2" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="inmu_1nomCompleResponVacuInmuAcuerTipoEmpRies2" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="inmu_1estaSaludColocoVacuInmuAcuerTipoEmpRies2" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
       <Column Name="inmu_1observaInmuAcuerTipoEmpRies2" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
       <Column Name="inmu_1fechaInmuAcuerTipoEmpRies3" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="inmu_1loteInmuAcuerTipoEmpRies3" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
       <Column Name="inmu_1esqueCompleInmuAcuerTipoEmpRies3" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
-      <Column Name="inmu_1nomCompleResponVacuInmuAcuerTipoEmpRies3" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
-      <Column Name="inmu_1estaSaludColocoVacuInmuAcuerTipoEmpRies3" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="inmu_1nomCompleResponVacuInmuAcuerTipoEmpRies3" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="inmu_1estaSaludColocoVacuInmuAcuerTipoEmpRies3" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
       <Column Name="inmu_1observaInmuAcuerTipoEmpRies3" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
       <Column Name="inmu_1fechaInmuAcuerTipoEmpRies4" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="inmu_1loteInmuAcuerTipoEmpRies4" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
       <Column Name="inmu_1esqueCompleInmuAcuerTipoEmpRies4" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
-      <Column Name="inmu_1nomCompleResponVacuInmuAcuerTipoEmpRies4" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
-      <Column Name="inmu_1estaSaludColocoVacuInmuAcuerTipoEmpRies4" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="inmu_1nomCompleResponVacuInmuAcuerTipoEmpRies4" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="inmu_1estaSaludColocoVacuInmuAcuerTipoEmpRies4" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
       <Column Name="inmu_1observaInmuAcuerTipoEmpRies4" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
       <Column Name="inmu_1fechaInmuAcuerTipoEmpRies5" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="inmu_1loteInmuAcuerTipoEmpRies5" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
       <Column Name="inmu_1esqueCompleInmuAcuerTipoEmpRies5" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
-      <Column Name="inmu_1nomCompleResponVacuInmuAcuerTipoEmpRies5" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
-      <Column Name="inmu_1estaSaludColocoVacuInmuAcuerTipoEmpRies5" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="inmu_1nomCompleResponVacuInmuAcuerTipoEmpRies5" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="inmu_1estaSaludColocoVacuInmuAcuerTipoEmpRies5" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
       <Column Name="inmu_1observaInmuAcuerTipoEmpRies5" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
       <Column Name="inmu_2fechaInmuAcuerTipoEmpRies1" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="inmu_2loteInmuAcuerTipoEmpRies1" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
       <Column Name="inmu_2esqueCompleInmuAcuerTipoEmpRies1" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
-      <Column Name="inmu_2nomCompleResponVacuInmuAcuerTipoEmpRies1" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
-      <Column Name="inmu_2estaSaludColocoVacuInmuAcuerTipoEmpRies1" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="inmu_2nomCompleResponVacuInmuAcuerTipoEmpRies1" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="inmu_2estaSaludColocoVacuInmuAcuerTipoEmpRies1" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
       <Column Name="inmu_2observaInmuAcuerTipoEmpRies1" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
       <Column Name="inmu_2fechaInmuAcuerTipoEmpRies2" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="inmu_2loteInmuAcuerTipoEmpRies2" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
       <Column Name="inmu_2esqueCompleInmuAcuerTipoEmpRies2" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
-      <Column Name="inmu_2nomCompleResponVacuInmuAcuerTipoEmpRies2" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
-      <Column Name="inmu_2estaSaludColocoVacuInmuAcuerTipoEmpRies2" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="inmu_2nomCompleResponVacuInmuAcuerTipoEmpRies2" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="inmu_2estaSaludColocoVacuInmuAcuerTipoEmpRies2" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
       <Column Name="inmu_2observaInmuAcuerTipoEmpRies2" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
       <Column Name="inmu_2fechaInmuAcuerTipoEmpRies3" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="inmu_2loteInmuAcuerTipoEmpRies3" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
       <Column Name="inmu_2esqueCompleInmuAcuerTipoEmpRies3" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
-      <Column Name="inmu_2nomCompleResponVacuInmuAcuerTipoEmpRies3" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
-      <Column Name="inmu_2estaSaludColocoVacuInmuAcuerTipoEmpRies3" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="inmu_2nomCompleResponVacuInmuAcuerTipoEmpRies3" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="inmu_2estaSaludColocoVacuInmuAcuerTipoEmpRies3" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
       <Column Name="inmu_2observaInmuAcuerTipoEmpRies3" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
       <Column Name="inmu_2fechaInmuAcuerTipoEmpRies4" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="inmu_2loteInmuAcuerTipoEmpRies4" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
       <Column Name="inmu_2esqueCompleInmuAcuerTipoEmpRies4" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
-      <Column Name="inmu_2nomCompleResponVacuInmuAcuerTipoEmpRies4" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
-      <Column Name="inmu_2estaSaludColocoVacuInmuAcuerTipoEmpRies4" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="inmu_2nomCompleResponVacuInmuAcuerTipoEmpRies4" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="inmu_2estaSaludColocoVacuInmuAcuerTipoEmpRies4" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
       <Column Name="inmu_2observaInmuAcuerTipoEmpRies4" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
       <Column Name="inmu_2fechaInmuAcuerTipoEmpRies5" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="inmu_2loteInmuAcuerTipoEmpRies5" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
       <Column Name="inmu_2esqueCompleInmuAcuerTipoEmpRies5" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
-      <Column Name="inmu_2nomCompleResponVacuInmuAcuerTipoEmpRies5" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
-      <Column Name="inmu_2estaSaludColocoVacuInmuAcuerTipoEmpRies5" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="inmu_2nomCompleResponVacuInmuAcuerTipoEmpRies5" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="inmu_2estaSaludColocoVacuInmuAcuerTipoEmpRies5" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
       <Column Name="inmu_2observaInmuAcuerTipoEmpRies5" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
       <Column Name="Per_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="inmu_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
