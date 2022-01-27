@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Template/Views/Principal.Master" AutoEventWireup="true" CodeBehind="PacientesRetiro.aspx.cs" Inherits="SistemaECU911.Template.Views.PacientesRetiro" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Template/Views/Principal.Master" AutoEventWireup="true" CodeBehind="PacientesEvolucion.aspx.cs" Inherits="SistemaECU911.Template.Views.PacientesEvolucion" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -10,7 +10,7 @@
                 <div class="container">
                     <div class="card text-center">
                         <div class="card-header">
-                            LISTADO DE PACIENTES HC RETIRO
+                            LISTADO DE PACIENTES HC EVOLUCION
                         </div>
                     </div>
                 </div>
@@ -20,7 +20,7 @@
                         <div class="container">
                             <div class="row justify-content-center">
                                 <div class="col-auto">
-                                    <asp:GridView ID="grvPacientesRetiro" OnRowCommand="grvPacientesRetiro_RowCommand" AutoGenerateColumns="false" Width="100%" CssClass="table table-hover text-center table-responsive" GridLines="None" runat="server" Style="margin-right: 0px">
+                                    <asp:GridView ID="grvPacientesEvolucion" OnRowCommand="grvPacientesEvolucion_RowCommand" AutoGenerateColumns="false" Width="100%" CssClass="table table-hover text-center table-responsive" GridLines="None" runat="server" Style="margin-right: 0px">
                                         <Columns>
                                             <asp:TemplateField HeaderText="ID">
                                                 <ItemTemplate>
@@ -64,7 +64,7 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="footer" runat="server">
     <script>
         $('document').ready(function () {
-        $('#<%=grvPacientesRetiro.ClientID%>').prepend($("<thead></thead>").append($(this).find("tr:first"))).DataTable({
+        $('#<%=grvPacientesEvolucion.ClientID%>').prepend($("<thead></thead>").append($(this).find("tr:first"))).DataTable({
         //scrollCollapse: true,
         //autoWidth: false,
         //responsive: true,

@@ -10,7 +10,7 @@
                 <div class="container">
                     <div class="card text-center">
                         <div class="card-header">
-                            LISTADO DE PACIENTES
+                            LISTADO DE PACIENTES HC PERIODICA
                         </div>
                     </div>
                 </div>

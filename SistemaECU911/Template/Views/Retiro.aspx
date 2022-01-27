@@ -35,16 +35,16 @@
                             </asp:TableRow>
                             <asp:TableRow>
                                 <asp:TableCell>
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center" Text="Sistema Integrado de Seguridad Sis Ecu 911"></asp:TextBox>
+                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center" Text="Sistema Integrado de Seguridad Sis Ecu 911" ReadOnly="true"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell>
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center" Text="1768174880001"></asp:TextBox>
+                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center" Text="1768174880001" ReadOnly="true"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell>
                                         <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell>
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center" Text="Consultorio Médico"></asp:TextBox>
+                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center" Text="Consultorio Médico" ReadOnly="true"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell>
                                         <asp:TextBox runat="server" ID="txt_numHClinica" OnTextChanged="txt_numHClinica_TextChanged" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center" AutoPostBack="true"></asp:TextBox>
