@@ -64,6 +64,7 @@ namespace SistemaECU911.Template.Views
                         txt_priApellido.Text = per.Per_priApellido.ToString();
                         txt_segApellido.Text = per.Per_segApellido.ToString();
                         txt_sexo.Text = per.Per_genero.ToString();
+                        txt_numHClinica.Text = per.Per_Cedula.ToString();
 
                         //B
                         txt_fechatetanos1.Text = inmu.inmu_fechaTetanos1.ToString();

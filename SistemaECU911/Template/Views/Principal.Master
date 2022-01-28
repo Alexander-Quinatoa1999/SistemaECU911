@@ -152,8 +152,8 @@
                                     <li class="nav-item"><a class="nav-link" href="PacientesRetiro.aspx">Retiro</a></li>
                                     <li class="nav-item"><a class="nav-link" href="PacientesCertificado.aspx">Certificado</a></li>
                                     <li class="nav-item"><a class="nav-link" href="PacientesInmunizaciones.aspx">Inmunizaciones</a></li>
-                                    <%--<li class="nav-item"><a class="nav-link" href="PacientesEvolucion.aspx">Evolución</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="PedidoExamenes.aspx">Pedido Examenes</a></li>--%>
+                                    <li class="nav-item"><a class="nav-link" href="PacientesEvolucion.aspx">Evolución</a></li>
+                                    <%--<li class="nav-item"><a class="nav-link" href="PedidoExamenes.aspx">Pedido Examenes</a></li>--%>
                                 </ul>
                             </div>
                         </li>
