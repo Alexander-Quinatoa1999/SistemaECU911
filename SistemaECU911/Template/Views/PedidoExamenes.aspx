@@ -6,7 +6,7 @@
     <div class="container" style="background-color: white">
         <br />
         <div class="container">
-            <div class="card text-center" style="margin-left:-0.7rem; margin-right:-0.7rem">
+            <div class="card text-center" style="margin-left: -0.7rem; margin-right: -0.7rem">
                 <div class="card-header">
                     HISTORIA CLÍNICA OCUPACIONAL - PEDIDO EXAMENES
                 </div>
@@ -41,7 +41,7 @@
                             <asp:TextBox runat="server" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
                         </asp:TableCell>
                         <asp:TableCell>
-                            <asp:TextBox runat="server" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                            <asp:TextBox runat="server" BorderStyle="None" ID="txt_numHClinica" Style="background-color: transparent; width: 100%; text-align: center" OnTextChanged="txt_numHClinica_TextChanged" AutoPostBack="true"></asp:TextBox>
                         </asp:TableCell>
                         <asp:TableCell>
                             <asp:TextBox runat="server" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
@@ -59,22 +59,22 @@
                     </asp:TableRow>
                     <asp:TableRow>
                         <asp:TableCell>
-                            <asp:TextBox runat="server" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                            <asp:TextBox runat="server" ID="txt_priApellido" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
                         </asp:TableCell>
                         <asp:TableCell>
-                            <asp:TextBox runat="server" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                            <asp:TextBox runat="server" ID="txt_segApellido" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
                         </asp:TableCell>
                         <asp:TableCell>
-                            <asp:TextBox runat="server" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                            <asp:TextBox runat="server" ID="txt_priNombre" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
                         </asp:TableCell>
                         <asp:TableCell>
-                            <asp:TextBox runat="server" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                            <asp:TextBox runat="server" ID="txt_segNombre" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
                         </asp:TableCell>
                         <asp:TableCell>
-                            <asp:TextBox runat="server" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                            <asp:TextBox runat="server" ID="txt_sexo" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
                         </asp:TableCell>
                         <asp:TableCell>
-                            <asp:TextBox runat="server" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                            <asp:TextBox runat="server" ID="txt_edad" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
                         </asp:TableCell>
                     </asp:TableRow>
                 </asp:Table>
@@ -86,20 +86,16 @@
                     <div class="col table-responsive" id="HEMATOLOGIA">
                         <b>HEMATOLOGIA</b>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="Hematica" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="Hematica" runat="server" Text="Biometrica Hematica"></asp:Label>
+                            <asp:CheckBox ID="ckb_bioHematica" Text="&nbsp; &nbsp; &nbsp; Biometrica Hematica" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="Hematocrito" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="Hematocrito" runat="server" Text="Hematocrito"></asp:Label>
+                            <asp:CheckBox ID="ckb_hematocrito" Text="&nbsp; &nbsp; &nbsp; Hematocrito" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="Hemoglobina" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="Hemoglobina" runat="server" Text="Hemoglobina"></asp:Label>
+                            <asp:CheckBox ID="ckb_hemoglobina" Text="&nbsp; &nbsp; &nbsp; Hemoglobina" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="VSG" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="VSG" runat="server" Text="VSG"></asp:Label>
+                            <asp:CheckBox ID="ckb_vsg" Text="&nbsp; &nbsp; &nbsp; VSG" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                     </div>
                     <div class="col table-responsive" id="ELECTROLITOS">
@@ -166,7 +162,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col table-responsive" id="INMUNOHEMATOLOGIA" style="margin-top: -8rem;">
+                    <div class="col table-responsive" id="INMUNOHEMATOLOGIA" style="margin-top: -6rem;">
                         <b>INMUNOHEMATOLOGIA</b>
                         <div class="form-check">
                             <asp:TextBox class="form-check-input" type="checkbox" value="" ID="Directo" runat="server"></asp:TextBox>
@@ -232,7 +228,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col table-responsive" id="COAGULACION" style="margin-top: -10rem;">
+                    <div class="col table-responsive" id="COAGULACION" style="margin-top: -8rem;">
                         <b>COAGULACION</b>
                         <div class="form-check">
                             <asp:TextBox class="form-check-input" type="checkbox" value="" ID="Plaquetas" runat="server"></asp:TextBox>
@@ -359,7 +355,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col table-responsive" id="SANGUINEA" style="margin-top: -16rem;">
+                    <div class="col table-responsive" id="SANGUINEA" style="margin-top: -14rem;">
                         <b>QUIMICA SANGUINEA</b>
                         <div class="form-check">
                             <asp:TextBox class="form-check-input" type="checkbox" value="" ID="Basal" runat="server"></asp:TextBox>
@@ -751,6 +747,12 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <br />
+        <div class="container" align="center">
+            <asp:Button CssClass="btn btn-primary" ID="btn_guarda" runat="server" Text="Guardar" OnClick="btn_guarda_Click" UseSubmitBehavior="False" />
+            <asp:Button CssClass="btn btn-primary" ID="btn_modificar" runat="server" Text="Modificar" OnClick="btn_modificar_Click" UseSubmitBehavior="False" />
+            <asp:Button CssClass="btn btn-secondary" ID="btn_cancelar" runat="server" Text="Cancelar" OnClick="btn_cancelar_Click" UseSubmitBehavior="False" />
         </div>
         <br />
     </div>

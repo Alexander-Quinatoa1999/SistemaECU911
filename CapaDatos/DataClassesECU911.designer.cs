@@ -483,7 +483,7 @@ namespace CapaDatos
     #endregion
 		
 		public DataClassesECU911DataContext() : 
-				base(global::CapaDatos.Properties.Settings.Default.SistemaECU911ConnectionString5, mappingSource)
+				base(global::CapaDatos.Properties.Settings.Default.SistemaECU911ConnectionString4, mappingSource)
 		{
 			OnCreated();
 		}
@@ -37490,7 +37490,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_nomCompleResponVacuTetanos1", DbType="VarChar(250)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_nomCompleResponVacuTetanos1", DbType="VarChar(150)")]
 		public string inmu_nomCompleResponVacuTetanos1
 		{
 			get
@@ -37510,7 +37510,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_estaSaludColocoVacuTetanos1", DbType="VarChar(250)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_estaSaludColocoVacuTetanos1", DbType="VarChar(150)")]
 		public string inmu_estaSaludColocoVacuTetanos1
 		{
 			get
@@ -37610,7 +37610,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_nomCompleResponVacuTetanos2", DbType="VarChar(250)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_nomCompleResponVacuTetanos2", DbType="VarChar(150)")]
 		public string inmu_nomCompleResponVacuTetanos2
 		{
 			get
@@ -37630,7 +37630,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_estaSaludColocoVacuTetanos2", DbType="VarChar(250)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_estaSaludColocoVacuTetanos2", DbType="VarChar(150)")]
 		public string inmu_estaSaludColocoVacuTetanos2
 		{
 			get
@@ -37730,7 +37730,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_nomCompleResponVacuTetanos3", DbType="VarChar(250)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_nomCompleResponVacuTetanos3", DbType="VarChar(150)")]
 		public string inmu_nomCompleResponVacuTetanos3
 		{
 			get
@@ -37750,7 +37750,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_estaSaludColocoVacuTetanos3", DbType="VarChar(250)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_estaSaludColocoVacuTetanos3", DbType="VarChar(150)")]
 		public string inmu_estaSaludColocoVacuTetanos3
 		{
 			get
@@ -37850,7 +37850,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_nomCompleResponVacuTetanos4", DbType="VarChar(250)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_nomCompleResponVacuTetanos4", DbType="VarChar(150)")]
 		public string inmu_nomCompleResponVacuTetanos4
 		{
 			get
@@ -37870,7 +37870,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_estaSaludColocoVacuTetanos4", DbType="VarChar(250)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_estaSaludColocoVacuTetanos4", DbType="VarChar(150)")]
 		public string inmu_estaSaludColocoVacuTetanos4
 		{
 			get
@@ -37970,7 +37970,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_nomCompleResponVacuTetanos5", DbType="VarChar(250)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_nomCompleResponVacuTetanos5", DbType="VarChar(150)")]
 		public string inmu_nomCompleResponVacuTetanos5
 		{
 			get
@@ -37990,7 +37990,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_estaSaludColocoVacuTetanos5", DbType="VarChar(250)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_estaSaludColocoVacuTetanos5", DbType="VarChar(150)")]
 		public string inmu_estaSaludColocoVacuTetanos5
 		{
 			get
@@ -38090,7 +38090,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_nomCompleResponVacuHepatitisA1", DbType="VarChar(250)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_nomCompleResponVacuHepatitisA1", DbType="VarChar(150)")]
 		public string inmu_nomCompleResponVacuHepatitisA1
 		{
 			get
@@ -38110,7 +38110,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_estaSaludColocoVaciHepatitisA1", DbType="VarChar(250)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_estaSaludColocoVaciHepatitisA1", DbType="VarChar(150)")]
 		public string inmu_estaSaludColocoVaciHepatitisA1
 		{
 			get
@@ -38210,7 +38210,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_nomCompleResponVacuHepatitisA2", DbType="VarChar(250)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_nomCompleResponVacuHepatitisA2", DbType="VarChar(150)")]
 		public string inmu_nomCompleResponVacuHepatitisA2
 		{
 			get
@@ -38230,7 +38230,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_estaSaludColocoVaciHepatitisA2", DbType="VarChar(250)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_estaSaludColocoVaciHepatitisA2", DbType="VarChar(150)")]
 		public string inmu_estaSaludColocoVaciHepatitisA2
 		{
 			get
@@ -38330,7 +38330,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_nomCompleResponVacuHepatitisA3", DbType="VarChar(250)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_nomCompleResponVacuHepatitisA3", DbType="VarChar(150)")]
 		public string inmu_nomCompleResponVacuHepatitisA3
 		{
 			get
@@ -38350,7 +38350,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_estaSaludColocoVaciHepatitisA3", DbType="VarChar(250)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_estaSaludColocoVaciHepatitisA3", DbType="VarChar(150)")]
 		public string inmu_estaSaludColocoVaciHepatitisA3
 		{
 			get
@@ -38450,7 +38450,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_nomCompleResponVacuHepatitisB1", DbType="VarChar(250)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_nomCompleResponVacuHepatitisB1", DbType="VarChar(150)")]
 		public string inmu_nomCompleResponVacuHepatitisB1
 		{
 			get
@@ -38470,7 +38470,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_estaSaludColocoVaciHepatitisB1", DbType="VarChar(250)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_estaSaludColocoVaciHepatitisB1", DbType="VarChar(150)")]
 		public string inmu_estaSaludColocoVaciHepatitisB1
 		{
 			get
@@ -38570,7 +38570,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_nomCompleResponVacuHepatitisB2", DbType="VarChar(250)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_nomCompleResponVacuHepatitisB2", DbType="VarChar(150)")]
 		public string inmu_nomCompleResponVacuHepatitisB2
 		{
 			get
@@ -38590,7 +38590,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_estaSaludColocoVaciHepatitisB2", DbType="VarChar(250)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_estaSaludColocoVaciHepatitisB2", DbType="VarChar(150)")]
 		public string inmu_estaSaludColocoVaciHepatitisB2
 		{
 			get
@@ -38690,7 +38690,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_nomCompleResponVacuHepatitisB3", DbType="VarChar(250)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_nomCompleResponVacuHepatitisB3", DbType="VarChar(150)")]
 		public string inmu_nomCompleResponVacuHepatitisB3
 		{
 			get
@@ -38710,7 +38710,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_estaSaludColocoVaciHepatitisB3", DbType="VarChar(250)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_estaSaludColocoVaciHepatitisB3", DbType="VarChar(150)")]
 		public string inmu_estaSaludColocoVaciHepatitisB3
 		{
 			get
@@ -38810,7 +38810,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_nomCompleResponVacuInfluenza", DbType="VarChar(250)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_nomCompleResponVacuInfluenza", DbType="VarChar(150)")]
 		public string inmu_nomCompleResponVacuInfluenza
 		{
 			get
@@ -38830,7 +38830,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_estaSaludColocoVacuInfluenza", DbType="VarChar(250)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_estaSaludColocoVacuInfluenza", DbType="VarChar(150)")]
 		public string inmu_estaSaludColocoVacuInfluenza
 		{
 			get
@@ -38930,7 +38930,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_nomCompleResponVacuFiebreAmarilla", DbType="VarChar(250)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_nomCompleResponVacuFiebreAmarilla", DbType="VarChar(150)")]
 		public string inmu_nomCompleResponVacuFiebreAmarilla
 		{
 			get
@@ -38950,7 +38950,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_estaSaludColocoVacuFiebreAmarilla", DbType="VarChar(250)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_estaSaludColocoVacuFiebreAmarilla", DbType="VarChar(150)")]
 		public string inmu_estaSaludColocoVacuFiebreAmarilla
 		{
 			get
@@ -39050,7 +39050,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_nomCompleResponVacuSarampion1", DbType="VarChar(250)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_nomCompleResponVacuSarampion1", DbType="VarChar(150)")]
 		public string inmu_nomCompleResponVacuSarampion1
 		{
 			get
@@ -39070,7 +39070,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_estaSaludColocoVacuSarampion1", DbType="VarChar(250)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_estaSaludColocoVacuSarampion1", DbType="VarChar(150)")]
 		public string inmu_estaSaludColocoVacuSarampion1
 		{
 			get
@@ -39170,7 +39170,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_nomCompleResponVacuSarampion2", DbType="VarChar(250)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_nomCompleResponVacuSarampion2", DbType="VarChar(150)")]
 		public string inmu_nomCompleResponVacuSarampion2
 		{
 			get
@@ -39190,7 +39190,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_estaSaludColocoVacuSarampion2", DbType="VarChar(250)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_estaSaludColocoVacuSarampion2", DbType="VarChar(150)")]
 		public string inmu_estaSaludColocoVacuSarampion2
 		{
 			get
@@ -39290,7 +39290,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_1nomCompleResponVacuInmuAcuerTipoEmpRies1", DbType="VarChar(250)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_1nomCompleResponVacuInmuAcuerTipoEmpRies1", DbType="VarChar(150)")]
 		public string inmu_1nomCompleResponVacuInmuAcuerTipoEmpRies1
 		{
 			get
@@ -39310,7 +39310,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_1estaSaludColocoVacuInmuAcuerTipoEmpRies1", DbType="VarChar(250)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_1estaSaludColocoVacuInmuAcuerTipoEmpRies1", DbType="VarChar(150)")]
 		public string inmu_1estaSaludColocoVacuInmuAcuerTipoEmpRies1
 		{
 			get
@@ -39410,7 +39410,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_1nomCompleResponVacuInmuAcuerTipoEmpRies2", DbType="VarChar(250)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_1nomCompleResponVacuInmuAcuerTipoEmpRies2", DbType="VarChar(150)")]
 		public string inmu_1nomCompleResponVacuInmuAcuerTipoEmpRies2
 		{
 			get
@@ -39430,7 +39430,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_1estaSaludColocoVacuInmuAcuerTipoEmpRies2", DbType="VarChar(250)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_1estaSaludColocoVacuInmuAcuerTipoEmpRies2", DbType="VarChar(150)")]
 		public string inmu_1estaSaludColocoVacuInmuAcuerTipoEmpRies2
 		{
 			get
@@ -39530,7 +39530,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_1nomCompleResponVacuInmuAcuerTipoEmpRies3", DbType="VarChar(250)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_1nomCompleResponVacuInmuAcuerTipoEmpRies3", DbType="VarChar(150)")]
 		public string inmu_1nomCompleResponVacuInmuAcuerTipoEmpRies3
 		{
 			get
@@ -39550,7 +39550,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_1estaSaludColocoVacuInmuAcuerTipoEmpRies3", DbType="VarChar(250)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_1estaSaludColocoVacuInmuAcuerTipoEmpRies3", DbType="VarChar(150)")]
 		public string inmu_1estaSaludColocoVacuInmuAcuerTipoEmpRies3
 		{
 			get
@@ -39650,7 +39650,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_1nomCompleResponVacuInmuAcuerTipoEmpRies4", DbType="VarChar(250)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_1nomCompleResponVacuInmuAcuerTipoEmpRies4", DbType="VarChar(150)")]
 		public string inmu_1nomCompleResponVacuInmuAcuerTipoEmpRies4
 		{
 			get
@@ -39670,7 +39670,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_1estaSaludColocoVacuInmuAcuerTipoEmpRies4", DbType="VarChar(250)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_1estaSaludColocoVacuInmuAcuerTipoEmpRies4", DbType="VarChar(150)")]
 		public string inmu_1estaSaludColocoVacuInmuAcuerTipoEmpRies4
 		{
 			get
@@ -39770,7 +39770,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_1nomCompleResponVacuInmuAcuerTipoEmpRies5", DbType="VarChar(250)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_1nomCompleResponVacuInmuAcuerTipoEmpRies5", DbType="VarChar(150)")]
 		public string inmu_1nomCompleResponVacuInmuAcuerTipoEmpRies5
 		{
 			get
@@ -39790,7 +39790,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_1estaSaludColocoVacuInmuAcuerTipoEmpRies5", DbType="VarChar(250)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_1estaSaludColocoVacuInmuAcuerTipoEmpRies5", DbType="VarChar(150)")]
 		public string inmu_1estaSaludColocoVacuInmuAcuerTipoEmpRies5
 		{
 			get
@@ -39890,7 +39890,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_2nomCompleResponVacuInmuAcuerTipoEmpRies1", DbType="VarChar(250)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_2nomCompleResponVacuInmuAcuerTipoEmpRies1", DbType="VarChar(150)")]
 		public string inmu_2nomCompleResponVacuInmuAcuerTipoEmpRies1
 		{
 			get
@@ -39910,7 +39910,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_2estaSaludColocoVacuInmuAcuerTipoEmpRies1", DbType="VarChar(250)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_2estaSaludColocoVacuInmuAcuerTipoEmpRies1", DbType="VarChar(150)")]
 		public string inmu_2estaSaludColocoVacuInmuAcuerTipoEmpRies1
 		{
 			get
@@ -40010,7 +40010,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_2nomCompleResponVacuInmuAcuerTipoEmpRies2", DbType="VarChar(250)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_2nomCompleResponVacuInmuAcuerTipoEmpRies2", DbType="VarChar(150)")]
 		public string inmu_2nomCompleResponVacuInmuAcuerTipoEmpRies2
 		{
 			get
@@ -40030,7 +40030,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_2estaSaludColocoVacuInmuAcuerTipoEmpRies2", DbType="VarChar(250)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_2estaSaludColocoVacuInmuAcuerTipoEmpRies2", DbType="VarChar(150)")]
 		public string inmu_2estaSaludColocoVacuInmuAcuerTipoEmpRies2
 		{
 			get
@@ -40130,7 +40130,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_2nomCompleResponVacuInmuAcuerTipoEmpRies3", DbType="VarChar(250)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_2nomCompleResponVacuInmuAcuerTipoEmpRies3", DbType="VarChar(150)")]
 		public string inmu_2nomCompleResponVacuInmuAcuerTipoEmpRies3
 		{
 			get
@@ -40150,7 +40150,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_2estaSaludColocoVacuInmuAcuerTipoEmpRies3", DbType="VarChar(250)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_2estaSaludColocoVacuInmuAcuerTipoEmpRies3", DbType="VarChar(150)")]
 		public string inmu_2estaSaludColocoVacuInmuAcuerTipoEmpRies3
 		{
 			get
@@ -40250,7 +40250,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_2nomCompleResponVacuInmuAcuerTipoEmpRies4", DbType="VarChar(250)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_2nomCompleResponVacuInmuAcuerTipoEmpRies4", DbType="VarChar(150)")]
 		public string inmu_2nomCompleResponVacuInmuAcuerTipoEmpRies4
 		{
 			get
@@ -40270,7 +40270,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_2estaSaludColocoVacuInmuAcuerTipoEmpRies4", DbType="VarChar(250)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_2estaSaludColocoVacuInmuAcuerTipoEmpRies4", DbType="VarChar(150)")]
 		public string inmu_2estaSaludColocoVacuInmuAcuerTipoEmpRies4
 		{
 			get
@@ -40370,7 +40370,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_2nomCompleResponVacuInmuAcuerTipoEmpRies5", DbType="VarChar(250)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_2nomCompleResponVacuInmuAcuerTipoEmpRies5", DbType="VarChar(150)")]
 		public string inmu_2nomCompleResponVacuInmuAcuerTipoEmpRies5
 		{
 			get
@@ -40390,7 +40390,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_2estaSaludColocoVacuInmuAcuerTipoEmpRies5", DbType="VarChar(250)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_2estaSaludColocoVacuInmuAcuerTipoEmpRies5", DbType="VarChar(150)")]
 		public string inmu_2estaSaludColocoVacuInmuAcuerTipoEmpRies5
 		{
 			get

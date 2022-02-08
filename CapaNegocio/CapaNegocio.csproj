@@ -50,6 +50,7 @@
     <Compile Include="CN_HistorialMedico.cs" />
     <Compile Include="CN_Inicial.cs" />
     <Compile Include="CN_Inmunizaciones.cs" />
+    <Compile Include="CN_PedidoExamenes.cs" />
     <Compile Include="CN_Periodica.cs" />
     <Compile Include="CN_Reintegro.cs" />
     <Compile Include="CN_Retiro.cs" />
