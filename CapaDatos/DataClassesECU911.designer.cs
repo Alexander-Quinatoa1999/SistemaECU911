@@ -99,9 +99,6 @@ namespace CapaDatos
     partial void InsertTbl_CargoInstitucional(Tbl_CargoInstitucional instance);
     partial void UpdateTbl_CargoInstitucional(Tbl_CargoInstitucional instance);
     partial void DeleteTbl_CargoInstitucional(Tbl_CargoInstitucional instance);
-    partial void InsertTbl_Coagulacion(Tbl_Coagulacion instance);
-    partial void UpdateTbl_Coagulacion(Tbl_Coagulacion instance);
-    partial void DeleteTbl_Coagulacion(Tbl_Coagulacion instance);
     partial void InsertTbl_ConDiagnostico(Tbl_ConDiagnostico instance);
     partial void UpdateTbl_ConDiagnostico(Tbl_ConDiagnostico instance);
     partial void DeleteTbl_ConDiagnostico(Tbl_ConDiagnostico instance);
@@ -180,12 +177,6 @@ namespace CapaDatos
     partial void InsertTbl_Dosis(Tbl_Dosis instance);
     partial void UpdateTbl_Dosis(Tbl_Dosis instance);
     partial void DeleteTbl_Dosis(Tbl_Dosis instance);
-    partial void InsertTbl_Drogras(Tbl_Drogras instance);
-    partial void UpdateTbl_Drogras(Tbl_Drogras instance);
-    partial void DeleteTbl_Drogras(Tbl_Drogras instance);
-    partial void InsertTbl_Electrolitos(Tbl_Electrolitos instance);
-    partial void UpdateTbl_Electrolitos(Tbl_Electrolitos instance);
-    partial void DeleteTbl_Electrolitos(Tbl_Electrolitos instance);
     partial void InsertTbl_Emp_Per(Tbl_Emp_Per instance);
     partial void UpdateTbl_Emp_Per(Tbl_Emp_Per instance);
     partial void DeleteTbl_Emp_Per(Tbl_Emp_Per instance);
@@ -213,9 +204,6 @@ namespace CapaDatos
     partial void InsertTbl_EnfermedadesProfesionales(Tbl_EnfermedadesProfesionales instance);
     partial void UpdateTbl_EnfermedadesProfesionales(Tbl_EnfermedadesProfesionales instance);
     partial void DeleteTbl_EnfermedadesProfesionales(Tbl_EnfermedadesProfesionales instance);
-    partial void InsertTbl_Enzimas(Tbl_Enzimas instance);
-    partial void UpdateTbl_Enzimas(Tbl_Enzimas instance);
-    partial void DeleteTbl_Enzimas(Tbl_Enzimas instance);
     partial void InsertTbl_Especialidad(Tbl_Especialidad instance);
     partial void UpdateTbl_Especialidad(Tbl_Especialidad instance);
     partial void DeleteTbl_Especialidad(Tbl_Especialidad instance);
@@ -240,9 +228,6 @@ namespace CapaDatos
     partial void InsertTbl_EstSalDondeVacuna(Tbl_EstSalDondeVacuna instance);
     partial void UpdateTbl_EstSalDondeVacuna(Tbl_EstSalDondeVacuna instance);
     partial void DeleteTbl_EstSalDondeVacuna(Tbl_EstSalDondeVacuna instance);
-    partial void InsertTbl_EstudiosEspeciales(Tbl_EstudiosEspeciales instance);
-    partial void UpdateTbl_EstudiosEspeciales(Tbl_EstudiosEspeciales instance);
-    partial void DeleteTbl_EstudiosEspeciales(Tbl_EstudiosEspeciales instance);
     partial void InsertTbl_Evaluacion(Tbl_Evaluacion instance);
     partial void UpdateTbl_Evaluacion(Tbl_Evaluacion instance);
     partial void DeleteTbl_Evaluacion(Tbl_Evaluacion instance);
@@ -345,18 +330,9 @@ namespace CapaDatos
     partial void InsertTbl_HabitosToxicos(Tbl_HabitosToxicos instance);
     partial void UpdateTbl_HabitosToxicos(Tbl_HabitosToxicos instance);
     partial void DeleteTbl_HabitosToxicos(Tbl_HabitosToxicos instance);
-    partial void InsertTbl_Heces(Tbl_Heces instance);
-    partial void UpdateTbl_Heces(Tbl_Heces instance);
-    partial void DeleteTbl_Heces(Tbl_Heces instance);
-    partial void InsertTbl_Hematologia(Tbl_Hematologia instance);
-    partial void UpdateTbl_Hematologia(Tbl_Hematologia instance);
-    partial void DeleteTbl_Hematologia(Tbl_Hematologia instance);
     partial void InsertTbl_Hijos(Tbl_Hijos instance);
     partial void UpdateTbl_Hijos(Tbl_Hijos instance);
     partial void DeleteTbl_Hijos(Tbl_Hijos instance);
-    partial void InsertTbl_Hormonas(Tbl_Hormonas instance);
-    partial void UpdateTbl_Hormonas(Tbl_Hormonas instance);
-    partial void DeleteTbl_Hormonas(Tbl_Hormonas instance);
     partial void InsertTbl_Incidentes(Tbl_Incidentes instance);
     partial void UpdateTbl_Incidentes(Tbl_Incidentes instance);
     partial void DeleteTbl_Incidentes(Tbl_Incidentes instance);
@@ -369,9 +345,6 @@ namespace CapaDatos
     partial void InsertTbl_InmunizacionesInmunizaciones(Tbl_InmunizacionesInmunizaciones instance);
     partial void UpdateTbl_InmunizacionesInmunizaciones(Tbl_InmunizacionesInmunizaciones instance);
     partial void DeleteTbl_InmunizacionesInmunizaciones(Tbl_InmunizacionesInmunizaciones instance);
-    partial void InsertTbl_InmunoHematologia(Tbl_InmunoHematologia instance);
-    partial void UpdateTbl_InmunoHematologia(Tbl_InmunoHematologia instance);
-    partial void DeleteTbl_InmunoHematologia(Tbl_InmunoHematologia instance);
     partial void InsertTbl_InmunoInfecciosas(Tbl_InmunoInfecciosas instance);
     partial void UpdateTbl_InmunoInfecciosas(Tbl_InmunoInfecciosas instance);
     partial void DeleteTbl_InmunoInfecciosas(Tbl_InmunoInfecciosas instance);
@@ -384,18 +357,12 @@ namespace CapaDatos
     partial void InsertTbl_Lote(Tbl_Lote instance);
     partial void UpdateTbl_Lote(Tbl_Lote instance);
     partial void DeleteTbl_Lote(Tbl_Lote instance);
-    partial void InsertTbl_MarcadoresTumorales(Tbl_MarcadoresTumorales instance);
-    partial void UpdateTbl_MarcadoresTumorales(Tbl_MarcadoresTumorales instance);
-    partial void DeleteTbl_MarcadoresTumorales(Tbl_MarcadoresTumorales instance);
     partial void InsertTbl_MetodoPlanificacionFamiliar(Tbl_MetodoPlanificacionFamiliar instance);
     partial void UpdateTbl_MetodoPlanificacionFamiliar(Tbl_MetodoPlanificacionFamiliar instance);
     partial void DeleteTbl_MetodoPlanificacionFamiliar(Tbl_MetodoPlanificacionFamiliar instance);
     partial void InsertTbl_MetodoPlanificacionFamiliar2(Tbl_MetodoPlanificacionFamiliar2 instance);
     partial void UpdateTbl_MetodoPlanificacionFamiliar2(Tbl_MetodoPlanificacionFamiliar2 instance);
     partial void DeleteTbl_MetodoPlanificacionFamiliar2(Tbl_MetodoPlanificacionFamiliar2 instance);
-    partial void InsertTbl_Microbiologia(Tbl_Microbiologia instance);
-    partial void UpdateTbl_Microbiologia(Tbl_Microbiologia instance);
-    partial void DeleteTbl_Microbiologia(Tbl_Microbiologia instance);
     partial void InsertTbl_ModalidadLaboral(Tbl_ModalidadLaboral instance);
     partial void UpdateTbl_ModalidadLaboral(Tbl_ModalidadLaboral instance);
     partial void DeleteTbl_ModalidadLaboral(Tbl_ModalidadLaboral instance);
@@ -417,15 +384,9 @@ namespace CapaDatos
     partial void InsertTbl_Observaciones(Tbl_Observaciones instance);
     partial void UpdateTbl_Observaciones(Tbl_Observaciones instance);
     partial void DeleteTbl_Observaciones(Tbl_Observaciones instance);
-    partial void InsertTbl_Orina(Tbl_Orina instance);
-    partial void UpdateTbl_Orina(Tbl_Orina instance);
-    partial void DeleteTbl_Orina(Tbl_Orina instance);
-    partial void InsertTbl_Otros(Tbl_Otros instance);
-    partial void UpdateTbl_Otros(Tbl_Otros instance);
-    partial void DeleteTbl_Otros(Tbl_Otros instance);
-    partial void InsertTbl_PedidoExamnes(Tbl_PedidoExamnes instance);
-    partial void UpdateTbl_PedidoExamnes(Tbl_PedidoExamnes instance);
-    partial void DeleteTbl_PedidoExamnes(Tbl_PedidoExamnes instance);
+    partial void InsertTbl_PedidoExamenes(Tbl_PedidoExamenes instance);
+    partial void UpdateTbl_PedidoExamenes(Tbl_PedidoExamenes instance);
+    partial void DeleteTbl_PedidoExamenes(Tbl_PedidoExamenes instance);
     partial void InsertTbl_Personas(Tbl_Personas instance);
     partial void UpdateTbl_Personas(Tbl_Personas instance);
     partial void DeleteTbl_Personas(Tbl_Personas instance);
@@ -444,9 +405,6 @@ namespace CapaDatos
     partial void InsertTbl_Profesional(Tbl_Profesional instance);
     partial void UpdateTbl_Profesional(Tbl_Profesional instance);
     partial void DeleteTbl_Profesional(Tbl_Profesional instance);
-    partial void InsertTbl_QuimicaSanguinea(Tbl_QuimicaSanguinea instance);
-    partial void UpdateTbl_QuimicaSanguinea(Tbl_QuimicaSanguinea instance);
-    partial void DeleteTbl_QuimicaSanguinea(Tbl_QuimicaSanguinea instance);
     partial void InsertTbl_RecomendacionesCertificado(Tbl_RecomendacionesCertificado instance);
     partial void UpdateTbl_RecomendacionesCertificado(Tbl_RecomendacionesCertificado instance);
     partial void DeleteTbl_RecomendacionesCertificado(Tbl_RecomendacionesCertificado instance);
@@ -495,9 +453,6 @@ namespace CapaDatos
     partial void InsertTbl_Sede(Tbl_Sede instance);
     partial void UpdateTbl_Sede(Tbl_Sede instance);
     partial void DeleteTbl_Sede(Tbl_Sede instance);
-    partial void InsertTbl_Serologia(Tbl_Serologia instance);
-    partial void UpdateTbl_Serologia(Tbl_Serologia instance);
-    partial void DeleteTbl_Serologia(Tbl_Serologia instance);
     partial void InsertTbl_TelefonoIntitucional(Tbl_TelefonoIntitucional instance);
     partial void UpdateTbl_TelefonoIntitucional(Tbl_TelefonoIntitucional instance);
     partial void DeleteTbl_TelefonoIntitucional(Tbl_TelefonoIntitucional instance);
@@ -741,14 +696,6 @@ namespace CapaDatos
 			}
 		}
 		
-		public System.Data.Linq.Table<Tbl_Coagulacion> Tbl_Coagulacion
-		{
-			get
-			{
-				return this.GetTable<Tbl_Coagulacion>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Tbl_ConDiagnostico> Tbl_ConDiagnostico
 		{
 			get
@@ -957,22 +904,6 @@ namespace CapaDatos
 			}
 		}
 		
-		public System.Data.Linq.Table<Tbl_Drogras> Tbl_Drogras
-		{
-			get
-			{
-				return this.GetTable<Tbl_Drogras>();
-			}
-		}
-		
-		public System.Data.Linq.Table<Tbl_Electrolitos> Tbl_Electrolitos
-		{
-			get
-			{
-				return this.GetTable<Tbl_Electrolitos>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Tbl_Emp_Per> Tbl_Emp_Per
 		{
 			get
@@ -1045,14 +976,6 @@ namespace CapaDatos
 			}
 		}
 		
-		public System.Data.Linq.Table<Tbl_Enzimas> Tbl_Enzimas
-		{
-			get
-			{
-				return this.GetTable<Tbl_Enzimas>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Tbl_Especialidad> Tbl_Especialidad
 		{
 			get
@@ -1114,14 +1037,6 @@ namespace CapaDatos
 			get
 			{
 				return this.GetTable<Tbl_EstSalDondeVacuna>();
-			}
-		}
-		
-		public System.Data.Linq.Table<Tbl_EstudiosEspeciales> Tbl_EstudiosEspeciales
-		{
-			get
-			{
-				return this.GetTable<Tbl_EstudiosEspeciales>();
 			}
 		}
 		
@@ -1397,35 +1312,11 @@ namespace CapaDatos
 			}
 		}
 		
-		public System.Data.Linq.Table<Tbl_Heces> Tbl_Heces
-		{
-			get
-			{
-				return this.GetTable<Tbl_Heces>();
-			}
-		}
-		
-		public System.Data.Linq.Table<Tbl_Hematologia> Tbl_Hematologia
-		{
-			get
-			{
-				return this.GetTable<Tbl_Hematologia>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Tbl_Hijos> Tbl_Hijos
 		{
 			get
 			{
 				return this.GetTable<Tbl_Hijos>();
-			}
-		}
-		
-		public System.Data.Linq.Table<Tbl_Hormonas> Tbl_Hormonas
-		{
-			get
-			{
-				return this.GetTable<Tbl_Hormonas>();
 			}
 		}
 		
@@ -1461,14 +1352,6 @@ namespace CapaDatos
 			}
 		}
 		
-		public System.Data.Linq.Table<Tbl_InmunoHematologia> Tbl_InmunoHematologia
-		{
-			get
-			{
-				return this.GetTable<Tbl_InmunoHematologia>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Tbl_InmunoInfecciosas> Tbl_InmunoInfecciosas
 		{
 			get
@@ -1501,14 +1384,6 @@ namespace CapaDatos
 			}
 		}
 		
-		public System.Data.Linq.Table<Tbl_MarcadoresTumorales> Tbl_MarcadoresTumorales
-		{
-			get
-			{
-				return this.GetTable<Tbl_MarcadoresTumorales>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Tbl_MetodoPlanificacionFamiliar> Tbl_MetodoPlanificacionFamiliar
 		{
 			get
@@ -1522,14 +1397,6 @@ namespace CapaDatos
 			get
 			{
 				return this.GetTable<Tbl_MetodoPlanificacionFamiliar2>();
-			}
-		}
-		
-		public System.Data.Linq.Table<Tbl_Microbiologia> Tbl_Microbiologia
-		{
-			get
-			{
-				return this.GetTable<Tbl_Microbiologia>();
 			}
 		}
 		
@@ -1589,27 +1456,11 @@ namespace CapaDatos
 			}
 		}
 		
-		public System.Data.Linq.Table<Tbl_Orina> Tbl_Orina
+		public System.Data.Linq.Table<Tbl_PedidoExamenes> Tbl_PedidoExamenes
 		{
 			get
 			{
-				return this.GetTable<Tbl_Orina>();
-			}
-		}
-		
-		public System.Data.Linq.Table<Tbl_Otros> Tbl_Otros
-		{
-			get
-			{
-				return this.GetTable<Tbl_Otros>();
-			}
-		}
-		
-		public System.Data.Linq.Table<Tbl_PedidoExamnes> Tbl_PedidoExamnes
-		{
-			get
-			{
-				return this.GetTable<Tbl_PedidoExamnes>();
+				return this.GetTable<Tbl_PedidoExamenes>();
 			}
 		}
 		
@@ -1658,14 +1509,6 @@ namespace CapaDatos
 			get
 			{
 				return this.GetTable<Tbl_Profesional>();
-			}
-		}
-		
-		public System.Data.Linq.Table<Tbl_QuimicaSanguinea> Tbl_QuimicaSanguinea
-		{
-			get
-			{
-				return this.GetTable<Tbl_QuimicaSanguinea>();
 			}
 		}
 		
@@ -1794,14 +1637,6 @@ namespace CapaDatos
 			get
 			{
 				return this.GetTable<Tbl_Sede>();
-			}
-		}
-		
-		public System.Data.Linq.Table<Tbl_Serologia> Tbl_Serologia
-		{
-			get
-			{
-				return this.GetTable<Tbl_Serologia>();
 			}
 		}
 		
@@ -11931,144 +11766,6 @@ namespace CapaDatos
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_Coagulacion")]
-	public partial class Tbl_Coagulacion : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _Coag_id;
-		
-		private System.Nullable<bool> _Coag_Opcion;
-		
-		private string _Coag_estado;
-		
-		private EntitySet<Tbl_PedidoExamnes> _Tbl_PedidoExamnes;
-		
-    #region Definiciones de métodos de extensibilidad
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnCoag_idChanging(int value);
-    partial void OnCoag_idChanged();
-    partial void OnCoag_OpcionChanging(System.Nullable<bool> value);
-    partial void OnCoag_OpcionChanged();
-    partial void OnCoag_estadoChanging(string value);
-    partial void OnCoag_estadoChanged();
-    #endregion
-		
-		public Tbl_Coagulacion()
-		{
-			this._Tbl_PedidoExamnes = new EntitySet<Tbl_PedidoExamnes>(new Action<Tbl_PedidoExamnes>(this.attach_Tbl_PedidoExamnes), new Action<Tbl_PedidoExamnes>(this.detach_Tbl_PedidoExamnes));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Coag_id", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int Coag_id
-		{
-			get
-			{
-				return this._Coag_id;
-			}
-			set
-			{
-				if ((this._Coag_id != value))
-				{
-					this.OnCoag_idChanging(value);
-					this.SendPropertyChanging();
-					this._Coag_id = value;
-					this.SendPropertyChanged("Coag_id");
-					this.OnCoag_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Coag_Opcion", DbType="Bit")]
-		public System.Nullable<bool> Coag_Opcion
-		{
-			get
-			{
-				return this._Coag_Opcion;
-			}
-			set
-			{
-				if ((this._Coag_Opcion != value))
-				{
-					this.OnCoag_OpcionChanging(value);
-					this.SendPropertyChanging();
-					this._Coag_Opcion = value;
-					this.SendPropertyChanged("Coag_Opcion");
-					this.OnCoag_OpcionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Coag_estado", DbType="VarChar(1)")]
-		public string Coag_estado
-		{
-			get
-			{
-				return this._Coag_estado;
-			}
-			set
-			{
-				if ((this._Coag_estado != value))
-				{
-					this.OnCoag_estadoChanging(value);
-					this.SendPropertyChanging();
-					this._Coag_estado = value;
-					this.SendPropertyChanged("Coag_estado");
-					this.OnCoag_estadoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Coagulacion_Tbl_PedidoExamnes", Storage="_Tbl_PedidoExamnes", ThisKey="Coag_id", OtherKey="Coag_id")]
-		public EntitySet<Tbl_PedidoExamnes> Tbl_PedidoExamnes
-		{
-			get
-			{
-				return this._Tbl_PedidoExamnes;
-			}
-			set
-			{
-				this._Tbl_PedidoExamnes.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Tbl_PedidoExamnes(Tbl_PedidoExamnes entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tbl_Coagulacion = this;
-		}
-		
-		private void detach_Tbl_PedidoExamnes(Tbl_PedidoExamnes entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tbl_Coagulacion = null;
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_ConDiagnostico")]
 	public partial class Tbl_ConDiagnostico : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -19421,282 +19118,6 @@ namespace CapaDatos
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_Drogras")]
-	public partial class Tbl_Drogras : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _Drog_id;
-		
-		private System.Nullable<bool> _Drog_Opcion;
-		
-		private string _Drog_estado;
-		
-		private EntitySet<Tbl_PedidoExamnes> _Tbl_PedidoExamnes;
-		
-    #region Definiciones de métodos de extensibilidad
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnDrog_idChanging(int value);
-    partial void OnDrog_idChanged();
-    partial void OnDrog_OpcionChanging(System.Nullable<bool> value);
-    partial void OnDrog_OpcionChanged();
-    partial void OnDrog_estadoChanging(string value);
-    partial void OnDrog_estadoChanged();
-    #endregion
-		
-		public Tbl_Drogras()
-		{
-			this._Tbl_PedidoExamnes = new EntitySet<Tbl_PedidoExamnes>(new Action<Tbl_PedidoExamnes>(this.attach_Tbl_PedidoExamnes), new Action<Tbl_PedidoExamnes>(this.detach_Tbl_PedidoExamnes));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Drog_id", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int Drog_id
-		{
-			get
-			{
-				return this._Drog_id;
-			}
-			set
-			{
-				if ((this._Drog_id != value))
-				{
-					this.OnDrog_idChanging(value);
-					this.SendPropertyChanging();
-					this._Drog_id = value;
-					this.SendPropertyChanged("Drog_id");
-					this.OnDrog_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Drog_Opcion", DbType="Bit")]
-		public System.Nullable<bool> Drog_Opcion
-		{
-			get
-			{
-				return this._Drog_Opcion;
-			}
-			set
-			{
-				if ((this._Drog_Opcion != value))
-				{
-					this.OnDrog_OpcionChanging(value);
-					this.SendPropertyChanging();
-					this._Drog_Opcion = value;
-					this.SendPropertyChanged("Drog_Opcion");
-					this.OnDrog_OpcionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Drog_estado", DbType="VarChar(1)")]
-		public string Drog_estado
-		{
-			get
-			{
-				return this._Drog_estado;
-			}
-			set
-			{
-				if ((this._Drog_estado != value))
-				{
-					this.OnDrog_estadoChanging(value);
-					this.SendPropertyChanging();
-					this._Drog_estado = value;
-					this.SendPropertyChanged("Drog_estado");
-					this.OnDrog_estadoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Drogras_Tbl_PedidoExamnes", Storage="_Tbl_PedidoExamnes", ThisKey="Drog_id", OtherKey="Drog_id")]
-		public EntitySet<Tbl_PedidoExamnes> Tbl_PedidoExamnes
-		{
-			get
-			{
-				return this._Tbl_PedidoExamnes;
-			}
-			set
-			{
-				this._Tbl_PedidoExamnes.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Tbl_PedidoExamnes(Tbl_PedidoExamnes entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tbl_Drogras = this;
-		}
-		
-		private void detach_Tbl_PedidoExamnes(Tbl_PedidoExamnes entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tbl_Drogras = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_Electrolitos")]
-	public partial class Tbl_Electrolitos : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _Elec_id;
-		
-		private System.Nullable<bool> _Elec_Opcion;
-		
-		private string _Elec_estado;
-		
-		private EntitySet<Tbl_PedidoExamnes> _Tbl_PedidoExamnes;
-		
-    #region Definiciones de métodos de extensibilidad
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnElec_idChanging(int value);
-    partial void OnElec_idChanged();
-    partial void OnElec_OpcionChanging(System.Nullable<bool> value);
-    partial void OnElec_OpcionChanged();
-    partial void OnElec_estadoChanging(string value);
-    partial void OnElec_estadoChanged();
-    #endregion
-		
-		public Tbl_Electrolitos()
-		{
-			this._Tbl_PedidoExamnes = new EntitySet<Tbl_PedidoExamnes>(new Action<Tbl_PedidoExamnes>(this.attach_Tbl_PedidoExamnes), new Action<Tbl_PedidoExamnes>(this.detach_Tbl_PedidoExamnes));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Elec_id", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int Elec_id
-		{
-			get
-			{
-				return this._Elec_id;
-			}
-			set
-			{
-				if ((this._Elec_id != value))
-				{
-					this.OnElec_idChanging(value);
-					this.SendPropertyChanging();
-					this._Elec_id = value;
-					this.SendPropertyChanged("Elec_id");
-					this.OnElec_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Elec_Opcion", DbType="Bit")]
-		public System.Nullable<bool> Elec_Opcion
-		{
-			get
-			{
-				return this._Elec_Opcion;
-			}
-			set
-			{
-				if ((this._Elec_Opcion != value))
-				{
-					this.OnElec_OpcionChanging(value);
-					this.SendPropertyChanging();
-					this._Elec_Opcion = value;
-					this.SendPropertyChanged("Elec_Opcion");
-					this.OnElec_OpcionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Elec_estado", DbType="VarChar(1)")]
-		public string Elec_estado
-		{
-			get
-			{
-				return this._Elec_estado;
-			}
-			set
-			{
-				if ((this._Elec_estado != value))
-				{
-					this.OnElec_estadoChanging(value);
-					this.SendPropertyChanging();
-					this._Elec_estado = value;
-					this.SendPropertyChanged("Elec_estado");
-					this.OnElec_estadoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Electrolitos_Tbl_PedidoExamnes", Storage="_Tbl_PedidoExamnes", ThisKey="Elec_id", OtherKey="Elec_id")]
-		public EntitySet<Tbl_PedidoExamnes> Tbl_PedidoExamnes
-		{
-			get
-			{
-				return this._Tbl_PedidoExamnes;
-			}
-			set
-			{
-				this._Tbl_PedidoExamnes.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Tbl_PedidoExamnes(Tbl_PedidoExamnes entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tbl_Electrolitos = this;
-		}
-		
-		private void detach_Tbl_PedidoExamnes(Tbl_PedidoExamnes entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tbl_Electrolitos = null;
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_Emp_Per")]
 	public partial class Tbl_Emp_Per : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -21469,144 +20890,6 @@ namespace CapaDatos
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_Enzimas")]
-	public partial class Tbl_Enzimas : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _Enzi_id;
-		
-		private System.Nullable<bool> _Enzi_Opcion;
-		
-		private string _Enzi_estado;
-		
-		private EntitySet<Tbl_PedidoExamnes> _Tbl_PedidoExamnes;
-		
-    #region Definiciones de métodos de extensibilidad
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnEnzi_idChanging(int value);
-    partial void OnEnzi_idChanged();
-    partial void OnEnzi_OpcionChanging(System.Nullable<bool> value);
-    partial void OnEnzi_OpcionChanged();
-    partial void OnEnzi_estadoChanging(string value);
-    partial void OnEnzi_estadoChanged();
-    #endregion
-		
-		public Tbl_Enzimas()
-		{
-			this._Tbl_PedidoExamnes = new EntitySet<Tbl_PedidoExamnes>(new Action<Tbl_PedidoExamnes>(this.attach_Tbl_PedidoExamnes), new Action<Tbl_PedidoExamnes>(this.detach_Tbl_PedidoExamnes));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Enzi_id", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int Enzi_id
-		{
-			get
-			{
-				return this._Enzi_id;
-			}
-			set
-			{
-				if ((this._Enzi_id != value))
-				{
-					this.OnEnzi_idChanging(value);
-					this.SendPropertyChanging();
-					this._Enzi_id = value;
-					this.SendPropertyChanged("Enzi_id");
-					this.OnEnzi_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Enzi_Opcion", DbType="Bit")]
-		public System.Nullable<bool> Enzi_Opcion
-		{
-			get
-			{
-				return this._Enzi_Opcion;
-			}
-			set
-			{
-				if ((this._Enzi_Opcion != value))
-				{
-					this.OnEnzi_OpcionChanging(value);
-					this.SendPropertyChanging();
-					this._Enzi_Opcion = value;
-					this.SendPropertyChanged("Enzi_Opcion");
-					this.OnEnzi_OpcionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Enzi_estado", DbType="VarChar(1)")]
-		public string Enzi_estado
-		{
-			get
-			{
-				return this._Enzi_estado;
-			}
-			set
-			{
-				if ((this._Enzi_estado != value))
-				{
-					this.OnEnzi_estadoChanging(value);
-					this.SendPropertyChanging();
-					this._Enzi_estado = value;
-					this.SendPropertyChanged("Enzi_estado");
-					this.OnEnzi_estadoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Enzimas_Tbl_PedidoExamnes", Storage="_Tbl_PedidoExamnes", ThisKey="Enzi_id", OtherKey="Enzi_id")]
-		public EntitySet<Tbl_PedidoExamnes> Tbl_PedidoExamnes
-		{
-			get
-			{
-				return this._Tbl_PedidoExamnes;
-			}
-			set
-			{
-				this._Tbl_PedidoExamnes.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Tbl_PedidoExamnes(Tbl_PedidoExamnes entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tbl_Enzimas = this;
-		}
-		
-		private void detach_Tbl_PedidoExamnes(Tbl_PedidoExamnes entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tbl_Enzimas = null;
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_Especialidad")]
 	public partial class Tbl_Especialidad : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -22961,144 +22244,6 @@ namespace CapaDatos
 		{
 			this.SendPropertyChanging();
 			entity.Tbl_EstSalDondeVacuna = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_EstudiosEspeciales")]
-	public partial class Tbl_EstudiosEspeciales : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _EstEsp_id;
-		
-		private System.Nullable<bool> _EstEsp_Opcion;
-		
-		private string _EstEsp_estado;
-		
-		private EntitySet<Tbl_PedidoExamnes> _Tbl_PedidoExamnes;
-		
-    #region Definiciones de métodos de extensibilidad
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnEstEsp_idChanging(int value);
-    partial void OnEstEsp_idChanged();
-    partial void OnEstEsp_OpcionChanging(System.Nullable<bool> value);
-    partial void OnEstEsp_OpcionChanged();
-    partial void OnEstEsp_estadoChanging(string value);
-    partial void OnEstEsp_estadoChanged();
-    #endregion
-		
-		public Tbl_EstudiosEspeciales()
-		{
-			this._Tbl_PedidoExamnes = new EntitySet<Tbl_PedidoExamnes>(new Action<Tbl_PedidoExamnes>(this.attach_Tbl_PedidoExamnes), new Action<Tbl_PedidoExamnes>(this.detach_Tbl_PedidoExamnes));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EstEsp_id", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int EstEsp_id
-		{
-			get
-			{
-				return this._EstEsp_id;
-			}
-			set
-			{
-				if ((this._EstEsp_id != value))
-				{
-					this.OnEstEsp_idChanging(value);
-					this.SendPropertyChanging();
-					this._EstEsp_id = value;
-					this.SendPropertyChanged("EstEsp_id");
-					this.OnEstEsp_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EstEsp_Opcion", DbType="Bit")]
-		public System.Nullable<bool> EstEsp_Opcion
-		{
-			get
-			{
-				return this._EstEsp_Opcion;
-			}
-			set
-			{
-				if ((this._EstEsp_Opcion != value))
-				{
-					this.OnEstEsp_OpcionChanging(value);
-					this.SendPropertyChanging();
-					this._EstEsp_Opcion = value;
-					this.SendPropertyChanged("EstEsp_Opcion");
-					this.OnEstEsp_OpcionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EstEsp_estado", DbType="VarChar(1)")]
-		public string EstEsp_estado
-		{
-			get
-			{
-				return this._EstEsp_estado;
-			}
-			set
-			{
-				if ((this._EstEsp_estado != value))
-				{
-					this.OnEstEsp_estadoChanging(value);
-					this.SendPropertyChanging();
-					this._EstEsp_estado = value;
-					this.SendPropertyChanged("EstEsp_estado");
-					this.OnEstEsp_estadoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_EstudiosEspeciales_Tbl_PedidoExamnes", Storage="_Tbl_PedidoExamnes", ThisKey="EstEsp_id", OtherKey="EstEsp_id")]
-		public EntitySet<Tbl_PedidoExamnes> Tbl_PedidoExamnes
-		{
-			get
-			{
-				return this._Tbl_PedidoExamnes;
-			}
-			set
-			{
-				this._Tbl_PedidoExamnes.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Tbl_PedidoExamnes(Tbl_PedidoExamnes entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tbl_EstudiosEspeciales = this;
-		}
-		
-		private void detach_Tbl_PedidoExamnes(Tbl_PedidoExamnes entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tbl_EstudiosEspeciales = null;
 		}
 	}
 	
@@ -36641,282 +35786,6 @@ namespace CapaDatos
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_Heces")]
-	public partial class Tbl_Heces : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _Hec_id;
-		
-		private System.Nullable<bool> _Hec_Opcion;
-		
-		private string _Hec_estado;
-		
-		private EntitySet<Tbl_PedidoExamnes> _Tbl_PedidoExamnes;
-		
-    #region Definiciones de métodos de extensibilidad
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnHec_idChanging(int value);
-    partial void OnHec_idChanged();
-    partial void OnHec_OpcionChanging(System.Nullable<bool> value);
-    partial void OnHec_OpcionChanged();
-    partial void OnHec_estadoChanging(string value);
-    partial void OnHec_estadoChanged();
-    #endregion
-		
-		public Tbl_Heces()
-		{
-			this._Tbl_PedidoExamnes = new EntitySet<Tbl_PedidoExamnes>(new Action<Tbl_PedidoExamnes>(this.attach_Tbl_PedidoExamnes), new Action<Tbl_PedidoExamnes>(this.detach_Tbl_PedidoExamnes));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Hec_id", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int Hec_id
-		{
-			get
-			{
-				return this._Hec_id;
-			}
-			set
-			{
-				if ((this._Hec_id != value))
-				{
-					this.OnHec_idChanging(value);
-					this.SendPropertyChanging();
-					this._Hec_id = value;
-					this.SendPropertyChanged("Hec_id");
-					this.OnHec_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Hec_Opcion", DbType="Bit")]
-		public System.Nullable<bool> Hec_Opcion
-		{
-			get
-			{
-				return this._Hec_Opcion;
-			}
-			set
-			{
-				if ((this._Hec_Opcion != value))
-				{
-					this.OnHec_OpcionChanging(value);
-					this.SendPropertyChanging();
-					this._Hec_Opcion = value;
-					this.SendPropertyChanged("Hec_Opcion");
-					this.OnHec_OpcionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Hec_estado", DbType="VarChar(1)")]
-		public string Hec_estado
-		{
-			get
-			{
-				return this._Hec_estado;
-			}
-			set
-			{
-				if ((this._Hec_estado != value))
-				{
-					this.OnHec_estadoChanging(value);
-					this.SendPropertyChanging();
-					this._Hec_estado = value;
-					this.SendPropertyChanged("Hec_estado");
-					this.OnHec_estadoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Heces_Tbl_PedidoExamnes", Storage="_Tbl_PedidoExamnes", ThisKey="Hec_id", OtherKey="Hec_id")]
-		public EntitySet<Tbl_PedidoExamnes> Tbl_PedidoExamnes
-		{
-			get
-			{
-				return this._Tbl_PedidoExamnes;
-			}
-			set
-			{
-				this._Tbl_PedidoExamnes.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Tbl_PedidoExamnes(Tbl_PedidoExamnes entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tbl_Heces = this;
-		}
-		
-		private void detach_Tbl_PedidoExamnes(Tbl_PedidoExamnes entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tbl_Heces = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_Hematologia")]
-	public partial class Tbl_Hematologia : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _Hema_id;
-		
-		private System.Nullable<bool> _Hema_Opcion;
-		
-		private string _hema_estado;
-		
-		private EntitySet<Tbl_PedidoExamnes> _Tbl_PedidoExamnes;
-		
-    #region Definiciones de métodos de extensibilidad
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnHema_idChanging(int value);
-    partial void OnHema_idChanged();
-    partial void OnHema_OpcionChanging(System.Nullable<bool> value);
-    partial void OnHema_OpcionChanged();
-    partial void Onhema_estadoChanging(string value);
-    partial void Onhema_estadoChanged();
-    #endregion
-		
-		public Tbl_Hematologia()
-		{
-			this._Tbl_PedidoExamnes = new EntitySet<Tbl_PedidoExamnes>(new Action<Tbl_PedidoExamnes>(this.attach_Tbl_PedidoExamnes), new Action<Tbl_PedidoExamnes>(this.detach_Tbl_PedidoExamnes));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Hema_id", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int Hema_id
-		{
-			get
-			{
-				return this._Hema_id;
-			}
-			set
-			{
-				if ((this._Hema_id != value))
-				{
-					this.OnHema_idChanging(value);
-					this.SendPropertyChanging();
-					this._Hema_id = value;
-					this.SendPropertyChanged("Hema_id");
-					this.OnHema_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Hema_Opcion", DbType="Bit")]
-		public System.Nullable<bool> Hema_Opcion
-		{
-			get
-			{
-				return this._Hema_Opcion;
-			}
-			set
-			{
-				if ((this._Hema_Opcion != value))
-				{
-					this.OnHema_OpcionChanging(value);
-					this.SendPropertyChanging();
-					this._Hema_Opcion = value;
-					this.SendPropertyChanged("Hema_Opcion");
-					this.OnHema_OpcionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hema_estado", DbType="VarChar(1)")]
-		public string hema_estado
-		{
-			get
-			{
-				return this._hema_estado;
-			}
-			set
-			{
-				if ((this._hema_estado != value))
-				{
-					this.Onhema_estadoChanging(value);
-					this.SendPropertyChanging();
-					this._hema_estado = value;
-					this.SendPropertyChanged("hema_estado");
-					this.Onhema_estadoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Hematologia_Tbl_PedidoExamnes", Storage="_Tbl_PedidoExamnes", ThisKey="Hema_id", OtherKey="Hema_id")]
-		public EntitySet<Tbl_PedidoExamnes> Tbl_PedidoExamnes
-		{
-			get
-			{
-				return this._Tbl_PedidoExamnes;
-			}
-			set
-			{
-				this._Tbl_PedidoExamnes.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Tbl_PedidoExamnes(Tbl_PedidoExamnes entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tbl_Hematologia = this;
-		}
-		
-		private void detach_Tbl_PedidoExamnes(Tbl_PedidoExamnes entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tbl_Hematologia = null;
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_Hijos")]
 	public partial class Tbl_Hijos : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -37052,144 +35921,6 @@ namespace CapaDatos
 		{
 			this.SendPropertyChanging();
 			entity.Tbl_Hijos = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_Hormonas")]
-	public partial class Tbl_Hormonas : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _Horm_id;
-		
-		private System.Nullable<bool> _Horm_Opcion;
-		
-		private string _Horm_estado;
-		
-		private EntitySet<Tbl_PedidoExamnes> _Tbl_PedidoExamnes;
-		
-    #region Definiciones de métodos de extensibilidad
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnHorm_idChanging(int value);
-    partial void OnHorm_idChanged();
-    partial void OnHorm_OpcionChanging(System.Nullable<bool> value);
-    partial void OnHorm_OpcionChanged();
-    partial void OnHorm_estadoChanging(string value);
-    partial void OnHorm_estadoChanged();
-    #endregion
-		
-		public Tbl_Hormonas()
-		{
-			this._Tbl_PedidoExamnes = new EntitySet<Tbl_PedidoExamnes>(new Action<Tbl_PedidoExamnes>(this.attach_Tbl_PedidoExamnes), new Action<Tbl_PedidoExamnes>(this.detach_Tbl_PedidoExamnes));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Horm_id", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int Horm_id
-		{
-			get
-			{
-				return this._Horm_id;
-			}
-			set
-			{
-				if ((this._Horm_id != value))
-				{
-					this.OnHorm_idChanging(value);
-					this.SendPropertyChanging();
-					this._Horm_id = value;
-					this.SendPropertyChanged("Horm_id");
-					this.OnHorm_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Horm_Opcion", DbType="Bit")]
-		public System.Nullable<bool> Horm_Opcion
-		{
-			get
-			{
-				return this._Horm_Opcion;
-			}
-			set
-			{
-				if ((this._Horm_Opcion != value))
-				{
-					this.OnHorm_OpcionChanging(value);
-					this.SendPropertyChanging();
-					this._Horm_Opcion = value;
-					this.SendPropertyChanged("Horm_Opcion");
-					this.OnHorm_OpcionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Horm_estado", DbType="VarChar(1)")]
-		public string Horm_estado
-		{
-			get
-			{
-				return this._Horm_estado;
-			}
-			set
-			{
-				if ((this._Horm_estado != value))
-				{
-					this.OnHorm_estadoChanging(value);
-					this.SendPropertyChanging();
-					this._Horm_estado = value;
-					this.SendPropertyChanged("Horm_estado");
-					this.OnHorm_estadoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Hormonas_Tbl_PedidoExamnes", Storage="_Tbl_PedidoExamnes", ThisKey="Horm_id", OtherKey="horm_id")]
-		public EntitySet<Tbl_PedidoExamnes> Tbl_PedidoExamnes
-		{
-			get
-			{
-				return this._Tbl_PedidoExamnes;
-			}
-			set
-			{
-				this._Tbl_PedidoExamnes.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Tbl_PedidoExamnes(Tbl_PedidoExamnes entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tbl_Hormonas = this;
-		}
-		
-		private void detach_Tbl_PedidoExamnes(Tbl_PedidoExamnes entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tbl_Hormonas = null;
 		}
 	}
 	
@@ -41798,144 +40529,6 @@ namespace CapaDatos
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_InmunoHematologia")]
-	public partial class Tbl_InmunoHematologia : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _InmuHe_id;
-		
-		private System.Nullable<bool> _InmuHe_Opcion;
-		
-		private string _InmuHe_estado;
-		
-		private EntitySet<Tbl_PedidoExamnes> _Tbl_PedidoExamnes;
-		
-    #region Definiciones de métodos de extensibilidad
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnInmuHe_idChanging(int value);
-    partial void OnInmuHe_idChanged();
-    partial void OnInmuHe_OpcionChanging(System.Nullable<bool> value);
-    partial void OnInmuHe_OpcionChanged();
-    partial void OnInmuHe_estadoChanging(string value);
-    partial void OnInmuHe_estadoChanged();
-    #endregion
-		
-		public Tbl_InmunoHematologia()
-		{
-			this._Tbl_PedidoExamnes = new EntitySet<Tbl_PedidoExamnes>(new Action<Tbl_PedidoExamnes>(this.attach_Tbl_PedidoExamnes), new Action<Tbl_PedidoExamnes>(this.detach_Tbl_PedidoExamnes));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InmuHe_id", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int InmuHe_id
-		{
-			get
-			{
-				return this._InmuHe_id;
-			}
-			set
-			{
-				if ((this._InmuHe_id != value))
-				{
-					this.OnInmuHe_idChanging(value);
-					this.SendPropertyChanging();
-					this._InmuHe_id = value;
-					this.SendPropertyChanged("InmuHe_id");
-					this.OnInmuHe_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InmuHe_Opcion", DbType="Bit")]
-		public System.Nullable<bool> InmuHe_Opcion
-		{
-			get
-			{
-				return this._InmuHe_Opcion;
-			}
-			set
-			{
-				if ((this._InmuHe_Opcion != value))
-				{
-					this.OnInmuHe_OpcionChanging(value);
-					this.SendPropertyChanging();
-					this._InmuHe_Opcion = value;
-					this.SendPropertyChanged("InmuHe_Opcion");
-					this.OnInmuHe_OpcionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InmuHe_estado", DbType="VarChar(1)")]
-		public string InmuHe_estado
-		{
-			get
-			{
-				return this._InmuHe_estado;
-			}
-			set
-			{
-				if ((this._InmuHe_estado != value))
-				{
-					this.OnInmuHe_estadoChanging(value);
-					this.SendPropertyChanging();
-					this._InmuHe_estado = value;
-					this.SendPropertyChanged("InmuHe_estado");
-					this.OnInmuHe_estadoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_InmunoHematologia_Tbl_PedidoExamnes", Storage="_Tbl_PedidoExamnes", ThisKey="InmuHe_id", OtherKey="InmuHe_id")]
-		public EntitySet<Tbl_PedidoExamnes> Tbl_PedidoExamnes
-		{
-			get
-			{
-				return this._Tbl_PedidoExamnes;
-			}
-			set
-			{
-				this._Tbl_PedidoExamnes.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Tbl_PedidoExamnes(Tbl_PedidoExamnes entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tbl_InmunoHematologia = this;
-		}
-		
-		private void detach_Tbl_PedidoExamnes(Tbl_PedidoExamnes entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tbl_InmunoHematologia = null;
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_InmunoInfecciosas")]
 	public partial class Tbl_InmunoInfecciosas : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -41949,8 +40542,6 @@ namespace CapaDatos
 		private string _InmuInfe_estado;
 		
 		private EntitySet<Tbl_Inmunos_Antigenos> _Tbl_Inmunos_Antigenos;
-		
-		private EntitySet<Tbl_PedidoExamnes> _Tbl_PedidoExamnes;
 		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
@@ -41967,7 +40558,6 @@ namespace CapaDatos
 		public Tbl_InmunoInfecciosas()
 		{
 			this._Tbl_Inmunos_Antigenos = new EntitySet<Tbl_Inmunos_Antigenos>(new Action<Tbl_Inmunos_Antigenos>(this.attach_Tbl_Inmunos_Antigenos), new Action<Tbl_Inmunos_Antigenos>(this.detach_Tbl_Inmunos_Antigenos));
-			this._Tbl_PedidoExamnes = new EntitySet<Tbl_PedidoExamnes>(new Action<Tbl_PedidoExamnes>(this.attach_Tbl_PedidoExamnes), new Action<Tbl_PedidoExamnes>(this.detach_Tbl_PedidoExamnes));
 			OnCreated();
 		}
 		
@@ -42044,19 +40634,6 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_InmunoInfecciosas_Tbl_PedidoExamnes", Storage="_Tbl_PedidoExamnes", ThisKey="InmuInfe_id", OtherKey="InmuInfe_id")]
-		public EntitySet<Tbl_PedidoExamnes> Tbl_PedidoExamnes
-		{
-			get
-			{
-				return this._Tbl_PedidoExamnes;
-			}
-			set
-			{
-				this._Tbl_PedidoExamnes.Assign(value);
-			}
-		}
-		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -42088,18 +40665,6 @@ namespace CapaDatos
 			this.SendPropertyChanging();
 			entity.Tbl_InmunoInfecciosas = null;
 		}
-		
-		private void attach_Tbl_PedidoExamnes(Tbl_PedidoExamnes entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tbl_InmunoInfecciosas = this;
-		}
-		
-		private void detach_Tbl_PedidoExamnes(Tbl_PedidoExamnes entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tbl_InmunoInfecciosas = null;
-		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_Inmunologia")]
@@ -42116,8 +40681,6 @@ namespace CapaDatos
 		
 		private EntitySet<Tbl_Inmunos_Antigenos> _Tbl_Inmunos_Antigenos;
 		
-		private EntitySet<Tbl_PedidoExamnes> _Tbl_PedidoExamnes;
-		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -42133,7 +40696,6 @@ namespace CapaDatos
 		public Tbl_Inmunologia()
 		{
 			this._Tbl_Inmunos_Antigenos = new EntitySet<Tbl_Inmunos_Antigenos>(new Action<Tbl_Inmunos_Antigenos>(this.attach_Tbl_Inmunos_Antigenos), new Action<Tbl_Inmunos_Antigenos>(this.detach_Tbl_Inmunos_Antigenos));
-			this._Tbl_PedidoExamnes = new EntitySet<Tbl_PedidoExamnes>(new Action<Tbl_PedidoExamnes>(this.attach_Tbl_PedidoExamnes), new Action<Tbl_PedidoExamnes>(this.detach_Tbl_PedidoExamnes));
 			OnCreated();
 		}
 		
@@ -42210,19 +40772,6 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Inmunologia_Tbl_PedidoExamnes", Storage="_Tbl_PedidoExamnes", ThisKey="Inmu_id", OtherKey="Inmu_id")]
-		public EntitySet<Tbl_PedidoExamnes> Tbl_PedidoExamnes
-		{
-			get
-			{
-				return this._Tbl_PedidoExamnes;
-			}
-			set
-			{
-				this._Tbl_PedidoExamnes.Assign(value);
-			}
-		}
-		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -42250,18 +40799,6 @@ namespace CapaDatos
 		}
 		
 		private void detach_Tbl_Inmunos_Antigenos(Tbl_Inmunos_Antigenos entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tbl_Inmunologia = null;
-		}
-		
-		private void attach_Tbl_PedidoExamnes(Tbl_PedidoExamnes entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tbl_Inmunologia = this;
-		}
-		
-		private void detach_Tbl_PedidoExamnes(Tbl_PedidoExamnes entity)
 		{
 			this.SendPropertyChanging();
 			entity.Tbl_Inmunologia = null;
@@ -42715,144 +41252,6 @@ namespace CapaDatos
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_MarcadoresTumorales")]
-	public partial class Tbl_MarcadoresTumorales : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _MarTum_id;
-		
-		private System.Nullable<bool> _MarTum_Opcion;
-		
-		private string _MarTum_estado;
-		
-		private EntitySet<Tbl_PedidoExamnes> _Tbl_PedidoExamnes;
-		
-    #region Definiciones de métodos de extensibilidad
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnMarTum_idChanging(int value);
-    partial void OnMarTum_idChanged();
-    partial void OnMarTum_OpcionChanging(System.Nullable<bool> value);
-    partial void OnMarTum_OpcionChanged();
-    partial void OnMarTum_estadoChanging(string value);
-    partial void OnMarTum_estadoChanged();
-    #endregion
-		
-		public Tbl_MarcadoresTumorales()
-		{
-			this._Tbl_PedidoExamnes = new EntitySet<Tbl_PedidoExamnes>(new Action<Tbl_PedidoExamnes>(this.attach_Tbl_PedidoExamnes), new Action<Tbl_PedidoExamnes>(this.detach_Tbl_PedidoExamnes));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MarTum_id", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int MarTum_id
-		{
-			get
-			{
-				return this._MarTum_id;
-			}
-			set
-			{
-				if ((this._MarTum_id != value))
-				{
-					this.OnMarTum_idChanging(value);
-					this.SendPropertyChanging();
-					this._MarTum_id = value;
-					this.SendPropertyChanged("MarTum_id");
-					this.OnMarTum_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MarTum_Opcion", DbType="Bit")]
-		public System.Nullable<bool> MarTum_Opcion
-		{
-			get
-			{
-				return this._MarTum_Opcion;
-			}
-			set
-			{
-				if ((this._MarTum_Opcion != value))
-				{
-					this.OnMarTum_OpcionChanging(value);
-					this.SendPropertyChanging();
-					this._MarTum_Opcion = value;
-					this.SendPropertyChanged("MarTum_Opcion");
-					this.OnMarTum_OpcionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MarTum_estado", DbType="VarChar(1)")]
-		public string MarTum_estado
-		{
-			get
-			{
-				return this._MarTum_estado;
-			}
-			set
-			{
-				if ((this._MarTum_estado != value))
-				{
-					this.OnMarTum_estadoChanging(value);
-					this.SendPropertyChanging();
-					this._MarTum_estado = value;
-					this.SendPropertyChanged("MarTum_estado");
-					this.OnMarTum_estadoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_MarcadoresTumorales_Tbl_PedidoExamnes", Storage="_Tbl_PedidoExamnes", ThisKey="MarTum_id", OtherKey="MarTum_id")]
-		public EntitySet<Tbl_PedidoExamnes> Tbl_PedidoExamnes
-		{
-			get
-			{
-				return this._Tbl_PedidoExamnes;
-			}
-			set
-			{
-				this._Tbl_PedidoExamnes.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Tbl_PedidoExamnes(Tbl_PedidoExamnes entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tbl_MarcadoresTumorales = this;
-		}
-		
-		private void detach_Tbl_PedidoExamnes(Tbl_PedidoExamnes entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tbl_MarcadoresTumorales = null;
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_MetodoPlanificacionFamiliar")]
 	public partial class Tbl_MetodoPlanificacionFamiliar : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -43174,144 +41573,6 @@ namespace CapaDatos
 		{
 			this.SendPropertyChanging();
 			entity.Tbl_MetodoPlanificacionFamiliar2 = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_Microbiologia")]
-	public partial class Tbl_Microbiologia : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _Micro_id;
-		
-		private System.Nullable<bool> _Micro_Opcion;
-		
-		private string _Micro_estado;
-		
-		private EntitySet<Tbl_PedidoExamnes> _Tbl_PedidoExamnes;
-		
-    #region Definiciones de métodos de extensibilidad
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnMicro_idChanging(int value);
-    partial void OnMicro_idChanged();
-    partial void OnMicro_OpcionChanging(System.Nullable<bool> value);
-    partial void OnMicro_OpcionChanged();
-    partial void OnMicro_estadoChanging(string value);
-    partial void OnMicro_estadoChanged();
-    #endregion
-		
-		public Tbl_Microbiologia()
-		{
-			this._Tbl_PedidoExamnes = new EntitySet<Tbl_PedidoExamnes>(new Action<Tbl_PedidoExamnes>(this.attach_Tbl_PedidoExamnes), new Action<Tbl_PedidoExamnes>(this.detach_Tbl_PedidoExamnes));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Micro_id", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int Micro_id
-		{
-			get
-			{
-				return this._Micro_id;
-			}
-			set
-			{
-				if ((this._Micro_id != value))
-				{
-					this.OnMicro_idChanging(value);
-					this.SendPropertyChanging();
-					this._Micro_id = value;
-					this.SendPropertyChanged("Micro_id");
-					this.OnMicro_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Micro_Opcion", DbType="Bit")]
-		public System.Nullable<bool> Micro_Opcion
-		{
-			get
-			{
-				return this._Micro_Opcion;
-			}
-			set
-			{
-				if ((this._Micro_Opcion != value))
-				{
-					this.OnMicro_OpcionChanging(value);
-					this.SendPropertyChanging();
-					this._Micro_Opcion = value;
-					this.SendPropertyChanged("Micro_Opcion");
-					this.OnMicro_OpcionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Micro_estado", DbType="VarChar(1)")]
-		public string Micro_estado
-		{
-			get
-			{
-				return this._Micro_estado;
-			}
-			set
-			{
-				if ((this._Micro_estado != value))
-				{
-					this.OnMicro_estadoChanging(value);
-					this.SendPropertyChanging();
-					this._Micro_estado = value;
-					this.SendPropertyChanged("Micro_estado");
-					this.OnMicro_estadoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Microbiologia_Tbl_PedidoExamnes", Storage="_Tbl_PedidoExamnes", ThisKey="Micro_id", OtherKey="Micro_id")]
-		public EntitySet<Tbl_PedidoExamnes> Tbl_PedidoExamnes
-		{
-			get
-			{
-				return this._Tbl_PedidoExamnes;
-			}
-			set
-			{
-				this._Tbl_PedidoExamnes.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Tbl_PedidoExamnes(Tbl_PedidoExamnes entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tbl_Microbiologia = this;
-		}
-		
-		private void detach_Tbl_PedidoExamnes(Tbl_PedidoExamnes entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tbl_Microbiologia = null;
 		}
 	}
 	
@@ -44533,359 +42794,307 @@ namespace CapaDatos
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_Orina")]
-	public partial class Tbl_Orina : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _Orin_id;
-		
-		private System.Nullable<bool> _Orin_Opcion;
-		
-		private string _Orin_estado;
-		
-		private EntitySet<Tbl_PedidoExamnes> _Tbl_PedidoExamnes;
-		
-    #region Definiciones de métodos de extensibilidad
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnOrin_idChanging(int value);
-    partial void OnOrin_idChanged();
-    partial void OnOrin_OpcionChanging(System.Nullable<bool> value);
-    partial void OnOrin_OpcionChanged();
-    partial void OnOrin_estadoChanging(string value);
-    partial void OnOrin_estadoChanged();
-    #endregion
-		
-		public Tbl_Orina()
-		{
-			this._Tbl_PedidoExamnes = new EntitySet<Tbl_PedidoExamnes>(new Action<Tbl_PedidoExamnes>(this.attach_Tbl_PedidoExamnes), new Action<Tbl_PedidoExamnes>(this.detach_Tbl_PedidoExamnes));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Orin_id", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int Orin_id
-		{
-			get
-			{
-				return this._Orin_id;
-			}
-			set
-			{
-				if ((this._Orin_id != value))
-				{
-					this.OnOrin_idChanging(value);
-					this.SendPropertyChanging();
-					this._Orin_id = value;
-					this.SendPropertyChanged("Orin_id");
-					this.OnOrin_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Orin_Opcion", DbType="Bit")]
-		public System.Nullable<bool> Orin_Opcion
-		{
-			get
-			{
-				return this._Orin_Opcion;
-			}
-			set
-			{
-				if ((this._Orin_Opcion != value))
-				{
-					this.OnOrin_OpcionChanging(value);
-					this.SendPropertyChanging();
-					this._Orin_Opcion = value;
-					this.SendPropertyChanged("Orin_Opcion");
-					this.OnOrin_OpcionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Orin_estado", DbType="VarChar(1)")]
-		public string Orin_estado
-		{
-			get
-			{
-				return this._Orin_estado;
-			}
-			set
-			{
-				if ((this._Orin_estado != value))
-				{
-					this.OnOrin_estadoChanging(value);
-					this.SendPropertyChanging();
-					this._Orin_estado = value;
-					this.SendPropertyChanged("Orin_estado");
-					this.OnOrin_estadoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Orina_Tbl_PedidoExamnes", Storage="_Tbl_PedidoExamnes", ThisKey="Orin_id", OtherKey="Orin_id")]
-		public EntitySet<Tbl_PedidoExamnes> Tbl_PedidoExamnes
-		{
-			get
-			{
-				return this._Tbl_PedidoExamnes;
-			}
-			set
-			{
-				this._Tbl_PedidoExamnes.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Tbl_PedidoExamnes(Tbl_PedidoExamnes entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tbl_Orina = this;
-		}
-		
-		private void detach_Tbl_PedidoExamnes(Tbl_PedidoExamnes entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tbl_Orina = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_Otros")]
-	public partial class Tbl_Otros : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _Otrs_id;
-		
-		private string _Otrs_Opcion;
-		
-		private string _Otrs_estado;
-		
-		private EntitySet<Tbl_PedidoExamnes> _Tbl_PedidoExamnes;
-		
-    #region Definiciones de métodos de extensibilidad
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnOtrs_idChanging(int value);
-    partial void OnOtrs_idChanged();
-    partial void OnOtrs_OpcionChanging(string value);
-    partial void OnOtrs_OpcionChanged();
-    partial void OnOtrs_estadoChanging(string value);
-    partial void OnOtrs_estadoChanged();
-    #endregion
-		
-		public Tbl_Otros()
-		{
-			this._Tbl_PedidoExamnes = new EntitySet<Tbl_PedidoExamnes>(new Action<Tbl_PedidoExamnes>(this.attach_Tbl_PedidoExamnes), new Action<Tbl_PedidoExamnes>(this.detach_Tbl_PedidoExamnes));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Otrs_id", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int Otrs_id
-		{
-			get
-			{
-				return this._Otrs_id;
-			}
-			set
-			{
-				if ((this._Otrs_id != value))
-				{
-					this.OnOtrs_idChanging(value);
-					this.SendPropertyChanging();
-					this._Otrs_id = value;
-					this.SendPropertyChanged("Otrs_id");
-					this.OnOtrs_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Otrs_Opcion", DbType="VarChar(100)")]
-		public string Otrs_Opcion
-		{
-			get
-			{
-				return this._Otrs_Opcion;
-			}
-			set
-			{
-				if ((this._Otrs_Opcion != value))
-				{
-					this.OnOtrs_OpcionChanging(value);
-					this.SendPropertyChanging();
-					this._Otrs_Opcion = value;
-					this.SendPropertyChanged("Otrs_Opcion");
-					this.OnOtrs_OpcionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Otrs_estado", DbType="VarChar(1)")]
-		public string Otrs_estado
-		{
-			get
-			{
-				return this._Otrs_estado;
-			}
-			set
-			{
-				if ((this._Otrs_estado != value))
-				{
-					this.OnOtrs_estadoChanging(value);
-					this.SendPropertyChanging();
-					this._Otrs_estado = value;
-					this.SendPropertyChanged("Otrs_estado");
-					this.OnOtrs_estadoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Otros_Tbl_PedidoExamnes", Storage="_Tbl_PedidoExamnes", ThisKey="Otrs_id", OtherKey="Otrs_id")]
-		public EntitySet<Tbl_PedidoExamnes> Tbl_PedidoExamnes
-		{
-			get
-			{
-				return this._Tbl_PedidoExamnes;
-			}
-			set
-			{
-				this._Tbl_PedidoExamnes.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Tbl_PedidoExamnes(Tbl_PedidoExamnes entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tbl_Otros = this;
-		}
-		
-		private void detach_Tbl_PedidoExamnes(Tbl_PedidoExamnes entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tbl_Otros = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_PedidoExamnes")]
-	public partial class Tbl_PedidoExamnes : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_PedidoExamenes")]
+	public partial class Tbl_PedidoExamenes : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _PedExam_Id;
 		
-		private System.Nullable<int> _Hema_id;
+		private string _PedExam_bioHematicaHema;
 		
-		private System.Nullable<int> _Elec_id;
+		private string _PedExam_hematocritoHema;
 		
-		private System.Nullable<int> _MarTum_id;
+		private string _PedExam_hemoglobinaHema;
 		
-		private System.Nullable<int> _InmuHe_id;
+		private string _PedExam_vsgHema;
 		
-		private System.Nullable<int> _Sero_id;
+		private string _PedExam_coombsDirectoInmuHema;
 		
-		private System.Nullable<int> _Micro_id;
+		private string _PedExam_coombsIndirectoInmuHema;
 		
-		private System.Nullable<int> _Coag_id;
+		private string _PedExam_grupoSanguiFacRhInmuHema;
 		
-		private System.Nullable<int> _horm_id;
+		private string _PedExam_celularLeInmuHema;
 		
-		private System.Nullable<int> _EstEsp_id;
+		private string _PedExam_plaquetasCoagu;
 		
-		private System.Nullable<int> _QuiSan_id;
+		private string _PedExam_fibrinogenoCoagu;
 		
-		private System.Nullable<int> _Inmu_id;
+		private string _PedExam_TpCoagu;
 		
-		private System.Nullable<int> _Orin_id;
+		private string _PedExam_TtpCoagu;
 		
-		private System.Nullable<int> _Enzi_id;
+		private string _PedExam_InrCoagu;
 		
-		private System.Nullable<int> _InmuInfe_id;
+		private string _PedExam_tiemCoagulacionCoagu;
 		
-		private System.Nullable<int> _Hec_id;
+		private string _PedExam_tiemSangriaCoagu;
 		
-		private System.Nullable<int> _Drog_id;
+		private string _PedExam_antiLupicoCoagu;
 		
-		private System.Nullable<int> _Otrs_id;
+		private string _PedExam_dimeroDCoagu;
+		
+		private string _PedExam_glucoBasalQSangui;
+		
+		private string _PedExam_ureaQSangui;
+		
+		private string _PedExam_bumQSangui;
+		
+		private string _PedExam_creatininaQSangui;
+		
+		private string _PedExam_acUricoQSangui;
+		
+		private string _PedExam_colesTotalQSangui;
+		
+		private string _PedExam_hdlcQSangui;
+		
+		private string _PedExam_ldlcQSangui;
+		
+		private string _PedExam_trigliceridosQSangui;
+		
+		private string _PedExam_bilirrubinaTotalQSangui;
+		
+		private string _PedExam_bilirrubinaDirectaQSangui;
+		
+		private string _PedExam_bilirrubinaIndirectaQSangui;
+		
+		private string _PedExam_proteTotalesQSangui;
+		
+		private string _PedExam_albuminaQSangui;
+		
+		private string _PedExam_globulinaQSangui;
+		
+		private string _PedExam_testOsullivanQSangui;
+		
+		private string _PedExam_glucosa2hppQSangui;
+		
+		private string _PedExam_curvaToleranciaQSangui;
+		
+		private string _PedExam_glucosaHorasQSangui;
+		
+		private string _PedExam_hemogloGlicosiladaQSangui;
+		
+		private string _PedExam_hierroSericoQSangui;
+		
+		private string _PedExam_ferritinaQSangui;
+		
+		private string _PedExam_transferritinaQSangui;
+		
+		private string _PedExam_tgoEnzi;
+		
+		private string _PedExam_tgpEnzi;
+		
+		private string _PedExam_amilasaEnzi;
+		
+		private string _PedExam_lipasaEnzi;
+		
+		private string _PedExam_cpkEnzi;
+		
+		private string _PedExam_cpkMbEnzi;
+		
+		private string _PedExam_ldhEnzi;
+		
+		private string _PedExam_fosfatasaAlcalinaEnzi;
+		
+		private string _PedExam_fosfatasaAcidaTotalEnzi;
+		
+		private string _PedExam_fosfatasaAcidaProstaticaEnzi;
+		
+		private string _PedExam_NakClElectro;
+		
+		private string _PedExam_calcioIonicoElectro;
+		
+		private string _PedExam_calcioTotalElectro;
+		
+		private string _PedExam_magnesioElectro;
+		
+		private string _PedExam_fosforoElectro;
+		
+		private string _PedExam_pcrCuantitativoSero;
+		
+		private string _PedExam_frLatexSero;
+		
+		private string _PedExam_astoSero;
+		
+		private string _PedExam_aglutinacionesFebrilesSero;
+		
+		private string _PedExam_vdrlSero;
+		
+		private string _PedExam_lhHormo;
+		
+		private string _PedExam_fshHormo;
+		
+		private string _PedExam_estradiolHormo;
+		
+		private string _PedExam_profesteronaHormo;
+		
+		private string _PedExam_prolactinaHormo;
+		
+		private string _PedExam_testosteronaHormo;
+		
+		private string _PedExam_dheasHormo;
+		
+		private string _PedExam_cortisolHormo;
+		
+		private string _PedExam_insulinaHormo;
+		
+		private string _PedExam_peptidoCHormo;
+		
+		private string _PedExam_indiceHomaHormo;
+		
+		private string _PedExam_bhcgHormo;
+		
+		private string _PedExam_t3Hormo;
+		
+		private string _PedExam_ft4Hormo;
+		
+		private string _PedExam_tshHormo;
+		
+		private string _PedExam_17OhProgesteronaHormo;
+		
+		private string _PedExam_hghHormo;
+		
+		private string _PedExam_prolactinaInmu;
+		
+		private string _PedExam_antiNuclearesInmu;
+		
+		private string _PedExam_antiDnaInmu;
+		
+		private string _PedExam_antiFosfolipidosInmu;
+		
+		private string _PedExam_lgGAntiFosfoInmu;
+		
+		private string _PedExam_lgMAntiFosfoInmu;
+		
+		private string _PedExam_lgAAntiFosfoInmu;
+		
+		private string _PedExam_antiCardiolipinasInmu;
+		
+		private string _PedExam_lgGAntiCardioInmu;
+		
+		private string _PedExam_lgMAntiCardioInmu;
+		
+		private string _PedExam_lgAAntiCardioInmu;
+		
+		private string _PedExam_b2GlicoproteinaInmu;
+		
+		private string _PedExam_lgGB2GlicoInmu;
+		
+		private string _PedExam_lgMB2GlicoInmu;
+		
+		private string _PedExam_antiGliadinaInmu;
+		
+		private string _PedExam_lgGAntiGliaInmu;
+		
+		private string _PedExam_lgAAntiGliaInmu;
+		
+		private string _PedExam_antiAnexinaVInmu;
+		
+		private string _PedExam_lgGAntiAnexInmu;
+		
+		private string _PedExam_lgMAntiAnexInmu;
+		
+		private string _PedExam_antiTpoInmu;
+		
+		private string _PedExam_antiTiroglobulinaInmu;
+		
+		private string _PedExam_antiCcpInmu;
+		
+		private string _PedExam_torchInmuInfecc;
+		
+		private string _PedExam_toxoGondiiInmuInfecc;
+		
+		private string _PedExam_clamydiaTrachoInmuInfecc;
+		
+		private string _PedExam_lgMClamyTrachoInmuInfecc;
+		
+		private string _PedExam_havInmuInfecc;
+		
+		private string _PedExam_lgGHavInmuInfecc;
+		
+		private string _PedExam_lgMHavInmuInfecc;
+		
+		private string _PedExam_vihInmuInfecc;
+		
+		private string _PedExam_hbsAgInmuInfecc;
+		
+		private string _PedExam_hcvInmuInfecc;
+		
+		private string _PedExam_ftaAbsInmuInfecc;
+		
+		private string _PedExam_ca125MarcaTumo;
+		
+		private string _PedExam_he4MarcaTumo;
+		
+		private string _PedExam_indiceRomaMarcaTumo;
+		
+		private string _PedExam_afpMarcaTumo;
+		
+		private string _PedExam_ceaMarcaTurno;
+		
+		private string _PedExam_ca156MarcaTumo;
+		
+		private string _PedExam_ca159MarcaTumo;
+		
+		private string _PedExam_tiroglobulinaMarcaTumo;
+		
+		private string _PedExam_psaTotalMarcaTumo;
+		
+		private string _PedExam_muestraDeMicro;
+		
+		private string _PedExam_gramMicro;
+		
+		private string _PedExam_frescoMicro;
+		
+		private string _PedExam_kohMicro;
+		
+		private string _PedExam_cultivoAntibiogramaMicro;
+		
+		private string _PedExam_esperCompletoEstEspecia;
+		
+		private string _PedExam_cristalografiaEstEspecia;
+		
+		private string _PedExam_screeningPrenatalEstEspecia;
+		
+		private string _PedExam_emoOrina;
+		
+		private string _PedExam_cultivoAntibiogramaOrina;
+		
+		private string _PedExam_gramGotaFrescaOrina;
+		
+		private string _PedExam_microalbuminuriaOrina;
+		
+		private string _PedExam_coproparasitarioHeces;
+		
+		private string _PedExam_coproparasitarioSeriadoHeces;
+		
+		private string _PedExam_sangreOcultaHeces;
+		
+		private string _PedExam_pmnHeces;
+		
+		private string _PedExam_rotavirusHeces;
+		
+		private string _PedExam_helicobacterPylotiHeces;
+		
+		private string _PedExam_fenobarbitalDrogas;
+		
+		private string _PedExam_teofilinaDrogas;
+		
+		private string _PedExam_acValproicoDrogas;
+		
+		private string _PedExam_1Otros;
+		
+		private string _PedExam_2Otros;
+		
+		private string _PedExam_3Otro;
+		
+		private System.Nullable<int> _Per_id;
 		
 		private string _PedExam_estado;
 		
-		private EntityRef<Tbl_Coagulacion> _Tbl_Coagulacion;
-		
-		private EntityRef<Tbl_Drogras> _Tbl_Drogras;
-		
-		private EntityRef<Tbl_Electrolitos> _Tbl_Electrolitos;
-		
-		private EntityRef<Tbl_Enzimas> _Tbl_Enzimas;
-		
-		private EntityRef<Tbl_EstudiosEspeciales> _Tbl_EstudiosEspeciales;
-		
-		private EntityRef<Tbl_Heces> _Tbl_Heces;
-		
-		private EntityRef<Tbl_Hematologia> _Tbl_Hematologia;
-		
-		private EntityRef<Tbl_Hormonas> _Tbl_Hormonas;
-		
-		private EntityRef<Tbl_Inmunologia> _Tbl_Inmunologia;
-		
-		private EntityRef<Tbl_InmunoHematologia> _Tbl_InmunoHematologia;
-		
-		private EntityRef<Tbl_InmunoInfecciosas> _Tbl_InmunoInfecciosas;
-		
-		private EntityRef<Tbl_MarcadoresTumorales> _Tbl_MarcadoresTumorales;
-		
-		private EntityRef<Tbl_Microbiologia> _Tbl_Microbiologia;
-		
-		private EntityRef<Tbl_Orina> _Tbl_Orina;
-		
-		private EntityRef<Tbl_Otros> _Tbl_Otros;
-		
-		private EntityRef<Tbl_QuimicaSanguinea> _Tbl_QuimicaSanguinea;
-		
-		private EntityRef<Tbl_Serologia> _Tbl_Serologia;
+		private EntityRef<Tbl_Personas> _Tbl_Personas;
 		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
@@ -44893,67 +43102,307 @@ namespace CapaDatos
     partial void OnCreated();
     partial void OnPedExam_IdChanging(int value);
     partial void OnPedExam_IdChanged();
-    partial void OnHema_idChanging(System.Nullable<int> value);
-    partial void OnHema_idChanged();
-    partial void OnElec_idChanging(System.Nullable<int> value);
-    partial void OnElec_idChanged();
-    partial void OnMarTum_idChanging(System.Nullable<int> value);
-    partial void OnMarTum_idChanged();
-    partial void OnInmuHe_idChanging(System.Nullable<int> value);
-    partial void OnInmuHe_idChanged();
-    partial void OnSero_idChanging(System.Nullable<int> value);
-    partial void OnSero_idChanged();
-    partial void OnMicro_idChanging(System.Nullable<int> value);
-    partial void OnMicro_idChanged();
-    partial void OnCoag_idChanging(System.Nullable<int> value);
-    partial void OnCoag_idChanged();
-    partial void Onhorm_idChanging(System.Nullable<int> value);
-    partial void Onhorm_idChanged();
-    partial void OnEstEsp_idChanging(System.Nullable<int> value);
-    partial void OnEstEsp_idChanged();
-    partial void OnQuiSan_idChanging(System.Nullable<int> value);
-    partial void OnQuiSan_idChanged();
-    partial void OnInmu_idChanging(System.Nullable<int> value);
-    partial void OnInmu_idChanged();
-    partial void OnOrin_idChanging(System.Nullable<int> value);
-    partial void OnOrin_idChanged();
-    partial void OnEnzi_idChanging(System.Nullable<int> value);
-    partial void OnEnzi_idChanged();
-    partial void OnInmuInfe_idChanging(System.Nullable<int> value);
-    partial void OnInmuInfe_idChanged();
-    partial void OnHec_idChanging(System.Nullable<int> value);
-    partial void OnHec_idChanged();
-    partial void OnDrog_idChanging(System.Nullable<int> value);
-    partial void OnDrog_idChanged();
-    partial void OnOtrs_idChanging(System.Nullable<int> value);
-    partial void OnOtrs_idChanged();
+    partial void OnPedExam_bioHematicaHemaChanging(string value);
+    partial void OnPedExam_bioHematicaHemaChanged();
+    partial void OnPedExam_hematocritoHemaChanging(string value);
+    partial void OnPedExam_hematocritoHemaChanged();
+    partial void OnPedExam_hemoglobinaHemaChanging(string value);
+    partial void OnPedExam_hemoglobinaHemaChanged();
+    partial void OnPedExam_vsgHemaChanging(string value);
+    partial void OnPedExam_vsgHemaChanged();
+    partial void OnPedExam_coombsDirectoInmuHemaChanging(string value);
+    partial void OnPedExam_coombsDirectoInmuHemaChanged();
+    partial void OnPedExam_coombsIndirectoInmuHemaChanging(string value);
+    partial void OnPedExam_coombsIndirectoInmuHemaChanged();
+    partial void OnPedExam_grupoSanguiFacRhInmuHemaChanging(string value);
+    partial void OnPedExam_grupoSanguiFacRhInmuHemaChanged();
+    partial void OnPedExam_celularLeInmuHemaChanging(string value);
+    partial void OnPedExam_celularLeInmuHemaChanged();
+    partial void OnPedExam_plaquetasCoaguChanging(string value);
+    partial void OnPedExam_plaquetasCoaguChanged();
+    partial void OnPedExam_fibrinogenoCoaguChanging(string value);
+    partial void OnPedExam_fibrinogenoCoaguChanged();
+    partial void OnPedExam_TpCoaguChanging(string value);
+    partial void OnPedExam_TpCoaguChanged();
+    partial void OnPedExam_TtpCoaguChanging(string value);
+    partial void OnPedExam_TtpCoaguChanged();
+    partial void OnPedExam_InrCoaguChanging(string value);
+    partial void OnPedExam_InrCoaguChanged();
+    partial void OnPedExam_tiemCoagulacionCoaguChanging(string value);
+    partial void OnPedExam_tiemCoagulacionCoaguChanged();
+    partial void OnPedExam_tiemSangriaCoaguChanging(string value);
+    partial void OnPedExam_tiemSangriaCoaguChanged();
+    partial void OnPedExam_antiLupicoCoaguChanging(string value);
+    partial void OnPedExam_antiLupicoCoaguChanged();
+    partial void OnPedExam_dimeroDCoaguChanging(string value);
+    partial void OnPedExam_dimeroDCoaguChanged();
+    partial void OnPedExam_glucoBasalQSanguiChanging(string value);
+    partial void OnPedExam_glucoBasalQSanguiChanged();
+    partial void OnPedExam_ureaQSanguiChanging(string value);
+    partial void OnPedExam_ureaQSanguiChanged();
+    partial void OnPedExam_bumQSanguiChanging(string value);
+    partial void OnPedExam_bumQSanguiChanged();
+    partial void OnPedExam_creatininaQSanguiChanging(string value);
+    partial void OnPedExam_creatininaQSanguiChanged();
+    partial void OnPedExam_acUricoQSanguiChanging(string value);
+    partial void OnPedExam_acUricoQSanguiChanged();
+    partial void OnPedExam_colesTotalQSanguiChanging(string value);
+    partial void OnPedExam_colesTotalQSanguiChanged();
+    partial void OnPedExam_hdlcQSanguiChanging(string value);
+    partial void OnPedExam_hdlcQSanguiChanged();
+    partial void OnPedExam_ldlcQSanguiChanging(string value);
+    partial void OnPedExam_ldlcQSanguiChanged();
+    partial void OnPedExam_trigliceridosQSanguiChanging(string value);
+    partial void OnPedExam_trigliceridosQSanguiChanged();
+    partial void OnPedExam_bilirrubinaTotalQSanguiChanging(string value);
+    partial void OnPedExam_bilirrubinaTotalQSanguiChanged();
+    partial void OnPedExam_bilirrubinaDirectaQSanguiChanging(string value);
+    partial void OnPedExam_bilirrubinaDirectaQSanguiChanged();
+    partial void OnPedExam_bilirrubinaIndirectaQSanguiChanging(string value);
+    partial void OnPedExam_bilirrubinaIndirectaQSanguiChanged();
+    partial void OnPedExam_proteTotalesQSanguiChanging(string value);
+    partial void OnPedExam_proteTotalesQSanguiChanged();
+    partial void OnPedExam_albuminaQSanguiChanging(string value);
+    partial void OnPedExam_albuminaQSanguiChanged();
+    partial void OnPedExam_globulinaQSanguiChanging(string value);
+    partial void OnPedExam_globulinaQSanguiChanged();
+    partial void OnPedExam_testOsullivanQSanguiChanging(string value);
+    partial void OnPedExam_testOsullivanQSanguiChanged();
+    partial void OnPedExam_glucosa2hppQSanguiChanging(string value);
+    partial void OnPedExam_glucosa2hppQSanguiChanged();
+    partial void OnPedExam_curvaToleranciaQSanguiChanging(string value);
+    partial void OnPedExam_curvaToleranciaQSanguiChanged();
+    partial void OnPedExam_glucosaHorasQSanguiChanging(string value);
+    partial void OnPedExam_glucosaHorasQSanguiChanged();
+    partial void OnPedExam_hemogloGlicosiladaQSanguiChanging(string value);
+    partial void OnPedExam_hemogloGlicosiladaQSanguiChanged();
+    partial void OnPedExam_hierroSericoQSanguiChanging(string value);
+    partial void OnPedExam_hierroSericoQSanguiChanged();
+    partial void OnPedExam_ferritinaQSanguiChanging(string value);
+    partial void OnPedExam_ferritinaQSanguiChanged();
+    partial void OnPedExam_transferritinaQSanguiChanging(string value);
+    partial void OnPedExam_transferritinaQSanguiChanged();
+    partial void OnPedExam_tgoEnziChanging(string value);
+    partial void OnPedExam_tgoEnziChanged();
+    partial void OnPedExam_tgpEnziChanging(string value);
+    partial void OnPedExam_tgpEnziChanged();
+    partial void OnPedExam_amilasaEnziChanging(string value);
+    partial void OnPedExam_amilasaEnziChanged();
+    partial void OnPedExam_lipasaEnziChanging(string value);
+    partial void OnPedExam_lipasaEnziChanged();
+    partial void OnPedExam_cpkEnziChanging(string value);
+    partial void OnPedExam_cpkEnziChanged();
+    partial void OnPedExam_cpkMbEnziChanging(string value);
+    partial void OnPedExam_cpkMbEnziChanged();
+    partial void OnPedExam_ldhEnziChanging(string value);
+    partial void OnPedExam_ldhEnziChanged();
+    partial void OnPedExam_fosfatasaAlcalinaEnziChanging(string value);
+    partial void OnPedExam_fosfatasaAlcalinaEnziChanged();
+    partial void OnPedExam_fosfatasaAcidaTotalEnziChanging(string value);
+    partial void OnPedExam_fosfatasaAcidaTotalEnziChanged();
+    partial void OnPedExam_fosfatasaAcidaProstaticaEnziChanging(string value);
+    partial void OnPedExam_fosfatasaAcidaProstaticaEnziChanged();
+    partial void OnPedExam_NakClElectroChanging(string value);
+    partial void OnPedExam_NakClElectroChanged();
+    partial void OnPedExam_calcioIonicoElectroChanging(string value);
+    partial void OnPedExam_calcioIonicoElectroChanged();
+    partial void OnPedExam_calcioTotalElectroChanging(string value);
+    partial void OnPedExam_calcioTotalElectroChanged();
+    partial void OnPedExam_magnesioElectroChanging(string value);
+    partial void OnPedExam_magnesioElectroChanged();
+    partial void OnPedExam_fosforoElectroChanging(string value);
+    partial void OnPedExam_fosforoElectroChanged();
+    partial void OnPedExam_pcrCuantitativoSeroChanging(string value);
+    partial void OnPedExam_pcrCuantitativoSeroChanged();
+    partial void OnPedExam_frLatexSeroChanging(string value);
+    partial void OnPedExam_frLatexSeroChanged();
+    partial void OnPedExam_astoSeroChanging(string value);
+    partial void OnPedExam_astoSeroChanged();
+    partial void OnPedExam_aglutinacionesFebrilesSeroChanging(string value);
+    partial void OnPedExam_aglutinacionesFebrilesSeroChanged();
+    partial void OnPedExam_vdrlSeroChanging(string value);
+    partial void OnPedExam_vdrlSeroChanged();
+    partial void OnPedExam_lhHormoChanging(string value);
+    partial void OnPedExam_lhHormoChanged();
+    partial void OnPedExam_fshHormoChanging(string value);
+    partial void OnPedExam_fshHormoChanged();
+    partial void OnPedExam_estradiolHormoChanging(string value);
+    partial void OnPedExam_estradiolHormoChanged();
+    partial void OnPedExam_profesteronaHormoChanging(string value);
+    partial void OnPedExam_profesteronaHormoChanged();
+    partial void OnPedExam_prolactinaHormoChanging(string value);
+    partial void OnPedExam_prolactinaHormoChanged();
+    partial void OnPedExam_testosteronaHormoChanging(string value);
+    partial void OnPedExam_testosteronaHormoChanged();
+    partial void OnPedExam_dheasHormoChanging(string value);
+    partial void OnPedExam_dheasHormoChanged();
+    partial void OnPedExam_cortisolHormoChanging(string value);
+    partial void OnPedExam_cortisolHormoChanged();
+    partial void OnPedExam_insulinaHormoChanging(string value);
+    partial void OnPedExam_insulinaHormoChanged();
+    partial void OnPedExam_peptidoCHormoChanging(string value);
+    partial void OnPedExam_peptidoCHormoChanged();
+    partial void OnPedExam_indiceHomaHormoChanging(string value);
+    partial void OnPedExam_indiceHomaHormoChanged();
+    partial void OnPedExam_bhcgHormoChanging(string value);
+    partial void OnPedExam_bhcgHormoChanged();
+    partial void OnPedExam_t3HormoChanging(string value);
+    partial void OnPedExam_t3HormoChanged();
+    partial void OnPedExam_ft4HormoChanging(string value);
+    partial void OnPedExam_ft4HormoChanged();
+    partial void OnPedExam_tshHormoChanging(string value);
+    partial void OnPedExam_tshHormoChanged();
+    partial void OnPedExam_17OhProgesteronaHormoChanging(string value);
+    partial void OnPedExam_17OhProgesteronaHormoChanged();
+    partial void OnPedExam_hghHormoChanging(string value);
+    partial void OnPedExam_hghHormoChanged();
+    partial void OnPedExam_prolactinaInmuChanging(string value);
+    partial void OnPedExam_prolactinaInmuChanged();
+    partial void OnPedExam_antiNuclearesInmuChanging(string value);
+    partial void OnPedExam_antiNuclearesInmuChanged();
+    partial void OnPedExam_antiDnaInmuChanging(string value);
+    partial void OnPedExam_antiDnaInmuChanged();
+    partial void OnPedExam_antiFosfolipidosInmuChanging(string value);
+    partial void OnPedExam_antiFosfolipidosInmuChanged();
+    partial void OnPedExam_lgGAntiFosfoInmuChanging(string value);
+    partial void OnPedExam_lgGAntiFosfoInmuChanged();
+    partial void OnPedExam_lgMAntiFosfoInmuChanging(string value);
+    partial void OnPedExam_lgMAntiFosfoInmuChanged();
+    partial void OnPedExam_lgAAntiFosfoInmuChanging(string value);
+    partial void OnPedExam_lgAAntiFosfoInmuChanged();
+    partial void OnPedExam_antiCardiolipinasInmuChanging(string value);
+    partial void OnPedExam_antiCardiolipinasInmuChanged();
+    partial void OnPedExam_lgGAntiCardioInmuChanging(string value);
+    partial void OnPedExam_lgGAntiCardioInmuChanged();
+    partial void OnPedExam_lgMAntiCardioInmuChanging(string value);
+    partial void OnPedExam_lgMAntiCardioInmuChanged();
+    partial void OnPedExam_lgAAntiCardioInmuChanging(string value);
+    partial void OnPedExam_lgAAntiCardioInmuChanged();
+    partial void OnPedExam_b2GlicoproteinaInmuChanging(string value);
+    partial void OnPedExam_b2GlicoproteinaInmuChanged();
+    partial void OnPedExam_lgGB2GlicoInmuChanging(string value);
+    partial void OnPedExam_lgGB2GlicoInmuChanged();
+    partial void OnPedExam_lgMB2GlicoInmuChanging(string value);
+    partial void OnPedExam_lgMB2GlicoInmuChanged();
+    partial void OnPedExam_antiGliadinaInmuChanging(string value);
+    partial void OnPedExam_antiGliadinaInmuChanged();
+    partial void OnPedExam_lgGAntiGliaInmuChanging(string value);
+    partial void OnPedExam_lgGAntiGliaInmuChanged();
+    partial void OnPedExam_lgAAntiGliaInmuChanging(string value);
+    partial void OnPedExam_lgAAntiGliaInmuChanged();
+    partial void OnPedExam_antiAnexinaVInmuChanging(string value);
+    partial void OnPedExam_antiAnexinaVInmuChanged();
+    partial void OnPedExam_lgGAntiAnexInmuChanging(string value);
+    partial void OnPedExam_lgGAntiAnexInmuChanged();
+    partial void OnPedExam_lgMAntiAnexInmuChanging(string value);
+    partial void OnPedExam_lgMAntiAnexInmuChanged();
+    partial void OnPedExam_antiTpoInmuChanging(string value);
+    partial void OnPedExam_antiTpoInmuChanged();
+    partial void OnPedExam_antiTiroglobulinaInmuChanging(string value);
+    partial void OnPedExam_antiTiroglobulinaInmuChanged();
+    partial void OnPedExam_antiCcpInmuChanging(string value);
+    partial void OnPedExam_antiCcpInmuChanged();
+    partial void OnPedExam_torchInmuInfeccChanging(string value);
+    partial void OnPedExam_torchInmuInfeccChanged();
+    partial void OnPedExam_toxoGondiiInmuInfeccChanging(string value);
+    partial void OnPedExam_toxoGondiiInmuInfeccChanged();
+    partial void OnPedExam_clamydiaTrachoInmuInfeccChanging(string value);
+    partial void OnPedExam_clamydiaTrachoInmuInfeccChanged();
+    partial void OnPedExam_lgMClamyTrachoInmuInfeccChanging(string value);
+    partial void OnPedExam_lgMClamyTrachoInmuInfeccChanged();
+    partial void OnPedExam_havInmuInfeccChanging(string value);
+    partial void OnPedExam_havInmuInfeccChanged();
+    partial void OnPedExam_lgGHavInmuInfeccChanging(string value);
+    partial void OnPedExam_lgGHavInmuInfeccChanged();
+    partial void OnPedExam_lgMHavInmuInfeccChanging(string value);
+    partial void OnPedExam_lgMHavInmuInfeccChanged();
+    partial void OnPedExam_vihInmuInfeccChanging(string value);
+    partial void OnPedExam_vihInmuInfeccChanged();
+    partial void OnPedExam_hbsAgInmuInfeccChanging(string value);
+    partial void OnPedExam_hbsAgInmuInfeccChanged();
+    partial void OnPedExam_hcvInmuInfeccChanging(string value);
+    partial void OnPedExam_hcvInmuInfeccChanged();
+    partial void OnPedExam_ftaAbsInmuInfeccChanging(string value);
+    partial void OnPedExam_ftaAbsInmuInfeccChanged();
+    partial void OnPedExam_ca125MarcaTumoChanging(string value);
+    partial void OnPedExam_ca125MarcaTumoChanged();
+    partial void OnPedExam_he4MarcaTumoChanging(string value);
+    partial void OnPedExam_he4MarcaTumoChanged();
+    partial void OnPedExam_indiceRomaMarcaTumoChanging(string value);
+    partial void OnPedExam_indiceRomaMarcaTumoChanged();
+    partial void OnPedExam_afpMarcaTumoChanging(string value);
+    partial void OnPedExam_afpMarcaTumoChanged();
+    partial void OnPedExam_ceaMarcaTurnoChanging(string value);
+    partial void OnPedExam_ceaMarcaTurnoChanged();
+    partial void OnPedExam_ca156MarcaTumoChanging(string value);
+    partial void OnPedExam_ca156MarcaTumoChanged();
+    partial void OnPedExam_ca159MarcaTumoChanging(string value);
+    partial void OnPedExam_ca159MarcaTumoChanged();
+    partial void OnPedExam_tiroglobulinaMarcaTumoChanging(string value);
+    partial void OnPedExam_tiroglobulinaMarcaTumoChanged();
+    partial void OnPedExam_psaTotalMarcaTumoChanging(string value);
+    partial void OnPedExam_psaTotalMarcaTumoChanged();
+    partial void OnPedExam_muestraDeMicroChanging(string value);
+    partial void OnPedExam_muestraDeMicroChanged();
+    partial void OnPedExam_gramMicroChanging(string value);
+    partial void OnPedExam_gramMicroChanged();
+    partial void OnPedExam_frescoMicroChanging(string value);
+    partial void OnPedExam_frescoMicroChanged();
+    partial void OnPedExam_kohMicroChanging(string value);
+    partial void OnPedExam_kohMicroChanged();
+    partial void OnPedExam_cultivoAntibiogramaMicroChanging(string value);
+    partial void OnPedExam_cultivoAntibiogramaMicroChanged();
+    partial void OnPedExam_esperCompletoEstEspeciaChanging(string value);
+    partial void OnPedExam_esperCompletoEstEspeciaChanged();
+    partial void OnPedExam_cristalografiaEstEspeciaChanging(string value);
+    partial void OnPedExam_cristalografiaEstEspeciaChanged();
+    partial void OnPedExam_screeningPrenatalEstEspeciaChanging(string value);
+    partial void OnPedExam_screeningPrenatalEstEspeciaChanged();
+    partial void OnPedExam_emoOrinaChanging(string value);
+    partial void OnPedExam_emoOrinaChanged();
+    partial void OnPedExam_cultivoAntibiogramaOrinaChanging(string value);
+    partial void OnPedExam_cultivoAntibiogramaOrinaChanged();
+    partial void OnPedExam_gramGotaFrescaOrinaChanging(string value);
+    partial void OnPedExam_gramGotaFrescaOrinaChanged();
+    partial void OnPedExam_microalbuminuriaOrinaChanging(string value);
+    partial void OnPedExam_microalbuminuriaOrinaChanged();
+    partial void OnPedExam_coproparasitarioHecesChanging(string value);
+    partial void OnPedExam_coproparasitarioHecesChanged();
+    partial void OnPedExam_coproparasitarioSeriadoHecesChanging(string value);
+    partial void OnPedExam_coproparasitarioSeriadoHecesChanged();
+    partial void OnPedExam_sangreOcultaHecesChanging(string value);
+    partial void OnPedExam_sangreOcultaHecesChanged();
+    partial void OnPedExam_pmnHecesChanging(string value);
+    partial void OnPedExam_pmnHecesChanged();
+    partial void OnPedExam_rotavirusHecesChanging(string value);
+    partial void OnPedExam_rotavirusHecesChanged();
+    partial void OnPedExam_helicobacterPylotiHecesChanging(string value);
+    partial void OnPedExam_helicobacterPylotiHecesChanged();
+    partial void OnPedExam_fenobarbitalDrogasChanging(string value);
+    partial void OnPedExam_fenobarbitalDrogasChanged();
+    partial void OnPedExam_teofilinaDrogasChanging(string value);
+    partial void OnPedExam_teofilinaDrogasChanged();
+    partial void OnPedExam_acValproicoDrogasChanging(string value);
+    partial void OnPedExam_acValproicoDrogasChanged();
+    partial void OnPedExam_1OtrosChanging(string value);
+    partial void OnPedExam_1OtrosChanged();
+    partial void OnPedExam_2OtrosChanging(string value);
+    partial void OnPedExam_2OtrosChanged();
+    partial void OnPedExam_3OtroChanging(string value);
+    partial void OnPedExam_3OtroChanged();
+    partial void OnPer_idChanging(System.Nullable<int> value);
+    partial void OnPer_idChanged();
     partial void OnPedExam_estadoChanging(string value);
     partial void OnPedExam_estadoChanged();
     #endregion
 		
-		public Tbl_PedidoExamnes()
+		public Tbl_PedidoExamenes()
 		{
-			this._Tbl_Coagulacion = default(EntityRef<Tbl_Coagulacion>);
-			this._Tbl_Drogras = default(EntityRef<Tbl_Drogras>);
-			this._Tbl_Electrolitos = default(EntityRef<Tbl_Electrolitos>);
-			this._Tbl_Enzimas = default(EntityRef<Tbl_Enzimas>);
-			this._Tbl_EstudiosEspeciales = default(EntityRef<Tbl_EstudiosEspeciales>);
-			this._Tbl_Heces = default(EntityRef<Tbl_Heces>);
-			this._Tbl_Hematologia = default(EntityRef<Tbl_Hematologia>);
-			this._Tbl_Hormonas = default(EntityRef<Tbl_Hormonas>);
-			this._Tbl_Inmunologia = default(EntityRef<Tbl_Inmunologia>);
-			this._Tbl_InmunoHematologia = default(EntityRef<Tbl_InmunoHematologia>);
-			this._Tbl_InmunoInfecciosas = default(EntityRef<Tbl_InmunoInfecciosas>);
-			this._Tbl_MarcadoresTumorales = default(EntityRef<Tbl_MarcadoresTumorales>);
-			this._Tbl_Microbiologia = default(EntityRef<Tbl_Microbiologia>);
-			this._Tbl_Orina = default(EntityRef<Tbl_Orina>);
-			this._Tbl_Otros = default(EntityRef<Tbl_Otros>);
-			this._Tbl_QuimicaSanguinea = default(EntityRef<Tbl_QuimicaSanguinea>);
-			this._Tbl_Serologia = default(EntityRef<Tbl_Serologia>);
+			this._Tbl_Personas = default(EntityRef<Tbl_Personas>);
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_Id", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int PedExam_Id
 		{
 			get
@@ -44973,410 +43422,2906 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Hema_id", DbType="Int")]
-		public System.Nullable<int> Hema_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_bioHematicaHema", DbType="VarChar(50)")]
+		public string PedExam_bioHematicaHema
 		{
 			get
 			{
-				return this._Hema_id;
+				return this._PedExam_bioHematicaHema;
 			}
 			set
 			{
-				if ((this._Hema_id != value))
+				if ((this._PedExam_bioHematicaHema != value))
 				{
-					if (this._Tbl_Hematologia.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnHema_idChanging(value);
+					this.OnPedExam_bioHematicaHemaChanging(value);
 					this.SendPropertyChanging();
-					this._Hema_id = value;
-					this.SendPropertyChanged("Hema_id");
-					this.OnHema_idChanged();
+					this._PedExam_bioHematicaHema = value;
+					this.SendPropertyChanged("PedExam_bioHematicaHema");
+					this.OnPedExam_bioHematicaHemaChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Elec_id", DbType="Int")]
-		public System.Nullable<int> Elec_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_hematocritoHema", DbType="VarChar(50)")]
+		public string PedExam_hematocritoHema
 		{
 			get
 			{
-				return this._Elec_id;
+				return this._PedExam_hematocritoHema;
 			}
 			set
 			{
-				if ((this._Elec_id != value))
+				if ((this._PedExam_hematocritoHema != value))
 				{
-					if (this._Tbl_Electrolitos.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnElec_idChanging(value);
+					this.OnPedExam_hematocritoHemaChanging(value);
 					this.SendPropertyChanging();
-					this._Elec_id = value;
-					this.SendPropertyChanged("Elec_id");
-					this.OnElec_idChanged();
+					this._PedExam_hematocritoHema = value;
+					this.SendPropertyChanged("PedExam_hematocritoHema");
+					this.OnPedExam_hematocritoHemaChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MarTum_id", DbType="Int")]
-		public System.Nullable<int> MarTum_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_hemoglobinaHema", DbType="VarChar(50)")]
+		public string PedExam_hemoglobinaHema
 		{
 			get
 			{
-				return this._MarTum_id;
+				return this._PedExam_hemoglobinaHema;
 			}
 			set
 			{
-				if ((this._MarTum_id != value))
+				if ((this._PedExam_hemoglobinaHema != value))
 				{
-					if (this._Tbl_MarcadoresTumorales.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnMarTum_idChanging(value);
+					this.OnPedExam_hemoglobinaHemaChanging(value);
 					this.SendPropertyChanging();
-					this._MarTum_id = value;
-					this.SendPropertyChanged("MarTum_id");
-					this.OnMarTum_idChanged();
+					this._PedExam_hemoglobinaHema = value;
+					this.SendPropertyChanged("PedExam_hemoglobinaHema");
+					this.OnPedExam_hemoglobinaHemaChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InmuHe_id", DbType="Int")]
-		public System.Nullable<int> InmuHe_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_vsgHema", DbType="VarChar(50)")]
+		public string PedExam_vsgHema
 		{
 			get
 			{
-				return this._InmuHe_id;
+				return this._PedExam_vsgHema;
 			}
 			set
 			{
-				if ((this._InmuHe_id != value))
+				if ((this._PedExam_vsgHema != value))
 				{
-					if (this._Tbl_InmunoHematologia.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnInmuHe_idChanging(value);
+					this.OnPedExam_vsgHemaChanging(value);
 					this.SendPropertyChanging();
-					this._InmuHe_id = value;
-					this.SendPropertyChanged("InmuHe_id");
-					this.OnInmuHe_idChanged();
+					this._PedExam_vsgHema = value;
+					this.SendPropertyChanged("PedExam_vsgHema");
+					this.OnPedExam_vsgHemaChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Sero_id", DbType="Int")]
-		public System.Nullable<int> Sero_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_coombsDirectoInmuHema", DbType="VarChar(50)")]
+		public string PedExam_coombsDirectoInmuHema
 		{
 			get
 			{
-				return this._Sero_id;
+				return this._PedExam_coombsDirectoInmuHema;
 			}
 			set
 			{
-				if ((this._Sero_id != value))
+				if ((this._PedExam_coombsDirectoInmuHema != value))
 				{
-					if (this._Tbl_Serologia.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnSero_idChanging(value);
+					this.OnPedExam_coombsDirectoInmuHemaChanging(value);
 					this.SendPropertyChanging();
-					this._Sero_id = value;
-					this.SendPropertyChanged("Sero_id");
-					this.OnSero_idChanged();
+					this._PedExam_coombsDirectoInmuHema = value;
+					this.SendPropertyChanged("PedExam_coombsDirectoInmuHema");
+					this.OnPedExam_coombsDirectoInmuHemaChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Micro_id", DbType="Int")]
-		public System.Nullable<int> Micro_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_coombsIndirectoInmuHema", DbType="VarChar(50)")]
+		public string PedExam_coombsIndirectoInmuHema
 		{
 			get
 			{
-				return this._Micro_id;
+				return this._PedExam_coombsIndirectoInmuHema;
 			}
 			set
 			{
-				if ((this._Micro_id != value))
+				if ((this._PedExam_coombsIndirectoInmuHema != value))
 				{
-					if (this._Tbl_Microbiologia.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnMicro_idChanging(value);
+					this.OnPedExam_coombsIndirectoInmuHemaChanging(value);
 					this.SendPropertyChanging();
-					this._Micro_id = value;
-					this.SendPropertyChanged("Micro_id");
-					this.OnMicro_idChanged();
+					this._PedExam_coombsIndirectoInmuHema = value;
+					this.SendPropertyChanged("PedExam_coombsIndirectoInmuHema");
+					this.OnPedExam_coombsIndirectoInmuHemaChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Coag_id", DbType="Int")]
-		public System.Nullable<int> Coag_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_grupoSanguiFacRhInmuHema", DbType="VarChar(50)")]
+		public string PedExam_grupoSanguiFacRhInmuHema
 		{
 			get
 			{
-				return this._Coag_id;
+				return this._PedExam_grupoSanguiFacRhInmuHema;
 			}
 			set
 			{
-				if ((this._Coag_id != value))
+				if ((this._PedExam_grupoSanguiFacRhInmuHema != value))
 				{
-					if (this._Tbl_Coagulacion.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnCoag_idChanging(value);
+					this.OnPedExam_grupoSanguiFacRhInmuHemaChanging(value);
 					this.SendPropertyChanging();
-					this._Coag_id = value;
-					this.SendPropertyChanged("Coag_id");
-					this.OnCoag_idChanged();
+					this._PedExam_grupoSanguiFacRhInmuHema = value;
+					this.SendPropertyChanged("PedExam_grupoSanguiFacRhInmuHema");
+					this.OnPedExam_grupoSanguiFacRhInmuHemaChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_horm_id", DbType="Int")]
-		public System.Nullable<int> horm_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_celularLeInmuHema", DbType="VarChar(50)")]
+		public string PedExam_celularLeInmuHema
 		{
 			get
 			{
-				return this._horm_id;
+				return this._PedExam_celularLeInmuHema;
 			}
 			set
 			{
-				if ((this._horm_id != value))
+				if ((this._PedExam_celularLeInmuHema != value))
 				{
-					if (this._Tbl_Hormonas.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.Onhorm_idChanging(value);
+					this.OnPedExam_celularLeInmuHemaChanging(value);
 					this.SendPropertyChanging();
-					this._horm_id = value;
-					this.SendPropertyChanged("horm_id");
-					this.Onhorm_idChanged();
+					this._PedExam_celularLeInmuHema = value;
+					this.SendPropertyChanged("PedExam_celularLeInmuHema");
+					this.OnPedExam_celularLeInmuHemaChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EstEsp_id", DbType="Int")]
-		public System.Nullable<int> EstEsp_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_plaquetasCoagu", DbType="VarChar(50)")]
+		public string PedExam_plaquetasCoagu
 		{
 			get
 			{
-				return this._EstEsp_id;
+				return this._PedExam_plaquetasCoagu;
 			}
 			set
 			{
-				if ((this._EstEsp_id != value))
+				if ((this._PedExam_plaquetasCoagu != value))
 				{
-					if (this._Tbl_EstudiosEspeciales.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnEstEsp_idChanging(value);
+					this.OnPedExam_plaquetasCoaguChanging(value);
 					this.SendPropertyChanging();
-					this._EstEsp_id = value;
-					this.SendPropertyChanged("EstEsp_id");
-					this.OnEstEsp_idChanged();
+					this._PedExam_plaquetasCoagu = value;
+					this.SendPropertyChanged("PedExam_plaquetasCoagu");
+					this.OnPedExam_plaquetasCoaguChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_QuiSan_id", DbType="Int")]
-		public System.Nullable<int> QuiSan_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_fibrinogenoCoagu", DbType="VarChar(50)")]
+		public string PedExam_fibrinogenoCoagu
 		{
 			get
 			{
-				return this._QuiSan_id;
+				return this._PedExam_fibrinogenoCoagu;
 			}
 			set
 			{
-				if ((this._QuiSan_id != value))
+				if ((this._PedExam_fibrinogenoCoagu != value))
 				{
-					if (this._Tbl_QuimicaSanguinea.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnQuiSan_idChanging(value);
+					this.OnPedExam_fibrinogenoCoaguChanging(value);
 					this.SendPropertyChanging();
-					this._QuiSan_id = value;
-					this.SendPropertyChanged("QuiSan_id");
-					this.OnQuiSan_idChanged();
+					this._PedExam_fibrinogenoCoagu = value;
+					this.SendPropertyChanged("PedExam_fibrinogenoCoagu");
+					this.OnPedExam_fibrinogenoCoaguChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Inmu_id", DbType="Int")]
-		public System.Nullable<int> Inmu_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_TpCoagu", DbType="VarChar(50)")]
+		public string PedExam_TpCoagu
 		{
 			get
 			{
-				return this._Inmu_id;
+				return this._PedExam_TpCoagu;
 			}
 			set
 			{
-				if ((this._Inmu_id != value))
+				if ((this._PedExam_TpCoagu != value))
 				{
-					if (this._Tbl_Inmunologia.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnInmu_idChanging(value);
+					this.OnPedExam_TpCoaguChanging(value);
 					this.SendPropertyChanging();
-					this._Inmu_id = value;
-					this.SendPropertyChanged("Inmu_id");
-					this.OnInmu_idChanged();
+					this._PedExam_TpCoagu = value;
+					this.SendPropertyChanged("PedExam_TpCoagu");
+					this.OnPedExam_TpCoaguChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Orin_id", DbType="Int")]
-		public System.Nullable<int> Orin_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_TtpCoagu", DbType="VarChar(50)")]
+		public string PedExam_TtpCoagu
 		{
 			get
 			{
-				return this._Orin_id;
+				return this._PedExam_TtpCoagu;
 			}
 			set
 			{
-				if ((this._Orin_id != value))
+				if ((this._PedExam_TtpCoagu != value))
 				{
-					if (this._Tbl_Orina.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnOrin_idChanging(value);
+					this.OnPedExam_TtpCoaguChanging(value);
 					this.SendPropertyChanging();
-					this._Orin_id = value;
-					this.SendPropertyChanged("Orin_id");
-					this.OnOrin_idChanged();
+					this._PedExam_TtpCoagu = value;
+					this.SendPropertyChanged("PedExam_TtpCoagu");
+					this.OnPedExam_TtpCoaguChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Enzi_id", DbType="Int")]
-		public System.Nullable<int> Enzi_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_InrCoagu", DbType="VarChar(50)")]
+		public string PedExam_InrCoagu
 		{
 			get
 			{
-				return this._Enzi_id;
+				return this._PedExam_InrCoagu;
 			}
 			set
 			{
-				if ((this._Enzi_id != value))
+				if ((this._PedExam_InrCoagu != value))
 				{
-					if (this._Tbl_Enzimas.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnEnzi_idChanging(value);
+					this.OnPedExam_InrCoaguChanging(value);
 					this.SendPropertyChanging();
-					this._Enzi_id = value;
-					this.SendPropertyChanged("Enzi_id");
-					this.OnEnzi_idChanged();
+					this._PedExam_InrCoagu = value;
+					this.SendPropertyChanged("PedExam_InrCoagu");
+					this.OnPedExam_InrCoaguChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InmuInfe_id", DbType="Int")]
-		public System.Nullable<int> InmuInfe_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_tiemCoagulacionCoagu", DbType="VarChar(50)")]
+		public string PedExam_tiemCoagulacionCoagu
 		{
 			get
 			{
-				return this._InmuInfe_id;
+				return this._PedExam_tiemCoagulacionCoagu;
 			}
 			set
 			{
-				if ((this._InmuInfe_id != value))
+				if ((this._PedExam_tiemCoagulacionCoagu != value))
 				{
-					if (this._Tbl_InmunoInfecciosas.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnInmuInfe_idChanging(value);
+					this.OnPedExam_tiemCoagulacionCoaguChanging(value);
 					this.SendPropertyChanging();
-					this._InmuInfe_id = value;
-					this.SendPropertyChanged("InmuInfe_id");
-					this.OnInmuInfe_idChanged();
+					this._PedExam_tiemCoagulacionCoagu = value;
+					this.SendPropertyChanged("PedExam_tiemCoagulacionCoagu");
+					this.OnPedExam_tiemCoagulacionCoaguChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Hec_id", DbType="Int")]
-		public System.Nullable<int> Hec_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_tiemSangriaCoagu", DbType="VarChar(50)")]
+		public string PedExam_tiemSangriaCoagu
 		{
 			get
 			{
-				return this._Hec_id;
+				return this._PedExam_tiemSangriaCoagu;
 			}
 			set
 			{
-				if ((this._Hec_id != value))
+				if ((this._PedExam_tiemSangriaCoagu != value))
 				{
-					if (this._Tbl_Heces.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnHec_idChanging(value);
+					this.OnPedExam_tiemSangriaCoaguChanging(value);
 					this.SendPropertyChanging();
-					this._Hec_id = value;
-					this.SendPropertyChanged("Hec_id");
-					this.OnHec_idChanged();
+					this._PedExam_tiemSangriaCoagu = value;
+					this.SendPropertyChanged("PedExam_tiemSangriaCoagu");
+					this.OnPedExam_tiemSangriaCoaguChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Drog_id", DbType="Int")]
-		public System.Nullable<int> Drog_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_antiLupicoCoagu", DbType="VarChar(50)")]
+		public string PedExam_antiLupicoCoagu
 		{
 			get
 			{
-				return this._Drog_id;
+				return this._PedExam_antiLupicoCoagu;
 			}
 			set
 			{
-				if ((this._Drog_id != value))
+				if ((this._PedExam_antiLupicoCoagu != value))
 				{
-					if (this._Tbl_Drogras.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnDrog_idChanging(value);
+					this.OnPedExam_antiLupicoCoaguChanging(value);
 					this.SendPropertyChanging();
-					this._Drog_id = value;
-					this.SendPropertyChanged("Drog_id");
-					this.OnDrog_idChanged();
+					this._PedExam_antiLupicoCoagu = value;
+					this.SendPropertyChanged("PedExam_antiLupicoCoagu");
+					this.OnPedExam_antiLupicoCoaguChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Otrs_id", DbType="Int")]
-		public System.Nullable<int> Otrs_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_dimeroDCoagu", DbType="VarChar(50)")]
+		public string PedExam_dimeroDCoagu
 		{
 			get
 			{
-				return this._Otrs_id;
+				return this._PedExam_dimeroDCoagu;
 			}
 			set
 			{
-				if ((this._Otrs_id != value))
+				if ((this._PedExam_dimeroDCoagu != value))
 				{
-					if (this._Tbl_Otros.HasLoadedOrAssignedValue)
+					this.OnPedExam_dimeroDCoaguChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_dimeroDCoagu = value;
+					this.SendPropertyChanged("PedExam_dimeroDCoagu");
+					this.OnPedExam_dimeroDCoaguChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_glucoBasalQSangui", DbType="VarChar(50)")]
+		public string PedExam_glucoBasalQSangui
+		{
+			get
+			{
+				return this._PedExam_glucoBasalQSangui;
+			}
+			set
+			{
+				if ((this._PedExam_glucoBasalQSangui != value))
+				{
+					this.OnPedExam_glucoBasalQSanguiChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_glucoBasalQSangui = value;
+					this.SendPropertyChanged("PedExam_glucoBasalQSangui");
+					this.OnPedExam_glucoBasalQSanguiChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_ureaQSangui", DbType="VarChar(50)")]
+		public string PedExam_ureaQSangui
+		{
+			get
+			{
+				return this._PedExam_ureaQSangui;
+			}
+			set
+			{
+				if ((this._PedExam_ureaQSangui != value))
+				{
+					this.OnPedExam_ureaQSanguiChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_ureaQSangui = value;
+					this.SendPropertyChanged("PedExam_ureaQSangui");
+					this.OnPedExam_ureaQSanguiChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_bumQSangui", DbType="VarChar(50)")]
+		public string PedExam_bumQSangui
+		{
+			get
+			{
+				return this._PedExam_bumQSangui;
+			}
+			set
+			{
+				if ((this._PedExam_bumQSangui != value))
+				{
+					this.OnPedExam_bumQSanguiChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_bumQSangui = value;
+					this.SendPropertyChanged("PedExam_bumQSangui");
+					this.OnPedExam_bumQSanguiChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_creatininaQSangui", DbType="VarChar(50)")]
+		public string PedExam_creatininaQSangui
+		{
+			get
+			{
+				return this._PedExam_creatininaQSangui;
+			}
+			set
+			{
+				if ((this._PedExam_creatininaQSangui != value))
+				{
+					this.OnPedExam_creatininaQSanguiChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_creatininaQSangui = value;
+					this.SendPropertyChanged("PedExam_creatininaQSangui");
+					this.OnPedExam_creatininaQSanguiChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_acUricoQSangui", DbType="VarChar(50)")]
+		public string PedExam_acUricoQSangui
+		{
+			get
+			{
+				return this._PedExam_acUricoQSangui;
+			}
+			set
+			{
+				if ((this._PedExam_acUricoQSangui != value))
+				{
+					this.OnPedExam_acUricoQSanguiChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_acUricoQSangui = value;
+					this.SendPropertyChanged("PedExam_acUricoQSangui");
+					this.OnPedExam_acUricoQSanguiChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_colesTotalQSangui", DbType="VarChar(50)")]
+		public string PedExam_colesTotalQSangui
+		{
+			get
+			{
+				return this._PedExam_colesTotalQSangui;
+			}
+			set
+			{
+				if ((this._PedExam_colesTotalQSangui != value))
+				{
+					this.OnPedExam_colesTotalQSanguiChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_colesTotalQSangui = value;
+					this.SendPropertyChanged("PedExam_colesTotalQSangui");
+					this.OnPedExam_colesTotalQSanguiChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_hdlcQSangui", DbType="VarChar(50)")]
+		public string PedExam_hdlcQSangui
+		{
+			get
+			{
+				return this._PedExam_hdlcQSangui;
+			}
+			set
+			{
+				if ((this._PedExam_hdlcQSangui != value))
+				{
+					this.OnPedExam_hdlcQSanguiChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_hdlcQSangui = value;
+					this.SendPropertyChanged("PedExam_hdlcQSangui");
+					this.OnPedExam_hdlcQSanguiChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_ldlcQSangui", DbType="VarChar(50)")]
+		public string PedExam_ldlcQSangui
+		{
+			get
+			{
+				return this._PedExam_ldlcQSangui;
+			}
+			set
+			{
+				if ((this._PedExam_ldlcQSangui != value))
+				{
+					this.OnPedExam_ldlcQSanguiChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_ldlcQSangui = value;
+					this.SendPropertyChanged("PedExam_ldlcQSangui");
+					this.OnPedExam_ldlcQSanguiChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_trigliceridosQSangui", DbType="VarChar(50)")]
+		public string PedExam_trigliceridosQSangui
+		{
+			get
+			{
+				return this._PedExam_trigliceridosQSangui;
+			}
+			set
+			{
+				if ((this._PedExam_trigliceridosQSangui != value))
+				{
+					this.OnPedExam_trigliceridosQSanguiChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_trigliceridosQSangui = value;
+					this.SendPropertyChanged("PedExam_trigliceridosQSangui");
+					this.OnPedExam_trigliceridosQSanguiChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_bilirrubinaTotalQSangui", DbType="VarChar(50)")]
+		public string PedExam_bilirrubinaTotalQSangui
+		{
+			get
+			{
+				return this._PedExam_bilirrubinaTotalQSangui;
+			}
+			set
+			{
+				if ((this._PedExam_bilirrubinaTotalQSangui != value))
+				{
+					this.OnPedExam_bilirrubinaTotalQSanguiChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_bilirrubinaTotalQSangui = value;
+					this.SendPropertyChanged("PedExam_bilirrubinaTotalQSangui");
+					this.OnPedExam_bilirrubinaTotalQSanguiChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_bilirrubinaDirectaQSangui", DbType="VarChar(50)")]
+		public string PedExam_bilirrubinaDirectaQSangui
+		{
+			get
+			{
+				return this._PedExam_bilirrubinaDirectaQSangui;
+			}
+			set
+			{
+				if ((this._PedExam_bilirrubinaDirectaQSangui != value))
+				{
+					this.OnPedExam_bilirrubinaDirectaQSanguiChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_bilirrubinaDirectaQSangui = value;
+					this.SendPropertyChanged("PedExam_bilirrubinaDirectaQSangui");
+					this.OnPedExam_bilirrubinaDirectaQSanguiChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_bilirrubinaIndirectaQSangui", DbType="VarChar(50)")]
+		public string PedExam_bilirrubinaIndirectaQSangui
+		{
+			get
+			{
+				return this._PedExam_bilirrubinaIndirectaQSangui;
+			}
+			set
+			{
+				if ((this._PedExam_bilirrubinaIndirectaQSangui != value))
+				{
+					this.OnPedExam_bilirrubinaIndirectaQSanguiChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_bilirrubinaIndirectaQSangui = value;
+					this.SendPropertyChanged("PedExam_bilirrubinaIndirectaQSangui");
+					this.OnPedExam_bilirrubinaIndirectaQSanguiChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_proteTotalesQSangui", DbType="VarChar(50)")]
+		public string PedExam_proteTotalesQSangui
+		{
+			get
+			{
+				return this._PedExam_proteTotalesQSangui;
+			}
+			set
+			{
+				if ((this._PedExam_proteTotalesQSangui != value))
+				{
+					this.OnPedExam_proteTotalesQSanguiChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_proteTotalesQSangui = value;
+					this.SendPropertyChanged("PedExam_proteTotalesQSangui");
+					this.OnPedExam_proteTotalesQSanguiChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_albuminaQSangui", DbType="VarChar(50)")]
+		public string PedExam_albuminaQSangui
+		{
+			get
+			{
+				return this._PedExam_albuminaQSangui;
+			}
+			set
+			{
+				if ((this._PedExam_albuminaQSangui != value))
+				{
+					this.OnPedExam_albuminaQSanguiChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_albuminaQSangui = value;
+					this.SendPropertyChanged("PedExam_albuminaQSangui");
+					this.OnPedExam_albuminaQSanguiChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_globulinaQSangui", DbType="VarChar(50)")]
+		public string PedExam_globulinaQSangui
+		{
+			get
+			{
+				return this._PedExam_globulinaQSangui;
+			}
+			set
+			{
+				if ((this._PedExam_globulinaQSangui != value))
+				{
+					this.OnPedExam_globulinaQSanguiChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_globulinaQSangui = value;
+					this.SendPropertyChanged("PedExam_globulinaQSangui");
+					this.OnPedExam_globulinaQSanguiChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_testOsullivanQSangui", DbType="VarChar(50)")]
+		public string PedExam_testOsullivanQSangui
+		{
+			get
+			{
+				return this._PedExam_testOsullivanQSangui;
+			}
+			set
+			{
+				if ((this._PedExam_testOsullivanQSangui != value))
+				{
+					this.OnPedExam_testOsullivanQSanguiChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_testOsullivanQSangui = value;
+					this.SendPropertyChanged("PedExam_testOsullivanQSangui");
+					this.OnPedExam_testOsullivanQSanguiChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_glucosa2hppQSangui", DbType="VarChar(50)")]
+		public string PedExam_glucosa2hppQSangui
+		{
+			get
+			{
+				return this._PedExam_glucosa2hppQSangui;
+			}
+			set
+			{
+				if ((this._PedExam_glucosa2hppQSangui != value))
+				{
+					this.OnPedExam_glucosa2hppQSanguiChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_glucosa2hppQSangui = value;
+					this.SendPropertyChanged("PedExam_glucosa2hppQSangui");
+					this.OnPedExam_glucosa2hppQSanguiChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_curvaToleranciaQSangui", DbType="VarChar(50)")]
+		public string PedExam_curvaToleranciaQSangui
+		{
+			get
+			{
+				return this._PedExam_curvaToleranciaQSangui;
+			}
+			set
+			{
+				if ((this._PedExam_curvaToleranciaQSangui != value))
+				{
+					this.OnPedExam_curvaToleranciaQSanguiChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_curvaToleranciaQSangui = value;
+					this.SendPropertyChanged("PedExam_curvaToleranciaQSangui");
+					this.OnPedExam_curvaToleranciaQSanguiChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_glucosaHorasQSangui", DbType="VarChar(50)")]
+		public string PedExam_glucosaHorasQSangui
+		{
+			get
+			{
+				return this._PedExam_glucosaHorasQSangui;
+			}
+			set
+			{
+				if ((this._PedExam_glucosaHorasQSangui != value))
+				{
+					this.OnPedExam_glucosaHorasQSanguiChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_glucosaHorasQSangui = value;
+					this.SendPropertyChanged("PedExam_glucosaHorasQSangui");
+					this.OnPedExam_glucosaHorasQSanguiChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_hemogloGlicosiladaQSangui", DbType="VarChar(50)")]
+		public string PedExam_hemogloGlicosiladaQSangui
+		{
+			get
+			{
+				return this._PedExam_hemogloGlicosiladaQSangui;
+			}
+			set
+			{
+				if ((this._PedExam_hemogloGlicosiladaQSangui != value))
+				{
+					this.OnPedExam_hemogloGlicosiladaQSanguiChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_hemogloGlicosiladaQSangui = value;
+					this.SendPropertyChanged("PedExam_hemogloGlicosiladaQSangui");
+					this.OnPedExam_hemogloGlicosiladaQSanguiChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_hierroSericoQSangui", DbType="VarChar(50)")]
+		public string PedExam_hierroSericoQSangui
+		{
+			get
+			{
+				return this._PedExam_hierroSericoQSangui;
+			}
+			set
+			{
+				if ((this._PedExam_hierroSericoQSangui != value))
+				{
+					this.OnPedExam_hierroSericoQSanguiChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_hierroSericoQSangui = value;
+					this.SendPropertyChanged("PedExam_hierroSericoQSangui");
+					this.OnPedExam_hierroSericoQSanguiChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_ferritinaQSangui", DbType="VarChar(50)")]
+		public string PedExam_ferritinaQSangui
+		{
+			get
+			{
+				return this._PedExam_ferritinaQSangui;
+			}
+			set
+			{
+				if ((this._PedExam_ferritinaQSangui != value))
+				{
+					this.OnPedExam_ferritinaQSanguiChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_ferritinaQSangui = value;
+					this.SendPropertyChanged("PedExam_ferritinaQSangui");
+					this.OnPedExam_ferritinaQSanguiChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_transferritinaQSangui", DbType="VarChar(50)")]
+		public string PedExam_transferritinaQSangui
+		{
+			get
+			{
+				return this._PedExam_transferritinaQSangui;
+			}
+			set
+			{
+				if ((this._PedExam_transferritinaQSangui != value))
+				{
+					this.OnPedExam_transferritinaQSanguiChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_transferritinaQSangui = value;
+					this.SendPropertyChanged("PedExam_transferritinaQSangui");
+					this.OnPedExam_transferritinaQSanguiChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_tgoEnzi", DbType="VarChar(50)")]
+		public string PedExam_tgoEnzi
+		{
+			get
+			{
+				return this._PedExam_tgoEnzi;
+			}
+			set
+			{
+				if ((this._PedExam_tgoEnzi != value))
+				{
+					this.OnPedExam_tgoEnziChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_tgoEnzi = value;
+					this.SendPropertyChanged("PedExam_tgoEnzi");
+					this.OnPedExam_tgoEnziChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_tgpEnzi", DbType="VarChar(50)")]
+		public string PedExam_tgpEnzi
+		{
+			get
+			{
+				return this._PedExam_tgpEnzi;
+			}
+			set
+			{
+				if ((this._PedExam_tgpEnzi != value))
+				{
+					this.OnPedExam_tgpEnziChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_tgpEnzi = value;
+					this.SendPropertyChanged("PedExam_tgpEnzi");
+					this.OnPedExam_tgpEnziChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_amilasaEnzi", DbType="VarChar(50)")]
+		public string PedExam_amilasaEnzi
+		{
+			get
+			{
+				return this._PedExam_amilasaEnzi;
+			}
+			set
+			{
+				if ((this._PedExam_amilasaEnzi != value))
+				{
+					this.OnPedExam_amilasaEnziChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_amilasaEnzi = value;
+					this.SendPropertyChanged("PedExam_amilasaEnzi");
+					this.OnPedExam_amilasaEnziChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_lipasaEnzi", DbType="VarChar(50)")]
+		public string PedExam_lipasaEnzi
+		{
+			get
+			{
+				return this._PedExam_lipasaEnzi;
+			}
+			set
+			{
+				if ((this._PedExam_lipasaEnzi != value))
+				{
+					this.OnPedExam_lipasaEnziChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_lipasaEnzi = value;
+					this.SendPropertyChanged("PedExam_lipasaEnzi");
+					this.OnPedExam_lipasaEnziChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_cpkEnzi", DbType="VarChar(50)")]
+		public string PedExam_cpkEnzi
+		{
+			get
+			{
+				return this._PedExam_cpkEnzi;
+			}
+			set
+			{
+				if ((this._PedExam_cpkEnzi != value))
+				{
+					this.OnPedExam_cpkEnziChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_cpkEnzi = value;
+					this.SendPropertyChanged("PedExam_cpkEnzi");
+					this.OnPedExam_cpkEnziChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_cpkMbEnzi", DbType="VarChar(50)")]
+		public string PedExam_cpkMbEnzi
+		{
+			get
+			{
+				return this._PedExam_cpkMbEnzi;
+			}
+			set
+			{
+				if ((this._PedExam_cpkMbEnzi != value))
+				{
+					this.OnPedExam_cpkMbEnziChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_cpkMbEnzi = value;
+					this.SendPropertyChanged("PedExam_cpkMbEnzi");
+					this.OnPedExam_cpkMbEnziChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_ldhEnzi", DbType="VarChar(50)")]
+		public string PedExam_ldhEnzi
+		{
+			get
+			{
+				return this._PedExam_ldhEnzi;
+			}
+			set
+			{
+				if ((this._PedExam_ldhEnzi != value))
+				{
+					this.OnPedExam_ldhEnziChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_ldhEnzi = value;
+					this.SendPropertyChanged("PedExam_ldhEnzi");
+					this.OnPedExam_ldhEnziChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_fosfatasaAlcalinaEnzi", DbType="VarChar(50)")]
+		public string PedExam_fosfatasaAlcalinaEnzi
+		{
+			get
+			{
+				return this._PedExam_fosfatasaAlcalinaEnzi;
+			}
+			set
+			{
+				if ((this._PedExam_fosfatasaAlcalinaEnzi != value))
+				{
+					this.OnPedExam_fosfatasaAlcalinaEnziChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_fosfatasaAlcalinaEnzi = value;
+					this.SendPropertyChanged("PedExam_fosfatasaAlcalinaEnzi");
+					this.OnPedExam_fosfatasaAlcalinaEnziChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_fosfatasaAcidaTotalEnzi", DbType="VarChar(50)")]
+		public string PedExam_fosfatasaAcidaTotalEnzi
+		{
+			get
+			{
+				return this._PedExam_fosfatasaAcidaTotalEnzi;
+			}
+			set
+			{
+				if ((this._PedExam_fosfatasaAcidaTotalEnzi != value))
+				{
+					this.OnPedExam_fosfatasaAcidaTotalEnziChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_fosfatasaAcidaTotalEnzi = value;
+					this.SendPropertyChanged("PedExam_fosfatasaAcidaTotalEnzi");
+					this.OnPedExam_fosfatasaAcidaTotalEnziChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_fosfatasaAcidaProstaticaEnzi", DbType="VarChar(50)")]
+		public string PedExam_fosfatasaAcidaProstaticaEnzi
+		{
+			get
+			{
+				return this._PedExam_fosfatasaAcidaProstaticaEnzi;
+			}
+			set
+			{
+				if ((this._PedExam_fosfatasaAcidaProstaticaEnzi != value))
+				{
+					this.OnPedExam_fosfatasaAcidaProstaticaEnziChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_fosfatasaAcidaProstaticaEnzi = value;
+					this.SendPropertyChanged("PedExam_fosfatasaAcidaProstaticaEnzi");
+					this.OnPedExam_fosfatasaAcidaProstaticaEnziChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_NakClElectro", DbType="VarChar(50)")]
+		public string PedExam_NakClElectro
+		{
+			get
+			{
+				return this._PedExam_NakClElectro;
+			}
+			set
+			{
+				if ((this._PedExam_NakClElectro != value))
+				{
+					this.OnPedExam_NakClElectroChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_NakClElectro = value;
+					this.SendPropertyChanged("PedExam_NakClElectro");
+					this.OnPedExam_NakClElectroChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_calcioIonicoElectro", DbType="VarChar(50)")]
+		public string PedExam_calcioIonicoElectro
+		{
+			get
+			{
+				return this._PedExam_calcioIonicoElectro;
+			}
+			set
+			{
+				if ((this._PedExam_calcioIonicoElectro != value))
+				{
+					this.OnPedExam_calcioIonicoElectroChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_calcioIonicoElectro = value;
+					this.SendPropertyChanged("PedExam_calcioIonicoElectro");
+					this.OnPedExam_calcioIonicoElectroChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_calcioTotalElectro", DbType="VarChar(50)")]
+		public string PedExam_calcioTotalElectro
+		{
+			get
+			{
+				return this._PedExam_calcioTotalElectro;
+			}
+			set
+			{
+				if ((this._PedExam_calcioTotalElectro != value))
+				{
+					this.OnPedExam_calcioTotalElectroChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_calcioTotalElectro = value;
+					this.SendPropertyChanged("PedExam_calcioTotalElectro");
+					this.OnPedExam_calcioTotalElectroChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_magnesioElectro", DbType="VarChar(50)")]
+		public string PedExam_magnesioElectro
+		{
+			get
+			{
+				return this._PedExam_magnesioElectro;
+			}
+			set
+			{
+				if ((this._PedExam_magnesioElectro != value))
+				{
+					this.OnPedExam_magnesioElectroChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_magnesioElectro = value;
+					this.SendPropertyChanged("PedExam_magnesioElectro");
+					this.OnPedExam_magnesioElectroChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_fosforoElectro", DbType="VarChar(50)")]
+		public string PedExam_fosforoElectro
+		{
+			get
+			{
+				return this._PedExam_fosforoElectro;
+			}
+			set
+			{
+				if ((this._PedExam_fosforoElectro != value))
+				{
+					this.OnPedExam_fosforoElectroChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_fosforoElectro = value;
+					this.SendPropertyChanged("PedExam_fosforoElectro");
+					this.OnPedExam_fosforoElectroChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_pcrCuantitativoSero", DbType="VarChar(50)")]
+		public string PedExam_pcrCuantitativoSero
+		{
+			get
+			{
+				return this._PedExam_pcrCuantitativoSero;
+			}
+			set
+			{
+				if ((this._PedExam_pcrCuantitativoSero != value))
+				{
+					this.OnPedExam_pcrCuantitativoSeroChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_pcrCuantitativoSero = value;
+					this.SendPropertyChanged("PedExam_pcrCuantitativoSero");
+					this.OnPedExam_pcrCuantitativoSeroChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_frLatexSero", DbType="VarChar(50)")]
+		public string PedExam_frLatexSero
+		{
+			get
+			{
+				return this._PedExam_frLatexSero;
+			}
+			set
+			{
+				if ((this._PedExam_frLatexSero != value))
+				{
+					this.OnPedExam_frLatexSeroChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_frLatexSero = value;
+					this.SendPropertyChanged("PedExam_frLatexSero");
+					this.OnPedExam_frLatexSeroChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_astoSero", DbType="VarChar(50)")]
+		public string PedExam_astoSero
+		{
+			get
+			{
+				return this._PedExam_astoSero;
+			}
+			set
+			{
+				if ((this._PedExam_astoSero != value))
+				{
+					this.OnPedExam_astoSeroChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_astoSero = value;
+					this.SendPropertyChanged("PedExam_astoSero");
+					this.OnPedExam_astoSeroChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_aglutinacionesFebrilesSero", DbType="VarChar(50)")]
+		public string PedExam_aglutinacionesFebrilesSero
+		{
+			get
+			{
+				return this._PedExam_aglutinacionesFebrilesSero;
+			}
+			set
+			{
+				if ((this._PedExam_aglutinacionesFebrilesSero != value))
+				{
+					this.OnPedExam_aglutinacionesFebrilesSeroChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_aglutinacionesFebrilesSero = value;
+					this.SendPropertyChanged("PedExam_aglutinacionesFebrilesSero");
+					this.OnPedExam_aglutinacionesFebrilesSeroChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_vdrlSero", DbType="VarChar(50)")]
+		public string PedExam_vdrlSero
+		{
+			get
+			{
+				return this._PedExam_vdrlSero;
+			}
+			set
+			{
+				if ((this._PedExam_vdrlSero != value))
+				{
+					this.OnPedExam_vdrlSeroChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_vdrlSero = value;
+					this.SendPropertyChanged("PedExam_vdrlSero");
+					this.OnPedExam_vdrlSeroChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_lhHormo", DbType="VarChar(50)")]
+		public string PedExam_lhHormo
+		{
+			get
+			{
+				return this._PedExam_lhHormo;
+			}
+			set
+			{
+				if ((this._PedExam_lhHormo != value))
+				{
+					this.OnPedExam_lhHormoChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_lhHormo = value;
+					this.SendPropertyChanged("PedExam_lhHormo");
+					this.OnPedExam_lhHormoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_fshHormo", DbType="VarChar(50)")]
+		public string PedExam_fshHormo
+		{
+			get
+			{
+				return this._PedExam_fshHormo;
+			}
+			set
+			{
+				if ((this._PedExam_fshHormo != value))
+				{
+					this.OnPedExam_fshHormoChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_fshHormo = value;
+					this.SendPropertyChanged("PedExam_fshHormo");
+					this.OnPedExam_fshHormoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_estradiolHormo", DbType="VarChar(50)")]
+		public string PedExam_estradiolHormo
+		{
+			get
+			{
+				return this._PedExam_estradiolHormo;
+			}
+			set
+			{
+				if ((this._PedExam_estradiolHormo != value))
+				{
+					this.OnPedExam_estradiolHormoChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_estradiolHormo = value;
+					this.SendPropertyChanged("PedExam_estradiolHormo");
+					this.OnPedExam_estradiolHormoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_profesteronaHormo", DbType="VarChar(50)")]
+		public string PedExam_profesteronaHormo
+		{
+			get
+			{
+				return this._PedExam_profesteronaHormo;
+			}
+			set
+			{
+				if ((this._PedExam_profesteronaHormo != value))
+				{
+					this.OnPedExam_profesteronaHormoChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_profesteronaHormo = value;
+					this.SendPropertyChanged("PedExam_profesteronaHormo");
+					this.OnPedExam_profesteronaHormoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_prolactinaHormo", DbType="VarChar(50)")]
+		public string PedExam_prolactinaHormo
+		{
+			get
+			{
+				return this._PedExam_prolactinaHormo;
+			}
+			set
+			{
+				if ((this._PedExam_prolactinaHormo != value))
+				{
+					this.OnPedExam_prolactinaHormoChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_prolactinaHormo = value;
+					this.SendPropertyChanged("PedExam_prolactinaHormo");
+					this.OnPedExam_prolactinaHormoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_testosteronaHormo", DbType="VarChar(50)")]
+		public string PedExam_testosteronaHormo
+		{
+			get
+			{
+				return this._PedExam_testosteronaHormo;
+			}
+			set
+			{
+				if ((this._PedExam_testosteronaHormo != value))
+				{
+					this.OnPedExam_testosteronaHormoChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_testosteronaHormo = value;
+					this.SendPropertyChanged("PedExam_testosteronaHormo");
+					this.OnPedExam_testosteronaHormoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_dheasHormo", DbType="VarChar(50)")]
+		public string PedExam_dheasHormo
+		{
+			get
+			{
+				return this._PedExam_dheasHormo;
+			}
+			set
+			{
+				if ((this._PedExam_dheasHormo != value))
+				{
+					this.OnPedExam_dheasHormoChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_dheasHormo = value;
+					this.SendPropertyChanged("PedExam_dheasHormo");
+					this.OnPedExam_dheasHormoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_cortisolHormo", DbType="VarChar(50)")]
+		public string PedExam_cortisolHormo
+		{
+			get
+			{
+				return this._PedExam_cortisolHormo;
+			}
+			set
+			{
+				if ((this._PedExam_cortisolHormo != value))
+				{
+					this.OnPedExam_cortisolHormoChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_cortisolHormo = value;
+					this.SendPropertyChanged("PedExam_cortisolHormo");
+					this.OnPedExam_cortisolHormoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_insulinaHormo", DbType="VarChar(50)")]
+		public string PedExam_insulinaHormo
+		{
+			get
+			{
+				return this._PedExam_insulinaHormo;
+			}
+			set
+			{
+				if ((this._PedExam_insulinaHormo != value))
+				{
+					this.OnPedExam_insulinaHormoChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_insulinaHormo = value;
+					this.SendPropertyChanged("PedExam_insulinaHormo");
+					this.OnPedExam_insulinaHormoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_peptidoCHormo", DbType="VarChar(50)")]
+		public string PedExam_peptidoCHormo
+		{
+			get
+			{
+				return this._PedExam_peptidoCHormo;
+			}
+			set
+			{
+				if ((this._PedExam_peptidoCHormo != value))
+				{
+					this.OnPedExam_peptidoCHormoChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_peptidoCHormo = value;
+					this.SendPropertyChanged("PedExam_peptidoCHormo");
+					this.OnPedExam_peptidoCHormoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_indiceHomaHormo", DbType="VarChar(50)")]
+		public string PedExam_indiceHomaHormo
+		{
+			get
+			{
+				return this._PedExam_indiceHomaHormo;
+			}
+			set
+			{
+				if ((this._PedExam_indiceHomaHormo != value))
+				{
+					this.OnPedExam_indiceHomaHormoChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_indiceHomaHormo = value;
+					this.SendPropertyChanged("PedExam_indiceHomaHormo");
+					this.OnPedExam_indiceHomaHormoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_bhcgHormo", DbType="VarChar(50)")]
+		public string PedExam_bhcgHormo
+		{
+			get
+			{
+				return this._PedExam_bhcgHormo;
+			}
+			set
+			{
+				if ((this._PedExam_bhcgHormo != value))
+				{
+					this.OnPedExam_bhcgHormoChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_bhcgHormo = value;
+					this.SendPropertyChanged("PedExam_bhcgHormo");
+					this.OnPedExam_bhcgHormoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_t3Hormo", DbType="VarChar(50)")]
+		public string PedExam_t3Hormo
+		{
+			get
+			{
+				return this._PedExam_t3Hormo;
+			}
+			set
+			{
+				if ((this._PedExam_t3Hormo != value))
+				{
+					this.OnPedExam_t3HormoChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_t3Hormo = value;
+					this.SendPropertyChanged("PedExam_t3Hormo");
+					this.OnPedExam_t3HormoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_ft4Hormo", DbType="VarChar(50)")]
+		public string PedExam_ft4Hormo
+		{
+			get
+			{
+				return this._PedExam_ft4Hormo;
+			}
+			set
+			{
+				if ((this._PedExam_ft4Hormo != value))
+				{
+					this.OnPedExam_ft4HormoChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_ft4Hormo = value;
+					this.SendPropertyChanged("PedExam_ft4Hormo");
+					this.OnPedExam_ft4HormoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_tshHormo", DbType="VarChar(50)")]
+		public string PedExam_tshHormo
+		{
+			get
+			{
+				return this._PedExam_tshHormo;
+			}
+			set
+			{
+				if ((this._PedExam_tshHormo != value))
+				{
+					this.OnPedExam_tshHormoChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_tshHormo = value;
+					this.SendPropertyChanged("PedExam_tshHormo");
+					this.OnPedExam_tshHormoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_17OhProgesteronaHormo", DbType="VarChar(50)")]
+		public string PedExam_17OhProgesteronaHormo
+		{
+			get
+			{
+				return this._PedExam_17OhProgesteronaHormo;
+			}
+			set
+			{
+				if ((this._PedExam_17OhProgesteronaHormo != value))
+				{
+					this.OnPedExam_17OhProgesteronaHormoChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_17OhProgesteronaHormo = value;
+					this.SendPropertyChanged("PedExam_17OhProgesteronaHormo");
+					this.OnPedExam_17OhProgesteronaHormoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_hghHormo", DbType="VarChar(50)")]
+		public string PedExam_hghHormo
+		{
+			get
+			{
+				return this._PedExam_hghHormo;
+			}
+			set
+			{
+				if ((this._PedExam_hghHormo != value))
+				{
+					this.OnPedExam_hghHormoChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_hghHormo = value;
+					this.SendPropertyChanged("PedExam_hghHormo");
+					this.OnPedExam_hghHormoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_prolactinaInmu", DbType="VarChar(50)")]
+		public string PedExam_prolactinaInmu
+		{
+			get
+			{
+				return this._PedExam_prolactinaInmu;
+			}
+			set
+			{
+				if ((this._PedExam_prolactinaInmu != value))
+				{
+					this.OnPedExam_prolactinaInmuChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_prolactinaInmu = value;
+					this.SendPropertyChanged("PedExam_prolactinaInmu");
+					this.OnPedExam_prolactinaInmuChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_antiNuclearesInmu", DbType="VarChar(50)")]
+		public string PedExam_antiNuclearesInmu
+		{
+			get
+			{
+				return this._PedExam_antiNuclearesInmu;
+			}
+			set
+			{
+				if ((this._PedExam_antiNuclearesInmu != value))
+				{
+					this.OnPedExam_antiNuclearesInmuChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_antiNuclearesInmu = value;
+					this.SendPropertyChanged("PedExam_antiNuclearesInmu");
+					this.OnPedExam_antiNuclearesInmuChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_antiDnaInmu", DbType="VarChar(50)")]
+		public string PedExam_antiDnaInmu
+		{
+			get
+			{
+				return this._PedExam_antiDnaInmu;
+			}
+			set
+			{
+				if ((this._PedExam_antiDnaInmu != value))
+				{
+					this.OnPedExam_antiDnaInmuChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_antiDnaInmu = value;
+					this.SendPropertyChanged("PedExam_antiDnaInmu");
+					this.OnPedExam_antiDnaInmuChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_antiFosfolipidosInmu", DbType="VarChar(50)")]
+		public string PedExam_antiFosfolipidosInmu
+		{
+			get
+			{
+				return this._PedExam_antiFosfolipidosInmu;
+			}
+			set
+			{
+				if ((this._PedExam_antiFosfolipidosInmu != value))
+				{
+					this.OnPedExam_antiFosfolipidosInmuChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_antiFosfolipidosInmu = value;
+					this.SendPropertyChanged("PedExam_antiFosfolipidosInmu");
+					this.OnPedExam_antiFosfolipidosInmuChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_lgGAntiFosfoInmu", DbType="VarChar(50)")]
+		public string PedExam_lgGAntiFosfoInmu
+		{
+			get
+			{
+				return this._PedExam_lgGAntiFosfoInmu;
+			}
+			set
+			{
+				if ((this._PedExam_lgGAntiFosfoInmu != value))
+				{
+					this.OnPedExam_lgGAntiFosfoInmuChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_lgGAntiFosfoInmu = value;
+					this.SendPropertyChanged("PedExam_lgGAntiFosfoInmu");
+					this.OnPedExam_lgGAntiFosfoInmuChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_lgMAntiFosfoInmu", DbType="VarChar(50)")]
+		public string PedExam_lgMAntiFosfoInmu
+		{
+			get
+			{
+				return this._PedExam_lgMAntiFosfoInmu;
+			}
+			set
+			{
+				if ((this._PedExam_lgMAntiFosfoInmu != value))
+				{
+					this.OnPedExam_lgMAntiFosfoInmuChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_lgMAntiFosfoInmu = value;
+					this.SendPropertyChanged("PedExam_lgMAntiFosfoInmu");
+					this.OnPedExam_lgMAntiFosfoInmuChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_lgAAntiFosfoInmu", DbType="VarChar(50)")]
+		public string PedExam_lgAAntiFosfoInmu
+		{
+			get
+			{
+				return this._PedExam_lgAAntiFosfoInmu;
+			}
+			set
+			{
+				if ((this._PedExam_lgAAntiFosfoInmu != value))
+				{
+					this.OnPedExam_lgAAntiFosfoInmuChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_lgAAntiFosfoInmu = value;
+					this.SendPropertyChanged("PedExam_lgAAntiFosfoInmu");
+					this.OnPedExam_lgAAntiFosfoInmuChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_antiCardiolipinasInmu", DbType="VarChar(50)")]
+		public string PedExam_antiCardiolipinasInmu
+		{
+			get
+			{
+				return this._PedExam_antiCardiolipinasInmu;
+			}
+			set
+			{
+				if ((this._PedExam_antiCardiolipinasInmu != value))
+				{
+					this.OnPedExam_antiCardiolipinasInmuChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_antiCardiolipinasInmu = value;
+					this.SendPropertyChanged("PedExam_antiCardiolipinasInmu");
+					this.OnPedExam_antiCardiolipinasInmuChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_lgGAntiCardioInmu", DbType="VarChar(50)")]
+		public string PedExam_lgGAntiCardioInmu
+		{
+			get
+			{
+				return this._PedExam_lgGAntiCardioInmu;
+			}
+			set
+			{
+				if ((this._PedExam_lgGAntiCardioInmu != value))
+				{
+					this.OnPedExam_lgGAntiCardioInmuChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_lgGAntiCardioInmu = value;
+					this.SendPropertyChanged("PedExam_lgGAntiCardioInmu");
+					this.OnPedExam_lgGAntiCardioInmuChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_lgMAntiCardioInmu", DbType="VarChar(50)")]
+		public string PedExam_lgMAntiCardioInmu
+		{
+			get
+			{
+				return this._PedExam_lgMAntiCardioInmu;
+			}
+			set
+			{
+				if ((this._PedExam_lgMAntiCardioInmu != value))
+				{
+					this.OnPedExam_lgMAntiCardioInmuChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_lgMAntiCardioInmu = value;
+					this.SendPropertyChanged("PedExam_lgMAntiCardioInmu");
+					this.OnPedExam_lgMAntiCardioInmuChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_lgAAntiCardioInmu", DbType="VarChar(50)")]
+		public string PedExam_lgAAntiCardioInmu
+		{
+			get
+			{
+				return this._PedExam_lgAAntiCardioInmu;
+			}
+			set
+			{
+				if ((this._PedExam_lgAAntiCardioInmu != value))
+				{
+					this.OnPedExam_lgAAntiCardioInmuChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_lgAAntiCardioInmu = value;
+					this.SendPropertyChanged("PedExam_lgAAntiCardioInmu");
+					this.OnPedExam_lgAAntiCardioInmuChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_b2GlicoproteinaInmu", DbType="VarChar(50)")]
+		public string PedExam_b2GlicoproteinaInmu
+		{
+			get
+			{
+				return this._PedExam_b2GlicoproteinaInmu;
+			}
+			set
+			{
+				if ((this._PedExam_b2GlicoproteinaInmu != value))
+				{
+					this.OnPedExam_b2GlicoproteinaInmuChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_b2GlicoproteinaInmu = value;
+					this.SendPropertyChanged("PedExam_b2GlicoproteinaInmu");
+					this.OnPedExam_b2GlicoproteinaInmuChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_lgGB2GlicoInmu", DbType="VarChar(50)")]
+		public string PedExam_lgGB2GlicoInmu
+		{
+			get
+			{
+				return this._PedExam_lgGB2GlicoInmu;
+			}
+			set
+			{
+				if ((this._PedExam_lgGB2GlicoInmu != value))
+				{
+					this.OnPedExam_lgGB2GlicoInmuChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_lgGB2GlicoInmu = value;
+					this.SendPropertyChanged("PedExam_lgGB2GlicoInmu");
+					this.OnPedExam_lgGB2GlicoInmuChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_lgMB2GlicoInmu", DbType="VarChar(50)")]
+		public string PedExam_lgMB2GlicoInmu
+		{
+			get
+			{
+				return this._PedExam_lgMB2GlicoInmu;
+			}
+			set
+			{
+				if ((this._PedExam_lgMB2GlicoInmu != value))
+				{
+					this.OnPedExam_lgMB2GlicoInmuChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_lgMB2GlicoInmu = value;
+					this.SendPropertyChanged("PedExam_lgMB2GlicoInmu");
+					this.OnPedExam_lgMB2GlicoInmuChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_antiGliadinaInmu", DbType="VarChar(50)")]
+		public string PedExam_antiGliadinaInmu
+		{
+			get
+			{
+				return this._PedExam_antiGliadinaInmu;
+			}
+			set
+			{
+				if ((this._PedExam_antiGliadinaInmu != value))
+				{
+					this.OnPedExam_antiGliadinaInmuChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_antiGliadinaInmu = value;
+					this.SendPropertyChanged("PedExam_antiGliadinaInmu");
+					this.OnPedExam_antiGliadinaInmuChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_lgGAntiGliaInmu", DbType="VarChar(50)")]
+		public string PedExam_lgGAntiGliaInmu
+		{
+			get
+			{
+				return this._PedExam_lgGAntiGliaInmu;
+			}
+			set
+			{
+				if ((this._PedExam_lgGAntiGliaInmu != value))
+				{
+					this.OnPedExam_lgGAntiGliaInmuChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_lgGAntiGliaInmu = value;
+					this.SendPropertyChanged("PedExam_lgGAntiGliaInmu");
+					this.OnPedExam_lgGAntiGliaInmuChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_lgAAntiGliaInmu", DbType="VarChar(50)")]
+		public string PedExam_lgAAntiGliaInmu
+		{
+			get
+			{
+				return this._PedExam_lgAAntiGliaInmu;
+			}
+			set
+			{
+				if ((this._PedExam_lgAAntiGliaInmu != value))
+				{
+					this.OnPedExam_lgAAntiGliaInmuChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_lgAAntiGliaInmu = value;
+					this.SendPropertyChanged("PedExam_lgAAntiGliaInmu");
+					this.OnPedExam_lgAAntiGliaInmuChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_antiAnexinaVInmu", DbType="VarChar(50)")]
+		public string PedExam_antiAnexinaVInmu
+		{
+			get
+			{
+				return this._PedExam_antiAnexinaVInmu;
+			}
+			set
+			{
+				if ((this._PedExam_antiAnexinaVInmu != value))
+				{
+					this.OnPedExam_antiAnexinaVInmuChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_antiAnexinaVInmu = value;
+					this.SendPropertyChanged("PedExam_antiAnexinaVInmu");
+					this.OnPedExam_antiAnexinaVInmuChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_lgGAntiAnexInmu", DbType="VarChar(50)")]
+		public string PedExam_lgGAntiAnexInmu
+		{
+			get
+			{
+				return this._PedExam_lgGAntiAnexInmu;
+			}
+			set
+			{
+				if ((this._PedExam_lgGAntiAnexInmu != value))
+				{
+					this.OnPedExam_lgGAntiAnexInmuChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_lgGAntiAnexInmu = value;
+					this.SendPropertyChanged("PedExam_lgGAntiAnexInmu");
+					this.OnPedExam_lgGAntiAnexInmuChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_lgMAntiAnexInmu", DbType="VarChar(50)")]
+		public string PedExam_lgMAntiAnexInmu
+		{
+			get
+			{
+				return this._PedExam_lgMAntiAnexInmu;
+			}
+			set
+			{
+				if ((this._PedExam_lgMAntiAnexInmu != value))
+				{
+					this.OnPedExam_lgMAntiAnexInmuChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_lgMAntiAnexInmu = value;
+					this.SendPropertyChanged("PedExam_lgMAntiAnexInmu");
+					this.OnPedExam_lgMAntiAnexInmuChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_antiTpoInmu", DbType="VarChar(50)")]
+		public string PedExam_antiTpoInmu
+		{
+			get
+			{
+				return this._PedExam_antiTpoInmu;
+			}
+			set
+			{
+				if ((this._PedExam_antiTpoInmu != value))
+				{
+					this.OnPedExam_antiTpoInmuChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_antiTpoInmu = value;
+					this.SendPropertyChanged("PedExam_antiTpoInmu");
+					this.OnPedExam_antiTpoInmuChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_antiTiroglobulinaInmu", DbType="VarChar(50)")]
+		public string PedExam_antiTiroglobulinaInmu
+		{
+			get
+			{
+				return this._PedExam_antiTiroglobulinaInmu;
+			}
+			set
+			{
+				if ((this._PedExam_antiTiroglobulinaInmu != value))
+				{
+					this.OnPedExam_antiTiroglobulinaInmuChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_antiTiroglobulinaInmu = value;
+					this.SendPropertyChanged("PedExam_antiTiroglobulinaInmu");
+					this.OnPedExam_antiTiroglobulinaInmuChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_antiCcpInmu", DbType="VarChar(50)")]
+		public string PedExam_antiCcpInmu
+		{
+			get
+			{
+				return this._PedExam_antiCcpInmu;
+			}
+			set
+			{
+				if ((this._PedExam_antiCcpInmu != value))
+				{
+					this.OnPedExam_antiCcpInmuChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_antiCcpInmu = value;
+					this.SendPropertyChanged("PedExam_antiCcpInmu");
+					this.OnPedExam_antiCcpInmuChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_torchInmuInfecc", DbType="VarChar(50)")]
+		public string PedExam_torchInmuInfecc
+		{
+			get
+			{
+				return this._PedExam_torchInmuInfecc;
+			}
+			set
+			{
+				if ((this._PedExam_torchInmuInfecc != value))
+				{
+					this.OnPedExam_torchInmuInfeccChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_torchInmuInfecc = value;
+					this.SendPropertyChanged("PedExam_torchInmuInfecc");
+					this.OnPedExam_torchInmuInfeccChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_toxoGondiiInmuInfecc", DbType="VarChar(50)")]
+		public string PedExam_toxoGondiiInmuInfecc
+		{
+			get
+			{
+				return this._PedExam_toxoGondiiInmuInfecc;
+			}
+			set
+			{
+				if ((this._PedExam_toxoGondiiInmuInfecc != value))
+				{
+					this.OnPedExam_toxoGondiiInmuInfeccChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_toxoGondiiInmuInfecc = value;
+					this.SendPropertyChanged("PedExam_toxoGondiiInmuInfecc");
+					this.OnPedExam_toxoGondiiInmuInfeccChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_clamydiaTrachoInmuInfecc", DbType="VarChar(50)")]
+		public string PedExam_clamydiaTrachoInmuInfecc
+		{
+			get
+			{
+				return this._PedExam_clamydiaTrachoInmuInfecc;
+			}
+			set
+			{
+				if ((this._PedExam_clamydiaTrachoInmuInfecc != value))
+				{
+					this.OnPedExam_clamydiaTrachoInmuInfeccChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_clamydiaTrachoInmuInfecc = value;
+					this.SendPropertyChanged("PedExam_clamydiaTrachoInmuInfecc");
+					this.OnPedExam_clamydiaTrachoInmuInfeccChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_lgMClamyTrachoInmuInfecc", DbType="VarChar(50)")]
+		public string PedExam_lgMClamyTrachoInmuInfecc
+		{
+			get
+			{
+				return this._PedExam_lgMClamyTrachoInmuInfecc;
+			}
+			set
+			{
+				if ((this._PedExam_lgMClamyTrachoInmuInfecc != value))
+				{
+					this.OnPedExam_lgMClamyTrachoInmuInfeccChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_lgMClamyTrachoInmuInfecc = value;
+					this.SendPropertyChanged("PedExam_lgMClamyTrachoInmuInfecc");
+					this.OnPedExam_lgMClamyTrachoInmuInfeccChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_havInmuInfecc", DbType="VarChar(50)")]
+		public string PedExam_havInmuInfecc
+		{
+			get
+			{
+				return this._PedExam_havInmuInfecc;
+			}
+			set
+			{
+				if ((this._PedExam_havInmuInfecc != value))
+				{
+					this.OnPedExam_havInmuInfeccChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_havInmuInfecc = value;
+					this.SendPropertyChanged("PedExam_havInmuInfecc");
+					this.OnPedExam_havInmuInfeccChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_lgGHavInmuInfecc", DbType="VarChar(50)")]
+		public string PedExam_lgGHavInmuInfecc
+		{
+			get
+			{
+				return this._PedExam_lgGHavInmuInfecc;
+			}
+			set
+			{
+				if ((this._PedExam_lgGHavInmuInfecc != value))
+				{
+					this.OnPedExam_lgGHavInmuInfeccChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_lgGHavInmuInfecc = value;
+					this.SendPropertyChanged("PedExam_lgGHavInmuInfecc");
+					this.OnPedExam_lgGHavInmuInfeccChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_lgMHavInmuInfecc", DbType="VarChar(50)")]
+		public string PedExam_lgMHavInmuInfecc
+		{
+			get
+			{
+				return this._PedExam_lgMHavInmuInfecc;
+			}
+			set
+			{
+				if ((this._PedExam_lgMHavInmuInfecc != value))
+				{
+					this.OnPedExam_lgMHavInmuInfeccChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_lgMHavInmuInfecc = value;
+					this.SendPropertyChanged("PedExam_lgMHavInmuInfecc");
+					this.OnPedExam_lgMHavInmuInfeccChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_vihInmuInfecc", DbType="VarChar(50)")]
+		public string PedExam_vihInmuInfecc
+		{
+			get
+			{
+				return this._PedExam_vihInmuInfecc;
+			}
+			set
+			{
+				if ((this._PedExam_vihInmuInfecc != value))
+				{
+					this.OnPedExam_vihInmuInfeccChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_vihInmuInfecc = value;
+					this.SendPropertyChanged("PedExam_vihInmuInfecc");
+					this.OnPedExam_vihInmuInfeccChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_hbsAgInmuInfecc", DbType="VarChar(50)")]
+		public string PedExam_hbsAgInmuInfecc
+		{
+			get
+			{
+				return this._PedExam_hbsAgInmuInfecc;
+			}
+			set
+			{
+				if ((this._PedExam_hbsAgInmuInfecc != value))
+				{
+					this.OnPedExam_hbsAgInmuInfeccChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_hbsAgInmuInfecc = value;
+					this.SendPropertyChanged("PedExam_hbsAgInmuInfecc");
+					this.OnPedExam_hbsAgInmuInfeccChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_hcvInmuInfecc", DbType="VarChar(50)")]
+		public string PedExam_hcvInmuInfecc
+		{
+			get
+			{
+				return this._PedExam_hcvInmuInfecc;
+			}
+			set
+			{
+				if ((this._PedExam_hcvInmuInfecc != value))
+				{
+					this.OnPedExam_hcvInmuInfeccChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_hcvInmuInfecc = value;
+					this.SendPropertyChanged("PedExam_hcvInmuInfecc");
+					this.OnPedExam_hcvInmuInfeccChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_ftaAbsInmuInfecc", DbType="VarChar(50)")]
+		public string PedExam_ftaAbsInmuInfecc
+		{
+			get
+			{
+				return this._PedExam_ftaAbsInmuInfecc;
+			}
+			set
+			{
+				if ((this._PedExam_ftaAbsInmuInfecc != value))
+				{
+					this.OnPedExam_ftaAbsInmuInfeccChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_ftaAbsInmuInfecc = value;
+					this.SendPropertyChanged("PedExam_ftaAbsInmuInfecc");
+					this.OnPedExam_ftaAbsInmuInfeccChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_ca125MarcaTumo", DbType="VarChar(50)")]
+		public string PedExam_ca125MarcaTumo
+		{
+			get
+			{
+				return this._PedExam_ca125MarcaTumo;
+			}
+			set
+			{
+				if ((this._PedExam_ca125MarcaTumo != value))
+				{
+					this.OnPedExam_ca125MarcaTumoChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_ca125MarcaTumo = value;
+					this.SendPropertyChanged("PedExam_ca125MarcaTumo");
+					this.OnPedExam_ca125MarcaTumoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_he4MarcaTumo", DbType="VarChar(50)")]
+		public string PedExam_he4MarcaTumo
+		{
+			get
+			{
+				return this._PedExam_he4MarcaTumo;
+			}
+			set
+			{
+				if ((this._PedExam_he4MarcaTumo != value))
+				{
+					this.OnPedExam_he4MarcaTumoChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_he4MarcaTumo = value;
+					this.SendPropertyChanged("PedExam_he4MarcaTumo");
+					this.OnPedExam_he4MarcaTumoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_indiceRomaMarcaTumo", DbType="VarChar(50)")]
+		public string PedExam_indiceRomaMarcaTumo
+		{
+			get
+			{
+				return this._PedExam_indiceRomaMarcaTumo;
+			}
+			set
+			{
+				if ((this._PedExam_indiceRomaMarcaTumo != value))
+				{
+					this.OnPedExam_indiceRomaMarcaTumoChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_indiceRomaMarcaTumo = value;
+					this.SendPropertyChanged("PedExam_indiceRomaMarcaTumo");
+					this.OnPedExam_indiceRomaMarcaTumoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_afpMarcaTumo", DbType="VarChar(50)")]
+		public string PedExam_afpMarcaTumo
+		{
+			get
+			{
+				return this._PedExam_afpMarcaTumo;
+			}
+			set
+			{
+				if ((this._PedExam_afpMarcaTumo != value))
+				{
+					this.OnPedExam_afpMarcaTumoChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_afpMarcaTumo = value;
+					this.SendPropertyChanged("PedExam_afpMarcaTumo");
+					this.OnPedExam_afpMarcaTumoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_ceaMarcaTurno", DbType="VarChar(50)")]
+		public string PedExam_ceaMarcaTurno
+		{
+			get
+			{
+				return this._PedExam_ceaMarcaTurno;
+			}
+			set
+			{
+				if ((this._PedExam_ceaMarcaTurno != value))
+				{
+					this.OnPedExam_ceaMarcaTurnoChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_ceaMarcaTurno = value;
+					this.SendPropertyChanged("PedExam_ceaMarcaTurno");
+					this.OnPedExam_ceaMarcaTurnoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_ca156MarcaTumo", DbType="VarChar(50)")]
+		public string PedExam_ca156MarcaTumo
+		{
+			get
+			{
+				return this._PedExam_ca156MarcaTumo;
+			}
+			set
+			{
+				if ((this._PedExam_ca156MarcaTumo != value))
+				{
+					this.OnPedExam_ca156MarcaTumoChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_ca156MarcaTumo = value;
+					this.SendPropertyChanged("PedExam_ca156MarcaTumo");
+					this.OnPedExam_ca156MarcaTumoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_ca159MarcaTumo", DbType="VarChar(50)")]
+		public string PedExam_ca159MarcaTumo
+		{
+			get
+			{
+				return this._PedExam_ca159MarcaTumo;
+			}
+			set
+			{
+				if ((this._PedExam_ca159MarcaTumo != value))
+				{
+					this.OnPedExam_ca159MarcaTumoChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_ca159MarcaTumo = value;
+					this.SendPropertyChanged("PedExam_ca159MarcaTumo");
+					this.OnPedExam_ca159MarcaTumoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_tiroglobulinaMarcaTumo", DbType="VarChar(50)")]
+		public string PedExam_tiroglobulinaMarcaTumo
+		{
+			get
+			{
+				return this._PedExam_tiroglobulinaMarcaTumo;
+			}
+			set
+			{
+				if ((this._PedExam_tiroglobulinaMarcaTumo != value))
+				{
+					this.OnPedExam_tiroglobulinaMarcaTumoChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_tiroglobulinaMarcaTumo = value;
+					this.SendPropertyChanged("PedExam_tiroglobulinaMarcaTumo");
+					this.OnPedExam_tiroglobulinaMarcaTumoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_psaTotalMarcaTumo", DbType="VarChar(50)")]
+		public string PedExam_psaTotalMarcaTumo
+		{
+			get
+			{
+				return this._PedExam_psaTotalMarcaTumo;
+			}
+			set
+			{
+				if ((this._PedExam_psaTotalMarcaTumo != value))
+				{
+					this.OnPedExam_psaTotalMarcaTumoChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_psaTotalMarcaTumo = value;
+					this.SendPropertyChanged("PedExam_psaTotalMarcaTumo");
+					this.OnPedExam_psaTotalMarcaTumoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_muestraDeMicro", DbType="VarChar(50)")]
+		public string PedExam_muestraDeMicro
+		{
+			get
+			{
+				return this._PedExam_muestraDeMicro;
+			}
+			set
+			{
+				if ((this._PedExam_muestraDeMicro != value))
+				{
+					this.OnPedExam_muestraDeMicroChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_muestraDeMicro = value;
+					this.SendPropertyChanged("PedExam_muestraDeMicro");
+					this.OnPedExam_muestraDeMicroChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_gramMicro", DbType="VarChar(50)")]
+		public string PedExam_gramMicro
+		{
+			get
+			{
+				return this._PedExam_gramMicro;
+			}
+			set
+			{
+				if ((this._PedExam_gramMicro != value))
+				{
+					this.OnPedExam_gramMicroChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_gramMicro = value;
+					this.SendPropertyChanged("PedExam_gramMicro");
+					this.OnPedExam_gramMicroChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_frescoMicro", DbType="VarChar(50)")]
+		public string PedExam_frescoMicro
+		{
+			get
+			{
+				return this._PedExam_frescoMicro;
+			}
+			set
+			{
+				if ((this._PedExam_frescoMicro != value))
+				{
+					this.OnPedExam_frescoMicroChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_frescoMicro = value;
+					this.SendPropertyChanged("PedExam_frescoMicro");
+					this.OnPedExam_frescoMicroChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_kohMicro", DbType="VarChar(50)")]
+		public string PedExam_kohMicro
+		{
+			get
+			{
+				return this._PedExam_kohMicro;
+			}
+			set
+			{
+				if ((this._PedExam_kohMicro != value))
+				{
+					this.OnPedExam_kohMicroChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_kohMicro = value;
+					this.SendPropertyChanged("PedExam_kohMicro");
+					this.OnPedExam_kohMicroChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_cultivoAntibiogramaMicro", DbType="VarChar(50)")]
+		public string PedExam_cultivoAntibiogramaMicro
+		{
+			get
+			{
+				return this._PedExam_cultivoAntibiogramaMicro;
+			}
+			set
+			{
+				if ((this._PedExam_cultivoAntibiogramaMicro != value))
+				{
+					this.OnPedExam_cultivoAntibiogramaMicroChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_cultivoAntibiogramaMicro = value;
+					this.SendPropertyChanged("PedExam_cultivoAntibiogramaMicro");
+					this.OnPedExam_cultivoAntibiogramaMicroChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_esperCompletoEstEspecia", DbType="VarChar(50)")]
+		public string PedExam_esperCompletoEstEspecia
+		{
+			get
+			{
+				return this._PedExam_esperCompletoEstEspecia;
+			}
+			set
+			{
+				if ((this._PedExam_esperCompletoEstEspecia != value))
+				{
+					this.OnPedExam_esperCompletoEstEspeciaChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_esperCompletoEstEspecia = value;
+					this.SendPropertyChanged("PedExam_esperCompletoEstEspecia");
+					this.OnPedExam_esperCompletoEstEspeciaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_cristalografiaEstEspecia", DbType="VarChar(50)")]
+		public string PedExam_cristalografiaEstEspecia
+		{
+			get
+			{
+				return this._PedExam_cristalografiaEstEspecia;
+			}
+			set
+			{
+				if ((this._PedExam_cristalografiaEstEspecia != value))
+				{
+					this.OnPedExam_cristalografiaEstEspeciaChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_cristalografiaEstEspecia = value;
+					this.SendPropertyChanged("PedExam_cristalografiaEstEspecia");
+					this.OnPedExam_cristalografiaEstEspeciaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_screeningPrenatalEstEspecia", DbType="VarChar(50)")]
+		public string PedExam_screeningPrenatalEstEspecia
+		{
+			get
+			{
+				return this._PedExam_screeningPrenatalEstEspecia;
+			}
+			set
+			{
+				if ((this._PedExam_screeningPrenatalEstEspecia != value))
+				{
+					this.OnPedExam_screeningPrenatalEstEspeciaChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_screeningPrenatalEstEspecia = value;
+					this.SendPropertyChanged("PedExam_screeningPrenatalEstEspecia");
+					this.OnPedExam_screeningPrenatalEstEspeciaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_emoOrina", DbType="VarChar(50)")]
+		public string PedExam_emoOrina
+		{
+			get
+			{
+				return this._PedExam_emoOrina;
+			}
+			set
+			{
+				if ((this._PedExam_emoOrina != value))
+				{
+					this.OnPedExam_emoOrinaChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_emoOrina = value;
+					this.SendPropertyChanged("PedExam_emoOrina");
+					this.OnPedExam_emoOrinaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_cultivoAntibiogramaOrina", DbType="VarChar(50)")]
+		public string PedExam_cultivoAntibiogramaOrina
+		{
+			get
+			{
+				return this._PedExam_cultivoAntibiogramaOrina;
+			}
+			set
+			{
+				if ((this._PedExam_cultivoAntibiogramaOrina != value))
+				{
+					this.OnPedExam_cultivoAntibiogramaOrinaChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_cultivoAntibiogramaOrina = value;
+					this.SendPropertyChanged("PedExam_cultivoAntibiogramaOrina");
+					this.OnPedExam_cultivoAntibiogramaOrinaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_gramGotaFrescaOrina", DbType="VarChar(50)")]
+		public string PedExam_gramGotaFrescaOrina
+		{
+			get
+			{
+				return this._PedExam_gramGotaFrescaOrina;
+			}
+			set
+			{
+				if ((this._PedExam_gramGotaFrescaOrina != value))
+				{
+					this.OnPedExam_gramGotaFrescaOrinaChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_gramGotaFrescaOrina = value;
+					this.SendPropertyChanged("PedExam_gramGotaFrescaOrina");
+					this.OnPedExam_gramGotaFrescaOrinaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_microalbuminuriaOrina", DbType="VarChar(50)")]
+		public string PedExam_microalbuminuriaOrina
+		{
+			get
+			{
+				return this._PedExam_microalbuminuriaOrina;
+			}
+			set
+			{
+				if ((this._PedExam_microalbuminuriaOrina != value))
+				{
+					this.OnPedExam_microalbuminuriaOrinaChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_microalbuminuriaOrina = value;
+					this.SendPropertyChanged("PedExam_microalbuminuriaOrina");
+					this.OnPedExam_microalbuminuriaOrinaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_coproparasitarioHeces", DbType="VarChar(50)")]
+		public string PedExam_coproparasitarioHeces
+		{
+			get
+			{
+				return this._PedExam_coproparasitarioHeces;
+			}
+			set
+			{
+				if ((this._PedExam_coproparasitarioHeces != value))
+				{
+					this.OnPedExam_coproparasitarioHecesChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_coproparasitarioHeces = value;
+					this.SendPropertyChanged("PedExam_coproparasitarioHeces");
+					this.OnPedExam_coproparasitarioHecesChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_coproparasitarioSeriadoHeces", DbType="VarChar(50)")]
+		public string PedExam_coproparasitarioSeriadoHeces
+		{
+			get
+			{
+				return this._PedExam_coproparasitarioSeriadoHeces;
+			}
+			set
+			{
+				if ((this._PedExam_coproparasitarioSeriadoHeces != value))
+				{
+					this.OnPedExam_coproparasitarioSeriadoHecesChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_coproparasitarioSeriadoHeces = value;
+					this.SendPropertyChanged("PedExam_coproparasitarioSeriadoHeces");
+					this.OnPedExam_coproparasitarioSeriadoHecesChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_sangreOcultaHeces", DbType="VarChar(50)")]
+		public string PedExam_sangreOcultaHeces
+		{
+			get
+			{
+				return this._PedExam_sangreOcultaHeces;
+			}
+			set
+			{
+				if ((this._PedExam_sangreOcultaHeces != value))
+				{
+					this.OnPedExam_sangreOcultaHecesChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_sangreOcultaHeces = value;
+					this.SendPropertyChanged("PedExam_sangreOcultaHeces");
+					this.OnPedExam_sangreOcultaHecesChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_pmnHeces", DbType="VarChar(50)")]
+		public string PedExam_pmnHeces
+		{
+			get
+			{
+				return this._PedExam_pmnHeces;
+			}
+			set
+			{
+				if ((this._PedExam_pmnHeces != value))
+				{
+					this.OnPedExam_pmnHecesChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_pmnHeces = value;
+					this.SendPropertyChanged("PedExam_pmnHeces");
+					this.OnPedExam_pmnHecesChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_rotavirusHeces", DbType="VarChar(50)")]
+		public string PedExam_rotavirusHeces
+		{
+			get
+			{
+				return this._PedExam_rotavirusHeces;
+			}
+			set
+			{
+				if ((this._PedExam_rotavirusHeces != value))
+				{
+					this.OnPedExam_rotavirusHecesChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_rotavirusHeces = value;
+					this.SendPropertyChanged("PedExam_rotavirusHeces");
+					this.OnPedExam_rotavirusHecesChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_helicobacterPylotiHeces", DbType="VarChar(50)")]
+		public string PedExam_helicobacterPylotiHeces
+		{
+			get
+			{
+				return this._PedExam_helicobacterPylotiHeces;
+			}
+			set
+			{
+				if ((this._PedExam_helicobacterPylotiHeces != value))
+				{
+					this.OnPedExam_helicobacterPylotiHecesChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_helicobacterPylotiHeces = value;
+					this.SendPropertyChanged("PedExam_helicobacterPylotiHeces");
+					this.OnPedExam_helicobacterPylotiHecesChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_fenobarbitalDrogas", DbType="VarChar(50)")]
+		public string PedExam_fenobarbitalDrogas
+		{
+			get
+			{
+				return this._PedExam_fenobarbitalDrogas;
+			}
+			set
+			{
+				if ((this._PedExam_fenobarbitalDrogas != value))
+				{
+					this.OnPedExam_fenobarbitalDrogasChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_fenobarbitalDrogas = value;
+					this.SendPropertyChanged("PedExam_fenobarbitalDrogas");
+					this.OnPedExam_fenobarbitalDrogasChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_teofilinaDrogas", DbType="VarChar(50)")]
+		public string PedExam_teofilinaDrogas
+		{
+			get
+			{
+				return this._PedExam_teofilinaDrogas;
+			}
+			set
+			{
+				if ((this._PedExam_teofilinaDrogas != value))
+				{
+					this.OnPedExam_teofilinaDrogasChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_teofilinaDrogas = value;
+					this.SendPropertyChanged("PedExam_teofilinaDrogas");
+					this.OnPedExam_teofilinaDrogasChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_acValproicoDrogas", DbType="VarChar(50)")]
+		public string PedExam_acValproicoDrogas
+		{
+			get
+			{
+				return this._PedExam_acValproicoDrogas;
+			}
+			set
+			{
+				if ((this._PedExam_acValproicoDrogas != value))
+				{
+					this.OnPedExam_acValproicoDrogasChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_acValproicoDrogas = value;
+					this.SendPropertyChanged("PedExam_acValproicoDrogas");
+					this.OnPedExam_acValproicoDrogasChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_1Otros", DbType="VarChar(100)")]
+		public string PedExam_1Otros
+		{
+			get
+			{
+				return this._PedExam_1Otros;
+			}
+			set
+			{
+				if ((this._PedExam_1Otros != value))
+				{
+					this.OnPedExam_1OtrosChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_1Otros = value;
+					this.SendPropertyChanged("PedExam_1Otros");
+					this.OnPedExam_1OtrosChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_2Otros", DbType="VarChar(100)")]
+		public string PedExam_2Otros
+		{
+			get
+			{
+				return this._PedExam_2Otros;
+			}
+			set
+			{
+				if ((this._PedExam_2Otros != value))
+				{
+					this.OnPedExam_2OtrosChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_2Otros = value;
+					this.SendPropertyChanged("PedExam_2Otros");
+					this.OnPedExam_2OtrosChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PedExam_3Otro", DbType="VarChar(100)")]
+		public string PedExam_3Otro
+		{
+			get
+			{
+				return this._PedExam_3Otro;
+			}
+			set
+			{
+				if ((this._PedExam_3Otro != value))
+				{
+					this.OnPedExam_3OtroChanging(value);
+					this.SendPropertyChanging();
+					this._PedExam_3Otro = value;
+					this.SendPropertyChanged("PedExam_3Otro");
+					this.OnPedExam_3OtroChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_id", DbType="Int")]
+		public System.Nullable<int> Per_id
+		{
+			get
+			{
+				return this._Per_id;
+			}
+			set
+			{
+				if ((this._Per_id != value))
+				{
+					if (this._Tbl_Personas.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
-					this.OnOtrs_idChanging(value);
+					this.OnPer_idChanging(value);
 					this.SendPropertyChanging();
-					this._Otrs_id = value;
-					this.SendPropertyChanged("Otrs_id");
-					this.OnOtrs_idChanged();
+					this._Per_id = value;
+					this.SendPropertyChanged("Per_id");
+					this.OnPer_idChanged();
 				}
 			}
 		}
@@ -45401,580 +46346,36 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Coagulacion_Tbl_PedidoExamnes", Storage="_Tbl_Coagulacion", ThisKey="Coag_id", OtherKey="Coag_id", IsForeignKey=true)]
-		public Tbl_Coagulacion Tbl_Coagulacion
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_PedidoExamenes", Storage="_Tbl_Personas", ThisKey="Per_id", OtherKey="Per_id", IsForeignKey=true)]
+		public Tbl_Personas Tbl_Personas
 		{
 			get
 			{
-				return this._Tbl_Coagulacion.Entity;
+				return this._Tbl_Personas.Entity;
 			}
 			set
 			{
-				Tbl_Coagulacion previousValue = this._Tbl_Coagulacion.Entity;
+				Tbl_Personas previousValue = this._Tbl_Personas.Entity;
 				if (((previousValue != value) 
-							|| (this._Tbl_Coagulacion.HasLoadedOrAssignedValue == false)))
+							|| (this._Tbl_Personas.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._Tbl_Coagulacion.Entity = null;
-						previousValue.Tbl_PedidoExamnes.Remove(this);
+						this._Tbl_Personas.Entity = null;
+						previousValue.Tbl_PedidoExamenes.Remove(this);
 					}
-					this._Tbl_Coagulacion.Entity = value;
+					this._Tbl_Personas.Entity = value;
 					if ((value != null))
 					{
-						value.Tbl_PedidoExamnes.Add(this);
-						this._Coag_id = value.Coag_id;
+						value.Tbl_PedidoExamenes.Add(this);
+						this._Per_id = value.Per_id;
 					}
 					else
 					{
-						this._Coag_id = default(Nullable<int>);
+						this._Per_id = default(Nullable<int>);
 					}
-					this.SendPropertyChanged("Tbl_Coagulacion");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Drogras_Tbl_PedidoExamnes", Storage="_Tbl_Drogras", ThisKey="Drog_id", OtherKey="Drog_id", IsForeignKey=true)]
-		public Tbl_Drogras Tbl_Drogras
-		{
-			get
-			{
-				return this._Tbl_Drogras.Entity;
-			}
-			set
-			{
-				Tbl_Drogras previousValue = this._Tbl_Drogras.Entity;
-				if (((previousValue != value) 
-							|| (this._Tbl_Drogras.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Tbl_Drogras.Entity = null;
-						previousValue.Tbl_PedidoExamnes.Remove(this);
-					}
-					this._Tbl_Drogras.Entity = value;
-					if ((value != null))
-					{
-						value.Tbl_PedidoExamnes.Add(this);
-						this._Drog_id = value.Drog_id;
-					}
-					else
-					{
-						this._Drog_id = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Tbl_Drogras");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Electrolitos_Tbl_PedidoExamnes", Storage="_Tbl_Electrolitos", ThisKey="Elec_id", OtherKey="Elec_id", IsForeignKey=true)]
-		public Tbl_Electrolitos Tbl_Electrolitos
-		{
-			get
-			{
-				return this._Tbl_Electrolitos.Entity;
-			}
-			set
-			{
-				Tbl_Electrolitos previousValue = this._Tbl_Electrolitos.Entity;
-				if (((previousValue != value) 
-							|| (this._Tbl_Electrolitos.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Tbl_Electrolitos.Entity = null;
-						previousValue.Tbl_PedidoExamnes.Remove(this);
-					}
-					this._Tbl_Electrolitos.Entity = value;
-					if ((value != null))
-					{
-						value.Tbl_PedidoExamnes.Add(this);
-						this._Elec_id = value.Elec_id;
-					}
-					else
-					{
-						this._Elec_id = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Tbl_Electrolitos");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Enzimas_Tbl_PedidoExamnes", Storage="_Tbl_Enzimas", ThisKey="Enzi_id", OtherKey="Enzi_id", IsForeignKey=true)]
-		public Tbl_Enzimas Tbl_Enzimas
-		{
-			get
-			{
-				return this._Tbl_Enzimas.Entity;
-			}
-			set
-			{
-				Tbl_Enzimas previousValue = this._Tbl_Enzimas.Entity;
-				if (((previousValue != value) 
-							|| (this._Tbl_Enzimas.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Tbl_Enzimas.Entity = null;
-						previousValue.Tbl_PedidoExamnes.Remove(this);
-					}
-					this._Tbl_Enzimas.Entity = value;
-					if ((value != null))
-					{
-						value.Tbl_PedidoExamnes.Add(this);
-						this._Enzi_id = value.Enzi_id;
-					}
-					else
-					{
-						this._Enzi_id = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Tbl_Enzimas");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_EstudiosEspeciales_Tbl_PedidoExamnes", Storage="_Tbl_EstudiosEspeciales", ThisKey="EstEsp_id", OtherKey="EstEsp_id", IsForeignKey=true)]
-		public Tbl_EstudiosEspeciales Tbl_EstudiosEspeciales
-		{
-			get
-			{
-				return this._Tbl_EstudiosEspeciales.Entity;
-			}
-			set
-			{
-				Tbl_EstudiosEspeciales previousValue = this._Tbl_EstudiosEspeciales.Entity;
-				if (((previousValue != value) 
-							|| (this._Tbl_EstudiosEspeciales.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Tbl_EstudiosEspeciales.Entity = null;
-						previousValue.Tbl_PedidoExamnes.Remove(this);
-					}
-					this._Tbl_EstudiosEspeciales.Entity = value;
-					if ((value != null))
-					{
-						value.Tbl_PedidoExamnes.Add(this);
-						this._EstEsp_id = value.EstEsp_id;
-					}
-					else
-					{
-						this._EstEsp_id = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Tbl_EstudiosEspeciales");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Heces_Tbl_PedidoExamnes", Storage="_Tbl_Heces", ThisKey="Hec_id", OtherKey="Hec_id", IsForeignKey=true)]
-		public Tbl_Heces Tbl_Heces
-		{
-			get
-			{
-				return this._Tbl_Heces.Entity;
-			}
-			set
-			{
-				Tbl_Heces previousValue = this._Tbl_Heces.Entity;
-				if (((previousValue != value) 
-							|| (this._Tbl_Heces.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Tbl_Heces.Entity = null;
-						previousValue.Tbl_PedidoExamnes.Remove(this);
-					}
-					this._Tbl_Heces.Entity = value;
-					if ((value != null))
-					{
-						value.Tbl_PedidoExamnes.Add(this);
-						this._Hec_id = value.Hec_id;
-					}
-					else
-					{
-						this._Hec_id = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Tbl_Heces");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Hematologia_Tbl_PedidoExamnes", Storage="_Tbl_Hematologia", ThisKey="Hema_id", OtherKey="Hema_id", IsForeignKey=true)]
-		public Tbl_Hematologia Tbl_Hematologia
-		{
-			get
-			{
-				return this._Tbl_Hematologia.Entity;
-			}
-			set
-			{
-				Tbl_Hematologia previousValue = this._Tbl_Hematologia.Entity;
-				if (((previousValue != value) 
-							|| (this._Tbl_Hematologia.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Tbl_Hematologia.Entity = null;
-						previousValue.Tbl_PedidoExamnes.Remove(this);
-					}
-					this._Tbl_Hematologia.Entity = value;
-					if ((value != null))
-					{
-						value.Tbl_PedidoExamnes.Add(this);
-						this._Hema_id = value.Hema_id;
-					}
-					else
-					{
-						this._Hema_id = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Tbl_Hematologia");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Hormonas_Tbl_PedidoExamnes", Storage="_Tbl_Hormonas", ThisKey="horm_id", OtherKey="Horm_id", IsForeignKey=true)]
-		public Tbl_Hormonas Tbl_Hormonas
-		{
-			get
-			{
-				return this._Tbl_Hormonas.Entity;
-			}
-			set
-			{
-				Tbl_Hormonas previousValue = this._Tbl_Hormonas.Entity;
-				if (((previousValue != value) 
-							|| (this._Tbl_Hormonas.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Tbl_Hormonas.Entity = null;
-						previousValue.Tbl_PedidoExamnes.Remove(this);
-					}
-					this._Tbl_Hormonas.Entity = value;
-					if ((value != null))
-					{
-						value.Tbl_PedidoExamnes.Add(this);
-						this._horm_id = value.Horm_id;
-					}
-					else
-					{
-						this._horm_id = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Tbl_Hormonas");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Inmunologia_Tbl_PedidoExamnes", Storage="_Tbl_Inmunologia", ThisKey="Inmu_id", OtherKey="Inmu_id", IsForeignKey=true)]
-		public Tbl_Inmunologia Tbl_Inmunologia
-		{
-			get
-			{
-				return this._Tbl_Inmunologia.Entity;
-			}
-			set
-			{
-				Tbl_Inmunologia previousValue = this._Tbl_Inmunologia.Entity;
-				if (((previousValue != value) 
-							|| (this._Tbl_Inmunologia.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Tbl_Inmunologia.Entity = null;
-						previousValue.Tbl_PedidoExamnes.Remove(this);
-					}
-					this._Tbl_Inmunologia.Entity = value;
-					if ((value != null))
-					{
-						value.Tbl_PedidoExamnes.Add(this);
-						this._Inmu_id = value.Inmu_id;
-					}
-					else
-					{
-						this._Inmu_id = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Tbl_Inmunologia");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_InmunoHematologia_Tbl_PedidoExamnes", Storage="_Tbl_InmunoHematologia", ThisKey="InmuHe_id", OtherKey="InmuHe_id", IsForeignKey=true)]
-		public Tbl_InmunoHematologia Tbl_InmunoHematologia
-		{
-			get
-			{
-				return this._Tbl_InmunoHematologia.Entity;
-			}
-			set
-			{
-				Tbl_InmunoHematologia previousValue = this._Tbl_InmunoHematologia.Entity;
-				if (((previousValue != value) 
-							|| (this._Tbl_InmunoHematologia.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Tbl_InmunoHematologia.Entity = null;
-						previousValue.Tbl_PedidoExamnes.Remove(this);
-					}
-					this._Tbl_InmunoHematologia.Entity = value;
-					if ((value != null))
-					{
-						value.Tbl_PedidoExamnes.Add(this);
-						this._InmuHe_id = value.InmuHe_id;
-					}
-					else
-					{
-						this._InmuHe_id = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Tbl_InmunoHematologia");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_InmunoInfecciosas_Tbl_PedidoExamnes", Storage="_Tbl_InmunoInfecciosas", ThisKey="InmuInfe_id", OtherKey="InmuInfe_id", IsForeignKey=true)]
-		public Tbl_InmunoInfecciosas Tbl_InmunoInfecciosas
-		{
-			get
-			{
-				return this._Tbl_InmunoInfecciosas.Entity;
-			}
-			set
-			{
-				Tbl_InmunoInfecciosas previousValue = this._Tbl_InmunoInfecciosas.Entity;
-				if (((previousValue != value) 
-							|| (this._Tbl_InmunoInfecciosas.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Tbl_InmunoInfecciosas.Entity = null;
-						previousValue.Tbl_PedidoExamnes.Remove(this);
-					}
-					this._Tbl_InmunoInfecciosas.Entity = value;
-					if ((value != null))
-					{
-						value.Tbl_PedidoExamnes.Add(this);
-						this._InmuInfe_id = value.InmuInfe_id;
-					}
-					else
-					{
-						this._InmuInfe_id = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Tbl_InmunoInfecciosas");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_MarcadoresTumorales_Tbl_PedidoExamnes", Storage="_Tbl_MarcadoresTumorales", ThisKey="MarTum_id", OtherKey="MarTum_id", IsForeignKey=true)]
-		public Tbl_MarcadoresTumorales Tbl_MarcadoresTumorales
-		{
-			get
-			{
-				return this._Tbl_MarcadoresTumorales.Entity;
-			}
-			set
-			{
-				Tbl_MarcadoresTumorales previousValue = this._Tbl_MarcadoresTumorales.Entity;
-				if (((previousValue != value) 
-							|| (this._Tbl_MarcadoresTumorales.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Tbl_MarcadoresTumorales.Entity = null;
-						previousValue.Tbl_PedidoExamnes.Remove(this);
-					}
-					this._Tbl_MarcadoresTumorales.Entity = value;
-					if ((value != null))
-					{
-						value.Tbl_PedidoExamnes.Add(this);
-						this._MarTum_id = value.MarTum_id;
-					}
-					else
-					{
-						this._MarTum_id = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Tbl_MarcadoresTumorales");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Microbiologia_Tbl_PedidoExamnes", Storage="_Tbl_Microbiologia", ThisKey="Micro_id", OtherKey="Micro_id", IsForeignKey=true)]
-		public Tbl_Microbiologia Tbl_Microbiologia
-		{
-			get
-			{
-				return this._Tbl_Microbiologia.Entity;
-			}
-			set
-			{
-				Tbl_Microbiologia previousValue = this._Tbl_Microbiologia.Entity;
-				if (((previousValue != value) 
-							|| (this._Tbl_Microbiologia.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Tbl_Microbiologia.Entity = null;
-						previousValue.Tbl_PedidoExamnes.Remove(this);
-					}
-					this._Tbl_Microbiologia.Entity = value;
-					if ((value != null))
-					{
-						value.Tbl_PedidoExamnes.Add(this);
-						this._Micro_id = value.Micro_id;
-					}
-					else
-					{
-						this._Micro_id = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Tbl_Microbiologia");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Orina_Tbl_PedidoExamnes", Storage="_Tbl_Orina", ThisKey="Orin_id", OtherKey="Orin_id", IsForeignKey=true)]
-		public Tbl_Orina Tbl_Orina
-		{
-			get
-			{
-				return this._Tbl_Orina.Entity;
-			}
-			set
-			{
-				Tbl_Orina previousValue = this._Tbl_Orina.Entity;
-				if (((previousValue != value) 
-							|| (this._Tbl_Orina.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Tbl_Orina.Entity = null;
-						previousValue.Tbl_PedidoExamnes.Remove(this);
-					}
-					this._Tbl_Orina.Entity = value;
-					if ((value != null))
-					{
-						value.Tbl_PedidoExamnes.Add(this);
-						this._Orin_id = value.Orin_id;
-					}
-					else
-					{
-						this._Orin_id = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Tbl_Orina");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Otros_Tbl_PedidoExamnes", Storage="_Tbl_Otros", ThisKey="Otrs_id", OtherKey="Otrs_id", IsForeignKey=true)]
-		public Tbl_Otros Tbl_Otros
-		{
-			get
-			{
-				return this._Tbl_Otros.Entity;
-			}
-			set
-			{
-				Tbl_Otros previousValue = this._Tbl_Otros.Entity;
-				if (((previousValue != value) 
-							|| (this._Tbl_Otros.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Tbl_Otros.Entity = null;
-						previousValue.Tbl_PedidoExamnes.Remove(this);
-					}
-					this._Tbl_Otros.Entity = value;
-					if ((value != null))
-					{
-						value.Tbl_PedidoExamnes.Add(this);
-						this._Otrs_id = value.Otrs_id;
-					}
-					else
-					{
-						this._Otrs_id = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Tbl_Otros");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_QuimicaSanguinea_Tbl_PedidoExamnes", Storage="_Tbl_QuimicaSanguinea", ThisKey="QuiSan_id", OtherKey="QuiSan_id", IsForeignKey=true)]
-		public Tbl_QuimicaSanguinea Tbl_QuimicaSanguinea
-		{
-			get
-			{
-				return this._Tbl_QuimicaSanguinea.Entity;
-			}
-			set
-			{
-				Tbl_QuimicaSanguinea previousValue = this._Tbl_QuimicaSanguinea.Entity;
-				if (((previousValue != value) 
-							|| (this._Tbl_QuimicaSanguinea.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Tbl_QuimicaSanguinea.Entity = null;
-						previousValue.Tbl_PedidoExamnes.Remove(this);
-					}
-					this._Tbl_QuimicaSanguinea.Entity = value;
-					if ((value != null))
-					{
-						value.Tbl_PedidoExamnes.Add(this);
-						this._QuiSan_id = value.QuiSan_id;
-					}
-					else
-					{
-						this._QuiSan_id = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Tbl_QuimicaSanguinea");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Serologia_Tbl_PedidoExamnes", Storage="_Tbl_Serologia", ThisKey="Sero_id", OtherKey="Sero_id", IsForeignKey=true)]
-		public Tbl_Serologia Tbl_Serologia
-		{
-			get
-			{
-				return this._Tbl_Serologia.Entity;
-			}
-			set
-			{
-				Tbl_Serologia previousValue = this._Tbl_Serologia.Entity;
-				if (((previousValue != value) 
-							|| (this._Tbl_Serologia.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Tbl_Serologia.Entity = null;
-						previousValue.Tbl_PedidoExamnes.Remove(this);
-					}
-					this._Tbl_Serologia.Entity = value;
-					if ((value != null))
-					{
-						value.Tbl_PedidoExamnes.Add(this);
-						this._Sero_id = value.Sero_id;
-					}
-					else
-					{
-						this._Sero_id = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Tbl_Serologia");
+					this.SendPropertyChanged("Tbl_Personas");
 				}
 			}
 		}
@@ -46206,6 +46607,8 @@ namespace CapaDatos
 		
 		private EntitySet<Tbl_MotivoConsultaReintegro> _Tbl_MotivoConsultaReintegro;
 		
+		private EntitySet<Tbl_PedidoExamenes> _Tbl_PedidoExamenes;
+		
 		private EntitySet<Tbl_Prescipciones> _Tbl_Prescipciones;
 		
 		private EntitySet<Tbl_PrescripcionesEvolucion> _Tbl_PrescripcionesEvolucion;
@@ -46418,6 +46821,7 @@ namespace CapaDatos
 			this._Tbl_MotivoConsultaInicial = new EntitySet<Tbl_MotivoConsultaInicial>(new Action<Tbl_MotivoConsultaInicial>(this.attach_Tbl_MotivoConsultaInicial), new Action<Tbl_MotivoConsultaInicial>(this.detach_Tbl_MotivoConsultaInicial));
 			this._Tbl_MotivoConsultaPeriodica = new EntitySet<Tbl_MotivoConsultaPeriodica>(new Action<Tbl_MotivoConsultaPeriodica>(this.attach_Tbl_MotivoConsultaPeriodica), new Action<Tbl_MotivoConsultaPeriodica>(this.detach_Tbl_MotivoConsultaPeriodica));
 			this._Tbl_MotivoConsultaReintegro = new EntitySet<Tbl_MotivoConsultaReintegro>(new Action<Tbl_MotivoConsultaReintegro>(this.attach_Tbl_MotivoConsultaReintegro), new Action<Tbl_MotivoConsultaReintegro>(this.detach_Tbl_MotivoConsultaReintegro));
+			this._Tbl_PedidoExamenes = new EntitySet<Tbl_PedidoExamenes>(new Action<Tbl_PedidoExamenes>(this.attach_Tbl_PedidoExamenes), new Action<Tbl_PedidoExamenes>(this.detach_Tbl_PedidoExamenes));
 			this._Tbl_Prescipciones = new EntitySet<Tbl_Prescipciones>(new Action<Tbl_Prescipciones>(this.attach_Tbl_Prescipciones), new Action<Tbl_Prescipciones>(this.detach_Tbl_Prescipciones));
 			this._Tbl_PrescripcionesEvolucion = new EntitySet<Tbl_PrescripcionesEvolucion>(new Action<Tbl_PrescripcionesEvolucion>(this.attach_Tbl_PrescripcionesEvolucion), new Action<Tbl_PrescripcionesEvolucion>(this.detach_Tbl_PrescripcionesEvolucion));
 			this._Tbl_RecomendacionesCertificado = new EntitySet<Tbl_RecomendacionesCertificado>(new Action<Tbl_RecomendacionesCertificado>(this.attach_Tbl_RecomendacionesCertificado), new Action<Tbl_RecomendacionesCertificado>(this.detach_Tbl_RecomendacionesCertificado));
@@ -48119,6 +48523,19 @@ namespace CapaDatos
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_PedidoExamenes", Storage="_Tbl_PedidoExamenes", ThisKey="Per_id", OtherKey="Per_id")]
+		public EntitySet<Tbl_PedidoExamenes> Tbl_PedidoExamenes
+		{
+			get
+			{
+				return this._Tbl_PedidoExamenes;
+			}
+			set
+			{
+				this._Tbl_PedidoExamenes.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_Prescipciones", Storage="_Tbl_Prescipciones", ThisKey="Per_id", OtherKey="Per_id")]
 		public EntitySet<Tbl_Prescipciones> Tbl_Prescipciones
 		{
@@ -49511,6 +49928,18 @@ namespace CapaDatos
 		}
 		
 		private void detach_Tbl_MotivoConsultaReintegro(Tbl_MotivoConsultaReintegro entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Personas = null;
+		}
+		
+		private void attach_Tbl_PedidoExamenes(Tbl_PedidoExamenes entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Personas = this;
+		}
+		
+		private void detach_Tbl_PedidoExamenes(Tbl_PedidoExamenes entity)
 		{
 			this.SendPropertyChanging();
 			entity.Tbl_Personas = null;
@@ -51234,144 +51663,6 @@ namespace CapaDatos
 		{
 			this.SendPropertyChanging();
 			entity.Tbl_Profesional = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_QuimicaSanguinea")]
-	public partial class Tbl_QuimicaSanguinea : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _QuiSan_id;
-		
-		private System.Nullable<bool> _QuiSan_Opcion;
-		
-		private string _QuiSan_estado;
-		
-		private EntitySet<Tbl_PedidoExamnes> _Tbl_PedidoExamnes;
-		
-    #region Definiciones de métodos de extensibilidad
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnQuiSan_idChanging(int value);
-    partial void OnQuiSan_idChanged();
-    partial void OnQuiSan_OpcionChanging(System.Nullable<bool> value);
-    partial void OnQuiSan_OpcionChanged();
-    partial void OnQuiSan_estadoChanging(string value);
-    partial void OnQuiSan_estadoChanged();
-    #endregion
-		
-		public Tbl_QuimicaSanguinea()
-		{
-			this._Tbl_PedidoExamnes = new EntitySet<Tbl_PedidoExamnes>(new Action<Tbl_PedidoExamnes>(this.attach_Tbl_PedidoExamnes), new Action<Tbl_PedidoExamnes>(this.detach_Tbl_PedidoExamnes));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_QuiSan_id", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int QuiSan_id
-		{
-			get
-			{
-				return this._QuiSan_id;
-			}
-			set
-			{
-				if ((this._QuiSan_id != value))
-				{
-					this.OnQuiSan_idChanging(value);
-					this.SendPropertyChanging();
-					this._QuiSan_id = value;
-					this.SendPropertyChanged("QuiSan_id");
-					this.OnQuiSan_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_QuiSan_Opcion", DbType="Bit")]
-		public System.Nullable<bool> QuiSan_Opcion
-		{
-			get
-			{
-				return this._QuiSan_Opcion;
-			}
-			set
-			{
-				if ((this._QuiSan_Opcion != value))
-				{
-					this.OnQuiSan_OpcionChanging(value);
-					this.SendPropertyChanging();
-					this._QuiSan_Opcion = value;
-					this.SendPropertyChanged("QuiSan_Opcion");
-					this.OnQuiSan_OpcionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_QuiSan_estado", DbType="VarChar(1)")]
-		public string QuiSan_estado
-		{
-			get
-			{
-				return this._QuiSan_estado;
-			}
-			set
-			{
-				if ((this._QuiSan_estado != value))
-				{
-					this.OnQuiSan_estadoChanging(value);
-					this.SendPropertyChanging();
-					this._QuiSan_estado = value;
-					this.SendPropertyChanged("QuiSan_estado");
-					this.OnQuiSan_estadoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_QuimicaSanguinea_Tbl_PedidoExamnes", Storage="_Tbl_PedidoExamnes", ThisKey="QuiSan_id", OtherKey="QuiSan_id")]
-		public EntitySet<Tbl_PedidoExamnes> Tbl_PedidoExamnes
-		{
-			get
-			{
-				return this._Tbl_PedidoExamnes;
-			}
-			set
-			{
-				this._Tbl_PedidoExamnes.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Tbl_PedidoExamnes(Tbl_PedidoExamnes entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tbl_QuimicaSanguinea = this;
-		}
-		
-		private void detach_Tbl_PedidoExamnes(Tbl_PedidoExamnes entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tbl_QuimicaSanguinea = null;
 		}
 	}
 	
@@ -55925,144 +56216,6 @@ namespace CapaDatos
 		{
 			this.SendPropertyChanging();
 			entity.Tbl_Sede = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_Serologia")]
-	public partial class Tbl_Serologia : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _Sero_id;
-		
-		private System.Nullable<bool> _Sero_Opcion;
-		
-		private string _Sero_estado;
-		
-		private EntitySet<Tbl_PedidoExamnes> _Tbl_PedidoExamnes;
-		
-    #region Definiciones de métodos de extensibilidad
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnSero_idChanging(int value);
-    partial void OnSero_idChanged();
-    partial void OnSero_OpcionChanging(System.Nullable<bool> value);
-    partial void OnSero_OpcionChanged();
-    partial void OnSero_estadoChanging(string value);
-    partial void OnSero_estadoChanged();
-    #endregion
-		
-		public Tbl_Serologia()
-		{
-			this._Tbl_PedidoExamnes = new EntitySet<Tbl_PedidoExamnes>(new Action<Tbl_PedidoExamnes>(this.attach_Tbl_PedidoExamnes), new Action<Tbl_PedidoExamnes>(this.detach_Tbl_PedidoExamnes));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Sero_id", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int Sero_id
-		{
-			get
-			{
-				return this._Sero_id;
-			}
-			set
-			{
-				if ((this._Sero_id != value))
-				{
-					this.OnSero_idChanging(value);
-					this.SendPropertyChanging();
-					this._Sero_id = value;
-					this.SendPropertyChanged("Sero_id");
-					this.OnSero_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Sero_Opcion", DbType="Bit")]
-		public System.Nullable<bool> Sero_Opcion
-		{
-			get
-			{
-				return this._Sero_Opcion;
-			}
-			set
-			{
-				if ((this._Sero_Opcion != value))
-				{
-					this.OnSero_OpcionChanging(value);
-					this.SendPropertyChanging();
-					this._Sero_Opcion = value;
-					this.SendPropertyChanged("Sero_Opcion");
-					this.OnSero_OpcionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Sero_estado", DbType="VarChar(1)")]
-		public string Sero_estado
-		{
-			get
-			{
-				return this._Sero_estado;
-			}
-			set
-			{
-				if ((this._Sero_estado != value))
-				{
-					this.OnSero_estadoChanging(value);
-					this.SendPropertyChanging();
-					this._Sero_estado = value;
-					this.SendPropertyChanged("Sero_estado");
-					this.OnSero_estadoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Serologia_Tbl_PedidoExamnes", Storage="_Tbl_PedidoExamnes", ThisKey="Sero_id", OtherKey="Sero_id")]
-		public EntitySet<Tbl_PedidoExamnes> Tbl_PedidoExamnes
-		{
-			get
-			{
-				return this._Tbl_PedidoExamnes;
-			}
-			set
-			{
-				this._Tbl_PedidoExamnes.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Tbl_PedidoExamnes(Tbl_PedidoExamnes entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tbl_Serologia = this;
-		}
-		
-		private void detach_Tbl_PedidoExamnes(Tbl_PedidoExamnes entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tbl_Serologia = null;
 		}
 	}
 	

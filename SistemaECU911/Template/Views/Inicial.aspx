@@ -130,7 +130,7 @@
                                 <asp:TableCell Style="width: 15%" ColumnSpan="5" Text="ORIENTACION SEXUAL"></asp:TableCell>
                                 <asp:TableCell Style="width: 15%" ColumnSpan="5" Text="IDENTIDAD DE GENERO"></asp:TableCell>
                                 <asp:TableCell Style="width: 15%" ColumnSpan="4" Text=" DISCAPACIDAD"></asp:TableCell>
-                                <asp:TableCell RowSpan="2" Text="FECHA DE INGRESO AL TRABAJO"></asp:TableCell>
+                                <asp:TableCell RowSpan="2" Text="FECHA DE INGRESO AL TRABAJO <br /> (dd/mm/aaaa)"></asp:TableCell>
                                 <asp:TableCell RowSpan="2" Text="PUESTO DE TRABAJO (CIUO)"></asp:TableCell>
                                 <asp:TableCell RowSpan="2" Text="ÁREA DE TRABAJO"></asp:TableCell>
                                 <asp:TableCell RowSpan="2" Text="ACTIVIDADES RELEVANTES AL PUESTO DE TRABAJO A OCUPAR"></asp:TableCell>
@@ -264,7 +264,7 @@
                         <asp:TableRow>
                             <asp:TableCell Style="width: 15%" RowSpan="2">MENARQUÍA</asp:TableCell>
                             <asp:TableCell RowSpan="2">CICLOS</asp:TableCell>
-                            <asp:TableCell RowSpan="2">FECHA DE ULTIMA MENSTRUACIÓN</asp:TableCell>
+                            <asp:TableCell RowSpan="2">FECHA DE ULTIMA MENSTRUACIÓN <br /> dd/mm/aaaa </asp:TableCell>
                             <asp:TableCell RowSpan="2">GESTAS</asp:TableCell>
                             <asp:TableCell RowSpan="2">PARTOS</asp:TableCell>
                             <asp:TableCell RowSpan="2">CESÁREAS</asp:TableCell>
@@ -332,12 +332,12 @@
                             <asp:TableCell>EXAMENES REALIZADOS</asp:TableCell>
                             <asp:TableCell>SI</asp:TableCell>
                             <asp:TableCell>NO</asp:TableCell>
-                            <asp:TableCell Style="width: 10%">TIEMPO</asp:TableCell>
+                            <asp:TableCell Style="width: 10%">TIEMPO <br />(años)</asp:TableCell>
                             <asp:TableCell Style="width: 20%">RESULTADO</asp:TableCell>
                             <asp:TableCell>EXAMENES REALIZADOS</asp:TableCell>
                             <asp:TableCell>SI</asp:TableCell>
                             <asp:TableCell>NO</asp:TableCell>
-                            <asp:TableCell Style="width: 10%">TIEMPO</asp:TableCell>
+                            <asp:TableCell Style="width: 10%">TIEMPO <br />(años)</asp:TableCell>
                             <asp:TableCell Style="width: 20%">RESULTADO</asp:TableCell>
                         </asp:TableRow>
                         <asp:TableRow>
@@ -407,7 +407,7 @@
                             <asp:TableCell RowSpan="2">EXAMENES REALIZADOS</asp:TableCell>
                             <asp:TableCell RowSpan="2">SI</asp:TableCell>
                             <asp:TableCell RowSpan="2">NO</asp:TableCell>
-                            <asp:TableCell RowSpan="2" Style="width: 10%">TIEMPO</asp:TableCell>
+                            <asp:TableCell RowSpan="2" Style="width: 10%">TIEMPO <br />(años)</asp:TableCell>
                             <asp:TableCell RowSpan="2" Style="width: 20%">RESULTADO</asp:TableCell>
                             <asp:TableCell ColumnSpan="3">MÉTODO DE PLANIFICACIÓN FAMILIAR</asp:TableCell>
                             <asp:TableCell ColumnSpan="2">HIJOS</asp:TableCell>
@@ -478,10 +478,10 @@
                             <asp:TableCell>CONSUMOS NOCIVOS</asp:TableCell>
                             <asp:TableCell Style="width: 5%">SI</asp:TableCell>
                             <asp:TableCell Style="width: 5%">NO</asp:TableCell>
-                            <asp:TableCell Style="width: 20%">TIEMPO DE CONSUMO</asp:TableCell>
+                            <asp:TableCell Style="width: 20%">TIEMPO DE CONSUMO <br />(meses)</asp:TableCell>
                             <asp:TableCell>CANTIDAD</asp:TableCell>
                             <asp:TableCell>EX CONSUMIDOR</asp:TableCell>
-                            <asp:TableCell Style="width: 20%">TIEMPO DE ABSTINENCIA</asp:TableCell>
+                            <asp:TableCell Style="width: 20%">TIEMPO DE ABSTINENCIA <br /> (meses)</asp:TableCell>
                         </asp:TableRow>
                         <asp:TableRow>
                             <asp:TableCell>TABACO</asp:TableCell>
@@ -638,7 +638,7 @@
                             <asp:TableCell RowSpan="2">EMPRESA</asp:TableCell>
                             <asp:TableCell RowSpan="2">PUESTO DE TRABAJO</asp:TableCell>
                             <asp:TableCell RowSpan="2">ACTVIDADES QUE DESEMPEÑA</asp:TableCell>
-                            <asp:TableCell RowSpan="2">TIEMPO DE TRABAJO</asp:TableCell>
+                            <asp:TableCell RowSpan="2">TIEMPO DE TRABAJO <br />(meses)</asp:TableCell>
                             <asp:TableCell Style="width: 15%" ColumnSpan="6">RIESGO</asp:TableCell>
                             <asp:TableCell RowSpan="2">OBSERVACIONES</asp:TableCell>
                         </asp:TableRow>
@@ -822,8 +822,8 @@
                     </div>
                     <asp:Table class="table table-bordered table-light table-responsive text-center" runat="server">
                         <asp:TableRow>
-                            <asp:TableCell Style="width: 20%" RowSpan="2" ColumnSpan="2">PUESTO DE TRABAJO / ÁREA</asp:TableCell>
-                            <asp:TableCell Style="width: 20%" RowSpan="2">ACTIVIDADES</asp:TableCell>
+                            <asp:TableCell Style="width: 200px" RowSpan="2" ColumnSpan="2">PUESTO DE TRABAJO / ÁREA</asp:TableCell>
+                            <asp:TableCell Style="width: 200px" RowSpan="2">ACTIVIDADES</asp:TableCell>
                             <asp:TableCell Style="width: 15%" ColumnSpan="10">FÍSICO</asp:TableCell>
                             <asp:TableCell Style="width: 15%" ColumnSpan="15">MECÁNICO</asp:TableCell>
                             <asp:TableCell Style="width: 15%" ColumnSpan="9">QUÍMICO</asp:TableCell>
@@ -1593,7 +1593,7 @@
                         <asp:Table class="table table-bordered table-light table-responsive text-center" runat="server">
                             <asp:TableRow>
                                 <asp:TableCell Style="width: 400px">EXAMEN </asp:TableCell>
-                                <asp:TableCell Style="width: 150px">FECHA</asp:TableCell>
+                                <asp:TableCell Style="width: 150px">FECHA <br /> dd/mm/aaaa</asp:TableCell>
                                 <asp:TableCell Style="width: 800px">RESULTADOS</asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
