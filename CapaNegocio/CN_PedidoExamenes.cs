@@ -33,23 +33,5 @@ namespace CapaNegocio
             }
         }
 
-        //metodo para guardar pedido examenes NO
-        public static void guardarPedidoExamenesNO(Tbl_PedidoExamenes pedexaNO)
-        {
-            try
-            {
-                pedexaNO.PedExam_bioHematicaHema = "NO";
-                pedexaNO.PedExam_hematocritoHema = "NO";
-                pedexaNO.PedExam_hemoglobinaHema = "NO";
-                pedexaNO.PedExam_vsgHema = "NO";
-                dc.Tbl_PedidoExamenes.InsertOnSubmit(pedexaNO);
-                dc.SubmitChanges();
-            }
-            catch (Exception ex)
-            {
-                throw new ArgumentException("Datos No Guardados" + ex.Message);
-            }
-        }
-
     }
 }

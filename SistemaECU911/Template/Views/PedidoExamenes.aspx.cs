@@ -79,20 +79,37 @@ namespace SistemaECU911.Template.Views
                 // A.1
                 pedexa = new Tbl_PedidoExamenes();
 
-                if (ckb_bioHematica.Checked == true || ckb_hematocrito.Checked == true ||
-                    ckb_hemoglobina.Checked == true || ckb_vsg.Checked == true)
+                if (ckb_bioHematica.Checked == true)
                 {
                     pedexa.PedExam_bioHematicaHema = "SI";
-                    pedexa.PedExam_hematocritoHema = "SI";
-                    pedexa.PedExam_hemoglobinaHema = "SI";
-                    pedexa.PedExam_vsgHema = "SI";
-                    pedexa.Per_id = perso;
                 }
-                else if(ckb_bioHematica.Checked == false || ckb_hematocrito.Checked == false ||
-                    ckb_hemoglobina.Checked == false || ckb_vsg.Checked == false)
+                if (ckb_hematocrito.Checked == true)
                 {
-                    CN_PedidoExamenes.guardarPedidoExamenesNO(pedexa);
+                    pedexa.PedExam_hematocritoHema = "SI";
                 }
+                if (ckb_hemoglobina.Checked == true)
+                {
+                    pedexa.PedExam_hemoglobinaHema = "SI";
+                }
+                if (ckb_vsg.Checked == true)
+                {
+                    pedexa.PedExam_vsgHema = "SI";
+                }
+                pedexa.Per_id = perso;
+                //if (ckb_bioHematica.Checked == true || ckb_hematocrito.Checked == true ||
+                //    ckb_hemoglobina.Checked == true || ckb_vsg.Checked == true)
+                //{
+                //    pedexa.PedExam_bioHematicaHema = "SI";
+                //    pedexa.PedExam_hematocritoHema = "SI";
+                //    pedexa.PedExam_hemoglobinaHema = "SI";
+                //    pedexa.PedExam_vsgHema = "SI";
+                //    pedexa.Per_id = perso;
+                //}
+                //else if(ckb_bioHematica.Checked == false || ckb_hematocrito.Checked == false ||
+                //    ckb_hemoglobina.Checked == false || ckb_vsg.Checked == false)
+                //{
+                //    CN_PedidoExamenes.guardarPedidoExamenesNO(pedexa);
+                //}
 
                 ////B.Captura de datos Datos Generales
                 //pedexa.PedExam_bioHematicaHema = Convert.ToString(ckb_bioHematica.Checked);
@@ -109,7 +126,7 @@ namespace SistemaECU911.Template.Views
 
 
                 ////B.Método para guardar Datos Datos Generales
-                //CN_PedidoExamenes.guardarPedidoExamenes(pedexa);
+                CN_PedidoExamenes.guardarPedidoExamenes(pedexa);
 
 
                 //Mensaje de confirmacion

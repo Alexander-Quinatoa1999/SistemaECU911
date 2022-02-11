@@ -86,493 +86,353 @@
                     <div class="col table-responsive" id="HEMATOLOGIA">
                         <b>HEMATOLOGIA</b>
                         <div class="form-check">
-                            <asp:CheckBox ID="ckb_bioHematica" Text="&nbsp; &nbsp; &nbsp; Biometrica Hematica" TextAlign="Right" Checked="false" runat="server" />
+                            <asp:CheckBox ID="ckb_bioHematica" Text="&nbsp; &nbsp; Biometrica Hematica" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                         <div class="form-check">
-                            <asp:CheckBox ID="ckb_hematocrito" Text="&nbsp; &nbsp; &nbsp; Hematocrito" TextAlign="Right" Checked="false" runat="server" />
+                            <asp:CheckBox ID="ckb_hematocrito" Text="&nbsp; &nbsp; Hematocrito" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                         <div class="form-check">
-                            <asp:CheckBox ID="ckb_hemoglobina" Text="&nbsp; &nbsp; &nbsp; Hemoglobina" TextAlign="Right" Checked="false" runat="server" />
+                            <asp:CheckBox ID="ckb_hemoglobina" Text="&nbsp; &nbsp; Hemoglobina" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                         <div class="form-check">
-                            <asp:CheckBox ID="ckb_vsg" Text="&nbsp; &nbsp; &nbsp; VSG" TextAlign="Right" Checked="false" runat="server" />
+                            <asp:CheckBox ID="ckb_vsg" Text="&nbsp; &nbsp; VSG" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                     </div>
-                    <div class="col table-responsive" id="ELECTROLITOS">
+                    <div class="col table-responsive" id="ELECTROLITOS" style="height: 100%">
                         <b>ELECTROLITOS</b>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="Na" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="Na" runat="server" Text="Na - K - Ci"></asp:Label>
+                            <asp:CheckBox ID="ckb_Na" Text="&nbsp; &nbsp; Na - K - Ci" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="Ionico" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="Ionico" runat="server" Text="Calcio Ionico"></asp:Label>
+                            <asp:CheckBox ID="ckb_calIonico" Text="&nbsp; &nbsp; Calcio Ionico" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="Total" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="Total" runat="server" Text="Calcio Total"></asp:Label>
+                            <asp:CheckBox ID="ckb_calTotal" Text="&nbsp; &nbsp; Calcio Total" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="Magnesio" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="Magnesio" runat="server" Text="Magnesio"></asp:Label>
+                            <asp:CheckBox ID="ckb_magnesio" Text="&nbsp; &nbsp; Magnesio" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="Fosforo" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="Fosforo" runat="server" Text="Fosforo"></asp:Label>
+                            <asp:CheckBox ID="ckb_fosforo" Text="&nbsp; &nbsp; Fosforo" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                     </div>
                     <div class="col table-responsive" id="TUMORALES">
                         <b>MARCADORES TUMORALES</b>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="CA125" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="CA125" runat="server" Text="CA 125"></asp:Label>
+                            <asp:CheckBox ID="ckb_ca125" Text="&nbsp; &nbsp; CA 125" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="HE4" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="HE4" runat="server" Text="HE 4"></asp:Label>
+                            <asp:CheckBox ID="ckb_he4" Text="&nbsp; &nbsp; HE 4" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="ROMA" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="ROMA" runat="server" Text="Indice ROMA"></asp:Label>
+                            <asp:CheckBox ID="ckb_indRoma" Text="&nbsp; &nbsp; Indice Roma" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="AFP" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="AFP" runat="server" Text="AFP"></asp:Label>
+                            <asp:CheckBox ID="ckb_afp" Text="&nbsp; &nbsp; AFP" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="CEA" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="CEA" runat="server" Text="CEA"></asp:Label>
+                            <asp:CheckBox ID="ckb_cea" Text="&nbsp; &nbsp; CEA" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="CA15" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="CA15" runat="server" Text="CA 15-3"></asp:Label>
+                            <asp:CheckBox ID="ckb_ca153" Text="&nbsp; &nbsp; CA 15-3" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="CA19" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="CA19" runat="server" Text="CA 19-9"></asp:Label>
+                            <asp:CheckBox ID="ckb_ca199" Text="&nbsp; &nbsp; CA 19-9" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="Tiroglobulina" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="Tiroglobulina" runat="server" Text="Tiroglobulina"></asp:Label>
+                            <asp:CheckBox ID="ckb_tiroglobulina" Text="&nbsp; &nbsp; Tiroglobulina" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="PSA" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="PSA" runat="server" Text="PSA"></asp:Label>
+                            <asp:CheckBox ID="ckb_psa" Text="&nbsp; &nbsp; PSA" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col table-responsive" id="INMUNOHEMATOLOGIA" style="margin-top: -6rem;">
+                    <div class="col table-responsive" id="INMUNOHEMATOLOGIA" style="margin-top: -11rem;">
                         <b>INMUNOHEMATOLOGIA</b>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="Directo" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="Directo" runat="server" Text="Coombs Directo"></asp:Label>
+                            <asp:CheckBox ID="ckb_cooDirecto" Text="&nbsp; &nbsp; Coombs Directo" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="Indirecto" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="Indirecto" runat="server" Text="Coombs Indirecto"></asp:Label>
+                            <asp:CheckBox ID="ckb_cooIndirecto" Text="&nbsp; &nbsp; Coombs Indirecto" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="RH" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="RH" runat="server" Text="Grupo Sanguineo y Factor RH"></asp:Label>
+                            <asp:CheckBox ID="ckb_grSanguineo" Text="&nbsp; &nbsp; Grupo Sanguineo y Factor RH" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="LE" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="LE" runat="server" Text="Celulas L.E."></asp:Label>
+                            <asp:CheckBox ID="ckb_celulasLE" Text="&nbsp; &nbsp; Celulas L.E." TextAlign="Right" Checked="false" runat="server" />
                         </div>
                     </div>
-                    <div class="col table-responsive" id="SEROLOGIA" style="margin-top: -6.5rem;">
+                    <div class="col table-responsive" id="SEROLOGIA" style="margin-top: -9rem;">
                         <b>SEROLOGIA</b>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="Cuantitativo" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="Cuantitativo" runat="server" Text="PCR Cuantitativo"></asp:Label>
+                            <asp:CheckBox ID="ckb_pcrCuantitativo" Text="&nbsp; &nbsp; PCR Cuantitativo" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="Latex" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="Latex" runat="server" Text="FR Latex"></asp:Label>
+                            <asp:CheckBox ID="ckb_frLatex" Text="&nbsp; &nbsp; FR Latex" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="ASTO" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="ASTO" runat="server" Text="ASTO"></asp:Label>
+                            <asp:CheckBox ID="ckb_asto" Text="&nbsp; &nbsp; ASTO" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="Aglutinaciones" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="Aglutinaciones" runat="server" Text="Aglutinaciones"></asp:Label>
+                            <asp:CheckBox ID="ckb_aglutinaciones" Text="&nbsp; &nbsp; Aglutinaciones" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="VDRL" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="VDRL" runat="server" Text="V.D.R.L."></asp:Label>
+                            <asp:CheckBox ID="ckb_vdrl" Text="&nbsp; &nbsp; V.D.R.L" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                     </div>
                     <div class="col table-responsive" id="MICROBIOLOGIA">
                         <b>MICROBIOLOGIA</b>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="Muestra" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="Muestra" runat="server" Text="Muestra de:"></asp:Label>
-                            <asp:TextBox ID="TextBox10" CssClass="border-bottom border-dark" Style="border: none" runat="server"></asp:TextBox>
+                            <asp:CheckBox ID="ckb_muestra" Text="&nbsp; &nbsp; Muestra de:" TextAlign="Right" Checked="false" runat="server" />
+                            <asp:TextBox ID="txt_muestra" CssClass="border-bottom border-dark" Style="border: none" runat="server"></asp:TextBox>
                         </div>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="Gram" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="Gram" runat="server" Text="Gram"></asp:Label>
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="Fresco" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="Fresco" runat="server" Text="Fresco"></asp:Label>
+                            <asp:CheckBox ID="ckb_gram" Text="&nbsp; &nbsp; Gram" TextAlign="Right" Checked="false" runat="server" />
+                            <asp:CheckBox ID="ckb_fresco" Text="&nbsp; &nbsp; Fresco" TextAlign="Right" Checked="false" runat="server" Style="margin-left: 2rem;" />
                         </div>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="KOH" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="KOH" runat="server" Text="KOH"></asp:Label>
+                            <asp:CheckBox ID="ckb_koh" Text="&nbsp; &nbsp; KOH" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="Antibiograma" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="Antibiograma" runat="server" Text="Cultivo y Antibiograma"></asp:Label>
+                            <asp:CheckBox ID="ckb_culAntibiograma" Text="&nbsp; &nbsp; Cultivo y Antibiograma" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col table-responsive" id="COAGULACION" style="margin-top: -8rem;">
+                    <div class="col table-responsive" id="COAGULACION" style="margin-top: -11rem;">
                         <b>COAGULACION</b>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="Plaquetas" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="Plaquetas" runat="server" Text="Plaquetas"></asp:Label>
+                            <asp:CheckBox ID="ckb_plaquetas" Text="&nbsp; &nbsp; Plaquetas" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="Fibrinogeno" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="Fibrinogeno" runat="server" Text="Fibrinogeno"></asp:Label>
+                            <asp:CheckBox ID="ckb_fibrinogeno" Text="&nbsp; &nbsp; Fibrinogeno" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="TP" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="TP" runat="server" Text="T.P"></asp:Label>
+                            <asp:CheckBox ID="ckb_tp" Text="&nbsp; &nbsp; T.P" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="TTP" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="TTP" runat="server" Text="T.T.P"></asp:Label>
+                            <asp:CheckBox ID="ckb_ttp" Text="&nbsp; &nbsp; T.T.P" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="INR" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="INR" runat="server" Text="I.N.R"></asp:Label>
+                            <asp:CheckBox ID="ckb_inr" Text="&nbsp; &nbsp; I.N.R" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="Coagulacion" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="Coagulacion" runat="server" Text="Tiempo de Coagulacion"></asp:Label>
+                            <asp:CheckBox ID="ckb_tiempCoagulacion" Text="&nbsp; &nbsp; Tiempo de Coagulacion" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="Sangria" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="Sangria" runat="server" Text="Tiempo de Sangria"></asp:Label>
+                            <asp:CheckBox ID="ckb_tiempSangria" Text="&nbsp; &nbsp; Tiempo de Sangria" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="Lupico" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="Lupico" runat="server" Text="Anticoagulante Lupico"></asp:Label>
+                            <asp:CheckBox ID="ckb_antiLupico" Text="&nbsp; &nbsp; Anticoagulante Lupico" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="DimeroD" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="DimeroD" runat="server" Text="Dimero D"></asp:Label>
+                            <asp:CheckBox ID="ckb_dimeroD" Text="&nbsp; &nbsp; Dimero D" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                     </div>
                     <div class="col table-responsive" id="HORMONAS" style="margin-top: -7rem;">
                         <b>HORMONAS</b>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="LH" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="LH" runat="server" Text="LH"></asp:Label>
+                            <asp:CheckBox ID="ckb_lh" Text="&nbsp; &nbsp; LH" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="FSH" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="FSH" runat="server" Text="FSH"></asp:Label>
+                            <asp:CheckBox ID="ckb_fsh" Text="&nbsp; &nbsp; FSH" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="Estradiol" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="Estradiol" runat="server" Text="Estradiol (E2)"></asp:Label>
+                            <asp:CheckBox ID="ckb_estradiol" Text="&nbsp; &nbsp; Estradiol (E2)" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="Progesterona" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="Progesterona" runat="server" Text="Progesterona (P4)"></asp:Label>
+                            <asp:CheckBox ID="ckb_progesterona" Text="&nbsp; &nbsp; Progesterona (P4)" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="Prolactina" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="Prolactina" runat="server" Text="Prolactina"></asp:Label>
+                            <asp:CheckBox ID="ckb_prolactina" Text="&nbsp; &nbsp; Prolactina" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="Testosterona" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="Testosterona" runat="server" Text="Testosterona"></asp:Label>
+                            <asp:CheckBox ID="ckb_testosterona" Text="&nbsp; &nbsp; Testosterona" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="DHEAS" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="DHEAS" runat="server" Text="DHEAS"></asp:Label>
+                            <asp:CheckBox ID="ckb_dheas" Text="&nbsp; &nbsp; DHEAS" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="Cortisol" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="Cortisol" runat="server" Text="Cortisol"></asp:Label>
+                            <asp:CheckBox ID="ckb_cortisol" Text="&nbsp; &nbsp; Cortisol" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="Insulina" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="Insulina" runat="server" Text="Insulina"></asp:Label>
+                            <asp:CheckBox ID="ckb_insulina" Text="&nbsp; &nbsp; Insulina" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="PeptidoC" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="PeptidoC" runat="server" Text="Peptido C"></asp:Label>
+                            <asp:CheckBox ID="ckb_peptidoC" Text="&nbsp; &nbsp; Peptido C" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="HOMA" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="HOMA" runat="server" Text="Indice HOMA"></asp:Label>
+                            <asp:CheckBox ID="ckb_indHoma" Text="&nbsp; &nbsp; Indice HOMA" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="BhCG" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="BhCG" runat="server" Text="BhCG"></asp:Label>
+                            <asp:CheckBox ID="ckb_bhcg" Text="&nbsp; &nbsp; BhCG" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="T3" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="T3" runat="server" Text="T3"></asp:Label>
+                            <asp:CheckBox ID="ckb_t3" Text="&nbsp; &nbsp; T3" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="fT4" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="fT4" runat="server" Text="fT4"></asp:Label>
+                            <asp:CheckBox ID="ckb_fT4" Text="&nbsp; &nbsp; fT4" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="TSH" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="TSH" runat="server" Text="TSH"></asp:Label>
+                            <asp:CheckBox ID="ckb_tsh" Text="&nbsp; &nbsp; TSH" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="OHProgesterona" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="OHProgesterona" runat="server" Text="17 OH Progesterona"></asp:Label>
+                            <asp:CheckBox ID="ckb_17Progesterona" Text="&nbsp; &nbsp; 17 OH Progesterona" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="HGH" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="HGH" runat="server" Text="HGH (H. de Crecimiento)"></asp:Label>
+                            <asp:CheckBox ID="ckb_hgh" Text="&nbsp; &nbsp; HGH (H. de Crecimiento)" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                     </div>
                     <div class="col table-responsive" id="ESPECIALES" style="margin-top: 0rem;">
                         <b>ESTUDIOS ESPECIALES</b>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="Espermatograma" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="Espermatograma" runat="server" Text="Espermatograma completo"></asp:Label>
+                            <asp:CheckBox ID="ckb_esperCompleto" Text="&nbsp; &nbsp; Espermatograma completo" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="Cristalografia" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="Cristalografia" runat="server" Text="Cristalografia"></asp:Label>
+                            <asp:CheckBox ID="ckb_cristalografia" Text="&nbsp; &nbsp; Cristalografia" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="Prenatal" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="Prenatal" runat="server" Text="Screening Prenatal"></asp:Label>
+                            <asp:CheckBox ID="ckb_screenPrenatal" Text="&nbsp; &nbsp; Screening Prenatal" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col table-responsive" id="SANGUINEA" style="margin-top: -14rem;">
+                    <div class="col table-responsive" id="SANGUINEA" style="margin-top: -21rem;">
                         <b>QUIMICA SANGUINEA</b>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="Basal" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="Basal" runat="server" Text="Glucosa Basal"></asp:Label>
+                            <asp:CheckBox ID="ckb_gluBasal" Text="&nbsp; &nbsp; Glucosa Basal" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="Urea" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="Urea" runat="server" Text="Urea"></asp:Label>
+                            <asp:CheckBox ID="ckb_urea" Text="&nbsp; &nbsp; Urea" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="BUM" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="BUM" runat="server" Text="BUM"></asp:Label>
+                            <asp:CheckBox ID="ckb_bum" Text="&nbsp; &nbsp; BUM" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="Creatinina" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="Creatinina" runat="server" Text="Creatinina"></asp:Label>
+                            <asp:CheckBox ID="ckb_creatinina" Text="&nbsp; &nbsp; Creatinina" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="Urico" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="Urico" runat="server" Text="Ac.Urico"></asp:Label>
+                            <asp:CheckBox ID="ckb_acUrico" Text="&nbsp; &nbsp; Ac.Urico" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="Colesterol" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="Colesterol" runat="server" Text="Colesterol Total"></asp:Label>
+                            <asp:CheckBox ID="ckb_colesTotal" Text="&nbsp; &nbsp; Colesterol Total" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                         <div class="row">
-                            <div class="form-check col-md" style="margin-left: 0.75rem;">
-                                <asp:TextBox class="form-check-input" type="checkbox" value="" ID="HDLc" runat="server"></asp:TextBox>
-                                <asp:Label class="form-check-label" for="HDLc" runat="server" Text="HDLc"></asp:Label>
-                            </div>
-                            <div class="form-check col col" style="margin-right: 0.75rem;">
-                                <asp:TextBox class="form-check-input" type="checkbox" value="" ID="LDLc" runat="server"></asp:TextBox>
-                                <asp:Label class="form-check-label" for="LDLc" runat="server" Text="LDLc"></asp:Label>
+                            <div class="form-check">
+                                <asp:CheckBox ID="ckb_hdlc" Text="&nbsp; &nbsp; HDLc" TextAlign="Right" Checked="false" runat="server" Style="margin-left: 0.75rem;" />
+                                <asp:CheckBox ID="ckb_ldlc" Text="&nbsp; &nbsp; LDLc" TextAlign="Right" Checked="false" runat="server" Style="margin-left: 2rem;" />
                             </div>
                         </div>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="Trigliceridos" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="Trigliceridos" runat="server" Text="Trigliceridos"></asp:Label>
+                            <asp:CheckBox ID="ckb_triglicerido" Text="&nbsp; &nbsp; Triglicerido" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="BilirrubinaT" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="BilirrubinaT" runat="server" Text="Bilirrubina Total"></asp:Label>
+                            <asp:CheckBox ID="ckb_biliTotal" Text="&nbsp; &nbsp; Bilirrubina Total" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="BilirrubinaD" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="BilirrubinaD" runat="server" Text="Bilirrubina Directa"></asp:Label>
+                            <asp:CheckBox ID="ckb_biliDirecta" Text="&nbsp; &nbsp; Bilirrubina Directa" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="BilirrubinaI" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="BilirrubinaI" runat="server" Text="Bilirrubina Indirecta"></asp:Label>
+                            <asp:CheckBox ID="ckb_biliindirecta" Text="&nbsp; &nbsp; Bilirrubina Indirecta" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="ProteinasT" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="ProteinasT" runat="server" Text="Proteinas Totales"></asp:Label>
+                            <asp:CheckBox ID="ckb_proTotales" Text="&nbsp; &nbsp; Proteinas Totales" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="Albumina" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="Albumina" runat="server" Text="Albumina"></asp:Label>
+                            <asp:CheckBox ID="ckb_albumina" Text="&nbsp; &nbsp; Albumina" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="Globulina" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="Globulina" runat="server" Text="Globulina"></asp:Label>
+                            <asp:CheckBox ID="ckb_globulina" Text="&nbsp; &nbsp; Globulina" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="Osullivan" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="Osullivan" runat="server" Text="Test de Osullivan"></asp:Label>
+                            <asp:CheckBox ID="ckb_testOsullivan" Text="&nbsp; &nbsp; Test de Osullivan" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="Glucosa2h" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="Glucosa2h" runat="server" Text="Glucosa 2h pp"></asp:Label>
+                            <asp:CheckBox ID="ckb_glucosa2h" Text="&nbsp; &nbsp; Glucosa 2h pp" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="Tolerancia" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="Tolerancia" runat="server" Text="Curva de Tolerancia"></asp:Label>
-                            <asp:Label class="form-check-label" for="glu" runat="server" Text="Glucosa:" Style="margin-left: -1.40rem;"></asp:Label>
-                            <asp:TextBox ID="TextBox5" CssClass="border-bottom border-dark" BorderStyle="None" Style="background-color: transparent; width: 50%; text-align: center" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="horas" runat="server" Text="Horas"></asp:Label>
+                            <asp:CheckBox ID="ckb_curvaTolerancia" Text="&nbsp; &nbsp; Curva de Tolerancia" TextAlign="Right" Checked="false" runat="server" />
+                            <div class="form-check" style="display: flex">
+                                <asp:Label class="form-check-label" for="glu" runat="server" Text="Glucosa:" Style="margin-left: 0.03rem;"></asp:Label>
+                                <asp:TextBox ID="txt_glucosa" CssClass="border-bottom border-dark" BorderStyle="None" Style="background-color: transparent; width: 50%;" runat="server"></asp:TextBox>
+                                <asp:Label class="form-check-label" for="horas" runat="server" Text="Horas" Style="margin-left: -0.03rem;"></asp:Label>
+                            </div>
                         </div>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="Glicosilada" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="Glicosilada" runat="server" Text="Hemoglobina Glicosilada"></asp:Label>
+                            <asp:CheckBox ID="ckb_hemoGlicosilada" Text="&nbsp; &nbsp; Hemoglobina Glicosilada" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="Sérico" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="Sérico" runat="server" Text="Hierro Sérico"></asp:Label>
+                            <asp:CheckBox ID="ckb_hierroSerico" Text="&nbsp; &nbsp; Hierro Sérico" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="Ferritina" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="Ferritina" runat="server" Text="Ferritina"></asp:Label>
+                            <asp:CheckBox ID="ckb_ferritina" Text="&nbsp; &nbsp; Ferritina" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="Transferrina" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="Transferrina" runat="server" Text="Transferrina"></asp:Label>
+                            <asp:CheckBox ID="ckb_transferrina" Text="&nbsp; &nbsp; Transferrina" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                     </div>
                     <div class="col table-responsive" id="INMUNOLOGIA">
                         <b>INMUNOLOGIA</b>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="IProlactina" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="IProlactina" runat="server" Text="Prolactina"></asp:Label>
+                            <asp:CheckBox ID="ckb_iProlactina" Text="&nbsp; &nbsp; Prolactina" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="ANA" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="ANA" runat="server" Text="Anti Nucleares (ANA)"></asp:Label>
+                            <asp:CheckBox ID="ckb_antiNucleares" Text="&nbsp; &nbsp; Anti Nucleares (ANA)" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="DNA" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="DNA" runat="server" Text="Anti DNA"></asp:Label>
+                            <asp:CheckBox ID="ckb_antiDna" Text="&nbsp; &nbsp; Anti DNA" TextAlign="Right" Checked="false" runat="server" />
                         </div>
-                        <div class="row">
-                            <div class="col form-check" style="margin-left: 0.75rem;">
-                                <asp:TextBox class="form-check-input" type="checkbox" value="" ID="Fosfolípidos" runat="server"></asp:TextBox>
-                                <asp:Label class="form-check-label" for="Fosfolípidos" runat="server" Text="Anti Fosfolípido"></asp:Label>
-                            </div>
-                            <%--<div class="col form-check" style="margin-left:0rem">
-                                <asp:TextBox class="form-check-input" type="checkbox" value="" ID="IgG" runat="server"></asp:TextBox>
-                                <asp:Label class="form-check-label" for="IgG" runat="server" Text="IgG"></asp:Label>
-                            </div>
-                            <div class="col form-check" style="margin-left:0rem">
-                                <asp:TextBox class="form-check-input" type="checkbox" value="" ID="IgM" runat="server"></asp:TextBox>
-                                <asp:Label class="form-check-label" for="IgM" runat="server" Text="IgM"></asp:Label>
-                            </div>
-                            <div class="col form-check" style="margin-left:-3rem">
-                                <asp:TextBox class="form-check-input" type="checkbox" value="" ID="IgA" runat="server"></asp:TextBox>
-                                <asp:Label class="form-check-label" for="IgA" runat="server" Text="IgA"></asp:Label>
-                            </div>--%>
+                        <div class="col form-check">
+                            <asp:CheckBox ID="ckb_antiFosfolípidos" Text="&nbsp; &nbsp; Anti Fosfolípidos" TextAlign="Right" Checked="false" runat="server" />
+                            <asp:CheckBox ID="ckb_igg" Text="&nbsp;IgG" TextAlign="Right" Checked="false" runat="server" Style="margin-left: 0.9rem;" />
+                            <asp:CheckBox ID="ckb_igm" Text="&nbsp;IgM" TextAlign="Right" Checked="false" runat="server" Style="margin-left: 0.5rem;" />
+                            <asp:CheckBox ID="ckb_iga" Text="&nbsp;IgA" TextAlign="Right" Checked="false" runat="server" Style="margin-left: 0.5rem;" />
                         </div>
-                        <div class="row">
-                            <div class="form-check col" style="margin-left: 0.75rem; margin-right: 2rem;">
-                                <asp:TextBox class="form-check-input" type="checkbox" value="" ID="Cardiolipinas" runat="server"></asp:TextBox>
-                                <asp:Label class="form-check-label" for="Cardiolipinas" runat="server" Text="Anti Cardiolipinas"></asp:Label>
-                            </div>
-                            <%--<div class="form-check col">
-                                <asp:TextBox class="form-check-input" type="checkbox" value="" ID="TextBox7" runat="server"></asp:TextBox>
-                                <asp:Label class="form-check-label" for="IgG" runat="server" Text="IgG"></asp:Label>
-                            </div>
-                            <div class="form-check col" style="margin-left: -1rem;">
-                                <asp:TextBox class="form-check-input" type="checkbox" value="" ID="TextBox8" runat="server"></asp:TextBox>
-                                <asp:Label class="form-check-label" for="IgM" runat="server" Text="IgM"></asp:Label>
-                            </div>
-                            <div class="form-check col">
-                                <asp:TextBox class="form-check-input" type="checkbox" value="" ID="TextBox9" runat="server"></asp:TextBox>
-                                <asp:Label class="form-check-label" for="IgA" runat="server" Text="IgA"></asp:Label>
-                            </div>--%>
+                        <div class="form-check col">
+                            <asp:CheckBox ID="ckb_cardiolipinas" Text="&nbsp; &nbsp; Anti Cardiolipinas" TextAlign="Right" Checked="false" runat="server" />
+                            <asp:CheckBox ID="CheckBox1" Text="&nbsp;IgG" TextAlign="Right" Checked="false" runat="server" Style="margin-left: 0.5rem;" />
+                            <asp:CheckBox ID="CheckBox2" Text="&nbsp;IgM" TextAlign="Right" Checked="false" runat="server" Style="margin-left: 0.5rem;" />
+                            <asp:CheckBox ID="CheckBox3" Text="&nbsp;IgA" TextAlign="Right" Checked="false" runat="server" Style="margin-left: 0.5rem;" />
                         </div>
-                        <div class="row">
-                            <div class="form-check col" style="margin-left: 0.75rem; margin-right: 1.3rem;">
-                                <asp:TextBox class="form-check-input" type="checkbox" value="" ID="Glicoproteína" runat="server"></asp:TextBox>
-                                <asp:Label class="form-check-label" for="Glicoproteína" runat="server" Text="B2 Glicoproteína"></asp:Label>
-                            </div>
-                            <%--<div class="form-check col">
-                                <asp:TextBox class="form-check-input" type="checkbox" value="" ID="TextBox1" runat="server"></asp:TextBox>
-                                <asp:Label class="form-check-label" for="IgG" runat="server" Text="IgG"></asp:Label>
-                            </div>
-                            <div class="form-check col">
-                                <asp:TextBox class="form-check-input" type="checkbox" value="" ID="TextBox11" runat="server"></asp:TextBox>
-                                <asp:Label class="form-check-label" for="IgM" runat="server" Text="IgM"></asp:Label>
-                            </div>--%>
+                        <div class="form-check col">
+                            <asp:CheckBox ID="ckb_b2Glicoproteína" Text="&nbsp; &nbsp; B2 Glicoproteína" TextAlign="Right" Checked="false" runat="server" />
+                            <asp:CheckBox ID="CheckBox4" Text="&nbsp;IgG" TextAlign="Right" Checked="false" runat="server" Style="margin-left: 0.97rem;" />
+                            <asp:CheckBox ID="CheckBox5" Text="&nbsp;IgM" TextAlign="Right" Checked="false" runat="server" Style="margin-left: 0.5rem;" />
                         </div>
-                        <div class="row">
-                            <div class="form-check col" style="margin-left: 0.75rem; margin-right: 3rem;">
-                                <asp:TextBox class="form-check-input" type="checkbox" value="" ID="Gliadina" runat="server"></asp:TextBox>
-                                <asp:Label class="form-check-label" for="Gliadina" runat="server" Text="Anti Gliadina"></asp:Label>
-                            </div>
-                            <%--<div class="form-check col">
-                                <asp:TextBox class="form-check-input" type="checkbox" value="" ID="TextBox12" runat="server"></asp:TextBox>
-                                <asp:Label class="form-check-label" for="IgG" runat="server" Text="IgG"></asp:Label>
-                            </div>
-                            <div class="form-check col">
-                                <asp:TextBox class="form-check-input" type="checkbox" value="" ID="TextBox13" runat="server"></asp:TextBox>
-                                <asp:Label class="form-check-label" for="IgA" runat="server" Text="IgA"></asp:Label>
-                            </div>--%>
+                        <div class="form-check col">
+                            <asp:CheckBox ID="ckb_antiGliadina" Text="&nbsp; &nbsp; Anti Gliadina" TextAlign="Right" Checked="false" runat="server" />
+                            <asp:CheckBox ID="CheckBox6" Text="&nbsp;IgG" TextAlign="Right" Checked="false" runat="server" Style="margin-left: 2.6rem;" />
+                            <asp:CheckBox ID="CheckBox7" Text="&nbsp;IgA" TextAlign="Right" Checked="false" runat="server" Style="margin-left: 4.1rem;" />
                         </div>
-                        <div class="row">
-                            <div class="form-check col" style="margin-left: 0.75rem; margin-right: 1.3rem;">
-                                <asp:TextBox class="form-check-input" type="checkbox" value="" ID="Anexina" runat="server"></asp:TextBox>
-                                <asp:Label class="form-check-label" for="Anexina" runat="server" Text="Anti Anexina V"></asp:Label>
-                            </div>
-                            <%--<div class="form-check col" style="margin-left: 5rem;">
-                                <asp:TextBox class="form-check-input" type="checkbox" value="" ID="TextBox14" runat="server"></asp:TextBox>
-                                <asp:Label class="form-check-label" for="IgG" runat="server" Text="IgG"></asp:Label>
-                            </div>
-                            <div class="form-check col">
-                                <asp:TextBox class="form-check-input" type="checkbox" value="" ID="TextBox15" runat="server"></asp:TextBox>
-                                <asp:Label class="form-check-label" for="IgM" runat="server" Text="IgM"></asp:Label>
-                            </div>--%>
+                        <div class="form-check col">
+                            <asp:CheckBox ID="ckb_antiAnexiaV" Text="&nbsp; &nbsp; Anti Anexina V" TextAlign="Right" Checked="false" runat="server" />
+                            <asp:CheckBox ID="CheckBox8" Text="&nbsp;IgG" TextAlign="Right" Checked="false" runat="server" Style="margin-left: 1.8rem;" />
+                            <asp:CheckBox ID="CheckBox9" Text="&nbsp;IgM" TextAlign="Right" Checked="false" runat="server" Style="margin-left: 0.5rem;" />
                         </div>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="TPO" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="TPO" runat="server" Text="Anti TPO (microsomales)"></asp:Label>
+                            <asp:CheckBox ID="ckb_antiTPO" Text="&nbsp; &nbsp; Anti TPO (microsomales)" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="ATiroglobulina" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="ATiroglobulina" runat="server" Text="Anti Tiroglobulina"></asp:Label>
+                            <asp:CheckBox ID="ckb_antiTiroglobulina" Text="&nbsp; &nbsp; Anti Tiroglobulina" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="CCP" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="CCP" runat="server" Text="Anti CCP"></asp:Label>
+                            <asp:CheckBox ID="ckb_antiCCP" Text="&nbsp; &nbsp; Anti CCP" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                     </div>
-                    <div class="col table-responsive" id="ORINA" style="margin-top: -16rem;">
+                    <div class="col table-responsive" id="ORINA" style="margin-top: -23rem;">
                         <b>ORINA</b>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="EMO" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="EMO" runat="server" Text="EMO"></asp:Label>
+                            <asp:CheckBox ID="ckb_emo" Text="&nbsp; &nbsp; EMO" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="CulAntibiograma" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="CulAntibiograma" runat="server" Text="Cultivo y Antibiograma"></asp:Label>
+                            <asp:CheckBox ID="ckb_CultAntibiograma" Text="&nbsp; &nbsp; Cultivo y Antibiograma" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="GramGotaF" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="GramGotaF" runat="server" Text="Gram gota fresca"></asp:Label>
+                            <asp:CheckBox ID="ckb_gramGotaFres" Text="&nbsp; &nbsp; Gram gota fresca" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="Microalbuminuria" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="Microalbuminuria" runat="server" Text="Microalbuminuria"></asp:Label>
+                            <asp:CheckBox ID="ckb_microalbuminuria" Text="&nbsp; &nbsp; Microalbuminuria" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                     </div>
                 </div>
@@ -581,49 +441,39 @@
                         <b>ENZIMAS</b>
                         <div class="row">
                             <div class="form-check col" style="margin-left: 0.75rem;">
-                                <asp:TextBox class="form-check-input" type="checkbox" value="" ID="TGO" runat="server"></asp:TextBox>
-                                <asp:Label class="form-check-label" for="TGO" runat="server" Text="TGO"></asp:Label>
+                                <asp:CheckBox ID="ckb_tgo" Text="&nbsp; &nbsp; TGO" TextAlign="Right" Checked="false" runat="server" />
                             </div>
                             <div class="form-check col">
-                                <asp:TextBox class="form-check-input" type="checkbox" value="" ID="TGP" runat="server"></asp:TextBox>
-                                <asp:Label class="form-check-label" for="TGP" runat="server" Text="TGP"></asp:Label>
+                                <asp:CheckBox ID="ckb_tgp" Text="&nbsp; &nbsp; TGP" TextAlign="Right" Checked="false" runat="server" />
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-check col" style="margin-left: 0.75rem;">
-                                <asp:TextBox class="form-check-input" type="checkbox" value="" ID="Amilasa" runat="server"></asp:TextBox>
-                                <asp:Label class="form-check-label" for="Amilasa" runat="server" Text="Amilasa"></asp:Label>
+                                <asp:CheckBox ID="ckb_amilasa" Text="&nbsp; &nbsp; Amilasa" TextAlign="Right" Checked="false" runat="server" />
                             </div>
                             <div class="form-check col">
-                                <asp:TextBox class="form-check-input" type="checkbox" value="" ID="Lipasa" runat="server"></asp:TextBox>
-                                <asp:Label class="form-check-label" for="Lipasa" runat="server" Text="Lipasa"></asp:Label>
+                                <asp:CheckBox ID="ckb_lipasa" Text="&nbsp; &nbsp; Lipasa" TextAlign="Right" Checked="false" runat="server" />
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-check col" style="margin-left: 0.75rem;">
-                                <asp:TextBox class="form-check-input" type="checkbox" value="" ID="CPK" runat="server"></asp:TextBox>
-                                <asp:Label class="form-check-label" for="CPK" runat="server" Text="CPK"></asp:Label>
+                                <asp:CheckBox ID="ckb_ckp" Text="&nbsp; &nbsp; CPK" TextAlign="Right" Checked="false" runat="server" />
                             </div>
                             <div class="form-check col">
-                                <asp:TextBox class="form-check-input" type="checkbox" value="" ID="CPKMB" runat="server"></asp:TextBox>
-                                <asp:Label class="form-check-label" for="CPKMB" runat="server" Text="CPK-MB"></asp:Label>
+                                <asp:CheckBox ID="ckb_ckpMb" Text="&nbsp; &nbsp; CPK-MB" TextAlign="Right" Checked="false" runat="server" />
                             </div>
                         </div>
                         <div class="form-check">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="LDH" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="LDH" runat="server" Text="LDH"></asp:Label>
+                            <asp:CheckBox ID="ckb_ldh" Text="&nbsp; &nbsp; LDH" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                         <div class="form-check col">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="Alcalina" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="Alcalina" runat="server" Text="Fosfatasa Alcalina"></asp:Label>
+                            <asp:CheckBox ID="ckb_fosfaAlcalina" Text="&nbsp; &nbsp; Fosfatasa Alcalina" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                         <div class="form-check col">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="ÁcidaTot" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="ÁcidaTot" runat="server" Text="Fosfatasa Ácida Total"></asp:Label>
+                            <asp:CheckBox ID="ckb_fosfaAcidaTotal" Text="&nbsp; &nbsp; Fosfatasa Ácida Total" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                         <div class="form-check col">
-                            <asp:TextBox class="form-check-input" type="checkbox" value="" ID="ÁcidaPros" runat="server"></asp:TextBox>
-                            <asp:Label class="form-check-label" for="ÁcidaPros" runat="server" Text="Fosfatasa Ácida Prostática"></asp:Label>
+                            <asp:CheckBox ID="fosfaAcidaProstatica" Text="&nbsp; &nbsp; Fosfatasa Ácida Prostática" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                     </div>
                     <div class="col table-responsive" id="INFECCIOSAS" style="margin-top: -4rem;">
