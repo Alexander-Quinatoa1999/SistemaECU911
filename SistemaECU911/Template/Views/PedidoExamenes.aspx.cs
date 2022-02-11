@@ -79,6 +79,7 @@ namespace SistemaECU911.Template.Views
                 // A.1
                 pedexa = new Tbl_PedidoExamenes();
 
+                //Hematologia
                 if (ckb_bioHematica.Checked == true)
                 {
                     pedexa.PedExam_bioHematicaHema = "SI";
@@ -95,7 +96,273 @@ namespace SistemaECU911.Template.Views
                 {
                     pedexa.PedExam_vsgHema = "SI";
                 }
+
+                //Electrolitos
+                if (ckb_Na.Checked == true)
+                {
+                    pedexa.PedExam_NakClElectro = "SI";
+                }
+                if (ckb_calIonico.Checked == true)
+                {
+                    pedexa.PedExam_calcioIonicoElectro = "SI";
+                }
+                if (ckb_calTotal.Checked == true)
+                {
+                    pedexa.PedExam_calcioTotalElectro = "SI";
+                }
+                if (ckb_magnesio.Checked == true)
+                {
+                    pedexa.PedExam_magnesioElectro = "SI";
+                }
+                if (ckb_fosforo.Checked == true)
+                {
+                    pedexa.PedExam_fosforoElectro = "SI";
+                }
+
+                //Marcadores Tumorales
+                if (ckb_ca125.Checked == true)
+                {
+                    pedexa.PedExam_ca125MarcaTumo = "SI";
+                }
+                if (ckb_he4.Checked == true)
+                {
+                    pedexa.PedExam_he4MarcaTumo = "SI";
+                }
+                if (ckb_indRoma.Checked == true)
+                {
+                    pedexa.PedExam_indiceRomaMarcaTumo = "SI";
+                }
+                if (ckb_afp.Checked == true)
+                {
+                    pedexa.PedExam_afpMarcaTumo = "SI";
+                }
+                if (ckb_cea.Checked == true)
+                {
+                    pedexa.PedExam_ceaMarcaTurno = "SI";
+                }
+                if (ckb_ca153.Checked == true)
+                {
+                    pedexa.PedExam_ca156MarcaTumo = "SI";
+                }
+                if (ckb_ca199.Checked == true)
+                {
+                    pedexa.PedExam_ca159MarcaTumo = "SI";
+                }
+                if (ckb_tiroglobulina.Checked == true)
+                {
+                    pedexa.PedExam_tiroglobulinaMarcaTumo = "SI";
+                }
+                if (ckb_psa.Checked == true)
+                {
+                    pedexa.PedExam_psaTotalMarcaTumo = "SI";
+                }
+
+                //InmunoHematologia
+                if (ckb_cooDirecto.Checked == true)
+                {
+                    pedexa.PedExam_coombsDirectoInmuHema = "SI";
+                }
+                if (ckb_cooIndirecto.Checked == true)
+                {
+                    pedexa.PedExam_coombsIndirectoInmuHema = "SI";
+                }
+                if (ckb_grSanguineo.Checked == true)
+                {
+                    pedexa.PedExam_grupoSanguiFacRhInmuHema = "SI";
+                }
+                if (ckb_celulasLE.Checked == true)
+                {
+                    pedexa.PedExam_celularLeInmuHema = "SI";
+                }
+
+                //Serologia
+                if (ckb_pcrCuantitativo.Checked == true)
+                {
+                    pedexa.PedExam_pcrCuantitativoSero = "SI";
+                }
+                if (ckb_frLatex.Checked == true)
+                {
+                    pedexa.PedExam_frLatexSero = "SI";
+                }
+                if (ckb_asto.Checked == true)
+                {
+                    pedexa.PedExam_astoSero = "SI";
+                }
+                if (ckb_aglutinaciones.Checked == true)
+                {
+                    pedexa.PedExam_aglutinacionesFebrilesSero = "SI";
+                }
+                if (ckb_vdrl.Checked == true)
+                {
+                    pedexa.PedExam_vdrlSero = "SI";
+                }
+
+                //Coagulacion
+                if (ckb_plaquetas.Checked == true)
+                {
+                    pedexa.PedExam_plaquetasCoagu = "SI";
+                }
+                if (ckb_fibrinogeno.Checked == true)
+                {
+                    pedexa.PedExam_fibrinogenoCoagu = "SI";
+                }
+                if (ckb_tp.Checked == true)
+                {
+                    pedexa.PedExam_TpCoagu = "SI";
+                }
+                if (ckb_ttp.Checked == true)
+                {
+                    pedexa.PedExam_TtpCoagu = "SI";
+                }
+                if (ckb_inr.Checked == true)
+                {
+                    pedexa.PedExam_InrCoagu = "SI";
+                }
+                if (ckb_tiempCoagulacion.Checked == true)
+                {
+                    pedexa.PedExam_tiemCoagulacionCoagu = "SI";
+                }
+                if (ckb_tiempSangria.Checked == true)
+                {
+                    pedexa.PedExam_tiemSangriaCoagu = "SI";
+                }
+                if (ckb_antiLupico.Checked == true)
+                {
+                    pedexa.PedExam_antiLupicoCoagu = "SI";
+                }
+                if (ckb_dimeroD.Checked == true)
+                {
+                    pedexa.PedExam_dimeroDCoagu = "SI";
+                }
+
+                //Hormonas
+                if (ckb_lh.Checked == true)
+                {
+                    pedexa.PedExam_lhHormo = "SI";
+                }
+                if (ckb_fsh.Checked == true)
+                {
+                    pedexa.PedExam_fshHormo = "SI";
+                }
+                if (ckb_estradiol.Checked == true)
+                {
+                    pedexa.PedExam_estradiolHormo = "SI";
+                }
+                if (ckb_progesterona.Checked == true)
+                {
+                    pedexa.PedExam_progesteronaHormo = "SI";
+                }
+                if (ckb_prolactina.Checked == true)
+                {
+                    pedexa.PedExam_prolactinaHormo = "SI";
+                }
+                if (ckb_testosterona.Checked == true)
+                {
+                    pedexa.PedExam_testosteronaHormo = "SI";
+                }
+                if (ckb_dheas.Checked == true)
+                {
+                    pedexa.PedExam_dheasHormo = "SI";
+                }
+                if (ckb_cortisol.Checked == true)
+                {
+                    pedexa.PedExam_cortisolHormo = "SI";
+                }
+                if (ckb_insulina.Checked == true)
+                {
+                    pedexa.PedExam_insulinaHormo = "SI";
+                }
+
+                if (ckb_peptidoC.Checked == true)
+                {
+                    pedexa.PedExam_peptidoCHormo = "SI";
+                }
+                if (ckb_indHoma.Checked == true)
+                {
+                    pedexa.PedExam_indiceHomaHormo = "SI";
+                }
+                if (ckb_bhcg.Checked == true)
+                {
+                    pedexa.PedExam_bhcgHormo = "SI";
+                }
+                if (ckb_t3.Checked == true)
+                {
+                    pedexa.PedExam_t3Hormo = "SI";
+                }
+                if (ckb_fT4.Checked == true)
+                {
+                    pedexa.PedExam_ft4Hormo = "SI";
+                }
+                if (ckb_tsh.Checked == true)
+                {
+                    pedexa.PedExam_tshHormo = "SI";
+                }
+                if (ckb_17Progesterona.Checked == true)
+                {
+                    pedexa.PedExam_17OhProgesteronaHormo = "SI";
+                }
+                if (ckb_hgh.Checked == true)
+                {
+                    pedexa.PedExam_hghHormo = "SI";
+                }
+
+                //Microbiologia
+                if (ckb_muestra.Checked == true)
+                {
+                    pedexa.PedExam_muestraDeMicro = "SI";
+                    pedexa.PedExam_muestraDeMicroDescrip = txt_muestra.Text;
+                }
+                if (ckb_gram.Checked == true)
+                {
+                    pedexa.PedExam_gramMicro = "SI";
+                }
+                if (ckb_fresco.Checked == true)
+                {
+                    pedexa.PedExam_frescoMicro = "SI";
+                }
+                if (ckb_koh.Checked == true)
+                {
+                    pedexa.PedExam_kohMicro = "SI";
+                }
+                if (ckb_culAntibiograma.Checked == true)
+                {
+                    pedexa.PedExam_cultivoAntibiogramaMicro = "SI";
+                }
+
+                //Estudios Especiales
+                if (ckb_esperCompleto.Checked == true)
+                {
+                    pedexa.PedExam_esperCompletoEstEspecia = "SI";
+                }
+                if (ckb_cristalografia.Checked == true)
+                {
+                    pedexa.PedExam_cristalografiaEstEspecia = "SI";
+                }
+                if (ckb_screenPrenatal.Checked == true)
+                {
+                    pedexa.PedExam_screeningPrenatalEstEspecia = "SI";
+                }
+
+                //Orina
+                if (ckb_emo.Checked == true)
+                {
+                    pedexa.PedExam_emoOrina = "SI";
+                }
+                if (ckb_CultAntibiograma.Checked == true)
+                {
+                    pedexa.PedExam_cultivoAntibiogramaOrina = "SI";
+                }
+                if (ckb_gramGotaFres.Checked == true)
+                {
+                    pedexa.PedExam_gramGotaFrescaOrina = "SI";
+                }
+                if (ckb_microalbuminuria.Checked == true)
+                {
+                    pedexa.PedExam_microalbuminuriaOrina = "SI";
+                }
+
                 pedexa.Per_id = perso;
+
                 //if (ckb_bioHematica.Checked == true || ckb_hematocrito.Checked == true ||
                 //    ckb_hemoglobina.Checked == true || ckb_vsg.Checked == true)
                 //{
@@ -132,7 +399,7 @@ namespace SistemaECU911.Template.Views
                 //Mensaje de confirmacion
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos Guardados Exitosamente')", true);
 
-                Response.Redirect("~/Template/Views/PacientesCertificado.aspx");
+                Response.Redirect("~/Template/Views/Inicio.aspx");
                 limpiar();
             }
             catch (Exception)

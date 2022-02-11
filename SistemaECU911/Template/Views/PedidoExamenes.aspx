@@ -476,7 +476,7 @@
                             <asp:CheckBox ID="fosfaAcidaProstatica" Text="&nbsp; &nbsp; Fosfatasa Ácida Prostática" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                     </div>
-                    <div class="col table-responsive" id="INFECCIOSAS" style="margin-top: -4rem;">
+                    <div class="col table-responsive" id="INFECCIOSAS" style="margin-top: -2rem;">
                         <b>INMUNO - INFECCIOSAS</b>
                         <div class="form-check">
                             <asp:TextBox class="form-check-input" type="checkbox" value="" ID="TORCH" runat="server"></asp:TextBox>
