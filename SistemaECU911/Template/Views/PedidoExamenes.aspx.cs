@@ -361,6 +361,130 @@ namespace SistemaECU911.Template.Views
                     pedexa.PedExam_microalbuminuriaOrina = "SI";
                 }
 
+                //Enzinas
+                if (ckb_tgo.Checked == true)
+                {
+                    pedexa.PedExam_tgoEnzi = "SI";
+                }
+                if (ckb_tgp.Checked == true)
+                {
+                    pedexa.PedExam_tgpEnzi = "SI";
+                }
+                if (ckb_amilasa.Checked == true)
+                {
+                    pedexa.PedExam_amilasaEnzi = "SI";
+                }
+                if (ckb_lipasa.Checked == true)
+                {
+                    pedexa.PedExam_lipasaEnzi = "SI";
+                }
+                if (ckb_cpk.Checked == true)
+                {
+                    pedexa.PedExam_cpkEnzi = "SI";
+                }
+                if (ckb_cpkMb.Checked == true)
+                {
+                    pedexa.PedExam_cpkMbEnzi = "SI";
+                }
+                if (ckb_ldh.Checked == true)
+                {
+                    pedexa.PedExam_ldhEnzi = "SI";
+                }
+                if (ckb_fosfaAlcalina.Checked == true)
+                {
+                    pedexa.PedExam_fosfatasaAlcalinaEnzi = "SI";
+                }
+                if (ckb_fosfaAcidaTotal.Checked == true)
+                {
+                    pedexa.PedExam_fosfatasaAcidaTotalEnzi = "SI";
+                }
+                if (fosfaAcidaProstatica.Checked == true)
+                {
+                    pedexa.PedExam_fosfatasaAcidaProstaticaEnzi = "SI";
+                }
+
+                //Inmuno - Infecciosas
+                if (ckb_torch.Checked == true)
+                {
+                    pedexa.PedExam_torchInmuInfecc = "SI";
+                }
+                if (ckb_toxoGondii.Checked == true)
+                {
+                    pedexa.PedExam_toxoGondiiInmuInfecc = "SI";
+                }
+                if (ckb_clamyTrachomatis.Checked == true)
+                {
+                    pedexa.PedExam_clamydiaTrachoInmuInfecc = "SI";
+                }
+                if (ckb_clamyTrachomatisIgG.Checked == true)
+                {
+                    //Falta en la base de datos
+                    //pedexa. = "SI";
+                }
+                if (ckb_clamyTrachomatisIgM.Checked == true)
+                {
+                    pedexa.PedExam_lgMClamyTrachoInmuInfecc = "SI";
+                }
+                if (ckb_hav.Checked == true)
+                {
+                    pedexa.PedExam_havInmuInfecc = "SI";
+                }
+                if (ckb_havIiG.Checked == true)
+                {
+                    pedexa.PedExam_lgGHavInmuInfecc = "SI";
+                }
+                if (ckb_havIiM.Checked == true)
+                {
+                    pedexa.PedExam_lgMHavInmuInfecc = "SI";
+                }
+                if (ckb_vih.Checked == true)
+                {
+                    pedexa.PedExam_vihInmuInfecc = "SI";
+                }
+                if (ckb_hbsAg.Checked == true)
+                {
+                    pedexa.PedExam_hbsAgInmuInfecc = "SI";
+                }
+                if (ckb_hcv.Checked == true)
+                {
+                    pedexa.PedExam_hcvInmuInfecc = "SI";
+                }
+                if (ckb_ftaAbs.Checked == true)
+                {
+                    pedexa.PedExam_ftaAbsInmuInfecc = "SI";
+                }
+
+                //Drogas
+                if (ckb_fenobarbital.Checked == true)
+                {
+                    pedexa.PedExam_fenobarbitalDrogas = "SI";
+                }
+                if (ckb_teofilina.Checked == true)
+                {
+                    pedexa.PedExam_teofilinaDrogas = "SI";
+                }
+                if (ckb_acValproico.Checked == true)
+                {
+                    pedexa.PedExam_acValproicoDrogas = "SI";
+                }
+
+                //Otros
+                if (ckb_otros1.Checked == true)
+                {
+                    pedexa.PedExam_1Otros = "SI";
+                    //Faltan las descripciones de otros1
+                }
+                if (ckb_otros2.Checked == true)
+                {
+                    pedexa.PedExam_2Otros = "SI";
+                    //Faltan las descripciones de otros2
+                }
+                if (ckb_otros3.Checked == true)
+                {
+                    pedexa.PedExam_3Otro = "SI";
+                    //Faltan las descripciones de otros3
+                }
+
                 pedexa.Per_id = perso;
 
                 //if (ckb_bioHematica.Checked == true || ckb_hematocrito.Checked == true ||
