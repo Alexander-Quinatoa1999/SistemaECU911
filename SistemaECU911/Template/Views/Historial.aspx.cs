@@ -71,6 +71,7 @@ namespace SistemaECU911.Template.Views
                 cargarEvidenciaPatologica12();
                 cargarEspecialidad();
                 cargarProfesional();
+                obtenerCie10();
             }            
         }
 
@@ -91,136 +92,146 @@ namespace SistemaECU911.Template.Views
 
         private void CargarDatosModificar()
         {
-            if (Request["cod"] != null)
+            try
             {
-                int codigo = Convert.ToInt32(Request["cod"]);
-
-                per = CN_HistorialMedico.obtenerPersonasxId(codigo);
-                int perso = Convert.ToInt32(per.Per_id.ToString());
-
-                DateTime fechahora = Convert.ToDateTime(motcons.Mcon_fecha_hora);
-
-                motcons = CN_HistorialMedico.obtenerMotivoxPer(perso);
-                //antper = CN_HistorialMedico.obtenerAntePersonalxPer(perso);
-                //antfam = CN_HistorialMedico.obtenerAnteFamiliarxPer(perso);
-                //enfact = CN_HistorialMedico.obtenerEnferActualxPer(perso);
-                //revOrSis = CN_HistorialMedico.obtenerRevOrganosSistemasxPer(perso);
-                //consvit = CN_HistorialMedico.obtenerConsVitAntroxPer(perso);
-                //exafis = CN_HistorialMedico.obtenerExamenFisxPer(perso);
-
-                //int region = Convert.ToInt32(exafis.Regiones_id);
-                //reg = CN_HistorialMedico.obtenerRegionesxid(region);
-
-                ////int regionid = Convert.ToInt32(ddl_region.SelectedValue);
-                ////tipreg = CN_HistorialMedico.obtenerTipoRegionxReg(regionid);
-
-                ////int tiporegionid = Convert.ToInt32(tipreg.tipoExa_id);
-                ////tipid = CN_HistorialMedico.obtenerTipoRegionxid(tiporegionid);
-
-                //diag = CN_HistorialMedico.obtenerDiagnosticoxPer(perso);
-                //rectra = CN_HistorialMedico.obtenerPlanTratamientoxPer(perso);
-                //evo = CN_HistorialMedico.obtenerEvolucionxPer(perso);
-                //pres = CN_HistorialMedico.obtenerPrescripcionxPer(perso);
-                //prof = CN_HistorialMedico.obtenerProfesionalesxPer(perso);
-
-                btn_guardar.Visible = false;
-
-                txt_priNombre.Text = per.Per_priNombre.ToString();
-                txt_segNombre.Text = per.Per_segNombre.ToString();
-                txt_priApellido.Text = per.Per_priApellido.ToString();
-                txt_segApellido.Text = per.Per_segApellido.ToString();
-                txt_numHClinica.Text = per.Per_Cedula.ToString();
-                txt_sexo.Text = per.Per_genero.ToString();
-                txt_edad.Text = per.Per_fechNacimiento.ToString();
-
-                if (motcons != null)
+                if (Request["cod"] != null)
                 {
+                    int codigo = Convert.ToInt32(Request["cod"]);
+
+                    per = CN_HistorialMedico.obtenerPersonasxId(codigo);
+                    int perso = Convert.ToInt32(per.Per_id.ToString());
+
+                    DateTime fechahora = Convert.ToDateTime(motcons.Mcon_fecha_hora);
+
+                    motcons = CN_HistorialMedico.obtenerMotivoxPer(perso);
+                    //antper = CN_HistorialMedico.obtenerAntePersonalxPer(perso);
+                    //antfam = CN_HistorialMedico.obtenerAnteFamiliarxPer(perso);
+                    //enfact = CN_HistorialMedico.obtenerEnferActualxPer(perso);
+                    //revOrSis = CN_HistorialMedico.obtenerRevOrganosSistemasxPer(perso);
+                    //consvit = CN_HistorialMedico.obtenerConsVitAntroxPer(perso);
+                    //exafis = CN_HistorialMedico.obtenerExamenFisxPer(perso);
+
+                    //int region = Convert.ToInt32(exafis.Regiones_id);
+                    //reg = CN_HistorialMedico.obtenerRegionesxid(region);
+
+                    ////int regionid = Convert.ToInt32(ddl_region.SelectedValue);
+                    ////tipreg = CN_HistorialMedico.obtenerTipoRegionxReg(regionid);
+
+                    ////int tiporegionid = Convert.ToInt32(tipreg.tipoExa_id);
+                    ////tipid = CN_HistorialMedico.obtenerTipoRegionxid(tiporegionid);
+
+                    //diag = CN_HistorialMedico.obtenerDiagnosticoxPer(perso);
+                    //rectra = CN_HistorialMedico.obtenerPlanTratamientoxPer(perso);
+                    //evo = CN_HistorialMedico.obtenerEvolucionxPer(perso);
+                    //pres = CN_HistorialMedico.obtenerPrescripcionxPer(perso);
+                    //prof = CN_HistorialMedico.obtenerProfesionalesxPer(perso);
+
+                    btn_guardar.Visible = false;
+
+                    txt_priNombre.Text = per.Per_priNombre.ToString();
+                    txt_segNombre.Text = per.Per_segNombre.ToString();
+                    txt_priApellido.Text = per.Per_priApellido.ToString();
+                    txt_segApellido.Text = per.Per_segApellido.ToString();
+                    txt_numHClinica.Text = per.Per_Cedula.ToString();
+                    txt_sexo.Text = per.Per_genero.ToString();
+                    txt_edad.Text = per.Per_fechNacimiento.ToString();
+
                     txt_moConsulta.Text = motcons.Mcon_descripcion.ToString();
+
+                    //if (motcons != null)
+                    //{
+
+                    //}
+                    //else
+                    //{
+                    //    txt_moConsulta.Text = "";
+                    //}
+
+
+                    /*if (per != null || motcons != null || antper != null || antfam != null || enfact != null || revOrSis != null || consvit != null || 
+                        exafis != null || diag != null || rectra != null || evo != null || pres != null || prof != null)
+                    {
+
+
+                        //ddl_tipoAntPer.Text = antper.TiEnf_id.ToString();
+                        //txt_antePersonales.Text = antper.AntPer_antecedente.ToString();
+                        //txt_antePerDescripcion.Text = antper.AntPer_descripcion.ToString();
+
+                        //ddl_tipoAntFam.Text = antfam.TiEnf_id.ToString();
+                        //txt_anteFamiliares.Text = antfam.AntFami_antecendente.ToString();
+                        //txt_anteFamDescripcion.Text = antfam.AntFami_descripcion.ToString();
+
+                        //txt_enfeActual.Text = enfact.EnfActu_descrip.ToString();
+
+                        //ddl_orgSistemas.Text = revOrSis.eviPat1_id.ToString();
+                        //txt_descOrgSistemas.Text = revOrSis.revorgsisFM_descOS.ToString();
+                        //ddl_respiratorio.Text = revOrSis.eviPat2_id.ToString();
+                        //txt_descRespiratorio.Text = revOrSis.revorgsisFM_descR.ToString();
+                        //ddl_carVascular.Text = revOrSis.eviPat3_id.ToString();
+                        //txt_descCarVascular.Text = revOrSis.revorgsisFM_descCV.ToString();
+                        //ddl_digestivo.Text = revOrSis.eviPat4_id.ToString();
+                        //txt_descDigestivo.Text = revOrSis.revorgsisFM_descD.ToString();
+                        //ddl_genital.Text = revOrSis.eviPat5_id.ToString();
+                        //txt_descGenital.Text = revOrSis.revorgsisFM_descG.ToString();
+                        //ddl_urinario.Text = revOrSis.eviPat6_id.ToString();
+                        //txt_descUrinario.Text = revOrSis.revorgsisFM_descU.ToString();
+                        //ddl_muscular.Text = revOrSis.eviPat7_id.ToString();
+                        //txt_descMuscular.Text = revOrSis.revorgsisFM_descM.ToString();
+                        //ddl_esqueletico.Text = revOrSis.eviPat8_id.ToString();
+                        //txt_descEsqueletico.Text = revOrSis.revorgsisFM_descE.ToString();
+                        //ddl_nervioso.Text = revOrSis.eviPat9_id.ToString();
+                        //txt_descNervioso.Text = revOrSis.revorgsisFM_descN.ToString();
+                        //ddl_endocrino.Text = revOrSis.eviPat10_id.ToString();
+                        //txt_descEndocrino.Text = revOrSis.revorgsisFM_descEND.ToString();
+                        //ddl_hemoLinfatico.Text = revOrSis.eviPat11_id.ToString();
+                        //txt_descHemoLinfatico.Text = revOrSis.revorgsisFM_descHL.ToString();
+                        //ddl_tegumentario.Text = revOrSis.eviPat12_id.ToString();
+                        //txt_descTegumentario.Text = revOrSis.revorgsisFM_descT.ToString();
+
+                        //txt_presArterial.Text = consvit.ConsVitAntro_preArterial.ToString();
+                        //txt_temperatura.Text = consvit.ConsVitAntro_temperatura.ToString();
+                        //txt_frecCardiaca.Text = consvit.ConsVitAntro_frecCardiacan.ToString();
+                        //txt_satOxigeno.Text = consvit.ConsVitAntro_satOxigenon.ToString();
+                        //txt_frecRespiratoria.Text = consvit.ConsVitAntro_frecRespiratorian.ToString();
+                        //txt_peso.Text = consvit.ConsVitAntro_peson.ToString();
+                        //txt_talla.Text = consvit.ConsVitAntro_tallan.ToString();
+                        //txt_indMasCorporal.Text = consvit.ConsVitAntro_indMasCorporaln.ToString();
+                        //txt_perAbdominal.Text = consvit.ConsVitAntro_perAbdominaln.ToString();
+
+                        //ddl_region.Text = reg.Regiones_id.ToString();
+                        //ddl_tipoRegion.Text = tipreg.tipoExa_id.ToString();
+                        //txt_exafisdescripcion.Text = exafis.ExaFisRegional_observaciones.ToString();
+
+                        //txt_diagnosticosDiagnostico.Text = diag.diag_diagnosticos.ToString();
+                        //txt_codigoDiagnostico.Text = diag.diag_codigo.ToString();
+                        //txt_tipoDiagnostico.Text = diag.diag_tipo.ToString();
+                        //txt_condicionDiagnostico.Text = diag.diag_condicion.ToString();
+                        //txt_cronologiaDiagnostico.Text = diag.diag_cronologian.ToString();
+                        //txt_descripcionDiagnostico.Text = diag.diag_descripcion.ToString();
+
+                        //txt_tratamiento.Text = rectra.RecTra_descripcion.ToString();
+
+                        //txt_evolucion.Text = evo.Evolucion_notas.ToString();
+
+                        //txt_prescipciones.Text = pres.Press_descripcion.ToString();
+
+                        //txt_fechahora.Text = prof.DatProfe_fecha_hora.ToString();
+                        //ddl_profesional.SelectedValue = prof.prof_id.ToString();
+                        //ddl_especialidad.SelectedValue = prof.espec_id.ToString();
+                        //txt_codigo.Text = prof.DatProfe_cod.ToString();
+
+                    }
+                    else
+                    {
+                        ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Error')", true);
+                    }*/
                 }
-                else
-                {
-                    txt_moConsulta.Text = "";
-                }
-                
-
-                /*if (per != null || motcons != null || antper != null || antfam != null || enfact != null || revOrSis != null || consvit != null || 
-                    exafis != null || diag != null || rectra != null || evo != null || pres != null || prof != null)
-                {
-                    
-
-                    //ddl_tipoAntPer.Text = antper.TiEnf_id.ToString();
-                    //txt_antePersonales.Text = antper.AntPer_antecedente.ToString();
-                    //txt_antePerDescripcion.Text = antper.AntPer_descripcion.ToString();
-
-                    //ddl_tipoAntFam.Text = antfam.TiEnf_id.ToString();
-                    //txt_anteFamiliares.Text = antfam.AntFami_antecendente.ToString();
-                    //txt_anteFamDescripcion.Text = antfam.AntFami_descripcion.ToString();
-
-                    //txt_enfeActual.Text = enfact.EnfActu_descrip.ToString();
-
-                    //ddl_orgSistemas.Text = revOrSis.eviPat1_id.ToString();
-                    //txt_descOrgSistemas.Text = revOrSis.revorgsisFM_descOS.ToString();
-                    //ddl_respiratorio.Text = revOrSis.eviPat2_id.ToString();
-                    //txt_descRespiratorio.Text = revOrSis.revorgsisFM_descR.ToString();
-                    //ddl_carVascular.Text = revOrSis.eviPat3_id.ToString();
-                    //txt_descCarVascular.Text = revOrSis.revorgsisFM_descCV.ToString();
-                    //ddl_digestivo.Text = revOrSis.eviPat4_id.ToString();
-                    //txt_descDigestivo.Text = revOrSis.revorgsisFM_descD.ToString();
-                    //ddl_genital.Text = revOrSis.eviPat5_id.ToString();
-                    //txt_descGenital.Text = revOrSis.revorgsisFM_descG.ToString();
-                    //ddl_urinario.Text = revOrSis.eviPat6_id.ToString();
-                    //txt_descUrinario.Text = revOrSis.revorgsisFM_descU.ToString();
-                    //ddl_muscular.Text = revOrSis.eviPat7_id.ToString();
-                    //txt_descMuscular.Text = revOrSis.revorgsisFM_descM.ToString();
-                    //ddl_esqueletico.Text = revOrSis.eviPat8_id.ToString();
-                    //txt_descEsqueletico.Text = revOrSis.revorgsisFM_descE.ToString();
-                    //ddl_nervioso.Text = revOrSis.eviPat9_id.ToString();
-                    //txt_descNervioso.Text = revOrSis.revorgsisFM_descN.ToString();
-                    //ddl_endocrino.Text = revOrSis.eviPat10_id.ToString();
-                    //txt_descEndocrino.Text = revOrSis.revorgsisFM_descEND.ToString();
-                    //ddl_hemoLinfatico.Text = revOrSis.eviPat11_id.ToString();
-                    //txt_descHemoLinfatico.Text = revOrSis.revorgsisFM_descHL.ToString();
-                    //ddl_tegumentario.Text = revOrSis.eviPat12_id.ToString();
-                    //txt_descTegumentario.Text = revOrSis.revorgsisFM_descT.ToString();
-
-                    //txt_presArterial.Text = consvit.ConsVitAntro_preArterial.ToString();
-                    //txt_temperatura.Text = consvit.ConsVitAntro_temperatura.ToString();
-                    //txt_frecCardiaca.Text = consvit.ConsVitAntro_frecCardiacan.ToString();
-                    //txt_satOxigeno.Text = consvit.ConsVitAntro_satOxigenon.ToString();
-                    //txt_frecRespiratoria.Text = consvit.ConsVitAntro_frecRespiratorian.ToString();
-                    //txt_peso.Text = consvit.ConsVitAntro_peson.ToString();
-                    //txt_talla.Text = consvit.ConsVitAntro_tallan.ToString();
-                    //txt_indMasCorporal.Text = consvit.ConsVitAntro_indMasCorporaln.ToString();
-                    //txt_perAbdominal.Text = consvit.ConsVitAntro_perAbdominaln.ToString();
-
-                    //ddl_region.Text = reg.Regiones_id.ToString();
-                    //ddl_tipoRegion.Text = tipreg.tipoExa_id.ToString();
-                    //txt_exafisdescripcion.Text = exafis.ExaFisRegional_observaciones.ToString();
-
-                    //txt_diagnosticosDiagnostico.Text = diag.diag_diagnosticos.ToString();
-                    //txt_codigoDiagnostico.Text = diag.diag_codigo.ToString();
-                    //txt_tipoDiagnostico.Text = diag.diag_tipo.ToString();
-                    //txt_condicionDiagnostico.Text = diag.diag_condicion.ToString();
-                    //txt_cronologiaDiagnostico.Text = diag.diag_cronologian.ToString();
-                    //txt_descripcionDiagnostico.Text = diag.diag_descripcion.ToString();
-
-                    //txt_tratamiento.Text = rectra.RecTra_descripcion.ToString();
-
-                    //txt_evolucion.Text = evo.Evolucion_notas.ToString();
-
-                    //txt_prescipciones.Text = pres.Press_descripcion.ToString();
-
-                    //txt_fechahora.Text = prof.DatProfe_fecha_hora.ToString();
-                    //ddl_profesional.SelectedValue = prof.prof_id.ToString();
-                    //ddl_especialidad.SelectedValue = prof.espec_id.ToString();
-                    //txt_codigo.Text = prof.DatProfe_cod.ToString();
-
-                }
-                else
-                {
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Error')", true);
-                }*/
             }
+            catch (Exception)
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Error')", true);
+            }
+            
         }
 
         private void guardar_modificar_datos(int perid, int motivoconsid, int antperid, int antfamid, int enfactid, int revOrSisid, 
@@ -292,7 +303,7 @@ namespace SistemaECU911.Template.Views
                 pres = new Tbl_Prescipciones();
                 prof = new Tbl_DatProfesional();
 
-                if (txt_moConsulta.Text == null)
+                if (string.IsNullOrEmpty(txt_moConsulta.Text))
                 {
                     ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Complete el motivo de consulta')", true);                  
                 }
@@ -775,6 +786,44 @@ namespace SistemaECU911.Template.Views
         protected void btn_cancelar_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/Template/Views/Inicio.aspx");
+        }
+
+        private void obtenerCie102()
+        {
+            string codigo = ddl_codigoDiagnostico.SelectedValue;
+
+            var lista = from c in dc.cie10
+                        where c.id10 == codigo
+                        select c;
+
+            foreach (var item in lista)
+            {
+                string descripcion = item.dec10;
+                txt_diagnosticosDiagnostico.Text = descripcion;
+            }       
+
+            //txt_diagnosticosDiagnostico.DataTextField = "dec10";
+            //txt_diagnosticosDiagnostico.DataValueField = "id10";
+            //txt_diagnosticosDiagnostico.DataBind();
+            //txt_diagnosticosDiagnostico.Items.Insert(0, new ListItem("Seleccionar Descripcion", "0"));
+        }
+
+        private void obtenerCie10()
+        {
+            var lista = from c in dc.cie10
+                        select c;
+
+            ddl_codigoDiagnostico.DataSource = lista;
+            ddl_codigoDiagnostico.DataTextField = "id10";
+            ddl_codigoDiagnostico.DataValueField = "id10";
+            ddl_codigoDiagnostico.DataBind();
+            ddl_codigoDiagnostico.Items.Insert(0, new ListItem("CIE 10", "0"));
+        }
+
+
+        protected void ddl_codigoDiagnostico_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            obtenerCie102();
         }
 
         //public DataSet Consultar(string consultaSQL)

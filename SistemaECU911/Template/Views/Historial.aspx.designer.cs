@@ -510,13 +510,13 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_diagnosticosDiagnostico;
 
         /// <summary>
-        /// Control txt_codigoDiagnostico.
+        /// Control ddl_codigoDiagnostico.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_codigoDiagnostico;
+        protected global::System.Web.UI.WebControls.DropDownList ddl_codigoDiagnostico;
 
         /// <summary>
         /// Control txt_tipoDiagnostico.

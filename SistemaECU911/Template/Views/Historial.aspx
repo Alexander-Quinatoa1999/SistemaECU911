@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Template/Views/Principal.Master" AutoEventWireup="true" CodeBehind="Historial.aspx.cs" Inherits="SistemaECU911.Template.Views.Historial" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
@@ -375,10 +376,15 @@
                             </asp:TableRow>
                             <asp:TableRow>
                                 <asp:TableCell Style="width: 250px; background-color: white; font-size:14px">
-                                    <asp:TextBox runat="server" ID="txt_diagnosticosDiagnostico" BorderStyle="None" Style="width: 100%; text-align: center"></asp:TextBox>
+                                    <%--<asp:DropDownList ID="ddl_diagnosticosDiagnostico" CssClass="form-control select2" data-toggle="select2" runat="server">
+                                    </asp:DropDownList>--%>
+                                    <asp:TextBox runat="server" ID="txt_diagnosticosDiagnostico" BorderStyle="None" Style="width: 100%; text-align: center" TextMode="MultiLine" Rows="3"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="width: 75px; background-color: white; font-size:14px">
-                                    <asp:TextBox runat="server" ID="txt_codigoDiagnostico" BorderStyle="None" Style="width: 100%; text-align: center"></asp:TextBox>
+                                    <asp:DropDownList ID="ddl_codigoDiagnostico" CssClass="form-control select2" data-toggle="select2" runat="server" OnSelectedIndexChanged="ddl_codigoDiagnostico_SelectedIndexChanged" AutoPostBack="true">
+                                    </asp:DropDownList>
+                                    <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator3" ForeColor="Red" runat="server" ControlToValidate="ddl_codDiagnostico" ValidationGroup="info" ErrorMessage="El codigo es requerido"></asp:RequiredFieldValidator>--%>
+                                    <%--<asp:TextBox runat="server" ID="txt_codigoDiagnostico" BorderStyle="None" Style="width: 100%; text-align: center"></asp:TextBox>--%>
                                 </asp:TableCell>
                                 <asp:TableCell Style="width: 100px; background-color: white; font-size:14px">
                                     <asp:TextBox runat="server" ID="txt_tipoDiagnostico" BorderStyle="None" Style="width: 100%; text-align: center"></asp:TextBox>
@@ -464,4 +470,11 @@
     </asp:UpdatePanel>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="footer" runat="server">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#<%=ddl_codigoDiagnostico.ClientID%>').select2();
+        });
+    </script>
 </asp:Content>
