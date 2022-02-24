@@ -111,15 +111,15 @@ namespace SistemaECU911.Template.Views
 
         protected void txt_numHClinica_TextChanged(object sender, EventArgs e)
         {
-            ObtenerNumHClinica();
+            ObtenerCedula();
         }
 
-        private void ObtenerNumHClinica()
+        private void ObtenerCedula()
         {
             string cedula = txt_numHClinica.Text;
 
             var lista = from c in dc.Tbl_Personas
-                        where c.Per_Cedula == Convert.ToInt32(cedula)
+                        where c.Per_Cedula == cedula
                         select c;
 
             foreach (var item in lista)
@@ -572,7 +572,7 @@ namespace SistemaECU911.Template.Views
 
                 per.Per_priNombre = txt_priNombre.Text;
                 per.Per_priApellido = txt_priApellido.Text;
-                per.Per_Cedula =Convert.ToInt32(txt_numHClinica.Text);
+                per.Per_Cedula = txt_numHClinica.Text;
                 per.Per_genero = txt_sexo.Text;
                 //captura de datos tbl_motivoconsulta
                 motcons.Mcon_descripcion = txt_moConsulta.Text;
