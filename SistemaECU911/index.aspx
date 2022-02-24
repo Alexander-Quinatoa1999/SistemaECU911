@@ -26,6 +26,7 @@
                             <h6 class="font-weight-light">Un gusto verte de nuevo!</h6>
                             <form class="pt-3" runat="server">
                                 <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+                                <asp:Timer ID="Timer1" runat="server" Interval="2000" OnTick="Timer1_Tick"></asp:Timer>
                                 <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                                     <ContentTemplate>
                                         <div class="form-group">

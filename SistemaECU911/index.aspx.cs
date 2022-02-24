@@ -5,14 +5,14 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using CapaDatos;
+using CapaNegocio;
 
 namespace SistemaECU911
 {
     public partial class index : System.Web.UI.Page
     {
 
-        private static int contador = 1;
-        private static int rol = 1;
+        private static int con = 1;
 
         //Instanciamos la BD
         DataClassesECU911DataContext dc = new DataClassesECU911DataContext();
@@ -21,65 +21,71 @@ namespace SistemaECU911
         {
             if (!IsPostBack)
             {
+                Timer1.Enabled = false;
+            }
+            Session["con"] = Session["Conantiguo"];
+        }
 
+        private void logear()
+        {
+            bool existenom = CN_Usuarios.autentificarxNom(txt_user.Text);
+            bool existe = CN_Usuarios.autentificar(txt_user.Text, /*encriptar(*/txt_pass.Text)/*)*/;
+            {
+                if (existenom)
+                {
+                    if (existe)
+                    {
+                        Tbl_Usuario usuario = new Tbl_Usuario();
+                        Tbl_TipoUsuario tusu = new Tbl_TipoUsuario();
+                        usuario = CN_Usuarios.autentificarxLogin(txt_user.Text, /*encriptar(*/txt_pass.Text)/*)*/;
+                        int rol = Convert.ToInt32(usuario.tusu_id.ToString());
+                        tusu = CN_TipoUsuario.obtenerTusuarioxUsuario(Convert.ToInt32(rol));
+                        int tusuario = Convert.ToInt32(usuario.tusu_id);
+                        if (tusuario == 1)
+                        {
+                            Session["ADMIN"] = usuario.usu_id.ToString();
+                            Session["nombre"] = usuario.usu_nombre.ToString();
+                            Session["apellido"] = usuario.usu_apellido.ToString();
+                            Session["rol"] = tusu.tusu_nombre.ToString();
+                            Response.Redirect("~/Template/Views/Inicio.aspx");
+                            limpiar();
+                        }
+                        else 
+                        {
+                            Session["PASANTE"] = usuario.usu_id.ToString();
+                            Session["nombre"] = usuario.usu_nombre.ToString();
+                            Session["apellido"] = usuario.usu_apellido.ToString();
+                            Session["rol"] = tusu.tusu_nombre.ToString();
+                            Response.Redirect("~/Template/Views/Secundario.aspx");
+                            limpiar();
+                        }
+                    }
+                    else
+                    {
+                        string intentos = (con + (Convert.ToInt32(Session["con"]))).ToString();
+                        Session["Conantiguo"] = intentos.ToString();
+                        ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", "swal('Error!', 'Credenciales Incorrectas! Intento #" + intentos + "', 'error')", true);
+                        txt_pass.Text = "";
+                        if (Convert.ToInt32(intentos) == 2)
+                        {
+                            ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", "swal('Error!', 'A superado el limite de intentos.', 'error')", true);
+                            btn_ingresar.Visible = false;
+                            Session.RemoveAll();
+                            Timer1.Enabled = true;
+                        }
+                    }
+                }
+                else
+                {
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", "swal('Error!', 'El usuario no existe.', 'error')", true);
+                    limpiar();
+                }
             }
         }
 
         protected void btn_ingresar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txt_user.Text) || string.IsNullOrEmpty(txt_pass.Text))
-            {
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Llene los Datos!!')", true);
-            }
-            else
-            {
-                logear(txt_user.Text, txt_pass.Text);
-            }
-        }
-
-        private void logear(string usu, string pass)
-        {            
-            var query2 = dc.Identificar_rol(rol);
-            var query1 = dc.Autentificacion_Usuario(usu, pass);
-            var query = dc.Validar_Existencia(usu);
-
-            if (query.ToList().Count == 1)
-            {
-
-                if (query1.ToList().Count > 0)
-                {
-                    if (query2.ToList().Count == 1)
-                    {
-                        Session["Admin"] = query.ToString();
-                        Response.Redirect("~/Template/Views/Inicio.aspx");
-                    }
-
-                    if (query2.ToList().Count == 2)
-                    {
-                        Session["Usuario"] = query.ToString();
-                        Response.Redirect("~/Template/Views/Secundario.aspx");
-                    }
-                }
-                else
-                {
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Contraseña Incorrecta va " + contador + " intentos')", true);                   
-                    contador++;
-                    txt_pass.Text = "";
-
-                    if (contador > 3)
-                    {
-                        ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Supero el limite te intentos')", true);
-                        limpiar();                      
-                        btn_ingresar.Visible = false;
-                    }
-                }
-
-            }
-            else
-            {
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('El usuario no existe !!')", true);
-                limpiar();
-            }
+            logear();
         }
 
         private void limpiar()
@@ -87,9 +93,17 @@ namespace SistemaECU911
             txt_user.Text = txt_pass.Text = "";
         }
 
-        private object pass_encriptada(string text)
+        string encriptar(string cadena)
         {
-            throw new NotImplementedException();
+            string resultado = string.Empty;
+            byte[] encriptar = System.Text.Encoding.Unicode.GetBytes(cadena);
+            resultado = Convert.ToBase64String(encriptar);
+            return resultado;
+        }
+
+        protected void Timer1_Tick(object sender, EventArgs e)
+        {
+
         }
     }
 }

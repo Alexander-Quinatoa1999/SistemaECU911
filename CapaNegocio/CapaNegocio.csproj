@@ -55,6 +55,8 @@
     <Compile Include="CN_Reintegro.cs" />
     <Compile Include="CN_Retiro.cs" />
     <Compile Include="CN_SocioEconomico.cs" />
+    <Compile Include="CN_TipoUsuario.cs" />
+    <Compile Include="CN_Usuarios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

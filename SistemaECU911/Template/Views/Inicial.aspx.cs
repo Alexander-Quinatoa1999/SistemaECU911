@@ -280,7 +280,7 @@ namespace SistemaECU911.Template.Views
                         txt_iluminacion.Text = facriesgotractual.FacRiesTrabAct_iluminacionFis.ToString();
                         txt_ventilacion.Text = facriesgotractual.FacRiesTrabAct_ventilacionFis.ToString();
                         txt_fluidoelectrico.Text = facriesgotractual.FacRiesTrabAct_fluElectricoFis.ToString();
-                        txt_otros1.Text = facriesgotractual.FacRiesTrabAct_otrosFis.ToString();
+                        txt_otrosFisico.Text = facriesgotractual.FacRiesTrabAct_otrosFis.ToString();
                         txt_atrapmaquinas.Text = facriesgotractual.FacRiesTrabAct_atraMaquinasMec.ToString();
                         txt_atrapsuperficie.Text = facriesgotractual.FacRiesTrabAct_atraSuperfiiesMec.ToString();
                         txt_atrapobjetos.Text = facriesgotractual.FacRiesTrabAct_atraObjetosMec.ToString();
@@ -295,7 +295,7 @@ namespace SistemaECU911.Template.Views
                         txt_cortes.Text = facriesgotractual.FacRiesTrabAct_cortesMec.ToString();
                         txt_atroporvehiculos.Text = facriesgotractual.FacRiesTrabAct_atropeVehiMec.ToString();
                         txt_choques.Text = facriesgotractual.FacRiesTrabAct_coliVehiMec.ToString();
-                        txt_otros2.Text = facriesgotractual.FacRiesTrabAct_otrosMec.ToString();
+                        txt_otrosMecanico.Text = facriesgotractual.FacRiesTrabAct_otrosMec.ToString();
                         txt_solidos.Text = facriesgotractual.FacRiesTrabAct_solidosQui.ToString();
                         txt_polvos.Text = facriesgotractual.FacRiesTrabAct_polvosQui.ToString();
                         txt_humos.Text = facriesgotractual.FacRiesTrabAct_humosQui.ToString();
@@ -304,19 +304,19 @@ namespace SistemaECU911.Template.Views
                         txt_aerosoles.Text = facriesgotractual.FacRiesTrabAct_aerosolesQui.ToString();
                         txt_neblinas.Text = facriesgotractual.FacRiesTrabAct_neblinasQui.ToString();
                         txt_gaseosos.Text = facriesgotractual.FacRiesTrabAct_gaseososQui.ToString();
-                        txt_otros3.Text = facriesgotractual.FacRiesTrabAct_otrosBio.ToString();
+                        txt_otrosQuimico.Text = facriesgotractual.FacRiesTrabAct_otrosBio.ToString();
                         txt_virus.Text = facriesgotractual.FacRiesTrabAct_virusBio.ToString();
                         txt_hongos.Text = facriesgotractual.FacRiesTrabAct_hongosBio.ToString();
                         txt_bacterias.Text = facriesgotractual.FacRiesTrabAct_bacteriasBio.ToString();
                         txt_parasitos.Text = facriesgotractual.FacRiesTrabAct_parasitosBio.ToString();
                         txt_expoavectores.Text = facriesgotractual.FacRiesTrabAct_expVectBio.ToString();
                         txt_expoanimselvaticos.Text = facriesgotractual.FacRiesTrabAct_expAniSelvaBio.ToString();
-                        txt_otros4.Text = facriesgotractual.FacRiesTrabAct_otrosBio.ToString();
+                        txt_otrosBiologico.Text = facriesgotractual.FacRiesTrabAct_otrosBio.ToString();
                         txt_manmanualcargas.Text = facriesgotractual.FacRiesTrabAct_maneManCarErg.ToString();
                         txt_movrepetitivo.Text = facriesgotractual.FacRiesTrabAct_movRepeErg.ToString();
                         txt_postforzadas.Text = facriesgotractual.FacRiesTrabAct_posForzaErg.ToString();
                         txt_trabajopvd.Text = facriesgotractual.FacRiesTrabAct_trabPvdErg.ToString();
-                        txt_otros5.Text = facriesgotractual.FacRiesTrabAct_otrosErg.ToString();
+                        txt_otrosErgonomico.Text = facriesgotractual.FacRiesTrabAct_otrosErg.ToString();
                         txt_montrabajo.Text = facriesgotractual.FacRiesTrabAct_monoTrabPsi.ToString();
                         txt_sobrecargalaboral.Text = facriesgotractual.FacRiesTrabAct_sobrecarLabPsi.ToString();
                         txt_minustarea.Text = facriesgotractual.FacRiesTrabAct_minuTareaPsi.ToString();
@@ -329,7 +329,7 @@ namespace SistemaECU911.Template.Views
                         txt_turnorotat.Text = facriesgotractual.FacRiesTrabAct_turnosRotaPsi.ToString();
                         txt_relacinterpersonales.Text = facriesgotractual.FacRiesTrabAct_relInterperPsi.ToString();
                         txt_inestalaboral.Text = facriesgotractual.FacRiesTrabAct_inesLabPsi.ToString();
-                        txt_otros6.Text = facriesgotractual.FacRiesTrabAct_otrosPsi.ToString();
+                        txt_otrosPsicosocial.Text = facriesgotractual.FacRiesTrabAct_otrosPsi.ToString();
                         txt_medpreventivas.Text = facriesgotractual.FacRiesTrabAct_medPreventivas.ToString();
 
                         //G
@@ -678,7 +678,7 @@ namespace SistemaECU911.Template.Views
                 facriesgotractual.FacRiesTrabAct_iluminacionFis = txt_iluminacion.Text;
                 facriesgotractual.FacRiesTrabAct_ventilacionFis = txt_ventilacion.Text;
                 facriesgotractual.FacRiesTrabAct_fluElectricoFis = txt_fluidoelectrico.Text;
-                facriesgotractual.FacRiesTrabAct_otrosFis = txt_otros1.Text;
+                facriesgotractual.FacRiesTrabAct_otrosFis = txt_otrosFisico.Text;
                 facriesgotractual.FacRiesTrabAct_atraMaquinasMec = txt_atrapmaquinas.Text;
                 facriesgotractual.FacRiesTrabAct_atraSuperfiiesMec = txt_atrapsuperficie.Text;
                 facriesgotractual.FacRiesTrabAct_atraObjetosMec = txt_atrapobjetos.Text;
@@ -693,7 +693,7 @@ namespace SistemaECU911.Template.Views
                 facriesgotractual.FacRiesTrabAct_cortesMec = txt_cortes.Text;
                 facriesgotractual.FacRiesTrabAct_atropeVehiMec = txt_atroporvehiculos.Text;
                 facriesgotractual.FacRiesTrabAct_coliVehiMec = txt_choques.Text;
-                facriesgotractual.FacRiesTrabAct_otrosMec = txt_otros2.Text;
+                facriesgotractual.FacRiesTrabAct_otrosMec = txt_otrosMecanico.Text;
                 facriesgotractual.FacRiesTrabAct_solidosQui = txt_solidos.Text;
                 facriesgotractual.FacRiesTrabAct_polvosQui = txt_polvos.Text;
                 facriesgotractual.FacRiesTrabAct_humosQui = txt_humos.Text;
@@ -702,19 +702,19 @@ namespace SistemaECU911.Template.Views
                 facriesgotractual.FacRiesTrabAct_aerosolesQui = txt_aerosoles.Text;
                 facriesgotractual.FacRiesTrabAct_neblinasQui = txt_neblinas.Text;
                 facriesgotractual.FacRiesTrabAct_gaseososQui = txt_gaseosos.Text;
-                facriesgotractual.FacRiesTrabAct_otrosBio = txt_otros3.Text;
+                facriesgotractual.FacRiesTrabAct_otrosBio = txt_otrosQuimico.Text;
                 facriesgotractual.FacRiesTrabAct_virusBio = txt_virus.Text;
                 facriesgotractual.FacRiesTrabAct_hongosBio = txt_hongos.Text;
                 facriesgotractual.FacRiesTrabAct_bacteriasBio = txt_bacterias.Text;
                 facriesgotractual.FacRiesTrabAct_parasitosBio = txt_parasitos.Text;
                 facriesgotractual.FacRiesTrabAct_expVectBio = txt_expoavectores.Text;
                 facriesgotractual.FacRiesTrabAct_expAniSelvaBio = txt_expoanimselvaticos.Text;
-                facriesgotractual.FacRiesTrabAct_otrosBio = txt_otros4.Text;
+                facriesgotractual.FacRiesTrabAct_otrosBio = txt_otrosBiologico.Text;
                 facriesgotractual.FacRiesTrabAct_maneManCarErg = txt_manmanualcargas.Text;
                 facriesgotractual.FacRiesTrabAct_movRepeErg = txt_movrepetitivo.Text;
                 facriesgotractual.FacRiesTrabAct_posForzaErg = txt_postforzadas.Text;
                 facriesgotractual.FacRiesTrabAct_trabPvdErg = txt_trabajopvd.Text;
-                facriesgotractual.FacRiesTrabAct_otrosErg = txt_otros5.Text;
+                facriesgotractual.FacRiesTrabAct_otrosErg = txt_otrosErgonomico.Text;
                 facriesgotractual.FacRiesTrabAct_monoTrabPsi = txt_montrabajo.Text;
                 facriesgotractual.FacRiesTrabAct_sobrecarLabPsi = txt_sobrecargalaboral.Text;
                 facriesgotractual.FacRiesTrabAct_minuTareaPsi = txt_minustarea.Text;
@@ -727,7 +727,7 @@ namespace SistemaECU911.Template.Views
                 facriesgotractual.FacRiesTrabAct_turnosRotaPsi = txt_turnorotat.Text;
                 facriesgotractual.FacRiesTrabAct_relInterperPsi = txt_relacinterpersonales.Text;
                 facriesgotractual.FacRiesTrabAct_inesLabPsi = txt_inestalaboral.Text;
-                facriesgotractual.FacRiesTrabAct_otrosPsi = txt_otros6.Text;
+                facriesgotractual.FacRiesTrabAct_otrosPsi = txt_otrosErgonomico.Text;
                 facriesgotractual.FacRiesTrabAct_medPreventivas = txt_medpreventivas.Text;
                 facriesgotractual.Per_id = perso;
 

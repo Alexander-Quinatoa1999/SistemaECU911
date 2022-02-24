@@ -380,8 +380,8 @@
       <Column Name="AntFami_descripcion" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
       <Column Name="Per_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="AntFami_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-      <Association Name="Tbl_Tipos_de_Enfermedades_Tbl_AnteFamiliares" Member="Tbl_Tipos_de_Enfermedades" ThisKey="TiEnf_id" OtherKey="TiEnf_id" Type="Tbl_Tipos_de_Enfermedades" IsForeignKey="true" />
       <Association Name="Tbl_Personas_Tbl_AnteFamiliares" Member="Tbl_Personas" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Personas" IsForeignKey="true" />
+      <Association Name="Tbl_Tipos_de_Enfermedades_Tbl_AnteFamiliares" Member="Tbl_Tipos_de_Enfermedades" ThisKey="TiEnf_id" OtherKey="TiEnf_id" Type="Tbl_Tipos_de_Enfermedades" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Tbl_AntePersonales" Member="Tbl_AntePersonales">
@@ -392,8 +392,8 @@
       <Column Name="AntPer_descripcion" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
       <Column Name="Per_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="AntPer_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-      <Association Name="Tbl_Tipos_de_Enfermedades_Tbl_AntePersonales" Member="Tbl_Tipos_de_Enfermedades" ThisKey="TiEnf_id" OtherKey="TiEnf_id" Type="Tbl_Tipos_de_Enfermedades" IsForeignKey="true" />
       <Association Name="Tbl_Personas_Tbl_AntePersonales" Member="Tbl_Personas" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Personas" IsForeignKey="true" />
+      <Association Name="Tbl_Tipos_de_Enfermedades_Tbl_AntePersonales" Member="Tbl_Tipos_de_Enfermedades" ThisKey="TiEnf_id" OtherKey="TiEnf_id" Type="Tbl_Tipos_de_Enfermedades" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Tbl_Antigenos" Member="Tbl_Antigenos">
@@ -762,8 +762,8 @@
       <Column Name="Per_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="DatProfe_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
       <Association Name="Tbl_Especialidad_Tbl_DatProfesional" Member="Tbl_Especialidad" ThisKey="espec_id" OtherKey="espec_id" Type="Tbl_Especialidad" IsForeignKey="true" />
-      <Association Name="Tbl_Profesional_Tbl_DatProfesional" Member="Tbl_Profesional" ThisKey="prof_id" OtherKey="prof_id" Type="Tbl_Profesional" IsForeignKey="true" />
       <Association Name="Tbl_Personas_Tbl_DatProfesional" Member="Tbl_Personas" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Personas" IsForeignKey="true" />
+      <Association Name="Tbl_Profesional_Tbl_DatProfesional" Member="Tbl_Profesional" ThisKey="prof_id" OtherKey="prof_id" Type="Tbl_Profesional" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Tbl_DatProfesionalCertificado" Member="Tbl_DatProfesionalCertificado">
@@ -786,8 +786,8 @@
       <Column Name="Per_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="DatProfeInicial_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
       <Association Name="Tbl_Especialidad_Tbl_DatProfesionalInicial" Member="Tbl_Especialidad" ThisKey="espec_id" OtherKey="espec_id" Type="Tbl_Especialidad" IsForeignKey="true" />
-      <Association Name="Tbl_Profesional_Tbl_DatProfesionalInicial" Member="Tbl_Profesional" ThisKey="prof_id" OtherKey="prof_id" Type="Tbl_Profesional" IsForeignKey="true" />
       <Association Name="Tbl_Personas_Tbl_DatProfesionalInicial" Member="Tbl_Personas" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Personas" IsForeignKey="true" />
+      <Association Name="Tbl_Profesional_Tbl_DatProfesionalInicial" Member="Tbl_Profesional" ThisKey="prof_id" OtherKey="prof_id" Type="Tbl_Profesional" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Tbl_DatProfesionalPeriodica" Member="Tbl_DatProfesionalPeriodica">
@@ -800,8 +800,8 @@
       <Column Name="Per_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="DatProfePeriodica_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
       <Association Name="Tbl_Especialidad_Tbl_DatProfesionalPeriodica" Member="Tbl_Especialidad" ThisKey="espec_id" OtherKey="espec_id" Type="Tbl_Especialidad" IsForeignKey="true" />
-      <Association Name="Tbl_Profesional_Tbl_DatProfesionalPeriodica" Member="Tbl_Profesional" ThisKey="prof_id" OtherKey="prof_id" Type="Tbl_Profesional" IsForeignKey="true" />
       <Association Name="Tbl_Personas_Tbl_DatProfesionalPeriodica" Member="Tbl_Personas" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Personas" IsForeignKey="true" />
+      <Association Name="Tbl_Profesional_Tbl_DatProfesionalPeriodica" Member="Tbl_Profesional" ThisKey="prof_id" OtherKey="prof_id" Type="Tbl_Profesional" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Tbl_DatProfesionalReintegro" Member="Tbl_DatProfesionalReintegro">
@@ -814,8 +814,8 @@
       <Column Name="Per_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="DatProfeReintegro_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
       <Association Name="Tbl_Especialidad_Tbl_DatProfesionalReintegro" Member="Tbl_Especialidad" ThisKey="espec_id" OtherKey="espec_id" Type="Tbl_Especialidad" IsForeignKey="true" />
-      <Association Name="Tbl_Profesional_Tbl_DatProfesionalReintegro" Member="Tbl_Profesional" ThisKey="prof_id" OtherKey="prof_id" Type="Tbl_Profesional" IsForeignKey="true" />
       <Association Name="Tbl_Personas_Tbl_DatProfesionalReintegro" Member="Tbl_Personas" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Personas" IsForeignKey="true" />
+      <Association Name="Tbl_Profesional_Tbl_DatProfesionalReintegro" Member="Tbl_Profesional" ThisKey="prof_id" OtherKey="prof_id" Type="Tbl_Profesional" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Tbl_DatProfesionalRetiro" Member="Tbl_DatProfesionalRetiro">
@@ -1323,8 +1323,8 @@
       <Column Name="Per_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Regiones_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="ExaFisRegional_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-      <Association Name="Tbl_Regiones_Tbl_ExaFisRegional" Member="Tbl_Regiones" ThisKey="Regiones_id" OtherKey="Regiones_id" Type="Tbl_Regiones" IsForeignKey="true" />
       <Association Name="Tbl_Personas_Tbl_ExaFisRegional" Member="Tbl_Personas" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Personas" IsForeignKey="true" />
+      <Association Name="Tbl_Regiones_Tbl_ExaFisRegional" Member="Tbl_Regiones" ThisKey="Regiones_id" OtherKey="Regiones_id" Type="Tbl_Regiones" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Tbl_ExaFisRegionalInicial" Member="Tbl_ExaFisRegionalInicial">
@@ -2400,6 +2400,140 @@
       <Association Name="Tbl_Serologia_Tbl_PedidoExamnes" Member="Tbl_Serologia" ThisKey="Sero_id" OtherKey="Sero_id" Type="Tbl_Serologia" IsForeignKey="true" />
     </Type>
   </Table>
+  <Table Name="dbo.Tbl_Personas" Member="Tbl_Personas">
+    <Type Name="Tbl_Personas">
+      <Column Name="Per_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Per_Cedula" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Per_priNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Per_segNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Per_priApellido" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Per_segApellido" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Per_fechNacimiento" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Zona_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DirInsti_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Sede_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ProcesoInt_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EstrucProgra_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Per_fechInicio" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Per_fechDesde" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Per_fechHasta" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EstructuraUno_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EstructuraDos_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Rmu_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Grado_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GrpOcupacional_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CargoInsti_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GrupoEtni_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Per_modLaboral_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Per_numContrato" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="Per_partiGeneral" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Per_partiIndividual" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Per_genero" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="Per_discapacidad" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Per_motivoSalida" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CorreoInts_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TelfInts_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Per_numCelular" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Per_dirDomicilio" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Per_correoPersonal" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Per_instrucFormal" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Per_añosExperiencia" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Per_comServicios" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="Per_oriDesComision" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Per_fechComiDesde" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Per_fechComiHasta" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Per_nomPerContacEmergencia" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Per_numPerContacEmergencia" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Per_observaciones" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Per_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Association Name="Tbl_Personas_Tbl_AccidentesTrabajoDesc" Member="Tbl_AccidentesTrabajoDesc" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_AccidentesTrabajoDesc" />
+      <Association Name="Tbl_Personas_Tbl_ActividadesExtraLaborales" Member="Tbl_ActividadesExtraLaborales" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_ActividadesExtraLaborales" />
+      <Association Name="Tbl_Personas_Tbl_AntecedentesEmplAnteriores" Member="Tbl_AntecedentesEmplAnteriores" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_AntecedentesEmplAnteriores" />
+      <Association Name="Tbl_Personas_Tbl_AntecedentesFamiliaresDetParentesco" Member="Tbl_AntecedentesFamiliaresDetParentesco" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_AntecedentesFamiliaresDetParentesco" />
+      <Association Name="Tbl_Personas_Tbl_AntecedentesFamiliaresDetParentescoPeriodica" Member="Tbl_AntecedentesFamiliaresDetParentescoPeriodica" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_AntecedentesFamiliaresDetParentescoPeriodica" />
+      <Association Name="Tbl_Personas_Tbl_AntecedentesPersonalesInicial" Member="Tbl_AntecedentesPersonalesInicial" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_AntecedentesPersonalesInicial" />
+      <Association Name="Tbl_Personas_Tbl_AntecedentesPersonalesPeriodica" Member="Tbl_AntecedentesPersonalesPeriodica" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_AntecedentesPersonalesPeriodica" />
+      <Association Name="Tbl_Personas_Tbl_AntecedentesPersonalesRetiro" Member="Tbl_AntecedentesPersonalesRetiro" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_AntecedentesPersonalesRetiro" />
+      <Association Name="Tbl_Personas_Tbl_AnteFamiliares" Member="Tbl_AnteFamiliares" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_AnteFamiliares" />
+      <Association Name="Tbl_Personas_Tbl_AntePersonales" Member="Tbl_AntePersonales" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_AntePersonales" />
+      <Association Name="Tbl_Personas_Tbl_AptitudMedica" Member="Tbl_AptitudMedica" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_AptitudMedica" />
+      <Association Name="Tbl_Personas_Tbl_AptitudMedicaCertificado" Member="Tbl_AptitudMedicaCertificado" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_AptitudMedicaCertificado" />
+      <Association Name="Tbl_Personas_Tbl_AptitudMedicaPeriodica" Member="Tbl_AptitudMedicaPeriodica" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_AptitudMedicaPeriodica" />
+      <Association Name="Tbl_Personas_Tbl_AptitudMedicaReintegro" Member="Tbl_AptitudMedicaReintegro" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_AptitudMedicaReintegro" />
+      <Association Name="Tbl_Personas_Tbl_ConsVitAntro" Member="Tbl_ConsVitAntro" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_ConsVitAntro" />
+      <Association Name="Tbl_Personas_Tbl_ConsVitAntroPeriodica" Member="Tbl_ConsVitAntroPeriodica" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_ConsVitAntroPeriodica" />
+      <Association Name="Tbl_Personas_Tbl_ConsVitAntroReintegro" Member="Tbl_ConsVitAntroReintegro" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_ConsVitAntroReintegro" />
+      <Association Name="Tbl_Personas_Tbl_ConsVitAntroRetiro" Member="Tbl_ConsVitAntroRetiro" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_ConsVitAntroRetiro" />
+      <Association Name="Tbl_Personas_Tbl_DatEstableEmpUsu" Member="Tbl_DatEstableEmpUsu" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_DatEstableEmpUsu" />
+      <Association Name="Tbl_Personas_Tbl_DatEstableEmpUsuReintegro" Member="Tbl_DatEstableEmpUsuReintegro" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_DatEstableEmpUsuReintegro" />
+      <Association Name="Tbl_Personas_Tbl_DatEstableEmpUsuRetiro" Member="Tbl_DatEstableEmpUsuRetiro" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_DatEstableEmpUsuRetiro" />
+      <Association Name="Tbl_Personas_Tbl_DatosGeneralesCertificado" Member="Tbl_DatosGeneralesCertificado" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_DatosGeneralesCertificado" />
+      <Association Name="Tbl_Personas_Tbl_DatProfesional" Member="Tbl_DatProfesional" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_DatProfesional" />
+      <Association Name="Tbl_Personas_Tbl_DatProfesionalCertificado" Member="Tbl_DatProfesionalCertificado" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_DatProfesionalCertificado" />
+      <Association Name="Tbl_Personas_Tbl_DatProfesionalInicial" Member="Tbl_DatProfesionalInicial" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_DatProfesionalInicial" />
+      <Association Name="Tbl_Personas_Tbl_DatProfesionalPeriodica" Member="Tbl_DatProfesionalPeriodica" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_DatProfesionalPeriodica" />
+      <Association Name="Tbl_Personas_Tbl_DatProfesionalReintegro" Member="Tbl_DatProfesionalReintegro" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_DatProfesionalReintegro" />
+      <Association Name="Tbl_Personas_Tbl_DatProfesionalRetiro" Member="Tbl_DatProfesionalRetiro" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_DatProfesionalRetiro" />
+      <Association Name="Tbl_Personas_Tbl_Diagnostico" Member="Tbl_Diagnostico" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Diagnostico" />
+      <Association Name="Tbl_Personas_Tbl_DiagnosticoFichMed" Member="Tbl_DiagnosticoFichMed" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_DiagnosticoFichMed" />
+      <Association Name="Tbl_Personas_Tbl_DiagnosticoPeriodica" Member="Tbl_DiagnosticoPeriodica" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_DiagnosticoPeriodica" />
+      <Association Name="Tbl_Personas_Tbl_DiagnosticoReintegro" Member="Tbl_DiagnosticoReintegro" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_DiagnosticoReintegro" />
+      <Association Name="Tbl_Personas_Tbl_DiagnosticoRetiro" Member="Tbl_DiagnosticoRetiro" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_DiagnosticoRetiro" />
+      <Association Name="Tbl_Personas_Tbl_EnferActualPeriodica" Member="Tbl_EnferActualPeriodica" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_EnferActualPeriodica" />
+      <Association Name="Tbl_Personas_Tbl_EnferActualReintegro" Member="Tbl_EnferActualReintegro" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_EnferActualReintegro" />
+      <Association Name="Tbl_Personas_Tbl_EnfermedadActual" Member="Tbl_EnfermedadActual" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_EnfermedadActual" />
+      <Association Name="Tbl_Personas_Tbl_EnfermedadActualInicial" Member="Tbl_EnfermedadActualInicial" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_EnfermedadActualInicial" />
+      <Association Name="Tbl_Personas_Tbl_EnfermedadActualPeriodica" Member="Tbl_EnfermedadActualPeriodica" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_EnfermedadActualPeriodica" />
+      <Association Name="Tbl_Personas_Tbl_EnfermedadActualReintegro" Member="Tbl_EnfermedadActualReintegro" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_EnfermedadActualReintegro" />
+      <Association Name="Tbl_Personas_Tbl_EnfermedadesProfesionales" Member="Tbl_EnfermedadesProfesionales" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_EnfermedadesProfesionales" />
+      <Association Name="Tbl_Personas_Tbl_EvaluacionMedicaRetiro" Member="Tbl_EvaluacionMedicaRetiro" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_EvaluacionMedicaRetiro" />
+      <Association Name="Tbl_Personas_Tbl_EvaMedicaRetiroCertificado" Member="Tbl_EvaMedicaRetiroCertificado" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_EvaMedicaRetiroCertificado" />
+      <Association Name="Tbl_Personas_Tbl_Evolucion" Member="Tbl_Evolucion" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Evolucion" />
+      <Association Name="Tbl_Personas_Tbl_EvolucionEvolucion" Member="Tbl_EvolucionEvolucion" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_EvolucionEvolucion" />
+      <Association Name="Tbl_Personas_Tbl_ExaFisRegional" Member="Tbl_ExaFisRegional" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_ExaFisRegional" />
+      <Association Name="Tbl_Personas_Tbl_ExaFisRegionalInicial" Member="Tbl_ExaFisRegionalInicial" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_ExaFisRegionalInicial" />
+      <Association Name="Tbl_Personas_Tbl_ExaFisRegionalPeriodica" Member="Tbl_ExaFisRegionalPeriodica" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_ExaFisRegionalPeriodica" />
+      <Association Name="Tbl_Personas_Tbl_ExaFisRegionalReintegro" Member="Tbl_ExaFisRegionalReintegro" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_ExaFisRegionalReintegro" />
+      <Association Name="Tbl_Personas_Tbl_ExaFisRegionalRetiro" Member="Tbl_ExaFisRegionalRetiro" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_ExaFisRegionalRetiro" />
+      <Association Name="Tbl_Personas_Tbl_FacRiesTrabAct" Member="Tbl_FacRiesTrabAct" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_FacRiesTrabAct" />
+      <Association Name="Tbl_Personas_Tbl_FacRiesTrabActPeriodica" Member="Tbl_FacRiesTrabActPeriodica" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_FacRiesTrabActPeriodica" />
+      <Association Name="Tbl_Personas_Tbl_InmunizacionesInmunizaciones" Member="Tbl_InmunizacionesInmunizaciones" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_InmunizacionesInmunizaciones" />
+      <Association Name="Tbl_Personas_Tbl_MotivoConsulta" Member="Tbl_MotivoConsulta" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_MotivoConsulta" />
+      <Association Name="Tbl_Personas_Tbl_MotivoConsultaInicial" Member="Tbl_MotivoConsultaInicial" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_MotivoConsultaInicial" />
+      <Association Name="Tbl_Personas_Tbl_MotivoConsultaPeriodica" Member="Tbl_MotivoConsultaPeriodica" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_MotivoConsultaPeriodica" />
+      <Association Name="Tbl_Personas_Tbl_MotivoConsultaReintegro" Member="Tbl_MotivoConsultaReintegro" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_MotivoConsultaReintegro" />
+      <Association Name="Tbl_Personas_Tbl_Prescipciones" Member="Tbl_Prescipciones" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Prescipciones" />
+      <Association Name="Tbl_Personas_Tbl_PrescripcionesEvolucion" Member="Tbl_PrescripcionesEvolucion" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_PrescripcionesEvolucion" />
+      <Association Name="Tbl_Personas_Tbl_RecomendacionesCertificado" Member="Tbl_RecomendacionesCertificado" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_RecomendacionesCertificado" />
+      <Association Name="Tbl_Personas_Tbl_RecoTratamiento" Member="Tbl_RecoTratamiento" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_RecoTratamiento" />
+      <Association Name="Tbl_Personas_Tbl_RecoTratamientoPeriodica" Member="Tbl_RecoTratamientoPeriodica" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_RecoTratamientoPeriodica" />
+      <Association Name="Tbl_Personas_Tbl_RecoTratamientoReintegro" Member="Tbl_RecoTratamientoReintegro" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_RecoTratamientoReintegro" />
+      <Association Name="Tbl_Personas_Tbl_RecoTratamientoRetiro" Member="Tbl_RecoTratamientoRetiro" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_RecoTratamientoRetiro" />
+      <Association Name="Tbl_Personas_Tbl_ResExaGenEspRiesTrabajo" Member="Tbl_ResExaGenEspRiesTrabajo" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_ResExaGenEspRiesTrabajo" />
+      <Association Name="Tbl_Personas_Tbl_ResExaGenEspRiesTrabajoPeriodica" Member="Tbl_ResExaGenEspRiesTrabajoPeriodica" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_ResExaGenEspRiesTrabajoPeriodica" />
+      <Association Name="Tbl_Personas_Tbl_ResExaGenEspRiesTrabajoReintegro" Member="Tbl_ResExaGenEspRiesTrabajoReintegro" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_ResExaGenEspRiesTrabajoReintegro" />
+      <Association Name="Tbl_Personas_Tbl_ResExaGenEspRiesTrabajoRetiro" Member="Tbl_ResExaGenEspRiesTrabajoRetiro" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_ResExaGenEspRiesTrabajoRetiro" />
+      <Association Name="Tbl_Personas_Tbl_ReviOrgaSistemasFichMed" Member="Tbl_ReviOrgaSistemasFichMed" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_ReviOrgaSistemasFichMed" />
+      <Association Name="Tbl_Personas_Tbl_RevisionActualOrganosSistemas" Member="Tbl_RevisionActualOrganosSistemas" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_RevisionActualOrganosSistemas" />
+      <Association Name="Tbl_Personas_Tbl_RevisionActualOrganosSistemasPeriodica" Member="Tbl_RevisionActualOrganosSistemasPeriodica" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_RevisionActualOrganosSistemasPeriodica" />
+      <Association Name="Tbl_Personas_Tbl_TratamientoInicial" Member="Tbl_TratamientoInicial" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_TratamientoInicial" />
+      <Association Name="Tbl_CargoInstitucional_Tbl_Personas" Member="Tbl_CargoInstitucional" ThisKey="CargoInsti_id" OtherKey="CargoIntsi_id" Type="Tbl_CargoInstitucional" IsForeignKey="true" />
+      <Association Name="Tbl_CorreoIntitucional_Tbl_Personas" Member="Tbl_CorreoIntitucional" ThisKey="CorreoInts_id" OtherKey="CorreoInts_id" Type="Tbl_CorreoIntitucional" IsForeignKey="true" />
+      <Association Name="Tbl_DireccionInstitucional_Tbl_Personas" Member="Tbl_DireccionInstitucional" ThisKey="DirInsti_Id" OtherKey="DirInsti_Id" Type="Tbl_DireccionInstitucional" IsForeignKey="true" />
+      <Association Name="Tbl_EstructuraProgramatica_Tbl_Personas" Member="Tbl_EstructuraProgramatica" ThisKey="EstrucProgra_id" OtherKey="EstrucProgra_id" Type="Tbl_EstructuraProgramatica" IsForeignKey="true" />
+      <Association Name="Tbl_EstructuraDos_Tbl_Personas" Member="Tbl_EstructuraDos" ThisKey="EstructuraDos_id" OtherKey="EstructuraDos_id" Type="Tbl_EstructuraDos" IsForeignKey="true" />
+      <Association Name="Tbl_EstrcuturaUno_Tbl_Personas" Member="Tbl_EstrcuturaUno" ThisKey="EstructuraUno_id" OtherKey="EstructuraUno_id" Type="Tbl_EstrcuturaUno" IsForeignKey="true" />
+      <Association Name="Tbl_Grado_Tbl_Personas" Member="Tbl_Grado" ThisKey="Grado_id" OtherKey="Grado_id" Type="Tbl_Grado" IsForeignKey="true" />
+      <Association Name="Tbl_GrupoOcupacional_Tbl_Personas" Member="Tbl_GrupoOcupacional" ThisKey="GrpOcupacional_id" OtherKey="GrpOcupacional_id" Type="Tbl_GrupoOcupacional" IsForeignKey="true" />
+      <Association Name="Tbl_GrupoEtnico_Tbl_Personas" Member="Tbl_GrupoEtnico" ThisKey="GrupoEtni_id" OtherKey="GrupoEtni_id" Type="Tbl_GrupoEtnico" IsForeignKey="true" />
+      <Association Name="Tbl_ModalidadLaboral_Tbl_Personas" Member="Tbl_ModalidadLaboral" ThisKey="Per_modLaboral_id" OtherKey="Per_modLaboral_id" Type="Tbl_ModalidadLaboral" IsForeignKey="true" />
+      <Association Name="Tbl_Zona_Tbl_Personas" Member="Tbl_Zona" ThisKey="Zona_id" OtherKey="Zona_id" Type="Tbl_Zona" IsForeignKey="true" />
+      <Association Name="Tbl_ProcesoInterno_Tbl_Personas" Member="Tbl_ProcesoInterno" ThisKey="ProcesoInt_id" OtherKey="ProcesoInt_id" Type="Tbl_ProcesoInterno" IsForeignKey="true" />
+      <Association Name="Tbl_Rmu_Tbl_Personas" Member="Tbl_Rmu" ThisKey="Rmu_id" OtherKey="Rmu_id" Type="Tbl_Rmu" IsForeignKey="true" />
+      <Association Name="Tbl_Sede_Tbl_Personas" Member="Tbl_Sede" ThisKey="Sede_id" OtherKey="Sede_id" Type="Tbl_Sede" IsForeignKey="true" />
+      <Association Name="Tbl_TelefonoIntitucional_Tbl_Personas" Member="Tbl_TelefonoIntitucional" ThisKey="TelfInts_id" OtherKey="TelfInts_id" Type="Tbl_TelefonoIntitucional" IsForeignKey="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.Tbl_Prescipciones" Member="Tbl_Prescipciones">
     <Type Name="Tbl_Prescipciones">
       <Column Name="Press_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -2806,6 +2940,7 @@
       <Column Name="usu_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="usu_nombre" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
       <Column Name="usu_apellido" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="usu_cedula" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
       <Column Name="usu_direccion" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
       <Column Name="usu_telefono" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
       <Column Name="usu_nomlogin" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
@@ -2845,140 +2980,6 @@
       <Column Name="VidSexAct_opcion" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="VidSexAct_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
       <Association Name="Tbl_VidaSexualActiva_Tbl_AntecedentesGinObste" Member="Tbl_AntecedentesGinObste" ThisKey="VidSexAct_id" OtherKey="VidSexAct_id" Type="Tbl_AntecedentesGinObste" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Tbl_Personas" Member="Tbl_Personas">
-    <Type Name="Tbl_Personas">
-      <Column Name="Per_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Per_Cedula" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="Per_priNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="Per_segNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="Per_priApellido" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="Per_segApellido" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="Per_fechNacimiento" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="Zona_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DirInsti_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Sede_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ProcesoInt_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="EstrucProgra_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Per_fechInicio" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="Per_fechDesde" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="Per_fechHasta" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="EstructuraUno_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="EstructuraDos_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Rmu_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Grado_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="GrpOcupacional_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="CargoInsti_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="GrupoEtni_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Per_modLaboral_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Per_numContrato" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
-      <Column Name="Per_partiGeneral" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Per_partiIndividual" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Per_genero" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-      <Column Name="Per_discapacidad" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="Per_motivoSalida" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="CorreoInts_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="TelfInts_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Per_numCelular" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Per_dirDomicilio" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="Per_correoPersonal" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="Per_instrucFormal" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="Per_añosExperiencia" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="Per_comServicios" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
-      <Column Name="Per_oriDesComision" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Per_fechComiDesde" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="Per_fechComiHasta" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="Per_nomPerContacEmergencia" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="Per_numPerContacEmergencia" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="Per_observaciones" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
-      <Column Name="Per_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-      <Association Name="Tbl_Personas_Tbl_AccidentesTrabajoDesc" Member="Tbl_AccidentesTrabajoDesc" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_AccidentesTrabajoDesc" />
-      <Association Name="Tbl_Personas_Tbl_ActividadesExtraLaborales" Member="Tbl_ActividadesExtraLaborales" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_ActividadesExtraLaborales" />
-      <Association Name="Tbl_Personas_Tbl_AntecedentesEmplAnteriores" Member="Tbl_AntecedentesEmplAnteriores" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_AntecedentesEmplAnteriores" />
-      <Association Name="Tbl_Personas_Tbl_AntecedentesFamiliaresDetParentesco" Member="Tbl_AntecedentesFamiliaresDetParentesco" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_AntecedentesFamiliaresDetParentesco" />
-      <Association Name="Tbl_Personas_Tbl_AntecedentesFamiliaresDetParentescoPeriodica" Member="Tbl_AntecedentesFamiliaresDetParentescoPeriodica" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_AntecedentesFamiliaresDetParentescoPeriodica" />
-      <Association Name="Tbl_Personas_Tbl_AntecedentesPersonalesInicial" Member="Tbl_AntecedentesPersonalesInicial" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_AntecedentesPersonalesInicial" />
-      <Association Name="Tbl_Personas_Tbl_AntecedentesPersonalesPeriodica" Member="Tbl_AntecedentesPersonalesPeriodica" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_AntecedentesPersonalesPeriodica" />
-      <Association Name="Tbl_Personas_Tbl_AntecedentesPersonalesRetiro" Member="Tbl_AntecedentesPersonalesRetiro" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_AntecedentesPersonalesRetiro" />
-      <Association Name="Tbl_Personas_Tbl_AnteFamiliares" Member="Tbl_AnteFamiliares" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_AnteFamiliares" />
-      <Association Name="Tbl_Personas_Tbl_AntePersonales" Member="Tbl_AntePersonales" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_AntePersonales" />
-      <Association Name="Tbl_Personas_Tbl_AptitudMedica" Member="Tbl_AptitudMedica" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_AptitudMedica" />
-      <Association Name="Tbl_Personas_Tbl_AptitudMedicaCertificado" Member="Tbl_AptitudMedicaCertificado" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_AptitudMedicaCertificado" />
-      <Association Name="Tbl_Personas_Tbl_AptitudMedicaPeriodica" Member="Tbl_AptitudMedicaPeriodica" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_AptitudMedicaPeriodica" />
-      <Association Name="Tbl_Personas_Tbl_AptitudMedicaReintegro" Member="Tbl_AptitudMedicaReintegro" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_AptitudMedicaReintegro" />
-      <Association Name="Tbl_Personas_Tbl_ConsVitAntro" Member="Tbl_ConsVitAntro" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_ConsVitAntro" />
-      <Association Name="Tbl_Personas_Tbl_ConsVitAntroPeriodica" Member="Tbl_ConsVitAntroPeriodica" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_ConsVitAntroPeriodica" />
-      <Association Name="Tbl_Personas_Tbl_ConsVitAntroReintegro" Member="Tbl_ConsVitAntroReintegro" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_ConsVitAntroReintegro" />
-      <Association Name="Tbl_Personas_Tbl_ConsVitAntroRetiro" Member="Tbl_ConsVitAntroRetiro" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_ConsVitAntroRetiro" />
-      <Association Name="Tbl_Personas_Tbl_DatEstableEmpUsu" Member="Tbl_DatEstableEmpUsu" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_DatEstableEmpUsu" />
-      <Association Name="Tbl_Personas_Tbl_DatEstableEmpUsuReintegro" Member="Tbl_DatEstableEmpUsuReintegro" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_DatEstableEmpUsuReintegro" />
-      <Association Name="Tbl_Personas_Tbl_DatEstableEmpUsuRetiro" Member="Tbl_DatEstableEmpUsuRetiro" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_DatEstableEmpUsuRetiro" />
-      <Association Name="Tbl_Personas_Tbl_DatosGeneralesCertificado" Member="Tbl_DatosGeneralesCertificado" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_DatosGeneralesCertificado" />
-      <Association Name="Tbl_Personas_Tbl_DatProfesional" Member="Tbl_DatProfesional" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_DatProfesional" />
-      <Association Name="Tbl_Personas_Tbl_DatProfesionalCertificado" Member="Tbl_DatProfesionalCertificado" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_DatProfesionalCertificado" />
-      <Association Name="Tbl_Personas_Tbl_DatProfesionalInicial" Member="Tbl_DatProfesionalInicial" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_DatProfesionalInicial" />
-      <Association Name="Tbl_Personas_Tbl_DatProfesionalPeriodica" Member="Tbl_DatProfesionalPeriodica" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_DatProfesionalPeriodica" />
-      <Association Name="Tbl_Personas_Tbl_DatProfesionalReintegro" Member="Tbl_DatProfesionalReintegro" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_DatProfesionalReintegro" />
-      <Association Name="Tbl_Personas_Tbl_DatProfesionalRetiro" Member="Tbl_DatProfesionalRetiro" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_DatProfesionalRetiro" />
-      <Association Name="Tbl_Personas_Tbl_Diagnostico" Member="Tbl_Diagnostico" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Diagnostico" />
-      <Association Name="Tbl_Personas_Tbl_DiagnosticoFichMed" Member="Tbl_DiagnosticoFichMed" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_DiagnosticoFichMed" />
-      <Association Name="Tbl_Personas_Tbl_DiagnosticoPeriodica" Member="Tbl_DiagnosticoPeriodica" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_DiagnosticoPeriodica" />
-      <Association Name="Tbl_Personas_Tbl_DiagnosticoReintegro" Member="Tbl_DiagnosticoReintegro" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_DiagnosticoReintegro" />
-      <Association Name="Tbl_Personas_Tbl_DiagnosticoRetiro" Member="Tbl_DiagnosticoRetiro" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_DiagnosticoRetiro" />
-      <Association Name="Tbl_Personas_Tbl_EnferActualPeriodica" Member="Tbl_EnferActualPeriodica" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_EnferActualPeriodica" />
-      <Association Name="Tbl_Personas_Tbl_EnferActualReintegro" Member="Tbl_EnferActualReintegro" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_EnferActualReintegro" />
-      <Association Name="Tbl_Personas_Tbl_EnfermedadActual" Member="Tbl_EnfermedadActual" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_EnfermedadActual" />
-      <Association Name="Tbl_Personas_Tbl_EnfermedadActualInicial" Member="Tbl_EnfermedadActualInicial" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_EnfermedadActualInicial" />
-      <Association Name="Tbl_Personas_Tbl_EnfermedadActualPeriodica" Member="Tbl_EnfermedadActualPeriodica" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_EnfermedadActualPeriodica" />
-      <Association Name="Tbl_Personas_Tbl_EnfermedadActualReintegro" Member="Tbl_EnfermedadActualReintegro" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_EnfermedadActualReintegro" />
-      <Association Name="Tbl_Personas_Tbl_EnfermedadesProfesionales" Member="Tbl_EnfermedadesProfesionales" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_EnfermedadesProfesionales" />
-      <Association Name="Tbl_Personas_Tbl_EvaluacionMedicaRetiro" Member="Tbl_EvaluacionMedicaRetiro" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_EvaluacionMedicaRetiro" />
-      <Association Name="Tbl_Personas_Tbl_EvaMedicaRetiroCertificado" Member="Tbl_EvaMedicaRetiroCertificado" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_EvaMedicaRetiroCertificado" />
-      <Association Name="Tbl_Personas_Tbl_Evolucion" Member="Tbl_Evolucion" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Evolucion" />
-      <Association Name="Tbl_Personas_Tbl_EvolucionEvolucion" Member="Tbl_EvolucionEvolucion" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_EvolucionEvolucion" />
-      <Association Name="Tbl_Personas_Tbl_ExaFisRegional" Member="Tbl_ExaFisRegional" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_ExaFisRegional" />
-      <Association Name="Tbl_Personas_Tbl_ExaFisRegionalInicial" Member="Tbl_ExaFisRegionalInicial" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_ExaFisRegionalInicial" />
-      <Association Name="Tbl_Personas_Tbl_ExaFisRegionalPeriodica" Member="Tbl_ExaFisRegionalPeriodica" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_ExaFisRegionalPeriodica" />
-      <Association Name="Tbl_Personas_Tbl_ExaFisRegionalReintegro" Member="Tbl_ExaFisRegionalReintegro" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_ExaFisRegionalReintegro" />
-      <Association Name="Tbl_Personas_Tbl_ExaFisRegionalRetiro" Member="Tbl_ExaFisRegionalRetiro" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_ExaFisRegionalRetiro" />
-      <Association Name="Tbl_Personas_Tbl_FacRiesTrabAct" Member="Tbl_FacRiesTrabAct" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_FacRiesTrabAct" />
-      <Association Name="Tbl_Personas_Tbl_FacRiesTrabActPeriodica" Member="Tbl_FacRiesTrabActPeriodica" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_FacRiesTrabActPeriodica" />
-      <Association Name="Tbl_Personas_Tbl_InmunizacionesInmunizaciones" Member="Tbl_InmunizacionesInmunizaciones" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_InmunizacionesInmunizaciones" />
-      <Association Name="Tbl_Personas_Tbl_MotivoConsulta" Member="Tbl_MotivoConsulta" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_MotivoConsulta" />
-      <Association Name="Tbl_Personas_Tbl_MotivoConsultaInicial" Member="Tbl_MotivoConsultaInicial" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_MotivoConsultaInicial" />
-      <Association Name="Tbl_Personas_Tbl_MotivoConsultaPeriodica" Member="Tbl_MotivoConsultaPeriodica" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_MotivoConsultaPeriodica" />
-      <Association Name="Tbl_Personas_Tbl_MotivoConsultaReintegro" Member="Tbl_MotivoConsultaReintegro" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_MotivoConsultaReintegro" />
-      <Association Name="Tbl_Personas_Tbl_Prescipciones" Member="Tbl_Prescipciones" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Prescipciones" />
-      <Association Name="Tbl_Personas_Tbl_PrescripcionesEvolucion" Member="Tbl_PrescripcionesEvolucion" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_PrescripcionesEvolucion" />
-      <Association Name="Tbl_Personas_Tbl_RecomendacionesCertificado" Member="Tbl_RecomendacionesCertificado" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_RecomendacionesCertificado" />
-      <Association Name="Tbl_Personas_Tbl_RecoTratamiento" Member="Tbl_RecoTratamiento" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_RecoTratamiento" />
-      <Association Name="Tbl_Personas_Tbl_RecoTratamientoPeriodica" Member="Tbl_RecoTratamientoPeriodica" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_RecoTratamientoPeriodica" />
-      <Association Name="Tbl_Personas_Tbl_RecoTratamientoReintegro" Member="Tbl_RecoTratamientoReintegro" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_RecoTratamientoReintegro" />
-      <Association Name="Tbl_Personas_Tbl_RecoTratamientoRetiro" Member="Tbl_RecoTratamientoRetiro" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_RecoTratamientoRetiro" />
-      <Association Name="Tbl_Personas_Tbl_ResExaGenEspRiesTrabajo" Member="Tbl_ResExaGenEspRiesTrabajo" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_ResExaGenEspRiesTrabajo" />
-      <Association Name="Tbl_Personas_Tbl_ResExaGenEspRiesTrabajoPeriodica" Member="Tbl_ResExaGenEspRiesTrabajoPeriodica" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_ResExaGenEspRiesTrabajoPeriodica" />
-      <Association Name="Tbl_Personas_Tbl_ResExaGenEspRiesTrabajoReintegro" Member="Tbl_ResExaGenEspRiesTrabajoReintegro" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_ResExaGenEspRiesTrabajoReintegro" />
-      <Association Name="Tbl_Personas_Tbl_ResExaGenEspRiesTrabajoRetiro" Member="Tbl_ResExaGenEspRiesTrabajoRetiro" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_ResExaGenEspRiesTrabajoRetiro" />
-      <Association Name="Tbl_Personas_Tbl_ReviOrgaSistemasFichMed" Member="Tbl_ReviOrgaSistemasFichMed" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_ReviOrgaSistemasFichMed" />
-      <Association Name="Tbl_Personas_Tbl_RevisionActualOrganosSistemas" Member="Tbl_RevisionActualOrganosSistemas" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_RevisionActualOrganosSistemas" />
-      <Association Name="Tbl_Personas_Tbl_RevisionActualOrganosSistemasPeriodica" Member="Tbl_RevisionActualOrganosSistemasPeriodica" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_RevisionActualOrganosSistemasPeriodica" />
-      <Association Name="Tbl_Personas_Tbl_TratamientoInicial" Member="Tbl_TratamientoInicial" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_TratamientoInicial" />
-      <Association Name="Tbl_CargoInstitucional_Tbl_Personas" Member="Tbl_CargoInstitucional" ThisKey="CargoInsti_id" OtherKey="CargoIntsi_id" Type="Tbl_CargoInstitucional" IsForeignKey="true" />
-      <Association Name="Tbl_CorreoIntitucional_Tbl_Personas" Member="Tbl_CorreoIntitucional" ThisKey="CorreoInts_id" OtherKey="CorreoInts_id" Type="Tbl_CorreoIntitucional" IsForeignKey="true" />
-      <Association Name="Tbl_DireccionInstitucional_Tbl_Personas" Member="Tbl_DireccionInstitucional" ThisKey="DirInsti_Id" OtherKey="DirInsti_Id" Type="Tbl_DireccionInstitucional" IsForeignKey="true" />
-      <Association Name="Tbl_EstructuraProgramatica_Tbl_Personas" Member="Tbl_EstructuraProgramatica" ThisKey="EstrucProgra_id" OtherKey="EstrucProgra_id" Type="Tbl_EstructuraProgramatica" IsForeignKey="true" />
-      <Association Name="Tbl_EstructuraDos_Tbl_Personas" Member="Tbl_EstructuraDos" ThisKey="EstructuraDos_id" OtherKey="EstructuraDos_id" Type="Tbl_EstructuraDos" IsForeignKey="true" />
-      <Association Name="Tbl_EstrcuturaUno_Tbl_Personas" Member="Tbl_EstrcuturaUno" ThisKey="EstructuraUno_id" OtherKey="EstructuraUno_id" Type="Tbl_EstrcuturaUno" IsForeignKey="true" />
-      <Association Name="Tbl_Grado_Tbl_Personas" Member="Tbl_Grado" ThisKey="Grado_id" OtherKey="Grado_id" Type="Tbl_Grado" IsForeignKey="true" />
-      <Association Name="Tbl_GrupoOcupacional_Tbl_Personas" Member="Tbl_GrupoOcupacional" ThisKey="GrpOcupacional_id" OtherKey="GrpOcupacional_id" Type="Tbl_GrupoOcupacional" IsForeignKey="true" />
-      <Association Name="Tbl_GrupoEtnico_Tbl_Personas" Member="Tbl_GrupoEtnico" ThisKey="GrupoEtni_id" OtherKey="GrupoEtni_id" Type="Tbl_GrupoEtnico" IsForeignKey="true" />
-      <Association Name="Tbl_ModalidadLaboral_Tbl_Personas" Member="Tbl_ModalidadLaboral" ThisKey="Per_modLaboral_id" OtherKey="Per_modLaboral_id" Type="Tbl_ModalidadLaboral" IsForeignKey="true" />
-      <Association Name="Tbl_ProcesoInterno_Tbl_Personas" Member="Tbl_ProcesoInterno" ThisKey="ProcesoInt_id" OtherKey="ProcesoInt_id" Type="Tbl_ProcesoInterno" IsForeignKey="true" />
-      <Association Name="Tbl_Rmu_Tbl_Personas" Member="Tbl_Rmu" ThisKey="Rmu_id" OtherKey="Rmu_id" Type="Tbl_Rmu" IsForeignKey="true" />
-      <Association Name="Tbl_Sede_Tbl_Personas" Member="Tbl_Sede" ThisKey="Sede_id" OtherKey="Sede_id" Type="Tbl_Sede" IsForeignKey="true" />
-      <Association Name="Tbl_TelefonoIntitucional_Tbl_Personas" Member="Tbl_TelefonoIntitucional" ThisKey="TelfInts_id" OtherKey="TelfInts_id" Type="Tbl_TelefonoIntitucional" IsForeignKey="true" />
-      <Association Name="Tbl_Zona_Tbl_Personas" Member="Tbl_Zona" ThisKey="Zona_id" OtherKey="Zona_id" Type="Tbl_Zona" IsForeignKey="true" />
     </Type>
   </Table>
   <Function Name="dbo.Autentificacion_Usuario" Method="Autentificacion_Usuario">

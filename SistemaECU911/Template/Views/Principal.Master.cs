@@ -11,11 +11,14 @@ namespace SistemaECU911.Template.Views
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Session.Timeout = 30;
             if (Session["Admin"] != null)
             {
                 string usulogeado = Session["Admin"].ToString();
-                lbl_nombre.Text = "Bienvenido " + usulogeado;
+                string resNom = Session["nombre"].ToString();
+                string resApe = Session["apellido"].ToString();
+                string resRol = Session["rol"].ToString();
+                lbl_nombre.Text = resNom + " " + resApe;
+                //lblRol.Text = resRol;
             }
             else
             {
