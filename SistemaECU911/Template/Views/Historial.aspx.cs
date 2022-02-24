@@ -4,6 +4,8 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using System.Web.Script.Services;
+using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using CapaDatos;
@@ -71,22 +73,127 @@ namespace SistemaECU911.Template.Views
                 cargarEvidenciaPatologica12();
                 cargarEspecialidad();
                 cargarProfesional();
-                obtenerCie10();
             }            
+        }
+
+        //Metodo obtener cedula por numero de historia clinica
+        [WebMethod]
+        [ScriptMethod]
+        public static List<string> ObtenerNumHClinica(string prefixText)
+        {
+            List<string> lista = new List<string>();
+            try
+            {
+                string oConn = @"Data Source=.;Initial Catalog=SistemaECU911;Integrated Security=True";
+
+                SqlConnection con = new SqlConnection(oConn);
+                con.Open();
+                SqlCommand cmd = new SqlCommand("select top(10) Per_Cedula from Tbl_Personas where Per_Cedula LIKE + @Cedula + '%'", con);
+                cmd.Parameters.AddWithValue("@Cedula", prefixText);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+                IDataReader lector = cmd.ExecuteReader();
+
+                while (lector.Read())
+                {
+                    lista.Add(lector.GetString(0));
+                }
+
+                lector.Close();
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex);
+                return null;
+            }
         }
 
         protected void txt_numHClinica_TextChanged(object sender, EventArgs e)
         {
-            per = CN_HistorialMedico.obtenerPersonasxCedula(Convert.ToInt32(txt_numHClinica.Text));
+            ObtenerNumHClinica();
+        }
 
-            if (per != null)
+        private void ObtenerNumHClinica()
+        {
+            string cedula = txt_numHClinica.Text;
+
+            var lista = from c in dc.Tbl_Personas
+                        where c.Per_Cedula == Convert.ToInt32(cedula)
+                        select c;
+
+            foreach (var item in lista)
             {
-                txt_priNombre.Text = per.Per_priNombre.ToString();
-                txt_segNombre.Text = per.Per_segNombre.ToString();
-                txt_priApellido.Text = per.Per_priApellido.ToString();
-                txt_segApellido.Text = per.Per_segApellido.ToString();
-                txt_sexo.Text = per.Per_genero.ToString();
-                txt_edad.Text = per.Per_fechNacimiento.ToString();
+                string priNombre = item.Per_priNombre;
+                txt_priNombre.Text = priNombre;
+
+                string segNombre = item.Per_segNombre;
+                txt_segNombre.Text = segNombre;
+
+                string priApellido = item.Per_priApellido;
+                txt_priApellido.Text = priApellido;
+
+                string segApellido = item.Per_segApellido;
+                txt_segApellido.Text = segApellido;
+
+                string sexo = item.Per_genero;
+                txt_sexo.Text = sexo;
+
+                string edad = Convert.ToString(item.Per_fechNacimiento);
+                txt_edad.Text = edad;
+            }
+        }
+
+        //Metodo obtener codigo cie10
+        [WebMethod]
+        [ScriptMethod]
+        public static List<string> ObtenerCie10(string prefixText)
+        {
+            List<string> lista = new List<string>();
+            try
+            {
+                string oConn = @"Data Source=.;Initial Catalog=SistemaECU911;Integrated Security=True";
+
+                SqlConnection con = new SqlConnection(oConn);
+                con.Open();
+                SqlCommand cmd = new SqlCommand("select top(10) dec10 from cie10 where dec10 LIKE + @Name + '%'", con);
+                cmd.Parameters.AddWithValue("@Name", prefixText);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+                IDataReader lector = cmd.ExecuteReader();
+
+                while (lector.Read())
+                {
+                    lista.Add(lector.GetString(0));
+                }
+
+                lector.Close();
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex);
+                return null;
+            }
+        }
+
+        protected void txt_diagnosticosDiagnostico_TextChanged(object sender, EventArgs e)
+        {
+            ObtenerCodigo();
+        }
+
+        private void ObtenerCodigo()
+        {
+            string descripcion = txt_diagnosticosDiagnostico.Text;
+
+            var lista = from c in dc.cie10
+                        where c.dec10 == descripcion
+                        select c;
+
+            foreach (var item in lista)
+            {
+                string codigo = item.id10;
+                txt_codigoDiagnostico.Text = codigo;
             }
         }
 
@@ -788,118 +895,45 @@ namespace SistemaECU911.Template.Views
             Response.Redirect("~/Template/Views/Inicio.aspx");
         }
 
-        private void obtenerCie102()
-        {
-            string codigo = ddl_codigoDiagnostico.SelectedValue;
-
-            var lista = from c in dc.cie10
-                        where c.id10 == codigo
-                        select c;
-
-            foreach (var item in lista)
-            {
-                string descripcion = item.dec10;
-                txt_diagnosticosDiagnostico.Text = descripcion;
-            }       
-
-            //txt_diagnosticosDiagnostico.DataTextField = "dec10";
-            //txt_diagnosticosDiagnostico.DataValueField = "id10";
-            //txt_diagnosticosDiagnostico.DataBind();
-            //txt_diagnosticosDiagnostico.Items.Insert(0, new ListItem("Seleccionar Descripcion", "0"));
-        }
-
-        private void obtenerCie10()
-        {
-            var lista = from c in dc.cie10
-                        select c;
-
-            ddl_codigoDiagnostico.DataSource = lista;
-            ddl_codigoDiagnostico.DataTextField = "id10";
-            ddl_codigoDiagnostico.DataValueField = "id10";
-            ddl_codigoDiagnostico.DataBind();
-            ddl_codigoDiagnostico.Items.Insert(0, new ListItem("CIE 10", "0"));
-        }
-
-
-        protected void ddl_codigoDiagnostico_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            obtenerCie102();
-        }
-
-        //public DataSet Consultar(string consultaSQL)
+        //private void obtenerCie102()
         //{
-        //    SqlConnection con = new SqlConnection(@"Data Source=ANDRES-SOSA;Initial Catalog=SistemaECU911;Integrated Security=True");
-        //    con.Open();
-        //    SqlCommand cmd = new SqlCommand(consultaSQL, con);
-        //    SqlDataAdapter da = new SqlDataAdapter(cmd);
-        //    DataSet ds = new DataSet();
-        //    da.Fill(ds);
-        //    con.Close();
+        //    string codigo = ddl_codigoDiagnostico.SelectedValue;
 
-        //    return ds;
+        //    var lista = from c in dc.cie10
+        //                where c.id10 == codigo
+        //                select c;
+
+        //    foreach (var item in lista)
+        //    {
+        //        string descripcion = item.dec10;
+        //        txt_diagnosticosDiagnostico.Text = descripcion;
+        //    }       
+
+        //    //txt_diagnosticosDiagnostico.DataTextField = "dec10";
+        //    //txt_diagnosticosDiagnostico.DataValueField = "id10";
+        //    //txt_diagnosticosDiagnostico.DataBind();
+        //    //txt_diagnosticosDiagnostico.Items.Insert(0, new ListItem("Seleccionar Descripcion", "0"));
         //}
 
-        //private void cargarDatosDefecto()
+        //private void obtenerCie10()
         //{
+        //    var lista = from c in dc.cie10
+        //                select c;
 
-        //    SqlConnection con = new SqlConnection(@"Data Source=.;Initial Catalog=SistemaECU911;Integrated Security=True");
-        //    SqlDataReader dr = null;
-        //    SqlCommand cmd = null;
-
-        //    if (txt_numHClinica.Text != "")
-        //    {
-        //        cmd = new SqlCommand("SELECT Per_Cedula, Per_priNombre, Per_priApellido FROM Tbl_Personas WHERE Per_Cedula = '" + txt_numHClinica + "'", con);
-        //        con.Open();
-
-        //        try
-        //        {
-        //            dr = cmd.ExecuteReader();
-
-        //            if (dr.Read() == true)
-        //            {
-        //                txt_priNombre.Enabled = true;
-        //                txt_priApellido.Enabled = true;
-        //                txt_numHClinica.Enabled = true;
-
-        //                txt_priNombre.Text = dr["Per_priNombre"].ToString();
-        //                txt_priApellido.Text = dr["Per_priApellido"].ToString();
-        //                txt_numHClinica.Text = dr["Per_Cedula"].ToString();
-
-        //            }
-        //            else
-        //            {
-        //                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Cedula Invalida')", true);
-        //            }
-        //        }
-        //        catch (Exception)
-        //        {
-
-        //            ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Error')", true);
-        //        }
-        //        finally
-        //        {
-        //            con.Close();
-        //        }
-        //    }
-        //    else
-        //    {
-        //        ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Numero de Historia Requerida')", true);
-        //    }
-
-        //    //con.Open();
-
-        //    //SqlCommand cmd = new SqlCommand("SELECT Emp_nombre FROM Tbl_Empresa WHERE Emp_estado = 'A' ", con);
-        //    //SqlDataReader consulta = cmd.ExecuteReader();
-
-        //    //if (consulta.Read())
-        //    //{
-        //    //    txt_nomEmpresa.Text = consulta.ToString();
-        //    //}
-
-        //    //consulta.Close();
-        //    //con.Close();
-
+        //    ddl_codigoDiagnostico.DataSource = lista;
+        //    ddl_codigoDiagnostico.DataTextField = "id10";
+        //    ddl_codigoDiagnostico.DataValueField = "id10";
+        //    ddl_codigoDiagnostico.DataBind();
+        //    ddl_codigoDiagnostico.Items.Insert(0, new ListItem("CIE 10", "0"));
         //}
+
+
+        //protected void ddl_codigoDiagnostico_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    obtenerCie102();
+        //}
+
+        
 
     }
 
