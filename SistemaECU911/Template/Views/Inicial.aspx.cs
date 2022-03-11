@@ -128,25 +128,25 @@ namespace SistemaECU911.Template.Views
                         txt_numHClinica.Text = per.Per_Cedula.ToString();
                         txt_sexo.Text = per.Per_genero.ToString();
                         txt_edadinicial.Text = per.Per_fechNacimiento.ToString();
-                        txt_catolica.Text = datosestempresausu.datEstable_catolicaRel.ToString();
-                        txt_evangelica.Text = datosestempresausu.datEstable_evangelicaRel.ToString();
-                        txt_testigo.Text = datosestempresausu.datEstable_testJehovaRel.ToString();
-                        txt_mormona.Text = datosestempresausu.datEstable_mormonaRel.ToString();
-                        txt_otrareligion.Text = datosestempresausu.datEstable_otrasRel.ToString();
+                        //txt_catolica.Text = datosestempresausu.datEstable_catolicaRel.ToString();
+                        //txt_evangelica.Text = datosestempresausu.datEstable_evangelicaRel.ToString();
+                        //txt_testigo.Text = datosestempresausu.datEstable_testJehovaRel.ToString();
+                        //txt_mormona.Text = datosestempresausu.datEstable_mormonaRel.ToString();
+                        //txt_otrareligion.Text = datosestempresausu.datEstable_otrasRel.ToString();
                         txt_gruposanguineo.Text = datosestempresausu.datEstable_groSanguineo.ToString();
                         txt_lateralidad.Text = datosestempresausu.datEstable_lateralidad.ToString();
-                        txt_lesbiana.Text = datosestempresausu.datEstable__lesbianaOriSex.ToString();
-                        txt_gay.Text = datosestempresausu.datEstable_gayOriSex.ToString();
-                        txt_bisexual.Text = datosestempresausu.datEstable_bisexualOriSex.ToString();
-                        txt_heterosexual.Text = datosestempresausu.datEstable_heterosexualOriSex.ToString();
-                        txt_noRespondeOriSex.Text = datosestempresausu.datEstable_norespondeOriSex.ToString();
-                        txt_femenino.Text = datosestempresausu.datEstable_femeninoIdenGen.ToString();
-                        txt_masculino.Text = datosestempresausu.datEstable_masculinoIdenGen.ToString();
-                        txt_transfemenino.Text = datosestempresausu.datEstable_transFemeninoIdenGen.ToString();
-                        txt_transmasculino.Text = datosestempresausu.datEstable_transMasculinoIdenGen.ToString();
-                        txt_noRespondeIdeGen.Text = datosestempresausu.datEstable_norespondeIdenGen.ToString();
-                        txt_sidiscapacidad.Text = datosestempresausu.datEstable_siDis.ToString();
-                        txt_nodiscapacidad.Text = datosestempresausu.datEstable_noDis.ToString();
+                        //txt_lesbiana.Text = datosestempresausu.datEstable__lesbianaOriSex.ToString();
+                        //txt_gay.Text = datosestempresausu.datEstable_gayOriSex.ToString();
+                        //txt_bisexual.Text = datosestempresausu.datEstable_bisexualOriSex.ToString();
+                        //txt_heterosexual.Text = datosestempresausu.datEstable_heterosexualOriSex.ToString();
+                        //txt_noRespondeOriSex.Text = datosestempresausu.datEstable_norespondeOriSex.ToString();
+                        //txt_femenino.Text = datosestempresausu.datEstable_femeninoIdenGen.ToString();
+                        //txt_masculino.Text = datosestempresausu.datEstable_masculinoIdenGen.ToString();
+                        //txt_transfemenino.Text = datosestempresausu.datEstable_transFemeninoIdenGen.ToString();
+                        //txt_transmasculino.Text = datosestempresausu.datEstable_transMasculinoIdenGen.ToString();
+                        //txt_noRespondeIdeGen.Text = datosestempresausu.datEstable_norespondeIdenGen.ToString();
+                        //txt_sidiscapacidad.Text = datosestempresausu.datEstable_siDis.ToString();
+                        //txt_nodiscapacidad.Text = datosestempresausu.datEstable_noDis.ToString();
                         txt_tipodiscapacidad.Text = datosestempresausu.datEstable_tipoDis.ToString();
                         txt_porcentajediscapacidad.Text = datosestempresausu.datEstable_porcentDis.ToString();
                         txt_actividadesrelevantes.Text = datosestempresausu.datEstable_actRelevantesTrabOcupar.ToString();
@@ -165,55 +165,55 @@ namespace SistemaECU911.Template.Views
                         txt_abortosAntGinObste.Text = antper.antPerInicial_abortos.ToString();
                         txt_vivosAntGinObste.Text = antper.antPerInicial_vivosHij.ToString();
                         txt_muertosAntGinObste.Text = antper.antPerInicial_muertosHij.ToString();
-                        txt_siVidSexAntGinObste.Text = antper.antPerInicial_siVidaSexActiva.ToString();
-                        txt_noVidSexAntGinObste.Text = antper.antPerInicial_noVidaSexActiva.ToString();
-                        txt_siMetPlaniAntGinObste.Text = antper.antPerInicial_siMetPlanifiFamiliar.ToString();
-                        txt_noMetPlaniAntGinObste.Text = antper.antPerInicial_noMetPlanifiFamiliar.ToString();
+                        //txt_siVidSexAntGinObste.Text = antper.antPerInicial_siVidaSexActiva.ToString();
+                        //txt_noVidSexAntGinObste.Text = antper.antPerInicial_noVidaSexActiva.ToString();
+                        //txt_siMetPlaniAntGinObste.Text = antper.antPerInicial_siMetPlanifiFamiliar.ToString();
+                        //txt_noMetPlaniAntGinObste.Text = antper.antPerInicial_noMetPlanifiFamiliar.ToString();
                         txt_tipoMetPlaniAntGinObste.Text = antper.antPerInicial_tipoMetPlanifiFamiliar.ToString();
-                        txt_siPapaniAntGinObste.Text = antper.antPerInicial_siExaRealiPapanicolaou.ToString();
-                        txt_noPapaniAntGinObste.Text = antper.antPerInicial_noExaRealiPapanicolaou.ToString();
+                        //txt_siPapaniAntGinObste.Text = antper.antPerInicial_siExaRealiPapanicolaou.ToString();
+                        //txt_noPapaniAntGinObste.Text = antper.antPerInicial_noExaRealiPapanicolaou.ToString();
                         txt_tiempoPapaniAntGinObste.Text = antper.antPerInicial_tiempoExaRealiPapanicolaou.ToString();
                         txt_resultadoPapaniAntGinObste.Text = antper.antPerInicial_resultadoExaRealiPapanicolaou.ToString();
-                        txt_siEcoMamaAntGinObste.Text = antper.antPerInicial_siExaRealiEcoMamario.ToString();
-                        txt_noEcoMamaAntGinObste.Text = antper.antPerInicial_noExaRealiEcoMamario.ToString();
+                        //txt_siEcoMamaAntGinObste.Text = antper.antPerInicial_siExaRealiEcoMamario.ToString();
+                        //txt_noEcoMamaAntGinObste.Text = antper.antPerInicial_noExaRealiEcoMamario.ToString();
                         txt_tiempoEcoMamaAntGinObste.Text = antper.antPerInicial_tiempoExaRealiEcoMamario.ToString();
                         txt_resultadoEcoMamaAntGinObste.Text = antper.antPerInicial_resultadoExaRealiEcoMamario.ToString();
-                        txt_siColposAntGinObste.Text = antper.antPerInicial_siExaRealiColposcopia.ToString();
-                        txt_noColposAntGinObste.Text = antper.antPerInicial_noExaRealiColposcopia.ToString();
+                        //txt_siColposAntGinObste.Text = antper.antPerInicial_siExaRealiColposcopia.ToString();
+                        //txt_noColposAntGinObste.Text = antper.antPerInicial_noExaRealiColposcopia.ToString();
                         txt_tiempoColposAntGinObste.Text = antper.antPerInicial_tiempoExaRealiColposcopia.ToString();
                         txt_resultadoColposAntGinObste.Text = antper.antPerInicial_resultadoExaRealiColposcopia.ToString();
-                        txt_siMamograAntGinObste.Text = antper.antPerInicial_siExaRealiMamografia.ToString();
-                        txt_noMamograAntGinObste.Text = antper.antPerInicial_noExaRealiMamografia.ToString();
+                        //txt_siMamograAntGinObste.Text = antper.antPerInicial_siExaRealiMamografia.ToString();
+                        //txt_noMamograAntGinObste.Text = antper.antPerInicial_noExaRealiMamografia.ToString();
                         txt_tiempoMamograAntGinObste.Text = antper.antPerInicial_tiempoExaRealiMamografia.ToString();
                         txt_resultadoMamograAntGinObste.Text = antper.antPerInicial_resultadoExaRealiMamografia.ToString();
-                        txt_siExaRealiAntProstaAntReproMascu.Text = antper.antPerInicial_siExaRealiAntiProstatico.ToString();
-                        txt_noExaRealiAntProstaAntReproMascu.Text = antper.antPerInicial_noExaRealiAntiProstatico.ToString();
+                        //txt_siExaRealiAntProstaAntReproMascu.Text = antper.antPerInicial_siExaRealiAntiProstatico.ToString();
+                        //txt_noExaRealiAntProstaAntReproMascu.Text = antper.antPerInicial_noExaRealiAntiProstatico.ToString();
                         txt_tiempoExaRealiAntProstaAntReproMascu.Text = antper.antPerInicial_tiempoExaRealiAntiProstatico.ToString();
                         txt_resultadoExaRealiAntProstaAntReproMascu.Text = antper.antPerInicial_resultadoExaRealiAntiProstatico.ToString();
-                        txt_siMetPlaniAntReproMascu.Text = antper.antPerInicial_siMetPlanifiFamiAntReproMascu.ToString();
-                        txt_noMetPlaniAntReproMascu.Text = antper.antPerInicial_noMetPlanifiFamiAntReproMascu.ToString();
+                        //txt_siMetPlaniAntReproMascu.Text = antper.antPerInicial_siMetPlanifiFamiAntReproMascu.ToString();
+                        //txt_noMetPlaniAntReproMascu.Text = antper.antPerInicial_noMetPlanifiFamiAntReproMascu.ToString();
                         txt_tipo1MetPlaniAntReproMascu.Text = antper.antPerInicial_tipo1MetPlanifiFamiAntReproMascu.ToString();
                         txt_vivosHijosAntReproMascu.Text = antper.antPerInicial_vivosHijAntReproMascu.ToString();
                         txt_muertosHijosAntReproMascu.Text = antper.antPerInicial_muertosHijAntReproMascu.ToString();
-                        txt_siExaRealiEcoProstaAntReproMascu.Text = antper.antPerInicial_siExaRealiEcoProstatico.ToString();
-                        txt_noExaRealiEcoProstaAntReproMascu.Text = antper.antPerInicial_noExaRealiEcoProstatico.ToString();
+                        //txt_siExaRealiEcoProstaAntReproMascu.Text = antper.antPerInicial_siExaRealiEcoProstatico.ToString();
+                        //txt_noExaRealiEcoProstaAntReproMascu.Text = antper.antPerInicial_noExaRealiEcoProstatico.ToString();
                         txt_tiempoExaRealiEcoProstaAntReproMascu.Text = antper.antPerInicial_tiempoExaRealiEcoProstatico.ToString();
                         txt_resultadoExaRealiEcoProstaAntReproMascu.Text = antper.antPerInicial_resultadoExaRealiEcoProstatico.ToString();
                         txt_tipo2MetPlaniAntReproMascu.Text = antper.antPerInicial_tipo2MetPlanifiFamiAntReproMascu.ToString();
-                        txt_siConsuNociTabaHabToxi.Text = antper.antPerInicial_siConsuNocivosTabaco.ToString();
-                        txt_noConsuNociTabaHabToxi.Text = antper.antPerInicial_noConsuNocivosTabaco.ToString();
+                        //txt_siConsuNociTabaHabToxi.Text = antper.antPerInicial_siConsuNocivosTabaco.ToString();
+                        //txt_noConsuNociTabaHabToxi.Text = antper.antPerInicial_noConsuNocivosTabaco.ToString();
                         txt_tiemConConsuNociTabaHabToxi.Text = antper.antPerInicial_tiempoConsuConsuNocivosTabaco.ToString();
                         txt_cantiConsuNociTabaHabToxi.Text = antper.antPerInicial_cantidadConsuNocivosTabaco.ToString();
                         txt_exConsumiConsuNociTabaHabToxi.Text = antper.antPerInicial_exConsumiConsuNocivosTabaco.ToString();
                         txt_tiemAbstiConsuNociTabaHabToxi.Text = antper.antPerInicial_tiempoAbstiConsuNocivosTabaco.ToString();
-                        txt_siConsuNociAlcoHabToxi.Text = antper.antPerInicial_siConsuNocivosAlcohol.ToString();
-                        txt_noConsuNociAlcoHabToxi.Text = antper.antPerInicial_noConsuNocivosAlcohol.ToString();
+                        //txt_siConsuNociAlcoHabToxi.Text = antper.antPerInicial_siConsuNocivosAlcohol.ToString();
+                        //txt_noConsuNociAlcoHabToxi.Text = antper.antPerInicial_noConsuNocivosAlcohol.ToString();
                         txt_tiemConConsuNociAlcoHabToxi.Text = antper.antPerInicial_tiempoConsuConsuNocivosAlcohol.ToString();
                         txt_cantiConsuNociAlcoHabToxi.Text = antper.antPerInicial_cantidadConsuNocivosAlcohol.ToString();
                         txt_exConsumiConsuNociAlcoHabToxi.Text = antper.antPerInicial_exConsumiConsuNocivosAlcohol.ToString();
                         txt_tiemAbstiConsuNociAlcoHabToxi.Text = antper.antPerInicial_tiempoAbstiConsuNocivosAlcohol.ToString();
-                        txt_siConsuNociOtrasDroHabToxi.Text = antper.antPerInicial_siConsuNocivosOtrasDrogas.ToString();
-                        txt_noConsuNociOtrasDroHabToxi.Text = antper.antPerInicial_noConsuNocivosOtrasDrogas.ToString();
+                        //txt_siConsuNociOtrasDroHabToxi.Text = antper.antPerInicial_siConsuNocivosOtrasDrogas.ToString();
+                        //txt_noConsuNociOtrasDroHabToxi.Text = antper.antPerInicial_noConsuNocivosOtrasDrogas.ToString();
                         txt_tiemCon1ConsuNociOtrasDroHabToxi.Text = antper.antPerInicial_tiempoConsu1ConsuNocivosOtrasDrogas.ToString();
                         txt_canti1ConsuNociOtrasDroHabToxi.Text = antper.antPerInicial_cantidad1ConsuNocivosOtrasDrogas.ToString();
                         txt_exConsumi1ConsuNociOtrasDroHabToxi.Text = antper.antPerInicial_exConsumi1ConsuNocivosOtrasDrogas.ToString();
@@ -223,12 +223,12 @@ namespace SistemaECU911.Template.Views
                         txt_canti2ConsuNociOtrasDroHabToxi.Text = antper.antPerInicial_cantidad2ConsuNocivosOtrasDrogas.ToString();
                         txt_exConsumi2ConsuNociOtrasDroHabToxi.Text = antper.antPerInicial_exConsumi2ConsuNocivosOtrasDrogas.ToString();
                         txt_tiemAbsti2ConsuNociOtrasDroHabToxi.Text = antper.antPerInicial_tiempoAbsti2ConsuNocivosOtrasDrogas.ToString();
-                        txt_siEstVidaActFisiEstVida.Text = antper.antPerInicial_siEstiVidaActFisica.ToString();
-                        txt_noEstVidaActFisiEstVida.Text = antper.antPerInicial_noEstiVidaActFisica.ToString();
+                        //txt_siEstVidaActFisiEstVida.Text = antper.antPerInicial_siEstiVidaActFisica.ToString();
+                        //txt_noEstVidaActFisiEstVida.Text = antper.antPerInicial_noEstiVidaActFisica.ToString();
                         txt_cualEstVidaActFisiEstVida.Text = antper.antPerInicial_cualEstiVidaActFisica.ToString();
                         txt_tiemCanEstVidaActFisiEstVida.Text = antper.antPerInicial_tiem_cantEstiVidaActFisica.ToString();
-                        txt_siEstVidaMedHabiEstVida.Text = antper.antPerInicial_siEstiVidaMediHabitual.ToString();
-                        txt_noEstVidaMedHabiEstVida.Text = antper.antPerInicial_noEstiVidaMediHabitual.ToString();
+                        //txt_siEstVidaMedHabiEstVida.Text = antper.antPerInicial_siEstiVidaMediHabitual.ToString();
+                        //txt_noEstVidaMedHabiEstVida.Text = antper.antPerInicial_noEstiVidaMediHabitual.ToString();
                         txt_cual1EstVidaMedHabiEstVida.Text = antper.antPerInicial_cual1EstiVidaMediHabitual.ToString();
                         txt_tiemCan1EstVidaMedHabiEstVida.Text = antper.antPerInicial_tiem_cant1EstiVidaMediHabitual.ToString();
                         txt_cual2EstVidaMedHabiEstVida.Text = antper.antPerInicial_cual2EstiVidaMediHabitual.ToString();
@@ -241,32 +241,32 @@ namespace SistemaECU911.Template.Views
                         txt_puestotrabajo.Text = emplant.AntTrabajoInicial_puestoTrabajo.ToString();
                         txt_actdesempeña.Text = emplant.AntTrabajoInicial_actDesemp.ToString();
                         txt_tiempotrabajo.Text = emplant.AntTrabajoInicial_tiemTrabajo.ToString();
-                        txt_fisico.Text = emplant.AntTrabajoInicial_fisicoRies.ToString();
-                        txt_mecanico.Text = emplant.AntTrabajoInicial_mecanicoRies.ToString();
-                        txt_quimico.Text = emplant.AntTrabajoInicial_quimicoRies.ToString();
-                        txt_biologico.Text = emplant.AntTrabajoInicial_biologicoRies.ToString();
-                        txt_ergonomico.Text = emplant.AntTrabajoInicial_ergonomicoRies.ToString();
-                        txt_psicosocial.Text = emplant.AntTrabajoInicial_psicosocial.ToString();
+                        //txt_fisico.Text = emplant.AntTrabajoInicial_fisicoRies.ToString();
+                        //txt_mecanico.Text = emplant.AntTrabajoInicial_mecanicoRies.ToString();
+                        //txt_quimico.Text = emplant.AntTrabajoInicial_quimicoRies.ToString();
+                        //txt_biologico.Text = emplant.AntTrabajoInicial_biologicoRies.ToString();
+                        //txt_ergonomico.Text = emplant.AntTrabajoInicial_ergonomicoRies.ToString();
+                        //txt_psicosocial.Text = emplant.AntTrabajoInicial_psicosocial.ToString();
                         txt_obseantempleanteriores.Text = emplant.AntTrabajoInicial_observaciones.ToString();
-                        txt_si.Text = emplant.AntTrabajoInicial_siCalificadoIESSAcciTrabajo.ToString();
+                        //txt_si.Text = emplant.AntTrabajoInicial_siCalificadoIESSAcciTrabajo.ToString();
                         txt_especificar.Text = emplant.AntTrabajoInicial_especificarCalificadoIESSAcciTrabajo.ToString();
-                        txt_no.Text = emplant.AntTrabajoInicial_noCalificadoIESSAcciTrabajo.ToString();
+                        //txt_no.Text = emplant.AntTrabajoInicial_noCalificadoIESSAcciTrabajo.ToString();
                         txt_fecha.Text = emplant.AntTrabajoInicial_fechaCalificadoIESSAcciTrabajo.ToString();
                         txt_observaciones2.Text = emplant.AntTrabajoInicial_obserAcciTrabajo.ToString();
-                        txt_siprofesional.Text = emplant.AntTrabajoInicial_siCalificadoIESSEnfProfesionales.ToString();
+                        //txt_siprofesional.Text = emplant.AntTrabajoInicial_siCalificadoIESSEnfProfesionales.ToString();
                         txt_espeprofesional.Text = emplant.AntTrabajoInicial_especificarCalificadoIESSEnfProfesionales.ToString();
-                        txt_noprofesional.Text = emplant.AntTrabajoInicial_noCalificadoIESSEnfProfesionales.ToString();
+                        //txt_noprofesional.Text = emplant.AntTrabajoInicial_noCalificadoIESSEnfProfesionales.ToString();
                         txt_fechaprofesional.Text = emplant.AntTrabajoInicial_fechaCalificadoIESSEnfProfesionales.ToString();
 
                         //E
-                        txt_enfermedadcardiovascular.Text = AnteFamiDetParentesco.AntFamDetPare_enfCarVas.ToString();
-                        txt_enfermedadmetabolica.Text = AnteFamiDetParentesco.AntFamDetPare_enfMeta.ToString();
-                        txt_enfermedadneurologica.Text = AnteFamiDetParentesco.AntFamDetPare_enfNeuro.ToString();
-                        txt_enfermedadoncologica.Text = AnteFamiDetParentesco.AntFamDetPare_enfOnco.ToString();
-                        txt_enfermedadinfecciosa.Text = AnteFamiDetParentesco.AntFamDetPare_enfInfe.ToString();
-                        txt_enfermedadhereditaria.Text = AnteFamiDetParentesco.AntFamDetPare_enfHereConge.ToString();
-                        txt_discapacidades.Text = AnteFamiDetParentesco.AntFamDetPare_discapa.ToString();
-                        txt_otrosenfer.Text = AnteFamiDetParentesco.AntFamDetPare_otros.ToString();
+                        //txt_enfermedadcardiovascular.Text = AnteFamiDetParentesco.AntFamDetPare_enfCarVas.ToString();
+                        //txt_enfermedadmetabolica.Text = AnteFamiDetParentesco.AntFamDetPare_enfMeta.ToString();
+                        //txt_enfermedadneurologica.Text = AnteFamiDetParentesco.AntFamDetPare_enfNeuro.ToString();
+                        //txt_enfermedadoncologica.Text = AnteFamiDetParentesco.AntFamDetPare_enfOnco.ToString();
+                        //txt_enfermedadinfecciosa.Text = AnteFamiDetParentesco.AntFamDetPare_enfInfe.ToString();
+                        //txt_enfermedadhereditaria.Text = AnteFamiDetParentesco.AntFamDetPare_enfHereConge.ToString();
+                        //txt_discapacidades.Text = AnteFamiDetParentesco.AntFamDetPare_discapa.ToString();
+                        //txt_otrosenfer.Text = AnteFamiDetParentesco.AntFamDetPare_otros.ToString();
                         txt_descripcionantefamiliares.Text = AnteFamiDetParentesco.AntFamDetPare_descripcion.ToString();
 
                         //F
@@ -339,16 +339,16 @@ namespace SistemaECU911.Template.Views
                         txt_enfermedadactualinicial.Text = enferactualinicial.enfActual_descrip.ToString();
 
                         //I
-                        txt_pielanexos.Text = revisionactualorganossistemas.RevActOrgSis_pielAnexos.ToString();
-                        txt_organossentidos.Text = revisionactualorganossistemas.RevActOrgSis_orgSentidos.ToString();
-                        txt_respiratorio.Text = revisionactualorganossistemas.RevActOrgSis_respiratorio.ToString();
-                        txt_cardiovascular.Text = revisionactualorganossistemas.RevActOrgSis_cardVascular.ToString();
-                        txt_digestivo.Text = revisionactualorganossistemas.RevActOrgSis_digestivo.ToString();
-                        txt_genitourinario.Text = revisionactualorganossistemas.RevActOrgSis_genUrinario.ToString();
-                        txt_musculosesqueleticos.Text = revisionactualorganossistemas.RevActOrgSis_muscEsqueletico.ToString();
-                        txt_endocrino.Text = revisionactualorganossistemas.RevActOrgSis_endocrino.ToString();
-                        txt_hemolinfatico.Text = revisionactualorganossistemas.RevActOrgSis_hemoLimfa.ToString();
-                        txt_nervioso.Text = revisionactualorganossistemas.RevActOrgSis_nervioso.ToString();
+                        //txt_pielanexos.Text = revisionactualorganossistemas.RevActOrgSis_pielAnexos.ToString();
+                        //txt_organossentidos.Text = revisionactualorganossistemas.RevActOrgSis_orgSentidos.ToString();
+                        //txt_respiratorio.Text = revisionactualorganossistemas.RevActOrgSis_respiratorio.ToString();
+                        //txt_cardiovascular.Text = revisionactualorganossistemas.RevActOrgSis_cardVascular.ToString();
+                        //txt_digestivo.Text = revisionactualorganossistemas.RevActOrgSis_digestivo.ToString();
+                        //txt_genitourinario.Text = revisionactualorganossistemas.RevActOrgSis_genUrinario.ToString();
+                        //txt_musculosesqueleticos.Text = revisionactualorganossistemas.RevActOrgSis_muscEsqueletico.ToString();
+                        //txt_endocrino.Text = revisionactualorganossistemas.RevActOrgSis_endocrino.ToString();
+                        //txt_hemolinfatico.Text = revisionactualorganossistemas.RevActOrgSis_hemoLimfa.ToString();
+                        //txt_nervioso.Text = revisionactualorganossistemas.RevActOrgSis_nervioso.ToString();
                         txt_descrorganosysistemas.Text = revisionactualorganossistemas.RevActOrgSis_descrip.ToString();
 
                         //K
@@ -403,14 +403,14 @@ namespace SistemaECU911.Template.Views
                         //M
                         txt_descripdiagnostico.Text = diagnostico.Diag_descripcion.ToString();
                         txt_cie.Text = diagnostico.Diag_cie.ToString();
-                        txt_pre.Text = diagnostico.Diag_pre.ToString();
-                        txt_def.Text = diagnostico.Diag_def.ToString();
+                        //txt_pre.Text = diagnostico.Diag_pre.ToString();
+                        //txt_def.Text = diagnostico.Diag_def.ToString();
 
                         //N
-                        txt_apto.Text = aptitudmedica.AptMed_apto.ToString();
-                        txt_aptoobservacion.Text = aptitudmedica.AptMed_aptoObserva.ToString();
-                        txt_aptolimitacion.Text = aptitudmedica.AptMed_aptoLimi.ToString();
-                        txt_noapto.Text = aptitudmedica.AptMed_NoApto.ToString();
+                        //txt_apto.Text = aptitudmedica.AptMed_apto.ToString();
+                        //txt_aptoobservacion.Text = aptitudmedica.AptMed_aptoObserva.ToString();
+                        //txt_aptolimitacion.Text = aptitudmedica.AptMed_aptoLimi.ToString();
+                        //txt_noapto.Text = aptitudmedica.AptMed_NoApto.ToString();
                         txt_observacionaptitud.Text = aptitudmedica.AptMed_Observ.ToString();
                         txt_limitacionaptitud.Text = aptitudmedica.AptMed_Limit.ToString();
 
@@ -520,25 +520,25 @@ namespace SistemaECU911.Template.Views
                 tratamientoinicial = new Tbl_TratamientoInicial();
 
                 //A. Captura de Datos Establecimiento Empresa Usuario
-                datosestempresausu.datEstable_catolicaRel = txt_catolica.Text;
-                datosestempresausu.datEstable_evangelicaRel = txt_evangelica.Text;
-                datosestempresausu.datEstable_testJehovaRel = txt_testigo.Text;
-                datosestempresausu.datEstable_mormonaRel = txt_mormona.Text;
-                datosestempresausu.datEstable_otrasRel = txt_otrareligion.Text;
+                //datosestempresausu.datEstable_catolicaRel = txt_catolica.Text;
+                //datosestempresausu.datEstable_evangelicaRel = txt_evangelica.Text;
+                //datosestempresausu.datEstable_testJehovaRel = txt_testigo.Text;
+                //datosestempresausu.datEstable_mormonaRel = txt_mormona.Text;
+                //datosestempresausu.datEstable_otrasRel = txt_otrareligion.Text;
                 datosestempresausu.datEstable_groSanguineo = txt_gruposanguineo.Text;
                 datosestempresausu.datEstable_lateralidad = txt_lateralidad.Text;
-                datosestempresausu.datEstable__lesbianaOriSex = txt_lesbiana.Text;
-                datosestempresausu.datEstable_gayOriSex = txt_gay.Text;
-                datosestempresausu.datEstable_bisexualOriSex = txt_bisexual.Text;
-                datosestempresausu.datEstable_heterosexualOriSex = txt_heterosexual.Text;
-                datosestempresausu.datEstable_norespondeOriSex = txt_noRespondeOriSex.Text;
-                datosestempresausu.datEstable_femeninoIdenGen = txt_femenino.Text;
-                datosestempresausu.datEstable_masculinoIdenGen = txt_masculino.Text;
-                datosestempresausu.datEstable_transFemeninoIdenGen = txt_transfemenino.Text;
-                datosestempresausu.datEstable_transMasculinoIdenGen = txt_transmasculino.Text;
-                datosestempresausu.datEstable_norespondeIdenGen = txt_noRespondeIdeGen.Text;
-                datosestempresausu.datEstable_siDis = txt_sidiscapacidad.Text;
-                datosestempresausu.datEstable_noDis = txt_nodiscapacidad.Text;
+                //datosestempresausu.datEstable__lesbianaOriSex = txt_lesbiana.Text;
+                //datosestempresausu.datEstable_gayOriSex = txt_gay.Text;
+                //datosestempresausu.datEstable_bisexualOriSex = txt_bisexual.Text;
+                //datosestempresausu.datEstable_heterosexualOriSex = txt_heterosexual.Text;
+                //datosestempresausu.datEstable_norespondeOriSex = txt_noRespondeOriSex.Text;
+                //datosestempresausu.datEstable_femeninoIdenGen = txt_femenino.Text;
+                //datosestempresausu.datEstable_masculinoIdenGen = txt_masculino.Text;
+                //datosestempresausu.datEstable_transFemeninoIdenGen = txt_transfemenino.Text;
+                //datosestempresausu.datEstable_transMasculinoIdenGen = txt_transmasculino.Text;
+                //datosestempresausu.datEstable_norespondeIdenGen = txt_noRespondeIdeGen.Text;
+                //datosestempresausu.datEstable_siDis = txt_sidiscapacidad.Text;
+                //datosestempresausu.datEstable_noDis = txt_nodiscapacidad.Text;
                 datosestempresausu.datEstable_tipoDis = txt_tipodiscapacidad.Text;
                 datosestempresausu.datEstable_porcentDis = Convert.ToInt32(txt_porcentajediscapacidad.Text);
                 datosestempresausu.datEstable_actRelevantesTrabOcupar = txt_actividadesrelevantes.Text;
@@ -559,55 +559,55 @@ namespace SistemaECU911.Template.Views
                 antper.antPerInicial_abortos = txt_abortosAntGinObste.Text;
                 antper.antPerInicial_vivosHij = Convert.ToInt32(txt_vivosAntGinObste.Text);
                 antper.antPerInicial_muertosHij = Convert.ToInt32(txt_muertosAntGinObste.Text);
-                antper.antPerInicial_siVidaSexActiva = txt_siVidSexAntGinObste.Text;
-                antper.antPerInicial_noVidaSexActiva = txt_noVidSexAntGinObste.Text;
-                antper.antPerInicial_siMetPlanifiFamiliar = txt_siMetPlaniAntGinObste.Text;
-                antper.antPerInicial_noMetPlanifiFamiliar = txt_noMetPlaniAntGinObste.Text;
+                //antper.antPerInicial_siVidaSexActiva = txt_siVidSexAntGinObste.Text;
+                //antper.antPerInicial_noVidaSexActiva = txt_noVidSexAntGinObste.Text;
+                //antper.antPerInicial_siMetPlanifiFamiliar = txt_siMetPlaniAntGinObste.Text;
+                //antper.antPerInicial_noMetPlanifiFamiliar = txt_noMetPlaniAntGinObste.Text;
                 antper.antPerInicial_tipoMetPlanifiFamiliar = txt_tipoMetPlaniAntGinObste.Text;
-                antper.antPerInicial_siExaRealiPapanicolaou = txt_siPapaniAntGinObste.Text;
-                antper.antPerInicial_noExaRealiPapanicolaou = txt_noPapaniAntGinObste.Text;
+                //antper.antPerInicial_siExaRealiPapanicolaou = txt_siPapaniAntGinObste.Text;
+                //antper.antPerInicial_noExaRealiPapanicolaou = txt_noPapaniAntGinObste.Text;
                 antper.antPerInicial_tiempoExaRealiPapanicolaou = Convert.ToInt32(txt_tiempoPapaniAntGinObste.Text);
                 antper.antPerInicial_resultadoExaRealiPapanicolaou = txt_resultadoPapaniAntGinObste.Text;
-                antper.antPerInicial_siExaRealiEcoMamario = txt_siEcoMamaAntGinObste.Text;
-                antper.antPerInicial_noExaRealiEcoMamario = txt_noEcoMamaAntGinObste.Text;
+                //antper.antPerInicial_siExaRealiEcoMamario = txt_siEcoMamaAntGinObste.Text;
+                //antper.antPerInicial_noExaRealiEcoMamario = txt_noEcoMamaAntGinObste.Text;
                 antper.antPerInicial_tiempoExaRealiEcoMamario = Convert.ToInt32(txt_tiempoEcoMamaAntGinObste.Text);
                 antper.antPerInicial_resultadoExaRealiEcoMamario = txt_resultadoEcoMamaAntGinObste.Text;
-                antper.antPerInicial_siExaRealiColposcopia = txt_siColposAntGinObste.Text;
-                antper.antPerInicial_noExaRealiColposcopia = txt_noColposAntGinObste.Text;
+                //antper.antPerInicial_siExaRealiColposcopia = txt_siColposAntGinObste.Text;
+                //antper.antPerInicial_noExaRealiColposcopia = txt_noColposAntGinObste.Text;
                 antper.antPerInicial_tiempoExaRealiColposcopia = Convert.ToInt32(txt_tiempoColposAntGinObste.Text);
                 antper.antPerInicial_resultadoExaRealiColposcopia = txt_resultadoColposAntGinObste.Text;
-                antper.antPerInicial_siExaRealiMamografia = txt_siMamograAntGinObste.Text;
-                antper.antPerInicial_noExaRealiMamografia = txt_noMamograAntGinObste.Text;
+                //antper.antPerInicial_siExaRealiMamografia = txt_siMamograAntGinObste.Text;
+                //antper.antPerInicial_noExaRealiMamografia = txt_noMamograAntGinObste.Text;
                 antper.antPerInicial_tiempoExaRealiMamografia = Convert.ToInt32(txt_tiempoMamograAntGinObste.Text);
                 antper.antPerInicial_resultadoExaRealiMamografia = txt_resultadoMamograAntGinObste.Text;
-                antper.antPerInicial_siExaRealiAntiProstatico = txt_siExaRealiAntProstaAntReproMascu.Text;
-                antper.antPerInicial_noExaRealiAntiProstatico = txt_noExaRealiAntProstaAntReproMascu.Text;
+                //antper.antPerInicial_siExaRealiAntiProstatico = txt_siExaRealiAntProstaAntReproMascu.Text;
+                //antper.antPerInicial_noExaRealiAntiProstatico = txt_noExaRealiAntProstaAntReproMascu.Text;
                 antper.antPerInicial_tiempoExaRealiAntiProstatico = Convert.ToInt32(txt_tiempoExaRealiAntProstaAntReproMascu.Text);
                 antper.antPerInicial_resultadoExaRealiAntiProstatico = txt_resultadoExaRealiAntProstaAntReproMascu.Text;
-                antper.antPerInicial_siMetPlanifiFamiAntReproMascu = txt_siMetPlaniAntReproMascu.Text;
-                antper.antPerInicial_noMetPlanifiFamiAntReproMascu = txt_noMetPlaniAntReproMascu.Text;
+                //antper.antPerInicial_siMetPlanifiFamiAntReproMascu = txt_siMetPlaniAntReproMascu.Text;
+                //antper.antPerInicial_noMetPlanifiFamiAntReproMascu = txt_noMetPlaniAntReproMascu.Text;
                 antper.antPerInicial_tipo1MetPlanifiFamiAntReproMascu = txt_tipo1MetPlaniAntReproMascu.Text;
                 antper.antPerInicial_vivosHijAntReproMascu = Convert.ToInt32(txt_vivosHijosAntReproMascu.Text);
                 antper.antPerInicial_muertosHijAntReproMascu = Convert.ToInt32(txt_muertosHijosAntReproMascu.Text);
-                antper.antPerInicial_siExaRealiEcoProstatico = txt_siExaRealiEcoProstaAntReproMascu.Text;
-                antper.antPerInicial_noExaRealiEcoProstatico = txt_noExaRealiEcoProstaAntReproMascu.Text;
+                //antper.antPerInicial_siExaRealiEcoProstatico = txt_siExaRealiEcoProstaAntReproMascu.Text;
+                //antper.antPerInicial_noExaRealiEcoProstatico = txt_noExaRealiEcoProstaAntReproMascu.Text;
                 antper.antPerInicial_tiempoExaRealiEcoProstatico = Convert.ToInt32(txt_tiempoExaRealiEcoProstaAntReproMascu.Text);
                 antper.antPerInicial_resultadoExaRealiEcoProstatico = txt_resultadoExaRealiEcoProstaAntReproMascu.Text;
                 antper.antPerInicial_tipo2MetPlanifiFamiAntReproMascu = txt_tipo2MetPlaniAntReproMascu.Text;
-                antper.antPerInicial_siConsuNocivosTabaco = txt_siConsuNociTabaHabToxi.Text;
-                antper.antPerInicial_noConsuNocivosTabaco = txt_noConsuNociTabaHabToxi.Text;
+                //antper.antPerInicial_siConsuNocivosTabaco = txt_siConsuNociTabaHabToxi.Text;
+                //antper.antPerInicial_noConsuNocivosTabaco = txt_noConsuNociTabaHabToxi.Text;
                 antper.antPerInicial_tiempoConsuConsuNocivosTabaco = Convert.ToInt32(txt_tiemConConsuNociTabaHabToxi.Text);
                 antper.antPerInicial_cantidadConsuNocivosTabaco = txt_cantiConsuNociTabaHabToxi.Text;
                 antper.antPerInicial_exConsumiConsuNocivosTabaco = txt_exConsumiConsuNociTabaHabToxi.Text;
                 antper.antPerInicial_tiempoAbstiConsuNocivosTabaco = Convert.ToInt32(txt_tiemAbstiConsuNociTabaHabToxi.Text);
-                antper.antPerInicial_siConsuNocivosAlcohol = txt_siConsuNociAlcoHabToxi.Text;
-                antper.antPerInicial_noConsuNocivosAlcohol = txt_noConsuNociAlcoHabToxi.Text;
+                //antper.antPerInicial_siConsuNocivosAlcohol = txt_siConsuNociAlcoHabToxi.Text;
+                //antper.antPerInicial_noConsuNocivosAlcohol = txt_noConsuNociAlcoHabToxi.Text;
                 antper.antPerInicial_tiempoConsuConsuNocivosAlcohol = Convert.ToInt32(txt_tiemConConsuNociAlcoHabToxi.Text);
                 antper.antPerInicial_cantidadConsuNocivosAlcohol = txt_cantiConsuNociAlcoHabToxi.Text;
                 antper.antPerInicial_exConsumiConsuNocivosAlcohol = txt_exConsumiConsuNociAlcoHabToxi.Text;
                 antper.antPerInicial_tiempoAbstiConsuNocivosAlcohol = Convert.ToInt32(txt_tiemAbstiConsuNociAlcoHabToxi.Text);
-                antper.antPerInicial_siConsuNocivosOtrasDrogas = txt_siConsuNociOtrasDroHabToxi.Text;
-                antper.antPerInicial_noConsuNocivosOtrasDrogas = txt_noConsuNociOtrasDroHabToxi.Text;
+                //antper.antPerInicial_siConsuNocivosOtrasDrogas = txt_siConsuNociOtrasDroHabToxi.Text;
+                //antper.antPerInicial_noConsuNocivosOtrasDrogas = txt_noConsuNociOtrasDroHabToxi.Text;
                 antper.antPerInicial_tiempoConsu1ConsuNocivosOtrasDrogas = Convert.ToInt32(txt_tiemCon1ConsuNociOtrasDroHabToxi.Text);
                 antper.antPerInicial_cantidad1ConsuNocivosOtrasDrogas = txt_canti1ConsuNociOtrasDroHabToxi.Text;
                 antper.antPerInicial_exConsumi1ConsuNocivosOtrasDrogas = txt_exConsumi1ConsuNociOtrasDroHabToxi.Text;
@@ -617,12 +617,12 @@ namespace SistemaECU911.Template.Views
                 antper.antPerInicial_cantidad2ConsuNocivosOtrasDrogas = txt_canti2ConsuNociOtrasDroHabToxi.Text;
                 antper.antPerInicial_exConsumi2ConsuNocivosOtrasDrogas = txt_exConsumi2ConsuNociOtrasDroHabToxi.Text;
                 antper.antPerInicial_tiempoAbsti2ConsuNocivosOtrasDrogas = Convert.ToInt32(txt_tiemAbsti2ConsuNociOtrasDroHabToxi.Text);
-                antper.antPerInicial_siEstiVidaActFisica = txt_siEstVidaActFisiEstVida.Text;
-                antper.antPerInicial_noEstiVidaActFisica = txt_noEstVidaActFisiEstVida.Text;
+                //antper.antPerInicial_siEstiVidaActFisica = txt_siEstVidaActFisiEstVida.Text;
+                //antper.antPerInicial_noEstiVidaActFisica = txt_noEstVidaActFisiEstVida.Text;
                 antper.antPerInicial_cualEstiVidaActFisica = txt_cualEstVidaActFisiEstVida.Text;
                 antper.antPerInicial_tiem_cantEstiVidaActFisica = txt_tiemCanEstVidaActFisiEstVida.Text;
-                antper.antPerInicial_siEstiVidaMediHabitual = txt_siEstVidaMedHabiEstVida.Text;
-                antper.antPerInicial_noEstiVidaMediHabitual = txt_noEstVidaMedHabiEstVida.Text;
+                //antper.antPerInicial_siEstiVidaMediHabitual = txt_siEstVidaMedHabiEstVida.Text;
+                //antper.antPerInicial_noEstiVidaMediHabitual = txt_noEstVidaMedHabiEstVida.Text;
                 antper.antPerInicial_cual1EstiVidaMediHabitual = txt_cual1EstVidaMedHabiEstVida.Text;
                 antper.antPerInicial_tiem_cant1EstiVidaMediHabitual = txt_tiemCan1EstVidaMedHabiEstVida.Text;
                 antper.antPerInicial_cual2EstiVidaMediHabitual = txt_cual2EstVidaMedHabiEstVida.Text;
@@ -636,33 +636,33 @@ namespace SistemaECU911.Template.Views
                 emplant.AntTrabajoInicial_puestoTrabajo = txt_puestotrabajo.Text;
                 emplant.AntTrabajoInicial_actDesemp = txt_actdesempeña.Text;
                 emplant.AntTrabajoInicial_tiemTrabajo = txt_tiempotrabajo.Text;
-                emplant.AntTrabajoInicial_fisicoRies = txt_fisico.Text;
-                emplant.AntTrabajoInicial_mecanicoRies = txt_mecanico.Text;
-                emplant.AntTrabajoInicial_quimicoRies = txt_quimico.Text;
-                emplant.AntTrabajoInicial_biologicoRies = txt_biologico.Text;
-                emplant.AntTrabajoInicial_ergonomicoRies = txt_ergonomico.Text;
-                emplant.AntTrabajoInicial_psicosocial = txt_psicosocial.Text;
+                //emplant.AntTrabajoInicial_fisicoRies = txt_fisico.Text;
+                //emplant.AntTrabajoInicial_mecanicoRies = txt_mecanico.Text;
+                //emplant.AntTrabajoInicial_quimicoRies = txt_quimico.Text;
+                //emplant.AntTrabajoInicial_biologicoRies = txt_biologico.Text;
+                //emplant.AntTrabajoInicial_ergonomicoRies = txt_ergonomico.Text;
+                //emplant.AntTrabajoInicial_psicosocial = txt_psicosocial.Text;
                 emplant.AntTrabajoInicial_observaciones = txt_obseantempleanteriores.Text;
-                emplant.AntTrabajoInicial_siCalificadoIESSAcciTrabajo = txt_si.Text;
+                //emplant.AntTrabajoInicial_siCalificadoIESSAcciTrabajo = txt_si.Text;
                 emplant.AntTrabajoInicial_especificarCalificadoIESSAcciTrabajo = txt_especificar.Text;
-                emplant.AntTrabajoInicial_noCalificadoIESSAcciTrabajo = txt_no.Text;
+                //emplant.AntTrabajoInicial_noCalificadoIESSAcciTrabajo = txt_no.Text;
                 emplant.AntTrabajoInicial_fechaCalificadoIESSAcciTrabajo = Convert.ToDateTime(txt_fecha.Text);
                 emplant.AntTrabajoInicial_obserAcciTrabajo = txt_observaciones2.Text;
-                emplant.AntTrabajoInicial_siCalificadoIESSEnfProfesionales = txt_siprofesional.Text;
+                //emplant.AntTrabajoInicial_siCalificadoIESSEnfProfesionales = txt_siprofesional.Text;
                 emplant.AntTrabajoInicial_especificarCalificadoIESSEnfProfesionales = txt_espeprofesional.Text;
-                emplant.AntTrabajoInicial_noCalificadoIESSEnfProfesionales = txt_noprofesional.Text;
+                //emplant.AntTrabajoInicial_noCalificadoIESSEnfProfesionales = txt_noprofesional.Text;
                 emplant.AntTrabajoInicial_fechaCalificadoIESSEnfProfesionales = Convert.ToDateTime(txt_fechaprofesional.Text);
                 emplant.Per_id = perso;
 
                 //E. Captura de Datos ANTECEDENTES FAMILIARES (DETALLAR EL PARENTESCO)
-                AnteFamiDetParentesco.AntFamDetPare_enfCarVas = txt_enfermedadcardiovascular.Text;
-                AnteFamiDetParentesco.AntFamDetPare_enfMeta = txt_enfermedadmetabolica.Text;
-                AnteFamiDetParentesco.AntFamDetPare_enfNeuro = txt_enfermedadneurologica.Text;
-                AnteFamiDetParentesco.AntFamDetPare_enfOnco = txt_enfermedadoncologica.Text;
-                AnteFamiDetParentesco.AntFamDetPare_enfInfe = txt_enfermedadinfecciosa.Text;
-                AnteFamiDetParentesco.AntFamDetPare_enfHereConge = txt_enfermedadhereditaria.Text;
-                AnteFamiDetParentesco.AntFamDetPare_discapa = txt_discapacidades.Text;
-                AnteFamiDetParentesco.AntFamDetPare_otros = txt_otrosenfer.Text;
+                //AnteFamiDetParentesco.AntFamDetPare_enfCarVas = txt_enfermedadcardiovascular.Text;
+                //AnteFamiDetParentesco.AntFamDetPare_enfMeta = txt_enfermedadmetabolica.Text;
+                //AnteFamiDetParentesco.AntFamDetPare_enfNeuro = txt_enfermedadneurologica.Text;
+                //AnteFamiDetParentesco.AntFamDetPare_enfOnco = txt_enfermedadoncologica.Text;
+                //AnteFamiDetParentesco.AntFamDetPare_enfInfe = txt_enfermedadinfecciosa.Text;
+                //AnteFamiDetParentesco.AntFamDetPare_enfHereConge = txt_enfermedadhereditaria.Text;
+                //AnteFamiDetParentesco.AntFamDetPare_discapa = txt_discapacidades.Text;
+                //AnteFamiDetParentesco.AntFamDetPare_otros = txt_otrosenfer.Text;
                 AnteFamiDetParentesco.AntFamDetPare_descripcion = txt_descripcionantefamiliares.Text;
                 AnteFamiDetParentesco.Per_id = perso;
 
@@ -740,16 +740,16 @@ namespace SistemaECU911.Template.Views
                 enferactualinicial.Per_id = perso;
 
                 //I. Captura de Datos REVISIÓN ACTUAL DE ÓRGANOS Y SISTEMAS
-                revisionactualorganossistemas.RevActOrgSis_pielAnexos = txt_pielanexos.Text;
-                revisionactualorganossistemas.RevActOrgSis_orgSentidos = txt_organossentidos.Text;
-                revisionactualorganossistemas.RevActOrgSis_respiratorio = txt_respiratorio.Text;
-                revisionactualorganossistemas.RevActOrgSis_cardVascular = txt_cardiovascular.Text;
-                revisionactualorganossistemas.RevActOrgSis_digestivo = txt_digestivo.Text;
-                revisionactualorganossistemas.RevActOrgSis_genUrinario = txt_genitourinario.Text;
-                revisionactualorganossistemas.RevActOrgSis_muscEsqueletico = txt_musculosesqueleticos.Text;
-                revisionactualorganossistemas.RevActOrgSis_endocrino = txt_endocrino.Text;
-                revisionactualorganossistemas.RevActOrgSis_hemoLimfa = txt_hemolinfatico.Text;
-                revisionactualorganossistemas.RevActOrgSis_nervioso = txt_nervioso.Text;
+                //revisionactualorganossistemas.RevActOrgSis_pielAnexos = txt_pielanexos.Text;
+                //revisionactualorganossistemas.RevActOrgSis_orgSentidos = txt_organossentidos.Text;
+                //revisionactualorganossistemas.RevActOrgSis_respiratorio = txt_respiratorio.Text;
+                //revisionactualorganossistemas.RevActOrgSis_cardVascular = txt_cardiovascular.Text;
+                //revisionactualorganossistemas.RevActOrgSis_digestivo = txt_digestivo.Text;
+                //revisionactualorganossistemas.RevActOrgSis_genUrinario = txt_genitourinario.Text;
+                //revisionactualorganossistemas.RevActOrgSis_muscEsqueletico = txt_musculosesqueleticos.Text;
+                //revisionactualorganossistemas.RevActOrgSis_endocrino = txt_endocrino.Text;
+                //revisionactualorganossistemas.RevActOrgSis_hemoLimfa = txt_hemolinfatico.Text;
+                //revisionactualorganossistemas.RevActOrgSis_nervioso = txt_nervioso.Text;
                 revisionactualorganossistemas.RevActOrgSis_descrip = txt_descrorganosysistemas.Text;
                 revisionactualorganossistemas.Per_id = perso;
 
@@ -807,15 +807,15 @@ namespace SistemaECU911.Template.Views
                 //M. Captura de Datos Tbl_Diagnostico
                 diagnostico.Diag_descripcion = txt_descripdiagnostico.Text;
                 diagnostico.Diag_cie = txt_cie.Text;
-                diagnostico.Diag_pre = txt_pre.Text;
-                diagnostico.Diag_def = txt_def.Text;
+                //diagnostico.Diag_pre = txt_pre.Text;
+                //diagnostico.Diag_def = txt_def.Text;
                 diagnostico.Per_id = perso;
 
                 //N.Captura de Datos Tbl_AptitudMedica
-                aptitudmedica.AptMed_apto = txt_apto.Text;
-                aptitudmedica.AptMed_aptoObserva = txt_aptoobservacion.Text;
-                aptitudmedica.AptMed_aptoLimi = txt_aptolimitacion.Text;
-                aptitudmedica.AptMed_NoApto = txt_noapto.Text;
+                //aptitudmedica.AptMed_apto = txt_apto.Text;
+                //aptitudmedica.AptMed_aptoObserva = txt_aptoobservacion.Text;
+                //aptitudmedica.AptMed_aptoLimi = txt_aptolimitacion.Text;
+                //aptitudmedica.AptMed_NoApto = txt_noapto.Text;
                 aptitudmedica.AptMed_Observ = txt_observacionaptitud.Text;
                 aptitudmedica.AptMed_Limit = txt_limitacionaptitud.Text;
                 aptitudmedica.Per_id = perso;
@@ -897,12 +897,12 @@ namespace SistemaECU911.Template.Views
                 emplant.AntTrabajoInicial_puestoTrabajo = txt_puestotrabajo.Text;
                 emplant.AntTrabajoInicial_actDesemp = txt_actdesempeña.Text;
                 emplant.AntTrabajoInicial_tiemTrabajo = txt_tiempotrabajo.Text;
-                emplant.AntTrabajoInicial_fisicoRies = txt_fisico.Text;
-                emplant.AntTrabajoInicial_mecanicoRies = txt_mecanico.Text;
-                emplant.AntTrabajoInicial_quimicoRies = txt_quimico.Text;
-                emplant.AntTrabajoInicial_biologicoRies = txt_biologico.Text;
-                emplant.AntTrabajoInicial_ergonomicoRies = txt_ergonomico.Text;
-                emplant.AntTrabajoInicial_psicosocial = txt_psicosocial.Text;
+                //emplant.AntTrabajoInicial_fisicoRies = txt_fisico.Text;
+                //emplant.AntTrabajoInicial_mecanicoRies = txt_mecanico.Text;
+                //emplant.AntTrabajoInicial_quimicoRies = txt_quimico.Text;
+                //emplant.AntTrabajoInicial_biologicoRies = txt_biologico.Text;
+                //emplant.AntTrabajoInicial_ergonomicoRies = txt_ergonomico.Text;
+                //emplant.AntTrabajoInicial_psicosocial = txt_psicosocial.Text;
                 emplant.AntTrabajoInicial_observaciones = txt_obseantempleanteriores.Text;
 
                 //captura de datos Tbl_AccidentesTrabajoDesc
@@ -932,11 +932,11 @@ namespace SistemaECU911.Template.Views
                 //captura de datos Tbl_Diagnostico
                 diagnostico.Diag_descripcion = txt_descripdiagnostico.Text;
                 diagnostico.Diag_cie = txt_cie.Text;
-                diagnostico.Diag_pre = txt_pre.Text;
-                diagnostico.Diag_def = txt_def.Text;
+                //diagnostico.Diag_pre = txt_pre.Text;
+                //diagnostico.Diag_def = txt_def.Text;
 
                 //captura de datos Tbl_AptitudMedica
-                aptitudmedica.AptMed_apto = txt_apto.Text;
+                //aptitudmedica.AptMed_apto = txt_apto.Text;
                 aptitudmedica.AptMed_Observ = txt_observacionaptitud.Text;
                 aptitudmedica.AptMed_Limit = txt_limitacionaptitud.Text;
 
@@ -989,15 +989,15 @@ namespace SistemaECU911.Template.Views
 
         private void limpiar()
         {
-            txt_antCliQuiDescripcion.Text = "";
-            txt_empresa.Text = txt_puestotrabajo.Text = txt_actdesempeña.Text = txt_tiempotrabajo.Text = txt_fisico.Text = txt_mecanico.Text=
-            txt_quimico.Text = txt_biologico.Text = txt_ergonomico.Text = txt_psicosocial.Text = txt_obseantempleanteriores.Text = txt_si.Text =
-            txt_especificar.Text = txt_no.Text = txt_fecha.Text = txt_observaciones2.Text = txt_siprofesional.Text = txt_espeprofesional.Text =
-            txt_noprofesional.Text = txt_fechaprofesional.Text = txt_observaciones3.Text = txt_puestodetrabajo.Text = txt_act.Text = 
-            txt_tempaltas.Text = txt_atrapmaquinas.Text = txt_solidos.Text = txt_puestodetrabajo2.Text = txt_act2.Text = txt_virus.Text = 
-            txt_manmanualcargas.Text = txt_montrabajo.Text = txt_medpreventivas.Text = txt_descrextralaborales.Text = txt_examen.Text = 
-            txt_fechaexamen.Text = txt_resultadoexamen.Text = txt_observacionexamen.Text = txt_descripdiagnostico.Text = txt_pre.Text = 
-            txt_def.Text = txt_apto.Text = txt_observacionaptitud.Text = txt_limitacionaptitud.Text = "";
+            //txt_antCliQuiDescripcion.Text = "";
+            //txt_empresa.Text = txt_puestotrabajo.Text = txt_actdesempeña.Text = txt_tiempotrabajo.Text = txt_fisico.Text = txt_mecanico.Text=
+            //txt_quimico.Text = txt_biologico.Text = txt_ergonomico.Text = txt_psicosocial.Text = txt_obseantempleanteriores.Text = txt_si.Text =
+            //txt_especificar.Text = txt_no.Text = txt_fecha.Text = txt_observaciones2.Text = txt_siprofesional.Text = txt_espeprofesional.Text =
+            //txt_noprofesional.Text = txt_fechaprofesional.Text = txt_observaciones3.Text = txt_puestodetrabajo.Text = txt_act.Text = 
+            //txt_tempaltas.Text = txt_atrapmaquinas.Text = txt_solidos.Text = txt_puestodetrabajo2.Text = txt_act2.Text = txt_virus.Text = 
+            //txt_manmanualcargas.Text = txt_montrabajo.Text = txt_medpreventivas.Text = txt_descrextralaborales.Text = txt_examen.Text = 
+            //txt_fechaexamen.Text = txt_resultadoexamen.Text = txt_observacionexamen.Text = txt_descripdiagnostico.Text = txt_pre.Text = 
+            //txt_def.Text = txt_apto.Text = txt_observacionaptitud.Text = txt_limitacionaptitud.Text = "";
 
         }
 

@@ -105,58 +105,58 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_cargoinstitucional;
 
         /// <summary>
-        /// Control txt_nombramiento.
+        /// Control cb_nombramiento.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_nombramiento;
+        protected global::System.Web.UI.WebControls.CheckBox cb_nombramiento;
 
         /// <summary>
-        /// Control txt_nombraprovisional.
+        /// Control cb_nombraprovisional.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_nombraprovisional;
+        protected global::System.Web.UI.WebControls.CheckBox cb_nombraprovisional;
 
         /// <summary>
-        /// Control txt_contratoocasional.
+        /// Control cb_contratoocasional.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_contratoocasional;
+        protected global::System.Web.UI.WebControls.CheckBox cb_contratoocasional;
 
         /// <summary>
-        /// Control txt_codigotrabajoContrato.
+        /// Control cb_codigotrabajoContrato.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_codigotrabajoContrato;
+        protected global::System.Web.UI.WebControls.CheckBox cb_codigotrabajoContrato;
 
         /// <summary>
-        /// Control txt_modalidadlosep.
+        /// Control cb_modalidadlosep.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_modalidadlosep;
+        protected global::System.Web.UI.WebControls.CheckBox cb_modalidadlosep;
 
         /// <summary>
-        /// Control txt_codigotrabajoModalidad.
+        /// Control cb_codigotrabajoModalidad.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_codigotrabajoModalidad;
+        protected global::System.Web.UI.WebControls.CheckBox cb_codigotrabajoModalidad;
 
         /// <summary>
         /// Control txt_fechaingreso.
@@ -168,49 +168,49 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_fechaingreso;
 
         /// <summary>
-        /// Control txt_soltero.
+        /// Control cb_soltero.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_soltero;
+        protected global::System.Web.UI.WebControls.CheckBox cb_soltero;
 
         /// <summary>
-        /// Control txt_casado.
+        /// Control cb_casado.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_casado;
+        protected global::System.Web.UI.WebControls.CheckBox cb_casado;
 
         /// <summary>
-        /// Control txt_viudo.
+        /// Control cb_viudo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_viudo;
+        protected global::System.Web.UI.WebControls.CheckBox cb_viudo;
 
         /// <summary>
-        /// Control txt_unionlibre.
+        /// Control cb_unionlibre.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_unionlibre;
+        protected global::System.Web.UI.WebControls.CheckBox cb_unionlibre;
 
         /// <summary>
-        /// Control txt_divorciado.
+        /// Control cb_divorciado.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_divorciado;
+        protected global::System.Web.UI.WebControls.CheckBox cb_divorciado;
 
         /// <summary>
         /// Control txt_genero.
@@ -285,103 +285,103 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_edad;
 
         /// <summary>
-        /// Control txt_primaria.
+        /// Control cb_primaria.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_primaria;
+        protected global::System.Web.UI.WebControls.CheckBox cb_primaria;
 
         /// <summary>
-        /// Control txt_secundaria.
+        /// Control cb_secundaria.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_secundaria;
+        protected global::System.Web.UI.WebControls.CheckBox cb_secundaria;
 
         /// <summary>
-        /// Control txt_superior.
+        /// Control cb_superior.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_superior;
+        protected global::System.Web.UI.WebControls.CheckBox cb_superior;
 
         /// <summary>
-        /// Control txt_especializacion.
+        /// Control cb_especializacion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_especializacion;
+        protected global::System.Web.UI.WebControls.CheckBox cb_especializacion;
 
         /// <summary>
-        /// Control txt_diploma.
+        /// Control cb_diploma.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_diploma;
+        protected global::System.Web.UI.WebControls.CheckBox cb_diploma;
 
         /// <summary>
-        /// Control txt_maestria.
+        /// Control cb_maestria.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_maestria;
+        protected global::System.Web.UI.WebControls.CheckBox cb_maestria;
 
         /// <summary>
-        /// Control txt_blanco.
+        /// Control cb_blanco.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_blanco;
+        protected global::System.Web.UI.WebControls.CheckBox cb_blanco;
 
         /// <summary>
-        /// Control txt_mestizo.
+        /// Control cb_mestizo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_mestizo;
+        protected global::System.Web.UI.WebControls.CheckBox cb_mestizo;
 
         /// <summary>
-        /// Control txt_afrodescendiente.
+        /// Control cb_afrodescendiente.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_afrodescendiente;
+        protected global::System.Web.UI.WebControls.CheckBox cb_afrodescendiente;
 
         /// <summary>
-        /// Control txt_indigena.
+        /// Control cb_indigena.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_indigena;
+        protected global::System.Web.UI.WebControls.CheckBox cb_indigena;
 
         /// <summary>
-        /// Control txt_montubio.
+        /// Control cb_montubio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_montubio;
+        protected global::System.Web.UI.WebControls.CheckBox cb_montubio;
 
         /// <summary>
         /// Control txt_provincia.
@@ -447,40 +447,40 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_referenciadomicilio;
 
         /// <summary>
-        /// Control txt_norte.
+        /// Control cb_norte.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_norte;
+        protected global::System.Web.UI.WebControls.CheckBox cb_norte;
 
         /// <summary>
-        /// Control txt_centro.
+        /// Control cb_centro.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_centro;
+        protected global::System.Web.UI.WebControls.CheckBox cb_centro;
 
         /// <summary>
-        /// Control txt_sur.
+        /// Control cb_sur.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_sur;
+        protected global::System.Web.UI.WebControls.CheckBox cb_sur;
 
         /// <summary>
-        /// Control txt_otro.
+        /// Control cb_otrosector.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_otro;
+        protected global::System.Web.UI.WebControls.CheckBox cb_otrosector;
 
         /// <summary>
         /// Control txt_otrosector.
@@ -492,22 +492,22 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_otrosector;
 
         /// <summary>
-        /// Control txt_casa.
+        /// Control cb_casa.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_casa;
+        protected global::System.Web.UI.WebControls.CheckBox cb_casa;
 
         /// <summary>
-        /// Control txt_departamento.
+        /// Control cb_departamento.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_departamento;
+        protected global::System.Web.UI.WebControls.CheckBox cb_departamento;
 
         /// <summary>
         /// Control txt_otravivienda.
@@ -519,22 +519,22 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_otravivienda;
 
         /// <summary>
-        /// Control txt_siserviciobasico.
+        /// Control cb_siserviciobasico.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_siserviciobasico;
+        protected global::System.Web.UI.WebControls.CheckBox cb_siserviciobasico;
 
         /// <summary>
-        /// Control txt_noserviciobasico.
+        /// Control cb_noserviciobasico.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_noserviciobasico;
+        protected global::System.Web.UI.WebControls.CheckBox cb_noserviciobasico;
 
         /// <summary>
         /// Control txt_personasvivenconusted.
@@ -618,67 +618,67 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_referenciadomiciliofamiliar;
 
         /// <summary>
-        /// Control txt_siahorro.
+        /// Control cb_siahorro.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_siahorro;
+        protected global::System.Web.UI.WebControls.CheckBox cb_siahorro;
 
         /// <summary>
-        /// Control txt_noahorro.
+        /// Control cb_noahorro.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_noahorro;
+        protected global::System.Web.UI.WebControls.CheckBox cb_noahorro;
 
         /// <summary>
-        /// Control txt_sivehiculo.
+        /// Control cb_sivehiculo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_sivehiculo;
+        protected global::System.Web.UI.WebControls.CheckBox cb_sivehiculo;
 
         /// <summary>
-        /// Control txt_novehiculo.
+        /// Control cb_novehiculo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_novehiculo;
+        protected global::System.Web.UI.WebControls.CheckBox cb_novehiculo;
 
         /// <summary>
-        /// Control txt_sirecorrido.
+        /// Control cb_sirecorrido.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_sirecorrido;
+        protected global::System.Web.UI.WebControls.CheckBox cb_sirecorrido;
 
         /// <summary>
-        /// Control txt_norecorrido.
+        /// Control cb_norecorrido.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_norecorrido;
+        protected global::System.Web.UI.WebControls.CheckBox cb_norecorrido;
 
         /// <summary>
-        /// Control txt_noexisterecorrido.
+        /// Control cb_noexisterecorrido.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_noexisterecorrido;
+        protected global::System.Web.UI.WebControls.CheckBox cb_noexisterecorrido;
 
         /// <summary>
         /// Control txt_distanciadomicilio.
@@ -699,22 +699,22 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_poseeenfermedad;
 
         /// <summary>
-        /// Control txt_sidiscapacidad.
+        /// Control cb_sidiscapacidad.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_sidiscapacidad;
+        protected global::System.Web.UI.WebControls.CheckBox cb_sidiscapacidad;
 
         /// <summary>
-        /// Control txt_nodiscapacidad.
+        /// Control cb_nodiscapacidad.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_nodiscapacidad;
+        protected global::System.Web.UI.WebControls.CheckBox cb_nodiscapacidad;
 
         /// <summary>
         /// Control txt_tipodiscapacidad.
@@ -753,31 +753,31 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_fechacaducidadcarnet;
 
         /// <summary>
-        /// Control txt_noconyugeembarazada.
+        /// Control cb_noconyugeembarazada.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_noconyugeembarazada;
+        protected global::System.Web.UI.WebControls.CheckBox cb_noconyugeembarazada;
 
         /// <summary>
-        /// Control txt_simeenceuntroembarazada.
+        /// Control cb_simeenceuntroembarazada.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_simeenceuntroembarazada;
+        protected global::System.Web.UI.WebControls.CheckBox cb_simeenceuntroembarazada;
 
         /// <summary>
-        /// Control txt_simiconyugeembarazada.
+        /// Control cb_simiconyugeembarazada.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_simiconyugeembarazada;
+        protected global::System.Web.UI.WebControls.CheckBox cb_simiconyugeembarazada;
 
         /// <summary>
         /// Control txt_mesgestacion.
@@ -807,22 +807,22 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_fechatentativaparto;
 
         /// <summary>
-        /// Control txt_siperiodolactancia.
+        /// Control cb_siperiodolactancia.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_siperiodolactancia;
+        protected global::System.Web.UI.WebControls.CheckBox cb_siperiodolactancia;
 
         /// <summary>
-        /// Control txt_noperiodolactancia.
+        /// Control cb_noperiodolactancia.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_noperiodolactancia;
+        protected global::System.Web.UI.WebControls.CheckBox cb_noperiodolactancia;
 
         /// <summary>
         /// Control txt_fechaculminacionlactancia.
@@ -834,22 +834,22 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_fechaculminacionlactancia;
 
         /// <summary>
-        /// Control txt_sienfermedadcronica.
+        /// Control cb_sienfermedadcronica.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_sienfermedadcronica;
+        protected global::System.Web.UI.WebControls.CheckBox cb_sienfermedadcronica;
 
         /// <summary>
-        /// Control txt_noenfermedadcronica.
+        /// Control cb_noenfermedadcronica.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_noenfermedadcronica;
+        protected global::System.Web.UI.WebControls.CheckBox cb_noenfermedadcronica;
 
         /// <summary>
         /// Control txt_cualenfermedadcronica.
@@ -870,22 +870,22 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_otrasenfermedades;
 
         /// <summary>
-        /// Control txt_sienfermedadrara.
+        /// Control cb_sienfermedadrara.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_sienfermedadrara;
+        protected global::System.Web.UI.WebControls.CheckBox cb_sienfermedadrara;
 
         /// <summary>
-        /// Control txt_noenfermedadrara.
+        /// Control cb_noenfermedadrara.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_noenfermedadrara;
+        protected global::System.Web.UI.WebControls.CheckBox cb_noenfermedadrara;
 
         /// <summary>
         /// Control txt_cualenfermedadrara.
@@ -897,58 +897,22 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_cualenfermedadrara;
 
         /// <summary>
-        /// Control txt_sialcohol.
+        /// Control cb_sialcohol.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_sialcohol;
+        protected global::System.Web.UI.WebControls.CheckBox cb_sialcohol;
 
         /// <summary>
-        /// Control txt_noalcohol.
+        /// Control cb_noalcohol.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_noalcohol;
-
-        /// <summary>
-        /// Control txt_cerveza.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_cerveza;
-
-        /// <summary>
-        /// Control txt_ron.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_ron;
-
-        /// <summary>
-        /// Control txt_whisky.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_whisky;
-
-        /// <summary>
-        /// Control txt_otroalcohol.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_otroalcohol;
+        protected global::System.Web.UI.WebControls.CheckBox cb_noalcohol;
 
         /// <summary>
         /// Control txt_frecuenciaalcohol.
@@ -969,22 +933,58 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_tiempoconsumoalcohol;
 
         /// <summary>
-        /// Control txt_sitabaco.
+        /// Control cb_cerveza.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_sitabaco;
+        protected global::System.Web.UI.WebControls.CheckBox cb_cerveza;
 
         /// <summary>
-        /// Control txt_notabaco.
+        /// Control cb_ron.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_notabaco;
+        protected global::System.Web.UI.WebControls.CheckBox cb_ron;
+
+        /// <summary>
+        /// Control cb_whisky.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_whisky;
+
+        /// <summary>
+        /// Control txt_otroalcohol.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_otroalcohol;
+
+        /// <summary>
+        /// Control cb_sitabaco.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_sitabaco;
+
+        /// <summary>
+        /// Control cb_notabaco.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_notabaco;
 
         /// <summary>
         /// Control txt_frecuenciatabaco.
@@ -1014,22 +1014,22 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_tiempoconsumotabaco;
 
         /// <summary>
-        /// Control txt_sipsicotropica.
+        /// Control cb_sipsicotropica.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_sipsicotropica;
+        protected global::System.Web.UI.WebControls.CheckBox cb_sipsicotropica;
 
         /// <summary>
-        /// Control txt_nopsicotropica.
+        /// Control cb_nopsicotropica.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_nopsicotropica;
+        protected global::System.Web.UI.WebControls.CheckBox cb_nopsicotropica;
 
         /// <summary>
         /// Control txt_tipopsicotropica.
@@ -1140,40 +1140,40 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_edadfam2;
 
         /// <summary>
-        /// Control txt_siperdis.
+        /// Control cb_siperdis.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_siperdis;
+        protected global::System.Web.UI.WebControls.CheckBox cb_siperdis;
 
         /// <summary>
-        /// Control txt_noperdis.
+        /// Control cb_noperdis.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_noperdis;
+        protected global::System.Web.UI.WebControls.CheckBox cb_noperdis;
 
         /// <summary>
-        /// Control txt_sicargodis.
+        /// Control cb_sicargodis.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_sicargodis;
+        protected global::System.Web.UI.WebControls.CheckBox cb_sicargodis;
 
         /// <summary>
-        /// Control txt_nocargodis.
+        /// Control cb_nocargodis.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_nocargodis;
+        protected global::System.Web.UI.WebControls.CheckBox cb_nocargodis;
 
         /// <summary>
         /// Control txt_nomapefamdis.
@@ -1230,22 +1230,22 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_fechanacdis;
 
         /// <summary>
-        /// Control txt_siMies.
+        /// Control cb_siMies.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_siMies;
+        protected global::System.Web.UI.WebControls.CheckBox cb_siMies;
 
         /// <summary>
-        /// Control txt_noMies.
+        /// Control cb_noMies.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_noMies;
+        protected global::System.Web.UI.WebControls.CheckBox cb_noMies;
 
         /// <summary>
         /// Control txt_carnetMies.
@@ -1257,22 +1257,22 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_carnetMies;
 
         /// <summary>
-        /// Control txt_sifamcatas.
+        /// Control cb_sifamcatas.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_sifamcatas;
+        protected global::System.Web.UI.WebControls.CheckBox cb_sifamcatas;
 
         /// <summary>
-        /// Control txt_nofamcatas.
+        /// Control cb_nofamcatas.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_nofamcatas;
+        protected global::System.Web.UI.WebControls.CheckBox cb_nofamcatas;
 
         /// <summary>
         /// Control txt_indicarfamcatas.
@@ -1284,22 +1284,22 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_indicarfamcatas;
 
         /// <summary>
-        /// Control txt_siacargofamcatas.
+        /// Control cb_siacargofamcatas.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_siacargofamcatas;
+        protected global::System.Web.UI.WebControls.CheckBox cb_siacargofamcatas;
 
         /// <summary>
-        /// Control txt_noacargofamcatas.
+        /// Control cb_noacargofamcatas.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_noacargofamcatas;
+        protected global::System.Web.UI.WebControls.CheckBox cb_noacargofamcatas;
 
         /// <summary>
         /// Control txt_tipoacargofamcatas.
@@ -1311,40 +1311,40 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_tipoacargofamcatas;
 
         /// <summary>
-        /// Control txt_hogar.
+        /// Control cb_hogar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_hogar;
+        protected global::System.Web.UI.WebControls.CheckBox cb_hogar;
 
         /// <summary>
-        /// Control txt_paseosfam.
+        /// Control cb_paseosfam.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_paseosfam;
+        protected global::System.Web.UI.WebControls.CheckBox cb_paseosfam;
 
         /// <summary>
-        /// Control txt_estudios.
+        /// Control cb_estudios.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_estudios;
+        protected global::System.Web.UI.WebControls.CheckBox cb_estudios;
 
         /// <summary>
-        /// Control txt_actartisticas.
+        /// Control cb_actartisticas.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_actartisticas;
+        protected global::System.Web.UI.WebControls.CheckBox cb_actartisticas;
 
         /// <summary>
         /// Control txt_otratc.
@@ -1392,22 +1392,22 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_hacecuantoact;
 
         /// <summary>
-        /// Control txt_sideportiva.
+        /// Control cb_sideportiva.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_sideportiva;
+        protected global::System.Web.UI.WebControls.CheckBox cb_sideportiva;
 
         /// <summary>
-        /// Control txt_nodeportiva.
+        /// Control cb_nodeportiva.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_nodeportiva;
+        protected global::System.Web.UI.WebControls.CheckBox cb_nodeportiva;
 
         /// <summary>
         /// Control txt_especificaract.
@@ -1437,22 +1437,22 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_edadpractica;
 
         /// <summary>
-        /// Control txt_silesion.
+        /// Control cb_silesion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_silesion;
+        protected global::System.Web.UI.WebControls.CheckBox cb_silesion;
 
         /// <summary>
-        /// Control txt_nolesion.
+        /// Control cb_nolesion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_nolesion;
+        protected global::System.Web.UI.WebControls.CheckBox cb_nolesion;
 
         /// <summary>
         /// Control txt_tipolesion.
@@ -1473,121 +1473,121 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_edadlesion;
 
         /// <summary>
-        /// Control txt_sitratamiento.
+        /// Control cb_sitratamiento.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_sitratamiento;
+        protected global::System.Web.UI.WebControls.CheckBox cb_sitratamiento;
 
         /// <summary>
-        /// Control txt_notratamiento.
+        /// Control cb_notratamiento.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_notratamiento;
+        protected global::System.Web.UI.WebControls.CheckBox cb_notratamiento;
 
         /// <summary>
-        /// Control txt_nuclear.
+        /// Control cb_nuclear.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_nuclear;
+        protected global::System.Web.UI.WebControls.CheckBox cb_nuclear;
 
         /// <summary>
-        /// Control txt_ampliada.
+        /// Control cb_ampliada.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_ampliada;
+        protected global::System.Web.UI.WebControls.CheckBox cb_ampliada;
 
         /// <summary>
-        /// Control txt_monoparental.
+        /// Control cb_monoparental.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_monoparental;
+        protected global::System.Web.UI.WebControls.CheckBox cb_monoparental;
 
         /// <summary>
-        /// Control txt_padremadresoltero.
+        /// Control cb_padremadresoltero.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_padremadresoltero;
+        protected global::System.Web.UI.WebControls.CheckBox cb_padremadresoltero;
 
         /// <summary>
-        /// Control txt_vivesolo.
+        /// Control cb_vivesolo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_vivesolo;
+        protected global::System.Web.UI.WebControls.CheckBox cb_vivesolo;
 
         /// <summary>
-        /// Control txt_viveamigos.
+        /// Control cb_viveamigos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_viveamigos;
+        protected global::System.Web.UI.WebControls.CheckBox cb_viveamigos;
 
         /// <summary>
-        /// Control txt_familiasinhijos.
+        /// Control cb_familiasinhijos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_familiasinhijos;
+        protected global::System.Web.UI.WebControls.CheckBox cb_familiasinhijos;
 
         /// <summary>
-        /// Control txt_familiarmuybueno.
+        /// Control cb_familiarmuybueno.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_familiarmuybueno;
+        protected global::System.Web.UI.WebControls.CheckBox cb_familiarmuybueno;
 
         /// <summary>
-        /// Control txt_familiarbueno.
+        /// Control cb_familiarbueno.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_familiarbueno;
+        protected global::System.Web.UI.WebControls.CheckBox cb_familiarbueno;
 
         /// <summary>
-        /// Control txt_familiaregular.
+        /// Control cb_familiaregular.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_familiaregular;
+        protected global::System.Web.UI.WebControls.CheckBox cb_familiaregular;
 
         /// <summary>
-        /// Control txt_familiarmala.
+        /// Control cb_familiarmala.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_familiarmala;
+        protected global::System.Web.UI.WebControls.CheckBox cb_familiarmala;
 
         /// <summary>
         /// Control txt_familiarporque.
@@ -1599,40 +1599,40 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_familiarporque;
 
         /// <summary>
-        /// Control txt_parejamuybueno.
+        /// Control cb_parejamuybueno.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_parejamuybueno;
+        protected global::System.Web.UI.WebControls.CheckBox cb_parejamuybueno;
 
         /// <summary>
-        /// Control txt_parejabueno.
+        /// Control cb_parejabueno.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_parejabueno;
+        protected global::System.Web.UI.WebControls.CheckBox cb_parejabueno;
 
         /// <summary>
-        /// Control txt_parejaregular.
+        /// Control cb_parejaregular.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_parejaregular;
+        protected global::System.Web.UI.WebControls.CheckBox cb_parejaregular;
 
         /// <summary>
-        /// Control txt_parejamala.
+        /// Control cb_parejamala.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_parejamala;
+        protected global::System.Web.UI.WebControls.CheckBox cb_parejamala;
 
         /// <summary>
         /// Control txt_parejaporque.
@@ -1644,40 +1644,40 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_parejaporque;
 
         /// <summary>
-        /// Control txt_hijosmuybueno.
+        /// Control cb_hijosmuybueno.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_hijosmuybueno;
+        protected global::System.Web.UI.WebControls.CheckBox cb_hijosmuybueno;
 
         /// <summary>
-        /// Control txt_hijosbueno.
+        /// Control cb_hijosbueno.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_hijosbueno;
+        protected global::System.Web.UI.WebControls.CheckBox cb_hijosbueno;
 
         /// <summary>
-        /// Control txt_hijosregular.
+        /// Control cb_hijosregular.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_hijosregular;
+        protected global::System.Web.UI.WebControls.CheckBox cb_hijosregular;
 
         /// <summary>
-        /// Control txt_hijosmala.
+        /// Control cb_hijosmala.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_hijosmala;
+        protected global::System.Web.UI.WebControls.CheckBox cb_hijosmala;
 
         /// <summary>
         /// Control txt_hijosporque.
@@ -1689,94 +1689,94 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_hijosporque;
 
         /// <summary>
-        /// Control txt_antpenales.
+        /// Control cb_antpenales.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_antpenales;
+        protected global::System.Web.UI.WebControls.CheckBox cb_antpenales;
 
         /// <summary>
-        /// Control txt_economicos.
+        /// Control cb_economicos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_economicos;
+        protected global::System.Web.UI.WebControls.CheckBox cb_economicos;
 
         /// <summary>
-        /// Control txt_comunicacion.
+        /// Control cb_comunicacion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_comunicacion;
+        protected global::System.Web.UI.WebControls.CheckBox cb_comunicacion;
 
         /// <summary>
-        /// Control txt_conyugales.
+        /// Control cb_conyugales.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_conyugales;
+        protected global::System.Web.UI.WebControls.CheckBox cb_conyugales;
 
         /// <summary>
-        /// Control txt_crianzahijos.
+        /// Control cb_crianzahijos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_crianzahijos;
+        protected global::System.Web.UI.WebControls.CheckBox cb_crianzahijos;
 
         /// <summary>
-        /// Control txt_adicciones.
+        /// Control cb_adicciones.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_adicciones;
+        protected global::System.Web.UI.WebControls.CheckBox cb_adicciones;
 
         /// <summary>
-        /// Control txt_fisica.
+        /// Control cb_fisica.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_fisica;
+        protected global::System.Web.UI.WebControls.CheckBox cb_fisica;
 
         /// <summary>
-        /// Control txt_psicologica.
+        /// Control cb_psicologica.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_psicologica;
+        protected global::System.Web.UI.WebControls.CheckBox cb_psicologica;
 
         /// <summary>
-        /// Control txt_verbal.
+        /// Control cb_verbal.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_verbal;
+        protected global::System.Web.UI.WebControls.CheckBox cb_verbal;
 
         /// <summary>
-        /// Control txt_sexual.
+        /// Control cb_sexual.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_sexual;
+        protected global::System.Web.UI.WebControls.CheckBox cb_sexual;
 
         /// <summary>
         /// Control txt_observaciones.
@@ -1788,58 +1788,58 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_observaciones;
 
         /// <summary>
-        /// Control txt_rolsi.
+        /// Control cb_rolsi.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_rolsi;
+        protected global::System.Web.UI.WebControls.CheckBox cb_rolsi;
 
         /// <summary>
-        /// Control txt_rolno.
+        /// Control cb_rolno.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_rolno;
+        protected global::System.Web.UI.WebControls.CheckBox cb_rolno;
 
         /// <summary>
-        /// Control txt_saludmuybuena.
+        /// Control cb_saludmuybuena.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_saludmuybuena;
+        protected global::System.Web.UI.WebControls.CheckBox cb_saludmuybuena;
 
         /// <summary>
-        /// Control txt_saludbuena.
+        /// Control cb_saludbuena.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_saludbuena;
+        protected global::System.Web.UI.WebControls.CheckBox cb_saludbuena;
 
         /// <summary>
-        /// Control txt_saludregular.
+        /// Control cb_saludregular.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_saludregular;
+        protected global::System.Web.UI.WebControls.CheckBox cb_saludregular;
 
         /// <summary>
-        /// Control txt_saludmala.
+        /// Control cb_saludmala.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_saludmala;
+        protected global::System.Web.UI.WebControls.CheckBox cb_saludmala;
 
         /// <summary>
         /// Control txt_saludporque.
@@ -1851,22 +1851,22 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_saludporque;
 
         /// <summary>
-        /// Control txt_funcional.
+        /// Control cb_funcional.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_funcional;
+        protected global::System.Web.UI.WebControls.CheckBox cb_funcional;
 
         /// <summary>
-        /// Control txt_disfuncional.
+        /// Control cb_disfuncional.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_disfuncional;
+        protected global::System.Web.UI.WebControls.CheckBox cb_disfuncional;
 
         /// <summary>
         /// Control txt_observacion.
@@ -1887,13 +1887,22 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_adicional;
 
         /// <summary>
-        /// Control txt_sicertifico.
+        /// Control cb_sicertifico.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_sicertifico;
+        protected global::System.Web.UI.WebControls.CheckBox cb_sicertifico;
+
+        /// <summary>
+        /// Control cb_nocertificado.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_nocertificado;
 
         /// <summary>
         /// Control Label93.

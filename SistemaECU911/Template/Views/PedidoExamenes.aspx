@@ -7,25 +7,25 @@
         <br />
         <div class="container">
             <div class="card text-center" style="margin-left: -0.7rem; margin-right: -0.7rem">
-                <div class="card-header">
+                <div class="card-header" style="font-size: 25px; background-color: #34495E; color: white">
                     HISTORIA CLÍNICA OCUPACIONAL - PEDIDO EXAMENES
                 </div>
             </div>
         </div>
         <br />
         <div class="card" style="width: auto;">
-            <div class="card-header">
+            <div class="card-header" style="background-color: #34495E; color: white">
                 A. DATOS DEL ESTABLECIMIENTO - EMPRESA Y USUARIO
             </div>
             <div class="list-group list-group-flush">
                 <asp:Table class="table table-bordered table-light text-center" runat="server">
                     <asp:TableRow>
-                        <asp:TableCell Text="INSTITUCIÓN DEL SISTEMA O NOMBRE DE LA EMPRESA"></asp:TableCell>
-                        <asp:TableCell Text="RUC"></asp:TableCell>
-                        <asp:TableCell Text="CIIU"></asp:TableCell>
-                        <asp:TableCell Text="ESTABLECIMIENTO DE SALUD"></asp:TableCell>
-                        <asp:TableCell Text="NÚMERO DE HISTORIA CLÍNICA"></asp:TableCell>
-                        <asp:TableCell Text="NÚMERO DE ARCHIVO"></asp:TableCell>
+                        <asp:TableCell Text="INSTITUCIÓN DEL SISTEMA O NOMBRE DE LA EMPRESA" style="background-color: #34495E; color: white; font-size: 16px"></asp:TableCell>
+                        <asp:TableCell Text="RUC" style="background-color: #34495E; color: white; font-size: 16px"></asp:TableCell>
+                        <asp:TableCell Text="CIIU" style="background-color: #34495E; color: white; font-size: 16px"></asp:TableCell>
+                        <asp:TableCell Text="ESTABLECIMIENTO DE SALUD" style="background-color: #34495E; color: white; font-size: 16px"></asp:TableCell>
+                        <asp:TableCell Text="NÚMERO DE HISTORIA CLÍNICA" style="background-color: #34495E; color: white; font-size: 16px"></asp:TableCell>
+                        <asp:TableCell Text="NÚMERO DE ARCHIVO" style="background-color: #34495E; color: white; font-size: 16px"></asp:TableCell>
                     </asp:TableRow>
                     <asp:TableRow>
                         <asp:TableCell>
@@ -50,12 +50,12 @@
                 </asp:Table>
                 <asp:Table class="table table-bordered table-light text-center" runat="server">
                     <asp:TableRow>
-                        <asp:TableCell Text="PRIMER APELLIDO"></asp:TableCell>
-                        <asp:TableCell Text="SEGUNDO APELLIDO"></asp:TableCell>
-                        <asp:TableCell Text="PRIMER NOMBRE"></asp:TableCell>
-                        <asp:TableCell Text="SEGUNDO NOMBRE"></asp:TableCell>
-                        <asp:TableCell Text="SEXO"></asp:TableCell>
-                        <asp:TableCell Text="EDAD"></asp:TableCell>
+                        <asp:TableCell Text="PRIMER APELLIDO" style="background-color: #34495E; color: white; font-size: 16px"></asp:TableCell>
+                        <asp:TableCell Text="SEGUNDO APELLIDO" style="background-color: #34495E; color: white; font-size: 16px"></asp:TableCell>
+                        <asp:TableCell Text="PRIMER NOMBRE" style="background-color: #34495E; color: white; font-size: 16px"></asp:TableCell>
+                        <asp:TableCell Text="SEGUNDO NOMBRE" style="background-color: #34495E; color: white; font-size: 16px"></asp:TableCell>
+                        <asp:TableCell Text="SEXO" style="background-color: #34495E; color: white; font-size: 16px"></asp:TableCell>
+                        <asp:TableCell Text="EDAD" style="background-color: #34495E; color: white; font-size: 16px"></asp:TableCell>
                     </asp:TableRow>
                     <asp:TableRow>
                         <asp:TableCell>
@@ -584,9 +584,9 @@
         </div>
         <br />
         <div class="container" align="center">
-            <asp:Button CssClass="btn btn-primary" ID="btn_guarda" runat="server" Text="Guardar" OnClick="btn_guarda_Click" UseSubmitBehavior="False" />
-            <asp:Button CssClass="btn btn-primary" ID="btn_modificar" runat="server" Text="Modificar" OnClick="btn_modificar_Click" UseSubmitBehavior="False" />
-            <asp:Button CssClass="btn btn-secondary" ID="btn_cancelar" runat="server" Text="Cancelar" OnClick="btn_cancelar_Click" UseSubmitBehavior="False" />
+            <asp:Button CssClass="btn btn-warning" ID="btn_guarda" runat="server" Text="Guardar" OnClick="btn_guarda_Click" UseSubmitBehavior="False" />
+            <asp:Button CssClass="btn btn-success" ID="btn_modificar" runat="server" Text="Modificar" OnClick="btn_modificar_Click" UseSubmitBehavior="False" />
+            <asp:Button CssClass="btn btn-danger" ID="btn_cancelar" runat="server" Text="Cancelar" OnClick="btn_cancelar_Click" UseSubmitBehavior="False" />
         </div>
         <br />
     </div>
