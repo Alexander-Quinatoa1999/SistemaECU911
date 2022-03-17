@@ -9,29 +9,25 @@
             <div class="container" style="background-color: white">
                 <br />
                 <div class="container">
-                    <div class="card text-center">
-                        <div class="card-header" style="font-size: 25px; background-color: #34495E; color: white">
-                            GESTIÓN DE SEGURIDAD Y SALUD OCUPACIONAL                           
-                        </div>
-                        <div style="font-size: 25px; background-color: #34495E; color: white">
+                    <div class="text-center" style="font-size: 25px; font-weight:bold; font-family:Arial">
+                            GESTIÓN DE SEGURIDAD Y SALUD OCUPACIONAL <br />
                             HISTORIA CLÍNICA OCUPACIONAL - INICIAL
-                        </div>
                     </div>
                 </div>
                 <br />
                 <div class="card" style="width: auto;">
-                    <div class="card-header" style="background-color: #34495E; color: white">
+                    <div class="card-header" style="background-color: #cccdfe; font-weight:bold; font-family:Arial">
                         A. DATOS DEL ESTABLECIMIENTO - EMPRESA Y USUARIO
                     </div>
                     <div class="list-group list-group-flush">
                         <asp:Table class="table table-bordered table-light text-center" runat="server">
                             <asp:TableRow>
-                                <asp:TableCell Text="INSTITUCIÓN DEL SISTEMA O NOMBRE DE LA EMPRESA" Style="width: 350px; background-color: #34495E; color: white; font-size: 16px"></asp:TableCell>
-                                <asp:TableCell Text="RUC" Style="width: 120px; background-color: #34495E; color: white; font-size: 16px"></asp:TableCell>
-                                <asp:TableCell Text="CIIU" Style="width: 120px; background-color: #34495E; color: white; font-size: 16px"></asp:TableCell>
-                                <asp:TableCell Text="ESTABLECIMIENTO DE SALUD" Style="width: 350px; background-color: #34495E; color: white; font-size: 16px"></asp:TableCell>
-                                <asp:TableCell Text="NÚMERO DE HISTORIA CLÍNICA" Style="width: 350px; background-color: #34495E; color: white; font-size: 16px"></asp:TableCell>
-                                <asp:TableCell Text="NÚMERO DE ARCHIVO" Style="width: 350px; background-color: #34495E; color: white; font-size: 16px"></asp:TableCell>
+                                <asp:TableCell Text="INSTITUCIÓN DEL SISTEMA O NOMBRE DE LA EMPRESA" Style="width: 375px; background-color: #cdfecc; font-size: 15px; font-family:Arial"></asp:TableCell>
+                                <asp:TableCell Text="RUC" Style="width: 150px; background-color: #cdfecc; font-size: 15px; font-family:Arial"></asp:TableCell>
+                                <asp:TableCell Text="CIIU" Style="width: 150px; background-color: #cdfecc; font-size: 15px; font-family:Arial"></asp:TableCell>
+                                <asp:TableCell Text="ESTABLECIMIENTO DE SALUD" Style="width: 250px; background-color: #cdfecc; font-size: 15px; font-family:Arial"></asp:TableCell>
+                                <asp:TableCell Text="NÚMERO DE HISTORIA CLÍNICA" Style="width: 200px; background-color: #cdfecc; font-size: 15px; font-family:Arial"></asp:TableCell>
+                                <asp:TableCell Text="NÚMERO DE ARCHIVO" Style="width: 200px; background-color: #cdfecc; font-size: 15px; font-family:Arial"></asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
                                 <asp:TableCell Style="background-color: white; font-size: 14px">
@@ -56,30 +52,30 @@
                         </asp:Table>
                         <asp:Table class="table table-bordered table-light table-responsive text-center" runat="server">
                             <asp:TableRow>
-                                <asp:TableCell RowSpan="2" Text="PRIMER APELLIDO" Style="width: 165px; background-color: #34495E; color: white; font-size: 16px"></asp:TableCell>
-                                <asp:TableCell RowSpan="2" Text="SEGUNDO APELLIDO" Style="width: 175px; background-color: #34495E; color: white; font-size: 16px"></asp:TableCell>
-                                <asp:TableCell RowSpan="2" Text="PRIMER NOMBRE" Style="width: 165px; background-color: #34495E; color: white; font-size: 16px"></asp:TableCell>
-                                <asp:TableCell RowSpan="2" Text="SEGUNDO NOMBRE" Style="width: 175px; background-color: #34495E; color: white; font-size: 16px"></asp:TableCell>
-                                <asp:TableCell RowSpan="2" Text="SEXO" Style="width: 50px; background-color: #34495E; color: white; font-size: 16px"></asp:TableCell>
-                                <asp:TableCell RowSpan="2" Text="EDAD (AÑOS)" Style="width: 75px; background-color: #34495E; color: white; font-size: 16px"></asp:TableCell>
-                                <asp:TableCell ColumnSpan="5" Text="RELIGIÓN" Style="width: 175px; background-color: #34495E; color: white; font-size: 16px"></asp:TableCell>
-                                <asp:TableCell RowSpan="2" Text="GRUPO SANGUÍNEO" Style="width: 125px; background-color: #34495E; color: white; font-size: 16px"></asp:TableCell>
-                                <asp:TableCell RowSpan="2" Text="LATERALIDAD" Style="width: 200px; background-color: #34495E; color: white; font-size: 16px"></asp:TableCell>
+                                <asp:TableCell RowSpan="2" Text="PRIMER APELLIDO" Style="width: 165px; background-color: #cdfecc; font-size: 15px; font-family:Arial"></asp:TableCell>
+                                <asp:TableCell RowSpan="2" Text="SEGUNDO APELLIDO" Style="width: 175px; background-color: #cdfecc; font-size: 15px; font-family:Arial"></asp:TableCell>
+                                <asp:TableCell RowSpan="2" Text="PRIMER NOMBRE" Style="width: 165px; background-color: #cdfecc; font-size: 15px; font-family:Arial"></asp:TableCell>
+                                <asp:TableCell RowSpan="2" Text="SEGUNDO NOMBRE" Style="width: 175px; background-color: #cdfecc; font-size: 15px; font-family:Arial"></asp:TableCell>
+                                <asp:TableCell RowSpan="2" Text="SEXO" Style="width: 50px; background-color: #cdfecc; font-size: 15px; font-family:Arial"></asp:TableCell>
+                                <asp:TableCell RowSpan="2" Text="EDAD (AÑOS)" Style="width: 75px; background-color: #cdfecc; font-size: 15px; font-family:Arial"></asp:TableCell>
+                                <asp:TableCell ColumnSpan="5" Text="RELIGIÓN" Style="width: 175px; background-color: #cdfecc; font-size: 15px; font-family:Arial"></asp:TableCell>
+                                <asp:TableCell RowSpan="2" Text="GRUPO SANGUÍNEO" Style="width: 125px; background-color: #cdfecc; font-size: 15px; font-family:Arial"></asp:TableCell>
+                                <asp:TableCell RowSpan="2" Text="LATERALIDAD" Style="width: 200px; background-color: #cdfecc; font-size: 15px; font-family:Arial"></asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
-                                <asp:TableCell Style="width: 20px; background-color: #34495E; color: white; font-size: 16px">
+                                <asp:TableCell Style="width: 20px; background-color: #cdfecc; font-family:Arial">
                                     <asp:Label CssClass="in-column" ID="lbl_catolica" runat="server" Text="Católica"></asp:Label>
                                 </asp:TableCell>
-                                <asp:TableCell Style="width: 20px; background-color: #34495E; color: white; font-size: 16px">
+                                <asp:TableCell Style="width: 20px; background-color: #cdfecc; font-family:Arial">
                                     <asp:Label CssClass="in-column" ID="Label1" runat="server" Text="Evangélica"></asp:Label>
                                 </asp:TableCell>
-                                <asp:TableCell Style="width: 20px; background-color: #34495E; color: white; font-size: 16px">
+                                <asp:TableCell Style="width: 20px; background-color: #cdfecc; font-family:Arial">
                                     <asp:Label CssClass="in-column" ID="Label2" runat="server" Text="Testigos de Jehová"></asp:Label>
                                 </asp:TableCell>
-                                <asp:TableCell Style="width: 20px; background-color: #34495E; color: white; font-size: 16px">
+                                <asp:TableCell Style="width: 20px; background-color: #cdfecc; font-family:Arial">
                                     <asp:Label CssClass="in-column" ID="Label3" runat="server" Text="Mormona"></asp:Label>
                                 </asp:TableCell>
-                                <asp:TableCell Style="width: 20px; background-color: #34495E; color: white; font-size: 16px">
+                                <asp:TableCell Style="width: 20px; background-color: #cdfecc; font-family:Arial">
                                     <asp:Label CssClass="in-column" ID="Label4" runat="server" Text="Otras"></asp:Label>
                                 </asp:TableCell>
                             </asp:TableRow>
@@ -132,95 +128,95 @@
                         </asp:Table>
                         <asp:Table class="table table-bordered table-light table-responsive text-center" runat="server">
                             <asp:TableRow>
-                                <asp:TableCell ColumnSpan="5" Text="ORIENTACION SEXUAL" Style="width: 175px; background-color: #34495E; color: white; font-size: 16px"></asp:TableCell>
-                                <asp:TableCell ColumnSpan="5" Text="IDENTIDAD DE GENERO" Style="width: 175px; background-color: #34495E; color: white; font-size: 16px"></asp:TableCell>
-                                <asp:TableCell ColumnSpan="4" Text=" DISCAPACIDAD" Style="width: 250px; background-color: #34495E; color: white; font-size: 16px"></asp:TableCell>
-                                <asp:TableCell RowSpan="2" Text="FECHA DE INGRESO AL TRABAJO <br /> (dd/mm/aaaa)" Style="width: 125px; background-color: #34495E; color: white; font-size: 16px"></asp:TableCell>
-                                <asp:TableCell RowSpan="2" Text="PUESTO DE TRABAJO (CIUO)" Style="width: 250px; background-color: #34495E; color: white; font-size: 16px"></asp:TableCell>
-                                <asp:TableCell RowSpan="2" Text="ÁREA DE TRABAJO" Style="width: 300px; background-color: #34495E; color: white; font-size: 16px"></asp:TableCell>
+                                <asp:TableCell ColumnSpan="5" Text="ORIENTACION SEXUAL" Style="width: 175px; background-color: #cdfecc; font-size: 15px; font-family:Arial"></asp:TableCell>
+                                <asp:TableCell ColumnSpan="5" Text="IDENTIDAD DE GENERO" Style="width: 175px; background-color: #cdfecc; font-size: 15px; font-family:Arial"></asp:TableCell>
+                                <asp:TableCell ColumnSpan="4" Text=" DISCAPACIDAD" Style="width: 250px; background-color: #cdfecc; font-size: 15px; font-family:Arial"></asp:TableCell>
+                                <asp:TableCell RowSpan="2" Text="FECHA DE INGRESO AL TRABAJO <br /> (dd/mm/aaaa)" Style="width: 125px; background-color: #cdfecc; font-size: 15px; font-family:Arial"></asp:TableCell>
+                                <asp:TableCell RowSpan="2" Text="PUESTO DE TRABAJO (CIUO)" Style="width: 250px; background-color: #cdfecc; font-size: 15px; font-family:Arial"></asp:TableCell>
+                                <asp:TableCell RowSpan="2" Text="ÁREA DE TRABAJO" Style="width: 300px; background-color: #cdfecc; font-size: 15px; font-family:Arial"></asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
-                                <asp:TableCell Style="width: 15px; background-color: #34495E; color: white; font-size: 16px">
+                                <asp:TableCell Style="width: 15px; background-color: #cdfecc; font-size: 15px; font-family:Arial">
                                     <asp:Label CssClass="in-column" ID="Label5" runat="server" Text="Lesbiana"></asp:Label>
                                 </asp:TableCell>
-                                <asp:TableCell Style="width: 15px; background-color: #34495E; color: white; font-size: 16px">
+                                <asp:TableCell Style="width: 15px; background-color: #cdfecc; font-size: 15px; font-family:Arial">
                                     <asp:Label CssClass="in-column" ID="Label6" runat="server" Text="Gay"></asp:Label>
                                 </asp:TableCell>
-                                <asp:TableCell Style="width: 15px; background-color: #34495E; color: white; font-size: 16px">
+                                <asp:TableCell Style="width: 15px; background-color: #cdfecc; font-size: 15px; font-family:Arial">
                                     <asp:Label CssClass="in-column" ID="Label7" runat="server" Text="Bisexual"></asp:Label>
                                 </asp:TableCell>
-                                <asp:TableCell Style="width: 15px; background-color: #34495E; color: white; font-size: 16px">
+                                <asp:TableCell Style="width: 15px; background-color: #cdfecc; font-size: 15px; font-family:Arial">
                                     <asp:Label CssClass="in-column" ID="Label8" runat="server" Text="Heterosexual"></asp:Label>
                                 </asp:TableCell>
-                                <asp:TableCell Style="width: 15px; background-color: #34495E; color: white; font-size: 16px">
+                                <asp:TableCell Style="width: 15px; background-color: #cdfecc; font-size: 15px; font-family:Arial">
                                     <asp:Label CssClass="in-column" ID="Label9" runat="server" Text="No sabe/No responde"></asp:Label>
                                 </asp:TableCell>
-                                <asp:TableCell Style="width: 15px; background-color: #34495E; color: white; font-size: 16px">
+                                <asp:TableCell Style="width: 15px; background-color: #cdfecc; font-size: 15px; font-family:Arial">
                                     <asp:Label CssClass="in-column" ID="Label10" runat="server" Text="Femenino"></asp:Label>
                                 </asp:TableCell>
-                                <asp:TableCell Style="width: 15px; background-color: #34495E; color: white; font-size: 16px">
+                                <asp:TableCell Style="width: 15px; background-color: #cdfecc; font-size: 15px; font-family:Arial">
                                     <asp:Label CssClass="in-column" ID="Label11" runat="server" Text="Masculino"></asp:Label>
                                 </asp:TableCell>
-                                <asp:TableCell Style="width: 15px; background-color: #34495E; color: white; font-size: 16px">
+                                <asp:TableCell Style="width: 15px; background-color: #cdfecc; font-size: 15px; font-family:Arial">
                                     <asp:Label CssClass="in-column" ID="Label12" runat="server" Text="Trans-femenino"></asp:Label>
                                 </asp:TableCell>
-                                <asp:TableCell Style="width: 15px; background-color: #34495E; color: white; font-size: 16px">
+                                <asp:TableCell Style="width: 15px; background-color: #cdfecc; font-size: 15px; font-family:Arial">
                                     <asp:Label CssClass="in-column" ID="Label13" runat="server" Text="Trans-masculino"></asp:Label>
                                 </asp:TableCell>
-                                <asp:TableCell Style="width: 15px; background-color: #34495E; color: white; font-size: 16px">
+                                <asp:TableCell Style="width: 15px; background-color: #cdfecc; font-size: 15px; font-family:Arial">
                                     <asp:Label CssClass="in-column" ID="Label14" runat="server" Text="No sabe/No responde"></asp:Label>
                                 </asp:TableCell>
-                                <asp:TableCell Style="width: 20px; background-color: #34495E; color: white; font-size: 14px">SI</asp:TableCell>
-                                <asp:TableCell Style="width: 20px; background-color: #34495E; color: white; font-size: 14px">NO</asp:TableCell>
-                                <asp:TableCell Style="width: 125px; background-color: #34495E; color: white; font-size: 14px">TIPO</asp:TableCell>
-                                <asp:TableCell Style="width: 71px; background-color: #34495E; color: white; font-size: 14px">%</asp:TableCell>
+                                <asp:TableCell Style="width: 20px; background-color: #cdfecc; font-family:Arial">SI</asp:TableCell>
+                                <asp:TableCell Style="width: 20px; background-color: #cdfecc; font-family:Arial">NO</asp:TableCell>
+                                <asp:TableCell Style="width: 125px; background-color: #cdfecc; font-family:Arial">TIPO</asp:TableCell>
+                                <asp:TableCell Style="width: 71px; background-color: #cdfecc; font-family:Arial">%</asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
-                                <asp:TableCell Style="background-color: white; font-size: 14px">
+                                <asp:TableCell Style="background-color: white">
                                     <asp:CheckBox ID="CheckBox1" Checked="false" runat="server" />
                                     <%--<asp:TextBox runat="server" ID="txt_lesbiana" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center" placeholder="-"></asp:TextBox>--%>
                                 </asp:TableCell>
-                                <asp:TableCell Style="background-color: white; font-size: 14px">
+                                <asp:TableCell Style="background-color: white">
                                     <asp:CheckBox ID="CheckBox17" Checked="false" runat="server" />
                                     <%--<asp:TextBox runat="server" ID="txt_gay" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center" placeholder="-"></asp:TextBox>--%>
                                 </asp:TableCell>
-                                <asp:TableCell Style="background-color: white; font-size: 14px">
+                                <asp:TableCell Style="background-color: white">
                                     <asp:CheckBox ID="CheckBox16" Checked="false" runat="server" />
                                     <%--<asp:TextBox runat="server" ID="txt_bisexual" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center" placeholder="-"></asp:TextBox>--%>
                                 </asp:TableCell>
-                                <asp:TableCell Style="background-color: white; font-size: 14px">
+                                <asp:TableCell Style="background-color: white">
                                     <asp:CheckBox ID="CheckBox15" Checked="false" runat="server" />
                                     <%--<asp:TextBox runat="server" ID="txt_heterosexual" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center" placeholder="-"></asp:TextBox>--%>
                                 </asp:TableCell>
-                                <asp:TableCell Style="background-color: white; font-size: 14px">
+                                <asp:TableCell Style="background-color: white">
                                     <asp:CheckBox ID="CheckBox14" Checked="false" runat="server" />
                                     <%--<asp:TextBox runat="server" ID="txt_noRespondeOriSex" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center" placeholder="-"></asp:TextBox>--%>
                                 </asp:TableCell>
-                                <asp:TableCell Style="background-color: white; font-size: 14px">
+                                <asp:TableCell Style="background-color: white">
                                     <asp:CheckBox ID="CheckBox13" Checked="false" runat="server" />
                                     <%--<asp:TextBox runat="server" ID="txt_femenino" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center" placeholder="-"></asp:TextBox>--%>
                                 </asp:TableCell>
-                                <asp:TableCell Style="background-color: white; font-size: 14px">
+                                <asp:TableCell Style="background-color: white">
                                     <asp:CheckBox ID="CheckBox12" Checked="false" runat="server" />
                                     <%--<asp:TextBox runat="server" ID="txt_masculino" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center" placeholder="-"></asp:TextBox>--%>
                                 </asp:TableCell>
-                                <asp:TableCell Style="background-color: white; font-size: 14px">
+                                <asp:TableCell Style="background-color: white">
                                     <asp:CheckBox ID="CheckBox11" Checked="false" runat="server" />
                                     <%--<asp:TextBox runat="server" ID="txt_transfemenino" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center" placeholder="-"></asp:TextBox>--%>
                                 </asp:TableCell>
-                                <asp:TableCell Style="background-color: white; font-size: 14px">
+                                <asp:TableCell Style="background-color: white">
                                     <asp:CheckBox ID="CheckBox10" Checked="false" runat="server" />
                                     <%--<asp:TextBox runat="server" ID="txt_transmasculino" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center" placeholder="-"></asp:TextBox>--%>
                                 </asp:TableCell>
-                                <asp:TableCell Style="background-color: white; font-size: 14px">
+                                <asp:TableCell Style="background-color: white">
                                     <asp:CheckBox ID="CheckBox9" Checked="false" runat="server" />
                                     <%--<asp:TextBox runat="server" ID="txt_noRespondeIdeGen" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center" placeholder="-"></asp:TextBox>--%>
                                 </asp:TableCell>
-                                <asp:TableCell Style="background-color: white; font-size: 14px">
+                                <asp:TableCell Style="background-color: white">
                                     <asp:CheckBox ID="CheckBox3" Checked="false" runat="server" />
                                     <%--<asp:TextBox runat="server" ID="txt_sidiscapacidad" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center" placeholder="-"></asp:TextBox>--%>
                                 </asp:TableCell>
-                                <asp:TableCell Style="background-color: white; font-size: 14px">
+                                <asp:TableCell Style="background-color: white">
                                     <asp:CheckBox ID="CheckBox2" Checked="false" runat="server" />
                                     <%--<asp:TextBox runat="server" ID="txt_nodiscapacidad" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center" placeholder="-"></asp:TextBox>--%>
                                 </asp:TableCell>
@@ -243,7 +239,7 @@
                         </asp:Table>
                         <asp:Table class="table table-bordered table-light table-responsive text-center" runat="server">
                             <asp:TableRow>
-                                <asp:TableCell Text="ACTIVIDADES RELEVANTES AL PUESTO DE TRABAJO A OCUPAR" Style="width: 1400px; background-color: #34495E; color: white; font-size: 16px"></asp:TableCell>
+                                <asp:TableCell Text="ACTIVIDADES RELEVANTES AL PUESTO DE TRABAJO A OCUPAR" Style="width: 1400px; background-color: #cdfecc; font-size: 15px; font-family:Arial"></asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
                                 <asp:TableCell Style="background-color: white; font-size: 14px">
@@ -256,10 +252,10 @@
                 <br />
                 <div class="card" style="width: auto;">
                     <div class="row">
-                        <div class="card-header col" style="margin-left: 0.8rem; background-color: #34495E; color: white; font-size:16px">
+                        <div class="card-header col" style="margin-left: 0.8rem; background-color: #cccdfe; font-weight:bold; font-family:Arial">
                             B. MOTIVO DE CONSULTA                                           
                         </div>
-                        <div class="card-header col" style="text-align: right; font-size: 13px; margin-right: 0.8rem; background-color: #34495E; color: white">
+                        <div class="card-header col" style="text-align: right; margin-right: 0.8rem; background-color: #cccdfe; font-size:13px; font-family:Arial">
                             ANOTAR LA CAUSA DEL PROBLEMA EN LA VERSIÓN DEL INFORMANTE                                          
                         </div>
                     </div>
@@ -269,41 +265,41 @@
                 </div>
                 <br />
                 <div class="card" style="width: auto;">
-                    <div class="card-header" style="background-color: #34495E; color: white; font-size:16px">
+                    <div class="card-header" style="background-color: #cccdfe; font-weight:bold; font-family:Arial">
                         C. ANTECEDENTES PERSONALES
                     </div>
-                    <div class="card-header" style="background-color:#34495E; color: white; font-size: 16px">
+                    <div class="card-header" style="background-color:#cdfecc; font-size: 15px; font-family:Arial">
                         ANTECEDENTES CLÍNICOS Y QUIRÚRGICOS
                     </div>
                     <div class="list-group list-group-flush">
                         <asp:TextBox runat="server" ID="txt_antCliQuiDescripcion" BorderStyle="None" Style="width: 100%" TextMode="MultiLine" Rows="3" placeholder="Descripción:"></asp:TextBox>
                     </div>
                     <div class="card" style="width: auto;">
-                        <div class="card-header" style="background-color:#34495E; color: white; font-size: 16px">
+                        <div class="card-header" style="background-color:#cdfecc; font-size: 15px; font-family:Arial">
                             ANTECEDENTES GINECO OBSTÉTRICOS
                         </div>
                     </div>
                     <asp:Table class="table table-bordered table-light table-responsive text-center" runat="server">
                         <asp:TableRow>
-                            <asp:TableCell RowSpan="2" style="width:150px; background-color: #34495E; color: white; font-size:16px">MENARQUÍA</asp:TableCell>
-                            <asp:TableCell RowSpan="2" style="width:100px; background-color: #34495E; color: white; font-size:16px">CICLOS</asp:TableCell>
-                            <asp:TableCell RowSpan="2" style="width:100px; background-color: #34495E; color: white; font-size:16px">FECHA DE ULTIMA MENSTRUACIÓN <br /> dd/mm/aaaa </asp:TableCell>
-                            <asp:TableCell RowSpan="2" style="width:75px; background-color: #34495E; color: white; font-size:16px">GESTAS</asp:TableCell>
-                            <asp:TableCell RowSpan="2" style="width:75px; background-color: #34495E; color: white; font-size:16px">PARTOS</asp:TableCell>
-                            <asp:TableCell RowSpan="2" style="width:75px; background-color: #34495E; color: white; font-size:16px">CESÁREAS</asp:TableCell>
-                            <asp:TableCell RowSpan="2" style="width:75px; background-color: #34495E; color: white; font-size:16px">ABORTOS</asp:TableCell>
-                            <asp:TableCell ColumnSpan="2" style="width:100px; background-color: #34495E; color: white; font-size:16px">HIJOS</asp:TableCell>
-                            <asp:TableCell ColumnSpan="2" style="width:125px; background-color: #34495E; color: white; font-size:16px">VIDA SEXUAL ACTIVA</asp:TableCell>
-                            <asp:TableCell ColumnSpan="3" style="width:300px; background-color: #34495E; color: white; font-size:16px">METODO DE PLANIFICACIÓN FAMILIAR</asp:TableCell>
+                            <asp:TableCell RowSpan="2" style="width:150px; background-color: #ccffff; font-size:15px; font-family:Arial">MENARQUÍA</asp:TableCell>
+                            <asp:TableCell RowSpan="2" style="width:100px; background-color: #ccffff; font-size:15px; font-family:Arial; font-family:Arial">CICLOS</asp:TableCell>
+                            <asp:TableCell RowSpan="2" style="width:100px; background-color: #ccffff; font-size:15px; font-family:Arial; font-family:Arial">FECHA DE ULTIMA MENSTRUACIÓN <br /> dd/mm/aaaa </asp:TableCell>
+                            <asp:TableCell RowSpan="2" style="width:75px; background-color: #ccffff; font-size:15px; font-family:Arial">GESTAS</asp:TableCell>
+                            <asp:TableCell RowSpan="2" style="width:75px; background-color: #ccffff; font-size:15px; font-family:Arial">PARTOS</asp:TableCell>
+                            <asp:TableCell RowSpan="2" style="width:75px; background-color: #ccffff; font-size:15px; font-family:Arial">CESÁREAS</asp:TableCell>
+                            <asp:TableCell RowSpan="2" style="width:75px; background-color: #ccffff; font-size:15px; font-family:Arial">ABORTOS</asp:TableCell>
+                            <asp:TableCell ColumnSpan="2" style="width:100px; background-color: #ccffff; font-size:15px; font-family:Arial; font-family:Arial">HIJOS</asp:TableCell>
+                            <asp:TableCell ColumnSpan="2" style="width:125px; background-color: #ccffff; font-size:15px; font-family:Arial">VIDA SEXUAL ACTIVA</asp:TableCell>
+                            <asp:TableCell ColumnSpan="3" style="width:300px; background-color: #ccffff; font-size:15px; font-family:Arial">METODO DE PLANIFICACIÓN FAMILIAR</asp:TableCell>
                         </asp:TableRow>
                         <asp:TableRow>
-                            <asp:TableCell style="width:50px; background-color: #34495E; color: white; font-size:16px">VIVOS</asp:TableCell>
-                            <asp:TableCell style="width:50px; background-color: #34495E; color: white; font-size:16px">MUERTOS</asp:TableCell>
-                            <asp:TableCell style="width:25px; background-color: #34495E; color: white; font-size:16px">SI</asp:TableCell>
-                            <asp:TableCell style="width:25px; background-color: #34495E; color: white; font-size:16px">NO</asp:TableCell>
-                            <asp:TableCell style="width:30px; background-color: #34495E; color: white; font-size:16px">SI</asp:TableCell>
-                            <asp:TableCell style="width:30px; background-color: #34495E; color: white; font-size:16px">NO</asp:TableCell>
-                            <asp:TableCell style="width:100px; background-color: #34495E; color: white; font-size:16px">TIPO</asp:TableCell>
+                            <asp:TableCell style="width:100px; background-color: #ccffff; font-size:15px; font-family:Arial">VIVOS</asp:TableCell>
+                            <asp:TableCell style="width:100px; background-color: #ccffff; font-size:15px; font-family:Arial">MUERTOS</asp:TableCell>
+                            <asp:TableCell style="width:25px; background-color: #ccffff; font-size:15px; font-family:Arial">SI</asp:TableCell>
+                            <asp:TableCell style="width:25px; background-color: #ccffff; font-size:15px; font-family:Arial">NO</asp:TableCell>
+                            <asp:TableCell style="width:30px; background-color: #ccffff; font-size:15px; font-family:Arial">SI</asp:TableCell>
+                            <asp:TableCell style="width:30px; background-color: #ccffff; font-size:15px; font-family:Arial">NO</asp:TableCell>
+                            <asp:TableCell style="width:100px; background-color: #ccffff; font-size:15px; font-family:Arial">TIPO</asp:TableCell>
                         </asp:TableRow>
                         <asp:TableRow>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
@@ -356,19 +352,19 @@
                     </asp:Table>
                     <asp:Table class="table table-bordered table-light table-responsive text-center" runat="server">
                         <asp:TableRow>
-                            <asp:TableCell style="width:200px; background-color: #34495E; color: white; font-size:16px">EXAMENES REALIZADOS</asp:TableCell>
-                            <asp:TableCell style="width:50px; background-color: #34495E; color: white; font-size:16px">SI</asp:TableCell>
-                            <asp:TableCell style="width:50px; background-color: #34495E; color: white; font-size:16px">NO</asp:TableCell>
-                            <asp:TableCell style="width:125px; background-color: #34495E; color: white; font-size:16px">TIEMPO <br />(años)</asp:TableCell>
-                            <asp:TableCell style="width:250px; background-color: #34495E; color: white; font-size:16px">RESULTADO</asp:TableCell>
-                            <asp:TableCell style="width:200px; background-color: #34495E; color: white; font-size:16px">EXAMENES REALIZADOS</asp:TableCell>
-                            <asp:TableCell style="width:50px; background-color: #34495E; color: white; font-size:16px">SI</asp:TableCell>
-                            <asp:TableCell style="width:50px; background-color: #34495E; color: white; font-size:16px">NO</asp:TableCell>
-                            <asp:TableCell style="width:125px; background-color: #34495E; color: white; font-size:16px">TIEMPO <br />(años)</asp:TableCell>
-                            <asp:TableCell style="width:250px; background-color: #34495E; color: white; font-size:16px">RESULTADO</asp:TableCell>
+                            <asp:TableCell style="width:200px; background-color: #ccffff; font-size:15px; font-family:Arial">EXAMENES REALIZADOS</asp:TableCell>
+                            <asp:TableCell style="width:50px; background-color: #ccffff; font-size:15px; font-family:Arial">SI</asp:TableCell>
+                            <asp:TableCell style="width:50px; background-color: #ccffff; font-size:15px; font-family:Arial">NO</asp:TableCell>
+                            <asp:TableCell style="width:125px; background-color: #ccffff; font-size:15px; font-family:Arial">TIEMPO <br />(años)</asp:TableCell>
+                            <asp:TableCell style="width:250px; background-color: #ccffff; font-size:15px; font-family:Arial">RESULTADO</asp:TableCell>
+                            <asp:TableCell style="width:200px; background-color: #ccffff; font-size:15px; font-family:Arial">EXAMENES REALIZADOS</asp:TableCell>
+                            <asp:TableCell style="width:50px; background-color: #ccffff; font-size:15px; font-family:Arial">SI</asp:TableCell>
+                            <asp:TableCell style="width:50px; background-color: #ccffff; font-size:15px; font-family:Arial">NO</asp:TableCell>
+                            <asp:TableCell style="width:125px; background-color: #ccffff; font-size:15px; font-family:Arial">TIEMPO <br />(años)</asp:TableCell>
+                            <asp:TableCell style="width:250px; background-color: #ccffff; font-size:15px; font-family:Arial">RESULTADO</asp:TableCell>
                         </asp:TableRow>
                         <asp:TableRow>
-                            <asp:TableCell style="background-color: #34495E; color: white; font-size:16px">PAPANICOLAOU</asp:TableCell>
+                            <asp:TableCell style="background-color: white; font-size:16px; font-family: Arial">PAPANICOLAOU</asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
                                 <asp:CheckBox ID="CheckBox22" Checked="false" runat="server" />
                                 <%--<asp:TextBox runat="server" ID="txt_siPapaniAntGinObste" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>--%>
@@ -383,7 +379,7 @@
                             <asp:TableCell Style="background-color: white; font-size: 14px">
                                 <asp:TextBox runat="server" ID="txt_resultadoPapaniAntGinObste" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
                             </asp:TableCell>
-                            <asp:TableCell style="background-color: #34495E; color: white; font-size:16px">ECO MAMARIO</asp:TableCell>
+                            <asp:TableCell style="background-color: white; font-size:16px; font-family: Arial">ECO MAMARIO</asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
                                 <asp:CheckBox ID="CheckBox24" Checked="false" runat="server" />
                                 <%--<asp:TextBox runat="server" ID="txt_siEcoMamaAntGinObste" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>--%>
@@ -400,7 +396,7 @@
                             </asp:TableCell>
                         </asp:TableRow>
                         <asp:TableRow>
-                            <asp:TableCell style="background-color: #34495E; color: white; font-size:16px">COLPOSCOPIA</asp:TableCell>
+                            <asp:TableCell style="background-color: white; font-size:16px; font-family: Arial">COLPOSCOPIA</asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
                                 <asp:CheckBox ID="CheckBox26" Checked="false" runat="server" />
                                 <%--<asp:TextBox runat="server" ID="txt_siColposAntGinObste" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>--%>
@@ -415,7 +411,7 @@
                             <asp:TableCell Style="background-color: white; font-size: 14px">
                                 <asp:TextBox runat="server" ID="txt_resultadoColposAntGinObste" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
                             </asp:TableCell>
-                            <asp:TableCell style="background-color: #34495E; color: white; font-size:16px">MAMOGRAFÍA</asp:TableCell>
+                            <asp:TableCell style="background-color: white; font-size:16px; font-family: Arial">MAMOGRAFÍA</asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
                                 <asp:CheckBox ID="CheckBox28" Checked="false" runat="server" />
                                 <%--<asp:TextBox runat="server" ID="txt_siMamograAntGinObste" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>--%>
@@ -433,29 +429,29 @@
                         </asp:TableRow>
                     </asp:Table>
                     <div class="card" style="width: auto;">
-                        <div class="card-header col" style="background-color: #34495E; color: white; font-size:16px">
+                        <div class="card-header col" style="background-color:#cdfecc; font-size: 15px; font-family:Arial">
                             ANTECEDENTES REPRODUCTIVOS MASCULINOS
                         </div>
                     </div>
                     <asp:Table class="table table-bordered table-light table-responsive text-center" runat="server">
                         <asp:TableRow>
-                            <asp:TableCell RowSpan="2" style="width:200px; background-color: #34495E; color: white; font-size:16px">EXAMENES REALIZADOS</asp:TableCell>
-                            <asp:TableCell RowSpan="2" style="width:50px; background-color: #34495E; color: white; font-size:16px">SI</asp:TableCell>
-                            <asp:TableCell RowSpan="2" style="width:50px; background-color: #34495E; color: white; font-size:16px">NO</asp:TableCell>
-                            <asp:TableCell RowSpan="2" style="width:125px; background-color: #34495E; color: white; font-size:16px">TIEMPO <br />(años)</asp:TableCell>
-                            <asp:TableCell RowSpan="2" style="width:250px; background-color: #34495E; color: white; font-size:16px">RESULTADO</asp:TableCell>
-                            <asp:TableCell ColumnSpan="3" style="width:450px; background-color: #34495E; color: white; font-size:16px">MÉTODO DE PLANIFICACIÓN FAMILIAR</asp:TableCell>
-                            <asp:TableCell ColumnSpan="2" style="width:150px; background-color: #34495E; color: white; font-size:16px">HIJOS</asp:TableCell>
+                            <asp:TableCell RowSpan="2" style="width:200px; background-color: #34495E; color: white; font-size:15px; font-family: Arial">EXAMENES REALIZADOS</asp:TableCell>
+                            <asp:TableCell RowSpan="2" style="width:50px; background-color: #34495E; color: white; font-size:15px; font-family: Arial">SI</asp:TableCell>
+                            <asp:TableCell RowSpan="2" style="width:50px; background-color: #34495E; color: white; font-size:15px; font-family: Arial">NO</asp:TableCell>
+                            <asp:TableCell RowSpan="2" style="width:125px; background-color: #34495E; color: white; font-size:15px; font-family: Arial">TIEMPO <br />(años)</asp:TableCell>
+                            <asp:TableCell RowSpan="2" style="width:250px; background-color: #34495E; color: white; font-size:15px; font-family: Arial">RESULTADO</asp:TableCell>
+                            <asp:TableCell ColumnSpan="3" style="width:450px; background-color: #34495E; color: white; font-size:15px; font-family: Arial">MÉTODO DE PLANIFICACIÓN FAMILIAR</asp:TableCell>
+                            <asp:TableCell ColumnSpan="2" style="width:150px; background-color: #34495E; color: white; font-size:15px; font-family: Arial">HIJOS</asp:TableCell>
                         </asp:TableRow>
                         <asp:TableRow>
-                            <asp:TableCell style="width:50px; background-color: #34495E; color: white; font-size:16px">SI</asp:TableCell>
-                            <asp:TableCell style="width:50px; background-color: #34495E; color: white; font-size:16px">NO</asp:TableCell>
-                            <asp:TableCell style="width:350px; background-color: #34495E; color: white; font-size:16px">TIPO</asp:TableCell>
-                            <asp:TableCell style="width:75px; background-color: #34495E; color: white; font-size:16px">VIVOS</asp:TableCell>
-                            <asp:TableCell style="width:75px; background-color: #34495E; color: white; font-size:16px">MUERTOS</asp:TableCell>
+                            <asp:TableCell style="width:50px; background-color: #34495E; color: white; font-size:16px; font-family: Arial">SI</asp:TableCell>
+                            <asp:TableCell style="width:50px; background-color: #34495E; color: white; font-size:16px; font-family: Arial">NO</asp:TableCell>
+                            <asp:TableCell style="width:350px; background-color: #34495E; color: white; font-size:16px; font-family: Arial">TIPO</asp:TableCell>
+                            <asp:TableCell style="width:75px; background-color: #34495E; color: white; font-size:16px; font-family: Arial">VIVOS</asp:TableCell>
+                            <asp:TableCell style="width:75px; background-color: #34495E; color: white; font-size:16px; font-family: Arial">MUERTOS</asp:TableCell>
                         </asp:TableRow>
                         <asp:TableRow>
-                            <asp:TableCell style="background-color: #34495E; color: white; font-size:16px">ANTÍGENO PROSTÁTICO</asp:TableCell>
+                            <asp:TableCell style="background-color: #34495E; color: white; font-size:15px; font-family: Arial">ANTÍGENO PROSTÁTICO</asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
                                 <asp:CheckBox ID="CheckBox30" Checked="false" runat="server" />
                                 <%--<asp:TextBox runat="server" ID="txt_siExaRealiAntProstaAntReproMascu" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>--%>
@@ -489,7 +485,7 @@
                             </asp:TableCell>
                         </asp:TableRow>
                         <asp:TableRow>
-                            <asp:TableCell style="background-color: #34495E; color: white; font-size:16px">ECO PROSTÁTICO</asp:TableCell>
+                            <asp:TableCell style="background-color: #34495E; color: white; font-size:15px; font-family: Arial">ECO PROSTÁTICO</asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
                                 <asp:CheckBox ID="CheckBox44" Checked="false" runat="server" />
                                 <%--<asp:TextBox runat="server" ID="txt_siExaRealiEcoProstaAntReproMascu" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>--%>
@@ -510,7 +506,7 @@
                         </asp:TableRow>
                     </asp:Table>
                     <div class="card" style="width: auto;">
-                        <div class="card-header col" style="background-color: #34495E; color: white; font-size:16px">
+                        <div class="card-header col" style="background-color:#cdfecc; font-size: 15px; font-family:Arial">
                             HÁBITOS TÓXICOS 
                         </div>
                     </div>
@@ -612,7 +608,7 @@
                         </asp:TableRow>
                     </asp:Table>
                     <div class="card" style="width: auto;">
-                        <div class="card-header" style="background-color: #34495E; color: white; font-size:16px">
+                        <div class="card-header" style="background-color:#cdfecc; font-size: 15px; font-family:Arial">
                             ESTILO DE VIDA
                         </div>
                     </div>
