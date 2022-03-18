@@ -6,29 +6,25 @@
     <div class="container" style="background-color: white">
         <br />
         <div class="container">
-            <div class="card text-center">
-                <div class="card-header" style="font-size: 25px; background-color: #34495E; color: white">
-                    GESTIÓN DE SEGURIDAD Y SALUD OCUPACIONAL
-                </div>
-                <div style="font-size: 25px; background-color: #34495E; color: white">
-                    HOJA DE EVOLUCIÓN
-                </div>
+            <div class="text-center" style="font-size: 25px">
+                GESTIÓN DE SEGURIDAD Y SALUD OCUPACIONAL<br />
+                HOJA DE EVOLUCIÓN
             </div>
         </div>
         <br />
         <div class="card" style="width: auto;">
-            <div class="card-header" style="background-color: #34495E; color: white">
+            <div class="card-header" style="background-color: #cccdfe;  font-weight:bold">
                 A. DATOS DEL ESTABLECIMIENTO - EMPRESA Y USUARIO
             </div>
             <div class="list-group list-group-flush">
                 <asp:Table class="table table-bordered table-light text-center" runat="server">
                     <asp:TableRow>
-                        <asp:TableCell Text="INSTITUCIÓN DEL SISTEMA O NOMBRE DE LA EMPRESA" style="background-color: #34495E; color: white; font-size: 16px"></asp:TableCell>
-                        <asp:TableCell Text="RUC" style="background-color: #34495E; color: white; font-size: 16px"></asp:TableCell>
-                        <asp:TableCell Text="CIIU" style="background-color: #34495E; color: white; font-size: 16px"></asp:TableCell>
-                        <asp:TableCell Text="ESTABLECIMIENTO DE SALUD" style="background-color: #34495E; color: white; font-size: 16px"></asp:TableCell>
-                        <asp:TableCell Text="NÚMERO DE HISTORIA CLÍNICA" style="background-color: #34495E; color: white; font-size: 16px"></asp:TableCell>
-                        <asp:TableCell Text="NÚMERO DE ARCHIVO" style="background-color: #34495E; color: white; font-size: 16px"></asp:TableCell>
+                        <asp:TableCell Text="INSTITUCIÓN DEL SISTEMA O NOMBRE DE LA EMPRESA" style="background-color: #cdfecc; font-size:15px"></asp:TableCell>
+                        <asp:TableCell Text="RUC" style="background-color: #cdfecc; font-size:15px"></asp:TableCell>
+                        <asp:TableCell Text="CIIU" style="background-color: #cdfecc; font-size:15px"></asp:TableCell>
+                        <asp:TableCell Text="ESTABLECIMIENTO DE SALUD" style="background-color: #cdfecc; font-size:15px"></asp:TableCell>
+                        <asp:TableCell Text="NÚMERO DE HISTORIA CLÍNICA" style="background-color: #cdfecc; font-size:15px"></asp:TableCell>
+                        <asp:TableCell Text="NÚMERO DE ARCHIVO" style="background-color: #cdfecc; font-size:15px"></asp:TableCell>
                     </asp:TableRow>
                     <asp:TableRow>
                         <asp:TableCell>
@@ -53,12 +49,12 @@
                 </asp:Table>
                 <asp:Table class="table table-bordered table-light text-center" runat="server">
                     <asp:TableRow>
-                        <asp:TableCell Text="PRIMER APELLIDO" style="background-color: #34495E; color: white; font-size: 16px"></asp:TableCell>
-                        <asp:TableCell Text="SEGUNDO APELLIDO" style="background-color: #34495E; color: white; font-size: 16px"></asp:TableCell>
-                        <asp:TableCell Text="PRIMER NOMBRE" style="background-color: #34495E; color: white; font-size: 16px"></asp:TableCell>
-                        <asp:TableCell Text="SEGUNDO NOMBRE" style="background-color: #34495E; color: white; font-size: 16px"></asp:TableCell>
-                        <asp:TableCell Text="SEXO" style="background-color: #34495E; color: white; font-size: 16px"></asp:TableCell>
-                        <asp:TableCell Text="PUESTO DE TRABAJO (CIUO)" style="background-color: #34495E; color: white; font-size: 16px"></asp:TableCell>
+                        <asp:TableCell Text="PRIMER APELLIDO" style="background-color: #cdfecc; font-size:15px"></asp:TableCell>
+                        <asp:TableCell Text="SEGUNDO APELLIDO" style="background-color: #cdfecc; font-size:15px"></asp:TableCell>
+                        <asp:TableCell Text="PRIMER NOMBRE" style="background-color: #cdfecc; font-size:15px"></asp:TableCell>
+                        <asp:TableCell Text="SEGUNDO NOMBRE" style="background-color: #cdfecc; font-size:15px"></asp:TableCell>
+                        <asp:TableCell Text="SEXO" style="background-color: #cdfecc; font-size:15px"></asp:TableCell>
+                        <asp:TableCell Text="PUESTO DE TRABAJO (CIUO)" style="background-color: #cdfecc; font-size:15px"></asp:TableCell>
                     </asp:TableRow>
                     <asp:TableRow>
                         <asp:TableCell>
@@ -86,20 +82,20 @@
         <br />
         <div class="card" style="width: 100%;">
             <div class="row">
-                <div class="card-header col" style="text-align: center; margin-left: 0.8rem; background-color: #34495E; color: white; font-size: 16px">
+                <div class="card-header col" style="text-align: center; margin-left: 0.8rem; background-color: #cccdfe; font-weight:bold">
                     B. EVOLUCIÓN                                          
                 </div>
-                <div class="card-header col" style="text-align: center; margin-right: 0.8rem; background-color: #34495E; color: white; font-size: 16px">
+                <div class="card-header col" style="text-align: center; margin-right: 0.8rem; background-color: #cccdfe; font-weight:bold">
                     C. PRESCRIPCIONES                                         
                 </div>
             </div>
             <asp:Table class="table table-bordered table-light text-center" runat="server">
                 <asp:TableRow>
-                    <asp:TableCell Text="FECHA" style="background-color: #34495E; color: white; font-size: 16px"></asp:TableCell>
-                    <asp:TableCell Text="HORA" style="background-color: #34495E; color: white; font-size: 16px"></asp:TableCell>
-                    <asp:TableCell Text="NOTAS DE EVOLUCION" style="background-color: #34495E; color: white; font-size: 16px"></asp:TableCell>
-                    <asp:TableCell Text="FARMACOTERAPIA INDICACIONES PARA ENFERMERIA Y OTRAS PERSONAS" style="background-color: #34495E; color: white; font-size: 16px"></asp:TableCell>
-                    <asp:TableCell Text="ADMINISTRACIÓN FARMACOS Y OTROS" style="background-color: #34495E; color: white; font-size: 16px"></asp:TableCell>
+                    <asp:TableCell Text="FECHA" style="background-color: #cdfecc; font-size:15px"></asp:TableCell>
+                    <asp:TableCell Text="HORA" style="background-color: #cdfecc; font-size:15px"></asp:TableCell>
+                    <asp:TableCell Text="NOTAS DE EVOLUCION" style="background-color: #cdfecc; font-size:15px"></asp:TableCell>
+                    <asp:TableCell Text="FARMACOTERAPIA INDICACIONES PARA ENFERMERIA Y OTRAS PERSONAS" style="background-color: #cdfecc; font-size:15px"></asp:TableCell>
+                    <asp:TableCell Text="ADMINISTRACIÓN FARMACOS Y OTROS" style="background-color: #cdfecc; font-size:15px"></asp:TableCell>
                 </asp:TableRow>
                 <asp:TableRow>
                     <asp:TableCell>

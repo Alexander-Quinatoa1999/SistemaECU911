@@ -6,32 +6,28 @@
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <contenttemplate>
-            <div class="container" style="background-color: white">
+            <div class="container" style="background-color: white; font-family: Arial">
                 <br />
                 <div class="container">
-                    <div class="card text-center">
-                        <div class="card-header" style="font-size: 25px; background-color: #34495E; color: white">
-                            GESTIÓN DE SEGURIDAD Y SALUD OCUPACIONAL
-                        </div>
-                        <div style="font-size: 25px; background-color: #34495E; color: white">
-                            HISTORIA CLÍNICA OCUPACIONAL - CERTIFICADO
-                        </div>
+                    <div class="text-center" style="font-size: 25px">
+                        GESTIÓN DE SEGURIDAD Y SALUD OCUPACIONAL<br />
+                        HISTORIA CLÍNICA OCUPACIONAL - CERTIFICADO
                     </div>
                 </div>
                 <br />
                 <div class="card" style="width: auto;">
-                    <div class="card-header" style="background-color: #34495E; color: white; font-size:16px">
+                    <div class="card-header" style="background-color: #cccdfe; font-size:15px; font-weight:bold">
                         A. DATOS DEL ESTABLECIMIENTO - EMPRESA Y USUARIO
                     </div>
                     <div class="list-group list-group-flush">
                         <asp:Table class="table table-bordered table-light text-center" runat="server">
                             <asp:TableRow>
-                                <asp:TableCell Text="INSTITUCIÓN DEL SISTEMA O NOMBRE DE LA EMPRESA" style="background-color: #34495E; color: white; font-size:16px"></asp:TableCell>
-                                <asp:TableCell Text="RUC" style="background-color: #34495E; color: white; font-size:16px"></asp:TableCell>
-                                <asp:TableCell Text="CIIU" style="background-color: #34495E; color: white; font-size:16px"></asp:TableCell>
-                                <asp:TableCell Text="ESTABLECIMIENTO DE SALUD" style="background-color: #34495E; color: white; font-size:16px"></asp:TableCell>
-                                <asp:TableCell Text="NÚMERO DE HISTORIA CLÍNICA" style="background-color: #34495E; color: white; font-size:16px"></asp:TableCell>
-                                <asp:TableCell Text="NÚMERO DE ARCHIVO" style="background-color: #34495E; color: white; font-size:16px"></asp:TableCell>
+                                <asp:TableCell Text="INSTITUCIÓN DEL SISTEMA O NOMBRE DE LA EMPRESA" style="background-color: #cdfecc; font-size:15px"></asp:TableCell>
+                                <asp:TableCell Text="RUC" style="background-color: #cdfecc; font-size:15px"></asp:TableCell>
+                                <asp:TableCell Text="CIIU" style="background-color: #cdfecc; font-size:15px"></asp:TableCell>
+                                <asp:TableCell Text="ESTABLECIMIENTO DE SALUD" style="background-color: #cdfecc; font-size:15px"></asp:TableCell>
+                                <asp:TableCell Text="NÚMERO DE HISTORIA CLÍNICA" style="background-color: #cdfecc; font-size:15px"></asp:TableCell>
+                                <asp:TableCell Text="NÚMERO DE ARCHIVO" style="background-color: #cdfecc; font-size:15px"></asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
                                 <asp:TableCell>
@@ -56,12 +52,12 @@
                         </asp:Table>
                         <asp:Table class="table table-bordered table-light text-center" runat="server">
                             <asp:TableRow>
-                                <asp:TableCell Text="PRIMER APELLIDO" Style="width: 225px; background-color: #34495E; color: white; font-size:16px"></asp:TableCell>
-                                <asp:TableCell Text="SEGUNDO APELLIDO" Style="width: 225px; background-color: #34495E; color: white; font-size:16px"></asp:TableCell>
-                                <asp:TableCell Text="PRIMER NOMBRE" Style="width: 225px; background-color: #34495E; color: white; font-size:16px"></asp:TableCell>
-                                <asp:TableCell Text="SEGUNDO NOMBRE" Style="width: 225px; background-color: #34495E; color: white; font-size:16px"></asp:TableCell>
-                                <asp:TableCell Text="SEXO" Style="width: 100px; background-color: #34495E; color: white; font-size:16px"></asp:TableCell>
-                                <asp:TableCell Text="PUESTO DE TRABAJO (CIUO)" Style="width: 150px; background-color: #34495E; color: white; font-size:16px"></asp:TableCell>
+                                <asp:TableCell Text="PRIMER APELLIDO" Style="width: 225px; background-color: #cdfecc; font-size:15px"></asp:TableCell>
+                                <asp:TableCell Text="SEGUNDO APELLIDO" Style="width: 225px; background-color: #cdfecc; font-size:15px"></asp:TableCell>
+                                <asp:TableCell Text="PRIMER NOMBRE" Style="width: 225px; background-color: #cdfecc; font-size:15px"></asp:TableCell>
+                                <asp:TableCell Text="SEGUNDO NOMBRE" Style="width: 225px; background-color: #cdfecc; font-size:15px"></asp:TableCell>
+                                <asp:TableCell Text="SEXO" Style="width: 100px; background-color: #cdfecc; font-size:15px"></asp:TableCell>
+                                <asp:TableCell Text="PUESTO DE TRABAJO (CIUO)" Style="width: 150px; background-color: #cdfecc; font-size:15px"></asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
                                 <asp:TableCell>
@@ -88,32 +84,32 @@
                 </div>
                 <br />
                 <div class="card" style="width: auto;">
-                    <div class="card-header" style="background-color: #34495E; color: white; font-size:16px">
+                    <div class="card-header" style="background-color: #cccdfe; font-size:15px; font-weight:bold">
                         B. DATOS GENERALES 
                     </div>
                     <div class="list-group list-group-flush">
                         <asp:Table class="table table-bordered table-light table-responsive text-center" runat="server">
                             <asp:TableRow>
-                                <asp:TableCell Text="FECHA DE EMISIÓN:" Style="width: 350px; background-color: #34495E; color: white; font-size:16px"></asp:TableCell>
+                                <asp:TableCell Text="FECHA DE EMISIÓN:" Style="width: 350px; background-color: #cdfecc; font-size:15px"></asp:TableCell>
                                 <asp:TableCell ColumnSpan="8" Style="width: 1000px">
                                     <asp:TextBox runat="server" ID="txt_fechaEmision" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center" TextMode="Date"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
-                                <asp:TableCell Text="EVALUACIÓN:" Style="width: 350px; background-color: #34495E; color: white; font-size:16px"></asp:TableCell>
-                                <asp:TableCell Text="INGRESO" Style="width: 250px; background-color: #34495E; color: white; font-size:16px"></asp:TableCell>
+                                <asp:TableCell Text="EVALUACIÓN:" Style="width: 350px; background-color: #cdfecc; font-size:15px"></asp:TableCell>
+                                <asp:TableCell Text="INGRESO" Style="width: 250px; background-color: #cdfecc; font-size:15px"></asp:TableCell>
                                 <asp:TableCell Style="width: 75px">
                                     <asp:TextBox runat="server" ID="txt_ingreso" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
                                 </asp:TableCell>
-                                <asp:TableCell Text="PERIÓDICO" Style="width: 150px; background-color: #34495E; color: white; font-size:16px"></asp:TableCell>
+                                <asp:TableCell Text="PERIÓDICO" Style="width: 150px; background-color: #cdfecc; font-size:15px"></asp:TableCell>
                                 <asp:TableCell Style="width: 75px">
                                     <asp:TextBox runat="server" ID="txt_periodico" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
                                 </asp:TableCell>
-                                <asp:TableCell Text="REINTEGRO" Style="width: 150px; background-color: #34495E; color: white; font-size:16px"></asp:TableCell>
+                                <asp:TableCell Text="REINTEGRO" Style="width: 150px; background-color: #cdfecc; font-size:15px"></asp:TableCell>
                                 <asp:TableCell Style="width: 75px">
                                     <asp:TextBox runat="server" ID="txt_reintegro" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
                                 </asp:TableCell>
-                                <asp:TableCell Text="RETIRO" Style="width: 150px; background-color: #34495E; color: white; font-size:16px"></asp:TableCell>
+                                <asp:TableCell Text="RETIRO" Style="width: 150px; background-color: #cdfecc; font-size:15px"></asp:TableCell>
                                 <asp:TableCell Style="width: 75px">
                                     <asp:TextBox runat="server" ID="txt_retiro" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
                                 </asp:TableCell>
@@ -123,28 +119,28 @@
                 </div>
                 <br />
                 <div class="card" style="width: auto;">
-                    <div class="card-header" style="background-color: #34495E; color: white; font-size:16px">
+                    <div class="card-header" style="background-color: #cccdfe; font-size:15px; font-weight:bold">
                         C. APTITUD MÉDICA LABORAL
                     </div>
                     <div class="list-group list-group-flush">
                         <asp:Table class="table table-bordered table-light text-center" runat="server">
                             <asp:TableRow>
-                                <asp:TableCell Text="Después de la valoración médica ocupacional se certifica que la persona en mención, es calificada como:" Style="width: 1160px; text-align: left; background-color: #34495E; color: white; font-size:16px" ColumnSpan="8"></asp:TableCell>
+                                <asp:TableCell Text="Después de la valoración médica ocupacional se certifica que la persona en mención, es calificada como:" Style="width: 1160px; text-align: left; background-color: #cdfecc; font-size:15px" ColumnSpan="8"></asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
-                                <asp:TableCell Style="width: 250px; background-color: #34495E; color: white; font-size:16px">APTO</asp:TableCell>
+                                <asp:TableCell Style="width: 250px; background-color: #cdfecc; font-size:15px">APTO</asp:TableCell>
                                 <asp:TableCell Style="width: 50px">
                                     <asp:TextBox runat="server" ID="txt_apto" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
                                 </asp:TableCell>
-                                <asp:TableCell Style="width: 175px; background-color: #34495E; color: white; font-size:16px">APTO EN OBSERVACIÓN</asp:TableCell>
+                                <asp:TableCell Style="width: 175px; background-color: #cdfecc; font-size:15px">APTO EN OBSERVACIÓN</asp:TableCell>
                                 <asp:TableCell Style="width: 75px">
                                     <asp:TextBox runat="server" ID="txt_aptoObservacion" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
                                 </asp:TableCell>
-                                <asp:TableCell Style="width: 175px; background-color: #34495E; color: white; font-size:16px">APTO CON LIMITACIONES</asp:TableCell>
+                                <asp:TableCell Style="width: 175px; background-color: #cdfecc; font-size:15px">APTO CON LIMITACIONES</asp:TableCell>
                                 <asp:TableCell Style="width: 60px">
                                     <asp:TextBox runat="server" ID="txt_aptoLimitaciones" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
                                 </asp:TableCell>
-                                <asp:TableCell Style="width: 175px; background-color: #34495E; color: white; font-size:16px">NO APTO</asp:TableCell>
+                                <asp:TableCell Style="width: 175px; background-color: #cdfecc; font-size:15px">NO APTO</asp:TableCell>
                                 <asp:TableCell Style="width: 75px">
                                     <asp:TextBox runat="server" ID="txt_noApto" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
                                 </asp:TableCell>
@@ -159,48 +155,48 @@
                 </div>
                 <br />
                 <div class="card" style="width: auto;">
-                    <div class="card-header" style="background-color: #34495E; color: white; font-size:16px">
+                    <div class="card-header" style="background-color: #cccdfe; font-size:15px; font-weight:bold">
                         D.  EVALUACIÓN MÉDICA DE RETIRO
                     </div>
                     <div class="list-group list-group-flush">
                         <asp:Table class="table table-bordered table-light text-center" runat="server">
                             <asp:TableRow>
-                                <asp:TableCell Text="El usuario se realizó la evaluación médica de retiro" Style="width: 705px; text-align: left; background-color: #34495E; color: white; font-size:16px"></asp:TableCell>
-                                <asp:TableCell Text="SI" Style="width: 100px; background-color: #34495E; color: white; font-size:16px"></asp:TableCell>
+                                <asp:TableCell Text="El usuario se realizó la evaluación médica de retiro" Style="width: 705px; text-align: left; background-color: white; font-size:15px"></asp:TableCell>
+                                <asp:TableCell Text="SI" Style="width: 100px; background-color: #cdfecc; font-size:15px"></asp:TableCell>
                                 <asp:TableCell Style="width: 100px">
                                     <asp:TextBox runat="server" ID="txt_siEvaMedRetiro" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
                                 </asp:TableCell>
-                                <asp:TableCell Text="NO" Style="width: 100px; background-color: #34495E; color: white; font-size:16px"></asp:TableCell>
+                                <asp:TableCell Text="NO" Style="width: 100px; background-color: #cdfecc; font-size:15px"></asp:TableCell>
                                 <asp:TableCell Style="width: 50px">
                                     <asp:TextBox runat="server" ID="txt_noEvaMedRetiro" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
-                                <asp:TableCell Text="Condición del diagnóstico" Style="width: 705px; text-align: left; background-color: #34495E; color: white; font-size:16px"></asp:TableCell>
-                                <asp:TableCell Text="Presuntiva" Style="width: 50px; background-color: #34495E; color: white; font-size:16px"></asp:TableCell>
+                                <asp:TableCell Text="Condición del diagnóstico" Style="width: 705px; text-align: left; background-color: white; font-size:15px"></asp:TableCell>
+                                <asp:TableCell Text="Presuntiva" Style="width: 50px; background-color: #cdfecc; font-size:15px"></asp:TableCell>
                                 <asp:TableCell Style="width: 50px">
                                     <asp:TextBox runat="server" ID="txt_presuntivaEvaMedRetiro" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
                                 </asp:TableCell>
-                                <asp:TableCell Text="Definitiva" Style="width: 100px; background-color: #34495E; color: white; font-size:16px"></asp:TableCell>
+                                <asp:TableCell Text="Definitiva" Style="width: 100px; background-color: #cdfecc; font-size:15px"></asp:TableCell>
                                 <asp:TableCell Style="width: 50px">
                                     <asp:TextBox runat="server" ID="txt_definitivaEvaMedRetiro" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
                                 </asp:TableCell>
-                                <asp:TableCell Text="No aplica" Style="width: 100px; background-color: #34495E; color: white; font-size:16px"></asp:TableCell>
+                                <asp:TableCell Text="No aplica" Style="width: 100px; background-color: #cdfecc; font-size:15px"></asp:TableCell>
                                 <asp:TableCell Style="width: 50px">
                                     <asp:TextBox runat="server" ID="txt_noAplicaEvaMedRetiro" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
-                                <asp:TableCell Text="La condición de salud esta relacionada con el trabajo" Style="width: 705px; text-align: left; background-color: #34495E; color: white; font-size:16px"></asp:TableCell>
-                                <asp:TableCell Text="SI" Style="width: 100px; background-color: #34495E; color: white; font-size:16px"></asp:TableCell>
+                                <asp:TableCell Text="La condición de salud esta relacionada con el trabajo" Style="width: 705px; text-align: left; background-color: white; font-size:15px"></asp:TableCell>
+                                <asp:TableCell Text="SI" Style="width: 100px; background-color: #cdfecc; font-size:15px"></asp:TableCell>
                                 <asp:TableCell Style="width: 50px">
                                     <asp:TextBox runat="server" ID="txt_si2EvaMedRetiro" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
                                 </asp:TableCell>
-                                <asp:TableCell Text="NO" Style="width: 100px; background-color: #34495E; color: white; font-size:16px"></asp:TableCell>
+                                <asp:TableCell Text="NO" Style="width: 100px; background-color: #cdfecc; font-size:15px"></asp:TableCell>
                                 <asp:TableCell Style="width: 50px">
                                     <asp:TextBox runat="server" ID="txt_no2EvaMedRetiro" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
                                 </asp:TableCell>
-                                <asp:TableCell Text="No aplica" Style="width: 100px; background-color: #34495E; color: white; font-size:16px"></asp:TableCell>
+                                <asp:TableCell Text="No aplica" Style="width: 100px; background-color: #cdfecc; font-size:15px"></asp:TableCell>
                                 <asp:TableCell Style="width: 50px">
                                     <asp:TextBox runat="server" ID="txt_noAplica2EvaMedRetiro" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
                                 </asp:TableCell>
@@ -210,7 +206,7 @@
                 </div>
                 <br />
                 <div class="card" style="width: auto;">
-                    <div class="card-header" style="background-color: #34495E; color: white; font-size:16px">
+                    <div class="card-header" style="background-color: #cccdfe; font-size:15px; font-weight:bold">
                         E. RECOMENDACIONES 
                     </div>
                     <div class="list-group list-group-flush">
@@ -232,21 +228,21 @@
                     </p>
                 </div>
                 <div class="card" style="width: auto;">
-                    <div class="card-header" style="background-color: #34495E; color: white; font-size:16px">
+                    <div class="card-header" style="background-color: #cccdfe; font-size:15px; font-weight:bold">
                         F. DATOS DEL PROFESIONAL DE SALUD
                     </div>
                     <div class="list-group list-group-flush">
                         <asp:Table class="table table-bordered table-light text-center" runat="server">
                             <asp:TableRow>
-                                <asp:TableCell Style="width: 100px; background-color: #34495E; color: white; font-size:16px">NOMBRES Y APELLIDOS</asp:TableCell>
+                                <asp:TableCell Style="width: 100px; background-color: #cdfecc; font-size:15px">NOMBRES Y APELLIDOS</asp:TableCell>
                                 <asp:TableCell Style="width: 300px">
                                     <asp:DropDownList ID="ddl_profesional" CssClass="form-check" Style="width: 100%; border: none; background-color: transparent" runat="server"></asp:DropDownList>
                                 </asp:TableCell>
-                                <asp:TableCell Style="width: 75px; background-color: #34495E; color: white; font-size:16px">CÓDIGO</asp:TableCell>
+                                <asp:TableCell Style="width: 75px; background-color: #cdfecc; font-size:15px">CÓDIGO</asp:TableCell>
                                 <asp:TableCell Style="width: 125px">
                                     <asp:TextBox runat="server" ID="txt_codigo" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
                                 </asp:TableCell>
-                                <asp:TableCell Style="width: 100px; background-color: #34495E; color: white; font-size:16px">FIRMA Y SELLO</asp:TableCell>
+                                <asp:TableCell Style="width: 100px; background-color: #cdfecc; font-size:15px">FIRMA Y SELLO</asp:TableCell>
                                 <asp:TableCell Style="width: 175px">
                                     <asp:TextBox runat="server" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
                                 </asp:TableCell>
@@ -257,7 +253,7 @@
                 <br />
                 <div align="center">
                     <div class="card" style="width: 400px">
-                        <div class="card-header" style="background-color: #34495E; color: white; font-size:16px">
+                        <div class="card-header" style="background-color: #cccdfe; font-size:15px; font-weight:bold">
                             G. FIRMA DEL USUARIO    
                         </div>
                         <div class="list-group list-group-flush">

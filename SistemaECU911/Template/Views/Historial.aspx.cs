@@ -895,6 +895,15 @@ namespace SistemaECU911.Template.Views
             Response.Redirect("~/Template/Views/Inicio.aspx");
         }
 
+        protected void txt_peso_TextChanged(object sender, EventArgs e)
+        {
+            int peso = Convert.ToInt32(txt_peso.Text);
+            decimal talla = Convert.ToDecimal(txt_talla.Text);
+            decimal calculo = peso / (talla * talla) * 100;
+
+            txt_indMasCorporal.Text = calculo.ToString();
+        }
+
         //private void obtenerCie102()
         //{
         //    string codigo = ddl_codigoDiagnostico.SelectedValue;
@@ -933,7 +942,7 @@ namespace SistemaECU911.Template.Views
         //    obtenerCie102();
         //}
 
-        
+
 
     }
 

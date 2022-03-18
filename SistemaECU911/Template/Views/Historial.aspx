@@ -365,7 +365,7 @@
                                     </asp:TableCell>
                                     <asp:TableCell Style="width: 600px; font-size: 15px; font-family:Arial" Text="Peso (Kg)"></asp:TableCell>
                                     <asp:TableCell Style="width: 75px; font-size: 14px">
-                                        <asp:TextBox ID="txt_peso" runat="server" BorderStyle="None" TextMode="Number" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                                        <asp:TextBox ID="txt_peso" runat="server" BorderStyle="None" TextMode="Number" Style="background-color: transparent; width: 100%; text-align: center" OnTextChanged="txt_peso_TextChanged" AutoPostBack="true"></asp:TextBox>
                                     </asp:TableCell>
                                 </asp:TableRow>
                                 <asp:TableRow>
@@ -429,7 +429,7 @@
                                 <asp:TableCell Text="TIPO" Style="width:100px; background-color: #cdfecc; font-size: 15px; font-family:Arial"></asp:TableCell>
                                 <asp:TableCell Text="CONDICIÓN" Style="width:100px; background-color: #cdfecc; font-size: 15px; font-family:Arial"></asp:TableCell>
                                 <asp:TableCell Text="CRONOLOGÍA" Style="width:100px; background-color: #cdfecc; font-size: 15px; font-family:Arial"></asp:TableCell>
-                                <asp:TableCell Text="DESCRIPCIÓN" Style="width:225px; background-color: #cdfecc; font-weight:bold; font-family:Arial; font-size: 15px; font-family:Arial"></asp:TableCell>
+                                <asp:TableCell Text="DESCRIPCIÓN" Style="width:225px; background-color: #cdfecc; font-family:Arial; font-size: 15px; font-family:Arial"></asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
                                 <asp:TableCell Style="width: 250px; background-color: white; font-size: 14px">

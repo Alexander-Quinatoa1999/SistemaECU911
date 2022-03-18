@@ -1,11 +1,15 @@
-﻿using CapaDatos;
-using CapaNegocio;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using System.Web.Script.Services;
+using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using CapaDatos;
+using CapaNegocio;
 
 namespace SistemaECU911.Template.Views
 {
@@ -36,18 +40,65 @@ namespace SistemaECU911.Template.Views
             }
         }
 
+        //Metodo obtener cedula por numero de historia clinica
+        [WebMethod]
+        [ScriptMethod]
+        public static List<string> ObtenerNumHClinica(string prefixText)
+        {
+            List<string> lista = new List<string>();
+            try
+            {
+                string oConn = @"Data Source=.;Initial Catalog=SistemaECU911;Integrated Security=True";
+
+                SqlConnection con = new SqlConnection(oConn);
+                con.Open();
+                SqlCommand cmd = new SqlCommand("select top(10) Per_Cedula from Tbl_Personas where Per_Cedula LIKE + @Cedula + '%'", con);
+                cmd.Parameters.AddWithValue("@Cedula", prefixText);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+                IDataReader lector = cmd.ExecuteReader();
+
+                while (lector.Read())
+                {
+                    lista.Add(lector.GetString(0));
+                }
+
+                lector.Close();
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex);
+                return null;
+            }
+        }
+
         protected void txt_cedula_TextChanged(object sender, EventArgs e)
         {
-            per = CN_HistorialMedico.obtenerPersonasxCedula(Convert.ToInt32(txt_cedula.Text));
+            ObtenerCedula();
+        }
 
-            if (per != null)
+        private void ObtenerCedula()
+        {
+            string cedula = txt_cedula.Text;
+
+            var lista = from c in dc.Tbl_Personas
+                        where c.Per_Cedula == cedula
+                        select c;
+
+            foreach (var item in lista)
             {
-                txt_prinombre.Text = per.Per_priNombre.ToString();
-                txt_segnombre.Text = per.Per_segNombre.ToString();
-                txt_priapellido.Text = per.Per_priApellido.ToString();
-                txt_segapellido.Text = per.Per_segApellido.ToString();
-                txt_fechanacimiento.Text = per.Per_fechNacimiento.ToString();
-                txt_edad.Text = per.Per_fechNacimiento.ToString();
+                string priNombre = item.Per_priNombre;
+                txt_prinombre.Text = priNombre;
+
+                string segNombre = item.Per_segNombre;
+                txt_segnombre.Text = segNombre;
+
+                string priApellido = item.Per_priApellido;
+                txt_priapellido.Text = priApellido;
+
+                string segApellido = item.Per_segApellido;
+                txt_segapellido.Text = segApellido;
             }
         }
 
@@ -151,7 +202,7 @@ namespace SistemaECU911.Template.Views
                         txt_poseeenfermedad.Text = datosaludsso.SaludSSO_poseeenfermedad.ToString();
                         //txt_sidiscapacidad.Text = datosaludsso.SaludSSO_discapacidad_si.ToString();
                         //txt_nodiscapacidad.Text = datosaludsso.SaludSSO_discapacidad_no.ToString();
-                        txt_tipodiscapacidad.Text = datosaludsso.SaludSSO_discapacidad_tipo.ToString();
+                        //txt_tipodiscapacidad.Text = datosaludsso.SaludSSO_discapacidad_tipo.ToString();
                         txt_porcentajediscapacidad.Text = datosaludsso.SaludSSO_discapacidad_porcentaje.ToString();
                         txt_numcarnetconadis.Text = datosaludsso.SaludSSO_discapacidad_carnetconadis.ToString();
                         txt_fechacaducidadcarnet.Text = datosaludsso.SaludSSO_discapacidad_caducidadcarnetconadis.ToString();
@@ -170,7 +221,7 @@ namespace SistemaECU911.Template.Views
                         txt_otrasenfermedades.Text = datosaludsso.SaludSSO_enfermedad_cronica_otras.ToString();
                         //txt_sienfermedadrara.Text = datosaludsso.SaludSSO_enfermedad_rara_si.ToString();
                         //txt_noenfermedadrara.Text = datosaludsso.SaludSSO_enfermedad_rara_no.ToString();
-                        txt_cualenfermedadrara.Text = datosaludsso.SaludSSO_enfermedad_rara_cual.ToString();
+                        //txt_cualenfermedadrara.Text = datosaludsso.SaludSSO_enfermedad_rara_cual.ToString();
                         //txt_sialcohol.Text = datosaludsso.SaludSSO_consume_alcohol_si.ToString();
                         //txt_noalcohol.Text = datosaludsso.SaludSSO_consume_alcohol_no.ToString();
                         //txt_cerveza.Text = datosaludsso.SaludSSO_consume_alcohol_tipo_cerveza.ToString();
@@ -421,7 +472,7 @@ namespace SistemaECU911.Template.Views
                 datosaludsso.SaludSSO_poseeenfermedad = txt_poseeenfermedad.Text;
                 //datosaludsso.SaludSSO_discapacidad_si = txt_sidiscapacidad.Text;
                 //datosaludsso.SaludSSO_discapacidad_no = txt_nodiscapacidad.Text;
-                datosaludsso.SaludSSO_discapacidad_tipo = txt_tipodiscapacidad.Text;
+                //datosaludsso.SaludSSO_discapacidad_tipo = txt_tipodiscapacidad.Text;
                 datosaludsso.SaludSSO_discapacidad_porcentaje = txt_porcentajediscapacidad.Text;
                 datosaludsso.SaludSSO_discapacidad_carnetconadis = txt_numcarnetconadis.Text;
                 datosaludsso.SaludSSO_discapacidad_caducidadcarnetconadis = Convert.ToDateTime(txt_fechacaducidadcarnet.Text);
@@ -440,7 +491,7 @@ namespace SistemaECU911.Template.Views
                 datosaludsso.SaludSSO_enfermedad_cronica_otras = txt_otrasenfermedades.Text;
                 //datosaludsso.SaludSSO_enfermedad_rara_si = txt_sienfermedadrara.Text;
                 //datosaludsso.SaludSSO_enfermedad_rara_no = txt_noenfermedadrara.Text;
-                datosaludsso.SaludSSO_enfermedad_rara_cual = txt_cualenfermedadrara.Text;
+                //datosaludsso.SaludSSO_enfermedad_rara_cual = txt_cualenfermedadrara.Text;
                 //datosaludsso.SaludSSO_consume_alcohol_si = txt_sialcohol.Text;
                 //datosaludsso.SaludSSO_consume_alcohol_no = txt_noalcohol.Text;
                 //datosaludsso.SaludSSO_consume_alcohol_tipo_cerveza = txt_cerveza.Text;
