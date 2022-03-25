@@ -5,15 +5,15 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace SistemaECU911.Template.Views
+namespace SistemaECU911.Template.Views_Pacientes
 {
-    public partial class Principal : System.Web.UI.MasterPage
+    public partial class PrincipalPaciente : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["Administrador"] != null)
+            if (Session["Paciente"] != null)
             {
-                string usulogeado = Session["Administrador"].ToString();
+                string usulogeado = Session["Paciente"].ToString();
                 string resNom = Session["nombre"].ToString();
                 string resApe = Session["apellido"].ToString();
                 string resRol = Session["rol"].ToString();

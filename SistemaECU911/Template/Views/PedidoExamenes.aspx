@@ -16,62 +16,58 @@
                 A. DATOS DEL ESTABLECIMIENTO - EMPRESA Y USUARIO
             </div>
             <div class="list-group list-group-flush">
-                <asp:Table class="table table-bordered table-light text-center" runat="server">
+                <asp:Table class="table table-bordered table-light table-responsive text-center" runat="server">
                     <asp:TableRow>
-                        <asp:TableCell Text="INSTITUCIÓN DEL SISTEMA O NOMBRE DE LA EMPRESA" style="background-color: #cdfecc; font-size: 15px"></asp:TableCell>
-                        <asp:TableCell Text="RUC" style="background-color: #cdfecc; font-size: 15px"></asp:TableCell>
-                        <asp:TableCell Text="CIIU" style="background-color: #cdfecc; font-size: 15px"></asp:TableCell>
-                        <asp:TableCell Text="ESTABLECIMIENTO DE SALUD" style="background-color: #cdfecc; font-size: 15px"></asp:TableCell>
-                        <asp:TableCell Text="NÚMERO DE HISTORIA CLÍNICA" style="background-color: #cdfecc; font-size: 15px"></asp:TableCell>
-                        <asp:TableCell Text="NÚMERO DE ARCHIVO" style="background-color: #cdfecc; font-size: 15px"></asp:TableCell>
+                        <asp:TableCell Text="INSTITUCIÓN DEL SISTEMA O NOMBRE DE LA EMPRESA" style="width:375px; background-color: #cdfecc; font-size: 15px"></asp:TableCell>
+                        <asp:TableCell Text="RUC" style="width:150px; background-color: #cdfecc; font-size: 15px"></asp:TableCell>
+                        <asp:TableCell Text="CIIU" style="width:150px; background-color: #cdfecc; font-size: 15px"></asp:TableCell>
+                        <asp:TableCell Text="ESTABLECIMIENTO DE SALUD" style="width:250px; background-color: #cdfecc; font-size: 15px"></asp:TableCell>
+                        <asp:TableCell Text="NÚMERO DE HISTORIA CLÍNICA" style="width:200px; background-color: #cdfecc; font-size: 15px"></asp:TableCell>
+                        <asp:TableCell Text="NÚMERO DE ARCHIVO" style="width:200px; background-color: #cdfecc; font-size: 15px"></asp:TableCell>
                     </asp:TableRow>
                     <asp:TableRow>
-                        <asp:TableCell>
+                        <asp:TableCell Style="background-color: white; font-size: 14px">
                             <asp:TextBox runat="server" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center;"></asp:TextBox>
                         </asp:TableCell>
-                        <asp:TableCell>
+                        <asp:TableCell Style="background-color: white; font-size: 14px">
                             <asp:TextBox runat="server" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
                         </asp:TableCell>
-                        <asp:TableCell>
+                        <asp:TableCell Style="background-color: white; font-size: 14px">
                             <asp:TextBox runat="server" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
                         </asp:TableCell>
-                        <asp:TableCell>
+                        <asp:TableCell Style="background-color: white; font-size: 14px">
                             <asp:TextBox runat="server" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
                         </asp:TableCell>
-                        <asp:TableCell>
+                        <asp:TableCell Style="background-color: white; font-size: 14px">
                             <asp:TextBox runat="server" BorderStyle="None" ID="txt_numHClinica" Style="background-color: transparent; width: 100%; text-align: center" OnTextChanged="txt_numHClinica_TextChanged" AutoPostBack="true"></asp:TextBox>
                         </asp:TableCell>
-                        <asp:TableCell>
+                        <asp:TableCell Style="background-color: white; font-size: 14px">
                             <asp:TextBox runat="server" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
                         </asp:TableCell>
                     </asp:TableRow>
                 </asp:Table>
-                <asp:Table class="table table-bordered table-light text-center" runat="server">
+                <asp:Table class="table table-bordered table-light table-responsive text-center" runat="server">
                     <asp:TableRow>
-                        <asp:TableCell Text="PRIMER APELLIDO" style="background-color: #cdfecc; font-size: 15px"></asp:TableCell>
-                        <asp:TableCell Text="SEGUNDO APELLIDO" style="background-color: #cdfecc; font-size: 15px"></asp:TableCell>
-                        <asp:TableCell Text="PRIMER NOMBRE" style="background-color: #cdfecc; font-size: 15px"></asp:TableCell>
-                        <asp:TableCell Text="SEGUNDO NOMBRE" style="background-color: #cdfecc; font-size: 15px"></asp:TableCell>
-                        <asp:TableCell Text="SEXO" style="background-color: #cdfecc; font-size: 15px"></asp:TableCell>
-                        <asp:TableCell Text="EDAD" style="background-color: #cdfecc; font-size: 15px"></asp:TableCell>
+                        <asp:TableCell Text="PRIMER APELLIDO" style="width:300px; background-color: #cdfecc; font-size: 15px"></asp:TableCell>
+                        <asp:TableCell Text="SEGUNDO APELLIDO" style="width:300px; background-color: #cdfecc; font-size: 15px"></asp:TableCell>
+                        <asp:TableCell Text="PRIMER NOMBRE" style="width:300px; background-color: #cdfecc; font-size: 15px"></asp:TableCell>
+                        <asp:TableCell Text="SEGUNDO NOMBRE" style="width:300px; background-color: #cdfecc; font-size: 15px"></asp:TableCell>
+                        <asp:TableCell Text="EDAD" style="width:100px; background-color: #cdfecc; font-size: 15px"></asp:TableCell>
                     </asp:TableRow>
                     <asp:TableRow>
-                        <asp:TableCell>
+                        <asp:TableCell Style="background-color: white; font-size: 14px">
                             <asp:TextBox runat="server" ID="txt_priApellido" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
                         </asp:TableCell>
-                        <asp:TableCell>
+                        <asp:TableCell Style="background-color: white; font-size: 14px">
                             <asp:TextBox runat="server" ID="txt_segApellido" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
                         </asp:TableCell>
-                        <asp:TableCell>
+                        <asp:TableCell Style="background-color: white; font-size: 14px">
                             <asp:TextBox runat="server" ID="txt_priNombre" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
                         </asp:TableCell>
-                        <asp:TableCell>
+                        <asp:TableCell Style="background-color: white; font-size: 14px">
                             <asp:TextBox runat="server" ID="txt_segNombre" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
                         </asp:TableCell>
-                        <asp:TableCell>
-                            <asp:TextBox runat="server" ID="txt_sexo" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
-                        </asp:TableCell>
-                        <asp:TableCell>
+                        <asp:TableCell Style="background-color: white; font-size: 14px">
                             <asp:TextBox runat="server" ID="txt_edad" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
                         </asp:TableCell>
                     </asp:TableRow>

@@ -36,7 +36,6 @@ namespace SistemaECU911.Template.Views
                 txt_segNombre.Text = per.Per_segNombre.ToString();
                 txt_priApellido.Text = per.Per_priApellido.ToString();
                 txt_segApellido.Text = per.Per_segApellido.ToString();
-                txt_sexo.Text = per.Per_genero.ToString();
                 txt_edad.Text = per.Per_fechNacimiento.ToString();
             }
         }

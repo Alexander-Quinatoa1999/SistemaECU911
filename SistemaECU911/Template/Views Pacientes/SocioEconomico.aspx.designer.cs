@@ -7,57 +7,273 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace SistemaECU911.Template.Views
+namespace SistemaECU911.Template.Views_Pacientes
 {
 
 
-    public partial class PedidoExamenes
+    public partial class SocioEconomico
     {
 
         /// <summary>
-        /// Control txt_numHClinica.
+        /// Control ScriptManager1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_numHClinica;
+        protected global::System.Web.UI.ScriptManager ScriptManager1;
 
         /// <summary>
-        /// Control txt_priApellido.
+        /// Control UpdatePanel1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_priApellido;
+        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
 
         /// <summary>
-        /// Control txt_segApellido.
+        /// Control txt_fecha.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_segApellido;
+        protected global::System.Web.UI.WebControls.TextBox txt_fecha;
 
         /// <summary>
-        /// Control txt_priNombre.
+        /// Control txt_cedula.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_priNombre;
+        protected global::System.Web.UI.WebControls.TextBox txt_cedula;
 
         /// <summary>
-        /// Control txt_segNombre.
+        /// Control txt_priapellido.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_segNombre;
+        protected global::System.Web.UI.WebControls.TextBox txt_priapellido;
+
+        /// <summary>
+        /// Control txt_segapellido.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_segapellido;
+
+        /// <summary>
+        /// Control txt_prinombre.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_prinombre;
+
+        /// <summary>
+        /// Control txt_segnombre.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_segnombre;
+
+        /// <summary>
+        /// Control txt_areatrabajo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_areatrabajo;
+
+        /// <summary>
+        /// Control txt_cargoinstitucional.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_cargoinstitucional;
+
+        /// <summary>
+        /// Control cb_nombramiento.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_nombramiento;
+
+        /// <summary>
+        /// Control cb_nombraprovisional.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_nombraprovisional;
+
+        /// <summary>
+        /// Control cb_contratoocasional.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_contratoocasional;
+
+        /// <summary>
+        /// Control cb_codigotrabajoContrato.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_codigotrabajoContrato;
+
+        /// <summary>
+        /// Control cb_modalidadlosep.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_modalidadlosep;
+
+        /// <summary>
+        /// Control cb_codigotrabajoModalidad.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_codigotrabajoModalidad;
+
+        /// <summary>
+        /// Control txt_fechaingreso.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_fechaingreso;
+
+        /// <summary>
+        /// Control cb_soltero.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_soltero;
+
+        /// <summary>
+        /// Control cb_casado.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_casado;
+
+        /// <summary>
+        /// Control cb_viudo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_viudo;
+
+        /// <summary>
+        /// Control cb_unionlibre.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_unionlibre;
+
+        /// <summary>
+        /// Control cb_divorciado.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_divorciado;
+
+        /// <summary>
+        /// Control txt_genero.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_genero;
+
+        /// <summary>
+        /// Control txt_tiposangre.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_tiposangre;
+
+        /// <summary>
+        /// Control txt_telfconvencional.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_telfconvencional;
+
+        /// <summary>
+        /// Control txt_telfcelular.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_telfcelular;
+
+        /// <summary>
+        /// Control txt_email.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_email;
+
+        /// <summary>
+        /// Control txt_lugarnacimiento.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_lugarnacimiento;
+
+        /// <summary>
+        /// Control txt_fechanacimiento.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_fechanacimiento;
 
         /// <summary>
         /// Control txt_edad.
@@ -69,1380 +285,1650 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_edad;
 
         /// <summary>
-        /// Control ckb_bioHematica.
+        /// Control cb_primaria.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_bioHematica;
+        protected global::System.Web.UI.WebControls.CheckBox cb_primaria;
 
         /// <summary>
-        /// Control ckb_hematocrito.
+        /// Control cb_secundaria.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_hematocrito;
+        protected global::System.Web.UI.WebControls.CheckBox cb_secundaria;
 
         /// <summary>
-        /// Control ckb_hemoglobina.
+        /// Control cb_superior.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_hemoglobina;
+        protected global::System.Web.UI.WebControls.CheckBox cb_superior;
 
         /// <summary>
-        /// Control ckb_vsg.
+        /// Control cb_especializacion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_vsg;
+        protected global::System.Web.UI.WebControls.CheckBox cb_especializacion;
 
         /// <summary>
-        /// Control ckb_Na.
+        /// Control cb_diploma.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_Na;
+        protected global::System.Web.UI.WebControls.CheckBox cb_diploma;
 
         /// <summary>
-        /// Control ckb_calIonico.
+        /// Control cb_maestria.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_calIonico;
+        protected global::System.Web.UI.WebControls.CheckBox cb_maestria;
 
         /// <summary>
-        /// Control ckb_calTotal.
+        /// Control cb_blanco.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_calTotal;
+        protected global::System.Web.UI.WebControls.CheckBox cb_blanco;
 
         /// <summary>
-        /// Control ckb_magnesio.
+        /// Control cb_mestizo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_magnesio;
+        protected global::System.Web.UI.WebControls.CheckBox cb_mestizo;
 
         /// <summary>
-        /// Control ckb_fosforo.
+        /// Control cb_afrodescendiente.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_fosforo;
+        protected global::System.Web.UI.WebControls.CheckBox cb_afrodescendiente;
 
         /// <summary>
-        /// Control ckb_ca125.
+        /// Control cb_indigena.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_ca125;
+        protected global::System.Web.UI.WebControls.CheckBox cb_indigena;
 
         /// <summary>
-        /// Control ckb_he4.
+        /// Control cb_montubio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_he4;
+        protected global::System.Web.UI.WebControls.CheckBox cb_montubio;
 
         /// <summary>
-        /// Control ckb_indRoma.
+        /// Control txt_provincia.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_indRoma;
+        protected global::System.Web.UI.WebControls.TextBox txt_provincia;
 
         /// <summary>
-        /// Control ckb_afp.
+        /// Control txt_canton.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_afp;
+        protected global::System.Web.UI.WebControls.TextBox txt_canton;
 
         /// <summary>
-        /// Control ckb_cea.
+        /// Control txt_parroquia.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_cea;
+        protected global::System.Web.UI.WebControls.TextBox txt_parroquia;
 
         /// <summary>
-        /// Control ckb_ca153.
+        /// Control txt_barrio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_ca153;
+        protected global::System.Web.UI.WebControls.TextBox txt_barrio;
 
         /// <summary>
-        /// Control ckb_ca199.
+        /// Control txt_callevivienda.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_ca199;
+        protected global::System.Web.UI.WebControls.TextBox txt_callevivienda;
 
         /// <summary>
-        /// Control ckb_tiroglobulina.
+        /// Control txt_callesecundaria.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_tiroglobulina;
+        protected global::System.Web.UI.WebControls.TextBox txt_callesecundaria;
 
         /// <summary>
-        /// Control ckb_psa.
+        /// Control txt_referenciadomicilio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_psa;
+        protected global::System.Web.UI.WebControls.TextBox txt_referenciadomicilio;
 
         /// <summary>
-        /// Control ckb_cooDirecto.
+        /// Control cb_norte.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_cooDirecto;
+        protected global::System.Web.UI.WebControls.CheckBox cb_norte;
 
         /// <summary>
-        /// Control ckb_cooIndirecto.
+        /// Control cb_centro.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_cooIndirecto;
+        protected global::System.Web.UI.WebControls.CheckBox cb_centro;
 
         /// <summary>
-        /// Control ckb_grSanguineo.
+        /// Control cb_sur.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_grSanguineo;
+        protected global::System.Web.UI.WebControls.CheckBox cb_sur;
 
         /// <summary>
-        /// Control ckb_celulasLE.
+        /// Control cb_otrosector.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_celulasLE;
+        protected global::System.Web.UI.WebControls.CheckBox cb_otrosector;
 
         /// <summary>
-        /// Control ckb_pcrCuantitativo.
+        /// Control txt_otrosector.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_pcrCuantitativo;
+        protected global::System.Web.UI.WebControls.TextBox txt_otrosector;
 
         /// <summary>
-        /// Control ckb_frLatex.
+        /// Control cb_casa.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_frLatex;
+        protected global::System.Web.UI.WebControls.CheckBox cb_casa;
 
         /// <summary>
-        /// Control ckb_asto.
+        /// Control cb_departamento.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_asto;
+        protected global::System.Web.UI.WebControls.CheckBox cb_departamento;
 
         /// <summary>
-        /// Control ckb_aglutinaciones.
+        /// Control txt_otravivienda.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_aglutinaciones;
+        protected global::System.Web.UI.WebControls.TextBox txt_otravivienda;
 
         /// <summary>
-        /// Control ckb_vdrl.
+        /// Control cb_siserviciobasico.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_vdrl;
+        protected global::System.Web.UI.WebControls.CheckBox cb_siserviciobasico;
 
         /// <summary>
-        /// Control ckb_muestra.
+        /// Control cb_noserviciobasico.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_muestra;
+        protected global::System.Web.UI.WebControls.CheckBox cb_noserviciobasico;
 
         /// <summary>
-        /// Control txt_muestra.
+        /// Control txt_personasvivenconusted.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_muestra;
+        protected global::System.Web.UI.WebControls.TextBox txt_personasvivenconusted;
 
         /// <summary>
-        /// Control ckb_gram.
+        /// Control txt_personasviveneventualconusted.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_gram;
+        protected global::System.Web.UI.WebControls.TextBox txt_personasviveneventualconusted;
 
         /// <summary>
-        /// Control ckb_fresco.
+        /// Control txt_nomapeemergencia.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_fresco;
+        protected global::System.Web.UI.WebControls.TextBox txt_nomapeemergencia;
 
         /// <summary>
-        /// Control ckb_koh.
+        /// Control txt_parentesco.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_koh;
+        protected global::System.Web.UI.WebControls.TextBox txt_parentesco;
 
         /// <summary>
-        /// Control ckb_culAntibiograma.
+        /// Control txt_telfemergencia.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_culAntibiograma;
+        protected global::System.Web.UI.WebControls.TextBox txt_telfemergencia;
 
         /// <summary>
-        /// Control ckb_plaquetas.
+        /// Control txt_calleprincipalfamiliar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_plaquetas;
+        protected global::System.Web.UI.WebControls.TextBox txt_calleprincipalfamiliar;
 
         /// <summary>
-        /// Control ckb_fibrinogeno.
+        /// Control txt_numdomiciliofamiliar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_fibrinogeno;
+        protected global::System.Web.UI.WebControls.TextBox txt_numdomiciliofamiliar;
 
         /// <summary>
-        /// Control ckb_tp.
+        /// Control txt_callesecundariafamiliar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_tp;
+        protected global::System.Web.UI.WebControls.TextBox txt_callesecundariafamiliar;
 
         /// <summary>
-        /// Control ckb_ttp.
+        /// Control txt_referenciadomiciliofamiliar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_ttp;
+        protected global::System.Web.UI.WebControls.TextBox txt_referenciadomiciliofamiliar;
 
         /// <summary>
-        /// Control ckb_inr.
+        /// Control cb_siahorro.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_inr;
+        protected global::System.Web.UI.WebControls.CheckBox cb_siahorro;
 
         /// <summary>
-        /// Control ckb_tiempCoagulacion.
+        /// Control cb_noahorro.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_tiempCoagulacion;
+        protected global::System.Web.UI.WebControls.CheckBox cb_noahorro;
 
         /// <summary>
-        /// Control ckb_tiempSangria.
+        /// Control cb_sivehiculo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_tiempSangria;
+        protected global::System.Web.UI.WebControls.CheckBox cb_sivehiculo;
 
         /// <summary>
-        /// Control ckb_antiLupico.
+        /// Control cb_novehiculo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_antiLupico;
+        protected global::System.Web.UI.WebControls.CheckBox cb_novehiculo;
 
         /// <summary>
-        /// Control ckb_dimeroD.
+        /// Control cb_sirecorrido.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_dimeroD;
+        protected global::System.Web.UI.WebControls.CheckBox cb_sirecorrido;
 
         /// <summary>
-        /// Control ckb_lh.
+        /// Control cb_norecorrido.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_lh;
+        protected global::System.Web.UI.WebControls.CheckBox cb_norecorrido;
 
         /// <summary>
-        /// Control ckb_fsh.
+        /// Control cb_noexisterecorrido.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_fsh;
+        protected global::System.Web.UI.WebControls.CheckBox cb_noexisterecorrido;
 
         /// <summary>
-        /// Control ckb_estradiol.
+        /// Control txt_distanciadomicilio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_estradiol;
+        protected global::System.Web.UI.WebControls.TextBox txt_distanciadomicilio;
 
         /// <summary>
-        /// Control ckb_progesterona.
+        /// Control txt_poseeenfermedad.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_progesterona;
+        protected global::System.Web.UI.WebControls.TextBox txt_poseeenfermedad;
 
         /// <summary>
-        /// Control ckb_prolactina.
+        /// Control cb_sidiscapacidad.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_prolactina;
+        protected global::System.Web.UI.WebControls.CheckBox cb_sidiscapacidad;
 
         /// <summary>
-        /// Control ckb_testosterona.
+        /// Control cb_nodiscapacidad.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_testosterona;
+        protected global::System.Web.UI.WebControls.CheckBox cb_nodiscapacidad;
 
         /// <summary>
-        /// Control ckb_dheas.
+        /// Control txt_tipodiscapacidad.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_dheas;
+        protected global::System.Web.UI.WebControls.TextBox txt_tipodiscapacidad;
 
         /// <summary>
-        /// Control ckb_cortisol.
+        /// Control txt_porcentajediscapacidad.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_cortisol;
+        protected global::System.Web.UI.WebControls.TextBox txt_porcentajediscapacidad;
 
         /// <summary>
-        /// Control ckb_insulina.
+        /// Control txt_numcarnetconadis.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_insulina;
+        protected global::System.Web.UI.WebControls.TextBox txt_numcarnetconadis;
 
         /// <summary>
-        /// Control ckb_peptidoC.
+        /// Control txt_fechacaducidadcarnet.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_peptidoC;
+        protected global::System.Web.UI.WebControls.TextBox txt_fechacaducidadcarnet;
 
         /// <summary>
-        /// Control ckb_indHoma.
+        /// Control cb_noconyugeembarazada.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_indHoma;
+        protected global::System.Web.UI.WebControls.CheckBox cb_noconyugeembarazada;
 
         /// <summary>
-        /// Control ckb_bhcg.
+        /// Control cb_simeenceuntroembarazada.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_bhcg;
+        protected global::System.Web.UI.WebControls.CheckBox cb_simeenceuntroembarazada;
 
         /// <summary>
-        /// Control ckb_t3.
+        /// Control cb_simiconyugeembarazada.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_t3;
+        protected global::System.Web.UI.WebControls.CheckBox cb_simiconyugeembarazada;
 
         /// <summary>
-        /// Control ckb_fT4.
+        /// Control txt_mesgestacion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_fT4;
+        protected global::System.Web.UI.WebControls.TextBox txt_mesgestacion;
 
         /// <summary>
-        /// Control ckb_tsh.
+        /// Control txt_diasgestacion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_tsh;
+        protected global::System.Web.UI.WebControls.TextBox txt_diasgestacion;
 
         /// <summary>
-        /// Control ckb_17Progesterona.
+        /// Control txt_fechatentativaparto.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_17Progesterona;
+        protected global::System.Web.UI.WebControls.TextBox txt_fechatentativaparto;
 
         /// <summary>
-        /// Control ckb_hgh.
+        /// Control cb_siperiodolactancia.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_hgh;
+        protected global::System.Web.UI.WebControls.CheckBox cb_siperiodolactancia;
 
         /// <summary>
-        /// Control ckb_esperCompleto.
+        /// Control cb_noperiodolactancia.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_esperCompleto;
+        protected global::System.Web.UI.WebControls.CheckBox cb_noperiodolactancia;
 
         /// <summary>
-        /// Control ckb_cristalografia.
+        /// Control txt_fechaculminacionlactancia.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_cristalografia;
+        protected global::System.Web.UI.WebControls.TextBox txt_fechaculminacionlactancia;
 
         /// <summary>
-        /// Control ckb_screenPrenatal.
+        /// Control cb_sienfermedadcronica.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_screenPrenatal;
+        protected global::System.Web.UI.WebControls.CheckBox cb_sienfermedadcronica;
 
         /// <summary>
-        /// Control ckb_gluBasal.
+        /// Control cb_noenfermedadcronica.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_gluBasal;
+        protected global::System.Web.UI.WebControls.CheckBox cb_noenfermedadcronica;
 
         /// <summary>
-        /// Control ckb_urea.
+        /// Control txt_cualenfermedadcronica.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_urea;
+        protected global::System.Web.UI.WebControls.TextBox txt_cualenfermedadcronica;
 
         /// <summary>
-        /// Control ckb_bum.
+        /// Control txt_otrasenfermedades.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_bum;
+        protected global::System.Web.UI.WebControls.TextBox txt_otrasenfermedades;
 
         /// <summary>
-        /// Control ckb_creatinina.
+        /// Control cb_sienfermedadrara.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_creatinina;
+        protected global::System.Web.UI.WebControls.CheckBox cb_sienfermedadrara;
 
         /// <summary>
-        /// Control ckb_acUrico.
+        /// Control cb_noenfermedadrara.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_acUrico;
+        protected global::System.Web.UI.WebControls.CheckBox cb_noenfermedadrara;
 
         /// <summary>
-        /// Control ckb_colesTotal.
+        /// Control txt_cualenfermedadrara.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_colesTotal;
+        protected global::System.Web.UI.WebControls.TextBox txt_cualenfermedadrara;
 
         /// <summary>
-        /// Control ckb_hdlc.
+        /// Control cb_sialcohol.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_hdlc;
+        protected global::System.Web.UI.WebControls.CheckBox cb_sialcohol;
 
         /// <summary>
-        /// Control ckb_ldlc.
+        /// Control cb_noalcohol.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_ldlc;
+        protected global::System.Web.UI.WebControls.CheckBox cb_noalcohol;
 
         /// <summary>
-        /// Control ckb_triglicerido.
+        /// Control txt_frecuenciaalcohol.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_triglicerido;
+        protected global::System.Web.UI.WebControls.TextBox txt_frecuenciaalcohol;
 
         /// <summary>
-        /// Control ckb_biliTotal.
+        /// Control txt_tiempoconsumoalcohol.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_biliTotal;
+        protected global::System.Web.UI.WebControls.TextBox txt_tiempoconsumoalcohol;
 
         /// <summary>
-        /// Control ckb_biliDirecta.
+        /// Control cb_cerveza.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_biliDirecta;
+        protected global::System.Web.UI.WebControls.CheckBox cb_cerveza;
 
         /// <summary>
-        /// Control ckb_biliindirecta.
+        /// Control cb_ron.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_biliindirecta;
+        protected global::System.Web.UI.WebControls.CheckBox cb_ron;
 
         /// <summary>
-        /// Control ckb_proTotales.
+        /// Control cb_whisky.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_proTotales;
+        protected global::System.Web.UI.WebControls.CheckBox cb_whisky;
 
         /// <summary>
-        /// Control ckb_albumina.
+        /// Control txt_otroalcohol.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_albumina;
+        protected global::System.Web.UI.WebControls.TextBox txt_otroalcohol;
 
         /// <summary>
-        /// Control ckb_globulina.
+        /// Control cb_sitabaco.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_globulina;
+        protected global::System.Web.UI.WebControls.CheckBox cb_sitabaco;
 
         /// <summary>
-        /// Control ckb_testOsullivan.
+        /// Control cb_notabaco.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_testOsullivan;
+        protected global::System.Web.UI.WebControls.CheckBox cb_notabaco;
 
         /// <summary>
-        /// Control ckb_glucosa2h.
+        /// Control txt_frecuenciatabaco.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_glucosa2h;
+        protected global::System.Web.UI.WebControls.TextBox txt_frecuenciatabaco;
 
         /// <summary>
-        /// Control ckb_curvaTolerancia.
+        /// Control txt_cantidadtabaco.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_curvaTolerancia;
+        protected global::System.Web.UI.WebControls.TextBox txt_cantidadtabaco;
 
         /// <summary>
-        /// Control txt_glucosa.
+        /// Control txt_tiempoconsumotabaco.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_glucosa;
+        protected global::System.Web.UI.WebControls.TextBox txt_tiempoconsumotabaco;
 
         /// <summary>
-        /// Control ckb_hemoGlicosilada.
+        /// Control cb_sipsicotropica.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_hemoGlicosilada;
+        protected global::System.Web.UI.WebControls.CheckBox cb_sipsicotropica;
 
         /// <summary>
-        /// Control ckb_hierroSerico.
+        /// Control cb_nopsicotropica.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_hierroSerico;
+        protected global::System.Web.UI.WebControls.CheckBox cb_nopsicotropica;
 
         /// <summary>
-        /// Control ckb_ferritina.
+        /// Control txt_tipopsicotropica.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_ferritina;
+        protected global::System.Web.UI.WebControls.TextBox txt_tipopsicotropica;
 
         /// <summary>
-        /// Control ckb_transferrina.
+        /// Control txt_frecuenciapsicotropica.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_transferrina;
+        protected global::System.Web.UI.WebControls.TextBox txt_frecuenciapsicotropica;
 
         /// <summary>
-        /// Control ckb_iProlactina.
+        /// Control txt_factorespsicotropica.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_iProlactina;
+        protected global::System.Web.UI.WebControls.TextBox txt_factorespsicotropica;
 
         /// <summary>
-        /// Control ckb_antiNucleares.
+        /// Control txt_nomapeconyuge.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_antiNucleares;
+        protected global::System.Web.UI.WebControls.TextBox txt_nomapeconyuge;
 
         /// <summary>
-        /// Control ckb_antiDna.
+        /// Control txt_numhijos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_antiDna;
+        protected global::System.Web.UI.WebControls.TextBox txt_numhijos;
 
         /// <summary>
-        /// Control ckb_antiFosfolípidos.
+        /// Control txt_numdependientes.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_antiFosfolípidos;
+        protected global::System.Web.UI.WebControls.TextBox txt_numdependientes;
 
         /// <summary>
-        /// Control ckb_igg.
+        /// Control txt_nomapefam1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_igg;
+        protected global::System.Web.UI.WebControls.TextBox txt_nomapefam1;
 
         /// <summary>
-        /// Control ckb_igm.
+        /// Control txt_fechanacfam1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_igm;
+        protected global::System.Web.UI.WebControls.TextBox txt_fechanacfam1;
 
         /// <summary>
-        /// Control ckb_iga.
+        /// Control txt_edadfam1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_iga;
+        protected global::System.Web.UI.WebControls.TextBox txt_edadfam1;
 
         /// <summary>
-        /// Control ckb_cardiolipinas.
+        /// Control txt_nomapefam2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_cardiolipinas;
+        protected global::System.Web.UI.WebControls.TextBox txt_nomapefam2;
 
         /// <summary>
-        /// Control CheckBox1.
+        /// Control txt_fechanacfam2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox1;
+        protected global::System.Web.UI.WebControls.TextBox txt_fechanacfam2;
 
         /// <summary>
-        /// Control CheckBox2.
+        /// Control txt_edadfam2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox2;
+        protected global::System.Web.UI.WebControls.TextBox txt_edadfam2;
 
         /// <summary>
-        /// Control CheckBox3.
+        /// Control cb_siperdis.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox3;
+        protected global::System.Web.UI.WebControls.CheckBox cb_siperdis;
 
         /// <summary>
-        /// Control ckb_b2Glicoproteína.
+        /// Control cb_noperdis.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_b2Glicoproteína;
+        protected global::System.Web.UI.WebControls.CheckBox cb_noperdis;
 
         /// <summary>
-        /// Control CheckBox4.
+        /// Control cb_sicargodis.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox4;
+        protected global::System.Web.UI.WebControls.CheckBox cb_sicargodis;
 
         /// <summary>
-        /// Control CheckBox5.
+        /// Control cb_nocargodis.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox5;
+        protected global::System.Web.UI.WebControls.CheckBox cb_nocargodis;
 
         /// <summary>
-        /// Control ckb_antiGliadina.
+        /// Control txt_nomapefamdis.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_antiGliadina;
+        protected global::System.Web.UI.WebControls.TextBox txt_nomapefamdis;
 
         /// <summary>
-        /// Control CheckBox6.
+        /// Control txt_fechacadis.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox6;
+        protected global::System.Web.UI.WebControls.TextBox txt_fechacadis;
 
         /// <summary>
-        /// Control CheckBox7.
+        /// Control txt_tipodis.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox7;
+        protected global::System.Web.UI.WebControls.TextBox txt_tipodis;
 
         /// <summary>
-        /// Control ckb_antiAnexiaV.
+        /// Control txt_porcdis.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_antiAnexiaV;
+        protected global::System.Web.UI.WebControls.TextBox txt_porcdis;
 
         /// <summary>
-        /// Control CheckBox8.
+        /// Control txt_parendis.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox8;
+        protected global::System.Web.UI.WebControls.TextBox txt_parendis;
 
         /// <summary>
-        /// Control CheckBox9.
+        /// Control txt_fechanacdis.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox9;
+        protected global::System.Web.UI.WebControls.TextBox txt_fechanacdis;
 
         /// <summary>
-        /// Control ckb_antiTPO.
+        /// Control cb_siMies.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_antiTPO;
+        protected global::System.Web.UI.WebControls.CheckBox cb_siMies;
 
         /// <summary>
-        /// Control ckb_antiTiroglobulina.
+        /// Control cb_noMies.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_antiTiroglobulina;
+        protected global::System.Web.UI.WebControls.CheckBox cb_noMies;
 
         /// <summary>
-        /// Control ckb_antiCCP.
+        /// Control txt_carnetMies.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_antiCCP;
+        protected global::System.Web.UI.WebControls.TextBox txt_carnetMies;
 
         /// <summary>
-        /// Control ckb_emo.
+        /// Control cb_sifamcatas.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_emo;
+        protected global::System.Web.UI.WebControls.CheckBox cb_sifamcatas;
 
         /// <summary>
-        /// Control ckb_CultAntibiograma.
+        /// Control cb_nofamcatas.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_CultAntibiograma;
+        protected global::System.Web.UI.WebControls.CheckBox cb_nofamcatas;
 
         /// <summary>
-        /// Control ckb_gramGotaFres.
+        /// Control txt_indicarfamcatas.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_gramGotaFres;
+        protected global::System.Web.UI.WebControls.TextBox txt_indicarfamcatas;
 
         /// <summary>
-        /// Control ckb_microalbuminuria.
+        /// Control cb_siacargofamcatas.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_microalbuminuria;
+        protected global::System.Web.UI.WebControls.CheckBox cb_siacargofamcatas;
 
         /// <summary>
-        /// Control ckb_tgo.
+        /// Control cb_noacargofamcatas.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_tgo;
+        protected global::System.Web.UI.WebControls.CheckBox cb_noacargofamcatas;
 
         /// <summary>
-        /// Control ckb_tgp.
+        /// Control txt_tipoacargofamcatas.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_tgp;
+        protected global::System.Web.UI.WebControls.TextBox txt_tipoacargofamcatas;
 
         /// <summary>
-        /// Control ckb_amilasa.
+        /// Control cb_hogar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_amilasa;
+        protected global::System.Web.UI.WebControls.CheckBox cb_hogar;
 
         /// <summary>
-        /// Control ckb_lipasa.
+        /// Control cb_paseosfam.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_lipasa;
+        protected global::System.Web.UI.WebControls.CheckBox cb_paseosfam;
 
         /// <summary>
-        /// Control ckb_cpk.
+        /// Control cb_estudios.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_cpk;
+        protected global::System.Web.UI.WebControls.CheckBox cb_estudios;
 
         /// <summary>
-        /// Control ckb_cpkMb.
+        /// Control cb_actartisticas.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_cpkMb;
+        protected global::System.Web.UI.WebControls.CheckBox cb_actartisticas;
 
         /// <summary>
-        /// Control ckb_ldh.
+        /// Control txt_otratc.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_ldh;
+        protected global::System.Web.UI.WebControls.TextBox txt_otratc;
 
         /// <summary>
-        /// Control ckb_fosfaAlcalina.
+        /// Control txt_trabajocomplementario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_fosfaAlcalina;
+        protected global::System.Web.UI.WebControls.TextBox txt_trabajocomplementario;
 
         /// <summary>
-        /// Control ckb_fosfaAcidaTotal.
+        /// Control txt_detalleact.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_fosfaAcidaTotal;
+        protected global::System.Web.UI.WebControls.TextBox txt_detalleact;
 
         /// <summary>
-        /// Control fosfaAcidaProstatica.
+        /// Control txt_tiempact.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox fosfaAcidaProstatica;
+        protected global::System.Web.UI.WebControls.TextBox txt_tiempact;
 
         /// <summary>
-        /// Control ckb_torch.
+        /// Control txt_hacecuantoact.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_torch;
+        protected global::System.Web.UI.WebControls.TextBox txt_hacecuantoact;
 
         /// <summary>
-        /// Control ckb_toxoGondii.
+        /// Control cb_sideportiva.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_toxoGondii;
+        protected global::System.Web.UI.WebControls.CheckBox cb_sideportiva;
 
         /// <summary>
-        /// Control ckb_clamyTrachomatis.
+        /// Control cb_nodeportiva.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_clamyTrachomatis;
+        protected global::System.Web.UI.WebControls.CheckBox cb_nodeportiva;
 
         /// <summary>
-        /// Control ckb_clamyTrachomatisIgG.
+        /// Control txt_especificaract.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_clamyTrachomatisIgG;
+        protected global::System.Web.UI.WebControls.TextBox txt_especificaract;
 
         /// <summary>
-        /// Control ckb_clamyTrachomatisIgM.
+        /// Control txt_frecuenciaact.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_clamyTrachomatisIgM;
+        protected global::System.Web.UI.WebControls.TextBox txt_frecuenciaact;
 
         /// <summary>
-        /// Control ckb_hav.
+        /// Control txt_edadpractica.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_hav;
+        protected global::System.Web.UI.WebControls.TextBox txt_edadpractica;
 
         /// <summary>
-        /// Control ckb_havIiG.
+        /// Control cb_silesion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_havIiG;
+        protected global::System.Web.UI.WebControls.CheckBox cb_silesion;
 
         /// <summary>
-        /// Control ckb_havIiM.
+        /// Control cb_nolesion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_havIiM;
+        protected global::System.Web.UI.WebControls.CheckBox cb_nolesion;
 
         /// <summary>
-        /// Control ckb_vih.
+        /// Control txt_tipolesion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_vih;
+        protected global::System.Web.UI.WebControls.TextBox txt_tipolesion;
 
         /// <summary>
-        /// Control ckb_hbsAg.
+        /// Control txt_edadlesion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_hbsAg;
+        protected global::System.Web.UI.WebControls.TextBox txt_edadlesion;
 
         /// <summary>
-        /// Control ckb_hcv.
+        /// Control cb_sitratamiento.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_hcv;
+        protected global::System.Web.UI.WebControls.CheckBox cb_sitratamiento;
 
         /// <summary>
-        /// Control ckb_ftaAbs.
+        /// Control cb_notratamiento.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_ftaAbs;
+        protected global::System.Web.UI.WebControls.CheckBox cb_notratamiento;
 
         /// <summary>
-        /// Control ckb_coproparasitario.
+        /// Control cb_nuclear.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_coproparasitario;
+        protected global::System.Web.UI.WebControls.CheckBox cb_nuclear;
 
         /// <summary>
-        /// Control ckb_coproSeriado.
+        /// Control cb_ampliada.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_coproSeriado;
+        protected global::System.Web.UI.WebControls.CheckBox cb_ampliada;
 
         /// <summary>
-        /// Control ckb_sangreOculta.
+        /// Control cb_monoparental.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_sangreOculta;
+        protected global::System.Web.UI.WebControls.CheckBox cb_monoparental;
 
         /// <summary>
-        /// Control ckb_pmn.
+        /// Control cb_padremadresoltero.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_pmn;
+        protected global::System.Web.UI.WebControls.CheckBox cb_padremadresoltero;
 
         /// <summary>
-        /// Control ckb_rotavirus.
+        /// Control cb_vivesolo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_rotavirus;
+        protected global::System.Web.UI.WebControls.CheckBox cb_vivesolo;
 
         /// <summary>
-        /// Control ckb_helicoPylori.
+        /// Control cb_viveamigos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_helicoPylori;
+        protected global::System.Web.UI.WebControls.CheckBox cb_viveamigos;
 
         /// <summary>
-        /// Control ckb_fenobarbital.
+        /// Control cb_familiasinhijos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_fenobarbital;
+        protected global::System.Web.UI.WebControls.CheckBox cb_familiasinhijos;
 
         /// <summary>
-        /// Control ckb_teofilina.
+        /// Control cb_familiarmuybueno.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_teofilina;
+        protected global::System.Web.UI.WebControls.CheckBox cb_familiarmuybueno;
 
         /// <summary>
-        /// Control ckb_acValproico.
+        /// Control cb_familiarbueno.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_acValproico;
+        protected global::System.Web.UI.WebControls.CheckBox cb_familiarbueno;
 
         /// <summary>
-        /// Control ckb_otros1.
+        /// Control cb_familiaregular.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_otros1;
+        protected global::System.Web.UI.WebControls.CheckBox cb_familiaregular;
 
         /// <summary>
-        /// Control txt_otros1.
+        /// Control cb_familiarmala.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_otros1;
+        protected global::System.Web.UI.WebControls.CheckBox cb_familiarmala;
 
         /// <summary>
-        /// Control ckb_otros2.
+        /// Control txt_familiarporque.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_otros2;
+        protected global::System.Web.UI.WebControls.TextBox txt_familiarporque;
 
         /// <summary>
-        /// Control txt_otros2.
+        /// Control cb_parejamuybueno.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_otros2;
+        protected global::System.Web.UI.WebControls.CheckBox cb_parejamuybueno;
 
         /// <summary>
-        /// Control ckb_otros3.
+        /// Control cb_parejabueno.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_otros3;
+        protected global::System.Web.UI.WebControls.CheckBox cb_parejabueno;
 
         /// <summary>
-        /// Control txt_otros3.
+        /// Control cb_parejaregular.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_otros3;
+        protected global::System.Web.UI.WebControls.CheckBox cb_parejaregular;
 
         /// <summary>
-        /// Control Label24.
+        /// Control cb_parejamala.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label24;
+        protected global::System.Web.UI.WebControls.CheckBox cb_parejamala;
 
         /// <summary>
-        /// Control btn_guarda.
+        /// Control txt_parejaporque.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_guarda;
+        protected global::System.Web.UI.WebControls.TextBox txt_parejaporque;
 
         /// <summary>
-        /// Control btn_modificar.
+        /// Control cb_hijosmuybueno.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_modificar;
+        protected global::System.Web.UI.WebControls.CheckBox cb_hijosmuybueno;
 
         /// <summary>
-        /// Control btn_cancelar.
+        /// Control cb_hijosbueno.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_cancelar;
+        protected global::System.Web.UI.WebControls.CheckBox cb_hijosbueno;
+
+        /// <summary>
+        /// Control cb_hijosregular.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_hijosregular;
+
+        /// <summary>
+        /// Control cb_hijosmala.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_hijosmala;
+
+        /// <summary>
+        /// Control txt_hijosporque.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_hijosporque;
+
+        /// <summary>
+        /// Control cb_antpenales.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_antpenales;
+
+        /// <summary>
+        /// Control cb_economicos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_economicos;
+
+        /// <summary>
+        /// Control cb_comunicacion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_comunicacion;
+
+        /// <summary>
+        /// Control cb_conyugales.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_conyugales;
+
+        /// <summary>
+        /// Control cb_crianzahijos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_crianzahijos;
+
+        /// <summary>
+        /// Control cb_adicciones.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_adicciones;
+
+        /// <summary>
+        /// Control cb_fisica.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_fisica;
+
+        /// <summary>
+        /// Control cb_psicologica.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_psicologica;
+
+        /// <summary>
+        /// Control cb_verbal.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_verbal;
+
+        /// <summary>
+        /// Control cb_sexual.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_sexual;
+
+        /// <summary>
+        /// Control txt_observaciones.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_observaciones;
+
+        /// <summary>
+        /// Control cb_rolsi.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_rolsi;
+
+        /// <summary>
+        /// Control cb_rolno.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_rolno;
+
+        /// <summary>
+        /// Control cb_saludmuybuena.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_saludmuybuena;
+
+        /// <summary>
+        /// Control cb_saludbuena.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_saludbuena;
+
+        /// <summary>
+        /// Control cb_saludregular.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_saludregular;
+
+        /// <summary>
+        /// Control cb_saludmala.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_saludmala;
+
+        /// <summary>
+        /// Control txt_saludporque.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_saludporque;
+
+        /// <summary>
+        /// Control cb_funcional.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_funcional;
+
+        /// <summary>
+        /// Control cb_disfuncional.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_disfuncional;
+
+        /// <summary>
+        /// Control txt_observacion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_observacion;
+
+        /// <summary>
+        /// Control txt_adicional.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_adicional;
+
+        /// <summary>
+        /// Control cb_sicertifico.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_sicertifico;
+
+        /// <summary>
+        /// Control cb_nocertificado.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_nocertificado;
+
+        /// <summary>
+        /// Control Label93.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label93;
+
+        /// <summary>
+        /// Control btn_guardarsso.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_guardarsso;
+
+        /// <summary>
+        /// Control btn_cancelarsso.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_cancelarsso;
     }
 }

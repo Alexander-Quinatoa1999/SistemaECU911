@@ -7,11 +7,11 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace SistemaECU911.Template.Views
+namespace SistemaECU911.Template.Views_Pacientes
 {
 
 
-    public partial class Principal
+    public partial class PrincipalPaciente
     {
 
         /// <summary>
@@ -24,13 +24,13 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
 
         /// <summary>
-        /// Control fmr.
+        /// Control form1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm fmr;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
         /// Control Lnb_CerrarSesion.

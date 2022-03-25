@@ -43,20 +43,29 @@ namespace SistemaECU911
                         int tusuario = Convert.ToInt32(usuario.tusu_id);
                         if (tusuario == 1)
                         {
-                            Session["ADMIN"] = usuario.usu_id.ToString();
+                            Session["Administrador"] = usuario.usu_id.ToString();
                             Session["nombre"] = usuario.usu_nombre.ToString();
                             Session["apellido"] = usuario.usu_apellido.ToString();
                             Session["rol"] = tusu.tusu_nombre.ToString();
                             Response.Redirect("~/Template/Views/Inicio.aspx");
                             limpiar();
                         }
-                        else 
+                        else if(tusuario == 2) 
                         {
-                            Session["PASANTE"] = usuario.usu_id.ToString();
+                            Session["Paciente"] = usuario.usu_id.ToString();
                             Session["nombre"] = usuario.usu_nombre.ToString();
                             Session["apellido"] = usuario.usu_apellido.ToString();
                             Session["rol"] = tusu.tusu_nombre.ToString();
-                            Response.Redirect("~/Template/Views/Secundario.aspx");
+                            Response.Redirect("~/Template/Views Pacientes/Inicio.aspx");
+                            limpiar();
+                        }
+                        else
+                        {
+                            Session["TrabajoSocial"] = usuario.usu_id.ToString();
+                            Session["nombre"] = usuario.usu_nombre.ToString();
+                            Session["apellido"] = usuario.usu_apellido.ToString();
+                            Session["rol"] = tusu.tusu_nombre.ToString();
+                            Response.Redirect("~/Template/Views Socio Economico/Inicio.aspx");
                             limpiar();
                         }
                     }
