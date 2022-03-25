@@ -138,7 +138,7 @@
                                     <asp:TextBox runat="server" ID="txt_moConsulta" BorderStyle="None" Style="width: 100%" TextMode="MultiLine" Rows="3"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white; font-size: 14px">
-                                    <asp:TextBox runat="server" BorderStyle="None" style="width:100%" TextMode="MultiLine" Rows="3"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txtSegAcompa" BorderStyle="None" style="width:100%" TextMode="MultiLine" Rows="3"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                         </asp:Table>
@@ -158,7 +158,17 @@
                             </asp:TableRow>
                             <asp:TableRow>
                                 <asp:TableCell Style="background-color: white">
-                                    <asp:DropDownList ID="ddl_tipoAntPer" CssClass="form-check" Style="width: 100%; border: none; font-size: 14px" runat="server"></asp:DropDownList>
+                                    <asp:DropDownList ID="ddl_tipoAntPer" CssClass="form-check" Style="width: 100%; border: none; font-size: 14px" runat="server">
+                                        <asp:ListItem Value="0">Seleccione...</asp:ListItem>
+                                        <asp:ListItem Value="1">Enfermedad Cardio_Vascular</asp:ListItem>
+                                        <asp:ListItem Value="2">Enfermedad Metabólica</asp:ListItem>
+                                        <asp:ListItem Value="3">Enfermedad Neurológica</asp:ListItem>
+                                        <asp:ListItem Value="4">Enfermedad Oncólogica</asp:ListItem>
+                                        <asp:ListItem Value="5">Enfermedad Infecciosa</asp:ListItem>
+                                        <asp:ListItem Value="6">Enfermedad Hereditaria/Congónita</asp:ListItem>
+                                        <asp:ListItem Value="7">Discapacidades</asp:ListItem>
+                                        <asp:ListItem Value="8">Otros</asp:ListItem>
+                                    </asp:DropDownList>
                                     <%--<asp:RequiredFieldValidator ErrorMessage="Required" ControlToValidate="ddl_tipoAntPer" InitialValue="0" runat="server"/>--%>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white">
@@ -185,7 +195,17 @@
                             </asp:TableRow>
                             <asp:TableRow>
                                 <asp:TableCell Style="background-color: white">
-                                    <asp:DropDownList ID="ddl_tipoAntFam" CssClass="form-check" Style="width: 100%; border: none; font-size: 14px" runat="server"></asp:DropDownList>
+                                    <asp:DropDownList ID="ddl_tipoAntFam" CssClass="form-check" Style="width: 100%; border: none; font-size: 14px" runat="server">
+                                        <asp:ListItem Value="0">Seleccione...</asp:ListItem>
+                                        <asp:ListItem Value="1">Enfermedad Cardio_Vascular</asp:ListItem>
+                                        <asp:ListItem Value="2">Enfermedad Metabólica</asp:ListItem>
+                                        <asp:ListItem Value="3">Enfermedad Neurológica</asp:ListItem>
+                                        <asp:ListItem Value="4">Enfermedad Oncólogica</asp:ListItem>
+                                        <asp:ListItem Value="5">Enfermedad Infecciosa</asp:ListItem>
+                                        <asp:ListItem Value="6">Enfermedad Hereditaria/Congónita</asp:ListItem>
+                                        <asp:ListItem Value="7">Discapacidades</asp:ListItem>
+                                        <asp:ListItem Value="8">Otros</asp:ListItem>
+                                    </asp:DropDownList>
                                     <%--<asp:RequiredFieldValidator ErrorMessage="Required" ControlToValidate="ddl_tipoAntPer" InitialValue="0" runat="server" ForeColor="Red" />--%>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white">
@@ -222,7 +242,11 @@
                             <asp:TableRow>
                                 <asp:TableCell Text="Órganos de los Sentidos" Style="background-color: #ccffff; font-size: 15px; font-family:Arial"></asp:TableCell>
                                 <asp:TableCell Style="background-color: white; font-size: 14px">
-                                    <asp:DropDownList ID="ddl_orgSistemas" CssClass="form-check" Style="width: 100%; border: none" runat="server"></asp:DropDownList>
+                                    <asp:DropDownList ID="ddl_orgSistemas" CssClass="form-check" Style="width: 100%; border: none" runat="server">
+                                        <asp:ListItem Value="0">Seleccione...</asp:ListItem>
+                                        <asp:ListItem Value="1">Con Patologia</asp:ListItem>
+                                        <asp:ListItem Value="2">Sin Patologia</asp:ListItem>
+                                    </asp:DropDownList>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white; font-size: 14px">
                                     <asp:TextBox runat="server" ID="txt_descOrgSistemas" placeholder="O. Sentidos" BorderStyle="None" Style="width: 100%" TextMode="MultiLine" Rows="3"></asp:TextBox>
@@ -231,7 +255,11 @@
                             <asp:TableRow>
                                 <asp:TableCell Text="Respiratorio" Style="background-color: #ccffff; font-size: 15px; font-family:Arial"></asp:TableCell>
                                 <asp:TableCell Style="background-color: white; font-size: 14px">
-                                    <asp:DropDownList ID="ddl_respiratorio" CssClass="form-check" Style="width: 100%; border: none" runat="server"></asp:DropDownList>
+                                    <asp:DropDownList ID="ddl_respiratorio" CssClass="form-check" Style="width: 100%; border: none" runat="server">
+                                        <asp:ListItem Value="0">Seleccione...</asp:ListItem>
+                                        <asp:ListItem Value="1">Con Patologia</asp:ListItem>
+                                        <asp:ListItem Value="2">Sin Patologia</asp:ListItem>
+                                    </asp:DropDownList>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white; font-size: 14px">
                                     <asp:TextBox runat="server" ID="txt_descRespiratorio" placeholder="Respiratorio" BorderStyle="None" Style="width: 100%" TextMode="MultiLine" Rows="3"></asp:TextBox>
@@ -240,7 +268,11 @@
                             <asp:TableRow>
                                 <asp:TableCell Text="Cardio Vascular" Style="background-color: #ccffff; font-size: 15px; font-family:Arial"></asp:TableCell>
                                 <asp:TableCell Style="background-color: white; font-size: 14px">
-                                    <asp:DropDownList ID="ddl_carVascular" CssClass="form-check" Style="width: 100%; border: none" runat="server"></asp:DropDownList>
+                                    <asp:DropDownList ID="ddl_carVascular" CssClass="form-check" Style="width: 100%; border: none" runat="server">
+                                        <asp:ListItem Value="0">Seleccione...</asp:ListItem>
+                                        <asp:ListItem Value="1">Con Patologia</asp:ListItem>
+                                        <asp:ListItem Value="2">Sin Patologia</asp:ListItem>
+                                    </asp:DropDownList>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white; font-size: 14px">
                                     <asp:TextBox runat="server" ID="txt_descCarVascular" placeholder="C. Vascular" BorderStyle="None" Style="width: 100%" TextMode="MultiLine" Rows="3"></asp:TextBox>
@@ -249,7 +281,11 @@
                             <asp:TableRow>
                                 <asp:TableCell Text="Digestivo" Style="background-color: #ccffff; font-size: 15px; font-family:Arial"></asp:TableCell>
                                 <asp:TableCell Style="background-color: white; font-size: 14px">
-                                    <asp:DropDownList ID="ddl_digestivo" CssClass="form-check" Style="width: 100%; border: none" runat="server"></asp:DropDownList>
+                                    <asp:DropDownList ID="ddl_digestivo" CssClass="form-check" Style="width: 100%; border: none" runat="server">
+                                        <asp:ListItem Value="0">Seleccione...</asp:ListItem>
+                                        <asp:ListItem Value="1">Con Patologia</asp:ListItem>
+                                        <asp:ListItem Value="2">Sin Patologia</asp:ListItem>
+                                    </asp:DropDownList>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white; font-size: 14px">
                                     <asp:TextBox runat="server" ID="txt_descDigestivo" placeholder="Digestivo" BorderStyle="None" Style="width: 100%" TextMode="MultiLine" Rows="3"></asp:TextBox>
@@ -258,7 +294,11 @@
                             <asp:TableRow>
                                 <asp:TableCell Text="Genital" Style="background-color: #ccffff; font-size: 15px; font-family:Arial"></asp:TableCell>
                                 <asp:TableCell Style="background-color: white; font-size: 14px">
-                                    <asp:DropDownList ID="ddl_genital" CssClass="form-check" Style="width: 100%; border: none" runat="server"></asp:DropDownList>
+                                    <asp:DropDownList ID="ddl_genital" CssClass="form-check" Style="width: 100%; border: none" runat="server">
+                                        <asp:ListItem Value="0">Seleccione...</asp:ListItem>
+                                        <asp:ListItem Value="1">Con Patologia</asp:ListItem>
+                                        <asp:ListItem Value="2">Sin Patologia</asp:ListItem>
+                                    </asp:DropDownList>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white; font-size: 14px">
                                     <asp:TextBox runat="server" ID="txt_descGenital" placeholder="Genital" BorderStyle="None" Style="width: 100%" TextMode="MultiLine" Rows="3"></asp:TextBox>
@@ -267,7 +307,11 @@
                             <asp:TableRow>
                                 <asp:TableCell Text="Urinario" Style="background-color: #ccffff; font-size: 15px; font-family:Arial"></asp:TableCell>
                                 <asp:TableCell Style="background-color: white; font-size: 14px">
-                                    <asp:DropDownList ID="ddl_urinario" CssClass="form-check" Style="width: 100%; border: none" runat="server"></asp:DropDownList>
+                                    <asp:DropDownList ID="ddl_urinario" CssClass="form-check" Style="width: 100%; border: none" runat="server">
+                                        <asp:ListItem Value="0">Seleccione...</asp:ListItem>
+                                        <asp:ListItem Value="1">Con Patologia</asp:ListItem>
+                                        <asp:ListItem Value="2">Sin Patologia</asp:ListItem>
+                                    </asp:DropDownList>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white; font-size: 14px">
                                     <asp:TextBox runat="server" ID="txt_descUrinario" placeholder="Urinario" BorderStyle="None" Style="width: 100%" TextMode="MultiLine" Rows="3"></asp:TextBox>
@@ -276,7 +320,11 @@
                             <asp:TableRow>
                                 <asp:TableCell Text="Muscular" Style="background-color: #ccffff; font-size: 15px; font-family:Arial"></asp:TableCell>
                                 <asp:TableCell Style="background-color: white; font-size: 14px">
-                                    <asp:DropDownList ID="ddl_muscular" CssClass="form-check" Style="width: 100%; border: none" runat="server"></asp:DropDownList>
+                                    <asp:DropDownList ID="ddl_muscular" CssClass="form-check" Style="width: 100%; border: none" runat="server">
+                                        <asp:ListItem Value="0">Seleccione...</asp:ListItem>
+                                        <asp:ListItem Value="1">Con Patologia</asp:ListItem>
+                                        <asp:ListItem Value="2">Sin Patologia</asp:ListItem>
+                                    </asp:DropDownList>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white; font-size: 14px">
                                     <asp:TextBox runat="server" ID="txt_descMuscular" placeholder="Muscular" BorderStyle="None" Style="width: 100%" TextMode="MultiLine" Rows="3"></asp:TextBox>
@@ -285,7 +333,11 @@
                             <asp:TableRow>
                                 <asp:TableCell Text="Esquelético" Style="background-color: #ccffff; font-size: 15px; font-family:Arial"></asp:TableCell>
                                 <asp:TableCell Style="background-color: white; font-size: 14px">
-                                    <asp:DropDownList ID="ddl_esqueletico" CssClass="form-check" Style="width: 100%; border: none" runat="server"></asp:DropDownList>
+                                    <asp:DropDownList ID="ddl_esqueletico" CssClass="form-check" Style="width: 100%; border: none" runat="server">
+                                        <asp:ListItem Value="0">Seleccione...</asp:ListItem>
+                                        <asp:ListItem Value="1">Con Patologia</asp:ListItem>
+                                        <asp:ListItem Value="2">Sin Patologia</asp:ListItem>
+                                    </asp:DropDownList>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white; font-size: 14px">
                                     <asp:TextBox runat="server" ID="txt_descEsqueletico" placeholder="Esqueletico" BorderStyle="None" Style="width: 100%" TextMode="MultiLine" Rows="3"></asp:TextBox>
@@ -294,7 +346,11 @@
                             <asp:TableRow>
                                 <asp:TableCell Text="Nervioso" Style="background-color: #ccffff; font-size: 15px; font-family:Arial"></asp:TableCell>
                                 <asp:TableCell Style="background-color: white; font-size: 14px">
-                                    <asp:DropDownList ID="ddl_nervioso" CssClass="form-check" Style="width: 100%; border: none" runat="server"></asp:DropDownList>
+                                    <asp:DropDownList ID="ddl_nervioso" CssClass="form-check" Style="width: 100%; border: none" runat="server">
+                                        <asp:ListItem Value="0">Seleccione...</asp:ListItem>
+                                        <asp:ListItem Value="1">Con Patologia</asp:ListItem>
+                                        <asp:ListItem Value="2">Sin Patologia</asp:ListItem>
+                                    </asp:DropDownList>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white; font-size: 14px">
                                     <asp:TextBox runat="server" ID="txt_descNervioso" placeholder="Nervioso" BorderStyle="None" Style="width: 100%" TextMode="MultiLine" Rows="3"></asp:TextBox>
@@ -303,7 +359,11 @@
                             <asp:TableRow>
                                 <asp:TableCell Text="Endocrino" Style="background-color: #ccffff; font-size: 15px; font-family:Arial"></asp:TableCell>
                                 <asp:TableCell Style="background-color: white; font-size: 14px">
-                                    <asp:DropDownList ID="ddl_endocrino" CssClass="form-check" Style="width: 100%; border: none" runat="server"></asp:DropDownList>
+                                    <asp:DropDownList ID="ddl_endocrino" CssClass="form-check" Style="width: 100%; border: none" runat="server">
+                                        <asp:ListItem Value="0">Seleccione...</asp:ListItem>
+                                        <asp:ListItem Value="1">Con Patologia</asp:ListItem>
+                                        <asp:ListItem Value="2">Sin Patologia</asp:ListItem>
+                                    </asp:DropDownList>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white; font-size: 14px">
                                     <asp:TextBox runat="server" ID="txt_descEndocrino" placeholder="Endocrino" BorderStyle="None" Style="width: 100%" TextMode="MultiLine" Rows="3"></asp:TextBox>
@@ -312,7 +372,11 @@
                             <asp:TableRow>
                                 <asp:TableCell Text="Hemo Linfático" Style="background-color: #ccffff; font-size: 15px; font-family:Arial"></asp:TableCell>
                                 <asp:TableCell Style="background-color: white; font-size: 14px">
-                                    <asp:DropDownList ID="ddl_hemoLinfatico" CssClass="form-check" Style="width: 100%; border: none" runat="server"></asp:DropDownList>
+                                    <asp:DropDownList ID="ddl_hemoLinfatico" CssClass="form-check" Style="width: 100%; border: none" runat="server">
+                                        <asp:ListItem Value="0">Seleccione...</asp:ListItem>
+                                        <asp:ListItem Value="1">Con Patologia</asp:ListItem>
+                                        <asp:ListItem Value="2">Sin Patologia</asp:ListItem>
+                                    </asp:DropDownList>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white; font-size: 14px">
                                     <asp:TextBox runat="server" ID="txt_descHemoLinfatico" placeholder="Hemo Linfatico" BorderStyle="None" Style="width: 100%" TextMode="MultiLine" Rows="3"></asp:TextBox>
@@ -321,7 +385,11 @@
                             <asp:TableRow>
                                 <asp:TableCell Text="Tegumentario (Piel y Faneras)" Style="background-color: #ccffff; font-size: 15px; font-family:Arial"></asp:TableCell>
                                 <asp:TableCell Style="background-color: white; font-size: 14px">
-                                    <asp:DropDownList ID="ddl_tegumentario" CssClass="form-check" Style="width: 100%; border: none" runat="server"></asp:DropDownList>
+                                    <asp:DropDownList ID="ddl_tegumentario" CssClass="form-check" Style="width: 100%; border: none" runat="server">
+                                        <asp:ListItem Value="0">Seleccione...</asp:ListItem>
+                                        <asp:ListItem Value="1">Con Patologia</asp:ListItem>
+                                        <asp:ListItem Value="2">Sin Patologia</asp:ListItem>
+                                    </asp:DropDownList>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white; font-size: 14px">
                                     <asp:TextBox runat="server" ID="txt_descTegumentario" placeholder="Tegumentario" BorderStyle="None" Style="width: 100%" TextMode="MultiLine" Rows="3"></asp:TextBox>

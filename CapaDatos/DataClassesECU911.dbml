@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SistemaECU911" Class="DataClassesECU911DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=SistemaECU911;Integrated Security=True" SettingsObjectName="CapaDatos.Properties.Settings" SettingsPropertyName="SistemaECU911ConnectionString4" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=MAYCKYANDER\MAYCKYANDER;Initial Catalog=SistemaECU911;Integrated Security=True" SettingsObjectName="CapaDatos.Properties.Settings" SettingsPropertyName="SistemaECU911ConnectionString6" Provider="System.Data.SqlClient" />
   <Table Name="dbo.cie10" Member="cie10">
     <Type Name="cie10">
       <Column Name="id10" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -13,6 +13,74 @@
       <Column Name="Zona_nom" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="Zona_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
       <Association Name="Tbl_Zona_Tbl_Personas" Member="Tbl_Personas" ThisKey="Zona_id" OtherKey="Zona_id" Type="Tbl_Personas" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FichasMedicas" Member="FichasMedicas">
+    <Type Name="FichasMedicas">
+      <Column Name="idFichaMedica" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="moConsulta" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="seAcompañanteMc" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="antecedentePer" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="descripcionPer" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="idTipAntecedentePer" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="antecedenteFam" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="descripcionFam" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="idTipAntecedenteFam" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="descripcionEA" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="orgSentido" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="descripcionOS" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="respiratorio" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="descripcionRes" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="cardioVascular" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="descripcionCV" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="digestivo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="descripcionDig" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="genital" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="descripcionGen" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="urinario" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="descripcionUri" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="muscular" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="descripcionMus" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="esqueletico" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="descripcionEsq" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="nervioso" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="descripcionNer" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="endocrino" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="descripcionEnd" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="hemoLinfatico" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="descripcionHL" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="tegumentario" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="descripcionTeg" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="persionArterial" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="frecuenciaCardica" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="frecuenciaRespiratoria" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="talla" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="perimetroAbdominal" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="temperatura" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="saturacionOxigeno" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="peso" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="indMasaCorporal" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="Regiones_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="tipoExa_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="descripcionEF" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="diagnostico" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="codigoDiag" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="tipoDiag" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="condicionDiag" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="cronologiaDiag" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="descripcionDiag" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="planTratamiento" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="evolucion" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="prescripciones" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="fechaHora" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="especialidadPro" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="profesional" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="codigoPro" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Per_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Association Name="Tbl_Personas_FichasMedicas" Member="Tbl_Personas" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Personas" IsForeignKey="true" />
+      <Association Name="Tbl_Regiones_FichasMedicas" Member="Tbl_Regiones" ThisKey="Regiones_id" OtherKey="Regiones_id" Type="Tbl_Regiones" IsForeignKey="true" />
+      <Association Name="Tbl_TipoExaFisRegional_FichasMedicas" Member="Tbl_TipoExaFisRegional" ThisKey="tipoExa_id" OtherKey="tipoExa_id" Type="Tbl_TipoExaFisRegional" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Tbl_AccidentesTrabajoDesc" Member="Tbl_AccidentesTrabajoDesc">
@@ -2446,6 +2514,7 @@
       <Column Name="Per_numPerContacEmergencia" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
       <Column Name="Per_observaciones" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
       <Column Name="Per_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Association Name="Tbl_Personas_FichasMedicas" Member="FichasMedicas" ThisKey="Per_id" OtherKey="Per_id" Type="FichasMedicas" />
       <Association Name="Tbl_Personas_Tbl_AccidentesTrabajoDesc" Member="Tbl_AccidentesTrabajoDesc" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_AccidentesTrabajoDesc" />
       <Association Name="Tbl_Personas_Tbl_ActividadesExtraLaborales" Member="Tbl_ActividadesExtraLaborales" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_ActividadesExtraLaborales" />
       <Association Name="Tbl_Personas_Tbl_AntecedentesEmplAnteriores" Member="Tbl_AntecedentesEmplAnteriores" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_AntecedentesEmplAnteriores" />
@@ -2666,6 +2735,7 @@
       <Column Name="Regiones_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Regiones_nombres" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="Regiones_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Association Name="Tbl_Regiones_FichasMedicas" Member="FichasMedicas" ThisKey="Regiones_id" OtherKey="Regiones_id" Type="FichasMedicas" />
       <Association Name="Tbl_Regiones_Tbl_ExaFisRegional" Member="Tbl_ExaFisRegional" ThisKey="Regiones_id" OtherKey="Regiones_id" Type="Tbl_ExaFisRegional" />
       <Association Name="Tbl_Regiones_Tbl_TipoExaFisRegional" Member="Tbl_TipoExaFisRegional" ThisKey="Regiones_id" OtherKey="Regiones_id" Type="Tbl_TipoExaFisRegional" />
     </Type>
@@ -2897,6 +2967,7 @@
       <Column Name="Regiones_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="tipoExa_nombres" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
       <Column Name="tipoExa_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Association Name="Tbl_TipoExaFisRegional_FichasMedicas" Member="FichasMedicas" ThisKey="tipoExa_id" OtherKey="tipoExa_id" Type="FichasMedicas" />
       <Association Name="Tbl_Regiones_Tbl_TipoExaFisRegional" Member="Tbl_Regiones" ThisKey="Regiones_id" OtherKey="Regiones_id" Type="Tbl_Regiones" IsForeignKey="true" />
     </Type>
   </Table>

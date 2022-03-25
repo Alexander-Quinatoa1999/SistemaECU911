@@ -277,6 +277,21 @@ namespace CapaNegocio
         //------------------------------------------ METODOS PARA GUARDAR Y MODIFICAR DATOS  -----------------------------------------
         //----------------------------------------------------------------------------------------------------------------------------
 
+        //1. Metodo para guardar datos de Ficha Medica
+        public static void GuardarFichaMedica(FichasMedicas fichasmedicas)
+        {
+            try
+            {
+                fichasmedicas.estado = "A";
+                fichasmedicas.fechaHora = DateTime.Now;
+                dc.FichasMedicas.InsertOnSubmit(fichasmedicas);
+                dc.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException("Verifique los datos de la ficha medica" + ex.Message);
+            }
+        }
 
         //1. Metodo para guardar datos motivo de consulta
         public static void guardarPersonas(Tbl_Personas per)
