@@ -413,7 +413,7 @@
                                     </asp:TableCell>
                                     <asp:TableCell Style="width: 600px; font-size: 15px; font-family:Arial" Text="Temperatura (°C)"></asp:TableCell>
                                     <asp:TableCell Style="width: 100px; font-size: 14px">
-                                        <asp:TextBox ID="txt_temperatura" runat="server" TextMode="Number" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                                        <asp:TextBox ID="txt_temperatura" runat="server"  BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
                                     </asp:TableCell>
                                 </asp:TableRow>
                                 <asp:TableRow>
@@ -423,7 +423,7 @@
                                     </asp:TableCell>
                                     <asp:TableCell Style="width: 600px; font-size: 15px; font-family:Arial" Text="Saturación de Oxígeno (O2%)"></asp:TableCell>
                                     <asp:TableCell Style="width: 100px; font-size: 14px">
-                                        <asp:TextBox ID="txt_satOxigeno" runat="server" TextMode="Number" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                                        <asp:TextBox ID="txt_satOxigeno" runat="server"  BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
                                     </asp:TableCell>
                                 </asp:TableRow>
                                 <asp:TableRow>
@@ -433,13 +433,13 @@
                                     </asp:TableCell>
                                     <asp:TableCell Style="width: 600px; font-size: 15px; font-family:Arial" Text="Peso (Kg)"></asp:TableCell>
                                     <asp:TableCell Style="width: 100px; font-size: 14px">
-                                        <asp:TextBox ID="txt_peso" runat="server" BorderStyle="None" TextMode="Number" Style="background-color: transparent; width: 100%; text-align: center" OnTextChanged="txt_peso_TextChanged" AutoPostBack="true"></asp:TextBox>
+                                        <asp:TextBox ID="txt_peso" runat="server" BorderStyle="None"  Style="background-color: transparent; width: 100%; text-align: center" OnTextChanged="txt_peso_TextChanged" AutoPostBack="true"></asp:TextBox>
                                     </asp:TableCell>
                                 </asp:TableRow>
                                 <asp:TableRow>
                                     <asp:TableCell Style="width: 600px; font-size: 15px; font-family:Arial" Text="Talla (cm)"></asp:TableCell>
                                     <asp:TableCell Style="width: 100px; font-size: 14px">
-                                        <asp:TextBox ID="txt_talla" runat="server" BorderStyle="None" TextMode="Number" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                                        <asp:TextBox ID="txt_talla" runat="server" BorderStyle="None"  Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
                                     </asp:TableCell>
                                     <asp:TableCell Style="width: 600px; font-size: 15px; font-family:Arial" Text="Indice de Masa Corporal (kg/m2)"></asp:TableCell>
                                     <asp:TableCell Style="width: 100px; font-size: 14px">
@@ -449,7 +449,7 @@
                                 <asp:TableRow>
                                     <asp:TableCell Style="width: 600px; font-size: 15px; font-family:Arial" Text="Perímetro Abdominal (cm)"></asp:TableCell>
                                     <asp:TableCell Style="width: 100px; font-size: 14px">
-                                        <asp:TextBox ID="txt_perAbdominal" runat="server" BorderStyle="None" TextMode="Number" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                                        <asp:TextBox ID="txt_perAbdominal" runat="server" BorderStyle="None"  Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
                                     </asp:TableCell>
                                 </asp:TableRow>
                             </asp:Table>
@@ -593,7 +593,6 @@
                 <br />
                 <div class="container" align="center">
                     <asp:Button CssClass="btn btn-primary" ID="btn_guardar" runat="server" Text="Guardar" OnClick="btn_guardar_Click" UseSubmitBehavior="False" />
-                    <asp:Button CssClass="btn btn-primary" ID="btn_modificar" runat="server" Text="Modificar" OnClick="btn_modificar_Click" UseSubmitBehavior="False" />
                     <asp:Button CssClass="btn btn-danger" ID="btn_cancelar" runat="server" Text="Cancelar" OnClick="btn_cancelar_Click" UseSubmitBehavior="False" />
                 </div>
                 <br />

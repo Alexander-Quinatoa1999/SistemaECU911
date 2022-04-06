@@ -25,7 +25,7 @@ namespace SistemaECU911.Template.Views
         private void cargarPaciente()
         {
             List<Tbl_Personas> listaPer = new List<Tbl_Personas>();
-            listaPer = CN_HistorialMedico.obtenerPersonas();
+            listaPer = CN_HistorialMedico.ObtenerPersonas();
 
             if (listaPer != null)
             {

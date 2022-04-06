@@ -49,7 +49,7 @@ namespace SistemaECU911.Template.Views
                 {
                     int codigo = Convert.ToInt32(Request["cod"]);
 
-                    per = CN_HistorialMedico.obtenerPersonasxId(codigo);
+                    per = CN_HistorialMedico.ObtenerPersonasxId(codigo);
                     int perso = Convert.ToInt32(per.Per_id.ToString());
 
                     inmu = CN_Inmunizaciones.obtenerInmunizaciones(perso);
@@ -247,7 +247,7 @@ namespace SistemaECU911.Template.Views
             }
             else
             {
-                per = CN_HistorialMedico.obtenerPersonasxId(perid);
+                per = CN_HistorialMedico.ObtenerPersonasxId(perid);
                 int perso = Convert.ToInt32(per.Per_id.ToString());
 
                 inmu = CN_Inmunizaciones.obtenerInmunizaciones(perso);
@@ -265,7 +265,7 @@ namespace SistemaECU911.Template.Views
         {
             try
             {
-                per = CN_HistorialMedico.obtenerIdPersonasxCedula(Convert.ToInt32(txt_numHClinica.Text));
+                per = CN_HistorialMedico.ObtenerIdPersonasxCedula(Convert.ToInt32(txt_numHClinica.Text));
 
                 int perso = Convert.ToInt32(per.Per_id.ToString());
 
