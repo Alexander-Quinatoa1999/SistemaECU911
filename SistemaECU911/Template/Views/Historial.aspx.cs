@@ -18,7 +18,7 @@ namespace SistemaECU911.Template.Views
         private readonly DataClassesECU911DataContext dc = new DataClassesECU911DataContext();
 
         private Tbl_Personas per = new Tbl_Personas();
-        private FichasMedicas fichasmedicas = new FichasMedicas();
+        private Tbl_FichasMedicas fichasmedicas = new Tbl_FichasMedicas();
         private Tbl_TipoExaFisRegional tipreg = new Tbl_TipoExaFisRegional();
 
         protected void Page_Load(object sender, EventArgs e)
@@ -37,7 +37,7 @@ namespace SistemaECU911.Template.Views
                         txt_priNombre.Text = per.Per_priNombre.ToString();
                         txt_segNombre.Text = per.Per_segNombre.ToString();
                         txt_priApellido.Text = per.Per_priApellido.ToString();
-                        txt_segApellido.Text = per.Per_priApellido.ToString();
+                        txt_segApellido.Text = per.Per_segApellido.ToString();
                         txt_edad.Text = per.Per_fechNacimiento.ToString();
                         txt_sexo.Text = per.Per_genero.ToString();
                         txt_numHClinica.Text = per.Per_Cedula.ToString();
@@ -45,7 +45,7 @@ namespace SistemaECU911.Template.Views
                         if (fichasmedicas != null)
                         {
                             txt_moConsulta.Text = fichasmedicas.moConsulta.ToString();
-                            txtSegAcompa.Text = fichasmedicas.seAcompañanteMc.ToString();
+                            txt_segAcompa.Text = fichasmedicas.seAcompañanteMc.ToString();
                             ddl_tipoAntPer.SelectedValue = fichasmedicas.idTipAntecedentePer.ToString();
                             txt_antePersonales.Text = fichasmedicas.antecedentePer.ToString();
                             txt_antePerDescripcion.Text = fichasmedicas.descripcionPer.ToString();
@@ -120,7 +120,7 @@ namespace SistemaECU911.Template.Views
             List<string> lista = new List<string>();
             try
             {
-                string oConn = @"Data Source=MAYCKYANDER\\MAYCKYANDER;Initial Catalog=SistemaECU911;Integrated Security=True";
+                string oConn = @"Data Source=.;Initial Catalog=SistemaECU911;Integrated Security=True";
 
                 SqlConnection con = new SqlConnection(oConn);
                 con.Open();
@@ -188,7 +188,7 @@ namespace SistemaECU911.Template.Views
             List<string> lista = new List<string>();
             try
             {
-                string oConn = @"Data Source=MAYCKYANDER\\MAYCKYANDER;Initial Catalog=SistemaECU911;Integrated Security=True";
+                string oConn = @"Data Source=.;Initial Catalog=SistemaECU911;Integrated Security=True";
 
                 SqlConnection con = new SqlConnection(oConn);
                 con.Open();
@@ -241,10 +241,10 @@ namespace SistemaECU911.Template.Views
 
                 int perso = Convert.ToInt32(per.Per_id.ToString());
 
-                fichasmedicas = new FichasMedicas
+                fichasmedicas = new Tbl_FichasMedicas
                 {
                     moConsulta = txt_moConsulta.Text,
-                    seAcompañanteMc = txtSegAcompa.Text,
+                    seAcompañanteMc = txt_segAcompa.Text,
                     idTipAntecedentePer = Convert.ToInt32(ddl_tipoAntPer.SelectedValue),
                     antecedentePer = txt_antePersonales.Text,
                     descripcionPer = txt_antePerDescripcion.Text,
@@ -276,9 +276,9 @@ namespace SistemaECU911.Template.Views
                     descripcionHL = txt_descHemoLinfatico.Text,
                     tegumentario = Convert.ToInt32(ddl_tegumentario.SelectedValue),
                     descripcionTeg = txt_descTegumentario.Text,
-                    persionArterial = Convert.ToDecimal(txt_presArterial.Text),
+                    persionArterial = txt_presArterial.Text,
                     temperatura = Convert.ToDecimal(txt_temperatura.Text),
-                    frecuenciaCardica = txt_frecCardiaca.Text,
+                    frecuenciaCardica = Convert.ToDecimal(txt_frecCardiaca.Text),
                     saturacionOxigeno = Convert.ToDecimal(txt_satOxigeno.Text),
                     frecuenciaRespiratoria = Convert.ToDecimal(txt_frecRespiratoria.Text),
                     peso = Convert.ToDecimal(txt_peso.Text),
@@ -317,14 +317,14 @@ namespace SistemaECU911.Template.Views
             }            
         }
 
-        private void ModificarHistorial(FichasMedicas fichasmedicas)
+        private void ModificarHistorial(Tbl_FichasMedicas fichasmedicas)
         {
             try
             {
                 fichasmedicas.moConsulta = txt_moConsulta.Text;
-                fichasmedicas.seAcompañanteMc = txtSegAcompa.Text;
+                fichasmedicas.seAcompañanteMc = txt_segAcompa.Text;
                 fichasmedicas.idTipAntecedentePer = Convert.ToInt32(ddl_tipoAntPer.SelectedValue);
-                fichasmedicas.antecedentePer = txt_antePersonales.Text;
+                fichasmedicas.antecedentePer = txt_antePersonales.Text; 
                 fichasmedicas.descripcionPer = txt_antePerDescripcion.Text;
                 fichasmedicas.idTipAntecedenteFam = Convert.ToInt32(ddl_tipoAntFam.SelectedValue);
                 fichasmedicas.antecedenteFam = txt_anteFamiliares.Text;
@@ -354,9 +354,9 @@ namespace SistemaECU911.Template.Views
                 fichasmedicas.descripcionHL = txt_descHemoLinfatico.Text;
                 fichasmedicas.tegumentario = Convert.ToInt32(ddl_tegumentario.SelectedValue);
                 fichasmedicas.descripcionTeg = txt_descTegumentario.Text;
-                fichasmedicas.persionArterial = Convert.ToDecimal(txt_presArterial.Text);
+                fichasmedicas.persionArterial = txt_presArterial.Text;
                 fichasmedicas.temperatura = Convert.ToDecimal(txt_temperatura.Text);
-                fichasmedicas.frecuenciaCardica = txt_frecCardiaca.Text;
+                fichasmedicas.frecuenciaCardica = Convert.ToDecimal(txt_frecCardiaca.Text);
                 fichasmedicas.saturacionOxigeno = Convert.ToDecimal(txt_satOxigeno.Text);
                 fichasmedicas.frecuenciaRespiratoria = Convert.ToDecimal(txt_frecRespiratoria.Text);
                 fichasmedicas.peso = Convert.ToDecimal(txt_peso.Text);
@@ -399,6 +399,7 @@ namespace SistemaECU911.Template.Views
             else
             {
                 fichasmedicas = CN_HistorialMedico.ObtenerFichasMedicasPorId(fichamedica);
+
                 if (fichasmedicas != null)
                 {
                     ModificarHistorial(fichasmedicas);

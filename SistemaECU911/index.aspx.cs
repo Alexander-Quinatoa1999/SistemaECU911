@@ -56,7 +56,7 @@ namespace SistemaECU911
                             Session["nombre"] = usuario.usu_nombre.ToString();
                             Session["apellido"] = usuario.usu_apellido.ToString();
                             Session["rol"] = tusu.tusu_nombre.ToString();
-                            Response.Redirect("~/Template/Views Pacientes/Inicio.aspx");
+                            Response.Redirect("~/Template/Views_Pacientes/Inicio.aspx");
                             limpiar();
                         }
                         else
@@ -65,7 +65,7 @@ namespace SistemaECU911
                             Session["nombre"] = usuario.usu_nombre.ToString();
                             Session["apellido"] = usuario.usu_apellido.ToString();
                             Session["rol"] = tusu.tusu_nombre.ToString();
-                            Response.Redirect("~/Template/Views Socio Economico/Inicio.aspx");
+                            Response.Redirect("~/Template/Views_Socio_Economico/Inicio.aspx");
                             limpiar();
                         }
                     }

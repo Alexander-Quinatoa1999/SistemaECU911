@@ -35,9 +35,9 @@ namespace CapaNegocio
             return perid;
         }
 
-        public static FichasMedicas ObtenerFichasMedicasPorId(int id)
+        public static Tbl_FichasMedicas ObtenerFichasMedicasPorId(int id)
         {
-            var fmid = dc.FichasMedicas.FirstOrDefault(fm => fm.idFichaMedica.Equals(id) && fm.estado == "A");
+            var fmid = dc.Tbl_FichasMedicas.FirstOrDefault(fm => fm.idFichaMedica.Equals(id) && fm.estado == "A");
             return fmid;
         }
 
@@ -55,9 +55,9 @@ namespace CapaNegocio
             return perid;
         }
 
-        public static FichasMedicas ObtenerFichaMedicaPer(int personaid)
+        public static Tbl_FichasMedicas ObtenerFichaMedicaPer(int personaid)
         {
-            var fmid = dc.FichasMedicas.FirstOrDefault(fm => fm.Per_id.Equals(personaid) && fm.estado == "A");
+            var fmid = dc.Tbl_FichasMedicas.FirstOrDefault(fm => fm.Per_id.Equals(personaid) && fm.estado == "A");
             return fmid;
         }
 
@@ -89,13 +89,13 @@ namespace CapaNegocio
         }
 
         // Metodo para guardar datos de Ficha Medica
-        public static void GuardarFichaMedica(FichasMedicas fichasmedicas)
+        public static void GuardarFichaMedica(Tbl_FichasMedicas fichasmedicas)
         {
             try
             {
                 fichasmedicas.estado = "A";
                 fichasmedicas.fechaHora = DateTime.Now;
-                dc.FichasMedicas.InsertOnSubmit(fichasmedicas);
+                dc.Tbl_FichasMedicas.InsertOnSubmit(fichasmedicas);
                 dc.SubmitChanges();
             }
             catch (Exception ex)
@@ -105,7 +105,7 @@ namespace CapaNegocio
         }
 
         // Metodo para modificar datos de la Ficha Medica
-        public static void ModificarFichaMedica(FichasMedicas fichasmedicas)
+        public static void ModificarFichaMedica(Tbl_FichasMedicas fichasmedicas)
         {
             try
             {

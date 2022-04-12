@@ -138,7 +138,7 @@
                                     <asp:TextBox runat="server" ID="txt_moConsulta" BorderStyle="None" Style="width: 100%" TextMode="MultiLine" Rows="3"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white; font-size: 14px">
-                                    <asp:TextBox runat="server" ID="txtSegAcompa" BorderStyle="None" style="width:100%" TextMode="MultiLine" Rows="3"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_segAcompa" BorderStyle="None" style="width:100%" TextMode="MultiLine" Rows="3"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                         </asp:Table>
@@ -443,7 +443,7 @@
                                     </asp:TableCell>
                                     <asp:TableCell Style="width: 600px; font-size: 15px; font-family:Arial" Text="Indice de Masa Corporal (kg/m2)"></asp:TableCell>
                                     <asp:TableCell Style="width: 100px; font-size: 14px">
-                                        <asp:TextBox ID="txt_indMasCorporal" runat="server" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                                        <asp:TextBox ID="txt_indMasCorporal" runat="server" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center" ReadOnly="true"></asp:TextBox>
                                     </asp:TableCell>
                                 </asp:TableRow>
                                 <asp:TableRow>

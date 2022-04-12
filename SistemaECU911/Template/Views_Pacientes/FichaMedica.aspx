@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Template/Views Pacientes/PrincipalPaciente.Master" AutoEventWireup="true" CodeBehind="FichaMedica.aspx.cs" Inherits="SistemaECU911.Template.Views_Pacientes.FichaMedica" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Template/Views_Pacientes/PrincipalPaciente.Master" AutoEventWireup="true" CodeBehind="FichaMedica.aspx.cs" Inherits="SistemaECU911.Template.Views_Pacientes.FichaMedica" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>

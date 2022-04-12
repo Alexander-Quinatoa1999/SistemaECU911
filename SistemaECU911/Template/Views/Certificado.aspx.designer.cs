@@ -42,6 +42,15 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_numHClinica;
 
         /// <summary>
+        /// Control AutoCompleteExtender2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::AjaxControlToolkit.AutoCompleteExtender AutoCompleteExtender2;
+
+        /// <summary>
         /// Control txt_numArchivo.
         /// </summary>
         /// <remarks>
@@ -312,30 +321,21 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.Label Label24;
 
         /// <summary>
-        /// Control btn_guardacertificado.
+        /// Control btn_guardar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_guardacertificado;
+        protected global::System.Web.UI.WebControls.Button btn_guardar;
 
         /// <summary>
-        /// Control btn_modificacertificado.
+        /// Control btn_cancelar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_modificacertificado;
-
-        /// <summary>
-        /// Control btn_cancelacertificado.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_cancelacertificado;
+        protected global::System.Web.UI.WebControls.Button btn_cancelar;
     }
 }

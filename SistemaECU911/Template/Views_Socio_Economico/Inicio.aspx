@@ -1,5 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Template/Views Pacientes/PrincipalPaciente.Master" AutoEventWireup="true" CodeBehind="Inicio.aspx.cs" Inherits="SistemaECU911.Template.Views_Pacientes.Inicio" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Template/Views_Socio_Economico/PrincipalSSO.Master" AutoEventWireup="true" CodeBehind="Inicio.aspx.cs" Inherits="SistemaECU911.Template.Views_Socio_Economico.Inicio" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">

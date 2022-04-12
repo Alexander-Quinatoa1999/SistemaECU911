@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Template/Views Pacientes/PrincipalPaciente.Master" AutoEventWireup="true" CodeBehind="PacientesFichaMedica.aspx.cs" Inherits="SistemaECU911.Template.Views_Pacientes.PacientesFichaMedica" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Template/Views_Socio_Economico/PrincipalSSO.Master" AutoEventWireup="true" CodeBehind="PacientesSocioEconomico.aspx.cs" Inherits="SistemaECU911.Template.Views_Socio_Economico.PacientesSocioEconomico" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -10,7 +10,7 @@
                 <div class="container">
                     <div class="card text-center">
                         <div class="card-header">
-                            LISTADO DE FICHAS MEDICAS
+                            LISTADO DE PACIENTES SOCIO ECONOMICO
                         </div>
                     </div>
                 </div>
@@ -20,15 +20,14 @@
                         <div class="container">
                             <div class="row justify-content-center">
                                 <div class="col-auto">
-
-                                    <asp:GridView ID="grvPacientes" AutoGenerateColumns="false" Width="100%" CssClass="table table-hover text-center table-responsive" GridLines="None" runat="server" Style="margin-right: 0px">
+                                    <asp:GridView ID="grvPacientesSocioEconomico" AutoGenerateColumns="false" Width="100%" CssClass="table table-hover text-center table-responsive" GridLines="None" runat="server" Style="margin-right: 0px">
                                         <Columns>
                                             <asp:TemplateField HeaderText="ID">
                                                 <ItemTemplate>
                                                     <asp:Label ID="Per_Id" runat="server" Text='<%#Eval("Per_id")%>'></asp:Label>
                                                 </ItemTemplate>
                                             </asp:TemplateField>
-                                            <asp:TemplateField HeaderText="Historia Clinica / Cedula">
+                                            <asp:TemplateField HeaderText="Cédula">
                                                 <ItemTemplate>
                                                     <asp:Label ID="Per_CedulaHisCli" runat="server" Text='<%#Eval("Per_Cedula")%>'></asp:Label>
                                                 </ItemTemplate>
@@ -41,16 +40,6 @@
                                             <asp:TemplateField HeaderText="Apellido">
                                                 <ItemTemplate>
                                                     <asp:Label ID="Per_priApellido" runat="server" Text='<%#Eval("Per_priApellido")%>'></asp:Label>
-                                                </ItemTemplate>
-                                            </asp:TemplateField>
-                                            <asp:TemplateField HeaderText="Fecha Nacimiento">
-                                                <ItemTemplate>
-                                                    <asp:Label ID="Per_priFechaNaci" runat="server" Text='<%#Eval("Per_fechNacimiento")%>'></asp:Label>
-                                                </ItemTemplate>
-                                            </asp:TemplateField>
-                                            <asp:TemplateField HeaderText="Genero">
-                                                <ItemTemplate>
-                                                    <asp:Label ID="Per_priGenero" runat="server" Text='<%#Eval("Per_genero")%>'></asp:Label>
                                                 </ItemTemplate>
                                             </asp:TemplateField>
                                             <asp:TemplateField ItemStyle-Width="17" HeaderStyle-Width="17" HeaderText="">
@@ -75,28 +64,28 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="footer" runat="server">
     <script>
         $('document').ready(function () {
-            $('#<%=grvPacientes.ClientID%>').prepend($("<thead></thead>").append($(this).find("tr:first"))).DataTable({
-                //scrollCollapse: true,
-                //autoWidth: false,
-                //responsive: true,
-                //columnDefs: [{
-                //targets: "datatable-nosort",
-                //orderable: false,
-                //}],
-                //"lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "Todos"]],
-                //"language": {
-                //"info": "Mostrando _START_-_END_ de _TOTAL_ Registros",
-                //"zeroRecords": "No se encontró nada - lo siento",
-                //"lengthMenu": "Mostrar _MENU_ Registros por página",
-                //"emptyTable": "No hay datos disponibles en la tabla",
-                //"search": "Buscar:",
-                //searchPlaceholder: "Buscar",
-                //paginate: {
-                //next: '<i class="ion-chevron-right"></i>',
-                //previous: '<i class="ion-chevron-left"></i>'
-                //}
-                //},
-            });
+        $('#<%=grvPacientesSocioEconomico.ClientID%>').prepend($("<thead></thead>").append($(this).find("tr:first"))).DataTable({
+        //scrollCollapse: true,
+        //autoWidth: false,
+        //responsive: true,
+        //columnDefs: [{
+        //targets: "datatable-nosort",
+        //orderable: false,
+        //}],
+        //"lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "Todos"]],
+        //"language": {
+        //"info": "Mostrando _START_-_END_ de _TOTAL_ Registros",
+        //"zeroRecords": "No se encontró nada - lo siento",
+        //"lengthMenu": "Mostrar _MENU_ Registros por página",
+        //"emptyTable": "No hay datos disponibles en la tabla",
+        //"search": "Buscar:",
+        //searchPlaceholder: "Buscar",
+        //paginate: {
+        //next: '<i class="ion-chevron-right"></i>',
+        //previous: '<i class="ion-chevron-left"></i>'
+        //}
+        //},
+        });
         });
     </script>
 </asp:Content>

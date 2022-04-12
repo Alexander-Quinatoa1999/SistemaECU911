@@ -1,6 +1,57 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Template/Views/Principal.Master" AutoEventWireup="true" CodeBehind="Certificado.aspx.cs" Inherits="SistemaECU911.Template.Views.Certificado" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+    <style type="text/css">
+        .CompletionList
+        {             
+            padding: 5px 0;
+            margin: 2px 0 0; 
+            height: 100px;  
+            overflow: auto;             
+            position: absolute;
+            border: 1px solid #ccc;
+              border: 1px solid rgba(0, 0, 0, 0.2);
+              *border-right-width: 2px;
+              *border-bottom-width: 2px;
+              -webkit-border-radius: 6px;
+                 -moz-border-radius: 6px;
+                      border-radius: 6px;
+                      -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+                 -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+                      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+              -webkit-background-clip: padding-box;
+                 -moz-background-clip: padding;
+                      background-clip: padding-box;
+          
+            background-color: White;
+            cursor: pointer;
+        }
+        
+        .CompletionListItem
+        {
+	          display: block;
+              padding: 3px 20px;
+              clear: both;
+              font-weight: normal;
+              line-height: 20px;
+              color: #333333;
+              white-space: nowrap;
+        }
+        
+
+        .CompletionListHighlightedItem
+        {
+	          color: #ffffff;
+	          padding: 3px 20px;
+              text-decoration: none;
+              background-color: #0081c2;
+              background-repeat: repeat-x;
+              outline: 0;
+              background-image: linear-gradient(to bottom, #0088cc, #0077b3);
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
@@ -44,6 +95,12 @@
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white; font-size: 14px">
                                     <asp:TextBox runat="server" ID="txt_numHClinica" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center" OnTextChanged="txt_numHistoCli_TextChanged" AutoPostBack="true"></asp:TextBox>
+                                    <ajaxToolkit:AutoCompleteExtender ID="AutoCompleteExtender2" runat="server" CompletionInterval="10" DelimiterCharacters="" Enabled="True"
+                                        MinimumPrefixLength="1" ServiceMethod="ObtenerNumHClinica"
+                                        TargetControlID="txt_numHClinica" CompletionListCssClass="CompletionList"
+                                        CompletionListHighlightedItemCssClass="CompletionListHighlightedItem"
+                                        CompletionListItemCssClass="CompletionListItem">
+                                        </ajaxToolkit:AutoCompleteExtender>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white; font-size: 14px">
                                     <asp:TextBox runat="server" ID="txt_numArchivo" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
@@ -268,9 +325,8 @@
                 </div>
                 <br />
                 <div class="container" align="center">
-                    <asp:Button CssClass="btn btn-warning" ID="btn_guardacertificado" runat="server" Text="Guardar" OnClick="btn_guardacertificado_Click" UseSubmitBehavior="False" />
-                    <asp:Button CssClass="btn btn-success" ID="btn_modificacertificado" runat="server" Text="Modificar" OnClick="btn_modificacertificado_Click" UseSubmitBehavior="False" />
-                    <asp:Button CssClass="btn btn-danger" ID="btn_cancelacertificado" runat="server" Text="Cancelar" OnClick="btn_cancelacertificado_Click" UseSubmitBehavior="False" />
+                    <asp:Button CssClass="btn btn-warning" ID="btn_guardar" runat="server" Text="Guardar" OnClick="btn_guardacertificado_Click" UseSubmitBehavior="False" />
+                    <asp:Button CssClass="btn btn-danger" ID="btn_cancelar" runat="server" Text="Cancelar" OnClick="btn_cancelacertificado_Click" UseSubmitBehavior="False" />
                 </div>
                 <br />
             </div>

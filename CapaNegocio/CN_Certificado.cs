@@ -9,130 +9,62 @@ namespace CapaNegocio
 {
     public class CN_Certificado
     {
-        //private static DataClassesECU911DataContext dc = new DataClassesECU911DataContext();
         private static DataClassesECU911DataContext dc = new DataClassesECU911DataContext();
 
-        //metodo traer para traer Datos Generales Certificado x persona
-        public static Tbl_DatosGeneralesCertificado obtenerDatosGeneralesxPerCertificado(int personaid)
+        public static List<Tbl_Empresa> ObtenerEmpresa()
         {
-            var datgencertificado = dc.Tbl_DatosGeneralesCertificado.FirstOrDefault(per => per.Per_id.Equals(personaid) && per.datGen_estado == "A");
-            return datgencertificado;
+            var listaEmp = dc.Tbl_Empresa.Where(emp => emp.Emp_estado == 'A');
+            return listaEmp.ToList();
         }
 
-        //metodo traer para traer APTITUD MÉDICA LABORAL Certificado x persona
-        public static Tbl_AptitudMedicaCertificado obtenerAptiMedLaboralxPerCertificado(int personaid)
+        public static Tbl_Certificado ObtenerCertificadoPorId(int id)
         {
-            var aptmedlabocertificado = dc.Tbl_AptitudMedicaCertificado.FirstOrDefault(per => per.Per_id.Equals(personaid) && per.AptMedCertificado_estado == "A");
-            return aptmedlabocertificado;
+            var cerid = dc.Tbl_Certificado.FirstOrDefault(certi => certi.certi_id.Equals(id) && certi.certi_estado == "A");
+            return cerid;
         }
 
-        //metodo traer para traer EVALUACIÓN MÉDICA DE RETIRO Certificado x persona
-        public static Tbl_EvaMedicaRetiroCertificado obtenerEvaMedRetiroxPerCertificado(int personaid)
+        public static Tbl_Certificado ObtenerCertificadoPer(int persoid)
         {
-            var evamedretcertificado = dc.Tbl_EvaMedicaRetiroCertificado.FirstOrDefault(per => per.Per_id.Equals(personaid) && per.evaMedRet_estado == "A");
-            return evamedretcertificado;
-        }        
-
-        //metodo traer para traer Recomendaciones Certificado x persona
-        public static Tbl_RecomendacionesCertificado obtenerRecomendacionesxPerCertificado(int personaid)
-        {
-            var recocertificado = dc.Tbl_RecomendacionesCertificado.FirstOrDefault(per => per.Per_id.Equals(personaid) && per.reco_estado == "A");
-            return recocertificado;
+            var cerid = dc.Tbl_Certificado.FirstOrDefault(certi => certi.Per_id.Equals(persoid) && certi.certi_estado == "A");
+            return cerid;
         }
 
-        //metodo traer para traer datos profesional x persona
-        public static Tbl_DatProfesionalCertificado obtenerDatosProfesionalxPerCertificado(int personaid)
+        //metodo para traer profesional
+        public static List<Tbl_Profesional> ObtenerProfesional()
         {
-            var datprofcertificado = dc.Tbl_DatProfesionalCertificado.FirstOrDefault(per => per.Per_id.Equals(personaid) && per.DatProfeCertificado_estado == "A");
-            return datprofcertificado;
+            var lista = dc.Tbl_Profesional.Where(prof => prof.prof_estado == "A");
+            return lista.ToList();
         }
 
         //----------------------------------------------------------------------------------------------------------------------------
         //------------------------------------------ METODOS PARA GUARDAR Y MODIFICAR DATOS  -----------------------------------------
         //----------------------------------------------------------------------------------------------------------------------------
 
-        //B. DATOS GENERALES
-
-        //Metodo para guardar datos DATOS GENERALES
-        public static void guardarDatosGeneralesCertificado(Tbl_DatosGeneralesCertificado datgencertificado)
+        // Metodo para guardar datos de Ficha Medica
+        public static void GuardarCertificado(Tbl_Certificado certificado)
         {
             try
             {
-                datgencertificado.datGen_estado = "A";
-                dc.Tbl_DatosGeneralesCertificado.InsertOnSubmit(datgencertificado);
+                certificado.certi_estado = "A";
+                dc.Tbl_Certificado.InsertOnSubmit(certificado);
                 dc.SubmitChanges();
             }
             catch (Exception ex)
             {
-                throw new ArgumentException("Datos No Guardados" + ex.Message);
+                throw new ArgumentException("Verifique los datos de HC CERTIFICADO" + ex.Message);
             }
         }
 
-        //C. APTITUD MÉDICA LABORAL
-
-        //Metodo para guardar datos APTITUD MÉDICA LABORAL
-        public static void guardarAptiMedLaboralCertificado(Tbl_AptitudMedicaCertificado aptmedlabcertificado)
+        // Metodo para modificar datos de la Ficha Medica
+        public static void ModificarCertificado(Tbl_Certificado certificado)
         {
             try
             {
-                aptmedlabcertificado.AptMedCertificado_estado = "A";
-                dc.Tbl_AptitudMedicaCertificado.InsertOnSubmit(aptmedlabcertificado);
                 dc.SubmitChanges();
             }
             catch (Exception ex)
             {
-                throw new ArgumentException("Datos No Guardados" + ex.Message);
-            }
-        }
-
-        //D. EVALUACIÓN MÉDICA DE RETIRO
-
-        //Metodo para guardar datos EVALUACIÓN MÉDICA DE RETIRO
-        public static void guardarEvaMedRetCertificado(Tbl_EvaMedicaRetiroCertificado evamedretcertificado)
-        {
-            try
-            {
-                evamedretcertificado.evaMedRet_estado = "A";
-                dc.Tbl_EvaMedicaRetiroCertificado.InsertOnSubmit(evamedretcertificado);
-                dc.SubmitChanges();
-            }
-            catch (Exception ex)
-            {
-                throw new ArgumentException("Datos No Guardados" + ex.Message);
-            }
-        }
-
-        //E. RECOMENDACIONES 
-
-        //Metodo para guardar datos RECOMENDACIONES 
-        public static void guardarRecomenCertificado(Tbl_RecomendacionesCertificado recocertificado)
-        {
-            try
-            {
-                recocertificado.reco_estado = "A";
-                dc.Tbl_RecomendacionesCertificado.InsertOnSubmit(recocertificado);
-                dc.SubmitChanges();
-            }
-            catch (Exception ex)
-            {
-                throw new ArgumentException("Datos No Guardados" + ex.Message);
-            }
-        }
-
-        //F. DATOS DEL PROFESIONAL
-
-        //Metodo para guardar datos DATOS DEL PROFESIONAL
-        public static void guardarDatosProfesionalCertificado(Tbl_DatProfesionalCertificado datprofcertificado)
-        {
-            try
-            {
-                datprofcertificado.DatProfeCertificado_estado = "A";
-                dc.Tbl_DatProfesionalCertificado.InsertOnSubmit(datprofcertificado);
-                dc.SubmitChanges();
-            }
-            catch (Exception ex)
-            {
-                throw new ArgumentException("Datos No Guardados" + ex.Message);
+                throw new ArgumentException("Verifique los datos de HC CERTIFICADO" + ex.Message);
             }
         }
     }
