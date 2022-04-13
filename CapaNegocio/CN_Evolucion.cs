@@ -10,61 +10,61 @@ namespace CapaNegocio
     public class CN_Evolucion
     {
 
-        //private static DataClassesECU911DataContext dc = new DataClassesECU911DataContext();
+        private static DataClassesECU911DataContext dc = new DataClassesECU911DataContext();
 
-        ////metodo traer para traer Tbl_Evolucion Evolucion x persona
-        //public static Tbl_EvolucionEvolucion obtenerEvolucionxPerEvolucion(int personaid)
-        //{
-        //    var evoevolucion = dc.Tbl_EvolucionEvolucion.FirstOrDefault(per => per.Per_id.Equals(personaid) && per.evo_estado == "A");
-        //    return evoevolucion;
-        //}
+        public static List<Tbl_Empresa> ObtenerEmpresa()
+        {
+            var listaEmp = dc.Tbl_Empresa.Where(emp => emp.Emp_estado == 'A');
+            return listaEmp.ToList();
+        }
 
-        ////metodo traer para traer Prescripciones Evolucion x persona
-        //public static Tbl_PrescripcionesEvolucion obtenerPrescripcionesxPerEvolucion(int personaid)
-        //{
-        //    var presevolucion = dc.Tbl_PrescripcionesEvolucion.FirstOrDefault(per => per.Per_id.Equals(personaid) && per.pres_estado == "A");
-        //    return presevolucion;
-        //}
+        public static Tbl_Evolucion ObtenerEvolucionPorId(int id)
+        {
+            var evoid = dc.Tbl_Evolucion.FirstOrDefault(evolucion => evolucion.evo_id.Equals(id) && evolucion.evo_estado == "A");
+            return evoid;
+        }
 
+        public static Tbl_Evolucion ObtenerEvolucionPer(int personaid)
+        {
+            var evoid = dc.Tbl_Evolucion.FirstOrDefault(evolucion => evolucion.Per_id.Equals(personaid) && evolucion.evo_estado == "A");
+            return evoid;
+        }
 
-        ////----------------------------------------------------------------------------------------------------------------------------
-        ////------------------------------------------ METODOS PARA GUARDAR Y MODIFICAR DATOS  -----------------------------------------
-        ////----------------------------------------------------------------------------------------------------------------------------
+        public static List<Tbl_Profesional> ObtenerProfesional()
+        {
+            var lista = dc.Tbl_Profesional.Where(prof => prof.prof_estado == "A");
+            return lista.ToList();
+        }
 
+        //----------------------------------------------------------------------------------------------------------------------------
+        //------------------------------------------ METODOS PARA GUARDAR Y MODIFICAR DATOS  -----------------------------------------
+        //----------------------------------------------------------------------------------------------------------------------------
 
-        ////B. EVOLUCION
+        public static void GuardarEvolucion(Tbl_Evolucion evolucion)
+        {
+            try
+            {
+                evolucion.evo_estado = "A";
+                dc.Tbl_Evolucion.InsertOnSubmit(evolucion);
+                dc.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException("Verifique los datos de HC EVOLUCION" + ex.Message);
+            }
+        }
 
-        ////Metodo para guardar datos Evolucion
-        //public static void guardarEvolucionEvolucion(Tbl_EvolucionEvolucion evoevolucion)
-        //{
-        //    try
-        //    {
-        //        evoevolucion.evo_estado = "A";
-        //        dc.Tbl_EvolucionEvolucion.InsertOnSubmit(evoevolucion);
-        //        dc.SubmitChanges();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw new ArgumentException("Datos No Guardados" + ex.Message);
-        //    }
-        //}
-
-        ////C. PRESCRIPCIONES
-
-        ////Metodo para guardar datos Prescripciones
-        //public static void guardarPrescripcionesEvolucion(Tbl_PrescripcionesEvolucion presevolucion)
-        //{
-        //    try
-        //    {
-        //        presevolucion.pres_estado = "A";
-        //        dc.Tbl_PrescripcionesEvolucion.InsertOnSubmit(presevolucion);
-        //        dc.SubmitChanges();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw new ArgumentException("Datos No Guardados" + ex.Message);
-        //    }
-        //}
+        public static void ModificarEvolucion(Tbl_Evolucion evolucion)
+        {
+            try
+            {
+                dc.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException("Verifique los datos de HC EVOLUCION" + ex.Message);
+            }
+        }
 
     }
 }

@@ -475,10 +475,18 @@ namespace SistemaECU911.Template.Views
             ddl_especialidad.DataBind();
         }
 
+        protected void txt_talla_TextChanged(object sender, EventArgs e)
+        {
+            if (txt_talla.Text != "")
+            {
+                txt_peso.Enabled = true;
+            }
+        }
+
         protected void txt_peso_TextChanged(object sender, EventArgs e)
         {
             try
-            {
+            {                
                 int peso = Convert.ToInt32(txt_peso.Text);
                 decimal talla = Convert.ToDecimal(txt_talla.Text);
                 decimal toTalla = (talla * talla) / 10000;
@@ -486,14 +494,17 @@ namespace SistemaECU911.Template.Views
                 calculo = decimal.Round(calculo, 2, MidpointRounding.AwayFromZero);
 
                 txt_indMasCorporal.Text = calculo.ToString();
+
             }
             catch (Exception)
             {
-
-                throw;
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Llenar primero la talla')", true);
+                txt_peso.Text = "";
+                txt_talla.Focus();
             }
+
         }
+
     }
 
 }
-

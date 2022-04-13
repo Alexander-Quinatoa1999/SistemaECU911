@@ -1130,6 +1130,7 @@
       <Column Name="pedExa_torchInmuInfecc" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="pedExa_toxoGondiiInmuInfecc" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="pedExa_clamydiaTrachoInmuInfecc" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="pedExa_lgGClamyTrachoInmuInfecc" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="pedExa_lgMClamyTrachoInmuInfecc" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="pedExa_havInmuInfecc" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="pedExa_lgGHavInmuInfecc" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
@@ -1169,9 +1170,12 @@
       <Column Name="pedExa_fenobarbitalDrogas" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="pedExa_teofilinaDrogas" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="pedExa_acValproicoDrogas" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="pedExa_1Otros" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="pedExa_2Otros" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="pedExa_3Otro" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="pedExa_Otros1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="pedExa_descripOtros1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="pedExa_Otros2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="pedExa_descripOtros2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="pedExa_Otros3" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="pedExa_descripOtros3" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="Per_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="pedExa_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
       <Association Name="Tbl_Personas_Tbl_PedidoExamenes" Member="Tbl_Personas" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Personas" IsForeignKey="true" />
@@ -1237,7 +1241,7 @@
       <Column Name="perio_enfHereConge" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="perio_discapa" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="perio_otros" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="perio_descripcion" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="perio_descripcionAntFamiliares" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="perio_area" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="perio_actividades" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="perio_tiemTrabajo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
@@ -1491,11 +1495,11 @@
       <Column Name="perio_observaExaFisRegional" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="perio_examen" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="perio_fecha" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="perio_resultados" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="perio_resultado" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="perio_examen2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="perio_fecha2" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="perio_resultados2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="perio_observaciones" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="perio_resultado2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="perio_observacionesResExaGenEspPuesTrabajo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="perio_descripcionDiagnostico" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="perio_cie" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="perio_pre" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />

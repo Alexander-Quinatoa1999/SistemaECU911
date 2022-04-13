@@ -31,7 +31,6 @@ namespace CapaNegocio
             return iniid;
         }
 
-        //metodo para traer profesional
         public static List<Tbl_Profesional> ObtenerProfesional()
         {
             var lista = dc.Tbl_Profesional.Where(prof => prof.prof_estado == "A");
@@ -42,7 +41,6 @@ namespace CapaNegocio
         //------------------------------------------ METODOS PARA GUARDAR Y MODIFICAR DATOS  -----------------------------------------
         //----------------------------------------------------------------------------------------------------------------------------
 
-        // Metodo para guardar datos de Ficha Medica
         public static void GuardarInicial(Tbl_Inicial inicial)
         {
             try
@@ -58,7 +56,6 @@ namespace CapaNegocio
             }
         }
 
-        // Metodo para modificar datos de la Ficha Medica
         public static void ModificarInicial(Tbl_Inicial inicial)
         {
             try

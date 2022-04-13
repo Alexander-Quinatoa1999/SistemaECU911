@@ -502,7 +502,7 @@ namespace SistemaECU911.Template.Views
                     inicial_porcentDis = Convert.ToInt32(txt_porcentajediscapacidad.Text),
                     inicial_actRelePuesTrabajo = txt_actividadesrelevantes.Text,
                     
-                    // B.
+                    //B.
                     inicial_descripcionMotivoConsulta = txt_motivoconsultainicial.Text,
 
                     //C.

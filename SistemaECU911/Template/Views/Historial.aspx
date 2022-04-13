@@ -439,7 +439,7 @@
                                 <asp:TableRow>
                                     <asp:TableCell Style="width: 600px; font-size: 15px; font-family:Arial" Text="Talla (cm)"></asp:TableCell>
                                     <asp:TableCell Style="width: 100px; font-size: 14px">
-                                        <asp:TextBox ID="txt_talla" runat="server" BorderStyle="None"  Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                                        <asp:TextBox ID="txt_talla" runat="server" BorderStyle="None"  Style="background-color: transparent; width: 100%; text-align: center" OnTextChanged="txt_talla_TextChanged" AutoPostBack="true"></asp:TextBox>
                                     </asp:TableCell>
                                     <asp:TableCell Style="width: 600px; font-size: 15px; font-family:Arial" Text="Indice de Masa Corporal (kg/m2)"></asp:TableCell>
                                     <asp:TableCell Style="width: 100px; font-size: 14px">

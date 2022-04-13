@@ -2058,21 +2058,21 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         protected global::System.Web.UI.WebControls.Label Label93;
 
         /// <summary>
-        /// Control btn_guardarsso.
+        /// Control btn_guardar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_guardarsso;
+        protected global::System.Web.UI.WebControls.Button btn_guardar;
 
         /// <summary>
-        /// Control btn_cancelarsso.
+        /// Control btn_cancelar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_cancelarsso;
+        protected global::System.Web.UI.WebControls.Button btn_cancelar;
     }
 }

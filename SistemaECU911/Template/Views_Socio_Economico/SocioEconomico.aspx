@@ -1271,8 +1271,8 @@
                 </div>
                 <br />
                 <div class="container" align="center">
-                    <asp:Button CssClass="btn btn-success" ID="btn_guardarsso" runat="server" Text="Guardar" OnClick="btn_guardarsso_Click" UseSubmitBehavior="False" />
-                    <asp:Button CssClass="btn btn-danger" ID="btn_cancelarsso" runat="server" Text="Cancelar" OnClick="btn_cancelarsso_Click" UseSubmitBehavior="False" />
+                    <asp:Button CssClass="btn btn-success" ID="btn_guardar" runat="server" Text="Guardar" OnClick="btn_guardar_Click" UseSubmitBehavior="False" />
+                    <asp:Button CssClass="btn btn-danger" ID="btn_cancelar" runat="server" Text="Cancelar" OnClick="btn_cancelar_Click" UseSubmitBehavior="False" />
                 </div>
                 <br />
             </div>

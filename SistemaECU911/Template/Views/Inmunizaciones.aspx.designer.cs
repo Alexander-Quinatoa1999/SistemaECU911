@@ -1428,30 +1428,21 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_2observaInmuAcuerTipoEmpRies5;
 
         /// <summary>
-        /// Control btn_guardarinmunizaciones.
+        /// Control btn_guardar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_guardarinmunizaciones;
+        protected global::System.Web.UI.WebControls.Button btn_guardar;
 
         /// <summary>
-        /// Control btn_modificarinmunizaciones.
+        /// Control btn_cancelar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_modificarinmunizaciones;
-
-        /// <summary>
-        /// Control btn_cancelarinmunizaciones.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_cancelarinmunizaciones;
+        protected global::System.Web.UI.WebControls.Button btn_cancelar;
     }
 }

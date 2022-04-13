@@ -24620,6 +24620,8 @@ namespace CapaDatos
 		
 		private string _pedExa_clamydiaTrachoInmuInfecc;
 		
+		private string _pedExa_lgGClamyTrachoInmuInfecc;
+		
 		private string _pedExa_lgMClamyTrachoInmuInfecc;
 		
 		private string _pedExa_havInmuInfecc;
@@ -24698,11 +24700,17 @@ namespace CapaDatos
 		
 		private string _pedExa_acValproicoDrogas;
 		
-		private string _pedExa_1Otros;
+		private string _pedExa_Otros1;
 		
-		private string _pedExa_2Otros;
+		private string _pedExa_descripOtros1;
 		
-		private string _pedExa_3Otro;
+		private string _pedExa_Otros2;
+		
+		private string _pedExa_descripOtros2;
+		
+		private string _pedExa_Otros3;
+		
+		private string _pedExa_descripOtros3;
 		
 		private System.Nullable<int> _Per_id;
 		
@@ -24924,6 +24932,8 @@ namespace CapaDatos
     partial void OnpedExa_toxoGondiiInmuInfeccChanged();
     partial void OnpedExa_clamydiaTrachoInmuInfeccChanging(string value);
     partial void OnpedExa_clamydiaTrachoInmuInfeccChanged();
+    partial void OnpedExa_lgGClamyTrachoInmuInfeccChanging(string value);
+    partial void OnpedExa_lgGClamyTrachoInmuInfeccChanged();
     partial void OnpedExa_lgMClamyTrachoInmuInfeccChanging(string value);
     partial void OnpedExa_lgMClamyTrachoInmuInfeccChanged();
     partial void OnpedExa_havInmuInfeccChanging(string value);
@@ -25002,12 +25012,18 @@ namespace CapaDatos
     partial void OnpedExa_teofilinaDrogasChanged();
     partial void OnpedExa_acValproicoDrogasChanging(string value);
     partial void OnpedExa_acValproicoDrogasChanged();
-    partial void OnpedExa_1OtrosChanging(string value);
-    partial void OnpedExa_1OtrosChanged();
-    partial void OnpedExa_2OtrosChanging(string value);
-    partial void OnpedExa_2OtrosChanged();
-    partial void OnpedExa_3OtroChanging(string value);
-    partial void OnpedExa_3OtroChanged();
+    partial void OnpedExa_Otros1Changing(string value);
+    partial void OnpedExa_Otros1Changed();
+    partial void OnpedExa_descripOtros1Changing(string value);
+    partial void OnpedExa_descripOtros1Changed();
+    partial void OnpedExa_Otros2Changing(string value);
+    partial void OnpedExa_Otros2Changed();
+    partial void OnpedExa_descripOtros2Changing(string value);
+    partial void OnpedExa_descripOtros2Changed();
+    partial void OnpedExa_Otros3Changing(string value);
+    partial void OnpedExa_Otros3Changed();
+    partial void OnpedExa_descripOtros3Changing(string value);
+    partial void OnpedExa_descripOtros3Changed();
     partial void OnPer_idChanging(System.Nullable<int> value);
     partial void OnPer_idChanged();
     partial void OnpedExa_estadoChanging(string value);
@@ -27120,6 +27136,26 @@ namespace CapaDatos
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_lgGClamyTrachoInmuInfecc", DbType="VarChar(MAX)")]
+		public string pedExa_lgGClamyTrachoInmuInfecc
+		{
+			get
+			{
+				return this._pedExa_lgGClamyTrachoInmuInfecc;
+			}
+			set
+			{
+				if ((this._pedExa_lgGClamyTrachoInmuInfecc != value))
+				{
+					this.OnpedExa_lgGClamyTrachoInmuInfeccChanging(value);
+					this.SendPropertyChanging();
+					this._pedExa_lgGClamyTrachoInmuInfecc = value;
+					this.SendPropertyChanged("pedExa_lgGClamyTrachoInmuInfecc");
+					this.OnpedExa_lgGClamyTrachoInmuInfeccChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_lgMClamyTrachoInmuInfecc", DbType="VarChar(MAX)")]
 		public string pedExa_lgMClamyTrachoInmuInfecc
 		{
@@ -27900,62 +27936,122 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_1Otros", DbType="VarChar(MAX)")]
-		public string pedExa_1Otros
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_Otros1", DbType="VarChar(MAX)")]
+		public string pedExa_Otros1
 		{
 			get
 			{
-				return this._pedExa_1Otros;
+				return this._pedExa_Otros1;
 			}
 			set
 			{
-				if ((this._pedExa_1Otros != value))
+				if ((this._pedExa_Otros1 != value))
 				{
-					this.OnpedExa_1OtrosChanging(value);
+					this.OnpedExa_Otros1Changing(value);
 					this.SendPropertyChanging();
-					this._pedExa_1Otros = value;
-					this.SendPropertyChanged("pedExa_1Otros");
-					this.OnpedExa_1OtrosChanged();
+					this._pedExa_Otros1 = value;
+					this.SendPropertyChanged("pedExa_Otros1");
+					this.OnpedExa_Otros1Changed();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_2Otros", DbType="VarChar(MAX)")]
-		public string pedExa_2Otros
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_descripOtros1", DbType="VarChar(MAX)")]
+		public string pedExa_descripOtros1
 		{
 			get
 			{
-				return this._pedExa_2Otros;
+				return this._pedExa_descripOtros1;
 			}
 			set
 			{
-				if ((this._pedExa_2Otros != value))
+				if ((this._pedExa_descripOtros1 != value))
 				{
-					this.OnpedExa_2OtrosChanging(value);
+					this.OnpedExa_descripOtros1Changing(value);
 					this.SendPropertyChanging();
-					this._pedExa_2Otros = value;
-					this.SendPropertyChanged("pedExa_2Otros");
-					this.OnpedExa_2OtrosChanged();
+					this._pedExa_descripOtros1 = value;
+					this.SendPropertyChanged("pedExa_descripOtros1");
+					this.OnpedExa_descripOtros1Changed();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_3Otro", DbType="VarChar(MAX)")]
-		public string pedExa_3Otro
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_Otros2", DbType="VarChar(MAX)")]
+		public string pedExa_Otros2
 		{
 			get
 			{
-				return this._pedExa_3Otro;
+				return this._pedExa_Otros2;
 			}
 			set
 			{
-				if ((this._pedExa_3Otro != value))
+				if ((this._pedExa_Otros2 != value))
 				{
-					this.OnpedExa_3OtroChanging(value);
+					this.OnpedExa_Otros2Changing(value);
 					this.SendPropertyChanging();
-					this._pedExa_3Otro = value;
-					this.SendPropertyChanged("pedExa_3Otro");
-					this.OnpedExa_3OtroChanged();
+					this._pedExa_Otros2 = value;
+					this.SendPropertyChanged("pedExa_Otros2");
+					this.OnpedExa_Otros2Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_descripOtros2", DbType="VarChar(MAX)")]
+		public string pedExa_descripOtros2
+		{
+			get
+			{
+				return this._pedExa_descripOtros2;
+			}
+			set
+			{
+				if ((this._pedExa_descripOtros2 != value))
+				{
+					this.OnpedExa_descripOtros2Changing(value);
+					this.SendPropertyChanging();
+					this._pedExa_descripOtros2 = value;
+					this.SendPropertyChanged("pedExa_descripOtros2");
+					this.OnpedExa_descripOtros2Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_Otros3", DbType="VarChar(MAX)")]
+		public string pedExa_Otros3
+		{
+			get
+			{
+				return this._pedExa_Otros3;
+			}
+			set
+			{
+				if ((this._pedExa_Otros3 != value))
+				{
+					this.OnpedExa_Otros3Changing(value);
+					this.SendPropertyChanging();
+					this._pedExa_Otros3 = value;
+					this.SendPropertyChanged("pedExa_Otros3");
+					this.OnpedExa_Otros3Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_descripOtros3", DbType="VarChar(MAX)")]
+		public string pedExa_descripOtros3
+		{
+			get
+			{
+				return this._pedExa_descripOtros3;
+			}
+			set
+			{
+				if ((this._pedExa_descripOtros3 != value))
+				{
+					this.OnpedExa_descripOtros3Changing(value);
+					this.SendPropertyChanging();
+					this._pedExa_descripOtros3 = value;
+					this.SendPropertyChanged("pedExa_descripOtros3");
+					this.OnpedExa_descripOtros3Changed();
 				}
 			}
 		}
@@ -28181,7 +28277,7 @@ namespace CapaDatos
 		
 		private string _perio_otros;
 		
-		private string _perio_descripcion;
+		private string _perio_descripcionAntFamiliares;
 		
 		private string _perio_area;
 		
@@ -28689,15 +28785,15 @@ namespace CapaDatos
 		
 		private System.Nullable<System.DateTime> _perio_fecha;
 		
-		private string _perio_resultados;
+		private string _perio_resultado;
 		
 		private string _perio_examen2;
 		
 		private System.Nullable<System.DateTime> _perio_fecha2;
 		
-		private string _perio_resultados2;
+		private string _perio_resultado2;
 		
-		private string _perio_observaciones;
+		private string _perio_observacionesResExaGenEspPuesTrabajo;
 		
 		private string _perio_descripcionDiagnostico;
 		
@@ -28875,8 +28971,8 @@ namespace CapaDatos
     partial void Onperio_discapaChanged();
     partial void Onperio_otrosChanging(string value);
     partial void Onperio_otrosChanged();
-    partial void Onperio_descripcionChanging(string value);
-    partial void Onperio_descripcionChanged();
+    partial void Onperio_descripcionAntFamiliaresChanging(string value);
+    partial void Onperio_descripcionAntFamiliaresChanged();
     partial void Onperio_areaChanging(string value);
     partial void Onperio_areaChanged();
     partial void Onperio_actividadesChanging(string value);
@@ -29383,16 +29479,16 @@ namespace CapaDatos
     partial void Onperio_examenChanged();
     partial void Onperio_fechaChanging(System.Nullable<System.DateTime> value);
     partial void Onperio_fechaChanged();
-    partial void Onperio_resultadosChanging(string value);
-    partial void Onperio_resultadosChanged();
+    partial void Onperio_resultadoChanging(string value);
+    partial void Onperio_resultadoChanged();
     partial void Onperio_examen2Changing(string value);
     partial void Onperio_examen2Changed();
     partial void Onperio_fecha2Changing(System.Nullable<System.DateTime> value);
     partial void Onperio_fecha2Changed();
-    partial void Onperio_resultados2Changing(string value);
-    partial void Onperio_resultados2Changed();
-    partial void Onperio_observacionesChanging(string value);
-    partial void Onperio_observacionesChanged();
+    partial void Onperio_resultado2Changing(string value);
+    partial void Onperio_resultado2Changed();
+    partial void Onperio_observacionesResExaGenEspPuesTrabajoChanging(string value);
+    partial void Onperio_observacionesResExaGenEspPuesTrabajoChanged();
     partial void Onperio_descripcionDiagnosticoChanging(string value);
     partial void Onperio_descripcionDiagnosticoChanged();
     partial void Onperio_cieChanging(string value);
@@ -30613,22 +30709,22 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_descripcion", DbType="VarChar(MAX)")]
-		public string perio_descripcion
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_descripcionAntFamiliares", DbType="VarChar(MAX)")]
+		public string perio_descripcionAntFamiliares
 		{
 			get
 			{
-				return this._perio_descripcion;
+				return this._perio_descripcionAntFamiliares;
 			}
 			set
 			{
-				if ((this._perio_descripcion != value))
+				if ((this._perio_descripcionAntFamiliares != value))
 				{
-					this.Onperio_descripcionChanging(value);
+					this.Onperio_descripcionAntFamiliaresChanging(value);
 					this.SendPropertyChanging();
-					this._perio_descripcion = value;
-					this.SendPropertyChanged("perio_descripcion");
-					this.Onperio_descripcionChanged();
+					this._perio_descripcionAntFamiliares = value;
+					this.SendPropertyChanged("perio_descripcionAntFamiliares");
+					this.Onperio_descripcionAntFamiliaresChanged();
 				}
 			}
 		}
@@ -35693,22 +35789,22 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_resultados", DbType="VarChar(MAX)")]
-		public string perio_resultados
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_resultado", DbType="VarChar(MAX)")]
+		public string perio_resultado
 		{
 			get
 			{
-				return this._perio_resultados;
+				return this._perio_resultado;
 			}
 			set
 			{
-				if ((this._perio_resultados != value))
+				if ((this._perio_resultado != value))
 				{
-					this.Onperio_resultadosChanging(value);
+					this.Onperio_resultadoChanging(value);
 					this.SendPropertyChanging();
-					this._perio_resultados = value;
-					this.SendPropertyChanged("perio_resultados");
-					this.Onperio_resultadosChanged();
+					this._perio_resultado = value;
+					this.SendPropertyChanged("perio_resultado");
+					this.Onperio_resultadoChanged();
 				}
 			}
 		}
@@ -35753,42 +35849,42 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_resultados2", DbType="VarChar(MAX)")]
-		public string perio_resultados2
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_resultado2", DbType="VarChar(MAX)")]
+		public string perio_resultado2
 		{
 			get
 			{
-				return this._perio_resultados2;
+				return this._perio_resultado2;
 			}
 			set
 			{
-				if ((this._perio_resultados2 != value))
+				if ((this._perio_resultado2 != value))
 				{
-					this.Onperio_resultados2Changing(value);
+					this.Onperio_resultado2Changing(value);
 					this.SendPropertyChanging();
-					this._perio_resultados2 = value;
-					this.SendPropertyChanged("perio_resultados2");
-					this.Onperio_resultados2Changed();
+					this._perio_resultado2 = value;
+					this.SendPropertyChanged("perio_resultado2");
+					this.Onperio_resultado2Changed();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_observaciones", DbType="VarChar(MAX)")]
-		public string perio_observaciones
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_observacionesResExaGenEspPuesTrabajo", DbType="VarChar(MAX)")]
+		public string perio_observacionesResExaGenEspPuesTrabajo
 		{
 			get
 			{
-				return this._perio_observaciones;
+				return this._perio_observacionesResExaGenEspPuesTrabajo;
 			}
 			set
 			{
-				if ((this._perio_observaciones != value))
+				if ((this._perio_observacionesResExaGenEspPuesTrabajo != value))
 				{
-					this.Onperio_observacionesChanging(value);
+					this.Onperio_observacionesResExaGenEspPuesTrabajoChanging(value);
 					this.SendPropertyChanging();
-					this._perio_observaciones = value;
-					this.SendPropertyChanged("perio_observaciones");
-					this.Onperio_observacionesChanged();
+					this._perio_observacionesResExaGenEspPuesTrabajo = value;
+					this.SendPropertyChanged("perio_observacionesResExaGenEspPuesTrabajo");
+					this.Onperio_observacionesResExaGenEspPuesTrabajoChanged();
 				}
 			}
 		}

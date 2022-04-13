@@ -1,6 +1,53 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Template/Views/Principal.Master" AutoEventWireup="true" CodeBehind="PedidoExamenes.aspx.cs" Inherits="SistemaECU911.Template.Views.PedidoExamenes" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+    <style type="text/css">
+        .CompletionList {
+            padding: 5px 0;
+            margin: 2px 0 0;
+            height: 100px;
+            overflow: auto;
+            position: absolute;
+            border: 1px solid #ccc;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            *border-right-width: 2px;
+            *border-bottom-width: 2px;
+            -webkit-border-radius: 6px;
+            -moz-border-radius: 6px;
+            border-radius: 6px;
+            -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            -webkit-background-clip: padding-box;
+            -moz-background-clip: padding;
+            background-clip: padding-box;
+            background-color: White;
+            cursor: pointer;
+        }
+
+        .CompletionListItem {
+            display: block;
+            padding: 3px 20px;
+            clear: both;
+            font-weight: normal;
+            line-height: 20px;
+            color: #333333;
+            white-space: nowrap;
+        }
+
+
+        .CompletionListHighlightedItem {
+            color: #ffffff;
+            padding: 3px 20px;
+            text-decoration: none;
+            background-color: #0081c2;
+            background-repeat: repeat-x;
+            outline: 0;
+            background-image: linear-gradient(to bottom, #0088cc, #0077b3);
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container" style="background-color: white">
@@ -12,18 +59,18 @@
         </div>
         <br />
         <div class="card" style="width: auto;">
-            <div class="card-header" style="background-color: #cccdfe; font-weight:bold">
+            <div class="card-header" style="background-color: #cccdfe; font-weight: bold">
                 A. DATOS DEL ESTABLECIMIENTO - EMPRESA Y USUARIO
             </div>
             <div class="list-group list-group-flush">
                 <asp:Table class="table table-bordered table-light table-responsive text-center" runat="server">
                     <asp:TableRow>
-                        <asp:TableCell Text="INSTITUCIÓN DEL SISTEMA O NOMBRE DE LA EMPRESA" style="width:375px; background-color: #cdfecc; font-size: 15px"></asp:TableCell>
-                        <asp:TableCell Text="RUC" style="width:150px; background-color: #cdfecc; font-size: 15px"></asp:TableCell>
-                        <asp:TableCell Text="CIIU" style="width:150px; background-color: #cdfecc; font-size: 15px"></asp:TableCell>
-                        <asp:TableCell Text="ESTABLECIMIENTO DE SALUD" style="width:250px; background-color: #cdfecc; font-size: 15px"></asp:TableCell>
-                        <asp:TableCell Text="NÚMERO DE HISTORIA CLÍNICA" style="width:200px; background-color: #cdfecc; font-size: 15px"></asp:TableCell>
-                        <asp:TableCell Text="NÚMERO DE ARCHIVO" style="width:200px; background-color: #cdfecc; font-size: 15px"></asp:TableCell>
+                        <asp:TableCell Text="INSTITUCIÓN DEL SISTEMA O NOMBRE DE LA EMPRESA" Style="width: 375px; background-color: #cdfecc; font-size: 15px"></asp:TableCell>
+                        <asp:TableCell Text="RUC" Style="width: 150px; background-color: #cdfecc; font-size: 15px"></asp:TableCell>
+                        <asp:TableCell Text="CIIU" Style="width: 150px; background-color: #cdfecc; font-size: 15px"></asp:TableCell>
+                        <asp:TableCell Text="ESTABLECIMIENTO DE SALUD" Style="width: 250px; background-color: #cdfecc; font-size: 15px"></asp:TableCell>
+                        <asp:TableCell Text="NÚMERO DE HISTORIA CLÍNICA" Style="width: 200px; background-color: #cdfecc; font-size: 15px"></asp:TableCell>
+                        <asp:TableCell Text="NÚMERO DE ARCHIVO" Style="width: 200px; background-color: #cdfecc; font-size: 15px"></asp:TableCell>
                     </asp:TableRow>
                     <asp:TableRow>
                         <asp:TableCell Style="background-color: white; font-size: 14px">
@@ -40,6 +87,12 @@
                         </asp:TableCell>
                         <asp:TableCell Style="background-color: white; font-size: 14px">
                             <asp:TextBox runat="server" BorderStyle="None" ID="txt_numHClinica" Style="background-color: transparent; width: 100%; text-align: center" OnTextChanged="txt_numHClinica_TextChanged" AutoPostBack="true"></asp:TextBox>
+                            <ajaxToolkit:AutoCompleteExtender ID="AutoCompleteExtender2" runat="server" CompletionInterval="10" DelimiterCharacters="" Enabled="True"
+                                MinimumPrefixLength="1" ServiceMethod="ObtenerNumHClinica"
+                                TargetControlID="txt_numHClinica" CompletionListCssClass="CompletionList"
+                                CompletionListHighlightedItemCssClass="CompletionListHighlightedItem"
+                                CompletionListItemCssClass="CompletionListItem">
+                            </ajaxToolkit:AutoCompleteExtender>
                         </asp:TableCell>
                         <asp:TableCell Style="background-color: white; font-size: 14px">
                             <asp:TextBox runat="server" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
@@ -48,11 +101,11 @@
                 </asp:Table>
                 <asp:Table class="table table-bordered table-light table-responsive text-center" runat="server">
                     <asp:TableRow>
-                        <asp:TableCell Text="PRIMER APELLIDO" style="width:300px; background-color: #cdfecc; font-size: 15px"></asp:TableCell>
-                        <asp:TableCell Text="SEGUNDO APELLIDO" style="width:300px; background-color: #cdfecc; font-size: 15px"></asp:TableCell>
-                        <asp:TableCell Text="PRIMER NOMBRE" style="width:300px; background-color: #cdfecc; font-size: 15px"></asp:TableCell>
-                        <asp:TableCell Text="SEGUNDO NOMBRE" style="width:300px; background-color: #cdfecc; font-size: 15px"></asp:TableCell>
-                        <asp:TableCell Text="EDAD" style="width:100px; background-color: #cdfecc; font-size: 15px"></asp:TableCell>
+                        <asp:TableCell Text="PRIMER APELLIDO" Style="width: 300px; background-color: #cdfecc; font-size: 15px"></asp:TableCell>
+                        <asp:TableCell Text="SEGUNDO APELLIDO" Style="width: 300px; background-color: #cdfecc; font-size: 15px"></asp:TableCell>
+                        <asp:TableCell Text="PRIMER NOMBRE" Style="width: 300px; background-color: #cdfecc; font-size: 15px"></asp:TableCell>
+                        <asp:TableCell Text="SEGUNDO NOMBRE" Style="width: 300px; background-color: #cdfecc; font-size: 15px"></asp:TableCell>
+                        <asp:TableCell Text="EDAD" Style="width: 100px; background-color: #cdfecc; font-size: 15px"></asp:TableCell>
                     </asp:TableRow>
                     <asp:TableRow>
                         <asp:TableCell Style="background-color: white; font-size: 14px">
@@ -366,7 +419,7 @@
                             <asp:CheckBox ID="ckb_transferrina" Text="&nbsp; &nbsp; Transferrina" TextAlign="Right" Checked="false" runat="server" />
                         </div>
                     </div>
-                    <div class="col table-responsive" id="INMUNOLOGIA" style="margin-top:   0.5rem;">
+                    <div class="col table-responsive" id="INMUNOLOGIA" style="margin-top: 0.5rem;">
                         <b>INMUNOLOGIA</b>
                         <div class="form-check">
                             <asp:CheckBox ID="ckb_iProlactina" Text="&nbsp; &nbsp; Prolactina" TextAlign="Right" Checked="false" runat="server" />
@@ -511,7 +564,7 @@
                         </div>
                         <div class="form-check col">
                             <asp:CheckBox ID="ckb_ftaAbs" Text="&nbsp; &nbsp; FTA - ABS" TextAlign="Right" Checked="false" runat="server" />
-                        </div>                        
+                        </div>
                     </div>
                     <div class="col table-responsive" id="HECES" style="margin-top: -40rem;">
                         <b>HECES</b>
@@ -578,8 +631,7 @@
         </div>
         <br />
         <div class="container" align="center">
-            <asp:Button CssClass="btn btn-warning" ID="btn_guarda" runat="server" Text="Guardar" OnClick="btn_guarda_Click" UseSubmitBehavior="False" />
-            <asp:Button CssClass="btn btn-success" ID="btn_modificar" runat="server" Text="Modificar" OnClick="btn_modificar_Click" UseSubmitBehavior="False" />
+            <asp:Button CssClass="btn btn-warning" ID="btn_guardar" runat="server" Text="Guardar" OnClick="btn_guardar_Click" UseSubmitBehavior="False" />
             <asp:Button CssClass="btn btn-danger" ID="btn_cancelar" runat="server" Text="Cancelar" OnClick="btn_cancelar_Click" UseSubmitBehavior="False" />
         </div>
         <br />

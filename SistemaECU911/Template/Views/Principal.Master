@@ -112,12 +112,6 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="SocioEconomico.aspx">
-                                <i class="fas fa-address-book menu-icon"></i>
-                                <span class="menu-title">Socio Economico</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link" href="Historial.aspx">
                                 <i class="fas fa-clipboard-list menu-icon"></i>
                                 <span class="menu-title">Ficha Medica</span>

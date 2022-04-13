@@ -861,9 +861,8 @@
         </div>
         <br />
         <div class="container" align="center">
-            <asp:Button CssClass="btn btn-warning" ID="btn_guardarinmunizaciones" runat="server" OnClick="btn_guardarinmunizaciones_Click" Text="Guardar" UseSubmitBehavior="False" />
-            <asp:Button CssClass="btn btn-success" ID="btn_modificarinmunizaciones" runat="server" OnClick="btn_modificarinmunizaciones_Click" Text="Modificar" UseSubmitBehavior="False" />
-            <asp:Button CssClass="btn btn-danger" ID="btn_cancelarinmunizaciones" runat="server" OnClick="btn_cancelarinmunizaciones_Click" Text="Cancelar" UseSubmitBehavior="False" />
+            <asp:Button CssClass="btn btn-warning" ID="btn_guardar" runat="server" OnClick="btn_guardar_Click" Text="Guardar" UseSubmitBehavior="False" />
+            <asp:Button CssClass="btn btn-danger" ID="btn_cancelar" runat="server" OnClick="btn_cancelar_Click" Text="Cancelar" UseSubmitBehavior="False" />
         </div>
         <br />
     </div>

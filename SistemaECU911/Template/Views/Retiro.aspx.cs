@@ -2,8 +2,12 @@
 using CapaNegocio;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using System.Web.Script.Services;
+using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -11,416 +15,521 @@ namespace SistemaECU911.Template.Views
 {
     public partial class Retiro : System.Web.UI.Page
     {
-        //DataClassesECU911DataContext dc = new DataClassesECU911DataContext();
+        DataClassesECU911DataContext dc = new DataClassesECU911DataContext();
 
-        ////Objeto de la tabla personas
-        //private Tbl_Personas per = new Tbl_Personas();
+        private Tbl_Personas per = new Tbl_Personas();
 
-        ////A. Objeto de la tabla Datos Establecimiento
-        //private Tbl_DatEstableEmpUsuRetiro datestable = new Tbl_DatEstableEmpUsuRetiro();
+        private Tbl_Retiro reti = new Tbl_Retiro();
 
-        ////B. Objeto de la tabla ANTECEDENTES PERSONALES
-        //private Tbl_AntecedentesPersonalesRetiro antperetiro = new Tbl_AntecedentesPersonalesRetiro();
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (!IsPostBack)
+            {
+                if (Request["cod"] != null)
+                {
+                    int codigo = Convert.ToInt32(Request["cod"]);
 
-        ////D. Objeto de la tabla EXAMEN FÍSICO REGIONAL
-        //private Tbl_ExaFisRegionalRetiro exafisregretiro = new Tbl_ExaFisRegionalRetiro();
+                    per = CN_HistorialMedico.ObtenerPersonasxId(codigo);
+                    int perso = Convert.ToInt32(per.Per_id.ToString());
+                    reti = CN_Retiro.ObtenerRetiroPer(codigo);
+                    btn_guardar.Text = "Actualizar";
 
-        ////E. Objeto de la tabla RESULTADO DE EXAMENES GENERALES
-        //private Tbl_ResExaGenEspRiesTrabajoRetiro resexagenretiro = new Tbl_ResExaGenEspRiesTrabajoRetiro();
+                    if (per != null)
+                    {
+                        //A
+                        txt_priNombre.Text = per.Per_priNombre.ToString();
+                        txt_segNombre.Text = per.Per_segNombre.ToString();
+                        txt_priApellido.Text = per.Per_priApellido.ToString();
+                        txt_segApellido.Text = per.Per_segApellido.ToString();
+                        txt_sexo.Text = per.Per_genero.ToString();
+                        txt_numHClinica.Text = per.Per_Cedula.ToString();
 
-        ////F. Objeto de la tabla DIAGNÓSTICO
-        //private Tbl_DiagnosticoRetiro diagretiro = new Tbl_DiagnosticoRetiro();
+                        if (reti != null)
+                        {
+                            //A
+                            txt_fechaIniLabores.Text = reti.ret__fechIniLabores.ToString();
+                            txt_fechaSalida.Text = reti.ret_fechSalida.ToString();
+                            txt_tiempo.Text = reti.ret_tiempo.ToString();
+                            txt_actividades1.Text = reti.ret_actividades.ToString();
+                            txt_facRiesgo1.Text = reti.ret_facRiesgo.ToString();
 
-        ////G. Objeto de la tabla EVALUACION MEDICA
-        //private Tbl_EvaluacionMedicaRetiro evamedretiro = new Tbl_EvaluacionMedicaRetiro();
+                            //B
+                            txt_descripcionantiqui.Text = reti.ret_descripAntCliQuiru.ToString();
 
-        ////H. Objeto de la tabla RECOMENDACIONES Y/O TRATAMIENTO
-        //private Tbl_RecoTratamientoRetiro tratamientoretiro = new Tbl_RecoTratamientoRetiro();
+                            txt_siCalificadoIESSAcciTrabajo.Text = reti.ret_siCalificadoIESSAcciTrabajo.ToString();
+                            txt_EspecifiCalificadoIESSAcciTrabajo.Text = reti.ret_EspecifiCalificadoIESSAcciTrabajo.ToString();
+                            txt_noCalificadoIESSAcciTrabajo.Text = reti.ret_noCalificadoIESSAcciTrabajo.ToString();
+                            txt_fechaCalificadoIESSAcciTrabajo.Text = reti.ret_fechaCalificadoIESSAcciTrabajo.ToString();
+                            txt_observacionesAcciTrabajo.Text = reti.ret_observacionesAcciTrabajo.ToString();
+                            txt_detalleAcciTrabajo.Text = reti.ret_detalleAcciTrabajo.ToString();
 
-        ////I. Objeto de la tabla DATOS DEL PROFESIONAL
-        //private Tbl_DatProfesionalRetiro datprofretiro = new Tbl_DatProfesionalRetiro();
+                            txt_siCalificadoIESSEnferProfesionales.Text = reti.ret_siCalificadoIESSEnferProfesionales.ToString();
+                            txt_EspecifiCalificadoIESSEnferProfesionales.Text = reti.ret_EspecifiCalificadoIESSEnferProfesionales.ToString();
+                            txt_noCalificadoIESSEnferProfesionales.Text = reti.ret_noCalificadoIESSEnferProfesionales.ToString();
+                            txt_fechaCalificadoIESSEnferProfesionales.Text = reti.ret_fechaCalificadoIESSEnferProfesionales.ToString();
+                            txt_observacionesEnferProfesionales.Text = reti.ret_observacionesEnferProfesionales.ToString();
+                            txt_detalleEnferProfesionales.Text = reti.ret_detalleEnferProfesionales.ToString();
 
-        //protected void Page_Load(object sender, EventArgs e)
-        //{
-        //    if (!IsPostBack)
-        //    {
-        //        CargarDatosModificar();
-        //        cargarProfesional();
-        //    }
-        //}
+                            //D
+                            txt_cicatrices.Text = reti.ret_cicatricesPiel.ToString();
+                            txt_tatuajes.Text = reti.ret_tatuajesPiel.ToString();
+                            txt_pielyfaneras.Text = reti.ret_pielFacerasPiel.ToString();
+                            txt_parpados.Text = reti.ret_parpadosOjos.ToString();
+                            txt_conjuntivas.Text = reti.ret_conjuntuvasOjos.ToString();
+                            txt_pupilas.Text = reti.ret_pupilasOjos.ToString();
+                            txt_cornea.Text = reti.ret_corneaOjos.ToString();
+                            txt_motilidad.Text = reti.ret_motilidadOjos.ToString();
+                            txt_auditivoexterno.Text = reti.ret_cAudiExtreOido.ToString();
+                            txt_pabellon.Text = reti.ret_pabellonOido.ToString();
+                            txt_timpanos.Text = reti.ret_timpanosOido.ToString();
+                            txt_labios.Text = reti.ret_labiosOroFa.ToString();
+                            txt_lengua.Text = reti.ret_lenguaOroFa.ToString();
+                            txt_faringe.Text = reti.ret_faringeOroFa.ToString();
+                            txt_amigdalas.Text = reti.ret_amigdalasOroFa.ToString();
+                            txt_dentadura.Text = reti.ret_dentaduraOroFa.ToString();
+                            txt_tabique.Text = reti.ret_tabiqueNariz.ToString();
+                            txt_cornetes.Text = reti.ret_cornetesNariz.ToString();
+                            txt_mucosa.Text = reti.ret_mucosasNariz.ToString();
+                            txt_senosparanasales.Text = reti.ret_senosParanaNariz.ToString();
+                            txt_tiroides.Text = reti.ret_tiroiMasasCuello.ToString();
+                            txt_movilidad.Text = reti.ret_movilidadCuello.ToString();
+                            txt_mamas.Text = reti.ret_mamasTorax.ToString();
+                            txt_corazon.Text = reti.ret_corazonTorax.ToString();
+                            txt_pulmones.Text = reti.ret_pulmonesTorax2.ToString();
+                            txt_parrillacostal.Text = reti.ret_parriCostalTorax2.ToString();
+                            txt_visceras.Text = reti.ret_viscerasAbdomen.ToString();
+                            txt_paredabdominal.Text = reti.ret_paredAbdomiAbdomen.ToString();
+                            txt_flexibilidad.Text = reti.ret_flexibilidadColumna.ToString();
+                            txt_desviacion.Text = reti.ret_desviacionColumna.ToString();
+                            txt_dolor.Text = reti.ret_dolorColumna.ToString();
+                            txt_pelvis.Text = reti.ret_pelvisPelvis.ToString();
+                            txt_genitales.Text = reti.ret_genitalesPelvis.ToString();
+                            txt_vascular.Text = reti.ret_vascularExtre.ToString();
+                            txt_miembrosuperiores.Text = reti.ret_miemSupeExtre.ToString();
+                            txt_miembrosinferiores.Text = reti.ret_miemInfeExtre.ToString();
+                            txt_fuerza.Text = reti.ret_fuerzaNeuro.ToString();
+                            txt_sensibilidad.Text = reti.ret_sensibiNeuro.ToString();
+                            txt_marcha.Text = reti.ret_marchaNeuro.ToString();
+                            txt_reflejos.Text = reti.ret_refleNeuro.ToString();
+                            txt_obervexamenfisicoregional.Text = reti.ret_observaExaFisRegional.ToString();
 
-        //protected void txt_numHClinica_TextChanged(object sender, EventArgs e)
-        //{
-        //    per = CN_HistorialMedico.obtenerPersonasxCedula(Convert.ToInt32(txt_numHClinica.Text));
+                            //E
+                            txt_examen.Text = reti.ret_examen.ToString();
+                            txt_fechaexamen.Text = reti.ret_fecha.ToString();
+                            txt_resultadoexamen.Text = reti.ret_resultados.ToString();
+                            txt_observacionexamen.Text = reti.ret_observacionesResExaGenEspRiesTrabajo.ToString();
 
-        //    if (per != null)
-        //    {
-        //        txt_priNombre.Text = per.Per_priNombre.ToString();
-        //        txt_segNombre.Text = per.Per_segNombre.ToString();
-        //        txt_priApellido.Text = per.Per_priApellido.ToString();
-        //        txt_segApellido.Text = per.Per_segApellido.ToString();
-        //        txt_sexo.Text = per.Per_genero.ToString();
-        //    }
-        //}
+                            //F
+                            txt_descripdiagnostico.Text = reti.ret_descripcionDiagnostico.ToString();
+                            txt_cie.Text = reti.ret_cie.ToString();
+                            txt_pre.Text = reti.ret_pre.ToString();
+                            txt_def.Text = reti.ret_def.ToString();
 
-        //private void CargarDatosModificar()
-        //{
-        //    try
-        //    {
-        //        if (Request["cod"] != null)
-        //        {
-        //            int codigo = Convert.ToInt32(Request["cod"]);
+                            //G
+                            txt_sievamed.Text = reti.ret_si.ToString();
+                            txt_noevamed.Text = reti.ret_no.ToString();
+                            txt_obserevamed.Text = reti.ret_observacionesEvaMedRetiro.ToString();
 
-        //            per = CN_HistorialMedico.ObtenerPersonasxId(codigo);
-        //            int perso = Convert.ToInt32(per.Per_id.ToString());
+                            //H
+                            txt_descripciontratamientoretiro.Text = reti.ret_descripcionRecoTratamiento.ToString();
 
-        //            datestable = CN_Retiro.obtenerDatEstEmpUsuRetiro(perso);
-        //            antperetiro = CN_Retiro.obtenerAntecedentesPersonalesxPerRetiro(perso);
-        //            exafisregretiro = CN_Retiro.obtenerExaFisRegxPerRetiro(perso);
-        //            resexagenretiro = CN_Retiro.obtenerResExaGenEspRiesTrabaxPerRetiro(perso);
-        //            diagretiro = CN_Retiro.obtenerDiagnosticoxPerRetiro(perso);
-        //            evamedretiro = CN_Retiro.obtenerEvalMedicaxPerRetiro(perso);
-        //            tratamientoretiro = CN_Retiro.obtenerTratamientoxPerRetiro(perso);
-        //            datprofretiro = CN_Retiro.obtenerDatosProfesionalxPerRetiro(perso);
+                            //I
+                            txt_fechahora.Text = reti.ret_fecha_hora.ToString();
+                            ddl_profesional.SelectedValue = reti.prof_id.ToString();
+                            txt_codigoDatProf.Text = reti.ret_cod.ToString();
+                        }
+                    }
+                }
 
-        //            btn_guardarretiro.Visible = true;
+                txt_fechahora.Text = DateTime.Now.ToString(" dd/MM/yyyy " + " HH:mm ");
+                cargarProfesional();
+            }
+        }
 
-        //            if (per != null || antperetiro != null || exafisregretiro != null || resexagenretiro != null ||
-        //                diagretiro != null || evamedretiro != null || tratamientoretiro != null || datprofretiro != null)
-        //            {
-        //                //A
-        //                txt_priNombre.Text = per.Per_priNombre.ToString();
-        //                txt_segNombre.Text = per.Per_segNombre.ToString();
-        //                txt_priApellido.Text = per.Per_priApellido.ToString();
-        //                txt_segApellido.Text = per.Per_segApellido.ToString();
-        //                txt_sexo.Text = per.Per_genero.ToString();
-        //                txt_numHClinica.Text = per.Per_Cedula.ToString();
+        //Metodo obtener cedula por numero de HC RETIRO
+        [WebMethod]
+        [ScriptMethod]
+        public static List<string> ObtenerNumHClinica(string prefixText)
+        {
+            List<string> lista = new List<string>();
+            try
+            {
+                string oConn = @"Data Source=.;Initial Catalog=SistemaECU911;Integrated Security=True";
 
-        //                //A
-        //                txt_fechaIniLabores.Text = datestable.datEstable__fechIniLabores.ToString();
-        //                txt_fechaSalida.Text = datestable.datEstable_fechSalida.ToString();
-        //                txt_tiempo.Text = datestable.datEstable_tiempo.ToString();
-        //                txt_actividades1.Text = datestable.datEstable_actividades.ToString();
-        //                txt_facRiesgo1.Text = datestable.datEstable_facRiesgo.ToString();
+                SqlConnection con = new SqlConnection(oConn);
+                con.Open();
+                SqlCommand cmd = new SqlCommand("select top(10) Per_Cedula from Tbl_Personas where Per_Cedula LIKE + @Cedula + '%'", con);
+                cmd.Parameters.AddWithValue("@Cedula", prefixText);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
 
-        //                //B
-        //                txt_descripcionantiqui.Text = antperetiro.antPerRetiro_descripAntCliQuiru.ToString();
+                IDataReader lector = cmd.ExecuteReader();
 
-        //                txt_siCalificadoIESSAcciTrabajo.Text = antperetiro.antPerRetiro_siCalificadoIESSAcciTrabajo.ToString();
-        //                txt_EspecifiCalificadoIESSAcciTrabajo.Text = antperetiro.antPerRetiro_EspecifiCalificadoIESSAcciTrabajo.ToString();
-        //                txt_noCalificadoIESSAcciTrabajo.Text = antperetiro.antPerRetiro_noCalificadoIESSAcciTrabajo.ToString();
-        //                txt_fechaCalificadoIESSAcciTrabajo.Text = antperetiro.antPerRetiro_fechaCalificadoIESSAcciTrabajo.ToString();
-        //                txt_observacionesAcciTrabajo.Text = antperetiro.antPerRetiro_observacionesAcciTrabajo.ToString();
-        //                txt_detalleAcciTrabajo.Text = antperetiro.antPerRetiro_detalleAcciTrabajo.ToString();
+                while (lector.Read())
+                {
+                    lista.Add(lector.GetString(0));
+                }
 
-        //                txt_siCalificadoIESSEnferProfesionales.Text = antperetiro.antPerRetiro_siCalificadoIESSEnferProfesionales.ToString();
-        //                txt_EspecifiCalificadoIESSEnferProfesionales.Text = antperetiro.antPerRetiro_EspecifiCalificadoIESSEnferProfesionales.ToString();
-        //                txt_noCalificadoIESSEnferProfesionales.Text = antperetiro.antPerRetiro_noCalificadoIESSEnferProfesionales.ToString();
-        //                txt_fechaCalificadoIESSEnferProfesionales.Text = antperetiro.antPerRetiro_fechaCalificadoIESSEnferProfesionales.ToString();
-        //                txt_observacionesEnferProfesionales.Text = antperetiro.antPerRetiro_observacionesEnferProfesionales.ToString();
-        //                txt_detalleEnferProfesionales.Text = antperetiro.antPerRetiro_detalleEnferProfesionales.ToString();
+                lector.Close();
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex);
+                return null;
+            }
+        }
 
-        //                //D
-        //                txt_cicatrices.Text = exafisregretiro.exaFisRegRetiro_cicatricesPiel.ToString();
-        //                txt_tatuajes.Text = exafisregretiro.exaFisRegRetiro_tatuajesPiel.ToString();
-        //                txt_pielyfaneras.Text = exafisregretiro.exaFisRegRetiro_pielFacerasPiel.ToString();
-        //                txt_parpados.Text = exafisregretiro.exaFisRegRetiro_parpadosOjos.ToString();
-        //                txt_conjuntivas.Text = exafisregretiro.exaFisRegRetiro_conjuntuvasOjos.ToString();
-        //                txt_pupilas.Text = exafisregretiro.exaFisRegRetiro_pupilasOjos.ToString();
-        //                txt_cornea.Text = exafisregretiro.exaFisRegRetiro_corneaOjos.ToString();
-        //                txt_motilidad.Text = exafisregretiro.exaFisRegRetiro_motilidadOjos.ToString();
-        //                txt_auditivoexterno.Text = exafisregretiro.exaFisRegRetiro_cAudiExtreOido.ToString();
-        //                txt_pabellon.Text = exafisregretiro.exaFisRegRetiro_pabellonOido.ToString();
-        //                txt_timpanos.Text = exafisregretiro.exaFisRegRetiro_timpanosOido.ToString();
-        //                txt_labios.Text = exafisregretiro.exaFisRegRetiro_labiosOroFa.ToString();
-        //                txt_lengua.Text = exafisregretiro.exaFisRegRetiro_lenguaOroFa.ToString();
-        //                txt_faringe.Text = exafisregretiro.exaFisRegRetiro_faringeOroFa.ToString();
-        //                txt_amigdalas.Text = exafisregretiro.exaFisRegRetiro_amigdalasOroFa.ToString();
-        //                txt_dentadura.Text = exafisregretiro.exaFisRegRetiro_dentaduraOroFa.ToString();
-        //                txt_tabique.Text = exafisregretiro.exaFisRegRetiro_tabiqueNariz.ToString();
-        //                txt_cornetes.Text = exafisregretiro.exaFisRegRetiro_cornetesNariz.ToString();
-        //                txt_mucosa.Text = exafisregretiro.exaFisRegRetiro_mucosasNariz.ToString();
-        //                txt_senosparanasales.Text = exafisregretiro.exaFisRegRetiro_senosParanaNariz.ToString();
-        //                txt_tiroides.Text = exafisregretiro.exaFisRegRetiro_tiroiMasasCuello.ToString();
-        //                txt_movilidad.Text = exafisregretiro.exaFisRegRetiro_movilidadCuello.ToString();
-        //                txt_mamas.Text = exafisregretiro.exaFisRegRetiro_mamasTorax.ToString();
-        //                txt_corazon.Text = exafisregretiro.exaFisRegRetiro_corazonTorax.ToString();
-        //                txt_pulmones.Text = exafisregretiro.exaFisRegRetiro_pulmonesTorax2.ToString();
-        //                txt_parrillacostal.Text = exafisregretiro.exaFisRegRetiro_parriCostalTorax2.ToString();
-        //                txt_visceras.Text = exafisregretiro.exaFisRegRetiro_viscerasAbdomen.ToString();
-        //                txt_paredabdominal.Text = exafisregretiro.exaFisRegRetiro_paredAbdomiAbdomen.ToString();
-        //                txt_flexibilidad.Text = exafisregretiro.exaFisRegRetiro_flexibilidadColumna.ToString();
-        //                txt_desviacion.Text = exafisregretiro.exaFisRegRetiro_desviacionColumna.ToString();
-        //                txt_dolor.Text = exafisregretiro.exaFisRegRetiro_dolorColumna.ToString();
-        //                txt_pelvis.Text = exafisregretiro.exaFisRegRetiro_pelvisPelvis.ToString();
-        //                txt_genitales.Text = exafisregretiro.exaFisRegRetiro_genitalesPelvis.ToString();
-        //                txt_vascular.Text = exafisregretiro.exaFisRegRetiro_vascularExtre.ToString();
-        //                txt_miembrosuperiores.Text = exafisregretiro.exaFisRegRetiro_miemSupeExtre.ToString();
-        //                txt_miembrosinferiores.Text = exafisregretiro.exaFisRegRetiro_miemInfeExtre.ToString();
-        //                txt_fuerza.Text = exafisregretiro.exaFisRegRetiro_fuerzaNeuro.ToString();
-        //                txt_sensibilidad.Text = exafisregretiro.exaFisRegRetiro_sensibiNeuro.ToString();
-        //                txt_marcha.Text = exafisregretiro.exaFisRegRetiro_marchaNeuro.ToString();
-        //                txt_reflejos.Text = exafisregretiro.exaFisRegRetiro_refleNeuro.ToString();
-        //                txt_obervexamenfisicoregional.Text = exafisregretiro.exaFisRegRetiro_observa.ToString();
+        protected void txt_numHClinica_TextChanged(object sender, EventArgs e)
+        {
+            ObtenerCedula();
+        }
 
-        //                //E
-        //                txt_examen.Text = resexagenretiro.ResExaGenEspRiesTrabajoRetiro_examen.ToString();
-        //                txt_fechaexamen.Text = resexagenretiro.ResExaGenEspRiesTrabajoRetiro_fecha.ToString();
-        //                txt_resultadoexamen.Text = resexagenretiro.ResExaGenEspRiesTrabajoRetiro_resultados.ToString();
-        //                txt_observacionexamen.Text = resexagenretiro.ResExaGenEspRiesTrabajoRetiro_observaciones.ToString();
+        private void ObtenerCedula()
+        {
+            string cedula = txt_numHClinica.Text;
 
-        //                //F
-        //                txt_descripdiagnostico.Text = diagretiro.DiagRetiro_descripcion.ToString();
-        //                txt_cie.Text = diagretiro.DiagRetiro_cie.ToString();
-        //                txt_pre.Text = diagretiro.DiagRetiro_pre.ToString();
-        //                txt_def.Text = diagretiro.DiagRetiro_def.ToString();
+            var lista = from c in dc.Tbl_Personas
+                        where c.Per_Cedula == cedula
+                        select c;
 
-        //                //G
-        //                txt_sievamed.Text = evamedretiro.evaMedRet_si.ToString();
-        //                txt_noevamed.Text = evamedretiro.evaMedRet_no.ToString();
-        //                txt_obserevamed.Text = evamedretiro.evaMedRet_observaciones.ToString();
+            foreach (var item in lista)
+            {
+                string priNombre = item.Per_priNombre;
+                txt_priNombre.Text = priNombre;
 
-        //                //H
-        //                txt_descripciontratamientoretiro.Text = tratamientoretiro.RecTraRetiro_descripcion.ToString();
+                string segNombre = item.Per_segNombre;
+                txt_segNombre.Text = segNombre;
 
-        //                //I
-        //                txt_fechaDatProf.Text = datprofretiro.DatProfeRetiro_fecha_hora.ToString();
-        //                ddl_profesional.SelectedValue = datprofretiro.prof_id.ToString();
-        //                txt_codigoDatProf.Text = datprofretiro.DatProfeRetiro_cod.ToString();
+                string priApellido = item.Per_priApellido;
+                txt_priApellido.Text = priApellido;
 
-        //            }
-        //            else
-        //            {
-        //                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Error')", true);
-        //            }
+                string segApellido = item.Per_segApellido;
+                txt_segApellido.Text = segApellido;
 
-        //        }
-        //    }
-        //    catch (Exception)
-        //    {
-        //        ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos Guardados Incompletos')", true);
-        //    }
-        //}
+                string sexo = item.Per_genero;
+                txt_sexo.Text = sexo;
+            }
+        }
 
-        //private void guardar_modificar_datos(int perid, int antperid, int exafiregperid, int resexgenperid, int diagperid, 
-        //    int evamedperid, int traperid, int datproperid)
-        //{
-        //    if (perid == 0 || antperid == 0 || exafiregperid == 0 || resexgenperid == 0 || diagperid == 0 || evamedperid == 0 
-        //        || traperid == 0 || datproperid == 0)
-        //    {
-        //        GuardarRetiro();
-        //    }
-        //    else
-        //    {
-        //        per = CN_HistorialMedico.ObtenerPersonasxId(perid);
-        //        int perso = Convert.ToInt32(per.Per_id.ToString());
+        //Metodo obtener codigo cie10
+        [WebMethod]
+        [ScriptMethod]
+        public static List<string> ObtenerCie10(string prefixText)
+        {
+            List<string> lista = new List<string>();
+            try
+            {
+                string oConn = @"Data Source=.;Initial Catalog=SistemaECU911;Integrated Security=True";
 
-        //        antperetiro = CN_Retiro.obtenerAntecedentesPersonalesxPerRetiro(perso);
-        //        exafisregretiro = CN_Retiro.obtenerExaFisRegxPerRetiro(perso);
-        //        resexagenretiro = CN_Retiro.obtenerResExaGenEspRiesTrabaxPerRetiro(perso);
-        //        diagretiro = CN_Retiro.obtenerDiagnosticoxPerRetiro(perso);
-        //        evamedretiro = CN_Retiro.obtenerEvalMedicaxPerRetiro(perso);
-        //        tratamientoretiro = CN_Retiro.obtenerTratamientoxPerRetiro(perso);
-        //        datprofretiro = CN_Retiro.obtenerDatosProfesionalxPerRetiro(perso);
+                SqlConnection con = new SqlConnection(oConn);
+                con.Open();
+                SqlCommand cmd = new SqlCommand("select top(10) dec10 from cie10 where dec10 LIKE + @Name + '%'", con);
+                cmd.Parameters.AddWithValue("@Name", prefixText);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
 
-        //        if (per != null || antperetiro != null || exafisregretiro != null || resexagenretiro != null || diagretiro != null || 
-        //            evamedretiro != null || tratamientoretiro != null || datprofretiro != null)
-        //        {
-        //            //ModificarHistorial(per, emplant, antper, acctrabajo, enferprof, facriesgotractual, actvextralaboral,
-        //            //    exagenesperiespues, diagnostico, aptitudmedica);
-        //        }
+                IDataReader lector = cmd.ExecuteReader();
 
-        //    }
-        //}
+                while (lector.Read())
+                {
+                    lista.Add(lector.GetString(0));
+                }
 
-        //private void GuardarRetiro()
-        //{
-        //    try
-        //    {
-        //        per = CN_HistorialMedico.ObtenerIdPersonasxCedula(Convert.ToInt32(txt_numHClinica.Text));
+                lector.Close();
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex);
+                return null;
+            }
+        }
 
-        //        int perso = Convert.ToInt32(per.Per_id.ToString());
+        protected void txt_descripdiagnostico_TextChanged(object sender, EventArgs e)
+        {
+            ObtenerCodigo();
+        }
 
-        //        // A
-        //        datestable = new Tbl_DatEstableEmpUsuRetiro();
-        //        // B
-        //        antperetiro = new Tbl_AntecedentesPersonalesRetiro();
-        //        // D
-        //        exafisregretiro = new Tbl_ExaFisRegionalRetiro();
-        //        // E
-        //        resexagenretiro = new Tbl_ResExaGenEspRiesTrabajoRetiro();
-        //        // F
-        //        diagretiro = new Tbl_DiagnosticoRetiro();
-        //        // G
-        //        evamedretiro = new Tbl_EvaluacionMedicaRetiro();
-        //        // H
-        //        tratamientoretiro = new Tbl_RecoTratamientoRetiro();
-        //        // I
-        //        datprofretiro = new Tbl_DatProfesionalRetiro();
+        private void ObtenerCodigo()
+        {
+            string descripcion = txt_descripdiagnostico.Text;
 
-        //        //A. Captura de datos Datos Establecimiento
-        //        datestable.datEstable__fechIniLabores = Convert.ToDateTime(txt_fechaIniLabores.Text);
-        //        datestable.datEstable_fechSalida = Convert.ToDateTime(txt_fechaSalida.Text);
-        //        datestable.datEstable_tiempo = Convert.ToInt32(txt_tiempo.Text);
-        //        datestable.datEstable_actividades = txt_actividades1.Text;
-        //        datestable.datEstable_facRiesgo = txt_facRiesgo1.Text;
-        //        datestable.Per_id = perso;
+            var lista = from c in dc.cie10
+                        where c.dec10 == descripcion
+                        select c;
 
-        //        //B. Captura de datos Antecedenetes personales
-        //        antperetiro.antPerRetiro_descripAntCliQuiru = txt_descripcionantiqui.Text;
+            foreach (var item in lista)
+            {
+                string codigo = item.id10;
+                txt_cie.Text = codigo;
+            }
+        }
 
-        //        antperetiro.antPerRetiro_siCalificadoIESSAcciTrabajo = txt_siCalificadoIESSAcciTrabajo.Text;
-        //        antperetiro.antPerRetiro_EspecifiCalificadoIESSAcciTrabajo = txt_EspecifiCalificadoIESSAcciTrabajo.Text;
-        //        antperetiro.antPerRetiro_noCalificadoIESSAcciTrabajo = txt_noCalificadoIESSAcciTrabajo.Text;
-        //        antperetiro.antPerRetiro_fechaCalificadoIESSAcciTrabajo = Convert.ToDateTime(txt_fechaCalificadoIESSAcciTrabajo.Text);
-        //        antperetiro.antPerRetiro_observacionesAcciTrabajo = txt_observacionesAcciTrabajo.Text;
-        //        antperetiro.antPerRetiro_detalleAcciTrabajo = txt_detalleAcciTrabajo.Text;
+        private void GuardarRetiro()
+        {
+            try
+            {
+                per = CN_HistorialMedico.ObtenerIdPersonasxCedula(Convert.ToInt32(txt_numHClinica.Text));
 
-        //        antperetiro.antPerRetiro_siCalificadoIESSEnferProfesionales = txt_siCalificadoIESSEnferProfesionales.Text;
-        //        antperetiro.antPerRetiro_EspecifiCalificadoIESSEnferProfesionales = txt_EspecifiCalificadoIESSEnferProfesionales.Text;
-        //        antperetiro.antPerRetiro_noCalificadoIESSEnferProfesionales = txt_noCalificadoIESSEnferProfesionales.Text;
-        //        antperetiro.antPerRetiro_fechaCalificadoIESSEnferProfesionales = Convert.ToDateTime(txt_fechaCalificadoIESSEnferProfesionales.Text);
-        //        antperetiro.antPerRetiro_observacionesEnferProfesionales = txt_observacionesEnferProfesionales.Text;
-        //        antperetiro.antPerRetiro_detalleEnferProfesionales = txt_detalleEnferProfesionales.Text;
-        //        antperetiro.Per_id = perso;
+                int perso = Convert.ToInt32(per.Per_id.ToString());
 
-        //        //D. Captura de Datos Examen Fisico Regional
-        //        exafisregretiro.exaFisRegRetiro_cicatricesPiel = txt_cicatrices.Text;
-        //        exafisregretiro.exaFisRegRetiro_tatuajesPiel = txt_tatuajes.Text;
-        //        exafisregretiro.exaFisRegRetiro_pielFacerasPiel = txt_pielyfaneras.Text;
-        //        exafisregretiro.exaFisRegRetiro_parpadosOjos = txt_parpados.Text;
-        //        exafisregretiro.exaFisRegRetiro_conjuntuvasOjos = txt_conjuntivas.Text;
-        //        exafisregretiro.exaFisRegRetiro_pupilasOjos = txt_pupilas.Text;
-        //        exafisregretiro.exaFisRegRetiro_corneaOjos = txt_cornea.Text;
-        //        exafisregretiro.exaFisRegRetiro_motilidadOjos = txt_motilidad.Text;
-        //        exafisregretiro.exaFisRegRetiro_cAudiExtreOido = txt_auditivoexterno.Text;
-        //        exafisregretiro.exaFisRegRetiro_pabellonOido = txt_pabellon.Text;
-        //        exafisregretiro.exaFisRegRetiro_timpanosOido = txt_timpanos.Text;
-        //        exafisregretiro.exaFisRegRetiro_labiosOroFa = txt_labios.Text;
-        //        exafisregretiro.exaFisRegRetiro_lenguaOroFa = txt_lengua.Text;
-        //        exafisregretiro.exaFisRegRetiro_faringeOroFa = txt_faringe.Text;
-        //        exafisregretiro.exaFisRegRetiro_amigdalasOroFa = txt_amigdalas.Text;
-        //        exafisregretiro.exaFisRegRetiro_dentaduraOroFa = txt_dentadura.Text;
-        //        exafisregretiro.exaFisRegRetiro_tabiqueNariz = txt_tabique.Text;
-        //        exafisregretiro.exaFisRegRetiro_cornetesNariz = txt_cornetes.Text;
-        //        exafisregretiro.exaFisRegRetiro_mucosasNariz = txt_mucosa.Text;
-        //        exafisregretiro.exaFisRegRetiro_senosParanaNariz = txt_senosparanasales.Text;
-        //        exafisregretiro.exaFisRegRetiro_tiroiMasasCuello = txt_tiroides.Text;
-        //        exafisregretiro.exaFisRegRetiro_movilidadCuello = txt_movilidad.Text;
-        //        exafisregretiro.exaFisRegRetiro_mamasTorax = txt_mamas.Text;
-        //        exafisregretiro.exaFisRegRetiro_corazonTorax = txt_corazon.Text;
-        //        exafisregretiro.exaFisRegRetiro_pulmonesTorax2 = txt_pulmones.Text;
-        //        exafisregretiro.exaFisRegRetiro_parriCostalTorax2 = txt_parrillacostal.Text;
-        //        exafisregretiro.exaFisRegRetiro_viscerasAbdomen = txt_visceras.Text;
-        //        exafisregretiro.exaFisRegRetiro_paredAbdomiAbdomen = txt_paredabdominal.Text;
-        //        exafisregretiro.exaFisRegRetiro_flexibilidadColumna = txt_flexibilidad.Text;
-        //        exafisregretiro.exaFisRegRetiro_desviacionColumna = txt_desviacion.Text;
-        //        exafisregretiro.exaFisRegRetiro_dolorColumna = txt_dolor.Text;
-        //        exafisregretiro.exaFisRegRetiro_pelvisPelvis = txt_pelvis.Text;
-        //        exafisregretiro.exaFisRegRetiro_genitalesPelvis = txt_genitales.Text;
-        //        exafisregretiro.exaFisRegRetiro_vascularExtre = txt_vascular.Text;
-        //        exafisregretiro.exaFisRegRetiro_miemSupeExtre = txt_miembrosuperiores.Text;
-        //        exafisregretiro.exaFisRegRetiro_miemInfeExtre = txt_miembrosinferiores.Text;
-        //        exafisregretiro.exaFisRegRetiro_fuerzaNeuro = txt_fuerza.Text;
-        //        exafisregretiro.exaFisRegRetiro_sensibiNeuro = txt_sensibilidad.Text;
-        //        exafisregretiro.exaFisRegRetiro_marchaNeuro = txt_marcha.Text;
-        //        exafisregretiro.exaFisRegRetiro_refleNeuro = txt_reflejos.Text;
-        //        exafisregretiro.exaFisRegRetiro_observa = txt_obervexamenfisicoregional.Text;
-        //        exafisregretiro.Per_id = perso;
+                reti = new Tbl_Retiro 
+                {
+                    //A.
+                    ret__fechIniLabores = Convert.ToDateTime(txt_fechaIniLabores.Text),
+                    ret_fechSalida = Convert.ToDateTime(txt_fechaSalida.Text),
+                    ret_tiempo = Convert.ToInt32(txt_tiempo.Text),
+                    ret_actividades = txt_actividades1.Text,
+                    ret_facRiesgo = txt_facRiesgo1.Text,
 
-        //        //E. Captura de Datos Tbl_ResExaGenEspRiesTrabajo
-        //        resexagenretiro.ResExaGenEspRiesTrabajoRetiro_examen = txt_examen.Text;
-        //        resexagenretiro.ResExaGenEspRiesTrabajoRetiro_fecha = Convert.ToDateTime(txt_fechaexamen.Text);
-        //        resexagenretiro.ResExaGenEspRiesTrabajoRetiro_resultados = txt_resultadoexamen.Text;
-        //        resexagenretiro.ResExaGenEspRiesTrabajoRetiro_observaciones = txt_observacionexamen.Text;
-        //        resexagenretiro.Per_id = perso;
+                    //B.
+                    ret_descripAntCliQuiru = txt_descripcionantiqui.Text,
 
-        //        //F. Captura de Datos Tbl_Diagnostico
-        //        diagretiro.DiagRetiro_descripcion = txt_descripdiagnostico.Text;
-        //        diagretiro.DiagRetiro_cie = txt_cie.Text;
-        //        diagretiro.DiagRetiro_pre = txt_pre.Text;
-        //        diagretiro.DiagRetiro_def = txt_def.Text;
-        //        diagretiro.Per_id = perso;
+                    ret_siCalificadoIESSAcciTrabajo = txt_siCalificadoIESSAcciTrabajo.Text,
+                    ret_EspecifiCalificadoIESSAcciTrabajo = txt_EspecifiCalificadoIESSAcciTrabajo.Text,
+                    ret_noCalificadoIESSAcciTrabajo = txt_noCalificadoIESSAcciTrabajo.Text,
+                    ret_fechaCalificadoIESSAcciTrabajo = Convert.ToDateTime(txt_fechaCalificadoIESSAcciTrabajo.Text),
+                    ret_observacionesAcciTrabajo = txt_observacionesAcciTrabajo.Text,
+                    ret_detalleAcciTrabajo = txt_detalleAcciTrabajo.Text,
 
-        //        //G.Captura de Datos Tbl_EvaluacionMedicaRetiro
-        //        evamedretiro.evaMedRet_si = txt_sievamed.Text;
-        //        evamedretiro.evaMedRet_no = txt_noevamed.Text;
-        //        evamedretiro.evaMedRet_observaciones = txt_obserevamed.Text;
-        //        evamedretiro.Per_id = perso;
+                    ret_siCalificadoIESSEnferProfesionales = txt_siCalificadoIESSEnferProfesionales.Text,
+                    ret_EspecifiCalificadoIESSEnferProfesionales = txt_EspecifiCalificadoIESSEnferProfesionales.Text,
+                    ret_noCalificadoIESSEnferProfesionales = txt_noCalificadoIESSEnferProfesionales.Text,
+                    ret_fechaCalificadoIESSEnferProfesionales = Convert.ToDateTime(txt_fechaCalificadoIESSEnferProfesionales.Text),
+                    ret_observacionesEnferProfesionales = txt_observacionesEnferProfesionales.Text,
+                    ret_detalleEnferProfesionales = txt_detalleEnferProfesionales.Text,
 
-        //        //H. Captura de Datos Recomendaciones y/o Tratamiento
-        //        tratamientoretiro.RecTraRetiro_descripcion = txt_descripciontratamientoretiro.Text;
-        //        tratamientoretiro.Per_id = perso;
+                    //D.
+                    ret_cicatricesPiel = txt_cicatrices.Text,
+                    ret_tatuajesPiel = txt_tatuajes.Text,
+                    ret_pielFacerasPiel = txt_pielyfaneras.Text,
+                    ret_parpadosOjos = txt_parpados.Text,
+                    ret_conjuntuvasOjos = txt_conjuntivas.Text,
+                    ret_pupilasOjos = txt_pupilas.Text,
+                    ret_corneaOjos = txt_cornea.Text,
+                    ret_motilidadOjos = txt_motilidad.Text,
+                    ret_cAudiExtreOido = txt_auditivoexterno.Text,
+                    ret_pabellonOido = txt_pabellon.Text,
+                    ret_timpanosOido = txt_timpanos.Text,
+                    ret_labiosOroFa = txt_labios.Text,
+                    ret_lenguaOroFa = txt_lengua.Text,
+                    ret_faringeOroFa = txt_faringe.Text,
+                    ret_amigdalasOroFa = txt_amigdalas.Text,
+                    ret_dentaduraOroFa = txt_dentadura.Text,
+                    ret_tabiqueNariz = txt_tabique.Text,
+                    ret_cornetesNariz = txt_cornetes.Text,
+                    ret_mucosasNariz = txt_mucosa.Text,
+                    ret_senosParanaNariz = txt_senosparanasales.Text,
+                    ret_tiroiMasasCuello = txt_tiroides.Text,
+                    ret_movilidadCuello = txt_movilidad.Text,
+                    ret_mamasTorax = txt_mamas.Text,
+                    ret_corazonTorax = txt_corazon.Text,
+                    ret_pulmonesTorax2 = txt_pulmones.Text,
+                    ret_parriCostalTorax2 = txt_parrillacostal.Text,
+                    ret_viscerasAbdomen = txt_visceras.Text,
+                    ret_paredAbdomiAbdomen = txt_paredabdominal.Text,
+                    ret_flexibilidadColumna = txt_flexibilidad.Text,
+                    ret_desviacionColumna = txt_desviacion.Text,
+                    ret_dolorColumna = txt_dolor.Text,
+                    ret_pelvisPelvis = txt_pelvis.Text,
+                    ret_genitalesPelvis = txt_genitales.Text,
+                    ret_vascularExtre = txt_vascular.Text,
+                    ret_miemSupeExtre = txt_miembrosuperiores.Text,
+                    ret_miemInfeExtre = txt_miembrosinferiores.Text,
+                    ret_fuerzaNeuro = txt_fuerza.Text,
+                    ret_sensibiNeuro = txt_sensibilidad.Text,
+                    ret_marchaNeuro = txt_marcha.Text,
+                    ret_refleNeuro = txt_reflejos.Text,
+                    ret_observaExaFisRegional = txt_obervexamenfisicoregional.Text,
 
-        //        //I. Captura de Datos RProfesional
-        //        datprofretiro.DatProfeRetiro_fecha_hora = Convert.ToDateTime(txt_fechaDatProf.Text);
-        //        datprofretiro.prof_id = Convert.ToInt32(ddl_profesional.SelectedValue);
-        //        datprofretiro.DatProfeRetiro_cod = txt_codigoDatProf.Text;
-        //        datprofretiro.Per_id = perso;
+                    //E.
+                    ret_examen = txt_examen.Text,
+                    ret_fecha = Convert.ToDateTime(txt_fechaexamen.Text),
+                    ret_resultados = txt_resultadoexamen.Text,
+                    ret_observacionesResExaGenEspRiesTrabajo = txt_observacionexamen.Text,
 
-        //        //A. Método para guardar Datos Establecimiento
-        //        CN_Retiro.guardarDatEstEmpUsuRetiro(datestable);
-        //        //B . Método para guardar Datos Antecedentes personales
-        //        CN_Retiro.guardarAntPersonalesRetiro(antperetiro);
-        //        //D. Método de guardar Datos Examen fisico regional
-        //        CN_Retiro.guardarExamenFisicoRegionalRetiro(exafisregretiro);
-        //        //E. Método de guardar Datos Resultado examenes generales
-        //        CN_Retiro.guardarExaGenEspeRiesyPuesRetiro(resexagenretiro);
-        //        //G. Método de guardar Datos diagnostico
-        //        CN_Retiro.guardarDiagnosticoRetiro(diagretiro);
-        //        //H. Método de guardar Datos evaluacion medica
-        //        CN_Retiro.guardarEvaluacionMedicaRetiro(evamedretiro);
-        //        //I. Método de guardar Datos recomendaciones y tratamiento
-        //        CN_Retiro.guardarRecomendacionesTratamientoRetiro(tratamientoretiro);
-        //        //J. Método de guardar Datos del profesional
-        //        CN_Retiro.guardarDatosProfesionalRetiro(datprofretiro);
+                    //F
+                    ret_descripcionDiagnostico = txt_descripdiagnostico.Text,
+                    ret_cie = txt_cie.Text,
+                    ret_pre = txt_pre.Text,
+                    ret_def = txt_def.Text,
 
+                    //G
+                    ret_si = txt_sievamed.Text,
+                    ret_no = txt_noevamed.Text,
+                    ret_observacionesEvaMedRetiro = txt_obserevamed.Text,
 
-        //        //Mensaje de confirmacion
-        //        ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos Guardados Exitosamente')", true);
+                    //H.
+                    ret_descripcionRecoTratamiento = txt_descripciontratamientoretiro.Text,
 
-        //        Response.Redirect("~/Template/Views/PacientesRetiro.aspx");
-        //        limpiar();
-        //    }
-        //    catch (Exception)
-        //    {
-        //        ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos No Guardados')", true);
-        //    }
+                    //I.
+                    ret_fecha_hora = Convert.ToDateTime(txt_fechahora.Text),
+                    prof_id = Convert.ToInt32(ddl_profesional.SelectedValue),
+                    ret_cod = txt_codigoDatProf.Text,
+                    Per_id = perso
+                };
 
-        //}
+                CN_Retiro.GuardarrRetiro(reti);
 
-        //private void cargarProfesional()
-        //{
-        //    List<Tbl_Profesional> listaProf = new List<Tbl_Profesional>();
-        //    listaProf = CN_HistorialMedico.ObtenerProfesional();
-        //    listaProf.Insert(0, new Tbl_Profesional() { prof_NomApe = "Seleccione ........" });
+                //Mensaje de confirmacion
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos Guardados Exitosamente')", true);
 
-        //    ddl_profesional.DataSource = listaProf;
-        //    ddl_profesional.DataTextField = "prof_NomApe";
-        //    ddl_profesional.DataValueField = "prof_id";
-        //    ddl_profesional.DataBind();
-        //}
+                Response.Redirect("~/Template/Views/PacientesRetiro.aspx");
 
-        //private void limpiar()
-        //{
+            }
+            catch (Exception)
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos No Guardados')", true);
+            }
 
-        //}
+        }
 
-        //protected void btn_guardarretiro_Click(object sender, EventArgs e)
-        //{
-        //    guardar_modificar_datos(Convert.ToInt32(Request["cod"]), Convert.ToInt32(per.Per_id.ToString()),
-        //    Convert.ToInt32(per.Per_id.ToString()), Convert.ToInt32(per.Per_id.ToString()), Convert.ToInt32(per.Per_id.ToString()),
-        //    Convert.ToInt32(per.Per_id.ToString()), Convert.ToInt32(per.Per_id.ToString()), Convert.ToInt32(per.Per_id.ToString()));
-        //}
+        private void ModificarRetiro(Tbl_Retiro reti)
+        {
+            try
+            {
+                //A.
+                reti.ret__fechIniLabores = Convert.ToDateTime(txt_fechaIniLabores.Text);
+                reti.ret_fechSalida = Convert.ToDateTime(txt_fechaSalida.Text);
+                reti.ret_tiempo = Convert.ToInt32(txt_tiempo.Text);
+                reti.ret_actividades = txt_actividades1.Text;
+                reti.ret_facRiesgo = txt_facRiesgo1.Text;
 
-        //protected void btn_modificaretiro_Click(object sender, EventArgs e)
-        //{
+                //B.
+                reti.ret_descripAntCliQuiru = txt_descripcionantiqui.Text;
 
-        //}
+                reti.ret_siCalificadoIESSAcciTrabajo = txt_siCalificadoIESSAcciTrabajo.Text;
+                reti.ret_EspecifiCalificadoIESSAcciTrabajo = txt_EspecifiCalificadoIESSAcciTrabajo.Text;
+                reti.ret_noCalificadoIESSAcciTrabajo = txt_noCalificadoIESSAcciTrabajo.Text;
+                reti.ret_fechaCalificadoIESSAcciTrabajo = Convert.ToDateTime(txt_fechaCalificadoIESSAcciTrabajo.Text);
+                reti.ret_observacionesAcciTrabajo = txt_observacionesAcciTrabajo.Text;
+                reti.ret_detalleAcciTrabajo = txt_detalleAcciTrabajo.Text;
 
-        //protected void btn_cancelaretiro_Click(object sender, EventArgs e)
-        //{
-        //    Response.Redirect("~/Template/Views/Inicio.aspx");
-        //}
+                reti.ret_siCalificadoIESSEnferProfesionales = txt_siCalificadoIESSEnferProfesionales.Text;
+                reti.ret_EspecifiCalificadoIESSEnferProfesionales = txt_EspecifiCalificadoIESSEnferProfesionales.Text;
+                reti.ret_noCalificadoIESSEnferProfesionales = txt_noCalificadoIESSEnferProfesionales.Text;
+                reti.ret_fechaCalificadoIESSEnferProfesionales = Convert.ToDateTime(txt_fechaCalificadoIESSEnferProfesionales.Text);
+                reti.ret_observacionesEnferProfesionales = txt_observacionesEnferProfesionales.Text;
+                reti.ret_detalleEnferProfesionales = txt_detalleEnferProfesionales.Text;
+
+                //D.
+                reti.ret_cicatricesPiel = txt_cicatrices.Text;
+                reti.ret_tatuajesPiel = txt_tatuajes.Text;
+                reti.ret_pielFacerasPiel = txt_pielyfaneras.Text;
+                reti.ret_parpadosOjos = txt_parpados.Text;
+                reti.ret_conjuntuvasOjos = txt_conjuntivas.Text;
+                reti.ret_pupilasOjos = txt_pupilas.Text;
+                reti.ret_corneaOjos = txt_cornea.Text;
+                reti.ret_motilidadOjos = txt_motilidad.Text;
+                reti.ret_cAudiExtreOido = txt_auditivoexterno.Text;
+                reti.ret_pabellonOido = txt_pabellon.Text;
+                reti.ret_timpanosOido = txt_timpanos.Text;
+                reti.ret_labiosOroFa = txt_labios.Text;
+                reti.ret_lenguaOroFa = txt_lengua.Text;
+                reti.ret_faringeOroFa = txt_faringe.Text;
+                reti.ret_amigdalasOroFa = txt_amigdalas.Text;
+                reti.ret_dentaduraOroFa = txt_dentadura.Text;
+                reti.ret_tabiqueNariz = txt_tabique.Text;
+                reti.ret_cornetesNariz = txt_cornetes.Text;
+                reti.ret_mucosasNariz = txt_mucosa.Text;
+                reti.ret_senosParanaNariz = txt_senosparanasales.Text;
+                reti.ret_tiroiMasasCuello = txt_tiroides.Text;
+                reti.ret_movilidadCuello = txt_movilidad.Text;
+                reti.ret_mamasTorax = txt_mamas.Text;
+                reti.ret_corazonTorax = txt_corazon.Text;
+                reti.ret_pulmonesTorax2 = txt_pulmones.Text;
+                reti.ret_parriCostalTorax2 = txt_parrillacostal.Text;
+                reti.ret_viscerasAbdomen = txt_visceras.Text;
+                reti.ret_paredAbdomiAbdomen = txt_paredabdominal.Text;
+                reti.ret_flexibilidadColumna = txt_flexibilidad.Text;
+                reti.ret_desviacionColumna = txt_desviacion.Text;
+                reti.ret_dolorColumna = txt_dolor.Text;
+                reti.ret_pelvisPelvis = txt_pelvis.Text;
+                reti.ret_genitalesPelvis = txt_genitales.Text;
+                reti.ret_vascularExtre = txt_vascular.Text;
+                reti.ret_miemSupeExtre = txt_miembrosuperiores.Text;
+                reti.ret_miemInfeExtre = txt_miembrosinferiores.Text;
+                reti.ret_fuerzaNeuro = txt_fuerza.Text;
+                reti.ret_sensibiNeuro = txt_sensibilidad.Text;
+                reti.ret_marchaNeuro = txt_marcha.Text;
+                reti.ret_refleNeuro = txt_reflejos.Text;
+                reti.ret_observaExaFisRegional = txt_obervexamenfisicoregional.Text;
+
+                //E.
+                reti.ret_examen = txt_examen.Text;
+                reti.ret_fecha = Convert.ToDateTime(txt_fechaexamen.Text);
+                reti.ret_resultados = txt_resultadoexamen.Text;
+                reti.ret_observacionesResExaGenEspRiesTrabajo = txt_observacionexamen.Text;
+
+                //F.
+                reti.ret_descripcionDiagnostico = txt_descripdiagnostico.Text;
+                reti.ret_cie = txt_cie.Text;
+                reti.ret_pre = txt_pre.Text;
+                reti.ret_def = txt_def.Text;
+
+                //G.
+                reti.ret_si = txt_sievamed.Text;
+                reti.ret_no = txt_noevamed.Text;
+                reti.ret_observacionesEvaMedRetiro = txt_obserevamed.Text;
+
+                //H.
+                reti.ret_descripcionRecoTratamiento = txt_descripciontratamientoretiro.Text;
+
+                //I.
+                reti.ret_fecha_hora = Convert.ToDateTime(txt_fechahora.Text);
+                reti.prof_id = Convert.ToInt32(ddl_profesional.SelectedValue);
+                reti.ret_cod = txt_codigoDatProf.Text;
+
+                CN_Retiro.ModificarRetiro(reti);
+
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos Modificados Exitosamente')", true);
+                Response.Redirect("~/Template/Views/PacientesRetiro.aspx");
+
+            }
+            catch (Exception)
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos No Modificados')", true);
+            }
+        }
+
+        private void guardar_modificar_datos(int retiro)
+        {
+            if (retiro == 0)
+            {
+                GuardarRetiro();
+            }
+            else
+            {
+                reti = CN_Retiro.ObtenerRetiroPorId(retiro);
+
+                if (per != null)
+                {
+                    ModificarRetiro(reti);
+                }
+
+            }
+        }
+
+        protected void btn_guardar_Click(object sender, EventArgs e)
+        {
+            guardar_modificar_datos(Convert.ToInt32(Request["cod"]));
+        }
+
+        protected void btn_cancelar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Template/Views/Inicio.aspx");
+        }
+
+        private void cargarProfesional()
+        {
+            List<Tbl_Profesional> listaProf = new List<Tbl_Profesional>();
+            listaProf = CN_HistorialMedico.ObtenerProfesional();
+            listaProf.Insert(0, new Tbl_Profesional() { prof_NomApe = "Seleccione ........" });
+
+            ddl_profesional.DataSource = listaProf;
+            ddl_profesional.DataTextField = "prof_NomApe";
+            ddl_profesional.DataValueField = "prof_id";
+            ddl_profesional.DataBind();
+        }
+
     }
 }

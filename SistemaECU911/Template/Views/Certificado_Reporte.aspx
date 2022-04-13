@@ -41,8 +41,15 @@
                                     Por medio de la presente certifico haber atendido al señor
                                 <asp:Label ID="Label16" runat="server" Text="Victor Daniel Añazco Salazar" Font-Bold="true"></asp:Label>
                                     con número de cédula
-                                <asp:Label ID="Label17" runat="server" Text="172084771-2" Font-Bold="true"></asp:Label>, fue atendido en el dispensario médico 
-                                    institucional por presentar edema en parpado de ojo izquierdo, presencia de secreción purulenta, el antes mencionado se desempeña como 
+                                <asp:Label ID="Label17" runat="server" Text="172084771-2" Font-Bold="true"></asp:Label>, con número de Historia Clinica 
+                                <asp:Label ID="Label8" runat="server" Text="172084771-2" Font-Bold="true"></asp:Label>, domiciliado en el sector 
+                                <asp:Label ID="Label9" runat="server" Text="Comite del prueblo" Font-Bold="true"></asp:Label>, telefono
+                                <asp:Label ID="Label10" runat="server" Text="0987496326-2" Font-Bold="true"></asp:Label>, paciente fue atendido en el dispensario 
+                                    médico institucional por presentar 
+                                <asp:Label ID="Label11" runat="server" Text="dolor a nivel de L3 - L4" Font-Bold="true"></asp:Label>,
+                                <asp:Label ID="Label12" runat="server" Text="limitación y dolor a la deambulación" Font-Bold="true"></asp:Label>,
+                                <asp:Label ID="Label13" runat="server" Text="limitación funcional" Font-Bold="true"></asp:Label>, el antes 
+                                    mencionado se desempeña como 
                                 <asp:Label ID="Label18" runat="server" Text="Evaluador de Operaciones Zonal" Font-Bold="true"></asp:Label>
                                     en el 
                                 <asp:Label ID="Label19" runat="server" Text="Servicio Integrado de Seguridad ECU 911." Font-Bold="true"></asp:Label>
@@ -56,7 +63,7 @@
                                 <p class="font-14 mb-5" style="text-align: justify; font-family: Arial;">
                                     Diagnóstico: 
                                     <asp:Label ID="Label2" runat="server"
-                                        Text="Orzuelo y otras inflamaciones profundas del parpado CIE10: H000" Font-Bold="true">
+                                        Text="Lumbago con ciatica, no especificado CIE10:" Font-Bold="true">
                                     </asp:Label>
                                 </p>
                                 <p class="font-14 mb-5" style="text-align: justify; font-family: Arial;">
@@ -64,12 +71,36 @@
                                     <br />
                                     <br />
                                     <asp:Label ID="Label3" runat="server"
-                                        Text="•	Frío Local <br /> •	Analgésico, Antibiótico <br /> •	Reposo por 1 (uno) día desde el 
-                                        Lunes 31 (treinta y uno) de enero de 2022 hasta el Lunes 31 (treinta y uno) de enero de 2022."
-                                        Font-Bold="true">
+                                        Text="•	Calor local." Font-Bold="true">
+                                    </asp:Label>
+                                    <br />
+                                    <asp:Label ID="Label14" runat="server"
+                                        Text="• Evitar periodos prolongados de pie y sentado." Font-Bold="true">
+                                    </asp:Label>
+                                    <br />
+                                    <asp:Label ID="Label15" runat="server"
+                                        Text="•	Reposo en superficie dura." Font-Bold="true">
+                                    </asp:Label>
+                                    <br />
+                                    <asp:Label ID="Label20" runat="server"
+                                        Text="•	Descanso en posición boca arriba y lateral con apoyo." Font-Bold="true">
+                                    </asp:Label>
+                                    <br />
+                                    <asp:Label ID="Label21" runat="server"
+                                        Text="•	Valoración con especialidad (Traumatología)." Font-Bold="true">
+                                    </asp:Label>
+                                    <br />
+                                    <asp:Label ID="Label22" runat="server"
+                                        Text="•	Tratamiento analgésico y antiinflamatorio." Font-Bold="true">
+                                    </asp:Label>
+                                    <br />
+                                    <asp:Label ID="Label23" runat="server"
+                                        Text="•	Reposo por 01 (uno) dia desde el Viernes 08 (ocho) de abril de 2022 (dos mil veintidos)
+                                        hasta el Viernes 08 (ocho) de abril de 2022 (dos mil veintidos)." Font-Bold="true">
                                     </asp:Label>
                                 </p>
                                 <p class="font-14 mb-5" style="text-align: justify; font-family: Arial;">Es todo cuanto puedo certificar en honor a la verdad.</p>
+                                <br />
                                 <p class="font-14 mb-5 text-center" style="text-align: justify; font-family: Arial;">Atentamente,</p>
                                 <br />
                                 <br />

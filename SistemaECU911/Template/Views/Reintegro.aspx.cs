@@ -1,7 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using System.Web.Script.Services;
+using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using CapaDatos;
@@ -11,417 +15,499 @@ namespace SistemaECU911.Template.Views
 {
     public partial class Reintegro : System.Web.UI.Page
     {
-        //DataClassesECU911DataContext dc = new DataClassesECU911DataContext();
+        DataClassesECU911DataContext dc = new DataClassesECU911DataContext();
 
-        ////Objeto de la tabla personas
-        //private Tbl_Personas per = new Tbl_Personas();
+        private Tbl_Personas per = new Tbl_Personas();
 
-        ////A. Objeto de la tabla Datos del establecimiento Emp - Usu
-        //private Tbl_DatEstableEmpUsuReintegro datestable = new Tbl_DatEstableEmpUsuReintegro();
+        private Tbl_Reintegro reinte = new Tbl_Reintegro();
 
-        ////B. Objeto de la tabla MOTIVO CONSULTA 
-        //private Tbl_MotivoConsultaReintegro motconreintegro = new Tbl_MotivoConsultaReintegro();
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (!IsPostBack)
+            {
+                if (Request["cod"] != null)
+                {
+                    int codigo = Convert.ToInt32(Request["cod"]);
+                    per = CN_HistorialMedico.ObtenerPersonasxId(codigo);
+                    reinte = CN_Reintegro.ObtenerReintegroPer(codigo);
+                    btn_guardar.Text = "Actualizar";
 
-        ////C. Objeto de la tabla ENFERMEDAD ACTUAL
-        //private Tbl_EnfermedadActualReintegro enferactreintegro = new Tbl_EnfermedadActualReintegro();
+                    if (per != null)
+                    {
+                        //A
+                        txt_priNombre.Text = per.Per_priNombre.ToString();
+                        txt_segNombre.Text = per.Per_segNombre.ToString();
+                        txt_priApellido.Text = per.Per_priApellido.ToString();
+                        txt_segApellido.Text = per.Per_segApellido.ToString();
+                        txt_sexo.Text = per.Per_genero.ToString();
+                        txt_numHClinica.Text = per.Per_Cedula.ToString();
 
-        ////E. Objeto de la tabla EXAMEN FÍSICO REGIONAL
-        //private Tbl_ExaFisRegionalReintegro exafisregreintegro = new Tbl_ExaFisRegionalReintegro();
+                        if (reinte != null)
+                        {
+                            //A
+                            txt_fechaUltiDiaLaboral.Text = reinte.rein__fechUltDiaLaboral.ToString();
+                            txt_fechaReingreso.Text = reinte.rein_fechReingreso.ToString();
+                            txt_total.Text = reinte.rein_total.ToString();
+                            txt_causaSalida.Text = reinte.rein_causaSalida.ToString();
 
-        ////F. Objeto de la tabla RESULTADO DE EXAMENES GENERALES
-        //private Tbl_ResExaGenEspRiesTrabajoReintegro resexamenreintegro = new Tbl_ResExaGenEspRiesTrabajoReintegro();
+                            //B
+                            txt_motivoconsultareintegro.Text = reinte.rein_descripmotCon.ToString();
 
-        ////G. Objeto de la tabla DIAGNÓSTICO
-        //private Tbl_DiagnosticoReintegro diagreintegro = new Tbl_DiagnosticoReintegro();
+                            //C
+                            txt_enfermedadactualreintegro.Text = reinte.rein_descripenfActual.ToString();
 
-        ////H. Objeto de la tabla APTITUD MÉDICA PARA EL TRABAJO
-        //private Tbl_AptitudMedicaReintegro aptmedreintegro = new Tbl_AptitudMedicaReintegro();
+                            //E
+                            txt_cicatrices.Text = reinte.rein_cicatricesPiel.ToString();
+                            txt_tatuajes.Text = reinte.rein_tatuajesPiel.ToString();
+                            txt_pielyfaneras.Text = reinte.rein_pielFacerasPiel.ToString();
+                            txt_parpados.Text = reinte.rein_parpadosOjos.ToString();
+                            txt_conjuntivas.Text = reinte.rein_conjuntuvasOjos.ToString();
+                            txt_pupilas.Text = reinte.rein_pupilasOjos.ToString();
+                            txt_cornea.Text = reinte.rein_corneaOjos.ToString();
+                            txt_motilidad.Text = reinte.rein_motilidadOjos.ToString();
+                            txt_auditivoexterno.Text = reinte.rein_cAudiExtreOido.ToString();
+                            txt_pabellon.Text = reinte.rein_pabellonOido.ToString();
+                            txt_timpanos.Text = reinte.rein_timpanosOido.ToString();
+                            txt_labios.Text = reinte.rein_labiosOroFa.ToString();
+                            txt_lengua.Text = reinte.rein_lenguaOroFa.ToString();
+                            txt_faringe.Text = reinte.rein_faringeOroFa.ToString();
+                            txt_amigdalas.Text = reinte.rein_amigdalasOroFa.ToString();
+                            txt_dentadura.Text = reinte.rein_dentaduraOroFa.ToString();
+                            txt_tabique.Text = reinte.rein_tabiqueNariz.ToString();
+                            txt_cornetes.Text = reinte.rein_cornetesNariz.ToString();
+                            txt_mucosa.Text = reinte.rein_mucosasNariz.ToString();
+                            txt_senosparanasales.Text = reinte.rein_senosParanaNariz.ToString();
+                            txt_tiroides.Text = reinte.rein_tiroiMasasCuello.ToString();
+                            txt_movilidad.Text = reinte.rein_movilidadCuello.ToString();
+                            txt_mamas.Text = reinte.rein_mamasTorax.ToString();
+                            txt_corazon.Text = reinte.rein_corazonTorax.ToString();
+                            txt_pulmones.Text = reinte.rein_pulmonesTorax2.ToString();
+                            txt_parrillacostal.Text = reinte.rein_parriCostalTorax2.ToString();
+                            txt_visceras.Text = reinte.rein_viscerasAbdomen.ToString();
+                            txt_paredabdominal.Text = reinte.rein_paredAbdomiAbdomen.ToString();
+                            txt_flexibilidad.Text = reinte.rein_flexibilidadColumna.ToString();
+                            txt_desviacion.Text = reinte.rein_desviacionColumna.ToString();
+                            txt_dolor.Text = reinte.rein_dolorColumna.ToString();
+                            txt_pelvis.Text = reinte.rein_pelvisPelvis.ToString();
+                            txt_genitales.Text = reinte.rein_genitalesPelvis.ToString();
+                            txt_vascular.Text = reinte.rein_vascularExtre.ToString();
+                            txt_miembrosuperiores.Text = reinte.rein_miemSupeExtre.ToString();
+                            txt_miembrosinferiores.Text = reinte.rein_miemInfeExtre.ToString();
+                            txt_fuerza.Text = reinte.rein_fuerzaNeuro.ToString();
+                            txt_sensibilidad.Text = reinte.rein_sensibiNeuro.ToString();
+                            txt_marcha.Text = reinte.rein_marchaNeuro.ToString();
+                            txt_reflejos.Text = reinte.rein_refleNeuro.ToString();
+                            txt_obervexamenfisicoregional.Text = reinte.rein_observaexaFisRegional.ToString();
 
-        ////I. Objeto de la tabla RECOMENDACIONES Y/O TRATAMIENTO
-        //private Tbl_RecoTratamientoReintegro tratamientoreintegro = new Tbl_RecoTratamientoReintegro();
+                            //F
+                            txt_examen.Text = reinte.rein_examen.ToString();
+                            txt_fechaexamen.Text = reinte.rein_fecha.ToString();
+                            txt_resultadoexamen.Text = reinte.rein_resultados.ToString();
+                            txt_observacionexamen.Text = reinte.rein_observacionesResExaGenEspRiesTrabajo.ToString();
 
-        ////J. Objeto de la tabla DATOS DEL PROFESIONAL
-        //private Tbl_DatProfesionalReintegro datprofreintegro = new Tbl_DatProfesionalReintegro();
+                            //G
+                            txt_descripdiagnostico.Text = reinte.rein_descripcionDiagnostico.ToString();
+                            txt_cie.Text = reinte.rein_cie.ToString();
+                            txt_pre.Text = reinte.rein_pre.ToString();
+                            txt_def.Text = reinte.rein_def.ToString();
 
-        //protected void Page_Load(object sender, EventArgs e)
-        //{
-        //    if (!IsPostBack)
-        //    {
-        //        CargarDatosModificar();
-        //        cargarProfesional();
-        //    }
-        //}
+                            //H
+                            txt_apto.Text = reinte.rein_apto.ToString();
+                            txt_aptoobservacion.Text = reinte.rein_aptoObserva.ToString();
+                            txt_aptolimitacion.Text = reinte.rein_aptoLimi.ToString();
+                            txt_noapto.Text = reinte.rein_NoApto.ToString();
+                            txt_observacionaptitud.Text = reinte.rein_ObservAptMedica.ToString();
+                            txt_limitacionaptitud.Text = reinte.rein_LimitAptMedica.ToString();
+                            txt_reubicacionaptitud.Text = reinte.rein_ReubicaAptMedica.ToString();
 
-        //protected void txt_numHClinica_TextChanged(object sender, EventArgs e)
-        //{
-        //    per = CN_HistorialMedico.obtenerPersonasxCedula(Convert.ToInt32(txt_numHClinica.Text));
+                            //I
+                            txt_descripciontratamientoreintegro.Text = reinte.rein_descripcionRecoTratamiento.ToString();
 
-        //    if (per != null)
-        //    {
-        //        txt_priNombre.Text = per.Per_priNombre.ToString();
-        //        txt_segNombre.Text = per.Per_segNombre.ToString();
-        //        txt_priApellido.Text = per.Per_priApellido.ToString();
-        //        txt_segApellido.Text = per.Per_segApellido.ToString();
-        //        txt_sexo.Text = per.Per_genero.ToString();
-        //        txt_edad.Text = per.Per_fechNacimiento.ToString();
-        //    }
-        //}
+                            //J
+                            txt_fechahora.Text = reinte.rein_fecha_hora.ToString();
+                            ddl_profesional.SelectedValue = reinte.prof_id.ToString();
+                            txt_codigoDatProf.Text = reinte.rein_cod.ToString();
+                        }
+                    }                    
+                }
 
-        //private void CargarDatosModificar()
-        //{
-        //    try
-        //    {
-        //        if (Request["cod"] != null)
-        //        {
-        //            int codigo = Convert.ToInt32(Request["cod"]);
+                txt_fechahora.Text = DateTime.Now.ToString(" dd/MM/yyyy " + " HH:mm ");
+                cargarProfesional();
+            }
+        }
 
-        //            per = CN_HistorialMedico.ObtenerPersonasxId(codigo);
-        //            int perso = Convert.ToInt32(per.Per_id.ToString());
+        //Metodo obtener cedula por numero de HC REINTEGRO
+        [WebMethod]
+        [ScriptMethod]
+        public static List<string> ObtenerNumHClinica(string prefixText)
+        {
+            List<string> lista = new List<string>();
+            try
+            {
+                string oConn = @"Data Source=.;Initial Catalog=SistemaECU911;Integrated Security=True";
 
-        //            datestable = CN_Reintegro.obtenerDatEstEmpUsuReintegro(perso);
-        //            motconreintegro = CN_Reintegro.obtenerMotivoConsultaxPerReintegro(perso);
-        //            enferactreintegro = CN_Reintegro.obtenerEnferActxPerReintegro(perso);
-        //            exafisregreintegro = CN_Reintegro.obtenerExaFisRegxPerReintegro(perso);
-        //            resexamenreintegro = CN_Reintegro.obtenerResExaGenEspRiesTrabaxPerReintegro(perso);
-        //            diagreintegro = CN_Reintegro.obtenerDiagnosticoxPerReintegro(perso);
-        //            aptmedreintegro = CN_Reintegro.obtenerAptMedicaxPerReintegro(perso);
-        //            tratamientoreintegro = CN_Reintegro.obtenerTratamientoxPerReintegro(perso);
-        //            datprofreintegro = CN_Reintegro.obtenerDatosProfesionalxPerReintegro(perso);
+                SqlConnection con = new SqlConnection(oConn);
+                con.Open();
+                SqlCommand cmd = new SqlCommand("select top(10) Per_Cedula from Tbl_Personas where Per_Cedula LIKE + @Cedula + '%'", con);
+                cmd.Parameters.AddWithValue("@Cedula", prefixText);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
 
-        //            btn_guardareintegro.Visible = true;
+                IDataReader lector = cmd.ExecuteReader();
 
-        //            if (per != null || datestable != null || motconreintegro != null || enferactreintegro != null || exafisregreintegro != null ||
-        //                resexamenreintegro != null || diagreintegro != null || aptmedreintegro != null ||
-        //                tratamientoreintegro != null || datprofreintegro != null)
-        //            {
-        //                //A
-        //                txt_priNombre.Text = per.Per_priNombre.ToString();
-        //                txt_segNombre.Text = per.Per_segNombre.ToString();
-        //                txt_priApellido.Text = per.Per_priApellido.ToString();
-        //                txt_segApellido.Text = per.Per_segApellido.ToString();
-        //                txt_sexo.Text = per.Per_genero.ToString();
-        //                txt_numHClinica.Text = per.Per_Cedula.ToString();
+                while (lector.Read())
+                {
+                    lista.Add(lector.GetString(0));
+                }
 
-        //                //A
-        //                txt_fechaUltiDiaLaboral.Text = datestable.datEstable__fechUltDiaLaboral.ToString();
-        //                txt_fechaReingreso.Text = datestable.datEstable_fechReingreso.ToString();
-        //                txt_total.Text = datestable.datEstable_total.ToString();
-        //                txt_causaSalida.Text = datestable.datEstable_causaSalida.ToString();
+                lector.Close();
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex);
+                return null;
+            }
+        }
 
-        //                //B
-        //                txt_motivoconsultareintegro.Text = motconreintegro.motConReintegro_descrip.ToString();
+        protected void txt_numHClinica_TextChanged(object sender, EventArgs e)
+        {
+            ObtenerCedula();
+        }
 
-        //                //C
-        //                txt_enfermedadactualreintegro.Text = enferactreintegro.enfActualReintegro_descrip.ToString();
+        private void ObtenerCedula()
+        {
+            string cedula = txt_numHClinica.Text;
 
-        //                //E
-        //                txt_cicatrices.Text = exafisregreintegro.exaFisRegReintegro_cicatricesPiel.ToString();
-        //                txt_tatuajes.Text = exafisregreintegro.exaFisRegReintegro_tatuajesPiel.ToString();
-        //                txt_pielyfaneras.Text = exafisregreintegro.exaFisRegReintegro_pielFacerasPiel.ToString();
-        //                txt_parpados.Text = exafisregreintegro.exaFisRegReintegro_parpadosOjos.ToString();
-        //                txt_conjuntivas.Text = exafisregreintegro.exaFisRegReintegro_conjuntuvasOjos.ToString();
-        //                txt_pupilas.Text = exafisregreintegro.exaFisRegReintegro_pupilasOjos.ToString();
-        //                txt_cornea.Text = exafisregreintegro.exaFisRegReintegro_corneaOjos.ToString();
-        //                txt_motilidad.Text = exafisregreintegro.exaFisRegReintegro_motilidadOjos.ToString();
-        //                txt_auditivoexterno.Text = exafisregreintegro.exaFisRegReintegro_cAudiExtreOido.ToString();
-        //                txt_pabellon.Text = exafisregreintegro.exaFisRegReintegro_pabellonOido.ToString();
-        //                txt_timpanos.Text = exafisregreintegro.exaFisRegReintegro_timpanosOido.ToString();
-        //                txt_labios.Text = exafisregreintegro.exaFisRegReintegro_labiosOroFa.ToString();
-        //                txt_lengua.Text = exafisregreintegro.exaFisRegReintegro_lenguaOroFa.ToString();
-        //                txt_faringe.Text = exafisregreintegro.exaFisRegReintegro_faringeOroFa.ToString();
-        //                txt_amigdalas.Text = exafisregreintegro.exaFisRegReintegro_amigdalasOroFa.ToString();
-        //                txt_dentadura.Text = exafisregreintegro.exaFisRegReintegro_dentaduraOroFa.ToString();
-        //                txt_tabique.Text = exafisregreintegro.exaFisRegReintegro_tabiqueNariz.ToString();
-        //                txt_cornetes.Text = exafisregreintegro.exaFisRegReintegro_cornetesNariz.ToString();
-        //                txt_mucosa.Text = exafisregreintegro.exaFisRegReintegro_mucosasNariz.ToString();
-        //                txt_senosparanasales.Text = exafisregreintegro.exaFisRegReintegro_senosParanaNariz.ToString();
-        //                txt_tiroides.Text = exafisregreintegro.exaFisRegReintegro_tiroiMasasCuello.ToString();
-        //                txt_movilidad.Text = exafisregreintegro.exaFisRegReintegro_movilidadCuello.ToString();
-        //                txt_mamas.Text = exafisregreintegro.exaFisRegReintegro_mamasTorax.ToString();
-        //                txt_corazon.Text = exafisregreintegro.exaFisRegReintegro_corazonTorax.ToString();
-        //                txt_pulmones.Text = exafisregreintegro.exaFisRegReintegro_pulmonesTorax2.ToString();
-        //                txt_parrillacostal.Text = exafisregreintegro.exaFisRegReintegro_parriCostalTorax2.ToString();
-        //                txt_visceras.Text = exafisregreintegro.exaFisRegReintegro_viscerasAbdomen.ToString();
-        //                txt_paredabdominal.Text = exafisregreintegro.exaFisRegReintegro_paredAbdomiAbdomen.ToString();
-        //                txt_flexibilidad.Text = exafisregreintegro.exaFisRegReintegro_flexibilidadColumna.ToString();
-        //                txt_desviacion.Text = exafisregreintegro.exaFisRegReintegro_desviacionColumna.ToString();
-        //                txt_dolor.Text = exafisregreintegro.exaFisRegReintegro_dolorColumna.ToString();
-        //                txt_pelvis.Text = exafisregreintegro.exaFisRegReintegro_pelvisPelvis.ToString();
-        //                txt_genitales.Text = exafisregreintegro.exaFisRegReintegro_genitalesPelvis.ToString();
-        //                txt_vascular.Text = exafisregreintegro.exaFisRegReintegro_vascularExtre.ToString();
-        //                txt_miembrosuperiores.Text = exafisregreintegro.exaFisRegReintegro_miemSupeExtre.ToString();
-        //                txt_miembrosinferiores.Text = exafisregreintegro.exaFisRegReintegro_miemInfeExtre.ToString();
-        //                txt_fuerza.Text = exafisregreintegro.exaFisRegReintegro_fuerzaNeuro.ToString();
-        //                txt_sensibilidad.Text = exafisregreintegro.exaFisRegReintegro_sensibiNeuro.ToString();
-        //                txt_marcha.Text = exafisregreintegro.exaFisRegReintegro_marchaNeuro.ToString();
-        //                txt_reflejos.Text = exafisregreintegro.exaFisRegReintegro_refleNeuro.ToString();
-        //                txt_obervexamenfisicoregional.Text = exafisregreintegro.exaFisRegReintegro_observa.ToString();
+            var lista = from c in dc.Tbl_Personas
+                        where c.Per_Cedula == cedula
+                        select c;
 
-        //                //F
-        //                txt_examen.Text = resexamenreintegro.ResExaGenEspRiesTrabajoReintegro_examen.ToString();
-        //                txt_fechaexamen.Text = resexamenreintegro.ResExaGenEspRiesTrabajoReintegro_fecha.ToString();
-        //                txt_resultadoexamen.Text = resexamenreintegro.ResExaGenEspRiesTrabajoReintegro_resultados.ToString();
-        //                txt_observacionexamen.Text = resexamenreintegro.ResExaGenEspRiesTrabajoReintegro_observaciones.ToString();
+            foreach (var item in lista)
+            {
+                string priNombre = item.Per_priNombre;
+                txt_priNombre.Text = priNombre;
 
-        //                //G
-        //                txt_descripdiagnostico.Text = diagreintegro.DiagReintegro_descripcion.ToString();
-        //                txt_cie.Text = diagreintegro.DiagReintegro_cie.ToString();
-        //                txt_pre.Text = diagreintegro.DiagReintegro_pre.ToString();
-        //                txt_def.Text = diagreintegro.DiagReintegro_def.ToString();
+                string segNombre = item.Per_segNombre;
+                txt_segNombre.Text = segNombre;
 
-        //                //H
-        //                txt_apto.Text = aptmedreintegro.AptMedReintegro_apto.ToString();
-        //                txt_aptoobservacion.Text = aptmedreintegro.AptMedReintegro_aptoObserva.ToString();
-        //                txt_aptolimitacion.Text = aptmedreintegro.AptMedReintegro_aptoLimi.ToString();
-        //                txt_noapto.Text = aptmedreintegro.AptMedReintegro_NoApto.ToString();
-        //                txt_observacionaptitud.Text = aptmedreintegro.AptMedReintegro_Observ.ToString();
-        //                txt_limitacionaptitud.Text = aptmedreintegro.AptMedReintegro_Limit.ToString();
-        //                txt_reubicacionaptitud.Text = aptmedreintegro.AptMedReintegro_Reubica.ToString();
+                string priApellido = item.Per_priApellido;
+                txt_priApellido.Text = priApellido;
 
-        //                //I
-        //                txt_descripciontratamientoreintegro.Text = tratamientoreintegro.RecTraReintegro_descripcion.ToString();
+                string segApellido = item.Per_segApellido;
+                txt_segApellido.Text = segApellido;
 
-        //                //J
-        //                txt_fechaDatProf.Text = datprofreintegro.DatProfeReintegro_fecha_hora.ToString();
-        //                ddl_profesional.SelectedValue = datprofreintegro.prof_id.ToString();
-        //                txt_codigoDatProf.Text = datprofreintegro.DatProfeReintegro_cod.ToString();
+                string sexo = item.Per_genero;
+                txt_sexo.Text = sexo;
 
-        //            }
-        //            else
-        //            {
-        //                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Error')", true);
-        //            }
+                string edad = Convert.ToString(item.Per_fechNacimiento);
+                txt_edad.Text = edad;
+            }
+        }
 
-        //        }
-        //    }
-        //    catch (Exception)
-        //    {
-        //        ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos Guardados Incompletos')", true);
-        //    }
-        //}
+        //Metodo obtener codigo cie10
+        [WebMethod]
+        [ScriptMethod]
+        public static List<string> ObtenerCie10(string prefixText)
+        {
+            List<string> lista = new List<string>();
+            try
+            {
+                string oConn = @"Data Source=.;Initial Catalog=SistemaECU911;Integrated Security=True";
 
-        //private void guardar_modificar_datos(int perid, int datempusuperid, int motconperid, int enfactperid, int exafiregperid,
-        //    int resexgenperid, int diagperid, int aptmedperid, int traperid, int datproperid)
-        //{
-        //    if (perid == 0 || datempusuperid == 0 || motconperid == 0 || enfactperid == 0 || exafiregperid == 0
-        //        || resexgenperid == 0 || diagperid == 0 || aptmedperid == 0 || traperid == 0 || datproperid == 0)
-        //    {
-        //        GuardarReintegro();
-        //    }
-        //    else
-        //    {
-        //        per = CN_HistorialMedico.ObtenerPersonasxId(perid);
-        //        int perso = Convert.ToInt32(per.Per_id.ToString());
+                SqlConnection con = new SqlConnection(oConn);
+                con.Open();
+                SqlCommand cmd = new SqlCommand("select top(10) dec10 from cie10 where dec10 LIKE + @Name + '%'", con);
+                cmd.Parameters.AddWithValue("@Name", prefixText);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
 
-        //        motconreintegro = CN_Reintegro.obtenerMotivoConsultaxPerReintegro(perso);
-        //        enferactreintegro = CN_Reintegro.obtenerEnferActxPerReintegro(perso);
-        //        exafisregreintegro = CN_Reintegro.obtenerExaFisRegxPerReintegro(perso);
-        //        resexamenreintegro = CN_Reintegro.obtenerResExaGenEspRiesTrabaxPerReintegro(perso);
-        //        diagreintegro = CN_Reintegro.obtenerDiagnosticoxPerReintegro(perso);
-        //        aptmedreintegro = CN_Reintegro.obtenerAptMedicaxPerReintegro(perso);
-        //        tratamientoreintegro = CN_Reintegro.obtenerTratamientoxPerReintegro(perso);
-        //        datprofreintegro = CN_Reintegro.obtenerDatosProfesionalxPerReintegro(perso);
+                IDataReader lector = cmd.ExecuteReader();
 
-        //        if (per != null || motconreintegro != null || enferactreintegro != null || exafisregreintegro != null ||
-        //            resexamenreintegro != null || diagreintegro != null || aptmedreintegro != null ||
-        //            tratamientoreintegro != null || datprofreintegro != null)
-        //        {
-        //            //ModificarHistorial(per, emplant, antper, acctrabajo, enferprof, facriesgotractual, actvextralaboral,
-        //            //    exagenesperiespues, diagnostico, aptitudmedica);
-        //        }
+                while (lector.Read())
+                {
+                    lista.Add(lector.GetString(0));
+                }
 
-        //    }
-        //}
+                lector.Close();
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex);
+                return null;
+            }
+        }
 
-        //private void GuardarReintegro()
-        //{
-        //    try
-        //    {
-        //        per = CN_HistorialMedico.ObtenerIdPersonasxCedula(Convert.ToInt32(txt_numHClinica.Text));
+        protected void txt_descripdiagnostico_TextChanged(object sender, EventArgs e)
+        {
+            ObtenerCodigo();
+        }
 
-        //        int perso = Convert.ToInt32(per.Per_id.ToString());
+        private void ObtenerCodigo()
+        {
+            string descripcion = txt_descripdiagnostico.Text;
 
-        //        //A
-        //        datestable = new Tbl_DatEstableEmpUsuReintegro();
-        //        // B
-        //        motconreintegro = new Tbl_MotivoConsultaReintegro();
-        //        // C
-        //        enferactreintegro = new Tbl_EnfermedadActualReintegro();
-        //        // E
-        //        exafisregreintegro = new Tbl_ExaFisRegionalReintegro();
-        //        // F
-        //        resexamenreintegro = new Tbl_ResExaGenEspRiesTrabajoReintegro();
-        //        // G
-        //        diagreintegro = new Tbl_DiagnosticoReintegro();
-        //        // H
-        //        aptmedreintegro = new Tbl_AptitudMedicaReintegro();
-        //        // I
-        //        tratamientoreintegro = new Tbl_RecoTratamientoReintegro();
-        //        // J
-        //        datprofreintegro = new Tbl_DatProfesionalReintegro();
+            var lista = from c in dc.cie10
+                        where c.dec10 == descripcion
+                        select c;
 
-        //        //A. Captura de datos Datos Establecimiento
-        //        datestable.datEstable__fechUltDiaLaboral = Convert.ToDateTime(txt_fechaUltiDiaLaboral.Text);
-        //        datestable.datEstable_fechReingreso = Convert.ToDateTime(txt_fechaReingreso.Text);
-        //        datestable.datEstable_total = Convert.ToInt32(txt_total.Text);
-        //        datestable.datEstable_causaSalida = txt_causaSalida.Text;
-        //        datestable.Per_id = perso;
+            foreach (var item in lista)
+            {
+                string codigo = item.id10;
+                txt_cie.Text = codigo;
+            }
+        }
 
-        //        //B. Captura de datos Motivo de Consulta
-        //        motconreintegro.motConReintegro_descrip = txt_motivoconsultareintegro.Text;
-        //        motconreintegro.Per_id = perso;
+        private void GuardarReintegro()
+        {
+            try
+            {
+                per = CN_HistorialMedico.ObtenerIdPersonasxCedula(Convert.ToInt32(txt_numHClinica.Text));
 
-        //        //C. Captura de Datos Enfermedad Actual
-        //        enferactreintegro.enfActualReintegro_descrip = txt_enfermedadactualreintegro.Text;
-        //        enferactreintegro.Per_id = perso;
+                int perso = Convert.ToInt32(per.Per_id.ToString());
 
-        //        //E. Captura de Datos Examen Fisico Regional
-        //        exafisregreintegro.exaFisRegReintegro_cicatricesPiel = txt_cicatrices.Text;
-        //        exafisregreintegro.exaFisRegReintegro_tatuajesPiel = txt_tatuajes.Text;
-        //        exafisregreintegro.exaFisRegReintegro_pielFacerasPiel = txt_pielyfaneras.Text;
-        //        exafisregreintegro.exaFisRegReintegro_parpadosOjos = txt_parpados.Text;
-        //        exafisregreintegro.exaFisRegReintegro_conjuntuvasOjos = txt_conjuntivas.Text;
-        //        exafisregreintegro.exaFisRegReintegro_pupilasOjos = txt_pupilas.Text;
-        //        exafisregreintegro.exaFisRegReintegro_corneaOjos = txt_cornea.Text;
-        //        exafisregreintegro.exaFisRegReintegro_motilidadOjos = txt_motilidad.Text;
-        //        exafisregreintegro.exaFisRegReintegro_cAudiExtreOido = txt_auditivoexterno.Text;
-        //        exafisregreintegro.exaFisRegReintegro_pabellonOido = txt_pabellon.Text;
-        //        exafisregreintegro.exaFisRegReintegro_timpanosOido = txt_timpanos.Text;
-        //        exafisregreintegro.exaFisRegReintegro_labiosOroFa = txt_labios.Text;
-        //        exafisregreintegro.exaFisRegReintegro_lenguaOroFa = txt_lengua.Text;
-        //        exafisregreintegro.exaFisRegReintegro_faringeOroFa = txt_faringe.Text;
-        //        exafisregreintegro.exaFisRegReintegro_amigdalasOroFa = txt_amigdalas.Text;
-        //        exafisregreintegro.exaFisRegReintegro_dentaduraOroFa = txt_dentadura.Text;
-        //        exafisregreintegro.exaFisRegReintegro_tabiqueNariz = txt_tabique.Text;
-        //        exafisregreintegro.exaFisRegReintegro_cornetesNariz = txt_cornetes.Text;
-        //        exafisregreintegro.exaFisRegReintegro_mucosasNariz = txt_mucosa.Text;
-        //        exafisregreintegro.exaFisRegReintegro_senosParanaNariz = txt_senosparanasales.Text;
-        //        exafisregreintegro.exaFisRegReintegro_tiroiMasasCuello = txt_tiroides.Text;
-        //        exafisregreintegro.exaFisRegReintegro_movilidadCuello = txt_movilidad.Text;
-        //        exafisregreintegro.exaFisRegReintegro_mamasTorax = txt_mamas.Text;
-        //        exafisregreintegro.exaFisRegReintegro_corazonTorax = txt_corazon.Text;
-        //        exafisregreintegro.exaFisRegReintegro_pulmonesTorax2 = txt_pulmones.Text;
-        //        exafisregreintegro.exaFisRegReintegro_parriCostalTorax2 = txt_parrillacostal.Text;
-        //        exafisregreintegro.exaFisRegReintegro_viscerasAbdomen = txt_visceras.Text;
-        //        exafisregreintegro.exaFisRegReintegro_paredAbdomiAbdomen = txt_paredabdominal.Text;
-        //        exafisregreintegro.exaFisRegReintegro_flexibilidadColumna = txt_flexibilidad.Text;
-        //        exafisregreintegro.exaFisRegReintegro_desviacionColumna = txt_desviacion.Text;
-        //        exafisregreintegro.exaFisRegReintegro_dolorColumna = txt_dolor.Text;
-        //        exafisregreintegro.exaFisRegReintegro_pelvisPelvis = txt_pelvis.Text;
-        //        exafisregreintegro.exaFisRegReintegro_genitalesPelvis = txt_genitales.Text;
-        //        exafisregreintegro.exaFisRegReintegro_vascularExtre = txt_vascular.Text;
-        //        exafisregreintegro.exaFisRegReintegro_miemSupeExtre = txt_miembrosuperiores.Text;
-        //        exafisregreintegro.exaFisRegReintegro_miemInfeExtre = txt_miembrosinferiores.Text;
-        //        exafisregreintegro.exaFisRegReintegro_fuerzaNeuro = txt_fuerza.Text;
-        //        exafisregreintegro.exaFisRegReintegro_sensibiNeuro = txt_sensibilidad.Text;
-        //        exafisregreintegro.exaFisRegReintegro_marchaNeuro = txt_marcha.Text;
-        //        exafisregreintegro.exaFisRegReintegro_refleNeuro = txt_reflejos.Text;
-        //        exafisregreintegro.exaFisRegReintegro_observa = txt_obervexamenfisicoregional.Text;
-        //        exafisregreintegro.Per_id = perso;
+                reinte = new Tbl_Reintegro
+                {
+                    //A
+                    rein__fechUltDiaLaboral = Convert.ToDateTime(txt_fechaUltiDiaLaboral.Text),
+                    rein_fechReingreso = Convert.ToDateTime(txt_fechaReingreso.Text),
+                    rein_total = Convert.ToInt32(txt_total.Text),
+                    rein_causaSalida = txt_causaSalida.Text,
 
-        //        //F. Captura de Datos Tbl_ResExaGenEspRiesTrabajo
-        //        resexamenreintegro.ResExaGenEspRiesTrabajoReintegro_examen = txt_examen.Text;
-        //        resexamenreintegro.ResExaGenEspRiesTrabajoReintegro_fecha = Convert.ToDateTime(txt_fechaexamen.Text);
-        //        resexamenreintegro.ResExaGenEspRiesTrabajoReintegro_resultados = txt_resultadoexamen.Text;
-        //        resexamenreintegro.ResExaGenEspRiesTrabajoReintegro_observaciones = txt_observacionexamen.Text;
-        //        resexamenreintegro.Per_id = perso;
+                    //B.
+                    rein_descripmotCon = txt_motivoconsultareintegro.Text,
 
-        //        //G. Captura de Datos Tbl_Diagnostico
-        //        diagreintegro.DiagReintegro_descripcion = txt_descripdiagnostico.Text;
-        //        diagreintegro.DiagReintegro_cie = txt_cie.Text;
-        //        diagreintegro.DiagReintegro_pre = txt_pre.Text;
-        //        diagreintegro.DiagReintegro_def = txt_def.Text;
-        //        diagreintegro.Per_id = perso;
+                    //C.
+                    rein_descripenfActual = txt_enfermedadactualreintegro.Text,
 
-        //        //H.Captura de Datos Tbl_AptitudMedica
-        //        aptmedreintegro.AptMedReintegro_apto = txt_apto.Text;
-        //        aptmedreintegro.AptMedReintegro_aptoObserva = txt_aptoobservacion.Text;
-        //        aptmedreintegro.AptMedReintegro_aptoLimi = txt_aptolimitacion.Text;
-        //        aptmedreintegro.AptMedReintegro_NoApto = txt_noapto.Text;
-        //        aptmedreintegro.AptMedReintegro_Observ = txt_observacionaptitud.Text;
-        //        aptmedreintegro.AptMedReintegro_Limit = txt_limitacionaptitud.Text;
-        //        aptmedreintegro.AptMedReintegro_Reubica = txt_reubicacionaptitud.Text;
-        //        aptmedreintegro.Per_id = perso;
+                    //E.
+                    rein_cicatricesPiel = txt_cicatrices.Text,
+                    rein_tatuajesPiel = txt_tatuajes.Text,
+                    rein_pielFacerasPiel = txt_pielyfaneras.Text,
+                    rein_parpadosOjos = txt_parpados.Text,
+                    rein_conjuntuvasOjos = txt_conjuntivas.Text,
+                    rein_pupilasOjos = txt_pupilas.Text,
+                    rein_corneaOjos = txt_cornea.Text,
+                    rein_motilidadOjos = txt_motilidad.Text,
+                    rein_cAudiExtreOido = txt_auditivoexterno.Text,
+                    rein_pabellonOido = txt_pabellon.Text,
+                    rein_timpanosOido = txt_timpanos.Text,
+                    rein_labiosOroFa = txt_labios.Text,
+                    rein_lenguaOroFa = txt_lengua.Text,
+                    rein_faringeOroFa = txt_faringe.Text,
+                    rein_amigdalasOroFa = txt_amigdalas.Text,
+                    rein_dentaduraOroFa = txt_dentadura.Text,
+                    rein_tabiqueNariz = txt_tabique.Text,
+                    rein_cornetesNariz = txt_cornetes.Text,
+                    rein_mucosasNariz = txt_mucosa.Text,
+                    rein_senosParanaNariz = txt_senosparanasales.Text,
+                    rein_tiroiMasasCuello = txt_tiroides.Text,
+                    rein_movilidadCuello = txt_movilidad.Text,
+                    rein_mamasTorax = txt_mamas.Text,
+                    rein_corazonTorax = txt_corazon.Text,
+                    rein_pulmonesTorax2 = txt_pulmones.Text,
+                    rein_parriCostalTorax2 = txt_parrillacostal.Text,
+                    rein_viscerasAbdomen = txt_visceras.Text,
+                    rein_paredAbdomiAbdomen = txt_paredabdominal.Text,
+                    rein_flexibilidadColumna = txt_flexibilidad.Text,
+                    rein_desviacionColumna = txt_desviacion.Text,
+                    rein_dolorColumna = txt_dolor.Text,
+                    rein_pelvisPelvis = txt_pelvis.Text,
+                    rein_genitalesPelvis = txt_genitales.Text,
+                    rein_vascularExtre = txt_vascular.Text,
+                    rein_miemSupeExtre = txt_miembrosuperiores.Text,
+                    rein_miemInfeExtre = txt_miembrosinferiores.Text,
+                    rein_fuerzaNeuro = txt_fuerza.Text,
+                    rein_sensibiNeuro = txt_sensibilidad.Text,
+                    rein_marchaNeuro = txt_marcha.Text,
+                    rein_refleNeuro = txt_reflejos.Text,
+                    rein_observaexaFisRegional = txt_obervexamenfisicoregional.Text,
 
-        //        //I. Captura de Datos Recomendaciones y/o Tratamiento
-        //        tratamientoreintegro.RecTraReintegro_descripcion = txt_descripciontratamientoreintegro.Text;
-        //        tratamientoreintegro.Per_id = perso;
+                    //F.
+                    rein_examen = txt_examen.Text,
+                    rein_fecha = Convert.ToDateTime(txt_fechaexamen.Text),
+                    rein_resultados = txt_resultadoexamen.Text,
+                    rein_observacionesResExaGenEspRiesTrabajo = txt_observacionexamen.Text,
 
-        //        //J. Captura de Datos RProfesional
-        //        datprofreintegro.DatProfeReintegro_fecha_hora = Convert.ToDateTime(txt_fechaDatProf.Text);
-        //        datprofreintegro.prof_id = Convert.ToInt32(ddl_profesional.SelectedValue);
-        //        datprofreintegro.DatProfeReintegro_cod = txt_codigoDatProf.Text;
-        //        datprofreintegro.Per_id = perso;
+                    //G.
+                    rein_descripcionDiagnostico = txt_descripdiagnostico.Text,
+                    rein_cie = txt_cie.Text,
+                    rein_pre = txt_pre.Text,
+                    rein_def = txt_def.Text,
 
+                    //H.
+                    rein_apto = txt_apto.Text,
+                    rein_aptoObserva = txt_aptoobservacion.Text,
+                    rein_aptoLimi = txt_aptolimitacion.Text,
+                    rein_NoApto = txt_noapto.Text,
+                    rein_ObservAptMedica = txt_observacionaptitud.Text,
+                    rein_LimitAptMedica = txt_limitacionaptitud.Text,
+                    rein_ReubicaAptMedica = txt_reubicacionaptitud.Text,
 
-        //        //A. Metodo para guardar Datos Establecimiento
-        //        CN_Reintegro.guardarDatEstEmpreUsuarReintegro(datestable);
-        //        //B . Método para guardar Datos Motivo Consulta
-        //        CN_Reintegro.guardarMotivoConsultaReintegro(motconreintegro);
-        //        //F. Método de guardar Datos Enfermedad Actual
-        //        CN_Reintegro.guardarEnfermedadActualReintegro(enferactreintegro);
-        //        //I. Método de guardar Datos Examen Fisico Regional
-        //        CN_Reintegro.guardarExamenFisicoRegionalReintegro(exafisregreintegro);
-        //        //J. Método de guardar Datos Resul. Exam. General
-        //        CN_Reintegro.guardarExaGeneralReintegro(resexamenreintegro);
-        //        //K. Método de guardar Datos diagnostico
-        //        CN_Reintegro.guardarDiagnosticoReintegro(diagreintegro);
-        //        //L. Método de guardar Datos aptitud medica para el trabajo
-        //        CN_Reintegro.guardarAptiMediTrabajoReintegro(aptmedreintegro);
-        //        //M. Método de guardar Datos recomendaciones y tratamiento
-        //        CN_Reintegro.guardarRecomendacionesTratamientoReintegro(tratamientoreintegro);
-        //        //N. Método de guardar Datos del profesional
-        //        CN_Reintegro.guardarDatosProfesionalReintegro(datprofreintegro);
+                    //I.
+                    rein_descripcionRecoTratamiento = txt_descripciontratamientoreintegro.Text,
 
+                    //J.
+                    rein_fecha_hora = Convert.ToDateTime(txt_fechahora.Text),
+                    prof_id = Convert.ToInt32(ddl_profesional.SelectedValue),
+                    rein_cod = txt_codigoDatProf.Text,
+                    Per_id = perso
+                };
 
-        //        //Mensaje de confirmacion
-        //        ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos Guardados Exitosamente')", true);
+                CN_Reintegro.GuardarReintegro(reinte);
 
-        //        Response.Redirect("~/Template/Views/PacientesReintegro.aspx");
-        //        limpiar();
-        //    }
-        //    catch (Exception)
-        //    {
-        //        ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos No Guardados')", true);
-        //    }
+                //Mensaje de confirmacion
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos Guardados Exitosamente')", true);
 
-        //}
+                Response.Redirect("~/Template/Views/PacientesReintegro.aspx");
 
-        //private void cargarProfesional()
-        //{
-        //    List<Tbl_Profesional> listaProf = new List<Tbl_Profesional>();
-        //    listaProf = CN_HistorialMedico.ObtenerProfesional();
-        //    listaProf.Insert(0, new Tbl_Profesional() { prof_NomApe = "Seleccione ........" });
+            }
+            catch (Exception)
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos No Guardados')", true);
+            }
 
-        //    ddl_profesional.DataSource = listaProf;
-        //    ddl_profesional.DataTextField = "prof_NomApe";
-        //    ddl_profesional.DataValueField = "prof_id";
-        //    ddl_profesional.DataBind();
-        //}
+        }
 
-        //private void limpiar()
-        //{
+        private void ModificarReintegro(Tbl_Reintegro reinte)
+        {
+            try
+            {
+                //A
+                reinte.rein__fechUltDiaLaboral = Convert.ToDateTime(txt_fechaUltiDiaLaboral.Text);
+                reinte.rein_fechReingreso = Convert.ToDateTime(txt_fechaReingreso.Text);
+                reinte.rein_total = Convert.ToInt32(txt_total.Text);
+                reinte.rein_causaSalida = txt_causaSalida.Text;
 
-        //}
+                //B.
+                reinte.rein_descripmotCon = txt_motivoconsultareintegro.Text;
 
-        //protected void btn_guardareintegro_Click(object sender, EventArgs e)
-        //{
-        //    guardar_modificar_datos(Convert.ToInt32(Request["cod"]), Convert.ToInt32(per.Per_id.ToString()),
-        //    Convert.ToInt32(per.Per_id.ToString()), Convert.ToInt32(per.Per_id.ToString()), Convert.ToInt32(per.Per_id.ToString()),
-        //    Convert.ToInt32(per.Per_id.ToString()), Convert.ToInt32(per.Per_id.ToString()), Convert.ToInt32(per.Per_id.ToString()),
-        //    Convert.ToInt32(per.Per_id.ToString()), Convert.ToInt32(per.Per_id.ToString()));
-        //}
+                //C.
+                reinte.rein_descripenfActual = txt_enfermedadactualreintegro.Text;
 
-        //protected void btn_modificareintegro_Click(object sender, EventArgs e)
-        //{
+                //E.
+                reinte.rein_cicatricesPiel = txt_cicatrices.Text;
+                reinte.rein_tatuajesPiel = txt_tatuajes.Text;
+                reinte.rein_pielFacerasPiel = txt_pielyfaneras.Text;
+                reinte.rein_parpadosOjos = txt_parpados.Text;
+                reinte.rein_conjuntuvasOjos = txt_conjuntivas.Text;
+                reinte.rein_pupilasOjos = txt_pupilas.Text;
+                reinte.rein_corneaOjos = txt_cornea.Text;
+                reinte.rein_motilidadOjos = txt_motilidad.Text;
+                reinte.rein_cAudiExtreOido = txt_auditivoexterno.Text;
+                reinte.rein_pabellonOido = txt_pabellon.Text;
+                reinte.rein_timpanosOido = txt_timpanos.Text;
+                reinte.rein_labiosOroFa = txt_labios.Text;
+                reinte.rein_lenguaOroFa = txt_lengua.Text;
+                reinte.rein_faringeOroFa = txt_faringe.Text;
+                reinte.rein_amigdalasOroFa = txt_amigdalas.Text;
+                reinte.rein_dentaduraOroFa = txt_dentadura.Text;
+                reinte.rein_tabiqueNariz = txt_tabique.Text;
+                reinte.rein_cornetesNariz = txt_cornetes.Text;
+                reinte.rein_mucosasNariz = txt_mucosa.Text;
+                reinte.rein_senosParanaNariz = txt_senosparanasales.Text;
+                reinte.rein_tiroiMasasCuello = txt_tiroides.Text;
+                reinte.rein_movilidadCuello = txt_movilidad.Text;
+                reinte.rein_mamasTorax = txt_mamas.Text;
+                reinte.rein_corazonTorax = txt_corazon.Text;
+                reinte.rein_pulmonesTorax2 = txt_pulmones.Text;
+                reinte.rein_parriCostalTorax2 = txt_parrillacostal.Text;
+                reinte.rein_viscerasAbdomen = txt_visceras.Text;
+                reinte.rein_paredAbdomiAbdomen = txt_paredabdominal.Text;
+                reinte.rein_flexibilidadColumna = txt_flexibilidad.Text;
+                reinte.rein_desviacionColumna = txt_desviacion.Text;
+                reinte.rein_dolorColumna = txt_dolor.Text;
+                reinte.rein_pelvisPelvis = txt_pelvis.Text;
+                reinte.rein_genitalesPelvis = txt_genitales.Text;
+                reinte.rein_vascularExtre = txt_vascular.Text;
+                reinte.rein_miemSupeExtre = txt_miembrosuperiores.Text;
+                reinte.rein_miemInfeExtre = txt_miembrosinferiores.Text;
+                reinte.rein_fuerzaNeuro = txt_fuerza.Text;
+                reinte.rein_sensibiNeuro = txt_sensibilidad.Text;
+                reinte.rein_marchaNeuro = txt_marcha.Text;
+                reinte.rein_refleNeuro = txt_reflejos.Text;
+                reinte.rein_observaexaFisRegional = txt_obervexamenfisicoregional.Text;
 
-        //}
+                //F.
+                reinte.rein_examen = txt_examen.Text;
+                reinte.rein_fecha = Convert.ToDateTime(txt_fechaexamen.Text);
+                reinte.rein_resultados = txt_resultadoexamen.Text;
+                reinte.rein_observacionesResExaGenEspRiesTrabajo = txt_observacionexamen.Text;
 
-        //protected void btn_cancelareintegro_Click(object sender, EventArgs e)
-        //{
-        //    Response.Redirect("~/Template/Views/Inicio.aspx");
-        //}
+                //G.
+                reinte.rein_descripcionDiagnostico = txt_descripdiagnostico.Text;
+                reinte.rein_cie = txt_cie.Text;
+                reinte.rein_pre = txt_pre.Text;
+                reinte.rein_def = txt_def.Text;
 
+                //H.
+                reinte.rein_apto = txt_apto.Text;
+                reinte.rein_aptoObserva = txt_aptoobservacion.Text;
+                reinte.rein_aptoLimi = txt_aptolimitacion.Text;
+                reinte.rein_NoApto = txt_noapto.Text;
+                reinte.rein_ObservAptMedica = txt_observacionaptitud.Text;
+                reinte.rein_LimitAptMedica = txt_limitacionaptitud.Text;
+                reinte.rein_ReubicaAptMedica = txt_reubicacionaptitud.Text;
+
+                //I.
+                reinte.rein_descripcionRecoTratamiento = txt_descripciontratamientoreintegro.Text;
+
+                //J.
+                reinte.rein_fecha_hora = Convert.ToDateTime(txt_fechahora.Text);
+                reinte.prof_id = Convert.ToInt32(ddl_profesional.SelectedValue);
+                reinte.rein_cod = txt_codigoDatProf.Text;
+
+                CN_Reintegro.ModificarReintegro(reinte);
+
+                //Mensaje de confirmacion
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos Modificados Exitosamente')", true);
+
+                Response.Redirect("~/Template/Views/PacientesReintegro.aspx");
+            }
+            catch (Exception)
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos No Modificados')", true);
+            }
+        }
+
+        private void guardar_modificar_datos(int reintegro)
+        {
+            if (reintegro == 0)
+            {
+                GuardarReintegro();
+            }
+            else
+            {
+                reinte = CN_Reintegro.ObtenerReintegroPorId(reintegro);
+
+                if (per != null)
+                {
+                    ModificarReintegro(reinte);
+                }
+
+            }
+        }
+
+        protected void btn_guardar_Click(object sender, EventArgs e)
+        {
+            guardar_modificar_datos(Convert.ToInt32(Request["cod"]));
+        }
+
+        protected void btn_cancelar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Template/Views/Inicio.aspx");
+        }
+
+        private void cargarProfesional()
+        {
+            List<Tbl_Profesional> listaProf = new List<Tbl_Profesional>();
+            listaProf = CN_HistorialMedico.ObtenerProfesional();
+            listaProf.Insert(0, new Tbl_Profesional() { prof_NomApe = "Seleccione ........" });
+
+            ddl_profesional.DataSource = listaProf;
+            ddl_profesional.DataTextField = "prof_NomApe";
+            ddl_profesional.DataValueField = "prof_id";
+            ddl_profesional.DataBind();
+        }
 
     }
 }

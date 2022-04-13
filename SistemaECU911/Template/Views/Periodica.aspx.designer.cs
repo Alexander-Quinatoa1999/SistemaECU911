@@ -42,6 +42,15 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_numHClinica;
 
         /// <summary>
+        /// Control AutoCompleteExtender2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::AjaxControlToolkit.AutoCompleteExtender AutoCompleteExtender2;
+
+        /// <summary>
         /// Control txt_priApellido.
         /// </summary>
         /// <remarks>
@@ -3588,6 +3597,15 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_descripdiagnostico;
 
         /// <summary>
+        /// Control AutoCompleteExtender1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::AjaxControlToolkit.AutoCompleteExtender AutoCompleteExtender1;
+
+        /// <summary>
         /// Control txt_cie.
         /// </summary>
         /// <remarks>
@@ -3750,13 +3768,13 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_descripciontratamientoperiodica;
 
         /// <summary>
-        /// Control txt_fechaDatProf.
+        /// Control txt_fechahora.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_fechaDatProf;
+        protected global::System.Web.UI.WebControls.TextBox txt_fechahora;
 
         /// <summary>
         /// Control ddl_profesional.
@@ -3786,30 +3804,21 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.Label Label24;
 
         /// <summary>
-        /// Control btn_guardarperiodica.
+        /// Control btn_guardar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_guardarperiodica;
+        protected global::System.Web.UI.WebControls.Button btn_guardar;
 
         /// <summary>
-        /// Control btn_modificarperiodica.
+        /// Control btn_cancelar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_modificarperiodica;
-
-        /// <summary>
-        /// Control btn_cancelarperiodica.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_cancelarperiodica;
+        protected global::System.Web.UI.WebControls.Button btn_cancelar;
     }
 }
