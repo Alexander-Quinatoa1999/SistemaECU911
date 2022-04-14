@@ -4195,6 +4195,8 @@ namespace CapaDatos
 		
 		private string _espec_estado;
 		
+		private EntitySet<Tbl_FichasMedicas> _Tbl_FichasMedicas;
+		
 		private EntitySet<Tbl_Inicial> _Tbl_Inicial;
 		
 		private EntitySet<Tbl_Periodica> _Tbl_Periodica;
@@ -4217,6 +4219,7 @@ namespace CapaDatos
 		
 		public Tbl_Especialidad()
 		{
+			this._Tbl_FichasMedicas = new EntitySet<Tbl_FichasMedicas>(new Action<Tbl_FichasMedicas>(this.attach_Tbl_FichasMedicas), new Action<Tbl_FichasMedicas>(this.detach_Tbl_FichasMedicas));
 			this._Tbl_Inicial = new EntitySet<Tbl_Inicial>(new Action<Tbl_Inicial>(this.attach_Tbl_Inicial), new Action<Tbl_Inicial>(this.detach_Tbl_Inicial));
 			this._Tbl_Periodica = new EntitySet<Tbl_Periodica>(new Action<Tbl_Periodica>(this.attach_Tbl_Periodica), new Action<Tbl_Periodica>(this.detach_Tbl_Periodica));
 			this._Tbl_Reintegro = new EntitySet<Tbl_Reintegro>(new Action<Tbl_Reintegro>(this.attach_Tbl_Reintegro), new Action<Tbl_Reintegro>(this.detach_Tbl_Reintegro));
@@ -4281,6 +4284,19 @@ namespace CapaDatos
 					this.SendPropertyChanged("espec_estado");
 					this.Onespec_estadoChanged();
 				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Especialidad_Tbl_FichasMedicas", Storage="_Tbl_FichasMedicas", ThisKey="espec_id", OtherKey="espec_id")]
+		public EntitySet<Tbl_FichasMedicas> Tbl_FichasMedicas
+		{
+			get
+			{
+				return this._Tbl_FichasMedicas;
+			}
+			set
+			{
+				this._Tbl_FichasMedicas.Assign(value);
 			}
 		}
 		
@@ -4354,6 +4370,18 @@ namespace CapaDatos
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+		
+		private void attach_Tbl_FichasMedicas(Tbl_FichasMedicas entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Especialidad = this;
+		}
+		
+		private void detach_Tbl_FichasMedicas(Tbl_FichasMedicas entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Especialidad = null;
 		}
 		
 		private void attach_Tbl_Inicial(Tbl_Inicial entity)
@@ -6498,15 +6526,19 @@ namespace CapaDatos
 		
 		private System.Nullable<System.DateTime> _fechaHora;
 		
-		private System.Nullable<int> _especialidadPro;
+		private System.Nullable<int> _espec_id;
 		
-		private System.Nullable<int> _profesional;
+		private System.Nullable<int> _prof_id;
 		
 		private string _codigoPro;
 		
 		private System.Nullable<int> _Per_id;
 		
 		private string _estado;
+		
+		private EntityRef<Tbl_Especialidad> _Tbl_Especialidad;
+		
+		private EntityRef<Tbl_Profesional> _Tbl_Profesional;
 		
 		private EntityRef<Tbl_Regiones> _Tbl_Regiones;
 		
@@ -6628,10 +6660,10 @@ namespace CapaDatos
     partial void OnprescripcionesChanged();
     partial void OnfechaHoraChanging(System.Nullable<System.DateTime> value);
     partial void OnfechaHoraChanged();
-    partial void OnespecialidadProChanging(System.Nullable<int> value);
-    partial void OnespecialidadProChanged();
-    partial void OnprofesionalChanging(System.Nullable<int> value);
-    partial void OnprofesionalChanged();
+    partial void Onespec_idChanging(System.Nullable<int> value);
+    partial void Onespec_idChanged();
+    partial void Onprof_idChanging(System.Nullable<int> value);
+    partial void Onprof_idChanged();
     partial void OncodigoProChanging(string value);
     partial void OncodigoProChanged();
     partial void OnPer_idChanging(System.Nullable<int> value);
@@ -6642,6 +6674,8 @@ namespace CapaDatos
 		
 		public Tbl_FichasMedicas()
 		{
+			this._Tbl_Especialidad = default(EntityRef<Tbl_Especialidad>);
+			this._Tbl_Profesional = default(EntityRef<Tbl_Profesional>);
 			this._Tbl_Regiones = default(EntityRef<Tbl_Regiones>);
 			this._Tbl_TipoExaFisRegional = default(EntityRef<Tbl_TipoExaFisRegional>);
 			OnCreated();
@@ -7775,42 +7809,50 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_especialidadPro", DbType="Int")]
-		public System.Nullable<int> especialidadPro
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_espec_id", DbType="Int")]
+		public System.Nullable<int> espec_id
 		{
 			get
 			{
-				return this._especialidadPro;
+				return this._espec_id;
 			}
 			set
 			{
-				if ((this._especialidadPro != value))
+				if ((this._espec_id != value))
 				{
-					this.OnespecialidadProChanging(value);
+					if (this._Tbl_Especialidad.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onespec_idChanging(value);
 					this.SendPropertyChanging();
-					this._especialidadPro = value;
-					this.SendPropertyChanged("especialidadPro");
-					this.OnespecialidadProChanged();
+					this._espec_id = value;
+					this.SendPropertyChanged("espec_id");
+					this.Onespec_idChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_profesional", DbType="Int")]
-		public System.Nullable<int> profesional
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_prof_id", DbType="Int")]
+		public System.Nullable<int> prof_id
 		{
 			get
 			{
-				return this._profesional;
+				return this._prof_id;
 			}
 			set
 			{
-				if ((this._profesional != value))
+				if ((this._prof_id != value))
 				{
-					this.OnprofesionalChanging(value);
+					if (this._Tbl_Profesional.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onprof_idChanging(value);
 					this.SendPropertyChanging();
-					this._profesional = value;
-					this.SendPropertyChanged("profesional");
-					this.OnprofesionalChanged();
+					this._prof_id = value;
+					this.SendPropertyChanged("prof_id");
+					this.Onprof_idChanged();
 				}
 			}
 		}
@@ -7871,6 +7913,74 @@ namespace CapaDatos
 					this._estado = value;
 					this.SendPropertyChanged("estado");
 					this.OnestadoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Especialidad_Tbl_FichasMedicas", Storage="_Tbl_Especialidad", ThisKey="espec_id", OtherKey="espec_id", IsForeignKey=true)]
+		public Tbl_Especialidad Tbl_Especialidad
+		{
+			get
+			{
+				return this._Tbl_Especialidad.Entity;
+			}
+			set
+			{
+				Tbl_Especialidad previousValue = this._Tbl_Especialidad.Entity;
+				if (((previousValue != value) 
+							|| (this._Tbl_Especialidad.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Tbl_Especialidad.Entity = null;
+						previousValue.Tbl_FichasMedicas.Remove(this);
+					}
+					this._Tbl_Especialidad.Entity = value;
+					if ((value != null))
+					{
+						value.Tbl_FichasMedicas.Add(this);
+						this._espec_id = value.espec_id;
+					}
+					else
+					{
+						this._espec_id = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Tbl_Especialidad");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Profesional_Tbl_FichasMedicas", Storage="_Tbl_Profesional", ThisKey="prof_id", OtherKey="prof_id", IsForeignKey=true)]
+		public Tbl_Profesional Tbl_Profesional
+		{
+			get
+			{
+				return this._Tbl_Profesional.Entity;
+			}
+			set
+			{
+				Tbl_Profesional previousValue = this._Tbl_Profesional.Entity;
+				if (((previousValue != value) 
+							|| (this._Tbl_Profesional.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Tbl_Profesional.Entity = null;
+						previousValue.Tbl_FichasMedicas.Remove(this);
+					}
+					this._Tbl_Profesional.Entity = value;
+					if ((value != null))
+					{
+						value.Tbl_FichasMedicas.Add(this);
+						this._prof_id = value.prof_id;
+					}
+					else
+					{
+						this._prof_id = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Tbl_Profesional");
 				}
 			}
 		}
@@ -37856,6 +37966,8 @@ namespace CapaDatos
 		
 		private EntitySet<Tbl_Certificado> _Tbl_Certificado;
 		
+		private EntitySet<Tbl_FichasMedicas> _Tbl_FichasMedicas;
+		
 		private EntitySet<Tbl_Inicial> _Tbl_Inicial;
 		
 		private EntitySet<Tbl_Periodica> _Tbl_Periodica;
@@ -37879,6 +37991,7 @@ namespace CapaDatos
 		public Tbl_Profesional()
 		{
 			this._Tbl_Certificado = new EntitySet<Tbl_Certificado>(new Action<Tbl_Certificado>(this.attach_Tbl_Certificado), new Action<Tbl_Certificado>(this.detach_Tbl_Certificado));
+			this._Tbl_FichasMedicas = new EntitySet<Tbl_FichasMedicas>(new Action<Tbl_FichasMedicas>(this.attach_Tbl_FichasMedicas), new Action<Tbl_FichasMedicas>(this.detach_Tbl_FichasMedicas));
 			this._Tbl_Inicial = new EntitySet<Tbl_Inicial>(new Action<Tbl_Inicial>(this.attach_Tbl_Inicial), new Action<Tbl_Inicial>(this.detach_Tbl_Inicial));
 			this._Tbl_Periodica = new EntitySet<Tbl_Periodica>(new Action<Tbl_Periodica>(this.attach_Tbl_Periodica), new Action<Tbl_Periodica>(this.detach_Tbl_Periodica));
 			this._Tbl_Reintegro = new EntitySet<Tbl_Reintegro>(new Action<Tbl_Reintegro>(this.attach_Tbl_Reintegro), new Action<Tbl_Reintegro>(this.detach_Tbl_Reintegro));
@@ -37956,6 +38069,19 @@ namespace CapaDatos
 			set
 			{
 				this._Tbl_Certificado.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Profesional_Tbl_FichasMedicas", Storage="_Tbl_FichasMedicas", ThisKey="prof_id", OtherKey="prof_id")]
+		public EntitySet<Tbl_FichasMedicas> Tbl_FichasMedicas
+		{
+			get
+			{
+				return this._Tbl_FichasMedicas;
+			}
+			set
+			{
+				this._Tbl_FichasMedicas.Assign(value);
 			}
 		}
 		
@@ -38038,6 +38164,18 @@ namespace CapaDatos
 		}
 		
 		private void detach_Tbl_Certificado(Tbl_Certificado entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Profesional = null;
+		}
+		
+		private void attach_Tbl_FichasMedicas(Tbl_FichasMedicas entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Profesional = this;
+		}
+		
+		private void detach_Tbl_FichasMedicas(Tbl_FichasMedicas entity)
 		{
 			this.SendPropertyChanging();
 			entity.Tbl_Profesional = null;

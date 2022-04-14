@@ -23,12 +23,7 @@
                                 <div class="col-auto">
 
                                     <asp:GridView ID="grvPacientes" OnRowCommand="grvPacientes_RowCommand" AutoGenerateColumns="false" Width="100%" CssClass="table table-hover text-center table-responsive" GridLines="None" runat="server" Style="margin-right: 0px">
-                                        <Columns>
-                                            <asp:TemplateField HeaderText="ID">
-                                                <ItemTemplate>
-                                                    <asp:Label ID="Per_Id" runat="server" Text='<%#Eval("Per_id")%>'></asp:Label>
-                                                </ItemTemplate>
-                                            </asp:TemplateField>
+                                        <Columns>                                            
                                             <asp:TemplateField HeaderText="Historia Clinica / Cedula">
                                                 <ItemTemplate>
                                                     <asp:Label ID="Per_CedulaHisCli" runat="server" Text='<%#Eval("Per_Cedula")%>'></asp:Label>
@@ -44,19 +39,24 @@
                                                     <asp:Label ID="Per_priApellido" runat="server" Text='<%#Eval("Per_priApellido")%>'></asp:Label>
                                                 </ItemTemplate>
                                             </asp:TemplateField>
-                                            <asp:TemplateField HeaderText="Fecha Nacimiento">
+                                            <asp:TemplateField HeaderText="Especialidad">
                                                 <ItemTemplate>
-                                                    <asp:Label ID="Per_priFechaNaci" runat="server" Text='<%#Eval("Per_fechNacimiento")%>'></asp:Label>
+                                                    <asp:Label ID="espec_nombre" runat="server" Text='<%#Eval("espec_nombre")%>'></asp:Label>
                                                 </ItemTemplate>
                                             </asp:TemplateField>
-                                            <asp:TemplateField HeaderText="Genero">
+                                            <asp:TemplateField HeaderText="Profesional">
                                                 <ItemTemplate>
-                                                    <asp:Label ID="Per_priGenero" runat="server" Text='<%#Eval("Per_genero")%>'></asp:Label>
+                                                    <asp:Label ID="prof_NomApe" runat="server" Text='<%#Eval("prof_NomApe")%>'></asp:Label>
+                                                </ItemTemplate>
+                                            </asp:TemplateField>
+                                            <asp:TemplateField HeaderText="Fecha y Hora">
+                                                <ItemTemplate>
+                                                    <asp:Label ID="fechaHora" runat="server" Text='<%#Eval("fechaHora")%>'></asp:Label>
                                                 </ItemTemplate>
                                             </asp:TemplateField>
                                             <asp:TemplateField ItemStyle-Width="17" HeaderStyle-Width="17" HeaderText="">
                                                 <ItemTemplate>
-                                                    <asp:LinkButton ID="lnbEditar" Width="16" Height="16" CommandArgument='<%#Eval("Per_id")%>' CommandName="Editar" runat="server"><i class="fas fa-pen"></i></asp:LinkButton>
+                                                    <asp:LinkButton ID="lnbEditar" Width="16" Height="16" CommandArgument='<%#Eval("idFichaMedica")%>' CommandName="Editar" runat="server"><i class="fas fa-pen"></i></asp:LinkButton>
                                                 </ItemTemplate>
                                                 <HeaderStyle Width="17px" />
                                                 <ItemStyle Width="17px" />

@@ -28,8 +28,11 @@ namespace SistemaECU911.Template.Views
                 if (Request["cod"] != null)
                 {
                     int codigo = Convert.ToInt32(Request["cod"]);
-                    per = CN_HistorialMedico.ObtenerPersonasxId(codigo);
-                    fichasmedicas = CN_HistorialMedico.ObtenerFichaMedicaPer(codigo);
+                    fichasmedicas = CN_HistorialMedico.ObtenerFichasMedicasPorId(codigo);
+                    int personasid = Convert.ToInt32(fichasmedicas.Per_id.ToString());
+                    per = CN_HistorialMedico.ObtenerPersonasxId(personasid);
+                    
+
                     btn_guardar.Text = "Actualizar";
 
                     if (per != null)
@@ -99,8 +102,8 @@ namespace SistemaECU911.Template.Views
                             txt_evolucion.Text = fichasmedicas.evolucion.ToString();
                             txt_prescipciones.Text = fichasmedicas.prescripciones.ToString();
                             txt_fechahora.Text = fichasmedicas.fechaHora.ToString();
-                            ddl_especialidad.SelectedValue = fichasmedicas.especialidadPro.ToString();
-                            ddl_profesional.SelectedValue = fichasmedicas.profesional.ToString();
+                            ddl_especialidad.SelectedValue = fichasmedicas.espec_id.ToString();
+                            ddl_profesional.SelectedValue = fichasmedicas.prof_id.ToString();
                             txt_codigo.Text = fichasmedicas.codigoPro.ToString();
                         }
                     }
@@ -297,8 +300,8 @@ namespace SistemaECU911.Template.Views
                     planTratamiento = txt_tratamiento.Text,
                     evolucion = txt_evolucion.Text,
                     prescripciones = txt_prescipciones.Text,
-                    especialidadPro = Convert.ToInt32(ddl_especialidad.SelectedValue),
-                    profesional = Convert.ToInt32(ddl_profesional.SelectedValue),
+                    espec_id = Convert.ToInt32(ddl_especialidad.SelectedValue),
+                    prof_id = Convert.ToInt32(ddl_profesional.SelectedValue),
                     codigoPro = txt_codigo.Text,
                     Per_id = perso
                 };
@@ -375,8 +378,8 @@ namespace SistemaECU911.Template.Views
                 fichasmedicas.planTratamiento = txt_tratamiento.Text;
                 fichasmedicas.evolucion = txt_evolucion.Text;
                 fichasmedicas.prescripciones = txt_prescipciones.Text;
-                fichasmedicas.especialidadPro = Convert.ToInt32(ddl_especialidad.SelectedValue);
-                fichasmedicas.profesional = Convert.ToInt32(ddl_profesional.SelectedValue);
+                fichasmedicas.espec_id = Convert.ToInt32(ddl_especialidad.SelectedValue);
+                fichasmedicas.prof_id = Convert.ToInt32(ddl_profesional.SelectedValue);
                 fichasmedicas.codigoPro = txt_codigo.Text;
 
                 CN_HistorialMedico.ModificarFichaMedica(fichasmedicas);

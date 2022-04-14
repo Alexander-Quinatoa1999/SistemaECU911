@@ -21,6 +21,12 @@ namespace CapaNegocio
             return listaEmp.ToList();
         }
 
+        public static List<Tbl_FichasMedicas> ObtenerFichasMedicas()
+        {
+            var listaFichMed = dc.Tbl_FichasMedicas.Where(fich => fich.estado == "A");
+            return listaFichMed.ToList();
+        }
+
         //metodo traer para todos los usuarios
         public static List<Tbl_Personas> ObtenerPersonas()
         {

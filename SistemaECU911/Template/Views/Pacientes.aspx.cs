@@ -24,31 +24,35 @@ namespace SistemaECU911.Template.Views
 
         private void cargarPaciente()
         {
-            List<Tbl_Personas> listaPer = new List<Tbl_Personas>();
-            listaPer = CN_HistorialMedico.ObtenerPersonas();
+            //List<Tbl_FichasMedicas> listaPer = new List<Tbl_FichasMedicas>();
+            //listaPer = CN_HistorialMedico.ObtenerFichasMedicas();
 
-            if (listaPer != null)
-            {
-                grvPacientes.DataSource = listaPer;
-                grvPacientes.DataBind();
-            }
-            //var query = from hm in dc.Tbl_HistorialMed
-            //            join p in dc.Tbl_Personas on hm.per_id equals p.Per_id  
-            //            join m in dc.Tbl_MotivoConsulta on hm.Mcon_id equals m.Mcon_id
-            //            select new
-            //            {
-            //                hm.histo_id,
-            //                hm.per_id,
-            //                hm.Mcon_id
-            //            };
-            
+            var query = from hm in dc.Tbl_FichasMedicas
+                        join p in dc.Tbl_Personas on hm.Per_id equals p.Per_id
+                        join e in dc.Tbl_Especialidad on hm.espec_id equals e.espec_id
+                        join pro in dc.Tbl_Profesional on hm.prof_id equals pro.prof_id
+                        orderby hm.fechaHora descending
+                        select new
+                        {
+                            hm.idFichaMedica,
+                            p.Per_Cedula,
+                            p.Per_priNombre,
+                            p.Per_priApellido,
+                            e.espec_nombre,
+                            pro.prof_NomApe,
+                            hm.fechaHora
+                        };
+
+            grvPacientes.DataSource = query.ToList();
+            grvPacientes.DataBind();
+
+
 
             //List<Tbl_Personas> listaPer = new List<Tbl_Personas>();
             //listaPer = CN_HistorialMedico.obtenerPersonas();
             //if (listaPer != null)
             //{
-            //    grvPacientes.DataSource = listaPer;
-            //    grvPacientes.DataBind();
+            //    
             //}
         }
 
