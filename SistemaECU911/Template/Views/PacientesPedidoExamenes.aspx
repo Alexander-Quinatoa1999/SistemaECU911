@@ -1,4 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Template/Views/Principal.Master" AutoEventWireup="true" CodeBehind="PacientesReintegro.aspx.cs" Inherits="SistemaECU911.Template.Views.PacientesReintegro" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Template/Views/Principal.Master" AutoEventWireup="true" CodeBehind="PacientesPedidoExamenes.aspx.cs" Inherits="SistemaECU911.Template.Views.PacientesPedidoExamenes" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -10,7 +11,7 @@
                 <div class="container">
                     <div class="card text-center">
                         <div class="card-header">
-                            LISTADO DE PACIENTES HC REINTEGRO
+                            LISTADO DE PEDIDO DE EXAMENES
                         </div>
                     </div>
                 </div>
@@ -20,7 +21,7 @@
                         <div class="container">
                             <div class="row justify-content-center">
                                 <div class="col-auto">
-                                    <asp:GridView ID="grvPacientesReintegro" OnRowCommand="grvPacientesReintegro_RowCommand" AutoGenerateColumns="false" Width="100%" CssClass="table table-hover text-center table-responsive" GridLines="None" runat="server" Style="margin-right: 0px">
+                                    <asp:GridView ID="grvPacientesPedidoExamenes" OnRowCommand="grvPacientesPedidoExamenes_RowCommand" AutoGenerateColumns="false" Width="100%" CssClass="table table-hover text-center table-responsive" GridLines="None" runat="server" Style="margin-right: 0px">
                                         <Columns>
                                             <asp:TemplateField HeaderText="Historia Clinica / Cedula">
                                                 <ItemTemplate>
@@ -37,24 +38,19 @@
                                                     <asp:Label ID="Per_priApellido" runat="server" Text='<%#Eval("Per_priApellido")%>'></asp:Label>
                                                 </ItemTemplate>
                                             </asp:TemplateField>
-                                            <asp:TemplateField HeaderText="Profesional">
-                                                <ItemTemplate>
-                                                    <asp:Label ID="prof_NomApe" runat="server" Text='<%#Eval("prof_NomApe")%>'></asp:Label>
-                                                </ItemTemplate>
-                                            </asp:TemplateField>
                                             <asp:TemplateField HeaderText="Fecha y Hora">
                                                 <ItemTemplate>
-                                                    <asp:Label ID="rein_fecha_hora" runat="server" Text='<%#Eval("rein_fecha_hora")%>'></asp:Label>
+                                                    <asp:Label ID="pedExa_fechaHora" runat="server" Text='<%#Eval("pedExa_fechaHora")%>'></asp:Label>
                                                 </ItemTemplate>
                                             </asp:TemplateField>
                                             <asp:TemplateField ItemStyle-Width="17" HeaderStyle-Width="17" HeaderText="">
                                                 <ItemTemplate>
-                                                    <asp:LinkButton ID="lnbEditar" Width="16" Height="16" CommandArgument='<%#Eval("rein_id")%>' CommandName="Editar" runat="server"><i class="fas fa-pen"></i></asp:LinkButton>
+                                                    <asp:LinkButton ID="lnbEditar" Width="16" Height="16" CommandArgument='<%#Eval("pedExa_id")%>' CommandName="Editar" runat="server"><i class="fas fa-pen"></i></asp:LinkButton>
                                                 </ItemTemplate>
                                                 <HeaderStyle Width="17px" />
                                                 <ItemStyle Width="17px" />
                                             </asp:TemplateField>
-                                        </Columns>                                        
+                                        </Columns>
                                     </asp:GridView>
                                 </div>
                             </div>
@@ -69,7 +65,7 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="footer" runat="server">
     <script>
         $('document').ready(function () {
-        $('#<%=grvPacientesReintegro.ClientID%>').prepend($("<thead></thead>").append($(this).find("tr:first"))).DataTable({
+        $('#<%=grvPacientesPedidoExamenes.ClientID%>').prepend($("<thead></thead>").append($(this).find("tr:first"))).DataTable({
         //scrollCollapse: true,
         //autoWidth: false,
         //responsive: true,

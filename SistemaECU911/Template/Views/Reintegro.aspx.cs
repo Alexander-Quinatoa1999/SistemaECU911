@@ -28,8 +28,11 @@ namespace SistemaECU911.Template.Views
                 if (Request["cod"] != null)
                 {
                     int codigo = Convert.ToInt32(Request["cod"]);
-                    per = CN_HistorialMedico.ObtenerPersonasxId(codigo);
-                    reinte = CN_Reintegro.ObtenerReintegroPer(codigo);
+                    reinte = CN_Reintegro.ObtenerReintegroPorId(codigo);
+                    int personasid = Convert.ToInt32(reinte.Per_id.ToString());
+                    per = CN_HistorialMedico.ObtenerPersonasxId(personasid);
+                    
+
                     btn_guardar.Text = "Actualizar";
 
                     if (per != null)

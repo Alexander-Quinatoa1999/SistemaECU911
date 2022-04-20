@@ -24,9 +24,6 @@ namespace SistemaECU911.Template.Views
 
         private void cargarPaciente()
         {
-            //List<Tbl_FichasMedicas> listaPer = new List<Tbl_FichasMedicas>();
-            //listaPer = CN_HistorialMedico.ObtenerFichasMedicas();
-
             var query = from hm in dc.Tbl_FichasMedicas
                         join p in dc.Tbl_Personas on hm.Per_id equals p.Per_id
                         join e in dc.Tbl_Especialidad on hm.espec_id equals e.espec_id
@@ -45,15 +42,6 @@ namespace SistemaECU911.Template.Views
 
             grvPacientes.DataSource = query.ToList();
             grvPacientes.DataBind();
-
-
-
-            //List<Tbl_Personas> listaPer = new List<Tbl_Personas>();
-            //listaPer = CN_HistorialMedico.obtenerPersonas();
-            //if (listaPer != null)
-            //{
-            //    
-            //}
         }
 
         protected void grvPacientes_RowCommand(object sender, GridViewCommandEventArgs e)

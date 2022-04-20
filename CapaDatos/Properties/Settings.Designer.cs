@@ -117,5 +117,15 @@ namespace CapaDatos.Properties {
                 return ((string)(this["SistemaECU911ConnectionString6"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=Ecu911Pasantes;Integrated Security=True")]
+        public string Ecu911PasantesConnectionString {
+            get {
+                return ((string)(this["Ecu911PasantesConnectionString"]));
+            }
+        }
     }
 }

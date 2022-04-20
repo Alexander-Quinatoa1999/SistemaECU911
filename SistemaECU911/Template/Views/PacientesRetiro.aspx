@@ -22,11 +22,6 @@
                                 <div class="col-auto">
                                     <asp:GridView ID="grvPacientesRetiro" OnRowCommand="grvPacientesRetiro_RowCommand" AutoGenerateColumns="false" Width="100%" CssClass="table table-hover text-center table-responsive" GridLines="None" runat="server" Style="margin-right: 0px">
                                         <Columns>
-                                            <asp:TemplateField HeaderText="ID">
-                                                <ItemTemplate>
-                                                    <asp:Label ID="Per_Id" runat="server" Text='<%#Eval("Per_id")%>'></asp:Label>
-                                                </ItemTemplate>
-                                            </asp:TemplateField>
                                             <asp:TemplateField HeaderText="Historia Clinica / Cedula">
                                                 <ItemTemplate>
                                                     <asp:Label ID="Per_CedulaHisCli" runat="server" Text='<%#Eval("Per_Cedula")%>'></asp:Label>
@@ -42,9 +37,19 @@
                                                     <asp:Label ID="Per_priApellido" runat="server" Text='<%#Eval("Per_priApellido")%>'></asp:Label>
                                                 </ItemTemplate>
                                             </asp:TemplateField>
+                                            <asp:TemplateField HeaderText="Profesional">
+                                                <ItemTemplate>
+                                                    <asp:Label ID="prof_NomApe" runat="server" Text='<%#Eval("prof_NomApe")%>'></asp:Label>
+                                                </ItemTemplate>
+                                            </asp:TemplateField>
+                                            <asp:TemplateField HeaderText="Fecha y Hora">
+                                                <ItemTemplate>
+                                                    <asp:Label ID="ret_fecha_hora" runat="server" Text='<%#Eval("ret_fecha_hora")%>'></asp:Label>
+                                                </ItemTemplate>
+                                            </asp:TemplateField>
                                             <asp:TemplateField ItemStyle-Width="17" HeaderStyle-Width="17" HeaderText="">
                                                 <ItemTemplate>
-                                                    <asp:LinkButton ID="lnbEditar" Width="16" Height="16" CommandArgument='<%#Eval("Per_id")%>' CommandName="Editar" runat="server"><i class="fas fa-pen"></i></asp:LinkButton>
+                                                    <asp:LinkButton ID="lnbEditar" Width="16" Height="16" CommandArgument='<%#Eval("ret_id")%>' CommandName="Editar" runat="server"><i class="fas fa-pen"></i></asp:LinkButton>
                                                 </ItemTemplate>
                                                 <HeaderStyle Width="17px" />
                                                 <ItemStyle Width="17px" />

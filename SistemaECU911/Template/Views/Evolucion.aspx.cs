@@ -29,9 +29,9 @@ namespace SistemaECU911.Template.Views
                 if (Request["cod"] != null)
                 {
                     int codigo = Convert.ToInt32(Request["cod"]);
-
-                    per = CN_HistorialMedico.ObtenerPersonasxId(codigo);
-                    evo = CN_Evolucion.ObtenerEvolucionPer(codigo);
+                    evo = CN_Evolucion.ObtenerEvolucionPorId(codigo);
+                    int personasid = Convert.ToInt32(evo.Per_id.ToString());
+                    per = CN_HistorialMedico.ObtenerPersonasxId(personasid);
 
                     btn_guardar.Text = "Actualizar";
 

@@ -9,9 +9,8 @@ using System.Web.UI.WebControls;
 
 namespace SistemaECU911.Template.Views
 {
-    public partial class PacientesPeriodica : System.Web.UI.Page
+    public partial class PacientesPedidoExamenes : System.Web.UI.Page
     {
-
         DataClassesECU911DataContext dc = new DataClassesECU911DataContext();
 
         protected void Page_Load(object sender, EventArgs e)
@@ -25,30 +24,28 @@ namespace SistemaECU911.Template.Views
 
         private void cargarPaciente()
         {
-            var query = from pe in dc.Tbl_Periodica
-                        join p in dc.Tbl_Personas on pe.Per_id equals p.Per_id
-                        join pro in dc.Tbl_Profesional on pe.prof_id equals pro.prof_id
-                        orderby pe.perio_fecha_hora descending
+            var query = from ped in dc.Tbl_PedidoExamenes
+                        join p in dc.Tbl_Personas on ped.Per_id equals p.Per_id
+                        orderby ped.pedExa_fechaHora descending
                         select new
                         {
-                            pe.perio_id,
+                            ped.pedExa_id,
                             p.Per_Cedula,
                             p.Per_priNombre,
                             p.Per_priApellido,
-                            pro.prof_NomApe,
-                            pe.perio_fecha_hora
+                            ped.pedExa_fechaHora
                         };
 
-            grvPacientesPeriodica.DataSource = query.ToList();
-            grvPacientesPeriodica.DataBind();
+            grvPacientesPedidoExamenes.DataSource = query.ToList();
+            grvPacientesPedidoExamenes.DataBind();
         }
 
-        protected void grvPacientesPeriodica_RowCommand(object sender, GridViewCommandEventArgs e)
+        protected void grvPacientesPedidoExamenes_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             int codigo = Convert.ToInt32(e.CommandArgument);
             if (e.CommandName == "Editar")
             {
-                Response.Redirect("~/Template/Views/Periodica.aspx?cod=" + codigo, true);
+                Response.Redirect("~/Template/Views/PedidoExamenes.aspx?cod=" + codigo, true);
             }
         }
     }

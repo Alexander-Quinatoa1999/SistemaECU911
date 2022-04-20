@@ -45,6 +45,7 @@ namespace CapaNegocio
             try
             {
                 evolucion.evo_estado = "A";
+                evolucion.evo_fechaHora = DateTime.Now;
                 dc.Tbl_Evolucion.InsertOnSubmit(evolucion);
                 dc.SubmitChanges();
             }

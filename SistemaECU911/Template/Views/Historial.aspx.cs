@@ -31,7 +31,6 @@ namespace SistemaECU911.Template.Views
                     fichasmedicas = CN_HistorialMedico.ObtenerFichasMedicasPorId(codigo);
                     int personasid = Convert.ToInt32(fichasmedicas.Per_id.ToString());
                     per = CN_HistorialMedico.ObtenerPersonasxId(personasid);
-                    
 
                     btn_guardar.Text = "Actualizar";
 

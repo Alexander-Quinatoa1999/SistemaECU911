@@ -24,14 +24,22 @@ namespace SistemaECU911.Template.Views
 
         private void cargarPaciente()
         {
-            List<Tbl_Personas> listaPer = new List<Tbl_Personas>();
-            listaPer = CN_HistorialMedico.ObtenerPersonas();
+            var query = from c in dc.Tbl_Certificado
+                        join p in dc.Tbl_Personas on c.Per_id equals p.Per_id
+                        join pro in dc.Tbl_Profesional on c.prof_id equals pro.prof_id
+                        orderby c.certi_fechaHora descending
+                        select new
+                        {
+                            c.certi_id,
+                            p.Per_Cedula,
+                            p.Per_priNombre,
+                            p.Per_priApellido,
+                            pro.prof_NomApe,
+                            c.certi_fechaHora
+                        };
 
-            if (listaPer != null)
-            {
-                grvPacientesCertificado.DataSource = listaPer;
-                grvPacientesCertificado.DataBind();
-            }
+            grvPacientesCertificado.DataSource = query.ToList();
+            grvPacientesCertificado.DataBind();
         }
 
         protected void grvPacientesCertificado_RowCommand(object sender, GridViewCommandEventArgs e)

@@ -144,9 +144,6 @@
                             </a>
                             <div class="collapse" id="form-elements1">
                                 <ul class="nav flex-column sub-menu">
-                                    
-                                    <li class="nav-item"><a class="nav-link" href="PacientesSocioEconomico.aspx">Socio Economico</a></li>
-
                                     <li class="nav-item"><a class="nav-link" href="Pacientes.aspx">Ficha Medica</a></li>
                                     <li class="nav-item"><a class="nav-link" href="PacientesInicial.aspx">Inicial</a></li>
                                     <li class="nav-item"><a class="nav-link" href="PacientesPeriodica.aspx">Periódica</a></li>
@@ -155,7 +152,7 @@
                                     <li class="nav-item"><a class="nav-link" href="PacientesCertificado.aspx">Certificado</a></li>
                                     <li class="nav-item"><a class="nav-link" href="PacientesInmunizaciones.aspx">Inmunizaciones</a></li>
                                     <li class="nav-item"><a class="nav-link" href="PacientesEvolucion.aspx">Evolución</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="PedidoExamenes.aspx">Pedido Examenes</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="PacientesPedidoExamenes.aspx">Pedido Examenes</a></li>
                                 </ul>
                             </div>
                         </li>
