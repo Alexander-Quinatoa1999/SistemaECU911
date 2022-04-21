@@ -2023,7 +2023,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_certi_fechaHora", DbType="Date")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_certi_fechaHora", DbType="DateTime")]
 		public System.Nullable<System.DateTime> certi_fechaHora
 		{
 			get
@@ -6337,7 +6337,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_evo_fechaHora", DbType="Date")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_evo_fechaHora", DbType="DateTime")]
 		public System.Nullable<System.DateTime> evo_fechaHora
 		{
 			get
@@ -24467,7 +24467,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_fechaHora", DbType="Date")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_fechaHora", DbType="DateTime")]
 		public System.Nullable<System.DateTime> inmu_fechaHora
 		{
 			get
@@ -28242,7 +28242,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_fechaHora", DbType="Date")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_fechaHora", DbType="DateTime")]
 		public System.Nullable<System.DateTime> pedExa_fechaHora
 		{
 			get
@@ -43960,6 +43960,8 @@ namespace CapaDatos
 		
 		private string _Socio_economico_General_Real_no;
 		
+		private System.Nullable<System.DateTime> _Socio_economico_fechaHora;
+		
 		private System.Nullable<int> _Per_id;
 		
 		private string _Socio_economico__estado;
@@ -47468,6 +47470,22 @@ namespace CapaDatos
 				if ((this._Socio_economico_General_Real_no != value))
 				{
 					this._Socio_economico_General_Real_no = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_fechaHora", DbType="DateTime")]
+		public System.Nullable<System.DateTime> Socio_economico_fechaHora
+		{
+			get
+			{
+				return this._Socio_economico_fechaHora;
+			}
+			set
+			{
+				if ((this._Socio_economico_fechaHora != value))
+				{
+					this._Socio_economico_fechaHora = value;
 				}
 			}
 		}
