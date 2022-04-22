@@ -53,22 +53,22 @@ namespace SistemaECU911.Template.Views
                             //C
                             txt_antCliQuiDescripcion.Text = perio.perio_descripcionAntCliQuirurgicos.ToString();
 
-                            txt_siConsuNociTabaHabToxi.Text = perio.perio_siConsuNocivosTabaco.ToString();
-                            txt_noConsuNociTabaHabToxi.Text = perio.perio_noConsuNocivosTabaco.ToString();
+                            //txt_siConsuNociTabaHabToxi.Text = perio.perio_siConsuNocivosTabaco.ToString();
+                            //txt_noConsuNociTabaHabToxi.Text = perio.perio_noConsuNocivosTabaco.ToString();
                             txt_tiemConConsuNociTabaHabToxi.Text = perio.perio_tiempoConsuConsuNocivosTabaco.ToString();
                             txt_cantiConsuNociTabaHabToxi.Text = perio.perio_cantidadConsuNocivosTabaco.ToString();
                             txt_exConsumiConsuNociTabaHabToxi.Text = perio.perio_exConsumiConsuNocivosTabaco.ToString();
                             txt_tiemAbstiConsuNociTabaHabToxi.Text = perio.perio_tiempoAbstiConsuNocivosTabaco.ToString();
 
-                            txt_siConsuNociAlcoHabToxi.Text = perio.perio_siConsuNocivosAlcohol.ToString();
-                            txt_noConsuNociAlcoHabToxi.Text = perio.perio_noConsuNocivosAlcohol.ToString();
+                            //txt_siConsuNociAlcoHabToxi.Text = perio.perio_siConsuNocivosAlcohol.ToString();
+                            //txt_noConsuNociAlcoHabToxi.Text = perio.perio_noConsuNocivosAlcohol.ToString();
                             txt_tiemConConsuNociAlcoHabToxi.Text = perio.perio_tiempoConsuConsuNocivosAlcohol.ToString();
                             txt_cantiConsuNociAlcoHabToxi.Text = perio.perio_cantidadConsuNocivosAlcohol.ToString();
                             txt_exConsumiConsuNociAlcoHabToxi.Text = perio.perio_exConsumiConsuNocivosAlcohol.ToString();
                             txt_tiemAbstiConsuNociAlcoHabToxi.Text = perio.perio_tiempoAbstiConsuNocivosAlcohol.ToString();
 
-                            txt_siConsuNociOtrasDroHabToxi.Text = perio.perio_siConsuNocivosOtrasDrogas.ToString();
-                            txt_noConsuNociOtrasDroHabToxi.Text = perio.perio_noConsuNocivosOtrasDrogas.ToString();
+                            //txt_siConsuNociOtrasDroHabToxi.Text = perio.perio_siConsuNocivosOtrasDrogas.ToString();
+                            //txt_noConsuNociOtrasDroHabToxi.Text = perio.perio_noConsuNocivosOtrasDrogas.ToString();
                             txt_tiemCon1ConsuNociOtrasDroHabToxi.Text = perio.perio_tiempoConsu1ConsuNocivosOtrasDrogas.ToString();
                             txt_canti1ConsuNociOtrasDroHabToxi.Text = perio.perio_cantidad1ConsuNocivosOtrasDrogas.ToString();
                             txt_exConsumi1ConsuNociOtrasDroHabToxi.Text = perio.perio_exConsumi1ConsuNocivosOtrasDrogas.ToString();
@@ -79,13 +79,13 @@ namespace SistemaECU911.Template.Views
                             txt_exConsumi2ConsuNociOtrasDroHabToxi.Text = perio.perio_exConsumi2ConsuNocivosOtrasDrogas.ToString();
                             txt_tiemAbsti2ConsuNociOtrasDroHabToxi.Text = perio.perio_tiempoAbsti2ConsuNocivosOtrasDrogas.ToString();
 
-                            txt_siEstVidaActFisiEstVida.Text = perio.perio_siEstiVidaActFisica.ToString();
-                            txt_noEstVidaActFisiEstVida.Text = perio.perio_noEstiVidaActFisica.ToString();
+                            //txt_siEstVidaActFisiEstVida.Text = perio.perio_siEstiVidaActFisica.ToString();
+                            //txt_noEstVidaActFisiEstVida.Text = perio.perio_noEstiVidaActFisica.ToString();
                             txt_cualEstVidaActFisiEstVida.Text = perio.perio_cualEstiVidaActFisica.ToString();
                             txt_tiemCanEstVidaActFisiEstVida.Text = perio.perio_tiem_cantEstiVidaActFisica.ToString();
 
-                            txt_siEstVidaMedHabiEstVida.Text = perio.perio_siEstiVidaMediHabitual.ToString();
-                            txt_noEstVidaMedHabiEstVida.Text = perio.perio_noEstiVidaMediHabitual.ToString();
+                            //txt_siEstVidaMedHabiEstVida.Text = perio.perio_siEstiVidaMediHabitual.ToString();
+                            //txt_noEstVidaMedHabiEstVida.Text = perio.perio_noEstiVidaMediHabitual.ToString();
                             txt_cual1EstVidaMedHabiEstVida.Text = perio.perio_cual1EstiVidaMediHabitual.ToString();
                             txt_tiemCan1EstVidaMedHabiEstVida.Text = perio.perio_tiem_cant1EstiVidaMediHabitual.ToString();
                             txt_cual2EstVidaMedHabiEstVida.Text = perio.perio_cual2EstiVidaMediHabitual.ToString();
@@ -95,27 +95,27 @@ namespace SistemaECU911.Template.Views
 
                             txt_incidentesperiodica.Text = perio.perio_descripIncidentes.ToString();
 
-                            txt_sicalificadotrabajo.Text = perio.perio_siCalificadoIESSAcciTrabajo.ToString();
+                            //txt_sicalificadotrabajo.Text = perio.perio_siCalificadoIESSAcciTrabajo.ToString();
                             txt_especificarcalificadotrabajo.Text = perio.perio_EspecifiCalificadoIESSAcciTrabajo.ToString();
-                            txt_nocalificadotrabajo.Text = perio.perio_noCalificadoIESSAcciTrabajo.ToString();
+                            //txt_nocalificadotrabajo.Text = perio.perio_noCalificadoIESSAcciTrabajo.ToString();
                             txt_fechacalificadotrabajo.Text = perio.perio_fechaCalificadoIESSAcciTrabajo.ToString();
                             txt_obsercalificadotrabajo.Text = perio.perio_observacionesAcciTrabajo.ToString();
 
-                            txt_sicalificadoprofesional.Text = perio.perio_siCalificadoIESSEnferProfesionales.ToString();
+                            //txt_sicalificadoprofesional.Text = perio.perio_siCalificadoIESSEnferProfesionales.ToString();
                             txt_especificarcalificadoprofesional.Text = perio.perio_EspecifiCalificadoIESSEnferProfesionales.ToString();
-                            txt_nocalificadoprofesional.Text = perio.perio_noCalificadoIESSEnferProfesionales.ToString();
+                            //txt_nocalificadoprofesional.Text = perio.perio_noCalificadoIESSEnferProfesionales.ToString();
                             txt_fechacalificadoprofesional.Text = perio.perio_fechaCalificadoIESSEnferProfesionales.ToString();
                             txt_obsercalificadoprofesional.Text = perio.perio_observacionesEnferProfesionales.ToString();
 
                             //D
-                            txt_enfermedadcardiovascular.Text = perio.perio_enfCarVas.ToString();
-                            txt_enfermedadmetabolica.Text = perio.perio_enfMeta.ToString();
-                            txt_enfermedadneurologica.Text = perio.perio_enfNeuro.ToString();
-                            txt_enfermedadoncologica.Text = perio.perio_enfOnco.ToString();
-                            txt_enfermedadinfecciosa.Text = perio.perio_enfInfe.ToString();
-                            txt_enfermedadhereditaria.Text = perio.perio_enfHereConge.ToString();
-                            txt_discapacidades.Text = perio.perio_discapa.ToString();
-                            txt_otrosenfer.Text = perio.perio_otros.ToString();
+                            //txt_enfermedadcardiovascular.Text = perio.perio_enfCarVas.ToString();
+                            //txt_enfermedadmetabolica.Text = perio.perio_enfMeta.ToString();
+                            //txt_enfermedadneurologica.Text = perio.perio_enfNeuro.ToString();
+                            //txt_enfermedadoncologica.Text = perio.perio_enfOnco.ToString();
+                            //txt_enfermedadinfecciosa.Text = perio.perio_enfInfe.ToString();
+                            //txt_enfermedadhereditaria.Text = perio.perio_enfHereConge.ToString();
+                            //txt_discapacidades.Text = perio.perio_discapa.ToString();
+                            //txt_otrosenfer.Text = perio.perio_otros.ToString();
                             txt_descripcionantefamiliares.Text = perio.perio_descripcionAntFamiliares.ToString();
 
                             //E
@@ -413,22 +413,22 @@ namespace SistemaECU911.Template.Views
                     //C.
                     perio_descripcionAntCliQuirurgicos = txt_antCliQuiDescripcion.Text,
 
-                    perio_siConsuNocivosTabaco = txt_siConsuNociTabaHabToxi.Text,
-                    perio_noConsuNocivosTabaco = txt_noConsuNociTabaHabToxi.Text,
+                    //perio_siConsuNocivosTabaco = txt_siConsuNociTabaHabToxi.Text,
+                    //perio_noConsuNocivosTabaco = txt_noConsuNociTabaHabToxi.Text,
                     perio_tiempoConsuConsuNocivosTabaco = txt_tiemConConsuNociTabaHabToxi.Text,
                     perio_cantidadConsuNocivosTabaco = txt_cantiConsuNociTabaHabToxi.Text,
                     perio_exConsumiConsuNocivosTabaco = txt_exConsumiConsuNociTabaHabToxi.Text,
                     perio_tiempoAbstiConsuNocivosTabaco = txt_tiemAbstiConsuNociTabaHabToxi.Text,
 
-                    perio_siConsuNocivosAlcohol = txt_siConsuNociAlcoHabToxi.Text,
-                    perio_noConsuNocivosAlcohol = txt_noConsuNociAlcoHabToxi.Text,
+                    //perio_siConsuNocivosAlcohol = txt_siConsuNociAlcoHabToxi.Text,
+                    //perio_noConsuNocivosAlcohol = txt_noConsuNociAlcoHabToxi.Text,
                     perio_tiempoConsuConsuNocivosAlcohol = txt_tiemConConsuNociAlcoHabToxi.Text,
                     perio_cantidadConsuNocivosAlcohol = txt_cantiConsuNociAlcoHabToxi.Text,
                     perio_exConsumiConsuNocivosAlcohol = txt_exConsumiConsuNociAlcoHabToxi.Text,
                     perio_tiempoAbstiConsuNocivosAlcohol = txt_tiemAbstiConsuNociAlcoHabToxi.Text,
 
-                    perio_siConsuNocivosOtrasDrogas = txt_siConsuNociOtrasDroHabToxi.Text,
-                    perio_noConsuNocivosOtrasDrogas = txt_noConsuNociOtrasDroHabToxi.Text,
+                    //perio_siConsuNocivosOtrasDrogas = txt_siConsuNociOtrasDroHabToxi.Text,
+                    //perio_noConsuNocivosOtrasDrogas = txt_noConsuNociOtrasDroHabToxi.Text,
                     perio_tiempoConsu1ConsuNocivosOtrasDrogas = txt_tiemCon1ConsuNociOtrasDroHabToxi.Text,
                     perio_cantidad1ConsuNocivosOtrasDrogas = txt_canti1ConsuNociOtrasDroHabToxi.Text,
                     perio_exConsumi1ConsuNocivosOtrasDrogas = txt_exConsumi1ConsuNociOtrasDroHabToxi.Text,
@@ -439,13 +439,13 @@ namespace SistemaECU911.Template.Views
                     perio_exConsumi2ConsuNocivosOtrasDrogas = txt_exConsumi2ConsuNociOtrasDroHabToxi.Text,
                     perio_tiempoAbsti2ConsuNocivosOtrasDrogas = txt_tiemAbsti2ConsuNociOtrasDroHabToxi.Text,
 
-                    perio_siEstiVidaActFisica = txt_siEstVidaActFisiEstVida.Text,
-                    perio_noEstiVidaActFisica = txt_noEstVidaActFisiEstVida.Text,
+                    //perio_siEstiVidaActFisica = txt_siEstVidaActFisiEstVida.Text,
+                    //perio_noEstiVidaActFisica = txt_noEstVidaActFisiEstVida.Text,
                     perio_cualEstiVidaActFisica = txt_cualEstVidaActFisiEstVida.Text,
                     perio_tiem_cantEstiVidaActFisica = txt_tiemCanEstVidaActFisiEstVida.Text,
 
-                    perio_siEstiVidaMediHabitual = txt_siEstVidaMedHabiEstVida.Text,
-                    perio_noEstiVidaMediHabitual = txt_noEstVidaMedHabiEstVida.Text,
+                    //perio_siEstiVidaMediHabitual = txt_siEstVidaMedHabiEstVida.Text,
+                    //perio_noEstiVidaMediHabitual = txt_noEstVidaMedHabiEstVida.Text,
                     perio_cual1EstiVidaMediHabitual = txt_cual1EstVidaMedHabiEstVida.Text,
                     perio_tiem_cant1EstiVidaMediHabitual = txt_tiemCan1EstVidaMedHabiEstVida.Text,
                     perio_cual2EstiVidaMediHabitual = txt_cual2EstVidaMedHabiEstVida.Text,
@@ -455,27 +455,27 @@ namespace SistemaECU911.Template.Views
 
                     perio_descripIncidentes = txt_incidentesperiodica.Text,
 
-                    perio_siCalificadoIESSAcciTrabajo = txt_sicalificadotrabajo.Text,
+                    //perio_siCalificadoIESSAcciTrabajo = txt_sicalificadotrabajo.Text,
                     perio_EspecifiCalificadoIESSAcciTrabajo = txt_especificarcalificadotrabajo.Text,
-                    perio_noCalificadoIESSAcciTrabajo = txt_nocalificadotrabajo.Text,
+                    //perio_noCalificadoIESSAcciTrabajo = txt_nocalificadotrabajo.Text,
                     perio_fechaCalificadoIESSAcciTrabajo = Convert.ToDateTime(txt_fechacalificadotrabajo.Text),
                     perio_observacionesAcciTrabajo = txt_obsercalificadotrabajo.Text,
 
-                    perio_siCalificadoIESSEnferProfesionales = txt_sicalificadoprofesional.Text,
+                    //perio_siCalificadoIESSEnferProfesionales = txt_sicalificadoprofesional.Text,
                     perio_EspecifiCalificadoIESSEnferProfesionales = txt_especificarcalificadoprofesional.Text,
-                    perio_noCalificadoIESSEnferProfesionales = txt_nocalificadoprofesional.Text,
+                    //perio_noCalificadoIESSEnferProfesionales = txt_nocalificadoprofesional.Text,
                     perio_fechaCalificadoIESSEnferProfesionales = Convert.ToDateTime(txt_fechacalificadoprofesional.Text),
                     perio_observacionesEnferProfesionales = txt_obsercalificadoprofesional.Text,
 
                     //D.
-                    perio_enfCarVas = txt_enfermedadcardiovascular.Text,
-                    perio_enfMeta = txt_enfermedadmetabolica.Text,
-                    perio_enfNeuro = txt_enfermedadneurologica.Text,
-                    perio_enfOnco = txt_enfermedadoncologica.Text,
-                    perio_enfInfe = txt_enfermedadinfecciosa.Text,
-                    perio_enfHereConge = txt_enfermedadhereditaria.Text,
-                    perio_discapa = txt_discapacidades.Text,
-                    perio_otros = txt_otrosenfer.Text,
+                    //perio_enfCarVas = txt_enfermedadcardiovascular.Text,
+                    //perio_enfMeta = txt_enfermedadmetabolica.Text,
+                    //perio_enfNeuro = txt_enfermedadneurologica.Text,
+                    //perio_enfOnco = txt_enfermedadoncologica.Text,
+                    //perio_enfInfe = txt_enfermedadinfecciosa.Text,
+                    //perio_enfHereConge = txt_enfermedadhereditaria.Text,
+                    //perio_discapa = txt_discapacidades.Text,
+                    //perio_otros = txt_otrosenfer.Text,
                     perio_descripcionAntFamiliares = txt_descripcionantefamiliares.Text,
 
                     //E.
@@ -657,22 +657,22 @@ namespace SistemaECU911.Template.Views
                 //C.
                 perio.perio_descripcionAntCliQuirurgicos = txt_antCliQuiDescripcion.Text;
 
-                perio.perio_siConsuNocivosTabaco = txt_siConsuNociTabaHabToxi.Text;
-                perio.perio_noConsuNocivosTabaco = txt_noConsuNociTabaHabToxi.Text;
+                //perio.perio_siConsuNocivosTabaco = txt_siConsuNociTabaHabToxi.Text;
+                //perio.perio_noConsuNocivosTabaco = txt_noConsuNociTabaHabToxi.Text;
                 perio.perio_tiempoConsuConsuNocivosTabaco = txt_tiemConConsuNociTabaHabToxi.Text;
                 perio.perio_cantidadConsuNocivosTabaco = txt_cantiConsuNociTabaHabToxi.Text;
                 perio.perio_exConsumiConsuNocivosTabaco = txt_exConsumiConsuNociTabaHabToxi.Text;
                 perio.perio_tiempoAbstiConsuNocivosTabaco = txt_tiemAbstiConsuNociTabaHabToxi.Text;
 
-                perio.perio_siConsuNocivosAlcohol = txt_siConsuNociAlcoHabToxi.Text;
-                perio.perio_noConsuNocivosAlcohol = txt_noConsuNociAlcoHabToxi.Text;
+                //perio.perio_siConsuNocivosAlcohol = txt_siConsuNociAlcoHabToxi.Text;
+                //perio.perio_noConsuNocivosAlcohol = txt_noConsuNociAlcoHabToxi.Text;
                 perio.perio_tiempoConsuConsuNocivosAlcohol = txt_tiemConConsuNociAlcoHabToxi.Text;
                 perio.perio_cantidadConsuNocivosAlcohol = txt_cantiConsuNociAlcoHabToxi.Text;
                 perio.perio_exConsumiConsuNocivosAlcohol = txt_exConsumiConsuNociAlcoHabToxi.Text;
                 perio.perio_tiempoAbstiConsuNocivosAlcohol = txt_tiemAbstiConsuNociAlcoHabToxi.Text;
 
-                perio.perio_siConsuNocivosOtrasDrogas = txt_siConsuNociOtrasDroHabToxi.Text;
-                perio.perio_noConsuNocivosOtrasDrogas = txt_noConsuNociOtrasDroHabToxi.Text;
+                //perio.perio_siConsuNocivosOtrasDrogas = txt_siConsuNociOtrasDroHabToxi.Text;
+                //perio.perio_noConsuNocivosOtrasDrogas = txt_noConsuNociOtrasDroHabToxi.Text;
                 perio.perio_tiempoConsu1ConsuNocivosOtrasDrogas = txt_tiemCon1ConsuNociOtrasDroHabToxi.Text;
                 perio.perio_cantidad1ConsuNocivosOtrasDrogas = txt_canti1ConsuNociOtrasDroHabToxi.Text;
                 perio.perio_exConsumi1ConsuNocivosOtrasDrogas = txt_exConsumi1ConsuNociOtrasDroHabToxi.Text;
@@ -683,13 +683,13 @@ namespace SistemaECU911.Template.Views
                 perio.perio_exConsumi2ConsuNocivosOtrasDrogas = txt_exConsumi2ConsuNociOtrasDroHabToxi.Text;
                 perio.perio_tiempoAbsti2ConsuNocivosOtrasDrogas = txt_tiemAbsti2ConsuNociOtrasDroHabToxi.Text;
 
-                perio.perio_siEstiVidaActFisica = txt_siEstVidaActFisiEstVida.Text;
-                perio.perio_noEstiVidaActFisica = txt_noEstVidaActFisiEstVida.Text;
+                //perio.perio_siEstiVidaActFisica = txt_siEstVidaActFisiEstVida.Text;
+                //perio.perio_noEstiVidaActFisica = txt_noEstVidaActFisiEstVida.Text;
                 perio.perio_cualEstiVidaActFisica = txt_cualEstVidaActFisiEstVida.Text;
                 perio.perio_tiem_cantEstiVidaActFisica = txt_tiemCanEstVidaActFisiEstVida.Text;
 
-                perio.perio_siEstiVidaMediHabitual = txt_siEstVidaMedHabiEstVida.Text;
-                perio.perio_noEstiVidaMediHabitual = txt_noEstVidaMedHabiEstVida.Text;
+                //perio.perio_siEstiVidaMediHabitual = txt_siEstVidaMedHabiEstVida.Text;
+                //perio.perio_noEstiVidaMediHabitual = txt_noEstVidaMedHabiEstVida.Text;
                 perio.perio_cual1EstiVidaMediHabitual = txt_cual1EstVidaMedHabiEstVida.Text;
                 perio.perio_tiem_cant1EstiVidaMediHabitual = txt_tiemCan1EstVidaMedHabiEstVida.Text;
                 perio.perio_cual2EstiVidaMediHabitual = txt_cual2EstVidaMedHabiEstVida.Text;
@@ -699,27 +699,27 @@ namespace SistemaECU911.Template.Views
 
                 perio.perio_descripIncidentes = txt_incidentesperiodica.Text;
 
-                perio.perio_siCalificadoIESSAcciTrabajo = txt_sicalificadotrabajo.Text;
+                //perio.perio_siCalificadoIESSAcciTrabajo = txt_sicalificadotrabajo.Text;
                 perio.perio_EspecifiCalificadoIESSAcciTrabajo = txt_especificarcalificadotrabajo.Text;
-                perio.perio_noCalificadoIESSAcciTrabajo = txt_nocalificadotrabajo.Text;
+                //perio.perio_noCalificadoIESSAcciTrabajo = txt_nocalificadotrabajo.Text;
                 perio.perio_fechaCalificadoIESSAcciTrabajo = Convert.ToDateTime(txt_fechacalificadotrabajo.Text);
                 perio.perio_observacionesAcciTrabajo = txt_obsercalificadotrabajo.Text;
 
-                perio.perio_siCalificadoIESSEnferProfesionales = txt_sicalificadoprofesional.Text;
+                //perio.perio_siCalificadoIESSEnferProfesionales = txt_sicalificadoprofesional.Text;
                 perio.perio_EspecifiCalificadoIESSEnferProfesionales = txt_especificarcalificadoprofesional.Text;
-                perio.perio_noCalificadoIESSEnferProfesionales = txt_nocalificadoprofesional.Text;
+                //perio.perio_noCalificadoIESSEnferProfesionales = txt_nocalificadoprofesional.Text;
                 perio.perio_fechaCalificadoIESSEnferProfesionales = Convert.ToDateTime(txt_fechacalificadoprofesional.Text);
                 perio.perio_observacionesEnferProfesionales = txt_obsercalificadoprofesional.Text;
 
                 //D.
-                perio.perio_enfCarVas = txt_enfermedadcardiovascular.Text;
-                perio.perio_enfMeta = txt_enfermedadmetabolica.Text;
-                perio.perio_enfNeuro = txt_enfermedadneurologica.Text;
-                perio.perio_enfOnco = txt_enfermedadoncologica.Text;
-                perio.perio_enfInfe = txt_enfermedadinfecciosa.Text;
-                perio.perio_enfHereConge = txt_enfermedadhereditaria.Text;
-                perio.perio_discapa = txt_discapacidades.Text;
-                perio.perio_otros = txt_otrosenfer.Text;
+                //perio.perio_enfCarVas = txt_enfermedadcardiovascular.Text;
+                //perio.perio_enfMeta = txt_enfermedadmetabolica.Text;
+                //perio.perio_enfNeuro = txt_enfermedadneurologica.Text;
+                //perio.perio_enfOnco = txt_enfermedadoncologica.Text;
+                //perio.perio_enfInfe = txt_enfermedadinfecciosa.Text;
+                //perio.perio_enfHereConge = txt_enfermedadhereditaria.Text;
+                //perio.perio_discapa = txt_discapacidades.Text;
+                //perio.perio_otros = txt_otrosenfer.Text;
                 perio.perio_descripcionAntFamiliares = txt_descripcionantefamiliares.Text;
 
                 //E.
