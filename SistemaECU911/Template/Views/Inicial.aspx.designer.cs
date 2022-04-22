@@ -186,49 +186,49 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_edad;
 
         /// <summary>
-        /// Control CheckBox4.
+        /// Control ckb_catolica.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox4;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_catolica;
 
         /// <summary>
-        /// Control CheckBox5.
+        /// Control ckb_evangelica.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox5;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_evangelica;
 
         /// <summary>
-        /// Control CheckBox6.
+        /// Control cbk_testigo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox6;
+        protected global::System.Web.UI.WebControls.CheckBox cbk_testigo;
 
         /// <summary>
-        /// Control CheckBox7.
+        /// Control cbk_mormona.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox7;
+        protected global::System.Web.UI.WebControls.CheckBox cbk_mormona;
 
         /// <summary>
-        /// Control CheckBox8.
+        /// Control cbk_otrareligion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox8;
+        protected global::System.Web.UI.WebControls.CheckBox cbk_otrareligion;
 
         /// <summary>
         /// Control txt_gruposanguineo.
@@ -339,112 +339,112 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.Label Label14;
 
         /// <summary>
-        /// Control CheckBox1.
+        /// Control cbk_lesbiana.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox1;
+        protected global::System.Web.UI.WebControls.CheckBox cbk_lesbiana;
 
         /// <summary>
-        /// Control CheckBox17.
+        /// Control cbk_gay.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox17;
+        protected global::System.Web.UI.WebControls.CheckBox cbk_gay;
 
         /// <summary>
-        /// Control CheckBox16.
+        /// Control cbk_bisexual.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox16;
+        protected global::System.Web.UI.WebControls.CheckBox cbk_bisexual;
 
         /// <summary>
-        /// Control CheckBox15.
+        /// Control cbk_heterosexual.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox15;
+        protected global::System.Web.UI.WebControls.CheckBox cbk_heterosexual;
 
         /// <summary>
-        /// Control CheckBox14.
+        /// Control cbk_noRespondeOriSex.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox14;
+        protected global::System.Web.UI.WebControls.CheckBox cbk_noRespondeOriSex;
 
         /// <summary>
-        /// Control CheckBox13.
+        /// Control cbk_femenino.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox13;
+        protected global::System.Web.UI.WebControls.CheckBox cbk_femenino;
 
         /// <summary>
-        /// Control CheckBox12.
+        /// Control cbk_masculino.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox12;
+        protected global::System.Web.UI.WebControls.CheckBox cbk_masculino;
 
         /// <summary>
-        /// Control CheckBox11.
+        /// Control cbk_transfemenino.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox11;
+        protected global::System.Web.UI.WebControls.CheckBox cbk_transfemenino;
 
         /// <summary>
-        /// Control CheckBox10.
+        /// Control cbk_transmasculino.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox10;
+        protected global::System.Web.UI.WebControls.CheckBox cbk_transmasculino;
 
         /// <summary>
-        /// Control CheckBox9.
+        /// Control cbk_noRespondeIdeGen.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox9;
+        protected global::System.Web.UI.WebControls.CheckBox cbk_noRespondeIdeGen;
 
         /// <summary>
-        /// Control CheckBox3.
+        /// Control cbk_sidiscapacidad.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox3;
+        protected global::System.Web.UI.WebControls.CheckBox cbk_sidiscapacidad;
 
         /// <summary>
-        /// Control CheckBox2.
+        /// Control cbk_nodiscapacidad.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox2;
+        protected global::System.Web.UI.WebControls.CheckBox cbk_nodiscapacidad;
 
         /// <summary>
         /// Control txt_tipodiscapacidad.
@@ -600,40 +600,40 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_muertosAntGinObste;
 
         /// <summary>
-        /// Control CheckBox18.
+        /// Control ckb_siVidSexAntGinObste.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox18;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_siVidSexAntGinObste;
 
         /// <summary>
-        /// Control CheckBox19.
+        /// Control ckb_noVidSexAntGinObste.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox19;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_noVidSexAntGinObste;
 
         /// <summary>
-        /// Control CheckBox20.
+        /// Control ckb_siMetPlaniAntGinObste.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox20;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_siMetPlaniAntGinObste;
 
         /// <summary>
-        /// Control CheckBox21.
+        /// Control ckb_noMetPlaniAntGinObste.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox21;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_noMetPlaniAntGinObste;
 
         /// <summary>
         /// Control txt_tipoMetPlaniAntGinObste.
@@ -645,22 +645,22 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_tipoMetPlaniAntGinObste;
 
         /// <summary>
-        /// Control CheckBox22.
+        /// Control ckb_siPapaniAntGinObste.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox22;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_siPapaniAntGinObste;
 
         /// <summary>
-        /// Control CheckBox23.
+        /// Control ckb_noPapaniAntGinObste.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox23;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_noPapaniAntGinObste;
 
         /// <summary>
         /// Control txt_tiempoPapaniAntGinObste.
@@ -681,22 +681,22 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_resultadoPapaniAntGinObste;
 
         /// <summary>
-        /// Control CheckBox24.
+        /// Control ckb_siEcoMamaAntGinObste.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox24;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_siEcoMamaAntGinObste;
 
         /// <summary>
-        /// Control CheckBox25.
+        /// Control ckb_noEcoMamaAntGinObste.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox25;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_noEcoMamaAntGinObste;
 
         /// <summary>
         /// Control txt_tiempoEcoMamaAntGinObste.
@@ -717,22 +717,22 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_resultadoEcoMamaAntGinObste;
 
         /// <summary>
-        /// Control CheckBox26.
+        /// Control ckb_siColposAntGinObste.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox26;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_siColposAntGinObste;
 
         /// <summary>
-        /// Control CheckBox27.
+        /// Control ckb_noColposAntGinObste.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox27;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_noColposAntGinObste;
 
         /// <summary>
         /// Control txt_tiempoColposAntGinObste.
@@ -753,22 +753,22 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_resultadoColposAntGinObste;
 
         /// <summary>
-        /// Control CheckBox28.
+        /// Control ckb_siMamograAntGinObste.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox28;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_siMamograAntGinObste;
 
         /// <summary>
-        /// Control CheckBox29.
+        /// Control ckb_noMamograAntGinObste.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox29;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_noMamograAntGinObste;
 
         /// <summary>
         /// Control txt_tiempoMamograAntGinObste.
@@ -789,22 +789,22 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_resultadoMamograAntGinObste;
 
         /// <summary>
-        /// Control CheckBox30.
+        /// Control ckb_siExaRealiAntProstaAntReproMascu.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox30;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_siExaRealiAntProstaAntReproMascu;
 
         /// <summary>
-        /// Control CheckBox31.
+        /// Control ckb_noExaRealiAntProstaAntReproMascu.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox31;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_noExaRealiAntProstaAntReproMascu;
 
         /// <summary>
         /// Control txt_tiempoExaRealiAntProstaAntReproMascu.
@@ -825,22 +825,22 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_resultadoExaRealiAntProstaAntReproMascu;
 
         /// <summary>
-        /// Control CheckBox32.
+        /// Control ckb_siMetPlaniAntReproMascu.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox32;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_siMetPlaniAntReproMascu;
 
         /// <summary>
-        /// Control CheckBox33.
+        /// Control ckb_noMetPlaniAntReproMascu.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox33;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_noMetPlaniAntReproMascu;
 
         /// <summary>
         /// Control txt_tipo1MetPlaniAntReproMascu.
@@ -870,22 +870,22 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_muertosHijosAntReproMascu;
 
         /// <summary>
-        /// Control CheckBox44.
+        /// Control ckb_siExaRealiEcoProstaAntReproMascu.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox44;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_siExaRealiEcoProstaAntReproMascu;
 
         /// <summary>
-        /// Control CheckBox45.
+        /// Control ckb_noExaRealiEcoProstaAntReproMascu.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox45;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_noExaRealiEcoProstaAntReproMascu;
 
         /// <summary>
         /// Control txt_tiempoExaRealiEcoProstaAntReproMascu.
@@ -915,22 +915,22 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_tipo2MetPlaniAntReproMascu;
 
         /// <summary>
-        /// Control CheckBox34.
+        /// Control ckb_siConsuNociTabaHabToxi.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox34;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_siConsuNociTabaHabToxi;
 
         /// <summary>
-        /// Control CheckBox35.
+        /// Control ckb_noConsuNociTabaHabToxi.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox35;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_noConsuNociTabaHabToxi;
 
         /// <summary>
         /// Control txt_tiemConConsuNociTabaHabToxi.
@@ -969,22 +969,22 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_tiemAbstiConsuNociTabaHabToxi;
 
         /// <summary>
-        /// Control CheckBox36.
+        /// Control ckb_siConsuNociAlcoHabToxi.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox36;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_siConsuNociAlcoHabToxi;
 
         /// <summary>
-        /// Control CheckBox37.
+        /// Control ckb_noConsuNociAlcoHabToxi.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox37;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_noConsuNociAlcoHabToxi;
 
         /// <summary>
         /// Control txt_tiemConConsuNociAlcoHabToxi.
@@ -1023,22 +1023,22 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_tiemAbstiConsuNociAlcoHabToxi;
 
         /// <summary>
-        /// Control CheckBox38.
+        /// Control ckb_siConsuNociOtrasDroHabToxi.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox38;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_siConsuNociOtrasDroHabToxi;
 
         /// <summary>
-        /// Control CheckBox39.
+        /// Control ckb_noConsuNociOtrasDroHabToxi.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox39;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_noConsuNociOtrasDroHabToxi;
 
         /// <summary>
         /// Control txt_tiemCon1ConsuNociOtrasDroHabToxi.
@@ -1122,22 +1122,22 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_tiemAbsti2ConsuNociOtrasDroHabToxi;
 
         /// <summary>
-        /// Control CheckBox40.
+        /// Control ckb_siEstVidaActFisiEstVida.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox40;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_siEstVidaActFisiEstVida;
 
         /// <summary>
-        /// Control CheckBox41.
+        /// Control ckb_noEstVidaActFisiEstVida.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox41;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_noEstVidaActFisiEstVida;
 
         /// <summary>
         /// Control txt_cualEstVidaActFisiEstVida.
@@ -1158,22 +1158,22 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_tiemCanEstVidaActFisiEstVida;
 
         /// <summary>
-        /// Control CheckBox42.
+        /// Control ckb_siEstVidaMedHabiEstVida.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox42;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_siEstVidaMedHabiEstVida;
 
         /// <summary>
-        /// Control CheckBox43.
+        /// Control ckb_noEstVidaMedHabiEstVida.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox43;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_noEstVidaMedHabiEstVida;
 
         /// <summary>
         /// Control txt_cual1EstVidaMedHabiEstVida.
@@ -1320,58 +1320,58 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_tiempotrabajo;
 
         /// <summary>
-        /// Control CheckBox46.
+        /// Control ckb_fisico.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox46;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_fisico;
 
         /// <summary>
-        /// Control CheckBox51.
+        /// Control ckb_mecanico.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox51;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_mecanico;
 
         /// <summary>
-        /// Control CheckBox50.
+        /// Control ckb_quimico.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox50;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_quimico;
 
         /// <summary>
-        /// Control CheckBox49.
+        /// Control ckb_biologico.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox49;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_biologico;
 
         /// <summary>
-        /// Control CheckBox48.
+        /// Control ckb_ergonomico.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox48;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_ergonomico;
 
         /// <summary>
-        /// Control CheckBox47.
+        /// Control ckb_psicosocial.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox47;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_psicosocial;
 
         /// <summary>
         /// Control txt_obseantempleanteriores.
@@ -1419,58 +1419,58 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_tiempotrabajo2;
 
         /// <summary>
-        /// Control CheckBox53.
+        /// Control ckb_fisico2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox53;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_fisico2;
 
         /// <summary>
-        /// Control CheckBox58.
+        /// Control ckb_mecanico2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox58;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_mecanico2;
 
         /// <summary>
-        /// Control CheckBox57.
+        /// Control ckb_quimico2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox57;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_quimico2;
 
         /// <summary>
-        /// Control CheckBox56.
+        /// Control ckb_biologico2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox56;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_biologico2;
 
         /// <summary>
-        /// Control CheckBox55.
+        /// Control ckb_ergonomico2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox55;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_ergonomico2;
 
         /// <summary>
-        /// Control CheckBox54.
+        /// Control ckb_psicosocial2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox54;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_psicosocial2;
 
         /// <summary>
         /// Control txt_obseantempleanteriores2.
@@ -1518,58 +1518,58 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_tiempotrabajo3;
 
         /// <summary>
-        /// Control CheckBox52.
+        /// Control ckb_fisico3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox52;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_fisico3;
 
         /// <summary>
-        /// Control CheckBox63.
+        /// Control ckb_mecanico3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox63;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_mecanico3;
 
         /// <summary>
-        /// Control CheckBox62.
+        /// Control ckb_quimico3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox62;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_quimico3;
 
         /// <summary>
-        /// Control CheckBox61.
+        /// Control ckb_biologico3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox61;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_biologico3;
 
         /// <summary>
-        /// Control CheckBox60.
+        /// Control ckb_ergonomico3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox60;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_ergonomico3;
 
         /// <summary>
-        /// Control CheckBox59.
+        /// Control ckb_psicosocial3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox59;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_psicosocial3;
 
         /// <summary>
         /// Control txt_obseantempleanteriores3.
@@ -1617,58 +1617,58 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_tiempotrabajo4;
 
         /// <summary>
-        /// Control CheckBox64.
+        /// Control ckb_fisico4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox64;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_fisico4;
 
         /// <summary>
-        /// Control CheckBox69.
+        /// Control ckb_mecanico4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox69;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_mecanico4;
 
         /// <summary>
-        /// Control CheckBox68.
+        /// Control ckb_quimico4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox68;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_quimico4;
 
         /// <summary>
-        /// Control CheckBox67.
+        /// Control ckb_biologico4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox67;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_biologico4;
 
         /// <summary>
-        /// Control CheckBox66.
+        /// Control ckb_ergonomico4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox66;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_ergonomico4;
 
         /// <summary>
-        /// Control CheckBox65.
+        /// Control ckb_psicosocial4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox65;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_psicosocial4;
 
         /// <summary>
         /// Control txt_obseantempleanteriores4.
@@ -1680,13 +1680,13 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_obseantempleanteriores4;
 
         /// <summary>
-        /// Control CheckBox70.
+        /// Control ckb_siAccTrabDescrip.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox70;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_siAccTrabDescrip;
 
         /// <summary>
         /// Control txt_especificar.
@@ -1698,13 +1698,13 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_especificar;
 
         /// <summary>
-        /// Control CheckBox71.
+        /// Control ckb_noAccTrabDescrip.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox71;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_noAccTrabDescrip;
 
         /// <summary>
         /// Control txt_fecha.
@@ -1725,13 +1725,13 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_observaciones2;
 
         /// <summary>
-        /// Control CheckBox72.
+        /// Control ckb_siprofesional.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox72;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_siprofesional;
 
         /// <summary>
         /// Control txt_espeprofesional.
@@ -1743,13 +1743,13 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_espeprofesional;
 
         /// <summary>
-        /// Control CheckBox73.
+        /// Control ckb_noprofesional.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox73;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_noprofesional;
 
         /// <summary>
         /// Control txt_fechaprofesional.
@@ -1770,76 +1770,76 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_observaciones3;
 
         /// <summary>
-        /// Control CheckBox74.
+        /// Control ckb_enfermedadcardiovascular.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox74;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_enfermedadcardiovascular;
 
         /// <summary>
-        /// Control CheckBox77.
+        /// Control ckb_enfermedadmetabolica.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox77;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_enfermedadmetabolica;
 
         /// <summary>
-        /// Control CheckBox76.
+        /// Control ckb_enfermedadneurologica.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox76;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_enfermedadneurologica;
 
         /// <summary>
-        /// Control CheckBox75.
+        /// Control ckb_enfermedadoncologica.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox75;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_enfermedadoncologica;
 
         /// <summary>
-        /// Control CheckBox81.
+        /// Control ckb_enfermedadinfecciosa.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox81;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_enfermedadinfecciosa;
 
         /// <summary>
-        /// Control CheckBox80.
+        /// Control ckb_enfermedadhereditaria.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox80;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_enfermedadhereditaria;
 
         /// <summary>
-        /// Control CheckBox79.
+        /// Control ckb_discapacidades.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox79;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_discapacidades;
 
         /// <summary>
-        /// Control CheckBox78.
+        /// Control ckb_otrosenfer.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox78;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_otrosenfer;
 
         /// <summary>
         /// Control txt_descripcionantefamiliares.
@@ -1959,94 +1959,94 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_act;
 
         /// <summary>
-        /// Control CheckBox102.
+        /// Control ckb_tempaltas.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox102;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_tempaltas;
 
         /// <summary>
-        /// Control CheckBox103.
+        /// Control ckb_tempbajas.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox103;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_tempbajas;
 
         /// <summary>
-        /// Control CheckBox104.
+        /// Control ckb_radiacion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox104;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_radiacion;
 
         /// <summary>
-        /// Control CheckBox105.
+        /// Control ckb_noradiacion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox105;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_noradiacion;
 
         /// <summary>
-        /// Control CheckBox106.
+        /// Control ckb_ruido.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox106;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_ruido;
 
         /// <summary>
-        /// Control CheckBox107.
+        /// Control ckb_vibracion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox107;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_vibracion;
 
         /// <summary>
-        /// Control CheckBox108.
+        /// Control ckb_iluminacion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox108;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_iluminacion;
 
         /// <summary>
-        /// Control CheckBox109.
+        /// Control ckb_ventilacion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox109;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_ventilacion;
 
         /// <summary>
-        /// Control CheckBox110.
+        /// Control ckb_fluidoelectrico.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox110;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_fluidoelectrico;
 
         /// <summary>
-        /// Control CheckBox111.
+        /// Control ckb_otrosFisico.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox111;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_otrosFisico;
 
         /// <summary>
         /// Control txt_puestodetrabajo2.
@@ -2067,94 +2067,94 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_act2;
 
         /// <summary>
-        /// Control CheckBox113.
+        /// Control ckb_tempaltas2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox113;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_tempaltas2;
 
         /// <summary>
-        /// Control CheckBox114.
+        /// Control ckb_tempbajas2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox114;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_tempbajas2;
 
         /// <summary>
-        /// Control CheckBox115.
+        /// Control ckb_radiacion2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox115;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_radiacion2;
 
         /// <summary>
-        /// Control CheckBox116.
+        /// Control ckb_noradiacion2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox116;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_noradiacion2;
 
         /// <summary>
-        /// Control CheckBox117.
+        /// Control ckb_ruido2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox117;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_ruido2;
 
         /// <summary>
-        /// Control CheckBox118.
+        /// Control ckb_vibracion2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox118;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_vibracion2;
 
         /// <summary>
-        /// Control CheckBox119.
+        /// Control ckb_iluminacion2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox119;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_iluminacion2;
 
         /// <summary>
-        /// Control CheckBox120.
+        /// Control ckb_ventilacion2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox120;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_ventilacion2;
 
         /// <summary>
-        /// Control CheckBox121.
+        /// Control ckb_fluidoelectrico2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox121;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_fluidoelectrico2;
 
         /// <summary>
-        /// Control CheckBox122.
+        /// Control ckb_otrosFisico2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox122;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_otrosFisico2;
 
         /// <summary>
         /// Control txt_puestodetrabajo3.
@@ -2175,94 +2175,94 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_act3;
 
         /// <summary>
-        /// Control CheckBox124.
+        /// Control ckb_tempaltas3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox124;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_tempaltas3;
 
         /// <summary>
-        /// Control CheckBox125.
+        /// Control ckb_tempbajas3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox125;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_tempbajas3;
 
         /// <summary>
-        /// Control CheckBox126.
+        /// Control ckb_radiacion3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox126;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_radiacion3;
 
         /// <summary>
-        /// Control CheckBox127.
+        /// Control ckb_noradiacion3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox127;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_noradiacion3;
 
         /// <summary>
-        /// Control CheckBox128.
+        /// Control ckb_ruido3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox128;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_ruido3;
 
         /// <summary>
-        /// Control CheckBox129.
+        /// Control ckb_vibracion3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox129;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_vibracion3;
 
         /// <summary>
-        /// Control CheckBox130.
+        /// Control ckb_iluminacion3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox130;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_iluminacion3;
 
         /// <summary>
-        /// Control CheckBox131.
+        /// Control ckb_ventilacion3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox131;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_ventilacion3;
 
         /// <summary>
-        /// Control CheckBox132.
+        /// Control ckb_fluidoelectrico3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox132;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_fluidoelectrico3;
 
         /// <summary>
-        /// Control CheckBox133.
+        /// Control ckb_otrosFisico3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox133;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_otrosFisico3;
 
         /// <summary>
         /// Control txt_puestodetrabajo4.
@@ -2283,94 +2283,94 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_act4;
 
         /// <summary>
-        /// Control CheckBox123.
+        /// Control ckb_tempaltas4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox123;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_tempaltas4;
 
         /// <summary>
-        /// Control CheckBox112.
+        /// Control ckb_tempbajas4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox112;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_tempbajas4;
 
         /// <summary>
-        /// Control CheckBox134.
+        /// Control ckb_radiacion4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox134;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_radiacion4;
 
         /// <summary>
-        /// Control CheckBox135.
+        /// Control ckb_noradiacion4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox135;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_noradiacion4;
 
         /// <summary>
-        /// Control CheckBox136.
+        /// Control ckb_ruido4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox136;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_ruido4;
 
         /// <summary>
-        /// Control CheckBox137.
+        /// Control ckb_vibracion4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox137;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_vibracion4;
 
         /// <summary>
-        /// Control CheckBox138.
+        /// Control ckb_iluminacion4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox138;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_iluminacion4;
 
         /// <summary>
-        /// Control CheckBox139.
+        /// Control ckb_ventilacion4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox139;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_ventilacion4;
 
         /// <summary>
-        /// Control CheckBox140.
+        /// Control ckb_fluidoelectrico4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox140;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_fluidoelectrico4;
 
         /// <summary>
-        /// Control CheckBox141.
+        /// Control ckb_otrosFisico4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox141;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_otrosFisico4;
 
         /// <summary>
         /// Control Label31.
@@ -2589,868 +2589,868 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.Label Label54;
 
         /// <summary>
-        /// Control CheckBox142.
+        /// Control ckb_atrapmaquinas.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox142;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_atrapmaquinas;
 
         /// <summary>
-        /// Control CheckBox143.
+        /// Control ckb_atrapsuperficie.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox143;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_atrapsuperficie;
 
         /// <summary>
-        /// Control CheckBox144.
+        /// Control ckb_atrapobjetos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox144;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_atrapobjetos;
 
         /// <summary>
-        /// Control CheckBox145.
+        /// Control ckb_caidaobjetos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox145;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_caidaobjetos;
 
         /// <summary>
-        /// Control CheckBox146.
+        /// Control ckb_caidamisnivel.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox146;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_caidamisnivel;
 
         /// <summary>
-        /// Control CheckBox147.
+        /// Control ckb_caidadifnivel.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox147;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_caidadifnivel;
 
         /// <summary>
-        /// Control CheckBox148.
+        /// Control ckb_contaelectrico.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox148;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_contaelectrico;
 
         /// <summary>
-        /// Control CheckBox149.
+        /// Control ckb_contasuptrabajo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox149;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_contasuptrabajo;
 
         /// <summary>
-        /// Control CheckBox150.
+        /// Control ckb_proyparticulas.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox150;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_proyparticulas;
 
         /// <summary>
-        /// Control CheckBox151.
+        /// Control ckb_proyefluidos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox151;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_proyefluidos;
 
         /// <summary>
-        /// Control CheckBox152.
+        /// Control ckb_pinchazos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox152;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_pinchazos;
 
         /// <summary>
-        /// Control CheckBox153.
+        /// Control ckb_cortes.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox153;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_cortes;
 
         /// <summary>
-        /// Control CheckBox154.
+        /// Control ckb_atroporvehiculos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox154;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_atroporvehiculos;
 
         /// <summary>
-        /// Control CheckBox155.
+        /// Control ckb_choques.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox155;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_choques;
 
         /// <summary>
-        /// Control CheckBox156.
+        /// Control ckb_otrosMecanico.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox156;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_otrosMecanico;
 
         /// <summary>
-        /// Control CheckBox157.
+        /// Control ckb_solidos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox157;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_solidos;
 
         /// <summary>
-        /// Control CheckBox158.
+        /// Control ckb_polvos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox158;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_polvos;
 
         /// <summary>
-        /// Control CheckBox159.
+        /// Control ckb_humos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox159;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_humos;
 
         /// <summary>
-        /// Control CheckBox160.
+        /// Control ckb_liquidos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox160;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_liquidos;
 
         /// <summary>
-        /// Control CheckBox161.
+        /// Control ckb_vapores.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox161;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_vapores;
 
         /// <summary>
-        /// Control CheckBox162.
+        /// Control ckb_aerosoles.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox162;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_aerosoles;
 
         /// <summary>
-        /// Control CheckBox163.
+        /// Control ckb_neblinas.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox163;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_neblinas;
 
         /// <summary>
-        /// Control CheckBox164.
+        /// Control ckb_gaseosos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox164;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_gaseosos;
 
         /// <summary>
-        /// Control CheckBox165.
+        /// Control ckb_otrosQuimico.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox165;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_otrosQuimico;
 
         /// <summary>
-        /// Control CheckBox166.
+        /// Control ckb_atrapmaquinas2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox166;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_atrapmaquinas2;
 
         /// <summary>
-        /// Control CheckBox167.
+        /// Control ckb_atrapsuperficie2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox167;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_atrapsuperficie2;
 
         /// <summary>
-        /// Control CheckBox168.
+        /// Control ckb_atrapobjetos2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox168;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_atrapobjetos2;
 
         /// <summary>
-        /// Control CheckBox169.
+        /// Control ckb_caidaobjetos2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox169;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_caidaobjetos2;
 
         /// <summary>
-        /// Control CheckBox170.
+        /// Control ckb_caidamisnivel2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox170;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_caidamisnivel2;
 
         /// <summary>
-        /// Control CheckBox171.
+        /// Control ckb_caidadifnivel2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox171;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_caidadifnivel2;
 
         /// <summary>
-        /// Control CheckBox172.
+        /// Control ckb_contaelectrico2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox172;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_contaelectrico2;
 
         /// <summary>
-        /// Control CheckBox173.
+        /// Control ckb_contasuptrabajo2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox173;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_contasuptrabajo2;
 
         /// <summary>
-        /// Control CheckBox174.
+        /// Control ckb_proyparticulas2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox174;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_proyparticulas2;
 
         /// <summary>
-        /// Control CheckBox175.
+        /// Control ckb_proyefluidos2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox175;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_proyefluidos2;
 
         /// <summary>
-        /// Control CheckBox176.
+        /// Control ckb_pinchazos2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox176;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_pinchazos2;
 
         /// <summary>
-        /// Control CheckBox177.
+        /// Control ckb_cortes2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox177;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_cortes2;
 
         /// <summary>
-        /// Control CheckBox178.
+        /// Control ckb_atroporvehiculos2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox178;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_atroporvehiculos2;
 
         /// <summary>
-        /// Control CheckBox179.
+        /// Control ckb_choques2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox179;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_choques2;
 
         /// <summary>
-        /// Control CheckBox180.
+        /// Control ckb_otrosMecanico2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox180;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_otrosMecanico2;
 
         /// <summary>
-        /// Control CheckBox181.
+        /// Control ckb_solidos2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox181;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_solidos2;
 
         /// <summary>
-        /// Control CheckBox182.
+        /// Control ckb_polvos2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox182;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_polvos2;
 
         /// <summary>
-        /// Control CheckBox183.
+        /// Control ckb_humos2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox183;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_humos2;
 
         /// <summary>
-        /// Control CheckBox184.
+        /// Control ckb_liquidos2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox184;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_liquidos2;
 
         /// <summary>
-        /// Control CheckBox185.
+        /// Control ckb_vapores2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox185;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_vapores2;
 
         /// <summary>
-        /// Control CheckBox186.
+        /// Control ckb_aerosoles2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox186;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_aerosoles2;
 
         /// <summary>
-        /// Control CheckBox187.
+        /// Control ckb_neblinas2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox187;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_neblinas2;
 
         /// <summary>
-        /// Control CheckBox188.
+        /// Control ckb_gaseosos2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox188;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_gaseosos2;
 
         /// <summary>
-        /// Control CheckBox189.
+        /// Control ckb_otrosQuimico2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox189;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_otrosQuimico2;
 
         /// <summary>
-        /// Control CheckBox190.
+        /// Control ckb_atrapmaquinas3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox190;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_atrapmaquinas3;
 
         /// <summary>
-        /// Control CheckBox191.
+        /// Control ckb_atrapsuperficie3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox191;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_atrapsuperficie3;
 
         /// <summary>
-        /// Control CheckBox192.
+        /// Control ckb_atrapobjetos3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox192;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_atrapobjetos3;
 
         /// <summary>
-        /// Control CheckBox193.
+        /// Control ckb_caidaobjetos3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox193;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_caidaobjetos3;
 
         /// <summary>
-        /// Control CheckBox194.
+        /// Control ckb_caidamisnivel3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox194;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_caidamisnivel3;
 
         /// <summary>
-        /// Control CheckBox195.
+        /// Control ckb_caidadifnivel3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox195;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_caidadifnivel3;
 
         /// <summary>
-        /// Control CheckBox196.
+        /// Control ckb_contaelectrico3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox196;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_contaelectrico3;
 
         /// <summary>
-        /// Control CheckBox197.
+        /// Control ckb_contasuptrabajo3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox197;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_contasuptrabajo3;
 
         /// <summary>
-        /// Control CheckBox198.
+        /// Control ckb_proyparticulas3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox198;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_proyparticulas3;
 
         /// <summary>
-        /// Control CheckBox199.
+        /// Control ckb_proyefluidos3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox199;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_proyefluidos3;
 
         /// <summary>
-        /// Control CheckBox200.
+        /// Control ckb_pinchazos3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox200;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_pinchazos3;
 
         /// <summary>
-        /// Control CheckBox201.
+        /// Control ckb_cortes3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox201;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_cortes3;
 
         /// <summary>
-        /// Control CheckBox202.
+        /// Control ckb_atroporvehiculos3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox202;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_atroporvehiculos3;
 
         /// <summary>
-        /// Control CheckBox203.
+        /// Control ckb_choques3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox203;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_choques3;
 
         /// <summary>
-        /// Control CheckBox204.
+        /// Control ckb_otrosMecanico3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox204;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_otrosMecanico3;
 
         /// <summary>
-        /// Control CheckBox205.
+        /// Control ckb_solidos3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox205;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_solidos3;
 
         /// <summary>
-        /// Control CheckBox206.
+        /// Control ckb_polvos3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox206;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_polvos3;
 
         /// <summary>
-        /// Control CheckBox207.
+        /// Control ckb_humos3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox207;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_humos3;
 
         /// <summary>
-        /// Control CheckBox208.
+        /// Control ckb_liquidos3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox208;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_liquidos3;
 
         /// <summary>
-        /// Control CheckBox209.
+        /// Control ckb_vapores3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox209;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_vapores3;
 
         /// <summary>
-        /// Control CheckBox210.
+        /// Control ckb_aerosoles3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox210;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_aerosoles3;
 
         /// <summary>
-        /// Control CheckBox211.
+        /// Control ckb_neblinas3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox211;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_neblinas3;
 
         /// <summary>
-        /// Control CheckBox212.
+        /// Control ckb_gaseosos3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox212;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_gaseosos3;
 
         /// <summary>
-        /// Control CheckBox213.
+        /// Control ckb_otrosQuimico3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox213;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_otrosQuimico3;
 
         /// <summary>
-        /// Control CheckBox214.
+        /// Control ckb_atrapmaquinas4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox214;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_atrapmaquinas4;
 
         /// <summary>
-        /// Control CheckBox215.
+        /// Control ckb_atrapsuperficie4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox215;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_atrapsuperficie4;
 
         /// <summary>
-        /// Control CheckBox216.
+        /// Control ckb_atrapobjetos4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox216;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_atrapobjetos4;
 
         /// <summary>
-        /// Control CheckBox217.
+        /// Control ckb_caidaobjetos4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox217;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_caidaobjetos4;
 
         /// <summary>
-        /// Control CheckBox218.
+        /// Control ckb_caidamisnivel4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox218;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_caidamisnivel4;
 
         /// <summary>
-        /// Control CheckBox219.
+        /// Control ckb_caidadifnivel4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox219;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_caidadifnivel4;
 
         /// <summary>
-        /// Control CheckBox220.
+        /// Control ckb_contaelectrico4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox220;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_contaelectrico4;
 
         /// <summary>
-        /// Control CheckBox221.
+        /// Control ckb_contasuptrabajo4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox221;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_contasuptrabajo4;
 
         /// <summary>
-        /// Control CheckBox222.
+        /// Control ckb_proyparticulas4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox222;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_proyparticulas4;
 
         /// <summary>
-        /// Control CheckBox223.
+        /// Control ckb_proyefluidos4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox223;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_proyefluidos4;
 
         /// <summary>
-        /// Control CheckBox224.
+        /// Control ckb_pinchazos4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox224;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_pinchazos4;
 
         /// <summary>
-        /// Control CheckBox225.
+        /// Control ckb_cortes4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox225;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_cortes4;
 
         /// <summary>
-        /// Control CheckBox226.
+        /// Control ckb_atroporvehiculos4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox226;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_atroporvehiculos4;
 
         /// <summary>
-        /// Control CheckBox227.
+        /// Control ckb_choques4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox227;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_choques4;
 
         /// <summary>
-        /// Control CheckBox228.
+        /// Control ckb_otrosMecanico4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox228;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_otrosMecanico4;
 
         /// <summary>
-        /// Control CheckBox229.
+        /// Control ckb_solidos4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox229;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_solidos4;
 
         /// <summary>
-        /// Control CheckBox230.
+        /// Control ckb_polvos4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox230;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_polvos4;
 
         /// <summary>
-        /// Control CheckBox231.
+        /// Control ckb_humos4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox231;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_humos4;
 
         /// <summary>
-        /// Control CheckBox232.
+        /// Control ckb_liquidos4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox232;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_liquidos4;
 
         /// <summary>
-        /// Control CheckBox233.
+        /// Control ckb_vapores4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox233;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_vapores4;
 
         /// <summary>
-        /// Control CheckBox234.
+        /// Control ckb_aerosoles4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox234;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_aerosoles4;
 
         /// <summary>
-        /// Control CheckBox235.
+        /// Control ckb_neblinas4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox235;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_neblinas4;
 
         /// <summary>
-        /// Control CheckBox236.
+        /// Control ckb_gaseosos4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox236;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_gaseosos4;
 
         /// <summary>
-        /// Control CheckBox237.
+        /// Control ckb_otrosQuimico4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox237;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_otrosQuimico4;
 
         /// <summary>
         /// Control Label55.
@@ -3579,112 +3579,112 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_act21;
 
         /// <summary>
-        /// Control CheckBox238.
+        /// Control ckb_virus.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox238;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_virus;
 
         /// <summary>
-        /// Control CheckBox239.
+        /// Control ckb_hongos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox239;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_hongos;
 
         /// <summary>
-        /// Control CheckBox240.
+        /// Control ckb_bacterias.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox240;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_bacterias;
 
         /// <summary>
-        /// Control CheckBox241.
+        /// Control ckb_parasitos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox241;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_parasitos;
 
         /// <summary>
-        /// Control CheckBox242.
+        /// Control ckb_expoavectores.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox242;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_expoavectores;
 
         /// <summary>
-        /// Control CheckBox243.
+        /// Control ckb_expoanimselvaticos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox243;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_expoanimselvaticos;
 
         /// <summary>
-        /// Control CheckBox244.
+        /// Control ckb_otrosBiologico.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox244;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_otrosBiologico;
 
         /// <summary>
-        /// Control CheckBox245.
+        /// Control ckb_manmanualcargas.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox245;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_manmanualcargas;
 
         /// <summary>
-        /// Control CheckBox246.
+        /// Control ckb_movrepetitivo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox246;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_movrepetitivo;
 
         /// <summary>
-        /// Control CheckBox247.
+        /// Control ckb_postforzadas.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox247;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_postforzadas;
 
         /// <summary>
-        /// Control CheckBox248.
+        /// Control ckb_trabajopvd.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox248;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_trabajopvd;
 
         /// <summary>
-        /// Control CheckBox249.
+        /// Control ckb_otrosErgonomico.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox249;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_otrosErgonomico;
 
         /// <summary>
         /// Control txt_puestodetrabajo22.
@@ -3705,112 +3705,112 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_act22;
 
         /// <summary>
-        /// Control CheckBox250.
+        /// Control ckb_virus2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox250;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_virus2;
 
         /// <summary>
-        /// Control CheckBox251.
+        /// Control ckb_hongos2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox251;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_hongos2;
 
         /// <summary>
-        /// Control CheckBox252.
+        /// Control ckb_bacterias2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox252;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_bacterias2;
 
         /// <summary>
-        /// Control CheckBox253.
+        /// Control ckb_parasitos2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox253;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_parasitos2;
 
         /// <summary>
-        /// Control CheckBox254.
+        /// Control ckb_expoavectores2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox254;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_expoavectores2;
 
         /// <summary>
-        /// Control CheckBox255.
+        /// Control ckb_expoanimselvaticos2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox255;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_expoanimselvaticos2;
 
         /// <summary>
-        /// Control CheckBox256.
+        /// Control ckb_otrosBiologico2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox256;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_otrosBiologico2;
 
         /// <summary>
-        /// Control CheckBox257.
+        /// Control ckb_manmanualcargas2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox257;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_manmanualcargas2;
 
         /// <summary>
-        /// Control CheckBox258.
+        /// Control ckb_movrepetitivo2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox258;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_movrepetitivo2;
 
         /// <summary>
-        /// Control CheckBox259.
+        /// Control ckb_postforzadas2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox259;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_postforzadas2;
 
         /// <summary>
-        /// Control CheckBox260.
+        /// Control ckb_trabajopvd2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox260;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_trabajopvd2;
 
         /// <summary>
-        /// Control CheckBox261.
+        /// Control ckb_otrosErgonomico2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox261;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_otrosErgonomico2;
 
         /// <summary>
         /// Control txt_puestodetrabajo23.
@@ -3831,112 +3831,112 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_act23;
 
         /// <summary>
-        /// Control CheckBox262.
+        /// Control ckb_virus3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox262;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_virus3;
 
         /// <summary>
-        /// Control CheckBox263.
+        /// Control ckb_hongos3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox263;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_hongos3;
 
         /// <summary>
-        /// Control CheckBox264.
+        /// Control ckb_bacterias3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox264;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_bacterias3;
 
         /// <summary>
-        /// Control CheckBox265.
+        /// Control ckb_parasitos3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox265;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_parasitos3;
 
         /// <summary>
-        /// Control CheckBox266.
+        /// Control ckb_expoavectores3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox266;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_expoavectores3;
 
         /// <summary>
-        /// Control CheckBox267.
+        /// Control ckb_expoanimselvaticos3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox267;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_expoanimselvaticos3;
 
         /// <summary>
-        /// Control CheckBox268.
+        /// Control ckb_otrosBiologico3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox268;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_otrosBiologico3;
 
         /// <summary>
-        /// Control CheckBox269.
+        /// Control ckb_manmanualcargas3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox269;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_manmanualcargas3;
 
         /// <summary>
-        /// Control CheckBox270.
+        /// Control ckb_movrepetitivo3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox270;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_movrepetitivo3;
 
         /// <summary>
-        /// Control CheckBox271.
+        /// Control ckb_postforzadas3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox271;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_postforzadas3;
 
         /// <summary>
-        /// Control CheckBox272.
+        /// Control ckb_trabajopvd3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox272;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_trabajopvd3;
 
         /// <summary>
-        /// Control CheckBox273.
+        /// Control ckb_otrosErgonomico3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox273;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_otrosErgonomico3;
 
         /// <summary>
         /// Control txt_puestodetrabajo24.
@@ -3957,112 +3957,112 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_act24;
 
         /// <summary>
-        /// Control CheckBox274.
+        /// Control ckb_virus4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox274;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_virus4;
 
         /// <summary>
-        /// Control CheckBox275.
+        /// Control ckb_hongos4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox275;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_hongos4;
 
         /// <summary>
-        /// Control CheckBox276.
+        /// Control ckb_bacterias4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox276;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_bacterias4;
 
         /// <summary>
-        /// Control CheckBox277.
+        /// Control ckb_parasitos4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox277;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_parasitos4;
 
         /// <summary>
-        /// Control CheckBox278.
+        /// Control ckb_expoavectores4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox278;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_expoavectores4;
 
         /// <summary>
-        /// Control CheckBox279.
+        /// Control ckb_expoanimselvaticos4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox279;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_expoanimselvaticos4;
 
         /// <summary>
-        /// Control CheckBox280.
+        /// Control ckb_otrosBiologico4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox280;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_otrosBiologico4;
 
         /// <summary>
-        /// Control CheckBox281.
+        /// Control ckb_manmanualcargas4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox281;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_manmanualcargas4;
 
         /// <summary>
-        /// Control CheckBox282.
+        /// Control ckb_movrepetitivo4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox282;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_movrepetitivo4;
 
         /// <summary>
-        /// Control CheckBox283.
+        /// Control ckb_postforzadas4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox283;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_postforzadas4;
 
         /// <summary>
-        /// Control CheckBox284.
+        /// Control ckb_trabajopvd4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox284;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_trabajopvd4;
 
         /// <summary>
-        /// Control CheckBox285.
+        /// Control ckb_otrosErgonomico4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox285;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_otrosErgonomico4;
 
         /// <summary>
         /// Control Label67.
@@ -4182,121 +4182,121 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.Label Label79;
 
         /// <summary>
-        /// Control CheckBox286.
+        /// Control ckb_montrabajo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox286;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_montrabajo;
 
         /// <summary>
-        /// Control CheckBox287.
+        /// Control ckb_sobrecargalaboral.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox287;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_sobrecargalaboral;
 
         /// <summary>
-        /// Control CheckBox288.
+        /// Control ckb_minustarea.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox288;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_minustarea;
 
         /// <summary>
-        /// Control CheckBox289.
+        /// Control ckb_altarespon.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox289;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_altarespon;
 
         /// <summary>
-        /// Control CheckBox290.
+        /// Control ckb_automadesiciones.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox290;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_automadesiciones;
 
         /// <summary>
-        /// Control CheckBox291.
+        /// Control ckb_supyestdireficiente.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox291;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_supyestdireficiente;
 
         /// <summary>
-        /// Control CheckBox292.
+        /// Control ckb_conflictorol.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox292;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_conflictorol;
 
         /// <summary>
-        /// Control CheckBox293.
+        /// Control ckb_faltaclarfunciones.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox293;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_faltaclarfunciones;
 
         /// <summary>
-        /// Control CheckBox294.
+        /// Control ckb_incorrdistrabajo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox294;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_incorrdistrabajo;
 
         /// <summary>
-        /// Control CheckBox295.
+        /// Control ckb_turnorotat.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox295;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_turnorotat;
 
         /// <summary>
-        /// Control CheckBox296.
+        /// Control ckb_relacinterpersonales.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox296;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_relacinterpersonales;
 
         /// <summary>
-        /// Control CheckBox297.
+        /// Control ckb_inestalaboral.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox297;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_inestalaboral;
 
         /// <summary>
-        /// Control CheckBox298.
+        /// Control ckb_otrosPsicosocial.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox298;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_otrosPsicosocial;
 
         /// <summary>
         /// Control txt_medpreventivas.
@@ -4308,121 +4308,121 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_medpreventivas;
 
         /// <summary>
-        /// Control CheckBox300.
+        /// Control ckb_montrabajo2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox300;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_montrabajo2;
 
         /// <summary>
-        /// Control CheckBox301.
+        /// Control ckb_sobrecargalaboral2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox301;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_sobrecargalaboral2;
 
         /// <summary>
-        /// Control CheckBox302.
+        /// Control ckb_minustarea2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox302;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_minustarea2;
 
         /// <summary>
-        /// Control CheckBox303.
+        /// Control ckb_altarespon2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox303;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_altarespon2;
 
         /// <summary>
-        /// Control CheckBox304.
+        /// Control ckb_automadesiciones2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox304;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_automadesiciones2;
 
         /// <summary>
-        /// Control CheckBox305.
+        /// Control ckb_supyestdireficiente2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox305;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_supyestdireficiente2;
 
         /// <summary>
-        /// Control CheckBox306.
+        /// Control ckb_conflictorol2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox306;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_conflictorol2;
 
         /// <summary>
-        /// Control CheckBox307.
+        /// Control ckb_faltaclarfunciones2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox307;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_faltaclarfunciones2;
 
         /// <summary>
-        /// Control CheckBox308.
+        /// Control ckb_incorrdistrabajo2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox308;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_incorrdistrabajo2;
 
         /// <summary>
-        /// Control CheckBox309.
+        /// Control ckb_turnorotat2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox309;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_turnorotat2;
 
         /// <summary>
-        /// Control CheckBox310.
+        /// Control ckb_relacinterpersonales2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox310;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_relacinterpersonales2;
 
         /// <summary>
-        /// Control CheckBox311.
+        /// Control ckb_inestalaboral2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox311;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_inestalaboral2;
 
         /// <summary>
-        /// Control CheckBox312.
+        /// Control ckb_otrosPsicosocial2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox312;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_otrosPsicosocial2;
 
         /// <summary>
         /// Control txt_medpreventivas2.
@@ -4434,121 +4434,121 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_medpreventivas2;
 
         /// <summary>
-        /// Control CheckBox315.
+        /// Control ckb_montrabajo3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox315;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_montrabajo3;
 
         /// <summary>
-        /// Control CheckBox316.
+        /// Control ckb_sobrecargalaboral3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox316;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_sobrecargalaboral3;
 
         /// <summary>
-        /// Control CheckBox317.
+        /// Control ckb_minustarea3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox317;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_minustarea3;
 
         /// <summary>
-        /// Control CheckBox318.
+        /// Control ckb_altarespon3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox318;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_altarespon3;
 
         /// <summary>
-        /// Control CheckBox319.
+        /// Control ckb_automadesiciones3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox319;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_automadesiciones3;
 
         /// <summary>
-        /// Control CheckBox320.
+        /// Control ckb_supyestdireficiente3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox320;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_supyestdireficiente3;
 
         /// <summary>
-        /// Control CheckBox321.
+        /// Control ckb_conflictorol3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox321;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_conflictorol3;
 
         /// <summary>
-        /// Control CheckBox322.
+        /// Control ckb_faltaclarfunciones3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox322;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_faltaclarfunciones3;
 
         /// <summary>
-        /// Control CheckBox323.
+        /// Control ckb_incorrdistrabajo3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox323;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_incorrdistrabajo3;
 
         /// <summary>
-        /// Control CheckBox324.
+        /// Control ckb_turnorotat3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox324;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_turnorotat3;
 
         /// <summary>
-        /// Control CheckBox325.
+        /// Control ckb_relacinterpersonales3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox325;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_relacinterpersonales3;
 
         /// <summary>
-        /// Control CheckBox326.
+        /// Control ckb_inestalaboral3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox326;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_inestalaboral3;
 
         /// <summary>
-        /// Control CheckBox327.
+        /// Control ckb_otrosPsicosocial3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox327;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_otrosPsicosocial3;
 
         /// <summary>
         /// Control txt_medpreventivas3.
@@ -4560,121 +4560,121 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_medpreventivas3;
 
         /// <summary>
-        /// Control CheckBox329.
+        /// Control ckb_montrabajo4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox329;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_montrabajo4;
 
         /// <summary>
-        /// Control CheckBox330.
+        /// Control ckb_sobrecargalaboral4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox330;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_sobrecargalaboral4;
 
         /// <summary>
-        /// Control CheckBox331.
+        /// Control ckb_minustarea4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox331;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_minustarea4;
 
         /// <summary>
-        /// Control CheckBox332.
+        /// Control ckb_altarespon4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox332;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_altarespon4;
 
         /// <summary>
-        /// Control CheckBox333.
+        /// Control ckb_automadesiciones4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox333;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_automadesiciones4;
 
         /// <summary>
-        /// Control CheckBox334.
+        /// Control ckb_supyestdireficiente4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox334;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_supyestdireficiente4;
 
         /// <summary>
-        /// Control CheckBox335.
+        /// Control ckb_conflictorol4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox335;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_conflictorol4;
 
         /// <summary>
-        /// Control CheckBox336.
+        /// Control ckb_faltaclarfunciones4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox336;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_faltaclarfunciones4;
 
         /// <summary>
-        /// Control CheckBox337.
+        /// Control ckb_incorrdistrabajo4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox337;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_incorrdistrabajo4;
 
         /// <summary>
-        /// Control CheckBox338.
+        /// Control ckb_turnorotat4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox338;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_turnorotat4;
 
         /// <summary>
-        /// Control CheckBox339.
+        /// Control ckb_relacinterpersonales4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox339;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_relacinterpersonales4;
 
         /// <summary>
-        /// Control CheckBox340.
+        /// Control ckb_inestalaboral4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox340;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_inestalaboral4;
 
         /// <summary>
-        /// Control CheckBox341.
+        /// Control ckb_otrosPsicosocial4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox341;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_otrosPsicosocial4;
 
         /// <summary>
         /// Control txt_medpreventivas4.
@@ -4704,94 +4704,94 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_enfermedadactualinicial;
 
         /// <summary>
-        /// Control CheckBox82.
+        /// Control ckb_pielanexos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox82;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_pielanexos;
 
         /// <summary>
-        /// Control CheckBox86.
+        /// Control ckb_respiratorio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox86;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_respiratorio;
 
         /// <summary>
-        /// Control CheckBox85.
+        /// Control ckb_digestivo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox85;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_digestivo;
 
         /// <summary>
-        /// Control CheckBox84.
+        /// Control ckb_musculosesqueleticos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox84;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_musculosesqueleticos;
 
         /// <summary>
-        /// Control CheckBox83.
+        /// Control ckb_hemolinfatico.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox83;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_hemolinfatico;
 
         /// <summary>
-        /// Control CheckBox87.
+        /// Control ckb_organossentidos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox87;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_organossentidos;
 
         /// <summary>
-        /// Control CheckBox91.
+        /// Control ckb_cardiovascular.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox91;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_cardiovascular;
 
         /// <summary>
-        /// Control CheckBox90.
+        /// Control ckb_genitourinario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox90;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_genitourinario;
 
         /// <summary>
-        /// Control CheckBox89.
+        /// Control ckb_endocrino.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox89;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_endocrino;
 
         /// <summary>
-        /// Control CheckBox88.
+        /// Control ckb_nervioso.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox88;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_nervioso;
 
         /// <summary>
         /// Control txt_descrorganosysistemas.
@@ -4812,13 +4812,13 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.Label Label80;
 
         /// <summary>
-        /// Control CheckBox299.
+        /// Control ckb_cicatrices.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox299;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_cicatrices;
 
         /// <summary>
         /// Control Label81.
@@ -4830,13 +4830,13 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.Label Label81;
 
         /// <summary>
-        /// Control CheckBox313.
+        /// Control ckb_auditivoexterno.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox313;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_auditivoexterno;
 
         /// <summary>
         /// Control Label82.
@@ -4848,13 +4848,13 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.Label Label82;
 
         /// <summary>
-        /// Control CheckBox314.
+        /// Control ckb_tabique.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox314;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_tabique;
 
         /// <summary>
         /// Control Label83.
@@ -4866,13 +4866,13 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.Label Label83;
 
         /// <summary>
-        /// Control CheckBox328.
+        /// Control ckb_pulmones.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox328;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_pulmones;
 
         /// <summary>
         /// Control Label84.
@@ -4884,85 +4884,85 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.Label Label84;
 
         /// <summary>
-        /// Control CheckBox342.
+        /// Control ckb_pelvis.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox342;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_pelvis;
 
         /// <summary>
-        /// Control CheckBox343.
+        /// Control ckb_tatuajes.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox343;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_tatuajes;
 
         /// <summary>
-        /// Control CheckBox344.
+        /// Control ckb_pabellon.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox344;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_pabellon;
 
         /// <summary>
-        /// Control CheckBox345.
+        /// Control ckb_cornetes.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox345;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_cornetes;
 
         /// <summary>
-        /// Control CheckBox346.
+        /// Control ckb_parrillacostal.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox346;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_parrillacostal;
 
         /// <summary>
-        /// Control CheckBox347.
+        /// Control ckb_genitales.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox347;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_genitales;
 
         /// <summary>
-        /// Control CheckBox348.
+        /// Control ckb_pielyfaneras.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox348;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_pielyfaneras;
 
         /// <summary>
-        /// Control CheckBox349.
+        /// Control ckb_timpanos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox349;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_timpanos;
 
         /// <summary>
-        /// Control CheckBox350.
+        /// Control ckb_mucosa.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox350;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_mucosa;
 
         /// <summary>
         /// Control Label85.
@@ -4974,13 +4974,13 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.Label Label85;
 
         /// <summary>
-        /// Control CheckBox351.
+        /// Control ckb_visceras.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox351;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_visceras;
 
         /// <summary>
         /// Control Label86.
@@ -4992,13 +4992,13 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.Label Label86;
 
         /// <summary>
-        /// Control CheckBox352.
+        /// Control ckb_vascular.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox352;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_vascular;
 
         /// <summary>
         /// Control Label87.
@@ -5010,13 +5010,13 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.Label Label87;
 
         /// <summary>
-        /// Control CheckBox353.
+        /// Control ckb_parpados.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox353;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_parpados;
 
         /// <summary>
         /// Control Label88.
@@ -5028,58 +5028,58 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.Label Label88;
 
         /// <summary>
-        /// Control CheckBox354.
+        /// Control ckb_labios.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox354;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_labios;
 
         /// <summary>
-        /// Control CheckBox355.
+        /// Control ckb_senosparanasales.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox355;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_senosparanasales;
 
         /// <summary>
-        /// Control CheckBox356.
+        /// Control ckb_paredabdominal.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox356;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_paredabdominal;
 
         /// <summary>
-        /// Control CheckBox357.
+        /// Control ckb_miembrosuperiores.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox357;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_miembrosuperiores;
 
         /// <summary>
-        /// Control CheckBox358.
+        /// Control ckb_conjuntivas.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox358;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_conjuntivas;
 
         /// <summary>
-        /// Control CheckBox359.
+        /// Control ckb_lengua.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox359;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_lengua;
 
         /// <summary>
         /// Control Label89.
@@ -5091,13 +5091,13 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.Label Label89;
 
         /// <summary>
-        /// Control CheckBox360.
+        /// Control ckb_tiroides.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox360;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_tiroides;
 
         /// <summary>
         /// Control Label90.
@@ -5109,58 +5109,58 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.Label Label90;
 
         /// <summary>
-        /// Control CheckBox361.
+        /// Control ckb_flexibilidad.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox361;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_flexibilidad;
 
         /// <summary>
-        /// Control CheckBox362.
+        /// Control ckb_miembrosinferiores.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox362;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_miembrosinferiores;
 
         /// <summary>
-        /// Control CheckBox363.
+        /// Control ckb_pupilas.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox363;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_pupilas;
 
         /// <summary>
-        /// Control CheckBox364.
+        /// Control ckb_faringe.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox364;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_faringe;
 
         /// <summary>
-        /// Control CheckBox365.
+        /// Control ckb_movilidad.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox365;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_movilidad;
 
         /// <summary>
-        /// Control CheckBox366.
+        /// Control ckb_desviacion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox366;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_desviacion;
 
         /// <summary>
         /// Control Label91.
@@ -5172,31 +5172,31 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.Label Label91;
 
         /// <summary>
-        /// Control CheckBox367.
+        /// Control ckb_fuerza.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox367;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_fuerza;
 
         /// <summary>
-        /// Control CheckBox368.
+        /// Control ckb_cornea.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox368;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_cornea;
 
         /// <summary>
-        /// Control CheckBox369.
+        /// Control ckb_amigdalas.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox369;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_amigdalas;
 
         /// <summary>
         /// Control Label92.
@@ -5208,76 +5208,76 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.Label Label92;
 
         /// <summary>
-        /// Control CheckBox370.
+        /// Control ckb_mamas.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox370;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_mamas;
 
         /// <summary>
-        /// Control CheckBox371.
+        /// Control ckb_sensibilidad.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox371;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_sensibilidad;
 
         /// <summary>
-        /// Control CheckBox372.
+        /// Control ckb_motilidad.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox372;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_motilidad;
 
         /// <summary>
-        /// Control CheckBox373.
+        /// Control ckb_dentadura.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox373;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_dentadura;
 
         /// <summary>
-        /// Control CheckBox374.
+        /// Control ckb_corazon.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox374;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_corazon;
 
         /// <summary>
-        /// Control CheckBox375.
+        /// Control ckb_dolor.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox375;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_dolor;
 
         /// <summary>
-        /// Control CheckBox376.
+        /// Control ckb_marcha.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox376;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_marcha;
 
         /// <summary>
-        /// Control CheckBox377.
+        /// Control ckb_reflejos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox377;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_reflejos;
 
         /// <summary>
         /// Control txt_obervexamenfisicoregional.
@@ -5433,22 +5433,22 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_cie;
 
         /// <summary>
-        /// Control CheckBox92.
+        /// Control ckb_pre.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox92;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_pre;
 
         /// <summary>
-        /// Control CheckBox93.
+        /// Control ckb_def.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox93;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_def;
 
         /// <summary>
         /// Control txt_descripdiagnostico2.
@@ -5469,22 +5469,22 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_cie2;
 
         /// <summary>
-        /// Control CheckBox94.
+        /// Control ckb_pre2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox94;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_pre2;
 
         /// <summary>
-        /// Control CheckBox95.
+        /// Control ckb_def2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox95;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_def2;
 
         /// <summary>
         /// Control txt_descripdiagnostico3.
@@ -5505,58 +5505,58 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_cie3;
 
         /// <summary>
-        /// Control CheckBox96.
+        /// Control ckb_pre3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox96;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_pre3;
 
         /// <summary>
-        /// Control CheckBox97.
+        /// Control ckb_def3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox97;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_def3;
 
         /// <summary>
-        /// Control CheckBox98.
+        /// Control ckb_apto.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox98;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_apto;
 
         /// <summary>
-        /// Control CheckBox99.
+        /// Control ckb_aptoobservacion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox99;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_aptoobservacion;
 
         /// <summary>
-        /// Control CheckBox100.
+        /// Control ckb_aptolimitacion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox100;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_aptolimitacion;
 
         /// <summary>
-        /// Control CheckBox101.
+        /// Control ckb_noapto.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox101;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_noapto;
 
         /// <summary>
         /// Control txt_observacionaptitud.

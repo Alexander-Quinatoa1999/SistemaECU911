@@ -897,67 +897,67 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.CheckBox ckb_antiFosfolípidos;
 
         /// <summary>
-        /// Control ckb_igg.
+        /// Control ckb_iggAntiFosfolipidos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_igg;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_iggAntiFosfolipidos;
 
         /// <summary>
-        /// Control ckb_igm.
+        /// Control ckb_igmAntiFosfolipidos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_igm;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_igmAntiFosfolipidos;
 
         /// <summary>
-        /// Control ckb_iga.
+        /// Control ckb_igaAntiFosfolipidos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_iga;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_igaAntiFosfolipidos;
 
         /// <summary>
-        /// Control ckb_cardiolipinas.
+        /// Control ckb_antiCardioLipinas.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckb_cardiolipinas;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_antiCardioLipinas;
 
         /// <summary>
-        /// Control CheckBox1.
+        /// Control ckb_iggAntiCardio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox1;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_iggAntiCardio;
 
         /// <summary>
-        /// Control CheckBox2.
+        /// Control ckb_igmAntiCardio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox2;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_igmAntiCardio;
 
         /// <summary>
-        /// Control CheckBox3.
+        /// Control ckb_igaAntiCardio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox3;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_igaAntiCardio;
 
         /// <summary>
         /// Control ckb_b2Glicoproteína.
@@ -969,22 +969,22 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.CheckBox ckb_b2Glicoproteína;
 
         /// <summary>
-        /// Control CheckBox4.
+        /// Control ckb_iggB2Glico.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox4;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_iggB2Glico;
 
         /// <summary>
-        /// Control CheckBox5.
+        /// Control ckb_igmB2Glico.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox5;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_igmB2Glico;
 
         /// <summary>
         /// Control ckb_antiGliadina.
@@ -996,22 +996,22 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.CheckBox ckb_antiGliadina;
 
         /// <summary>
-        /// Control CheckBox6.
+        /// Control ckb_iggAntiGliadina.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox6;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_iggAntiGliadina;
 
         /// <summary>
-        /// Control CheckBox7.
+        /// Control ckb_igaAntiGliadina.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox7;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_igaAntiGliadina;
 
         /// <summary>
         /// Control ckb_antiAnexiaV.
@@ -1023,22 +1023,22 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.CheckBox ckb_antiAnexiaV;
 
         /// <summary>
-        /// Control CheckBox8.
+        /// Control ckb_iggantiAnexiaV.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox8;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_iggantiAnexiaV;
 
         /// <summary>
-        /// Control CheckBox9.
+        /// Control ckb_igmantiAnexiaV.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox9;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_igmantiAnexiaV;
 
         /// <summary>
         /// Control ckb_antiTPO.

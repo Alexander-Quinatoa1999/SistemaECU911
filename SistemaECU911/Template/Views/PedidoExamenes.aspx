@@ -435,30 +435,30 @@
                                 </div>
                                 <div class="col form-check">
                                     <asp:CheckBox ID="ckb_antiFosfolípidos" Text="&nbsp; &nbsp; Anti Fosfolípidos" TextAlign="Right" Checked="false" runat="server" />
-                                    <asp:CheckBox ID="ckb_igg" Text="&nbsp;IgG" TextAlign="Right" Checked="false" runat="server" Style="margin-left: 0.9rem;" />
-                                    <asp:CheckBox ID="ckb_igm" Text="&nbsp;IgM" TextAlign="Right" Checked="false" runat="server" Style="margin-left: 0.5rem;" />
-                                    <asp:CheckBox ID="ckb_iga" Text="&nbsp;IgA" TextAlign="Right" Checked="false" runat="server" Style="margin-left: 0.5rem;" />
+                                    <asp:CheckBox ID="ckb_iggAntiFosfolipidos" Text="&nbsp;IgG" TextAlign="Right" Checked="false" runat="server" Style="margin-left: 0.9rem;" />
+                                    <asp:CheckBox ID="ckb_igmAntiFosfolipidos" Text="&nbsp;IgM" TextAlign="Right" Checked="false" runat="server" Style="margin-left: 0.5rem;" />
+                                    <asp:CheckBox ID="ckb_igaAntiFosfolipidos" Text="&nbsp;IgA" TextAlign="Right" Checked="false" runat="server" Style="margin-left: 0.5rem;" />
                                 </div>
                                 <div class="form-check col">
-                                    <asp:CheckBox ID="ckb_cardiolipinas" Text="&nbsp; &nbsp; Anti Cardiolipinas" TextAlign="Right" Checked="false" runat="server" />
-                                    <asp:CheckBox ID="CheckBox1" Text="&nbsp;IgG" TextAlign="Right" Checked="false" runat="server" Style="margin-left: 0.5rem;" />
-                                    <asp:CheckBox ID="CheckBox2" Text="&nbsp;IgM" TextAlign="Right" Checked="false" runat="server" Style="margin-left: 0.5rem;" />
-                                    <asp:CheckBox ID="CheckBox3" Text="&nbsp;IgA" TextAlign="Right" Checked="false" runat="server" Style="margin-left: 0.5rem;" />
+                                    <asp:CheckBox ID="ckb_antiCardioLipinas" Text="&nbsp; &nbsp; Anti Cardiolipinas" TextAlign="Right" Checked="false" runat="server" />
+                                    <asp:CheckBox ID="ckb_iggAntiCardio" Text="&nbsp;IgG" TextAlign="Right" Checked="false" runat="server" Style="margin-left: 0.5rem;" />
+                                    <asp:CheckBox ID="ckb_igmAntiCardio" Text="&nbsp;IgM" TextAlign="Right" Checked="false" runat="server" Style="margin-left: 0.5rem;" />
+                                    <asp:CheckBox ID="ckb_igaAntiCardio" Text="&nbsp;IgA" TextAlign="Right" Checked="false" runat="server" Style="margin-left: 0.5rem;" />
                                 </div>
                                 <div class="form-check col">
                                     <asp:CheckBox ID="ckb_b2Glicoproteína" Text="&nbsp; &nbsp; B2 Glicoproteína" TextAlign="Right" Checked="false" runat="server" />
-                                    <asp:CheckBox ID="CheckBox4" Text="&nbsp;IgG" TextAlign="Right" Checked="false" runat="server" Style="margin-left: 0.97rem;" />
-                                    <asp:CheckBox ID="CheckBox5" Text="&nbsp;IgM" TextAlign="Right" Checked="false" runat="server" Style="margin-left: 0.5rem;" />
+                                    <asp:CheckBox ID="ckb_iggB2Glico" Text="&nbsp;IgG" TextAlign="Right" Checked="false" runat="server" Style="margin-left: 0.97rem;" />
+                                    <asp:CheckBox ID="ckb_igmB2Glico" Text="&nbsp;IgM" TextAlign="Right" Checked="false" runat="server" Style="margin-left: 0.5rem;" />
                                 </div>
                                 <div class="form-check col">
                                     <asp:CheckBox ID="ckb_antiGliadina" Text="&nbsp; &nbsp; Anti Gliadina" TextAlign="Right" Checked="false" runat="server" />
-                                    <asp:CheckBox ID="CheckBox6" Text="&nbsp;IgG" TextAlign="Right" Checked="false" runat="server" Style="margin-left: 2.6rem;" />
-                                    <asp:CheckBox ID="CheckBox7" Text="&nbsp;IgA" TextAlign="Right" Checked="false" runat="server" Style="margin-left: 4.1rem;" />
+                                    <asp:CheckBox ID="ckb_iggAntiGliadina" Text="&nbsp;IgG" TextAlign="Right" Checked="false" runat="server" Style="margin-left: 2.6rem;" />
+                                    <asp:CheckBox ID="ckb_igaAntiGliadina" Text="&nbsp;IgA" TextAlign="Right" Checked="false" runat="server" Style="margin-left: 4.1rem;" />
                                 </div>
                                 <div class="form-check col">
                                     <asp:CheckBox ID="ckb_antiAnexiaV" Text="&nbsp; &nbsp; Anti Anexina V" TextAlign="Right" Checked="false" runat="server" />
-                                    <asp:CheckBox ID="CheckBox8" Text="&nbsp;IgG" TextAlign="Right" Checked="false" runat="server" Style="margin-left: 1.8rem;" />
-                                    <asp:CheckBox ID="CheckBox9" Text="&nbsp;IgM" TextAlign="Right" Checked="false" runat="server" Style="margin-left: 0.5rem;" />
+                                    <asp:CheckBox ID="ckb_iggantiAnexiaV" Text="&nbsp;IgG" TextAlign="Right" Checked="false" runat="server" Style="margin-left: 1.8rem;" />
+                                    <asp:CheckBox ID="ckb_igmantiAnexiaV" Text="&nbsp;IgM" TextAlign="Right" Checked="false" runat="server" Style="margin-left: 0.5rem;" />
                                 </div>
                                 <div class="form-check">
                                     <asp:CheckBox ID="ckb_antiTPO" Text="&nbsp; &nbsp; Anti TPO (microsomales)" TextAlign="Right" Checked="false" runat="server" />
@@ -487,7 +487,7 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col table-responsive" id="ENZIMAS" style="margin-top: -3rem;">
+                            <div class="col table-responsive" id="ENZIMAS" style="margin-top: 0rem;">
                                 <b>ENZIMAS</b>
                                 <div class="row">
                                     <div class="form-check col" style="margin-left: 0.75rem;">
@@ -569,7 +569,7 @@
                                     <asp:CheckBox ID="ckb_ftaAbs" Text="&nbsp; &nbsp; FTA - ABS" TextAlign="Right" Checked="false" runat="server" />
                                 </div>
                             </div>
-                            <div class="col table-responsive" id="HECES" style="margin-top: -44rem;">
+                            <div class="col table-responsive" id="HECES" style="margin-top: -40rem;">
                                 <b>HECES</b>
                                 <div class="form-check col">
                                     <asp:CheckBox ID="ckb_coproparasitario" Text="&nbsp; &nbsp; Coproparasitario" TextAlign="Right" Checked="false" runat="server" />
@@ -592,7 +592,7 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col table-responsive" id="DROGAS" style="margin-top: -6rem;">
+                            <div class="col table-responsive" id="DROGAS" style="margin-top: -5rem;">
                                 <b>DROGAS</b>
                                 <div class="form-check col">
                                     <asp:CheckBox ID="ckb_fenobarbital" Text="&nbsp; &nbsp; Fenobarbital" TextAlign="Right" Checked="false" runat="server" />

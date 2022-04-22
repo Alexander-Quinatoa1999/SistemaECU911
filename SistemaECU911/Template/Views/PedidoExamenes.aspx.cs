@@ -129,11 +129,11 @@ namespace SistemaECU911.Template.Views
                             //Marcadores Tumorales
                             if (pedexa.pedExa_ca125MarcaTumo == null)
                             {
-                                ckb_ca125.Checked = true;                              
+                                ckb_ca125.Checked = false;                              
                             }
                             else
                             {
-                                ckb_ca125.Checked = false;                                                             
+                                ckb_ca125.Checked = true;                                                             
                             }
                             if (pedexa.pedExa_he4MarcaTumo == null)
                             {
@@ -550,6 +550,371 @@ namespace SistemaECU911.Template.Views
                             else
                             {
                                 ckb_screenPrenatal.Checked = true;
+                            }
+
+                            //Quimica Sanguinea
+                            if (pedexa.pedExa_glucoBasalQSangui == null)
+                            {
+                                ckb_gluBasal.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_gluBasal.Checked = true;                                
+                            }
+                            if (pedexa.pedExa_ureaQSangui == null)
+                            {
+                                ckb_urea.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_urea.Checked = true;                                
+                            }
+                            if (pedexa.pedExa_bumQSangui == null)
+                            {
+                                ckb_bum.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_bum.Checked = true;                                
+                            }
+                            if (pedexa.pedExa_creatininaQSangui == null)
+                            {
+                                ckb_creatinina.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_creatinina.Checked = true;                                
+                            }
+                            if (pedexa.pedExa_acUricoQSangui == null)
+                            {
+                                ckb_acUrico.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_acUrico.Checked = true;                                
+                            }
+                            if (pedexa.pedExa_colesTotalQSangui == null)
+                            {
+                                ckb_colesTotal.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_colesTotal.Checked = true;                                
+                            }
+                            if (pedexa.pedExa_hdlcQSangui == null)
+                            {
+                                ckb_hdlc.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_hdlc.Checked = true;                                
+                            }
+                            if (pedexa.pedExa_ldlcQSangui == null)
+                            {
+                                ckb_ldlc.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_ldlc.Checked = true;                                
+                            }
+                            if (pedexa.pedExa_trigliceridosQSangui == null)
+                            {
+                                ckb_triglicerido.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_triglicerido.Checked = true;                                
+                            }
+                            if (pedexa.pedExa_bilirrubinaTotalQSangui == null)
+                            {
+                                ckb_biliTotal.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_biliTotal.Checked = true;                                
+                            }
+                            if (pedexa.pedExa_bilirrubinaDirectaQSangui == null)
+                            {
+                                ckb_biliDirecta.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_biliDirecta.Checked = true;                                
+                            }
+                            if (pedexa.pedExa_bilirrubinaIndirectaQSangui == null)
+                            {
+                                ckb_biliindirecta.Checked = false;                                
+                            }
+                            else
+                            {
+                                ckb_biliindirecta.Checked = true;
+                            }
+                            if (pedexa.pedExa_proteTotalesQSangui == null)
+                            {
+                                ckb_proTotales.Checked = false;                                
+                            }
+                            else
+                            {
+                                ckb_proTotales.Checked = true;
+                            }
+                            if (pedexa.pedExa_albuminaQSangui == null)
+                            {
+                                ckb_albumina.Checked = false;                                
+                            }
+                            else
+                            {
+                                ckb_albumina.Checked = true;
+                            }
+                            if (pedexa.pedExa_globulinaQSangui == null)
+                            {
+                                ckb_globulina.Checked = false;                                
+                            }
+                            else
+                            {
+                                ckb_globulina.Checked = true;
+                            }
+                            if (pedexa.pedExa_testOsullivanQSangui == null)
+                            {
+                                ckb_testOsullivan.Checked = false;                                
+                            }
+                            else
+                            {
+                                ckb_testOsullivan.Checked = true;
+                            }
+                            if (pedexa.pedExa_glucosa2hppQSangui == null)
+                            {
+                                ckb_glucosa2h.Checked = false;                                
+                            }
+                            else
+                            {
+                                ckb_glucosa2h.Checked = true;
+                            }
+                            if (pedexa.pedExa_curvaToleranciaQSangui == null)
+                            {
+                                ckb_curvaTolerancia.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_curvaTolerancia.Checked = true;
+                                txt_glucosa.Text = pedexa.pedExa_glucosaHorasQSangui.ToString();
+                            }
+                            if (pedexa.pedExa_hemogloGlicosiladaQSangui == null)
+                            {
+                                ckb_hemoGlicosilada.Checked = false;                                
+                            }
+                            else
+                            {
+                                ckb_hemoGlicosilada.Checked = true;
+                            }
+                            if (pedexa.pedExa_hierroSericoQSangui == null)
+                            {
+                                ckb_hierroSerico.Checked = false;                                
+                            }
+                            else
+                            {
+                                ckb_hierroSerico.Checked = true;
+                            }
+                            if (pedexa.pedExa_ferritinaQSangui == null)
+                            {
+                                ckb_ferritina.Checked = false;                                
+                            }
+                            else
+                            {
+                                ckb_ferritina.Checked = true;
+                            }
+                            if (pedexa.pedExa_transferritinaQSangui == null)
+                            {
+                                ckb_transferrina.Checked = false;                                
+                            }
+                            else
+                            {
+                                ckb_transferrina.Checked = true;
+                            }
+
+                            //Inmulogia
+                            if (pedexa.pedExa_prolactinaInmu == null)
+                            {
+                                ckb_iProlactina.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_iProlactina.Checked = true;                                
+                            }
+                            if (pedexa.pedExa_antiNuclearesInmu == null)
+                            {
+                                ckb_antiNucleares.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_antiNucleares.Checked = true;                                
+                            }
+                            if (pedexa.pedExa_antiDnaInmu == null)
+                            {
+                                ckb_antiDna.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_antiDna.Checked = true;                                
+                            }
+                            if (pedexa.pedExa_antiFosfolipidosInmu == null)
+                            {
+                                ckb_antiFosfolípidos.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_antiFosfolípidos.Checked = true;                                
+                            }
+                            if (pedexa.pedExa_lgGAntiFosfoInmu == null)
+                            {
+                                ckb_iggAntiFosfolipidos.Checked = false;
+                            }
+                            else
+                            {                                
+                                ckb_iggAntiFosfolipidos.Checked = true;
+                            }
+                            if (pedexa.pedExa_lgMAntiFosfoInmu == null)
+                            {
+                                ckb_igmAntiFosfolipidos.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_igmAntiFosfolipidos.Checked = true;                                
+                            }
+                            if (pedexa.pedExa_lgAAntiFosfoInmu == null)
+                            {
+                                ckb_igaAntiFosfolipidos.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_igaAntiFosfolipidos.Checked = true;                                
+                            }
+                            if (pedexa.pedExa_antiCardiolipinasInmu == null)
+                            {
+                                ckb_antiCardioLipinas.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_antiCardioLipinas.Checked = true;                                
+                            }
+                            if (pedexa.pedExa_lgGAntiCardioInmu == null)
+                            {
+                                ckb_iggAntiCardio.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_iggAntiCardio.Checked = true;                                
+                            }
+                            if (pedexa.pedExa_lgMAntiCardioInmu == null)
+                            {
+                                ckb_igmAntiCardio.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_igmAntiCardio.Checked = true;                                
+                            }
+                            if (pedexa.pedExa_lgAAntiCardioInmu == null)
+                            {
+                                ckb_igaAntiCardio.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_igaAntiCardio.Checked = true;                                
+                            }
+                            if (pedexa.pedExa_b2GlicoproteinaInmu == null)
+                            {
+                                ckb_b2Glicoproteína.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_b2Glicoproteína.Checked = true;                                
+                            }
+                            if (pedexa.pedExa_lgGB2GlicoInmu == null)
+                            {
+                                ckb_iggB2Glico.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_iggB2Glico.Checked = true;                                
+                            }
+                            if (pedexa.pedExa_lgMB2GlicoInmu == null)
+                            {
+                                ckb_igmB2Glico.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_igmB2Glico.Checked = true;                                
+                            }
+                            if (pedexa.pedExa_antiGliadinaInmu == null)
+                            {
+                                ckb_antiGliadina.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_antiGliadina.Checked = true;                                
+                            }
+                            if (pedexa.pedExa_lgGAntiGliaInmu == null)
+                            {
+                                ckb_iggAntiGliadina.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_iggAntiGliadina.Checked = true;                                
+                            }
+                            if (pedexa.pedExa_lgAAntiGliaInmu == null)
+                            {
+                                ckb_igaAntiGliadina.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_igaAntiGliadina.Checked = true;                                
+                            }
+                            if (pedexa.pedExa_antiAnexinaVInmu == null)
+                            {
+                                ckb_antiAnexiaV.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_antiAnexiaV.Checked = true;                                
+                            }
+                            if (pedexa.pedExa_lgGAntiAnexInmu == null)
+                            {
+                                ckb_iggantiAnexiaV.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_iggantiAnexiaV.Checked = true;                                
+                            }
+                            if (pedexa.pedExa_lgMAntiAnexInmu == null)
+                            {
+                                ckb_igmantiAnexiaV.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_igmantiAnexiaV.Checked = true;                                
+                            }
+                            if (pedexa.pedExa_antiTpoInmu == null)
+                            {
+                                ckb_antiTPO.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_antiTPO.Checked = true;                                
+                            }
+                            if (pedexa.pedExa_antiTiroglobulinaInmu == null)
+                            {
+                                ckb_antiTiroglobulina.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_antiTiroglobulina.Checked = true;                                
+                            }
+                            if (pedexa.pedExa_antiCcpInmu == null)
+                            {
+                                ckb_antiCCP.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_antiCCP.Checked = true;                                
                             }
 
                             //Orina
@@ -1232,6 +1597,191 @@ namespace SistemaECU911.Template.Views
                     pedexa.pedExa_screeningPrenatalEstEspecia = "SI";
                 }
 
+                //Quimica Sanguinea
+                if (ckb_gluBasal.Checked == true)
+                {
+                    pedexa.pedExa_glucoBasalQSangui = "SI";
+                }
+                if (ckb_urea.Checked == true)
+                {
+                    pedexa.pedExa_ureaQSangui = "SI";
+                }
+                if (ckb_bum.Checked == true)
+                {
+                    pedexa.pedExa_bumQSangui = "SI";
+                }
+                if (ckb_creatinina.Checked == true)
+                {
+                    pedexa.pedExa_creatininaQSangui = "SI";
+                }
+                if (ckb_acUrico.Checked == true)
+                {
+                    pedexa.pedExa_acUricoQSangui = "SI";
+                }
+                if (ckb_colesTotal.Checked == true)
+                {
+                    pedexa.pedExa_colesTotalQSangui = "SI";
+                }
+                if (ckb_hdlc.Checked == true)
+                {
+                    pedexa.pedExa_hdlcQSangui = "SI";
+                }
+                if (ckb_ldlc.Checked == true)
+                {
+                    pedexa.pedExa_ldlcQSangui = "SI";
+                }
+                if (ckb_triglicerido.Checked == true)
+                {
+                    pedexa.pedExa_trigliceridosQSangui = "SI";
+                }
+                if (ckb_biliTotal.Checked == true)
+                {
+                    pedexa.pedExa_bilirrubinaTotalQSangui = "SI";
+                }
+                if (ckb_biliDirecta.Checked == true)
+                {
+                    pedexa.pedExa_bilirrubinaDirectaQSangui = "SI";
+                }
+                if (ckb_biliindirecta.Checked == true)
+                {
+                    pedexa.pedExa_bilirrubinaIndirectaQSangui = "SI";
+                }
+                if (ckb_proTotales.Checked == true)
+                {
+                    pedexa.pedExa_proteTotalesQSangui = "SI";
+                }
+                if (ckb_albumina.Checked == true)
+                {
+                    pedexa.pedExa_albuminaQSangui = "SI";
+                }
+                if (ckb_globulina.Checked == true)
+                {
+                    pedexa.pedExa_globulinaQSangui = "SI";
+                }
+                if (ckb_testOsullivan.Checked == true)
+                {
+                    pedexa.pedExa_testOsullivanQSangui = "SI";
+                }
+                if (ckb_glucosa2h.Checked == true)
+                {
+                    pedexa.pedExa_glucosa2hppQSangui = "SI";
+                }
+                if (ckb_curvaTolerancia.Checked == true)
+                {
+                    pedexa.pedExa_curvaToleranciaQSangui = "SI";
+                    pedexa.pedExa_glucosaHorasQSangui = txt_glucosa.Text;
+                }
+                if (ckb_hemoGlicosilada.Checked == true)
+                {
+                    pedexa.pedExa_hemogloGlicosiladaQSangui = "SI";
+                }
+                if (ckb_hierroSerico.Checked == true)
+                {
+                    pedexa.pedExa_hierroSericoQSangui = "SI";
+                }
+                if (ckb_ferritina.Checked == true)
+                {
+                    pedexa.pedExa_ferritinaQSangui = "SI";
+                }
+                if (ckb_transferrina.Checked == true)
+                {
+                    pedexa.pedExa_transferritinaQSangui = "SI";
+                }
+
+                //Inmulogia
+                if (ckb_iProlactina.Checked == true)
+                {
+                    pedexa.pedExa_prolactinaInmu = "SI";
+                }
+                if (ckb_antiNucleares.Checked == true)
+                {
+                    pedexa.pedExa_antiNuclearesInmu = "SI";
+                }
+                if (ckb_antiDna.Checked == true)
+                {
+                    pedexa.pedExa_antiDnaInmu = "SI";
+                }
+                if (ckb_antiFosfolípidos.Checked == true)
+                {
+                    pedexa.pedExa_antiFosfolipidosInmu = "SI";
+                }
+                if (ckb_iggAntiFosfolipidos.Checked == true)
+                {
+                    pedexa.pedExa_lgGAntiFosfoInmu = "SI";
+                }
+                if (ckb_igmAntiFosfolipidos.Checked == true)
+                {
+                    pedexa.pedExa_lgMAntiFosfoInmu = "SI";
+                }
+                if (ckb_igaAntiFosfolipidos.Checked == true)
+                {
+                    pedexa.pedExa_lgAAntiFosfoInmu = "SI";
+                }
+                if (ckb_antiCardioLipinas.Checked == true)
+                {
+                    pedexa.pedExa_antiCardiolipinasInmu = "SI";
+                }
+                if (ckb_iggAntiCardio.Checked == true)
+                {
+                    pedexa.pedExa_lgGAntiCardioInmu = "SI";
+                }
+                if (ckb_igmAntiCardio.Checked == true)
+                {
+                    pedexa.pedExa_lgMAntiCardioInmu = "SI";
+                }
+                if (ckb_igaAntiCardio.Checked == true)
+                {
+                    pedexa.pedExa_lgAAntiCardioInmu = "SI";
+                }
+                if (ckb_b2Glicoproteína.Checked == true)
+                {
+                    pedexa.pedExa_b2GlicoproteinaInmu = "SI";
+                }
+                if (ckb_iggB2Glico.Checked == true)
+                {
+                    pedexa.pedExa_lgGB2GlicoInmu = "SI";
+                }
+                if (ckb_igmB2Glico.Checked == true)
+                {
+                    pedexa.pedExa_lgMB2GlicoInmu = "SI";
+                }
+                if (ckb_antiGliadina.Checked == true)
+                {
+                    pedexa.pedExa_antiGliadinaInmu = "SI";
+                }
+                if (ckb_iggAntiGliadina.Checked == true)
+                {
+                    pedexa.pedExa_lgGAntiGliaInmu = "SI";
+                }
+                if (ckb_igaAntiGliadina.Checked == true)
+                {
+                    pedexa.pedExa_lgAAntiGliaInmu = "SI";
+                }
+                if (ckb_antiAnexiaV.Checked == true)
+                {
+                    pedexa.pedExa_antiAnexinaVInmu = "SI";
+                }
+                if (ckb_iggantiAnexiaV.Checked == true)
+                {
+                    pedexa.pedExa_lgGAntiAnexInmu = "SI";
+                }
+                if (ckb_igmantiAnexiaV.Checked == true)
+                {
+                    pedexa.pedExa_lgMAntiAnexInmu = "SI";
+                }
+                if (ckb_antiTPO.Checked == true)
+                {
+                    pedexa.pedExa_antiTpoInmu = "SI";
+                }
+                if (ckb_antiTiroglobulina.Checked == true)
+                {
+                    pedexa.pedExa_antiTiroglobulinaInmu = "SI";
+                }
+                if (ckb_antiCCP.Checked == true)
+                {
+                    pedexa.pedExa_antiCcpInmu = "SI";
+                }
+
                 //Orina
                 if (ckb_emo.Checked == true)
                 {
@@ -1424,17 +1974,33 @@ namespace SistemaECU911.Template.Views
                 {
                     pedexa.pedExa_bioHematicaHema = "SI";
                 }
+                else
+                {
+                    pedexa.pedExa_bioHematicaHema = null;
+                }
                 if (ckb_hematocrito.Checked == true)
                 {
                     pedexa.pedExa_hematocritoHema = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_hematocritoHema = null;
                 }
                 if (ckb_hemoglobina.Checked == true)
                 {
                     pedexa.pedExa_hemoglobinaHema = "SI";
                 }
+                else
+                {
+                    pedexa.pedExa_hemoglobinaHema = null;
+                }
                 if (ckb_vsg.Checked == true)
                 {
                     pedexa.pedExa_vsgHema = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_vsgHema = null;
                 }
 
                 //Electrolitos
@@ -1442,21 +2008,41 @@ namespace SistemaECU911.Template.Views
                 {
                     pedexa.pedExa_NakClElectro = "SI";
                 }
+                else
+                {
+                    pedexa.pedExa_NakClElectro = null;
+                }
                 if (ckb_calIonico.Checked == true)
                 {
                     pedexa.pedExa_calcioIonicoElectro = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_calcioIonicoElectro = null;
                 }
                 if (ckb_calTotal.Checked == true)
                 {
                     pedexa.pedExa_calcioTotalElectro = "SI";
                 }
+                else
+                {
+                    pedexa.pedExa_calcioTotalElectro = null;
+                }
                 if (ckb_magnesio.Checked == true)
                 {
                     pedexa.pedExa_magnesioElectro = "SI";
                 }
+                else
+                {
+                    pedexa.pedExa_magnesioElectro = null;
+                }
                 if (ckb_fosforo.Checked == true)
                 {
                     pedexa.pedExa_fosforoElectro = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_fosforoElectro = null;
                 }
 
                 //Marcadores Tumorales
@@ -1464,37 +2050,73 @@ namespace SistemaECU911.Template.Views
                 {
                     pedexa.pedExa_ca125MarcaTumo = "SI";
                 }
+                else
+                {
+                    pedexa.pedExa_ca125MarcaTumo = null;
+                }
                 if (ckb_he4.Checked == true)
                 {
                     pedexa.pedExa_he4MarcaTumo = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_he4MarcaTumo = null;
                 }
                 if (ckb_indRoma.Checked == true)
                 {
                     pedexa.pedExa_indiceRomaMarcaTumo = "SI";
                 }
+                else
+                {
+                    pedexa.pedExa_indiceRomaMarcaTumo = null;
+                }
                 if (ckb_afp.Checked == true)
                 {
                     pedexa.pedExa_afpMarcaTumo = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_afpMarcaTumo = null;
                 }
                 if (ckb_cea.Checked == true)
                 {
                     pedexa.pedExa_ceaMarcaTurno = "SI";
                 }
+                else
+                {
+                    pedexa.pedExa_ceaMarcaTurno = null;
+                }
                 if (ckb_ca153.Checked == true)
                 {
                     pedexa.pedExa_ca156MarcaTumo = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_ca156MarcaTumo = null;
                 }
                 if (ckb_ca199.Checked == true)
                 {
                     pedexa.pedExa_ca159MarcaTumo = "SI";
                 }
+                else
+                {
+                    pedexa.pedExa_ca159MarcaTumo = null;
+                }
                 if (ckb_tiroglobulina.Checked == true)
                 {
                     pedexa.pedExa_tiroglobulinaMarcaTumo = "SI";
                 }
+                else
+                {
+                    pedexa.pedExa_tiroglobulinaMarcaTumo = null;
+                }
                 if (ckb_psa.Checked == true)
                 {
                     pedexa.pedExa_psaTotalMarcaTumo = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_psaTotalMarcaTumo = null;
                 }
 
                 //InmunoHematologia
@@ -1502,17 +2124,33 @@ namespace SistemaECU911.Template.Views
                 {
                     pedexa.pedExa_coombsDirectoInmuHema = "SI";
                 }
+                else
+                {
+                    pedexa.pedExa_coombsDirectoInmuHema = null;
+                }
                 if (ckb_cooIndirecto.Checked == true)
                 {
                     pedexa.pedExa_coombsIndirectoInmuHema = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_coombsIndirectoInmuHema = null;
                 }
                 if (ckb_grSanguineo.Checked == true)
                 {
                     pedexa.pedExa_grupoSanguiFacRhInmuHema = "SI";
                 }
+                else
+                {
+                    pedexa.pedExa_grupoSanguiFacRhInmuHema = null;
+                }
                 if (ckb_celulasLE.Checked == true)
                 {
                     pedexa.pedExa_celularLeInmuHema = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_celularLeInmuHema = null;
                 }
 
                 //Serologia
@@ -1520,21 +2158,41 @@ namespace SistemaECU911.Template.Views
                 {
                     pedexa.pedExa_pcrCuantitativoSero = "SI";
                 }
+                else
+                {
+                    pedexa.pedExa_pcrCuantitativoSero = null;
+                }
                 if (ckb_frLatex.Checked == true)
                 {
                     pedexa.pedExa_frLatexSero = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_frLatexSero = null;
                 }
                 if (ckb_asto.Checked == true)
                 {
                     pedexa.pedExa_astoSero = "SI";
                 }
+                else
+                {
+                    pedexa.pedExa_astoSero = null;
+                }
                 if (ckb_aglutinaciones.Checked == true)
                 {
                     pedexa.pedExa_aglutinacionesFebrilesSero = "SI";
                 }
+                else
+                {
+                    pedexa.pedExa_aglutinacionesFebrilesSero = null;
+                }
                 if (ckb_vdrl.Checked == true)
                 {
                     pedexa.pedExa_vdrlSero = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_vdrlSero = null;
                 }
 
                 //Coagulacion
@@ -1542,37 +2200,73 @@ namespace SistemaECU911.Template.Views
                 {
                     pedexa.pedExa_plaquetasCoagu = "SI";
                 }
+                else
+                {
+                    pedexa.pedExa_plaquetasCoagu = null;
+                }
                 if (ckb_fibrinogeno.Checked == true)
                 {
                     pedexa.pedExa_fibrinogenoCoagu = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_fibrinogenoCoagu = null;
                 }
                 if (ckb_tp.Checked == true)
                 {
                     pedexa.pedExa_TpCoagu = "SI";
                 }
+                else
+                {
+                    pedexa.pedExa_TpCoagu = null;
+                }
                 if (ckb_ttp.Checked == true)
                 {
                     pedexa.pedExa_TtpCoagu = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_TtpCoagu = null;
                 }
                 if (ckb_inr.Checked == true)
                 {
                     pedexa.pedExa_InrCoagu = "SI";
                 }
+                else
+                {
+                    pedexa.pedExa_InrCoagu = null;
+                }
                 if (ckb_tiempCoagulacion.Checked == true)
                 {
                     pedexa.pedExa_tiemCoagulacionCoagu = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_tiemCoagulacionCoagu = null;
                 }
                 if (ckb_tiempSangria.Checked == true)
                 {
                     pedexa.pedExa_tiemSangriaCoagu = "SI";
                 }
+                else
+                {
+                    pedexa.pedExa_tiemSangriaCoagu = null;
+                }
                 if (ckb_antiLupico.Checked == true)
                 {
                     pedexa.pedExa_antiLupicoCoagu = "SI";
                 }
+                else
+                {
+                    pedexa.pedExa_antiLupicoCoagu = null;
+                }
                 if (ckb_dimeroD.Checked == true)
                 {
                     pedexa.pedExa_dimeroDCoagu = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_dimeroDCoagu = null;
                 }
 
                 //Hormonas
@@ -1580,70 +2274,137 @@ namespace SistemaECU911.Template.Views
                 {
                     pedexa.pedExa_lhHormo = "SI";
                 }
+                else
+                {
+                    pedexa.pedExa_lhHormo = null;
+                }
                 if (ckb_fsh.Checked == true)
                 {
                     pedexa.pedExa_fshHormo = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_fshHormo = null;
                 }
                 if (ckb_estradiol.Checked == true)
                 {
                     pedexa.pedExa_estradiolHormo = "SI";
                 }
+                else
+                {
+                    pedexa.pedExa_estradiolHormo = null;
+                }
                 if (ckb_progesterona.Checked == true)
                 {
                     pedexa.pedExa_progesteronaHormo = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_progesteronaHormo = null;
                 }
                 if (ckb_prolactina.Checked == true)
                 {
                     pedexa.pedExa_prolactinaHormo = "SI";
                 }
+                else
+                {
+                    pedexa.pedExa_prolactinaHormo = null;
+                }
                 if (ckb_testosterona.Checked == true)
                 {
                     pedexa.pedExa_testosteronaHormo = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_testosteronaHormo = null;
                 }
                 if (ckb_dheas.Checked == true)
                 {
                     pedexa.pedExa_dheasHormo = "SI";
                 }
+                else
+                {
+                    pedexa.pedExa_dheasHormo = null;
+                }
                 if (ckb_cortisol.Checked == true)
                 {
                     pedexa.pedExa_cortisolHormo = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_cortisolHormo = null;
                 }
                 if (ckb_insulina.Checked == true)
                 {
                     pedexa.pedExa_insulinaHormo = "SI";
                 }
-
+                else
+                {
+                    pedexa.pedExa_insulinaHormo = null;
+                }
                 if (ckb_peptidoC.Checked == true)
                 {
                     pedexa.pedExa_peptidoCHormo = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_peptidoCHormo = null;
                 }
                 if (ckb_indHoma.Checked == true)
                 {
                     pedexa.pedExa_indiceHomaHormo = "SI";
                 }
+                else
+                {
+                    pedexa.pedExa_indiceHomaHormo = null;
+                }
                 if (ckb_bhcg.Checked == true)
                 {
                     pedexa.pedExa_bhcgHormo = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_bhcgHormo = null;
                 }
                 if (ckb_t3.Checked == true)
                 {
                     pedexa.pedExa_t3Hormo = "SI";
                 }
+                else
+                {
+                    pedexa.pedExa_t3Hormo = null;
+                }
                 if (ckb_fT4.Checked == true)
                 {
                     pedexa.pedExa_ft4Hormo = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_ft4Hormo = null;
                 }
                 if (ckb_tsh.Checked == true)
                 {
                     pedexa.pedExa_tshHormo = "SI";
                 }
+                else
+                {
+                    pedexa.pedExa_tshHormo = null;
+                }
                 if (ckb_17Progesterona.Checked == true)
                 {
                     pedexa.pedExa_17OhProgesteronaHormo = "SI";
                 }
+                else
+                {
+                    pedexa.pedExa_17OhProgesteronaHormo = null;
+                }
                 if (ckb_hgh.Checked == true)
                 {
                     pedexa.pedExa_hghHormo = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_hghHormo = null;
                 }
 
                 //Microbiologia
@@ -1652,21 +2413,42 @@ namespace SistemaECU911.Template.Views
                     pedexa.pedExa_muestraDeMicro = "SI";
                     pedexa.pedExa_muestraDeMicroDescrip = txt_muestra.Text;
                 }
+                else
+                {
+                    pedexa.pedExa_muestraDeMicro = null;
+                    pedexa.pedExa_muestraDeMicroDescrip = null;
+                }
                 if (ckb_gram.Checked == true)
                 {
                     pedexa.pedExa_gramMicro = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_gramMicro = null;
                 }
                 if (ckb_fresco.Checked == true)
                 {
                     pedexa.pedExa_frescoMicro = "SI";
                 }
+                else
+                {
+                    pedexa.pedExa_frescoMicro = null;
+                }
                 if (ckb_koh.Checked == true)
                 {
                     pedexa.pedExa_kohMicro = "SI";
                 }
+                else
+                {
+                    pedexa.pedExa_kohMicro = null;
+                }
                 if (ckb_culAntibiograma.Checked == true)
                 {
                     pedexa.pedExa_cultivoAntibiogramaMicro = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_cultivoAntibiogramaMicro = null;
                 }
 
                 //Estudios Especiales
@@ -1674,13 +2456,391 @@ namespace SistemaECU911.Template.Views
                 {
                     pedexa.pedExa_esperCompletoEstEspecia = "SI";
                 }
+                else
+                {
+                    pedexa.pedExa_esperCompletoEstEspecia = null;
+                }
                 if (ckb_cristalografia.Checked == true)
                 {
                     pedexa.pedExa_cristalografiaEstEspecia = "SI";
                 }
+                else
+                {
+                    pedexa.pedExa_cristalografiaEstEspecia = null;
+                }
                 if (ckb_screenPrenatal.Checked == true)
                 {
                     pedexa.pedExa_screeningPrenatalEstEspecia = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_screeningPrenatalEstEspecia = null;
+                }
+
+                //Quimica Sanguinea
+                if (ckb_gluBasal.Checked == true)
+                {
+                    pedexa.pedExa_glucoBasalQSangui = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_glucoBasalQSangui = null;
+                }
+                if (ckb_urea.Checked == true)
+                {
+                    pedexa.pedExa_ureaQSangui = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_ureaQSangui = null;
+                }
+                if (ckb_bum.Checked == true)
+                {
+                    pedexa.pedExa_bumQSangui = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_bumQSangui = null;
+                }
+                if (ckb_creatinina.Checked == true)
+                {
+                    pedexa.pedExa_creatininaQSangui = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_creatininaQSangui = null;
+                }
+                if (ckb_acUrico.Checked == true)
+                {
+                    pedexa.pedExa_acUricoQSangui = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_acUricoQSangui = null;
+                }
+                if (ckb_colesTotal.Checked == true)
+                {
+                    pedexa.pedExa_colesTotalQSangui = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_colesTotalQSangui = null;
+                }
+                if (ckb_hdlc.Checked == true)
+                {
+                    pedexa.pedExa_hdlcQSangui = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_hdlcQSangui = null;
+                }
+                if (ckb_ldlc.Checked == true)
+                {
+                    pedexa.pedExa_ldlcQSangui = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_ldlcQSangui = null;
+                }
+                if (ckb_triglicerido.Checked == true)
+                {
+                    pedexa.pedExa_trigliceridosQSangui = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_trigliceridosQSangui = null;
+                }
+                if (ckb_biliTotal.Checked == true)
+                {
+                    pedexa.pedExa_bilirrubinaTotalQSangui = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_bilirrubinaTotalQSangui = null;
+                }
+                if (ckb_biliDirecta.Checked == true)
+                {
+                    pedexa.pedExa_bilirrubinaDirectaQSangui = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_bilirrubinaDirectaQSangui = null;
+                }
+                if (ckb_biliindirecta.Checked == true)
+                {
+                    pedexa.pedExa_bilirrubinaIndirectaQSangui = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_bilirrubinaIndirectaQSangui = null;
+                }
+                if (ckb_proTotales.Checked == true)
+                {
+                    pedexa.pedExa_proteTotalesQSangui = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_proteTotalesQSangui = null;
+                }
+                if (ckb_albumina.Checked == true)
+                {
+                    pedexa.pedExa_albuminaQSangui = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_albuminaQSangui = null;
+                }
+                if (ckb_globulina.Checked == true)
+                {
+                    pedexa.pedExa_globulinaQSangui = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_globulinaQSangui = null;
+                }
+                if (ckb_testOsullivan.Checked == true)
+                {
+                    pedexa.pedExa_testOsullivanQSangui = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_testOsullivanQSangui = null;
+                }
+                if (ckb_glucosa2h.Checked == true)
+                {
+                    pedexa.pedExa_glucosa2hppQSangui = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_glucosa2hppQSangui = null;
+                }
+                if (ckb_curvaTolerancia.Checked == true)
+                {
+                    pedexa.pedExa_curvaToleranciaQSangui = "SI";
+                    pedexa.pedExa_glucosaHorasQSangui = txt_glucosa.Text;
+                }
+                else
+                {
+                    pedexa.pedExa_curvaToleranciaQSangui = null;
+                    pedexa.pedExa_glucosaHorasQSangui = null;
+                }
+                if (ckb_hemoGlicosilada.Checked == true)
+                {
+                    pedexa.pedExa_hemogloGlicosiladaQSangui = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_hemogloGlicosiladaQSangui = null;
+                }
+                if (ckb_hierroSerico.Checked == true)
+                {
+                    pedexa.pedExa_hierroSericoQSangui = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_hierroSericoQSangui = null;
+                }
+                if (ckb_ferritina.Checked == true)
+                {
+                    pedexa.pedExa_ferritinaQSangui = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_ferritinaQSangui = null;
+                }
+                if (ckb_transferrina.Checked == true)
+                {
+                    pedexa.pedExa_transferritinaQSangui = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_transferritinaQSangui = null;
+                }
+
+                //Inmulogia
+                if (ckb_iProlactina.Checked == true)
+                {
+                    pedexa.pedExa_prolactinaInmu = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_prolactinaInmu = null;
+                }
+                if (ckb_antiNucleares.Checked == true)
+                {
+                    pedexa.pedExa_antiNuclearesInmu = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_antiNuclearesInmu = null;
+                }
+                if (ckb_antiDna.Checked == true)
+                {
+                    pedexa.pedExa_antiDnaInmu = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_antiDnaInmu = null;
+                }
+                if (ckb_antiFosfolípidos.Checked == true)
+                {
+                    pedexa.pedExa_antiFosfolipidosInmu = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_antiFosfolipidosInmu = null;
+                }
+                if (ckb_iggAntiFosfolipidos.Checked == true)
+                {
+                    pedexa.pedExa_lgGAntiFosfoInmu = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_lgGAntiFosfoInmu = null;
+                }
+                if (ckb_igmAntiFosfolipidos.Checked == true)
+                {
+                    pedexa.pedExa_lgMAntiFosfoInmu = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_lgMAntiFosfoInmu = null;
+                }
+                if (ckb_igaAntiFosfolipidos.Checked == true)
+                {
+                    pedexa.pedExa_lgAAntiFosfoInmu = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_lgAAntiFosfoInmu = null;
+                }
+                if (ckb_antiCardioLipinas.Checked == true)
+                {
+                    pedexa.pedExa_antiCardiolipinasInmu = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_antiCardiolipinasInmu = null;
+                }
+                if (ckb_iggAntiCardio.Checked == true)
+                {
+                    pedexa.pedExa_lgGAntiCardioInmu = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_lgGAntiCardioInmu = null;
+                }
+                if (ckb_igmAntiCardio.Checked == true)
+                {
+                    pedexa.pedExa_lgMAntiCardioInmu = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_lgMAntiCardioInmu = null;
+                }
+                if (ckb_igaAntiCardio.Checked == true)
+                {
+                    pedexa.pedExa_lgAAntiCardioInmu = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_lgAAntiCardioInmu = null;
+                }
+                if (ckb_b2Glicoproteína.Checked == true)
+                {
+                    pedexa.pedExa_b2GlicoproteinaInmu = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_b2GlicoproteinaInmu = null;
+                }
+                if (ckb_iggB2Glico.Checked == true)
+                {
+                    pedexa.pedExa_lgGB2GlicoInmu = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_lgGB2GlicoInmu = null;
+                }
+                if (ckb_igmB2Glico.Checked == true)
+                {
+                    pedexa.pedExa_lgMB2GlicoInmu = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_lgMB2GlicoInmu = null;
+                }
+                if (ckb_antiGliadina.Checked == true)
+                {
+                    pedexa.pedExa_antiGliadinaInmu = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_antiGliadinaInmu = null;
+                }
+                if (ckb_iggAntiGliadina.Checked == true)
+                {
+                    pedexa.pedExa_lgGAntiGliaInmu = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_lgGAntiGliaInmu = null;
+                }
+                if (ckb_igaAntiGliadina.Checked == true)
+                {
+                    pedexa.pedExa_lgAAntiGliaInmu = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_lgAAntiGliaInmu = null;
+                }
+                if (ckb_antiAnexiaV.Checked == true)
+                {
+                    pedexa.pedExa_antiAnexinaVInmu = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_antiAnexinaVInmu = null;
+                }
+                if (ckb_iggantiAnexiaV.Checked == true)
+                {
+                    pedexa.pedExa_lgGAntiAnexInmu = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_lgGAntiAnexInmu = null;
+                }
+                if (ckb_igmantiAnexiaV.Checked == true)
+                {
+                    pedexa.pedExa_lgMAntiAnexInmu = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_lgMAntiAnexInmu = null;
+                }
+                if (ckb_antiTPO.Checked == true)
+                {
+                    pedexa.pedExa_antiTpoInmu = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_antiTpoInmu = null;
+                }
+                if (ckb_antiTiroglobulina.Checked == true)
+                {
+                    pedexa.pedExa_antiTiroglobulinaInmu = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_antiTiroglobulinaInmu = null;
+                }
+                if (ckb_antiCCP.Checked == true)
+                {
+                    pedexa.pedExa_antiCcpInmu = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_antiCcpInmu = null;
                 }
 
                 //Orina
@@ -1688,17 +2848,33 @@ namespace SistemaECU911.Template.Views
                 {
                     pedexa.pedExa_emoOrina = "SI";
                 }
+                else
+                {
+                    pedexa.pedExa_emoOrina = null;
+                }
                 if (ckb_CultAntibiograma.Checked == true)
                 {
                     pedexa.pedExa_cultivoAntibiogramaOrina = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_cultivoAntibiogramaOrina = null;
                 }
                 if (ckb_gramGotaFres.Checked == true)
                 {
                     pedexa.pedExa_gramGotaFrescaOrina = "SI";
                 }
+                else
+                {
+                    pedexa.pedExa_gramGotaFrescaOrina = null;
+                }
                 if (ckb_microalbuminuria.Checked == true)
                 {
                     pedexa.pedExa_microalbuminuriaOrina = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_microalbuminuriaOrina = null;
                 }
 
                 //Enzinas
@@ -1706,41 +2882,81 @@ namespace SistemaECU911.Template.Views
                 {
                     pedexa.pedExa_tgoEnzi = "SI";
                 }
+                else
+                {
+                    pedexa.pedExa_tgoEnzi = null;
+                }
                 if (ckb_tgp.Checked == true)
                 {
                     pedexa.pedExa_tgpEnzi = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_tgpEnzi = null;
                 }
                 if (ckb_amilasa.Checked == true)
                 {
                     pedexa.pedExa_amilasaEnzi = "SI";
                 }
+                else
+                {
+                    pedexa.pedExa_amilasaEnzi = null;
+                }
                 if (ckb_lipasa.Checked == true)
                 {
                     pedexa.pedExa_lipasaEnzi = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_lipasaEnzi = null;
                 }
                 if (ckb_cpk.Checked == true)
                 {
                     pedexa.pedExa_cpkEnzi = "SI";
                 }
+                else
+                {
+                    pedexa.pedExa_cpkEnzi = null;
+                }
                 if (ckb_cpkMb.Checked == true)
                 {
                     pedexa.pedExa_cpkMbEnzi = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_cpkMbEnzi = null;
                 }
                 if (ckb_ldh.Checked == true)
                 {
                     pedexa.pedExa_ldhEnzi = "SI";
                 }
+                else
+                {
+                    pedexa.pedExa_ldhEnzi = null;
+                }
                 if (ckb_fosfaAlcalina.Checked == true)
                 {
                     pedexa.pedExa_fosfatasaAlcalinaEnzi = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_fosfatasaAlcalinaEnzi = null;
                 }
                 if (ckb_fosfaAcidaTotal.Checked == true)
                 {
                     pedexa.pedExa_fosfatasaAcidaTotalEnzi = "SI";
                 }
+                else
+                {
+                    pedexa.pedExa_fosfatasaAcidaTotalEnzi = null;
+                }
                 if (fosfaAcidaProstatica.Checked == true)
                 {
                     pedexa.pedExa_fosfatasaAcidaProstaticaEnzi = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_fosfatasaAcidaProstaticaEnzi = null;
                 }
 
                 //Inmuno - Infecciosas
@@ -1748,49 +2964,97 @@ namespace SistemaECU911.Template.Views
                 {
                     pedexa.pedExa_torchInmuInfecc = "SI";
                 }
+                else
+                {
+                    pedexa.pedExa_torchInmuInfecc = null;
+                }
                 if (ckb_toxoGondii.Checked == true)
                 {
                     pedexa.pedExa_toxoGondiiInmuInfecc = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_toxoGondiiInmuInfecc = null;
                 }
                 if (ckb_clamyTrachomatis.Checked == true)
                 {
                     pedexa.pedExa_clamydiaTrachoInmuInfecc = "SI";
                 }
+                else
+                {
+                    pedexa.pedExa_clamydiaTrachoInmuInfecc = null;
+                }
                 if (ckb_clamyTrachomatisIgG.Checked == true)
                 {
                     pedexa.pedExa_lgGClamyTrachoInmuInfecc = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_lgGClamyTrachoInmuInfecc = null;
                 }
                 if (ckb_clamyTrachomatisIgM.Checked == true)
                 {
                     pedexa.pedExa_lgMClamyTrachoInmuInfecc = "SI";
                 }
+                else
+                {
+                    pedexa.pedExa_lgMClamyTrachoInmuInfecc = null;
+                }
                 if (ckb_hav.Checked == true)
                 {
                     pedexa.pedExa_havInmuInfecc = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_havInmuInfecc = null;
                 }
                 if (ckb_havIiG.Checked == true)
                 {
                     pedexa.pedExa_lgGHavInmuInfecc = "SI";
                 }
+                else
+                {
+                    pedexa.pedExa_lgGHavInmuInfecc = null;
+                }
                 if (ckb_havIiM.Checked == true)
                 {
                     pedexa.pedExa_lgMHavInmuInfecc = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_lgMHavInmuInfecc = null;
                 }
                 if (ckb_vih.Checked == true)
                 {
                     pedexa.pedExa_vihInmuInfecc = "SI";
                 }
+                else
+                {
+                    pedexa.pedExa_vihInmuInfecc = null;
+                }
                 if (ckb_hbsAg.Checked == true)
                 {
                     pedexa.pedExa_hbsAgInmuInfecc = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_hbsAgInmuInfecc = null;
                 }
                 if (ckb_hcv.Checked == true)
                 {
                     pedexa.pedExa_hcvInmuInfecc = "SI";
                 }
+                else
+                {
+                    pedexa.pedExa_hcvInmuInfecc = null;
+                }
                 if (ckb_ftaAbs.Checked == true)
                 {
                     pedexa.pedExa_ftaAbsInmuInfecc = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_ftaAbsInmuInfecc = null;
                 }
 
                 //Drogas
@@ -1798,13 +3062,25 @@ namespace SistemaECU911.Template.Views
                 {
                     pedexa.pedExa_fenobarbitalDrogas = "SI";
                 }
+                else
+                {
+                    pedexa.pedExa_fenobarbitalDrogas = null;
+                }
                 if (ckb_teofilina.Checked == true)
                 {
                     pedexa.pedExa_teofilinaDrogas = "SI";
                 }
+                else
+                {
+                    pedexa.pedExa_teofilinaDrogas = null;
+                }
                 if (ckb_acValproico.Checked == true)
                 {
                     pedexa.pedExa_acValproicoDrogas = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_acValproicoDrogas = null;
                 }
 
                 //Otros
@@ -1813,15 +3089,30 @@ namespace SistemaECU911.Template.Views
                     pedexa.pedExa_Otros1 = "SI";
                     pedexa.pedExa_descripOtros1 = txt_otros1.Text;
                 }
+                else
+                {
+                    pedexa.pedExa_Otros1 = null;
+                    pedexa.pedExa_descripOtros1 = null;
+                }
                 if (ckb_otros2.Checked == true)
                 {
                     pedexa.pedExa_Otros2 = "SI";
                     pedexa.pedExa_descripOtros2 = txt_otros2.Text;
                 }
+                else
+                {
+                    pedexa.pedExa_Otros2 = null;
+                    pedexa.pedExa_descripOtros2 = null;
+                }
                 if (ckb_otros3.Checked == true)
                 {
                     pedexa.pedExa_Otros3 = "SI";
                     pedexa.pedExa_descripOtros3 = txt_otros3.Text;
+                }
+                else
+                {
+                    pedexa.pedExa_Otros3 = null;
+                    pedexa.pedExa_descripOtros3 = null;
                 }
 
                 //Heces
@@ -1829,25 +3120,49 @@ namespace SistemaECU911.Template.Views
                 {
                     pedexa.pedExa_coproparasitarioHeces = "SI";
                 }
+                else
+                {
+                    pedexa.pedExa_coproparasitarioHeces = null;
+                }
                 if (ckb_coproSeriado.Checked == true)
                 {
                     pedexa.pedExa_coproparasitarioSeriadoHeces = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_coproparasitarioSeriadoHeces = null;
                 }
                 if (ckb_sangreOculta.Checked == true)
                 {
                     pedexa.pedExa_sangreOcultaHeces = "SI";
                 }
+                else
+                {
+                    pedexa.pedExa_sangreOcultaHeces = null;
+                }
                 if (ckb_pmn.Checked == true)
                 {
                     pedexa.pedExa_pmnHeces = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_pmnHeces = null;
                 }
                 if (ckb_rotavirus.Checked == true)
                 {
                     pedexa.pedExa_rotavirusHeces = "SI";
                 }
+                else
+                {
+                    pedexa.pedExa_rotavirusHeces = null;
+                }
                 if (ckb_helicoPylori.Checked == true)
                 {
                     pedexa.pedExa_helicobacterPylotiHeces = "SI";
+                }
+                else
+                {
+                    pedexa.pedExa_helicobacterPylotiHeces = null;
                 }
 
                 CN_PedidoExamenes.ModificarPedidoExamenes(pedexa);
