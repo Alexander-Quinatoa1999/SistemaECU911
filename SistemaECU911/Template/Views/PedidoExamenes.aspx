@@ -198,7 +198,7 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col table-responsive" id="INMUNOHEMATOLOGIA" style="margin-top: -10.5rem;">
+                            <div class="col table-responsive" id="INMUNOHEMATOLOGIA" style="margin-top: -8rem;">
                                 <b>INMUNOHEMATOLOGIA</b>
                                 <div class="form-check">
                                     <asp:CheckBox ID="ckb_cooDirecto" Text="&nbsp; &nbsp; Coombs Directo" TextAlign="Right" Checked="false" runat="server" />
@@ -213,7 +213,7 @@
                                     <asp:CheckBox ID="ckb_celulasLE" Text="&nbsp; &nbsp; Celulas L.E." TextAlign="Right" Checked="false" runat="server" />
                                 </div>
                             </div>
-                            <div class="col table-responsive" id="SEROLOGIA" style="margin-top: -8.5rem;">
+                            <div class="col table-responsive" id="SEROLOGIA" style="margin-top: -7rem;">
                                 <b>SEROLOGIA</b>
                                 <div class="form-check">
                                     <asp:CheckBox ID="ckb_pcrCuantitativo" Text="&nbsp; &nbsp; PCR Cuantitativo" TextAlign="Right" Checked="false" runat="server" />
@@ -250,7 +250,7 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col table-responsive" id="COAGULACION" style="margin-top: -10rem;">
+                            <div class="col table-responsive" id="COAGULACION" style="margin-top: -7rem;">
                                 <b>COAGULACION</b>
                                 <div class="form-check">
                                     <asp:CheckBox ID="ckb_plaquetas" Text="&nbsp; &nbsp; Plaquetas" TextAlign="Right" Checked="false" runat="server" />
@@ -280,7 +280,7 @@
                                     <asp:CheckBox ID="ckb_dimeroD" Text="&nbsp; &nbsp; Dimero D" TextAlign="Right" Checked="false" runat="server" />
                                 </div>
                             </div>
-                            <div class="col table-responsive" id="HORMONAS" style="margin-top: -6rem;">
+                            <div class="col table-responsive" id="HORMONAS" style="margin-top: -5rem;">
                                 <b>HORMONAS</b>
                                 <div class="form-check">
                                     <asp:CheckBox ID="ckb_lh" Text="&nbsp; &nbsp; LH" TextAlign="Right" Checked="false" runat="server" />
@@ -348,7 +348,7 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col table-responsive" id="SANGUINEA" style="margin-top: -20.5rem;">
+                            <div class="col table-responsive" id="SANGUINEA" style="margin-top: -15rem;">
                                 <b>QUIMICA SANGUINEA</b>
                                 <div class="form-check">
                                     <asp:CheckBox ID="ckb_gluBasal" Text="&nbsp; &nbsp; Glucosa Basal" TextAlign="Right" Checked="false" runat="server" />
@@ -470,7 +470,7 @@
                                     <asp:CheckBox ID="ckb_antiCCP" Text="&nbsp; &nbsp; Anti CCP" TextAlign="Right" Checked="false" runat="server" />
                                 </div>
                             </div>
-                            <div class="col table-responsive" id="ORINA" style="margin-top: -23rem;">
+                            <div class="col table-responsive" id="ORINA" style="margin-top: -19rem;">
                                 <b>ORINA</b>
                                 <div class="form-check">
                                     <asp:CheckBox ID="ckb_emo" Text="&nbsp; &nbsp; EMO" TextAlign="Right" Checked="false" runat="server" />
@@ -487,7 +487,7 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col table-responsive" id="ENZIMAS" style="margin-top: 0rem;">
+                            <div class="col table-responsive" id="ENZIMAS" style="margin-top: 1rem;">
                                 <b>ENZIMAS</b>
                                 <div class="row">
                                     <div class="form-check col" style="margin-left: 0.75rem;">
@@ -569,7 +569,7 @@
                                     <asp:CheckBox ID="ckb_ftaAbs" Text="&nbsp; &nbsp; FTA - ABS" TextAlign="Right" Checked="false" runat="server" />
                                 </div>
                             </div>
-                            <div class="col table-responsive" id="HECES" style="margin-top: -40rem;">
+                            <div class="col table-responsive" id="HECES" style="margin-top: -36rem;">
                                 <b>HECES</b>
                                 <div class="form-check col">
                                     <asp:CheckBox ID="ckb_coproparasitario" Text="&nbsp; &nbsp; Coproparasitario" TextAlign="Right" Checked="false" runat="server" />
@@ -592,7 +592,7 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col table-responsive" id="DROGAS" style="margin-top: -5rem;">
+                            <div class="col table-responsive" id="DROGAS" style="margin-top: -3rem;">
                                 <b>DROGAS</b>
                                 <div class="form-check col">
                                     <asp:CheckBox ID="ckb_fenobarbital" Text="&nbsp; &nbsp; Fenobarbital" TextAlign="Right" Checked="false" runat="server" />
