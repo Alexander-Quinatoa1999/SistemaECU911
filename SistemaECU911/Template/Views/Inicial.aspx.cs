@@ -41,13 +41,17 @@ namespace SistemaECU911.Template.Views
                         txt_segNombre.Text = per.Per_segNombre.ToString();
                         txt_priApellido.Text = per.Per_priApellido.ToString();
                         txt_segApellido.Text = per.Per_segApellido.ToString();
-                        txt_edad.Text = per.Per_fechNacimiento.ToString();
                         txt_sexo.Text = per.Per_genero.ToString();
-                        txt_numHClinica.Text = per.Per_Cedula.ToString();
+                        txt_numHClinica.Text = per.Per_cedula.ToString();
+                        txt_fechaingresotrabajo.Text = per.Per_fechInicioTrabajo.ToString();
+                        txt_puestodetrabajo.Text = per.Per_puestoTrabajo.ToString();
+                        txt_areadetrabajo.Text = per.Per_areaTrabajo.ToString();
 
                         if (inicial != null)
                         {
                             //A
+                            txt_numArchivo.Text = inicial.inicial_numArchivo.ToString();
+                            txt_edad.Text = inicial.inicial_edad.ToString();
                             //txt_catolica.Text = inicial.inicial_catolicaRel.ToString();
                             //txt_evangelica.Text = inicial.inicial_evangelicaRel.ToString();
                             //txt_testigo.Text = inicial.inicial_testJehovaRel.ToString();
@@ -392,7 +396,7 @@ namespace SistemaECU911.Template.Views
             string cedula = txt_numHClinica.Text;
 
             var lista = from c in dc.Tbl_Personas
-                        where c.Per_Cedula == cedula
+                        where c.Per_cedula == cedula
                         select c;
 
             foreach (var item in lista)
@@ -412,8 +416,15 @@ namespace SistemaECU911.Template.Views
                 string sexo = item.Per_genero;
                 txt_sexo.Text = sexo;
 
-                string edad = Convert.ToString(item.Per_fechNacimiento);
-                txt_edad.Text = edad;
+                //DateTime fechaIngresoTrabajo = Convert.ToDateTime(item.Per_fechInicioTrabajo);
+                //txt_fechaingresotrabajo.Text = fechaIngresoTrabajo;
+
+                string puestoTrabajo = item.Per_puestoTrabajo;
+                txt_puestodetrabajociuo.Text = puestoTrabajo;
+
+                string areaTrabajo = item.Per_areaTrabajo;
+                txt_areadetrabajo.Text = areaTrabajo;
+
             }
         }
 
@@ -481,6 +492,8 @@ namespace SistemaECU911.Template.Views
                 inicial = new Tbl_Inicial
                 {
                     //A.
+                    inicial_numArchivo = txt_numArchivo.Text,
+                    inicial_edad = Convert.ToInt32(txt_edad.Text),
                     //inicial.inicial_catolicaRel = txt_catolica.Text;
                     //inicial.inicial_evangelicaRel = txt_evangelica.Text;
                     //inicial.inicial_testJehovaRel = txt_testigo.Text;
@@ -797,6 +810,8 @@ namespace SistemaECU911.Template.Views
             try
             {
                 //A.
+                inicial.inicial_numArchivo = txt_numArchivo.Text;
+                inicial.inicial_edad = Convert.ToInt32(txt_edad.Text);
                 //inicial.inicial_catolicaRel = txt_catolica.Text;
                 //inicial.inicial_evangelicaRel = txt_evangelica.Text;
                 //inicial.inicial_testJehovaRel = txt_testigo.Text;

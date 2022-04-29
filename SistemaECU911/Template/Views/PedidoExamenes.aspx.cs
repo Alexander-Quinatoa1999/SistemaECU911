@@ -43,11 +43,14 @@ namespace SistemaECU911.Template.Views
                         txt_segNombre.Text = per.Per_segNombre.ToString();
                         txt_priApellido.Text = per.Per_priApellido.ToString();
                         txt_segApellido.Text = per.Per_segApellido.ToString();
-                        txt_edad.Text = per.Per_fechNacimiento.ToString();
-                        txt_numHClinica.Text = per.Per_Cedula.ToString();
+                        txt_numHClinica.Text = per.Per_cedula.ToString();
 
                         if (pedexa != null)
                         {
+
+                            //Datos Establecimiento
+                            txt_numArchivo.Text = pedexa.pedExa_numArchivo.ToString();
+                            txt_edad.Text = pedexa.perExa_edad.ToString();
 
                             //Hematologia
                             if (pedexa.pedExa_bioHematicaHema == null)
@@ -1284,7 +1287,7 @@ namespace SistemaECU911.Template.Views
             string cedula = txt_numHClinica.Text;
 
             var lista = from c in dc.Tbl_Personas
-                        where c.Per_Cedula == cedula
+                        where c.Per_cedula == cedula
                         select c;
 
             foreach (var item in lista)
@@ -1301,8 +1304,6 @@ namespace SistemaECU911.Template.Views
                 string segApellido = item.Per_segApellido;
                 txt_segApellido.Text = segApellido;
 
-                string edad = Convert.ToString(item.Per_fechNacimiento);
-                txt_edad.Text = edad;
             }
         }
 
@@ -1331,7 +1332,12 @@ namespace SistemaECU911.Template.Views
 
                 int perso = Convert.ToInt32(per.Per_id.ToString());
 
-                pedexa = new Tbl_PedidoExamenes();
+                pedexa = new Tbl_PedidoExamenes
+                {
+                    //A.
+                    pedExa_numArchivo = txt_numArchivo.Text,
+                    perExa_edad = Convert.ToInt32(txt_edad.Text),
+                };
 
                 //Hematologia
                 if (ckb_bioHematica.Checked == true)
@@ -1969,6 +1975,10 @@ namespace SistemaECU911.Template.Views
         {
             try
             {
+                //A.
+                pedexa.pedExa_numArchivo = txt_numArchivo.Text;
+                pedexa.perExa_edad = Convert.ToInt32(txt_edad.Text);
+
                 //Hematologia
                 if (ckb_bioHematica.Checked == true)
                 {

@@ -30,7 +30,7 @@ namespace SistemaECU911.Template.Views
                         select new
                         {
                             i.inmu_id,
-                            p.Per_Cedula,
+                            p.Per_cedula,
                             p.Per_priNombre,
                             p.Per_priApellido,
                             i.inmu_fechaHora

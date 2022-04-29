@@ -99,7 +99,7 @@
                                     </ajaxToolkit:AutoCompleteExtender>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white; font-size: 14px">
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
+                                        <asp:TextBox runat="server" ID="txt_numArchivo" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                         </asp:Table>
@@ -129,7 +129,7 @@
                                     <asp:TextBox runat="server" ID="txt_sexo" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white; font-size: 14px">
-                                    <asp:TextBox runat="server" ID="txt_cargo" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_cargo" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center" TextMode="MultiLine" Rows="3"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                         </asp:Table>

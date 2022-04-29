@@ -43,16 +43,21 @@ namespace SistemaECU911.Template.Views
                         txt_priApellido.Text = per.Per_priApellido.ToString();
                         txt_segApellido.Text = per.Per_segApellido.ToString();
                         txt_sexo.Text = per.Per_genero.ToString();
-                        txt_numHClinica.Text = per.Per_Cedula.ToString();
+                        txt_numHClinica.Text = per.Per_cedula.ToString();
+                        txt_fechaIniLabores.Text = per.Per_fechInicioTrabajo.ToString();
+                        txt_puestoTrabajo.Text = per.Per_puestoTrabajo.ToString();
 
                         if (reti != null)
                         {
                             //A
-                            txt_fechaIniLabores.Text = reti.ret__fechIniLabores.ToString();
                             txt_fechaSalida.Text = reti.ret_fechSalida.ToString();
                             txt_tiempo.Text = reti.ret_tiempo.ToString();
                             txt_actividades1.Text = reti.ret_actividades.ToString();
                             txt_facRiesgo1.Text = reti.ret_facRiesgo.ToString();
+                            txt_actividades2.Text = reti.ret_actividades2.ToString();
+                            txt_facRiesgo2.Text = reti.ret_facRiesgo2.ToString();
+                            txt_actividades3.Text = reti.ret_actividades3.ToString();
+                            txt_facRiesgo3.Text = reti.ret_facRiesgo3.ToString();
 
                             //B
                             txt_descripcionantiqui.Text = reti.ret_descripAntCliQuiru.ToString();
@@ -190,7 +195,7 @@ namespace SistemaECU911.Template.Views
             string cedula = txt_numHClinica.Text;
 
             var lista = from c in dc.Tbl_Personas
-                        where c.Per_Cedula == cedula
+                        where c.Per_cedula == cedula
                         select c;
 
             foreach (var item in lista)
@@ -209,6 +214,9 @@ namespace SistemaECU911.Template.Views
 
                 string sexo = item.Per_genero;
                 txt_sexo.Text = sexo;
+
+                string puestoTrabajo = item.Per_puestoTrabajo;
+                txt_puestoTrabajo.Text = puestoTrabajo;
             }
         }
 
@@ -276,15 +284,17 @@ namespace SistemaECU911.Template.Views
                 reti = new Tbl_Retiro 
                 {
                     //A.
-                    ret__fechIniLabores = Convert.ToDateTime(txt_fechaIniLabores.Text),
                     ret_fechSalida = Convert.ToDateTime(txt_fechaSalida.Text),
                     ret_tiempo = Convert.ToInt32(txt_tiempo.Text),
                     ret_actividades = txt_actividades1.Text,
                     ret_facRiesgo = txt_facRiesgo1.Text,
+                    ret_actividades2 = txt_actividades2.Text,
+                    ret_facRiesgo2 = txt_facRiesgo2.Text,
+                    ret_actividades3 = txt_actividades3.Text,
+                    ret_facRiesgo3 = txt_facRiesgo3.Text,
 
                     //B.
                     ret_descripAntCliQuiru = txt_descripcionantiqui.Text,
-
                     ret_siCalificadoIESSAcciTrabajo = txt_siCalificadoIESSAcciTrabajo.Text,
                     ret_EspecifiCalificadoIESSAcciTrabajo = txt_EspecifiCalificadoIESSAcciTrabajo.Text,
                     ret_noCalificadoIESSAcciTrabajo = txt_noCalificadoIESSAcciTrabajo.Text,
@@ -389,11 +399,14 @@ namespace SistemaECU911.Template.Views
             try
             {
                 //A.
-                reti.ret__fechIniLabores = Convert.ToDateTime(txt_fechaIniLabores.Text);
                 reti.ret_fechSalida = Convert.ToDateTime(txt_fechaSalida.Text);
                 reti.ret_tiempo = Convert.ToInt32(txt_tiempo.Text);
                 reti.ret_actividades = txt_actividades1.Text;
                 reti.ret_facRiesgo = txt_facRiesgo1.Text;
+                reti.ret_actividades2 = txt_actividades2.Text;
+                reti.ret_facRiesgo2 = txt_facRiesgo2.Text;
+                reti.ret_actividades3 = txt_actividades3.Text;
+                reti.ret_facRiesgo3 = txt_facRiesgo3.Text;
 
                 //B.
                 reti.ret_descripAntCliQuiru = txt_descripcionantiqui.Text;

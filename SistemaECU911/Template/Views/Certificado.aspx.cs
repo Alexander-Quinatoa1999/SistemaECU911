@@ -41,10 +41,14 @@ namespace SistemaECU911.Template.Views
                         txt_priApellido.Text = per.Per_priApellido.ToString();
                         txt_segApellido.Text = per.Per_segApellido.ToString();
                         txt_sexo.Text = per.Per_genero.ToString();
-                        txt_numHClinica.Text = per.Per_Cedula.ToString();
+                        txt_numHClinica.Text = per.Per_cedula.ToString();
+                        txt_puestoTrabajo.Text = per.Per_puestoTrabajo.ToString();
 
                         if (certi != null)
                         {
+                            //A
+                            txt_numArchivo.Text = certi.certi_numArchivo.ToString();
+
                             //B
                             txt_fechaEmision.Text = certi.certi_fechEmision.ToString();
                             txt_ingreso.Text = certi.certi_ingreso.ToString();
@@ -125,7 +129,7 @@ namespace SistemaECU911.Template.Views
             string cedula = txt_numHClinica.Text;
 
             var lista = from c in dc.Tbl_Personas
-                        where c.Per_Cedula == cedula
+                        where c.Per_cedula == cedula
                         select c;
 
             foreach (var item in lista)
@@ -145,6 +149,9 @@ namespace SistemaECU911.Template.Views
                 string sexo = item.Per_genero;
                 txt_sexo.Text = sexo;
 
+                string puestoTrabajo = item.Per_puestoTrabajo;
+                txt_puestoTrabajo.Text = puestoTrabajo;
+
             }
         }
 
@@ -158,6 +165,9 @@ namespace SistemaECU911.Template.Views
 
                 certi = new Tbl_Certificado
                 {
+                    //A
+                    certi_numArchivo = txt_numArchivo.Text,
+
                     //B.
                     certi_fechEmision = Convert.ToDateTime(txt_fechaEmision.Text),
                     certi_ingreso = txt_ingreso.Text,
@@ -208,6 +218,9 @@ namespace SistemaECU911.Template.Views
         {
             try
             {
+                //A
+                certi.certi_numArchivo = txt_numArchivo.Text;
+
                 //B.
                 certi.certi_fechEmision = Convert.ToDateTime(txt_fechaEmision.Text);
                 certi.certi_ingreso = txt_ingreso.Text;

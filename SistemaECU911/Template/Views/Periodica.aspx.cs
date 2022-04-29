@@ -42,11 +42,14 @@ namespace SistemaECU911.Template.Views
                         txt_priApellido.Text = per.Per_priApellido.ToString();
                         txt_segApellido.Text = per.Per_segApellido.ToString();
                         txt_sexo.Text = per.Per_genero.ToString();
-                        txt_sexo.Text = per.Per_fechNacimiento.ToString();
-                        txt_numHClinica.Text = per.Per_Cedula.ToString();
+                        txt_numHClinica.Text = per.Per_cedula.ToString();
+                        txt_puestodetrabajoperiodica.Text = per.Per_puestoTrabajo.ToString();
 
                         if (perio != null)
                         {
+                            //A
+                            txt_numArchivo.Text = perio.perio_numArchivo.ToString();
+                
                             //B
                             txt_motivoconsultaperiodica.Text = perio.perio_descripMotiConsulta.ToString();
 
@@ -322,7 +325,7 @@ namespace SistemaECU911.Template.Views
             string cedula = txt_numHClinica.Text;
 
             var lista = from c in dc.Tbl_Personas
-                        where c.Per_Cedula == cedula
+                        where c.Per_cedula == cedula
                         select c;
 
             foreach (var item in lista)
@@ -341,6 +344,9 @@ namespace SistemaECU911.Template.Views
 
                 string sexo = item.Per_genero;
                 txt_sexo.Text = sexo;
+
+                string puestoTrabajo = item.Per_puestoTrabajo;
+                txt_puestodetrabajoperiodica.Text = puestoTrabajo;
             }
         }
 
@@ -407,6 +413,9 @@ namespace SistemaECU911.Template.Views
 
                 perio = new Tbl_Periodica
                 {
+                    //A
+                    perio_numArchivo = txt_numArchivo.Text,
+
                     //B.
                     perio_descripMotiConsulta = txt_motivoconsultaperiodica.Text,
 
@@ -651,6 +660,9 @@ namespace SistemaECU911.Template.Views
         {
             try
             {
+                //A
+                perio.perio_numArchivo = txt_numArchivo.Text;
+
                 //B.
                 perio.perio_descripMotiConsulta = txt_motivoconsultaperiodica.Text;
 

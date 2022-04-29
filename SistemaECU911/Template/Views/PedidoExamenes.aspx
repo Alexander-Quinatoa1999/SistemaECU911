@@ -98,7 +98,7 @@
                                     </ajaxToolkit:AutoCompleteExtender>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white; font-size: 14px">
-                            <asp:TextBox runat="server" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                            <asp:TextBox runat="server" BorderStyle="None" ID="txt_numArchivo" style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                         </asp:Table>

@@ -30,7 +30,7 @@ namespace SistemaECU911.Template.Views
                         select new
                         {
                             ped.pedExa_id,
-                            p.Per_Cedula,
+                            p.Per_cedula,
                             p.Per_priNombre,
                             p.Per_priApellido,
                             ped.pedExa_fechaHora

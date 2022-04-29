@@ -150,6 +150,42 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_facRiesgo1;
 
         /// <summary>
+        /// Control txt_actividades2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_actividades2;
+
+        /// <summary>
+        /// Control txt_facRiesgo2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_facRiesgo2;
+
+        /// <summary>
+        /// Control txt_actividades3.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_actividades3;
+
+        /// <summary>
+        /// Control txt_facRiesgo3.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_facRiesgo3;
+
+        /// <summary>
         /// Control txt_descripcionantiqui.
         /// </summary>
         /// <remarks>

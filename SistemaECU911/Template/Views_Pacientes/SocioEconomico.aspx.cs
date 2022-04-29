@@ -73,7 +73,7 @@ namespace SistemaECU911.Template.Views_Pacientes
             string cedula = txt_cedula.Text;
 
             var lista = from c in dc.Tbl_Personas
-                        where c.Per_Cedula == cedula
+                        where c.Per_cedula == cedula
                         select c;
 
             foreach (var item in lista)
@@ -109,7 +109,7 @@ namespace SistemaECU911.Template.Views_Pacientes
                     //datoactiemlibresso = CN_SocioEconomico.obtenerDatosActividadTiempoLibreSSO(perso);
                     //datoinfoestafamisso = CN_SocioEconomico.obtenerDatosEstabilidadFamiliarSSO(perso);
 
-                    btn_guardarsso.Visible = true;
+                    btn_guardar.Visible = true;
 
                     if (per != null)
                     {

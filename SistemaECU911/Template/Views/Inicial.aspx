@@ -287,7 +287,7 @@
                                     <asp:TextBox runat="server" ID="txt_fechaingresotrabajo" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center" TextMode="Date"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white; font-size: 14px">
-                                    <asp:TextBox runat="server" ID="txt_puestodetrabajociuo" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_puestodetrabajociuo" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center" TextMode="MultiLine" Rows="4"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white; font-size: 14px">
                                     <asp:TextBox runat="server" ID="txt_areadetrabajo" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>

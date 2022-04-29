@@ -51,6 +51,15 @@ namespace SistemaECU911.Template.Views
         protected global::AjaxControlToolkit.AutoCompleteExtender AutoCompleteExtender2;
 
         /// <summary>
+        /// Control txt_numArchivo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_numArchivo;
+
+        /// <summary>
         /// Control txt_priApellido.
         /// </summary>
         /// <remarks>
@@ -94,6 +103,15 @@ namespace SistemaECU911.Template.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_sexo;
+
+        /// <summary>
+        /// Control txt_puestoTrabajo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_puestoTrabajo;
 
         /// <summary>
         /// Control txt_fecha1.

@@ -24,38 +24,11 @@
       <Association Name="Tbl_TipoUsuario_Tbl_Usuario" Member="Tbl_TipoUsuario" ThisKey="tusu_id" OtherKey="tusu_id" Type="Tbl_TipoUsuario" IsForeignKey="true" DeleteRule="CASCADE" />
     </Type>
   </Table>
-  <Table Name="dbo.Tbl_ActTiempoLibreSSO" Member="Tbl_ActTiempoLibreSSO">
-    <Type Name="Tbl_ActTiempoLibreSSO">
-      <Column Name="ActReTiemLibreSSO_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="ActReTiemLibreSSO_hogar" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-      <Column Name="ActReTiemLibreSSO_paseos_familiares" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-      <Column Name="ActReTiemLibreSSO_estudios" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-      <Column Name="ActReTiemLibreSSO_actividades_artisticas" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-      <Column Name="ActReTiemLibreSSO_otros" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
-      <Column Name="ActReTiemLibreSSO_trabajo_complementario" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
-      <Column Name="ActReTiemLibreSSO_detalle_actividad" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
-      <Column Name="ActReTiemLibreSSO_tiempo_actividad" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
-      <Column Name="ActReTiemLibreSSO_hace_cuanto_tiempo_actividad" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
-      <Column Name="ActReTiemLibreSSO_actividad_deportiva_si" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-      <Column Name="ActReTiemLibreSSO_actividad_deportiva_no" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-      <Column Name="ActReTiemLibreSSO_actividad_deportiva_especificar" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
-      <Column Name="ActReTiemLibreSSO_actividad_deportiva_frecuencia" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
-      <Column Name="ActReTiemLibreSSO_actividad_deportiva_edad" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
-      <Column Name="ActReTiemLibreSSO_lesion_si" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-      <Column Name="ActReTiemLibreSSO_lesion_no" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-      <Column Name="ActReTiemLibreSSO_lesion_tipo" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
-      <Column Name="ActReTiemLibreSSO_lesion_edad" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
-      <Column Name="ActReTiemLibreSSO_lesion_tratamiento_si" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-      <Column Name="ActReTiemLibreSSO_lesion_tratamiento_no" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-      <Column Name="Per_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ActReTiemLibreSSO_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.Tbl_Certificado" Member="Tbl_Certificado">
     <Type Name="Tbl_Certificado">
       <Column Name="certi_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="certi_NumArchivo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="certi_fechEmision" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="certi_numArchivo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="certi_fechEmision" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="certi_ingreso" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="certi_periodico" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="certi_reintegro" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
@@ -82,78 +55,6 @@
       <Column Name="certi_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
       <Association Name="Tbl_Personas_Tbl_Certificado" Member="Tbl_Personas" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Personas" IsForeignKey="true" />
       <Association Name="Tbl_Profesional_Tbl_Certificado" Member="Tbl_Profesional" ThisKey="prof_id" OtherKey="prof_id" Type="Tbl_Profesional" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Tbl_DatosGeneralesSSO" Member="Tbl_DatosGeneralesSSO">
-    <Type Name="Tbl_DatosGeneralesSSO">
-      <Column Name="DatGeneralesSSO_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="DatGeneralesSSO_departamento_area" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
-      <Column Name="DatGeneralesSSO_carga_institucional" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
-      <Column Name="DatGeneralesSSO_tipocontrato_nombramiento" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-      <Column Name="DatGeneralesSSO_tipocontrato_nombraprovisional" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-      <Column Name="DatGeneralesSSO_tipocontrato_contratocasional" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-      <Column Name="DatGeneralesSSO_tipocontrato_codigotrabajo" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-      <Column Name="DatGeneralesSSO_modalidadcontrato_leyorgserpublico" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-      <Column Name="DatGeneralesSSO_modalidadcontrato_codigotrabajo" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-      <Column Name="DatGeneralesSSO_fecha_ingreso_al_Ecu" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
-      <Column Name="DatGeneralesSSO_estadocivil_soltero" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-      <Column Name="DatGeneralesSSO_estadocivil_casado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-      <Column Name="DatGeneralesSSO_estadocivil_viudo" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-      <Column Name="DatGeneralesSSO_estadocivil_unionlibre" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-      <Column Name="DatGeneralesSSO_estadocivil_divorciado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-      <Column Name="DatGeneralesSSO_genero" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="DatGeneralesSSO_tipodesangre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="DatGeneralesSSO_telefonoconvencional" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="DatGeneralesSSO_telefonocelular" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="DatGeneralesSSO_email" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
-      <Column Name="DatGeneralesSSO_lugardenacimiento" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
-      <Column Name="DatGeneralesSSO_niveleducativo_primaria" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-      <Column Name="DatGeneralesSSO_niveleducativo_secundaria" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-      <Column Name="DatGeneralesSSO_niveleducativo_superior" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-      <Column Name="DatGeneralesSSO_niveleducativo_especializacion" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-      <Column Name="DatGeneralesSSO_niveleducativo_diplomado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-      <Column Name="DatGeneralesSSO_niveleducativo_maestrias" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-      <Column Name="DatGeneralesSSO_autoidentificacionetnica_blanco" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-      <Column Name="DatGeneralesSSO_autoidentificacionetnica_mestizo" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-      <Column Name="DatGeneralesSSO_autoidentificacionetnica_afrodescendiente" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-      <Column Name="DatGeneralesSSO_autoidentificacionetnica_indigena" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-      <Column Name="DatGeneralesSSO_autoidentificacionetnica_montubio" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-      <Column Name="DatGeneralesSSO_direcciondomicilio_provincia" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
-      <Column Name="DatGeneralesSSO_direcciondomicilio_canton" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
-      <Column Name="DatGeneralesSSO_direcciondomicilio_parroquia" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
-      <Column Name="DatGeneralesSSO_direcciondomicilio_barrio" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
-      <Column Name="DatGeneralesSSO_calleubicadaviviendaynumeracion" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
-      <Column Name="DatGeneralesSSO_callesecundaria" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
-      <Column Name="DatGeneralesSSO_referencia_ubicar_domicilio" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
-      <Column Name="DatGeneralesSSO_sectorvive_norte" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-      <Column Name="DatGeneralesSSO_sectorvive_centro" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-      <Column Name="DatGeneralesSSO_sectorvive_sur" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-      <Column Name="DatGeneralesSSO_sectorvive_otro" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-      <Column Name="DatGeneralesSSO_sectorvive_otroindique" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="DatGeneralesSSO_tipovivienda_casa" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-      <Column Name="DatGeneralesSSO_tipovivienda_departamento" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-      <Column Name="DatGeneralesSSO_tipovivienda_otro" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="DatGeneralesSSO_tipovivienda_cuentaserviciosbasicossi" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-      <Column Name="DatGeneralesSSO_tipovivienda_cuentaserviciosbasicosno" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-      <Column Name="DatGeneralesSSO_cuantaspersonasvivenconusted" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="DatGeneralesSSO_cuantaspersonasviveneventualconusted" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="DatGeneralesSSO_personacontactoemergencia_nombresyapellidos" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
-      <Column Name="DatGeneralesSSO_personacontactoemergencia_parentesco" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="DatGeneralesSSO_personacontactoemergencia_telefono" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="DatGeneralesSSO_personacontactoemergencia_direccion_calleprincipal" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
-      <Column Name="DatGeneralesSSO_personacontactoemergencia_direccion_numdomicilio" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
-      <Column Name="DatGeneralesSSO_personacontactoemergencia_direccion_callesecundaria" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
-      <Column Name="DatGeneralesSSO_personacontactoemergencia_direccion_referenciaubicardomicilio" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
-      <Column Name="DatGeneralesSSO_destinadineroahorro_si" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-      <Column Name="DatGeneralesSSO_destinadineroahorro_no" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-      <Column Name="DatGeneralesSSO_vehiculopropio_si" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-      <Column Name="DatGeneralesSSO_vehiculopropio_no" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-      <Column Name="DatGeneralesSSO_recorridoinstitucional_si" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-      <Column Name="DatGeneralesSSO_recorridoinstitucional_no" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-      <Column Name="DatGeneralesSSO_recorridoinstitucional_noexiste" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-      <Column Name="DatGeneralesSSO_distancia_domicilio_trabajo" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
-      <Column Name="Per_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DatGeneralesSSO_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.Tbl_Emp_Per" Member="Tbl_Emp_Per">
@@ -190,50 +91,50 @@
   <Table Name="dbo.Tbl_Evolucion" Member="Tbl_Evolucion">
     <Type Name="Tbl_Evolucion">
       <Column Name="evo_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="evo__NumArchivo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="evo_fecha1" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="evo_numArchivo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="evo_fecha1" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="evo_hora1" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="evo_notasEvolucion1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="evo_fecha2" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="evo_fecha2" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="evo_hora2" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="evo_notasEvolucion2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="evo_fecha3" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="evo_fecha3" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="evo_hora3" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="evo_notasEvolucion3" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="evo_fecha4" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="evo_fecha4" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="evo_hora4" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="evo_notasEvolucion4" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="evo_fecha5" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="evo_fecha5" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="evo_hora5" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="evo_notasEvolucion5" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="evo_fecha6" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="evo_fecha6" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="evo_hora6" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="evo_notasEvolucion6" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="evo_fecha7" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="evo_fecha7" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="evo_hora7" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="evo_notasEvolucion7" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="evo_fecha8" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="evo_fecha8" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="evo_hora8" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="evo_notasEvolucion8" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="evo_fecha9" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="evo_fecha9" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="evo_hora9" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="evo_notasEvolucion9" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="evo_fecha10" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="evo_fecha10" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="evo_hora10" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="evo_notasEvolucion10" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="evo_fecha11" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="evo_fecha11" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="evo_hora11" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="evo_notasEvolucion11" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="evo_fecha12" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="evo_fecha12" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="evo_hora12" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="evo_notasEvolucion12" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="evo_fecha13" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="evo_fecha13" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="evo_hora13" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="evo_notasEvolucion13" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="evo_fecha14" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="evo_fecha14" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="evo_hora14" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="evo_notasEvolucion14" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="evo_fecha15" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="evo_fecha15" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="evo_hora15" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="evo_notasEvolucion15" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="evo_farmacoIndicaciones1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
@@ -275,6 +176,7 @@
   <Table Name="dbo.Tbl_FichasMedicas" Member="Tbl_FichasMedicas">
     <Type Name="Tbl_FichasMedicas">
       <Column Name="idFichaMedica" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="edad" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
       <Column Name="moConsulta" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="seAcompañanteMc" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="antecedentePer" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
@@ -336,6 +238,7 @@
       <Column Name="Per_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
       <Association Name="Tbl_Especialidad_Tbl_FichasMedicas" Member="Tbl_Especialidad" ThisKey="espec_id" OtherKey="espec_id" Type="Tbl_Especialidad" IsForeignKey="true" />
+      <Association Name="Tbl_Personas_Tbl_FichasMedicas" Member="Tbl_Personas" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Personas" IsForeignKey="true" />
       <Association Name="Tbl_Profesional_Tbl_FichasMedicas" Member="Tbl_Profesional" ThisKey="prof_id" OtherKey="prof_id" Type="Tbl_Profesional" IsForeignKey="true" />
       <Association Name="Tbl_Regiones_Tbl_FichasMedicas" Member="Tbl_Regiones" ThisKey="Regiones_id" OtherKey="Regiones_id" Type="Tbl_Regiones" IsForeignKey="true" />
       <Association Name="Tbl_TipoExaFisRegional_Tbl_FichasMedicas" Member="Tbl_TipoExaFisRegional" ThisKey="tipoExa_id" OtherKey="tipoExa_id" Type="Tbl_TipoExaFisRegional" IsForeignKey="true" />
@@ -344,13 +247,14 @@
   <Table Name="dbo.Tbl_Inicial" Member="Tbl_Inicial">
     <Type Name="Tbl_Inicial">
       <Column Name="inicial_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="inicial__NumArchivo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="inicial_numArchivo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="inicial_edad" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
       <Column Name="inicial_catolicaRel" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inicial_evangelicaRel" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inicial_testJehovaRel" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inicial_mormonaRel" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inicial_otrasRel" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="inicial_groSanguineo" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="inicial_groSanguineo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inicial_lateralidad" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inicial__lesbianaOriSex" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inicial_gayOriSex" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
@@ -365,10 +269,7 @@
       <Column Name="inicial_siDis" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inicial_noDis" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inicial_tipoDis" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="inicial_porcentDis" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="inicial_fechIngreTrabajo" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="inicial_puesTrabajo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="inicial_areaTrabajo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="inicial_porcentDis" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
       <Column Name="inicial_actRelePuesTrabajo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inicial_descripcionMotivoConsulta" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inicial_descripcionAnteceCliniQuirur" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
@@ -379,8 +280,8 @@
       <Column Name="inicial_partos" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inicial_cesareas" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inicial_abortos" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="inicial_vivosHij" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="inicial_muertosHij" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="inicial_vivosHij" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="inicial_muertosHij" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
       <Column Name="inicial_siVidaSexActiva" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inicial_noVidaSexActiva" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inicial_siMetPlanifiFamiliar" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
@@ -390,32 +291,32 @@
       <Column Name="inicial_siExaRealiColposcopia" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inicial_noExaRealiPapanicolaou" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inicial_noExaRealiColposcopia" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="inicial_tiempoExaRealiPapanicolaou" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="inicial_tiempoExaRealiColposcopia" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="inicial_tiempoExaRealiPapanicolaou" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="inicial_tiempoExaRealiColposcopia" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
       <Column Name="inicial_resultadoExaRealiPapanicolaou" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inicial_resultadoExaRealiColposcopia" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inicial_siExaRealiEcoMamario" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inicial_siExaRealiMamografia" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inicial_noExaRealiEcoMamario" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inicial_noExaRealiMamografia" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="inicial_tiempoExaRealiEcoMamario" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="inicial_tiempoExaRealiMamografia" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="inicial_tiempoExaRealiEcoMamario" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="inicial_tiempoExaRealiMamografia" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
       <Column Name="inicial_resultadoExaRealiEcoMamario" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inicial_resultadoExaRealiMamografia" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inicial_siExaRealiAntiProstatico" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inicial_siExaRealiEcoProstatico" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inicial_noExaRealiAntiProstatico" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inicial_noExaRealiEcoProstatico" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="inicial_tiempoExaRealiAntiProstatico" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="inicial_tiempoExaRealiEcoProstatico" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="inicial_tiempoExaRealiAntiProstatico" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="inicial_tiempoExaRealiEcoProstatico" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
       <Column Name="inicial_resultadoExaRealiAntiProstatico" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inicial_resultadoExaRealiEcoProstatico" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inicial_siMetPlanifiFamiAntReproMascu" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inicial_noMetPlanifiFamiAntReproMascu" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inicial_tipo1MetPlanifiFamiAntReproMascu" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inicial_tipo2MetPlanifiFamiAntReproMascu" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="inicial_vivosHijAntReproMascu" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="inicial_muertosHijAntReproMascu" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="inicial_vivosHijAntReproMascu" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="inicial_muertosHijAntReproMascu" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
       <Column Name="inicial_siConsuNocivosTabaco" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inicial_siConsuNocivosAlcohol" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inicial_siConsuNocivosOtrasDrogas" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
@@ -423,10 +324,10 @@
       <Column Name="inicial_noConsuNocivosTabaco" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inicial_noConsuNocivosAlcohol" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inicial_noConsuNocivosOtrasDrogas" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="inicial_tiempoConsuConsuNocivosTabaco" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="inicial_tiempoConsuConsuNocivosAlcohol" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="inicial_tiempoConsu1ConsuNocivosOtrasDrogas" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="inicial_tiempoConsu2ConsuNocivosOtrasDrogas" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="inicial_tiempoConsuConsuNocivosTabaco" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="inicial_tiempoConsuConsuNocivosAlcohol" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="inicial_tiempoConsu1ConsuNocivosOtrasDrogas" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="inicial_tiempoConsu2ConsuNocivosOtrasDrogas" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
       <Column Name="inicial_cantidadConsuNocivosTabaco" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inicial_cantidadConsuNocivosAlcohol" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inicial_cantidad1ConsuNocivosOtrasDrogas" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
@@ -435,10 +336,10 @@
       <Column Name="inicial_exConsumiConsuNocivosAlcohol" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inicial_exConsumi1ConsuNocivosOtrasDrogas" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inicial_exConsumi2ConsuNocivosOtrasDrogas" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="inicial_tiempoAbstiConsuNocivosTabaco" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="inicial_tiempoAbstiConsuNocivosAlcohol" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="inicial_tiempoAbsti1ConsuNocivosOtrasDrogas" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="inicial_tiempoAbsti2ConsuNocivosOtrasDrogas" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="inicial_tiempoAbstiConsuNocivosTabaco" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="inicial_tiempoAbstiConsuNocivosAlcohol" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="inicial_tiempoAbsti1ConsuNocivosOtrasDrogas" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="inicial_tiempoAbsti2ConsuNocivosOtrasDrogas" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
       <Column Name="inicial_siEstiVidaActFisica" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inicial_siEstiVidaMediHabitual" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inicial_noEstiVidaActFisica" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
@@ -826,16 +727,16 @@
       <Column Name="inicial_refleNeuro" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inicial_observaExaFisRegInicial" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inicial_examen" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="inicial_fecha" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="inicial_fecha" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="inicial_resultados" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inicial_examen2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="inicial_fecha2" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="inicial_fecha2" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="inicial_resultados2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inicial_examen3" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="inicial_fecha3" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="inicial_fecha3" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="inicial_resultados3" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inicial_examen4" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="inicial_fecha4" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="inicial_fecha4" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="inicial_resultados4" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inicial_observacionesResExaGenEspRiesTrabajo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inicial_descripciondiagnostico" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
@@ -872,152 +773,152 @@
   <Table Name="dbo.Tbl_Inmunizaciones" Member="Tbl_Inmunizaciones">
     <Type Name="Tbl_Inmunizaciones">
       <Column Name="inmu_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="inmu_NumArchivo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="inmu_fechaTetanos1" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="inmu_numArchivo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="inmu_fechaTetanos1" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="inmu_loteTetanos1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_esqueCompleTetanos1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_nomCompleResponVacuTetanos1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_estaSaludColocoVacuTetanos1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_observaTetanos1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="inmu_fechaTetanos2" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="inmu_fechaTetanos2" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="inmu_loteTetanos2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_esqueCompleTetanos2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_nomCompleResponVacuTetanos2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_estaSaludColocoVacuTetanos2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_observaTetanos2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="inmu_fechaTetanos3" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="inmu_fechaTetanos3" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="inmu_loteTetanos3" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_esqueCompleTetanos3" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_nomCompleResponVacuTetanos3" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_estaSaludColocoVacuTetanos3" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_observaTetanos3" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="inmu_fechaTetanos4" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="inmu_fechaTetanos4" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="inmu_loteTetanos4" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_esqueCompleTetanos4" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_nomCompleResponVacuTetanos4" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_estaSaludColocoVacuTetanos4" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_observaTetanos4" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="inmu_fechaTetanos5" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="inmu_fechaTetanos5" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="inmu_loteTetanos5" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_esqueCompleTetanos5" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_nomCompleResponVacuTetanos5" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_estaSaludColocoVacuTetanos5" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_observaTetanos5" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="inmu_fechaHepatitisA1" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="inmu_fechaHepatitisA1" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="inmu_loteHepatitisA1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_esqueCompleHepatitisA1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_nomCompleResponVacuHepatitisA1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_estaSaludColocoVaciHepatitisA1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_observaHepatitisA1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="inmu_fechaHepatitisA2" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="inmu_fechaHepatitisA2" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="inmu_loteHepatitisA2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_esqueCompleHepatitisA2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_nomCompleResponVacuHepatitisA2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_estaSaludColocoVaciHepatitisA2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_observaHepatitisA2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="inmu_fechaHepatitisA3" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="inmu_fechaHepatitisA3" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="inmu_loteHepatitisA3" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_esqueCompleHepatitisA3" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_nomCompleResponVacuHepatitisA3" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_estaSaludColocoVaciHepatitisA3" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_observaHepatitisA3" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="inmu_fechaHepatitisB1" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="inmu_fechaHepatitisB1" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="inmu_loteHepatitisB1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_esqueCompleHepatitisB1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_nomCompleResponVacuHepatitisB1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_estaSaludColocoVaciHepatitisB1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_observaHepatitisB1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="inmu_fechaHepatitisB2" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="inmu_fechaHepatitisB2" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="inmu_loteHepatitisB2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_esqueCompleHepatitisB2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_nomCompleResponVacuHepatitisB2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_estaSaludColocoVaciHepatitisB2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_observaHepatitisB2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="inmu_fechaHepatitisB3" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="inmu_fechaHepatitisB3" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="inmu_loteHepatitisB3" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_esqueCompleHepatitisB3" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_nomCompleResponVacuHepatitisB3" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_estaSaludColocoVaciHepatitisB3" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_observaHepatitisB3" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="inmu_fechaInfluenza" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="inmu_fechaInfluenza" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="inmu_loteInfluenza" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_esqueCompleInfluenza" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_nomCompleResponVacuInfluenza" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_estaSaludColocoVacuInfluenza" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_observaInfluenza" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="inmu_fechaFiebreAmarilla" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="inmu_fechaFiebreAmarilla" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="inmu_loteFiebreAmarilla" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_esqueCompleFiebreAmarilla" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_nomCompleResponVacuFiebreAmarilla" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_estaSaludColocoVacuFiebreAmarilla" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_observaFiebreAmarilla" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="inmu_fechaSarampion1" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="inmu_fechaSarampion1" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="inmu_loteSarampion1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_esqueCompleSarampion1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_nomCompleResponVacuSarampion1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_estaSaludColocoVacuSarampion1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_observaSarampion1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="inmu_fechaSarampion2" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="inmu_fechaSarampion2" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="inmu_loteSarampion2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_esqueCompleSarampion2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_nomCompleResponVacuSarampion2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_estaSaludColocoVacuSarampion2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_observaSarampion2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="inmu_1fechaInmuAcuerTipoEmpRies1" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="inmu_1fechaInmuAcuerTipoEmpRies1" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="inmu_1loteInmuAcuerTipoEmpRies1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_1esqueCompleInmuAcuerTipoEmpRies1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_1nomCompleResponVacuInmuAcuerTipoEmpRies1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_1estaSaludColocoVacuInmuAcuerTipoEmpRies1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_1observaInmuAcuerTipoEmpRies1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="inmu_1fechaInmuAcuerTipoEmpRies2" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="inmu_1fechaInmuAcuerTipoEmpRies2" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="inmu_1loteInmuAcuerTipoEmpRies2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_1esqueCompleInmuAcuerTipoEmpRies2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_1nomCompleResponVacuInmuAcuerTipoEmpRies2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_1estaSaludColocoVacuInmuAcuerTipoEmpRies2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_1observaInmuAcuerTipoEmpRies2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="inmu_1fechaInmuAcuerTipoEmpRies3" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="inmu_1fechaInmuAcuerTipoEmpRies3" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="inmu_1loteInmuAcuerTipoEmpRies3" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_1esqueCompleInmuAcuerTipoEmpRies3" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_1nomCompleResponVacuInmuAcuerTipoEmpRies3" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_1estaSaludColocoVacuInmuAcuerTipoEmpRies3" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_1observaInmuAcuerTipoEmpRies3" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="inmu_1fechaInmuAcuerTipoEmpRies4" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="inmu_1fechaInmuAcuerTipoEmpRies4" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="inmu_1loteInmuAcuerTipoEmpRies4" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_1esqueCompleInmuAcuerTipoEmpRies4" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_1nomCompleResponVacuInmuAcuerTipoEmpRies4" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_1estaSaludColocoVacuInmuAcuerTipoEmpRies4" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_1observaInmuAcuerTipoEmpRies4" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="inmu_1fechaInmuAcuerTipoEmpRies5" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="inmu_1fechaInmuAcuerTipoEmpRies5" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="inmu_1loteInmuAcuerTipoEmpRies5" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_1esqueCompleInmuAcuerTipoEmpRies5" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_1nomCompleResponVacuInmuAcuerTipoEmpRies5" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_1estaSaludColocoVacuInmuAcuerTipoEmpRies5" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_1observaInmuAcuerTipoEmpRies5" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="inmu_2fechaInmuAcuerTipoEmpRies1" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="inmu_2fechaInmuAcuerTipoEmpRies1" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="inmu_2loteInmuAcuerTipoEmpRies1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_2esqueCompleInmuAcuerTipoEmpRies1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_2nomCompleResponVacuInmuAcuerTipoEmpRies1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_2estaSaludColocoVacuInmuAcuerTipoEmpRies1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_2observaInmuAcuerTipoEmpRies1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="inmu_2fechaInmuAcuerTipoEmpRies2" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="inmu_2fechaInmuAcuerTipoEmpRies2" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="inmu_2loteInmuAcuerTipoEmpRies2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_2esqueCompleInmuAcuerTipoEmpRies2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_2nomCompleResponVacuInmuAcuerTipoEmpRies2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_2estaSaludColocoVacuInmuAcuerTipoEmpRies2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_2observaInmuAcuerTipoEmpRies2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="inmu_2fechaInmuAcuerTipoEmpRies3" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="inmu_2fechaInmuAcuerTipoEmpRies3" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="inmu_2loteInmuAcuerTipoEmpRies3" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_2esqueCompleInmuAcuerTipoEmpRies3" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_2nomCompleResponVacuInmuAcuerTipoEmpRies3" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_2estaSaludColocoVacuInmuAcuerTipoEmpRies3" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_2observaInmuAcuerTipoEmpRies3" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="inmu_2fechaInmuAcuerTipoEmpRies4" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="inmu_2fechaInmuAcuerTipoEmpRies4" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="inmu_2loteInmuAcuerTipoEmpRies4" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_2esqueCompleInmuAcuerTipoEmpRies4" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_2nomCompleResponVacuInmuAcuerTipoEmpRies4" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_2estaSaludColocoVacuInmuAcuerTipoEmpRies4" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_2observaInmuAcuerTipoEmpRies4" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="inmu_2fechaInmuAcuerTipoEmpRies5" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="inmu_2fechaInmuAcuerTipoEmpRies5" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="inmu_2loteInmuAcuerTipoEmpRies5" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_2esqueCompleInmuAcuerTipoEmpRies5" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_2nomCompleResponVacuInmuAcuerTipoEmpRies5" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
@@ -1032,7 +933,8 @@
   <Table Name="dbo.Tbl_PedidoExamenes" Member="Tbl_PedidoExamenes">
     <Type Name="Tbl_PedidoExamenes">
       <Column Name="pedExa_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="pedExa__NumArchivo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="pedExa_numArchivo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="perExa_edad" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
       <Column Name="pedExa_bioHematicaHema" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="pedExa_hematocritoHema" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="pedExa_hemoglobinaHema" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
@@ -1191,7 +1093,7 @@
   <Table Name="dbo.Tbl_Periodica" Member="Tbl_Periodica">
     <Type Name="Tbl_Periodica">
       <Column Name="perio_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="perio_NumArchivo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="perio_numArchivo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="perio_descripMotiConsulta" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="perio_descripcionAntCliQuirurgicos" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="perio_siConsuNocivosTabaco" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
@@ -1501,10 +1403,10 @@
       <Column Name="perio_refleNeuro" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="perio_observaExaFisRegional" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="perio_examen" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="perio_fecha" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="perio_fecha" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="perio_resultado" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="perio_examen2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="perio_fecha2" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="perio_fecha2" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="perio_resultado2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="perio_observacionesResExaGenEspPuesTrabajo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="perio_descripcionDiagnostico" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
@@ -1540,57 +1442,27 @@
   <Table Name="dbo.Tbl_Personas" Member="Tbl_Personas">
     <Type Name="Tbl_Personas">
       <Column Name="Per_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Per_Cedula" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="Per_priNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="Per_segNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="Per_priApellido" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="Per_segApellido" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="Per_fechNacimiento" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="Zona_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DirInsti_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Sede_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ProcesoInt_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="EstrucProgra_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Per_fechInicio" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="Per_fechDesde" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="Per_fechHasta" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="EstructuraUno_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="EstructuraDos_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Rmu_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Grado_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="GrpOcupacional_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="CargoInsti_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="GrupoEtni_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Per_modLaboral_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Per_numContrato" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
-      <Column Name="Per_partiGeneral" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Per_partiIndividual" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Per_genero" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-      <Column Name="Per_discapacidad" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="Per_motivoSalida" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="CorreoInts_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="TelfInts_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Per_numCelular" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Per_dirDomicilio" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="Per_correoPersonal" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="Per_instrucFormal" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="Per_añosExperiencia" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="Per_comServicios" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
-      <Column Name="Per_oriDesComision" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Per_fechComiDesde" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="Per_fechComiHasta" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="Per_nomPerContacEmergencia" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="Per_numPerContacEmergencia" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="Per_observaciones" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Per_cedula" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Per_priApellido" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Per_segApellido" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Per_priNombre" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Per_segNombre" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Per_genero" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Per_puestoTrabajo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Per_areaTrabajo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Per_fechInicioTrabajo" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Per_cargoOcupacion" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="Per_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
       <Association Name="Tbl_Personas_Tbl_Certificado" Member="Tbl_Certificado" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Certificado" />
       <Association Name="Tbl_Personas_Tbl_Evolucion" Member="Tbl_Evolucion" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Evolucion" />
+      <Association Name="Tbl_Personas_Tbl_FichasMedicas" Member="Tbl_FichasMedicas" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_FichasMedicas" />
       <Association Name="Tbl_Personas_Tbl_Inicial" Member="Tbl_Inicial" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Inicial" />
       <Association Name="Tbl_Personas_Tbl_Inmunizaciones" Member="Tbl_Inmunizaciones" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Inmunizaciones" />
       <Association Name="Tbl_Personas_Tbl_PedidoExamenes" Member="Tbl_PedidoExamenes" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_PedidoExamenes" />
       <Association Name="Tbl_Personas_Tbl_Periodica" Member="Tbl_Periodica" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Periodica" />
       <Association Name="Tbl_Personas_Tbl_Reintegro" Member="Tbl_Reintegro" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Reintegro" />
       <Association Name="Tbl_Personas_Tbl_Retiro" Member="Tbl_Retiro" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Retiro" />
+      <Association Name="Tbl_Personas_Tbl_SocioEconomico" Member="Tbl_SocioEconomico" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_SocioEconomico" />
     </Type>
   </Table>
   <Table Name="dbo.Tbl_Profesional" Member="Tbl_Profesional">
@@ -1618,9 +1490,11 @@
   <Table Name="dbo.Tbl_Reintegro" Member="Tbl_Reintegro">
     <Type Name="Tbl_Reintegro">
       <Column Name="rein_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="rein_numArchivo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="rein_edad" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
       <Column Name="rein__fechUltDiaLaboral" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="rein_fechReingreso" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="rein_total" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="rein_total" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
       <Column Name="rein_causaSalida" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="rein_descripmotCon" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="rein_descripenfActual" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
@@ -1675,13 +1549,13 @@
       <Column Name="rein_refleNeuro" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="rein_observaexaFisRegional" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="rein_examen" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="rein_fecha" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="rein_fecha" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="rein_resultados" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="rein_examen2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="rein_fecha2" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="rein_fecha2" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="rein_resultados2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="rein_examen3" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="rein_fecha3" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="rein_fecha3" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="rein_resultados3" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="rein_observacionesResExaGenEspRiesTrabajo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="rein_descripcionDiagnostico" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
@@ -1709,19 +1583,18 @@
       <Column Name="espec_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="rein_cod" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="Per_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="rein_estado" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="rein_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
       <Association Name="Tbl_Especialidad_Tbl_Reintegro" Member="Tbl_Especialidad" ThisKey="espec_id" OtherKey="espec_id" Type="Tbl_Especialidad" IsForeignKey="true" />
-      <Association Name="Tbl_Personas_Tbl_Reintegro" Member="Tbl_Personas" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Personas" IsForeignKey="true" />
       <Association Name="Tbl_Profesional_Tbl_Reintegro" Member="Tbl_Profesional" ThisKey="prof_id" OtherKey="prof_id" Type="Tbl_Profesional" IsForeignKey="true" />
+      <Association Name="Tbl_Personas_Tbl_Reintegro" Member="Tbl_Personas" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Personas" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Tbl_Retiro" Member="Tbl_Retiro">
     <Type Name="Tbl_Retiro">
       <Column Name="ret_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="ret_NumArchivo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="ret__fechIniLabores" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ret_numArchivo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="ret_fechSalida" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="ret_tiempo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ret_tiempo" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
       <Column Name="ret_actividades" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="ret_facRiesgo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="ret_actividades2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
@@ -1790,12 +1663,12 @@
       <Column Name="ret_sensibiNeuro" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="ret_marchaNeuro" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="ret_refleNeuro" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="ret_observaExaFisRegional" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ret_observaExaFisRegional" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="ret_examen" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="ret_fecha" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ret_fecha" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="ret_resultados" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="ret_examen2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="ret_fecha2" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ret_fecha2" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="ret_resultados2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="ret_observacionesResExaGenEspRiesTrabajo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="ret_descripcionDiagnostico" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
@@ -1821,8 +1694,8 @@
       <Column Name="Per_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="ret_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
       <Association Name="Tbl_Especialidad_Tbl_Retiro" Member="Tbl_Especialidad" ThisKey="espec_id" OtherKey="espec_id" Type="Tbl_Especialidad" IsForeignKey="true" />
-      <Association Name="Tbl_Personas_Tbl_Retiro" Member="Tbl_Personas" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Personas" IsForeignKey="true" />
       <Association Name="Tbl_Profesional_Tbl_Retiro" Member="Tbl_Profesional" ThisKey="prof_id" OtherKey="prof_id" Type="Tbl_Profesional" IsForeignKey="true" />
+      <Association Name="Tbl_Personas_Tbl_Retiro" Member="Tbl_Personas" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Personas" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Tbl_SocioEconomico" Member="Tbl_SocioEconomico">
@@ -1836,7 +1709,7 @@
       <Column Name="Socio_economico_tipocontrato_codigotrabajo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="Socio_economico_modalidadcontrato_leyorgserpublico" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="Socio_economico_modalidadcontrato_codigotrabajo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="Socio_economico_fecha_ingreso_al_Ecu" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Socio_economico_fecha_ingreso_al_Ecu" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="Socio_economico_estadocivil_soltero" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="Socio_economico_estadocivil_casado" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="Socio_economico_estadocivil_viudo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
@@ -1848,6 +1721,8 @@
       <Column Name="Socio_economico_telefonocelular" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="Socio_economico_email" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="Socio_economico_lugardenacimiento" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Socio_economico_fechNacimiento" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Socio_economico_edad" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
       <Column Name="Socio_economico_niveleducativo_primaria" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="Socio_economico_niveleducativo_secundaria" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="Socio_economico_niveleducativo_superior" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
@@ -1897,18 +1772,18 @@
       <Column Name="Socio_economico_discapacidad_si" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="Socio_economico_discapacidad_no" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="Socio_economico_discapacidad_tipo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="Socio_economico_discapacidad_porcentaje" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Socio_economico_discapacidad_porcentaje" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
       <Column Name="Socio_economico_discapacidad_carnetconadis" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="Socio_economico_discapacidad_fechacaducidadcarnetconadis" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Socio_economico_discapacidad_fechacaducidadcarnetconadis" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="Socio_economico_conyugueembarazada_no" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="Socio_economico__si_me_encuentro_embarazada" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="Socio_economico__si_mi_conyugue_esta_embarazada" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="Socio_economico__mes_embarazo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="Socio_economico__dias_embarazo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="Socio_economico_fecha_tentativa_parto" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Socio_economico_fecha_tentativa_parto" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="Socio_economico_periodo_lactancia_si" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="Socio_economico_periodo_lactancia_no" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="Socio_economico_periodo_lactancia_fechaculminacion" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Socio_economico_periodo_lactancia_fechaculminacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="Socio_economico_enfermedad_cronica_si" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="Socio_economico_enfermedad_cronica_no" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="Socio_economico_enfermedad_cronica_cual" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
@@ -1938,39 +1813,39 @@
       <Column Name="Socio_economico_numero_hijos" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="Socio_economico_numero_dependientes" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="Socio_economico_nombres_apellidos_familiar1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="Socio_economico_fecha_nacimiento_familiar1" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="Socio_economico_edad_familiar1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Socio_economico_fecha_nacimiento_familiar1" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Socio_economico_edad_familiar1" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
       <Column Name="Socio_economico_nombres_apellidos_familiar2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="Socio_economico_fecha_nacimiento_familiar2" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="Socio_economico_edad_familiar2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Socio_economico_fecha_nacimiento_familiar2" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Socio_economico_edad_familiar2" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
       <Column Name="Socio_economico_nombres_apellidos_familiar3" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="Socio_economico_fecha_nacimiento_familiar3" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="Socio_economico_edad_familiar3" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Socio_economico_fecha_nacimiento_familiar3" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Socio_economico_edad_familiar3" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
       <Column Name="Socio_economico_nombres_apellidos_familiar4" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="Socio_economico_fecha_nacimiento_familiar4" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="Socio_economico_edad_familiar4" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Socio_economico_fecha_nacimiento_familiar4" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Socio_economico_edad_familiar4" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
       <Column Name="Socio_economico_nucleofamiliar_persona_discapacidad_si" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="Socio_economico_nucleofamiliar_persona_discapacidad_no" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="Socio_economico_acargo_de_persona_discapacidad_si" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="Socio_economico_acargo_de_persona_discapacidad_no" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="Socio_economico_nombres_apellidos_familiar_discapacidad1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="Socio_economico_fecha_caducidad_carnet_familiar_discapacidad1" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Socio_economico_fecha_caducidad_carnet_familiar_discapacidad1" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="Socio_economico_familiar_discapacidad_tipo1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="Socio_economico_familiar_discapacidad_porcentaje1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Socio_economico_familiar_discapacidad_porcentaje1" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
       <Column Name="Socio_economico_familiar_discapacidad_parentesco1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="Socio_economico_familiar_discapacidad_fecha_nacimiento1" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Socio_economico_familiar_discapacidad_fecha_nacimiento1" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="Socio_economico_nombres_apellidos_familiar_discapacidad2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="Socio_economico_fecha_caducidad_carnet_familiar_discapacidad2" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Socio_economico_fecha_caducidad_carnet_familiar_discapacidad2" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="Socio_economico_familiar_discapacidad_tipo2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="Socio_economico_familiar_discapacidad_porcentaje2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Socio_economico_familiar_discapacidad_porcentaje2" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
       <Column Name="Socio_economico_familiar_discapacidad_parentesco2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="Socio_economico_familiar_discapacidad_fecha_nacimiento2" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Socio_economico_familiar_discapacidad_fecha_nacimiento2" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="Socio_economico_nombres_apellidos_familiar_discapacidad3" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="Socio_economico_fecha_caducidad_carnet_familiar_discapacidad3" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Socio_economico_fecha_caducidad_carnet_familiar_discapacidad3" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="Socio_economico_familiar_discapacidad_tipo3" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="Socio_economico_familiar_discapacidad_porcentaje3" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Socio_economico_familiar_discapacidad_porcentaje3" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
       <Column Name="Socio_economico_familiar_discapacidad_parentesco3" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="Socio_economico_familiar_discapacidad_fecha_nacimiento3" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Socio_economico_familiar_discapacidad_fecha_nacimiento3" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="Socio_economico_registrar_dependencia_familiar_MIES_si" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="Socio_economico_registrar_dependencia_familiar_MIES_no" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="Socio_economico_registrar_dependencia_familiar_MIES_numcarnet" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
@@ -1993,11 +1868,11 @@
       <Column Name="Socio_economico_actividad_deportiva_no" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="Socio_economico_actividad_deportiva_especificar" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="Socio_economico_actividad_deportiva_frecuencia" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="Socio_economico_actividad_deportiva_edad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Socio_economico_actividad_deportiva_edad" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
       <Column Name="Socio_economico_lesion_si" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="Socio_economico_lesion_no" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="Socio_economico_lesion_tipo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="Socio_economico_lesion_edad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Socio_economico_lesion_edad" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
       <Column Name="Socio_economico_lesion_tratamiento_si" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="Socio_economico_lesion_tratamiento_no" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="Socio_economico_tipo_familia_nuclear" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
@@ -2049,6 +1924,7 @@
       <Column Name="Socio_economico_fechaHora" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="Per_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Socio_economico__estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Association Name="Tbl_Personas_Tbl_SocioEconomico" Member="Tbl_Personas" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Personas" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Tbl_TipoExaFisRegional" Member="Tbl_TipoExaFisRegional">

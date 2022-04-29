@@ -44,10 +44,14 @@ namespace SistemaECU911.Template.Views
                         txt_priApellido.Text = per.Per_priApellido.ToString();
                         txt_segApellido.Text = per.Per_segApellido.ToString();
                         txt_sexo.Text = per.Per_genero.ToString();
-                        txt_numHClinica.Text = per.Per_Cedula.ToString();
+                        txt_numHClinica.Text = per.Per_cedula.ToString();
+                        txt_cargo.Text = per.Per_cargoOcupacion.ToString();
 
                         if (inmu != null)
                         {
+                            //A
+                            txt_numArchivo.Text = inmu.inmu_numArchivo.ToString();
+
                             //B
                             txt_fechatetanos1.Text = inmu.inmu_fechaTetanos1.ToString();
                             txt_loteTetanos1.Text = inmu.inmu_loteTetanos1.ToString();
@@ -256,7 +260,7 @@ namespace SistemaECU911.Template.Views
             string cedula = txt_numHClinica.Text;
 
             var lista = from c in dc.Tbl_Personas
-                        where c.Per_Cedula == cedula
+                        where c.Per_cedula == cedula
                         select c;
 
             foreach (var item in lista)
@@ -276,6 +280,8 @@ namespace SistemaECU911.Template.Views
                 string sexo = item.Per_genero;
                 txt_sexo.Text = sexo;
 
+                string cargo = item.Per_cargoOcupacion;
+                txt_cargo.Text = cargo;
             }
         }
 
@@ -289,6 +295,9 @@ namespace SistemaECU911.Template.Views
 
                 inmu = new Tbl_Inmunizaciones 
                 {
+                    //A. Captura de datos Establecimiento
+                    inmu_numArchivo = txt_numArchivo.Text,
+
                     //B. Captura de datos Inmunizaciones
                     inmu_fechaTetanos1 = Convert.ToDateTime(txt_fechatetanos1.Text),
                     inmu_loteTetanos1 = txt_loteTetanos1.Text,
@@ -470,6 +479,9 @@ namespace SistemaECU911.Template.Views
         {
             try
             {
+                //A. Captura de datos Establecimiento
+                inmu.inmu_numArchivo = txt_numArchivo.Text;
+
                 //B. Captura de datos Inmunizaciones
                 inmu.inmu_fechaTetanos1 = Convert.ToDateTime(txt_fechatetanos1.Text);
                 inmu.inmu_loteTetanos1 = txt_loteTetanos1.Text;

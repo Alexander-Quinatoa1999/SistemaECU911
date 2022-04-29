@@ -37,7 +37,7 @@ namespace CapaNegocio
         //metodo traer para todos los usuarios x ID
         public static Tbl_Personas obtenerPersonasxCedula(int ced)
         {
-            var perid = dc.Tbl_Personas.FirstOrDefault(per => per.Per_Cedula.Equals(ced) && per.Per_estado == "A");
+            var perid = dc.Tbl_Personas.FirstOrDefault(per => per.Per_cedula.Equals(ced) && per.Per_estado == "A");
             return perid;
         }
 
@@ -57,7 +57,7 @@ namespace CapaNegocio
         //metodo traer para todos los ID personas x cedula
         public static Tbl_Personas ObtenerIdPersonasxCedula(int perced)
         {
-            var perid = dc.Tbl_Personas.FirstOrDefault(per => per.Per_Cedula.Equals(perced) && per.Per_estado == "A");
+            var perid = dc.Tbl_Personas.FirstOrDefault(per => per.Per_cedula.Equals(perced) && per.Per_estado == "A");
             return perid;
         }
 

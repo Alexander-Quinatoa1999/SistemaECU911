@@ -43,11 +43,14 @@ namespace SistemaECU911.Template.Views
                         txt_priApellido.Text = per.Per_priApellido.ToString();
                         txt_segApellido.Text = per.Per_segApellido.ToString();
                         txt_sexo.Text = per.Per_genero.ToString();
-                        txt_numHClinica.Text = per.Per_Cedula.ToString();
+                        txt_numHClinica.Text = per.Per_cedula.ToString();
+                        txt_puestoTrabajo.Text = per.Per_puestoTrabajo.ToString();
 
                         if (reinte != null)
                         {
                             //A
+                            txt_numArchivo.Text = reinte.rein_numArchivo.ToString();
+                            txt_edad.Text = reinte.rein_edad.ToString();
                             txt_fechaUltiDiaLaboral.Text = reinte.rein__fechUltDiaLaboral.ToString();
                             txt_fechaReingreso.Text = reinte.rein_fechReingreso.ToString();
                             txt_total.Text = reinte.rein_total.ToString();
@@ -182,7 +185,7 @@ namespace SistemaECU911.Template.Views
             string cedula = txt_numHClinica.Text;
 
             var lista = from c in dc.Tbl_Personas
-                        where c.Per_Cedula == cedula
+                        where c.Per_cedula == cedula
                         select c;
 
             foreach (var item in lista)
@@ -202,8 +205,9 @@ namespace SistemaECU911.Template.Views
                 string sexo = item.Per_genero;
                 txt_sexo.Text = sexo;
 
-                string edad = Convert.ToString(item.Per_fechNacimiento);
-                txt_edad.Text = edad;
+                string puestoTrabajo = item.Per_puestoTrabajo;
+                txt_puestoTrabajo.Text = puestoTrabajo;
+
             }
         }
 
@@ -271,6 +275,8 @@ namespace SistemaECU911.Template.Views
                 reinte = new Tbl_Reintegro
                 {
                     //A
+                    rein_numArchivo = txt_numArchivo.Text,
+                    rein_edad = Convert.ToInt32(txt_edad.Text),
                     rein__fechUltDiaLaboral = Convert.ToDateTime(txt_fechaUltiDiaLaboral.Text),
                     rein_fechReingreso = Convert.ToDateTime(txt_fechaReingreso.Text),
                     rein_total = Convert.ToInt32(txt_total.Text),
@@ -376,6 +382,8 @@ namespace SistemaECU911.Template.Views
             try
             {
                 //A
+                reinte.rein_numArchivo = txt_numArchivo.Text;
+                reinte.rein_edad = Convert.ToInt32(txt_edad.Text);
                 reinte.rein__fechUltDiaLaboral = Convert.ToDateTime(txt_fechaUltiDiaLaboral.Text);
                 reinte.rein_fechReingreso = Convert.ToDateTime(txt_fechaReingreso.Text);
                 reinte.rein_total = Convert.ToInt32(txt_total.Text);

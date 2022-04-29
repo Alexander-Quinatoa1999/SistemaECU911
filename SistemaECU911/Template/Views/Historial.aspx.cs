@@ -40,12 +40,12 @@ namespace SistemaECU911.Template.Views
                         txt_segNombre.Text = per.Per_segNombre.ToString();
                         txt_priApellido.Text = per.Per_priApellido.ToString();
                         txt_segApellido.Text = per.Per_segApellido.ToString();
-                        txt_edad.Text = per.Per_fechNacimiento.ToString();
                         txt_sexo.Text = per.Per_genero.ToString();
-                        txt_numHClinica.Text = per.Per_Cedula.ToString();
+                        txt_numHClinica.Text = per.Per_cedula.ToString();
 
                         if (fichasmedicas != null)
                         {
+                            txt_edad.Text = fichasmedicas.edad.ToString();
                             txt_moConsulta.Text = fichasmedicas.moConsulta.ToString();
                             txt_segAcompa.Text = fichasmedicas.seAcompañanteMc.ToString();
                             ddl_tipoAntPer.SelectedValue = fichasmedicas.idTipAntecedentePer.ToString();
@@ -157,7 +157,7 @@ namespace SistemaECU911.Template.Views
             string cedula = txt_numHClinica.Text;
 
             var lista = from c in dc.Tbl_Personas
-                        where c.Per_Cedula == cedula
+                        where c.Per_cedula == cedula
                         select c;
 
             foreach (var item in lista)
@@ -177,8 +177,6 @@ namespace SistemaECU911.Template.Views
                 string sexo = item.Per_genero;
                 txt_sexo.Text = sexo;
 
-                string edad = Convert.ToString(item.Per_fechNacimiento);
-                txt_edad.Text = edad;
             }
         }
 
@@ -245,6 +243,7 @@ namespace SistemaECU911.Template.Views
 
                 fichasmedicas = new Tbl_FichasMedicas
                 {
+                    edad = Convert.ToInt32(txt_edad.Text),
                     moConsulta = txt_moConsulta.Text,
                     seAcompañanteMc = txt_segAcompa.Text,
                     idTipAntecedentePer = Convert.ToInt32(ddl_tipoAntPer.SelectedValue),
@@ -323,6 +322,7 @@ namespace SistemaECU911.Template.Views
         {
             try
             {
+                fichasmedicas.edad = Convert.ToInt32(txt_edad.Text);
                 fichasmedicas.moConsulta = txt_moConsulta.Text;
                 fichasmedicas.seAcompañanteMc = txt_segAcompa.Text;
                 fichasmedicas.idTipAntecedentePer = Convert.ToInt32(ddl_tipoAntPer.SelectedValue);

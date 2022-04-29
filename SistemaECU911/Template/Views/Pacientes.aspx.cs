@@ -32,7 +32,7 @@ namespace SistemaECU911.Template.Views
                         select new
                         {
                             hm.idFichaMedica,
-                            p.Per_Cedula,
+                            p.Per_cedula,
                             p.Per_priNombre,
                             p.Per_priApellido,
                             e.espec_nombre,

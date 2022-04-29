@@ -130,7 +130,7 @@ namespace SistemaECU911.Template.Views
             string cedula = txt_cedula.Text;
 
             var lista = from c in dc.Tbl_Personas
-                        where c.Per_Cedula == cedula
+                        where c.Per_cedula == cedula
                         select c;
 
             foreach (var item in lista)
