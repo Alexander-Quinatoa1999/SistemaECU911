@@ -190,60 +190,60 @@ namespace SistemaECU911.Template.Views
                             //F
                             txt_enfermedadactualperiodica.Text = perio.perio_descripEnfActual.ToString();
 
-                            //G
-                            txt_pielanexos.Text = perio.perio_pielAnexos.ToString();
-                            txt_organossentidos.Text = perio.perio_orgSentidos.ToString();
-                            txt_respiratorio.Text = perio.perio_respiratorio.ToString();
-                            txt_cardiovascular.Text = perio.perio_cardVascular.ToString();
-                            txt_digestivo.Text = perio.perio_digestivo.ToString();
-                            txt_genitourinario.Text = perio.perio_genUrinario.ToString();
-                            txt_musculosesqueleticos.Text = perio.perio_muscEsqueletico.ToString();
-                            txt_endocrino.Text = perio.perio_endocrino.ToString();
-                            txt_hemolinfatico.Text = perio.perio_hemoLimfa.ToString();
-                            txt_nervioso.Text = perio.perio_nervioso.ToString();
+                            ////G
+                            //txt_pielanexos.Text = perio.perio_pielAnexos.ToString();
+                            //txt_organossentidos.Text = perio.perio_orgSentidos.ToString();
+                            //txt_respiratorio.Text = perio.perio_respiratorio.ToString();
+                            //txt_cardiovascular.Text = perio.perio_cardVascular.ToString();
+                            //txt_digestivo.Text = perio.perio_digestivo.ToString();
+                            //txt_genitourinario.Text = perio.perio_genUrinario.ToString();
+                            //txt_musculosesqueleticos.Text = perio.perio_muscEsqueletico.ToString();
+                            //txt_endocrino.Text = perio.perio_endocrino.ToString();
+                            //txt_hemolinfatico.Text = perio.perio_hemoLimfa.ToString();
+                            //txt_nervioso.Text = perio.perio_nervioso.ToString();
                             txt_descrorganosysistemasperiodica.Text = perio.perio_descripRevOrgaSistemas.ToString();
 
-                            //I
-                            txt_cicatrices.Text = perio.perio_cicatricesPiel.ToString();
-                            txt_tatuajes.Text = perio.perio_tatuajesPiel.ToString();
-                            txt_pielyfaneras.Text = perio.perio_pielFacerasPiel.ToString();
-                            txt_parpados.Text = perio.perio_parpadosOjos.ToString();
-                            txt_conjuntivas.Text = perio.perio_conjuntuvasOjos.ToString();
-                            txt_pupilas.Text = perio.perio_pupilasOjos.ToString();
-                            txt_cornea.Text = perio.perio_corneaOjos.ToString();
-                            txt_motilidad.Text = perio.perio_motilidadOjos.ToString();
-                            txt_auditivoexterno.Text = perio.perio_cAudiExtreOido.ToString();
-                            txt_pabellon.Text = perio.perio_pabellonOido.ToString();
-                            txt_timpanos.Text = perio.perio_timpanosOido.ToString();
-                            txt_labios.Text = perio.perio_labiosOroFa.ToString();
-                            txt_lengua.Text = perio.perio_lenguaOroFa.ToString();
-                            txt_faringe.Text = perio.perio_faringeOroFa.ToString();
-                            txt_amigdalas.Text = perio.perio_amigdalasOroFa.ToString();
-                            txt_dentadura.Text = perio.perio_dentaduraOroFa.ToString();
-                            txt_tabique.Text = perio.perio_tabiqueNariz.ToString();
-                            txt_cornetes.Text = perio.perio_cornetesNariz.ToString();
-                            txt_mucosa.Text = perio.perio_mucosasNariz.ToString();
-                            txt_senosparanasales.Text = perio.perio_senosParanaNariz.ToString();
-                            txt_tiroides.Text = perio.perio_tiroiMasasCuello.ToString();
-                            txt_movilidad.Text = perio.perio_movilidadCuello.ToString();
-                            txt_mamas.Text = perio.perio_mamasTorax.ToString();
-                            txt_corazon.Text = perio.perio_corazonTorax.ToString();
-                            txt_pulmones.Text = perio.perio_pulmonesTorax2.ToString();
-                            txt_parrillacostal.Text = perio.perio_parriCostalTorax2.ToString();
-                            txt_visceras.Text = perio.perio_viscerasAbdomen.ToString();
-                            txt_paredabdominal.Text = perio.perio_paredAbdomiAbdomen.ToString();
-                            txt_flexibilidad.Text = perio.perio_flexibilidadColumna.ToString();
-                            txt_desviacion.Text = perio.perio_desviacionColumna.ToString();
-                            txt_dolor.Text = perio.perio_dolorColumna.ToString();
-                            txt_pelvis.Text = perio.perio_pelvisPelvis.ToString();
-                            txt_genitales.Text = perio.perio_genitalesPelvis.ToString();
-                            txt_vascular.Text = perio.perio_vascularExtre.ToString();
-                            txt_miembrosuperiores.Text = perio.perio_miemSupeExtre.ToString();
-                            txt_miembrosinferiores.Text = perio.perio_miemInfeExtre.ToString();
-                            txt_fuerza.Text = perio.perio_fuerzaNeuro.ToString();
-                            txt_sensibilidad.Text = perio.perio_sensibiNeuro.ToString();
-                            txt_marcha.Text = perio.perio_marchaNeuro.ToString();
-                            txt_reflejos.Text = perio.perio_refleNeuro.ToString();
+                            ////I
+                            //txt_cicatrices.Text = perio.perio_cicatricesPiel.ToString();
+                            //txt_tatuajes.Text = perio.perio_tatuajesPiel.ToString();
+                            //txt_pielyfaneras.Text = perio.perio_pielFacerasPiel.ToString();
+                            //txt_parpados.Text = perio.perio_parpadosOjos.ToString();
+                            //txt_conjuntivas.Text = perio.perio_conjuntuvasOjos.ToString();
+                            //txt_pupilas.Text = perio.perio_pupilasOjos.ToString();
+                            //txt_cornea.Text = perio.perio_corneaOjos.ToString();
+                            //txt_motilidad.Text = perio.perio_motilidadOjos.ToString();
+                            //txt_auditivoexterno.Text = perio.perio_cAudiExtreOido.ToString();
+                            //txt_pabellon.Text = perio.perio_pabellonOido.ToString();
+                            //txt_timpanos.Text = perio.perio_timpanosOido.ToString();
+                            //txt_labios.Text = perio.perio_labiosOroFa.ToString();
+                            //txt_lengua.Text = perio.perio_lenguaOroFa.ToString();
+                            //txt_faringe.Text = perio.perio_faringeOroFa.ToString();
+                            //txt_amigdalas.Text = perio.perio_amigdalasOroFa.ToString();
+                            //txt_dentadura.Text = perio.perio_dentaduraOroFa.ToString();
+                            //txt_tabique.Text = perio.perio_tabiqueNariz.ToString();
+                            //txt_cornetes.Text = perio.perio_cornetesNariz.ToString();
+                            //txt_mucosa.Text = perio.perio_mucosasNariz.ToString();
+                            //txt_senosparanasales.Text = perio.perio_senosParanaNariz.ToString();
+                            //txt_tiroides.Text = perio.perio_tiroiMasasCuello.ToString();
+                            //txt_movilidad.Text = perio.perio_movilidadCuello.ToString();
+                            //txt_mamas.Text = perio.perio_mamasTorax.ToString();
+                            //txt_corazon.Text = perio.perio_corazonTorax.ToString();
+                            //txt_pulmones.Text = perio.perio_pulmonesTorax2.ToString();
+                            //txt_parrillacostal.Text = perio.perio_parriCostalTorax2.ToString();
+                            //txt_visceras.Text = perio.perio_viscerasAbdomen.ToString();
+                            //txt_paredabdominal.Text = perio.perio_paredAbdomiAbdomen.ToString();
+                            //txt_flexibilidad.Text = perio.perio_flexibilidadColumna.ToString();
+                            //txt_desviacion.Text = perio.perio_desviacionColumna.ToString();
+                            //txt_dolor.Text = perio.perio_dolorColumna.ToString();
+                            //txt_pelvis.Text = perio.perio_pelvisPelvis.ToString();
+                            //txt_genitales.Text = perio.perio_genitalesPelvis.ToString();
+                            //txt_vascular.Text = perio.perio_vascularExtre.ToString();
+                            //txt_miembrosuperiores.Text = perio.perio_miemSupeExtre.ToString();
+                            //txt_miembrosinferiores.Text = perio.perio_miemInfeExtre.ToString();
+                            //txt_fuerza.Text = perio.perio_fuerzaNeuro.ToString();
+                            //txt_sensibilidad.Text = perio.perio_sensibiNeuro.ToString();
+                            //txt_marcha.Text = perio.perio_marchaNeuro.ToString();
+                            //txt_reflejos.Text = perio.perio_refleNeuro.ToString();
                             txt_obervexamenfisicoregional.Text = perio.perio_observaExaFisRegional.ToString();
 
                             //J
@@ -254,15 +254,15 @@ namespace SistemaECU911.Template.Views
 
                             //K
                             txt_descripdiagnostico.Text = perio.perio_descripcionDiagnostico.ToString();
-                            txt_cie.Text = perio.perio_cie.ToString();
-                            txt_pre.Text = perio.perio_pre.ToString();
-                            txt_def.Text = perio.perio_def.ToString();
+                            //txt_cie.Text = perio.perio_cie.ToString();
+                            //txt_pre.Text = perio.perio_pre.ToString();
+                            //txt_def.Text = perio.perio_def.ToString();
 
                             //L
-                            txt_apto.Text = perio.perio_apto.ToString();
-                            txt_aptoobservacion.Text = perio.perio_aptoObserva.ToString();
-                            txt_aptolimitacion.Text = perio.perio_aptoLimi.ToString();
-                            txt_noapto.Text = perio.perio_NoApto.ToString();
+                            //txt_apto.Text = perio.perio_apto.ToString();
+                            //txt_aptoobservacion.Text = perio.perio_aptoObserva.ToString();
+                            //txt_aptolimitacion.Text = perio.perio_aptoLimi.ToString();
+                            //txt_noapto.Text = perio.perio_NoApto.ToString();
                             txt_observacionaptitud.Text = perio.perio_ObservAptMedTrabajo.ToString();
                             txt_limitacionaptitud.Text = perio.perio_LimitAptMedTrabajo.ToString();
 
@@ -555,60 +555,60 @@ namespace SistemaECU911.Template.Views
                     //F.
                     perio_descripEnfActual = txt_enfermedadactualperiodica.Text,
 
-                    //G.
-                    perio_pielAnexos = txt_pielanexos.Text,
-                    perio_orgSentidos = txt_organossentidos.Text,
-                    perio_respiratorio = txt_respiratorio.Text,
-                    perio_cardVascular = txt_cardiovascular.Text,
-                    perio_digestivo = txt_digestivo.Text,
-                    perio_genUrinario = txt_genitourinario.Text,
-                    perio_muscEsqueletico = txt_musculosesqueleticos.Text,
-                    perio_endocrino = txt_endocrino.Text,
-                    perio_hemoLimfa = txt_hemolinfatico.Text,
-                    perio_nervioso = txt_nervioso.Text,
+                    ////G.
+                    //perio_pielAnexos = txt_pielanexos.Text,
+                    //perio_orgSentidos = txt_organossentidos.Text,
+                    //perio_respiratorio = txt_respiratorio.Text,
+                    //perio_cardVascular = txt_cardiovascular.Text,
+                    //perio_digestivo = txt_digestivo.Text,
+                    //perio_genUrinario = txt_genitourinario.Text,
+                    //perio_muscEsqueletico = txt_musculosesqueleticos.Text,
+                    //perio_endocrino = txt_endocrino.Text,
+                    //perio_hemoLimfa = txt_hemolinfatico.Text,
+                    //perio_nervioso = txt_nervioso.Text,
                     perio_descripRevOrgaSistemas = txt_descrorganosysistemasperiodica.Text,
 
-                    //I.
-                    perio_cicatricesPiel = txt_cicatrices.Text,
-                    perio_tatuajesPiel = txt_tatuajes.Text,
-                    perio_pielFacerasPiel = txt_pielyfaneras.Text,
-                    perio_parpadosOjos = txt_parpados.Text,
-                    perio_conjuntuvasOjos = txt_conjuntivas.Text,
-                    perio_pupilasOjos = txt_pupilas.Text,
-                    perio_corneaOjos = txt_cornea.Text,
-                    perio_motilidadOjos = txt_motilidad.Text,
-                    perio_cAudiExtreOido = txt_auditivoexterno.Text,
-                    perio_pabellonOido = txt_pabellon.Text,
-                    perio_timpanosOido = txt_timpanos.Text,
-                    perio_labiosOroFa = txt_labios.Text,
-                    perio_lenguaOroFa = txt_lengua.Text,
-                    perio_faringeOroFa = txt_faringe.Text,
-                    perio_amigdalasOroFa = txt_amigdalas.Text,
-                    perio_dentaduraOroFa = txt_dentadura.Text,
-                    perio_tabiqueNariz = txt_tabique.Text,
-                    perio_cornetesNariz = txt_cornetes.Text,
-                    perio_mucosasNariz = txt_mucosa.Text,
-                    perio_senosParanaNariz = txt_senosparanasales.Text,
-                    perio_tiroiMasasCuello = txt_tiroides.Text,
-                    perio_movilidadCuello = txt_movilidad.Text,
-                    perio_mamasTorax = txt_mamas.Text,
-                    perio_corazonTorax = txt_corazon.Text,
-                    perio_pulmonesTorax2 = txt_pulmones.Text,
-                    perio_parriCostalTorax2 = txt_parrillacostal.Text,
-                    perio_viscerasAbdomen = txt_visceras.Text,
-                    perio_paredAbdomiAbdomen = txt_paredabdominal.Text,
-                    perio_flexibilidadColumna = txt_flexibilidad.Text,
-                    perio_desviacionColumna = txt_desviacion.Text,
-                    perio_dolorColumna = txt_dolor.Text,
-                    perio_pelvisPelvis = txt_pelvis.Text,
-                    perio_genitalesPelvis = txt_genitales.Text,
-                    perio_vascularExtre = txt_vascular.Text,
-                    perio_miemSupeExtre = txt_miembrosuperiores.Text,
-                    perio_miemInfeExtre = txt_miembrosinferiores.Text,
-                    perio_fuerzaNeuro = txt_fuerza.Text,
-                    perio_sensibiNeuro = txt_sensibilidad.Text,
-                    perio_marchaNeuro = txt_marcha.Text,
-                    perio_refleNeuro = txt_reflejos.Text,
+                    ////I.
+                    //perio_cicatricesPiel = txt_cicatrices.Text,
+                    //perio_tatuajesPiel = txt_tatuajes.Text,
+                    //perio_pielFacerasPiel = txt_pielyfaneras.Text,
+                    //perio_parpadosOjos = txt_parpados.Text,
+                    //perio_conjuntuvasOjos = txt_conjuntivas.Text,
+                    //perio_pupilasOjos = txt_pupilas.Text,
+                    //perio_corneaOjos = txt_cornea.Text,
+                    //perio_motilidadOjos = txt_motilidad.Text,
+                    //perio_cAudiExtreOido = txt_auditivoexterno.Text,
+                    //perio_pabellonOido = txt_pabellon.Text,
+                    //perio_timpanosOido = txt_timpanos.Text,
+                    //perio_labiosOroFa = txt_labios.Text,
+                    //perio_lenguaOroFa = txt_lengua.Text,
+                    //perio_faringeOroFa = txt_faringe.Text,
+                    //perio_amigdalasOroFa = txt_amigdalas.Text,
+                    //perio_dentaduraOroFa = txt_dentadura.Text,
+                    //perio_tabiqueNariz = txt_tabique.Text,
+                    //perio_cornetesNariz = txt_cornetes.Text,
+                    //perio_mucosasNariz = txt_mucosa.Text,
+                    //perio_senosParanaNariz = txt_senosparanasales.Text,
+                    //perio_tiroiMasasCuello = txt_tiroides.Text,
+                    //perio_movilidadCuello = txt_movilidad.Text,
+                    //perio_mamasTorax = txt_mamas.Text,
+                    //perio_corazonTorax = txt_corazon.Text,
+                    //perio_pulmonesTorax2 = txt_pulmones.Text,
+                    //perio_parriCostalTorax2 = txt_parrillacostal.Text,
+                    //perio_viscerasAbdomen = txt_visceras.Text,
+                    //perio_paredAbdomiAbdomen = txt_paredabdominal.Text,
+                    //perio_flexibilidadColumna = txt_flexibilidad.Text,
+                    //perio_desviacionColumna = txt_desviacion.Text,
+                    //perio_dolorColumna = txt_dolor.Text,
+                    //perio_pelvisPelvis = txt_pelvis.Text,
+                    //perio_genitalesPelvis = txt_genitales.Text,
+                    //perio_vascularExtre = txt_vascular.Text,
+                    //perio_miemSupeExtre = txt_miembrosuperiores.Text,
+                    //perio_miemInfeExtre = txt_miembrosinferiores.Text,
+                    //perio_fuerzaNeuro = txt_fuerza.Text,
+                    //perio_sensibiNeuro = txt_sensibilidad.Text,
+                    //perio_marchaNeuro = txt_marcha.Text,
+                    //perio_refleNeuro = txt_reflejos.Text,
                     perio_observaExaFisRegional = txt_obervexamenfisicoregional.Text,
 
                     //J.
@@ -620,14 +620,14 @@ namespace SistemaECU911.Template.Views
                     //K.
                     perio_descripcionDiagnostico = txt_descripdiagnostico.Text,
                     perio_cie = txt_cie.Text,
-                    perio_pre = txt_pre.Text,
-                    perio_def = txt_def.Text,
+                    //perio_pre = txt_pre.Text,
+                    //perio_def = txt_def.Text,
 
                     //L.
-                    perio_apto = txt_apto.Text,
-                    perio_aptoObserva = txt_aptoobservacion.Text,
-                    perio_aptoLimi = txt_aptolimitacion.Text,
-                    perio_NoApto = txt_noapto.Text,
+                    //perio_apto = txt_apto.Text,
+                    //perio_aptoObserva = txt_aptoobservacion.Text,
+                    //perio_aptoLimi = txt_aptolimitacion.Text,
+                    //perio_NoApto = txt_noapto.Text,
                     perio_ObservAptMedTrabajo = txt_observacionaptitud.Text,
                     perio_LimitAptMedTrabajo = txt_limitacionaptitud.Text,
 
@@ -802,60 +802,60 @@ namespace SistemaECU911.Template.Views
                 //F.
                 perio.perio_descripEnfActual = txt_enfermedadactualperiodica.Text;
 
-                //G.
-                perio.perio_pielAnexos = txt_pielanexos.Text;
-                perio.perio_orgSentidos = txt_organossentidos.Text;
-                perio.perio_respiratorio = txt_respiratorio.Text;
-                perio.perio_cardVascular = txt_cardiovascular.Text;
-                perio.perio_digestivo = txt_digestivo.Text;
-                perio.perio_genUrinario = txt_genitourinario.Text;
-                perio.perio_muscEsqueletico = txt_musculosesqueleticos.Text;
-                perio.perio_endocrino = txt_endocrino.Text;
-                perio.perio_hemoLimfa = txt_hemolinfatico.Text;
-                perio.perio_nervioso = txt_nervioso.Text;
+                ////G.
+                //perio.perio_pielAnexos = txt_pielanexos.Text;
+                //perio.perio_orgSentidos = txt_organossentidos.Text;
+                //perio.perio_respiratorio = txt_respiratorio.Text;
+                //perio.perio_cardVascular = txt_cardiovascular.Text;
+                //perio.perio_digestivo = txt_digestivo.Text;
+                //perio.perio_genUrinario = txt_genitourinario.Text;
+                //perio.perio_muscEsqueletico = txt_musculosesqueleticos.Text;
+                //perio.perio_endocrino = txt_endocrino.Text;
+                //perio.perio_hemoLimfa = txt_hemolinfatico.Text;
+                //perio.perio_nervioso = txt_nervioso.Text;
                 perio.perio_descripRevOrgaSistemas = txt_descrorganosysistemasperiodica.Text;
 
-                //I.
-                perio.perio_cicatricesPiel = txt_cicatrices.Text;
-                perio.perio_tatuajesPiel = txt_tatuajes.Text;
-                perio.perio_pielFacerasPiel = txt_pielyfaneras.Text;
-                perio.perio_parpadosOjos = txt_parpados.Text;
-                perio.perio_conjuntuvasOjos = txt_conjuntivas.Text;
-                perio.perio_pupilasOjos = txt_pupilas.Text;
-                perio.perio_corneaOjos = txt_cornea.Text;
-                perio.perio_motilidadOjos = txt_motilidad.Text;
-                perio.perio_cAudiExtreOido = txt_auditivoexterno.Text;
-                perio.perio_pabellonOido = txt_pabellon.Text;
-                perio.perio_timpanosOido = txt_timpanos.Text;
-                perio.perio_labiosOroFa = txt_labios.Text;
-                perio.perio_lenguaOroFa = txt_lengua.Text;
-                perio.perio_faringeOroFa = txt_faringe.Text;
-                perio.perio_amigdalasOroFa = txt_amigdalas.Text;
-                perio.perio_dentaduraOroFa = txt_dentadura.Text;
-                perio.perio_tabiqueNariz = txt_tabique.Text;
-                perio.perio_cornetesNariz = txt_cornetes.Text;
-                perio.perio_mucosasNariz = txt_mucosa.Text;
-                perio.perio_senosParanaNariz = txt_senosparanasales.Text;
-                perio.perio_tiroiMasasCuello = txt_tiroides.Text;
-                perio.perio_movilidadCuello = txt_movilidad.Text;
-                perio.perio_mamasTorax = txt_mamas.Text;
-                perio.perio_corazonTorax = txt_corazon.Text;
-                perio.perio_pulmonesTorax2 = txt_pulmones.Text;
-                perio.perio_parriCostalTorax2 = txt_parrillacostal.Text;
-                perio.perio_viscerasAbdomen = txt_visceras.Text;
-                perio.perio_paredAbdomiAbdomen = txt_paredabdominal.Text;
-                perio.perio_flexibilidadColumna = txt_flexibilidad.Text;
-                perio.perio_desviacionColumna = txt_desviacion.Text;
-                perio.perio_dolorColumna = txt_dolor.Text;
-                perio.perio_pelvisPelvis = txt_pelvis.Text;
-                perio.perio_genitalesPelvis = txt_genitales.Text;
-                perio.perio_vascularExtre = txt_vascular.Text;
-                perio.perio_miemSupeExtre = txt_miembrosuperiores.Text;
-                perio.perio_miemInfeExtre = txt_miembrosinferiores.Text;
-                perio.perio_fuerzaNeuro = txt_fuerza.Text;
-                perio.perio_sensibiNeuro = txt_sensibilidad.Text;
-                perio.perio_marchaNeuro = txt_marcha.Text;
-                perio.perio_refleNeuro = txt_reflejos.Text;
+                ////I.
+                //perio.perio_cicatricesPiel = txt_cicatrices.Text;
+                //perio.perio_tatuajesPiel = txt_tatuajes.Text;
+                //perio.perio_pielFacerasPiel = txt_pielyfaneras.Text;
+                //perio.perio_parpadosOjos = txt_parpados.Text;
+                //perio.perio_conjuntuvasOjos = txt_conjuntivas.Text;
+                //perio.perio_pupilasOjos = txt_pupilas.Text;
+                //perio.perio_corneaOjos = txt_cornea.Text;
+                //perio.perio_motilidadOjos = txt_motilidad.Text;
+                //perio.perio_cAudiExtreOido = txt_auditivoexterno.Text;
+                //perio.perio_pabellonOido = txt_pabellon.Text;
+                //perio.perio_timpanosOido = txt_timpanos.Text;
+                //perio.perio_labiosOroFa = txt_labios.Text;
+                //perio.perio_lenguaOroFa = txt_lengua.Text;
+                //perio.perio_faringeOroFa = txt_faringe.Text;
+                //perio.perio_amigdalasOroFa = txt_amigdalas.Text;
+                //perio.perio_dentaduraOroFa = txt_dentadura.Text;
+                //perio.perio_tabiqueNariz = txt_tabique.Text;
+                //perio.perio_cornetesNariz = txt_cornetes.Text;
+                //perio.perio_mucosasNariz = txt_mucosa.Text;
+                //perio.perio_senosParanaNariz = txt_senosparanasales.Text;
+                //perio.perio_tiroiMasasCuello = txt_tiroides.Text;
+                //perio.perio_movilidadCuello = txt_movilidad.Text;
+                //perio.perio_mamasTorax = txt_mamas.Text;
+                //perio.perio_corazonTorax = txt_corazon.Text;
+                //perio.perio_pulmonesTorax2 = txt_pulmones.Text;
+                //perio.perio_parriCostalTorax2 = txt_parrillacostal.Text;
+                //perio.perio_viscerasAbdomen = txt_visceras.Text;
+                //perio.perio_paredAbdomiAbdomen = txt_paredabdominal.Text;
+                //perio.perio_flexibilidadColumna = txt_flexibilidad.Text;
+                //perio.perio_desviacionColumna = txt_desviacion.Text;
+                //perio.perio_dolorColumna = txt_dolor.Text;
+                //perio.perio_pelvisPelvis = txt_pelvis.Text;
+                //perio.perio_genitalesPelvis = txt_genitales.Text;
+                //perio.perio_vascularExtre = txt_vascular.Text;
+                //perio.perio_miemSupeExtre = txt_miembrosuperiores.Text;
+                //perio.perio_miemInfeExtre = txt_miembrosinferiores.Text;
+                //perio.perio_fuerzaNeuro = txt_fuerza.Text;
+                //perio.perio_sensibiNeuro = txt_sensibilidad.Text;
+                //perio.perio_marchaNeuro = txt_marcha.Text;
+                //perio.perio_refleNeuro = txt_reflejos.Text;
                 perio.perio_observaExaFisRegional = txt_obervexamenfisicoregional.Text;
 
                 //J.
@@ -867,14 +867,14 @@ namespace SistemaECU911.Template.Views
                 //K.
                 perio.perio_descripcionDiagnostico = txt_descripdiagnostico.Text;
                 perio.perio_cie = txt_cie.Text;
-                perio.perio_pre = txt_pre.Text;
-                perio.perio_def = txt_def.Text;
+                //perio.perio_pre = txt_pre.Text;
+                //perio.perio_def = txt_def.Text;
 
                 //L.
-                perio.perio_apto = txt_apto.Text;
-                perio.perio_aptoObserva = txt_aptoobservacion.Text;
-                perio.perio_aptoLimi = txt_aptolimitacion.Text;
-                perio.perio_NoApto = txt_noapto.Text;
+                //perio.perio_apto = txt_apto.Text;
+                //perio.perio_aptoObserva = txt_aptoobservacion.Text;
+                //perio.perio_aptoLimi = txt_aptolimitacion.Text;
+                //perio.perio_NoApto = txt_noapto.Text;
                 perio.perio_ObservAptMedTrabajo = txt_observacionaptitud.Text;
                 perio.perio_LimitAptMedTrabajo = txt_limitacionaptitud.Text;
 

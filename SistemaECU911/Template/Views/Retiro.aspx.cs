@@ -62,61 +62,61 @@ namespace SistemaECU911.Template.Views
                             //B
                             txt_descripcionantiqui.Text = reti.ret_descripAntCliQuiru.ToString();
 
-                            txt_siCalificadoIESSAcciTrabajo.Text = reti.ret_siCalificadoIESSAcciTrabajo.ToString();
+                            //txt_siCalificadoIESSAcciTrabajo.Text = reti.ret_siCalificadoIESSAcciTrabajo.ToString();
                             txt_EspecifiCalificadoIESSAcciTrabajo.Text = reti.ret_EspecifiCalificadoIESSAcciTrabajo.ToString();
-                            txt_noCalificadoIESSAcciTrabajo.Text = reti.ret_noCalificadoIESSAcciTrabajo.ToString();
+                            //txt_noCalificadoIESSAcciTrabajo.Text = reti.ret_noCalificadoIESSAcciTrabajo.ToString();
                             txt_fechaCalificadoIESSAcciTrabajo.Text = reti.ret_fechaCalificadoIESSAcciTrabajo.ToString();
                             txt_observacionesAcciTrabajo.Text = reti.ret_observacionesAcciTrabajo.ToString();
                             txt_detalleAcciTrabajo.Text = reti.ret_detalleAcciTrabajo.ToString();
 
-                            txt_siCalificadoIESSEnferProfesionales.Text = reti.ret_siCalificadoIESSEnferProfesionales.ToString();
+                            //txt_siCalificadoIESSEnferProfesionales.Text = reti.ret_siCalificadoIESSEnferProfesionales.ToString();
                             txt_EspecifiCalificadoIESSEnferProfesionales.Text = reti.ret_EspecifiCalificadoIESSEnferProfesionales.ToString();
-                            txt_noCalificadoIESSEnferProfesionales.Text = reti.ret_noCalificadoIESSEnferProfesionales.ToString();
+                            //txt_noCalificadoIESSEnferProfesionales.Text = reti.ret_noCalificadoIESSEnferProfesionales.ToString();
                             txt_fechaCalificadoIESSEnferProfesionales.Text = reti.ret_fechaCalificadoIESSEnferProfesionales.ToString();
                             txt_observacionesEnferProfesionales.Text = reti.ret_observacionesEnferProfesionales.ToString();
                             txt_detalleEnferProfesionales.Text = reti.ret_detalleEnferProfesionales.ToString();
 
-                            //D
-                            txt_cicatrices.Text = reti.ret_cicatricesPiel.ToString();
-                            txt_tatuajes.Text = reti.ret_tatuajesPiel.ToString();
-                            txt_pielyfaneras.Text = reti.ret_pielFacerasPiel.ToString();
-                            txt_parpados.Text = reti.ret_parpadosOjos.ToString();
-                            txt_conjuntivas.Text = reti.ret_conjuntuvasOjos.ToString();
-                            txt_pupilas.Text = reti.ret_pupilasOjos.ToString();
-                            txt_cornea.Text = reti.ret_corneaOjos.ToString();
-                            txt_motilidad.Text = reti.ret_motilidadOjos.ToString();
-                            txt_auditivoexterno.Text = reti.ret_cAudiExtreOido.ToString();
-                            txt_pabellon.Text = reti.ret_pabellonOido.ToString();
-                            txt_timpanos.Text = reti.ret_timpanosOido.ToString();
-                            txt_labios.Text = reti.ret_labiosOroFa.ToString();
-                            txt_lengua.Text = reti.ret_lenguaOroFa.ToString();
-                            txt_faringe.Text = reti.ret_faringeOroFa.ToString();
-                            txt_amigdalas.Text = reti.ret_amigdalasOroFa.ToString();
-                            txt_dentadura.Text = reti.ret_dentaduraOroFa.ToString();
-                            txt_tabique.Text = reti.ret_tabiqueNariz.ToString();
-                            txt_cornetes.Text = reti.ret_cornetesNariz.ToString();
-                            txt_mucosa.Text = reti.ret_mucosasNariz.ToString();
-                            txt_senosparanasales.Text = reti.ret_senosParanaNariz.ToString();
-                            txt_tiroides.Text = reti.ret_tiroiMasasCuello.ToString();
-                            txt_movilidad.Text = reti.ret_movilidadCuello.ToString();
-                            txt_mamas.Text = reti.ret_mamasTorax.ToString();
-                            txt_corazon.Text = reti.ret_corazonTorax.ToString();
-                            txt_pulmones.Text = reti.ret_pulmonesTorax2.ToString();
-                            txt_parrillacostal.Text = reti.ret_parriCostalTorax2.ToString();
-                            txt_visceras.Text = reti.ret_viscerasAbdomen.ToString();
-                            txt_paredabdominal.Text = reti.ret_paredAbdomiAbdomen.ToString();
-                            txt_flexibilidad.Text = reti.ret_flexibilidadColumna.ToString();
-                            txt_desviacion.Text = reti.ret_desviacionColumna.ToString();
-                            txt_dolor.Text = reti.ret_dolorColumna.ToString();
-                            txt_pelvis.Text = reti.ret_pelvisPelvis.ToString();
-                            txt_genitales.Text = reti.ret_genitalesPelvis.ToString();
-                            txt_vascular.Text = reti.ret_vascularExtre.ToString();
-                            txt_miembrosuperiores.Text = reti.ret_miemSupeExtre.ToString();
-                            txt_miembrosinferiores.Text = reti.ret_miemInfeExtre.ToString();
-                            txt_fuerza.Text = reti.ret_fuerzaNeuro.ToString();
-                            txt_sensibilidad.Text = reti.ret_sensibiNeuro.ToString();
-                            txt_marcha.Text = reti.ret_marchaNeuro.ToString();
-                            txt_reflejos.Text = reti.ret_refleNeuro.ToString();
+                            ////D
+                            //txt_cicatrices.Text = reti.ret_cicatricesPiel.ToString();
+                            //txt_tatuajes.Text = reti.ret_tatuajesPiel.ToString();
+                            //txt_pielyfaneras.Text = reti.ret_pielFacerasPiel.ToString();
+                            //txt_parpados.Text = reti.ret_parpadosOjos.ToString();
+                            //txt_conjuntivas.Text = reti.ret_conjuntuvasOjos.ToString();
+                            //txt_pupilas.Text = reti.ret_pupilasOjos.ToString();
+                            //txt_cornea.Text = reti.ret_corneaOjos.ToString();
+                            //txt_motilidad.Text = reti.ret_motilidadOjos.ToString();
+                            //txt_auditivoexterno.Text = reti.ret_cAudiExtreOido.ToString();
+                            //txt_pabellon.Text = reti.ret_pabellonOido.ToString();
+                            //txt_timpanos.Text = reti.ret_timpanosOido.ToString();
+                            //txt_labios.Text = reti.ret_labiosOroFa.ToString();
+                            //txt_lengua.Text = reti.ret_lenguaOroFa.ToString();
+                            //txt_faringe.Text = reti.ret_faringeOroFa.ToString();
+                            //txt_amigdalas.Text = reti.ret_amigdalasOroFa.ToString();
+                            //txt_dentadura.Text = reti.ret_dentaduraOroFa.ToString();
+                            //txt_tabique.Text = reti.ret_tabiqueNariz.ToString();
+                            //txt_cornetes.Text = reti.ret_cornetesNariz.ToString();
+                            //txt_mucosa.Text = reti.ret_mucosasNariz.ToString();
+                            //txt_senosparanasales.Text = reti.ret_senosParanaNariz.ToString();
+                            //txt_tiroides.Text = reti.ret_tiroiMasasCuello.ToString();
+                            //txt_movilidad.Text = reti.ret_movilidadCuello.ToString();
+                            //txt_mamas.Text = reti.ret_mamasTorax.ToString();
+                            //txt_corazon.Text = reti.ret_corazonTorax.ToString();
+                            //txt_pulmones.Text = reti.ret_pulmonesTorax2.ToString();
+                            //txt_parrillacostal.Text = reti.ret_parriCostalTorax2.ToString();
+                            //txt_visceras.Text = reti.ret_viscerasAbdomen.ToString();
+                            //txt_paredabdominal.Text = reti.ret_paredAbdomiAbdomen.ToString();
+                            //txt_flexibilidad.Text = reti.ret_flexibilidadColumna.ToString();
+                            //txt_desviacion.Text = reti.ret_desviacionColumna.ToString();
+                            //txt_dolor.Text = reti.ret_dolorColumna.ToString();
+                            //txt_pelvis.Text = reti.ret_pelvisPelvis.ToString();
+                            //txt_genitales.Text = reti.ret_genitalesPelvis.ToString();
+                            //txt_vascular.Text = reti.ret_vascularExtre.ToString();
+                            //txt_miembrosuperiores.Text = reti.ret_miemSupeExtre.ToString();
+                            //txt_miembrosinferiores.Text = reti.ret_miemInfeExtre.ToString();
+                            //txt_fuerza.Text = reti.ret_fuerzaNeuro.ToString();
+                            //txt_sensibilidad.Text = reti.ret_sensibiNeuro.ToString();
+                            //txt_marcha.Text = reti.ret_marchaNeuro.ToString();
+                            //txt_reflejos.Text = reti.ret_refleNeuro.ToString();
                             txt_obervexamenfisicoregional.Text = reti.ret_observaExaFisRegional.ToString();
 
                             //E
@@ -128,12 +128,12 @@ namespace SistemaECU911.Template.Views
                             //F
                             txt_descripdiagnostico.Text = reti.ret_descripcionDiagnostico.ToString();
                             txt_cie.Text = reti.ret_cie.ToString();
-                            txt_pre.Text = reti.ret_pre.ToString();
-                            txt_def.Text = reti.ret_def.ToString();
+                            //txt_pre.Text = reti.ret_pre.ToString();
+                            //txt_def.Text = reti.ret_def.ToString();
 
                             //G
-                            txt_sievamed.Text = reti.ret_si.ToString();
-                            txt_noevamed.Text = reti.ret_no.ToString();
+                            //txt_sievamed.Text = reti.ret_si.ToString();
+                            //txt_noevamed.Text = reti.ret_no.ToString();
                             txt_obserevamed.Text = reti.ret_observacionesEvaMedRetiro.ToString();
 
                             //H
@@ -295,61 +295,61 @@ namespace SistemaECU911.Template.Views
 
                     //B.
                     ret_descripAntCliQuiru = txt_descripcionantiqui.Text,
-                    ret_siCalificadoIESSAcciTrabajo = txt_siCalificadoIESSAcciTrabajo.Text,
+                    //ret_siCalificadoIESSAcciTrabajo = txt_siCalificadoIESSAcciTrabajo.Text,
                     ret_EspecifiCalificadoIESSAcciTrabajo = txt_EspecifiCalificadoIESSAcciTrabajo.Text,
-                    ret_noCalificadoIESSAcciTrabajo = txt_noCalificadoIESSAcciTrabajo.Text,
+                    //ret_noCalificadoIESSAcciTrabajo = txt_noCalificadoIESSAcciTrabajo.Text,
                     ret_fechaCalificadoIESSAcciTrabajo = Convert.ToDateTime(txt_fechaCalificadoIESSAcciTrabajo.Text),
                     ret_observacionesAcciTrabajo = txt_observacionesAcciTrabajo.Text,
                     ret_detalleAcciTrabajo = txt_detalleAcciTrabajo.Text,
 
-                    ret_siCalificadoIESSEnferProfesionales = txt_siCalificadoIESSEnferProfesionales.Text,
+                    //ret_siCalificadoIESSEnferProfesionales = txt_siCalificadoIESSEnferProfesionales.Text,
                     ret_EspecifiCalificadoIESSEnferProfesionales = txt_EspecifiCalificadoIESSEnferProfesionales.Text,
-                    ret_noCalificadoIESSEnferProfesionales = txt_noCalificadoIESSEnferProfesionales.Text,
+                    //ret_noCalificadoIESSEnferProfesionales = txt_noCalificadoIESSEnferProfesionales.Text,
                     ret_fechaCalificadoIESSEnferProfesionales = Convert.ToDateTime(txt_fechaCalificadoIESSEnferProfesionales.Text),
                     ret_observacionesEnferProfesionales = txt_observacionesEnferProfesionales.Text,
                     ret_detalleEnferProfesionales = txt_detalleEnferProfesionales.Text,
 
-                    //D.
-                    ret_cicatricesPiel = txt_cicatrices.Text,
-                    ret_tatuajesPiel = txt_tatuajes.Text,
-                    ret_pielFacerasPiel = txt_pielyfaneras.Text,
-                    ret_parpadosOjos = txt_parpados.Text,
-                    ret_conjuntuvasOjos = txt_conjuntivas.Text,
-                    ret_pupilasOjos = txt_pupilas.Text,
-                    ret_corneaOjos = txt_cornea.Text,
-                    ret_motilidadOjos = txt_motilidad.Text,
-                    ret_cAudiExtreOido = txt_auditivoexterno.Text,
-                    ret_pabellonOido = txt_pabellon.Text,
-                    ret_timpanosOido = txt_timpanos.Text,
-                    ret_labiosOroFa = txt_labios.Text,
-                    ret_lenguaOroFa = txt_lengua.Text,
-                    ret_faringeOroFa = txt_faringe.Text,
-                    ret_amigdalasOroFa = txt_amigdalas.Text,
-                    ret_dentaduraOroFa = txt_dentadura.Text,
-                    ret_tabiqueNariz = txt_tabique.Text,
-                    ret_cornetesNariz = txt_cornetes.Text,
-                    ret_mucosasNariz = txt_mucosa.Text,
-                    ret_senosParanaNariz = txt_senosparanasales.Text,
-                    ret_tiroiMasasCuello = txt_tiroides.Text,
-                    ret_movilidadCuello = txt_movilidad.Text,
-                    ret_mamasTorax = txt_mamas.Text,
-                    ret_corazonTorax = txt_corazon.Text,
-                    ret_pulmonesTorax2 = txt_pulmones.Text,
-                    ret_parriCostalTorax2 = txt_parrillacostal.Text,
-                    ret_viscerasAbdomen = txt_visceras.Text,
-                    ret_paredAbdomiAbdomen = txt_paredabdominal.Text,
-                    ret_flexibilidadColumna = txt_flexibilidad.Text,
-                    ret_desviacionColumna = txt_desviacion.Text,
-                    ret_dolorColumna = txt_dolor.Text,
-                    ret_pelvisPelvis = txt_pelvis.Text,
-                    ret_genitalesPelvis = txt_genitales.Text,
-                    ret_vascularExtre = txt_vascular.Text,
-                    ret_miemSupeExtre = txt_miembrosuperiores.Text,
-                    ret_miemInfeExtre = txt_miembrosinferiores.Text,
-                    ret_fuerzaNeuro = txt_fuerza.Text,
-                    ret_sensibiNeuro = txt_sensibilidad.Text,
-                    ret_marchaNeuro = txt_marcha.Text,
-                    ret_refleNeuro = txt_reflejos.Text,
+                    ////D.
+                    //ret_cicatricesPiel = txt_cicatrices.Text,
+                    //ret_tatuajesPiel = txt_tatuajes.Text,
+                    //ret_pielFacerasPiel = txt_pielyfaneras.Text,
+                    //ret_parpadosOjos = txt_parpados.Text,
+                    //ret_conjuntuvasOjos = txt_conjuntivas.Text,
+                    //ret_pupilasOjos = txt_pupilas.Text,
+                    //ret_corneaOjos = txt_cornea.Text,
+                    //ret_motilidadOjos = txt_motilidad.Text,
+                    //ret_cAudiExtreOido = txt_auditivoexterno.Text,
+                    //ret_pabellonOido = txt_pabellon.Text,
+                    //ret_timpanosOido = txt_timpanos.Text,
+                    //ret_labiosOroFa = txt_labios.Text,
+                    //ret_lenguaOroFa = txt_lengua.Text,
+                    //ret_faringeOroFa = txt_faringe.Text,
+                    //ret_amigdalasOroFa = txt_amigdalas.Text,
+                    //ret_dentaduraOroFa = txt_dentadura.Text,
+                    //ret_tabiqueNariz = txt_tabique.Text,
+                    //ret_cornetesNariz = txt_cornetes.Text,
+                    //ret_mucosasNariz = txt_mucosa.Text,
+                    //ret_senosParanaNariz = txt_senosparanasales.Text,
+                    //ret_tiroiMasasCuello = txt_tiroides.Text,
+                    //ret_movilidadCuello = txt_movilidad.Text,
+                    //ret_mamasTorax = txt_mamas.Text,
+                    //ret_corazonTorax = txt_corazon.Text,
+                    //ret_pulmonesTorax2 = txt_pulmones.Text,
+                    //ret_parriCostalTorax2 = txt_parrillacostal.Text,
+                    //ret_viscerasAbdomen = txt_visceras.Text,
+                    //ret_paredAbdomiAbdomen = txt_paredabdominal.Text,
+                    //ret_flexibilidadColumna = txt_flexibilidad.Text,
+                    //ret_desviacionColumna = txt_desviacion.Text,
+                    //ret_dolorColumna = txt_dolor.Text,
+                    //ret_pelvisPelvis = txt_pelvis.Text,
+                    //ret_genitalesPelvis = txt_genitales.Text,
+                    //ret_vascularExtre = txt_vascular.Text,
+                    //ret_miemSupeExtre = txt_miembrosuperiores.Text,
+                    //ret_miemInfeExtre = txt_miembrosinferiores.Text,
+                    //ret_fuerzaNeuro = txt_fuerza.Text,
+                    //ret_sensibiNeuro = txt_sensibilidad.Text,
+                    //ret_marchaNeuro = txt_marcha.Text,
+                    //ret_refleNeuro = txt_reflejos.Text,
                     ret_observaExaFisRegional = txt_obervexamenfisicoregional.Text,
 
                     //E.
@@ -361,12 +361,12 @@ namespace SistemaECU911.Template.Views
                     //F
                     ret_descripcionDiagnostico = txt_descripdiagnostico.Text,
                     ret_cie = txt_cie.Text,
-                    ret_pre = txt_pre.Text,
-                    ret_def = txt_def.Text,
+                    //ret_pre = txt_pre.Text,
+                    //ret_def = txt_def.Text,
 
                     //G
-                    ret_si = txt_sievamed.Text,
-                    ret_no = txt_noevamed.Text,
+                    //ret_si = txt_sievamed.Text,
+                    //ret_no = txt_noevamed.Text,
                     ret_observacionesEvaMedRetiro = txt_obserevamed.Text,
 
                     //H.
@@ -411,61 +411,61 @@ namespace SistemaECU911.Template.Views
                 //B.
                 reti.ret_descripAntCliQuiru = txt_descripcionantiqui.Text;
 
-                reti.ret_siCalificadoIESSAcciTrabajo = txt_siCalificadoIESSAcciTrabajo.Text;
+                //reti.ret_siCalificadoIESSAcciTrabajo = txt_siCalificadoIESSAcciTrabajo.Text;
                 reti.ret_EspecifiCalificadoIESSAcciTrabajo = txt_EspecifiCalificadoIESSAcciTrabajo.Text;
-                reti.ret_noCalificadoIESSAcciTrabajo = txt_noCalificadoIESSAcciTrabajo.Text;
+                //reti.ret_noCalificadoIESSAcciTrabajo = txt_noCalificadoIESSAcciTrabajo.Text;
                 reti.ret_fechaCalificadoIESSAcciTrabajo = Convert.ToDateTime(txt_fechaCalificadoIESSAcciTrabajo.Text);
                 reti.ret_observacionesAcciTrabajo = txt_observacionesAcciTrabajo.Text;
                 reti.ret_detalleAcciTrabajo = txt_detalleAcciTrabajo.Text;
 
-                reti.ret_siCalificadoIESSEnferProfesionales = txt_siCalificadoIESSEnferProfesionales.Text;
+                //reti.ret_siCalificadoIESSEnferProfesionales = txt_siCalificadoIESSEnferProfesionales.Text;
                 reti.ret_EspecifiCalificadoIESSEnferProfesionales = txt_EspecifiCalificadoIESSEnferProfesionales.Text;
-                reti.ret_noCalificadoIESSEnferProfesionales = txt_noCalificadoIESSEnferProfesionales.Text;
+                //reti.ret_noCalificadoIESSEnferProfesionales = txt_noCalificadoIESSEnferProfesionales.Text;
                 reti.ret_fechaCalificadoIESSEnferProfesionales = Convert.ToDateTime(txt_fechaCalificadoIESSEnferProfesionales.Text);
                 reti.ret_observacionesEnferProfesionales = txt_observacionesEnferProfesionales.Text;
                 reti.ret_detalleEnferProfesionales = txt_detalleEnferProfesionales.Text;
 
-                //D.
-                reti.ret_cicatricesPiel = txt_cicatrices.Text;
-                reti.ret_tatuajesPiel = txt_tatuajes.Text;
-                reti.ret_pielFacerasPiel = txt_pielyfaneras.Text;
-                reti.ret_parpadosOjos = txt_parpados.Text;
-                reti.ret_conjuntuvasOjos = txt_conjuntivas.Text;
-                reti.ret_pupilasOjos = txt_pupilas.Text;
-                reti.ret_corneaOjos = txt_cornea.Text;
-                reti.ret_motilidadOjos = txt_motilidad.Text;
-                reti.ret_cAudiExtreOido = txt_auditivoexterno.Text;
-                reti.ret_pabellonOido = txt_pabellon.Text;
-                reti.ret_timpanosOido = txt_timpanos.Text;
-                reti.ret_labiosOroFa = txt_labios.Text;
-                reti.ret_lenguaOroFa = txt_lengua.Text;
-                reti.ret_faringeOroFa = txt_faringe.Text;
-                reti.ret_amigdalasOroFa = txt_amigdalas.Text;
-                reti.ret_dentaduraOroFa = txt_dentadura.Text;
-                reti.ret_tabiqueNariz = txt_tabique.Text;
-                reti.ret_cornetesNariz = txt_cornetes.Text;
-                reti.ret_mucosasNariz = txt_mucosa.Text;
-                reti.ret_senosParanaNariz = txt_senosparanasales.Text;
-                reti.ret_tiroiMasasCuello = txt_tiroides.Text;
-                reti.ret_movilidadCuello = txt_movilidad.Text;
-                reti.ret_mamasTorax = txt_mamas.Text;
-                reti.ret_corazonTorax = txt_corazon.Text;
-                reti.ret_pulmonesTorax2 = txt_pulmones.Text;
-                reti.ret_parriCostalTorax2 = txt_parrillacostal.Text;
-                reti.ret_viscerasAbdomen = txt_visceras.Text;
-                reti.ret_paredAbdomiAbdomen = txt_paredabdominal.Text;
-                reti.ret_flexibilidadColumna = txt_flexibilidad.Text;
-                reti.ret_desviacionColumna = txt_desviacion.Text;
-                reti.ret_dolorColumna = txt_dolor.Text;
-                reti.ret_pelvisPelvis = txt_pelvis.Text;
-                reti.ret_genitalesPelvis = txt_genitales.Text;
-                reti.ret_vascularExtre = txt_vascular.Text;
-                reti.ret_miemSupeExtre = txt_miembrosuperiores.Text;
-                reti.ret_miemInfeExtre = txt_miembrosinferiores.Text;
-                reti.ret_fuerzaNeuro = txt_fuerza.Text;
-                reti.ret_sensibiNeuro = txt_sensibilidad.Text;
-                reti.ret_marchaNeuro = txt_marcha.Text;
-                reti.ret_refleNeuro = txt_reflejos.Text;
+                ////D.
+                //reti.ret_cicatricesPiel = txt_cicatrices.Text;
+                //reti.ret_tatuajesPiel = txt_tatuajes.Text;
+                //reti.ret_pielFacerasPiel = txt_pielyfaneras.Text;
+                //reti.ret_parpadosOjos = txt_parpados.Text;
+                //reti.ret_conjuntuvasOjos = txt_conjuntivas.Text;
+                //reti.ret_pupilasOjos = txt_pupilas.Text;
+                //reti.ret_corneaOjos = txt_cornea.Text;
+                //reti.ret_motilidadOjos = txt_motilidad.Text;
+                //reti.ret_cAudiExtreOido = txt_auditivoexterno.Text;
+                //reti.ret_pabellonOido = txt_pabellon.Text;
+                //reti.ret_timpanosOido = txt_timpanos.Text;
+                //reti.ret_labiosOroFa = txt_labios.Text;
+                //reti.ret_lenguaOroFa = txt_lengua.Text;
+                //reti.ret_faringeOroFa = txt_faringe.Text;
+                //reti.ret_amigdalasOroFa = txt_amigdalas.Text;
+                //reti.ret_dentaduraOroFa = txt_dentadura.Text;
+                //reti.ret_tabiqueNariz = txt_tabique.Text;
+                //reti.ret_cornetesNariz = txt_cornetes.Text;
+                //reti.ret_mucosasNariz = txt_mucosa.Text;
+                //reti.ret_senosParanaNariz = txt_senosparanasales.Text;
+                //reti.ret_tiroiMasasCuello = txt_tiroides.Text;
+                //reti.ret_movilidadCuello = txt_movilidad.Text;
+                //reti.ret_mamasTorax = txt_mamas.Text;
+                //reti.ret_corazonTorax = txt_corazon.Text;
+                //reti.ret_pulmonesTorax2 = txt_pulmones.Text;
+                //reti.ret_parriCostalTorax2 = txt_parrillacostal.Text;
+                //reti.ret_viscerasAbdomen = txt_visceras.Text;
+                //reti.ret_paredAbdomiAbdomen = txt_paredabdominal.Text;
+                //reti.ret_flexibilidadColumna = txt_flexibilidad.Text;
+                //reti.ret_desviacionColumna = txt_desviacion.Text;
+                //reti.ret_dolorColumna = txt_dolor.Text;
+                //reti.ret_pelvisPelvis = txt_pelvis.Text;
+                //reti.ret_genitalesPelvis = txt_genitales.Text;
+                //reti.ret_vascularExtre = txt_vascular.Text;
+                //reti.ret_miemSupeExtre = txt_miembrosuperiores.Text;
+                //reti.ret_miemInfeExtre = txt_miembrosinferiores.Text;
+                //reti.ret_fuerzaNeuro = txt_fuerza.Text;
+                //reti.ret_sensibiNeuro = txt_sensibilidad.Text;
+                //reti.ret_marchaNeuro = txt_marcha.Text;
+                //reti.ret_refleNeuro = txt_reflejos.Text;
                 reti.ret_observaExaFisRegional = txt_obervexamenfisicoregional.Text;
 
                 //E.
@@ -477,12 +477,12 @@ namespace SistemaECU911.Template.Views
                 //F.
                 reti.ret_descripcionDiagnostico = txt_descripdiagnostico.Text;
                 reti.ret_cie = txt_cie.Text;
-                reti.ret_pre = txt_pre.Text;
-                reti.ret_def = txt_def.Text;
+                //reti.ret_pre = txt_pre.Text;
+                //reti.ret_def = txt_def.Text;
 
                 //G.
-                reti.ret_si = txt_sievamed.Text;
-                reti.ret_no = txt_noevamed.Text;
+                //reti.ret_si = txt_sievamed.Text;
+                //reti.ret_no = txt_noevamed.Text;
                 reti.ret_observacionesEvaMedRetiro = txt_obserevamed.Text;
 
                 //H.

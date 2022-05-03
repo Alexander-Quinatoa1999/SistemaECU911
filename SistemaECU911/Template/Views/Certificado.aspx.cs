@@ -51,27 +51,27 @@ namespace SistemaECU911.Template.Views
 
                             //B
                             txt_fechaEmision.Text = certi.certi_fechEmision.ToString();
-                            txt_ingreso.Text = certi.certi_ingreso.ToString();
-                            txt_periodico.Text = certi.certi_periodico.ToString();
-                            txt_reintegro.Text = certi.certi_reintegro.ToString();
-                            txt_retiro.Text = certi.certi_retiro.ToString();
+                            //txt_ingreso.Text = certi.certi_ingreso.ToString();
+                            //txt_periodico.Text = certi.certi_periodico.ToString();
+                            //txt_reintegro.Text = certi.certi_reintegro.ToString();
+                            //txt_retiro.Text = certi.certi_retiro.ToString();
 
-                            //C
-                            txt_apto.Text = certi.certi_apto.ToString();
-                            txt_aptoObservacion.Text = certi.certi_aptoObserva.ToString();
-                            txt_aptoLimitaciones.Text = certi.certi_aptoLimi.ToString();
-                            txt_noApto.Text = certi.certi_NoApto.ToString();
+                            ////C
+                            //txt_apto.Text = certi.certi_apto.ToString();
+                            //txt_aptoObservacion.Text = certi.certi_aptoObserva.ToString();
+                            //txt_aptoLimitaciones.Text = certi.certi_aptoLimi.ToString();
+                            //txt_noApto.Text = certi.certi_NoApto.ToString();
                             txt_detaObservaAptiMedLaboral.Text = certi.certi_ObservAptiMedLaboral.ToString();
 
-                            //D
-                            txt_siEvaMedRetiro.Text = certi.certi_siUsuEvaMed.ToString();
-                            txt_noEvaMedRetiro.Text = certi.certi_noUsuEvaMed.ToString();
-                            txt_presuntivaEvaMedRetiro.Text = certi.certi_presunCondiDiag.ToString();
-                            txt_definitivaEvaMedRetiro.Text = certi.certi_defiCondiDiag.ToString();
-                            txt_noAplicaEvaMedRetiro.Text = certi.certi_noAplicaCondiDiag.ToString();
-                            txt_si2EvaMedRetiro.Text = certi.certi_siCondiSalud.ToString();
-                            txt_no2EvaMedRetiro.Text = certi.certi_noAplicaCondiSalud.ToString();
-                            txt_noAplica2EvaMedRetiro.Text = certi.certi_noAplicaCondiSalud.ToString();
+                            ////D
+                            //txt_siEvaMedRetiro.Text = certi.certi_siUsuEvaMed.ToString();
+                            //txt_noEvaMedRetiro.Text = certi.certi_noUsuEvaMed.ToString();
+                            //txt_presuntivaEvaMedRetiro.Text = certi.certi_presunCondiDiag.ToString();
+                            //txt_definitivaEvaMedRetiro.Text = certi.certi_defiCondiDiag.ToString();
+                            //txt_noAplicaEvaMedRetiro.Text = certi.certi_noAplicaCondiDiag.ToString();
+                            //txt_si2EvaMedRetiro.Text = certi.certi_siCondiSalud.ToString();
+                            //txt_no2EvaMedRetiro.Text = certi.certi_noAplicaCondiSalud.ToString();
+                            //txt_noAplica2EvaMedRetiro.Text = certi.certi_noAplicaCondiSalud.ToString();
 
                             //E
                             txt_descripRecomendaciones.Text = certi.certi_descripcionRecomendaciones.ToString();
@@ -170,27 +170,27 @@ namespace SistemaECU911.Template.Views
 
                     //B.
                     certi_fechEmision = Convert.ToDateTime(txt_fechaEmision.Text),
-                    certi_ingreso = txt_ingreso.Text,
-                    certi_periodico = txt_periodico.Text,
-                    certi_reintegro = txt_reintegro.Text,
-                    certi_retiro = txt_retiro.Text,
+                    //certi_ingreso = txt_ingreso.Text,
+                    //certi_periodico = txt_periodico.Text,
+                    //certi_reintegro = txt_reintegro.Text,
+                    //certi_retiro = txt_retiro.Text,
 
                     //C.
-                    certi_apto = txt_apto.Text,
-                    certi_aptoObserva = txt_aptoObservacion.Text,
-                    certi_aptoLimi = txt_aptoLimitaciones.Text,
-                    certi_NoApto = txt_noApto.Text,
+                    //certi_apto = txt_apto.Text,
+                    //certi_aptoObserva = txt_aptoObservacion.Text,
+                    //certi_aptoLimi = txt_aptoLimitaciones.Text,
+                    //certi_NoApto = txt_noApto.Text,
                     certi_ObservAptiMedLaboral = txt_detaObservaAptiMedLaboral.Text,
 
                     //D.
-                    certi_siUsuEvaMed = txt_siEvaMedRetiro.Text,
-                    certi_noUsuEvaMed = txt_noEvaMedRetiro.Text,
-                    certi_presunCondiDiag = txt_presuntivaEvaMedRetiro.Text,
-                    certi_defiCondiDiag = txt_definitivaEvaMedRetiro.Text,
-                    certi_noAplicaCondiDiag = txt_noAplicaEvaMedRetiro.Text,
-                    certi_siCondiSalud = txt_si2EvaMedRetiro.Text,
-                    certi_noCondiSalud = txt_no2EvaMedRetiro.Text,
-                    certi_noAplicaCondiSalud = txt_noAplica2EvaMedRetiro.Text,
+                    //certi_siUsuEvaMed = txt_siEvaMedRetiro.Text,
+                    //certi_noUsuEvaMed = txt_noEvaMedRetiro.Text,
+                    //certi_presunCondiDiag = txt_presuntivaEvaMedRetiro.Text,
+                    //certi_defiCondiDiag = txt_definitivaEvaMedRetiro.Text,
+                    //certi_noAplicaCondiDiag = txt_noAplicaEvaMedRetiro.Text,
+                    //certi_siCondiSalud = txt_si2EvaMedRetiro.Text,
+                    //certi_noCondiSalud = txt_no2EvaMedRetiro.Text,
+                    //certi_noAplicaCondiSalud = txt_noAplica2EvaMedRetiro.Text,
 
                     //E.
                     certi_descripcionRecomendaciones = txt_descripRecomendaciones.Text,
@@ -223,27 +223,27 @@ namespace SistemaECU911.Template.Views
 
                 //B.
                 certi.certi_fechEmision = Convert.ToDateTime(txt_fechaEmision.Text);
-                certi.certi_ingreso = txt_ingreso.Text;
-                certi.certi_periodico = txt_periodico.Text;
-                certi.certi_reintegro = txt_reintegro.Text;
-                certi.certi_retiro = txt_retiro.Text;
+                //certi.certi_ingreso = txt_ingreso.Text;
+                //certi.certi_periodico = txt_periodico.Text;
+                //certi.certi_reintegro = txt_reintegro.Text;
+                //certi.certi_retiro = txt_retiro.Text;
 
                 //C.
-                certi.certi_apto = txt_apto.Text;
-                certi.certi_aptoObserva = txt_aptoObservacion.Text;
-                certi.certi_aptoLimi = txt_aptoLimitaciones.Text;
-                certi.certi_NoApto = txt_noApto.Text;
+                //certi.certi_apto = txt_apto.Text;
+                //certi.certi_aptoObserva = txt_aptoObservacion.Text;
+                //certi.certi_aptoLimi = txt_aptoLimitaciones.Text;
+                //certi.certi_NoApto = txt_noApto.Text;
                 certi.certi_ObservAptiMedLaboral = txt_detaObservaAptiMedLaboral.Text;
 
                 //D.
-                certi.certi_siUsuEvaMed = txt_siEvaMedRetiro.Text;
-                certi.certi_noUsuEvaMed = txt_noEvaMedRetiro.Text;
-                certi.certi_presunCondiDiag = txt_presuntivaEvaMedRetiro.Text;
-                certi.certi_defiCondiDiag = txt_definitivaEvaMedRetiro.Text;
-                certi.certi_noAplicaCondiDiag = txt_noAplicaEvaMedRetiro.Text;
-                certi.certi_siCondiSalud = txt_si2EvaMedRetiro.Text;
-                certi.certi_noAplicaCondiSalud = txt_no2EvaMedRetiro.Text;
-                certi.certi_noAplicaCondiSalud = txt_noAplica2EvaMedRetiro.Text;
+                //certi.certi_siUsuEvaMed = txt_siEvaMedRetiro.Text;
+                //certi.certi_noUsuEvaMed = txt_noEvaMedRetiro.Text;
+                //certi.certi_presunCondiDiag = txt_presuntivaEvaMedRetiro.Text;
+                //certi.certi_defiCondiDiag = txt_definitivaEvaMedRetiro.Text;
+                //certi.certi_noAplicaCondiDiag = txt_noAplicaEvaMedRetiro.Text;
+                //certi.certi_siCondiSalud = txt_si2EvaMedRetiro.Text;
+                //certi.certi_noAplicaCondiSalud = txt_no2EvaMedRetiro.Text;
+                //certi.certi_noAplicaCondiSalud = txt_noAplica2EvaMedRetiro.Text;
 
                 //E.
                 certi.certi_descripcionRecomendaciones = txt_descripRecomendaciones.Text;

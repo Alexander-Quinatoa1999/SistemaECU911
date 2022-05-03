@@ -199,7 +199,8 @@
                             <asp:TableCell Style="width: 600px; background-color: white; font-size: 15px">FUE CALIFICADO POR EL INSTITUTO DE SEGURIDAD SOCIAL CORRESPONDIENTE: </asp:TableCell>
                             <asp:TableCell Style="width: 50px; background-color: white; font-size: 15px">SI</asp:TableCell>
                             <asp:TableCell Style="width: 50px; background-color: white; font-size: 14px">
-                                <asp:TextBox runat="server" ID="txt_siCalificadoIESSAcciTrabajo" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                                <asp:CheckBox ID="ckb_siCalificadoIESSAcciTrabajo" Checked="false" runat="server" />
+                                <%--<asp:TextBox runat="server" ID="ckb_siCalificadoIESSAcciTrabajo" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>--%>
                             </asp:TableCell>
                             <asp:TableCell Style="width: 100px; background-color: white; font-size: 15px">ESPECIFICAR</asp:TableCell>
                             <asp:TableCell Style="width: 150px; background-color: white; font-size: 14px">
@@ -207,7 +208,8 @@
                             </asp:TableCell>
                             <asp:TableCell Style="width: 50px; background-color: white; font-size: 15px">NO</asp:TableCell>
                             <asp:TableCell Style="width: 50px; background-color: white; font-size: 14px">
-                                <asp:TextBox runat="server" ID="txt_noCalificadoIESSAcciTrabajo" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                                <asp:CheckBox ID="ckb_noCalificadoIESSAcciTrabajo" Checked="false" runat="server" />
+                                <%--<asp:TextBox runat="server" ID="ckb_noCalificadoIESSAcciTrabajo" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>--%>
                             </asp:TableCell>
                             <asp:TableCell Style="width: 75px; background-color: white; font-size: 15px">FECHA:</asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
@@ -236,7 +238,8 @@
                             <asp:TableCell Style="width: 600px; background-color: white; font-size: 15px">FUE CALIFICADO POR EL INSTITUTO DE SEGURIDAD SOCIAL CORRESPONDIENTE: </asp:TableCell>
                             <asp:TableCell Style="width: 50px; background-color: white; font-size: 15px">SI</asp:TableCell>
                             <asp:TableCell Style="width: 50px; background-color: white; font-size: 14px">
-                                <asp:TextBox runat="server" ID="txt_siCalificadoIESSEnferProfesionales" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                                <asp:CheckBox ID="ckb_siCalificadoIESSEnferProfesionales" Checked="false" runat="server" />
+                                <%--<asp:TextBox runat="server" ID="ckb_siCalificadoIESSEnferProfesionales" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>--%>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 15px">ESPECIFICAR</asp:TableCell>
                             <asp:TableCell Style="width: 150px; background-color: white; font-size: 14px">
@@ -244,7 +247,8 @@
                             </asp:TableCell>
                             <asp:TableCell Style="width: 50px; background-color: white; font-size: 15px">NO</asp:TableCell>
                             <asp:TableCell Style="width: 50px; background-color: white; font-size: 14px">
-                                <asp:TextBox runat="server" ID="txt_noCalificadoIESSEnferProfesionales" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                                <asp:CheckBox ID="ckb_noCalificadoIESSEnferProfesionales" Checked="false" runat="server" />
+                                <%--<asp:TextBox runat="server" ID="ckb_noCalificadoIESSEnferProfesionales" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>--%>
                             </asp:TableCell>
                             <asp:TableCell Style="width: 75px; background-color: white; font-size: 15px">FECHA:</asp:TableCell>
                             <asp:TableCell Style="background-color: white">
@@ -330,85 +334,100 @@
                                 </asp:TableCell>
                                 <asp:TableCell CssClass="REI-CONTENT" Style="width: 120px; background-color: #ccffff; font-size: 15px">a. Cicatrices</asp:TableCell>
                                 <asp:TableCell CssClass="REI-BOX" Style="width: 60px; background-color: white; font-size: 14px">
-                                    <asp:TextBox runat="server" ID="txt_cicatrices" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                                    <asp:CheckBox ID="ckb_cicatrices" Checked="false" runat="server" />
+                                    <%--<asp:TextBox runat="server" ID="ckb_cicatrices" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>--%>
                                 </asp:TableCell>
                                 <asp:TableCell RowSpan="3" Style="width: 65px; background-color: #ccffff; font-size: 15px">
                                     <asp:Label CssClass="REI-COLUMN" ID="Label12" runat="server" Text="3. Oído"></asp:Label>
                                 </asp:TableCell>
                                 <asp:TableCell CssClass="REI-CONTENT" Style="width: 120px; background-color: #ccffff; font-size: 15px">a. C. auditivo externo</asp:TableCell>
                                 <asp:TableCell CssClass="REI-BOX" Style="width: 60px; background-color: white; font-size: 14px">
-                                    <asp:TextBox runat="server" ID="txt_auditivoexterno" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                                    <asp:CheckBox ID="ckb_auditivoexterno" Checked="false" runat="server" />
+                                    <%--<asp:TextBox runat="server" ID="ckb_auditivoexterno" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>--%>
                                 </asp:TableCell>
                                 <asp:TableCell RowSpan="4" Style="width: 65px; background-color: #ccffff; font-size: 15px">
                                     <asp:Label CssClass="REI-COLUMN" ID="Label13" runat="server" Text="5. Nariz"></asp:Label>
                                 </asp:TableCell>
                                 <asp:TableCell CssClass="REI-CONTENT" Style="width: 120px; background-color: #ccffff; font-size: 15px">a. Tabique</asp:TableCell>
                                 <asp:TableCell CssClass="REI-BOX" Style="width: 60px; background-color: white; font-size: 14px">
-                                    <asp:TextBox runat="server" ID="txt_tabique" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                                    <asp:CheckBox ID="ckb_tabique" Checked="false" runat="server" />
+                                    <%--<asp:TextBox runat="server" ID="ckb_tabique" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>--%>
                                 </asp:TableCell>
                                 <asp:TableCell RowSpan="2" Style="width: 65px; background-color: #ccffff; font-size: 15px">
                                     <asp:Label CssClass="REI-COLUMN" ID="Label14" runat="server" Text="8. Tórax"></asp:Label>
                                 </asp:TableCell>
                                 <asp:TableCell CssClass="REI-CONTENT" Style="width: 120px; background-color: #ccffff; font-size: 15px">a. Pulmones</asp:TableCell>
                                 <asp:TableCell CssClass="REI-BOX" Style="width: 60px; background-color: white; font-size: 14px">
-                                    <asp:TextBox runat="server" ID="txt_pulmones" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                                    <asp:CheckBox ID="ckb_pulmones" Checked="false" runat="server" />
+                                    <%--<asp:TextBox runat="server" ID="ckb_pulmones" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>--%>
                                 </asp:TableCell>
                                 <asp:TableCell RowSpan="2" Style="width: 65px; background-color: #ccffff; font-size: 15px">
                                     <asp:Label CssClass="REI-COLUMN" ID="Label15" runat="server" Text="11. Pelvis"></asp:Label>
                                 </asp:TableCell>
                                 <asp:TableCell CssClass="REI-CONTENT" Style="width: 120px; background-color: #ccffff; font-size: 15px">a. Pelvis</asp:TableCell>
                                 <asp:TableCell CssClass="REI-BOX" Style="width: 60px; background-color: white; font-size: 14px">
-                                    <asp:TextBox runat="server" ID="txt_pelvis" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                                    <asp:CheckBox ID="ckb_pelvis" Checked="false" runat="server" />
+                                    <%--<asp:TextBox runat="server" ID="ckb_pelvis" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>--%>
                                 </asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
                                 <asp:TableCell CssClass="REI-CONTENT" Style="background-color: #ccffff; font-size: 15px">b. Tatuajes</asp:TableCell>
                                 <asp:TableCell CssClass="REI-BOX" Style="background-color: white; font-size: 14px">
-                                    <asp:TextBox runat="server" ID="txt_tatuajes" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                                    <asp:CheckBox ID="ckb_tatuajes" Checked="false" runat="server" />
+                                    <%--<asp:TextBox runat="server" ID="ckb_tatuajes" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>--%>
                                 </asp:TableCell>
                                 <asp:TableCell CssClass="REI-CONTENT" Style="background-color: #ccffff; font-size: 15px">b. Pabellón</asp:TableCell>
                                 <asp:TableCell CssClass="REI-BOX" Style="background-color: white; font-size: 14px">
-                                    <asp:TextBox runat="server" ID="txt_pabellon" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                                    <asp:CheckBox ID="ckb_pabellon" Checked="false" runat="server" />
+                                    <%--<asp:TextBox runat="server" ID="ckb_pabellon" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>--%>
                                 </asp:TableCell>
                                 <asp:TableCell CssClass="REI-CONTENT" Style="background-color: #ccffff; font-size: 15px">b. Cornetes</asp:TableCell>
                                 <asp:TableCell CssClass="REI-BOX" Style="background-color: white; font-size: 14px">
-                                    <asp:TextBox runat="server" ID="txt_cornetes" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                                    <asp:CheckBox ID="ckb_cornetes" Checked="false" runat="server" />
+                                    <%--<asp:TextBox runat="server" ID="ckb_cornetes" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>--%>
                                 </asp:TableCell>
                                 <asp:TableCell CssClass="REI-CONTENT" Style="background-color: #ccffff; font-size: 15px">b. Parrilla Costal</asp:TableCell>
                                 <asp:TableCell CssClass="REI-BOX" Style="background-color: white; font-size: 14px">
-                                    <asp:TextBox runat="server" ID="txt_parrillacostal" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                                    <asp:CheckBox ID="ckb_parrillacostal" Checked="false" runat="server" />
+                                    <%--<asp:TextBox runat="server" ID="ckb_parrillacostal" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>--%>
                                 </asp:TableCell>
                                 <asp:TableCell CssClass="REI-CONTENT" Style="background-color: #ccffff; font-size: 15px">b. Genitales</asp:TableCell>
                                 <asp:TableCell CssClass="REI-BOX" Style="background-color: white; font-size: 14px">
-                                    <asp:TextBox runat="server" ID="txt_genitales" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                                    <asp:CheckBox ID="ckb_genitales" Checked="false" runat="server" />
+                                    <%--<asp:TextBox runat="server" ID="ckb_genitales" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>--%>
                                 </asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
                                 <asp:TableCell CssClass="REI-CONTENT" Style="background-color: #ccffff; font-size: 15px">c. Piel  y Faneras</asp:TableCell>
                                 <asp:TableCell CssClass="REI-BOX" Style="background-color: white; font-size: 14px">
-                                    <asp:TextBox runat="server" ID="txt_pielyfaneras" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                                    <asp:CheckBox ID="ckb_pielyfaneras" Checked="false" runat="server" />
+                                    <%--<asp:TextBox runat="server" ID="ckb_pielyfaneras" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>--%>
                                 </asp:TableCell>
                                 <asp:TableCell CssClass="REI-CONTENT" Style="background-color: #ccffff; font-size: 15px">c. Tímpanos</asp:TableCell>
                                 <asp:TableCell CssClass="REI-BOX" Style="background-color: white; font-size: 14px">
-                                    <asp:TextBox runat="server" ID="txt_timpanos" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                                    <asp:CheckBox ID="ckb_timpanos" Checked="false" runat="server" />
+                                    <%--<asp:TextBox runat="server" ID="ckb_timpanos" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>--%>
                                 </asp:TableCell>
                                 <asp:TableCell CssClass="REI-CONTENT" Style="background-color: #ccffff; font-size: 15px">c. Mucosas</asp:TableCell>
                                 <asp:TableCell CssClass="REI-BOX" Style="background-color: white; font-size: 14px">
-                                    <asp:TextBox runat="server" ID="txt_mucosa" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                                    <asp:CheckBox ID="ckb_mucosa" Checked="false" runat="server" />
+                                    <%--<asp:TextBox runat="server" ID="ckb_mucosa" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>--%>
                                 </asp:TableCell>
                                 <asp:TableCell RowSpan="2" Style="background-color: #ccffff; font-size: 15px">
                                     <asp:Label CssClass="REI-COLUMN" ID="Label16" runat="server" Text="9. Abdomen"></asp:Label>
                                 </asp:TableCell>
                                 <asp:TableCell CssClass="REI-CONTENT" Style="background-color: #ccffff; font-size: 15px">a. Vísceras</asp:TableCell>
                                 <asp:TableCell CssClass="REI-BOX" Style="background-color: white; font-size: 14px">
-                                    <asp:TextBox runat="server" ID="txt_visceras" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                                    <asp:CheckBox ID="ckb_visceras" Checked="false" runat="server" />
+                                    <%--<asp:TextBox runat="server" ID="ckb_visceras" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>--%>
                                 </asp:TableCell>
                                 <asp:TableCell RowSpan="3" Style="background-color: #ccffff; font-size: 15px">
                                     <asp:Label CssClass="REI-COLUMN" ID="Label17" runat="server" Text="12. Extremidades"></asp:Label>
                                 </asp:TableCell>
                                 <asp:TableCell CssClass="REI-CONTENT" Style="background-color: #ccffff; font-size: 15px">a. Vascular</asp:TableCell>
                                 <asp:TableCell CssClass="REI-BOX" Style="background-color: white; font-size: 14px">
-                                    <asp:TextBox runat="server" ID="txt_vascular" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                                    <asp:CheckBox ID="ckb_vascular" Checked="false" runat="server" />
+                                    <%--<asp:TextBox runat="server" ID="ckb_vascular" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>--%>
                                 </asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
@@ -417,129 +436,154 @@
                                 </asp:TableCell>
                                 <asp:TableCell CssClass="REI-CONTENT" Style="background-color: #ccffff; font-size: 15px">a. Párpados</asp:TableCell>
                                 <asp:TableCell CssClass="REI-BOX" Style="background-color: white; font-size: 14px">
-                                    <asp:TextBox runat="server" ID="txt_parpados" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                                    <asp:CheckBox ID="ckb_parpados" Checked="false" runat="server" />
+                                    <%--<asp:TextBox runat="server" ID="ckb_parpados" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>--%>
                                 </asp:TableCell>
                                 <asp:TableCell RowSpan="5" Style="background-color: #ccffff; font-size: 15px">
                                     <asp:Label CssClass="REI-COLUMN" ID="Label19" runat="server" Text="4. Oro faringe"></asp:Label>
                                 </asp:TableCell>
                                 <asp:TableCell CssClass="REI-CONTENT" Style="background-color: #ccffff; font-size: 15px">a. Labios</asp:TableCell>
                                 <asp:TableCell CssClass="REI-BOX" Style="background-color: white; font-size: 14px">
-                                    <asp:TextBox runat="server" ID="txt_labios" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                                    <asp:CheckBox ID="ckb_labios" Checked="false" runat="server" />
+                                    <%--<asp:TextBox runat="server" ID="ckb_labios" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>--%>
                                 </asp:TableCell>
                                 <asp:TableCell CssClass="REI-CONTENT" Style="background-color: #ccffff; font-size: 15px">d. Senos paranasales</asp:TableCell>
                                 <asp:TableCell CssClass="REI-BOX" Style="background-color: white; font-size: 14px">
-                                    <asp:TextBox runat="server" ID="txt_senosparanasales" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                                    <asp:CheckBox ID="ckb_senosparanasales" Checked="false" runat="server" />
+                                    <%--<asp:TextBox runat="server" ID="ckb_senosparanasales" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>--%>
                                 </asp:TableCell>
                                 <asp:TableCell CssClass="REI-CONTENT" Style="background-color: #ccffff; font-size: 15px">b. Pared abdominal</asp:TableCell>
                                 <asp:TableCell CssClass="REI-BOX" Style="background-color: white; font-size: 14px">
-                                    <asp:TextBox runat="server" ID="txt_paredabdominal" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                                    <asp:CheckBox ID="ckb_paredabdominal" Checked="false" runat="server" />
+                                    <%--<asp:TextBox runat="server" ID="ckb_paredabdominal" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>--%>
                                 </asp:TableCell>
                                 <asp:TableCell CssClass="REI-CONTENT" Style="background-color: #ccffff; font-size: 15px">b. Miembros superiores</asp:TableCell>
                                 <asp:TableCell CssClass="REI-BOX" Style="background-color: white; font-size: 14px">
-                                    <asp:TextBox runat="server" ID="txt_miembrosuperiores" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                                    <asp:CheckBox ID="ckb_miembrosuperiores" Checked="false" runat="server" />
+                                    <%--<asp:TextBox runat="server" ID="ckb_miembrosuperiores" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>--%>
                                 </asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
                                 <asp:TableCell CssClass="REI-CONTENT" Style="background-color: #ccffff; font-size: 15px">b. Conjuntivas</asp:TableCell>
                                 <asp:TableCell CssClass="REI-BOX" Style="background-color: white; font-size: 14px">
-                                    <asp:TextBox runat="server" ID="txt_conjuntivas" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                                    <asp:CheckBox ID="ckb_conjuntivas" Checked="false" runat="server" />
+                                    <%--<asp:TextBox runat="server" ID="ckb_conjuntivas" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>--%>
                                 </asp:TableCell>
                                 <asp:TableCell CssClass="REI-CONTENT" Style="background-color: #ccffff; font-size: 15px">b. Lengua</asp:TableCell>
                                 <asp:TableCell CssClass="REI-BOX" Style="background-color: white; font-size: 14px">
-                                    <asp:TextBox runat="server" ID="txt_lengua" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                                    <asp:CheckBox ID="ckb_lengua" Checked="false" runat="server" />
+                                    <%--<asp:TextBox runat="server" ID="ckb_lengua" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>--%>
                                 </asp:TableCell>
                                 <asp:TableCell RowSpan="2" Style="background-color: #ccffff; font-size: 15px">
                                     <asp:Label CssClass="REI-COLUMN" ID="Label20" runat="server" Text="6. Cuello"></asp:Label>
                                 </asp:TableCell>
                                 <asp:TableCell CssClass="REI-CONTENT" Style="background-color: #ccffff; font-size: 15px">a. Tiroides / masas</asp:TableCell>
                                 <asp:TableCell CssClass="REI-BOX" Style="background-color: white; font-size: 14px">
-                                    <asp:TextBox runat="server" ID="txt_tiroides" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                                    <asp:CheckBox ID="ckb_tiroides" Checked="false" runat="server" />
+                                    <%--<asp:TextBox runat="server" ID="ckb_tiroides" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>--%>
                                 </asp:TableCell>
                                 <asp:TableCell RowSpan="4" Style="background-color: #ccffff; font-size: 15px">
                                     <asp:Label CssClass="REI-COLUMN" ID="Label21" runat="server" Text="10. Columna"></asp:Label>
                                 </asp:TableCell>
                                 <asp:TableCell CssClass="REI-CONTENT" Style="background-color: #ccffff; font-size: 15px">a. Flexibilidad</asp:TableCell>
                                 <asp:TableCell CssClass="REI-BOX" Style="background-color: white; font-size: 14px">
-                                    <asp:TextBox runat="server" ID="txt_flexibilidad" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                                    <asp:CheckBox ID="ckb_flexibilidad" Checked="false" runat="server" />
+                                    <%--<asp:TextBox runat="server" ID="ckb_flexibilidad" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>--%>
                                 </asp:TableCell>
                                 <asp:TableCell CssClass="REI-CONTENT" Style="background-color: #ccffff; font-size: 15px">c. Miembros inferiores</asp:TableCell>
                                 <asp:TableCell CssClass="REI-BOX" Style="background-color: white; font-size: 14px">
-                                    <asp:TextBox runat="server" ID="txt_miembrosinferiores" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                                    <asp:CheckBox ID="ckb_miembrosinferiores" Checked="false" runat="server" />
+                                    <%--<asp:TextBox runat="server" ID="ckb_miembrosinferiores" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>--%>
                                 </asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
                                 <asp:TableCell CssClass="REI-CONTENT" Style="background-color: #ccffff; font-size: 15px">c. Pupilas</asp:TableCell>
                                 <asp:TableCell CssClass="REI-BOX" Style="background-color: white; font-size: 14px">
-                                    <asp:TextBox runat="server" ID="txt_pupilas" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                                    <asp:CheckBox ID="ckb_pupilas" Checked="false" runat="server" />
+                                    <%--<asp:TextBox runat="server" ID="ckb_pupilas" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>--%>
                                 </asp:TableCell>
                                 <asp:TableCell CssClass="REI-CONTENT" Style="background-color: #ccffff; font-size: 15px">c. Faringe</asp:TableCell>
                                 <asp:TableCell CssClass="REI-BOX" Style="background-color: white; font-size: 14px">
-                                    <asp:TextBox runat="server" ID="txt_faringe" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                                    <asp:CheckBox ID="ckb_faringe" Checked="false" runat="server" />
+                                    <%--<asp:TextBox runat="server" ID="ckb_faringe" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>--%>
                                 </asp:TableCell>
                                 <asp:TableCell CssClass="REI-CONTENT" Style="background-color: #ccffff; font-size: 15px">b. Movilidad</asp:TableCell>
                                 <asp:TableCell CssClass="REI-BOX" Style="background-color: white; font-size: 14px">
-                                    <asp:TextBox runat="server" ID="txt_movilidad" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                                    <asp:CheckBox ID="ckb_movilidad" Checked="false" runat="server" />
+                                    <%--<asp:TextBox runat="server" ID="ckb_movilidad" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>--%>
                                 </asp:TableCell>
                                 <asp:TableCell CssClass="REI-CONTENT" RowSpan="2" Style="background-color: #ccffff; font-size: 15px">b. Desviación</asp:TableCell>
                                 <asp:TableCell CssClass="REI-BOX" RowSpan="2" Style="background-color: white; font-size: 14px">
-                                    <asp:TextBox runat="server" ID="txt_desviacion" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                                    <asp:CheckBox ID="ckb_desviacion" Checked="false" runat="server" />
+                                    <%--<asp:TextBox runat="server" ID="ckb_desviacion" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>--%>
                                 </asp:TableCell>
                                 <asp:TableCell RowSpan="4" Style="background-color: #ccffff; font-size: 15px">
                                     <asp:Label CssClass="REI-COLUMN" ID="Label22" runat="server" Text="13. Neurológico"></asp:Label>
                                 </asp:TableCell>
                                 <asp:TableCell CssClass="REI-CONTENT" Style="background-color: #ccffff; font-size: 15px">a. Fuerza</asp:TableCell>
                                 <asp:TableCell CssClass="REI-BOX" Style="background-color: white; font-size: 14px">
-                                    <asp:TextBox runat="server" ID="txt_fuerza" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                                    <asp:CheckBox ID="ckb_fuerza" Checked="false" runat="server" />
+                                    <%--<asp:TextBox runat="server" ID="ckb_fuerza" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>--%>
                                 </asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
                                 <asp:TableCell CssClass="REI-CONTENT" Style="background-color: #ccffff; font-size: 15px">d. Córnea</asp:TableCell>
                                 <asp:TableCell CssClass="REI-BOX" Style="background-color: white; font-size: 14px">
-                                    <asp:TextBox runat="server" ID="txt_cornea" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                                    <asp:CheckBox ID="ckb_cornea" Checked="false" runat="server" />
+                                    <%--<asp:TextBox runat="server" ID="ckb_cornea" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>--%>
                                 </asp:TableCell>
                                 <asp:TableCell CssClass="REI-CONTENT" Style="background-color: #ccffff; font-size: 15px">d. Amígdalas</asp:TableCell>
                                 <asp:TableCell CssClass="REI-BOX" Style="background-color: white; font-size: 14px">
-                                    <asp:TextBox runat="server" ID="txt_amigdalas" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                                    <asp:CheckBox ID="ckb_amigdalas" Checked="false" runat="server" />
+                                    <%--<asp:TextBox runat="server" ID="ckb_amigdalas" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>--%>
                                 </asp:TableCell>
                                 <asp:TableCell RowSpan="2" Style="background-color: #ccffff; font-size: 15px">
                                     <asp:Label CssClass="REI-COLUMN" ID="Label23" runat="server" Text="7. Tórax"></asp:Label>
                                 </asp:TableCell>
                                 <asp:TableCell CssClass="REI-CONTENT" Style="background-color: #ccffff; font-size: 15px">a. Mamas</asp:TableCell>
                                 <asp:TableCell CssClass="REI-BOX" Style="background-color: white; font-size: 14px">
-                                    <asp:TextBox runat="server" ID="txt_mamas" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                                    <asp:CheckBox ID="ckb_mamas" Checked="false" runat="server" />
+                                    <%--<asp:TextBox runat="server" ID="ckb_mamas" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>--%>
                                 </asp:TableCell>
                                 <asp:TableCell CssClass="REI-CONTENT" Style="background-color: #ccffff; font-size: 15px">b. Sensibilidad</asp:TableCell>
                                 <asp:TableCell CssClass="REI-BOX" Style="background-color: white; font-size: 14px">
-                                    <asp:TextBox runat="server" ID="txt_sensibilidad" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                                    <asp:CheckBox ID="ckb_sensibilidad" Checked="false" runat="server" />
+                                    <%--<asp:TextBox runat="server" ID="ckb_sensibilidad" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>--%>
                                 </asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
                                 <asp:TableCell CssClass="REI-CONTENT" Style="background-color: #ccffff; font-size: 15px">e. Motilidad</asp:TableCell>
                                 <asp:TableCell CssClass="REI-BOX" Style="background-color: white; font-size: 14px">
-                                    <asp:TextBox runat="server" ID="txt_motilidad" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                                    <asp:CheckBox ID="ckb_motilidad" Checked="false" runat="server" />
+                                    <%--<asp:TextBox runat="server" ID="ckb_motilidad" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>--%>
                                 </asp:TableCell>
                                 <asp:TableCell CssClass="REI-CONTENT" Style="background-color: #ccffff; font-size: 15px">e. Dentadura</asp:TableCell>
                                 <asp:TableCell CssClass="REI-BOX" Style="background-color: white; font-size: 14px">
-                                    <asp:TextBox runat="server" ID="txt_dentadura" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                                    <asp:CheckBox ID="ckb_dentadura" Checked="false" runat="server" />
+                                    <%--<asp:TextBox runat="server" ID="ckb_dentadura" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>--%>
                                 </asp:TableCell>
                                 <asp:TableCell CssClass="REI-CONTENT" Style="background-color: #ccffff; font-size: 15px">b. Corazón</asp:TableCell>
                                 <asp:TableCell CssClass="REI-BOX" Style="background-color: white; font-size: 14px">
-                                    <asp:TextBox runat="server" ID="txt_corazon" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                                    <asp:CheckBox ID="ckb_corazon" Checked="false" runat="server" />
+                                    <%--<asp:TextBox runat="server" ID="ckb_corazon" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>--%>
                                 </asp:TableCell>
                                 <asp:TableCell CssClass="REI-CONTENT" Style="background-color: #ccffff; font-size: 15px">c. Dolor</asp:TableCell>
                                 <asp:TableCell CssClass="REI-BOX" Style="background-color: white; font-size: 14px">
-                                    <asp:TextBox runat="server" ID="txt_dolor" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                                    <asp:CheckBox ID="ckb_dolor" Checked="false" runat="server" />
+                                    <%--<asp:TextBox runat="server" ID="ckb_dolor" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>--%>
                                 </asp:TableCell>
                                 <asp:TableCell CssClass="REI-CONTENT" Style="background-color: #ccffff; font-size: 15px">c. Marcha</asp:TableCell>
                                 <asp:TableCell CssClass="REI-BOX" Style="background-color: white; font-size: 14px">
-                                    <asp:TextBox runat="server" ID="txt_marcha" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                                    <asp:CheckBox ID="ckb_marcha" Checked="false" runat="server" />
+                                    <%--<asp:TextBox runat="server" ID="ckb_marcha" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>--%>
                                 </asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
                                 <asp:TableCell Style="text-align: left; background-color: white; font-size: 12px" ColumnSpan="12">CON EVIDENCIA DE PATOLOGÍA MARCAR CON "X" Y DESCRIBIR EN LA SIGUIENTE SECCIÓN ANOTANDO EL NUMERAL</asp:TableCell>
                                 <asp:TableCell CssClass="REI-CONTENT" Style="background-color: #ccffff; font-size: 15px">d. Reflejos</asp:TableCell>
                                 <asp:TableCell CssClass="REI-BOX" Style="background-color: white; font-size: 14px">
-                                    <asp:TextBox runat="server" ID="txt_reflejos" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                                    <asp:CheckBox ID="ckb_reflejos" Checked="false" runat="server" />
+                                    <%--<asp:TextBox runat="server" ID="ckb_reflejos" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>--%>
                                 </asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
@@ -632,10 +676,12 @@
                                     <asp:TextBox runat="server" ID="txt_cie" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white; font-size: 14px">
-                                    <asp:TextBox runat="server" ID="txt_pre" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                                    <asp:CheckBox ID="ckb_pre" Checked="false" runat="server" />
+                                    <%--<asp:TextBox runat="server" ID="ckb_pre" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>--%>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white; font-size: 14px">
-                                    <asp:TextBox runat="server" ID="txt_def" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                                    <asp:CheckBox ID="ckb_def" Checked="false" runat="server" />
+                                    <%--<asp:TextBox runat="server" ID="ckb_def" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>--%>
                                 </asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
@@ -647,10 +693,12 @@
                                     <asp:TextBox runat="server" ID="txt_cie2" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white; font-size: 14px">
-                                    <asp:TextBox runat="server" ID="txt_pre2" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                                    <asp:CheckBox ID="ckb_pre2" Checked="false" runat="server" />
+                                    <%--<asp:TextBox runat="server" ID="ckb_pre2" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>--%>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white; font-size: 14px">
-                                    <asp:TextBox runat="server" ID="txt_def2" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                                    <asp:CheckBox ID="ckb_def2" Checked="false" runat="server" />
+                                    <%--<asp:TextBox runat="server" ID="ckb_def2" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>--%>
                                 </asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
@@ -662,10 +710,12 @@
                                     <asp:TextBox runat="server" ID="txt_cie3" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white; font-size: 14px">
-                                    <asp:TextBox runat="server" ID="txt_pre3" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                                    <asp:CheckBox ID="ckb_pre3" Checked="false" runat="server" />
+                                    <%--<asp:TextBox runat="server" ID="ckb_pre3" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>--%>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white; font-size: 14px">
-                                    <asp:TextBox runat="server" ID="txt_def3" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                                    <asp:CheckBox ID="ckb_def3" Checked="false" runat="server" />
+                                    <%--<asp:TextBox runat="server" ID="ckb_def3" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>--%>
                                 </asp:TableCell>
                             </asp:TableRow>
                         </asp:Table>
@@ -682,11 +732,13 @@
                                 <asp:TableCell Style="width: 800px; text-align: left; background-color: #cdfecc; font-size: 15px">SE REALIZÓ LA EVALUACIÓN</asp:TableCell>
                                 <asp:TableCell Style="width: 100px; text-align: center; background-color: #cdfecc; font-size: 15px">SI</asp:TableCell>
                                 <asp:TableCell Style="width: 100px; background-color: white; font-size: 14px">
-                                    <asp:TextBox runat="server" ID="txt_sievamed" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                                    <asp:CheckBox ID="ckb_sievamed" Checked="false" runat="server" />
+                                    <%--<asp:TextBox runat="server" ID="ckb_sievamed" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>--%>
                                 </asp:TableCell>
                                 <asp:TableCell Style="width: 100px; background-color: #cdfecc; font-size: 15px">NO</asp:TableCell>
                                 <asp:TableCell Style="width: 100px; background-color: white; font-size: 14px">
-                                    <asp:TextBox runat="server" ID="txt_noevamed" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                                    <asp:CheckBox ID="ckb_noevamed" Checked="false" runat="server" />
+                                    <%--<asp:TextBox runat="server" ID="ckb_noevamed" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>--%>
                                 </asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>

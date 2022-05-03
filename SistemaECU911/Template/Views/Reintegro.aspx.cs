@@ -62,47 +62,47 @@ namespace SistemaECU911.Template.Views
                             //C
                             txt_enfermedadactualreintegro.Text = reinte.rein_descripenfActual.ToString();
 
-                            //E
-                            txt_cicatrices.Text = reinte.rein_cicatricesPiel.ToString();
-                            txt_tatuajes.Text = reinte.rein_tatuajesPiel.ToString();
-                            txt_pielyfaneras.Text = reinte.rein_pielFacerasPiel.ToString();
-                            txt_parpados.Text = reinte.rein_parpadosOjos.ToString();
-                            txt_conjuntivas.Text = reinte.rein_conjuntuvasOjos.ToString();
-                            txt_pupilas.Text = reinte.rein_pupilasOjos.ToString();
-                            txt_cornea.Text = reinte.rein_corneaOjos.ToString();
-                            txt_motilidad.Text = reinte.rein_motilidadOjos.ToString();
-                            txt_auditivoexterno.Text = reinte.rein_cAudiExtreOido.ToString();
-                            txt_pabellon.Text = reinte.rein_pabellonOido.ToString();
-                            txt_timpanos.Text = reinte.rein_timpanosOido.ToString();
-                            txt_labios.Text = reinte.rein_labiosOroFa.ToString();
-                            txt_lengua.Text = reinte.rein_lenguaOroFa.ToString();
-                            txt_faringe.Text = reinte.rein_faringeOroFa.ToString();
-                            txt_amigdalas.Text = reinte.rein_amigdalasOroFa.ToString();
-                            txt_dentadura.Text = reinte.rein_dentaduraOroFa.ToString();
-                            txt_tabique.Text = reinte.rein_tabiqueNariz.ToString();
-                            txt_cornetes.Text = reinte.rein_cornetesNariz.ToString();
-                            txt_mucosa.Text = reinte.rein_mucosasNariz.ToString();
-                            txt_senosparanasales.Text = reinte.rein_senosParanaNariz.ToString();
-                            txt_tiroides.Text = reinte.rein_tiroiMasasCuello.ToString();
-                            txt_movilidad.Text = reinte.rein_movilidadCuello.ToString();
-                            txt_mamas.Text = reinte.rein_mamasTorax.ToString();
-                            txt_corazon.Text = reinte.rein_corazonTorax.ToString();
-                            txt_pulmones.Text = reinte.rein_pulmonesTorax2.ToString();
-                            txt_parrillacostal.Text = reinte.rein_parriCostalTorax2.ToString();
-                            txt_visceras.Text = reinte.rein_viscerasAbdomen.ToString();
-                            txt_paredabdominal.Text = reinte.rein_paredAbdomiAbdomen.ToString();
-                            txt_flexibilidad.Text = reinte.rein_flexibilidadColumna.ToString();
-                            txt_desviacion.Text = reinte.rein_desviacionColumna.ToString();
-                            txt_dolor.Text = reinte.rein_dolorColumna.ToString();
-                            txt_pelvis.Text = reinte.rein_pelvisPelvis.ToString();
-                            txt_genitales.Text = reinte.rein_genitalesPelvis.ToString();
-                            txt_vascular.Text = reinte.rein_vascularExtre.ToString();
-                            txt_miembrosuperiores.Text = reinte.rein_miemSupeExtre.ToString();
-                            txt_miembrosinferiores.Text = reinte.rein_miemInfeExtre.ToString();
-                            txt_fuerza.Text = reinte.rein_fuerzaNeuro.ToString();
-                            txt_sensibilidad.Text = reinte.rein_sensibiNeuro.ToString();
-                            txt_marcha.Text = reinte.rein_marchaNeuro.ToString();
-                            txt_reflejos.Text = reinte.rein_refleNeuro.ToString();
+                            ////E
+                            //txt_cicatrices.Text = reinte.rein_cicatricesPiel.ToString();
+                            //txt_tatuajes.Text = reinte.rein_tatuajesPiel.ToString();
+                            //txt_pielyfaneras.Text = reinte.rein_pielFacerasPiel.ToString();
+                            //txt_parpados.Text = reinte.rein_parpadosOjos.ToString();
+                            //txt_conjuntivas.Text = reinte.rein_conjuntuvasOjos.ToString();
+                            //txt_pupilas.Text = reinte.rein_pupilasOjos.ToString();
+                            //txt_cornea.Text = reinte.rein_corneaOjos.ToString();
+                            //txt_motilidad.Text = reinte.rein_motilidadOjos.ToString();
+                            //txt_auditivoexterno.Text = reinte.rein_cAudiExtreOido.ToString();
+                            //txt_pabellon.Text = reinte.rein_pabellonOido.ToString();
+                            //txt_timpanos.Text = reinte.rein_timpanosOido.ToString();
+                            //txt_labios.Text = reinte.rein_labiosOroFa.ToString();
+                            //txt_lengua.Text = reinte.rein_lenguaOroFa.ToString();
+                            //txt_faringe.Text = reinte.rein_faringeOroFa.ToString();
+                            //txt_amigdalas.Text = reinte.rein_amigdalasOroFa.ToString();
+                            //txt_dentadura.Text = reinte.rein_dentaduraOroFa.ToString();
+                            //txt_tabique.Text = reinte.rein_tabiqueNariz.ToString();
+                            //txt_cornetes.Text = reinte.rein_cornetesNariz.ToString();
+                            //txt_mucosa.Text = reinte.rein_mucosasNariz.ToString();
+                            //txt_senosparanasales.Text = reinte.rein_senosParanaNariz.ToString();
+                            //txt_tiroides.Text = reinte.rein_tiroiMasasCuello.ToString();
+                            //txt_movilidad.Text = reinte.rein_movilidadCuello.ToString();
+                            //txt_mamas.Text = reinte.rein_mamasTorax.ToString();
+                            //txt_corazon.Text = reinte.rein_corazonTorax.ToString();
+                            //txt_pulmones.Text = reinte.rein_pulmonesTorax2.ToString();
+                            //txt_parrillacostal.Text = reinte.rein_parriCostalTorax2.ToString();
+                            //txt_visceras.Text = reinte.rein_viscerasAbdomen.ToString();
+                            //txt_paredabdominal.Text = reinte.rein_paredAbdomiAbdomen.ToString();
+                            //txt_flexibilidad.Text = reinte.rein_flexibilidadColumna.ToString();
+                            //txt_desviacion.Text = reinte.rein_desviacionColumna.ToString();
+                            //txt_dolor.Text = reinte.rein_dolorColumna.ToString();
+                            //txt_pelvis.Text = reinte.rein_pelvisPelvis.ToString();
+                            //txt_genitales.Text = reinte.rein_genitalesPelvis.ToString();
+                            //txt_vascular.Text = reinte.rein_vascularExtre.ToString();
+                            //txt_miembrosuperiores.Text = reinte.rein_miemSupeExtre.ToString();
+                            //txt_miembrosinferiores.Text = reinte.rein_miemInfeExtre.ToString();
+                            //txt_fuerza.Text = reinte.rein_fuerzaNeuro.ToString();
+                            //txt_sensibilidad.Text = reinte.rein_sensibiNeuro.ToString();
+                            //txt_marcha.Text = reinte.rein_marchaNeuro.ToString();
+                            //txt_reflejos.Text = reinte.rein_refleNeuro.ToString();
                             txt_obervexamenfisicoregional.Text = reinte.rein_observaexaFisRegional.ToString();
 
                             //F
@@ -114,14 +114,14 @@ namespace SistemaECU911.Template.Views
                             //G
                             txt_descripdiagnostico.Text = reinte.rein_descripcionDiagnostico.ToString();
                             txt_cie.Text = reinte.rein_cie.ToString();
-                            txt_pre.Text = reinte.rein_pre.ToString();
-                            txt_def.Text = reinte.rein_def.ToString();
+                            //txt_pre.Text = reinte.rein_pre.ToString();
+                            //txt_def.Text = reinte.rein_def.ToString();
 
                             //H
-                            txt_apto.Text = reinte.rein_apto.ToString();
-                            txt_aptoobservacion.Text = reinte.rein_aptoObserva.ToString();
-                            txt_aptolimitacion.Text = reinte.rein_aptoLimi.ToString();
-                            txt_noapto.Text = reinte.rein_NoApto.ToString();
+                            //txt_apto.Text = reinte.rein_apto.ToString();
+                            //txt_aptoobservacion.Text = reinte.rein_aptoObserva.ToString();
+                            //txt_aptolimitacion.Text = reinte.rein_aptoLimi.ToString();
+                            //txt_noapto.Text = reinte.rein_NoApto.ToString();
                             txt_observacionaptitud.Text = reinte.rein_ObservAptMedica.ToString();
                             txt_limitacionaptitud.Text = reinte.rein_LimitAptMedica.ToString();
                             txt_reubicacionaptitud.Text = reinte.rein_ReubicaAptMedica.ToString();
@@ -288,47 +288,47 @@ namespace SistemaECU911.Template.Views
                     //C.
                     rein_descripenfActual = txt_enfermedadactualreintegro.Text,
 
-                    //E.
-                    rein_cicatricesPiel = txt_cicatrices.Text,
-                    rein_tatuajesPiel = txt_tatuajes.Text,
-                    rein_pielFacerasPiel = txt_pielyfaneras.Text,
-                    rein_parpadosOjos = txt_parpados.Text,
-                    rein_conjuntuvasOjos = txt_conjuntivas.Text,
-                    rein_pupilasOjos = txt_pupilas.Text,
-                    rein_corneaOjos = txt_cornea.Text,
-                    rein_motilidadOjos = txt_motilidad.Text,
-                    rein_cAudiExtreOido = txt_auditivoexterno.Text,
-                    rein_pabellonOido = txt_pabellon.Text,
-                    rein_timpanosOido = txt_timpanos.Text,
-                    rein_labiosOroFa = txt_labios.Text,
-                    rein_lenguaOroFa = txt_lengua.Text,
-                    rein_faringeOroFa = txt_faringe.Text,
-                    rein_amigdalasOroFa = txt_amigdalas.Text,
-                    rein_dentaduraOroFa = txt_dentadura.Text,
-                    rein_tabiqueNariz = txt_tabique.Text,
-                    rein_cornetesNariz = txt_cornetes.Text,
-                    rein_mucosasNariz = txt_mucosa.Text,
-                    rein_senosParanaNariz = txt_senosparanasales.Text,
-                    rein_tiroiMasasCuello = txt_tiroides.Text,
-                    rein_movilidadCuello = txt_movilidad.Text,
-                    rein_mamasTorax = txt_mamas.Text,
-                    rein_corazonTorax = txt_corazon.Text,
-                    rein_pulmonesTorax2 = txt_pulmones.Text,
-                    rein_parriCostalTorax2 = txt_parrillacostal.Text,
-                    rein_viscerasAbdomen = txt_visceras.Text,
-                    rein_paredAbdomiAbdomen = txt_paredabdominal.Text,
-                    rein_flexibilidadColumna = txt_flexibilidad.Text,
-                    rein_desviacionColumna = txt_desviacion.Text,
-                    rein_dolorColumna = txt_dolor.Text,
-                    rein_pelvisPelvis = txt_pelvis.Text,
-                    rein_genitalesPelvis = txt_genitales.Text,
-                    rein_vascularExtre = txt_vascular.Text,
-                    rein_miemSupeExtre = txt_miembrosuperiores.Text,
-                    rein_miemInfeExtre = txt_miembrosinferiores.Text,
-                    rein_fuerzaNeuro = txt_fuerza.Text,
-                    rein_sensibiNeuro = txt_sensibilidad.Text,
-                    rein_marchaNeuro = txt_marcha.Text,
-                    rein_refleNeuro = txt_reflejos.Text,
+                    ////E.
+                    //rein_cicatricesPiel = txt_cicatrices.Text,
+                    //rein_tatuajesPiel = txt_tatuajes.Text,
+                    //rein_pielFacerasPiel = txt_pielyfaneras.Text,
+                    //rein_parpadosOjos = txt_parpados.Text,
+                    //rein_conjuntuvasOjos = txt_conjuntivas.Text,
+                    //rein_pupilasOjos = txt_pupilas.Text,
+                    //rein_corneaOjos = txt_cornea.Text,
+                    //rein_motilidadOjos = txt_motilidad.Text,
+                    //rein_cAudiExtreOido = txt_auditivoexterno.Text,
+                    //rein_pabellonOido = txt_pabellon.Text,
+                    //rein_timpanosOido = txt_timpanos.Text,
+                    //rein_labiosOroFa = txt_labios.Text,
+                    //rein_lenguaOroFa = txt_lengua.Text,
+                    //rein_faringeOroFa = txt_faringe.Text,
+                    //rein_amigdalasOroFa = txt_amigdalas.Text,
+                    //rein_dentaduraOroFa = txt_dentadura.Text,
+                    //rein_tabiqueNariz = txt_tabique.Text,
+                    //rein_cornetesNariz = txt_cornetes.Text,
+                    //rein_mucosasNariz = txt_mucosa.Text,
+                    //rein_senosParanaNariz = txt_senosparanasales.Text,
+                    //rein_tiroiMasasCuello = txt_tiroides.Text,
+                    //rein_movilidadCuello = txt_movilidad.Text,
+                    //rein_mamasTorax = txt_mamas.Text,
+                    //rein_corazonTorax = txt_corazon.Text,
+                    //rein_pulmonesTorax2 = txt_pulmones.Text,
+                    //rein_parriCostalTorax2 = txt_parrillacostal.Text,
+                    //rein_viscerasAbdomen = txt_visceras.Text,
+                    //rein_paredAbdomiAbdomen = txt_paredabdominal.Text,
+                    //rein_flexibilidadColumna = txt_flexibilidad.Text,
+                    //rein_desviacionColumna = txt_desviacion.Text,
+                    //rein_dolorColumna = txt_dolor.Text,
+                    //rein_pelvisPelvis = txt_pelvis.Text,
+                    //rein_genitalesPelvis = txt_genitales.Text,
+                    //rein_vascularExtre = txt_vascular.Text,
+                    //rein_miemSupeExtre = txt_miembrosuperiores.Text,
+                    //rein_miemInfeExtre = txt_miembrosinferiores.Text,
+                    //rein_fuerzaNeuro = txt_fuerza.Text,
+                    //rein_sensibiNeuro = txt_sensibilidad.Text,
+                    //rein_marchaNeuro = txt_marcha.Text,
+                    //rein_refleNeuro = txt_reflejos.Text,
                     rein_observaexaFisRegional = txt_obervexamenfisicoregional.Text,
 
                     //F.
@@ -340,14 +340,14 @@ namespace SistemaECU911.Template.Views
                     //G.
                     rein_descripcionDiagnostico = txt_descripdiagnostico.Text,
                     rein_cie = txt_cie.Text,
-                    rein_pre = txt_pre.Text,
-                    rein_def = txt_def.Text,
+                    //rein_pre = txt_pre.Text,
+                    //rein_def = txt_def.Text,
 
                     //H.
-                    rein_apto = txt_apto.Text,
-                    rein_aptoObserva = txt_aptoobservacion.Text,
-                    rein_aptoLimi = txt_aptolimitacion.Text,
-                    rein_NoApto = txt_noapto.Text,
+                    //rein_apto = txt_apto.Text,
+                    //rein_aptoObserva = txt_aptoobservacion.Text,
+                    //rein_aptoLimi = txt_aptolimitacion.Text,
+                    //rein_NoApto = txt_noapto.Text,
                     rein_ObservAptMedica = txt_observacionaptitud.Text,
                     rein_LimitAptMedica = txt_limitacionaptitud.Text,
                     rein_ReubicaAptMedica = txt_reubicacionaptitud.Text,
@@ -395,47 +395,47 @@ namespace SistemaECU911.Template.Views
                 //C.
                 reinte.rein_descripenfActual = txt_enfermedadactualreintegro.Text;
 
-                //E.
-                reinte.rein_cicatricesPiel = txt_cicatrices.Text;
-                reinte.rein_tatuajesPiel = txt_tatuajes.Text;
-                reinte.rein_pielFacerasPiel = txt_pielyfaneras.Text;
-                reinte.rein_parpadosOjos = txt_parpados.Text;
-                reinte.rein_conjuntuvasOjos = txt_conjuntivas.Text;
-                reinte.rein_pupilasOjos = txt_pupilas.Text;
-                reinte.rein_corneaOjos = txt_cornea.Text;
-                reinte.rein_motilidadOjos = txt_motilidad.Text;
-                reinte.rein_cAudiExtreOido = txt_auditivoexterno.Text;
-                reinte.rein_pabellonOido = txt_pabellon.Text;
-                reinte.rein_timpanosOido = txt_timpanos.Text;
-                reinte.rein_labiosOroFa = txt_labios.Text;
-                reinte.rein_lenguaOroFa = txt_lengua.Text;
-                reinte.rein_faringeOroFa = txt_faringe.Text;
-                reinte.rein_amigdalasOroFa = txt_amigdalas.Text;
-                reinte.rein_dentaduraOroFa = txt_dentadura.Text;
-                reinte.rein_tabiqueNariz = txt_tabique.Text;
-                reinte.rein_cornetesNariz = txt_cornetes.Text;
-                reinte.rein_mucosasNariz = txt_mucosa.Text;
-                reinte.rein_senosParanaNariz = txt_senosparanasales.Text;
-                reinte.rein_tiroiMasasCuello = txt_tiroides.Text;
-                reinte.rein_movilidadCuello = txt_movilidad.Text;
-                reinte.rein_mamasTorax = txt_mamas.Text;
-                reinte.rein_corazonTorax = txt_corazon.Text;
-                reinte.rein_pulmonesTorax2 = txt_pulmones.Text;
-                reinte.rein_parriCostalTorax2 = txt_parrillacostal.Text;
-                reinte.rein_viscerasAbdomen = txt_visceras.Text;
-                reinte.rein_paredAbdomiAbdomen = txt_paredabdominal.Text;
-                reinte.rein_flexibilidadColumna = txt_flexibilidad.Text;
-                reinte.rein_desviacionColumna = txt_desviacion.Text;
-                reinte.rein_dolorColumna = txt_dolor.Text;
-                reinte.rein_pelvisPelvis = txt_pelvis.Text;
-                reinte.rein_genitalesPelvis = txt_genitales.Text;
-                reinte.rein_vascularExtre = txt_vascular.Text;
-                reinte.rein_miemSupeExtre = txt_miembrosuperiores.Text;
-                reinte.rein_miemInfeExtre = txt_miembrosinferiores.Text;
-                reinte.rein_fuerzaNeuro = txt_fuerza.Text;
-                reinte.rein_sensibiNeuro = txt_sensibilidad.Text;
-                reinte.rein_marchaNeuro = txt_marcha.Text;
-                reinte.rein_refleNeuro = txt_reflejos.Text;
+                ////E.
+                //reinte.rein_cicatricesPiel = txt_cicatrices.Text;
+                //reinte.rein_tatuajesPiel = txt_tatuajes.Text;
+                //reinte.rein_pielFacerasPiel = txt_pielyfaneras.Text;
+                //reinte.rein_parpadosOjos = txt_parpados.Text;
+                //reinte.rein_conjuntuvasOjos = txt_conjuntivas.Text;
+                //reinte.rein_pupilasOjos = txt_pupilas.Text;
+                //reinte.rein_corneaOjos = txt_cornea.Text;
+                //reinte.rein_motilidadOjos = txt_motilidad.Text;
+                //reinte.rein_cAudiExtreOido = txt_auditivoexterno.Text;
+                //reinte.rein_pabellonOido = txt_pabellon.Text;
+                //reinte.rein_timpanosOido = txt_timpanos.Text;
+                //reinte.rein_labiosOroFa = txt_labios.Text;
+                //reinte.rein_lenguaOroFa = txt_lengua.Text;
+                //reinte.rein_faringeOroFa = txt_faringe.Text;
+                //reinte.rein_amigdalasOroFa = txt_amigdalas.Text;
+                //reinte.rein_dentaduraOroFa = txt_dentadura.Text;
+                //reinte.rein_tabiqueNariz = txt_tabique.Text;
+                //reinte.rein_cornetesNariz = txt_cornetes.Text;
+                //reinte.rein_mucosasNariz = txt_mucosa.Text;
+                //reinte.rein_senosParanaNariz = txt_senosparanasales.Text;
+                //reinte.rein_tiroiMasasCuello = txt_tiroides.Text;
+                //reinte.rein_movilidadCuello = txt_movilidad.Text;
+                //reinte.rein_mamasTorax = txt_mamas.Text;
+                //reinte.rein_corazonTorax = txt_corazon.Text;
+                //reinte.rein_pulmonesTorax2 = txt_pulmones.Text;
+                //reinte.rein_parriCostalTorax2 = txt_parrillacostal.Text;
+                //reinte.rein_viscerasAbdomen = txt_visceras.Text;
+                //reinte.rein_paredAbdomiAbdomen = txt_paredabdominal.Text;
+                //reinte.rein_flexibilidadColumna = txt_flexibilidad.Text;
+                //reinte.rein_desviacionColumna = txt_desviacion.Text;
+                //reinte.rein_dolorColumna = txt_dolor.Text;
+                //reinte.rein_pelvisPelvis = txt_pelvis.Text;
+                //reinte.rein_genitalesPelvis = txt_genitales.Text;
+                //reinte.rein_vascularExtre = txt_vascular.Text;
+                //reinte.rein_miemSupeExtre = txt_miembrosuperiores.Text;
+                //reinte.rein_miemInfeExtre = txt_miembrosinferiores.Text;
+                //reinte.rein_fuerzaNeuro = txt_fuerza.Text;
+                //reinte.rein_sensibiNeuro = txt_sensibilidad.Text;
+                //reinte.rein_marchaNeuro = txt_marcha.Text;
+                //reinte.rein_refleNeuro = txt_reflejos.Text;
                 reinte.rein_observaexaFisRegional = txt_obervexamenfisicoregional.Text;
 
                 //F.
@@ -447,14 +447,14 @@ namespace SistemaECU911.Template.Views
                 //G.
                 reinte.rein_descripcionDiagnostico = txt_descripdiagnostico.Text;
                 reinte.rein_cie = txt_cie.Text;
-                reinte.rein_pre = txt_pre.Text;
-                reinte.rein_def = txt_def.Text;
+                //reinte.rein_pre = txt_pre.Text;
+                //reinte.rein_def = txt_def.Text;
 
                 //H.
-                reinte.rein_apto = txt_apto.Text;
-                reinte.rein_aptoObserva = txt_aptoobservacion.Text;
-                reinte.rein_aptoLimi = txt_aptolimitacion.Text;
-                reinte.rein_NoApto = txt_noapto.Text;
+                //reinte.rein_apto = txt_apto.Text;
+                //reinte.rein_aptoObserva = txt_aptoobservacion.Text;
+                //reinte.rein_aptoLimi = txt_aptolimitacion.Text;
+                //reinte.rein_NoApto = txt_noapto.Text;
                 reinte.rein_ObservAptMedica = txt_observacionaptitud.Text;
                 reinte.rein_LimitAptMedica = txt_limitacionaptitud.Text;
                 reinte.rein_ReubicaAptMedica = txt_reubicacionaptitud.Text;
