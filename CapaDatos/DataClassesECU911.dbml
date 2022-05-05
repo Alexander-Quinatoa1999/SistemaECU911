@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SistemaECU911" Class="DataClassesECU911DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=SistemaECU911;Integrated Security=True" SettingsObjectName="CapaDatos.Properties.Settings" SettingsPropertyName="SistemaECU911ConnectionString4" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=MAYCKYANDER\MAYCKYANDER;Initial Catalog=SistemaECU911;Integrated Security=True" SettingsObjectName="CapaDatos.Properties.Settings" SettingsPropertyName="SistemaECU911ConnectionString6" Provider="System.Data.SqlClient" />
   <Table Name="dbo.cie10" Member="cie10">
     <Type Name="cie10">
       <Column Name="id10" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -269,7 +269,7 @@
       <Column Name="inicial_siDis" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inicial_noDis" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inicial_tipoDis" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="inicial_porcentDis" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="inicial_porcentDis" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="inicial_actRelePuesTrabajo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inicial_descripcionMotivoConsulta" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inicial_descripcionAnteceCliniQuirur" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
@@ -280,8 +280,8 @@
       <Column Name="inicial_partos" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inicial_cesareas" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inicial_abortos" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="inicial_vivosHij" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="inicial_muertosHij" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="inicial_vivosHij" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="inicial_muertosHij" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="inicial_siVidaSexActiva" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inicial_noVidaSexActiva" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inicial_siMetPlanifiFamiliar" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
@@ -291,23 +291,23 @@
       <Column Name="inicial_siExaRealiColposcopia" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inicial_noExaRealiPapanicolaou" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inicial_noExaRealiColposcopia" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="inicial_tiempoExaRealiPapanicolaou" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="inicial_tiempoExaRealiColposcopia" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="inicial_tiempoExaRealiPapanicolaou" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="inicial_tiempoExaRealiColposcopia" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="inicial_resultadoExaRealiPapanicolaou" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inicial_resultadoExaRealiColposcopia" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inicial_siExaRealiEcoMamario" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inicial_siExaRealiMamografia" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inicial_noExaRealiEcoMamario" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inicial_noExaRealiMamografia" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="inicial_tiempoExaRealiEcoMamario" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="inicial_tiempoExaRealiMamografia" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="inicial_tiempoExaRealiEcoMamario" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="inicial_tiempoExaRealiMamografia" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="inicial_resultadoExaRealiEcoMamario" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inicial_resultadoExaRealiMamografia" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inicial_siExaRealiAntiProstatico" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inicial_siExaRealiEcoProstatico" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inicial_noExaRealiAntiProstatico" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inicial_noExaRealiEcoProstatico" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="inicial_tiempoExaRealiAntiProstatico" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="inicial_tiempoExaRealiAntiProstatico" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="inicial_tiempoExaRealiEcoProstatico" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
       <Column Name="inicial_resultadoExaRealiAntiProstatico" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inicial_resultadoExaRealiEcoProstatico" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
@@ -315,8 +315,8 @@
       <Column Name="inicial_noMetPlanifiFamiAntReproMascu" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inicial_tipo1MetPlanifiFamiAntReproMascu" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inicial_tipo2MetPlanifiFamiAntReproMascu" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="inicial_vivosHijAntReproMascu" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="inicial_muertosHijAntReproMascu" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="inicial_vivosHijAntReproMascu" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="inicial_muertosHijAntReproMascu" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="inicial_siConsuNocivosTabaco" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inicial_siConsuNocivosAlcohol" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inicial_siConsuNocivosOtrasDrogas" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
