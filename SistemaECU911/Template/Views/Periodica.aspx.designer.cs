@@ -3525,13 +3525,13 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.CheckBox ckb_reflejos;
 
         /// <summary>
-        /// Control txt_obervexamenfisicoregional.
+        /// Control txt_observexamenfisicoregional.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_obervexamenfisicoregional;
+        protected global::System.Web.UI.WebControls.TextBox txt_observexamenfisicoregional;
 
         /// <summary>
         /// Control txt_examen.

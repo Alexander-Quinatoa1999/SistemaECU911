@@ -15,12 +15,13 @@ namespace SistemaECU911.Template.Views
 {
     public partial class Periodica : System.Web.UI.Page
     {
+
         DataClassesECU911DataContext dc = new DataClassesECU911DataContext();
 
         private Tbl_Personas per = new Tbl_Personas();
 
         private Tbl_Periodica perio = new Tbl_Periodica();
-        
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -31,7 +32,7 @@ namespace SistemaECU911.Template.Views
                     perio = CN_Periodica.ObtenerPeriodicaPorId(codigo);
                     int personasid = Convert.ToInt32(perio.Per_id.ToString());
                     per = CN_HistorialMedico.ObtenerPersonasxId(personasid);
-                    
+
                     btn_guardar.Text = "Actualizar";
 
                     if (per != null)
@@ -47,31 +48,52 @@ namespace SistemaECU911.Template.Views
 
                         if (perio != null)
                         {
+
+
+
                             //A
                             txt_numArchivo.Text = perio.perio_numArchivo.ToString();
-                
+
                             //B
                             txt_motivoconsultaperiodica.Text = perio.perio_descripMotiConsulta.ToString();
 
                             //C
                             txt_antCliQuiDescripcion.Text = perio.perio_descripcionAntCliQuirurgicos.ToString();
 
-                            //txt_siConsuNociTabaHabToxi.Text = perio.perio_siConsuNocivosTabaco.ToString();
-                            //txt_noConsuNociTabaHabToxi.Text = perio.perio_noConsuNocivosTabaco.ToString();
+                            if (ckb_siConsuNociTabaHabToxi.Checked == true)
+                            {
+                                perio.perio_siConsuNocivosTabaco = "SI";
+                            }
+                            if (ckb_noConsuNociTabaHabToxi.Checked == true)
+                            {
+                                perio.perio_noConsuNocivosTabaco = "SI";
+                            }
                             txt_tiemConConsuNociTabaHabToxi.Text = perio.perio_tiempoConsuConsuNocivosTabaco.ToString();
                             txt_cantiConsuNociTabaHabToxi.Text = perio.perio_cantidadConsuNocivosTabaco.ToString();
                             txt_exConsumiConsuNociTabaHabToxi.Text = perio.perio_exConsumiConsuNocivosTabaco.ToString();
                             txt_tiemAbstiConsuNociTabaHabToxi.Text = perio.perio_tiempoAbstiConsuNocivosTabaco.ToString();
 
-                            //txt_siConsuNociAlcoHabToxi.Text = perio.perio_siConsuNocivosAlcohol.ToString();
-                            //txt_noConsuNociAlcoHabToxi.Text = perio.perio_noConsuNocivosAlcohol.ToString();
+                            if (ckb_siConsuNociAlcoHabToxi.Checked == true)
+                            {
+                                perio.perio_siConsuNocivosAlcohol = "SI";
+                            }
+                            if (ckb_noConsuNociAlcoHabToxi.Checked == true)
+                            {
+                                perio.perio_noConsuNocivosAlcohol = "SI";
+                            }
                             txt_tiemConConsuNociAlcoHabToxi.Text = perio.perio_tiempoConsuConsuNocivosAlcohol.ToString();
                             txt_cantiConsuNociAlcoHabToxi.Text = perio.perio_cantidadConsuNocivosAlcohol.ToString();
                             txt_exConsumiConsuNociAlcoHabToxi.Text = perio.perio_exConsumiConsuNocivosAlcohol.ToString();
                             txt_tiemAbstiConsuNociAlcoHabToxi.Text = perio.perio_tiempoAbstiConsuNocivosAlcohol.ToString();
 
-                            //txt_siConsuNociOtrasDroHabToxi.Text = perio.perio_siConsuNocivosOtrasDrogas.ToString();
-                            //txt_noConsuNociOtrasDroHabToxi.Text = perio.perio_noConsuNocivosOtrasDrogas.ToString();
+                            if (ckb_siConsuNociOtrasDroHabToxi.Checked == true)
+                            {
+                                perio.perio_siConsuNocivosOtrasDrogas = "SI";
+                            }
+                            if (ckb_noConsuNociOtrasDroHabToxi.Checked == true)
+                            {
+                                perio.perio_noConsuNocivosOtrasDrogas = "SI";
+                            }
                             txt_tiemCon1ConsuNociOtrasDroHabToxi.Text = perio.perio_tiempoConsu1ConsuNocivosOtrasDrogas.ToString();
                             txt_canti1ConsuNociOtrasDroHabToxi.Text = perio.perio_cantidad1ConsuNocivosOtrasDrogas.ToString();
                             txt_exConsumi1ConsuNociOtrasDroHabToxi.Text = perio.perio_exConsumi1ConsuNocivosOtrasDrogas.ToString();
@@ -82,13 +104,25 @@ namespace SistemaECU911.Template.Views
                             txt_exConsumi2ConsuNociOtrasDroHabToxi.Text = perio.perio_exConsumi2ConsuNocivosOtrasDrogas.ToString();
                             txt_tiemAbsti2ConsuNociOtrasDroHabToxi.Text = perio.perio_tiempoAbsti2ConsuNocivosOtrasDrogas.ToString();
 
-                            //txt_siEstVidaActFisiEstVida.Text = perio.perio_siEstiVidaActFisica.ToString();
-                            //txt_noEstVidaActFisiEstVida.Text = perio.perio_noEstiVidaActFisica.ToString();
+                            if (ckb_siEstVidaActFisiEstVida.Checked == true)
+                            {
+                                perio.perio_siEstiVidaActFisica = "SI";
+                            }
+                            if (ckb_noEstVidaActFisiEstVida.Checked == true)
+                            {
+                                perio.perio_noEstiVidaActFisica = "SI";
+                            }
                             txt_cualEstVidaActFisiEstVida.Text = perio.perio_cualEstiVidaActFisica.ToString();
                             txt_tiemCanEstVidaActFisiEstVida.Text = perio.perio_tiem_cantEstiVidaActFisica.ToString();
 
-                            //txt_siEstVidaMedHabiEstVida.Text = perio.perio_siEstiVidaMediHabitual.ToString();
-                            //txt_noEstVidaMedHabiEstVida.Text = perio.perio_noEstiVidaMediHabitual.ToString();
+                            if (ckb_siEstVidaMedHabiEstVida.Checked == true)
+                            {
+                                perio.perio_siEstiVidaMediHabitual = "SI";
+                            }
+                            if (ckb_noEstVidaMedHabiEstVida.Checked == true)
+                            {
+                                perio.perio_noEstiVidaMediHabitual = "SI";
+                            }
                             txt_cual1EstVidaMedHabiEstVida.Text = perio.perio_cual1EstiVidaMediHabitual.ToString();
                             txt_tiemCan1EstVidaMedHabiEstVida.Text = perio.perio_tiem_cant1EstiVidaMediHabitual.ToString();
                             txt_cual2EstVidaMedHabiEstVida.Text = perio.perio_cual2EstiVidaMediHabitual.ToString();
@@ -98,171 +132,67 @@ namespace SistemaECU911.Template.Views
 
                             txt_incidentesperiodica.Text = perio.perio_descripIncidentes.ToString();
 
-                            //txt_sicalificadotrabajo.Text = perio.perio_siCalificadoIESSAcciTrabajo.ToString();
+                            if (ckb_sicalificadotrabajo.Checked == true)
+                            {
+                                perio.perio_siCalificadoIESSAcciTrabajo = "SI";
+                            }
+                            if (ckb_nocalificadotrabajo.Checked == true)
+                            {
+                                perio.perio_noCalificadoIESSAcciTrabajo = "SI";
+                            }
                             txt_especificarcalificadotrabajo.Text = perio.perio_EspecifiCalificadoIESSAcciTrabajo.ToString();
-                            //txt_nocalificadotrabajo.Text = perio.perio_noCalificadoIESSAcciTrabajo.ToString();
                             txt_fechacalificadotrabajo.Text = perio.perio_fechaCalificadoIESSAcciTrabajo.ToString();
                             txt_obsercalificadotrabajo.Text = perio.perio_observacionesAcciTrabajo.ToString();
 
-                            //txt_sicalificadoprofesional.Text = perio.perio_siCalificadoIESSEnferProfesionales.ToString();
+                            if (ckb_sicalificadoprofesional.Checked == true)
+                            {
+                                perio.perio_siCalificadoIESSEnferProfesionales = "SI";
+                            }
+                            if (ckb_nocalificadoprofesional.Checked == true)
+                            {
+                                perio.perio_noCalificadoIESSEnferProfesionales = "SI";
+                            }
                             txt_especificarcalificadoprofesional.Text = perio.perio_EspecifiCalificadoIESSEnferProfesionales.ToString();
-                            //txt_nocalificadoprofesional.Text = perio.perio_noCalificadoIESSEnferProfesionales.ToString();
                             txt_fechacalificadoprofesional.Text = perio.perio_fechaCalificadoIESSEnferProfesionales.ToString();
                             txt_obsercalificadoprofesional.Text = perio.perio_observacionesEnferProfesionales.ToString();
 
                             //D
-                            //txt_enfermedadcardiovascular.Text = perio.perio_enfCarVas.ToString();
-                            //txt_enfermedadmetabolica.Text = perio.perio_enfMeta.ToString();
-                            //txt_enfermedadneurologica.Text = perio.perio_enfNeuro.ToString();
-                            //txt_enfermedadoncologica.Text = perio.perio_enfOnco.ToString();
-                            //txt_enfermedadinfecciosa.Text = perio.perio_enfInfe.ToString();
-                            //txt_enfermedadhereditaria.Text = perio.perio_enfHereConge.ToString();
-                            //txt_discapacidades.Text = perio.perio_discapa.ToString();
-                            //txt_otrosenfer.Text = perio.perio_otros.ToString();
                             txt_descripcionantefamiliares.Text = perio.perio_descripcionAntFamiliares.ToString();
 
                             //E
-                            //facriestrabperio.periodica.FacRiesTrabActperio.periodica_area = txt_puestotrabajoperio.periodica.Text;
-                            //facriestrabperio.periodica.FacRiesTrabActperio.periodica_actividades = txt_act.Text;
-                            //facriestrabperio.periodica.FacRiesTrabActperio.periodica_tiemTrabperio.periodica = txt_tiempotrabajo.Text;
-                            //facriestrabperio.periodica.FacRiesTrabActperio.periodica_temAltasFis = txt_tempaltas.Text;
-                            //facriestrabperio.periodica.FacRiesTrabActperio.periodica_temBajasFis = txt_tempbajas.Text;
-                            //facriestrabperio.periodica.FacRiesTrabActperio.periodica_radIonizanteFis = txt_radiacion.Text;
-                            //facriestrabperio.periodica.FacRiesTrabActperio.periodica_radNoIonizanteFis = txt_noradiacion.Text;
-                            //facriestrabperio.periodica.FacRiesTrabActperio.periodica_ruidoFis = txt_ruido.Text;
-                            //facriestrabperio.periodica.FacRiesTrabActperio.periodica_vibracionFis = txt_vibracion.Text;
-                            //facriestrabperio.periodica.FacRiesTrabActperio.periodica_iluminacionFis = txt_iluminacion.Text;
-                            //facriestrabperio.periodica.FacRiesTrabActperio.periodica_ventilacionFis = txt_ventilacion.Text;
-                            //facriestrabperio.periodica.FacRiesTrabActperio.periodica_fluElectricoFis = txt_fluidoelectrico.Text;
-                            //facriestrabperio.periodica.FacRiesTrabActperio.periodica_otrosFis = txt_otros1.Text;
-                            //facriestrabperio.periodica.FacRiesTrabActperio.periodica_atraMaquinasMec = txt_atrapmaquinas.Text;
-                            //facriestrabperio.periodica.FacRiesTrabActperio.periodica_atraSuperfiiesMec = txt_atrapsuperficie.Text;
-                            //facriestrabperio.periodica.FacRiesTrabActperio.periodica_atraObjetosMec = txt_atrapobjetos.Text;
-                            //facriestrabperio.periodica.FacRiesTrabActperio.periodica_caidaObjetosMec = txt_caidaobjetos.Text;
-                            //facriestrabperio.periodica.FacRiesTrabActperio.periodica_caidaMisNivelMec = txt_caidamisnivel.Text;
-                            //facriestrabperio.periodica.FacRiesTrabActperio.periodica_caidaDifNivelMec = txt_caidadifnivel.Text;
-                            //facriestrabperio.periodica.FacRiesTrabActperio.periodica_contactoElecMec = txt_contaelectrico.Text;
-                            //facriestrabperio.periodica.FacRiesTrabActperio.periodica_conSuperTrabaMec = txt_contasuptrabajo.Text;
-                            //facriestrabperio.periodica.FacRiesTrabActperio.periodica_proPartiFragMec = txt_proyparticulas.Text;
-                            //facriestrabperio.periodica.FacRiesTrabActperio.periodica_proFluidosMec = txt_proyefluidos.Text;
-                            //facriestrabperio.periodica.FacRiesTrabActperio.periodica_pinchazosMec = txt_pinchazos.Text;
-                            //facriestrabperio.periodica.FacRiesTrabActperio.periodica_cortesMec = txt_cortes.Text;
-                            //facriestrabperio.periodica.FacRiesTrabActperio.periodica_atropeVehiMec = txt_atroporvehiculos.Text;
-                            //facriestrabperio.periodica.FacRiesTrabActperio.periodica_coliVehiMec = txt_choques.Text;
-                            //facriestrabperio.periodica.FacRiesTrabActperio.periodica_otrosMec = txt_otros2.Text;
-                            //facriestrabperio.periodica.FacRiesTrabActperio.periodica_solidosQui = txt_solidos.Text;
-                            //facriestrabperio.periodica.FacRiesTrabActperio.periodica_polvosQui = txt_polvos.Text;
-                            //facriestrabperio.periodica.FacRiesTrabActperio.periodica_humosQui = txt_humos.Text;
-                            //facriestrabperio.periodica.FacRiesTrabActperio.periodica_liquidosQui = txt_liquidos.Text;
-                            //facriestrabperio.periodica.FacRiesTrabActperio.periodica_vaporesQui = txt_vapores.Text;
-                            //facriestrabperio.periodica.FacRiesTrabActperio.periodica_aerosolesQui = txt_aerosoles.Text;
-                            //facriestrabperio.periodica.FacRiesTrabActperio.periodica_neblinasQui = txt_neblinas.Text;
-                            //facriestrabperio.periodica.FacRiesTrabActperio.periodica_gaseososQui = txt_gaseosos.Text;
-                            //facriestrabperio.periodica.FacRiesTrabActperio.periodica_otrosBio = txt_otros3.Text;
-                            //facriestrabperio.periodica.FacRiesTrabActperio.periodica_virusBio = txt_virus.Text;
-                            //facriestrabperio.periodica.FacRiesTrabActperio.periodica_hongosBio = txt_hongos.Text;
-                            //facriestrabperio.periodica.FacRiesTrabActperio.periodica_bacteriasBio = txt_bacterias.Text;
-                            //facriestrabperio.periodica.FacRiesTrabActperio.periodica_parasitosBio = txt_parasitos.Text;
-                            //facriestrabperio.periodica.FacRiesTrabActperio.periodica_expVectBio = txt_expoavectores.Text;
-                            //facriestrabperio.periodica.FacRiesTrabActperio.periodica_expAniSelvaBio = txt_expoanimselvaticos.Text;
-                            //facriestrabperio.periodica.FacRiesTrabActperio.periodica_otrosBio = txt_otros4.Text;
-                            //facriestrabperio.periodica.FacRiesTrabActperio.periodica_maneManCarErg = txt_manmanualcargas.Text;
-                            //facriestrabperio.periodica.FacRiesTrabActperio.periodica_movRepeErg = txt_movrepetitivo.Text;
-                            //facriestrabperio.periodica.FacRiesTrabActperio.periodica_posForzaErg = txt_postforzadas.Text;
-                            //facriestrabperio.periodica.FacRiesTrabActperio.periodica_trabPvdErg = txt_trabajopvd.Text;
-                            //facriestrabperio.periodica.FacRiesTrabActperio.periodica_otrosErg = txt_otros5.Text;
-                            //facriestrabperio.periodica.FacRiesTrabActperio.periodica_monoTrabPsi = txt_montrabajo.Text;
-                            //facriestrabperio.periodica.FacRiesTrabActperio.periodica_sobrecarLabPsi = txt_sobrecargalaboral.Text;
-                            //facriestrabperio.periodica.FacRiesTrabActperio.periodica_minuTareaPsi = txt_minustarea.Text;
-                            //facriestrabperio.periodica.FacRiesTrabActperio.periodica_altaResponPsi = txt_altarespon.Text;
-                            //facriestrabperio.periodica.FacRiesTrabActperio.periodica_autoTomaDesiPsi = txt_automadesiciones.Text;
-                            //facriestrabperio.periodica.FacRiesTrabActperio.periodica_supEstDirecDefiPsi = txt_supyestdireficiente.Text;
-                            //facriestrabperio.periodica.FacRiesTrabActperio.periodica_conflicRolPsi = txt_conflictorol.Text;
-                            //facriestrabperio.periodica.FacRiesTrabActperio.periodica_falClariFunPsi = txt_faltaclarfunciones.Text;
-                            //facriestrabperio.periodica.FacRiesTrabActperio.periodica_incoDistriTrabPsi = txt_incorrdistrabajo.Text;
-                            //facriestrabperio.periodica.FacRiesTrabActperio.periodica_turnosRotaPsi = txt_turnorotat.Text;
-                            //facriestrabperio.periodica.FacRiesTrabActperio.periodica_relInterperPsi = txt_relacinterpersonales.Text;
-                            //facriestrabperio.periodica.FacRiesTrabActperio.periodica_inesLabPsi = txt_inestalaboral.Text;
-                            //facriestrabperio.periodica.FacRiesTrabActperio.periodica_otrosPsi = txt_otros6.Text;
-                            //facriestrabperio.periodica.FacRiesTrabActperio.periodica_medPreventivas = txt_medpreventivas.Text;
-                            //facriestrabperio.periodica.Per_id = perso;
+                            txt_medpreventivas.Text = perio.perio_medPreventivas.ToString();
+                            txt_medpreventivas2.Text = perio.perio_medPreventivas2.ToString();
+                            txt_medpreventivas3.Text = perio.perio_medPreventivas3.ToString();
 
                             //F
                             txt_enfermedadactualperiodica.Text = perio.perio_descripEnfActual.ToString();
 
-                            ////G
-                            //txt_pielanexos.Text = perio.perio_pielAnexos.ToString();
-                            //txt_organossentidos.Text = perio.perio_orgSentidos.ToString();
-                            //txt_respiratorio.Text = perio.perio_respiratorio.ToString();
-                            //txt_cardiovascular.Text = perio.perio_cardVascular.ToString();
-                            //txt_digestivo.Text = perio.perio_digestivo.ToString();
-                            //txt_genitourinario.Text = perio.perio_genUrinario.ToString();
-                            //txt_musculosesqueleticos.Text = perio.perio_muscEsqueletico.ToString();
-                            //txt_endocrino.Text = perio.perio_endocrino.ToString();
-                            //txt_hemolinfatico.Text = perio.perio_hemoLimfa.ToString();
-                            //txt_nervioso.Text = perio.perio_nervioso.ToString();
+                            //G                            
                             txt_descrorganosysistemasperiodica.Text = perio.perio_descripRevOrgaSistemas.ToString();
 
-                            ////I
-                            //txt_cicatrices.Text = perio.perio_cicatricesPiel.ToString();
-                            //txt_tatuajes.Text = perio.perio_tatuajesPiel.ToString();
-                            //txt_pielyfaneras.Text = perio.perio_pielFacerasPiel.ToString();
-                            //txt_parpados.Text = perio.perio_parpadosOjos.ToString();
-                            //txt_conjuntivas.Text = perio.perio_conjuntuvasOjos.ToString();
-                            //txt_pupilas.Text = perio.perio_pupilasOjos.ToString();
-                            //txt_cornea.Text = perio.perio_corneaOjos.ToString();
-                            //txt_motilidad.Text = perio.perio_motilidadOjos.ToString();
-                            //txt_auditivoexterno.Text = perio.perio_cAudiExtreOido.ToString();
-                            //txt_pabellon.Text = perio.perio_pabellonOido.ToString();
-                            //txt_timpanos.Text = perio.perio_timpanosOido.ToString();
-                            //txt_labios.Text = perio.perio_labiosOroFa.ToString();
-                            //txt_lengua.Text = perio.perio_lenguaOroFa.ToString();
-                            //txt_faringe.Text = perio.perio_faringeOroFa.ToString();
-                            //txt_amigdalas.Text = perio.perio_amigdalasOroFa.ToString();
-                            //txt_dentadura.Text = perio.perio_dentaduraOroFa.ToString();
-                            //txt_tabique.Text = perio.perio_tabiqueNariz.ToString();
-                            //txt_cornetes.Text = perio.perio_cornetesNariz.ToString();
-                            //txt_mucosa.Text = perio.perio_mucosasNariz.ToString();
-                            //txt_senosparanasales.Text = perio.perio_senosParanaNariz.ToString();
-                            //txt_tiroides.Text = perio.perio_tiroiMasasCuello.ToString();
-                            //txt_movilidad.Text = perio.perio_movilidadCuello.ToString();
-                            //txt_mamas.Text = perio.perio_mamasTorax.ToString();
-                            //txt_corazon.Text = perio.perio_corazonTorax.ToString();
-                            //txt_pulmones.Text = perio.perio_pulmonesTorax2.ToString();
-                            //txt_parrillacostal.Text = perio.perio_parriCostalTorax2.ToString();
-                            //txt_visceras.Text = perio.perio_viscerasAbdomen.ToString();
-                            //txt_paredabdominal.Text = perio.perio_paredAbdomiAbdomen.ToString();
-                            //txt_flexibilidad.Text = perio.perio_flexibilidadColumna.ToString();
-                            //txt_desviacion.Text = perio.perio_desviacionColumna.ToString();
-                            //txt_dolor.Text = perio.perio_dolorColumna.ToString();
-                            //txt_pelvis.Text = perio.perio_pelvisPelvis.ToString();
-                            //txt_genitales.Text = perio.perio_genitalesPelvis.ToString();
-                            //txt_vascular.Text = perio.perio_vascularExtre.ToString();
-                            //txt_miembrosuperiores.Text = perio.perio_miemSupeExtre.ToString();
-                            //txt_miembrosinferiores.Text = perio.perio_miemInfeExtre.ToString();
-                            //txt_fuerza.Text = perio.perio_fuerzaNeuro.ToString();
-                            //txt_sensibilidad.Text = perio.perio_sensibiNeuro.ToString();
-                            //txt_marcha.Text = perio.perio_marchaNeuro.ToString();
-                            //txt_reflejos.Text = perio.perio_refleNeuro.ToString();
-                            txt_obervexamenfisicoregional.Text = perio.perio_observaExaFisRegional.ToString();
+                            //H
+
+                            //I                            
+                            txt_observexamenfisicoregional.Text = perio.perio_observaExaFisRegional.ToString();
 
                             //J
                             txt_examen.Text = perio.perio_examen.ToString();
+                            txt_examen2.Text = perio.perio_examen2.ToString();
                             txt_fechaexamen.Text = perio.perio_fecha.ToString();
+                            txt_fechaexamen2.Text = perio.perio_fecha2.ToString();
                             txt_resultadoexamen.Text = perio.perio_resultado.ToString();
+                            txt_resultadoexamen2.Text = perio.perio_resultado2.ToString();
                             txt_observacionexamen.Text = perio.perio_observacionesResExaGenEspPuesTrabajo.ToString();
 
                             //K
                             txt_descripdiagnostico.Text = perio.perio_descripcionDiagnostico.ToString();
-                            //txt_cie.Text = perio.perio_cie.ToString();
-                            //txt_pre.Text = perio.perio_pre.ToString();
-                            //txt_def.Text = perio.perio_def.ToString();
+                            txt_descripdiagnostico2.Text = perio.perio_descripcionDiagnostico2.ToString();
+                            txt_descripdiagnostico3.Text = perio.perio_descripcionDiagnostico3.ToString();
+                            txt_cie.Text = perio.perio_cie.ToString();
+                            txt_cie2.Text = perio.perio_cie2.ToString();
+                            txt_cie3.Text = perio.perio_cie3.ToString();
 
-                            //L
-                            //txt_apto.Text = perio.perio_apto.ToString();
-                            //txt_aptoobservacion.Text = perio.perio_aptoObserva.ToString();
-                            //txt_aptolimitacion.Text = perio.perio_aptoLimi.ToString();
-                            //txt_noapto.Text = perio.perio_NoApto.ToString();
+                            //L                            
                             txt_observacionaptitud.Text = perio.perio_ObservAptMedTrabajo.ToString();
                             txt_limitacionaptitud.Text = perio.perio_LimitAptMedTrabajo.ToString();
 
@@ -411,6 +341,1048 @@ namespace SistemaECU911.Template.Views
 
                 int perso = Convert.ToInt32(per.Per_id.ToString());
 
+                //Habitos Toxicos
+                if (ckb_siConsuNociTabaHabToxi.Checked == true)
+                {
+                    perio.perio_siConsuNocivosTabaco = "SI";
+                }
+                if (ckb_noConsuNociTabaHabToxi.Checked == true)
+                {
+                    perio.perio_noConsuNocivosTabaco = "SI";
+                }
+                if (ckb_siConsuNociAlcoHabToxi.Checked == true)
+                {
+                    perio.perio_siConsuNocivosAlcohol = "SI";
+                }
+                if (ckb_noConsuNociAlcoHabToxi.Checked == true)
+                {
+                    perio.perio_noConsuNocivosAlcohol = "SI";
+                }
+                if (ckb_siConsuNociOtrasDroHabToxi.Checked == true)
+                {
+                    perio.perio_siConsuNocivosOtrasDrogas = "SI";
+                }
+                if (ckb_noConsuNociOtrasDroHabToxi.Checked == true)
+                {
+                    perio.perio_noConsuNocivosOtrasDrogas = "SI";
+                }
+
+                //Estilo de Vida
+                if (ckb_siEstVidaActFisiEstVida.Checked == true)
+                {
+                    perio.perio_siEstiVidaActFisica = "SI";
+                }
+                if (ckb_noEstVidaActFisiEstVida.Checked == true)
+                {
+                    perio.perio_noEstiVidaActFisica = "SI";
+                }
+                if (ckb_siEstVidaMedHabiEstVida.Checked == true)
+                {
+                    perio.perio_siEstiVidaMediHabitual = "SI";
+                }
+                if (ckb_noEstVidaMedHabiEstVida.Checked == true)
+                {
+                    perio.perio_noEstiVidaMediHabitual = "SI";
+                }
+
+                //Accidentes de Trabajo (Descripcion)
+                if (ckb_sicalificadotrabajo.Checked == true)
+                {
+                    perio.perio_siCalificadoIESSAcciTrabajo = "SI";
+                }
+                if (ckb_nocalificadotrabajo.Checked == true)
+                {
+                    perio.perio_noCalificadoIESSAcciTrabajo = "SI";
+                }
+
+                //Enfermedades Profesionales
+                if (ckb_sicalificadoprofesional.Checked == true)
+                {
+                    perio.perio_siCalificadoIESSEnferProfesionales = "SI";
+                }
+                if (ckb_nocalificadoprofesional.Checked == true)
+                {
+                    perio.perio_noCalificadoIESSEnferProfesionales = "SI";
+                }
+
+                //Antecedentes Profesionales (Detallar el Parentesco)
+                if (ckb_enfermedadcardiovascular.Checked == true)
+                {
+                    perio.perio_cardVascular = "SI";
+                }
+                if (ckb_enfermedadmetabolica.Checked == true)
+                {
+                    perio.perio_enfMeta = "SI";
+                }
+                if (ckb_enfermedadneurologica.Checked == true)
+                {
+                    perio.perio_enfNeuro = "SI";
+                }
+                if (ckb_enfermedadoncologica.Checked == true)
+                {
+                    perio.perio_enfOnco = "SI";
+                }
+                if (ckb_enfermedadinfecciosa.Checked == true)
+                {
+                    perio.perio_enfInfe = "SI";
+                }
+                if (ckb_enfermedadhereditaria.Checked == true)
+                {
+                    perio.perio_enfHereConge = "SI";
+                }
+                if (ckb_discapacidades.Checked == true)
+                {
+                    perio.perio_discapa = "SI";
+                }
+                if (ckb_otrosenfer.Checked == true)
+                {
+                    perio.perio_otros = "SI";
+                }
+
+                //Factores de riesgo del puesto de trabajo
+                //----------- Fisico -----------
+                if (ckb_tempaltas.Checked == true)
+                {
+                    perio.perio_temAltasFis = "SI";
+                }
+                if (ckb_tempbajas2.Checked == true)
+                {
+                    perio.perio_temBajasFis2 = "SI";
+                }
+                if (ckb_tempbajas3.Checked == true)
+                {
+                    perio.perio_temBajasFis3 = "SI";
+                }
+                if (ckb_radiacion.Checked == true)
+                {
+                    perio.perio_radIonizanteFis = "SI";
+                }
+                if (ckb_radiacion2.Checked == true)
+                {
+                    perio.perio_radIonizanteFis2 = "SI";
+                }
+                if (ckb_radiacion3.Checked == true)
+                {
+                    perio.perio_radIonizanteFis3 = "SI";
+                }
+                if (ckb_noradiacion.Checked == true)
+                {
+                    perio.perio_radNoIonizanteFis = "SI";
+                }
+                if (ckb_noradiacion2.Checked == true)
+                {
+                    perio.perio_radNoIonizanteFis2 = "SI";
+                }
+                if (ckb_noradiacion3.Checked == true)
+                {
+                    perio.perio_radNoIonizanteFis3 = "SI";
+                }
+                if (ckb_ruido.Checked == true)
+                {
+                    perio.perio_ruidoFis = "SI";
+                }
+                if (ckb_ruido2.Checked == true)
+                {
+                    perio.perio_ruidoFis2 = "SI";
+                }
+                if (ckb_ruido3.Checked == true)
+                {
+                    perio.perio_ruidoFis3 = "SI";
+                }
+                if (ckb_vibracion.Checked == true)
+                {
+                    perio.perio_vibracionFis = "SI";
+                }
+                if (ckb_vibracion2.Checked == true)
+                {
+                    perio.perio_vibracionFis2 = "SI";
+                }
+                if (ckb_vibracion3.Checked == true)
+                {
+                    perio.perio_vibracionFis3 = "SI";
+                }
+                if (ckb_iluminacion.Checked == true)
+                {
+                    perio.perio_iluminacionFis = "SI";
+                }
+                if (ckb_iluminacion2.Checked == true)
+                {
+                    perio.perio_iluminacionFis2 = "SI";
+                }
+                if (ckb_iluminacion3.Checked == true)
+                {
+                    perio.perio_iluminacionFis3 = "SI";
+                }
+                if (ckb_ventilacion.Checked == true)
+                {
+                    perio.perio_ventilacionFis = "SI";
+                }
+                if (ckb_ventilacion2.Checked == true)
+                {
+                    perio.perio_ventilacionFis2 = "SI";
+                }
+                if (ckb_ventilacion3.Checked == true)
+                {
+                    perio.perio_ventilacionFis3 = "SI";
+                }
+                if (ckb_fluidoelectrico.Checked == true)
+                {
+                    perio.perio_fluElectricoFis = "SI";
+                }
+                if (ckb_fluidoelectrico2.Checked == true)
+                {
+                    perio.perio_fluElectricoFis2 = "SI";
+                }
+                if (ckb_fluidoelectrico3.Checked == true)
+                {
+                    perio.perio_fluElectricoFis3 = "SI";
+                }
+                if (ckb_otrosFisico.Checked == true)
+                {
+                    perio.perio_otrosFis = "SI";
+                }
+                if (ckb_otrosFisico2.Checked == true)
+                {
+                    perio.perio_otrosFis2 = "SI";
+                }
+                if (ckb_otrosFisico3.Checked == true)
+                {
+                    perio.perio_otrosFis3 = "SI";
+                }
+                //----------- Mecanico -----------
+                if (ckb_atrapmaquinas.Checked == true)
+                {
+                    perio.perio_atraMaquinasMec = "SI";
+                }
+                if (ckb_atrapmaquinas2.Checked == true)
+                {
+                    perio.perio_atraMaquinasMec2 = "SI";
+                }
+                if (ckb_atrapmaquinas3.Checked == true)
+                {
+                    perio.perio_atraMaquinasMec3 = "SI";
+                }
+                if (ckb_atrapsuperficie.Checked == true)
+                {
+                    perio.perio_atraSuperfiiesMec = "SI";
+                }
+                if (ckb_atrapsuperficie2.Checked == true)
+                {
+                    perio.perio_atraSuperfiiesMec2 = "SI";
+                }
+                if (ckb_atrapsuperficie3.Checked == true)
+                {
+                    perio.perio_atraSuperfiiesMec3 = "SI";
+                }
+                if (ckb_atrapobjetos.Checked == true)
+                {
+                    perio.perio_atraObjetosMec = "SI";
+                }
+                if (ckb_atrapobjetos2.Checked == true)
+                {
+                    perio.perio_atraObjetosMec2 = "SI";
+                }
+                if (ckb_atrapobjetos3.Checked == true)
+                {
+                    perio.perio_atraObjetosMec3 = "SI";
+                }
+                if (ckb_caidaobjetos.Checked == true)
+                {
+                    perio.perio_caidaObjetosMec = "SI";
+                }
+                if (ckb_caidaobjetos2.Checked == true)
+                {
+                    perio.perio_caidaObjetosMec2 = "SI";
+                }
+                if (ckb_caidaobjetos3.Checked == true)
+                {
+                    perio.perio_caidaObjetosMec3 = "SI";
+                }
+                if (ckb_caidamisnivel.Checked == true)
+                {
+                    perio.perio_caidaMisNivelMec = "SI";
+                }
+                if (ckb_caidamisnivel2.Checked == true)
+                {
+                    perio.perio_caidaMisNivelMec2 = "SI";
+                }
+                if (ckb_caidamisnivel3.Checked == true)
+                {
+                    perio.perio_caidaMisNivelMec3 = "SI";
+                }
+                if (ckb_caidadifnivel.Checked == true)
+                {
+                    perio.perio_caidaDifNivelMec = "SI";
+                }
+                if (ckb_caidadifnivel2.Checked == true)
+                {
+                    perio.perio_caidaDifNivelMec2 = "SI";
+                }
+                if (ckb_caidadifnivel3.Checked == true)
+                {
+                    perio.perio_caidaDifNivelMec3 = "SI";
+                }
+                if (ckb_contaelectrico.Checked == true)
+                {
+                    perio.perio_contactoElecMec = "SI";
+                }
+                if (ckb_contaelectrico2.Checked == true)
+                {
+                    perio.perio_contactoElecMec2 = "SI";
+                }
+                if (ckb_contaelectrico3.Checked == true)
+                {
+                    perio.perio_contactoElecMec3 = "SI";
+                }
+                if (ckb_contasuptrabajo.Checked == true)
+                {
+                    perio.perio_conSuperTrabaMec = "SI";
+                }
+                if (ckb_contasuptrabajo2.Checked == true)
+                {
+                    perio.perio_conSuperTrabaMec2 = "SI";
+                }
+                if (ckb_contasuptrabajo3.Checked == true)
+                {
+                    perio.perio_conSuperTrabaMec3 = "SI";
+                }
+                if (ckb_proyparticulas.Checked == true)
+                {
+                    perio.perio_proPartiFragMec = "SI";
+                }
+                if (ckb_proyparticulas2.Checked == true)
+                {
+                    perio.perio_proPartiFragMec2 = "SI";
+                }
+                if (ckb_proyparticulas3.Checked == true)
+                {
+                    perio.perio_proPartiFragMec3 = "SI";
+                }
+                if (ckb_proyefluidos.Checked == true)
+                {
+                    perio.perio_proFluidosMec = "SI";
+                }
+                if (ckb_proyefluidos2.Checked == true)
+                {
+                    perio.perio_proFluidosMec2 = "SI";
+                }
+                if (ckb_proyefluidos3.Checked == true)
+                {
+                    perio.perio_proFluidosMec3 = "SI";
+                }
+                if (ckb_pinchazos.Checked == true)
+                {
+                    perio.perio_pinchazosMec = "SI";
+                }
+                if (ckb_pinchazos2.Checked == true)
+                {
+                    perio.perio_pinchazosMec2 = "SI";
+                }
+                if (ckb_pinchazos3.Checked == true)
+                {
+                    perio.perio_pinchazosMec3 = "SI";
+                }
+                if (ckb_cortes.Checked == true)
+                {
+                    perio.perio_cortesMec = "SI";
+                }
+                if (ckb_cortes2.Checked == true)
+                {
+                    perio.perio_cortesMec2 = "SI";
+                }
+                if (ckb_cortes3.Checked == true)
+                {
+                    perio.perio_cortesMec3 = "SI";
+                }
+                if (ckb_atroporvehiculos.Checked == true)
+                {
+                    perio.perio_atropeVehiMec = "SI";
+                }
+                if (ckb_atroporvehiculos2.Checked == true)
+                {
+                    perio.perio_atropeVehiMec2 = "SI";
+                }
+                if (ckb_atroporvehiculos3.Checked == true)
+                {
+                    perio.perio_atropeVehiMec3 = "SI";
+                }
+                if (ckb_choques.Checked == true)
+                {
+                    perio.perio_coliVehiMec = "SI";
+                }
+                if (ckb_choques2.Checked == true)
+                {
+                    perio.perio_coliVehiMec2 = "SI";
+                }
+                if (ckb_choques3.Checked == true)
+                {
+                    perio.perio_coliVehiMec3 = "SI";
+                }
+                if (ckb_otrosMecanico.Checked == true)
+                {
+                    perio.perio_otrosMec = "SI";
+                }
+                if (ckb_otrosMecanico2.Checked == true)
+                {
+                    perio.perio_otrosMec2 = "SI";
+                }
+                if (ckb_otrosMecanico3.Checked == true)
+                {
+                    perio.perio_otrosMec3 = "SI";
+                }
+                //----------- Quimico -----------
+                if (ckb_solidos.Checked == true)
+                {
+                    perio.perio_solidosQui = "SI";
+                }
+                if (ckb_solidos2.Checked == true)
+                {
+                    perio.perio_solidosQui2 = "SI";
+                }
+                if (ckb_solidos3.Checked == true)
+                {
+                    perio.perio_solidosQui3 = "SI";
+                }
+                if (ckb_polvos.Checked == true)
+                {
+                    perio.perio_polvosQui = "SI";
+                }
+                if (ckb_polvos2.Checked == true)
+                {
+                    perio.perio_polvosQui2 = "SI";
+                }
+                if (ckb_polvos3.Checked == true)
+                {
+                    perio.perio_polvosQui3 = "SI";
+                }
+                if (ckb_humos.Checked == true)
+                {
+                    perio.perio_humosQui = "SI";
+                }
+                if (ckb_humos2.Checked == true)
+                {
+                    perio.perio_humosQui2 = "SI";
+                }
+                if (ckb_humos3.Checked == true)
+                {
+                    perio.perio_humosQui3 = "SI";
+                }
+                if (ckb_liquidos.Checked == true)
+                {
+                    perio.perio_liquidosQui = "SI";
+                }
+                if (ckb_liquidos2.Checked == true)
+                {
+                    perio.perio_liquidosQui2 = "SI";
+                }
+                if (ckb_liquidos3.Checked == true)
+                {
+                    perio.perio_liquidosQui3 = "SI";
+                }
+                if (ckb_vapores.Checked == true)
+                {
+                    perio.perio_vaporesQui = "SI";
+                }
+                if (ckb_vapores2.Checked == true)
+                {
+                    perio.perio_vaporesQui2 = "SI";
+                }
+                if (ckb_vapores3.Checked == true)
+                {
+                    perio.perio_vaporesQui3 = "SI";
+                }
+                if (ckb_aerosoles.Checked == true)
+                {
+                    perio.perio_aerosolesQui = "SI";
+                }
+                if (ckb_aerosoles2.Checked == true)
+                {
+                    perio.perio_aerosolesQui2 = "SI";
+                }
+                if (ckb_aerosoles3.Checked == true)
+                {
+                    perio.perio_aerosolesQui3 = "SI";
+                }
+                if (ckb_neblinas.Checked == true)
+                {
+                    perio.perio_neblinasQui = "SI";
+                }
+                if (ckb_neblinas2.Checked == true)
+                {
+                    perio.perio_neblinasQui2 = "SI";
+                }
+                if (ckb_neblinas3.Checked == true)
+                {
+                    perio.perio_neblinasQui3 = "SI";
+                }
+                if (ckb_gaseosos.Checked == true)
+                {
+                    perio.perio_gaseososQui = "SI";
+                }
+                if (ckb_gaseosos2.Checked == true)
+                {
+                    perio.perio_gaseososQui2 = "SI";
+                }
+                if (ckb_gaseosos3.Checked == true)
+                {
+                    perio.perio_gaseososQui3 = "SI";
+                }
+                if (ckb_otrosQuimico.Checked == true)
+                {
+                    perio.perio_otrosQui = "SI";
+                }
+                if (ckb_otrosQuimico2.Checked == true)
+                {
+                    perio.perio_otrosQui2 = "SI";
+                }
+                if (ckb_otrosQuimico3.Checked == true)
+                {
+                    perio.perio_otrosQui3 = "SI";
+                }
+                //----------- Biologico -----------
+                if (ckb_virus.Checked == true)
+                {
+                    perio.perio_virusBio = "SI";
+                }
+                if (ckb_virus2.Checked == true)
+                {
+                    perio.perio_virusBio2 = "SI";
+                }
+                if (ckb_virus3.Checked == true)
+                {
+                    perio.perio_virusBio3 = "SI";
+                }
+                if (ckb_hongos.Checked == true)
+                {
+                    perio.perio_hongosBio = "SI";
+                }
+                if (ckb_hongos2.Checked == true)
+                {
+                    perio.perio_hongosBio2 = "SI";
+                }
+                if (ckb_hongos3.Checked == true)
+                {
+                    perio.perio_hongosBio3 = "SI";
+                }
+                if (ckb_bacterias.Checked == true)
+                {
+                    perio.perio_bacteriasBio = "SI";
+                }
+                if (ckb_bacterias2.Checked == true)
+                {
+                    perio.perio_bacteriasBio2 = "SI";
+                }
+                if (ckb_bacterias3.Checked == true)
+                {
+                    perio.perio_bacteriasBio3 = "SI";
+                }
+                if (ckb_parasitos.Checked == true)
+                {
+                    perio.perio_parasitosBio = "SI";
+                }
+                if (ckb_parasitos2.Checked == true)
+                {
+                    perio.perio_parasitosBio2 = "SI";
+                }
+                if (ckb_parasitos3.Checked == true)
+                {
+                    perio.perio_parasitosBio3 = "SI";
+                }
+                if (ckb_expoavectores.Checked == true)
+                {
+                    perio.perio_expVectBio = "SI";
+                }
+                if (ckb_expoavectores2.Checked == true)
+                {
+                    perio.perio_expVectBio2 = "SI";
+                }
+                if (ckb_expoavectores3.Checked == true)
+                {
+                    perio.perio_expVectBio3 = "SI";
+                }
+                if (ckb_expoanimselvaticos.Checked == true)
+                {
+                    perio.perio_expAniSelvaBio = "SI";
+                }
+                if (ckb_expoanimselvaticos2.Checked == true)
+                {
+                    perio.perio_expAniSelvaBio2 = "SI";
+                }
+                if (ckb_expoanimselvaticos3.Checked == true)
+                {
+                    perio.perio_expAniSelvaBio3 = "SI";
+                }
+                if (ckb_otrosBiologico.Checked == true)
+                {
+                    perio.perio_otrosBio = "SI";
+                }
+                if (ckb_otrosBiologico2.Checked == true)
+                {
+                    perio.perio_otrosBio2 = "SI";
+                }
+                if (ckb_otrosBiologico3.Checked == true)
+                {
+                    perio.perio_otrosBio3 = "SI";
+                }
+                //----------- Ergonomico -----------
+                if (ckb_manmanualcargas.Checked == true)
+                {
+                    perio.perio_maneManCarErg = "SI";
+                }
+                if (ckb_manmanualcargas2.Checked == true)
+                {
+                    perio.perio_maneManCarErg2 = "SI";
+                }
+                if (ckb_manmanualcargas3.Checked == true)
+                {
+                    perio.perio_maneManCarErg3 = "SI";
+                }
+                if (ckb_movrepetitivo.Checked == true)
+                {
+                    perio.perio_movRepeErg = "SI";
+                }
+                if (ckb_movrepetitivo.Checked == true)
+                {
+                    perio.perio_movRepeErg = "SI";
+                }
+                if (ckb_movrepetitivo2.Checked == true)
+                {
+                    perio.perio_movRepeErg2 = "SI";
+                }
+                if (ckb_postforzadas3.Checked == true)
+                {
+                    perio.perio_posForzaErg3 = "SI";
+                }
+                if (ckb_trabajopvd.Checked == true)
+                {
+                    perio.perio_trabPvdErg = "SI";
+                }
+                if (ckb_trabajopvd2.Checked == true)
+                {
+                    perio.perio_trabPvdErg2 = "SI";
+                }
+                if (ckb_trabajopvd3.Checked == true)
+                {
+                    perio.perio_trabPvdErg3 = "SI";
+                }
+                if (ckb_otrosErgonomico.Checked == true)
+                {
+                    perio.perio_otrosErg = "SI";
+                }
+                if (ckb_otrosErgonomico2.Checked == true)
+                {
+                    perio.perio_otrosErg2 = "SI";
+                }
+                if (ckb_otrosErgonomico3.Checked == true)
+                {
+                    perio.perio_otrosErg3 = "SI";
+                }
+                //----------- Psicosocial -----------
+                if (ckb_montrabajo.Checked == true)
+                {
+                    perio.perio_monoTrabPsi = "SI";
+                }
+                if (ckb_montrabajo2.Checked == true)
+                {
+                    perio.perio_monoTrabPsi2 = "SI";
+                }
+                if (ckb_montrabajo3.Checked == true)
+                {
+                    perio.perio_monoTrabPsi3 = "SI";
+                }
+                if (ckb_sobrecargalaboral.Checked == true)
+                {
+                    perio.perio_sobrecarLabPsi = "SI";
+                }
+                if (ckb_sobrecargalaboral2.Checked == true)
+                {
+                    perio.perio_sobrecarLabPsi2 = "SI";
+                }
+                if (ckb_sobrecargalaboral3.Checked == true)
+                {
+                    perio.perio_sobrecarLabPsi3 = "SI";
+                }
+                if (ckb_minustarea.Checked == true)
+                {
+                    perio.perio_minuTareaPsi = "SI";
+                }
+                if (ckb_minustarea2.Checked == true)
+                {
+                    perio.perio_minuTareaPsi2 = "SI";
+                }
+                if (ckb_minustarea3.Checked == true)
+                {
+                    perio.perio_minuTareaPsi3 = "SI";
+                }
+                if (ckb_altarespon.Checked == true)
+                {
+                    perio.perio_altaResponPsi = "SI";
+                }
+                if (ckb_altarespon2.Checked == true)
+                {
+                    perio.perio_altaResponPsi2 = "SI";
+                }
+                if (ckb_altarespon3.Checked == true)
+                {
+                    perio.perio_altaResponPsi3 = "SI";
+                }
+                if (ckb_automadesiciones.Checked == true)
+                {
+                    perio.perio_autoTomaDesiPsi = "SI";
+                }
+                if (ckb_automadesiciones2.Checked == true)
+                {
+                    perio.perio_autoTomaDesiPsi2 = "SI";
+                }
+                if (ckb_automadesiciones3.Checked == true)
+                {
+                    perio.perio_autoTomaDesiPsi3 = "SI";
+                }
+                if (ckb_supyestdireficiente.Checked == true)
+                {
+                    perio.perio_supEstDirecDefiPsi = "SI";
+                }
+                if (ckb_supyestdireficiente2.Checked == true)
+                {
+                    perio.perio_supEstDirecDefiPsi2 = "SI";
+                }
+                if (ckb_supyestdireficiente3.Checked == true)
+                {
+                    perio.perio_supEstDirecDefiPsi3 = "SI";
+                }
+                if (ckb_conflictorol.Checked == true)
+                {
+                    perio.perio_conflicRolPsi = "SI";
+                }
+                if (ckb_conflictorol2.Checked == true)
+                {
+                    perio.perio_conflicRolPsi2 = "SI";
+                }
+                if (ckb_conflictorol3.Checked == true)
+                {
+                    perio.perio_conflicRolPsi3 = "SI";
+                }
+                if (ckb_faltaclarfunciones.Checked == true)
+                {
+                    perio.perio_falClariFunPsi = "SI";
+                }
+                if (ckb_faltaclarfunciones2.Checked == true)
+                {
+                    perio.perio_falClariFunPsi2 = "SI";
+                }
+                if (ckb_faltaclarfunciones3.Checked == true)
+                {
+                    perio.perio_falClariFunPsi3 = "SI";
+                }
+                if (ckb_incorrdistrabajo.Checked == true)
+                {
+                    perio.perio_incoDistriTrabPsi = "SI";
+                }
+                if (ckb_incorrdistrabajo2.Checked == true)
+                {
+                    perio.perio_incoDistriTrabPsi2 = "SI";
+                }
+                if (ckb_incorrdistrabajo3.Checked == true)
+                {
+                    perio.perio_incoDistriTrabPsi3 = "SI";
+                }
+                if (ckb_turnorotat.Checked == true)
+                {
+                    perio.perio_turnosRotaPsi = "SI";
+                }
+                if (ckb_turnorotat2.Checked == true)
+                {
+                    perio.perio_turnosRotaPsi2 = "SI";
+                }
+                if (ckb_turnorotat3.Checked == true)
+                {
+                    perio.perio_turnosRotaPsi3 = "SI";
+                }
+                if (ckb_relacinterpersonales.Checked == true)
+                {
+                    perio.perio_relInterperPsi = "SI";
+                }
+                if (ckb_relacinterpersonales2.Checked == true)
+                {
+                    perio.perio_relInterperPsi2 = "SI";
+                }
+                if (ckb_relacinterpersonales3.Checked == true)
+                {
+                    perio.perio_relInterperPsi3 = "SI";
+                }
+                if (ckb_inestalaboral.Checked == true)
+                {
+                    perio.perio_inesLabPsi = "SI";
+                }
+                if (ckb_inestalaboral2.Checked == true)
+                {
+                    perio.perio_inesLabPsi2 = "SI";
+                }
+                if (ckb_inestalaboral3.Checked == true)
+                {
+                    perio.perio_inesLabPsi3 = "SI";
+                }
+                if (ckb_otrosPsisocial.Checked == true)
+                {
+                    perio.perio_otrosPsi = "SI";
+                }
+                if (ckb_otrosPsisocial2.Checked == true)
+                {
+                    perio.perio_otrosPsi2 = "SI";
+                }
+                if (ckb_otrosPsisocial3.Checked == true)
+                {
+                    perio.perio_otrosPsi3 = "SI";
+                }
+
+                //Revision de Organos y Sistemas
+                if (ckb_pielanexos.Checked == true)
+                {
+                    perio.perio_pielAnexos = "SI";
+                }
+                if (ckb_organossentidos.Checked == true)
+                {
+                    perio.perio_orgSentidos = "SI";
+                }
+                if (ckb_respiratorio.Checked == true)
+                {
+                    perio.perio_respiratorio = "SI";
+                }
+                if (ckb_cardiovascular.Checked == true)
+                {
+                    perio.perio_cardVascular = "SI";
+                }
+                if (ckb_digestivo.Checked == true)
+                {
+                    perio.perio_digestivo = "SI";
+                }
+                if (ckb_genitourinario.Checked == true)
+                {
+                    perio.perio_genUrinario = "SI";
+                }
+                if (ckb_musculosesqueleticos.Checked == true)
+                {
+                    perio.perio_muscEsqueletico = "SI";
+                }
+                if (ckb_endocrino.Checked == true)
+                {
+                    perio.perio_endocrino = "SI";
+                }
+                if (ckb_hemolinfatico.Checked == true)
+                {
+                    perio.perio_hemoLimfa = "SI";
+                }
+                if (ckb_nervioso.Checked == true)
+                {
+                    perio.perio_nervioso = "SI";
+                }
+
+                //Regiones
+                if (ckb_cicatrices.Checked == true)
+                {
+                    perio.perio_cicatricesPiel = "SI";
+                }
+                if (ckb_tatuajes.Checked == true)
+                {
+                    perio.perio_tatuajesPiel = "SI";
+                }
+                if (ckb_pielyfaneras.Checked == true)
+                {
+                    perio.perio_pielFacerasPiel = "SI";
+                }
+                if (ckb_parpados.Checked == true)
+                {
+                    perio.perio_parpadosOjos = "SI";
+                }
+                if (ckb_conjuntivas.Checked == true)
+                {
+                    perio.perio_conjuntuvasOjos = "SI";
+                }
+                if (ckb_pupilas.Checked == true)
+                {
+                    perio.perio_pupilasOjos = "SI";
+                }
+                if (ckb_cornea.Checked == true)
+                {
+                    perio.perio_corneaOjos = "SI";
+                }
+                if (ckb_motilidad.Checked == true)
+                {
+                    perio.perio_motilidadOjos = "SI";
+                }
+                if (ckb_auditivoexterno.Checked == true)
+                {
+                    perio.perio_cAudiExtreOido = "SI";
+                }
+                if (ckb_pabellon.Checked == true)
+                {
+                    perio.perio_pabellonOido = "SI";
+                }
+                if (ckb_timpanos.Checked == true)
+                {
+                    perio.perio_timpanosOido = "SI";
+                }
+                if (ckb_labios.Checked == true)
+                {
+                    perio.perio_labiosOroFa = "SI";
+                }
+                if (ckb_lengua.Checked == true)
+                {
+                    perio.perio_lenguaOroFa = "SI";
+                }
+                if (ckb_faringe.Checked == true)
+                {
+                    perio.perio_faringeOroFa = "SI";
+                }
+                if (ckb_amigdalas.Checked == true)
+                {
+                    perio.perio_amigdalasOroFa = "SI";
+                }
+                if (ckb_dentadura.Checked == true)
+                {
+                    perio.perio_dentaduraOroFa = "SI";
+                }
+                if (ckb_tabique.Checked == true)
+                {
+                    perio.perio_tabiqueNariz = "SI";
+                }
+                if (ckb_cornetes.Checked == true)
+                {
+                    perio.perio_cornetesNariz = "SI";
+                }
+                if (ckb_mucosa.Checked == true)
+                {
+                    perio.perio_mucosasNariz = "SI";
+                }
+                if (ckb_senosparanasales.Checked == true)
+                {
+                    perio.perio_senosParanaNariz = "SI";
+                }
+                if (ckb_tiroides.Checked == true)
+                {
+                    perio.perio_tiroiMasasCuello = "SI";
+                }
+                if (ckb_movilidad.Checked == true)
+                {
+                    perio.perio_movilidadCuello = "SI";
+                }
+                if (ckb_mamas.Checked == true)
+                {
+                    perio.perio_mamasTorax = "SI";
+                }
+                if (ckb_corazon.Checked == true)
+                {
+                    perio.perio_corazonTorax = "SI";
+                }
+                if (ckb_pulmones.Checked == true)
+                {
+                    perio.perio_pulmonesTorax2 = "SI";
+                }
+                if (ckb_parrillacostal.Checked == true)
+                {
+                    perio.perio_parriCostalTorax2 = "SI";
+                }
+                if (ckb_visceras.Checked == true)
+                {
+                    perio.perio_viscerasAbdomen = "SI";
+                }
+                if (ckb_paredabdominal.Checked == true)
+                {
+                    perio.perio_paredAbdomiAbdomen = "SI";
+                }
+                if (ckb_flexibilidad.Checked == true)
+                {
+                    perio.perio_flexibilidadColumna = "SI";
+                }
+                if (ckb_desviacion.Checked == true)
+                {
+                    perio.perio_desviacionColumna = "SI";
+                }
+                if (ckb_dolor.Checked == true)
+                {
+                    perio.perio_dolorColumna = "SI";
+                }
+                if (ckb_pelvis.Checked == true)
+                {
+                    perio.perio_pelvisPelvis = "SI";
+                }
+                if (ckb_genitales.Checked == true)
+                {
+                    perio.perio_genitalesPelvis = "SI";
+                }
+                if (ckb_vascular.Checked == true)
+                {
+                    perio.perio_vascularExtre = "SI";
+                }
+                if (ckb_miembrosuperiores.Checked == true)
+                {
+                    perio.perio_miemSupeExtre = "SI";
+                }
+                if (ckb_miembrosinferiores.Checked == true)
+                {
+                    perio.perio_miemInfeExtre = "SI";
+                }
+                if (ckb_fuerza.Checked == true)
+                {
+                    perio.perio_fuerzaNeuro = "SI";
+                }
+                if (ckb_sensibilidad.Checked == true)
+                {
+                    perio.perio_sensibiNeuro = "SI";
+                }
+                if (ckb_marcha.Checked == true)
+                {
+                    perio.perio_marchaNeuro = "SI";
+                }
+                if (ckb_reflejos.Checked == true)
+                {
+                    perio.perio_refleNeuro = "SI";
+                }
+
+                //Diagnostco
+                if (ckb_pre.Checked == true)
+                {
+                    perio.perio_pre = "SI";
+                }
+                if (ckb_pre2.Checked == true)
+                {
+                    perio.perio_pre2 = "SI";
+                }
+                if (ckb_pre3.Checked == true)
+                {
+                    perio.perio_pre3 = "SI";
+                }
+                if (ckb_def.Checked == true)
+                {
+                    perio.perio_def = "SI";
+                }
+                if (ckb_def2.Checked == true)
+                {
+                    perio.perio_def2 = "SI";
+                }
+                if (ckb_def3.Checked == true)
+                {
+                    perio.perio_def3 = "SI";
+                }
+
+                //Aptitud Medica para el trabajo
+                if (ckb_apto.Checked == true)
+                {
+                    perio.perio_apto = "SI";
+                }
+                if (ckb_aptoobservacion.Checked == true)
+                {
+                    perio.perio_aptoObserva = "SI";
+                }
+                if (ckb_aptolimitacion.Checked == true)
+                {
+                    perio.perio_aptoLimi = "SI";
+                }
+                if (ckb_noapto.Checked == true)
+                {
+                    perio.perio_NoApto = "SI";
+                }
+
                 perio = new Tbl_Periodica
                 {
                     //A
@@ -422,22 +1394,16 @@ namespace SistemaECU911.Template.Views
                     //C.
                     perio_descripcionAntCliQuirurgicos = txt_antCliQuiDescripcion.Text,
 
-                    //perio_siConsuNocivosTabaco = txt_siConsuNociTabaHabToxi.Text,
-                    //perio_noConsuNocivosTabaco = txt_noConsuNociTabaHabToxi.Text,
                     perio_tiempoConsuConsuNocivosTabaco = txt_tiemConConsuNociTabaHabToxi.Text,
                     perio_cantidadConsuNocivosTabaco = txt_cantiConsuNociTabaHabToxi.Text,
                     perio_exConsumiConsuNocivosTabaco = txt_exConsumiConsuNociTabaHabToxi.Text,
                     perio_tiempoAbstiConsuNocivosTabaco = txt_tiemAbstiConsuNociTabaHabToxi.Text,
 
-                    //perio_siConsuNocivosAlcohol = txt_siConsuNociAlcoHabToxi.Text,
-                    //perio_noConsuNocivosAlcohol = txt_noConsuNociAlcoHabToxi.Text,
                     perio_tiempoConsuConsuNocivosAlcohol = txt_tiemConConsuNociAlcoHabToxi.Text,
                     perio_cantidadConsuNocivosAlcohol = txt_cantiConsuNociAlcoHabToxi.Text,
                     perio_exConsumiConsuNocivosAlcohol = txt_exConsumiConsuNociAlcoHabToxi.Text,
                     perio_tiempoAbstiConsuNocivosAlcohol = txt_tiemAbstiConsuNociAlcoHabToxi.Text,
 
-                    //perio_siConsuNocivosOtrasDrogas = txt_siConsuNociOtrasDroHabToxi.Text,
-                    //perio_noConsuNocivosOtrasDrogas = txt_noConsuNociOtrasDroHabToxi.Text,
                     perio_tiempoConsu1ConsuNocivosOtrasDrogas = txt_tiemCon1ConsuNociOtrasDroHabToxi.Text,
                     perio_cantidad1ConsuNocivosOtrasDrogas = txt_canti1ConsuNociOtrasDroHabToxi.Text,
                     perio_exConsumi1ConsuNocivosOtrasDrogas = txt_exConsumi1ConsuNociOtrasDroHabToxi.Text,
@@ -448,13 +1414,9 @@ namespace SistemaECU911.Template.Views
                     perio_exConsumi2ConsuNocivosOtrasDrogas = txt_exConsumi2ConsuNociOtrasDroHabToxi.Text,
                     perio_tiempoAbsti2ConsuNocivosOtrasDrogas = txt_tiemAbsti2ConsuNociOtrasDroHabToxi.Text,
 
-                    //perio_siEstiVidaActFisica = txt_siEstVidaActFisiEstVida.Text,
-                    //perio_noEstiVidaActFisica = txt_noEstVidaActFisiEstVida.Text,
                     perio_cualEstiVidaActFisica = txt_cualEstVidaActFisiEstVida.Text,
                     perio_tiem_cantEstiVidaActFisica = txt_tiemCanEstVidaActFisiEstVida.Text,
 
-                    //perio_siEstiVidaMediHabitual = txt_siEstVidaMedHabiEstVida.Text,
-                    //perio_noEstiVidaMediHabitual = txt_noEstVidaMedHabiEstVida.Text,
                     perio_cual1EstiVidaMediHabitual = txt_cual1EstVidaMedHabiEstVida.Text,
                     perio_tiem_cant1EstiVidaMediHabitual = txt_tiemCan1EstVidaMedHabiEstVida.Text,
                     perio_cual2EstiVidaMediHabitual = txt_cual2EstVidaMedHabiEstVida.Text,
@@ -464,170 +1426,51 @@ namespace SistemaECU911.Template.Views
 
                     perio_descripIncidentes = txt_incidentesperiodica.Text,
 
-                    //perio_siCalificadoIESSAcciTrabajo = txt_sicalificadotrabajo.Text,
                     perio_EspecifiCalificadoIESSAcciTrabajo = txt_especificarcalificadotrabajo.Text,
-                    //perio_noCalificadoIESSAcciTrabajo = txt_nocalificadotrabajo.Text,
                     perio_fechaCalificadoIESSAcciTrabajo = Convert.ToDateTime(txt_fechacalificadotrabajo.Text),
                     perio_observacionesAcciTrabajo = txt_obsercalificadotrabajo.Text,
 
-                    //perio_siCalificadoIESSEnferProfesionales = txt_sicalificadoprofesional.Text,
                     perio_EspecifiCalificadoIESSEnferProfesionales = txt_especificarcalificadoprofesional.Text,
-                    //perio_noCalificadoIESSEnferProfesionales = txt_nocalificadoprofesional.Text,
                     perio_fechaCalificadoIESSEnferProfesionales = Convert.ToDateTime(txt_fechacalificadoprofesional.Text),
                     perio_observacionesEnferProfesionales = txt_obsercalificadoprofesional.Text,
 
                     //D.
-                    //perio_enfCarVas = txt_enfermedadcardiovascular.Text,
-                    //perio_enfMeta = txt_enfermedadmetabolica.Text,
-                    //perio_enfNeuro = txt_enfermedadneurologica.Text,
-                    //perio_enfOnco = txt_enfermedadoncologica.Text,
-                    //perio_enfInfe = txt_enfermedadinfecciosa.Text,
-                    //perio_enfHereConge = txt_enfermedadhereditaria.Text,
-                    //perio_discapa = txt_discapacidades.Text,
-                    //perio_otros = txt_otrosenfer.Text,
                     perio_descripcionAntFamiliares = txt_descripcionantefamiliares.Text,
 
                     //E.
-                    //facriestrabperiodica.FacRiesTrabActPeriodica_area = txt_puestotrabajoperiodica.Text;
-                    //facriestrabperiodica.FacRiesTrabActPeriodica_actividades = txt_act.Text;
-                    //facriestrabperiodica.FacRiesTrabActPeriodica_tiemTrabPeriodica = txt_tiempotrabajo.Text;
-                    //facriestrabperiodica.FacRiesTrabActPeriodica_temAltasFis = txt_tempaltas.Text;
-                    //facriestrabperiodica.FacRiesTrabActPeriodica_temBajasFis = txt_tempbajas.Text;
-                    //facriestrabperiodica.FacRiesTrabActPeriodica_radIonizanteFis = txt_radiacion.Text;
-                    //facriestrabperiodica.FacRiesTrabActPeriodica_radNoIonizanteFis = txt_noradiacion.Text;
-                    //facriestrabperiodica.FacRiesTrabActPeriodica_ruidoFis = txt_ruido.Text;
-                    //facriestrabperiodica.FacRiesTrabActPeriodica_vibracionFis = txt_vibracion.Text;
-                    //facriestrabperiodica.FacRiesTrabActPeriodica_iluminacionFis = txt_iluminacion.Text;
-                    //facriestrabperiodica.FacRiesTrabActPeriodica_ventilacionFis = txt_ventilacion.Text;
-                    //facriestrabperiodica.FacRiesTrabActPeriodica_fluElectricoFis = txt_fluidoelectrico.Text;
-                    //facriestrabperiodica.FacRiesTrabActPeriodica_otrosFis = txt_otros1.Text;
-                    //facriestrabperiodica.FacRiesTrabActPeriodica_atraMaquinasMec = txt_atrapmaquinas.Text;
-                    //facriestrabperiodica.FacRiesTrabActPeriodica_atraSuperfiiesMec = txt_atrapsuperficie.Text;
-                    //facriestrabperiodica.FacRiesTrabActPeriodica_atraObjetosMec = txt_atrapobjetos.Text;
-                    //facriestrabperiodica.FacRiesTrabActPeriodica_caidaObjetosMec = txt_caidaobjetos.Text;
-                    //facriestrabperiodica.FacRiesTrabActPeriodica_caidaMisNivelMec = txt_caidamisnivel.Text;
-                    //facriestrabperiodica.FacRiesTrabActPeriodica_caidaDifNivelMec = txt_caidadifnivel.Text;
-                    //facriestrabperiodica.FacRiesTrabActPeriodica_contactoElecMec = txt_contaelectrico.Text;
-                    //facriestrabperiodica.FacRiesTrabActPeriodica_conSuperTrabaMec = txt_contasuptrabajo.Text;
-                    //facriestrabperiodica.FacRiesTrabActPeriodica_proPartiFragMec = txt_proyparticulas.Text;
-                    //facriestrabperiodica.FacRiesTrabActPeriodica_proFluidosMec = txt_proyefluidos.Text;
-                    //facriestrabperiodica.FacRiesTrabActPeriodica_pinchazosMec = txt_pinchazos.Text;
-                    //facriestrabperiodica.FacRiesTrabActPeriodica_cortesMec = txt_cortes.Text;
-                    //facriestrabperiodica.FacRiesTrabActPeriodica_atropeVehiMec = txt_atroporvehiculos.Text;
-                    //facriestrabperiodica.FacRiesTrabActPeriodica_coliVehiMec = txt_choques.Text;
-                    //facriestrabperiodica.FacRiesTrabActPeriodica_otrosMec = txt_otros2.Text;
-                    //facriestrabperiodica.FacRiesTrabActPeriodica_solidosQui = txt_solidos.Text;
-                    //facriestrabperiodica.FacRiesTrabActPeriodica_polvosQui = txt_polvos.Text;
-                    //facriestrabperiodica.FacRiesTrabActPeriodica_humosQui = txt_humos.Text;
-                    //facriestrabperiodica.FacRiesTrabActPeriodica_liquidosQui = txt_liquidos.Text;
-                    //facriestrabperiodica.FacRiesTrabActPeriodica_vaporesQui = txt_vapores.Text;
-                    //facriestrabperiodica.FacRiesTrabActPeriodica_aerosolesQui = txt_aerosoles.Text;
-                    //facriestrabperiodica.FacRiesTrabActPeriodica_neblinasQui = txt_neblinas.Text;
-                    //facriestrabperiodica.FacRiesTrabActPeriodica_gaseososQui = txt_gaseosos.Text;
-                    //facriestrabperiodica.FacRiesTrabActPeriodica_otrosBio = txt_otros3.Text;
-                    //facriestrabperiodica.FacRiesTrabActPeriodica_virusBio = txt_virus.Text;
-                    //facriestrabperiodica.FacRiesTrabActPeriodica_hongosBio = txt_hongos.Text;
-                    //facriestrabperiodica.FacRiesTrabActPeriodica_bacteriasBio = txt_bacterias.Text;
-                    //facriestrabperiodica.FacRiesTrabActPeriodica_parasitosBio = txt_parasitos.Text;
-                    //facriestrabperiodica.FacRiesTrabActPeriodica_expVectBio = txt_expoavectores.Text;
-                    //facriestrabperiodica.FacRiesTrabActPeriodica_expAniSelvaBio = txt_expoanimselvaticos.Text;
-                    //facriestrabperiodica.FacRiesTrabActPeriodica_otrosBio = txt_otros4.Text;
-                    //facriestrabperiodica.FacRiesTrabActPeriodica_maneManCarErg = txt_manmanualcargas.Text;
-                    //facriestrabperiodica.FacRiesTrabActPeriodica_movRepeErg = txt_movrepetitivo.Text;
-                    //facriestrabperiodica.FacRiesTrabActPeriodica_posForzaErg = txt_postforzadas.Text;
-                    //facriestrabperiodica.FacRiesTrabActPeriodica_trabPvdErg = txt_trabajopvd.Text;
-                    //facriestrabperiodica.FacRiesTrabActPeriodica_otrosErg = txt_otros5.Text;
-                    //facriestrabperiodica.FacRiesTrabActPeriodica_monoTrabPsi = txt_montrabajo.Text;
-                    //facriestrabperiodica.FacRiesTrabActPeriodica_sobrecarLabPsi = txt_sobrecargalaboral.Text;
-                    //facriestrabperiodica.FacRiesTrabActPeriodica_minuTareaPsi = txt_minustarea.Text;
-                    //facriestrabperiodica.FacRiesTrabActPeriodica_altaResponPsi = txt_altarespon.Text;
-                    //facriestrabperiodica.FacRiesTrabActPeriodica_autoTomaDesiPsi = txt_automadesiciones.Text;
-                    //facriestrabperiodica.FacRiesTrabActPeriodica_supEstDirecDefiPsi = txt_supyestdireficiente.Text;
-                    //facriestrabperiodica.FacRiesTrabActPeriodica_conflicRolPsi = txt_conflictorol.Text;
-                    //facriestrabperiodica.FacRiesTrabActPeriodica_falClariFunPsi = txt_faltaclarfunciones.Text;
-                    //facriestrabperiodica.FacRiesTrabActPeriodica_incoDistriTrabPsi = txt_incorrdistrabajo.Text;
-                    //facriestrabperiodica.FacRiesTrabActPeriodica_turnosRotaPsi = txt_turnorotat.Text;
-                    //facriestrabperiodica.FacRiesTrabActPeriodica_relInterperPsi = txt_relacinterpersonales.Text;
-                    //facriestrabperiodica.FacRiesTrabActPeriodica_inesLabPsi = txt_inestalaboral.Text;
-                    //facriestrabperiodica.FacRiesTrabActPeriodica_otrosPsi = txt_otros6.Text;
-                    //facriestrabperiodica.FacRiesTrabActPeriodica_medPreventivas = txt_medpreventivas.Text;
+                    perio_medPreventivas = txt_medpreventivas.Text,
+                    perio_medPreventivas2 = txt_medpreventivas2.Text,
+                    perio_medPreventivas3 = txt_medpreventivas3.Text,
 
                     //F.
                     perio_descripEnfActual = txt_enfermedadactualperiodica.Text,
 
-                    ////G.
-                    //perio_pielAnexos = txt_pielanexos.Text,
-                    //perio_orgSentidos = txt_organossentidos.Text,
-                    //perio_respiratorio = txt_respiratorio.Text,
-                    //perio_cardVascular = txt_cardiovascular.Text,
-                    //perio_digestivo = txt_digestivo.Text,
-                    //perio_genUrinario = txt_genitourinario.Text,
-                    //perio_muscEsqueletico = txt_musculosesqueleticos.Text,
-                    //perio_endocrino = txt_endocrino.Text,
-                    //perio_hemoLimfa = txt_hemolinfatico.Text,
-                    //perio_nervioso = txt_nervioso.Text,
+                    //G.
                     perio_descripRevOrgaSistemas = txt_descrorganosysistemasperiodica.Text,
 
-                    ////I.
-                    //perio_cicatricesPiel = txt_cicatrices.Text,
-                    //perio_tatuajesPiel = txt_tatuajes.Text,
-                    //perio_pielFacerasPiel = txt_pielyfaneras.Text,
-                    //perio_parpadosOjos = txt_parpados.Text,
-                    //perio_conjuntuvasOjos = txt_conjuntivas.Text,
-                    //perio_pupilasOjos = txt_pupilas.Text,
-                    //perio_corneaOjos = txt_cornea.Text,
-                    //perio_motilidadOjos = txt_motilidad.Text,
-                    //perio_cAudiExtreOido = txt_auditivoexterno.Text,
-                    //perio_pabellonOido = txt_pabellon.Text,
-                    //perio_timpanosOido = txt_timpanos.Text,
-                    //perio_labiosOroFa = txt_labios.Text,
-                    //perio_lenguaOroFa = txt_lengua.Text,
-                    //perio_faringeOroFa = txt_faringe.Text,
-                    //perio_amigdalasOroFa = txt_amigdalas.Text,
-                    //perio_dentaduraOroFa = txt_dentadura.Text,
-                    //perio_tabiqueNariz = txt_tabique.Text,
-                    //perio_cornetesNariz = txt_cornetes.Text,
-                    //perio_mucosasNariz = txt_mucosa.Text,
-                    //perio_senosParanaNariz = txt_senosparanasales.Text,
-                    //perio_tiroiMasasCuello = txt_tiroides.Text,
-                    //perio_movilidadCuello = txt_movilidad.Text,
-                    //perio_mamasTorax = txt_mamas.Text,
-                    //perio_corazonTorax = txt_corazon.Text,
-                    //perio_pulmonesTorax2 = txt_pulmones.Text,
-                    //perio_parriCostalTorax2 = txt_parrillacostal.Text,
-                    //perio_viscerasAbdomen = txt_visceras.Text,
-                    //perio_paredAbdomiAbdomen = txt_paredabdominal.Text,
-                    //perio_flexibilidadColumna = txt_flexibilidad.Text,
-                    //perio_desviacionColumna = txt_desviacion.Text,
-                    //perio_dolorColumna = txt_dolor.Text,
-                    //perio_pelvisPelvis = txt_pelvis.Text,
-                    //perio_genitalesPelvis = txt_genitales.Text,
-                    //perio_vascularExtre = txt_vascular.Text,
-                    //perio_miemSupeExtre = txt_miembrosuperiores.Text,
-                    //perio_miemInfeExtre = txt_miembrosinferiores.Text,
-                    //perio_fuerzaNeuro = txt_fuerza.Text,
-                    //perio_sensibiNeuro = txt_sensibilidad.Text,
-                    //perio_marchaNeuro = txt_marcha.Text,
-                    //perio_refleNeuro = txt_reflejos.Text,
-                    perio_observaExaFisRegional = txt_obervexamenfisicoregional.Text,
+                    //H.
+
+                    //I.
+                    perio_observaExaFisRegional = txt_observexamenfisicoregional.Text,
 
                     //J.
                     perio_examen = txt_examen.Text,
+                    perio_examen2 = txt_examen2.Text,
                     perio_fecha = Convert.ToDateTime(txt_fechaexamen.Text),
+                    perio_fecha2 = Convert.ToDateTime(txt_fechaexamen2.Text),
                     perio_resultado = txt_resultadoexamen.Text,
+                    perio_resultado2 = txt_resultadoexamen2.Text,
                     perio_observacionesResExaGenEspPuesTrabajo = txt_observacionexamen.Text,
 
                     //K.
                     perio_descripcionDiagnostico = txt_descripdiagnostico.Text,
+                    perio_descripcionDiagnostico2 = txt_descripdiagnostico2.Text,
+                    perio_descripcionDiagnostico3 = txt_descripdiagnostico3.Text,
                     perio_cie = txt_cie.Text,
-                    //perio_pre = txt_pre.Text,
-                    //perio_def = txt_def.Text,
+                    perio_cie2 = txt_cie2.Text,
+                    perio_cie3 = txt_cie3.Text,
 
                     //L.
-                    //perio_apto = txt_apto.Text,
-                    //perio_aptoObserva = txt_aptoobservacion.Text,
-                    //perio_aptoLimi = txt_aptolimitacion.Text,
-                    //perio_NoApto = txt_noapto.Text,
                     perio_ObservAptMedTrabajo = txt_observacionaptitud.Text,
                     perio_LimitAptMedTrabajo = txt_limitacionaptitud.Text,
 
@@ -640,12 +1483,12 @@ namespace SistemaECU911.Template.Views
                     perio_cod = txt_codigoDatProf.Text,
                     Per_id = perso
                 };
-                           
+
                 CN_Periodica.GuardarPeriodica(perio);
 
                 //Mensaje de confirmacion
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos Guardados Exitosamente')", true);
-            
+
                 Response.Redirect("~/Template/Views/PacientesPeriodica.aspx");
 
             }
@@ -660,6 +1503,2052 @@ namespace SistemaECU911.Template.Views
         {
             try
             {
+                //Habitos Toxicos
+                if (ckb_siConsuNociTabaHabToxi.Checked == true)
+                {
+                    perio.perio_siConsuNocivosTabaco = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_noConsuNociTabaHabToxi.Checked == true)
+                {
+                    perio.perio_noConsuNocivosTabaco = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_siConsuNociAlcoHabToxi.Checked == true)
+                {
+                    perio.perio_siConsuNocivosAlcohol = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_noConsuNociAlcoHabToxi.Checked == true)
+                {
+                    perio.perio_noConsuNocivosAlcohol = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_siConsuNociOtrasDroHabToxi.Checked == true)
+                {
+                    perio.perio_siConsuNocivosOtrasDrogas = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_noConsuNociOtrasDroHabToxi.Checked == true)
+                {
+                    perio.perio_noConsuNocivosOtrasDrogas = "SI";
+                }
+                else
+                {
+
+                }
+
+                //Estilo de Vida
+                if (ckb_siEstVidaActFisiEstVida.Checked == true)
+                {
+                    perio.perio_siEstiVidaActFisica = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_noEstVidaActFisiEstVida.Checked == true)
+                {
+                    perio.perio_noEstiVidaActFisica = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_siEstVidaMedHabiEstVida.Checked == true)
+                {
+                    perio.perio_siEstiVidaMediHabitual = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_noEstVidaMedHabiEstVida.Checked == true)
+                {
+                    perio.perio_noEstiVidaMediHabitual = "SI";
+                }
+                else
+                {
+
+                }
+
+                //Accidentes de Trabajo (Descripcion)
+                if (ckb_sicalificadotrabajo.Checked == true)
+                {
+                    perio.perio_siCalificadoIESSAcciTrabajo = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_nocalificadotrabajo.Checked == true)
+                {
+                    perio.perio_noCalificadoIESSAcciTrabajo = "SI";
+                }
+                else
+                {
+
+                }
+
+                //Enfermedades Profesionales
+                if (ckb_sicalificadoprofesional.Checked == true)
+                {
+                    perio.perio_siCalificadoIESSEnferProfesionales = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_nocalificadoprofesional.Checked == true)
+                {
+                    perio.perio_noCalificadoIESSEnferProfesionales = "SI";
+                }
+                else
+                {
+
+                }
+
+                //Antecedentes Profesionales (Detallar el Parentesco)
+                if (ckb_enfermedadcardiovascular.Checked == true)
+                {
+                    perio.perio_cardVascular = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_enfermedadmetabolica.Checked == true)
+                {
+                    perio.perio_enfMeta = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_enfermedadneurologica.Checked == true)
+                {
+                    perio.perio_enfNeuro = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_enfermedadoncologica.Checked == true)
+                {
+                    perio.perio_enfOnco = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_enfermedadinfecciosa.Checked == true)
+                {
+                    perio.perio_enfInfe = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_enfermedadhereditaria.Checked == true)
+                {
+                    perio.perio_enfHereConge = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_discapacidades.Checked == true)
+                {
+                    perio.perio_discapa = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_otrosenfer.Checked == true)
+                {
+                    perio.perio_otros = "SI";
+                }
+                else
+                {
+
+                }
+
+                //Factores de riesgo del puesto de trabajo
+                //----------- Fisico -----------
+                if (ckb_tempaltas.Checked == true)
+                {
+                    perio.perio_temAltasFis = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_tempbajas2.Checked == true)
+                {
+                    perio.perio_temBajasFis2 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_tempbajas3.Checked == true)
+                {
+                    perio.perio_temBajasFis3 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_radiacion.Checked == true)
+                {
+                    perio.perio_radIonizanteFis = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_radiacion2.Checked == true)
+                {
+                    perio.perio_radIonizanteFis2 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_radiacion3.Checked == true)
+                {
+                    perio.perio_radIonizanteFis3 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_noradiacion.Checked == true)
+                {
+                    perio.perio_radNoIonizanteFis = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_noradiacion2.Checked == true)
+                {
+                    perio.perio_radNoIonizanteFis2 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_noradiacion3.Checked == true)
+                {
+                    perio.perio_radNoIonizanteFis3 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_ruido.Checked == true)
+                {
+                    perio.perio_ruidoFis = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_ruido2.Checked == true)
+                {
+                    perio.perio_ruidoFis2 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_ruido3.Checked == true)
+                {
+                    perio.perio_ruidoFis3 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_vibracion.Checked == true)
+                {
+                    perio.perio_vibracionFis = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_vibracion2.Checked == true)
+                {
+                    perio.perio_vibracionFis2 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_vibracion3.Checked == true)
+                {
+                    perio.perio_vibracionFis3 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_iluminacion.Checked == true)
+                {
+                    perio.perio_iluminacionFis = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_iluminacion2.Checked == true)
+                {
+                    perio.perio_iluminacionFis2 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_iluminacion3.Checked == true)
+                {
+                    perio.perio_iluminacionFis3 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_ventilacion.Checked == true)
+                {
+                    perio.perio_ventilacionFis = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_ventilacion2.Checked == true)
+                {
+                    perio.perio_ventilacionFis2 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_ventilacion3.Checked == true)
+                {
+                    perio.perio_ventilacionFis3 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_fluidoelectrico.Checked == true)
+                {
+                    perio.perio_fluElectricoFis = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_fluidoelectrico2.Checked == true)
+                {
+                    perio.perio_fluElectricoFis2 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_fluidoelectrico3.Checked == true)
+                {
+                    perio.perio_fluElectricoFis3 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_otrosFisico.Checked == true)
+                {
+                    perio.perio_otrosFis = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_otrosFisico2.Checked == true)
+                {
+                    perio.perio_otrosFis2 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_otrosFisico3.Checked == true)
+                {
+                    perio.perio_otrosFis3 = "SI";
+                }
+                else
+                {
+
+                }
+                //----------- Mecanico -----------
+                if (ckb_atrapmaquinas.Checked == true)
+                {
+                    perio.perio_atraMaquinasMec = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_atrapmaquinas2.Checked == true)
+                {
+                    perio.perio_atraMaquinasMec2 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_atrapmaquinas3.Checked == true)
+                {
+                    perio.perio_atraMaquinasMec3 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_atrapsuperficie.Checked == true)
+                {
+                    perio.perio_atraSuperfiiesMec = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_atrapsuperficie2.Checked == true)
+                {
+                    perio.perio_atraSuperfiiesMec2 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_atrapsuperficie3.Checked == true)
+                {
+                    perio.perio_atraSuperfiiesMec3 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_atrapobjetos.Checked == true)
+                {
+                    perio.perio_atraObjetosMec = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_atrapobjetos2.Checked == true)
+                {
+                    perio.perio_atraObjetosMec2 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_atrapobjetos3.Checked == true)
+                {
+                    perio.perio_atraObjetosMec3 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_caidaobjetos.Checked == true)
+                {
+                    perio.perio_caidaObjetosMec = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_caidaobjetos2.Checked == true)
+                {
+                    perio.perio_caidaObjetosMec2 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_caidaobjetos3.Checked == true)
+                {
+                    perio.perio_caidaObjetosMec3 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_caidamisnivel.Checked == true)
+                {
+                    perio.perio_caidaMisNivelMec = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_caidamisnivel2.Checked == true)
+                {
+                    perio.perio_caidaMisNivelMec2 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_caidamisnivel3.Checked == true)
+                {
+                    perio.perio_caidaMisNivelMec3 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_caidadifnivel.Checked == true)
+                {
+                    perio.perio_caidaDifNivelMec = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_caidadifnivel2.Checked == true)
+                {
+                    perio.perio_caidaDifNivelMec2 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_caidadifnivel3.Checked == true)
+                {
+                    perio.perio_caidaDifNivelMec3 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_contaelectrico.Checked == true)
+                {
+                    perio.perio_contactoElecMec = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_contaelectrico2.Checked == true)
+                {
+                    perio.perio_contactoElecMec2 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_contaelectrico3.Checked == true)
+                {
+                    perio.perio_contactoElecMec3 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_contasuptrabajo.Checked == true)
+                {
+                    perio.perio_conSuperTrabaMec = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_contasuptrabajo2.Checked == true)
+                {
+                    perio.perio_conSuperTrabaMec2 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_contasuptrabajo3.Checked == true)
+                {
+                    perio.perio_conSuperTrabaMec3 = "SI";
+                }
+                if (ckb_proyparticulas.Checked == true)
+                {
+                    perio.perio_proPartiFragMec = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_proyparticulas2.Checked == true)
+                {
+                    perio.perio_proPartiFragMec2 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_proyparticulas3.Checked == true)
+                {
+                    perio.perio_proPartiFragMec3 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_proyefluidos.Checked == true)
+                {
+                    perio.perio_proFluidosMec = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_proyefluidos2.Checked == true)
+                {
+                    perio.perio_proFluidosMec2 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_proyefluidos3.Checked == true)
+                {
+                    perio.perio_proFluidosMec3 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_pinchazos.Checked == true)
+                {
+                    perio.perio_pinchazosMec = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_pinchazos2.Checked == true)
+                {
+                    perio.perio_pinchazosMec2 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_pinchazos3.Checked == true)
+                {
+                    perio.perio_pinchazosMec3 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_cortes.Checked == true)
+                {
+                    perio.perio_cortesMec = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_cortes2.Checked == true)
+                {
+                    perio.perio_cortesMec2 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_cortes3.Checked == true)
+                {
+                    perio.perio_cortesMec3 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_atroporvehiculos.Checked == true)
+                {
+                    perio.perio_atropeVehiMec = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_atroporvehiculos2.Checked == true)
+                {
+                    perio.perio_atropeVehiMec2 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_atroporvehiculos3.Checked == true)
+                {
+                    perio.perio_atropeVehiMec3 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_choques.Checked == true)
+                {
+                    perio.perio_coliVehiMec = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_choques2.Checked == true)
+                {
+                    perio.perio_coliVehiMec2 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_choques3.Checked == true)
+                {
+                    perio.perio_coliVehiMec3 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_otrosMecanico.Checked == true)
+                {
+                    perio.perio_otrosMec = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_otrosMecanico2.Checked == true)
+                {
+                    perio.perio_otrosMec2 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_otrosMecanico3.Checked == true)
+                {
+                    perio.perio_otrosMec3 = "SI";
+                }
+                else
+                {
+
+                }
+                //----------- Quimico -----------
+                if (ckb_solidos.Checked == true)
+                {
+                    perio.perio_solidosQui = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_solidos2.Checked == true)
+                {
+                    perio.perio_solidosQui2 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_solidos3.Checked == true)
+                {
+                    perio.perio_solidosQui3 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_polvos.Checked == true)
+                {
+                    perio.perio_polvosQui = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_polvos2.Checked == true)
+                {
+                    perio.perio_polvosQui2 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_polvos3.Checked == true)
+                {
+                    perio.perio_polvosQui3 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_humos.Checked == true)
+                {
+                    perio.perio_humosQui = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_humos2.Checked == true)
+                {
+                    perio.perio_humosQui2 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_humos3.Checked == true)
+                {
+                    perio.perio_humosQui3 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_liquidos.Checked == true)
+                {
+                    perio.perio_liquidosQui = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_liquidos2.Checked == true)
+                {
+                    perio.perio_liquidosQui2 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_liquidos3.Checked == true)
+                {
+                    perio.perio_liquidosQui3 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_vapores.Checked == true)
+                {
+                    perio.perio_vaporesQui = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_vapores2.Checked == true)
+                {
+                    perio.perio_vaporesQui2 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_vapores3.Checked == true)
+                {
+                    perio.perio_vaporesQui3 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_aerosoles.Checked == true)
+                {
+                    perio.perio_aerosolesQui = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_aerosoles2.Checked == true)
+                {
+                    perio.perio_aerosolesQui2 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_aerosoles3.Checked == true)
+                {
+                    perio.perio_aerosolesQui3 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_neblinas.Checked == true)
+                {
+                    perio.perio_neblinasQui = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_neblinas2.Checked == true)
+                {
+                    perio.perio_neblinasQui2 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_neblinas3.Checked == true)
+                {
+                    perio.perio_neblinasQui3 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_gaseosos.Checked == true)
+                {
+                    perio.perio_gaseososQui = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_gaseosos2.Checked == true)
+                {
+                    perio.perio_gaseososQui2 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_gaseosos3.Checked == true)
+                {
+                    perio.perio_gaseososQui3 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_otrosQuimico.Checked == true)
+                {
+                    perio.perio_otrosQui = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_otrosQuimico2.Checked == true)
+                {
+                    perio.perio_otrosQui2 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_otrosQuimico3.Checked == true)
+                {
+                    perio.perio_otrosQui3 = "SI";
+                }
+                else
+                {
+
+                }
+                //----------- Biologico -----------
+                if (ckb_virus.Checked == true)
+                {
+                    perio.perio_virusBio = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_virus2.Checked == true)
+                {
+                    perio.perio_virusBio2 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_virus3.Checked == true)
+                {
+                    perio.perio_virusBio3 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_hongos.Checked == true)
+                {
+                    perio.perio_hongosBio = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_hongos2.Checked == true)
+                {
+                    perio.perio_hongosBio2 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_hongos3.Checked == true)
+                {
+                    perio.perio_hongosBio3 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_bacterias.Checked == true)
+                {
+                    perio.perio_bacteriasBio = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_bacterias2.Checked == true)
+                {
+                    perio.perio_bacteriasBio2 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_bacterias3.Checked == true)
+                {
+                    perio.perio_bacteriasBio3 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_parasitos.Checked == true)
+                {
+                    perio.perio_parasitosBio = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_parasitos2.Checked == true)
+                {
+                    perio.perio_parasitosBio2 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_parasitos3.Checked == true)
+                {
+                    perio.perio_parasitosBio3 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_expoavectores.Checked == true)
+                {
+                    perio.perio_expVectBio = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_expoavectores2.Checked == true)
+                {
+                    perio.perio_expVectBio2 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_expoavectores3.Checked == true)
+                {
+                    perio.perio_expVectBio3 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_expoanimselvaticos.Checked == true)
+                {
+                    perio.perio_expAniSelvaBio = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_expoanimselvaticos2.Checked == true)
+                {
+                    perio.perio_expAniSelvaBio2 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_expoanimselvaticos3.Checked == true)
+                {
+                    perio.perio_expAniSelvaBio3 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_otrosBiologico.Checked == true)
+                {
+                    perio.perio_otrosBio = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_otrosBiologico2.Checked == true)
+                {
+                    perio.perio_otrosBio2 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_otrosBiologico3.Checked == true)
+                {
+                    perio.perio_otrosBio3 = "SI";
+                }
+                else
+                {
+
+                }
+                //----------- Ergonomico -----------
+                if (ckb_manmanualcargas.Checked == true)
+                {
+                    perio.perio_maneManCarErg = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_manmanualcargas2.Checked == true)
+                {
+                    perio.perio_maneManCarErg2 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_manmanualcargas3.Checked == true)
+                {
+                    perio.perio_maneManCarErg3 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_movrepetitivo.Checked == true)
+                {
+                    perio.perio_movRepeErg = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_movrepetitivo.Checked == true)
+                {
+                    perio.perio_movRepeErg = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_movrepetitivo2.Checked == true)
+                {
+                    perio.perio_movRepeErg2 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_postforzadas3.Checked == true)
+                {
+                    perio.perio_posForzaErg3 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_trabajopvd.Checked == true)
+                {
+                    perio.perio_trabPvdErg = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_trabajopvd2.Checked == true)
+                {
+                    perio.perio_trabPvdErg2 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_trabajopvd3.Checked == true)
+                {
+                    perio.perio_trabPvdErg3 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_otrosErgonomico.Checked == true)
+                {
+                    perio.perio_otrosErg = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_otrosErgonomico2.Checked == true)
+                {
+                    perio.perio_otrosErg2 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_otrosErgonomico3.Checked == true)
+                {
+                    perio.perio_otrosErg3 = "SI";
+                }
+                else
+                {
+
+                }
+                //----------- Psicosocial -----------
+                if (ckb_montrabajo.Checked == true)
+                {
+                    perio.perio_monoTrabPsi = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_montrabajo2.Checked == true)
+                {
+                    perio.perio_monoTrabPsi2 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_montrabajo3.Checked == true)
+                {
+                    perio.perio_monoTrabPsi3 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_sobrecargalaboral.Checked == true)
+                {
+                    perio.perio_sobrecarLabPsi = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_sobrecargalaboral2.Checked == true)
+                {
+                    perio.perio_sobrecarLabPsi2 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_sobrecargalaboral3.Checked == true)
+                {
+                    perio.perio_sobrecarLabPsi3 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_minustarea.Checked == true)
+                {
+                    perio.perio_minuTareaPsi = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_minustarea2.Checked == true)
+                {
+                    perio.perio_minuTareaPsi2 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_minustarea3.Checked == true)
+                {
+                    perio.perio_minuTareaPsi3 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_altarespon.Checked == true)
+                {
+                    perio.perio_altaResponPsi = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_altarespon2.Checked == true)
+                {
+                    perio.perio_altaResponPsi2 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_altarespon3.Checked == true)
+                {
+                    perio.perio_altaResponPsi3 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_automadesiciones.Checked == true)
+                {
+                    perio.perio_autoTomaDesiPsi = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_automadesiciones2.Checked == true)
+                {
+                    perio.perio_autoTomaDesiPsi2 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_automadesiciones3.Checked == true)
+                {
+                    perio.perio_autoTomaDesiPsi3 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_supyestdireficiente.Checked == true)
+                {
+                    perio.perio_supEstDirecDefiPsi = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_supyestdireficiente2.Checked == true)
+                {
+                    perio.perio_supEstDirecDefiPsi2 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_supyestdireficiente3.Checked == true)
+                {
+                    perio.perio_supEstDirecDefiPsi3 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_conflictorol.Checked == true)
+                {
+                    perio.perio_conflicRolPsi = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_conflictorol2.Checked == true)
+                {
+                    perio.perio_conflicRolPsi2 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_conflictorol3.Checked == true)
+                {
+                    perio.perio_conflicRolPsi3 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_faltaclarfunciones.Checked == true)
+                {
+                    perio.perio_falClariFunPsi = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_faltaclarfunciones2.Checked == true)
+                {
+                    perio.perio_falClariFunPsi2 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_faltaclarfunciones3.Checked == true)
+                {
+                    perio.perio_falClariFunPsi3 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_incorrdistrabajo.Checked == true)
+                {
+                    perio.perio_incoDistriTrabPsi = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_incorrdistrabajo2.Checked == true)
+                {
+                    perio.perio_incoDistriTrabPsi2 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_incorrdistrabajo3.Checked == true)
+                {
+                    perio.perio_incoDistriTrabPsi3 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_turnorotat.Checked == true)
+                {
+                    perio.perio_turnosRotaPsi = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_turnorotat2.Checked == true)
+                {
+                    perio.perio_turnosRotaPsi2 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_turnorotat3.Checked == true)
+                {
+                    perio.perio_turnosRotaPsi3 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_relacinterpersonales.Checked == true)
+                {
+                    perio.perio_relInterperPsi = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_relacinterpersonales2.Checked == true)
+                {
+                    perio.perio_relInterperPsi2 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_relacinterpersonales3.Checked == true)
+                {
+                    perio.perio_relInterperPsi3 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_inestalaboral.Checked == true)
+                {
+                    perio.perio_inesLabPsi = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_inestalaboral2.Checked == true)
+                {
+                    perio.perio_inesLabPsi2 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_inestalaboral3.Checked == true)
+                {
+                    perio.perio_inesLabPsi3 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_otrosPsisocial.Checked == true)
+                {
+                    perio.perio_otrosPsi = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_otrosPsisocial2.Checked == true)
+                {
+                    perio.perio_otrosPsi2 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_otrosPsisocial3.Checked == true)
+                {
+                    perio.perio_otrosPsi3 = "SI";
+                }
+                else
+                {
+
+                }
+
+                //Revision de Organos y Sistemas
+                if (ckb_pielanexos.Checked == true)
+                {
+                    perio.perio_pielAnexos = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_organossentidos.Checked == true)
+                {
+                    perio.perio_orgSentidos = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_respiratorio.Checked == true)
+                {
+                    perio.perio_respiratorio = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_cardiovascular.Checked == true)
+                {
+                    perio.perio_cardVascular = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_digestivo.Checked == true)
+                {
+                    perio.perio_digestivo = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_genitourinario.Checked == true)
+                {
+                    perio.perio_genUrinario = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_musculosesqueleticos.Checked == true)
+                {
+                    perio.perio_muscEsqueletico = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_endocrino.Checked == true)
+                {
+                    perio.perio_endocrino = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_hemolinfatico.Checked == true)
+                {
+                    perio.perio_hemoLimfa = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_nervioso.Checked == true)
+                {
+                    perio.perio_nervioso = "SI";
+                }
+                else
+                {
+
+                }
+
+                //Regiones
+                if (ckb_cicatrices.Checked == true)
+                {
+                    perio.perio_cicatricesPiel = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_tatuajes.Checked == true)
+                {
+                    perio.perio_tatuajesPiel = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_pielyfaneras.Checked == true)
+                {
+                    perio.perio_pielFacerasPiel = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_parpados.Checked == true)
+                {
+                    perio.perio_parpadosOjos = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_conjuntivas.Checked == true)
+                {
+                    perio.perio_conjuntuvasOjos = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_pupilas.Checked == true)
+                {
+                    perio.perio_pupilasOjos = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_cornea.Checked == true)
+                {
+                    perio.perio_corneaOjos = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_motilidad.Checked == true)
+                {
+                    perio.perio_motilidadOjos = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_auditivoexterno.Checked == true)
+                {
+                    perio.perio_cAudiExtreOido = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_pabellon.Checked == true)
+                {
+                    perio.perio_pabellonOido = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_timpanos.Checked == true)
+                {
+                    perio.perio_timpanosOido = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_labios.Checked == true)
+                {
+                    perio.perio_labiosOroFa = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_lengua.Checked == true)
+                {
+                    perio.perio_lenguaOroFa = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_faringe.Checked == true)
+                {
+                    perio.perio_faringeOroFa = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_amigdalas.Checked == true)
+                {
+                    perio.perio_amigdalasOroFa = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_dentadura.Checked == true)
+                {
+                    perio.perio_dentaduraOroFa = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_tabique.Checked == true)
+                {
+                    perio.perio_tabiqueNariz = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_cornetes.Checked == true)
+                {
+                    perio.perio_cornetesNariz = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_mucosa.Checked == true)
+                {
+                    perio.perio_mucosasNariz = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_senosparanasales.Checked == true)
+                {
+                    perio.perio_senosParanaNariz = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_tiroides.Checked == true)
+                {
+                    perio.perio_tiroiMasasCuello = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_movilidad.Checked == true)
+                {
+                    perio.perio_movilidadCuello = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_mamas.Checked == true)
+                {
+                    perio.perio_mamasTorax = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_corazon.Checked == true)
+                {
+                    perio.perio_corazonTorax = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_pulmones.Checked == true)
+                {
+                    perio.perio_pulmonesTorax2 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_parrillacostal.Checked == true)
+                {
+                    perio.perio_parriCostalTorax2 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_visceras.Checked == true)
+                {
+                    perio.perio_viscerasAbdomen = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_paredabdominal.Checked == true)
+                {
+                    perio.perio_paredAbdomiAbdomen = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_flexibilidad.Checked == true)
+                {
+                    perio.perio_flexibilidadColumna = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_desviacion.Checked == true)
+                {
+                    perio.perio_desviacionColumna = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_dolor.Checked == true)
+                {
+                    perio.perio_dolorColumna = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_pelvis.Checked == true)
+                {
+                    perio.perio_pelvisPelvis = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_genitales.Checked == true)
+                {
+                    perio.perio_genitalesPelvis = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_vascular.Checked == true)
+                {
+                    perio.perio_vascularExtre = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_miembrosuperiores.Checked == true)
+                {
+                    perio.perio_miemSupeExtre = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_miembrosinferiores.Checked == true)
+                {
+                    perio.perio_miemInfeExtre = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_fuerza.Checked == true)
+                {
+                    perio.perio_fuerzaNeuro = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_sensibilidad.Checked == true)
+                {
+                    perio.perio_sensibiNeuro = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_marcha.Checked == true)
+                {
+                    perio.perio_marchaNeuro = "SI";
+                }
+                if (ckb_reflejos.Checked == true)
+                {
+                    perio.perio_refleNeuro = "SI";
+                }
+                else
+                {
+
+                }
+
+                //Diagnostco
+                if (ckb_pre.Checked == true)
+                {
+                    perio.perio_pre = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_pre2.Checked == true)
+                {
+                    perio.perio_pre2 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_pre3.Checked == true)
+                {
+                    perio.perio_pre3 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_def.Checked == true)
+                {
+                    perio.perio_def = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_def2.Checked == true)
+                {
+                    perio.perio_def2 = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_def3.Checked == true)
+                {
+                    perio.perio_def3 = "SI";
+                }
+
+                //Aptitud Medica para el trabajo
+                if (ckb_apto.Checked == true)
+                {
+                    perio.perio_apto = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_aptoobservacion.Checked == true)
+                {
+                    perio.perio_aptoObserva = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_aptolimitacion.Checked == true)
+                {
+                    perio.perio_aptoLimi = "SI";
+                }
+                else
+                {
+
+                }
+                if (ckb_noapto.Checked == true)
+                {
+                    perio.perio_NoApto = "SI";
+                }
+                else
+                {
+
+                }
+
                 //A
                 perio.perio_numArchivo = txt_numArchivo.Text;
 
@@ -856,7 +3745,7 @@ namespace SistemaECU911.Template.Views
                 //perio.perio_sensibiNeuro = txt_sensibilidad.Text;
                 //perio.perio_marchaNeuro = txt_marcha.Text;
                 //perio.perio_refleNeuro = txt_reflejos.Text;
-                perio.perio_observaExaFisRegional = txt_obervexamenfisicoregional.Text;
+                perio.perio_observaExaFisRegional = txt_observexamenfisicoregional.Text;
 
                 //J.
                 perio.perio_examen = txt_examen.Text;
@@ -890,7 +3779,7 @@ namespace SistemaECU911.Template.Views
 
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos Modificados Exitosamente')", true);
                 Response.Redirect("~/Template/Views/PacientesPeriodica.aspx");
-            }   
+            }
             catch (Exception)
             {
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos No Modificados')", true);
