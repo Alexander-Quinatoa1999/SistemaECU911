@@ -255,7 +255,7 @@ namespace SistemaECU911.Template.Views
                 CN_Certificado.ModificarCertificado(certi);
 
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos Modificados Exitosamente')", true);
-                Response.Redirect("~/Template/Views/Pacientes.aspx");
+                Response.Redirect("~/Template/Views/PacientesCertificado.aspx");
             }
             catch (Exception)
             {

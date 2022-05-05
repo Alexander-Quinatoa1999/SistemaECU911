@@ -772,6 +772,7 @@
     <Content Include="Template\Template Principal\vendors\tinymce\themes\modern\theme.js" />
     <Content Include="Template\Template Principal\vendors\tinymce\tinymce.min.js" />
     <Content Include="Template\Views\PacientesPedidoExamenes.aspx" />
+    <Content Include="Template\Views\Personas.aspx" />
     <Content Include="Template\Views_Pacientes\FichaMedica.aspx" />
     <Content Include="Template\Views_Pacientes\Inicio.aspx" />
     <Content Include="Template\Views_Pacientes\PacientesFichaMedica.aspx" />
@@ -819,6 +820,13 @@
     </Compile>
     <Compile Include="Template\Views\PacientesPedidoExamenes.aspx.designer.cs">
       <DependentUpon>PacientesPedidoExamenes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Template\Views\Personas.aspx.cs">
+      <DependentUpon>Personas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Template\Views\Personas.aspx.designer.cs">
+      <DependentUpon>Personas.aspx</DependentUpon>
     </Compile>
     <Compile Include="Template\Views_Pacientes\FichaMedica.aspx.cs">
       <DependentUpon>FichaMedica.aspx</DependentUpon>
