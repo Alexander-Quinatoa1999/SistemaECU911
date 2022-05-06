@@ -361,7 +361,7 @@ namespace SistemaECU911.Template.Views
             List<string> lista = new List<string>();
             try
             {
-                string oConn = @"Data Source=MAYCKYANDER\MAYCKYANDER;Initial Catalog=SistemaECU911;Integrated Security=True";
+                string oConn = @"Data Source=ZOCAPO\SQLEXPRESS;Initial Catalog=SistemaECU911;Integrated Security=True";
 
                 SqlConnection con = new SqlConnection(oConn);
                 con.Open();
@@ -436,7 +436,7 @@ namespace SistemaECU911.Template.Views
             List<string> lista = new List<string>();
             try
             {
-                string oConn = @"Data Source=MAYCKYANDER\MAYCKYANDER;Initial Catalog=SistemaECU911;Integrated Security=True";
+                string oConn = @"Data Source=ZOCAPO\SQLEXPRESS;Initial Catalog=SistemaECU911;Integrated Security=True";
 
                 SqlConnection con = new SqlConnection(oConn);
                 con.Open();

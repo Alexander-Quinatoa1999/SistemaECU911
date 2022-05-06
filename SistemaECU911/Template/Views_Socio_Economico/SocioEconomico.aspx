@@ -139,7 +139,7 @@
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 200px">Código de Trabajo</asp:TableCell>
                                 <asp:TableCell Style="background-color: white; width: 50px">
-                                    <asp:CheckBox ID="cb_codigotrabajoModalidad" runat="server" />
+                                    <asp:CheckBox ID="cb_modalidadcodigotrabajo" runat="server" />
                                 </asp:TableCell>
                             </asp:TableRow>
                         </asp:Table>
@@ -356,7 +356,7 @@
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 50px">Otro</asp:TableCell>
                                 <asp:TableCell Style="background-color: white; width: 20px">
-                                    <asp:CheckBox ID="cb_otro" runat="server" />
+                                    <asp:CheckBox ID="cb_otro_sector" runat="server" />
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white; width: 100px; text-align: left">
                                     <asp:TextBox runat="server" ID="txt_otrosector" BorderStyle="None" BackColor="white" Style="width: 100%" Placeholder="Indique cuál"></asp:TextBox>
@@ -493,7 +493,7 @@
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 50px">Distancia de su domicilio al trabajo</asp:TableCell>
                                 <asp:TableCell Style="background-color: white; width: 100px; text-align: left">
-                                    <asp:TextBox runat="server" ID="txt_distanciatrabajocasa" BorderStyle="None" BackColor="white" Style="width: 100%"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_distanciadomiciotrabajo" BorderStyle="None" BackColor="white" Style="width: 100%"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                         </asp:Table>
@@ -1025,7 +1025,7 @@
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial" RowSpan="2">Otro especifique</asp:TableCell>
                                 <asp:TableCell Style="background-color: white" RowSpan="2">
-                                    <asp:TextBox runat="server" ID="cb_otradistribucioncasa" BorderStyle="None" Style="width: 100%;" BackColor="white"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_otradistribucioncasa" BorderStyle="None" Style="width: 100%;" BackColor="white"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
@@ -1359,7 +1359,7 @@
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial">¿Desde qué edad practica ese deporte?</asp:TableCell>
                                 <asp:TableCell Style="background-color: white">
-                                    <asp:TextBox runat="server" ID="txt_edadpracticadeporte" BorderStyle="None" Style="width: 100%; background-color: transparent" placeholder="Ej. 4 años"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_edadpracticadeporte" BorderStyle="None" Style="width: 100%; background-color: transparent" TextMode="DateTime"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                         </asp:Table>
@@ -1381,7 +1381,7 @@
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial">Edad a la que sufrió la lesión</asp:TableCell>
                                 <asp:TableCell Style="background-color: white">
-                                    <asp:TextBox runat="server" ID="txt_edadlesion" BorderStyle="None" Style="width: 100%; background-color: transparent" placeholder="Ej. 4 años"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_edadlesion" BorderStyle="None" Style="width: 100%; background-color: transparent" TextMode="DateTime"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial">¿Recibió algún tratamiento o rehabilitación?</asp:TableCell>
                                 <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial">Si</asp:TableCell>
@@ -1556,7 +1556,7 @@
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial">Sexual</asp:TableCell>
                                 <asp:TableCell Style="background-color: white; width: 20px">
-                                    <asp:CheckBox ID="b_sexual" runat="server" />
+                                    <asp:CheckBox ID="cb_sexual" runat="server" />
                                 </asp:TableCell>
                             </asp:TableRow>
                         </asp:Table>

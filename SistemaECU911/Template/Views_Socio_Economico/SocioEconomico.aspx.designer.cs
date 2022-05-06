@@ -123,13 +123,13 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         protected global::System.Web.UI.WebControls.CheckBox cb_modalidadlosep;
 
         /// <summary>
-        /// Control cb_codigotrabajoModalidad.
+        /// Control cb_modalidadcodigotrabajo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox cb_codigotrabajoModalidad;
+        protected global::System.Web.UI.WebControls.CheckBox cb_modalidadcodigotrabajo;
 
         /// <summary>
         /// Control txt_fechaingresoalsisecu.
@@ -483,13 +483,13 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         protected global::System.Web.UI.WebControls.CheckBox cb_sur;
 
         /// <summary>
-        /// Control cb_otro.
+        /// Control cb_otro_sector.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox cb_otro;
+        protected global::System.Web.UI.WebControls.CheckBox cb_otro_sector;
 
         /// <summary>
         /// Control txt_otrosector.
@@ -708,13 +708,13 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         protected global::System.Web.UI.WebControls.CheckBox cb_recorridonoexiste;
 
         /// <summary>
-        /// Control txt_distanciatrabajocasa.
+        /// Control txt_distanciadomiciotrabajo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_distanciatrabajocasa;
+        protected global::System.Web.UI.WebControls.TextBox txt_distanciadomiciotrabajo;
 
         /// <summary>
         /// Control txt_poseeenfermedadingresarEcu.
@@ -1680,13 +1680,13 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         protected global::System.Web.UI.WebControls.CheckBox cb_garage;
 
         /// <summary>
-        /// Control cb_otradistribucioncasa.
+        /// Control txt_otradistribucioncasa.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox cb_otradistribucioncasa;
+        protected global::System.Web.UI.WebControls.TextBox txt_otradistribucioncasa;
 
         /// <summary>
         /// Control cb_comedor.
@@ -2625,13 +2625,13 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         protected global::System.Web.UI.WebControls.CheckBox cb_verbal;
 
         /// <summary>
-        /// Control b_sexual.
+        /// Control cb_sexual.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox b_sexual;
+        protected global::System.Web.UI.WebControls.CheckBox cb_sexual;
 
         /// <summary>
         /// Control txt_observacionesfamiliares.

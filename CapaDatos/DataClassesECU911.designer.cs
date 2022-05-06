@@ -81,6 +81,9 @@ namespace CapaDatos
     partial void InsertTbl_Retiro(Tbl_Retiro instance);
     partial void UpdateTbl_Retiro(Tbl_Retiro instance);
     partial void DeleteTbl_Retiro(Tbl_Retiro instance);
+    partial void InsertTbl_SocioEconomico(Tbl_SocioEconomico instance);
+    partial void UpdateTbl_SocioEconomico(Tbl_SocioEconomico instance);
+    partial void DeleteTbl_SocioEconomico(Tbl_SocioEconomico instance);
     partial void InsertTbl_TipoExaFisRegional(Tbl_TipoExaFisRegional instance);
     partial void UpdateTbl_TipoExaFisRegional(Tbl_TipoExaFisRegional instance);
     partial void DeleteTbl_TipoExaFisRegional(Tbl_TipoExaFisRegional instance);
@@ -93,7 +96,7 @@ namespace CapaDatos
     #endregion
 		
 		public DataClassesECU911DataContext() : 
-				base(global::CapaDatos.Properties.Settings.Default.SistemaECU911ConnectionString4, mappingSource)
+				base(global::CapaDatos.Properties.Settings.Default.SistemaECU911ConnectionString5, mappingSource)
 		{
 			OnCreated();
 		}
@@ -967,7 +970,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_certi_fechEmision", DbType="Date")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_certi_fechEmision", DbType="DateTime")]
 		public System.Nullable<System.DateTime> certi_fechEmision
 		{
 			get
@@ -34537,6 +34540,8 @@ namespace CapaDatos
 		
 		private EntitySet<Tbl_Retiro> _Tbl_Retiro;
 		
+		private EntitySet<Tbl_SocioEconomico> _Tbl_SocioEconomico;
+		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -34578,6 +34583,7 @@ namespace CapaDatos
 			this._Tbl_Periodica = new EntitySet<Tbl_Periodica>(new Action<Tbl_Periodica>(this.attach_Tbl_Periodica), new Action<Tbl_Periodica>(this.detach_Tbl_Periodica));
 			this._Tbl_Reintegro = new EntitySet<Tbl_Reintegro>(new Action<Tbl_Reintegro>(this.attach_Tbl_Reintegro), new Action<Tbl_Reintegro>(this.detach_Tbl_Reintegro));
 			this._Tbl_Retiro = new EntitySet<Tbl_Retiro>(new Action<Tbl_Retiro>(this.attach_Tbl_Retiro), new Action<Tbl_Retiro>(this.detach_Tbl_Retiro));
+			this._Tbl_SocioEconomico = new EntitySet<Tbl_SocioEconomico>(new Action<Tbl_SocioEconomico>(this.attach_Tbl_SocioEconomico), new Action<Tbl_SocioEconomico>(this.detach_Tbl_SocioEconomico));
 			OnCreated();
 		}
 		
@@ -34938,6 +34944,19 @@ namespace CapaDatos
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_SocioEconomico", Storage="_Tbl_SocioEconomico", ThisKey="Per_id", OtherKey="Per_id")]
+		public EntitySet<Tbl_SocioEconomico> Tbl_SocioEconomico
+		{
+			get
+			{
+				return this._Tbl_SocioEconomico;
+			}
+			set
+			{
+				this._Tbl_SocioEconomico.Assign(value);
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -35061,6 +35080,18 @@ namespace CapaDatos
 		}
 		
 		private void detach_Tbl_Retiro(Tbl_Retiro entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Personas = null;
+		}
+		
+		private void attach_Tbl_SocioEconomico(Tbl_SocioEconomico entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Personas = this;
+		}
+		
+		private void detach_Tbl_SocioEconomico(Tbl_SocioEconomico entity)
 		{
 			this.SendPropertyChanging();
 			entity.Tbl_Personas = null;
@@ -40562,22 +40593,12 @@ namespace CapaDatos
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_SocioEconomico")]
-	public partial class Tbl_SocioEconomico
+	public partial class Tbl_SocioEconomico : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
 		private int _Socio_economico_id;
-		
-		private string _Socio_economico_departamento_area;
-		
-		private string _Socio_economico_carga_institucional;
-		
-		private string _Socio_economico_tipocontrato_nombramiento;
-		
-		private string _Socio_economico_tipocontrato_nombraprovisional;
-		
-		private string _Socio_economico_tipocontrato_contratocasional;
-		
-		private string _Socio_economico_tipocontrato_codigotrabajo;
 		
 		private string _Socio_economico_modalidadcontrato_leyorgserpublico;
 		
@@ -40595,9 +40616,15 @@ namespace CapaDatos
 		
 		private string _Socio_economico_estadocivil_divorciado;
 		
-		private string _Socio_economico_genero;
+		private string _Socio_economico_genero_masculino;
+		
+		private string _Socio_economico_genero_femenino;
 		
 		private string _Socio_economico_tipodesangre;
+		
+		private string _Socio_economico_es_donante_si;
+		
+		private string _Socio_economico_es_donante_no;
 		
 		private string _Socio_economico_telefonoconvencional;
 		
@@ -40607,21 +40634,23 @@ namespace CapaDatos
 		
 		private string _Socio_economico_lugardenacimiento;
 		
-		private System.Nullable<System.DateTime> _Socio_economico_fechNacimiento;
+		private System.Nullable<System.DateTime> _Socio_economico_fechadeNacimiento;
 		
 		private System.Nullable<long> _Socio_economico_edad;
 		
-		private string _Socio_economico_niveleducativo_primaria;
+		private string _Socio_economico_titulo_primaria;
 		
-		private string _Socio_economico_niveleducativo_secundaria;
+		private string _Socio_economico_titulo_secundaria;
 		
-		private string _Socio_economico_niveleducativo_superior;
+		private string _Socio_economico_titulo_superior;
 		
-		private string _Socio_economico_niveleducativo_especializacion;
+		private string _Socio_economico_titulo_especializacion;
 		
-		private string _Socio_economico_niveleducativo_diplomado;
+		private string _Socio_economico_titulo_diplomado;
 		
-		private string _Socio_economico_niveleducativo_maestrias;
+		private string _Socio_economico_titulo_maestria;
+		
+		private string _Socio_economico_titulo_doctorado;
 		
 		private string _Socio_economico_autoidentificacionetnica_blanco;
 		
@@ -40641,9 +40670,9 @@ namespace CapaDatos
 		
 		private string _Socio_economico_direcciondomicilio_barrio;
 		
-		private string _Socio_economico_calleubicadaviviendaynumeracion;
+		private string _Socio_economico_calle_vivienda_numeracion;
 		
-		private string _Socio_economico_callesecundaria;
+		private string _Socio_economico_calle_secundaria;
 		
 		private string _Socio_economico_referencia_ubicar_domicilio;
 		
@@ -40655,7 +40684,7 @@ namespace CapaDatos
 		
 		private string _Socio_economico_sectorvive_otro;
 		
-		private string _Socio_economico_sectorvive_otroindique;
+		private string _Socio_economico_sectorvive_otro_indique;
 		
 		private string _Socio_economico_tipovivienda_casa;
 		
@@ -40663,45 +40692,49 @@ namespace CapaDatos
 		
 		private string _Socio_economico_tipovivienda_otro;
 		
-		private string _Socio_economico_tipovivienda_cuentaserviciosbasicossi;
+		private string _Socio_economico_tipovivienda_otro_indique;
 		
-		private string _Socio_economico_tipovivienda_cuentaserviciosbasicosno;
+		private string _Socio_economico_riesgo_delincuencial_alto;
 		
-		private string _Socio_economico_cuantaspersonasvivenconusted;
+		private string _Socio_economico_riesgo_delincuencial_medio;
 		
-		private string _Socio_economico_cuantaspersonasviveneventualconusted;
+		private string _Socio_economico_riesgo_delincuencial_bajo;
 		
-		private string _Socio_economico_personacontactoemergencia_nombresyapellidos;
+		private string _Socio_economico_cuantas_personas_viven_con_usted;
 		
-		private string _Socio_economico_personacontactoemergencia_parentesco;
+		private string _Socio_economico_cuantas_personas_viven_eventual_con_usted;
 		
-		private string _Socio_economico_personacontactoemergencia_telefono;
+		private string _Socio_economico_contacto_emergencia_nombres_apellidos;
 		
-		private string _Socio_economico_personacontactoemergencia_direccion_calleprincipal;
+		private string _Socio_economico_contacto_emergencia_parentesco;
 		
-		private string _Socio_economico_personacontactoemergencia_direccion_numdomicilio;
+		private string _Socio_economico_contacto_emergencia_telefono;
 		
-		private string _Socio_economico_personacontactoemergencia_direccion_callesecundaria;
+		private string _Socio_economico_contacto_emergencia_calle_principal;
 		
-		private string _Socio_economico_personacontactoemergencia_direccion_referenciaubicardomicilio;
+		private string _Socio_economico_contacto_emergencia_numero_domicilio;
 		
-		private string _Socio_economico_destinadineroahorro_si;
+		private string _Socio_economico_contacto_emergencia_calle_secundaria;
 		
-		private string _Socio_economico_destinadineroahorro_no;
+		private string _Socio_economico_contacto_emergencia_referencia_domicilio;
 		
-		private string _Socio_economico_vehiculopropio_si;
+		private string _Socio_economico_dinero_ahorro_si;
 		
-		private string _Socio_economico_vehiculopropio_no;
+		private string _Socio_economico_dinero_ahorro_no;
 		
-		private string _Socio_economico_recorridoinstitucional_si;
+		private string _Socio_economico_vehiculo_propio_si;
 		
-		private string _Socio_economico_recorridoinstitucional_no;
+		private string _Socio_economico_vehiculo_propio_no;
 		
-		private string _Socio_economico_recorridoinstitucional_noexiste;
+		private string _Socio_economico_recorrido_institucional_si;
+		
+		private string _Socio_economico_recorrido_institucional_no;
+		
+		private string _Socio_economico_recorrido_institucional_no_existe;
 		
 		private string _Socio_economico_distancia_domicilio_trabajo;
 		
-		private string _Socio_economico_poseeenfermedad;
+		private string _Socio_economico_posee_enfermedad;
 		
 		private string _Socio_economico_discapacidad_si;
 		
@@ -40711,19 +40744,15 @@ namespace CapaDatos
 		
 		private System.Nullable<long> _Socio_economico_discapacidad_porcentaje;
 		
-		private string _Socio_economico_discapacidad_carnetconadis;
+		private string _Socio_economico_discapacidad_carnet_conadis;
 		
-		private System.Nullable<System.DateTime> _Socio_economico_discapacidad_fechacaducidadcarnetconadis;
+		private System.Nullable<System.DateTime> _Socio_economico_discapacidad_fecha_caducidad_carnet;
 		
-		private string _Socio_economico_conyugueembarazada_no;
+		private string _Socio_economico_conyugue_embarazada_si;
 		
-		private string _Socio_economico__si_me_encuentro_embarazada;
+		private string _Socio_economico_conyugue_embarazada_no;
 		
-		private string _Socio_economico__si_mi_conyugue_esta_embarazada;
-		
-		private string _Socio_economico__mes_embarazo;
-		
-		private string _Socio_economico__dias_embarazo;
+		private string _Socio_economico_mes_gestacion;
 		
 		private System.Nullable<System.DateTime> _Socio_economico_fecha_tentativa_parto;
 		
@@ -40731,7 +40760,7 @@ namespace CapaDatos
 		
 		private string _Socio_economico_periodo_lactancia_no;
 		
-		private System.Nullable<System.DateTime> _Socio_economico_periodo_lactancia_fechaculminacion;
+		private System.Nullable<System.DateTime> _Socio_economico_periodo_lactancia_fecha_culminacion;
 		
 		private string _Socio_economico_enfermedad_cronica_si;
 		
@@ -40751,14 +40780,6 @@ namespace CapaDatos
 		
 		private string _Socio_economico_consume_alcohol_no;
 		
-		private string _Socio_economico_consume_alcohol_tipo_cerveza;
-		
-		private string _Socio_economico_consume_alcohol_tipo_ron;
-		
-		private string _Socio_economico_consume_alcohol_tipo_whisky;
-		
-		private string _Socio_economico_consume_alcohol_tipo_otro;
-		
 		private string _Socio_economico_consume_alcohol_frecuencia_consumo;
 		
 		private string _Socio_economico_consume_alcohol_tiempo_consumo;
@@ -40768,8 +40789,6 @@ namespace CapaDatos
 		private string _Socio_economico_consume_tabaco_no;
 		
 		private string _Socio_economico_consume_tabaco_frecuencia_consumo;
-		
-		private string _Socio_economico_consume_tabaco_cantidad_consumo;
 		
 		private string _Socio_economico_consume_tabaco_tiempo_consumo;
 		
@@ -40781,15 +40800,171 @@ namespace CapaDatos
 		
 		private string _Socio_economico_consume_sustancia_psicotropica_frecuencia_consumo;
 		
-		private string _Socio_economico_consume_sustancia_psicotropica_factores_psicosociales;
+		private string _Socio_economico_problemas_consumo_familiares;
 		
-		private string _Socio_economico_nombres_apellidos_conyugue;
+		private string _Socio_economico_problemas_consumo_laborales;
 		
-		private string _Socio_economico_numero_hijos;
+		private string _Socio_economico_problemas_consumo_economicos;
 		
-		private string _Socio_economico_numero_dependientes;
+		private string _Socio_economico_problemas_consumo_salud;
+		
+		private string _Socio_economico_problemas_consumo_legales;
+		
+		private System.Nullable<long> _Socio_economico_total_ingresos_mensuales_proyectados_1;
+		
+		private System.Nullable<long> _Socio_economico_ayuda_padres1;
+		
+		private System.Nullable<long> _Socio_economico_otros_ingresos1;
+		
+		private System.Nullable<long> _Socio_economico_total_egresos_mensuales_proyectados_alimentacion;
+		
+		private System.Nullable<long> _Socio_economico_total_ingresos_mensuales_proyectados_2;
+		
+		private System.Nullable<long> _Socio_economico_ayuda_padres2;
+		
+		private System.Nullable<long> _Socio_economico_otros_ingresos2;
+		
+		private System.Nullable<long> _Socio_economico_total_egresos_mensuales_proyectados_vivienda;
+		
+		private System.Nullable<long> _Socio_economico_total_ingresos_mensuales_proyectados_3;
+		
+		private System.Nullable<long> _Socio_economico_ayuda_padres3;
+		
+		private System.Nullable<long> _Socio_economico_otros_ingresos3;
+		
+		private System.Nullable<long> _Socio_economico_total_egresos_mensuales_proyectados_educacion;
+		
+		private System.Nullable<long> _Socio_economico_total_ingresos_mensuales_proyectados_4;
+		
+		private System.Nullable<long> _Socio_economico_ayuda_padres4;
+		
+		private System.Nullable<long> _Socio_economico_otros_ingresos4;
+		
+		private System.Nullable<long> _Socio_economico_total_egresos_mensuales_proyectados_servicios_basicos;
+		
+		private System.Nullable<long> _Socio_economico_total_ingresos_mensuales_proyectados_5;
+		
+		private System.Nullable<long> _Socio_economico_ayuda_padres5;
+		
+		private System.Nullable<long> _Socio_economico_otros_ingresos5;
+		
+		private System.Nullable<long> _Socio_economico_total_egresos_mensuales_proyectados_salud;
+		
+		private System.Nullable<long> _Socio_economico_total_ingresos_mensuales_proyectados_6;
+		
+		private System.Nullable<long> _Socio_economico_ayuda_padres6;
+		
+		private System.Nullable<long> _Socio_economico_otros_ingresos6;
+		
+		private System.Nullable<long> _Socio_economico_total_egresos_mensuales_proyectados_movilizacion;
+		
+		private System.Nullable<long> _Socio_economico_total_ingresos_mensuales_proyectados_7;
+		
+		private System.Nullable<long> _Socio_economico_ayuda_padres7;
+		
+		private System.Nullable<long> _Socio_economico_otros_ingresos7;
+		
+		private System.Nullable<long> _Socio_economico_total_egresos_mensuales_proyectados_deudas;
+		
+		private System.Nullable<long> _Socio_economico_total_ingresos_mensuales_proyectados_8;
+		
+		private System.Nullable<long> _Socio_economico_ayuda_padres8;
+		
+		private System.Nullable<long> _Socio_economico_otros_ingresos8;
+		
+		private System.Nullable<long> _Socio_economico_total_egresos_mensuales_proyectados_otros;
+		
+		private System.Nullable<long> _Socio_economico_total_ingresos_mensuales_proyectados_total_9;
+		
+		private System.Nullable<long> _Socio_economico_ayuda_padres_total9;
+		
+		private System.Nullable<long> _Socio_economico_otros_ingresos_total9;
+		
+		private System.Nullable<long> _Socio_economico_total_egresos_mensuales_proyectados_total;
+		
+		private System.Nullable<long> _Socio_economico_total_egresos_mensuales_proyectados_total_general;
+		
+		private System.Nullable<long> _Socio_economico_descripcion_mueble_valor_casa;
+		
+		private string _Socio_economico_descripcion_mueble_detalle_direccion_casa;
+		
+		private System.Nullable<long> _Socio_economico_descripcion_mueble_valor_departamento;
+		
+		private string _Socio_economico_descripcion_mueble_detalle_direccion_departamento;
+		
+		private System.Nullable<long> _Socio_economico_descripcion_mueble_valor_vehiculo;
+		
+		private string _Socio_economico_descripcion_mueble_detalle_detalle_vehiculo;
+		
+		private System.Nullable<long> _Socio_economico_descripcion_mueble_valor_terreno;
+		
+		private string _Socio_economico_descripcion_mueble_detalle_sector_terreno;
+		
+		private System.Nullable<long> _Socio_economico_descripcion_mueble_valor_negocio;
+		
+		private string _Socio_economico_descripcion_mueble_detalle_detalle_negocio;
+		
+		private System.Nullable<long> _Socio_economico_descripcion_mueble_valor_muebles_enseres;
+		
+		private string _Socio_economico_descripcion_mueble_detalle_detalle_muebles_enseres;
+		
+		private string _Socio_economico_caracteristica_vivienda_descripcion_unifamiliar;
+		
+		private string _Socio_economico_caracteristica_vivienda_descripcion_multifamiliar;
+		
+		private string _Socio_economico_caracteristica_vivienda_descripcion_otra_especifique;
+		
+		private string _Socio_economico_caracteristica_vivienda_tenencia_propia_sin_deuda;
+		
+		private string _Socio_economico_caracteristica_vivienda_tenencia_arrendada;
+		
+		private string _Socio_economico_caracteristica_vivienda_tenencia_de_familia;
+		
+		private string _Socio_economico_caracteristica_vivienda_tenencia_hipotecada;
+		
+		private string _Socio_economico_caracteristica_vivienda_tenencia_prestada;
+		
+		private string _Socio_economico_caracteristica_vivienda_tenencia_anticreces;
+		
+		private string _Socio_economico_caracteristica_vivienda_tenencia_otra_especifique;
+		
+		private string _Socio_economico_caracteristica_vivienda_tipo_casa;
+		
+		private string _Socio_economico_caracteristica_vivienda_tipo_suit;
+		
+		private string _Socio_economico_caracteristica_vivienda_tipo_mediagua;
+		
+		private string _Socio_economico_caracteristica_vivienda_tipo_departamento;
+		
+		private string _Socio_economico_caracteristica_vivienda_tipo_pieza;
+		
+		private string _Socio_economico_caracteristica_vivienda_tipo_otro_especifique;
+		
+		private string _Socio_economico_caracteristica_vivienda_distribucion_habitacion;
+		
+		private string _Socio_economico_caracteristica_vivienda_distribucion_sala;
+		
+		private string _Socio_economico_caracteristica_vivienda_distribucion_baño;
+		
+		private string _Socio_economico_caracteristica_vivienda_distribucion_garage;
+		
+		private string _Socio_economico_caracteristica_vivienda_distribucion_comedor;
+		
+		private string _Socio_economico_caracteristica_vivienda_distribucion_cocina;
+		
+		private string _Socio_economico_caracteristica_vivienda_distribucion_patio;
+		
+		private string _Socio_economico_caracteristica_vivienda_distribucion_bodega;
+		
+		private string _Socio_economico_caracteristica_vivienda_distribucion_otro_especifique;
+		
+		private string _Socio_economico_caracteristica_vivienda_otro_especifique;
+		
+		private string _Socio_economico_como_moviliza_vivienda_a_trabajo;
 		
 		private string _Socio_economico_nombres_apellidos_familiar1;
+		
+		private string _Socio_economico_parentesco_familiar1;
 		
 		private System.Nullable<System.DateTime> _Socio_economico_fecha_nacimiento_familiar1;
 		
@@ -40797,11 +40972,15 @@ namespace CapaDatos
 		
 		private string _Socio_economico_nombres_apellidos_familiar2;
 		
+		private string _Socio_economico_parentesco_familiar2;
+		
 		private System.Nullable<System.DateTime> _Socio_economico_fecha_nacimiento_familiar2;
 		
 		private System.Nullable<long> _Socio_economico_edad_familiar2;
 		
 		private string _Socio_economico_nombres_apellidos_familiar3;
+		
+		private string _Socio_economico_parentesco_familiar3;
 		
 		private System.Nullable<System.DateTime> _Socio_economico_fecha_nacimiento_familiar3;
 		
@@ -40809,9 +40988,19 @@ namespace CapaDatos
 		
 		private string _Socio_economico_nombres_apellidos_familiar4;
 		
+		private string _Socio_economico_parentesco_familiar4;
+		
 		private System.Nullable<System.DateTime> _Socio_economico_fecha_nacimiento_familiar4;
 		
 		private System.Nullable<long> _Socio_economico_edad_familiar4;
+		
+		private string _Socio_economico_nombres_apellidos_familiar5;
+		
+		private string _Socio_economico_parentesco_familiar5;
+		
+		private System.Nullable<System.DateTime> _Socio_economico_fecha_nacimiento_familiar5;
+		
+		private System.Nullable<long> _Socio_economico_edad_familiar5;
 		
 		private string _Socio_economico_nucleofamiliar_persona_discapacidad_si;
 		
@@ -40845,23 +41034,11 @@ namespace CapaDatos
 		
 		private System.Nullable<System.DateTime> _Socio_economico_familiar_discapacidad_fecha_nacimiento2;
 		
-		private string _Socio_economico_nombres_apellidos_familiar_discapacidad3;
+		private string _Socio_economico_registrar_dependencia_familiar_MT_si;
 		
-		private System.Nullable<System.DateTime> _Socio_economico_fecha_caducidad_carnet_familiar_discapacidad3;
+		private string _Socio_economico_registrar_dependencia_familiar_MT_no;
 		
-		private string _Socio_economico_familiar_discapacidad_tipo3;
-		
-		private System.Nullable<long> _Socio_economico_familiar_discapacidad_porcentaje3;
-		
-		private string _Socio_economico_familiar_discapacidad_parentesco3;
-		
-		private System.Nullable<System.DateTime> _Socio_economico_familiar_discapacidad_fecha_nacimiento3;
-		
-		private string _Socio_economico_registrar_dependencia_familiar_MIES_si;
-		
-		private string _Socio_economico_registrar_dependencia_familiar_MIES_no;
-		
-		private string _Socio_economico_registrar_dependencia_familiar_MIES_numcarnet;
+		private string _Socio_economico_registrar_dependencia_familiar_MT_numero_carnetMSP;
 		
 		private string _Socio_economico_familiar_enfermedad_catastrofica_rara_si;
 		
@@ -40883,15 +41060,19 @@ namespace CapaDatos
 		
 		private string _Socio_economico_actividades_artisticas;
 		
-		private string _Socio_economico_otros;
+		private string _Socio_economico_otro;
 		
-		private string _Socio_economico_trabajo_complementario;
+		private string _Socio_economico_otro_especifique;
 		
-		private string _Socio_economico_detalle_actividad;
+		private string _Socio_economico_actividad_economica_adicional_si;
 		
-		private string _Socio_economico_tiempo_actividad;
+		private string _Socio_economico_actividad_economica_adicional_no;
 		
-		private string _Socio_economico_hace_cuanto_tiempo_actividad;
+		private string _Socio_economico_actividad_economica_adicional_detalle;
+		
+		private string _Socio_economico_actividad_economica_adicional_tiempo_destina;
+		
+		private string _Socio_economico_actividad_economica_adicional_hace_tiempo;
 		
 		private string _Socio_economico_actividad_deportiva_si;
 		
@@ -40985,15 +41166,15 @@ namespace CapaDatos
 		
 		private string _Socio_economico_miembro_familiar_rol_no;
 		
-		private string _Socio_economico_salud_familia_muybueno;
+		private string _Socio_economico_nivel_salud_familia_muybueno;
 		
-		private string _Socio_economico_salud_familia_bueno;
+		private string _Socio_economico_nivel_salud_familia_bueno;
 		
-		private string _Socio_economico_salud_familia_regular;
+		private string _Socio_economico_nivel_salud_familia_regular;
 		
-		private string _Socio_economico_salud_familia_mala;
+		private string _Socio_economico_nivel_salud_familia_mala;
 		
-		private string _Socio_economico_salud_familia_porque;
+		private string _Socio_economico_nivel_salud_familia_porque;
 		
 		private string _Socio_economico_familia_funcional;
 		
@@ -41003,9 +41184,9 @@ namespace CapaDatos
 		
 		private string _Socio_economico_informacion_adicional;
 		
-		private string _Socio_economico_General_Real_si;
+		private string _Socio_economico_informacion_general_real_si;
 		
-		private string _Socio_economico_General_Real_no;
+		private string _Socio_economico_informacion_general_real_no;
 		
 		private System.Nullable<System.DateTime> _Socio_economico_fechaHora;
 		
@@ -41013,11 +41194,617 @@ namespace CapaDatos
 		
 		private string _Socio_economico__estado;
 		
+		private EntityRef<Tbl_Personas> _Tbl_Personas;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnSocio_economico_idChanging(int value);
+    partial void OnSocio_economico_idChanged();
+    partial void OnSocio_economico_modalidadcontrato_leyorgserpublicoChanging(string value);
+    partial void OnSocio_economico_modalidadcontrato_leyorgserpublicoChanged();
+    partial void OnSocio_economico_modalidadcontrato_codigotrabajoChanging(string value);
+    partial void OnSocio_economico_modalidadcontrato_codigotrabajoChanged();
+    partial void OnSocio_economico_fecha_ingreso_al_EcuChanging(System.Nullable<System.DateTime> value);
+    partial void OnSocio_economico_fecha_ingreso_al_EcuChanged();
+    partial void OnSocio_economico_estadocivil_solteroChanging(string value);
+    partial void OnSocio_economico_estadocivil_solteroChanged();
+    partial void OnSocio_economico_estadocivil_casadoChanging(string value);
+    partial void OnSocio_economico_estadocivil_casadoChanged();
+    partial void OnSocio_economico_estadocivil_viudoChanging(string value);
+    partial void OnSocio_economico_estadocivil_viudoChanged();
+    partial void OnSocio_economico_estadocivil_unionlibreChanging(string value);
+    partial void OnSocio_economico_estadocivil_unionlibreChanged();
+    partial void OnSocio_economico_estadocivil_divorciadoChanging(string value);
+    partial void OnSocio_economico_estadocivil_divorciadoChanged();
+    partial void OnSocio_economico_genero_masculinoChanging(string value);
+    partial void OnSocio_economico_genero_masculinoChanged();
+    partial void OnSocio_economico_genero_femeninoChanging(string value);
+    partial void OnSocio_economico_genero_femeninoChanged();
+    partial void OnSocio_economico_tipodesangreChanging(string value);
+    partial void OnSocio_economico_tipodesangreChanged();
+    partial void OnSocio_economico_es_donante_siChanging(string value);
+    partial void OnSocio_economico_es_donante_siChanged();
+    partial void OnSocio_economico_es_donante_noChanging(string value);
+    partial void OnSocio_economico_es_donante_noChanged();
+    partial void OnSocio_economico_telefonoconvencionalChanging(string value);
+    partial void OnSocio_economico_telefonoconvencionalChanged();
+    partial void OnSocio_economico_telefonocelularChanging(string value);
+    partial void OnSocio_economico_telefonocelularChanged();
+    partial void OnSocio_economico_emailChanging(string value);
+    partial void OnSocio_economico_emailChanged();
+    partial void OnSocio_economico_lugardenacimientoChanging(string value);
+    partial void OnSocio_economico_lugardenacimientoChanged();
+    partial void OnSocio_economico_fechadeNacimientoChanging(System.Nullable<System.DateTime> value);
+    partial void OnSocio_economico_fechadeNacimientoChanged();
+    partial void OnSocio_economico_edadChanging(System.Nullable<long> value);
+    partial void OnSocio_economico_edadChanged();
+    partial void OnSocio_economico_titulo_primariaChanging(string value);
+    partial void OnSocio_economico_titulo_primariaChanged();
+    partial void OnSocio_economico_titulo_secundariaChanging(string value);
+    partial void OnSocio_economico_titulo_secundariaChanged();
+    partial void OnSocio_economico_titulo_superiorChanging(string value);
+    partial void OnSocio_economico_titulo_superiorChanged();
+    partial void OnSocio_economico_titulo_especializacionChanging(string value);
+    partial void OnSocio_economico_titulo_especializacionChanged();
+    partial void OnSocio_economico_titulo_diplomadoChanging(string value);
+    partial void OnSocio_economico_titulo_diplomadoChanged();
+    partial void OnSocio_economico_titulo_maestriaChanging(string value);
+    partial void OnSocio_economico_titulo_maestriaChanged();
+    partial void OnSocio_economico_titulo_doctoradoChanging(string value);
+    partial void OnSocio_economico_titulo_doctoradoChanged();
+    partial void OnSocio_economico_autoidentificacionetnica_blancoChanging(string value);
+    partial void OnSocio_economico_autoidentificacionetnica_blancoChanged();
+    partial void OnSocio_economico_autoidentificacionetnica_mestizoChanging(string value);
+    partial void OnSocio_economico_autoidentificacionetnica_mestizoChanged();
+    partial void OnSocio_economico_autoidentificacionetnica_afrodescendienteChanging(string value);
+    partial void OnSocio_economico_autoidentificacionetnica_afrodescendienteChanged();
+    partial void OnSocio_economico_autoidentificacionetnica_indigenaChanging(string value);
+    partial void OnSocio_economico_autoidentificacionetnica_indigenaChanged();
+    partial void OnSocio_economico_autoidentificacionetnica_montubioChanging(string value);
+    partial void OnSocio_economico_autoidentificacionetnica_montubioChanged();
+    partial void OnSocio_economico_direcciondomicilio_provinciaChanging(string value);
+    partial void OnSocio_economico_direcciondomicilio_provinciaChanged();
+    partial void OnSocio_economico_direcciondomicilio_cantonChanging(string value);
+    partial void OnSocio_economico_direcciondomicilio_cantonChanged();
+    partial void OnSocio_economico_direcciondomicilio_parroquiaChanging(string value);
+    partial void OnSocio_economico_direcciondomicilio_parroquiaChanged();
+    partial void OnSocio_economico_direcciondomicilio_barrioChanging(string value);
+    partial void OnSocio_economico_direcciondomicilio_barrioChanged();
+    partial void OnSocio_economico_calle_vivienda_numeracionChanging(string value);
+    partial void OnSocio_economico_calle_vivienda_numeracionChanged();
+    partial void OnSocio_economico_calle_secundariaChanging(string value);
+    partial void OnSocio_economico_calle_secundariaChanged();
+    partial void OnSocio_economico_referencia_ubicar_domicilioChanging(string value);
+    partial void OnSocio_economico_referencia_ubicar_domicilioChanged();
+    partial void OnSocio_economico_sectorvive_norteChanging(string value);
+    partial void OnSocio_economico_sectorvive_norteChanged();
+    partial void OnSocio_economico_sectorvive_centroChanging(string value);
+    partial void OnSocio_economico_sectorvive_centroChanged();
+    partial void OnSocio_economico_sectorvive_surChanging(string value);
+    partial void OnSocio_economico_sectorvive_surChanged();
+    partial void OnSocio_economico_sectorvive_otroChanging(string value);
+    partial void OnSocio_economico_sectorvive_otroChanged();
+    partial void OnSocio_economico_sectorvive_otro_indiqueChanging(string value);
+    partial void OnSocio_economico_sectorvive_otro_indiqueChanged();
+    partial void OnSocio_economico_tipovivienda_casaChanging(string value);
+    partial void OnSocio_economico_tipovivienda_casaChanged();
+    partial void OnSocio_economico_tipovivienda_departamentoChanging(string value);
+    partial void OnSocio_economico_tipovivienda_departamentoChanged();
+    partial void OnSocio_economico_tipovivienda_otroChanging(string value);
+    partial void OnSocio_economico_tipovivienda_otroChanged();
+    partial void OnSocio_economico_tipovivienda_otro_indiqueChanging(string value);
+    partial void OnSocio_economico_tipovivienda_otro_indiqueChanged();
+    partial void OnSocio_economico_riesgo_delincuencial_altoChanging(string value);
+    partial void OnSocio_economico_riesgo_delincuencial_altoChanged();
+    partial void OnSocio_economico_riesgo_delincuencial_medioChanging(string value);
+    partial void OnSocio_economico_riesgo_delincuencial_medioChanged();
+    partial void OnSocio_economico_riesgo_delincuencial_bajoChanging(string value);
+    partial void OnSocio_economico_riesgo_delincuencial_bajoChanged();
+    partial void OnSocio_economico_cuantas_personas_viven_con_ustedChanging(string value);
+    partial void OnSocio_economico_cuantas_personas_viven_con_ustedChanged();
+    partial void OnSocio_economico_cuantas_personas_viven_eventual_con_ustedChanging(string value);
+    partial void OnSocio_economico_cuantas_personas_viven_eventual_con_ustedChanged();
+    partial void OnSocio_economico_contacto_emergencia_nombres_apellidosChanging(string value);
+    partial void OnSocio_economico_contacto_emergencia_nombres_apellidosChanged();
+    partial void OnSocio_economico_contacto_emergencia_parentescoChanging(string value);
+    partial void OnSocio_economico_contacto_emergencia_parentescoChanged();
+    partial void OnSocio_economico_contacto_emergencia_telefonoChanging(string value);
+    partial void OnSocio_economico_contacto_emergencia_telefonoChanged();
+    partial void OnSocio_economico_contacto_emergencia_calle_principalChanging(string value);
+    partial void OnSocio_economico_contacto_emergencia_calle_principalChanged();
+    partial void OnSocio_economico_contacto_emergencia_numero_domicilioChanging(string value);
+    partial void OnSocio_economico_contacto_emergencia_numero_domicilioChanged();
+    partial void OnSocio_economico_contacto_emergencia_calle_secundariaChanging(string value);
+    partial void OnSocio_economico_contacto_emergencia_calle_secundariaChanged();
+    partial void OnSocio_economico_contacto_emergencia_referencia_domicilioChanging(string value);
+    partial void OnSocio_economico_contacto_emergencia_referencia_domicilioChanged();
+    partial void OnSocio_economico_dinero_ahorro_siChanging(string value);
+    partial void OnSocio_economico_dinero_ahorro_siChanged();
+    partial void OnSocio_economico_dinero_ahorro_noChanging(string value);
+    partial void OnSocio_economico_dinero_ahorro_noChanged();
+    partial void OnSocio_economico_vehiculo_propio_siChanging(string value);
+    partial void OnSocio_economico_vehiculo_propio_siChanged();
+    partial void OnSocio_economico_vehiculo_propio_noChanging(string value);
+    partial void OnSocio_economico_vehiculo_propio_noChanged();
+    partial void OnSocio_economico_recorrido_institucional_siChanging(string value);
+    partial void OnSocio_economico_recorrido_institucional_siChanged();
+    partial void OnSocio_economico_recorrido_institucional_noChanging(string value);
+    partial void OnSocio_economico_recorrido_institucional_noChanged();
+    partial void OnSocio_economico_recorrido_institucional_no_existeChanging(string value);
+    partial void OnSocio_economico_recorrido_institucional_no_existeChanged();
+    partial void OnSocio_economico_distancia_domicilio_trabajoChanging(string value);
+    partial void OnSocio_economico_distancia_domicilio_trabajoChanged();
+    partial void OnSocio_economico_posee_enfermedadChanging(string value);
+    partial void OnSocio_economico_posee_enfermedadChanged();
+    partial void OnSocio_economico_discapacidad_siChanging(string value);
+    partial void OnSocio_economico_discapacidad_siChanged();
+    partial void OnSocio_economico_discapacidad_noChanging(string value);
+    partial void OnSocio_economico_discapacidad_noChanged();
+    partial void OnSocio_economico_discapacidad_tipoChanging(string value);
+    partial void OnSocio_economico_discapacidad_tipoChanged();
+    partial void OnSocio_economico_discapacidad_porcentajeChanging(System.Nullable<long> value);
+    partial void OnSocio_economico_discapacidad_porcentajeChanged();
+    partial void OnSocio_economico_discapacidad_carnet_conadisChanging(string value);
+    partial void OnSocio_economico_discapacidad_carnet_conadisChanged();
+    partial void OnSocio_economico_discapacidad_fecha_caducidad_carnetChanging(System.Nullable<System.DateTime> value);
+    partial void OnSocio_economico_discapacidad_fecha_caducidad_carnetChanged();
+    partial void OnSocio_economico_conyugue_embarazada_siChanging(string value);
+    partial void OnSocio_economico_conyugue_embarazada_siChanged();
+    partial void OnSocio_economico_conyugue_embarazada_noChanging(string value);
+    partial void OnSocio_economico_conyugue_embarazada_noChanged();
+    partial void OnSocio_economico_mes_gestacionChanging(string value);
+    partial void OnSocio_economico_mes_gestacionChanged();
+    partial void OnSocio_economico_fecha_tentativa_partoChanging(System.Nullable<System.DateTime> value);
+    partial void OnSocio_economico_fecha_tentativa_partoChanged();
+    partial void OnSocio_economico_periodo_lactancia_siChanging(string value);
+    partial void OnSocio_economico_periodo_lactancia_siChanged();
+    partial void OnSocio_economico_periodo_lactancia_noChanging(string value);
+    partial void OnSocio_economico_periodo_lactancia_noChanged();
+    partial void OnSocio_economico_periodo_lactancia_fecha_culminacionChanging(System.Nullable<System.DateTime> value);
+    partial void OnSocio_economico_periodo_lactancia_fecha_culminacionChanged();
+    partial void OnSocio_economico_enfermedad_cronica_siChanging(string value);
+    partial void OnSocio_economico_enfermedad_cronica_siChanged();
+    partial void OnSocio_economico_enfermedad_cronica_noChanging(string value);
+    partial void OnSocio_economico_enfermedad_cronica_noChanged();
+    partial void OnSocio_economico_enfermedad_cronica_cualChanging(string value);
+    partial void OnSocio_economico_enfermedad_cronica_cualChanged();
+    partial void OnSocio_economico_enfermedad_cronica_otrasChanging(string value);
+    partial void OnSocio_economico_enfermedad_cronica_otrasChanged();
+    partial void OnSocio_economico_enfermedad_rara_siChanging(string value);
+    partial void OnSocio_economico_enfermedad_rara_siChanged();
+    partial void OnSocio_economico_enfermedad_rara_noChanging(string value);
+    partial void OnSocio_economico_enfermedad_rara_noChanged();
+    partial void OnSocio_economico_enfermedad_rara_cualChanging(string value);
+    partial void OnSocio_economico_enfermedad_rara_cualChanged();
+    partial void OnSocio_economico_consume_alcohol_siChanging(string value);
+    partial void OnSocio_economico_consume_alcohol_siChanged();
+    partial void OnSocio_economico_consume_alcohol_noChanging(string value);
+    partial void OnSocio_economico_consume_alcohol_noChanged();
+    partial void OnSocio_economico_consume_alcohol_frecuencia_consumoChanging(string value);
+    partial void OnSocio_economico_consume_alcohol_frecuencia_consumoChanged();
+    partial void OnSocio_economico_consume_alcohol_tiempo_consumoChanging(string value);
+    partial void OnSocio_economico_consume_alcohol_tiempo_consumoChanged();
+    partial void OnSocio_economico_consume_tabaco_siChanging(string value);
+    partial void OnSocio_economico_consume_tabaco_siChanged();
+    partial void OnSocio_economico_consume_tabaco_noChanging(string value);
+    partial void OnSocio_economico_consume_tabaco_noChanged();
+    partial void OnSocio_economico_consume_tabaco_frecuencia_consumoChanging(string value);
+    partial void OnSocio_economico_consume_tabaco_frecuencia_consumoChanged();
+    partial void OnSocio_economico_consume_tabaco_tiempo_consumoChanging(string value);
+    partial void OnSocio_economico_consume_tabaco_tiempo_consumoChanged();
+    partial void OnSocio_economico_consume_sustancia_psicotropica_siChanging(string value);
+    partial void OnSocio_economico_consume_sustancia_psicotropica_siChanged();
+    partial void OnSocio_economico_consume_sustancia_psicotropica_noChanging(string value);
+    partial void OnSocio_economico_consume_sustancia_psicotropica_noChanged();
+    partial void OnSocio_economico_consume_sustancia_psicotropica_tipoChanging(string value);
+    partial void OnSocio_economico_consume_sustancia_psicotropica_tipoChanged();
+    partial void OnSocio_economico_consume_sustancia_psicotropica_frecuencia_consumoChanging(string value);
+    partial void OnSocio_economico_consume_sustancia_psicotropica_frecuencia_consumoChanged();
+    partial void OnSocio_economico_problemas_consumo_familiaresChanging(string value);
+    partial void OnSocio_economico_problemas_consumo_familiaresChanged();
+    partial void OnSocio_economico_problemas_consumo_laboralesChanging(string value);
+    partial void OnSocio_economico_problemas_consumo_laboralesChanged();
+    partial void OnSocio_economico_problemas_consumo_economicosChanging(string value);
+    partial void OnSocio_economico_problemas_consumo_economicosChanged();
+    partial void OnSocio_economico_problemas_consumo_saludChanging(string value);
+    partial void OnSocio_economico_problemas_consumo_saludChanged();
+    partial void OnSocio_economico_problemas_consumo_legalesChanging(string value);
+    partial void OnSocio_economico_problemas_consumo_legalesChanged();
+    partial void OnSocio_economico_total_ingresos_mensuales_proyectados_1Changing(System.Nullable<long> value);
+    partial void OnSocio_economico_total_ingresos_mensuales_proyectados_1Changed();
+    partial void OnSocio_economico_ayuda_padres1Changing(System.Nullable<long> value);
+    partial void OnSocio_economico_ayuda_padres1Changed();
+    partial void OnSocio_economico_otros_ingresos1Changing(System.Nullable<long> value);
+    partial void OnSocio_economico_otros_ingresos1Changed();
+    partial void OnSocio_economico_total_egresos_mensuales_proyectados_alimentacionChanging(System.Nullable<long> value);
+    partial void OnSocio_economico_total_egresos_mensuales_proyectados_alimentacionChanged();
+    partial void OnSocio_economico_total_ingresos_mensuales_proyectados_2Changing(System.Nullable<long> value);
+    partial void OnSocio_economico_total_ingresos_mensuales_proyectados_2Changed();
+    partial void OnSocio_economico_ayuda_padres2Changing(System.Nullable<long> value);
+    partial void OnSocio_economico_ayuda_padres2Changed();
+    partial void OnSocio_economico_otros_ingresos2Changing(System.Nullable<long> value);
+    partial void OnSocio_economico_otros_ingresos2Changed();
+    partial void OnSocio_economico_total_egresos_mensuales_proyectados_viviendaChanging(System.Nullable<long> value);
+    partial void OnSocio_economico_total_egresos_mensuales_proyectados_viviendaChanged();
+    partial void OnSocio_economico_total_ingresos_mensuales_proyectados_3Changing(System.Nullable<long> value);
+    partial void OnSocio_economico_total_ingresos_mensuales_proyectados_3Changed();
+    partial void OnSocio_economico_ayuda_padres3Changing(System.Nullable<long> value);
+    partial void OnSocio_economico_ayuda_padres3Changed();
+    partial void OnSocio_economico_otros_ingresos3Changing(System.Nullable<long> value);
+    partial void OnSocio_economico_otros_ingresos3Changed();
+    partial void OnSocio_economico_total_egresos_mensuales_proyectados_educacionChanging(System.Nullable<long> value);
+    partial void OnSocio_economico_total_egresos_mensuales_proyectados_educacionChanged();
+    partial void OnSocio_economico_total_ingresos_mensuales_proyectados_4Changing(System.Nullable<long> value);
+    partial void OnSocio_economico_total_ingresos_mensuales_proyectados_4Changed();
+    partial void OnSocio_economico_ayuda_padres4Changing(System.Nullable<long> value);
+    partial void OnSocio_economico_ayuda_padres4Changed();
+    partial void OnSocio_economico_otros_ingresos4Changing(System.Nullable<long> value);
+    partial void OnSocio_economico_otros_ingresos4Changed();
+    partial void OnSocio_economico_total_egresos_mensuales_proyectados_servicios_basicosChanging(System.Nullable<long> value);
+    partial void OnSocio_economico_total_egresos_mensuales_proyectados_servicios_basicosChanged();
+    partial void OnSocio_economico_total_ingresos_mensuales_proyectados_5Changing(System.Nullable<long> value);
+    partial void OnSocio_economico_total_ingresos_mensuales_proyectados_5Changed();
+    partial void OnSocio_economico_ayuda_padres5Changing(System.Nullable<long> value);
+    partial void OnSocio_economico_ayuda_padres5Changed();
+    partial void OnSocio_economico_otros_ingresos5Changing(System.Nullable<long> value);
+    partial void OnSocio_economico_otros_ingresos5Changed();
+    partial void OnSocio_economico_total_egresos_mensuales_proyectados_saludChanging(System.Nullable<long> value);
+    partial void OnSocio_economico_total_egresos_mensuales_proyectados_saludChanged();
+    partial void OnSocio_economico_total_ingresos_mensuales_proyectados_6Changing(System.Nullable<long> value);
+    partial void OnSocio_economico_total_ingresos_mensuales_proyectados_6Changed();
+    partial void OnSocio_economico_ayuda_padres6Changing(System.Nullable<long> value);
+    partial void OnSocio_economico_ayuda_padres6Changed();
+    partial void OnSocio_economico_otros_ingresos6Changing(System.Nullable<long> value);
+    partial void OnSocio_economico_otros_ingresos6Changed();
+    partial void OnSocio_economico_total_egresos_mensuales_proyectados_movilizacionChanging(System.Nullable<long> value);
+    partial void OnSocio_economico_total_egresos_mensuales_proyectados_movilizacionChanged();
+    partial void OnSocio_economico_total_ingresos_mensuales_proyectados_7Changing(System.Nullable<long> value);
+    partial void OnSocio_economico_total_ingresos_mensuales_proyectados_7Changed();
+    partial void OnSocio_economico_ayuda_padres7Changing(System.Nullable<long> value);
+    partial void OnSocio_economico_ayuda_padres7Changed();
+    partial void OnSocio_economico_otros_ingresos7Changing(System.Nullable<long> value);
+    partial void OnSocio_economico_otros_ingresos7Changed();
+    partial void OnSocio_economico_total_egresos_mensuales_proyectados_deudasChanging(System.Nullable<long> value);
+    partial void OnSocio_economico_total_egresos_mensuales_proyectados_deudasChanged();
+    partial void OnSocio_economico_total_ingresos_mensuales_proyectados_8Changing(System.Nullable<long> value);
+    partial void OnSocio_economico_total_ingresos_mensuales_proyectados_8Changed();
+    partial void OnSocio_economico_ayuda_padres8Changing(System.Nullable<long> value);
+    partial void OnSocio_economico_ayuda_padres8Changed();
+    partial void OnSocio_economico_otros_ingresos8Changing(System.Nullable<long> value);
+    partial void OnSocio_economico_otros_ingresos8Changed();
+    partial void OnSocio_economico_total_egresos_mensuales_proyectados_otrosChanging(System.Nullable<long> value);
+    partial void OnSocio_economico_total_egresos_mensuales_proyectados_otrosChanged();
+    partial void OnSocio_economico_total_ingresos_mensuales_proyectados_total_9Changing(System.Nullable<long> value);
+    partial void OnSocio_economico_total_ingresos_mensuales_proyectados_total_9Changed();
+    partial void OnSocio_economico_ayuda_padres_total9Changing(System.Nullable<long> value);
+    partial void OnSocio_economico_ayuda_padres_total9Changed();
+    partial void OnSocio_economico_otros_ingresos_total9Changing(System.Nullable<long> value);
+    partial void OnSocio_economico_otros_ingresos_total9Changed();
+    partial void OnSocio_economico_total_egresos_mensuales_proyectados_totalChanging(System.Nullable<long> value);
+    partial void OnSocio_economico_total_egresos_mensuales_proyectados_totalChanged();
+    partial void OnSocio_economico_total_egresos_mensuales_proyectados_total_generalChanging(System.Nullable<long> value);
+    partial void OnSocio_economico_total_egresos_mensuales_proyectados_total_generalChanged();
+    partial void OnSocio_economico_descripcion_mueble_valor_casaChanging(System.Nullable<long> value);
+    partial void OnSocio_economico_descripcion_mueble_valor_casaChanged();
+    partial void OnSocio_economico_descripcion_mueble_detalle_direccion_casaChanging(string value);
+    partial void OnSocio_economico_descripcion_mueble_detalle_direccion_casaChanged();
+    partial void OnSocio_economico_descripcion_mueble_valor_departamentoChanging(System.Nullable<long> value);
+    partial void OnSocio_economico_descripcion_mueble_valor_departamentoChanged();
+    partial void OnSocio_economico_descripcion_mueble_detalle_direccion_departamentoChanging(string value);
+    partial void OnSocio_economico_descripcion_mueble_detalle_direccion_departamentoChanged();
+    partial void OnSocio_economico_descripcion_mueble_valor_vehiculoChanging(System.Nullable<long> value);
+    partial void OnSocio_economico_descripcion_mueble_valor_vehiculoChanged();
+    partial void OnSocio_economico_descripcion_mueble_detalle_detalle_vehiculoChanging(string value);
+    partial void OnSocio_economico_descripcion_mueble_detalle_detalle_vehiculoChanged();
+    partial void OnSocio_economico_descripcion_mueble_valor_terrenoChanging(System.Nullable<long> value);
+    partial void OnSocio_economico_descripcion_mueble_valor_terrenoChanged();
+    partial void OnSocio_economico_descripcion_mueble_detalle_sector_terrenoChanging(string value);
+    partial void OnSocio_economico_descripcion_mueble_detalle_sector_terrenoChanged();
+    partial void OnSocio_economico_descripcion_mueble_valor_negocioChanging(System.Nullable<long> value);
+    partial void OnSocio_economico_descripcion_mueble_valor_negocioChanged();
+    partial void OnSocio_economico_descripcion_mueble_detalle_detalle_negocioChanging(string value);
+    partial void OnSocio_economico_descripcion_mueble_detalle_detalle_negocioChanged();
+    partial void OnSocio_economico_descripcion_mueble_valor_muebles_enseresChanging(System.Nullable<long> value);
+    partial void OnSocio_economico_descripcion_mueble_valor_muebles_enseresChanged();
+    partial void OnSocio_economico_descripcion_mueble_detalle_detalle_muebles_enseresChanging(string value);
+    partial void OnSocio_economico_descripcion_mueble_detalle_detalle_muebles_enseresChanged();
+    partial void OnSocio_economico_caracteristica_vivienda_descripcion_unifamiliarChanging(string value);
+    partial void OnSocio_economico_caracteristica_vivienda_descripcion_unifamiliarChanged();
+    partial void OnSocio_economico_caracteristica_vivienda_descripcion_multifamiliarChanging(string value);
+    partial void OnSocio_economico_caracteristica_vivienda_descripcion_multifamiliarChanged();
+    partial void OnSocio_economico_caracteristica_vivienda_descripcion_otra_especifiqueChanging(string value);
+    partial void OnSocio_economico_caracteristica_vivienda_descripcion_otra_especifiqueChanged();
+    partial void OnSocio_economico_caracteristica_vivienda_tenencia_propia_sin_deudaChanging(string value);
+    partial void OnSocio_economico_caracteristica_vivienda_tenencia_propia_sin_deudaChanged();
+    partial void OnSocio_economico_caracteristica_vivienda_tenencia_arrendadaChanging(string value);
+    partial void OnSocio_economico_caracteristica_vivienda_tenencia_arrendadaChanged();
+    partial void OnSocio_economico_caracteristica_vivienda_tenencia_de_familiaChanging(string value);
+    partial void OnSocio_economico_caracteristica_vivienda_tenencia_de_familiaChanged();
+    partial void OnSocio_economico_caracteristica_vivienda_tenencia_hipotecadaChanging(string value);
+    partial void OnSocio_economico_caracteristica_vivienda_tenencia_hipotecadaChanged();
+    partial void OnSocio_economico_caracteristica_vivienda_tenencia_prestadaChanging(string value);
+    partial void OnSocio_economico_caracteristica_vivienda_tenencia_prestadaChanged();
+    partial void OnSocio_economico_caracteristica_vivienda_tenencia_anticrecesChanging(string value);
+    partial void OnSocio_economico_caracteristica_vivienda_tenencia_anticrecesChanged();
+    partial void OnSocio_economico_caracteristica_vivienda_tenencia_otra_especifiqueChanging(string value);
+    partial void OnSocio_economico_caracteristica_vivienda_tenencia_otra_especifiqueChanged();
+    partial void OnSocio_economico_caracteristica_vivienda_tipo_casaChanging(string value);
+    partial void OnSocio_economico_caracteristica_vivienda_tipo_casaChanged();
+    partial void OnSocio_economico_caracteristica_vivienda_tipo_suitChanging(string value);
+    partial void OnSocio_economico_caracteristica_vivienda_tipo_suitChanged();
+    partial void OnSocio_economico_caracteristica_vivienda_tipo_mediaguaChanging(string value);
+    partial void OnSocio_economico_caracteristica_vivienda_tipo_mediaguaChanged();
+    partial void OnSocio_economico_caracteristica_vivienda_tipo_departamentoChanging(string value);
+    partial void OnSocio_economico_caracteristica_vivienda_tipo_departamentoChanged();
+    partial void OnSocio_economico_caracteristica_vivienda_tipo_piezaChanging(string value);
+    partial void OnSocio_economico_caracteristica_vivienda_tipo_piezaChanged();
+    partial void OnSocio_economico_caracteristica_vivienda_tipo_otro_especifiqueChanging(string value);
+    partial void OnSocio_economico_caracteristica_vivienda_tipo_otro_especifiqueChanged();
+    partial void OnSocio_economico_caracteristica_vivienda_distribucion_habitacionChanging(string value);
+    partial void OnSocio_economico_caracteristica_vivienda_distribucion_habitacionChanged();
+    partial void OnSocio_economico_caracteristica_vivienda_distribucion_salaChanging(string value);
+    partial void OnSocio_economico_caracteristica_vivienda_distribucion_salaChanged();
+    partial void OnSocio_economico_caracteristica_vivienda_distribucion_bañoChanging(string value);
+    partial void OnSocio_economico_caracteristica_vivienda_distribucion_bañoChanged();
+    partial void OnSocio_economico_caracteristica_vivienda_distribucion_garageChanging(string value);
+    partial void OnSocio_economico_caracteristica_vivienda_distribucion_garageChanged();
+    partial void OnSocio_economico_caracteristica_vivienda_distribucion_comedorChanging(string value);
+    partial void OnSocio_economico_caracteristica_vivienda_distribucion_comedorChanged();
+    partial void OnSocio_economico_caracteristica_vivienda_distribucion_cocinaChanging(string value);
+    partial void OnSocio_economico_caracteristica_vivienda_distribucion_cocinaChanged();
+    partial void OnSocio_economico_caracteristica_vivienda_distribucion_patioChanging(string value);
+    partial void OnSocio_economico_caracteristica_vivienda_distribucion_patioChanged();
+    partial void OnSocio_economico_caracteristica_vivienda_distribucion_bodegaChanging(string value);
+    partial void OnSocio_economico_caracteristica_vivienda_distribucion_bodegaChanged();
+    partial void OnSocio_economico_caracteristica_vivienda_distribucion_otro_especifiqueChanging(string value);
+    partial void OnSocio_economico_caracteristica_vivienda_distribucion_otro_especifiqueChanged();
+    partial void OnSocio_economico_caracteristica_vivienda_otro_especifiqueChanging(string value);
+    partial void OnSocio_economico_caracteristica_vivienda_otro_especifiqueChanged();
+    partial void OnSocio_economico_como_moviliza_vivienda_a_trabajoChanging(string value);
+    partial void OnSocio_economico_como_moviliza_vivienda_a_trabajoChanged();
+    partial void OnSocio_economico_nombres_apellidos_familiar1Changing(string value);
+    partial void OnSocio_economico_nombres_apellidos_familiar1Changed();
+    partial void OnSocio_economico_parentesco_familiar1Changing(string value);
+    partial void OnSocio_economico_parentesco_familiar1Changed();
+    partial void OnSocio_economico_fecha_nacimiento_familiar1Changing(System.Nullable<System.DateTime> value);
+    partial void OnSocio_economico_fecha_nacimiento_familiar1Changed();
+    partial void OnSocio_economico_edad_familiar1Changing(System.Nullable<long> value);
+    partial void OnSocio_economico_edad_familiar1Changed();
+    partial void OnSocio_economico_nombres_apellidos_familiar2Changing(string value);
+    partial void OnSocio_economico_nombres_apellidos_familiar2Changed();
+    partial void OnSocio_economico_parentesco_familiar2Changing(string value);
+    partial void OnSocio_economico_parentesco_familiar2Changed();
+    partial void OnSocio_economico_fecha_nacimiento_familiar2Changing(System.Nullable<System.DateTime> value);
+    partial void OnSocio_economico_fecha_nacimiento_familiar2Changed();
+    partial void OnSocio_economico_edad_familiar2Changing(System.Nullable<long> value);
+    partial void OnSocio_economico_edad_familiar2Changed();
+    partial void OnSocio_economico_nombres_apellidos_familiar3Changing(string value);
+    partial void OnSocio_economico_nombres_apellidos_familiar3Changed();
+    partial void OnSocio_economico_parentesco_familiar3Changing(string value);
+    partial void OnSocio_economico_parentesco_familiar3Changed();
+    partial void OnSocio_economico_fecha_nacimiento_familiar3Changing(System.Nullable<System.DateTime> value);
+    partial void OnSocio_economico_fecha_nacimiento_familiar3Changed();
+    partial void OnSocio_economico_edad_familiar3Changing(System.Nullable<long> value);
+    partial void OnSocio_economico_edad_familiar3Changed();
+    partial void OnSocio_economico_nombres_apellidos_familiar4Changing(string value);
+    partial void OnSocio_economico_nombres_apellidos_familiar4Changed();
+    partial void OnSocio_economico_parentesco_familiar4Changing(string value);
+    partial void OnSocio_economico_parentesco_familiar4Changed();
+    partial void OnSocio_economico_fecha_nacimiento_familiar4Changing(System.Nullable<System.DateTime> value);
+    partial void OnSocio_economico_fecha_nacimiento_familiar4Changed();
+    partial void OnSocio_economico_edad_familiar4Changing(System.Nullable<long> value);
+    partial void OnSocio_economico_edad_familiar4Changed();
+    partial void OnSocio_economico_nombres_apellidos_familiar5Changing(string value);
+    partial void OnSocio_economico_nombres_apellidos_familiar5Changed();
+    partial void OnSocio_economico_parentesco_familiar5Changing(string value);
+    partial void OnSocio_economico_parentesco_familiar5Changed();
+    partial void OnSocio_economico_fecha_nacimiento_familiar5Changing(System.Nullable<System.DateTime> value);
+    partial void OnSocio_economico_fecha_nacimiento_familiar5Changed();
+    partial void OnSocio_economico_edad_familiar5Changing(System.Nullable<long> value);
+    partial void OnSocio_economico_edad_familiar5Changed();
+    partial void OnSocio_economico_nucleofamiliar_persona_discapacidad_siChanging(string value);
+    partial void OnSocio_economico_nucleofamiliar_persona_discapacidad_siChanged();
+    partial void OnSocio_economico_nucleofamiliar_persona_discapacidad_noChanging(string value);
+    partial void OnSocio_economico_nucleofamiliar_persona_discapacidad_noChanged();
+    partial void OnSocio_economico_acargo_de_persona_discapacidad_siChanging(string value);
+    partial void OnSocio_economico_acargo_de_persona_discapacidad_siChanged();
+    partial void OnSocio_economico_acargo_de_persona_discapacidad_noChanging(string value);
+    partial void OnSocio_economico_acargo_de_persona_discapacidad_noChanged();
+    partial void OnSocio_economico_nombres_apellidos_familiar_discapacidad1Changing(string value);
+    partial void OnSocio_economico_nombres_apellidos_familiar_discapacidad1Changed();
+    partial void OnSocio_economico_fecha_caducidad_carnet_familiar_discapacidad1Changing(System.Nullable<System.DateTime> value);
+    partial void OnSocio_economico_fecha_caducidad_carnet_familiar_discapacidad1Changed();
+    partial void OnSocio_economico_familiar_discapacidad_tipo1Changing(string value);
+    partial void OnSocio_economico_familiar_discapacidad_tipo1Changed();
+    partial void OnSocio_economico_familiar_discapacidad_porcentaje1Changing(System.Nullable<long> value);
+    partial void OnSocio_economico_familiar_discapacidad_porcentaje1Changed();
+    partial void OnSocio_economico_familiar_discapacidad_parentesco1Changing(string value);
+    partial void OnSocio_economico_familiar_discapacidad_parentesco1Changed();
+    partial void OnSocio_economico_familiar_discapacidad_fecha_nacimiento1Changing(System.Nullable<System.DateTime> value);
+    partial void OnSocio_economico_familiar_discapacidad_fecha_nacimiento1Changed();
+    partial void OnSocio_economico_nombres_apellidos_familiar_discapacidad2Changing(string value);
+    partial void OnSocio_economico_nombres_apellidos_familiar_discapacidad2Changed();
+    partial void OnSocio_economico_fecha_caducidad_carnet_familiar_discapacidad2Changing(System.Nullable<System.DateTime> value);
+    partial void OnSocio_economico_fecha_caducidad_carnet_familiar_discapacidad2Changed();
+    partial void OnSocio_economico_familiar_discapacidad_tipo2Changing(string value);
+    partial void OnSocio_economico_familiar_discapacidad_tipo2Changed();
+    partial void OnSocio_economico_familiar_discapacidad_porcentaje2Changing(System.Nullable<long> value);
+    partial void OnSocio_economico_familiar_discapacidad_porcentaje2Changed();
+    partial void OnSocio_economico_familiar_discapacidad_parentesco2Changing(string value);
+    partial void OnSocio_economico_familiar_discapacidad_parentesco2Changed();
+    partial void OnSocio_economico_familiar_discapacidad_fecha_nacimiento2Changing(System.Nullable<System.DateTime> value);
+    partial void OnSocio_economico_familiar_discapacidad_fecha_nacimiento2Changed();
+    partial void OnSocio_economico_registrar_dependencia_familiar_MT_siChanging(string value);
+    partial void OnSocio_economico_registrar_dependencia_familiar_MT_siChanged();
+    partial void OnSocio_economico_registrar_dependencia_familiar_MT_noChanging(string value);
+    partial void OnSocio_economico_registrar_dependencia_familiar_MT_noChanged();
+    partial void OnSocio_economico_registrar_dependencia_familiar_MT_numero_carnetMSPChanging(string value);
+    partial void OnSocio_economico_registrar_dependencia_familiar_MT_numero_carnetMSPChanged();
+    partial void OnSocio_economico_familiar_enfermedad_catastrofica_rara_siChanging(string value);
+    partial void OnSocio_economico_familiar_enfermedad_catastrofica_rara_siChanged();
+    partial void OnSocio_economico_familiar_enfermedad_catastrofica_rara_noChanging(string value);
+    partial void OnSocio_economico_familiar_enfermedad_catastrofica_rara_noChanged();
+    partial void OnSocio_economico_familiar_enfermedad_catastrofica_rara_parentescoChanging(string value);
+    partial void OnSocio_economico_familiar_enfermedad_catastrofica_rara_parentescoChanged();
+    partial void OnSocio_economico_a_cargo_familiar_enfermedad_catastrofica_rara_siChanging(string value);
+    partial void OnSocio_economico_a_cargo_familiar_enfermedad_catastrofica_rara_siChanged();
+    partial void OnSocio_economico_a_cargo_familiar_enfermedad_catastrofica_rara_noChanging(string value);
+    partial void OnSocio_economico_a_cargo_familiar_enfermedad_catastrofica_rara_noChanged();
+    partial void OnSocio_economico_a_cargo_familiar_enfermedad_catastrofica_rara_tipoenfermedadChanging(string value);
+    partial void OnSocio_economico_a_cargo_familiar_enfermedad_catastrofica_rara_tipoenfermedadChanged();
+    partial void OnSocio_economico_hogarChanging(string value);
+    partial void OnSocio_economico_hogarChanged();
+    partial void OnSocio_economico_paseos_familiaresChanging(string value);
+    partial void OnSocio_economico_paseos_familiaresChanged();
+    partial void OnSocio_economico_estudiosChanging(string value);
+    partial void OnSocio_economico_estudiosChanged();
+    partial void OnSocio_economico_actividades_artisticasChanging(string value);
+    partial void OnSocio_economico_actividades_artisticasChanged();
+    partial void OnSocio_economico_otroChanging(string value);
+    partial void OnSocio_economico_otroChanged();
+    partial void OnSocio_economico_otro_especifiqueChanging(string value);
+    partial void OnSocio_economico_otro_especifiqueChanged();
+    partial void OnSocio_economico_actividad_economica_adicional_siChanging(string value);
+    partial void OnSocio_economico_actividad_economica_adicional_siChanged();
+    partial void OnSocio_economico_actividad_economica_adicional_noChanging(string value);
+    partial void OnSocio_economico_actividad_economica_adicional_noChanged();
+    partial void OnSocio_economico_actividad_economica_adicional_detalleChanging(string value);
+    partial void OnSocio_economico_actividad_economica_adicional_detalleChanged();
+    partial void OnSocio_economico_actividad_economica_adicional_tiempo_destinaChanging(string value);
+    partial void OnSocio_economico_actividad_economica_adicional_tiempo_destinaChanged();
+    partial void OnSocio_economico_actividad_economica_adicional_hace_tiempoChanging(string value);
+    partial void OnSocio_economico_actividad_economica_adicional_hace_tiempoChanged();
+    partial void OnSocio_economico_actividad_deportiva_siChanging(string value);
+    partial void OnSocio_economico_actividad_deportiva_siChanged();
+    partial void OnSocio_economico_actividad_deportiva_noChanging(string value);
+    partial void OnSocio_economico_actividad_deportiva_noChanged();
+    partial void OnSocio_economico_actividad_deportiva_especificarChanging(string value);
+    partial void OnSocio_economico_actividad_deportiva_especificarChanged();
+    partial void OnSocio_economico_actividad_deportiva_frecuenciaChanging(string value);
+    partial void OnSocio_economico_actividad_deportiva_frecuenciaChanged();
+    partial void OnSocio_economico_actividad_deportiva_edadChanging(System.Nullable<long> value);
+    partial void OnSocio_economico_actividad_deportiva_edadChanged();
+    partial void OnSocio_economico_lesion_siChanging(string value);
+    partial void OnSocio_economico_lesion_siChanged();
+    partial void OnSocio_economico_lesion_noChanging(string value);
+    partial void OnSocio_economico_lesion_noChanged();
+    partial void OnSocio_economico_lesion_tipoChanging(string value);
+    partial void OnSocio_economico_lesion_tipoChanged();
+    partial void OnSocio_economico_lesion_edadChanging(System.Nullable<long> value);
+    partial void OnSocio_economico_lesion_edadChanged();
+    partial void OnSocio_economico_lesion_tratamiento_siChanging(string value);
+    partial void OnSocio_economico_lesion_tratamiento_siChanged();
+    partial void OnSocio_economico_lesion_tratamiento_noChanging(string value);
+    partial void OnSocio_economico_lesion_tratamiento_noChanged();
+    partial void OnSocio_economico_tipo_familia_nuclearChanging(string value);
+    partial void OnSocio_economico_tipo_familia_nuclearChanged();
+    partial void OnSocio_economico_tipo_familia_ampliadaChanging(string value);
+    partial void OnSocio_economico_tipo_familia_ampliadaChanged();
+    partial void OnSocio_economico_tipo_familia_monoparentalChanging(string value);
+    partial void OnSocio_economico_tipo_familia_monoparentalChanged();
+    partial void OnSocio_economico_tipo_familia_padremadresolteroChanging(string value);
+    partial void OnSocio_economico_tipo_familia_padremadresolteroChanged();
+    partial void OnSocio_economico_tipo_familia_vive_soloChanging(string value);
+    partial void OnSocio_economico_tipo_familia_vive_soloChanged();
+    partial void OnSocio_economico_tipo_familia_vive_amigosChanging(string value);
+    partial void OnSocio_economico_tipo_familia_vive_amigosChanged();
+    partial void OnSocio_economico_tipo_familia_sin_hijosChanging(string value);
+    partial void OnSocio_economico_tipo_familia_sin_hijosChanged();
+    partial void OnSocio_economico_evaluacion_relacion_familiar_muybuenoChanging(string value);
+    partial void OnSocio_economico_evaluacion_relacion_familiar_muybuenoChanged();
+    partial void OnSocio_economico_evaluacion_relacion_familiar_buenoChanging(string value);
+    partial void OnSocio_economico_evaluacion_relacion_familiar_buenoChanged();
+    partial void OnSocio_economico_evaluacion_relacion_familiar_regularChanging(string value);
+    partial void OnSocio_economico_evaluacion_relacion_familiar_regularChanged();
+    partial void OnSocio_economico_evaluacion_relacion_familiar_malaChanging(string value);
+    partial void OnSocio_economico_evaluacion_relacion_familiar_malaChanged();
+    partial void OnSocio_economico_evaluacion_relacion_familiar_porqueChanging(string value);
+    partial void OnSocio_economico_evaluacion_relacion_familiar_porqueChanged();
+    partial void OnSocio_economico_evaluacion_relacion_pareja_muybuenoChanging(string value);
+    partial void OnSocio_economico_evaluacion_relacion_pareja_muybuenoChanged();
+    partial void OnSocio_economico_evaluacion_relacion_pareja_buenoChanging(string value);
+    partial void OnSocio_economico_evaluacion_relacion_pareja_buenoChanged();
+    partial void OnSocio_economico_evaluacion_relacion_pareja_regularChanging(string value);
+    partial void OnSocio_economico_evaluacion_relacion_pareja_regularChanged();
+    partial void OnSocio_economico_evaluacion_relacion_pareja_malaChanging(string value);
+    partial void OnSocio_economico_evaluacion_relacion_pareja_malaChanged();
+    partial void OnSocio_economico_evaluacion_relacion_pareja_porqueChanging(string value);
+    partial void OnSocio_economico_evaluacion_relacion_pareja_porqueChanged();
+    partial void OnSocio_economico_evaluacion_relacion_hijos_muybuenoChanging(string value);
+    partial void OnSocio_economico_evaluacion_relacion_hijos_muybuenoChanged();
+    partial void OnSocio_economico_evaluacion_relacion_hijos_buenoChanging(string value);
+    partial void OnSocio_economico_evaluacion_relacion_hijos_buenoChanged();
+    partial void OnSocio_economico_evaluacion_relacion_hijos_regularChanging(string value);
+    partial void OnSocio_economico_evaluacion_relacion_hijos_regularChanged();
+    partial void OnSocio_economico_evaluacion_relacion_hijos_malaChanging(string value);
+    partial void OnSocio_economico_evaluacion_relacion_hijos_malaChanged();
+    partial void OnSocio_economico_evaluacion_relacion_hijos_porqueChanging(string value);
+    partial void OnSocio_economico_evaluacion_relacion_hijos_porqueChanged();
+    partial void OnSocio_economico_problemas_familiares_antpenalesChanging(string value);
+    partial void OnSocio_economico_problemas_familiares_antpenalesChanged();
+    partial void OnSocio_economico_problemas_familiares_economicosChanging(string value);
+    partial void OnSocio_economico_problemas_familiares_economicosChanged();
+    partial void OnSocio_economico_problemas_familiares_comunicacionChanging(string value);
+    partial void OnSocio_economico_problemas_familiares_comunicacionChanged();
+    partial void OnSocio_economico_problemas_familiares_conyugalesChanging(string value);
+    partial void OnSocio_economico_problemas_familiares_conyugalesChanged();
+    partial void OnSocio_economico_problemas_familiares_crianza_hijosChanging(string value);
+    partial void OnSocio_economico_problemas_familiares_crianza_hijosChanged();
+    partial void OnSocio_economico_problemas_familiares_adiccionesChanging(string value);
+    partial void OnSocio_economico_problemas_familiares_adiccionesChanged();
+    partial void OnSocio_economico_problemas_familiares_violencia_fisicaChanging(string value);
+    partial void OnSocio_economico_problemas_familiares_violencia_fisicaChanged();
+    partial void OnSocio_economico_problemas_familiares_violencia_psicologicaChanging(string value);
+    partial void OnSocio_economico_problemas_familiares_violencia_psicologicaChanged();
+    partial void OnSocio_economico_problemas_familiares_violencia_verbalChanging(string value);
+    partial void OnSocio_economico_problemas_familiares_violencia_verbalChanged();
+    partial void OnSocio_economico_problemas_familiares_violencia_sexualChanging(string value);
+    partial void OnSocio_economico_problemas_familiares_violencia_sexualChanged();
+    partial void OnSocio_economico_problemas_familiares_observacionesChanging(string value);
+    partial void OnSocio_economico_problemas_familiares_observacionesChanged();
+    partial void OnSocio_economico_miembro_familiar_rol_siChanging(string value);
+    partial void OnSocio_economico_miembro_familiar_rol_siChanged();
+    partial void OnSocio_economico_miembro_familiar_rol_noChanging(string value);
+    partial void OnSocio_economico_miembro_familiar_rol_noChanged();
+    partial void OnSocio_economico_nivel_salud_familia_muybuenoChanging(string value);
+    partial void OnSocio_economico_nivel_salud_familia_muybuenoChanged();
+    partial void OnSocio_economico_nivel_salud_familia_buenoChanging(string value);
+    partial void OnSocio_economico_nivel_salud_familia_buenoChanged();
+    partial void OnSocio_economico_nivel_salud_familia_regularChanging(string value);
+    partial void OnSocio_economico_nivel_salud_familia_regularChanged();
+    partial void OnSocio_economico_nivel_salud_familia_malaChanging(string value);
+    partial void OnSocio_economico_nivel_salud_familia_malaChanged();
+    partial void OnSocio_economico_nivel_salud_familia_porqueChanging(string value);
+    partial void OnSocio_economico_nivel_salud_familia_porqueChanged();
+    partial void OnSocio_economico_familia_funcionalChanging(string value);
+    partial void OnSocio_economico_familia_funcionalChanged();
+    partial void OnSocio_economico_familia_disfuncionalChanging(string value);
+    partial void OnSocio_economico_familia_disfuncionalChanged();
+    partial void OnSocio_economico_familia_observacionesChanging(string value);
+    partial void OnSocio_economico_familia_observacionesChanged();
+    partial void OnSocio_economico_informacion_adicionalChanging(string value);
+    partial void OnSocio_economico_informacion_adicionalChanged();
+    partial void OnSocio_economico_informacion_general_real_siChanging(string value);
+    partial void OnSocio_economico_informacion_general_real_siChanged();
+    partial void OnSocio_economico_informacion_general_real_noChanging(string value);
+    partial void OnSocio_economico_informacion_general_real_noChanged();
+    partial void OnSocio_economico_fechaHoraChanging(System.Nullable<System.DateTime> value);
+    partial void OnSocio_economico_fechaHoraChanged();
+    partial void OnPer_idChanging(System.Nullable<int> value);
+    partial void OnPer_idChanged();
+    partial void OnSocio_economico__estadoChanging(string value);
+    partial void OnSocio_economico__estadoChanged();
+    #endregion
+		
 		public Tbl_SocioEconomico()
 		{
+			this._Tbl_Personas = default(EntityRef<Tbl_Personas>);
+			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_id", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int Socio_economico_id
 		{
 			get
@@ -41028,103 +41815,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_id != value))
 				{
+					this.OnSocio_economico_idChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_id = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_departamento_area", DbType="VarChar(MAX)")]
-		public string Socio_economico_departamento_area
-		{
-			get
-			{
-				return this._Socio_economico_departamento_area;
-			}
-			set
-			{
-				if ((this._Socio_economico_departamento_area != value))
-				{
-					this._Socio_economico_departamento_area = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_carga_institucional", DbType="VarChar(MAX)")]
-		public string Socio_economico_carga_institucional
-		{
-			get
-			{
-				return this._Socio_economico_carga_institucional;
-			}
-			set
-			{
-				if ((this._Socio_economico_carga_institucional != value))
-				{
-					this._Socio_economico_carga_institucional = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_tipocontrato_nombramiento", DbType="VarChar(MAX)")]
-		public string Socio_economico_tipocontrato_nombramiento
-		{
-			get
-			{
-				return this._Socio_economico_tipocontrato_nombramiento;
-			}
-			set
-			{
-				if ((this._Socio_economico_tipocontrato_nombramiento != value))
-				{
-					this._Socio_economico_tipocontrato_nombramiento = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_tipocontrato_nombraprovisional", DbType="VarChar(MAX)")]
-		public string Socio_economico_tipocontrato_nombraprovisional
-		{
-			get
-			{
-				return this._Socio_economico_tipocontrato_nombraprovisional;
-			}
-			set
-			{
-				if ((this._Socio_economico_tipocontrato_nombraprovisional != value))
-				{
-					this._Socio_economico_tipocontrato_nombraprovisional = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_tipocontrato_contratocasional", DbType="VarChar(MAX)")]
-		public string Socio_economico_tipocontrato_contratocasional
-		{
-			get
-			{
-				return this._Socio_economico_tipocontrato_contratocasional;
-			}
-			set
-			{
-				if ((this._Socio_economico_tipocontrato_contratocasional != value))
-				{
-					this._Socio_economico_tipocontrato_contratocasional = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_tipocontrato_codigotrabajo", DbType="VarChar(MAX)")]
-		public string Socio_economico_tipocontrato_codigotrabajo
-		{
-			get
-			{
-				return this._Socio_economico_tipocontrato_codigotrabajo;
-			}
-			set
-			{
-				if ((this._Socio_economico_tipocontrato_codigotrabajo != value))
-				{
-					this._Socio_economico_tipocontrato_codigotrabajo = value;
+					this.SendPropertyChanged("Socio_economico_id");
+					this.OnSocio_economico_idChanged();
 				}
 			}
 		}
@@ -41140,7 +41835,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_modalidadcontrato_leyorgserpublico != value))
 				{
+					this.OnSocio_economico_modalidadcontrato_leyorgserpublicoChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_modalidadcontrato_leyorgserpublico = value;
+					this.SendPropertyChanged("Socio_economico_modalidadcontrato_leyorgserpublico");
+					this.OnSocio_economico_modalidadcontrato_leyorgserpublicoChanged();
 				}
 			}
 		}
@@ -41156,7 +41855,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_modalidadcontrato_codigotrabajo != value))
 				{
+					this.OnSocio_economico_modalidadcontrato_codigotrabajoChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_modalidadcontrato_codigotrabajo = value;
+					this.SendPropertyChanged("Socio_economico_modalidadcontrato_codigotrabajo");
+					this.OnSocio_economico_modalidadcontrato_codigotrabajoChanged();
 				}
 			}
 		}
@@ -41172,7 +41875,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_fecha_ingreso_al_Ecu != value))
 				{
+					this.OnSocio_economico_fecha_ingreso_al_EcuChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_fecha_ingreso_al_Ecu = value;
+					this.SendPropertyChanged("Socio_economico_fecha_ingreso_al_Ecu");
+					this.OnSocio_economico_fecha_ingreso_al_EcuChanged();
 				}
 			}
 		}
@@ -41188,7 +41895,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_estadocivil_soltero != value))
 				{
+					this.OnSocio_economico_estadocivil_solteroChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_estadocivil_soltero = value;
+					this.SendPropertyChanged("Socio_economico_estadocivil_soltero");
+					this.OnSocio_economico_estadocivil_solteroChanged();
 				}
 			}
 		}
@@ -41204,7 +41915,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_estadocivil_casado != value))
 				{
+					this.OnSocio_economico_estadocivil_casadoChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_estadocivil_casado = value;
+					this.SendPropertyChanged("Socio_economico_estadocivil_casado");
+					this.OnSocio_economico_estadocivil_casadoChanged();
 				}
 			}
 		}
@@ -41220,7 +41935,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_estadocivil_viudo != value))
 				{
+					this.OnSocio_economico_estadocivil_viudoChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_estadocivil_viudo = value;
+					this.SendPropertyChanged("Socio_economico_estadocivil_viudo");
+					this.OnSocio_economico_estadocivil_viudoChanged();
 				}
 			}
 		}
@@ -41236,7 +41955,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_estadocivil_unionlibre != value))
 				{
+					this.OnSocio_economico_estadocivil_unionlibreChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_estadocivil_unionlibre = value;
+					this.SendPropertyChanged("Socio_economico_estadocivil_unionlibre");
+					this.OnSocio_economico_estadocivil_unionlibreChanged();
 				}
 			}
 		}
@@ -41252,23 +41975,51 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_estadocivil_divorciado != value))
 				{
+					this.OnSocio_economico_estadocivil_divorciadoChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_estadocivil_divorciado = value;
+					this.SendPropertyChanged("Socio_economico_estadocivil_divorciado");
+					this.OnSocio_economico_estadocivil_divorciadoChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_genero", DbType="VarChar(MAX)")]
-		public string Socio_economico_genero
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_genero_masculino", DbType="VarChar(MAX)")]
+		public string Socio_economico_genero_masculino
 		{
 			get
 			{
-				return this._Socio_economico_genero;
+				return this._Socio_economico_genero_masculino;
 			}
 			set
 			{
-				if ((this._Socio_economico_genero != value))
+				if ((this._Socio_economico_genero_masculino != value))
 				{
-					this._Socio_economico_genero = value;
+					this.OnSocio_economico_genero_masculinoChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_genero_masculino = value;
+					this.SendPropertyChanged("Socio_economico_genero_masculino");
+					this.OnSocio_economico_genero_masculinoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_genero_femenino", DbType="VarChar(MAX)")]
+		public string Socio_economico_genero_femenino
+		{
+			get
+			{
+				return this._Socio_economico_genero_femenino;
+			}
+			set
+			{
+				if ((this._Socio_economico_genero_femenino != value))
+				{
+					this.OnSocio_economico_genero_femeninoChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_genero_femenino = value;
+					this.SendPropertyChanged("Socio_economico_genero_femenino");
+					this.OnSocio_economico_genero_femeninoChanged();
 				}
 			}
 		}
@@ -41284,7 +42035,51 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_tipodesangre != value))
 				{
+					this.OnSocio_economico_tipodesangreChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_tipodesangre = value;
+					this.SendPropertyChanged("Socio_economico_tipodesangre");
+					this.OnSocio_economico_tipodesangreChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_es_donante_si", DbType="VarChar(MAX)")]
+		public string Socio_economico_es_donante_si
+		{
+			get
+			{
+				return this._Socio_economico_es_donante_si;
+			}
+			set
+			{
+				if ((this._Socio_economico_es_donante_si != value))
+				{
+					this.OnSocio_economico_es_donante_siChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_es_donante_si = value;
+					this.SendPropertyChanged("Socio_economico_es_donante_si");
+					this.OnSocio_economico_es_donante_siChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_es_donante_no", DbType="VarChar(MAX)")]
+		public string Socio_economico_es_donante_no
+		{
+			get
+			{
+				return this._Socio_economico_es_donante_no;
+			}
+			set
+			{
+				if ((this._Socio_economico_es_donante_no != value))
+				{
+					this.OnSocio_economico_es_donante_noChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_es_donante_no = value;
+					this.SendPropertyChanged("Socio_economico_es_donante_no");
+					this.OnSocio_economico_es_donante_noChanged();
 				}
 			}
 		}
@@ -41300,7 +42095,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_telefonoconvencional != value))
 				{
+					this.OnSocio_economico_telefonoconvencionalChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_telefonoconvencional = value;
+					this.SendPropertyChanged("Socio_economico_telefonoconvencional");
+					this.OnSocio_economico_telefonoconvencionalChanged();
 				}
 			}
 		}
@@ -41316,7 +42115,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_telefonocelular != value))
 				{
+					this.OnSocio_economico_telefonocelularChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_telefonocelular = value;
+					this.SendPropertyChanged("Socio_economico_telefonocelular");
+					this.OnSocio_economico_telefonocelularChanged();
 				}
 			}
 		}
@@ -41332,7 +42135,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_email != value))
 				{
+					this.OnSocio_economico_emailChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_email = value;
+					this.SendPropertyChanged("Socio_economico_email");
+					this.OnSocio_economico_emailChanged();
 				}
 			}
 		}
@@ -41348,23 +42155,31 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_lugardenacimiento != value))
 				{
+					this.OnSocio_economico_lugardenacimientoChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_lugardenacimiento = value;
+					this.SendPropertyChanged("Socio_economico_lugardenacimiento");
+					this.OnSocio_economico_lugardenacimientoChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_fechNacimiento", DbType="DateTime")]
-		public System.Nullable<System.DateTime> Socio_economico_fechNacimiento
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_fechadeNacimiento", DbType="DateTime")]
+		public System.Nullable<System.DateTime> Socio_economico_fechadeNacimiento
 		{
 			get
 			{
-				return this._Socio_economico_fechNacimiento;
+				return this._Socio_economico_fechadeNacimiento;
 			}
 			set
 			{
-				if ((this._Socio_economico_fechNacimiento != value))
+				if ((this._Socio_economico_fechadeNacimiento != value))
 				{
-					this._Socio_economico_fechNacimiento = value;
+					this.OnSocio_economico_fechadeNacimientoChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_fechadeNacimiento = value;
+					this.SendPropertyChanged("Socio_economico_fechadeNacimiento");
+					this.OnSocio_economico_fechadeNacimientoChanged();
 				}
 			}
 		}
@@ -41380,103 +42195,151 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_edad != value))
 				{
+					this.OnSocio_economico_edadChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_edad = value;
+					this.SendPropertyChanged("Socio_economico_edad");
+					this.OnSocio_economico_edadChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_niveleducativo_primaria", DbType="VarChar(MAX)")]
-		public string Socio_economico_niveleducativo_primaria
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_titulo_primaria", DbType="VarChar(MAX)")]
+		public string Socio_economico_titulo_primaria
 		{
 			get
 			{
-				return this._Socio_economico_niveleducativo_primaria;
+				return this._Socio_economico_titulo_primaria;
 			}
 			set
 			{
-				if ((this._Socio_economico_niveleducativo_primaria != value))
+				if ((this._Socio_economico_titulo_primaria != value))
 				{
-					this._Socio_economico_niveleducativo_primaria = value;
+					this.OnSocio_economico_titulo_primariaChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_titulo_primaria = value;
+					this.SendPropertyChanged("Socio_economico_titulo_primaria");
+					this.OnSocio_economico_titulo_primariaChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_niveleducativo_secundaria", DbType="VarChar(MAX)")]
-		public string Socio_economico_niveleducativo_secundaria
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_titulo_secundaria", DbType="VarChar(MAX)")]
+		public string Socio_economico_titulo_secundaria
 		{
 			get
 			{
-				return this._Socio_economico_niveleducativo_secundaria;
+				return this._Socio_economico_titulo_secundaria;
 			}
 			set
 			{
-				if ((this._Socio_economico_niveleducativo_secundaria != value))
+				if ((this._Socio_economico_titulo_secundaria != value))
 				{
-					this._Socio_economico_niveleducativo_secundaria = value;
+					this.OnSocio_economico_titulo_secundariaChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_titulo_secundaria = value;
+					this.SendPropertyChanged("Socio_economico_titulo_secundaria");
+					this.OnSocio_economico_titulo_secundariaChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_niveleducativo_superior", DbType="VarChar(MAX)")]
-		public string Socio_economico_niveleducativo_superior
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_titulo_superior", DbType="VarChar(MAX)")]
+		public string Socio_economico_titulo_superior
 		{
 			get
 			{
-				return this._Socio_economico_niveleducativo_superior;
+				return this._Socio_economico_titulo_superior;
 			}
 			set
 			{
-				if ((this._Socio_economico_niveleducativo_superior != value))
+				if ((this._Socio_economico_titulo_superior != value))
 				{
-					this._Socio_economico_niveleducativo_superior = value;
+					this.OnSocio_economico_titulo_superiorChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_titulo_superior = value;
+					this.SendPropertyChanged("Socio_economico_titulo_superior");
+					this.OnSocio_economico_titulo_superiorChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_niveleducativo_especializacion", DbType="VarChar(MAX)")]
-		public string Socio_economico_niveleducativo_especializacion
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_titulo_especializacion", DbType="VarChar(MAX)")]
+		public string Socio_economico_titulo_especializacion
 		{
 			get
 			{
-				return this._Socio_economico_niveleducativo_especializacion;
+				return this._Socio_economico_titulo_especializacion;
 			}
 			set
 			{
-				if ((this._Socio_economico_niveleducativo_especializacion != value))
+				if ((this._Socio_economico_titulo_especializacion != value))
 				{
-					this._Socio_economico_niveleducativo_especializacion = value;
+					this.OnSocio_economico_titulo_especializacionChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_titulo_especializacion = value;
+					this.SendPropertyChanged("Socio_economico_titulo_especializacion");
+					this.OnSocio_economico_titulo_especializacionChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_niveleducativo_diplomado", DbType="VarChar(MAX)")]
-		public string Socio_economico_niveleducativo_diplomado
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_titulo_diplomado", DbType="VarChar(MAX)")]
+		public string Socio_economico_titulo_diplomado
 		{
 			get
 			{
-				return this._Socio_economico_niveleducativo_diplomado;
+				return this._Socio_economico_titulo_diplomado;
 			}
 			set
 			{
-				if ((this._Socio_economico_niveleducativo_diplomado != value))
+				if ((this._Socio_economico_titulo_diplomado != value))
 				{
-					this._Socio_economico_niveleducativo_diplomado = value;
+					this.OnSocio_economico_titulo_diplomadoChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_titulo_diplomado = value;
+					this.SendPropertyChanged("Socio_economico_titulo_diplomado");
+					this.OnSocio_economico_titulo_diplomadoChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_niveleducativo_maestrias", DbType="VarChar(MAX)")]
-		public string Socio_economico_niveleducativo_maestrias
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_titulo_maestria", DbType="VarChar(MAX)")]
+		public string Socio_economico_titulo_maestria
 		{
 			get
 			{
-				return this._Socio_economico_niveleducativo_maestrias;
+				return this._Socio_economico_titulo_maestria;
 			}
 			set
 			{
-				if ((this._Socio_economico_niveleducativo_maestrias != value))
+				if ((this._Socio_economico_titulo_maestria != value))
 				{
-					this._Socio_economico_niveleducativo_maestrias = value;
+					this.OnSocio_economico_titulo_maestriaChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_titulo_maestria = value;
+					this.SendPropertyChanged("Socio_economico_titulo_maestria");
+					this.OnSocio_economico_titulo_maestriaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_titulo_doctorado", DbType="VarChar(MAX)")]
+		public string Socio_economico_titulo_doctorado
+		{
+			get
+			{
+				return this._Socio_economico_titulo_doctorado;
+			}
+			set
+			{
+				if ((this._Socio_economico_titulo_doctorado != value))
+				{
+					this.OnSocio_economico_titulo_doctoradoChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_titulo_doctorado = value;
+					this.SendPropertyChanged("Socio_economico_titulo_doctorado");
+					this.OnSocio_economico_titulo_doctoradoChanged();
 				}
 			}
 		}
@@ -41492,7 +42355,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_autoidentificacionetnica_blanco != value))
 				{
+					this.OnSocio_economico_autoidentificacionetnica_blancoChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_autoidentificacionetnica_blanco = value;
+					this.SendPropertyChanged("Socio_economico_autoidentificacionetnica_blanco");
+					this.OnSocio_economico_autoidentificacionetnica_blancoChanged();
 				}
 			}
 		}
@@ -41508,7 +42375,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_autoidentificacionetnica_mestizo != value))
 				{
+					this.OnSocio_economico_autoidentificacionetnica_mestizoChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_autoidentificacionetnica_mestizo = value;
+					this.SendPropertyChanged("Socio_economico_autoidentificacionetnica_mestizo");
+					this.OnSocio_economico_autoidentificacionetnica_mestizoChanged();
 				}
 			}
 		}
@@ -41524,7 +42395,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_autoidentificacionetnica_afrodescendiente != value))
 				{
+					this.OnSocio_economico_autoidentificacionetnica_afrodescendienteChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_autoidentificacionetnica_afrodescendiente = value;
+					this.SendPropertyChanged("Socio_economico_autoidentificacionetnica_afrodescendiente");
+					this.OnSocio_economico_autoidentificacionetnica_afrodescendienteChanged();
 				}
 			}
 		}
@@ -41540,7 +42415,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_autoidentificacionetnica_indigena != value))
 				{
+					this.OnSocio_economico_autoidentificacionetnica_indigenaChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_autoidentificacionetnica_indigena = value;
+					this.SendPropertyChanged("Socio_economico_autoidentificacionetnica_indigena");
+					this.OnSocio_economico_autoidentificacionetnica_indigenaChanged();
 				}
 			}
 		}
@@ -41556,7 +42435,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_autoidentificacionetnica_montubio != value))
 				{
+					this.OnSocio_economico_autoidentificacionetnica_montubioChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_autoidentificacionetnica_montubio = value;
+					this.SendPropertyChanged("Socio_economico_autoidentificacionetnica_montubio");
+					this.OnSocio_economico_autoidentificacionetnica_montubioChanged();
 				}
 			}
 		}
@@ -41572,7 +42455,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_direcciondomicilio_provincia != value))
 				{
+					this.OnSocio_economico_direcciondomicilio_provinciaChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_direcciondomicilio_provincia = value;
+					this.SendPropertyChanged("Socio_economico_direcciondomicilio_provincia");
+					this.OnSocio_economico_direcciondomicilio_provinciaChanged();
 				}
 			}
 		}
@@ -41588,7 +42475,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_direcciondomicilio_canton != value))
 				{
+					this.OnSocio_economico_direcciondomicilio_cantonChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_direcciondomicilio_canton = value;
+					this.SendPropertyChanged("Socio_economico_direcciondomicilio_canton");
+					this.OnSocio_economico_direcciondomicilio_cantonChanged();
 				}
 			}
 		}
@@ -41604,7 +42495,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_direcciondomicilio_parroquia != value))
 				{
+					this.OnSocio_economico_direcciondomicilio_parroquiaChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_direcciondomicilio_parroquia = value;
+					this.SendPropertyChanged("Socio_economico_direcciondomicilio_parroquia");
+					this.OnSocio_economico_direcciondomicilio_parroquiaChanged();
 				}
 			}
 		}
@@ -41620,39 +42515,51 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_direcciondomicilio_barrio != value))
 				{
+					this.OnSocio_economico_direcciondomicilio_barrioChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_direcciondomicilio_barrio = value;
+					this.SendPropertyChanged("Socio_economico_direcciondomicilio_barrio");
+					this.OnSocio_economico_direcciondomicilio_barrioChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_calleubicadaviviendaynumeracion", DbType="VarChar(MAX)")]
-		public string Socio_economico_calleubicadaviviendaynumeracion
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_calle_vivienda_numeracion", DbType="VarChar(MAX)")]
+		public string Socio_economico_calle_vivienda_numeracion
 		{
 			get
 			{
-				return this._Socio_economico_calleubicadaviviendaynumeracion;
+				return this._Socio_economico_calle_vivienda_numeracion;
 			}
 			set
 			{
-				if ((this._Socio_economico_calleubicadaviviendaynumeracion != value))
+				if ((this._Socio_economico_calle_vivienda_numeracion != value))
 				{
-					this._Socio_economico_calleubicadaviviendaynumeracion = value;
+					this.OnSocio_economico_calle_vivienda_numeracionChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_calle_vivienda_numeracion = value;
+					this.SendPropertyChanged("Socio_economico_calle_vivienda_numeracion");
+					this.OnSocio_economico_calle_vivienda_numeracionChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_callesecundaria", DbType="VarChar(MAX)")]
-		public string Socio_economico_callesecundaria
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_calle_secundaria", DbType="VarChar(MAX)")]
+		public string Socio_economico_calle_secundaria
 		{
 			get
 			{
-				return this._Socio_economico_callesecundaria;
+				return this._Socio_economico_calle_secundaria;
 			}
 			set
 			{
-				if ((this._Socio_economico_callesecundaria != value))
+				if ((this._Socio_economico_calle_secundaria != value))
 				{
-					this._Socio_economico_callesecundaria = value;
+					this.OnSocio_economico_calle_secundariaChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_calle_secundaria = value;
+					this.SendPropertyChanged("Socio_economico_calle_secundaria");
+					this.OnSocio_economico_calle_secundariaChanged();
 				}
 			}
 		}
@@ -41668,7 +42575,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_referencia_ubicar_domicilio != value))
 				{
+					this.OnSocio_economico_referencia_ubicar_domicilioChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_referencia_ubicar_domicilio = value;
+					this.SendPropertyChanged("Socio_economico_referencia_ubicar_domicilio");
+					this.OnSocio_economico_referencia_ubicar_domicilioChanged();
 				}
 			}
 		}
@@ -41684,7 +42595,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_sectorvive_norte != value))
 				{
+					this.OnSocio_economico_sectorvive_norteChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_sectorvive_norte = value;
+					this.SendPropertyChanged("Socio_economico_sectorvive_norte");
+					this.OnSocio_economico_sectorvive_norteChanged();
 				}
 			}
 		}
@@ -41700,7 +42615,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_sectorvive_centro != value))
 				{
+					this.OnSocio_economico_sectorvive_centroChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_sectorvive_centro = value;
+					this.SendPropertyChanged("Socio_economico_sectorvive_centro");
+					this.OnSocio_economico_sectorvive_centroChanged();
 				}
 			}
 		}
@@ -41716,7 +42635,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_sectorvive_sur != value))
 				{
+					this.OnSocio_economico_sectorvive_surChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_sectorvive_sur = value;
+					this.SendPropertyChanged("Socio_economico_sectorvive_sur");
+					this.OnSocio_economico_sectorvive_surChanged();
 				}
 			}
 		}
@@ -41732,23 +42655,31 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_sectorvive_otro != value))
 				{
+					this.OnSocio_economico_sectorvive_otroChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_sectorvive_otro = value;
+					this.SendPropertyChanged("Socio_economico_sectorvive_otro");
+					this.OnSocio_economico_sectorvive_otroChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_sectorvive_otroindique", DbType="VarChar(MAX)")]
-		public string Socio_economico_sectorvive_otroindique
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_sectorvive_otro_indique", DbType="VarChar(MAX)")]
+		public string Socio_economico_sectorvive_otro_indique
 		{
 			get
 			{
-				return this._Socio_economico_sectorvive_otroindique;
+				return this._Socio_economico_sectorvive_otro_indique;
 			}
 			set
 			{
-				if ((this._Socio_economico_sectorvive_otroindique != value))
+				if ((this._Socio_economico_sectorvive_otro_indique != value))
 				{
-					this._Socio_economico_sectorvive_otroindique = value;
+					this.OnSocio_economico_sectorvive_otro_indiqueChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_sectorvive_otro_indique = value;
+					this.SendPropertyChanged("Socio_economico_sectorvive_otro_indique");
+					this.OnSocio_economico_sectorvive_otro_indiqueChanged();
 				}
 			}
 		}
@@ -41764,7 +42695,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_tipovivienda_casa != value))
 				{
+					this.OnSocio_economico_tipovivienda_casaChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_tipovivienda_casa = value;
+					this.SendPropertyChanged("Socio_economico_tipovivienda_casa");
+					this.OnSocio_economico_tipovivienda_casaChanged();
 				}
 			}
 		}
@@ -41780,7 +42715,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_tipovivienda_departamento != value))
 				{
+					this.OnSocio_economico_tipovivienda_departamentoChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_tipovivienda_departamento = value;
+					this.SendPropertyChanged("Socio_economico_tipovivienda_departamento");
+					this.OnSocio_economico_tipovivienda_departamentoChanged();
 				}
 			}
 		}
@@ -41796,295 +42735,411 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_tipovivienda_otro != value))
 				{
+					this.OnSocio_economico_tipovivienda_otroChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_tipovivienda_otro = value;
+					this.SendPropertyChanged("Socio_economico_tipovivienda_otro");
+					this.OnSocio_economico_tipovivienda_otroChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_tipovivienda_cuentaserviciosbasicossi", DbType="VarChar(MAX)")]
-		public string Socio_economico_tipovivienda_cuentaserviciosbasicossi
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_tipovivienda_otro_indique", DbType="VarChar(MAX)")]
+		public string Socio_economico_tipovivienda_otro_indique
 		{
 			get
 			{
-				return this._Socio_economico_tipovivienda_cuentaserviciosbasicossi;
+				return this._Socio_economico_tipovivienda_otro_indique;
 			}
 			set
 			{
-				if ((this._Socio_economico_tipovivienda_cuentaserviciosbasicossi != value))
+				if ((this._Socio_economico_tipovivienda_otro_indique != value))
 				{
-					this._Socio_economico_tipovivienda_cuentaserviciosbasicossi = value;
+					this.OnSocio_economico_tipovivienda_otro_indiqueChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_tipovivienda_otro_indique = value;
+					this.SendPropertyChanged("Socio_economico_tipovivienda_otro_indique");
+					this.OnSocio_economico_tipovivienda_otro_indiqueChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_tipovivienda_cuentaserviciosbasicosno", DbType="VarChar(MAX)")]
-		public string Socio_economico_tipovivienda_cuentaserviciosbasicosno
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_riesgo_delincuencial_alto", DbType="VarChar(MAX)")]
+		public string Socio_economico_riesgo_delincuencial_alto
 		{
 			get
 			{
-				return this._Socio_economico_tipovivienda_cuentaserviciosbasicosno;
+				return this._Socio_economico_riesgo_delincuencial_alto;
 			}
 			set
 			{
-				if ((this._Socio_economico_tipovivienda_cuentaserviciosbasicosno != value))
+				if ((this._Socio_economico_riesgo_delincuencial_alto != value))
 				{
-					this._Socio_economico_tipovivienda_cuentaserviciosbasicosno = value;
+					this.OnSocio_economico_riesgo_delincuencial_altoChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_riesgo_delincuencial_alto = value;
+					this.SendPropertyChanged("Socio_economico_riesgo_delincuencial_alto");
+					this.OnSocio_economico_riesgo_delincuencial_altoChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_cuantaspersonasvivenconusted", DbType="VarChar(MAX)")]
-		public string Socio_economico_cuantaspersonasvivenconusted
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_riesgo_delincuencial_medio", DbType="VarChar(MAX)")]
+		public string Socio_economico_riesgo_delincuencial_medio
 		{
 			get
 			{
-				return this._Socio_economico_cuantaspersonasvivenconusted;
+				return this._Socio_economico_riesgo_delincuencial_medio;
 			}
 			set
 			{
-				if ((this._Socio_economico_cuantaspersonasvivenconusted != value))
+				if ((this._Socio_economico_riesgo_delincuencial_medio != value))
 				{
-					this._Socio_economico_cuantaspersonasvivenconusted = value;
+					this.OnSocio_economico_riesgo_delincuencial_medioChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_riesgo_delincuencial_medio = value;
+					this.SendPropertyChanged("Socio_economico_riesgo_delincuencial_medio");
+					this.OnSocio_economico_riesgo_delincuencial_medioChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_cuantaspersonasviveneventualconusted", DbType="VarChar(MAX)")]
-		public string Socio_economico_cuantaspersonasviveneventualconusted
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_riesgo_delincuencial_bajo", DbType="VarChar(MAX)")]
+		public string Socio_economico_riesgo_delincuencial_bajo
 		{
 			get
 			{
-				return this._Socio_economico_cuantaspersonasviveneventualconusted;
+				return this._Socio_economico_riesgo_delincuencial_bajo;
 			}
 			set
 			{
-				if ((this._Socio_economico_cuantaspersonasviveneventualconusted != value))
+				if ((this._Socio_economico_riesgo_delincuencial_bajo != value))
 				{
-					this._Socio_economico_cuantaspersonasviveneventualconusted = value;
+					this.OnSocio_economico_riesgo_delincuencial_bajoChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_riesgo_delincuencial_bajo = value;
+					this.SendPropertyChanged("Socio_economico_riesgo_delincuencial_bajo");
+					this.OnSocio_economico_riesgo_delincuencial_bajoChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_personacontactoemergencia_nombresyapellidos", DbType="VarChar(MAX)")]
-		public string Socio_economico_personacontactoemergencia_nombresyapellidos
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_cuantas_personas_viven_con_usted", DbType="VarChar(MAX)")]
+		public string Socio_economico_cuantas_personas_viven_con_usted
 		{
 			get
 			{
-				return this._Socio_economico_personacontactoemergencia_nombresyapellidos;
+				return this._Socio_economico_cuantas_personas_viven_con_usted;
 			}
 			set
 			{
-				if ((this._Socio_economico_personacontactoemergencia_nombresyapellidos != value))
+				if ((this._Socio_economico_cuantas_personas_viven_con_usted != value))
 				{
-					this._Socio_economico_personacontactoemergencia_nombresyapellidos = value;
+					this.OnSocio_economico_cuantas_personas_viven_con_ustedChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_cuantas_personas_viven_con_usted = value;
+					this.SendPropertyChanged("Socio_economico_cuantas_personas_viven_con_usted");
+					this.OnSocio_economico_cuantas_personas_viven_con_ustedChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_personacontactoemergencia_parentesco", DbType="VarChar(MAX)")]
-		public string Socio_economico_personacontactoemergencia_parentesco
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_cuantas_personas_viven_eventual_con_usted", DbType="VarChar(MAX)")]
+		public string Socio_economico_cuantas_personas_viven_eventual_con_usted
 		{
 			get
 			{
-				return this._Socio_economico_personacontactoemergencia_parentesco;
+				return this._Socio_economico_cuantas_personas_viven_eventual_con_usted;
 			}
 			set
 			{
-				if ((this._Socio_economico_personacontactoemergencia_parentesco != value))
+				if ((this._Socio_economico_cuantas_personas_viven_eventual_con_usted != value))
 				{
-					this._Socio_economico_personacontactoemergencia_parentesco = value;
+					this.OnSocio_economico_cuantas_personas_viven_eventual_con_ustedChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_cuantas_personas_viven_eventual_con_usted = value;
+					this.SendPropertyChanged("Socio_economico_cuantas_personas_viven_eventual_con_usted");
+					this.OnSocio_economico_cuantas_personas_viven_eventual_con_ustedChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_personacontactoemergencia_telefono", DbType="VarChar(MAX)")]
-		public string Socio_economico_personacontactoemergencia_telefono
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_contacto_emergencia_nombres_apellidos", DbType="VarChar(MAX)")]
+		public string Socio_economico_contacto_emergencia_nombres_apellidos
 		{
 			get
 			{
-				return this._Socio_economico_personacontactoemergencia_telefono;
+				return this._Socio_economico_contacto_emergencia_nombres_apellidos;
 			}
 			set
 			{
-				if ((this._Socio_economico_personacontactoemergencia_telefono != value))
+				if ((this._Socio_economico_contacto_emergencia_nombres_apellidos != value))
 				{
-					this._Socio_economico_personacontactoemergencia_telefono = value;
+					this.OnSocio_economico_contacto_emergencia_nombres_apellidosChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_contacto_emergencia_nombres_apellidos = value;
+					this.SendPropertyChanged("Socio_economico_contacto_emergencia_nombres_apellidos");
+					this.OnSocio_economico_contacto_emergencia_nombres_apellidosChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_personacontactoemergencia_direccion_calleprincipal", DbType="VarChar(MAX)")]
-		public string Socio_economico_personacontactoemergencia_direccion_calleprincipal
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_contacto_emergencia_parentesco", DbType="VarChar(MAX)")]
+		public string Socio_economico_contacto_emergencia_parentesco
 		{
 			get
 			{
-				return this._Socio_economico_personacontactoemergencia_direccion_calleprincipal;
+				return this._Socio_economico_contacto_emergencia_parentesco;
 			}
 			set
 			{
-				if ((this._Socio_economico_personacontactoemergencia_direccion_calleprincipal != value))
+				if ((this._Socio_economico_contacto_emergencia_parentesco != value))
 				{
-					this._Socio_economico_personacontactoemergencia_direccion_calleprincipal = value;
+					this.OnSocio_economico_contacto_emergencia_parentescoChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_contacto_emergencia_parentesco = value;
+					this.SendPropertyChanged("Socio_economico_contacto_emergencia_parentesco");
+					this.OnSocio_economico_contacto_emergencia_parentescoChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_personacontactoemergencia_direccion_numdomicilio", DbType="VarChar(MAX)")]
-		public string Socio_economico_personacontactoemergencia_direccion_numdomicilio
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_contacto_emergencia_telefono", DbType="VarChar(MAX)")]
+		public string Socio_economico_contacto_emergencia_telefono
 		{
 			get
 			{
-				return this._Socio_economico_personacontactoemergencia_direccion_numdomicilio;
+				return this._Socio_economico_contacto_emergencia_telefono;
 			}
 			set
 			{
-				if ((this._Socio_economico_personacontactoemergencia_direccion_numdomicilio != value))
+				if ((this._Socio_economico_contacto_emergencia_telefono != value))
 				{
-					this._Socio_economico_personacontactoemergencia_direccion_numdomicilio = value;
+					this.OnSocio_economico_contacto_emergencia_telefonoChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_contacto_emergencia_telefono = value;
+					this.SendPropertyChanged("Socio_economico_contacto_emergencia_telefono");
+					this.OnSocio_economico_contacto_emergencia_telefonoChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_personacontactoemergencia_direccion_callesecundaria", DbType="VarChar(MAX)")]
-		public string Socio_economico_personacontactoemergencia_direccion_callesecundaria
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_contacto_emergencia_calle_principal", DbType="VarChar(MAX)")]
+		public string Socio_economico_contacto_emergencia_calle_principal
 		{
 			get
 			{
-				return this._Socio_economico_personacontactoemergencia_direccion_callesecundaria;
+				return this._Socio_economico_contacto_emergencia_calle_principal;
 			}
 			set
 			{
-				if ((this._Socio_economico_personacontactoemergencia_direccion_callesecundaria != value))
+				if ((this._Socio_economico_contacto_emergencia_calle_principal != value))
 				{
-					this._Socio_economico_personacontactoemergencia_direccion_callesecundaria = value;
+					this.OnSocio_economico_contacto_emergencia_calle_principalChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_contacto_emergencia_calle_principal = value;
+					this.SendPropertyChanged("Socio_economico_contacto_emergencia_calle_principal");
+					this.OnSocio_economico_contacto_emergencia_calle_principalChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_personacontactoemergencia_direccion_referenciaubicardomicilio", DbType="VarChar(MAX)")]
-		public string Socio_economico_personacontactoemergencia_direccion_referenciaubicardomicilio
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_contacto_emergencia_numero_domicilio", DbType="VarChar(MAX)")]
+		public string Socio_economico_contacto_emergencia_numero_domicilio
 		{
 			get
 			{
-				return this._Socio_economico_personacontactoemergencia_direccion_referenciaubicardomicilio;
+				return this._Socio_economico_contacto_emergencia_numero_domicilio;
 			}
 			set
 			{
-				if ((this._Socio_economico_personacontactoemergencia_direccion_referenciaubicardomicilio != value))
+				if ((this._Socio_economico_contacto_emergencia_numero_domicilio != value))
 				{
-					this._Socio_economico_personacontactoemergencia_direccion_referenciaubicardomicilio = value;
+					this.OnSocio_economico_contacto_emergencia_numero_domicilioChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_contacto_emergencia_numero_domicilio = value;
+					this.SendPropertyChanged("Socio_economico_contacto_emergencia_numero_domicilio");
+					this.OnSocio_economico_contacto_emergencia_numero_domicilioChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_destinadineroahorro_si", DbType="VarChar(MAX)")]
-		public string Socio_economico_destinadineroahorro_si
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_contacto_emergencia_calle_secundaria", DbType="VarChar(MAX)")]
+		public string Socio_economico_contacto_emergencia_calle_secundaria
 		{
 			get
 			{
-				return this._Socio_economico_destinadineroahorro_si;
+				return this._Socio_economico_contacto_emergencia_calle_secundaria;
 			}
 			set
 			{
-				if ((this._Socio_economico_destinadineroahorro_si != value))
+				if ((this._Socio_economico_contacto_emergencia_calle_secundaria != value))
 				{
-					this._Socio_economico_destinadineroahorro_si = value;
+					this.OnSocio_economico_contacto_emergencia_calle_secundariaChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_contacto_emergencia_calle_secundaria = value;
+					this.SendPropertyChanged("Socio_economico_contacto_emergencia_calle_secundaria");
+					this.OnSocio_economico_contacto_emergencia_calle_secundariaChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_destinadineroahorro_no", DbType="VarChar(MAX)")]
-		public string Socio_economico_destinadineroahorro_no
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_contacto_emergencia_referencia_domicilio", DbType="VarChar(MAX)")]
+		public string Socio_economico_contacto_emergencia_referencia_domicilio
 		{
 			get
 			{
-				return this._Socio_economico_destinadineroahorro_no;
+				return this._Socio_economico_contacto_emergencia_referencia_domicilio;
 			}
 			set
 			{
-				if ((this._Socio_economico_destinadineroahorro_no != value))
+				if ((this._Socio_economico_contacto_emergencia_referencia_domicilio != value))
 				{
-					this._Socio_economico_destinadineroahorro_no = value;
+					this.OnSocio_economico_contacto_emergencia_referencia_domicilioChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_contacto_emergencia_referencia_domicilio = value;
+					this.SendPropertyChanged("Socio_economico_contacto_emergencia_referencia_domicilio");
+					this.OnSocio_economico_contacto_emergencia_referencia_domicilioChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_vehiculopropio_si", DbType="VarChar(MAX)")]
-		public string Socio_economico_vehiculopropio_si
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_dinero_ahorro_si", DbType="VarChar(MAX)")]
+		public string Socio_economico_dinero_ahorro_si
 		{
 			get
 			{
-				return this._Socio_economico_vehiculopropio_si;
+				return this._Socio_economico_dinero_ahorro_si;
 			}
 			set
 			{
-				if ((this._Socio_economico_vehiculopropio_si != value))
+				if ((this._Socio_economico_dinero_ahorro_si != value))
 				{
-					this._Socio_economico_vehiculopropio_si = value;
+					this.OnSocio_economico_dinero_ahorro_siChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_dinero_ahorro_si = value;
+					this.SendPropertyChanged("Socio_economico_dinero_ahorro_si");
+					this.OnSocio_economico_dinero_ahorro_siChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_vehiculopropio_no", DbType="VarChar(MAX)")]
-		public string Socio_economico_vehiculopropio_no
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_dinero_ahorro_no", DbType="VarChar(MAX)")]
+		public string Socio_economico_dinero_ahorro_no
 		{
 			get
 			{
-				return this._Socio_economico_vehiculopropio_no;
+				return this._Socio_economico_dinero_ahorro_no;
 			}
 			set
 			{
-				if ((this._Socio_economico_vehiculopropio_no != value))
+				if ((this._Socio_economico_dinero_ahorro_no != value))
 				{
-					this._Socio_economico_vehiculopropio_no = value;
+					this.OnSocio_economico_dinero_ahorro_noChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_dinero_ahorro_no = value;
+					this.SendPropertyChanged("Socio_economico_dinero_ahorro_no");
+					this.OnSocio_economico_dinero_ahorro_noChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_recorridoinstitucional_si", DbType="VarChar(MAX)")]
-		public string Socio_economico_recorridoinstitucional_si
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_vehiculo_propio_si", DbType="VarChar(MAX)")]
+		public string Socio_economico_vehiculo_propio_si
 		{
 			get
 			{
-				return this._Socio_economico_recorridoinstitucional_si;
+				return this._Socio_economico_vehiculo_propio_si;
 			}
 			set
 			{
-				if ((this._Socio_economico_recorridoinstitucional_si != value))
+				if ((this._Socio_economico_vehiculo_propio_si != value))
 				{
-					this._Socio_economico_recorridoinstitucional_si = value;
+					this.OnSocio_economico_vehiculo_propio_siChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_vehiculo_propio_si = value;
+					this.SendPropertyChanged("Socio_economico_vehiculo_propio_si");
+					this.OnSocio_economico_vehiculo_propio_siChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_recorridoinstitucional_no", DbType="VarChar(MAX)")]
-		public string Socio_economico_recorridoinstitucional_no
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_vehiculo_propio_no", DbType="VarChar(MAX)")]
+		public string Socio_economico_vehiculo_propio_no
 		{
 			get
 			{
-				return this._Socio_economico_recorridoinstitucional_no;
+				return this._Socio_economico_vehiculo_propio_no;
 			}
 			set
 			{
-				if ((this._Socio_economico_recorridoinstitucional_no != value))
+				if ((this._Socio_economico_vehiculo_propio_no != value))
 				{
-					this._Socio_economico_recorridoinstitucional_no = value;
+					this.OnSocio_economico_vehiculo_propio_noChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_vehiculo_propio_no = value;
+					this.SendPropertyChanged("Socio_economico_vehiculo_propio_no");
+					this.OnSocio_economico_vehiculo_propio_noChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_recorridoinstitucional_noexiste", DbType="VarChar(MAX)")]
-		public string Socio_economico_recorridoinstitucional_noexiste
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_recorrido_institucional_si", DbType="VarChar(MAX)")]
+		public string Socio_economico_recorrido_institucional_si
 		{
 			get
 			{
-				return this._Socio_economico_recorridoinstitucional_noexiste;
+				return this._Socio_economico_recorrido_institucional_si;
 			}
 			set
 			{
-				if ((this._Socio_economico_recorridoinstitucional_noexiste != value))
+				if ((this._Socio_economico_recorrido_institucional_si != value))
 				{
-					this._Socio_economico_recorridoinstitucional_noexiste = value;
+					this.OnSocio_economico_recorrido_institucional_siChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_recorrido_institucional_si = value;
+					this.SendPropertyChanged("Socio_economico_recorrido_institucional_si");
+					this.OnSocio_economico_recorrido_institucional_siChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_recorrido_institucional_no", DbType="VarChar(MAX)")]
+		public string Socio_economico_recorrido_institucional_no
+		{
+			get
+			{
+				return this._Socio_economico_recorrido_institucional_no;
+			}
+			set
+			{
+				if ((this._Socio_economico_recorrido_institucional_no != value))
+				{
+					this.OnSocio_economico_recorrido_institucional_noChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_recorrido_institucional_no = value;
+					this.SendPropertyChanged("Socio_economico_recorrido_institucional_no");
+					this.OnSocio_economico_recorrido_institucional_noChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_recorrido_institucional_no_existe", DbType="VarChar(MAX)")]
+		public string Socio_economico_recorrido_institucional_no_existe
+		{
+			get
+			{
+				return this._Socio_economico_recorrido_institucional_no_existe;
+			}
+			set
+			{
+				if ((this._Socio_economico_recorrido_institucional_no_existe != value))
+				{
+					this.OnSocio_economico_recorrido_institucional_no_existeChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_recorrido_institucional_no_existe = value;
+					this.SendPropertyChanged("Socio_economico_recorrido_institucional_no_existe");
+					this.OnSocio_economico_recorrido_institucional_no_existeChanged();
 				}
 			}
 		}
@@ -42100,23 +43155,31 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_distancia_domicilio_trabajo != value))
 				{
+					this.OnSocio_economico_distancia_domicilio_trabajoChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_distancia_domicilio_trabajo = value;
+					this.SendPropertyChanged("Socio_economico_distancia_domicilio_trabajo");
+					this.OnSocio_economico_distancia_domicilio_trabajoChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_poseeenfermedad", DbType="VarChar(MAX)")]
-		public string Socio_economico_poseeenfermedad
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_posee_enfermedad", DbType="VarChar(MAX)")]
+		public string Socio_economico_posee_enfermedad
 		{
 			get
 			{
-				return this._Socio_economico_poseeenfermedad;
+				return this._Socio_economico_posee_enfermedad;
 			}
 			set
 			{
-				if ((this._Socio_economico_poseeenfermedad != value))
+				if ((this._Socio_economico_posee_enfermedad != value))
 				{
-					this._Socio_economico_poseeenfermedad = value;
+					this.OnSocio_economico_posee_enfermedadChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_posee_enfermedad = value;
+					this.SendPropertyChanged("Socio_economico_posee_enfermedad");
+					this.OnSocio_economico_posee_enfermedadChanged();
 				}
 			}
 		}
@@ -42132,7 +43195,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_discapacidad_si != value))
 				{
+					this.OnSocio_economico_discapacidad_siChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_discapacidad_si = value;
+					this.SendPropertyChanged("Socio_economico_discapacidad_si");
+					this.OnSocio_economico_discapacidad_siChanged();
 				}
 			}
 		}
@@ -42148,7 +43215,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_discapacidad_no != value))
 				{
+					this.OnSocio_economico_discapacidad_noChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_discapacidad_no = value;
+					this.SendPropertyChanged("Socio_economico_discapacidad_no");
+					this.OnSocio_economico_discapacidad_noChanged();
 				}
 			}
 		}
@@ -42164,7 +43235,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_discapacidad_tipo != value))
 				{
+					this.OnSocio_economico_discapacidad_tipoChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_discapacidad_tipo = value;
+					this.SendPropertyChanged("Socio_economico_discapacidad_tipo");
+					this.OnSocio_economico_discapacidad_tipoChanged();
 				}
 			}
 		}
@@ -42180,119 +43255,111 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_discapacidad_porcentaje != value))
 				{
+					this.OnSocio_economico_discapacidad_porcentajeChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_discapacidad_porcentaje = value;
+					this.SendPropertyChanged("Socio_economico_discapacidad_porcentaje");
+					this.OnSocio_economico_discapacidad_porcentajeChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_discapacidad_carnetconadis", DbType="VarChar(MAX)")]
-		public string Socio_economico_discapacidad_carnetconadis
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_discapacidad_carnet_conadis", DbType="VarChar(MAX)")]
+		public string Socio_economico_discapacidad_carnet_conadis
 		{
 			get
 			{
-				return this._Socio_economico_discapacidad_carnetconadis;
+				return this._Socio_economico_discapacidad_carnet_conadis;
 			}
 			set
 			{
-				if ((this._Socio_economico_discapacidad_carnetconadis != value))
+				if ((this._Socio_economico_discapacidad_carnet_conadis != value))
 				{
-					this._Socio_economico_discapacidad_carnetconadis = value;
+					this.OnSocio_economico_discapacidad_carnet_conadisChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_discapacidad_carnet_conadis = value;
+					this.SendPropertyChanged("Socio_economico_discapacidad_carnet_conadis");
+					this.OnSocio_economico_discapacidad_carnet_conadisChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_discapacidad_fechacaducidadcarnetconadis", DbType="DateTime")]
-		public System.Nullable<System.DateTime> Socio_economico_discapacidad_fechacaducidadcarnetconadis
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_discapacidad_fecha_caducidad_carnet", DbType="DateTime")]
+		public System.Nullable<System.DateTime> Socio_economico_discapacidad_fecha_caducidad_carnet
 		{
 			get
 			{
-				return this._Socio_economico_discapacidad_fechacaducidadcarnetconadis;
+				return this._Socio_economico_discapacidad_fecha_caducidad_carnet;
 			}
 			set
 			{
-				if ((this._Socio_economico_discapacidad_fechacaducidadcarnetconadis != value))
+				if ((this._Socio_economico_discapacidad_fecha_caducidad_carnet != value))
 				{
-					this._Socio_economico_discapacidad_fechacaducidadcarnetconadis = value;
+					this.OnSocio_economico_discapacidad_fecha_caducidad_carnetChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_discapacidad_fecha_caducidad_carnet = value;
+					this.SendPropertyChanged("Socio_economico_discapacidad_fecha_caducidad_carnet");
+					this.OnSocio_economico_discapacidad_fecha_caducidad_carnetChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_conyugueembarazada_no", DbType="VarChar(MAX)")]
-		public string Socio_economico_conyugueembarazada_no
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_conyugue_embarazada_si", DbType="VarChar(MAX)")]
+		public string Socio_economico_conyugue_embarazada_si
 		{
 			get
 			{
-				return this._Socio_economico_conyugueembarazada_no;
+				return this._Socio_economico_conyugue_embarazada_si;
 			}
 			set
 			{
-				if ((this._Socio_economico_conyugueembarazada_no != value))
+				if ((this._Socio_economico_conyugue_embarazada_si != value))
 				{
-					this._Socio_economico_conyugueembarazada_no = value;
+					this.OnSocio_economico_conyugue_embarazada_siChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_conyugue_embarazada_si = value;
+					this.SendPropertyChanged("Socio_economico_conyugue_embarazada_si");
+					this.OnSocio_economico_conyugue_embarazada_siChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico__si_me_encuentro_embarazada", DbType="VarChar(MAX)")]
-		public string Socio_economico__si_me_encuentro_embarazada
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_conyugue_embarazada_no", DbType="VarChar(MAX)")]
+		public string Socio_economico_conyugue_embarazada_no
 		{
 			get
 			{
-				return this._Socio_economico__si_me_encuentro_embarazada;
+				return this._Socio_economico_conyugue_embarazada_no;
 			}
 			set
 			{
-				if ((this._Socio_economico__si_me_encuentro_embarazada != value))
+				if ((this._Socio_economico_conyugue_embarazada_no != value))
 				{
-					this._Socio_economico__si_me_encuentro_embarazada = value;
+					this.OnSocio_economico_conyugue_embarazada_noChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_conyugue_embarazada_no = value;
+					this.SendPropertyChanged("Socio_economico_conyugue_embarazada_no");
+					this.OnSocio_economico_conyugue_embarazada_noChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico__si_mi_conyugue_esta_embarazada", DbType="VarChar(MAX)")]
-		public string Socio_economico__si_mi_conyugue_esta_embarazada
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_mes_gestacion", DbType="VarChar(MAX)")]
+		public string Socio_economico_mes_gestacion
 		{
 			get
 			{
-				return this._Socio_economico__si_mi_conyugue_esta_embarazada;
+				return this._Socio_economico_mes_gestacion;
 			}
 			set
 			{
-				if ((this._Socio_economico__si_mi_conyugue_esta_embarazada != value))
+				if ((this._Socio_economico_mes_gestacion != value))
 				{
-					this._Socio_economico__si_mi_conyugue_esta_embarazada = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico__mes_embarazo", DbType="VarChar(MAX)")]
-		public string Socio_economico__mes_embarazo
-		{
-			get
-			{
-				return this._Socio_economico__mes_embarazo;
-			}
-			set
-			{
-				if ((this._Socio_economico__mes_embarazo != value))
-				{
-					this._Socio_economico__mes_embarazo = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico__dias_embarazo", DbType="VarChar(MAX)")]
-		public string Socio_economico__dias_embarazo
-		{
-			get
-			{
-				return this._Socio_economico__dias_embarazo;
-			}
-			set
-			{
-				if ((this._Socio_economico__dias_embarazo != value))
-				{
-					this._Socio_economico__dias_embarazo = value;
+					this.OnSocio_economico_mes_gestacionChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_mes_gestacion = value;
+					this.SendPropertyChanged("Socio_economico_mes_gestacion");
+					this.OnSocio_economico_mes_gestacionChanged();
 				}
 			}
 		}
@@ -42308,7 +43375,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_fecha_tentativa_parto != value))
 				{
+					this.OnSocio_economico_fecha_tentativa_partoChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_fecha_tentativa_parto = value;
+					this.SendPropertyChanged("Socio_economico_fecha_tentativa_parto");
+					this.OnSocio_economico_fecha_tentativa_partoChanged();
 				}
 			}
 		}
@@ -42324,7 +43395,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_periodo_lactancia_si != value))
 				{
+					this.OnSocio_economico_periodo_lactancia_siChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_periodo_lactancia_si = value;
+					this.SendPropertyChanged("Socio_economico_periodo_lactancia_si");
+					this.OnSocio_economico_periodo_lactancia_siChanged();
 				}
 			}
 		}
@@ -42340,23 +43415,31 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_periodo_lactancia_no != value))
 				{
+					this.OnSocio_economico_periodo_lactancia_noChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_periodo_lactancia_no = value;
+					this.SendPropertyChanged("Socio_economico_periodo_lactancia_no");
+					this.OnSocio_economico_periodo_lactancia_noChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_periodo_lactancia_fechaculminacion", DbType="DateTime")]
-		public System.Nullable<System.DateTime> Socio_economico_periodo_lactancia_fechaculminacion
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_periodo_lactancia_fecha_culminacion", DbType="DateTime")]
+		public System.Nullable<System.DateTime> Socio_economico_periodo_lactancia_fecha_culminacion
 		{
 			get
 			{
-				return this._Socio_economico_periodo_lactancia_fechaculminacion;
+				return this._Socio_economico_periodo_lactancia_fecha_culminacion;
 			}
 			set
 			{
-				if ((this._Socio_economico_periodo_lactancia_fechaculminacion != value))
+				if ((this._Socio_economico_periodo_lactancia_fecha_culminacion != value))
 				{
-					this._Socio_economico_periodo_lactancia_fechaculminacion = value;
+					this.OnSocio_economico_periodo_lactancia_fecha_culminacionChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_periodo_lactancia_fecha_culminacion = value;
+					this.SendPropertyChanged("Socio_economico_periodo_lactancia_fecha_culminacion");
+					this.OnSocio_economico_periodo_lactancia_fecha_culminacionChanged();
 				}
 			}
 		}
@@ -42372,7 +43455,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_enfermedad_cronica_si != value))
 				{
+					this.OnSocio_economico_enfermedad_cronica_siChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_enfermedad_cronica_si = value;
+					this.SendPropertyChanged("Socio_economico_enfermedad_cronica_si");
+					this.OnSocio_economico_enfermedad_cronica_siChanged();
 				}
 			}
 		}
@@ -42388,7 +43475,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_enfermedad_cronica_no != value))
 				{
+					this.OnSocio_economico_enfermedad_cronica_noChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_enfermedad_cronica_no = value;
+					this.SendPropertyChanged("Socio_economico_enfermedad_cronica_no");
+					this.OnSocio_economico_enfermedad_cronica_noChanged();
 				}
 			}
 		}
@@ -42404,7 +43495,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_enfermedad_cronica_cual != value))
 				{
+					this.OnSocio_economico_enfermedad_cronica_cualChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_enfermedad_cronica_cual = value;
+					this.SendPropertyChanged("Socio_economico_enfermedad_cronica_cual");
+					this.OnSocio_economico_enfermedad_cronica_cualChanged();
 				}
 			}
 		}
@@ -42420,7 +43515,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_enfermedad_cronica_otras != value))
 				{
+					this.OnSocio_economico_enfermedad_cronica_otrasChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_enfermedad_cronica_otras = value;
+					this.SendPropertyChanged("Socio_economico_enfermedad_cronica_otras");
+					this.OnSocio_economico_enfermedad_cronica_otrasChanged();
 				}
 			}
 		}
@@ -42436,7 +43535,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_enfermedad_rara_si != value))
 				{
+					this.OnSocio_economico_enfermedad_rara_siChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_enfermedad_rara_si = value;
+					this.SendPropertyChanged("Socio_economico_enfermedad_rara_si");
+					this.OnSocio_economico_enfermedad_rara_siChanged();
 				}
 			}
 		}
@@ -42452,7 +43555,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_enfermedad_rara_no != value))
 				{
+					this.OnSocio_economico_enfermedad_rara_noChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_enfermedad_rara_no = value;
+					this.SendPropertyChanged("Socio_economico_enfermedad_rara_no");
+					this.OnSocio_economico_enfermedad_rara_noChanged();
 				}
 			}
 		}
@@ -42468,7 +43575,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_enfermedad_rara_cual != value))
 				{
+					this.OnSocio_economico_enfermedad_rara_cualChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_enfermedad_rara_cual = value;
+					this.SendPropertyChanged("Socio_economico_enfermedad_rara_cual");
+					this.OnSocio_economico_enfermedad_rara_cualChanged();
 				}
 			}
 		}
@@ -42484,7 +43595,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_consume_alcohol_si != value))
 				{
+					this.OnSocio_economico_consume_alcohol_siChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_consume_alcohol_si = value;
+					this.SendPropertyChanged("Socio_economico_consume_alcohol_si");
+					this.OnSocio_economico_consume_alcohol_siChanged();
 				}
 			}
 		}
@@ -42500,71 +43615,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_consume_alcohol_no != value))
 				{
+					this.OnSocio_economico_consume_alcohol_noChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_consume_alcohol_no = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_consume_alcohol_tipo_cerveza", DbType="VarChar(MAX)")]
-		public string Socio_economico_consume_alcohol_tipo_cerveza
-		{
-			get
-			{
-				return this._Socio_economico_consume_alcohol_tipo_cerveza;
-			}
-			set
-			{
-				if ((this._Socio_economico_consume_alcohol_tipo_cerveza != value))
-				{
-					this._Socio_economico_consume_alcohol_tipo_cerveza = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_consume_alcohol_tipo_ron", DbType="VarChar(MAX)")]
-		public string Socio_economico_consume_alcohol_tipo_ron
-		{
-			get
-			{
-				return this._Socio_economico_consume_alcohol_tipo_ron;
-			}
-			set
-			{
-				if ((this._Socio_economico_consume_alcohol_tipo_ron != value))
-				{
-					this._Socio_economico_consume_alcohol_tipo_ron = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_consume_alcohol_tipo_whisky", DbType="VarChar(MAX)")]
-		public string Socio_economico_consume_alcohol_tipo_whisky
-		{
-			get
-			{
-				return this._Socio_economico_consume_alcohol_tipo_whisky;
-			}
-			set
-			{
-				if ((this._Socio_economico_consume_alcohol_tipo_whisky != value))
-				{
-					this._Socio_economico_consume_alcohol_tipo_whisky = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_consume_alcohol_tipo_otro", DbType="VarChar(MAX)")]
-		public string Socio_economico_consume_alcohol_tipo_otro
-		{
-			get
-			{
-				return this._Socio_economico_consume_alcohol_tipo_otro;
-			}
-			set
-			{
-				if ((this._Socio_economico_consume_alcohol_tipo_otro != value))
-				{
-					this._Socio_economico_consume_alcohol_tipo_otro = value;
+					this.SendPropertyChanged("Socio_economico_consume_alcohol_no");
+					this.OnSocio_economico_consume_alcohol_noChanged();
 				}
 			}
 		}
@@ -42580,7 +43635,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_consume_alcohol_frecuencia_consumo != value))
 				{
+					this.OnSocio_economico_consume_alcohol_frecuencia_consumoChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_consume_alcohol_frecuencia_consumo = value;
+					this.SendPropertyChanged("Socio_economico_consume_alcohol_frecuencia_consumo");
+					this.OnSocio_economico_consume_alcohol_frecuencia_consumoChanged();
 				}
 			}
 		}
@@ -42596,7 +43655,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_consume_alcohol_tiempo_consumo != value))
 				{
+					this.OnSocio_economico_consume_alcohol_tiempo_consumoChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_consume_alcohol_tiempo_consumo = value;
+					this.SendPropertyChanged("Socio_economico_consume_alcohol_tiempo_consumo");
+					this.OnSocio_economico_consume_alcohol_tiempo_consumoChanged();
 				}
 			}
 		}
@@ -42612,7 +43675,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_consume_tabaco_si != value))
 				{
+					this.OnSocio_economico_consume_tabaco_siChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_consume_tabaco_si = value;
+					this.SendPropertyChanged("Socio_economico_consume_tabaco_si");
+					this.OnSocio_economico_consume_tabaco_siChanged();
 				}
 			}
 		}
@@ -42628,7 +43695,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_consume_tabaco_no != value))
 				{
+					this.OnSocio_economico_consume_tabaco_noChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_consume_tabaco_no = value;
+					this.SendPropertyChanged("Socio_economico_consume_tabaco_no");
+					this.OnSocio_economico_consume_tabaco_noChanged();
 				}
 			}
 		}
@@ -42644,23 +43715,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_consume_tabaco_frecuencia_consumo != value))
 				{
+					this.OnSocio_economico_consume_tabaco_frecuencia_consumoChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_consume_tabaco_frecuencia_consumo = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_consume_tabaco_cantidad_consumo", DbType="VarChar(MAX)")]
-		public string Socio_economico_consume_tabaco_cantidad_consumo
-		{
-			get
-			{
-				return this._Socio_economico_consume_tabaco_cantidad_consumo;
-			}
-			set
-			{
-				if ((this._Socio_economico_consume_tabaco_cantidad_consumo != value))
-				{
-					this._Socio_economico_consume_tabaco_cantidad_consumo = value;
+					this.SendPropertyChanged("Socio_economico_consume_tabaco_frecuencia_consumo");
+					this.OnSocio_economico_consume_tabaco_frecuencia_consumoChanged();
 				}
 			}
 		}
@@ -42676,7 +43735,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_consume_tabaco_tiempo_consumo != value))
 				{
+					this.OnSocio_economico_consume_tabaco_tiempo_consumoChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_consume_tabaco_tiempo_consumo = value;
+					this.SendPropertyChanged("Socio_economico_consume_tabaco_tiempo_consumo");
+					this.OnSocio_economico_consume_tabaco_tiempo_consumoChanged();
 				}
 			}
 		}
@@ -42692,7 +43755,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_consume_sustancia_psicotropica_si != value))
 				{
+					this.OnSocio_economico_consume_sustancia_psicotropica_siChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_consume_sustancia_psicotropica_si = value;
+					this.SendPropertyChanged("Socio_economico_consume_sustancia_psicotropica_si");
+					this.OnSocio_economico_consume_sustancia_psicotropica_siChanged();
 				}
 			}
 		}
@@ -42708,7 +43775,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_consume_sustancia_psicotropica_no != value))
 				{
+					this.OnSocio_economico_consume_sustancia_psicotropica_noChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_consume_sustancia_psicotropica_no = value;
+					this.SendPropertyChanged("Socio_economico_consume_sustancia_psicotropica_no");
+					this.OnSocio_economico_consume_sustancia_psicotropica_noChanged();
 				}
 			}
 		}
@@ -42724,7 +43795,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_consume_sustancia_psicotropica_tipo != value))
 				{
+					this.OnSocio_economico_consume_sustancia_psicotropica_tipoChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_consume_sustancia_psicotropica_tipo = value;
+					this.SendPropertyChanged("Socio_economico_consume_sustancia_psicotropica_tipo");
+					this.OnSocio_economico_consume_sustancia_psicotropica_tipoChanged();
 				}
 			}
 		}
@@ -42740,71 +43815,1631 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_consume_sustancia_psicotropica_frecuencia_consumo != value))
 				{
+					this.OnSocio_economico_consume_sustancia_psicotropica_frecuencia_consumoChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_consume_sustancia_psicotropica_frecuencia_consumo = value;
+					this.SendPropertyChanged("Socio_economico_consume_sustancia_psicotropica_frecuencia_consumo");
+					this.OnSocio_economico_consume_sustancia_psicotropica_frecuencia_consumoChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_consume_sustancia_psicotropica_factores_psicosociales", DbType="VarChar(MAX)")]
-		public string Socio_economico_consume_sustancia_psicotropica_factores_psicosociales
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_problemas_consumo_familiares", DbType="VarChar(MAX)")]
+		public string Socio_economico_problemas_consumo_familiares
 		{
 			get
 			{
-				return this._Socio_economico_consume_sustancia_psicotropica_factores_psicosociales;
+				return this._Socio_economico_problemas_consumo_familiares;
 			}
 			set
 			{
-				if ((this._Socio_economico_consume_sustancia_psicotropica_factores_psicosociales != value))
+				if ((this._Socio_economico_problemas_consumo_familiares != value))
 				{
-					this._Socio_economico_consume_sustancia_psicotropica_factores_psicosociales = value;
+					this.OnSocio_economico_problemas_consumo_familiaresChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_problemas_consumo_familiares = value;
+					this.SendPropertyChanged("Socio_economico_problemas_consumo_familiares");
+					this.OnSocio_economico_problemas_consumo_familiaresChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_nombres_apellidos_conyugue", DbType="VarChar(MAX)")]
-		public string Socio_economico_nombres_apellidos_conyugue
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_problemas_consumo_laborales", DbType="VarChar(MAX)")]
+		public string Socio_economico_problemas_consumo_laborales
 		{
 			get
 			{
-				return this._Socio_economico_nombres_apellidos_conyugue;
+				return this._Socio_economico_problemas_consumo_laborales;
 			}
 			set
 			{
-				if ((this._Socio_economico_nombres_apellidos_conyugue != value))
+				if ((this._Socio_economico_problemas_consumo_laborales != value))
 				{
-					this._Socio_economico_nombres_apellidos_conyugue = value;
+					this.OnSocio_economico_problemas_consumo_laboralesChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_problemas_consumo_laborales = value;
+					this.SendPropertyChanged("Socio_economico_problemas_consumo_laborales");
+					this.OnSocio_economico_problemas_consumo_laboralesChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_numero_hijos", DbType="VarChar(MAX)")]
-		public string Socio_economico_numero_hijos
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_problemas_consumo_economicos", DbType="VarChar(MAX)")]
+		public string Socio_economico_problemas_consumo_economicos
 		{
 			get
 			{
-				return this._Socio_economico_numero_hijos;
+				return this._Socio_economico_problemas_consumo_economicos;
 			}
 			set
 			{
-				if ((this._Socio_economico_numero_hijos != value))
+				if ((this._Socio_economico_problemas_consumo_economicos != value))
 				{
-					this._Socio_economico_numero_hijos = value;
+					this.OnSocio_economico_problemas_consumo_economicosChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_problemas_consumo_economicos = value;
+					this.SendPropertyChanged("Socio_economico_problemas_consumo_economicos");
+					this.OnSocio_economico_problemas_consumo_economicosChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_numero_dependientes", DbType="VarChar(MAX)")]
-		public string Socio_economico_numero_dependientes
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_problemas_consumo_salud", DbType="VarChar(MAX)")]
+		public string Socio_economico_problemas_consumo_salud
 		{
 			get
 			{
-				return this._Socio_economico_numero_dependientes;
+				return this._Socio_economico_problemas_consumo_salud;
 			}
 			set
 			{
-				if ((this._Socio_economico_numero_dependientes != value))
+				if ((this._Socio_economico_problemas_consumo_salud != value))
 				{
-					this._Socio_economico_numero_dependientes = value;
+					this.OnSocio_economico_problemas_consumo_saludChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_problemas_consumo_salud = value;
+					this.SendPropertyChanged("Socio_economico_problemas_consumo_salud");
+					this.OnSocio_economico_problemas_consumo_saludChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_problemas_consumo_legales", DbType="VarChar(MAX)")]
+		public string Socio_economico_problemas_consumo_legales
+		{
+			get
+			{
+				return this._Socio_economico_problemas_consumo_legales;
+			}
+			set
+			{
+				if ((this._Socio_economico_problemas_consumo_legales != value))
+				{
+					this.OnSocio_economico_problemas_consumo_legalesChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_problemas_consumo_legales = value;
+					this.SendPropertyChanged("Socio_economico_problemas_consumo_legales");
+					this.OnSocio_economico_problemas_consumo_legalesChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_total_ingresos_mensuales_proyectados_1", DbType="BigInt")]
+		public System.Nullable<long> Socio_economico_total_ingresos_mensuales_proyectados_1
+		{
+			get
+			{
+				return this._Socio_economico_total_ingresos_mensuales_proyectados_1;
+			}
+			set
+			{
+				if ((this._Socio_economico_total_ingresos_mensuales_proyectados_1 != value))
+				{
+					this.OnSocio_economico_total_ingresos_mensuales_proyectados_1Changing(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_total_ingresos_mensuales_proyectados_1 = value;
+					this.SendPropertyChanged("Socio_economico_total_ingresos_mensuales_proyectados_1");
+					this.OnSocio_economico_total_ingresos_mensuales_proyectados_1Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_ayuda_padres1", DbType="BigInt")]
+		public System.Nullable<long> Socio_economico_ayuda_padres1
+		{
+			get
+			{
+				return this._Socio_economico_ayuda_padres1;
+			}
+			set
+			{
+				if ((this._Socio_economico_ayuda_padres1 != value))
+				{
+					this.OnSocio_economico_ayuda_padres1Changing(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_ayuda_padres1 = value;
+					this.SendPropertyChanged("Socio_economico_ayuda_padres1");
+					this.OnSocio_economico_ayuda_padres1Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_otros_ingresos1", DbType="BigInt")]
+		public System.Nullable<long> Socio_economico_otros_ingresos1
+		{
+			get
+			{
+				return this._Socio_economico_otros_ingresos1;
+			}
+			set
+			{
+				if ((this._Socio_economico_otros_ingresos1 != value))
+				{
+					this.OnSocio_economico_otros_ingresos1Changing(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_otros_ingresos1 = value;
+					this.SendPropertyChanged("Socio_economico_otros_ingresos1");
+					this.OnSocio_economico_otros_ingresos1Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_total_egresos_mensuales_proyectados_alimentacion", DbType="BigInt")]
+		public System.Nullable<long> Socio_economico_total_egresos_mensuales_proyectados_alimentacion
+		{
+			get
+			{
+				return this._Socio_economico_total_egresos_mensuales_proyectados_alimentacion;
+			}
+			set
+			{
+				if ((this._Socio_economico_total_egresos_mensuales_proyectados_alimentacion != value))
+				{
+					this.OnSocio_economico_total_egresos_mensuales_proyectados_alimentacionChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_total_egresos_mensuales_proyectados_alimentacion = value;
+					this.SendPropertyChanged("Socio_economico_total_egresos_mensuales_proyectados_alimentacion");
+					this.OnSocio_economico_total_egresos_mensuales_proyectados_alimentacionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_total_ingresos_mensuales_proyectados_2", DbType="BigInt")]
+		public System.Nullable<long> Socio_economico_total_ingresos_mensuales_proyectados_2
+		{
+			get
+			{
+				return this._Socio_economico_total_ingresos_mensuales_proyectados_2;
+			}
+			set
+			{
+				if ((this._Socio_economico_total_ingresos_mensuales_proyectados_2 != value))
+				{
+					this.OnSocio_economico_total_ingresos_mensuales_proyectados_2Changing(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_total_ingresos_mensuales_proyectados_2 = value;
+					this.SendPropertyChanged("Socio_economico_total_ingresos_mensuales_proyectados_2");
+					this.OnSocio_economico_total_ingresos_mensuales_proyectados_2Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_ayuda_padres2", DbType="BigInt")]
+		public System.Nullable<long> Socio_economico_ayuda_padres2
+		{
+			get
+			{
+				return this._Socio_economico_ayuda_padres2;
+			}
+			set
+			{
+				if ((this._Socio_economico_ayuda_padres2 != value))
+				{
+					this.OnSocio_economico_ayuda_padres2Changing(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_ayuda_padres2 = value;
+					this.SendPropertyChanged("Socio_economico_ayuda_padres2");
+					this.OnSocio_economico_ayuda_padres2Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_otros_ingresos2", DbType="BigInt")]
+		public System.Nullable<long> Socio_economico_otros_ingresos2
+		{
+			get
+			{
+				return this._Socio_economico_otros_ingresos2;
+			}
+			set
+			{
+				if ((this._Socio_economico_otros_ingresos2 != value))
+				{
+					this.OnSocio_economico_otros_ingresos2Changing(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_otros_ingresos2 = value;
+					this.SendPropertyChanged("Socio_economico_otros_ingresos2");
+					this.OnSocio_economico_otros_ingresos2Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_total_egresos_mensuales_proyectados_vivienda", DbType="BigInt")]
+		public System.Nullable<long> Socio_economico_total_egresos_mensuales_proyectados_vivienda
+		{
+			get
+			{
+				return this._Socio_economico_total_egresos_mensuales_proyectados_vivienda;
+			}
+			set
+			{
+				if ((this._Socio_economico_total_egresos_mensuales_proyectados_vivienda != value))
+				{
+					this.OnSocio_economico_total_egresos_mensuales_proyectados_viviendaChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_total_egresos_mensuales_proyectados_vivienda = value;
+					this.SendPropertyChanged("Socio_economico_total_egresos_mensuales_proyectados_vivienda");
+					this.OnSocio_economico_total_egresos_mensuales_proyectados_viviendaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_total_ingresos_mensuales_proyectados_3", DbType="BigInt")]
+		public System.Nullable<long> Socio_economico_total_ingresos_mensuales_proyectados_3
+		{
+			get
+			{
+				return this._Socio_economico_total_ingresos_mensuales_proyectados_3;
+			}
+			set
+			{
+				if ((this._Socio_economico_total_ingresos_mensuales_proyectados_3 != value))
+				{
+					this.OnSocio_economico_total_ingresos_mensuales_proyectados_3Changing(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_total_ingresos_mensuales_proyectados_3 = value;
+					this.SendPropertyChanged("Socio_economico_total_ingresos_mensuales_proyectados_3");
+					this.OnSocio_economico_total_ingresos_mensuales_proyectados_3Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_ayuda_padres3", DbType="BigInt")]
+		public System.Nullable<long> Socio_economico_ayuda_padres3
+		{
+			get
+			{
+				return this._Socio_economico_ayuda_padres3;
+			}
+			set
+			{
+				if ((this._Socio_economico_ayuda_padres3 != value))
+				{
+					this.OnSocio_economico_ayuda_padres3Changing(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_ayuda_padres3 = value;
+					this.SendPropertyChanged("Socio_economico_ayuda_padres3");
+					this.OnSocio_economico_ayuda_padres3Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_otros_ingresos3", DbType="BigInt")]
+		public System.Nullable<long> Socio_economico_otros_ingresos3
+		{
+			get
+			{
+				return this._Socio_economico_otros_ingresos3;
+			}
+			set
+			{
+				if ((this._Socio_economico_otros_ingresos3 != value))
+				{
+					this.OnSocio_economico_otros_ingresos3Changing(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_otros_ingresos3 = value;
+					this.SendPropertyChanged("Socio_economico_otros_ingresos3");
+					this.OnSocio_economico_otros_ingresos3Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_total_egresos_mensuales_proyectados_educacion", DbType="BigInt")]
+		public System.Nullable<long> Socio_economico_total_egresos_mensuales_proyectados_educacion
+		{
+			get
+			{
+				return this._Socio_economico_total_egresos_mensuales_proyectados_educacion;
+			}
+			set
+			{
+				if ((this._Socio_economico_total_egresos_mensuales_proyectados_educacion != value))
+				{
+					this.OnSocio_economico_total_egresos_mensuales_proyectados_educacionChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_total_egresos_mensuales_proyectados_educacion = value;
+					this.SendPropertyChanged("Socio_economico_total_egresos_mensuales_proyectados_educacion");
+					this.OnSocio_economico_total_egresos_mensuales_proyectados_educacionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_total_ingresos_mensuales_proyectados_4", DbType="BigInt")]
+		public System.Nullable<long> Socio_economico_total_ingresos_mensuales_proyectados_4
+		{
+			get
+			{
+				return this._Socio_economico_total_ingresos_mensuales_proyectados_4;
+			}
+			set
+			{
+				if ((this._Socio_economico_total_ingresos_mensuales_proyectados_4 != value))
+				{
+					this.OnSocio_economico_total_ingresos_mensuales_proyectados_4Changing(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_total_ingresos_mensuales_proyectados_4 = value;
+					this.SendPropertyChanged("Socio_economico_total_ingresos_mensuales_proyectados_4");
+					this.OnSocio_economico_total_ingresos_mensuales_proyectados_4Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_ayuda_padres4", DbType="BigInt")]
+		public System.Nullable<long> Socio_economico_ayuda_padres4
+		{
+			get
+			{
+				return this._Socio_economico_ayuda_padres4;
+			}
+			set
+			{
+				if ((this._Socio_economico_ayuda_padres4 != value))
+				{
+					this.OnSocio_economico_ayuda_padres4Changing(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_ayuda_padres4 = value;
+					this.SendPropertyChanged("Socio_economico_ayuda_padres4");
+					this.OnSocio_economico_ayuda_padres4Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_otros_ingresos4", DbType="BigInt")]
+		public System.Nullable<long> Socio_economico_otros_ingresos4
+		{
+			get
+			{
+				return this._Socio_economico_otros_ingresos4;
+			}
+			set
+			{
+				if ((this._Socio_economico_otros_ingresos4 != value))
+				{
+					this.OnSocio_economico_otros_ingresos4Changing(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_otros_ingresos4 = value;
+					this.SendPropertyChanged("Socio_economico_otros_ingresos4");
+					this.OnSocio_economico_otros_ingresos4Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_total_egresos_mensuales_proyectados_servicios_basicos", DbType="BigInt")]
+		public System.Nullable<long> Socio_economico_total_egresos_mensuales_proyectados_servicios_basicos
+		{
+			get
+			{
+				return this._Socio_economico_total_egresos_mensuales_proyectados_servicios_basicos;
+			}
+			set
+			{
+				if ((this._Socio_economico_total_egresos_mensuales_proyectados_servicios_basicos != value))
+				{
+					this.OnSocio_economico_total_egresos_mensuales_proyectados_servicios_basicosChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_total_egresos_mensuales_proyectados_servicios_basicos = value;
+					this.SendPropertyChanged("Socio_economico_total_egresos_mensuales_proyectados_servicios_basicos");
+					this.OnSocio_economico_total_egresos_mensuales_proyectados_servicios_basicosChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_total_ingresos_mensuales_proyectados_5", DbType="BigInt")]
+		public System.Nullable<long> Socio_economico_total_ingresos_mensuales_proyectados_5
+		{
+			get
+			{
+				return this._Socio_economico_total_ingresos_mensuales_proyectados_5;
+			}
+			set
+			{
+				if ((this._Socio_economico_total_ingresos_mensuales_proyectados_5 != value))
+				{
+					this.OnSocio_economico_total_ingresos_mensuales_proyectados_5Changing(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_total_ingresos_mensuales_proyectados_5 = value;
+					this.SendPropertyChanged("Socio_economico_total_ingresos_mensuales_proyectados_5");
+					this.OnSocio_economico_total_ingresos_mensuales_proyectados_5Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_ayuda_padres5", DbType="BigInt")]
+		public System.Nullable<long> Socio_economico_ayuda_padres5
+		{
+			get
+			{
+				return this._Socio_economico_ayuda_padres5;
+			}
+			set
+			{
+				if ((this._Socio_economico_ayuda_padres5 != value))
+				{
+					this.OnSocio_economico_ayuda_padres5Changing(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_ayuda_padres5 = value;
+					this.SendPropertyChanged("Socio_economico_ayuda_padres5");
+					this.OnSocio_economico_ayuda_padres5Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_otros_ingresos5", DbType="BigInt")]
+		public System.Nullable<long> Socio_economico_otros_ingresos5
+		{
+			get
+			{
+				return this._Socio_economico_otros_ingresos5;
+			}
+			set
+			{
+				if ((this._Socio_economico_otros_ingresos5 != value))
+				{
+					this.OnSocio_economico_otros_ingresos5Changing(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_otros_ingresos5 = value;
+					this.SendPropertyChanged("Socio_economico_otros_ingresos5");
+					this.OnSocio_economico_otros_ingresos5Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_total_egresos_mensuales_proyectados_salud", DbType="BigInt")]
+		public System.Nullable<long> Socio_economico_total_egresos_mensuales_proyectados_salud
+		{
+			get
+			{
+				return this._Socio_economico_total_egresos_mensuales_proyectados_salud;
+			}
+			set
+			{
+				if ((this._Socio_economico_total_egresos_mensuales_proyectados_salud != value))
+				{
+					this.OnSocio_economico_total_egresos_mensuales_proyectados_saludChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_total_egresos_mensuales_proyectados_salud = value;
+					this.SendPropertyChanged("Socio_economico_total_egresos_mensuales_proyectados_salud");
+					this.OnSocio_economico_total_egresos_mensuales_proyectados_saludChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_total_ingresos_mensuales_proyectados_6", DbType="BigInt")]
+		public System.Nullable<long> Socio_economico_total_ingresos_mensuales_proyectados_6
+		{
+			get
+			{
+				return this._Socio_economico_total_ingresos_mensuales_proyectados_6;
+			}
+			set
+			{
+				if ((this._Socio_economico_total_ingresos_mensuales_proyectados_6 != value))
+				{
+					this.OnSocio_economico_total_ingresos_mensuales_proyectados_6Changing(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_total_ingresos_mensuales_proyectados_6 = value;
+					this.SendPropertyChanged("Socio_economico_total_ingresos_mensuales_proyectados_6");
+					this.OnSocio_economico_total_ingresos_mensuales_proyectados_6Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_ayuda_padres6", DbType="BigInt")]
+		public System.Nullable<long> Socio_economico_ayuda_padres6
+		{
+			get
+			{
+				return this._Socio_economico_ayuda_padres6;
+			}
+			set
+			{
+				if ((this._Socio_economico_ayuda_padres6 != value))
+				{
+					this.OnSocio_economico_ayuda_padres6Changing(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_ayuda_padres6 = value;
+					this.SendPropertyChanged("Socio_economico_ayuda_padres6");
+					this.OnSocio_economico_ayuda_padres6Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_otros_ingresos6", DbType="BigInt")]
+		public System.Nullable<long> Socio_economico_otros_ingresos6
+		{
+			get
+			{
+				return this._Socio_economico_otros_ingresos6;
+			}
+			set
+			{
+				if ((this._Socio_economico_otros_ingresos6 != value))
+				{
+					this.OnSocio_economico_otros_ingresos6Changing(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_otros_ingresos6 = value;
+					this.SendPropertyChanged("Socio_economico_otros_ingresos6");
+					this.OnSocio_economico_otros_ingresos6Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_total_egresos_mensuales_proyectados_movilizacion", DbType="BigInt")]
+		public System.Nullable<long> Socio_economico_total_egresos_mensuales_proyectados_movilizacion
+		{
+			get
+			{
+				return this._Socio_economico_total_egresos_mensuales_proyectados_movilizacion;
+			}
+			set
+			{
+				if ((this._Socio_economico_total_egresos_mensuales_proyectados_movilizacion != value))
+				{
+					this.OnSocio_economico_total_egresos_mensuales_proyectados_movilizacionChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_total_egresos_mensuales_proyectados_movilizacion = value;
+					this.SendPropertyChanged("Socio_economico_total_egresos_mensuales_proyectados_movilizacion");
+					this.OnSocio_economico_total_egresos_mensuales_proyectados_movilizacionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_total_ingresos_mensuales_proyectados_7", DbType="BigInt")]
+		public System.Nullable<long> Socio_economico_total_ingresos_mensuales_proyectados_7
+		{
+			get
+			{
+				return this._Socio_economico_total_ingresos_mensuales_proyectados_7;
+			}
+			set
+			{
+				if ((this._Socio_economico_total_ingresos_mensuales_proyectados_7 != value))
+				{
+					this.OnSocio_economico_total_ingresos_mensuales_proyectados_7Changing(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_total_ingresos_mensuales_proyectados_7 = value;
+					this.SendPropertyChanged("Socio_economico_total_ingresos_mensuales_proyectados_7");
+					this.OnSocio_economico_total_ingresos_mensuales_proyectados_7Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_ayuda_padres7", DbType="BigInt")]
+		public System.Nullable<long> Socio_economico_ayuda_padres7
+		{
+			get
+			{
+				return this._Socio_economico_ayuda_padres7;
+			}
+			set
+			{
+				if ((this._Socio_economico_ayuda_padres7 != value))
+				{
+					this.OnSocio_economico_ayuda_padres7Changing(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_ayuda_padres7 = value;
+					this.SendPropertyChanged("Socio_economico_ayuda_padres7");
+					this.OnSocio_economico_ayuda_padres7Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_otros_ingresos7", DbType="BigInt")]
+		public System.Nullable<long> Socio_economico_otros_ingresos7
+		{
+			get
+			{
+				return this._Socio_economico_otros_ingresos7;
+			}
+			set
+			{
+				if ((this._Socio_economico_otros_ingresos7 != value))
+				{
+					this.OnSocio_economico_otros_ingresos7Changing(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_otros_ingresos7 = value;
+					this.SendPropertyChanged("Socio_economico_otros_ingresos7");
+					this.OnSocio_economico_otros_ingresos7Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_total_egresos_mensuales_proyectados_deudas", DbType="BigInt")]
+		public System.Nullable<long> Socio_economico_total_egresos_mensuales_proyectados_deudas
+		{
+			get
+			{
+				return this._Socio_economico_total_egresos_mensuales_proyectados_deudas;
+			}
+			set
+			{
+				if ((this._Socio_economico_total_egresos_mensuales_proyectados_deudas != value))
+				{
+					this.OnSocio_economico_total_egresos_mensuales_proyectados_deudasChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_total_egresos_mensuales_proyectados_deudas = value;
+					this.SendPropertyChanged("Socio_economico_total_egresos_mensuales_proyectados_deudas");
+					this.OnSocio_economico_total_egresos_mensuales_proyectados_deudasChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_total_ingresos_mensuales_proyectados_8", DbType="BigInt")]
+		public System.Nullable<long> Socio_economico_total_ingresos_mensuales_proyectados_8
+		{
+			get
+			{
+				return this._Socio_economico_total_ingresos_mensuales_proyectados_8;
+			}
+			set
+			{
+				if ((this._Socio_economico_total_ingresos_mensuales_proyectados_8 != value))
+				{
+					this.OnSocio_economico_total_ingresos_mensuales_proyectados_8Changing(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_total_ingresos_mensuales_proyectados_8 = value;
+					this.SendPropertyChanged("Socio_economico_total_ingresos_mensuales_proyectados_8");
+					this.OnSocio_economico_total_ingresos_mensuales_proyectados_8Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_ayuda_padres8", DbType="BigInt")]
+		public System.Nullable<long> Socio_economico_ayuda_padres8
+		{
+			get
+			{
+				return this._Socio_economico_ayuda_padres8;
+			}
+			set
+			{
+				if ((this._Socio_economico_ayuda_padres8 != value))
+				{
+					this.OnSocio_economico_ayuda_padres8Changing(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_ayuda_padres8 = value;
+					this.SendPropertyChanged("Socio_economico_ayuda_padres8");
+					this.OnSocio_economico_ayuda_padres8Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_otros_ingresos8", DbType="BigInt")]
+		public System.Nullable<long> Socio_economico_otros_ingresos8
+		{
+			get
+			{
+				return this._Socio_economico_otros_ingresos8;
+			}
+			set
+			{
+				if ((this._Socio_economico_otros_ingresos8 != value))
+				{
+					this.OnSocio_economico_otros_ingresos8Changing(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_otros_ingresos8 = value;
+					this.SendPropertyChanged("Socio_economico_otros_ingresos8");
+					this.OnSocio_economico_otros_ingresos8Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_total_egresos_mensuales_proyectados_otros", DbType="BigInt")]
+		public System.Nullable<long> Socio_economico_total_egresos_mensuales_proyectados_otros
+		{
+			get
+			{
+				return this._Socio_economico_total_egresos_mensuales_proyectados_otros;
+			}
+			set
+			{
+				if ((this._Socio_economico_total_egresos_mensuales_proyectados_otros != value))
+				{
+					this.OnSocio_economico_total_egresos_mensuales_proyectados_otrosChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_total_egresos_mensuales_proyectados_otros = value;
+					this.SendPropertyChanged("Socio_economico_total_egresos_mensuales_proyectados_otros");
+					this.OnSocio_economico_total_egresos_mensuales_proyectados_otrosChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_total_ingresos_mensuales_proyectados_total_9", DbType="BigInt")]
+		public System.Nullable<long> Socio_economico_total_ingresos_mensuales_proyectados_total_9
+		{
+			get
+			{
+				return this._Socio_economico_total_ingresos_mensuales_proyectados_total_9;
+			}
+			set
+			{
+				if ((this._Socio_economico_total_ingresos_mensuales_proyectados_total_9 != value))
+				{
+					this.OnSocio_economico_total_ingresos_mensuales_proyectados_total_9Changing(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_total_ingresos_mensuales_proyectados_total_9 = value;
+					this.SendPropertyChanged("Socio_economico_total_ingresos_mensuales_proyectados_total_9");
+					this.OnSocio_economico_total_ingresos_mensuales_proyectados_total_9Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_ayuda_padres_total9", DbType="BigInt")]
+		public System.Nullable<long> Socio_economico_ayuda_padres_total9
+		{
+			get
+			{
+				return this._Socio_economico_ayuda_padres_total9;
+			}
+			set
+			{
+				if ((this._Socio_economico_ayuda_padres_total9 != value))
+				{
+					this.OnSocio_economico_ayuda_padres_total9Changing(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_ayuda_padres_total9 = value;
+					this.SendPropertyChanged("Socio_economico_ayuda_padres_total9");
+					this.OnSocio_economico_ayuda_padres_total9Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_otros_ingresos_total9", DbType="BigInt")]
+		public System.Nullable<long> Socio_economico_otros_ingresos_total9
+		{
+			get
+			{
+				return this._Socio_economico_otros_ingresos_total9;
+			}
+			set
+			{
+				if ((this._Socio_economico_otros_ingresos_total9 != value))
+				{
+					this.OnSocio_economico_otros_ingresos_total9Changing(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_otros_ingresos_total9 = value;
+					this.SendPropertyChanged("Socio_economico_otros_ingresos_total9");
+					this.OnSocio_economico_otros_ingresos_total9Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_total_egresos_mensuales_proyectados_total", DbType="BigInt")]
+		public System.Nullable<long> Socio_economico_total_egresos_mensuales_proyectados_total
+		{
+			get
+			{
+				return this._Socio_economico_total_egresos_mensuales_proyectados_total;
+			}
+			set
+			{
+				if ((this._Socio_economico_total_egresos_mensuales_proyectados_total != value))
+				{
+					this.OnSocio_economico_total_egresos_mensuales_proyectados_totalChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_total_egresos_mensuales_proyectados_total = value;
+					this.SendPropertyChanged("Socio_economico_total_egresos_mensuales_proyectados_total");
+					this.OnSocio_economico_total_egresos_mensuales_proyectados_totalChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_total_egresos_mensuales_proyectados_total_general", DbType="BigInt")]
+		public System.Nullable<long> Socio_economico_total_egresos_mensuales_proyectados_total_general
+		{
+			get
+			{
+				return this._Socio_economico_total_egresos_mensuales_proyectados_total_general;
+			}
+			set
+			{
+				if ((this._Socio_economico_total_egresos_mensuales_proyectados_total_general != value))
+				{
+					this.OnSocio_economico_total_egresos_mensuales_proyectados_total_generalChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_total_egresos_mensuales_proyectados_total_general = value;
+					this.SendPropertyChanged("Socio_economico_total_egresos_mensuales_proyectados_total_general");
+					this.OnSocio_economico_total_egresos_mensuales_proyectados_total_generalChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_descripcion_mueble_valor_casa", DbType="BigInt")]
+		public System.Nullable<long> Socio_economico_descripcion_mueble_valor_casa
+		{
+			get
+			{
+				return this._Socio_economico_descripcion_mueble_valor_casa;
+			}
+			set
+			{
+				if ((this._Socio_economico_descripcion_mueble_valor_casa != value))
+				{
+					this.OnSocio_economico_descripcion_mueble_valor_casaChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_descripcion_mueble_valor_casa = value;
+					this.SendPropertyChanged("Socio_economico_descripcion_mueble_valor_casa");
+					this.OnSocio_economico_descripcion_mueble_valor_casaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_descripcion_mueble_detalle_direccion_casa", DbType="VarChar(MAX)")]
+		public string Socio_economico_descripcion_mueble_detalle_direccion_casa
+		{
+			get
+			{
+				return this._Socio_economico_descripcion_mueble_detalle_direccion_casa;
+			}
+			set
+			{
+				if ((this._Socio_economico_descripcion_mueble_detalle_direccion_casa != value))
+				{
+					this.OnSocio_economico_descripcion_mueble_detalle_direccion_casaChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_descripcion_mueble_detalle_direccion_casa = value;
+					this.SendPropertyChanged("Socio_economico_descripcion_mueble_detalle_direccion_casa");
+					this.OnSocio_economico_descripcion_mueble_detalle_direccion_casaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_descripcion_mueble_valor_departamento", DbType="BigInt")]
+		public System.Nullable<long> Socio_economico_descripcion_mueble_valor_departamento
+		{
+			get
+			{
+				return this._Socio_economico_descripcion_mueble_valor_departamento;
+			}
+			set
+			{
+				if ((this._Socio_economico_descripcion_mueble_valor_departamento != value))
+				{
+					this.OnSocio_economico_descripcion_mueble_valor_departamentoChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_descripcion_mueble_valor_departamento = value;
+					this.SendPropertyChanged("Socio_economico_descripcion_mueble_valor_departamento");
+					this.OnSocio_economico_descripcion_mueble_valor_departamentoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_descripcion_mueble_detalle_direccion_departamento", DbType="VarChar(MAX)")]
+		public string Socio_economico_descripcion_mueble_detalle_direccion_departamento
+		{
+			get
+			{
+				return this._Socio_economico_descripcion_mueble_detalle_direccion_departamento;
+			}
+			set
+			{
+				if ((this._Socio_economico_descripcion_mueble_detalle_direccion_departamento != value))
+				{
+					this.OnSocio_economico_descripcion_mueble_detalle_direccion_departamentoChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_descripcion_mueble_detalle_direccion_departamento = value;
+					this.SendPropertyChanged("Socio_economico_descripcion_mueble_detalle_direccion_departamento");
+					this.OnSocio_economico_descripcion_mueble_detalle_direccion_departamentoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_descripcion_mueble_valor_vehiculo", DbType="BigInt")]
+		public System.Nullable<long> Socio_economico_descripcion_mueble_valor_vehiculo
+		{
+			get
+			{
+				return this._Socio_economico_descripcion_mueble_valor_vehiculo;
+			}
+			set
+			{
+				if ((this._Socio_economico_descripcion_mueble_valor_vehiculo != value))
+				{
+					this.OnSocio_economico_descripcion_mueble_valor_vehiculoChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_descripcion_mueble_valor_vehiculo = value;
+					this.SendPropertyChanged("Socio_economico_descripcion_mueble_valor_vehiculo");
+					this.OnSocio_economico_descripcion_mueble_valor_vehiculoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_descripcion_mueble_detalle_detalle_vehiculo", DbType="VarChar(MAX)")]
+		public string Socio_economico_descripcion_mueble_detalle_detalle_vehiculo
+		{
+			get
+			{
+				return this._Socio_economico_descripcion_mueble_detalle_detalle_vehiculo;
+			}
+			set
+			{
+				if ((this._Socio_economico_descripcion_mueble_detalle_detalle_vehiculo != value))
+				{
+					this.OnSocio_economico_descripcion_mueble_detalle_detalle_vehiculoChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_descripcion_mueble_detalle_detalle_vehiculo = value;
+					this.SendPropertyChanged("Socio_economico_descripcion_mueble_detalle_detalle_vehiculo");
+					this.OnSocio_economico_descripcion_mueble_detalle_detalle_vehiculoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_descripcion_mueble_valor_terreno", DbType="BigInt")]
+		public System.Nullable<long> Socio_economico_descripcion_mueble_valor_terreno
+		{
+			get
+			{
+				return this._Socio_economico_descripcion_mueble_valor_terreno;
+			}
+			set
+			{
+				if ((this._Socio_economico_descripcion_mueble_valor_terreno != value))
+				{
+					this.OnSocio_economico_descripcion_mueble_valor_terrenoChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_descripcion_mueble_valor_terreno = value;
+					this.SendPropertyChanged("Socio_economico_descripcion_mueble_valor_terreno");
+					this.OnSocio_economico_descripcion_mueble_valor_terrenoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_descripcion_mueble_detalle_sector_terreno", DbType="VarChar(MAX)")]
+		public string Socio_economico_descripcion_mueble_detalle_sector_terreno
+		{
+			get
+			{
+				return this._Socio_economico_descripcion_mueble_detalle_sector_terreno;
+			}
+			set
+			{
+				if ((this._Socio_economico_descripcion_mueble_detalle_sector_terreno != value))
+				{
+					this.OnSocio_economico_descripcion_mueble_detalle_sector_terrenoChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_descripcion_mueble_detalle_sector_terreno = value;
+					this.SendPropertyChanged("Socio_economico_descripcion_mueble_detalle_sector_terreno");
+					this.OnSocio_economico_descripcion_mueble_detalle_sector_terrenoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_descripcion_mueble_valor_negocio", DbType="BigInt")]
+		public System.Nullable<long> Socio_economico_descripcion_mueble_valor_negocio
+		{
+			get
+			{
+				return this._Socio_economico_descripcion_mueble_valor_negocio;
+			}
+			set
+			{
+				if ((this._Socio_economico_descripcion_mueble_valor_negocio != value))
+				{
+					this.OnSocio_economico_descripcion_mueble_valor_negocioChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_descripcion_mueble_valor_negocio = value;
+					this.SendPropertyChanged("Socio_economico_descripcion_mueble_valor_negocio");
+					this.OnSocio_economico_descripcion_mueble_valor_negocioChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_descripcion_mueble_detalle_detalle_negocio", DbType="VarChar(MAX)")]
+		public string Socio_economico_descripcion_mueble_detalle_detalle_negocio
+		{
+			get
+			{
+				return this._Socio_economico_descripcion_mueble_detalle_detalle_negocio;
+			}
+			set
+			{
+				if ((this._Socio_economico_descripcion_mueble_detalle_detalle_negocio != value))
+				{
+					this.OnSocio_economico_descripcion_mueble_detalle_detalle_negocioChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_descripcion_mueble_detalle_detalle_negocio = value;
+					this.SendPropertyChanged("Socio_economico_descripcion_mueble_detalle_detalle_negocio");
+					this.OnSocio_economico_descripcion_mueble_detalle_detalle_negocioChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_descripcion_mueble_valor_muebles_enseres", DbType="BigInt")]
+		public System.Nullable<long> Socio_economico_descripcion_mueble_valor_muebles_enseres
+		{
+			get
+			{
+				return this._Socio_economico_descripcion_mueble_valor_muebles_enseres;
+			}
+			set
+			{
+				if ((this._Socio_economico_descripcion_mueble_valor_muebles_enseres != value))
+				{
+					this.OnSocio_economico_descripcion_mueble_valor_muebles_enseresChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_descripcion_mueble_valor_muebles_enseres = value;
+					this.SendPropertyChanged("Socio_economico_descripcion_mueble_valor_muebles_enseres");
+					this.OnSocio_economico_descripcion_mueble_valor_muebles_enseresChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_descripcion_mueble_detalle_detalle_muebles_enseres", DbType="VarChar(MAX)")]
+		public string Socio_economico_descripcion_mueble_detalle_detalle_muebles_enseres
+		{
+			get
+			{
+				return this._Socio_economico_descripcion_mueble_detalle_detalle_muebles_enseres;
+			}
+			set
+			{
+				if ((this._Socio_economico_descripcion_mueble_detalle_detalle_muebles_enseres != value))
+				{
+					this.OnSocio_economico_descripcion_mueble_detalle_detalle_muebles_enseresChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_descripcion_mueble_detalle_detalle_muebles_enseres = value;
+					this.SendPropertyChanged("Socio_economico_descripcion_mueble_detalle_detalle_muebles_enseres");
+					this.OnSocio_economico_descripcion_mueble_detalle_detalle_muebles_enseresChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_caracteristica_vivienda_descripcion_unifamiliar", DbType="VarChar(MAX)")]
+		public string Socio_economico_caracteristica_vivienda_descripcion_unifamiliar
+		{
+			get
+			{
+				return this._Socio_economico_caracteristica_vivienda_descripcion_unifamiliar;
+			}
+			set
+			{
+				if ((this._Socio_economico_caracteristica_vivienda_descripcion_unifamiliar != value))
+				{
+					this.OnSocio_economico_caracteristica_vivienda_descripcion_unifamiliarChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_caracteristica_vivienda_descripcion_unifamiliar = value;
+					this.SendPropertyChanged("Socio_economico_caracteristica_vivienda_descripcion_unifamiliar");
+					this.OnSocio_economico_caracteristica_vivienda_descripcion_unifamiliarChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_caracteristica_vivienda_descripcion_multifamiliar", DbType="VarChar(MAX)")]
+		public string Socio_economico_caracteristica_vivienda_descripcion_multifamiliar
+		{
+			get
+			{
+				return this._Socio_economico_caracteristica_vivienda_descripcion_multifamiliar;
+			}
+			set
+			{
+				if ((this._Socio_economico_caracteristica_vivienda_descripcion_multifamiliar != value))
+				{
+					this.OnSocio_economico_caracteristica_vivienda_descripcion_multifamiliarChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_caracteristica_vivienda_descripcion_multifamiliar = value;
+					this.SendPropertyChanged("Socio_economico_caracteristica_vivienda_descripcion_multifamiliar");
+					this.OnSocio_economico_caracteristica_vivienda_descripcion_multifamiliarChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_caracteristica_vivienda_descripcion_otra_especifique", DbType="VarChar(MAX)")]
+		public string Socio_economico_caracteristica_vivienda_descripcion_otra_especifique
+		{
+			get
+			{
+				return this._Socio_economico_caracteristica_vivienda_descripcion_otra_especifique;
+			}
+			set
+			{
+				if ((this._Socio_economico_caracteristica_vivienda_descripcion_otra_especifique != value))
+				{
+					this.OnSocio_economico_caracteristica_vivienda_descripcion_otra_especifiqueChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_caracteristica_vivienda_descripcion_otra_especifique = value;
+					this.SendPropertyChanged("Socio_economico_caracteristica_vivienda_descripcion_otra_especifique");
+					this.OnSocio_economico_caracteristica_vivienda_descripcion_otra_especifiqueChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_caracteristica_vivienda_tenencia_propia_sin_deuda", DbType="VarChar(MAX)")]
+		public string Socio_economico_caracteristica_vivienda_tenencia_propia_sin_deuda
+		{
+			get
+			{
+				return this._Socio_economico_caracteristica_vivienda_tenencia_propia_sin_deuda;
+			}
+			set
+			{
+				if ((this._Socio_economico_caracteristica_vivienda_tenencia_propia_sin_deuda != value))
+				{
+					this.OnSocio_economico_caracteristica_vivienda_tenencia_propia_sin_deudaChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_caracteristica_vivienda_tenencia_propia_sin_deuda = value;
+					this.SendPropertyChanged("Socio_economico_caracteristica_vivienda_tenencia_propia_sin_deuda");
+					this.OnSocio_economico_caracteristica_vivienda_tenencia_propia_sin_deudaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_caracteristica_vivienda_tenencia_arrendada", DbType="VarChar(MAX)")]
+		public string Socio_economico_caracteristica_vivienda_tenencia_arrendada
+		{
+			get
+			{
+				return this._Socio_economico_caracteristica_vivienda_tenencia_arrendada;
+			}
+			set
+			{
+				if ((this._Socio_economico_caracteristica_vivienda_tenencia_arrendada != value))
+				{
+					this.OnSocio_economico_caracteristica_vivienda_tenencia_arrendadaChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_caracteristica_vivienda_tenencia_arrendada = value;
+					this.SendPropertyChanged("Socio_economico_caracteristica_vivienda_tenencia_arrendada");
+					this.OnSocio_economico_caracteristica_vivienda_tenencia_arrendadaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_caracteristica_vivienda_tenencia_de_familia", DbType="VarChar(MAX)")]
+		public string Socio_economico_caracteristica_vivienda_tenencia_de_familia
+		{
+			get
+			{
+				return this._Socio_economico_caracteristica_vivienda_tenencia_de_familia;
+			}
+			set
+			{
+				if ((this._Socio_economico_caracteristica_vivienda_tenencia_de_familia != value))
+				{
+					this.OnSocio_economico_caracteristica_vivienda_tenencia_de_familiaChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_caracteristica_vivienda_tenencia_de_familia = value;
+					this.SendPropertyChanged("Socio_economico_caracteristica_vivienda_tenencia_de_familia");
+					this.OnSocio_economico_caracteristica_vivienda_tenencia_de_familiaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_caracteristica_vivienda_tenencia_hipotecada", DbType="VarChar(MAX)")]
+		public string Socio_economico_caracteristica_vivienda_tenencia_hipotecada
+		{
+			get
+			{
+				return this._Socio_economico_caracteristica_vivienda_tenencia_hipotecada;
+			}
+			set
+			{
+				if ((this._Socio_economico_caracteristica_vivienda_tenencia_hipotecada != value))
+				{
+					this.OnSocio_economico_caracteristica_vivienda_tenencia_hipotecadaChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_caracteristica_vivienda_tenencia_hipotecada = value;
+					this.SendPropertyChanged("Socio_economico_caracteristica_vivienda_tenencia_hipotecada");
+					this.OnSocio_economico_caracteristica_vivienda_tenencia_hipotecadaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_caracteristica_vivienda_tenencia_prestada", DbType="VarChar(MAX)")]
+		public string Socio_economico_caracteristica_vivienda_tenencia_prestada
+		{
+			get
+			{
+				return this._Socio_economico_caracteristica_vivienda_tenencia_prestada;
+			}
+			set
+			{
+				if ((this._Socio_economico_caracteristica_vivienda_tenencia_prestada != value))
+				{
+					this.OnSocio_economico_caracteristica_vivienda_tenencia_prestadaChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_caracteristica_vivienda_tenencia_prestada = value;
+					this.SendPropertyChanged("Socio_economico_caracteristica_vivienda_tenencia_prestada");
+					this.OnSocio_economico_caracteristica_vivienda_tenencia_prestadaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_caracteristica_vivienda_tenencia_anticreces", DbType="VarChar(MAX)")]
+		public string Socio_economico_caracteristica_vivienda_tenencia_anticreces
+		{
+			get
+			{
+				return this._Socio_economico_caracteristica_vivienda_tenencia_anticreces;
+			}
+			set
+			{
+				if ((this._Socio_economico_caracteristica_vivienda_tenencia_anticreces != value))
+				{
+					this.OnSocio_economico_caracteristica_vivienda_tenencia_anticrecesChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_caracteristica_vivienda_tenencia_anticreces = value;
+					this.SendPropertyChanged("Socio_economico_caracteristica_vivienda_tenencia_anticreces");
+					this.OnSocio_economico_caracteristica_vivienda_tenencia_anticrecesChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_caracteristica_vivienda_tenencia_otra_especifique", DbType="VarChar(MAX)")]
+		public string Socio_economico_caracteristica_vivienda_tenencia_otra_especifique
+		{
+			get
+			{
+				return this._Socio_economico_caracteristica_vivienda_tenencia_otra_especifique;
+			}
+			set
+			{
+				if ((this._Socio_economico_caracteristica_vivienda_tenencia_otra_especifique != value))
+				{
+					this.OnSocio_economico_caracteristica_vivienda_tenencia_otra_especifiqueChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_caracteristica_vivienda_tenencia_otra_especifique = value;
+					this.SendPropertyChanged("Socio_economico_caracteristica_vivienda_tenencia_otra_especifique");
+					this.OnSocio_economico_caracteristica_vivienda_tenencia_otra_especifiqueChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_caracteristica_vivienda_tipo_casa", DbType="VarChar(MAX)")]
+		public string Socio_economico_caracteristica_vivienda_tipo_casa
+		{
+			get
+			{
+				return this._Socio_economico_caracteristica_vivienda_tipo_casa;
+			}
+			set
+			{
+				if ((this._Socio_economico_caracteristica_vivienda_tipo_casa != value))
+				{
+					this.OnSocio_economico_caracteristica_vivienda_tipo_casaChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_caracteristica_vivienda_tipo_casa = value;
+					this.SendPropertyChanged("Socio_economico_caracteristica_vivienda_tipo_casa");
+					this.OnSocio_economico_caracteristica_vivienda_tipo_casaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_caracteristica_vivienda_tipo_suit", DbType="VarChar(MAX)")]
+		public string Socio_economico_caracteristica_vivienda_tipo_suit
+		{
+			get
+			{
+				return this._Socio_economico_caracteristica_vivienda_tipo_suit;
+			}
+			set
+			{
+				if ((this._Socio_economico_caracteristica_vivienda_tipo_suit != value))
+				{
+					this.OnSocio_economico_caracteristica_vivienda_tipo_suitChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_caracteristica_vivienda_tipo_suit = value;
+					this.SendPropertyChanged("Socio_economico_caracteristica_vivienda_tipo_suit");
+					this.OnSocio_economico_caracteristica_vivienda_tipo_suitChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_caracteristica_vivienda_tipo_mediagua", DbType="VarChar(MAX)")]
+		public string Socio_economico_caracteristica_vivienda_tipo_mediagua
+		{
+			get
+			{
+				return this._Socio_economico_caracteristica_vivienda_tipo_mediagua;
+			}
+			set
+			{
+				if ((this._Socio_economico_caracteristica_vivienda_tipo_mediagua != value))
+				{
+					this.OnSocio_economico_caracteristica_vivienda_tipo_mediaguaChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_caracteristica_vivienda_tipo_mediagua = value;
+					this.SendPropertyChanged("Socio_economico_caracteristica_vivienda_tipo_mediagua");
+					this.OnSocio_economico_caracteristica_vivienda_tipo_mediaguaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_caracteristica_vivienda_tipo_departamento", DbType="VarChar(MAX)")]
+		public string Socio_economico_caracteristica_vivienda_tipo_departamento
+		{
+			get
+			{
+				return this._Socio_economico_caracteristica_vivienda_tipo_departamento;
+			}
+			set
+			{
+				if ((this._Socio_economico_caracteristica_vivienda_tipo_departamento != value))
+				{
+					this.OnSocio_economico_caracteristica_vivienda_tipo_departamentoChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_caracteristica_vivienda_tipo_departamento = value;
+					this.SendPropertyChanged("Socio_economico_caracteristica_vivienda_tipo_departamento");
+					this.OnSocio_economico_caracteristica_vivienda_tipo_departamentoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_caracteristica_vivienda_tipo_pieza", DbType="VarChar(MAX)")]
+		public string Socio_economico_caracteristica_vivienda_tipo_pieza
+		{
+			get
+			{
+				return this._Socio_economico_caracteristica_vivienda_tipo_pieza;
+			}
+			set
+			{
+				if ((this._Socio_economico_caracteristica_vivienda_tipo_pieza != value))
+				{
+					this.OnSocio_economico_caracteristica_vivienda_tipo_piezaChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_caracteristica_vivienda_tipo_pieza = value;
+					this.SendPropertyChanged("Socio_economico_caracteristica_vivienda_tipo_pieza");
+					this.OnSocio_economico_caracteristica_vivienda_tipo_piezaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_caracteristica_vivienda_tipo_otro_especifique", DbType="VarChar(MAX)")]
+		public string Socio_economico_caracteristica_vivienda_tipo_otro_especifique
+		{
+			get
+			{
+				return this._Socio_economico_caracteristica_vivienda_tipo_otro_especifique;
+			}
+			set
+			{
+				if ((this._Socio_economico_caracteristica_vivienda_tipo_otro_especifique != value))
+				{
+					this.OnSocio_economico_caracteristica_vivienda_tipo_otro_especifiqueChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_caracteristica_vivienda_tipo_otro_especifique = value;
+					this.SendPropertyChanged("Socio_economico_caracteristica_vivienda_tipo_otro_especifique");
+					this.OnSocio_economico_caracteristica_vivienda_tipo_otro_especifiqueChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_caracteristica_vivienda_distribucion_habitacion", DbType="VarChar(MAX)")]
+		public string Socio_economico_caracteristica_vivienda_distribucion_habitacion
+		{
+			get
+			{
+				return this._Socio_economico_caracteristica_vivienda_distribucion_habitacion;
+			}
+			set
+			{
+				if ((this._Socio_economico_caracteristica_vivienda_distribucion_habitacion != value))
+				{
+					this.OnSocio_economico_caracteristica_vivienda_distribucion_habitacionChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_caracteristica_vivienda_distribucion_habitacion = value;
+					this.SendPropertyChanged("Socio_economico_caracteristica_vivienda_distribucion_habitacion");
+					this.OnSocio_economico_caracteristica_vivienda_distribucion_habitacionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_caracteristica_vivienda_distribucion_sala", DbType="VarChar(MAX)")]
+		public string Socio_economico_caracteristica_vivienda_distribucion_sala
+		{
+			get
+			{
+				return this._Socio_economico_caracteristica_vivienda_distribucion_sala;
+			}
+			set
+			{
+				if ((this._Socio_economico_caracteristica_vivienda_distribucion_sala != value))
+				{
+					this.OnSocio_economico_caracteristica_vivienda_distribucion_salaChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_caracteristica_vivienda_distribucion_sala = value;
+					this.SendPropertyChanged("Socio_economico_caracteristica_vivienda_distribucion_sala");
+					this.OnSocio_economico_caracteristica_vivienda_distribucion_salaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_caracteristica_vivienda_distribucion_baño", DbType="VarChar(MAX)")]
+		public string Socio_economico_caracteristica_vivienda_distribucion_baño
+		{
+			get
+			{
+				return this._Socio_economico_caracteristica_vivienda_distribucion_baño;
+			}
+			set
+			{
+				if ((this._Socio_economico_caracteristica_vivienda_distribucion_baño != value))
+				{
+					this.OnSocio_economico_caracteristica_vivienda_distribucion_bañoChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_caracteristica_vivienda_distribucion_baño = value;
+					this.SendPropertyChanged("Socio_economico_caracteristica_vivienda_distribucion_baño");
+					this.OnSocio_economico_caracteristica_vivienda_distribucion_bañoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_caracteristica_vivienda_distribucion_garage", DbType="VarChar(MAX)")]
+		public string Socio_economico_caracteristica_vivienda_distribucion_garage
+		{
+			get
+			{
+				return this._Socio_economico_caracteristica_vivienda_distribucion_garage;
+			}
+			set
+			{
+				if ((this._Socio_economico_caracteristica_vivienda_distribucion_garage != value))
+				{
+					this.OnSocio_economico_caracteristica_vivienda_distribucion_garageChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_caracteristica_vivienda_distribucion_garage = value;
+					this.SendPropertyChanged("Socio_economico_caracteristica_vivienda_distribucion_garage");
+					this.OnSocio_economico_caracteristica_vivienda_distribucion_garageChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_caracteristica_vivienda_distribucion_comedor", DbType="VarChar(MAX)")]
+		public string Socio_economico_caracteristica_vivienda_distribucion_comedor
+		{
+			get
+			{
+				return this._Socio_economico_caracteristica_vivienda_distribucion_comedor;
+			}
+			set
+			{
+				if ((this._Socio_economico_caracteristica_vivienda_distribucion_comedor != value))
+				{
+					this.OnSocio_economico_caracteristica_vivienda_distribucion_comedorChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_caracteristica_vivienda_distribucion_comedor = value;
+					this.SendPropertyChanged("Socio_economico_caracteristica_vivienda_distribucion_comedor");
+					this.OnSocio_economico_caracteristica_vivienda_distribucion_comedorChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_caracteristica_vivienda_distribucion_cocina", DbType="VarChar(MAX)")]
+		public string Socio_economico_caracteristica_vivienda_distribucion_cocina
+		{
+			get
+			{
+				return this._Socio_economico_caracteristica_vivienda_distribucion_cocina;
+			}
+			set
+			{
+				if ((this._Socio_economico_caracteristica_vivienda_distribucion_cocina != value))
+				{
+					this.OnSocio_economico_caracteristica_vivienda_distribucion_cocinaChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_caracteristica_vivienda_distribucion_cocina = value;
+					this.SendPropertyChanged("Socio_economico_caracteristica_vivienda_distribucion_cocina");
+					this.OnSocio_economico_caracteristica_vivienda_distribucion_cocinaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_caracteristica_vivienda_distribucion_patio", DbType="VarChar(MAX)")]
+		public string Socio_economico_caracteristica_vivienda_distribucion_patio
+		{
+			get
+			{
+				return this._Socio_economico_caracteristica_vivienda_distribucion_patio;
+			}
+			set
+			{
+				if ((this._Socio_economico_caracteristica_vivienda_distribucion_patio != value))
+				{
+					this.OnSocio_economico_caracteristica_vivienda_distribucion_patioChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_caracteristica_vivienda_distribucion_patio = value;
+					this.SendPropertyChanged("Socio_economico_caracteristica_vivienda_distribucion_patio");
+					this.OnSocio_economico_caracteristica_vivienda_distribucion_patioChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_caracteristica_vivienda_distribucion_bodega", DbType="VarChar(MAX)")]
+		public string Socio_economico_caracteristica_vivienda_distribucion_bodega
+		{
+			get
+			{
+				return this._Socio_economico_caracteristica_vivienda_distribucion_bodega;
+			}
+			set
+			{
+				if ((this._Socio_economico_caracteristica_vivienda_distribucion_bodega != value))
+				{
+					this.OnSocio_economico_caracteristica_vivienda_distribucion_bodegaChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_caracteristica_vivienda_distribucion_bodega = value;
+					this.SendPropertyChanged("Socio_economico_caracteristica_vivienda_distribucion_bodega");
+					this.OnSocio_economico_caracteristica_vivienda_distribucion_bodegaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_caracteristica_vivienda_distribucion_otro_especifique", DbType="VarChar(MAX)")]
+		public string Socio_economico_caracteristica_vivienda_distribucion_otro_especifique
+		{
+			get
+			{
+				return this._Socio_economico_caracteristica_vivienda_distribucion_otro_especifique;
+			}
+			set
+			{
+				if ((this._Socio_economico_caracteristica_vivienda_distribucion_otro_especifique != value))
+				{
+					this.OnSocio_economico_caracteristica_vivienda_distribucion_otro_especifiqueChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_caracteristica_vivienda_distribucion_otro_especifique = value;
+					this.SendPropertyChanged("Socio_economico_caracteristica_vivienda_distribucion_otro_especifique");
+					this.OnSocio_economico_caracteristica_vivienda_distribucion_otro_especifiqueChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_caracteristica_vivienda_otro_especifique", DbType="VarChar(MAX)")]
+		public string Socio_economico_caracteristica_vivienda_otro_especifique
+		{
+			get
+			{
+				return this._Socio_economico_caracteristica_vivienda_otro_especifique;
+			}
+			set
+			{
+				if ((this._Socio_economico_caracteristica_vivienda_otro_especifique != value))
+				{
+					this.OnSocio_economico_caracteristica_vivienda_otro_especifiqueChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_caracteristica_vivienda_otro_especifique = value;
+					this.SendPropertyChanged("Socio_economico_caracteristica_vivienda_otro_especifique");
+					this.OnSocio_economico_caracteristica_vivienda_otro_especifiqueChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_como_moviliza_vivienda_a_trabajo", DbType="VarChar(MAX)")]
+		public string Socio_economico_como_moviliza_vivienda_a_trabajo
+		{
+			get
+			{
+				return this._Socio_economico_como_moviliza_vivienda_a_trabajo;
+			}
+			set
+			{
+				if ((this._Socio_economico_como_moviliza_vivienda_a_trabajo != value))
+				{
+					this.OnSocio_economico_como_moviliza_vivienda_a_trabajoChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_como_moviliza_vivienda_a_trabajo = value;
+					this.SendPropertyChanged("Socio_economico_como_moviliza_vivienda_a_trabajo");
+					this.OnSocio_economico_como_moviliza_vivienda_a_trabajoChanged();
 				}
 			}
 		}
@@ -42820,7 +45455,31 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_nombres_apellidos_familiar1 != value))
 				{
+					this.OnSocio_economico_nombres_apellidos_familiar1Changing(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_nombres_apellidos_familiar1 = value;
+					this.SendPropertyChanged("Socio_economico_nombres_apellidos_familiar1");
+					this.OnSocio_economico_nombres_apellidos_familiar1Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_parentesco_familiar1", DbType="VarChar(MAX)")]
+		public string Socio_economico_parentesco_familiar1
+		{
+			get
+			{
+				return this._Socio_economico_parentesco_familiar1;
+			}
+			set
+			{
+				if ((this._Socio_economico_parentesco_familiar1 != value))
+				{
+					this.OnSocio_economico_parentesco_familiar1Changing(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_parentesco_familiar1 = value;
+					this.SendPropertyChanged("Socio_economico_parentesco_familiar1");
+					this.OnSocio_economico_parentesco_familiar1Changed();
 				}
 			}
 		}
@@ -42836,7 +45495,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_fecha_nacimiento_familiar1 != value))
 				{
+					this.OnSocio_economico_fecha_nacimiento_familiar1Changing(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_fecha_nacimiento_familiar1 = value;
+					this.SendPropertyChanged("Socio_economico_fecha_nacimiento_familiar1");
+					this.OnSocio_economico_fecha_nacimiento_familiar1Changed();
 				}
 			}
 		}
@@ -42852,7 +45515,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_edad_familiar1 != value))
 				{
+					this.OnSocio_economico_edad_familiar1Changing(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_edad_familiar1 = value;
+					this.SendPropertyChanged("Socio_economico_edad_familiar1");
+					this.OnSocio_economico_edad_familiar1Changed();
 				}
 			}
 		}
@@ -42868,7 +45535,31 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_nombres_apellidos_familiar2 != value))
 				{
+					this.OnSocio_economico_nombres_apellidos_familiar2Changing(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_nombres_apellidos_familiar2 = value;
+					this.SendPropertyChanged("Socio_economico_nombres_apellidos_familiar2");
+					this.OnSocio_economico_nombres_apellidos_familiar2Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_parentesco_familiar2", DbType="VarChar(MAX)")]
+		public string Socio_economico_parentesco_familiar2
+		{
+			get
+			{
+				return this._Socio_economico_parentesco_familiar2;
+			}
+			set
+			{
+				if ((this._Socio_economico_parentesco_familiar2 != value))
+				{
+					this.OnSocio_economico_parentesco_familiar2Changing(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_parentesco_familiar2 = value;
+					this.SendPropertyChanged("Socio_economico_parentesco_familiar2");
+					this.OnSocio_economico_parentesco_familiar2Changed();
 				}
 			}
 		}
@@ -42884,7 +45575,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_fecha_nacimiento_familiar2 != value))
 				{
+					this.OnSocio_economico_fecha_nacimiento_familiar2Changing(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_fecha_nacimiento_familiar2 = value;
+					this.SendPropertyChanged("Socio_economico_fecha_nacimiento_familiar2");
+					this.OnSocio_economico_fecha_nacimiento_familiar2Changed();
 				}
 			}
 		}
@@ -42900,7 +45595,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_edad_familiar2 != value))
 				{
+					this.OnSocio_economico_edad_familiar2Changing(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_edad_familiar2 = value;
+					this.SendPropertyChanged("Socio_economico_edad_familiar2");
+					this.OnSocio_economico_edad_familiar2Changed();
 				}
 			}
 		}
@@ -42916,7 +45615,31 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_nombres_apellidos_familiar3 != value))
 				{
+					this.OnSocio_economico_nombres_apellidos_familiar3Changing(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_nombres_apellidos_familiar3 = value;
+					this.SendPropertyChanged("Socio_economico_nombres_apellidos_familiar3");
+					this.OnSocio_economico_nombres_apellidos_familiar3Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_parentesco_familiar3", DbType="VarChar(MAX)")]
+		public string Socio_economico_parentesco_familiar3
+		{
+			get
+			{
+				return this._Socio_economico_parentesco_familiar3;
+			}
+			set
+			{
+				if ((this._Socio_economico_parentesco_familiar3 != value))
+				{
+					this.OnSocio_economico_parentesco_familiar3Changing(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_parentesco_familiar3 = value;
+					this.SendPropertyChanged("Socio_economico_parentesco_familiar3");
+					this.OnSocio_economico_parentesco_familiar3Changed();
 				}
 			}
 		}
@@ -42932,7 +45655,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_fecha_nacimiento_familiar3 != value))
 				{
+					this.OnSocio_economico_fecha_nacimiento_familiar3Changing(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_fecha_nacimiento_familiar3 = value;
+					this.SendPropertyChanged("Socio_economico_fecha_nacimiento_familiar3");
+					this.OnSocio_economico_fecha_nacimiento_familiar3Changed();
 				}
 			}
 		}
@@ -42948,7 +45675,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_edad_familiar3 != value))
 				{
+					this.OnSocio_economico_edad_familiar3Changing(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_edad_familiar3 = value;
+					this.SendPropertyChanged("Socio_economico_edad_familiar3");
+					this.OnSocio_economico_edad_familiar3Changed();
 				}
 			}
 		}
@@ -42964,7 +45695,31 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_nombres_apellidos_familiar4 != value))
 				{
+					this.OnSocio_economico_nombres_apellidos_familiar4Changing(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_nombres_apellidos_familiar4 = value;
+					this.SendPropertyChanged("Socio_economico_nombres_apellidos_familiar4");
+					this.OnSocio_economico_nombres_apellidos_familiar4Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_parentesco_familiar4", DbType="VarChar(MAX)")]
+		public string Socio_economico_parentesco_familiar4
+		{
+			get
+			{
+				return this._Socio_economico_parentesco_familiar4;
+			}
+			set
+			{
+				if ((this._Socio_economico_parentesco_familiar4 != value))
+				{
+					this.OnSocio_economico_parentesco_familiar4Changing(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_parentesco_familiar4 = value;
+					this.SendPropertyChanged("Socio_economico_parentesco_familiar4");
+					this.OnSocio_economico_parentesco_familiar4Changed();
 				}
 			}
 		}
@@ -42980,7 +45735,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_fecha_nacimiento_familiar4 != value))
 				{
+					this.OnSocio_economico_fecha_nacimiento_familiar4Changing(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_fecha_nacimiento_familiar4 = value;
+					this.SendPropertyChanged("Socio_economico_fecha_nacimiento_familiar4");
+					this.OnSocio_economico_fecha_nacimiento_familiar4Changed();
 				}
 			}
 		}
@@ -42996,7 +45755,91 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_edad_familiar4 != value))
 				{
+					this.OnSocio_economico_edad_familiar4Changing(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_edad_familiar4 = value;
+					this.SendPropertyChanged("Socio_economico_edad_familiar4");
+					this.OnSocio_economico_edad_familiar4Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_nombres_apellidos_familiar5", DbType="VarChar(MAX)")]
+		public string Socio_economico_nombres_apellidos_familiar5
+		{
+			get
+			{
+				return this._Socio_economico_nombres_apellidos_familiar5;
+			}
+			set
+			{
+				if ((this._Socio_economico_nombres_apellidos_familiar5 != value))
+				{
+					this.OnSocio_economico_nombres_apellidos_familiar5Changing(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_nombres_apellidos_familiar5 = value;
+					this.SendPropertyChanged("Socio_economico_nombres_apellidos_familiar5");
+					this.OnSocio_economico_nombres_apellidos_familiar5Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_parentesco_familiar5", DbType="VarChar(MAX)")]
+		public string Socio_economico_parentesco_familiar5
+		{
+			get
+			{
+				return this._Socio_economico_parentesco_familiar5;
+			}
+			set
+			{
+				if ((this._Socio_economico_parentesco_familiar5 != value))
+				{
+					this.OnSocio_economico_parentesco_familiar5Changing(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_parentesco_familiar5 = value;
+					this.SendPropertyChanged("Socio_economico_parentesco_familiar5");
+					this.OnSocio_economico_parentesco_familiar5Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_fecha_nacimiento_familiar5", DbType="DateTime")]
+		public System.Nullable<System.DateTime> Socio_economico_fecha_nacimiento_familiar5
+		{
+			get
+			{
+				return this._Socio_economico_fecha_nacimiento_familiar5;
+			}
+			set
+			{
+				if ((this._Socio_economico_fecha_nacimiento_familiar5 != value))
+				{
+					this.OnSocio_economico_fecha_nacimiento_familiar5Changing(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_fecha_nacimiento_familiar5 = value;
+					this.SendPropertyChanged("Socio_economico_fecha_nacimiento_familiar5");
+					this.OnSocio_economico_fecha_nacimiento_familiar5Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_edad_familiar5", DbType="BigInt")]
+		public System.Nullable<long> Socio_economico_edad_familiar5
+		{
+			get
+			{
+				return this._Socio_economico_edad_familiar5;
+			}
+			set
+			{
+				if ((this._Socio_economico_edad_familiar5 != value))
+				{
+					this.OnSocio_economico_edad_familiar5Changing(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_edad_familiar5 = value;
+					this.SendPropertyChanged("Socio_economico_edad_familiar5");
+					this.OnSocio_economico_edad_familiar5Changed();
 				}
 			}
 		}
@@ -43012,7 +45855,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_nucleofamiliar_persona_discapacidad_si != value))
 				{
+					this.OnSocio_economico_nucleofamiliar_persona_discapacidad_siChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_nucleofamiliar_persona_discapacidad_si = value;
+					this.SendPropertyChanged("Socio_economico_nucleofamiliar_persona_discapacidad_si");
+					this.OnSocio_economico_nucleofamiliar_persona_discapacidad_siChanged();
 				}
 			}
 		}
@@ -43028,7 +45875,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_nucleofamiliar_persona_discapacidad_no != value))
 				{
+					this.OnSocio_economico_nucleofamiliar_persona_discapacidad_noChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_nucleofamiliar_persona_discapacidad_no = value;
+					this.SendPropertyChanged("Socio_economico_nucleofamiliar_persona_discapacidad_no");
+					this.OnSocio_economico_nucleofamiliar_persona_discapacidad_noChanged();
 				}
 			}
 		}
@@ -43044,7 +45895,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_acargo_de_persona_discapacidad_si != value))
 				{
+					this.OnSocio_economico_acargo_de_persona_discapacidad_siChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_acargo_de_persona_discapacidad_si = value;
+					this.SendPropertyChanged("Socio_economico_acargo_de_persona_discapacidad_si");
+					this.OnSocio_economico_acargo_de_persona_discapacidad_siChanged();
 				}
 			}
 		}
@@ -43060,7 +45915,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_acargo_de_persona_discapacidad_no != value))
 				{
+					this.OnSocio_economico_acargo_de_persona_discapacidad_noChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_acargo_de_persona_discapacidad_no = value;
+					this.SendPropertyChanged("Socio_economico_acargo_de_persona_discapacidad_no");
+					this.OnSocio_economico_acargo_de_persona_discapacidad_noChanged();
 				}
 			}
 		}
@@ -43076,7 +45935,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_nombres_apellidos_familiar_discapacidad1 != value))
 				{
+					this.OnSocio_economico_nombres_apellidos_familiar_discapacidad1Changing(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_nombres_apellidos_familiar_discapacidad1 = value;
+					this.SendPropertyChanged("Socio_economico_nombres_apellidos_familiar_discapacidad1");
+					this.OnSocio_economico_nombres_apellidos_familiar_discapacidad1Changed();
 				}
 			}
 		}
@@ -43092,7 +45955,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_fecha_caducidad_carnet_familiar_discapacidad1 != value))
 				{
+					this.OnSocio_economico_fecha_caducidad_carnet_familiar_discapacidad1Changing(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_fecha_caducidad_carnet_familiar_discapacidad1 = value;
+					this.SendPropertyChanged("Socio_economico_fecha_caducidad_carnet_familiar_discapacidad1");
+					this.OnSocio_economico_fecha_caducidad_carnet_familiar_discapacidad1Changed();
 				}
 			}
 		}
@@ -43108,7 +45975,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_familiar_discapacidad_tipo1 != value))
 				{
+					this.OnSocio_economico_familiar_discapacidad_tipo1Changing(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_familiar_discapacidad_tipo1 = value;
+					this.SendPropertyChanged("Socio_economico_familiar_discapacidad_tipo1");
+					this.OnSocio_economico_familiar_discapacidad_tipo1Changed();
 				}
 			}
 		}
@@ -43124,7 +45995,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_familiar_discapacidad_porcentaje1 != value))
 				{
+					this.OnSocio_economico_familiar_discapacidad_porcentaje1Changing(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_familiar_discapacidad_porcentaje1 = value;
+					this.SendPropertyChanged("Socio_economico_familiar_discapacidad_porcentaje1");
+					this.OnSocio_economico_familiar_discapacidad_porcentaje1Changed();
 				}
 			}
 		}
@@ -43140,7 +46015,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_familiar_discapacidad_parentesco1 != value))
 				{
+					this.OnSocio_economico_familiar_discapacidad_parentesco1Changing(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_familiar_discapacidad_parentesco1 = value;
+					this.SendPropertyChanged("Socio_economico_familiar_discapacidad_parentesco1");
+					this.OnSocio_economico_familiar_discapacidad_parentesco1Changed();
 				}
 			}
 		}
@@ -43156,7 +46035,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_familiar_discapacidad_fecha_nacimiento1 != value))
 				{
+					this.OnSocio_economico_familiar_discapacidad_fecha_nacimiento1Changing(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_familiar_discapacidad_fecha_nacimiento1 = value;
+					this.SendPropertyChanged("Socio_economico_familiar_discapacidad_fecha_nacimiento1");
+					this.OnSocio_economico_familiar_discapacidad_fecha_nacimiento1Changed();
 				}
 			}
 		}
@@ -43172,7 +46055,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_nombres_apellidos_familiar_discapacidad2 != value))
 				{
+					this.OnSocio_economico_nombres_apellidos_familiar_discapacidad2Changing(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_nombres_apellidos_familiar_discapacidad2 = value;
+					this.SendPropertyChanged("Socio_economico_nombres_apellidos_familiar_discapacidad2");
+					this.OnSocio_economico_nombres_apellidos_familiar_discapacidad2Changed();
 				}
 			}
 		}
@@ -43188,7 +46075,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_fecha_caducidad_carnet_familiar_discapacidad2 != value))
 				{
+					this.OnSocio_economico_fecha_caducidad_carnet_familiar_discapacidad2Changing(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_fecha_caducidad_carnet_familiar_discapacidad2 = value;
+					this.SendPropertyChanged("Socio_economico_fecha_caducidad_carnet_familiar_discapacidad2");
+					this.OnSocio_economico_fecha_caducidad_carnet_familiar_discapacidad2Changed();
 				}
 			}
 		}
@@ -43204,7 +46095,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_familiar_discapacidad_tipo2 != value))
 				{
+					this.OnSocio_economico_familiar_discapacidad_tipo2Changing(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_familiar_discapacidad_tipo2 = value;
+					this.SendPropertyChanged("Socio_economico_familiar_discapacidad_tipo2");
+					this.OnSocio_economico_familiar_discapacidad_tipo2Changed();
 				}
 			}
 		}
@@ -43220,7 +46115,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_familiar_discapacidad_porcentaje2 != value))
 				{
+					this.OnSocio_economico_familiar_discapacidad_porcentaje2Changing(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_familiar_discapacidad_porcentaje2 = value;
+					this.SendPropertyChanged("Socio_economico_familiar_discapacidad_porcentaje2");
+					this.OnSocio_economico_familiar_discapacidad_porcentaje2Changed();
 				}
 			}
 		}
@@ -43236,7 +46135,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_familiar_discapacidad_parentesco2 != value))
 				{
+					this.OnSocio_economico_familiar_discapacidad_parentesco2Changing(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_familiar_discapacidad_parentesco2 = value;
+					this.SendPropertyChanged("Socio_economico_familiar_discapacidad_parentesco2");
+					this.OnSocio_economico_familiar_discapacidad_parentesco2Changed();
 				}
 			}
 		}
@@ -43252,151 +46155,71 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_familiar_discapacidad_fecha_nacimiento2 != value))
 				{
+					this.OnSocio_economico_familiar_discapacidad_fecha_nacimiento2Changing(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_familiar_discapacidad_fecha_nacimiento2 = value;
+					this.SendPropertyChanged("Socio_economico_familiar_discapacidad_fecha_nacimiento2");
+					this.OnSocio_economico_familiar_discapacidad_fecha_nacimiento2Changed();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_nombres_apellidos_familiar_discapacidad3", DbType="VarChar(MAX)")]
-		public string Socio_economico_nombres_apellidos_familiar_discapacidad3
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_registrar_dependencia_familiar_MT_si", DbType="VarChar(MAX)")]
+		public string Socio_economico_registrar_dependencia_familiar_MT_si
 		{
 			get
 			{
-				return this._Socio_economico_nombres_apellidos_familiar_discapacidad3;
+				return this._Socio_economico_registrar_dependencia_familiar_MT_si;
 			}
 			set
 			{
-				if ((this._Socio_economico_nombres_apellidos_familiar_discapacidad3 != value))
+				if ((this._Socio_economico_registrar_dependencia_familiar_MT_si != value))
 				{
-					this._Socio_economico_nombres_apellidos_familiar_discapacidad3 = value;
+					this.OnSocio_economico_registrar_dependencia_familiar_MT_siChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_registrar_dependencia_familiar_MT_si = value;
+					this.SendPropertyChanged("Socio_economico_registrar_dependencia_familiar_MT_si");
+					this.OnSocio_economico_registrar_dependencia_familiar_MT_siChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_fecha_caducidad_carnet_familiar_discapacidad3", DbType="DateTime")]
-		public System.Nullable<System.DateTime> Socio_economico_fecha_caducidad_carnet_familiar_discapacidad3
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_registrar_dependencia_familiar_MT_no", DbType="VarChar(MAX)")]
+		public string Socio_economico_registrar_dependencia_familiar_MT_no
 		{
 			get
 			{
-				return this._Socio_economico_fecha_caducidad_carnet_familiar_discapacidad3;
+				return this._Socio_economico_registrar_dependencia_familiar_MT_no;
 			}
 			set
 			{
-				if ((this._Socio_economico_fecha_caducidad_carnet_familiar_discapacidad3 != value))
+				if ((this._Socio_economico_registrar_dependencia_familiar_MT_no != value))
 				{
-					this._Socio_economico_fecha_caducidad_carnet_familiar_discapacidad3 = value;
+					this.OnSocio_economico_registrar_dependencia_familiar_MT_noChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_registrar_dependencia_familiar_MT_no = value;
+					this.SendPropertyChanged("Socio_economico_registrar_dependencia_familiar_MT_no");
+					this.OnSocio_economico_registrar_dependencia_familiar_MT_noChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_familiar_discapacidad_tipo3", DbType="VarChar(MAX)")]
-		public string Socio_economico_familiar_discapacidad_tipo3
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_registrar_dependencia_familiar_MT_numero_carnetMSP", DbType="VarChar(MAX)")]
+		public string Socio_economico_registrar_dependencia_familiar_MT_numero_carnetMSP
 		{
 			get
 			{
-				return this._Socio_economico_familiar_discapacidad_tipo3;
+				return this._Socio_economico_registrar_dependencia_familiar_MT_numero_carnetMSP;
 			}
 			set
 			{
-				if ((this._Socio_economico_familiar_discapacidad_tipo3 != value))
+				if ((this._Socio_economico_registrar_dependencia_familiar_MT_numero_carnetMSP != value))
 				{
-					this._Socio_economico_familiar_discapacidad_tipo3 = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_familiar_discapacidad_porcentaje3", DbType="BigInt")]
-		public System.Nullable<long> Socio_economico_familiar_discapacidad_porcentaje3
-		{
-			get
-			{
-				return this._Socio_economico_familiar_discapacidad_porcentaje3;
-			}
-			set
-			{
-				if ((this._Socio_economico_familiar_discapacidad_porcentaje3 != value))
-				{
-					this._Socio_economico_familiar_discapacidad_porcentaje3 = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_familiar_discapacidad_parentesco3", DbType="VarChar(MAX)")]
-		public string Socio_economico_familiar_discapacidad_parentesco3
-		{
-			get
-			{
-				return this._Socio_economico_familiar_discapacidad_parentesco3;
-			}
-			set
-			{
-				if ((this._Socio_economico_familiar_discapacidad_parentesco3 != value))
-				{
-					this._Socio_economico_familiar_discapacidad_parentesco3 = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_familiar_discapacidad_fecha_nacimiento3", DbType="DateTime")]
-		public System.Nullable<System.DateTime> Socio_economico_familiar_discapacidad_fecha_nacimiento3
-		{
-			get
-			{
-				return this._Socio_economico_familiar_discapacidad_fecha_nacimiento3;
-			}
-			set
-			{
-				if ((this._Socio_economico_familiar_discapacidad_fecha_nacimiento3 != value))
-				{
-					this._Socio_economico_familiar_discapacidad_fecha_nacimiento3 = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_registrar_dependencia_familiar_MIES_si", DbType="VarChar(MAX)")]
-		public string Socio_economico_registrar_dependencia_familiar_MIES_si
-		{
-			get
-			{
-				return this._Socio_economico_registrar_dependencia_familiar_MIES_si;
-			}
-			set
-			{
-				if ((this._Socio_economico_registrar_dependencia_familiar_MIES_si != value))
-				{
-					this._Socio_economico_registrar_dependencia_familiar_MIES_si = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_registrar_dependencia_familiar_MIES_no", DbType="VarChar(MAX)")]
-		public string Socio_economico_registrar_dependencia_familiar_MIES_no
-		{
-			get
-			{
-				return this._Socio_economico_registrar_dependencia_familiar_MIES_no;
-			}
-			set
-			{
-				if ((this._Socio_economico_registrar_dependencia_familiar_MIES_no != value))
-				{
-					this._Socio_economico_registrar_dependencia_familiar_MIES_no = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_registrar_dependencia_familiar_MIES_numcarnet", DbType="VarChar(MAX)")]
-		public string Socio_economico_registrar_dependencia_familiar_MIES_numcarnet
-		{
-			get
-			{
-				return this._Socio_economico_registrar_dependencia_familiar_MIES_numcarnet;
-			}
-			set
-			{
-				if ((this._Socio_economico_registrar_dependencia_familiar_MIES_numcarnet != value))
-				{
-					this._Socio_economico_registrar_dependencia_familiar_MIES_numcarnet = value;
+					this.OnSocio_economico_registrar_dependencia_familiar_MT_numero_carnetMSPChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_registrar_dependencia_familiar_MT_numero_carnetMSP = value;
+					this.SendPropertyChanged("Socio_economico_registrar_dependencia_familiar_MT_numero_carnetMSP");
+					this.OnSocio_economico_registrar_dependencia_familiar_MT_numero_carnetMSPChanged();
 				}
 			}
 		}
@@ -43412,7 +46235,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_familiar_enfermedad_catastrofica_rara_si != value))
 				{
+					this.OnSocio_economico_familiar_enfermedad_catastrofica_rara_siChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_familiar_enfermedad_catastrofica_rara_si = value;
+					this.SendPropertyChanged("Socio_economico_familiar_enfermedad_catastrofica_rara_si");
+					this.OnSocio_economico_familiar_enfermedad_catastrofica_rara_siChanged();
 				}
 			}
 		}
@@ -43428,7 +46255,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_familiar_enfermedad_catastrofica_rara_no != value))
 				{
+					this.OnSocio_economico_familiar_enfermedad_catastrofica_rara_noChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_familiar_enfermedad_catastrofica_rara_no = value;
+					this.SendPropertyChanged("Socio_economico_familiar_enfermedad_catastrofica_rara_no");
+					this.OnSocio_economico_familiar_enfermedad_catastrofica_rara_noChanged();
 				}
 			}
 		}
@@ -43444,7 +46275,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_familiar_enfermedad_catastrofica_rara_parentesco != value))
 				{
+					this.OnSocio_economico_familiar_enfermedad_catastrofica_rara_parentescoChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_familiar_enfermedad_catastrofica_rara_parentesco = value;
+					this.SendPropertyChanged("Socio_economico_familiar_enfermedad_catastrofica_rara_parentesco");
+					this.OnSocio_economico_familiar_enfermedad_catastrofica_rara_parentescoChanged();
 				}
 			}
 		}
@@ -43460,7 +46295,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_a_cargo_familiar_enfermedad_catastrofica_rara_si != value))
 				{
+					this.OnSocio_economico_a_cargo_familiar_enfermedad_catastrofica_rara_siChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_a_cargo_familiar_enfermedad_catastrofica_rara_si = value;
+					this.SendPropertyChanged("Socio_economico_a_cargo_familiar_enfermedad_catastrofica_rara_si");
+					this.OnSocio_economico_a_cargo_familiar_enfermedad_catastrofica_rara_siChanged();
 				}
 			}
 		}
@@ -43476,7 +46315,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_a_cargo_familiar_enfermedad_catastrofica_rara_no != value))
 				{
+					this.OnSocio_economico_a_cargo_familiar_enfermedad_catastrofica_rara_noChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_a_cargo_familiar_enfermedad_catastrofica_rara_no = value;
+					this.SendPropertyChanged("Socio_economico_a_cargo_familiar_enfermedad_catastrofica_rara_no");
+					this.OnSocio_economico_a_cargo_familiar_enfermedad_catastrofica_rara_noChanged();
 				}
 			}
 		}
@@ -43492,7 +46335,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_a_cargo_familiar_enfermedad_catastrofica_rara_tipoenfermedad != value))
 				{
+					this.OnSocio_economico_a_cargo_familiar_enfermedad_catastrofica_rara_tipoenfermedadChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_a_cargo_familiar_enfermedad_catastrofica_rara_tipoenfermedad = value;
+					this.SendPropertyChanged("Socio_economico_a_cargo_familiar_enfermedad_catastrofica_rara_tipoenfermedad");
+					this.OnSocio_economico_a_cargo_familiar_enfermedad_catastrofica_rara_tipoenfermedadChanged();
 				}
 			}
 		}
@@ -43508,7 +46355,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_hogar != value))
 				{
+					this.OnSocio_economico_hogarChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_hogar = value;
+					this.SendPropertyChanged("Socio_economico_hogar");
+					this.OnSocio_economico_hogarChanged();
 				}
 			}
 		}
@@ -43524,7 +46375,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_paseos_familiares != value))
 				{
+					this.OnSocio_economico_paseos_familiaresChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_paseos_familiares = value;
+					this.SendPropertyChanged("Socio_economico_paseos_familiares");
+					this.OnSocio_economico_paseos_familiaresChanged();
 				}
 			}
 		}
@@ -43540,7 +46395,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_estudios != value))
 				{
+					this.OnSocio_economico_estudiosChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_estudios = value;
+					this.SendPropertyChanged("Socio_economico_estudios");
+					this.OnSocio_economico_estudiosChanged();
 				}
 			}
 		}
@@ -43556,87 +46415,151 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_actividades_artisticas != value))
 				{
+					this.OnSocio_economico_actividades_artisticasChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_actividades_artisticas = value;
+					this.SendPropertyChanged("Socio_economico_actividades_artisticas");
+					this.OnSocio_economico_actividades_artisticasChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_otros", DbType="VarChar(MAX)")]
-		public string Socio_economico_otros
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_otro", DbType="VarChar(MAX)")]
+		public string Socio_economico_otro
 		{
 			get
 			{
-				return this._Socio_economico_otros;
+				return this._Socio_economico_otro;
 			}
 			set
 			{
-				if ((this._Socio_economico_otros != value))
+				if ((this._Socio_economico_otro != value))
 				{
-					this._Socio_economico_otros = value;
+					this.OnSocio_economico_otroChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_otro = value;
+					this.SendPropertyChanged("Socio_economico_otro");
+					this.OnSocio_economico_otroChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_trabajo_complementario", DbType="VarChar(MAX)")]
-		public string Socio_economico_trabajo_complementario
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_otro_especifique", DbType="VarChar(MAX)")]
+		public string Socio_economico_otro_especifique
 		{
 			get
 			{
-				return this._Socio_economico_trabajo_complementario;
+				return this._Socio_economico_otro_especifique;
 			}
 			set
 			{
-				if ((this._Socio_economico_trabajo_complementario != value))
+				if ((this._Socio_economico_otro_especifique != value))
 				{
-					this._Socio_economico_trabajo_complementario = value;
+					this.OnSocio_economico_otro_especifiqueChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_otro_especifique = value;
+					this.SendPropertyChanged("Socio_economico_otro_especifique");
+					this.OnSocio_economico_otro_especifiqueChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_detalle_actividad", DbType="VarChar(MAX)")]
-		public string Socio_economico_detalle_actividad
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_actividad_economica_adicional_si", DbType="VarChar(MAX)")]
+		public string Socio_economico_actividad_economica_adicional_si
 		{
 			get
 			{
-				return this._Socio_economico_detalle_actividad;
+				return this._Socio_economico_actividad_economica_adicional_si;
 			}
 			set
 			{
-				if ((this._Socio_economico_detalle_actividad != value))
+				if ((this._Socio_economico_actividad_economica_adicional_si != value))
 				{
-					this._Socio_economico_detalle_actividad = value;
+					this.OnSocio_economico_actividad_economica_adicional_siChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_actividad_economica_adicional_si = value;
+					this.SendPropertyChanged("Socio_economico_actividad_economica_adicional_si");
+					this.OnSocio_economico_actividad_economica_adicional_siChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_tiempo_actividad", DbType="VarChar(MAX)")]
-		public string Socio_economico_tiempo_actividad
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_actividad_economica_adicional_no", DbType="VarChar(MAX)")]
+		public string Socio_economico_actividad_economica_adicional_no
 		{
 			get
 			{
-				return this._Socio_economico_tiempo_actividad;
+				return this._Socio_economico_actividad_economica_adicional_no;
 			}
 			set
 			{
-				if ((this._Socio_economico_tiempo_actividad != value))
+				if ((this._Socio_economico_actividad_economica_adicional_no != value))
 				{
-					this._Socio_economico_tiempo_actividad = value;
+					this.OnSocio_economico_actividad_economica_adicional_noChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_actividad_economica_adicional_no = value;
+					this.SendPropertyChanged("Socio_economico_actividad_economica_adicional_no");
+					this.OnSocio_economico_actividad_economica_adicional_noChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_hace_cuanto_tiempo_actividad", DbType="VarChar(MAX)")]
-		public string Socio_economico_hace_cuanto_tiempo_actividad
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_actividad_economica_adicional_detalle", DbType="VarChar(MAX)")]
+		public string Socio_economico_actividad_economica_adicional_detalle
 		{
 			get
 			{
-				return this._Socio_economico_hace_cuanto_tiempo_actividad;
+				return this._Socio_economico_actividad_economica_adicional_detalle;
 			}
 			set
 			{
-				if ((this._Socio_economico_hace_cuanto_tiempo_actividad != value))
+				if ((this._Socio_economico_actividad_economica_adicional_detalle != value))
 				{
-					this._Socio_economico_hace_cuanto_tiempo_actividad = value;
+					this.OnSocio_economico_actividad_economica_adicional_detalleChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_actividad_economica_adicional_detalle = value;
+					this.SendPropertyChanged("Socio_economico_actividad_economica_adicional_detalle");
+					this.OnSocio_economico_actividad_economica_adicional_detalleChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_actividad_economica_adicional_tiempo_destina", DbType="VarChar(MAX)")]
+		public string Socio_economico_actividad_economica_adicional_tiempo_destina
+		{
+			get
+			{
+				return this._Socio_economico_actividad_economica_adicional_tiempo_destina;
+			}
+			set
+			{
+				if ((this._Socio_economico_actividad_economica_adicional_tiempo_destina != value))
+				{
+					this.OnSocio_economico_actividad_economica_adicional_tiempo_destinaChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_actividad_economica_adicional_tiempo_destina = value;
+					this.SendPropertyChanged("Socio_economico_actividad_economica_adicional_tiempo_destina");
+					this.OnSocio_economico_actividad_economica_adicional_tiempo_destinaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_actividad_economica_adicional_hace_tiempo", DbType="VarChar(MAX)")]
+		public string Socio_economico_actividad_economica_adicional_hace_tiempo
+		{
+			get
+			{
+				return this._Socio_economico_actividad_economica_adicional_hace_tiempo;
+			}
+			set
+			{
+				if ((this._Socio_economico_actividad_economica_adicional_hace_tiempo != value))
+				{
+					this.OnSocio_economico_actividad_economica_adicional_hace_tiempoChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_actividad_economica_adicional_hace_tiempo = value;
+					this.SendPropertyChanged("Socio_economico_actividad_economica_adicional_hace_tiempo");
+					this.OnSocio_economico_actividad_economica_adicional_hace_tiempoChanged();
 				}
 			}
 		}
@@ -43652,7 +46575,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_actividad_deportiva_si != value))
 				{
+					this.OnSocio_economico_actividad_deportiva_siChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_actividad_deportiva_si = value;
+					this.SendPropertyChanged("Socio_economico_actividad_deportiva_si");
+					this.OnSocio_economico_actividad_deportiva_siChanged();
 				}
 			}
 		}
@@ -43668,7 +46595,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_actividad_deportiva_no != value))
 				{
+					this.OnSocio_economico_actividad_deportiva_noChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_actividad_deportiva_no = value;
+					this.SendPropertyChanged("Socio_economico_actividad_deportiva_no");
+					this.OnSocio_economico_actividad_deportiva_noChanged();
 				}
 			}
 		}
@@ -43684,7 +46615,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_actividad_deportiva_especificar != value))
 				{
+					this.OnSocio_economico_actividad_deportiva_especificarChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_actividad_deportiva_especificar = value;
+					this.SendPropertyChanged("Socio_economico_actividad_deportiva_especificar");
+					this.OnSocio_economico_actividad_deportiva_especificarChanged();
 				}
 			}
 		}
@@ -43700,7 +46635,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_actividad_deportiva_frecuencia != value))
 				{
+					this.OnSocio_economico_actividad_deportiva_frecuenciaChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_actividad_deportiva_frecuencia = value;
+					this.SendPropertyChanged("Socio_economico_actividad_deportiva_frecuencia");
+					this.OnSocio_economico_actividad_deportiva_frecuenciaChanged();
 				}
 			}
 		}
@@ -43716,7 +46655,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_actividad_deportiva_edad != value))
 				{
+					this.OnSocio_economico_actividad_deportiva_edadChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_actividad_deportiva_edad = value;
+					this.SendPropertyChanged("Socio_economico_actividad_deportiva_edad");
+					this.OnSocio_economico_actividad_deportiva_edadChanged();
 				}
 			}
 		}
@@ -43732,7 +46675,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_lesion_si != value))
 				{
+					this.OnSocio_economico_lesion_siChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_lesion_si = value;
+					this.SendPropertyChanged("Socio_economico_lesion_si");
+					this.OnSocio_economico_lesion_siChanged();
 				}
 			}
 		}
@@ -43748,7 +46695,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_lesion_no != value))
 				{
+					this.OnSocio_economico_lesion_noChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_lesion_no = value;
+					this.SendPropertyChanged("Socio_economico_lesion_no");
+					this.OnSocio_economico_lesion_noChanged();
 				}
 			}
 		}
@@ -43764,7 +46715,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_lesion_tipo != value))
 				{
+					this.OnSocio_economico_lesion_tipoChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_lesion_tipo = value;
+					this.SendPropertyChanged("Socio_economico_lesion_tipo");
+					this.OnSocio_economico_lesion_tipoChanged();
 				}
 			}
 		}
@@ -43780,7 +46735,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_lesion_edad != value))
 				{
+					this.OnSocio_economico_lesion_edadChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_lesion_edad = value;
+					this.SendPropertyChanged("Socio_economico_lesion_edad");
+					this.OnSocio_economico_lesion_edadChanged();
 				}
 			}
 		}
@@ -43796,7 +46755,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_lesion_tratamiento_si != value))
 				{
+					this.OnSocio_economico_lesion_tratamiento_siChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_lesion_tratamiento_si = value;
+					this.SendPropertyChanged("Socio_economico_lesion_tratamiento_si");
+					this.OnSocio_economico_lesion_tratamiento_siChanged();
 				}
 			}
 		}
@@ -43812,7 +46775,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_lesion_tratamiento_no != value))
 				{
+					this.OnSocio_economico_lesion_tratamiento_noChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_lesion_tratamiento_no = value;
+					this.SendPropertyChanged("Socio_economico_lesion_tratamiento_no");
+					this.OnSocio_economico_lesion_tratamiento_noChanged();
 				}
 			}
 		}
@@ -43828,7 +46795,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_tipo_familia_nuclear != value))
 				{
+					this.OnSocio_economico_tipo_familia_nuclearChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_tipo_familia_nuclear = value;
+					this.SendPropertyChanged("Socio_economico_tipo_familia_nuclear");
+					this.OnSocio_economico_tipo_familia_nuclearChanged();
 				}
 			}
 		}
@@ -43844,7 +46815,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_tipo_familia_ampliada != value))
 				{
+					this.OnSocio_economico_tipo_familia_ampliadaChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_tipo_familia_ampliada = value;
+					this.SendPropertyChanged("Socio_economico_tipo_familia_ampliada");
+					this.OnSocio_economico_tipo_familia_ampliadaChanged();
 				}
 			}
 		}
@@ -43860,7 +46835,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_tipo_familia_monoparental != value))
 				{
+					this.OnSocio_economico_tipo_familia_monoparentalChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_tipo_familia_monoparental = value;
+					this.SendPropertyChanged("Socio_economico_tipo_familia_monoparental");
+					this.OnSocio_economico_tipo_familia_monoparentalChanged();
 				}
 			}
 		}
@@ -43876,7 +46855,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_tipo_familia_padremadresoltero != value))
 				{
+					this.OnSocio_economico_tipo_familia_padremadresolteroChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_tipo_familia_padremadresoltero = value;
+					this.SendPropertyChanged("Socio_economico_tipo_familia_padremadresoltero");
+					this.OnSocio_economico_tipo_familia_padremadresolteroChanged();
 				}
 			}
 		}
@@ -43892,7 +46875,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_tipo_familia_vive_solo != value))
 				{
+					this.OnSocio_economico_tipo_familia_vive_soloChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_tipo_familia_vive_solo = value;
+					this.SendPropertyChanged("Socio_economico_tipo_familia_vive_solo");
+					this.OnSocio_economico_tipo_familia_vive_soloChanged();
 				}
 			}
 		}
@@ -43908,12 +46895,16 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_tipo_familia_vive_amigos != value))
 				{
+					this.OnSocio_economico_tipo_familia_vive_amigosChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_tipo_familia_vive_amigos = value;
+					this.SendPropertyChanged("Socio_economico_tipo_familia_vive_amigos");
+					this.OnSocio_economico_tipo_familia_vive_amigosChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Socio_economico_tipo_familia_sin hijos]", Storage="_Socio_economico_tipo_familia_sin_hijos", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_tipo_familia_sin_hijos", DbType="VarChar(MAX)")]
 		public string Socio_economico_tipo_familia_sin_hijos
 		{
 			get
@@ -43924,7 +46915,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_tipo_familia_sin_hijos != value))
 				{
+					this.OnSocio_economico_tipo_familia_sin_hijosChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_tipo_familia_sin_hijos = value;
+					this.SendPropertyChanged("Socio_economico_tipo_familia_sin_hijos");
+					this.OnSocio_economico_tipo_familia_sin_hijosChanged();
 				}
 			}
 		}
@@ -43940,7 +46935,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_evaluacion_relacion_familiar_muybueno != value))
 				{
+					this.OnSocio_economico_evaluacion_relacion_familiar_muybuenoChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_evaluacion_relacion_familiar_muybueno = value;
+					this.SendPropertyChanged("Socio_economico_evaluacion_relacion_familiar_muybueno");
+					this.OnSocio_economico_evaluacion_relacion_familiar_muybuenoChanged();
 				}
 			}
 		}
@@ -43956,7 +46955,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_evaluacion_relacion_familiar_bueno != value))
 				{
+					this.OnSocio_economico_evaluacion_relacion_familiar_buenoChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_evaluacion_relacion_familiar_bueno = value;
+					this.SendPropertyChanged("Socio_economico_evaluacion_relacion_familiar_bueno");
+					this.OnSocio_economico_evaluacion_relacion_familiar_buenoChanged();
 				}
 			}
 		}
@@ -43972,7 +46975,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_evaluacion_relacion_familiar_regular != value))
 				{
+					this.OnSocio_economico_evaluacion_relacion_familiar_regularChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_evaluacion_relacion_familiar_regular = value;
+					this.SendPropertyChanged("Socio_economico_evaluacion_relacion_familiar_regular");
+					this.OnSocio_economico_evaluacion_relacion_familiar_regularChanged();
 				}
 			}
 		}
@@ -43988,7 +46995,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_evaluacion_relacion_familiar_mala != value))
 				{
+					this.OnSocio_economico_evaluacion_relacion_familiar_malaChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_evaluacion_relacion_familiar_mala = value;
+					this.SendPropertyChanged("Socio_economico_evaluacion_relacion_familiar_mala");
+					this.OnSocio_economico_evaluacion_relacion_familiar_malaChanged();
 				}
 			}
 		}
@@ -44004,7 +47015,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_evaluacion_relacion_familiar_porque != value))
 				{
+					this.OnSocio_economico_evaluacion_relacion_familiar_porqueChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_evaluacion_relacion_familiar_porque = value;
+					this.SendPropertyChanged("Socio_economico_evaluacion_relacion_familiar_porque");
+					this.OnSocio_economico_evaluacion_relacion_familiar_porqueChanged();
 				}
 			}
 		}
@@ -44020,7 +47035,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_evaluacion_relacion_pareja_muybueno != value))
 				{
+					this.OnSocio_economico_evaluacion_relacion_pareja_muybuenoChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_evaluacion_relacion_pareja_muybueno = value;
+					this.SendPropertyChanged("Socio_economico_evaluacion_relacion_pareja_muybueno");
+					this.OnSocio_economico_evaluacion_relacion_pareja_muybuenoChanged();
 				}
 			}
 		}
@@ -44036,7 +47055,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_evaluacion_relacion_pareja_bueno != value))
 				{
+					this.OnSocio_economico_evaluacion_relacion_pareja_buenoChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_evaluacion_relacion_pareja_bueno = value;
+					this.SendPropertyChanged("Socio_economico_evaluacion_relacion_pareja_bueno");
+					this.OnSocio_economico_evaluacion_relacion_pareja_buenoChanged();
 				}
 			}
 		}
@@ -44052,7 +47075,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_evaluacion_relacion_pareja_regular != value))
 				{
+					this.OnSocio_economico_evaluacion_relacion_pareja_regularChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_evaluacion_relacion_pareja_regular = value;
+					this.SendPropertyChanged("Socio_economico_evaluacion_relacion_pareja_regular");
+					this.OnSocio_economico_evaluacion_relacion_pareja_regularChanged();
 				}
 			}
 		}
@@ -44068,7 +47095,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_evaluacion_relacion_pareja_mala != value))
 				{
+					this.OnSocio_economico_evaluacion_relacion_pareja_malaChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_evaluacion_relacion_pareja_mala = value;
+					this.SendPropertyChanged("Socio_economico_evaluacion_relacion_pareja_mala");
+					this.OnSocio_economico_evaluacion_relacion_pareja_malaChanged();
 				}
 			}
 		}
@@ -44084,7 +47115,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_evaluacion_relacion_pareja_porque != value))
 				{
+					this.OnSocio_economico_evaluacion_relacion_pareja_porqueChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_evaluacion_relacion_pareja_porque = value;
+					this.SendPropertyChanged("Socio_economico_evaluacion_relacion_pareja_porque");
+					this.OnSocio_economico_evaluacion_relacion_pareja_porqueChanged();
 				}
 			}
 		}
@@ -44100,7 +47135,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_evaluacion_relacion_hijos_muybueno != value))
 				{
+					this.OnSocio_economico_evaluacion_relacion_hijos_muybuenoChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_evaluacion_relacion_hijos_muybueno = value;
+					this.SendPropertyChanged("Socio_economico_evaluacion_relacion_hijos_muybueno");
+					this.OnSocio_economico_evaluacion_relacion_hijos_muybuenoChanged();
 				}
 			}
 		}
@@ -44116,7 +47155,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_evaluacion_relacion_hijos_bueno != value))
 				{
+					this.OnSocio_economico_evaluacion_relacion_hijos_buenoChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_evaluacion_relacion_hijos_bueno = value;
+					this.SendPropertyChanged("Socio_economico_evaluacion_relacion_hijos_bueno");
+					this.OnSocio_economico_evaluacion_relacion_hijos_buenoChanged();
 				}
 			}
 		}
@@ -44132,7 +47175,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_evaluacion_relacion_hijos_regular != value))
 				{
+					this.OnSocio_economico_evaluacion_relacion_hijos_regularChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_evaluacion_relacion_hijos_regular = value;
+					this.SendPropertyChanged("Socio_economico_evaluacion_relacion_hijos_regular");
+					this.OnSocio_economico_evaluacion_relacion_hijos_regularChanged();
 				}
 			}
 		}
@@ -44148,7 +47195,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_evaluacion_relacion_hijos_mala != value))
 				{
+					this.OnSocio_economico_evaluacion_relacion_hijos_malaChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_evaluacion_relacion_hijos_mala = value;
+					this.SendPropertyChanged("Socio_economico_evaluacion_relacion_hijos_mala");
+					this.OnSocio_economico_evaluacion_relacion_hijos_malaChanged();
 				}
 			}
 		}
@@ -44164,7 +47215,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_evaluacion_relacion_hijos_porque != value))
 				{
+					this.OnSocio_economico_evaluacion_relacion_hijos_porqueChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_evaluacion_relacion_hijos_porque = value;
+					this.SendPropertyChanged("Socio_economico_evaluacion_relacion_hijos_porque");
+					this.OnSocio_economico_evaluacion_relacion_hijos_porqueChanged();
 				}
 			}
 		}
@@ -44180,7 +47235,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_problemas_familiares_antpenales != value))
 				{
+					this.OnSocio_economico_problemas_familiares_antpenalesChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_problemas_familiares_antpenales = value;
+					this.SendPropertyChanged("Socio_economico_problemas_familiares_antpenales");
+					this.OnSocio_economico_problemas_familiares_antpenalesChanged();
 				}
 			}
 		}
@@ -44196,7 +47255,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_problemas_familiares_economicos != value))
 				{
+					this.OnSocio_economico_problemas_familiares_economicosChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_problemas_familiares_economicos = value;
+					this.SendPropertyChanged("Socio_economico_problemas_familiares_economicos");
+					this.OnSocio_economico_problemas_familiares_economicosChanged();
 				}
 			}
 		}
@@ -44212,7 +47275,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_problemas_familiares_comunicacion != value))
 				{
+					this.OnSocio_economico_problemas_familiares_comunicacionChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_problemas_familiares_comunicacion = value;
+					this.SendPropertyChanged("Socio_economico_problemas_familiares_comunicacion");
+					this.OnSocio_economico_problemas_familiares_comunicacionChanged();
 				}
 			}
 		}
@@ -44228,7 +47295,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_problemas_familiares_conyugales != value))
 				{
+					this.OnSocio_economico_problemas_familiares_conyugalesChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_problemas_familiares_conyugales = value;
+					this.SendPropertyChanged("Socio_economico_problemas_familiares_conyugales");
+					this.OnSocio_economico_problemas_familiares_conyugalesChanged();
 				}
 			}
 		}
@@ -44244,7 +47315,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_problemas_familiares_crianza_hijos != value))
 				{
+					this.OnSocio_economico_problemas_familiares_crianza_hijosChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_problemas_familiares_crianza_hijos = value;
+					this.SendPropertyChanged("Socio_economico_problemas_familiares_crianza_hijos");
+					this.OnSocio_economico_problemas_familiares_crianza_hijosChanged();
 				}
 			}
 		}
@@ -44260,7 +47335,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_problemas_familiares_adicciones != value))
 				{
+					this.OnSocio_economico_problemas_familiares_adiccionesChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_problemas_familiares_adicciones = value;
+					this.SendPropertyChanged("Socio_economico_problemas_familiares_adicciones");
+					this.OnSocio_economico_problemas_familiares_adiccionesChanged();
 				}
 			}
 		}
@@ -44276,7 +47355,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_problemas_familiares_violencia_fisica != value))
 				{
+					this.OnSocio_economico_problemas_familiares_violencia_fisicaChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_problemas_familiares_violencia_fisica = value;
+					this.SendPropertyChanged("Socio_economico_problemas_familiares_violencia_fisica");
+					this.OnSocio_economico_problemas_familiares_violencia_fisicaChanged();
 				}
 			}
 		}
@@ -44292,7 +47375,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_problemas_familiares_violencia_psicologica != value))
 				{
+					this.OnSocio_economico_problemas_familiares_violencia_psicologicaChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_problemas_familiares_violencia_psicologica = value;
+					this.SendPropertyChanged("Socio_economico_problemas_familiares_violencia_psicologica");
+					this.OnSocio_economico_problemas_familiares_violencia_psicologicaChanged();
 				}
 			}
 		}
@@ -44308,7 +47395,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_problemas_familiares_violencia_verbal != value))
 				{
+					this.OnSocio_economico_problemas_familiares_violencia_verbalChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_problemas_familiares_violencia_verbal = value;
+					this.SendPropertyChanged("Socio_economico_problemas_familiares_violencia_verbal");
+					this.OnSocio_economico_problemas_familiares_violencia_verbalChanged();
 				}
 			}
 		}
@@ -44324,7 +47415,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_problemas_familiares_violencia_sexual != value))
 				{
+					this.OnSocio_economico_problemas_familiares_violencia_sexualChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_problemas_familiares_violencia_sexual = value;
+					this.SendPropertyChanged("Socio_economico_problemas_familiares_violencia_sexual");
+					this.OnSocio_economico_problemas_familiares_violencia_sexualChanged();
 				}
 			}
 		}
@@ -44340,7 +47435,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_problemas_familiares_observaciones != value))
 				{
+					this.OnSocio_economico_problemas_familiares_observacionesChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_problemas_familiares_observaciones = value;
+					this.SendPropertyChanged("Socio_economico_problemas_familiares_observaciones");
+					this.OnSocio_economico_problemas_familiares_observacionesChanged();
 				}
 			}
 		}
@@ -44356,7 +47455,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_miembro_familiar_rol_si != value))
 				{
+					this.OnSocio_economico_miembro_familiar_rol_siChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_miembro_familiar_rol_si = value;
+					this.SendPropertyChanged("Socio_economico_miembro_familiar_rol_si");
+					this.OnSocio_economico_miembro_familiar_rol_siChanged();
 				}
 			}
 		}
@@ -44372,87 +47475,111 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_miembro_familiar_rol_no != value))
 				{
+					this.OnSocio_economico_miembro_familiar_rol_noChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_miembro_familiar_rol_no = value;
+					this.SendPropertyChanged("Socio_economico_miembro_familiar_rol_no");
+					this.OnSocio_economico_miembro_familiar_rol_noChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_salud_familia_muybueno", DbType="VarChar(MAX)")]
-		public string Socio_economico_salud_familia_muybueno
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_nivel_salud_familia_muybueno", DbType="VarChar(MAX)")]
+		public string Socio_economico_nivel_salud_familia_muybueno
 		{
 			get
 			{
-				return this._Socio_economico_salud_familia_muybueno;
+				return this._Socio_economico_nivel_salud_familia_muybueno;
 			}
 			set
 			{
-				if ((this._Socio_economico_salud_familia_muybueno != value))
+				if ((this._Socio_economico_nivel_salud_familia_muybueno != value))
 				{
-					this._Socio_economico_salud_familia_muybueno = value;
+					this.OnSocio_economico_nivel_salud_familia_muybuenoChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_nivel_salud_familia_muybueno = value;
+					this.SendPropertyChanged("Socio_economico_nivel_salud_familia_muybueno");
+					this.OnSocio_economico_nivel_salud_familia_muybuenoChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_salud_familia_bueno", DbType="VarChar(MAX)")]
-		public string Socio_economico_salud_familia_bueno
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_nivel_salud_familia_bueno", DbType="VarChar(MAX)")]
+		public string Socio_economico_nivel_salud_familia_bueno
 		{
 			get
 			{
-				return this._Socio_economico_salud_familia_bueno;
+				return this._Socio_economico_nivel_salud_familia_bueno;
 			}
 			set
 			{
-				if ((this._Socio_economico_salud_familia_bueno != value))
+				if ((this._Socio_economico_nivel_salud_familia_bueno != value))
 				{
-					this._Socio_economico_salud_familia_bueno = value;
+					this.OnSocio_economico_nivel_salud_familia_buenoChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_nivel_salud_familia_bueno = value;
+					this.SendPropertyChanged("Socio_economico_nivel_salud_familia_bueno");
+					this.OnSocio_economico_nivel_salud_familia_buenoChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_salud_familia_regular", DbType="VarChar(MAX)")]
-		public string Socio_economico_salud_familia_regular
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_nivel_salud_familia_regular", DbType="VarChar(MAX)")]
+		public string Socio_economico_nivel_salud_familia_regular
 		{
 			get
 			{
-				return this._Socio_economico_salud_familia_regular;
+				return this._Socio_economico_nivel_salud_familia_regular;
 			}
 			set
 			{
-				if ((this._Socio_economico_salud_familia_regular != value))
+				if ((this._Socio_economico_nivel_salud_familia_regular != value))
 				{
-					this._Socio_economico_salud_familia_regular = value;
+					this.OnSocio_economico_nivel_salud_familia_regularChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_nivel_salud_familia_regular = value;
+					this.SendPropertyChanged("Socio_economico_nivel_salud_familia_regular");
+					this.OnSocio_economico_nivel_salud_familia_regularChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_salud_familia_mala", DbType="VarChar(MAX)")]
-		public string Socio_economico_salud_familia_mala
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_nivel_salud_familia_mala", DbType="VarChar(MAX)")]
+		public string Socio_economico_nivel_salud_familia_mala
 		{
 			get
 			{
-				return this._Socio_economico_salud_familia_mala;
+				return this._Socio_economico_nivel_salud_familia_mala;
 			}
 			set
 			{
-				if ((this._Socio_economico_salud_familia_mala != value))
+				if ((this._Socio_economico_nivel_salud_familia_mala != value))
 				{
-					this._Socio_economico_salud_familia_mala = value;
+					this.OnSocio_economico_nivel_salud_familia_malaChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_nivel_salud_familia_mala = value;
+					this.SendPropertyChanged("Socio_economico_nivel_salud_familia_mala");
+					this.OnSocio_economico_nivel_salud_familia_malaChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_salud_familia_porque", DbType="VarChar(MAX)")]
-		public string Socio_economico_salud_familia_porque
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_nivel_salud_familia_porque", DbType="VarChar(MAX)")]
+		public string Socio_economico_nivel_salud_familia_porque
 		{
 			get
 			{
-				return this._Socio_economico_salud_familia_porque;
+				return this._Socio_economico_nivel_salud_familia_porque;
 			}
 			set
 			{
-				if ((this._Socio_economico_salud_familia_porque != value))
+				if ((this._Socio_economico_nivel_salud_familia_porque != value))
 				{
-					this._Socio_economico_salud_familia_porque = value;
+					this.OnSocio_economico_nivel_salud_familia_porqueChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_nivel_salud_familia_porque = value;
+					this.SendPropertyChanged("Socio_economico_nivel_salud_familia_porque");
+					this.OnSocio_economico_nivel_salud_familia_porqueChanged();
 				}
 			}
 		}
@@ -44468,7 +47595,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_familia_funcional != value))
 				{
+					this.OnSocio_economico_familia_funcionalChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_familia_funcional = value;
+					this.SendPropertyChanged("Socio_economico_familia_funcional");
+					this.OnSocio_economico_familia_funcionalChanged();
 				}
 			}
 		}
@@ -44484,7 +47615,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_familia_disfuncional != value))
 				{
+					this.OnSocio_economico_familia_disfuncionalChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_familia_disfuncional = value;
+					this.SendPropertyChanged("Socio_economico_familia_disfuncional");
+					this.OnSocio_economico_familia_disfuncionalChanged();
 				}
 			}
 		}
@@ -44500,7 +47635,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_familia_observaciones != value))
 				{
+					this.OnSocio_economico_familia_observacionesChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_familia_observaciones = value;
+					this.SendPropertyChanged("Socio_economico_familia_observaciones");
+					this.OnSocio_economico_familia_observacionesChanged();
 				}
 			}
 		}
@@ -44516,39 +47655,51 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_informacion_adicional != value))
 				{
+					this.OnSocio_economico_informacion_adicionalChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_informacion_adicional = value;
+					this.SendPropertyChanged("Socio_economico_informacion_adicional");
+					this.OnSocio_economico_informacion_adicionalChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_General_Real_si", DbType="VarChar(MAX)")]
-		public string Socio_economico_General_Real_si
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_informacion_general_real_si", DbType="VarChar(MAX)")]
+		public string Socio_economico_informacion_general_real_si
 		{
 			get
 			{
-				return this._Socio_economico_General_Real_si;
+				return this._Socio_economico_informacion_general_real_si;
 			}
 			set
 			{
-				if ((this._Socio_economico_General_Real_si != value))
+				if ((this._Socio_economico_informacion_general_real_si != value))
 				{
-					this._Socio_economico_General_Real_si = value;
+					this.OnSocio_economico_informacion_general_real_siChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_informacion_general_real_si = value;
+					this.SendPropertyChanged("Socio_economico_informacion_general_real_si");
+					this.OnSocio_economico_informacion_general_real_siChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_General_Real_no", DbType="VarChar(MAX)")]
-		public string Socio_economico_General_Real_no
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_informacion_general_real_no", DbType="VarChar(MAX)")]
+		public string Socio_economico_informacion_general_real_no
 		{
 			get
 			{
-				return this._Socio_economico_General_Real_no;
+				return this._Socio_economico_informacion_general_real_no;
 			}
 			set
 			{
-				if ((this._Socio_economico_General_Real_no != value))
+				if ((this._Socio_economico_informacion_general_real_no != value))
 				{
-					this._Socio_economico_General_Real_no = value;
+					this.OnSocio_economico_informacion_general_real_noChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_informacion_general_real_no = value;
+					this.SendPropertyChanged("Socio_economico_informacion_general_real_no");
+					this.OnSocio_economico_informacion_general_real_noChanged();
 				}
 			}
 		}
@@ -44564,7 +47715,11 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico_fechaHora != value))
 				{
+					this.OnSocio_economico_fechaHoraChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico_fechaHora = value;
+					this.SendPropertyChanged("Socio_economico_fechaHora");
+					this.OnSocio_economico_fechaHoraChanged();
 				}
 			}
 		}
@@ -44580,7 +47735,15 @@ namespace CapaDatos
 			{
 				if ((this._Per_id != value))
 				{
+					if (this._Tbl_Personas.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnPer_idChanging(value);
+					this.SendPropertyChanging();
 					this._Per_id = value;
+					this.SendPropertyChanged("Per_id");
+					this.OnPer_idChanged();
 				}
 			}
 		}
@@ -44596,8 +47759,66 @@ namespace CapaDatos
 			{
 				if ((this._Socio_economico__estado != value))
 				{
+					this.OnSocio_economico__estadoChanging(value);
+					this.SendPropertyChanging();
 					this._Socio_economico__estado = value;
+					this.SendPropertyChanged("Socio_economico__estado");
+					this.OnSocio_economico__estadoChanged();
 				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_SocioEconomico", Storage="_Tbl_Personas", ThisKey="Per_id", OtherKey="Per_id", IsForeignKey=true)]
+		public Tbl_Personas Tbl_Personas
+		{
+			get
+			{
+				return this._Tbl_Personas.Entity;
+			}
+			set
+			{
+				Tbl_Personas previousValue = this._Tbl_Personas.Entity;
+				if (((previousValue != value) 
+							|| (this._Tbl_Personas.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Tbl_Personas.Entity = null;
+						previousValue.Tbl_SocioEconomico.Remove(this);
+					}
+					this._Tbl_Personas.Entity = value;
+					if ((value != null))
+					{
+						value.Tbl_SocioEconomico.Add(this);
+						this._Per_id = value.Per_id;
+					}
+					else
+					{
+						this._Per_id = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Tbl_Personas");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
