@@ -239,6 +239,8 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                             txt_observacionesgenerales.Text = sso.Socio_economico_familia_observaciones.ToString();
                             txt_informacionadicional.Text = sso.Socio_economico_informacion_adicional.ToString();
 
+
+
                             //DATOS GENERALES
                             //Modalidad de Trabajo
                             if (sso.Socio_economico_modalidadcontrato_leyorgserpublico == null)
@@ -1549,8 +1551,6 @@ namespace SistemaECU911.Template.Views_Socio_Economico
 
                 sso = new Tbl_SocioEconomico
                 {
-                    Socio_economico_fechaHora = Convert.ToDateTime(txt_fecha.Text),
-
                     //Datos Generales
                     Socio_economico_fecha_ingreso_al_Ecu = Convert.ToDateTime(txt_fechaingresoalsisecu.Text),
                     Socio_economico_tipodesangre = txt_tipodesangre.Text,
@@ -1740,6 +1740,8 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                     Socio_economico_nivel_salud_familia_porque = txt_nivelsaludfamiliarporque.Text,
                     Socio_economico_familia_observaciones = txt_observacionesgenerales.Text,
                     Socio_economico_informacion_adicional = txt_informacionadicional.Text,
+
+                    Per_id = perso
                 };
 
                 //DATOS GENERALES

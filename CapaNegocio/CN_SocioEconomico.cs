@@ -39,8 +39,7 @@ namespace CapaNegocio
             try
             {
                 socioEconomico.Socio_economico__estado = "A";
-                //Falta jugar campo en base de datos
-                //socioEconomico.fecha = DateTime.Now;
+                socioEconomico.Socio_economico_fechaHora = DateTime.Now;
                 dc.Tbl_SocioEconomico.InsertOnSubmit(socioEconomico);
                 dc.SubmitChanges();
             }
