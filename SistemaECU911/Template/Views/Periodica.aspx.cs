@@ -49,6 +49,128 @@ namespace SistemaECU911.Template.Views
                         if (perio != null)
                         {
 
+                            //Habitos Toxicos
+                            if (perio.perio_siConsuNocivosTabaco == null)
+                            {
+
+                                ckb_siConsuNociTabaHabToxi.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_siConsuNociTabaHabToxi.Checked = true;
+                            }
+                            if (perio.perio_noConsuNocivosTabaco == null)
+                            {
+                                ckb_noConsuNociTabaHabToxi.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_noConsuNociTabaHabToxi.Checked = true;
+                            }
+                            if (perio.perio_siConsuNocivosAlcohol == null)
+                            {
+                                ckb_siConsuNociAlcoHabToxi.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_siConsuNociAlcoHabToxi.Checked = true;
+                            }
+                            if (perio.perio_noConsuNocivosAlcohol == null)
+                            {
+                                ckb_noConsuNociAlcoHabToxi.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_noConsuNociAlcoHabToxi.Checked = true;
+                            }
+                            if (perio.perio_siConsuNocivosOtrasDrogas == null)
+                            {
+                                ckb_siConsuNociOtrasDroHabToxi.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_siConsuNociOtrasDroHabToxi.Checked = true;
+                            }
+                            if (perio.perio_noConsuNocivosOtrasDrogas == null)
+                            {
+
+                                ckb_noConsuNociOtrasDroHabToxi.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_noConsuNociOtrasDroHabToxi.Checked = true;
+                            }
+
+                            //Estilo de Vida
+                            if (perio.perio_siEstiVidaActFisica == null)
+                            {
+                                ckb_siEstVidaActFisiEstVida.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_siEstVidaActFisiEstVida.Checked = true;
+                            }
+                            if (perio.perio_noEstiVidaActFisica == null)
+                            {                                
+                                ckb_noEstVidaActFisiEstVida.Checked == true
+                            }
+                            else
+                            {
+                                ckb_noEstVidaActFisiEstVida.Checked == true
+                            }
+                            if (perio.perio_siEstiVidaMediHabitual = "SI";)
+                            {                                
+                                ckb_siEstVidaMedHabiEstVida.Checked == true
+                            }
+                            else
+                            {
+                                ckb_siEstVidaMedHabiEstVida.Checked == true
+                            }
+                            if (perio.perio_noEstiVidaMediHabitual = "SI";)
+                            {                                
+                                ckb_noEstVidaMedHabiEstVida.Checked == true
+                            }
+                            else
+                            {
+                                ckb_noEstVidaMedHabiEstVida.Checked == true
+                            }
+
+                            //Accidentes de Trabajo (Descripcion)
+                            if (perio.perio_siCalificadoIESSAcciTrabajo = "SI";)
+                            {                                
+                                ckb_sicalificadotrabajo.Checked == true
+                            }
+                            else
+                            {
+                                ckb_sicalificadotrabajo.Checked == true
+                            }
+                            if (perio.perio_noCalificadoIESSAcciTrabajo = "SI";)
+                            {                                
+                                ckb_nocalificadotrabajo.Checked == true
+                            }
+                            else
+                            {
+                                ckb_nocalificadotrabajo.Checked == true
+                            }
+
+                            //Enfermedades Profesionales
+                            if (perio.perio_siCalificadoIESSEnferProfesionales == null)
+                            {
+                                ckb_sicalificadoprofesional.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_sicalificadoprofesional.Checked = true;
+                            }
+                            if (perio.perio_noCalificadoIESSEnferProfesionales == null)
+                            {
+                                ckb_nocalificadoprofesional.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_nocalificadoprofesional.Checked = true;
+                            }
+                                                     
 
 
                             //A
@@ -60,40 +182,16 @@ namespace SistemaECU911.Template.Views
                             //C
                             txt_antCliQuiDescripcion.Text = perio.perio_descripcionAntCliQuirurgicos.ToString();
 
-                            if (ckb_siConsuNociTabaHabToxi.Checked == true)
-                            {
-                                perio.perio_siConsuNocivosTabaco = "SI";
-                            }
-                            if (ckb_noConsuNociTabaHabToxi.Checked == true)
-                            {
-                                perio.perio_noConsuNocivosTabaco = "SI";
-                            }
                             txt_tiemConConsuNociTabaHabToxi.Text = perio.perio_tiempoConsuConsuNocivosTabaco.ToString();
                             txt_cantiConsuNociTabaHabToxi.Text = perio.perio_cantidadConsuNocivosTabaco.ToString();
                             txt_exConsumiConsuNociTabaHabToxi.Text = perio.perio_exConsumiConsuNocivosTabaco.ToString();
                             txt_tiemAbstiConsuNociTabaHabToxi.Text = perio.perio_tiempoAbstiConsuNocivosTabaco.ToString();
 
-                            if (ckb_siConsuNociAlcoHabToxi.Checked == true)
-                            {
-                                perio.perio_siConsuNocivosAlcohol = "SI";
-                            }
-                            if (ckb_noConsuNociAlcoHabToxi.Checked == true)
-                            {
-                                perio.perio_noConsuNocivosAlcohol = "SI";
-                            }
                             txt_tiemConConsuNociAlcoHabToxi.Text = perio.perio_tiempoConsuConsuNocivosAlcohol.ToString();
                             txt_cantiConsuNociAlcoHabToxi.Text = perio.perio_cantidadConsuNocivosAlcohol.ToString();
                             txt_exConsumiConsuNociAlcoHabToxi.Text = perio.perio_exConsumiConsuNocivosAlcohol.ToString();
                             txt_tiemAbstiConsuNociAlcoHabToxi.Text = perio.perio_tiempoAbstiConsuNocivosAlcohol.ToString();
 
-                            if (ckb_siConsuNociOtrasDroHabToxi.Checked == true)
-                            {
-                                perio.perio_siConsuNocivosOtrasDrogas = "SI";
-                            }
-                            if (ckb_noConsuNociOtrasDroHabToxi.Checked == true)
-                            {
-                                perio.perio_noConsuNocivosOtrasDrogas = "SI";
-                            }
                             txt_tiemCon1ConsuNociOtrasDroHabToxi.Text = perio.perio_tiempoConsu1ConsuNocivosOtrasDrogas.ToString();
                             txt_canti1ConsuNociOtrasDroHabToxi.Text = perio.perio_cantidad1ConsuNocivosOtrasDrogas.ToString();
                             txt_exConsumi1ConsuNociOtrasDroHabToxi.Text = perio.perio_exConsumi1ConsuNocivosOtrasDrogas.ToString();
@@ -104,25 +202,9 @@ namespace SistemaECU911.Template.Views
                             txt_exConsumi2ConsuNociOtrasDroHabToxi.Text = perio.perio_exConsumi2ConsuNocivosOtrasDrogas.ToString();
                             txt_tiemAbsti2ConsuNociOtrasDroHabToxi.Text = perio.perio_tiempoAbsti2ConsuNocivosOtrasDrogas.ToString();
 
-                            if (ckb_siEstVidaActFisiEstVida.Checked == true)
-                            {
-                                perio.perio_siEstiVidaActFisica = "SI";
-                            }
-                            if (ckb_noEstVidaActFisiEstVida.Checked == true)
-                            {
-                                perio.perio_noEstiVidaActFisica = "SI";
-                            }
                             txt_cualEstVidaActFisiEstVida.Text = perio.perio_cualEstiVidaActFisica.ToString();
                             txt_tiemCanEstVidaActFisiEstVida.Text = perio.perio_tiem_cantEstiVidaActFisica.ToString();
 
-                            if (ckb_siEstVidaMedHabiEstVida.Checked == true)
-                            {
-                                perio.perio_siEstiVidaMediHabitual = "SI";
-                            }
-                            if (ckb_noEstVidaMedHabiEstVida.Checked == true)
-                            {
-                                perio.perio_noEstiVidaMediHabitual = "SI";
-                            }
                             txt_cual1EstVidaMedHabiEstVida.Text = perio.perio_cual1EstiVidaMediHabitual.ToString();
                             txt_tiemCan1EstVidaMedHabiEstVida.Text = perio.perio_tiem_cant1EstiVidaMediHabitual.ToString();
                             txt_cual2EstVidaMedHabiEstVida.Text = perio.perio_cual2EstiVidaMediHabitual.ToString();
@@ -132,26 +214,10 @@ namespace SistemaECU911.Template.Views
 
                             txt_incidentesperiodica.Text = perio.perio_descripIncidentes.ToString();
 
-                            if (ckb_sicalificadotrabajo.Checked == true)
-                            {
-                                perio.perio_siCalificadoIESSAcciTrabajo = "SI";
-                            }
-                            if (ckb_nocalificadotrabajo.Checked == true)
-                            {
-                                perio.perio_noCalificadoIESSAcciTrabajo = "SI";
-                            }
                             txt_especificarcalificadotrabajo.Text = perio.perio_EspecifiCalificadoIESSAcciTrabajo.ToString();
                             txt_fechacalificadotrabajo.Text = perio.perio_fechaCalificadoIESSAcciTrabajo.ToString();
                             txt_obsercalificadotrabajo.Text = perio.perio_observacionesAcciTrabajo.ToString();
 
-                            if (ckb_sicalificadoprofesional.Checked == true)
-                            {
-                                perio.perio_siCalificadoIESSEnferProfesionales = "SI";
-                            }
-                            if (ckb_nocalificadoprofesional.Checked == true)
-                            {
-                                perio.perio_noCalificadoIESSEnferProfesionales = "SI";
-                            }
                             txt_especificarcalificadoprofesional.Text = perio.perio_EspecifiCalificadoIESSEnferProfesionales.ToString();
                             txt_fechacalificadoprofesional.Text = perio.perio_fechaCalificadoIESSEnferProfesionales.ToString();
                             txt_obsercalificadoprofesional.Text = perio.perio_observacionesEnferProfesionales.ToString();
@@ -1510,7 +1576,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_siConsuNocivosTabaco = null;
                 }
                 if (ckb_noConsuNociTabaHabToxi.Checked == true)
                 {
@@ -1518,7 +1584,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_noConsuNocivosTabaco = null;
                 }
                 if (ckb_siConsuNociAlcoHabToxi.Checked == true)
                 {
@@ -1526,7 +1592,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_siConsuNocivosAlcohol = null;
                 }
                 if (ckb_noConsuNociAlcoHabToxi.Checked == true)
                 {
@@ -1534,7 +1600,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_noConsuNocivosAlcohol = null;
                 }
                 if (ckb_siConsuNociOtrasDroHabToxi.Checked == true)
                 {
@@ -1542,7 +1608,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_siConsuNocivosOtrasDrogas = null;
                 }
                 if (ckb_noConsuNociOtrasDroHabToxi.Checked == true)
                 {
@@ -1550,7 +1616,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_noConsuNocivosOtrasDrogas = null;
                 }
 
                 //Estilo de Vida
@@ -1560,7 +1626,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_siEstiVidaActFisica = null;
                 }
                 if (ckb_noEstVidaActFisiEstVida.Checked == true)
                 {
@@ -1568,7 +1634,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_noEstiVidaActFisica = null;
                 }
                 if (ckb_siEstVidaMedHabiEstVida.Checked == true)
                 {
@@ -1576,7 +1642,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_siEstiVidaMediHabitual = null;
                 }
                 if (ckb_noEstVidaMedHabiEstVida.Checked == true)
                 {
@@ -1584,7 +1650,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_noEstiVidaMediHabitual = null;
                 }
 
                 //Accidentes de Trabajo (Descripcion)
@@ -1594,7 +1660,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_siCalificadoIESSAcciTrabajo = null;
                 }
                 if (ckb_nocalificadotrabajo.Checked == true)
                 {
@@ -1602,7 +1668,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_noCalificadoIESSAcciTrabajo = null;
                 }
 
                 //Enfermedades Profesionales
@@ -1612,7 +1678,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_siCalificadoIESSEnferProfesionales = null;
                 }
                 if (ckb_nocalificadoprofesional.Checked == true)
                 {
@@ -1620,7 +1686,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_noCalificadoIESSEnferProfesionales = null;
                 }
 
                 //Antecedentes Profesionales (Detallar el Parentesco)
@@ -1630,7 +1696,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_cardVascular = null;
                 }
                 if (ckb_enfermedadmetabolica.Checked == true)
                 {
@@ -1638,7 +1704,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_enfMeta = null;
                 }
                 if (ckb_enfermedadneurologica.Checked == true)
                 {
@@ -1646,7 +1712,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_enfNeuro = null;
                 }
                 if (ckb_enfermedadoncologica.Checked == true)
                 {
@@ -1654,7 +1720,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_enfOnco = null;
                 }
                 if (ckb_enfermedadinfecciosa.Checked == true)
                 {
@@ -1662,7 +1728,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_enfInfe = null;
                 }
                 if (ckb_enfermedadhereditaria.Checked == true)
                 {
@@ -1670,7 +1736,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_enfHereConge = null;
                 }
                 if (ckb_discapacidades.Checked == true)
                 {
@@ -1678,7 +1744,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_discapa = null;
                 }
                 if (ckb_otrosenfer.Checked == true)
                 {
@@ -1686,7 +1752,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_otros = null;
                 }
 
                 //Factores de riesgo del puesto de trabajo
@@ -1697,7 +1763,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_temAltasFis = null;
                 }
                 if (ckb_tempbajas2.Checked == true)
                 {
@@ -1705,7 +1771,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_temBajasFis2 = null;
                 }
                 if (ckb_tempbajas3.Checked == true)
                 {
@@ -1713,7 +1779,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_temBajasFis3 = null;
                 }
                 if (ckb_radiacion.Checked == true)
                 {
@@ -1721,7 +1787,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_radIonizanteFis = null;
                 }
                 if (ckb_radiacion2.Checked == true)
                 {
@@ -1729,7 +1795,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_radIonizanteFis2 = null;
                 }
                 if (ckb_radiacion3.Checked == true)
                 {
@@ -1737,7 +1803,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_radIonizanteFis3 = null;
                 }
                 if (ckb_noradiacion.Checked == true)
                 {
@@ -1745,7 +1811,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_radNoIonizanteFis = null;
                 }
                 if (ckb_noradiacion2.Checked == true)
                 {
@@ -1753,7 +1819,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_radNoIonizanteFis2 = null;
                 }
                 if (ckb_noradiacion3.Checked == true)
                 {
@@ -1761,7 +1827,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_radNoIonizanteFis3 = null;
                 }
                 if (ckb_ruido.Checked == true)
                 {
@@ -1769,7 +1835,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_ruidoFis = null;
                 }
                 if (ckb_ruido2.Checked == true)
                 {
@@ -1777,7 +1843,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_ruidoFis2 = null;
                 }
                 if (ckb_ruido3.Checked == true)
                 {
@@ -1785,7 +1851,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_ruidoFis3 = null;
                 }
                 if (ckb_vibracion.Checked == true)
                 {
@@ -1793,7 +1859,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_vibracionFis = null;
                 }
                 if (ckb_vibracion2.Checked == true)
                 {
@@ -1801,7 +1867,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_vibracionFis2 = null;
                 }
                 if (ckb_vibracion3.Checked == true)
                 {
@@ -1809,7 +1875,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_vibracionFis3 = null;
                 }
                 if (ckb_iluminacion.Checked == true)
                 {
@@ -1817,7 +1883,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_iluminacionFis = null;
                 }
                 if (ckb_iluminacion2.Checked == true)
                 {
@@ -1825,7 +1891,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_iluminacionFis2 = null;
                 }
                 if (ckb_iluminacion3.Checked == true)
                 {
@@ -1833,7 +1899,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_iluminacionFis3 = null;
                 }
                 if (ckb_ventilacion.Checked == true)
                 {
@@ -1841,7 +1907,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_ventilacionFis = null;
                 }
                 if (ckb_ventilacion2.Checked == true)
                 {
@@ -1849,7 +1915,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_ventilacionFis2 = null;
                 }
                 if (ckb_ventilacion3.Checked == true)
                 {
@@ -1857,7 +1923,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_ventilacionFis3 = null;
                 }
                 if (ckb_fluidoelectrico.Checked == true)
                 {
@@ -1865,7 +1931,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_fluElectricoFis = null;
                 }
                 if (ckb_fluidoelectrico2.Checked == true)
                 {
@@ -1873,7 +1939,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_fluElectricoFis2 = null;
                 }
                 if (ckb_fluidoelectrico3.Checked == true)
                 {
@@ -1881,7 +1947,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_fluElectricoFis3 = null;
                 }
                 if (ckb_otrosFisico.Checked == true)
                 {
@@ -1889,7 +1955,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_otrosFis = null;
                 }
                 if (ckb_otrosFisico2.Checked == true)
                 {
@@ -1897,7 +1963,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_otrosFis2 = null;
                 }
                 if (ckb_otrosFisico3.Checked == true)
                 {
@@ -1905,7 +1971,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_otrosFis3 = null;
                 }
                 //----------- Mecanico -----------
                 if (ckb_atrapmaquinas.Checked == true)
@@ -1914,7 +1980,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_atraMaquinasMec = null;
                 }
                 if (ckb_atrapmaquinas2.Checked == true)
                 {
@@ -1922,7 +1988,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_atraMaquinasMec2 = null;
                 }
                 if (ckb_atrapmaquinas3.Checked == true)
                 {
@@ -1930,7 +1996,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_atraMaquinasMec3 = null;
                 }
                 if (ckb_atrapsuperficie.Checked == true)
                 {
@@ -1938,7 +2004,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_atraSuperfiiesMec = null;
                 }
                 if (ckb_atrapsuperficie2.Checked == true)
                 {
@@ -1946,7 +2012,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_atraSuperfiiesMec2 = null;
                 }
                 if (ckb_atrapsuperficie3.Checked == true)
                 {
@@ -1954,7 +2020,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_atraSuperfiiesMec3 = null;
                 }
                 if (ckb_atrapobjetos.Checked == true)
                 {
@@ -1962,7 +2028,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_atraObjetosMec = null;
                 }
                 if (ckb_atrapobjetos2.Checked == true)
                 {
@@ -1970,7 +2036,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_atraObjetosMec2 = null;
                 }
                 if (ckb_atrapobjetos3.Checked == true)
                 {
@@ -1978,7 +2044,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_atraObjetosMec3 = null;
                 }
                 if (ckb_caidaobjetos.Checked == true)
                 {
@@ -1986,7 +2052,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_caidaObjetosMec = null;
                 }
                 if (ckb_caidaobjetos2.Checked == true)
                 {
@@ -1994,7 +2060,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_caidaObjetosMec2 = null;
                 }
                 if (ckb_caidaobjetos3.Checked == true)
                 {
@@ -2002,7 +2068,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_caidaObjetosMec3 = null;
                 }
                 if (ckb_caidamisnivel.Checked == true)
                 {
@@ -2010,7 +2076,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_caidaMisNivelMec = null;
                 }
                 if (ckb_caidamisnivel2.Checked == true)
                 {
@@ -2018,7 +2084,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_caidaMisNivelMec2 = null;
                 }
                 if (ckb_caidamisnivel3.Checked == true)
                 {
@@ -2026,7 +2092,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_caidaMisNivelMec3 = null;
                 }
                 if (ckb_caidadifnivel.Checked == true)
                 {
@@ -2034,7 +2100,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_caidaDifNivelMec = null;
                 }
                 if (ckb_caidadifnivel2.Checked == true)
                 {
@@ -2042,7 +2108,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_caidaDifNivelMec2 = null;
                 }
                 if (ckb_caidadifnivel3.Checked == true)
                 {
@@ -2050,7 +2116,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_caidaDifNivelMec3 = null;
                 }
                 if (ckb_contaelectrico.Checked == true)
                 {
@@ -2058,7 +2124,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_contactoElecMec = null;
                 }
                 if (ckb_contaelectrico2.Checked == true)
                 {
@@ -2066,7 +2132,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_contactoElecMec2 = null;
                 }
                 if (ckb_contaelectrico3.Checked == true)
                 {
@@ -2074,7 +2140,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_contactoElecMec3 = null;
                 }
                 if (ckb_contasuptrabajo.Checked == true)
                 {
@@ -2082,7 +2148,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_conSuperTrabaMec = null;
                 }
                 if (ckb_contasuptrabajo2.Checked == true)
                 {
@@ -2090,11 +2156,15 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_conSuperTrabaMec2 = null;
                 }
                 if (ckb_contasuptrabajo3.Checked == true)
                 {
                     perio.perio_conSuperTrabaMec3 = "SI";
+                }
+                else
+                {
+                    perio.perio_conSuperTrabaMec3 = null;
                 }
                 if (ckb_proyparticulas.Checked == true)
                 {
@@ -2102,7 +2172,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_proPartiFragMec = null;
                 }
                 if (ckb_proyparticulas2.Checked == true)
                 {
@@ -2110,7 +2180,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_proPartiFragMec2 = null;
                 }
                 if (ckb_proyparticulas3.Checked == true)
                 {
@@ -2118,7 +2188,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_proPartiFragMec3 = null;
                 }
                 if (ckb_proyefluidos.Checked == true)
                 {
@@ -2126,7 +2196,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_proFluidosMec = null;
                 }
                 if (ckb_proyefluidos2.Checked == true)
                 {
@@ -2134,7 +2204,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_proFluidosMec2 = null;
                 }
                 if (ckb_proyefluidos3.Checked == true)
                 {
@@ -2142,7 +2212,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_proFluidosMec3 = null;
                 }
                 if (ckb_pinchazos.Checked == true)
                 {
@@ -2150,7 +2220,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_pinchazosMec = null;
                 }
                 if (ckb_pinchazos2.Checked == true)
                 {
@@ -2158,7 +2228,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_pinchazosMec2 = null;
                 }
                 if (ckb_pinchazos3.Checked == true)
                 {
@@ -2166,7 +2236,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_pinchazosMec3 = null;
                 }
                 if (ckb_cortes.Checked == true)
                 {
@@ -2174,7 +2244,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_cortesMec = null;
                 }
                 if (ckb_cortes2.Checked == true)
                 {
@@ -2182,7 +2252,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_cortesMec2 = null;
                 }
                 if (ckb_cortes3.Checked == true)
                 {
@@ -2190,7 +2260,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_cortesMec3 = null;
                 }
                 if (ckb_atroporvehiculos.Checked == true)
                 {
@@ -2198,7 +2268,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_atropeVehiMec = null;
                 }
                 if (ckb_atroporvehiculos2.Checked == true)
                 {
@@ -2206,7 +2276,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_atropeVehiMec2 = null;
                 }
                 if (ckb_atroporvehiculos3.Checked == true)
                 {
@@ -2214,7 +2284,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_atropeVehiMec3 = null;
                 }
                 if (ckb_choques.Checked == true)
                 {
@@ -2222,7 +2292,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_coliVehiMec = null;
                 }
                 if (ckb_choques2.Checked == true)
                 {
@@ -2230,7 +2300,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_coliVehiMec2 = null;
                 }
                 if (ckb_choques3.Checked == true)
                 {
@@ -2238,7 +2308,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_coliVehiMec3 = null;
                 }
                 if (ckb_otrosMecanico.Checked == true)
                 {
@@ -2246,7 +2316,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_otrosMec = null;
                 }
                 if (ckb_otrosMecanico2.Checked == true)
                 {
@@ -2254,7 +2324,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_otrosMec2 = null;
                 }
                 if (ckb_otrosMecanico3.Checked == true)
                 {
@@ -2262,7 +2332,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_otrosMec3 = null;
                 }
                 //----------- Quimico -----------
                 if (ckb_solidos.Checked == true)
@@ -2271,7 +2341,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_solidosQui = null;
                 }
                 if (ckb_solidos2.Checked == true)
                 {
@@ -2279,7 +2349,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_solidosQui2 = null;
                 }
                 if (ckb_solidos3.Checked == true)
                 {
@@ -2287,7 +2357,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_solidosQui3 = null;
                 }
                 if (ckb_polvos.Checked == true)
                 {
@@ -2295,7 +2365,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_polvosQui = null;
                 }
                 if (ckb_polvos2.Checked == true)
                 {
@@ -2303,7 +2373,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_polvosQui2 = null;
                 }
                 if (ckb_polvos3.Checked == true)
                 {
@@ -2311,7 +2381,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_polvosQui3 = null;
                 }
                 if (ckb_humos.Checked == true)
                 {
@@ -2319,7 +2389,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_humosQui = null;
                 }
                 if (ckb_humos2.Checked == true)
                 {
@@ -2327,7 +2397,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_humosQui2 = null;
                 }
                 if (ckb_humos3.Checked == true)
                 {
@@ -2335,7 +2405,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_humosQui3 = null;
                 }
                 if (ckb_liquidos.Checked == true)
                 {
@@ -2343,7 +2413,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_liquidosQui = null;
                 }
                 if (ckb_liquidos2.Checked == true)
                 {
@@ -2351,7 +2421,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_liquidosQui2 = null;
                 }
                 if (ckb_liquidos3.Checked == true)
                 {
@@ -2359,7 +2429,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_liquidosQui3 = null;
                 }
                 if (ckb_vapores.Checked == true)
                 {
@@ -2367,7 +2437,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_vaporesQui = null;
                 }
                 if (ckb_vapores2.Checked == true)
                 {
@@ -2375,7 +2445,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_vaporesQui2 = null;
                 }
                 if (ckb_vapores3.Checked == true)
                 {
@@ -2383,7 +2453,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_vaporesQui3 = null;
                 }
                 if (ckb_aerosoles.Checked == true)
                 {
@@ -2391,7 +2461,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_aerosolesQui = null;
                 }
                 if (ckb_aerosoles2.Checked == true)
                 {
@@ -2399,7 +2469,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_aerosolesQui2 = null;
                 }
                 if (ckb_aerosoles3.Checked == true)
                 {
@@ -2407,7 +2477,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_aerosolesQui3 = null;
                 }
                 if (ckb_neblinas.Checked == true)
                 {
@@ -2415,7 +2485,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_neblinasQui = null;
                 }
                 if (ckb_neblinas2.Checked == true)
                 {
@@ -2423,7 +2493,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_neblinasQui2 = null;
                 }
                 if (ckb_neblinas3.Checked == true)
                 {
@@ -2431,7 +2501,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_neblinasQui3 = null;
                 }
                 if (ckb_gaseosos.Checked == true)
                 {
@@ -2439,7 +2509,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_gaseososQui = null;
                 }
                 if (ckb_gaseosos2.Checked == true)
                 {
@@ -2447,7 +2517,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_gaseososQui2 = null;
                 }
                 if (ckb_gaseosos3.Checked == true)
                 {
@@ -2455,7 +2525,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_gaseososQui3 = null;
                 }
                 if (ckb_otrosQuimico.Checked == true)
                 {
@@ -2463,7 +2533,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_otrosQui = null;
                 }
                 if (ckb_otrosQuimico2.Checked == true)
                 {
@@ -2471,7 +2541,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_otrosQui2 = null;
                 }
                 if (ckb_otrosQuimico3.Checked == true)
                 {
@@ -2479,7 +2549,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_otrosQui3 = null;
                 }
                 //----------- Biologico -----------
                 if (ckb_virus.Checked == true)
@@ -2488,7 +2558,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_virusBio = null;
                 }
                 if (ckb_virus2.Checked == true)
                 {
@@ -2496,7 +2566,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_virusBio2 = null;
                 }
                 if (ckb_virus3.Checked == true)
                 {
@@ -2504,7 +2574,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_virusBio3 = null;
                 }
                 if (ckb_hongos.Checked == true)
                 {
@@ -2512,7 +2582,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_hongosBio = null;
                 }
                 if (ckb_hongos2.Checked == true)
                 {
@@ -2520,7 +2590,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_hongosBio2 = null;
                 }
                 if (ckb_hongos3.Checked == true)
                 {
@@ -2528,7 +2598,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_hongosBio3 = null;
                 }
                 if (ckb_bacterias.Checked == true)
                 {
@@ -2536,7 +2606,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_bacteriasBio = null;
                 }
                 if (ckb_bacterias2.Checked == true)
                 {
@@ -2544,7 +2614,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_bacteriasBio2 = null;
                 }
                 if (ckb_bacterias3.Checked == true)
                 {
@@ -2552,7 +2622,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_bacteriasBio3 = null;
                 }
                 if (ckb_parasitos.Checked == true)
                 {
@@ -2560,7 +2630,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_parasitosBio = null;
                 }
                 if (ckb_parasitos2.Checked == true)
                 {
@@ -2568,7 +2638,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_parasitosBio2 = null;
                 }
                 if (ckb_parasitos3.Checked == true)
                 {
@@ -2576,7 +2646,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_parasitosBio3 = null;
                 }
                 if (ckb_expoavectores.Checked == true)
                 {
@@ -2584,7 +2654,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_expVectBio = null;
                 }
                 if (ckb_expoavectores2.Checked == true)
                 {
@@ -2592,7 +2662,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_expVectBio2 = null;
                 }
                 if (ckb_expoavectores3.Checked == true)
                 {
@@ -2600,7 +2670,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_expVectBio3 = null;
                 }
                 if (ckb_expoanimselvaticos.Checked == true)
                 {
@@ -2608,7 +2678,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_expAniSelvaBio = null;
                 }
                 if (ckb_expoanimselvaticos2.Checked == true)
                 {
@@ -2616,7 +2686,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_expAniSelvaBio2 = null;
                 }
                 if (ckb_expoanimselvaticos3.Checked == true)
                 {
@@ -2624,7 +2694,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_expAniSelvaBio3 = null;
                 }
                 if (ckb_otrosBiologico.Checked == true)
                 {
@@ -2632,7 +2702,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_otrosBio = null;
                 }
                 if (ckb_otrosBiologico2.Checked == true)
                 {
@@ -2640,7 +2710,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_otrosBio2 = null;
                 }
                 if (ckb_otrosBiologico3.Checked == true)
                 {
@@ -2648,7 +2718,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_otrosBio3 = null;
                 }
                 //----------- Ergonomico -----------
                 if (ckb_manmanualcargas.Checked == true)
@@ -2657,7 +2727,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_maneManCarErg = null;
                 }
                 if (ckb_manmanualcargas2.Checked == true)
                 {
@@ -2665,7 +2735,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_maneManCarErg2 = null;
                 }
                 if (ckb_manmanualcargas3.Checked == true)
                 {
@@ -2673,7 +2743,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_maneManCarErg3 = null;
                 }
                 if (ckb_movrepetitivo.Checked == true)
                 {
@@ -2681,7 +2751,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_movRepeErg = null;
                 }
                 if (ckb_movrepetitivo.Checked == true)
                 {
@@ -2689,7 +2759,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_movRepeErg = null;
                 }
                 if (ckb_movrepetitivo2.Checked == true)
                 {
@@ -2697,7 +2767,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_movRepeErg2 = null;
                 }
                 if (ckb_postforzadas3.Checked == true)
                 {
@@ -2705,7 +2775,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_posForzaErg3 = null;
                 }
                 if (ckb_trabajopvd.Checked == true)
                 {
@@ -2713,7 +2783,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_trabPvdErg = null;
                 }
                 if (ckb_trabajopvd2.Checked == true)
                 {
@@ -2721,7 +2791,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_trabPvdErg2 = null;
                 }
                 if (ckb_trabajopvd3.Checked == true)
                 {
@@ -2729,7 +2799,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_trabPvdErg3 = null;
                 }
                 if (ckb_otrosErgonomico.Checked == true)
                 {
@@ -2737,7 +2807,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_otrosErg = null;
                 }
                 if (ckb_otrosErgonomico2.Checked == true)
                 {
@@ -2745,7 +2815,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_otrosErg2 = null;
                 }
                 if (ckb_otrosErgonomico3.Checked == true)
                 {
@@ -2753,7 +2823,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_otrosErg3 = null;
                 }
                 //----------- Psicosocial -----------
                 if (ckb_montrabajo.Checked == true)
@@ -2762,7 +2832,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_monoTrabPsi = null;
                 }
                 if (ckb_montrabajo2.Checked == true)
                 {
@@ -2770,7 +2840,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_monoTrabPsi2 = null;
                 }
                 if (ckb_montrabajo3.Checked == true)
                 {
@@ -2778,7 +2848,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_monoTrabPsi3 = null;
                 }
                 if (ckb_sobrecargalaboral.Checked == true)
                 {
@@ -2786,7 +2856,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_sobrecarLabPsi = null;
                 }
                 if (ckb_sobrecargalaboral2.Checked == true)
                 {
@@ -2794,7 +2864,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_sobrecarLabPsi2 = null;
                 }
                 if (ckb_sobrecargalaboral3.Checked == true)
                 {
@@ -2802,7 +2872,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_sobrecarLabPsi3 = null;
                 }
                 if (ckb_minustarea.Checked == true)
                 {
@@ -2810,7 +2880,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_minuTareaPsi = null;
                 }
                 if (ckb_minustarea2.Checked == true)
                 {
@@ -2818,7 +2888,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_minuTareaPsi2 = null;
                 }
                 if (ckb_minustarea3.Checked == true)
                 {
@@ -2826,7 +2896,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_minuTareaPsi3 = null;
                 }
                 if (ckb_altarespon.Checked == true)
                 {
@@ -2834,7 +2904,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_altaResponPsi = null;
                 }
                 if (ckb_altarespon2.Checked == true)
                 {
@@ -2842,7 +2912,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_altaResponPsi2 = null;
                 }
                 if (ckb_altarespon3.Checked == true)
                 {
@@ -2850,7 +2920,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_altaResponPsi3 = null;
                 }
                 if (ckb_automadesiciones.Checked == true)
                 {
@@ -2858,7 +2928,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_autoTomaDesiPsi = null;
                 }
                 if (ckb_automadesiciones2.Checked == true)
                 {
@@ -2866,7 +2936,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_autoTomaDesiPsi2 = null;
                 }
                 if (ckb_automadesiciones3.Checked == true)
                 {
@@ -2874,7 +2944,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_autoTomaDesiPsi3 = null;
                 }
                 if (ckb_supyestdireficiente.Checked == true)
                 {
@@ -2882,7 +2952,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_supEstDirecDefiPsi = null;
                 }
                 if (ckb_supyestdireficiente2.Checked == true)
                 {
@@ -2890,7 +2960,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_supEstDirecDefiPsi2 = null;
                 }
                 if (ckb_supyestdireficiente3.Checked == true)
                 {
@@ -2898,7 +2968,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_supEstDirecDefiPsi3 = null;
                 }
                 if (ckb_conflictorol.Checked == true)
                 {
@@ -2906,7 +2976,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_conflicRolPsi = null;
                 }
                 if (ckb_conflictorol2.Checked == true)
                 {
@@ -2914,7 +2984,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_conflicRolPsi2 = null;
                 }
                 if (ckb_conflictorol3.Checked == true)
                 {
@@ -2922,7 +2992,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_conflicRolPsi3 = null;
                 }
                 if (ckb_faltaclarfunciones.Checked == true)
                 {
@@ -2930,7 +3000,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_falClariFunPsi = null;
                 }
                 if (ckb_faltaclarfunciones2.Checked == true)
                 {
@@ -2938,7 +3008,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_falClariFunPsi2 = null;
                 }
                 if (ckb_faltaclarfunciones3.Checked == true)
                 {
@@ -2946,7 +3016,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_falClariFunPsi3 = null;
                 }
                 if (ckb_incorrdistrabajo.Checked == true)
                 {
@@ -2954,7 +3024,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_incoDistriTrabPsi = null;
                 }
                 if (ckb_incorrdistrabajo2.Checked == true)
                 {
@@ -2962,7 +3032,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_incoDistriTrabPsi2 = null;
                 }
                 if (ckb_incorrdistrabajo3.Checked == true)
                 {
@@ -2970,7 +3040,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_incoDistriTrabPsi3 = null;
                 }
                 if (ckb_turnorotat.Checked == true)
                 {
@@ -2978,7 +3048,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_turnosRotaPsi = null;
                 }
                 if (ckb_turnorotat2.Checked == true)
                 {
@@ -2986,7 +3056,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_turnosRotaPsi2 = null;
                 }
                 if (ckb_turnorotat3.Checked == true)
                 {
@@ -2994,7 +3064,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_turnosRotaPsi3 = null;
                 }
                 if (ckb_relacinterpersonales.Checked == true)
                 {
@@ -3002,7 +3072,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_relInterperPsi = null;
                 }
                 if (ckb_relacinterpersonales2.Checked == true)
                 {
@@ -3010,7 +3080,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_relInterperPsi2 = null;
                 }
                 if (ckb_relacinterpersonales3.Checked == true)
                 {
@@ -3018,7 +3088,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_relInterperPsi3 = null;
                 }
                 if (ckb_inestalaboral.Checked == true)
                 {
@@ -3026,7 +3096,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_inesLabPsi = null;
                 }
                 if (ckb_inestalaboral2.Checked == true)
                 {
@@ -3034,7 +3104,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_inesLabPsi2 = null;
                 }
                 if (ckb_inestalaboral3.Checked == true)
                 {
@@ -3042,7 +3112,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_inesLabPsi3 = null;
                 }
                 if (ckb_otrosPsisocial.Checked == true)
                 {
@@ -3050,7 +3120,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_otrosPsi = null;
                 }
                 if (ckb_otrosPsisocial2.Checked == true)
                 {
@@ -3058,7 +3128,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_otrosPsi2 = null;
                 }
                 if (ckb_otrosPsisocial3.Checked == true)
                 {
@@ -3066,7 +3136,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_otrosPsi3 = null;
                 }
 
                 //Revision de Organos y Sistemas
@@ -3076,7 +3146,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_pielAnexos = null;
                 }
                 if (ckb_organossentidos.Checked == true)
                 {
@@ -3084,7 +3154,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_orgSentidos = null;
                 }
                 if (ckb_respiratorio.Checked == true)
                 {
@@ -3092,7 +3162,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_respiratorio = null;
                 }
                 if (ckb_cardiovascular.Checked == true)
                 {
@@ -3100,7 +3170,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_cardVascular = null;
                 }
                 if (ckb_digestivo.Checked == true)
                 {
@@ -3108,7 +3178,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_digestivo = null;
                 }
                 if (ckb_genitourinario.Checked == true)
                 {
@@ -3116,7 +3186,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_genUrinario = null;
                 }
                 if (ckb_musculosesqueleticos.Checked == true)
                 {
@@ -3124,7 +3194,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_muscEsqueletico = null;
                 }
                 if (ckb_endocrino.Checked == true)
                 {
@@ -3132,7 +3202,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_endocrino = null;
                 }
                 if (ckb_hemolinfatico.Checked == true)
                 {
@@ -3140,7 +3210,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_hemoLimfa = null;
                 }
                 if (ckb_nervioso.Checked == true)
                 {
@@ -3148,7 +3218,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_nervioso = null;
                 }
 
                 //Regiones
@@ -3158,7 +3228,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_cicatricesPiel = null;
                 }
                 if (ckb_tatuajes.Checked == true)
                 {
@@ -3166,7 +3236,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_tatuajesPiel = null;
                 }
                 if (ckb_pielyfaneras.Checked == true)
                 {
@@ -3174,7 +3244,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_pielFacerasPiel = null;
                 }
                 if (ckb_parpados.Checked == true)
                 {
@@ -3182,7 +3252,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_parpadosOjos = null;
                 }
                 if (ckb_conjuntivas.Checked == true)
                 {
@@ -3190,7 +3260,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_conjuntuvasOjos = null;
                 }
                 if (ckb_pupilas.Checked == true)
                 {
@@ -3198,7 +3268,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_pupilasOjos = null;
                 }
                 if (ckb_cornea.Checked == true)
                 {
@@ -3206,7 +3276,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_corneaOjos = null;
                 }
                 if (ckb_motilidad.Checked == true)
                 {
@@ -3214,7 +3284,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_motilidadOjos = null;
                 }
                 if (ckb_auditivoexterno.Checked == true)
                 {
@@ -3222,7 +3292,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_cAudiExtreOido = null;
                 }
                 if (ckb_pabellon.Checked == true)
                 {
@@ -3230,7 +3300,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_pabellonOido = null;
                 }
                 if (ckb_timpanos.Checked == true)
                 {
@@ -3238,7 +3308,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_timpanosOido = null;
                 }
                 if (ckb_labios.Checked == true)
                 {
@@ -3246,7 +3316,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_labiosOroFa = null;
                 }
                 if (ckb_lengua.Checked == true)
                 {
@@ -3254,7 +3324,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_lenguaOroFa = null;
                 }
                 if (ckb_faringe.Checked == true)
                 {
@@ -3262,7 +3332,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_faringeOroFa = null;
                 }
                 if (ckb_amigdalas.Checked == true)
                 {
@@ -3270,7 +3340,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_amigdalasOroFa = null;
                 }
                 if (ckb_dentadura.Checked == true)
                 {
@@ -3278,7 +3348,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_dentaduraOroFa = null;
                 }
                 if (ckb_tabique.Checked == true)
                 {
@@ -3286,7 +3356,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_tabiqueNariz = null;
                 }
                 if (ckb_cornetes.Checked == true)
                 {
@@ -3294,7 +3364,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_cornetesNariz = null;
                 }
                 if (ckb_mucosa.Checked == true)
                 {
@@ -3302,7 +3372,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_mucosasNariz = null;
                 }
                 if (ckb_senosparanasales.Checked == true)
                 {
@@ -3310,7 +3380,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_senosParanaNariz = null;
                 }
                 if (ckb_tiroides.Checked == true)
                 {
@@ -3318,7 +3388,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_tiroiMasasCuello = null;
                 }
                 if (ckb_movilidad.Checked == true)
                 {
@@ -3326,7 +3396,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_movilidadCuello = null;
                 }
                 if (ckb_mamas.Checked == true)
                 {
@@ -3334,7 +3404,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_mamasTorax = null;
                 }
                 if (ckb_corazon.Checked == true)
                 {
@@ -3342,7 +3412,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_corazonTorax = null;
                 }
                 if (ckb_pulmones.Checked == true)
                 {
@@ -3350,7 +3420,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_pulmonesTorax2 = null;
                 }
                 if (ckb_parrillacostal.Checked == true)
                 {
@@ -3358,7 +3428,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_parriCostalTorax2 = null;
                 }
                 if (ckb_visceras.Checked == true)
                 {
@@ -3366,7 +3436,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_viscerasAbdomen = null;
                 }
                 if (ckb_paredabdominal.Checked == true)
                 {
@@ -3374,7 +3444,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_paredAbdomiAbdomen = null;
                 }
                 if (ckb_flexibilidad.Checked == true)
                 {
@@ -3382,7 +3452,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_flexibilidadColumna = null;
                 }
                 if (ckb_desviacion.Checked == true)
                 {
@@ -3390,7 +3460,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_desviacionColumna = null;
                 }
                 if (ckb_dolor.Checked == true)
                 {
@@ -3398,7 +3468,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_dolorColumna = null;
                 }
                 if (ckb_pelvis.Checked == true)
                 {
@@ -3406,7 +3476,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_pelvisPelvis = null;
                 }
                 if (ckb_genitales.Checked == true)
                 {
@@ -3414,7 +3484,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_genitalesPelvis = null;
                 }
                 if (ckb_vascular.Checked == true)
                 {
@@ -3422,7 +3492,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_vascularExtre = null;
                 }
                 if (ckb_miembrosuperiores.Checked == true)
                 {
@@ -3430,7 +3500,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_miemSupeExtre = null;
                 }
                 if (ckb_miembrosinferiores.Checked == true)
                 {
@@ -3438,7 +3508,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_miemInfeExtre = null;
                 }
                 if (ckb_fuerza.Checked == true)
                 {
@@ -3446,7 +3516,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_fuerzaNeuro = null;
                 }
                 if (ckb_sensibilidad.Checked == true)
                 {
@@ -3454,11 +3524,15 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_sensibiNeuro = null;
                 }
                 if (ckb_marcha.Checked == true)
                 {
                     perio.perio_marchaNeuro = "SI";
+                }
+                else
+                {
+                    perio.perio_marchaNeuro = null;
                 }
                 if (ckb_reflejos.Checked == true)
                 {
@@ -3466,7 +3540,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_refleNeuro = null;
                 }
 
                 //Diagnostco
@@ -3476,7 +3550,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_pre = null;
                 }
                 if (ckb_pre2.Checked == true)
                 {
@@ -3484,7 +3558,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_pre2 = null;
                 }
                 if (ckb_pre3.Checked == true)
                 {
@@ -3492,7 +3566,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_pre3 = null;
                 }
                 if (ckb_def.Checked == true)
                 {
@@ -3500,7 +3574,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_def = null;
                 }
                 if (ckb_def2.Checked == true)
                 {
@@ -3508,11 +3582,15 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_def2 = null;
                 }
                 if (ckb_def3.Checked == true)
                 {
                     perio.perio_def3 = "SI";
+                }
+                else
+                {
+                    perio.perio_def3 = null;
                 }
 
                 //Aptitud Medica para el trabajo
@@ -3522,7 +3600,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_apto = null;
                 }
                 if (ckb_aptoobservacion.Checked == true)
                 {
@@ -3530,7 +3608,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_aptoObserva = null;
                 }
                 if (ckb_aptolimitacion.Checked == true)
                 {
@@ -3538,7 +3616,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_aptoLimi = null;
                 }
                 if (ckb_noapto.Checked == true)
                 {
@@ -3546,7 +3624,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-
+                    perio.perio_NoApto = null;
                 }
 
                 //A
