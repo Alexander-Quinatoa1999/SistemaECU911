@@ -111,46 +111,46 @@ namespace SistemaECU911.Template.Views
                                 ckb_siEstVidaActFisiEstVida.Checked = true;
                             }
                             if (perio.perio_noEstiVidaActFisica == null)
-                            {                                
-                                ckb_noEstVidaActFisiEstVida.Checked == true
+                            {
+                                ckb_noEstVidaActFisiEstVida.Checked = false;
                             }
                             else
                             {
-                                ckb_noEstVidaActFisiEstVida.Checked == true
+                                ckb_noEstVidaActFisiEstVida.Checked = true;
                             }
-                            if (perio.perio_siEstiVidaMediHabitual = "SI";)
-                            {                                
-                                ckb_siEstVidaMedHabiEstVida.Checked == true
+                            if (perio.perio_siEstiVidaMediHabitual == null)
+                            {
+                                ckb_siEstVidaMedHabiEstVida.Checked = false;
                             }
                             else
                             {
-                                ckb_siEstVidaMedHabiEstVida.Checked == true
+                                ckb_siEstVidaMedHabiEstVida.Checked = true;
                             }
-                            if (perio.perio_noEstiVidaMediHabitual = "SI";)
-                            {                                
-                                ckb_noEstVidaMedHabiEstVida.Checked == true
+                            if (perio.perio_noEstiVidaMediHabitual == null)
+                            {
+                                ckb_noEstVidaMedHabiEstVida.Checked = false;
                             }
                             else
                             {
-                                ckb_noEstVidaMedHabiEstVida.Checked == true
+                                ckb_noEstVidaMedHabiEstVida.Checked = true;
                             }
 
                             //Accidentes de Trabajo (Descripcion)
-                            if (perio.perio_siCalificadoIESSAcciTrabajo = "SI";)
-                            {                                
-                                ckb_sicalificadotrabajo.Checked == true
+                            if (perio.perio_siCalificadoIESSAcciTrabajo == null)
+                            {
+                                ckb_sicalificadotrabajo.Checked = false;
                             }
                             else
                             {
-                                ckb_sicalificadotrabajo.Checked == true
+                                ckb_sicalificadotrabajo.Checked = true;
                             }
-                            if (perio.perio_noCalificadoIESSAcciTrabajo = "SI";)
-                            {                                
-                                ckb_nocalificadotrabajo.Checked == true
+                            if (perio.perio_noCalificadoIESSAcciTrabajo == null)
+                            {
+                                ckb_nocalificadotrabajo.Checked = false;
                             }
                             else
                             {
-                                ckb_nocalificadotrabajo.Checked == true
+                                ckb_nocalificadotrabajo.Checked = true;
                             }
 
                             //Enfermedades Profesionales
@@ -170,7 +170,7 @@ namespace SistemaECU911.Template.Views
                             {
                                 ckb_nocalificadoprofesional.Checked = true;
                             }
-                                                     
+
 
 
                             //A

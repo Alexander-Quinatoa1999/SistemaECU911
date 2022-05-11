@@ -83,7 +83,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                             txt_emecallesecun.Text = sso.Socio_economico_contacto_emergencia_calle_secundaria.ToString();
                             txt_emerefubicardomicilio.Text = sso.Socio_economico_contacto_emergencia_referencia_domicilio.ToString();
 
-                            txt_distanciadomiciotrabajo.Text = sso.Socio_economico_distancia_domicilio_trabajo.ToString();
+                            //txt_distanciadomiciotrabajo.Text = sso.Socio_economico_distancia_domicilio_trabajo.ToString();
 
                             //Salud
                             txt_poseeenfermedadingresarEcu.Text = sso.Socio_economico_posee_enfermedad.ToString();
@@ -171,7 +171,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                             txt_otrodescrpcionfamilia.Text = sso.Socio_economico_caracteristica_vivienda_descripcion_otra_especifique.ToString();
                             txt_otratenencia.Text = sso.Socio_economico_caracteristica_vivienda_tenencia_otra_especifique.ToString();
                             txt_otrotipodecasa.Text = sso.Socio_economico_caracteristica_vivienda_tipo_otro_especifique.ToString();
-                            txt_otradistribucioncasa.Text = sso.Socio_economico_caracteristica_vivienda_distribucion_otro_especifique.ToString();
+                            //txt_otradistribucioncasa.Text = sso.Socio_economico_caracteristica_vivienda_distribucion_otro_especifique.ToString();
                             txt_otrainformacioncasa.Text = sso.Socio_economico_caracteristica_vivienda_otro_especifique.ToString();
                             txt_movilizadecasaatrabajo.Text = sso.Socio_economico_como_moviliza_vivienda_a_trabajo.ToString();
 
@@ -253,11 +253,11 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                             }
                             if (sso.Socio_economico_modalidadcontrato_codigotrabajo == null)
                             {
-                                cb_modalidadcodigotrabajo.Checked = false;
+                                //cb_modalidadcodigotrabajo.Checked = false;
                             }
                             else
                             {
-                                cb_modalidadcodigotrabajo.Checked = true;
+                                //cb_modalidadcodigotrabajo.Checked = true;
                             }
 
                             //Estado Civil
@@ -460,11 +460,11 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                             }
                             if (sso.Socio_economico_sectorvive_otro == null)
                             {
-                                cb_otro_sector.Checked = false;
+                                //cb_otro_sector.Checked = false;
                             }
                             else
                             {
-                                cb_otro_sector.Checked = true;
+                                //cb_otro_sector.Checked = true;
                             }
                             //Tipo de vivienda
                             if (sso.Socio_economico_tipovivienda_casa == null)
@@ -1359,11 +1359,11 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                             }
                             if (sso.Socio_economico_problemas_familiares_violencia_sexual == null)
                             {
-                                cb_sexual.Checked = false;
+                                //cb_sexual.Checked = false;
                             }
                             else
                             {
-                                cb_sexual.Checked = true;
+                                //cb_sexual.Checked = true;
                             }
                             //Rol
                             if (sso.Socio_economico_miembro_familiar_rol_si == null)
@@ -1585,7 +1585,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                     Socio_economico_contacto_emergencia_calle_secundaria = txt_emecallesecun.Text,
                     Socio_economico_contacto_emergencia_referencia_domicilio = txt_emerefubicardomicilio.Text,
 
-                    Socio_economico_distancia_domicilio_trabajo = txt_distanciadomiciotrabajo.Text,
+                    //Socio_economico_distancia_domicilio_trabajo = txt_distanciadomiciotrabajo.Text,
 
                     //Salud
                     Socio_economico_posee_enfermedad = txt_poseeenfermedadingresarEcu.Text,
@@ -1673,7 +1673,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                     Socio_economico_caracteristica_vivienda_descripcion_otra_especifique = txt_otrodescrpcionfamilia.Text,
                     Socio_economico_caracteristica_vivienda_tenencia_otra_especifique = txt_otratenencia.Text,
                     Socio_economico_caracteristica_vivienda_tipo_otro_especifique = txt_otrotipodecasa.Text,
-                    Socio_economico_caracteristica_vivienda_distribucion_otro_especifique = txt_otradistribucioncasa.Text,
+                    //Socio_economico_caracteristica_vivienda_distribucion_otro_especifique = txt_otradistribucioncasa.Text,
                     Socio_economico_caracteristica_vivienda_otro_especifique = txt_otrainformacioncasa.Text,
                     Socio_economico_como_moviliza_vivienda_a_trabajo = txt_movilizadecasaatrabajo.Text,
 
@@ -1750,10 +1750,10 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                 {
                     sso.Socio_economico_modalidadcontrato_leyorgserpublico = "SI";
                 }
-                if (cb_modalidadcodigotrabajo.Checked == true)
-                {
-                    sso.Socio_economico_modalidadcontrato_codigotrabajo = "SI";
-                }
+                //if (cb_modalidadcodigotrabajo.Checked == true)
+                //{
+                //    sso.Socio_economico_modalidadcontrato_codigotrabajo = "SI";
+                //}
                 //Estado Civil
                 if (cb_soltero.Checked == true)
                 {
@@ -1856,10 +1856,10 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                 {
                     sso.Socio_economico_sectorvive_sur = "SI";
                 }
-                if (cb_otro_sector.Checked == true)
-                {
-                    sso.Socio_economico_sectorvive_otro = "SI";
-                }
+                //if (cb_otro_sector.Checked == true)
+                //{
+                //    sso.Socio_economico_sectorvive_otro = "SI";
+                //}
                 //Tipo de vivienda
                 if (cb_casa.Checked == true)
                 {
@@ -2327,7 +2327,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                 {
                     sso.Socio_economico_problemas_familiares_violencia_verbal = "SI";
                 }
-                if (cb_sexual.Checked == true)
+                //if (cb_sexual.Checked == true)
                 {
                     sso.Socio_economico_problemas_familiares_violencia_sexual = "SI";
                 }
@@ -2432,7 +2432,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                 sso.Socio_economico_contacto_emergencia_calle_secundaria = txt_emecallesecun.Text;
                 sso.Socio_economico_contacto_emergencia_referencia_domicilio = txt_emerefubicardomicilio.Text;
 
-                sso.Socio_economico_distancia_domicilio_trabajo = txt_distanciadomiciotrabajo.Text;
+                //sso.Socio_economico_distancia_domicilio_trabajo = txt_distanciadomiciotrabajo.Text;
 
                 //Salud
                 sso.Socio_economico_posee_enfermedad = txt_poseeenfermedadingresarEcu.Text;
@@ -2520,7 +2520,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                 sso.Socio_economico_caracteristica_vivienda_descripcion_otra_especifique = txt_otrodescrpcionfamilia.Text;
                 sso.Socio_economico_caracteristica_vivienda_tenencia_otra_especifique = txt_otratenencia.Text;
                 sso.Socio_economico_caracteristica_vivienda_tipo_otro_especifique = txt_otrotipodecasa.Text;
-                sso.Socio_economico_caracteristica_vivienda_distribucion_otro_especifique = txt_otradistribucioncasa.Text;
+                //sso.Socio_economico_caracteristica_vivienda_distribucion_otro_especifique = txt_otradistribucioncasa.Text;
                 sso.Socio_economico_caracteristica_vivienda_otro_especifique = txt_otrainformacioncasa.Text;
                 sso.Socio_economico_como_moviliza_vivienda_a_trabajo = txt_movilizadecasaatrabajo.Text;
 
@@ -2598,14 +2598,14 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                 {
                     sso.Socio_economico_modalidadcontrato_leyorgserpublico = null;
                 }
-                if (cb_modalidadcodigotrabajo.Checked == true)
-                {
-                    sso.Socio_economico_modalidadcontrato_codigotrabajo = "SI";
-                }
-                else
-                {
-                    sso.Socio_economico_modalidadcontrato_codigotrabajo = null;
-                }
+                //if (cb_modalidadcodigotrabajo.Checked == true)
+                //{
+                //    sso.Socio_economico_modalidadcontrato_codigotrabajo = "SI";
+                //}
+                //else
+                //{
+                //    sso.Socio_economico_modalidadcontrato_codigotrabajo = null;
+                //}
                 //Estado Civil
                 if (cb_soltero.Checked == true)
                 {
@@ -2804,14 +2804,14 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                 {
                     sso.Socio_economico_sectorvive_sur = null;
                 }
-                if (cb_otro_sector.Checked == true)
-                {
-                    sso.Socio_economico_sectorvive_otro = "SI";
-                }
-                else
-                {
-                    sso.Socio_economico_sectorvive_otro = null;
-                }
+                //if (cb_otro_sector.Checked == true)
+                //{
+                //    sso.Socio_economico_sectorvive_otro = "SI";
+                //}
+                //else
+                //{
+                //    sso.Socio_economico_sectorvive_otro = null;
+                //}
                 //Tipo de vivienda
                 if (cb_casa.Checked == true)
                 {
@@ -3703,14 +3703,14 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                 {
                     sso.Socio_economico_problemas_familiares_violencia_verbal = null;
                 }
-                if (cb_sexual.Checked == true)
-                {
-                    sso.Socio_economico_problemas_familiares_violencia_sexual = "SI";
-                }
-                else
-                {
-                    sso.Socio_economico_problemas_familiares_violencia_sexual = null;
-                }
+                //if (cb_sexual.Checked == true)
+                //{
+                //    sso.Socio_economico_problemas_familiares_violencia_sexual = "SI";
+                //}
+                //else
+                //{
+                //    sso.Socio_economico_problemas_familiares_violencia_sexual = null;
+                //}
                 //Rol
                 if (cb_rolfamiliarsi.Checked == true)
                 {
