@@ -777,6 +777,7 @@
     <Content Include="Template\Views_Pacientes\Inicio.aspx" />
     <Content Include="Template\Views_Pacientes\PacientesFichaMedica.aspx" />
     <Content Include="Template\Views_Pacientes\SocioEconomico.aspx" />
+    <Content Include="Template\Views_Pacientes\SSO.aspx" />
     <Content Include="Template\Views_Socio_Economico\Inicio.aspx" />
     <Content Include="Template\Views_Socio_Economico\PacientesSocioEconomico.aspx" />
     <Content Include="Template\Views_Socio_Economico\SocioEconomico.aspx" />
@@ -862,6 +863,13 @@
     </Compile>
     <Compile Include="Template\Views_Pacientes\SocioEconomico.aspx.designer.cs">
       <DependentUpon>SocioEconomico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Template\Views_Pacientes\SSO.aspx.cs">
+      <DependentUpon>SSO.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Template\Views_Pacientes\SSO.aspx.designer.cs">
+      <DependentUpon>SSO.aspx</DependentUpon>
     </Compile>
     <Compile Include="Template\Views_Socio_Economico\Inicio.aspx.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
