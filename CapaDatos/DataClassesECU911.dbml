@@ -1448,6 +1448,7 @@
       <Column Name="Per_priNombre" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="Per_segNombre" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="Per_genero" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Per_fechaNacimiento" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="Per_puestoTrabajo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="Per_areaTrabajo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="Per_fechInicioTrabajo" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />

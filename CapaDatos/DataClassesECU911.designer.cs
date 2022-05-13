@@ -34512,6 +34512,8 @@ namespace CapaDatos
 		
 		private string _Per_genero;
 		
+		private System.Nullable<System.DateTime> _Per_fechaNacimiento;
+		
 		private string _Per_puestoTrabajo;
 		
 		private string _Per_areaTrabajo;
@@ -34560,6 +34562,8 @@ namespace CapaDatos
     partial void OnPer_segNombreChanged();
     partial void OnPer_generoChanging(string value);
     partial void OnPer_generoChanged();
+    partial void OnPer_fechaNacimientoChanging(System.Nullable<System.DateTime> value);
+    partial void OnPer_fechaNacimientoChanged();
     partial void OnPer_puestoTrabajoChanging(string value);
     partial void OnPer_puestoTrabajoChanged();
     partial void OnPer_areaTrabajoChanging(string value);
@@ -34723,6 +34727,26 @@ namespace CapaDatos
 					this._Per_genero = value;
 					this.SendPropertyChanged("Per_genero");
 					this.OnPer_generoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_fechaNacimiento", DbType="DateTime")]
+		public System.Nullable<System.DateTime> Per_fechaNacimiento
+		{
+			get
+			{
+				return this._Per_fechaNacimiento;
+			}
+			set
+			{
+				if ((this._Per_fechaNacimiento != value))
+				{
+					this.OnPer_fechaNacimientoChanging(value);
+					this.SendPropertyChanging();
+					this._Per_fechaNacimiento = value;
+					this.SendPropertyChanged("Per_fechaNacimiento");
+					this.OnPer_fechaNacimientoChanged();
 				}
 			}
 		}

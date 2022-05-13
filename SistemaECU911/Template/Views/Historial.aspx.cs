@@ -114,6 +114,33 @@ namespace SistemaECU911.Template.Views
             }            
         }
 
+        public void Calculo(DateTime nac, DateTime actual)
+        {
+            int año = nac.Year;
+            int mes = nac.Month;
+            int dia = nac.Day;
+
+            int añoBisiesto = 0;
+
+            for (int i = año; i < actual.Year; i++)
+            {
+                if (DateTime.IsLeapYear(i))
+                {
+                    ++añoBisiesto;
+                }
+            }
+
+            TimeSpan ts = actual.Subtract(nac);
+            dia = ts.Days - añoBisiesto;
+            int r = 0;
+
+            año = Math.DivRem(dia, 365, out r);
+            mes = Math.DivRem(r, 30, out r);
+            dia = r;
+
+            txt_edad.Text = año + "A, " + mes + "M, " + dia + "D";
+        }
+
         //Metodo obtener cedula por numero de historia clinica
         [WebMethod]
         [ScriptMethod]
@@ -122,7 +149,7 @@ namespace SistemaECU911.Template.Views
             List<string> lista = new List<string>();
             try
             {
-                string oConn = @"Data Source=ZOCAPO\SQLEXPRESS;Initial Catalog=SistemaECU911;Integrated Security=True";
+                string oConn = @"Data Source=.;Initial Catalog=SistemaECU911;Integrated Security=True";
 
                 SqlConnection con = new SqlConnection(oConn);
                 con.Open();
@@ -177,6 +204,12 @@ namespace SistemaECU911.Template.Views
                 string sexo = item.Per_genero;
                 txt_sexo.Text = sexo;
 
+                DateTime edad = Convert.ToDateTime(item.Per_fechaNacimiento);
+                DateTime naci = Convert.ToDateTime(edad);
+
+                DateTime actual = DateTime.Now;
+                Calculo(naci, actual);
+
             }
         }
 
@@ -188,7 +221,7 @@ namespace SistemaECU911.Template.Views
             List<string> lista = new List<string>();
             try
             {
-                string oConn = @"Data Source=ZOCAPO\SQLEXPRESS;Initial Catalog=SistemaECU911;Integrated Security=True";
+                string oConn = @"Data Source=.;Initial Catalog=SistemaECU911;Integrated Security=True";
 
                 SqlConnection con = new SqlConnection(oConn);
                 con.Open();
