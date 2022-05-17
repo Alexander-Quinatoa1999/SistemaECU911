@@ -60,10 +60,38 @@
 
                 <div class="container">
                     <div class="text-center" style="font-size: 15px; font-family: Arial">
-                        <h6>DIRECCIÓN DE ADMINISTRACIÓN DE RECURSOS HUMANOS</h6>
+                        <h6>GESTIÓN DE TALENTO HUMANO</h6>
                         <h6>GESTIÓN DE BIENESTAR LABORAL Y SALUD OCUPACIONAL</h6>
                         <h6>FICHA SOCIOECONÓMICA</h6>
                     </div>
+                </div>
+                <br />
+
+                <%--Código y Versión--%>
+
+                <div class="list-group list-group-flush">
+                    <asp:Table class="table table-bordered table-light" runat="server">
+                        <asp:TableRow>
+                            <asp:TableCell Style="text-align: center; border: ridge; font-family: Arial">
+                                <div class="card-header" style="background-color: #cccdfe; font-weight: bold; font-family: Arial">
+                                    CÓDIGO
+                                </div>
+                            </asp:TableCell>
+                            <asp:TableCell Style="text-align: center; border: ridge; font-family: Arial">
+                                <div class="card-header" style="background-color: #cccdfe; font-weight: bold; font-family: Arial">
+                                    VERSIÓN
+                                </div>
+                            </asp:TableCell>
+                        </asp:TableRow>
+                        <asp:TableRow>
+                            <asp:TableCell Style="background-color: white; border: ridge; font-family: Arial">
+                                <asp:TextBox runat="server" ID="txt_codigoinicio" BorderStyle="None" Style="width: 100%; text-align: center" placeholder="GTH_FOR_21"></asp:TextBox>
+                            </asp:TableCell>
+                            <asp:TableCell Style="background-color: white; border: ridge; font-family: Arial">
+                                <asp:TextBox runat="server" ID="txt_version" BorderStyle="None" Style="width: 100%; text-align: center" placeholder="1"></asp:TextBox>
+                            </asp:TableCell>
+                        </asp:TableRow>
+                    </asp:Table>
                 </div>
                 <br />
 
@@ -84,7 +112,7 @@
 
                 <div class="card card-responsive" style="width: auto;">
                     <div class="card-header" style="background-color: #cccdfe; font-weight: bold; font-family: Arial">
-                        DATOS GENERALES
+                        I. DATOS GENERALES
                     </div>
                     <div class="list-group list-group-flush" style="padding: 10px; text-align: center">
                         <asp:Table class="table table-bordered text-center" runat="server">
@@ -505,7 +533,7 @@
 
                 <div class="card card-responsive" style="width: auto;">
                     <div class="card-header" style="background-color: #cccdfe; font-weight: bold; font-family: Arial">
-                        SALUD
+                    II.    SALUD
                     </div>
                     <div class="list-group list-group-flush" style="padding: 10px; text-align: center">
                         <asp:Table class="table table-bordered text-center" runat="server">
@@ -729,7 +757,7 @@
 
                 <div class="card card-responsive" style="width: auto;">
                     <div class="card-header" style="background-color: #cccdfe; font-weight: bold; font-family: Arial">
-                        SITUACIÓN ECONÓMICA DEL SERVIDOR/A
+                    III.    SITUACIÓN ECONÓMICA DEL SERVIDOR/A
                     </div>
                     <div class="list-group list-group-flush" style="padding: 10px; text-align: center">
                         <asp:Table class="table table-bordered text-center" runat="server">
@@ -1075,7 +1103,7 @@
 
                 <div class="card card-responsive" style="width: auto;">
                     <div class="card-header" style="background-color: #cccdfe; font-weight: bold; font-family: Arial">
-                        INFORMACIÓN FAMILIAR
+                    IV.    INFORMACIÓN FAMILIAR
                     </div>
                     <div class="list-group list-group-flush" style="padding: 10px; text-align: center">
                         <asp:Table class="table table-bordered text-center" runat="server">
@@ -1275,7 +1303,7 @@
 
                 <div class="card card-responsive" style="width: auto;">
                     <div class="card-header" style="background-color: #cccdfe; font-weight: bold; font-family: Arial">
-                        ACTIVIDADES QUE  REALIZA EN SU TIEMPO LIBRE
+                    V.    ACTIVIDADES QUE  REALIZA EN SU TIEMPO LIBRE
                     </div>
                     <div class="list-group list-group-flush" style="padding: 10px; text-align: center">
 
@@ -1402,7 +1430,7 @@
 
                 <div class="card card-responsive" style="width: auto;">
                     <div class="card-header" style="background-color: #cccdfe; font-weight: bold; font-family: Arial">
-                        INFORMACIÓN PARA USO DE BIENESTAR FAMILIAR
+                    VI.    INFORMACIÓN PARA USO DE BIENESTAR FAMILIAR
                     </div>
                     <div class="list-group list-group-flush" style="padding: 10px; text-align: center">
 
@@ -1644,6 +1672,17 @@
                             <asp:TableRow>
                                 <asp:TableCell Style="background-color: white">
                                     <asp:TextBox runat="server" ID="txt_informacionadicional" BorderStyle="None" Style="width: 100%;" BackColor="white" TextMode="MultiLine" Rows="2"></asp:TextBox>
+                                </asp:TableCell>
+                            </asp:TableRow>
+                        </asp:Table>
+
+                        <asp:Table class="table table-bordered text-left" runat="server">
+                            <asp:TableRow>
+                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial">Observaciones y Recomendaciones</asp:TableCell>
+                            </asp:TableRow>
+                            <asp:TableRow>
+                                <asp:TableCell Style="background-color: white">
+                                    <asp:TextBox runat="server" ID="TextBox1" BorderStyle="None" Style="width: 100%;" BackColor="white" TextMode="MultiLine" Rows="4"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                         </asp:Table>
