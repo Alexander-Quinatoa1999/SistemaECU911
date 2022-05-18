@@ -558,7 +558,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (cbk_nodiscapacidad.Checked == true)
                 {
-                    inicial.inicial_noDis = "No";
+                    inicial.inicial_noDis = "Si";
                 }
                 inicial.inicial_tipoDis = txt_tipodiscapacidad.Text;
                 inicial.inicial_porcentDis = Convert.ToInt32(txt_porcentajediscapacidad.Text);
@@ -581,7 +581,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_noVidSexAntGinObste.Checked == true)
                 {
-                    inicial.inicial_noVidaSexActiva = "No";
+                    inicial.inicial_noVidaSexActiva = "Si";
                 }
                 if (ckb_siMetPlaniAntGinObste.Checked == true)
                 {
@@ -589,7 +589,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_noMetPlaniAntGinObste.Checked == true)
                 {
-                    inicial.inicial_noMetPlanifiFamiliar = "No";
+                    inicial.inicial_noMetPlanifiFamiliar = "Si";
                 }
                 inicial.inicial_tipoMetPlanifiFamiliar = txt_tipoMetPlaniAntGinObste.Text;
                 if (ckb_siPapaniAntGinObste.Checked == true)
@@ -598,7 +598,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_noPapaniAntGinObste.Checked == true)
                 {
-                    inicial.inicial_noExaRealiPapanicolaou = "No";
+                    inicial.inicial_noExaRealiPapanicolaou = "Si";
                 }
                 inicial.inicial_tiempoExaRealiPapanicolaou = Convert.ToInt32(txt_tiempoPapaniAntGinObste.Text);
                 inicial.inicial_resultadoExaRealiPapanicolaou = txt_resultadoPapaniAntGinObste.Text;
@@ -608,7 +608,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_noEcoMamaAntGinObste.Checked == true)
                 {
-                    inicial.inicial_noExaRealiEcoMamario = "No";
+                    inicial.inicial_noExaRealiEcoMamario = "Si";
                 }
                 inicial.inicial_tiempoExaRealiEcoMamario = Convert.ToInt32(txt_tiempoEcoMamaAntGinObste.Text);
                 inicial.inicial_resultadoExaRealiEcoMamario = txt_resultadoEcoMamaAntGinObste.Text;
@@ -618,7 +618,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_noColposAntGinObste.Checked == true)
                 {
-                    inicial.inicial_noExaRealiColposcopia = "No";
+                    inicial.inicial_noExaRealiColposcopia = "Si";
                 }
                 inicial.inicial_tiempoExaRealiColposcopia = Convert.ToInt32(txt_tiempoColposAntGinObste.Text);
                 inicial.inicial_resultadoExaRealiColposcopia = txt_resultadoColposAntGinObste.Text;
@@ -628,7 +628,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_noMamograAntGinObste.Checked == true)
                 {
-                    inicial.inicial_noExaRealiMamografia = "No";
+                    inicial.inicial_noExaRealiMamografia = "Si";
                 }
                 inicial.inicial_tiempoExaRealiMamografia = Convert.ToInt32(txt_tiempoMamograAntGinObste.Text);
                 inicial.inicial_resultadoExaRealiMamografia = txt_resultadoMamograAntGinObste.Text;
@@ -638,7 +638,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_noExaRealiAntProstaAntReproMascu.Checked == true)
                 {
-                    inicial.inicial_noExaRealiAntiProstatico = "No";
+                    inicial.inicial_noExaRealiAntiProstatico = "Si";
                 }
                 inicial.inicial_tiempoExaRealiAntiProstatico = Convert.ToInt32(txt_tiempoExaRealiAntProstaAntReproMascu.Text);
                 inicial.inicial_resultadoExaRealiAntiProstatico = txt_resultadoExaRealiAntProstaAntReproMascu.Text;
@@ -648,7 +648,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_noMetPlaniAntReproMascu.Checked == true)
                 {
-                    inicial.inicial_noMetPlanifiFamiAntReproMascu = "No";
+                    inicial.inicial_noMetPlanifiFamiAntReproMascu = "Si";
                 }
                 inicial.inicial_tipo1MetPlanifiFamiAntReproMascu = txt_tipo1MetPlaniAntReproMascu.Text;
                 inicial.inicial_vivosHijAntReproMascu = Convert.ToInt32(txt_vivosHijosAntReproMascu.Text);
@@ -659,7 +659,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_noExaRealiEcoProstaAntReproMascu.Checked == true)
                 {
-                    inicial.inicial_noExaRealiEcoProstatico = "No";
+                    inicial.inicial_noExaRealiEcoProstatico = "Si";
                 }
                 inicial.inicial_tiempoExaRealiEcoProstatico = Convert.ToInt32(txt_tiempoExaRealiEcoProstaAntReproMascu.Text);
                 inicial.inicial_resultadoExaRealiEcoProstatico = txt_resultadoExaRealiEcoProstaAntReproMascu.Text;
@@ -670,7 +670,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_noConsuNociTabaHabToxi.Checked == true)
                 {
-                    inicial.inicial_noConsuNocivosTabaco = "No";
+                    inicial.inicial_noConsuNocivosTabaco = "Si";
                 }
                 inicial.inicial_tiempoConsuConsuNocivosTabaco = Convert.ToInt32(txt_tiemConConsuNociTabaHabToxi.Text);
                 inicial.inicial_cantidadConsuNocivosTabaco = txt_cantiConsuNociTabaHabToxi.Text;
@@ -682,7 +682,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_noConsuNociAlcoHabToxi.Checked == true)
                 {
-                    inicial.inicial_noConsuNocivosAlcohol = "No";
+                    inicial.inicial_noConsuNocivosAlcohol = "Si";
                 }
                 inicial.inicial_tiempoConsuConsuNocivosAlcohol = Convert.ToInt32(txt_tiemConConsuNociAlcoHabToxi.Text);
                 inicial.inicial_cantidadConsuNocivosAlcohol = txt_cantiConsuNociAlcoHabToxi.Text;
@@ -694,7 +694,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_noConsuNociOtrasDroHabToxi.Checked == true)
                 {
-                    inicial.inicial_noConsuNocivosOtrasDrogas = "No";
+                    inicial.inicial_noConsuNocivosOtrasDrogas = "Si";
                 }
                 inicial.inicial_tiempoConsu1ConsuNocivosOtrasDrogas = Convert.ToInt32(txt_tiemCon1ConsuNociOtrasDroHabToxi.Text);
                 inicial.inicial_cantidad1ConsuNocivosOtrasDrogas = txt_canti1ConsuNociOtrasDroHabToxi.Text;
@@ -711,7 +711,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_noEstVidaActFisiEstVida.Checked == true)
                 {
-                    inicial.inicial_noEstiVidaActFisica = "No";
+                    inicial.inicial_noEstiVidaActFisica = "Si";
                 }
                 inicial.inicial_cualEstiVidaActFisica = txt_cualEstVidaActFisiEstVida.Text;
                 inicial.inicial_tiem_cantEstiVidaActFisica = txt_tiemCanEstVidaActFisiEstVida.Text;
@@ -721,7 +721,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_noEstVidaMedHabiEstVida.Checked == true)
                 {
-                    inicial.inicial_noEstiVidaMediHabitual = "No";
+                    inicial.inicial_noEstiVidaMediHabitual = "Si";
                 }
                 inicial.inicial_cual2EstiVidaMediHabitual = txt_cual1EstVidaMedHabiEstVida.Text;
                 inicial.inicial_tiem_cant2EstiVidaMediHabitual = txt_tiemCan1EstVidaMedHabiEstVida.Text;
@@ -840,7 +840,7 @@ namespace SistemaECU911.Template.Views
                 inicial.inicial_especificarCalificadoIESSAcciTrabajo = txt_especificar.Text;
                 if (ckb_noAccTrabDescrip.Checked == true)
                 {
-                    inicial.inicial_noCalificadoIESSAcciTrabajo = "No";
+                    inicial.inicial_noCalificadoIESSAcciTrabajo = "Si";
                 }
                 inicial.inicial_fechaCalificadoIESSAcciTrabajo = Convert.ToDateTime(txt_fecha.Text);
                 inicial.inicial_obserAcciTrabajo = txt_observaciones2.Text;
@@ -851,7 +851,7 @@ namespace SistemaECU911.Template.Views
                 inicial.inicial_especificarCalificadoIESSEnfProfesionales = txt_espeprofesional.Text;
                 if (ckb_noprofesional.Checked == true)
                 {
-                    inicial.inicial_noCalificadoIESSEnfProfesionales = "No";
+                    inicial.inicial_noCalificadoIESSEnfProfesionales = "Si";
                 }
                 inicial.inicial_fechaCalificadoIESSEnfProfesionales = Convert.ToDateTime(txt_fechaprofesional.Text);
                 inicial.inicial_obserEnfProfesionales = txt_observaciones3.Text;
@@ -2155,21 +2155,41 @@ namespace SistemaECU911.Template.Views
                 {
                     inicial.inicial_catolicaRel = "Si";
                 }
+                else
+                {
+                    inicial.inicial_catolicaRel = null;
+                }
                 if (ckb_evangelica.Checked == true)
                 {
                     inicial.inicial_evangelicaRel = "Si";
+                }
+                else
+                {
+                    inicial.inicial_evangelicaRel = null;
                 }
                 if (cbk_testigo.Checked == true)
                 {
                     inicial.inicial_testJehovaRel = "Si";
                 }
+                else
+                {
+                    inicial.inicial_testJehovaRel = null;
+                }
                 if (cbk_mormona.Checked == true)
                 {
                     inicial.inicial_mormonaRel = "Si";
                 }
+                else
+                {
+                    inicial.inicial_mormonaRel = null;
+                }
                 if (cbk_otrareligion.Checked == true)
                 {
                     inicial.inicial_otrasRel = "Si";
+                }
+                else
+                {
+                    inicial.inicial_otrasRel = null;
                 }
                 inicial.inicial_groSanguineo = txt_gruposanguineo.Text;
                 inicial.inicial_lateralidad = txt_lateralidad.Text;
@@ -2177,49 +2197,97 @@ namespace SistemaECU911.Template.Views
                 {
                     inicial.inicial_gayOriSex = "Si";
                 }
+                else
+                {
+                    inicial.inicial_gayOriSex = null;
+                }
                 if (cbk_lesbiana.Checked == true)
                 {
                     inicial.inicial__lesbianaOriSex = "Si";
+                }
+                else
+                {
+                    inicial.inicial__lesbianaOriSex = null;
                 }
                 if (cbk_bisexual.Checked == true)
                 {
                     inicial.inicial_bisexualOriSex = "Si";
                 }
+                else
+                {
+                    inicial.inicial_bisexualOriSex = null;
+                }
                 if (cbk_heterosexual.Checked == true)
                 {
                     inicial.inicial_heterosexualOriSex = "Si";
+                }
+                else
+                {
+                    inicial.inicial_heterosexualOriSex = null;
                 }
                 if (cbk_noRespondeOriSex.Checked == true)
                 {
                     inicial.inicial_norespondeOriSex = "Si";
                 }
+                else
+                {
+                    inicial.inicial_norespondeOriSex = null;
+                }
                 if (cbk_femenino.Checked == true)
                 {
                     inicial.inicial_femeninoIdenGen = "Si";
+                }
+                else
+                {
+                    inicial.inicial_femeninoIdenGen = null;
                 }
                 if (cbk_masculino.Checked == true)
                 {
                     inicial.inicial_masculinoIdenGen = "Si";
                 }
+                else
+                {
+                    inicial.inicial_masculinoIdenGen = null;
+                }
                 if (cbk_transfemenino.Checked == true)
                 {
                     inicial.inicial_transFemeninoIdenGen = "Si";
+                }
+                else
+                {
+                    inicial.inicial_transFemeninoIdenGen = null;
                 }
                 if (cbk_transmasculino.Checked == true)
                 {
                     inicial.inicial_transMasculinoIdenGen = "Si";
                 }
+                else
+                {
+                    inicial.inicial_transMasculinoIdenGen = null;
+                }
                 if (cbk_noRespondeIdeGen.Checked == true)
                 {
                     inicial.inicial_norespondeIdenGen = "Si";
+                }
+                else
+                {
+                    inicial.inicial_norespondeIdenGen = null;
                 }
                 if (cbk_sidiscapacidad.Checked == true)
                 {
                     inicial.inicial_siDis = "Si";
                 }
+                else
+                {
+                    inicial.inicial_norespondeIdenGen = null;
+                }
                 if (cbk_nodiscapacidad.Checked == true)
                 {
-                    inicial.inicial_noDis = "No";
+                    inicial.inicial_noDis = "Si";
+                }
+                else
+                {
+                    inicial.inicial_noDis = null;
                 }
                 inicial.inicial_tipoDis = txt_tipodiscapacidad.Text;
                 inicial.inicial_porcentDis = Convert.ToInt32(txt_porcentajediscapacidad.Text);
@@ -2240,26 +2308,50 @@ namespace SistemaECU911.Template.Views
                 {
                     inicial.inicial_siVidaSexActiva = "Si";
                 }
+                else
+                {
+                    inicial.inicial_siVidaSexActiva = null;
+                }
                 if (ckb_noVidSexAntGinObste.Checked == true)
                 {
-                    inicial.inicial_noVidaSexActiva = "No";
+                    inicial.inicial_noVidaSexActiva = "Si";
+                }
+                else
+                {
+                    inicial.inicial_noVidaSexActiva = null;
                 }
                 if (ckb_siMetPlaniAntGinObste.Checked == true)
                 {
                     inicial.inicial_siMetPlanifiFamiliar = "Si";
                 }
+                else
+                {
+                    inicial.inicial_siMetPlanifiFamiliar = null;
+                }
                 if (ckb_noMetPlaniAntGinObste.Checked == true)
                 {
-                    inicial.inicial_noMetPlanifiFamiliar = "No";
+                    inicial.inicial_noMetPlanifiFamiliar = "Si";
+                }
+                else
+                {
+                    inicial.inicial_noMetPlanifiFamiliar = null;
                 }
                 inicial.inicial_tipoMetPlanifiFamiliar = txt_tipoMetPlaniAntGinObste.Text;
                 if (ckb_siPapaniAntGinObste.Checked == true)
                 {
                     inicial.inicial_siExaRealiPapanicolaou = "Si";
                 }
+                else
+                {
+                    inicial.inicial_siExaRealiPapanicolaou = null;
+                }
                 if (ckb_noPapaniAntGinObste.Checked == true)
                 {
-                    inicial.inicial_noExaRealiPapanicolaou = "No";
+                    inicial.inicial_noExaRealiPapanicolaou = "Si";
+                }
+                else
+                {
+                    inicial.inicial_noExaRealiPapanicolaou = null;
                 }
                 inicial.inicial_tiempoExaRealiPapanicolaou = Convert.ToInt32(txt_tiempoPapaniAntGinObste.Text);
                 inicial.inicial_resultadoExaRealiPapanicolaou = txt_resultadoPapaniAntGinObste.Text;
@@ -2267,9 +2359,17 @@ namespace SistemaECU911.Template.Views
                 {
                     inicial.inicial_siExaRealiEcoMamario = "Si";
                 }
+                else
+                {
+                    inicial.inicial_siExaRealiEcoMamario = null;
+                }
                 if (ckb_noEcoMamaAntGinObste.Checked == true)
                 {
-                    inicial.inicial_noExaRealiEcoMamario = "No";
+                    inicial.inicial_noExaRealiEcoMamario = "Si";
+                }
+                else
+                {
+                    inicial.inicial_noExaRealiEcoMamario = null;
                 }
                 inicial.inicial_tiempoExaRealiEcoMamario = Convert.ToInt32(txt_tiempoEcoMamaAntGinObste.Text);
                 inicial.inicial_resultadoExaRealiEcoMamario = txt_resultadoEcoMamaAntGinObste.Text;
@@ -2277,9 +2377,17 @@ namespace SistemaECU911.Template.Views
                 {
                     inicial.inicial_siExaRealiColposcopia = "Si";
                 }
+                else
+                {
+                    inicial.inicial_siExaRealiColposcopia = null;
+                }
                 if (ckb_noColposAntGinObste.Checked == true)
                 {
-                    inicial.inicial_noExaRealiColposcopia = "No";
+                    inicial.inicial_noExaRealiColposcopia = "Si";
+                }
+                else
+                {
+                    inicial.inicial_noExaRealiColposcopia = null;
                 }
                 inicial.inicial_tiempoExaRealiColposcopia = Convert.ToInt32(txt_tiempoColposAntGinObste.Text);
                 inicial.inicial_resultadoExaRealiColposcopia = txt_resultadoColposAntGinObste.Text;
@@ -2287,9 +2395,17 @@ namespace SistemaECU911.Template.Views
                 {
                     inicial.inicial_siExaRealiMamografia = "Si";
                 }
+                else
+                {
+                    inicial.inicial_siExaRealiMamografia = null;
+                }
                 if (ckb_noMamograAntGinObste.Checked == true)
                 {
-                    inicial.inicial_noExaRealiMamografia = "No";
+                    inicial.inicial_noExaRealiMamografia = "Si";
+                }
+                else
+                {
+                    inicial.inicial_noExaRealiMamografia = null;
                 }
                 inicial.inicial_tiempoExaRealiMamografia = Convert.ToInt32(txt_tiempoMamograAntGinObste.Text);
                 inicial.inicial_resultadoExaRealiMamografia = txt_resultadoMamograAntGinObste.Text;
@@ -2297,9 +2413,17 @@ namespace SistemaECU911.Template.Views
                 {
                     inicial.inicial_siExaRealiAntiProstatico = "Si";
                 }
+                else
+                {
+                    inicial.inicial_siExaRealiAntiProstatico = null;
+                }
                 if (ckb_noExaRealiAntProstaAntReproMascu.Checked == true)
                 {
-                    inicial.inicial_noExaRealiAntiProstatico = "No";
+                    inicial.inicial_noExaRealiAntiProstatico = "Si";
+                }
+                else
+                {
+                    inicial.inicial_noExaRealiAntiProstatico = null;
                 }
                 inicial.inicial_tiempoExaRealiAntiProstatico = Convert.ToInt32(txt_tiempoExaRealiAntProstaAntReproMascu.Text);
                 inicial.inicial_resultadoExaRealiAntiProstatico = txt_resultadoExaRealiAntProstaAntReproMascu.Text;
@@ -2307,9 +2431,17 @@ namespace SistemaECU911.Template.Views
                 {
                     inicial.inicial_siMetPlanifiFamiAntReproMascu = "Si";
                 }
+                else
+                {
+                    inicial.inicial_siMetPlanifiFamiAntReproMascu = null;
+                }
                 if (ckb_noMetPlaniAntReproMascu.Checked == true)
                 {
-                    inicial.inicial_noMetPlanifiFamiAntReproMascu = "No";
+                    inicial.inicial_noMetPlanifiFamiAntReproMascu = "Si";
+                }
+                else
+                {
+                    inicial.inicial_noMetPlanifiFamiAntReproMascu = null;
                 }
                 inicial.inicial_tipo1MetPlanifiFamiAntReproMascu = txt_tipo1MetPlaniAntReproMascu.Text;
                 inicial.inicial_vivosHijAntReproMascu = Convert.ToInt32(txt_vivosHijosAntReproMascu.Text);
@@ -2318,9 +2450,17 @@ namespace SistemaECU911.Template.Views
                 {
                     inicial.inicial_siExaRealiEcoProstatico = "Si";
                 }
+                else
+                {
+                    inicial.inicial_siExaRealiEcoProstatico = null;
+                }
                 if (ckb_noExaRealiEcoProstaAntReproMascu.Checked == true)
                 {
-                    inicial.inicial_noExaRealiEcoProstatico = "No";
+                    inicial.inicial_noExaRealiEcoProstatico = "Si";
+                }
+                else
+                {
+                    inicial.inicial_noExaRealiEcoProstatico = null;
                 }
                 inicial.inicial_tiempoExaRealiEcoProstatico = Convert.ToInt32(txt_tiempoExaRealiEcoProstaAntReproMascu.Text);
                 inicial.inicial_resultadoExaRealiEcoProstatico = txt_resultadoExaRealiEcoProstaAntReproMascu.Text;
@@ -2329,9 +2469,17 @@ namespace SistemaECU911.Template.Views
                 {
                     inicial.inicial_siConsuNocivosTabaco = "Si";
                 }
+                else
+                {
+                    inicial.inicial_siConsuNocivosTabaco = null;
+                }
                 if (ckb_noConsuNociTabaHabToxi.Checked == true)
                 {
-                    inicial.inicial_noConsuNocivosTabaco = "No";
+                    inicial.inicial_noConsuNocivosTabaco = "Si";
+                }
+                else
+                {
+                    inicial.inicial_noConsuNocivosTabaco = null;
                 }
                 inicial.inicial_tiempoConsuConsuNocivosTabaco = Convert.ToInt32(txt_tiemConConsuNociTabaHabToxi.Text);
                 inicial.inicial_cantidadConsuNocivosTabaco = txt_cantiConsuNociTabaHabToxi.Text;
@@ -2341,9 +2489,17 @@ namespace SistemaECU911.Template.Views
                 {
                     inicial.inicial_siConsuNocivosAlcohol = "Si";
                 }
+                else
+                {
+                    inicial.inicial_siConsuNocivosAlcohol = null;
+                }
                 if (ckb_noConsuNociAlcoHabToxi.Checked == true)
                 {
-                    inicial.inicial_noConsuNocivosAlcohol = "No";
+                    inicial.inicial_noConsuNocivosAlcohol = "Si";
+                }
+                else
+                {
+                    inicial.inicial_noConsuNocivosAlcohol = null;
                 }
                 inicial.inicial_tiempoConsuConsuNocivosAlcohol = Convert.ToInt32(txt_tiemConConsuNociAlcoHabToxi.Text);
                 inicial.inicial_cantidadConsuNocivosAlcohol = txt_cantiConsuNociAlcoHabToxi.Text;
@@ -2353,9 +2509,17 @@ namespace SistemaECU911.Template.Views
                 {
                     inicial.inicial_siConsuNocivosOtrasDrogas = "Si";
                 }
+                else
+                {
+                    inicial.inicial_siConsuNocivosOtrasDrogas = null;
+                }
                 if (ckb_noConsuNociOtrasDroHabToxi.Checked == true)
                 {
-                    inicial.inicial_noConsuNocivosOtrasDrogas = "No";
+                    inicial.inicial_noConsuNocivosOtrasDrogas = "Si";
+                }
+                else
+                {
+                    inicial.inicial_noConsuNocivosOtrasDrogas = null;
                 }
                 inicial.inicial_tiempoConsu1ConsuNocivosOtrasDrogas = Convert.ToInt32(txt_tiemCon1ConsuNociOtrasDroHabToxi.Text);
                 inicial.inicial_cantidad1ConsuNocivosOtrasDrogas = txt_canti1ConsuNociOtrasDroHabToxi.Text;
@@ -2370,9 +2534,17 @@ namespace SistemaECU911.Template.Views
                 {
                     inicial.inicial_siEstiVidaActFisica = "Si";
                 }
+                else
+                {
+                    inicial.inicial_siEstiVidaActFisica = null;
+                }
                 if (ckb_noEstVidaActFisiEstVida.Checked == true)
                 {
-                    inicial.inicial_noEstiVidaActFisica = "No";
+                    inicial.inicial_noEstiVidaActFisica = "Si";
+                }
+                else
+                {
+                    inicial.inicial_noEstiVidaActFisica = null;
                 }
                 inicial.inicial_cualEstiVidaActFisica = txt_cualEstVidaActFisiEstVida.Text;
                 inicial.inicial_tiem_cantEstiVidaActFisica = txt_tiemCanEstVidaActFisiEstVida.Text;
@@ -2380,9 +2552,17 @@ namespace SistemaECU911.Template.Views
                 {
                     inicial.inicial_siEstiVidaMediHabitual = "Si";
                 }
+                else
+                {
+                    inicial.inicial_siEstiVidaMediHabitual = null;
+                }
                 if (ckb_noEstVidaMedHabiEstVida.Checked == true)
                 {
-                    inicial.inicial_noEstiVidaMediHabitual = "No";
+                    inicial.inicial_noEstiVidaMediHabitual = "Si";
+                }
+                else
+                {
+                    inicial.inicial_noEstiVidaMediHabitual = null;
                 }
                 inicial.inicial_cual2EstiVidaMediHabitual = txt_cual1EstVidaMedHabiEstVida.Text;
                 inicial.inicial_tiem_cant2EstiVidaMediHabitual = txt_tiemCan1EstVidaMedHabiEstVida.Text;
@@ -2398,110 +2578,214 @@ namespace SistemaECU911.Template.Views
                 {
                     inicial.inicial_fisicoRies = "Si";
                 }
+                else
+                {
+                    inicial.inicial_fisicoRies = null;
+                }
                 if (ckb_mecanico.Checked == true)
                 {
                     inicial.inicial_mecanicoRies = "Si";
+                }
+                else
+                {
+                    inicial.inicial_mecanicoRies = null;
                 }
                 if (ckb_quimico.Checked == true)
                 {
                     inicial.inicial_quimicoRies = "Si";
                 }
+                else
+                {
+                    inicial.inicial_quimicoRies = null;
+                }
                 if (ckb_biologico.Checked == true)
                 {
                     inicial.inicial_biologicoRies = "Si";
+                }
+                else
+                {
+                    inicial.inicial_biologicoRies = null;
                 }
                 if (ckb_ergonomico.Checked == true)
                 {
                     inicial.inicial_ergonomicoRies = "Si";
                 }
+                else
+                {
+                    inicial.inicial_ergonomicoRies = null;
+                }
                 if (ckb_psicosocial.Checked == true)
                 {
                     inicial.inicial_psicosocial = "Si";
+                }
+                else
+                {
+                    inicial.inicial_psicosocial = null;
                 }
                 inicial.inicial_observacionesAnteEmpleAnteriores = txt_obseantempleanteriores.Text;
                 if (ckb_fisico2.Checked == true)
                 {
                     inicial.inicial_fisicoRies2 = "Si";
                 }
+                else
+                {
+                    inicial.inicial_fisicoRies2 = null;
+                }
                 if (ckb_mecanico2.Checked == true)
                 {
                     inicial.inicial_mecanicoRies2 = "Si";
+                }
+                else
+                {
+                    inicial.inicial_mecanicoRies2 = null;
                 }
                 if (ckb_quimico2.Checked == true)
                 {
                     inicial.inicial_quimicoRies2 = "Si";
                 }
+                else
+                {
+                    inicial.inicial_quimicoRies2 = null;
+                }
                 if (ckb_biologico2.Checked == true)
                 {
                     inicial.inicial_biologicoRies2 = "Si";
+                }
+                else
+                {
+                    inicial.inicial_biologicoRies2 = null;
                 }
                 if (ckb_ergonomico2.Checked == true)
                 {
                     inicial.inicial_ergonomicoRies2 = "Si";
                 }
+                else
+                {
+                    inicial.inicial_ergonomicoRies2 = null;
+                }
                 if (ckb_psicosocial2.Checked == true)
                 {
                     inicial.inicial_psicosocial2 = "Si";
+                }
+                else
+                {
+                    inicial.inicial_psicosocial2 = null;
                 }
                 inicial.inicial_observacionesAnteEmpleAnteriores2 = txt_obseantempleanteriores.Text;
                 if (ckb_fisico3.Checked == true)
                 {
                     inicial.inicial_fisicoRies3 = "Si";
                 }
+                else
+                {
+                    inicial.inicial_fisicoRies3 = null;
+                }
                 if (ckb_mecanico3.Checked == true)
                 {
                     inicial.inicial_mecanicoRies3 = "Si";
+                }
+                else
+                {
+                    inicial.inicial_mecanicoRies3 = null;
                 }
                 if (ckb_quimico3.Checked == true)
                 {
                     inicial.inicial_quimicoRies3 = "Si";
                 }
+                else
+                {
+                    inicial.inicial_quimicoRies3 = null;
+                }
                 if (ckb_biologico3.Checked == true)
                 {
                     inicial.inicial_biologicoRies3 = "Si";
+                }
+                else
+                {
+                    inicial.inicial_biologicoRies3 = null;
                 }
                 if (ckb_ergonomico3.Checked == true)
                 {
                     inicial.inicial_ergonomicoRies3 = "Si";
                 }
+                else
+                {
+                    inicial.inicial_ergonomicoRies3 = null;
+                }
                 if (ckb_psicosocial3.Checked == true)
                 {
                     inicial.inicial_psicosocial3 = "Si";
+                }
+                else
+                {
+                    inicial.inicial_psicosocial3 = null;
                 }
                 inicial.inicial_observacionesAnteEmpleAnteriores3 = txt_obseantempleanteriores.Text;
                 if (ckb_fisico4.Checked == true)
                 {
                     inicial.inicial_fisicoRies4 = "Si";
                 }
+                else
+                {
+                    inicial.inicial_fisicoRies4 = null;
+                }
                 if (ckb_mecanico4.Checked == true)
                 {
                     inicial.inicial_mecanicoRies4 = "Si";
+                }
+                else
+                {
+                    inicial.inicial_mecanicoRies4 = null;
                 }
                 if (ckb_quimico4.Checked == true)
                 {
                     inicial.inicial_quimicoRies4 = "Si";
                 }
+                else
+                {
+                    inicial.inicial_quimicoRies4 = null;
+                }
                 if (ckb_biologico4.Checked == true)
                 {
                     inicial.inicial_biologicoRies4 = "Si";
+                }
+                else
+                {
+                    inicial.inicial_biologicoRies4 = null;
                 }
                 if (ckb_ergonomico4.Checked == true)
                 {
                     inicial.inicial_ergonomicoRies4 = "Si";
                 }
+                else
+                {
+                    inicial.inicial_ergonomicoRies4 = null;
+                }
                 if (ckb_psicosocial4.Checked == true)
                 {
                     inicial.inicial_psicosocial4 = "Si";
+                }
+                else
+                {
+                    inicial.inicial_psicosocial4 = null;
                 }
                 inicial.inicial_observacionesAnteEmpleAnteriores4 = txt_obseantempleanteriores.Text;
                 if (ckb_siAccTrabDescrip.Checked == true)
                 {
                     inicial.inicial_siCalificadoIESSAcciTrabajo = "Si";
                 }
+                else
+                {
+                    inicial.inicial_siCalificadoIESSAcciTrabajo = null;
+                }
                 inicial.inicial_especificarCalificadoIESSAcciTrabajo = txt_especificar.Text;
                 if (ckb_noAccTrabDescrip.Checked == true)
                 {
-                    inicial.inicial_noCalificadoIESSAcciTrabajo = "No";
+                    inicial.inicial_noCalificadoIESSAcciTrabajo = "Si";
+                }
+                else
+                {
+                    inicial.inicial_noCalificadoIESSAcciTrabajo = null;
                 }
                 inicial.inicial_fechaCalificadoIESSAcciTrabajo = Convert.ToDateTime(txt_fecha.Text);
                 inicial.inicial_obserAcciTrabajo = txt_observaciones2.Text;
@@ -2509,10 +2793,18 @@ namespace SistemaECU911.Template.Views
                 {
                     inicial.inicial_siCalificadoIESSEnfProfesionales = "Si";
                 }
+                else
+                {
+                    inicial.inicial_siCalificadoIESSEnfProfesionales = null;
+                }
                 inicial.inicial_especificarCalificadoIESSEnfProfesionales = txt_espeprofesional.Text;
                 if (ckb_noprofesional.Checked == true)
                 {
-                    inicial.inicial_noCalificadoIESSEnfProfesionales = "No";
+                    inicial.inicial_noCalificadoIESSEnfProfesionales = "Si";
+                }
+                else
+                {
+                    inicial.inicial_noCalificadoIESSEnfProfesionales = null;
                 }
                 inicial.inicial_fechaCalificadoIESSEnfProfesionales = Convert.ToDateTime(txt_fechaprofesional.Text);
                 inicial.inicial_obserEnfProfesionales = txt_observaciones3.Text;
@@ -2520,33 +2812,65 @@ namespace SistemaECU911.Template.Views
                 {
                     inicial.inicial_enfCarVasAnteFamiliares = "Si";
                 }
+                else
+                {
+                    inicial.inicial_enfCarVasAnteFamiliares = null;
+                }
                 if (ckb_enfermedadmetabolica.Checked == true)
                 {
                     inicial.inicial_enfMetaAnteFamiliares = "Si";
+                }
+                else
+                {
+                    inicial.inicial_enfMetaAnteFamiliares = null;
                 }
                 if (ckb_enfermedadneurologica.Checked == true)
                 {
                     inicial.inicial_enfNeuroAnteFamiliares = "Si";
                 }
+                else
+                {
+                    inicial.inicial_enfNeuroAnteFamiliares = null;
+                }
                 if (ckb_enfermedadoncologica.Checked == true)
                 {
                     inicial.inicial_enfOncoAnteFamiliares = "Si";
+                }
+                else
+                {
+                    inicial.inicial_enfOncoAnteFamiliares = null;
                 }
                 if (ckb_enfermedadinfecciosa.Checked == true)
                 {
                     inicial.inicial_enfInfeAnteFamiliares = "Si";
                 }
+                else
+                {
+                    inicial.inicial_enfInfeAnteFamiliares = null;
+                }
                 if (ckb_enfermedadhereditaria.Checked == true)
                 {
                     inicial.inicial_enfHereCongeAnteFamiliares = "Si";
+                }
+                else
+                {
+                    inicial.inicial_enfHereCongeAnteFamiliares = null;
                 }
                 if (ckb_discapacidades.Checked == true)
                 {
                     inicial.inicial_discapaAnteFamiliares = "Si";
                 }
+                else
+                {
+                    inicial.inicial_discapaAnteFamiliares = null;
+                }
                 if (ckb_otrosenfer.Checked == true)
                 {
                     inicial.inicial_otrosAnteFamiliares = "Si";
+                }
+                else
+                {
+                    inicial.inicial_otrosAnteFamiliares = null;
                 }
                 inicial.inicial_descripcionAnteFamiliares = txt_descripcionantefamiliares.Text;
                 inicial.inicial_area = txt_puestodetrabajo.Text;
@@ -2555,41 +2879,81 @@ namespace SistemaECU911.Template.Views
                 {
                     inicial.inicial_temAltasFis = "Si";
                 }
+                else
+                {
+                    inicial.inicial_temAltasFis = null;
+                }
                 if (ckb_tempbajas.Checked == true)
                 {
                     inicial.inicial_temBajasFis = "Si";
+                }
+                else
+                {
+                    inicial.inicial_temBajasFis = null;
                 }
                 if (ckb_radiacion.Checked == true)
                 {
                     inicial.inicial_radIonizanteFis = "Si";
                 }
+                else
+                {
+                    inicial.inicial_radIonizanteFis = null;
+                }
                 if (ckb_noradiacion.Checked == true)
                 {
                     inicial.inicial_radNoIonizanteFis = "Si";
+                }
+                else
+                {
+                    inicial.inicial_radNoIonizanteFis = null;
                 }
                 if (ckb_ruido.Checked == true)
                 {
                     inicial.inicial_ruidoFis = "Si";
                 }
+                else
+                {
+                    inicial.inicial_ruidoFis = null;
+                }
                 if (ckb_vibracion.Checked == true)
                 {
                     inicial.inicial_vibracionFis = "Si";
+                }
+                else
+                {
+                    inicial.inicial_vibracionFis = null;
                 }
                 if (ckb_iluminacion.Checked == true)
                 {
                     inicial.inicial_iluminacionFis = "Si";
                 }
+                else
+                {
+                    inicial.inicial_iluminacionFis = null;
+                }
                 if (ckb_ventilacion.Checked == true)
                 {
                     inicial.inicial_ventilacionFis = "Si";
+                }
+                else
+                {
+                    inicial.inicial_ventilacionFis = null;
                 }
                 if (ckb_fluidoelectrico.Checked == true)
                 {
                     inicial.inicial_fluElectricoFis = "Si";
                 }
+                else
+                {
+                    inicial.inicial_fluElectricoFis = null;
+                }
                 if (ckb_otrosFisico.Checked == true)
                 {
                     inicial.inicial_otrosFis = "Si";
+                }
+                else
+                {
+                    inicial.inicial_otrosFis = null;
                 }
                 inicial.inicial_area2 = txt_puestodetrabajo.Text;
                 inicial.inicial_actividades2 = txt_act.Text;
@@ -2597,41 +2961,81 @@ namespace SistemaECU911.Template.Views
                 {
                     inicial.inicial_temAltasFis2 = "Si";
                 }
+                else
+                {
+                    inicial.inicial_temAltasFis2 = null;
+                }
                 if (ckb_tempbajas2.Checked == true)
                 {
                     inicial.inicial_temBajasFis2 = "Si";
+                }
+                else
+                {
+                    inicial.inicial_temBajasFis2 = null;
                 }
                 if (ckb_radiacion2.Checked == true)
                 {
                     inicial.inicial_radIonizanteFis2 = "Si";
                 }
+                else
+                {
+                    inicial.inicial_radIonizanteFis2 = null;
+                }
                 if (ckb_noradiacion2.Checked == true)
                 {
                     inicial.inicial_radNoIonizanteFis2 = "Si";
+                }
+                else
+                {
+                    inicial.inicial_radNoIonizanteFis2 = null;
                 }
                 if (ckb_ruido2.Checked == true)
                 {
                     inicial.inicial_ruidoFis2 = "Si";
                 }
+                else
+                {
+                    inicial.inicial_ruidoFis2 = null;
+                }
                 if (ckb_vibracion2.Checked == true)
                 {
                     inicial.inicial_vibracionFis2 = "Si";
+                }
+                else
+                {
+                    inicial.inicial_vibracionFis2 = null;
                 }
                 if (ckb_iluminacion2.Checked == true)
                 {
                     inicial.inicial_iluminacionFis2 = "Si";
                 }
+                else
+                {
+                    inicial.inicial_iluminacionFis2 = null;
+                }
                 if (ckb_ventilacion2.Checked == true)
                 {
                     inicial.inicial_ventilacionFis2 = "Si";
+                }
+                else
+                {
+                    inicial.inicial_ventilacionFis2 = null;
                 }
                 if (ckb_fluidoelectrico2.Checked == true)
                 {
                     inicial.inicial_fluElectricoFis2 = "Si";
                 }
+                else
+                {
+                    inicial.inicial_fluElectricoFis2 = null;
+                }
                 if (ckb_otrosFisico2.Checked == true)
                 {
                     inicial.inicial_otrosFis2 = "Si";
+                }
+                else
+                {
+                    inicial.inicial_otrosFis2 = null;
                 }
                 inicial.inicial_area3 = txt_puestodetrabajo.Text;
                 inicial.inicial_actividades3 = txt_act.Text;
@@ -2639,41 +3043,81 @@ namespace SistemaECU911.Template.Views
                 {
                     inicial.inicial_temAltasFis3 = "Si";
                 }
+                else
+                {
+                    inicial.inicial_temAltasFis3 = null;
+                }
                 if (ckb_tempbajas3.Checked == true)
                 {
                     inicial.inicial_temBajasFis3 = "Si";
+                }
+                else
+                {
+                    inicial.inicial_temBajasFis3 = null;
                 }
                 if (ckb_radiacion3.Checked == true)
                 {
                     inicial.inicial_radIonizanteFis3 = "Si";
                 }
+                else
+                {
+                    inicial.inicial_radIonizanteFis3 = null;
+                }
                 if (ckb_noradiacion3.Checked == true)
                 {
                     inicial.inicial_radNoIonizanteFis3 = "Si";
+                }
+                else
+                {
+                    inicial.inicial_radNoIonizanteFis3 = null;
                 }
                 if (ckb_ruido3.Checked == true)
                 {
                     inicial.inicial_ruidoFis3 = "Si";
                 }
+                else
+                {
+                    inicial.inicial_ruidoFis3 = null;
+                }
                 if (ckb_vibracion3.Checked == true)
                 {
                     inicial.inicial_vibracionFis3 = "Si";
+                }
+                else
+                {
+                    inicial.inicial_vibracionFis3 = null;
                 }
                 if (ckb_iluminacion3.Checked == true)
                 {
                     inicial.inicial_iluminacionFis3 = "Si";
                 }
+                else
+                {
+                    inicial.inicial_iluminacionFis3 = null;
+                }
                 if (ckb_ventilacion3.Checked == true)
                 {
                     inicial.inicial_ventilacionFis3 = "Si";
+                }
+                else
+                {
+                    inicial.inicial_ventilacionFis3 = null;
                 }
                 if (ckb_fluidoelectrico3.Checked == true)
                 {
                     inicial.inicial_fluElectricoFis3 = "Si";
                 }
+                else
+                {
+                    inicial.inicial_fluElectricoFis3 = null;
+                }
                 if (ckb_otrosFisico3.Checked == true)
                 {
                     inicial.inicial_otrosFis3 = "Si";
+                }
+                else
+                {
+                    inicial.inicial_otrosFis3 = null;
                 }
                 inicial.inicial_area4 = txt_puestodetrabajo.Text;
                 inicial.inicial_actividades4 = txt_act.Text;
@@ -2681,425 +3125,851 @@ namespace SistemaECU911.Template.Views
                 {
                     inicial.inicial_temAltasFis4 = "Si";
                 }
+                else
+                {
+                    inicial.inicial_temAltasFis4 = null;
+                }
                 if (ckb_tempbajas4.Checked == true)
                 {
                     inicial.inicial_temBajasFis4 = "Si";
+                }
+                else
+                {
+                    inicial.inicial_temBajasFis4 = null;
                 }
                 if (ckb_radiacion4.Checked == true)
                 {
                     inicial.inicial_radIonizanteFis4 = "Si";
                 }
+                else
+                {
+                    inicial.inicial_radIonizanteFis4 = null;
+                }
                 if (ckb_noradiacion4.Checked == true)
                 {
                     inicial.inicial_radNoIonizanteFis4 = "Si";
+                }
+                else
+                {
+                    inicial.inicial_radNoIonizanteFis4 = null;
                 }
                 if (ckb_ruido4.Checked == true)
                 {
                     inicial.inicial_ruidoFis4 = "Si";
                 }
+                else
+                {
+                    inicial.inicial_ruidoFis4 = null;
+                }
                 if (ckb_vibracion4.Checked == true)
                 {
                     inicial.inicial_vibracionFis4 = "Si";
+                }
+                else
+                {
+                    inicial.inicial_vibracionFis4 = null;
                 }
                 if (ckb_iluminacion4.Checked == true)
                 {
                     inicial.inicial_iluminacionFis4 = "Si";
                 }
+                else
+                {
+                    inicial.inicial_iluminacionFis4 = null;
+                }
                 if (ckb_ventilacion4.Checked == true)
                 {
                     inicial.inicial_ventilacionFis4 = "Si";
+                }
+                else
+                {
+                    inicial.inicial_ventilacionFis4 = null;
                 }
                 if (ckb_fluidoelectrico4.Checked == true)
                 {
                     inicial.inicial_fluElectricoFis4 = "Si";
                 }
+                else
+                {
+                    inicial.inicial_fluElectricoFis4 = null;
+                }
                 if (ckb_otrosFisico4.Checked == true)
                 {
                     inicial.inicial_otrosFis4 = "Si";
+                }
+                else
+                {
+                    inicial.inicial_otrosFis4 = null;
+
                 }
                 if (ckb_atrapmaquinas.Checked == true)
                 {
                     inicial.inicial_atraMaquinasMec = "Si";
                 }
+                else
+                {
+                    inicial.inicial_atraMaquinasMec = null;
+                }
                 if (ckb_atrapsuperficie.Checked == true)
                 {
                     inicial.inicial_atraSuperfiiesMec = "Si";
+                }
+                else
+                {
+                    inicial.inicial_atraSuperfiiesMec = null;
                 }
                 if (ckb_atrapobjetos.Checked == true)
                 {
                     inicial.inicial_atraObjetosMec = "Si";
                 }
+                else
+                {
+                    inicial.inicial_atraObjetosMec = null;
+                }
                 if (ckb_caidaobjetos.Checked == true)
                 {
                     inicial.inicial_caidaObjetosMec = "Si";
+                }
+                else
+                {
+                    inicial.inicial_caidaObjetosMec = null;
                 }
                 if (ckb_caidamisnivel.Checked == true)
                 {
                     inicial.inicial_caidaMisNivelMec = "Si";
                 }
+                else
+                {
+                    inicial.inicial_caidaMisNivelMec = null;
+                }
                 if (ckb_caidadifnivel.Checked == true)
                 {
                     inicial.inicial_caidaDifNivelMec = "Si";
+                }
+                else
+                {
+                    inicial.inicial_caidaDifNivelMec = null;
                 }
                 if (ckb_contaelectrico.Checked == true)
                 {
                     inicial.inicial_contactoElecMec = "Si";
                 }
+                else
+                {
+                    inicial.inicial_contactoElecMec = null;
+                }
                 if (ckb_contasuptrabajo.Checked == true)
                 {
                     inicial.inicial_conSuperTrabaMec = "Si";
+                }
+                else
+                {
+                    inicial.inicial_conSuperTrabaMec = null;
                 }
                 if (ckb_proyparticulas.Checked == true)
                 {
                     inicial.inicial_proPartiFragMec = "Si";
                 }
+                else
+                {
+                    inicial.inicial_proPartiFragMec = null;
+                }
                 if (ckb_proyefluidos.Checked == true)
                 {
                     inicial.inicial_proFluidosMec = "Si";
+                }
+                else
+                {
+                    inicial.inicial_proFluidosMec = null;
                 }
                 if (ckb_pinchazos.Checked == true)
                 {
                     inicial.inicial_pinchazosMec = "Si";
                 }
+                else
+                {
+                    inicial.inicial_pinchazosMec = null;
+                }
                 if (ckb_cortes.Checked == true)
                 {
                     inicial.inicial_cortesMec = "Si";
+                }
+                else
+                {
+                    inicial.inicial_cortesMec = null;
                 }
                 if (ckb_atroporvehiculos.Checked == true)
                 {
                     inicial.inicial_atropeVehiMec = "Si";
                 }
+                else
+                {
+                    inicial.inicial_atropeVehiMec = null;
+                }
                 if (ckb_choques.Checked == true)
                 {
                     inicial.inicial_coliVehiMec = "Si";
+                }
+                else
+                {
+                    inicial.inicial_coliVehiMec = null;
                 }
                 if (ckb_otrosMecanico.Checked == true)
                 {
                     inicial.inicial_otrosMec = "Si";
                 }
+                else
+                {
+                    inicial.inicial_otrosMec = null;
+                }
                 if (ckb_solidos.Checked == true)
                 {
                     inicial.inicial_solidosQui = "Si";
+                }
+                else
+                {
+                    inicial.inicial_solidosQui = null;
                 }
                 if (ckb_polvos.Checked == true)
                 {
                     inicial.inicial_polvosQui = "Si";
                 }
+                else
+                {
+                    inicial.inicial_polvosQui = null;
+                }
                 if (ckb_humos.Checked == true)
                 {
                     inicial.inicial_humosQui = "Si";
+                }
+                else
+                {
+                    inicial.inicial_humosQui = null;
                 }
                 if (ckb_liquidos.Checked == true)
                 {
                     inicial.inicial_liquidosQui = "Si";
                 }
+                else
+                {
+                    inicial.inicial_liquidosQui = null;
+                }
                 if (ckb_vapores.Checked == true)
                 {
                     inicial.inicial_vaporesQui = "Si";
+                }
+                else
+                {
+                    inicial.inicial_vaporesQui = null;
                 }
                 if (ckb_aerosoles.Checked == true)
                 {
                     inicial.inicial_aerosolesQui = "Si";
                 }
+                else
+                {
+                    inicial.inicial_aerosolesQui = null;
+                }
                 if (ckb_neblinas.Checked == true)
                 {
                     inicial.inicial_neblinasQui = "Si";
+                }
+                else
+                {
+                    inicial.inicial_neblinasQui = null;
                 }
                 if (ckb_gaseosos.Checked == true)
                 {
                     inicial.inicial_gaseososQui = "Si";
                 }
+                else
+                {
+                    inicial.inicial_gaseososQui = null;
+                }
                 if (ckb_otrosQuimico.Checked == true)
                 {
                     inicial.inicial_otrosQui = "Si";
+                }
+                else
+                {
+                    inicial.inicial_otrosQui = null;
                 }
                 if (ckb_atrapmaquinas2.Checked == true)
                 {
                     inicial.inicial_atraMaquinasMec2 = "Si";
                 }
+                else
+                {
+                    inicial.inicial_atraMaquinasMec2 = null;
+                }
                 if (ckb_atrapsuperficie2.Checked == true)
                 {
                     inicial.inicial_atraSuperfiiesMec2 = "Si";
+                }
+                else
+                {
+                    inicial.inicial_atraSuperfiiesMec2 = null;
                 }
                 if (ckb_atrapobjetos2.Checked == true)
                 {
                     inicial.inicial_atraObjetosMec2 = "Si";
                 }
+                else
+                {
+                    inicial.inicial_atraObjetosMec2 = null;
+                }
                 if (ckb_caidaobjetos2.Checked == true)
                 {
                     inicial.inicial_caidaObjetosMec2 = "Si";
+                }
+                else
+                {
+                    inicial.inicial_caidaObjetosMec2 = null;
                 }
                 if (ckb_caidamisnivel2.Checked == true)
                 {
                     inicial.inicial_caidaMisNivelMec2 = "Si";
                 }
+                else
+                {
+                    inicial.inicial_caidaMisNivelMec2 = null;
+
+                }
                 if (ckb_caidadifnivel2.Checked == true)
                 {
                     inicial.inicial_caidaDifNivelMec2 = "Si";
+                }
+                else
+                {
+                    inicial.inicial_caidaDifNivelMec2 = null;
                 }
                 if (ckb_contaelectrico2.Checked == true)
                 {
                     inicial.inicial_contactoElecMec2 = "Si";
                 }
+                else
+                {
+                    inicial.inicial_contactoElecMec2 = null;
+                }
                 if (ckb_contasuptrabajo2.Checked == true)
                 {
                     inicial.inicial_conSuperTrabaMec2 = "Si";
+                }
+                else
+                {
+                    inicial.inicial_conSuperTrabaMec2 = null;
                 }
                 if (ckb_proyparticulas2.Checked == true)
                 {
                     inicial.inicial_proPartiFragMec2 = "Si";
                 }
+                else
+                {
+                    inicial.inicial_proPartiFragMec2 = null;
+                }
                 if (ckb_proyefluidos2.Checked == true)
                 {
                     inicial.inicial_proFluidosMec2 = "Si";
+                }
+                else
+                {
+                    inicial.inicial_proFluidosMec2 = null;
                 }
                 if (ckb_pinchazos2.Checked == true)
                 {
                     inicial.inicial_pinchazosMec2 = "Si";
                 }
+                else
+                {
+                    inicial.inicial_pinchazosMec2 = null;
+                }
                 if (ckb_cortes2.Checked == true)
                 {
                     inicial.inicial_cortesMec2 = "Si";
+                }
+                else
+                {
+                    inicial.inicial_cortesMec2 = null;
                 }
                 if (ckb_atroporvehiculos2.Checked == true)
                 {
                     inicial.inicial_atropeVehiMec2 = "Si";
                 }
+                else
+                {
+                    inicial.inicial_atropeVehiMec2 = null;
+                }
                 if (ckb_choques2.Checked == true)
                 {
                     inicial.inicial_coliVehiMec2 = "Si";
+                }
+                else
+                {
+                    inicial.inicial_coliVehiMec2 = null;
                 }
                 if (ckb_otrosMecanico2.Checked == true)
                 {
                     inicial.inicial_otrosMec2 = "Si";
                 }
+                else
+                {
+                    inicial.inicial_otrosMec2 = null;
+                }
                 if (ckb_solidos2.Checked == true)
                 {
                     inicial.inicial_solidosQui2 = "Si";
+                }
+                else
+                {
+                    inicial.inicial_solidosQui2 = null;
                 }
                 if (ckb_polvos2.Checked == true)
                 {
                     inicial.inicial_polvosQui2 = "Si";
                 }
+                else
+                {
+                    inicial.inicial_polvosQui2 = null;
+                }
                 if (ckb_humos2.Checked == true)
                 {
                     inicial.inicial_humosQui2 = "Si";
+                }
+                else
+                {
+                    inicial.inicial_humosQui2 = null;
                 }
                 if (ckb_liquidos2.Checked == true)
                 {
                     inicial.inicial_liquidosQui2 = "Si";
                 }
+                else
+                {
+                    inicial.inicial_liquidosQui2 = null;
+                }
                 if (ckb_vapores2.Checked == true)
                 {
                     inicial.inicial_vaporesQui2 = "Si";
+                }
+                else
+                {
+                    inicial.inicial_vaporesQui2 = null;
                 }
                 if (ckb_aerosoles2.Checked == true)
                 {
                     inicial.inicial_aerosolesQui2 = "Si";
                 }
+                else
+                {
+                    inicial.inicial_aerosolesQui2 = null;
+                }
                 if (ckb_neblinas2.Checked == true)
                 {
                     inicial.inicial_neblinasQui2 = "Si";
+                }
+                else
+                {
+                    inicial.inicial_neblinasQui2 = null;
                 }
                 if (ckb_gaseosos2.Checked == true)
                 {
                     inicial.inicial_gaseososQui2 = "Si";
                 }
+                else
+                {
+                    inicial.inicial_gaseososQui2 = null;
+                }
                 if (ckb_otrosQuimico2.Checked == true)
                 {
                     inicial.inicial_otrosQui2 = "Si";
+                }
+                else
+                {
+                    inicial.inicial_otrosQui2 = null;
                 }
                 if (ckb_atrapmaquinas3.Checked == true)
                 {
                     inicial.inicial_atraMaquinasMec3 = "Si";
                 }
+                else
+                {
+                    inicial.inicial_atraMaquinasMec3 = null;
+                }
                 if (ckb_atrapsuperficie3.Checked == true)
                 {
                     inicial.inicial_atraSuperfiiesMec3 = "Si";
+                }
+                else
+                {
+                    inicial.inicial_atraSuperfiiesMec3 = null;
                 }
                 if (ckb_atrapobjetos3.Checked == true)
                 {
                     inicial.inicial_atraObjetosMec3 = "Si";
                 }
+                else
+                {
+                    inicial.inicial_atraObjetosMec3 = null;
+                }
                 if (ckb_caidaobjetos3.Checked == true)
                 {
                     inicial.inicial_caidaObjetosMec3 = "Si";
+                }
+                else
+                {
+                    inicial.inicial_caidaObjetosMec3 = null;
                 }
                 if (ckb_caidamisnivel3.Checked == true)
                 {
                     inicial.inicial_caidaMisNivelMec3 = "Si";
                 }
+                else
+                {
+                    inicial.inicial_caidaMisNivelMec3 = null;
+                }
                 if (ckb_caidadifnivel3.Checked == true)
                 {
                     inicial.inicial_caidaDifNivelMec3 = "Si";
+                }
+                else
+                {
+                    inicial.inicial_caidaDifNivelMec3 = null;
                 }
                 if (ckb_contaelectrico3.Checked == true)
                 {
                     inicial.inicial_contactoElecMec3 = "Si";
                 }
+                else
+                {
+                    inicial.inicial_contactoElecMec3 = null;
+                }
                 if (ckb_contasuptrabajo3.Checked == true)
                 {
                     inicial.inicial_conSuperTrabaMec3 = "Si";
+                }
+                else
+                {
+                    inicial.inicial_conSuperTrabaMec3 = null;
                 }
                 if (ckb_proyparticulas3.Checked == true)
                 {
                     inicial.inicial_proPartiFragMec3 = "Si";
                 }
+                else
+                {
+                    inicial.inicial_proPartiFragMec3 = null;
+                }
                 if (ckb_proyefluidos3.Checked == true)
                 {
                     inicial.inicial_proFluidosMec3 = "Si";
+                }
+                else
+                {
+                    inicial.inicial_proFluidosMec3 = null;
                 }
                 if (ckb_pinchazos3.Checked == true)
                 {
                     inicial.inicial_pinchazosMec3 = "Si";
                 }
+                else
+                {
+                    inicial.inicial_pinchazosMec3 = null;
+                }
                 if (ckb_cortes3.Checked == true)
                 {
                     inicial.inicial_cortesMec3 = "Si";
+                }
+                else
+                {
+                    inicial.inicial_cortesMec3 = null;
                 }
                 if (ckb_atroporvehiculos3.Checked == true)
                 {
                     inicial.inicial_atropeVehiMec3 = "Si";
                 }
+                else
+                {
+                    inicial.inicial_atropeVehiMec3 = null;
+                }
                 if (ckb_choques3.Checked == true)
                 {
                     inicial.inicial_coliVehiMec3 = "Si";
+                }
+                else
+                {
+                    inicial.inicial_coliVehiMec3 = null;
                 }
                 if (ckb_otrosMecanico3.Checked == true)
                 {
                     inicial.inicial_otrosMec3 = "Si";
                 }
+                else
+                {
+                    inicial.inicial_otrosMec3 = null;
+                }
                 if (ckb_solidos3.Checked == true)
                 {
                     inicial.inicial_solidosQui3 = "Si";
+                }
+                else
+                {
+                    inicial.inicial_solidosQui3 = null;
                 }
                 if (ckb_polvos3.Checked == true)
                 {
                     inicial.inicial_polvosQui3 = "Si";
                 }
+                else
+                {
+                    inicial.inicial_polvosQui3 = null;
+                }
                 if (ckb_humos3.Checked == true)
                 {
                     inicial.inicial_humosQui3 = "Si";
+                }
+                else
+                {
+                    inicial.inicial_humosQui3 = null;
                 }
                 if (ckb_liquidos3.Checked == true)
                 {
                     inicial.inicial_liquidosQui3 = "Si";
                 }
+                else
+                {
+                    inicial.inicial_liquidosQui3 = null;
+                }
                 if (ckb_vapores3.Checked == true)
                 {
                     inicial.inicial_vaporesQui3 = "Si";
+                }
+                else
+                {
+                    inicial.inicial_vaporesQui3 = null;
                 }
                 if (ckb_aerosoles3.Checked == true)
                 {
                     inicial.inicial_aerosolesQui3 = "Si";
                 }
+                else
+                {
+                    inicial.inicial_aerosolesQui3 = null;
+                }
                 if (ckb_neblinas3.Checked == true)
                 {
                     inicial.inicial_neblinasQui3 = "Si";
+                }
+                else
+                {
+                    inicial.inicial_neblinasQui3 = null;
                 }
                 if (ckb_gaseosos3.Checked == true)
                 {
                     inicial.inicial_gaseososQui3 = "Si";
                 }
+                else
+                {
+                    inicial.inicial_gaseososQui3 = null;
+                }
                 if (ckb_otrosQuimico3.Checked == true)
                 {
                     inicial.inicial_otrosQui3 = "Si";
+                }
+                else
+                {
+                    inicial.inicial_otrosQui3 = null;
                 }
                 if (ckb_atrapmaquinas4.Checked == true)
                 {
                     inicial.inicial_atraMaquinasMec4 = "Si";
                 }
+                else
+                {
+                    inicial.inicial_atraMaquinasMec4 = null;
+                }
                 if (ckb_atrapsuperficie4.Checked == true)
                 {
                     inicial.inicial_atraSuperfiiesMec4 = "Si";
+                }
+                else
+                {
+                    inicial.inicial_atraSuperfiiesMec4 = null;
                 }
                 if (ckb_atrapobjetos4.Checked == true)
                 {
                     inicial.inicial_atraObjetosMec4 = "Si";
                 }
+                else
+                {
+                    inicial.inicial_atraObjetosMec4 = null;
+                }
                 if (ckb_caidaobjetos4.Checked == true)
                 {
                     inicial.inicial_caidaObjetosMec4 = "Si";
+                }
+                else
+                {
+                    inicial.inicial_caidaObjetosMec4 = null;
                 }
                 if (ckb_caidamisnivel4.Checked == true)
                 {
                     inicial.inicial_caidaMisNivelMec4 = "Si";
                 }
+                else
+                {
+                    inicial.inicial_caidaMisNivelMec4 = null;
+                }
                 if (ckb_caidadifnivel4.Checked == true)
                 {
                     inicial.inicial_caidaDifNivelMec4 = "Si";
+                }
+                else
+                {
+                    inicial.inicial_caidaDifNivelMec4 = null;
                 }
                 if (ckb_contaelectrico4.Checked == true)
                 {
                     inicial.inicial_contactoElecMec4 = "Si";
                 }
+                else
+                {
+                    inicial.inicial_contactoElecMec4 = null;
+                }
                 if (ckb_contasuptrabajo4.Checked == true)
                 {
                     inicial.inicial_conSuperTrabaMec4 = "Si";
+                }
+                else
+                {
+                    inicial.inicial_conSuperTrabaMec4 = null;
                 }
                 if (ckb_proyparticulas4.Checked == true)
                 {
                     inicial.inicial_proPartiFragMec4 = "Si";
                 }
+                else
+                {
+                    inicial.inicial_proPartiFragMec4 = null;
+                }
                 if (ckb_proyefluidos4.Checked == true)
                 {
                     inicial.inicial_proFluidosMec4 = "Si";
+                }
+                else
+                {
+                    inicial.inicial_proFluidosMec4 = null;
                 }
                 if (ckb_pinchazos4.Checked == true)
                 {
                     inicial.inicial_pinchazosMec4 = "Si";
                 }
+                else
+                {
+                    inicial.inicial_pinchazosMec4 = null;
+                }
                 if (ckb_cortes4.Checked == true)
                 {
                     inicial.inicial_cortesMec4 = "Si";
+                }
+                else
+                {
+                    inicial.inicial_cortesMec4 = null;
                 }
                 if (ckb_atroporvehiculos4.Checked == true)
                 {
                     inicial.inicial_atropeVehiMec4 = "Si";
                 }
+                else
+                {
+                    inicial.inicial_atropeVehiMec4 = null;
+                }
                 if (ckb_choques4.Checked == true)
                 {
                     inicial.inicial_coliVehiMec4 = "Si";
+                }
+                else
+                {
+                    inicial.inicial_coliVehiMec4 = null;
                 }
                 if (ckb_otrosMecanico4.Checked == true)
                 {
                     inicial.inicial_otrosMec4 = "Si";
                 }
+                else
+                {
+                    inicial.inicial_otrosMec4 = null;
+                }
                 if (ckb_solidos4.Checked == true)
                 {
                     inicial.inicial_solidosQui4 = "Si";
+                }
+                else
+                {
+                    inicial.inicial_solidosQui4 = null;
                 }
                 if (ckb_polvos4.Checked == true)
                 {
                     inicial.inicial_polvosQui4 = "Si";
                 }
+                else
+                {
+                    inicial.inicial_polvosQui4 = null;
+                }
                 if (ckb_humos4.Checked == true)
                 {
                     inicial.inicial_humosQui4 = "Si";
+                }
+                else
+                {
+                    inicial.inicial_humosQui4 = null;
                 }
                 if (ckb_liquidos4.Checked == true)
                 {
                     inicial.inicial_liquidosQui4 = "Si";
                 }
+                else
+                {
+                    inicial.inicial_liquidosQui4 = null;
+                }
                 if (ckb_vapores4.Checked == true)
                 {
                     inicial.inicial_vaporesQui4 = "Si";
+                }
+                else
+                {
+                    inicial.inicial_vaporesQui4 = null;
                 }
                 if (ckb_aerosoles4.Checked == true)
                 {
                     inicial.inicial_aerosolesQui4 = "Si";
                 }
+                else
+                {
+                    inicial.inicial_aerosolesQui4 = null;
+                }
                 if (ckb_neblinas4.Checked == true)
                 {
                     inicial.inicial_neblinasQui4 = "Si";
+                }
+                else
+                {
+                    inicial.inicial_neblinasQui4 = null;
                 }
                 if (ckb_gaseosos4.Checked == true)
                 {
                     inicial.inicial_gaseososQui4 = "Si";
                 }
+                else
+                {
+                    inicial.inicial_gaseososQui4 = null;
+                }
                 if (ckb_otrosQuimico4.Checked == true)
                 {
                     inicial.inicial_otrosQui4 = "Si";
+                }
+                else
+                {
+                    inicial.inicial_otrosQui4 = null;
                 }
                 inicial.inicial_puestoTrabajo = txt_puestodetrabajo21.Text;
                 inicial.inicial_actividades = txt_act21.Text;
@@ -3107,49 +3977,97 @@ namespace SistemaECU911.Template.Views
                 {
                     inicial.inicial_virusBio = "Si";
                 }
+                else
+                {
+                    inicial.inicial_virusBio = null;
+                }
                 if (ckb_hongos.Checked == true)
                 {
                     inicial.inicial_hongosBio = "Si";
+                }
+                else
+                {
+                    inicial.inicial_hongosBio = null;
                 }
                 if (ckb_bacterias.Checked == true)
                 {
                     inicial.inicial_bacteriasBio = "Si";
                 }
+                else
+                {
+                    inicial.inicial_bacteriasBio = null;
+                }
                 if (ckb_parasitos.Checked == true)
                 {
                     inicial.inicial_parasitosBio = "Si";
+                }
+                else
+                {
+                    inicial.inicial_parasitosBio = null;
                 }
                 if (ckb_expoavectores.Checked == true)
                 {
                     inicial.inicial_expVectBio = "Si";
                 }
+                else
+                {
+                    inicial.inicial_expVectBio = null;
+                }
                 if (ckb_expoanimselvaticos.Checked == true)
                 {
                     inicial.inicial_expAniSelvaBio = "Si";
+                }
+                else
+                {
+                    inicial.inicial_expAniSelvaBio = null;
                 }
                 if (ckb_otrosBiologico.Checked == true)
                 {
                     inicial.inicial_otrosBio = "Si";
                 }
+                else
+                {
+                    inicial.inicial_otrosBio = null;
+                }
                 if (ckb_manmanualcargas.Checked == true)
                 {
                     inicial.inicial_maneManCarErg = "Si";
+                }
+                else
+                {
+                    inicial.inicial_maneManCarErg = null;
                 }
                 if (ckb_movrepetitivo.Checked == true)
                 {
                     inicial.inicial_movRepeErg = "Si";
                 }
+                else
+                {
+                    inicial.inicial_movRepeErg = null;
+                }
                 if (ckb_postforzadas.Checked == true)
                 {
                     inicial.inicial_posForzaErg = "Si";
+                }
+                else
+                {
+                    inicial.inicial_posForzaErg = null;
                 }
                 if (ckb_trabajopvd.Checked == true)
                 {
                     inicial.inicial_trabPvdErg = "Si";
                 }
+                else
+                {
+                    inicial.inicial_trabPvdErg = null;
+                }
                 if (ckb_otrosErgonomico.Checked == true)
                 {
                     inicial.inicial_otrosErg = "Si";
+                }
+                else
+                {
+                    inicial.inicial_otrosErg = null;
                 }
                 inicial.inicial_puestoTrabajo2 = txt_puestodetrabajo22.Text;
                 inicial.inicial_actividades2 = txt_act22.Text;
@@ -3157,49 +4075,97 @@ namespace SistemaECU911.Template.Views
                 {
                     inicial.inicial_virusBio2 = "Si";
                 }
+                else
+                {
+                    inicial.inicial_virusBio2 = null;
+                }
                 if (ckb_hongos2.Checked == true)
                 {
                     inicial.inicial_hongosBio2 = "Si";
+                }
+                else
+                {
+                    inicial.inicial_hongosBio2 = null;
                 }
                 if (ckb_bacterias2.Checked == true)
                 {
                     inicial.inicial_bacteriasBio2 = "Si";
                 }
+                else
+                {
+                    inicial.inicial_bacteriasBio2 = null;
+                }
                 if (ckb_parasitos2.Checked == true)
                 {
                     inicial.inicial_parasitosBio2 = "Si";
+                }
+                else
+                {
+                    inicial.inicial_parasitosBio2 = null;
                 }
                 if (ckb_expoavectores2.Checked == true)
                 {
                     inicial.inicial_expVectBio2 = "Si";
                 }
+                else
+                {
+                    inicial.inicial_expVectBio2 = null;
+                }
                 if (ckb_expoanimselvaticos2.Checked == true)
                 {
                     inicial.inicial_expAniSelvaBio2 = "Si";
+                }
+                else
+                {
+                    inicial.inicial_expAniSelvaBio2 = null;
                 }
                 if (ckb_otrosBiologico2.Checked == true)
                 {
                     inicial.inicial_otrosBio2 = "Si";
                 }
+                else
+                {
+                    inicial.inicial_otrosBio2 = null;
+                }
                 if (ckb_manmanualcargas2.Checked == true)
                 {
                     inicial.inicial_maneManCarErg2 = "Si";
+                }
+                else
+                {
+                    inicial.inicial_maneManCarErg2 = null;
                 }
                 if (ckb_movrepetitivo2.Checked == true)
                 {
                     inicial.inicial_movRepeErg2 = "Si";
                 }
+                else
+                {
+                    inicial.inicial_movRepeErg2 = null;
+                }
                 if (ckb_postforzadas2.Checked == true)
                 {
                     inicial.inicial_posForzaErg2 = "Si";
+                }
+                else
+                {
+                    inicial.inicial_posForzaErg2 = null;
                 }
                 if (ckb_trabajopvd2.Checked == true)
                 {
                     inicial.inicial_trabPvdErg2 = "Si";
                 }
+                else
+                {
+                    inicial.inicial_trabPvdErg2 = null;
+                }
                 if (ckb_otrosErgonomico2.Checked == true)
                 {
                     inicial.inicial_otrosErg2 = "Si";
+                }
+                else
+                {
+                    inicial.inicial_otrosErg2 = null;
                 }
                 inicial.inicial_puestoTrabajo3 = txt_puestodetrabajo23.Text;
                 inicial.inicial_actividades3 = txt_act23.Text;
