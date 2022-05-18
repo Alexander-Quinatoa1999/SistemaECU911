@@ -48,6 +48,463 @@ namespace SistemaECU911.Template.Views
 
                         if (reinte != null)
                         {
+
+                            //Regiones
+                            if (reinte.rein_cicatricesPiel == null)
+                            {
+                                ckb_cicatrices.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_cicatrices.Checked = true;
+
+                            }
+                            if (reinte.rein_tatuajesPiel == null)
+                            {
+                                ckb_tatuajes.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_tatuajes.Checked = true;
+
+                            }
+                            if (reinte.rein_pielFacerasPiel == null)
+                            {
+                                ckb_pielyfaneras.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_pielyfaneras.Checked = true;
+
+                            }
+                            if (reinte.rein_parpadosOjos == null)
+                            {
+                                ckb_parpados.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_parpados.Checked = true;
+
+                            }
+                            if (reinte.rein_conjuntuvasOjos == null)
+                            {
+                                ckb_conjuntivas.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_conjuntivas.Checked = true;
+
+                            }
+                            if (reinte.rein_pupilasOjos == null)
+                            {
+                                ckb_pupilas.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_pupilas.Checked = true;
+
+                            }
+                            if (reinte.rein_corneaOjos == null)
+                            {
+                                ckb_cornea.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_cornea.Checked = true;
+
+                            }
+                            if (reinte.rein_motilidadOjos == null)
+                            {
+                                ckb_motilidad.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_motilidad.Checked = true;
+
+                            }
+                            if (reinte.rein_cAudiExtreOido == null)
+                            {
+                                ckb_auditivoexterno.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_auditivoexterno.Checked = true;
+
+                            }
+                            if (reinte.rein_pabellonOido == null)
+                            {
+                                ckb_pabellon.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_pabellon.Checked = true;
+
+                            }
+                            if (reinte.rein_timpanosOido == null)
+                            {
+                                ckb_timpanos.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_timpanos.Checked = true;
+
+                            }
+                            if (reinte.rein_labiosOroFa == null)
+                            {
+                                ckb_labios.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_labios.Checked = true;
+
+                            }
+                            if (reinte.rein_lenguaOroFa == null)
+                            {
+                                ckb_lengua.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_lengua.Checked = true;
+
+                            }
+                            if (reinte.rein_faringeOroFa == null)
+                            {
+                                ckb_faringe.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_faringe.Checked = true;
+
+                            }
+                            if (reinte.rein_amigdalasOroFa == null)
+                            {
+                                ckb_amigdalas.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_amigdalas.Checked = true;
+
+                            }
+                            if (reinte.rein_dentaduraOroFa == null)
+                            {
+                                ckb_dentadura.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_dentadura.Checked = true;
+
+                            }
+                            if (reinte.rein_tabiqueNariz == null)
+                            {
+                                ckb_tabique.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_tabique.Checked = true;
+
+                            }
+                            if (reinte.rein_cornetesNariz == null)
+                            {
+                                ckb_cornetes.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_cornetes.Checked = true;
+
+                            }
+                            if (reinte.rein_mucosasNariz == null)
+                            {
+                                ckb_mucosa.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_mucosa.Checked = true;
+
+                            }
+                            if (reinte.rein_senosParanaNariz == null)
+                            {
+                                ckb_senosparanasales.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_senosparanasales.Checked = true;
+
+                            }
+                            if (reinte.rein_tiroiMasasCuello == null)
+                            {
+                                ckb_tiroides.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_tiroides.Checked = true;
+
+                            }
+                            if (reinte.rein_movilidadCuello == null)
+                            {
+                                ckb_movilidad.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_movilidad.Checked = true;
+
+                            }
+                            if (reinte.rein_mamasTorax == null)
+                            {
+                                ckb_mamas.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_mamas.Checked = true;
+
+                            }
+                            if (reinte.rein_corazonTorax == null)
+                            {
+                                ckb_corazon.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_corazon.Checked = true;
+
+                            }
+                            if (reinte.rein_pulmonesTorax2 == null)
+                            {
+                                ckb_pulmones.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_pulmones.Checked = true;
+
+                            }
+                            if (reinte.rein_parriCostalTorax2 == null)
+                            {
+                                ckb_parrillacostal.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_parrillacostal.Checked = true;
+
+                            }
+                            if (reinte.rein_viscerasAbdomen == null)
+                            {
+                                ckb_visceras.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_visceras.Checked = true;
+
+                            }
+                            if (reinte.rein_paredAbdomiAbdomen == null)
+                            {
+                                ckb_paredabdominal.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_paredabdominal.Checked = true;
+
+                            }
+                            if (reinte.rein_flexibilidadColumna == null)
+                            {
+                                ckb_flexibilidad.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_flexibilidad.Checked = true;
+
+                            }
+                            if (reinte.rein_desviacionColumna == null)
+                            {
+                                ckb_desviacion.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_desviacion.Checked = true;
+
+                            }
+                            if (reinte.rein_dolorColumna == null)
+                            {
+                                ckb_dolor.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_dolor.Checked = true;
+
+                            }
+                            if (reinte.rein_pelvisPelvis == null)
+                            {
+                                ckb_pelvis.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_pelvis.Checked = true;
+
+                            }
+                            if (reinte.rein_genitalesPelvis == null)
+                            {
+                                ckb_genitales.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_genitales.Checked = true;
+
+                            }
+                            if (reinte.rein_vascularExtre == null)
+                            {
+                                ckb_vascular.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_vascular.Checked = true;
+
+                            }
+                            if (reinte.rein_miemSupeExtre == null)
+                            {
+                                ckb_miembrosuperiores.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_miembrosuperiores.Checked = true;
+
+                            }
+                            if (reinte.rein_miemInfeExtre == null)
+                            {
+                                ckb_miembrosinferiores.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_miembrosinferiores.Checked = true;
+
+                            }
+                            if (reinte.rein_fuerzaNeuro == null)
+                            {
+                                ckb_fuerza.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_fuerza.Checked = true;
+
+                            }
+                            if (reinte.rein_sensibiNeuro == null)
+                            {
+                                ckb_sensibilidad.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_sensibilidad.Checked = true;
+
+                            }
+                            if (reinte.rein_marchaNeuro == null)
+                            {
+                                ckb_marcha.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_marcha.Checked = true;
+
+                            }
+                            if (reinte.rein_refleNeuro == null)
+                            {
+                                ckb_reflejos.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_reflejos.Checked = true;
+
+                            }
+
+                            //Diagnostco
+                            if (reinte.rein_pre == null)
+                            {
+                                ckb_pre.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_pre.Checked = true;
+
+                            }
+                            if (reinte.rein_pre2 == null)
+                            {
+                                ckb_pre2.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_pre2.Checked = true;
+
+                            }
+                            if (reinte.rein_pre3 == null)
+                            {
+                                ckb_pre3.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_pre3.Checked = true;
+
+                            }
+                            if (reinte.rein_def == null)
+                            {
+                                ckb_def.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_def.Checked = true;
+
+                            }
+                            if (reinte.rein_def2 == null)
+                            {
+                                ckb_def2.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_def2.Checked = true;
+
+                            }
+                            if (reinte.rein_def3 == null)
+                            {
+                                ckb_def3.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_def3.Checked = true;
+
+                            }
+
+                            //Aptitud Medica para el trabajo
+                            if (reinte.rein_apto == null)
+                            {
+                                ckb_apto.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_apto.Checked = true;
+
+                            }
+                            if (reinte.rein_aptoObserva == null)
+                            {
+                                ckb_aptoobservacion.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_aptoobservacion.Checked = true;
+
+                            }
+                            if (reinte.rein_aptoLimi == null)
+                            {
+                                ckb_aptolimitacion.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_aptolimitacion.Checked = true;
+
+                            }
+                            if (reinte.rein_NoApto == null)
+                            {
+                                ckb_noapto.Checked = false;
+                            }
+                            else
+                            {
+                                ckb_noapto.Checked = true;
+
+                            }
+
                             //A
                             txt_numArchivo.Text = reinte.rein_numArchivo.ToString();
                             txt_edad.Text = reinte.rein_edad.ToString();
@@ -97,13 +554,13 @@ namespace SistemaECU911.Template.Views
                             //txt_pelvis.Text = reinte.rein_pelvisPelvis.ToString();
                             //txt_genitales.Text = reinte.rein_genitalesPelvis.ToString();
                             //txt_vascular.Text = reinte.rein_vascularExtre.ToString();
-                            //txt_miembrosuperiores.Text = reinte.rein_miemSupeExtre.ToString();
+                            //txt_miembrosureinres.Text = reinte.rein_miemSupeExtre.ToString();
                             //txt_miembrosinferiores.Text = reinte.rein_miemInfeExtre.ToString();
                             //txt_fuerza.Text = reinte.rein_fuerzaNeuro.ToString();
                             //txt_sensibilidad.Text = reinte.rein_sensibiNeuro.ToString();
                             //txt_marcha.Text = reinte.rein_marchaNeuro.ToString();
                             //txt_reflejos.Text = reinte.rein_refleNeuro.ToString();
-                            txt_obervexamenfisicoregional.Text = reinte.rein_observaexaFisRegional.ToString();
+                            txt_observexamenfisicoregional.Text = reinte.rein_observaexaFisRegional.ToString();
 
                             //F
                             txt_examen.Text = reinte.rein_examen.ToString();
@@ -272,6 +729,212 @@ namespace SistemaECU911.Template.Views
 
                 int perso = Convert.ToInt32(per.Per_id.ToString());
 
+                //Regiones
+                if (ckb_cicatrices.Checked == true)
+                {
+                    reinte.rein_cicatricesPiel = "SI";
+                }
+                if (ckb_tatuajes.Checked == true)
+                {
+                    reinte.rein_tatuajesPiel = "SI";
+                }
+                if (ckb_pielyfaneras.Checked == true)
+                {
+                    reinte.rein_pielFacerasPiel = "SI";
+                }
+                if (ckb_parpados.Checked == true)
+                {
+                    reinte.rein_parpadosOjos = "SI";
+                }
+                if (ckb_conjuntivas.Checked == true)
+                {
+                    reinte.rein_conjuntuvasOjos = "SI";
+                }
+                if (ckb_pupilas.Checked == true)
+                {
+                    reinte.rein_pupilasOjos = "SI";
+                }
+                if (ckb_cornea.Checked == true)
+                {
+                    reinte.rein_corneaOjos = "SI";
+                }
+                if (ckb_motilidad.Checked == true)
+                {
+                    reinte.rein_motilidadOjos = "SI";
+                }
+                if (ckb_auditivoexterno.Checked == true)
+                {
+                    reinte.rein_cAudiExtreOido = "SI";
+                }
+                if (ckb_pabellon.Checked == true)
+                {
+                    reinte.rein_pabellonOido = "SI";
+                }
+                if (ckb_timpanos.Checked == true)
+                {
+                    reinte.rein_timpanosOido = "SI";
+                }
+                if (ckb_labios.Checked == true)
+                {
+                    reinte.rein_labiosOroFa = "SI";
+                }
+                if (ckb_lengua.Checked == true)
+                {
+                    reinte.rein_lenguaOroFa = "SI";
+                }
+                if (ckb_faringe.Checked == true)
+                {
+                    reinte.rein_faringeOroFa = "SI";
+                }
+                if (ckb_amigdalas.Checked == true)
+                {
+                    reinte.rein_amigdalasOroFa = "SI";
+                }
+                if (ckb_dentadura.Checked == true)
+                {
+                    reinte.rein_dentaduraOroFa = "SI";
+                }
+                if (ckb_tabique.Checked == true)
+                {
+                    reinte.rein_tabiqueNariz = "SI";
+                }
+                if (ckb_cornetes.Checked == true)
+                {
+                    reinte.rein_cornetesNariz = "SI";
+                }
+                if (ckb_mucosa.Checked == true)
+                {
+                    reinte.rein_mucosasNariz = "SI";
+                }
+                if (ckb_senosparanasales.Checked == true)
+                {
+                    reinte.rein_senosParanaNariz = "SI";
+                }
+                if (ckb_tiroides.Checked == true)
+                {
+                    reinte.rein_tiroiMasasCuello = "SI";
+                }
+                if (ckb_movilidad.Checked == true)
+                {
+                    reinte.rein_movilidadCuello = "SI";
+                }
+                if (ckb_mamas.Checked == true)
+                {
+                    reinte.rein_mamasTorax = "SI";
+                }
+                if (ckb_corazon.Checked == true)
+                {
+                    reinte.rein_corazonTorax = "SI";
+                }
+                if (ckb_pulmones.Checked == true)
+                {
+                    reinte.rein_pulmonesTorax2 = "SI";
+                }
+                if (ckb_parrillacostal.Checked == true)
+                {
+                    reinte.rein_parriCostalTorax2 = "SI";
+                }
+                if (ckb_visceras.Checked == true)
+                {
+                    reinte.rein_viscerasAbdomen = "SI";
+                }
+                if (ckb_paredabdominal.Checked == true)
+                {
+                    reinte.rein_paredAbdomiAbdomen = "SI";
+                }
+                if (ckb_flexibilidad.Checked == true)
+                {
+                    reinte.rein_flexibilidadColumna = "SI";
+                }
+                if (ckb_desviacion.Checked == true)
+                {
+                    reinte.rein_desviacionColumna = "SI";
+                }
+                if (ckb_dolor.Checked == true)
+                {
+                    reinte.rein_dolorColumna = "SI";
+                }
+                if (ckb_pelvis.Checked == true)
+                {
+                    reinte.rein_pelvisPelvis = "SI";
+                }
+                if (ckb_genitales.Checked == true)
+                {
+                    reinte.rein_genitalesPelvis = "SI";
+                }
+                if (ckb_vascular.Checked == true)
+                {
+                    reinte.rein_vascularExtre = "SI";
+                }
+                if (ckb_miembrosuperiores.Checked == true)
+                {
+                    reinte.rein_miemSupeExtre = "SI";
+                }
+                if (ckb_miembrosinferiores.Checked == true)
+                {
+                    reinte.rein_miemInfeExtre = "SI";
+                }
+                if (ckb_fuerza.Checked == true)
+                {
+                    reinte.rein_fuerzaNeuro = "SI";
+                }
+                if (ckb_sensibilidad.Checked == true)
+                {
+                    reinte.rein_sensibiNeuro = "SI";
+                }
+                if (ckb_marcha.Checked == true)
+                {
+                    reinte.rein_marchaNeuro = "SI";
+                }
+                if (ckb_reflejos.Checked == true)
+                {
+                    reinte.rein_refleNeuro = "SI";
+                }
+
+                //Diagnostco
+                if (ckb_pre.Checked == true)
+                {
+                    reinte.rein_pre = "SI";
+                }
+                if (ckb_pre2.Checked == true)
+                {
+                    reinte.rein_pre2 = "SI";
+                }
+                if (ckb_pre3.Checked == true)
+                {
+                    reinte.rein_pre3 = "SI";
+                }
+                if (ckb_def.Checked == true)
+                {
+                    reinte.rein_def = "SI";
+                }
+                if (ckb_def2.Checked == true)
+                {
+                    reinte.rein_def2 = "SI";
+                }
+                if (ckb_def3.Checked == true)
+                {
+                    reinte.rein_def3 = "SI";
+                }
+
+                //Aptitud Medica para el trabajo
+                if (ckb_apto.Checked == true)
+                {
+                    reinte.rein_apto = "SI";
+                }
+                if (ckb_aptoobservacion.Checked == true)
+                {
+                    reinte.rein_aptoObserva = "SI";
+                }
+                if (ckb_aptolimitacion.Checked == true)
+                {
+                    reinte.rein_aptoLimi = "SI";
+                }
+                if (ckb_noapto.Checked == true)
+                {
+                    reinte.rein_NoApto = "SI";
+                }
+
                 reinte = new Tbl_Reintegro
                 {
                     //A
@@ -323,13 +986,13 @@ namespace SistemaECU911.Template.Views
                     //rein_pelvisPelvis = txt_pelvis.Text,
                     //rein_genitalesPelvis = txt_genitales.Text,
                     //rein_vascularExtre = txt_vascular.Text,
-                    //rein_miemSupeExtre = txt_miembrosuperiores.Text,
+                    //rein_miemSupeExtre = txt_miembrosureinres.Text,
                     //rein_miemInfeExtre = txt_miembrosinferiores.Text,
                     //rein_fuerzaNeuro = txt_fuerza.Text,
                     //rein_sensibiNeuro = txt_sensibilidad.Text,
                     //rein_marchaNeuro = txt_marcha.Text,
                     //rein_refleNeuro = txt_reflejos.Text,
-                    rein_observaexaFisRegional = txt_obervexamenfisicoregional.Text,
+                    rein_observaexaFisRegional = txt_observexamenfisicoregional.Text,
 
                     //F.
                     rein_examen = txt_examen.Text,
@@ -381,6 +1044,412 @@ namespace SistemaECU911.Template.Views
         {
             try
             {
+                //Regiones
+                if (ckb_cicatrices.Checked == true)
+                {
+                    reinte.rein_cicatricesPiel = "SI";
+                }
+                else
+                {
+                    reinte.rein_cicatricesPiel = null;
+                }
+                if (ckb_tatuajes.Checked == true)
+                {
+                    reinte.rein_tatuajesPiel = "SI";
+                }
+                else
+                {
+                    reinte.rein_tatuajesPiel = null;
+                }
+                if (ckb_pielyfaneras.Checked == true)
+                {
+                    reinte.rein_pielFacerasPiel = "SI";
+                }
+                else
+                {
+                    reinte.rein_pielFacerasPiel = null;
+                }
+                if (ckb_parpados.Checked == true)
+                {
+                    reinte.rein_parpadosOjos = "SI";
+                }
+                else
+                {
+                    reinte.rein_parpadosOjos = null;
+                }
+                if (ckb_conjuntivas.Checked == true)
+                {
+                    reinte.rein_conjuntuvasOjos = "SI";
+                }
+                else
+                {
+                    reinte.rein_conjuntuvasOjos = null;
+                }
+                if (ckb_pupilas.Checked == true)
+                {
+                    reinte.rein_pupilasOjos = "SI";
+                }
+                else
+                {
+                    reinte.rein_pupilasOjos = null;
+                }
+                if (ckb_cornea.Checked == true)
+                {
+                    reinte.rein_corneaOjos = "SI";
+                }
+                else
+                {
+                    reinte.rein_corneaOjos = null;
+                }
+                if (ckb_motilidad.Checked == true)
+                {
+                    reinte.rein_motilidadOjos = "SI";
+                }
+                else
+                {
+                    reinte.rein_motilidadOjos = null;
+                }
+                if (ckb_auditivoexterno.Checked == true)
+                {
+                    reinte.rein_cAudiExtreOido = "SI";
+                }
+                else
+                {
+                    reinte.rein_cAudiExtreOido = null;
+                }
+                if (ckb_pabellon.Checked == true)
+                {
+                    reinte.rein_pabellonOido = "SI";
+                }
+                else
+                {
+                    reinte.rein_pabellonOido = null;
+                }
+                if (ckb_timpanos.Checked == true)
+                {
+                    reinte.rein_timpanosOido = "SI";
+                }
+                else
+                {
+                    reinte.rein_timpanosOido = null;
+                }
+                if (ckb_labios.Checked == true)
+                {
+                    reinte.rein_labiosOroFa = "SI";
+                }
+                else
+                {
+                    reinte.rein_labiosOroFa = null;
+                }
+                if (ckb_lengua.Checked == true)
+                {
+                    reinte.rein_lenguaOroFa = "SI";
+                }
+                else
+                {
+                    reinte.rein_lenguaOroFa = null;
+                }
+                if (ckb_faringe.Checked == true)
+                {
+                    reinte.rein_faringeOroFa = "SI";
+                }
+                else
+                {
+                    reinte.rein_faringeOroFa = null;
+                }
+                if (ckb_amigdalas.Checked == true)
+                {
+                    reinte.rein_amigdalasOroFa = "SI";
+                }
+                else
+                {
+                    reinte.rein_amigdalasOroFa = null;
+                }
+                if (ckb_dentadura.Checked == true)
+                {
+                    reinte.rein_dentaduraOroFa = "SI";
+                }
+                else
+                {
+                    reinte.rein_dentaduraOroFa = null;
+                }
+                if (ckb_tabique.Checked == true)
+                {
+                    reinte.rein_tabiqueNariz = "SI";
+                }
+                else
+                {
+                    reinte.rein_tabiqueNariz = null;
+                }
+                if (ckb_cornetes.Checked == true)
+                {
+                    reinte.rein_cornetesNariz = "SI";
+                }
+                else
+                {
+                    reinte.rein_cornetesNariz = null;
+                }
+                if (ckb_mucosa.Checked == true)
+                {
+                    reinte.rein_mucosasNariz = "SI";
+                }
+                else
+                {
+                    reinte.rein_mucosasNariz = null;
+                }
+                if (ckb_senosparanasales.Checked == true)
+                {
+                    reinte.rein_senosParanaNariz = "SI";
+                }
+                else
+                {
+                    reinte.rein_senosParanaNariz = null;
+                }
+                if (ckb_tiroides.Checked == true)
+                {
+                    reinte.rein_tiroiMasasCuello = "SI";
+                }
+                else
+                {
+                    reinte.rein_tiroiMasasCuello = null;
+                }
+                if (ckb_movilidad.Checked == true)
+                {
+                    reinte.rein_movilidadCuello = "SI";
+                }
+                else
+                {
+                    reinte.rein_movilidadCuello = null;
+                }
+                if (ckb_mamas.Checked == true)
+                {
+                    reinte.rein_mamasTorax = "SI";
+                }
+                else
+                {
+                    reinte.rein_mamasTorax = null;
+                }
+                if (ckb_corazon.Checked == true)
+                {
+                    reinte.rein_corazonTorax = "SI";
+                }
+                else
+                {
+                    reinte.rein_corazonTorax = null;
+                }
+                if (ckb_pulmones.Checked == true)
+                {
+                    reinte.rein_pulmonesTorax2 = "SI";
+                }
+                else
+                {
+                    reinte.rein_pulmonesTorax2 = null;
+                }
+                if (ckb_parrillacostal.Checked == true)
+                {
+                    reinte.rein_parriCostalTorax2 = "SI";
+                }
+                else
+                {
+                    reinte.rein_parriCostalTorax2 = null;
+                }
+                if (ckb_visceras.Checked == true)
+                {
+                    reinte.rein_viscerasAbdomen = "SI";
+                }
+                else
+                {
+                    reinte.rein_viscerasAbdomen = null;
+                }
+                if (ckb_paredabdominal.Checked == true)
+                {
+                    reinte.rein_paredAbdomiAbdomen = "SI";
+                }
+                else
+                {
+                    reinte.rein_paredAbdomiAbdomen = null;
+                }
+                if (ckb_flexibilidad.Checked == true)
+                {
+                    reinte.rein_flexibilidadColumna = "SI";
+                }
+                else
+                {
+                    reinte.rein_flexibilidadColumna = null;
+                }
+                if (ckb_desviacion.Checked == true)
+                {
+                    reinte.rein_desviacionColumna = "SI";
+                }
+                else
+                {
+                    reinte.rein_desviacionColumna = null;
+                }
+                if (ckb_dolor.Checked == true)
+                {
+                    reinte.rein_dolorColumna = "SI";
+                }
+                else
+                {
+                    reinte.rein_dolorColumna = null;
+                }
+                if (ckb_pelvis.Checked == true)
+                {
+                    reinte.rein_pelvisPelvis = "SI";
+                }
+                else
+                {
+                    reinte.rein_pelvisPelvis = null;
+                }
+                if (ckb_genitales.Checked == true)
+                {
+                    reinte.rein_genitalesPelvis = "SI";
+                }
+                else
+                {
+                    reinte.rein_genitalesPelvis = null;
+                }
+                if (ckb_vascular.Checked == true)
+                {
+                    reinte.rein_vascularExtre = "SI";
+                }
+                else
+                {
+                    reinte.rein_vascularExtre = null;
+                }
+                if (ckb_miembrosuperiores.Checked == true)
+                {
+                    reinte.rein_miemSupeExtre = "SI";
+                }
+                else
+                {
+                    reinte.rein_miemSupeExtre = null;
+                }
+                if (ckb_miembrosinferiores.Checked == true)
+                {
+                    reinte.rein_miemInfeExtre = "SI";
+                }
+                else
+                {
+                    reinte.rein_miemInfeExtre = null;
+                }
+                if (ckb_fuerza.Checked == true)
+                {
+                    reinte.rein_fuerzaNeuro = "SI";
+                }
+                else
+                {
+                    reinte.rein_fuerzaNeuro = null;
+                }
+                if (ckb_sensibilidad.Checked == true)
+                {
+                    reinte.rein_sensibiNeuro = "SI";
+                }
+                else
+                {
+                    reinte.rein_sensibiNeuro = null;
+                }
+                if (ckb_marcha.Checked == true)
+                {
+                    reinte.rein_marchaNeuro = "SI";
+                }
+                else
+                {
+                    reinte.rein_marchaNeuro = null;
+                }
+                if (ckb_reflejos.Checked == true)
+                {
+                    reinte.rein_refleNeuro = "SI";
+                }
+                else
+                {
+                    reinte.rein_refleNeuro = null;
+                }
+
+                //Diagnostco
+                if (ckb_pre.Checked == true)
+                {
+                    reinte.rein_pre = "SI";
+                }
+                else
+                {
+                    reinte.rein_pre = null;
+                }
+                if (ckb_pre2.Checked == true)
+                {
+                    reinte.rein_pre2 = "SI";
+                }
+                else
+                {
+                    reinte.rein_pre2 = null;
+                }
+                if (ckb_pre3.Checked == true)
+                {
+                    reinte.rein_pre3 = "SI";
+                }
+                else
+                {
+                    reinte.rein_pre3 = null;
+                }
+                if (ckb_def.Checked == true)
+                {
+                    reinte.rein_def = "SI";
+                }
+                else
+                {
+                    reinte.rein_def = null;
+                }
+                if (ckb_def2.Checked == true)
+                {
+                    reinte.rein_def2 = "SI";
+                }
+                else
+                {
+                    reinte.rein_def2 = null;
+                }
+                if (ckb_def3.Checked == true)
+                {
+                    reinte.rein_def3 = "SI";
+                }
+                else
+                {
+                    reinte.rein_def3 = null;
+                }
+
+                //Aptitud Medica para el trabajo
+                if (ckb_apto.Checked == true)
+                {
+                    reinte.rein_apto = "SI";
+                }
+                else
+                {
+                    reinte.rein_apto = null;
+                }
+                if (ckb_aptoobservacion.Checked == true)
+                {
+                    reinte.rein_aptoObserva = "SI";
+                }
+                else
+                {
+                    reinte.rein_aptoObserva = null;
+                }
+                if (ckb_aptolimitacion.Checked == true)
+                {
+                    reinte.rein_aptoLimi = "SI";
+                }
+                else
+                {
+                    reinte.rein_aptoLimi = null;
+                }
+                if (ckb_noapto.Checked == true)
+                {
+                    reinte.rein_NoApto = "SI";
+                }
+                else
+                {
+                    reinte.rein_NoApto = null;
+                }
+
                 //A
                 reinte.rein_numArchivo = txt_numArchivo.Text;
                 reinte.rein_edad = Convert.ToInt32(txt_edad.Text);
@@ -430,13 +1499,13 @@ namespace SistemaECU911.Template.Views
                 //reinte.rein_pelvisPelvis = txt_pelvis.Text;
                 //reinte.rein_genitalesPelvis = txt_genitales.Text;
                 //reinte.rein_vascularExtre = txt_vascular.Text;
-                //reinte.rein_miemSupeExtre = txt_miembrosuperiores.Text;
+                //reinte.rein_miemSupeExtre = txt_miembrosureinres.Text;
                 //reinte.rein_miemInfeExtre = txt_miembrosinferiores.Text;
                 //reinte.rein_fuerzaNeuro = txt_fuerza.Text;
                 //reinte.rein_sensibiNeuro = txt_sensibilidad.Text;
                 //reinte.rein_marchaNeuro = txt_marcha.Text;
                 //reinte.rein_refleNeuro = txt_reflejos.Text;
-                reinte.rein_observaexaFisRegional = txt_obervexamenfisicoregional.Text;
+                reinte.rein_observaexaFisRegional = txt_observexamenfisicoregional.Text;
 
                 //F.
                 reinte.rein_examen = txt_examen.Text;
