@@ -28,7 +28,7 @@ namespace SistemaECU911.Template.Views
                         join p in dc.Tbl_Personas on hm.Per_id equals p.Per_id
                         join e in dc.Tbl_Especialidad on hm.espec_id equals e.espec_id
                         join pro in dc.Tbl_Profesional on hm.prof_id equals pro.prof_id
-                        orderby hm.fechaHora descending
+                        orderby hm.fechaHoraGuardado descending
                         select new
                         {
                             hm.idFichaMedica,
@@ -37,7 +37,7 @@ namespace SistemaECU911.Template.Views
                             p.Per_priApellido,
                             e.espec_nombre,
                             pro.prof_NomApe,
-                            hm.fechaHora
+                            hm.fechaHoraGuardado
                         };
 
             grvPacientes.DataSource = query.ToList();

@@ -41,11 +41,14 @@ namespace SistemaECU911.Template.Views
                         txt_priApellido.Text = per.Per_priApellido.ToString();
                         txt_segApellido.Text = per.Per_segApellido.ToString();
                         txt_sexo.Text = per.Per_genero.ToString();
+                        DateTime edad = Convert.ToDateTime(per.Per_fechaNacimiento);
+                        DateTime naci = Convert.ToDateTime(edad);
+                        DateTime actual = DateTime.Now;
+                        Calculo(naci, actual);
                         txt_numHClinica.Text = per.Per_cedula.ToString();
 
                         if (fichasmedicas != null)
                         {
-                            txt_edad.Text = fichasmedicas.edad.ToString();
                             txt_moConsulta.Text = fichasmedicas.moConsulta.ToString();
                             txt_segAcompa.Text = fichasmedicas.seAcompañanteMc.ToString();
                             ddl_tipoAntPer.SelectedValue = fichasmedicas.idTipAntecedentePer.ToString();
@@ -100,14 +103,17 @@ namespace SistemaECU911.Template.Views
                             txt_tratamiento.Text = fichasmedicas.planTratamiento.ToString();
                             txt_evolucion.Text = fichasmedicas.evolucion.ToString();
                             txt_prescipciones.Text = fichasmedicas.prescripciones.ToString();
-                            txt_fechahora.Text = fichasmedicas.fechaHora.ToString();
+                            txt_fechahora.Text = Convert.ToDateTime(fichasmedicas.fechaHora).ToString("yyyy-MM-ddTHH:mm");                           
                             ddl_especialidad.SelectedValue = fichasmedicas.espec_id.ToString();
                             ddl_profesional.SelectedValue = fichasmedicas.prof_id.ToString();
                             txt_codigo.Text = fichasmedicas.codigoPro.ToString();
                         }
                     }
                 }
-                txt_fechahora.Text = DateTime.Now.ToString(" dd/MM/yyyy " + " HH:mm ");
+                if (fichasmedicas.fechaHora == null)
+                {
+                    txt_fechahora.Text = DateTime.Now.ToLocalTime().ToString("yyyy-MM-ddTHH:mm");
+                }
                 cargarRegion();
                 cargarEspecialidad();
                 cargarProfesional();
@@ -274,68 +280,80 @@ namespace SistemaECU911.Template.Views
 
                 int perso = Convert.ToInt32(per.Per_id.ToString());
 
-                fichasmedicas = new Tbl_FichasMedicas
-                {
-                    edad = Convert.ToInt32(txt_edad.Text),
-                    moConsulta = txt_moConsulta.Text,
-                    seAcompañanteMc = txt_segAcompa.Text,
-                    idTipAntecedentePer = Convert.ToInt32(ddl_tipoAntPer.SelectedValue),
-                    antecedentePer = txt_antePersonales.Text,
-                    descripcionPer = txt_antePerDescripcion.Text,
-                    idTipAntecedenteFam = Convert.ToInt32(ddl_tipoAntFam.SelectedValue),
-                    antecedenteFam = txt_anteFamiliares.Text,
-                    descripcionFam = txt_anteFamDescripcion.Text,
-                    descripcionEA = txt_enfeActual.Text,
-                    orgSentido = Convert.ToInt32(ddl_orgSistemas.SelectedValue),
-                    descripcionOS = txt_descOrgSistemas.Text,
-                    respiratorio = Convert.ToInt32(ddl_respiratorio.SelectedValue),
-                    descripcionRes = txt_descRespiratorio.Text,
-                    cardioVascular = Convert.ToInt32(ddl_carVascular.SelectedValue),
-                    descripcionCV = txt_descCarVascular.Text,
-                    digestivo = Convert.ToInt32(ddl_digestivo.SelectedValue),
-                    descripcionDig = txt_descDigestivo.Text,
-                    genital = Convert.ToInt32(ddl_genital.SelectedValue),
-                    descripcionGen = txt_descGenital.Text,
-                    urinario = Convert.ToInt32(ddl_urinario.SelectedValue),
-                    descripcionUri = txt_descUrinario.Text,
-                    muscular = Convert.ToInt32(ddl_muscular.SelectedValue),
-                    descripcionMus = txt_descMuscular.Text,
-                    esqueletico = Convert.ToInt32(ddl_esqueletico.SelectedValue),
-                    descripcionEsq = txt_descEsqueletico.Text,
-                    nervioso = Convert.ToInt32(ddl_nervioso.SelectedValue),
-                    descripcionNer = txt_descNervioso.Text,
-                    endocrino = Convert.ToInt32(ddl_endocrino.SelectedValue),
-                    descripcionEnd = txt_descEndocrino.Text,
-                    hemoLinfatico = Convert.ToInt32(ddl_hemoLinfatico.SelectedValue),
-                    descripcionHL = txt_descHemoLinfatico.Text,
-                    tegumentario = Convert.ToInt32(ddl_tegumentario.SelectedValue),
-                    descripcionTeg = txt_descTegumentario.Text,
-                    persionArterial = txt_presArterial.Text,
-                    temperatura = Convert.ToDecimal(txt_temperatura.Text),
-                    frecuenciaCardica = Convert.ToDecimal(txt_frecCardiaca.Text),
-                    saturacionOxigeno = Convert.ToDecimal(txt_satOxigeno.Text),
-                    frecuenciaRespiratoria = Convert.ToDecimal(txt_frecRespiratoria.Text),
-                    peso = Convert.ToDecimal(txt_peso.Text),
-                    talla = Convert.ToDecimal(txt_talla.Text),
-                    indMasaCorporal = Convert.ToDecimal(txt_indMasCorporal.Text),
-                    perimetroAbdominal = Convert.ToDecimal(txt_perAbdominal.Text),
-                    Regiones_id = Convert.ToInt32(ddl_region.SelectedValue),
-                    tipoExa_id = Convert.ToInt32(ddl_tipoRegion.SelectedValue),
-                    descripcionEF = txt_exafisdescripcion.Text,
-                    diagnostico = txt_diagnosticosDiagnostico.Text,
-                    codigoDiag = txt_codigoDiagnostico.Text,
-                    tipoDiag = txt_tipoDiagnostico.Text,
-                    condicionDiag = txt_condicionDiagnostico.Text,
-                    cronologiaDiag = txt_cronologiaDiagnostico.Text,
-                    descripcionDiag = txt_descripcionDiagnostico.Text,
-                    planTratamiento = txt_tratamiento.Text,
-                    evolucion = txt_evolucion.Text,
-                    prescripciones = txt_prescipciones.Text,
-                    espec_id = Convert.ToInt32(ddl_especialidad.SelectedValue),
-                    prof_id = Convert.ToInt32(ddl_profesional.SelectedValue),
-                    codigoPro = txt_codigo.Text,
-                    Per_id = perso
-                };
+                fichasmedicas = new Tbl_FichasMedicas();
+
+                //1
+                fichasmedicas.moConsulta = txt_moConsulta.Text;
+                fichasmedicas.seAcompañanteMc = txt_segAcompa.Text;
+                //2
+                fichasmedicas.idTipAntecedentePer = Convert.ToInt32(ddl_tipoAntPer.SelectedValue);
+                fichasmedicas.antecedentePer = txt_antePersonales.Text;
+                fichasmedicas.descripcionPer = txt_antePerDescripcion.Text;
+                //3
+                fichasmedicas.idTipAntecedenteFam = Convert.ToInt32(ddl_tipoAntFam.SelectedValue);
+                fichasmedicas.antecedenteFam = txt_anteFamiliares.Text;
+                fichasmedicas.descripcionFam = txt_anteFamDescripcion.Text;
+                //4
+                fichasmedicas.descripcionEA = txt_enfeActual.Text;
+                //5
+                fichasmedicas.orgSentido = Convert.ToInt32(ddl_orgSistemas.SelectedValue);
+                fichasmedicas.descripcionOS = txt_descOrgSistemas.Text;
+                fichasmedicas.respiratorio = Convert.ToInt32(ddl_respiratorio.SelectedValue);
+                fichasmedicas.descripcionRes = txt_descRespiratorio.Text;
+                fichasmedicas.cardioVascular = Convert.ToInt32(ddl_carVascular.SelectedValue);
+                fichasmedicas.descripcionCV = txt_descCarVascular.Text;
+                fichasmedicas.digestivo = Convert.ToInt32(ddl_digestivo.SelectedValue);
+                fichasmedicas.descripcionDig = txt_descDigestivo.Text;
+                fichasmedicas.genital = Convert.ToInt32(ddl_genital.SelectedValue);
+                fichasmedicas.descripcionGen = txt_descGenital.Text;
+                fichasmedicas.urinario = Convert.ToInt32(ddl_urinario.SelectedValue);
+                fichasmedicas.descripcionUri = txt_descUrinario.Text;
+                fichasmedicas.muscular = Convert.ToInt32(ddl_muscular.SelectedValue);
+                fichasmedicas.descripcionMus = txt_descMuscular.Text;
+                fichasmedicas.esqueletico = Convert.ToInt32(ddl_esqueletico.SelectedValue);
+                fichasmedicas.descripcionEsq = txt_descEsqueletico.Text;
+                fichasmedicas.nervioso = Convert.ToInt32(ddl_nervioso.SelectedValue);
+                fichasmedicas.descripcionNer = txt_descNervioso.Text;
+                fichasmedicas.endocrino = Convert.ToInt32(ddl_endocrino.SelectedValue);
+                fichasmedicas.descripcionEnd = txt_descEndocrino.Text;
+                fichasmedicas.hemoLinfatico = Convert.ToInt32(ddl_hemoLinfatico.SelectedValue);
+                fichasmedicas.descripcionHL = txt_descHemoLinfatico.Text;
+                fichasmedicas.tegumentario = Convert.ToInt32(ddl_tegumentario.SelectedValue);
+                fichasmedicas.descripcionTeg = txt_descTegumentario.Text;
+                //6
+                fichasmedicas.persionArterial = txt_presArterial.Text;
+                fichasmedicas.temperatura = Convert.ToDecimal(txt_temperatura.Text);
+                fichasmedicas.frecuenciaCardica = Convert.ToDecimal(txt_frecCardiaca.Text);
+                fichasmedicas.saturacionOxigeno = Convert.ToDecimal(txt_satOxigeno.Text);
+                fichasmedicas.frecuenciaRespiratoria = Convert.ToDecimal(txt_frecRespiratoria.Text);
+                fichasmedicas.peso = Convert.ToDecimal(txt_peso.Text);
+                fichasmedicas.talla = Convert.ToDecimal(txt_talla.Text);
+                fichasmedicas.indMasaCorporal = Convert.ToDecimal(txt_indMasCorporal.Text);
+                fichasmedicas.perimetroAbdominal = Convert.ToDecimal(txt_perAbdominal.Text);
+                ////7
+                //fichasmedicas.Regiones_id = Convert.ToInt32(ddl_region.SelectedValue);
+                //fichasmedicas.tipoExa_id = Convert.ToInt32(ddl_tipoRegion.SelectedValue);
+                fichasmedicas.descripcionEF = txt_exafisdescripcion.Text;
+                //8
+                fichasmedicas.diagnostico = txt_diagnosticosDiagnostico.Text;
+                fichasmedicas.codigoDiag = txt_codigoDiagnostico.Text;
+                fichasmedicas.tipoDiag = txt_tipoDiagnostico.Text;
+                fichasmedicas.condicionDiag = txt_condicionDiagnostico.Text;
+                fichasmedicas.cronologiaDiag = txt_cronologiaDiagnostico.Text;
+                fichasmedicas.descripcionDiag = txt_descripcionDiagnostico.Text;
+                //9
+                fichasmedicas.planTratamiento = txt_tratamiento.Text;
+                //10
+                fichasmedicas.evolucion = txt_evolucion.Text;
+                //11
+                fichasmedicas.prescripciones = txt_prescipciones.Text;
+                //Final
+                fichasmedicas.fechaHora = Convert.ToDateTime(txt_fechahora.Text);
+                fichasmedicas.espec_id = Convert.ToInt32(ddl_especialidad.SelectedValue);
+                fichasmedicas.prof_id = Convert.ToInt32(ddl_profesional.SelectedValue);
+                fichasmedicas.codigoPro = txt_codigo.Text;
+                fichasmedicas.Per_id = perso;
+                
 
                 CN_HistorialMedico.GuardarFichaMedica(fichasmedicas);
 
@@ -355,7 +373,6 @@ namespace SistemaECU911.Template.Views
         {
             try
             {
-                fichasmedicas.edad = Convert.ToInt32(txt_edad.Text);
                 fichasmedicas.moConsulta = txt_moConsulta.Text;
                 fichasmedicas.seAcompañanteMc = txt_segAcompa.Text;
                 fichasmedicas.idTipAntecedentePer = Convert.ToInt32(ddl_tipoAntPer.SelectedValue);
@@ -410,6 +427,7 @@ namespace SistemaECU911.Template.Views
                 fichasmedicas.planTratamiento = txt_tratamiento.Text;
                 fichasmedicas.evolucion = txt_evolucion.Text;
                 fichasmedicas.prescripciones = txt_prescipciones.Text;
+                fichasmedicas.fechaHora = Convert.ToDateTime(txt_fechahora.Text);
                 fichasmedicas.espec_id = Convert.ToInt32(ddl_especialidad.SelectedValue);
                 fichasmedicas.prof_id = Convert.ToInt32(ddl_profesional.SelectedValue);
                 fichasmedicas.codigoPro = txt_codigo.Text;
@@ -481,7 +499,7 @@ namespace SistemaECU911.Template.Views
             ddl_tipoRegion.DataTextField = "tipoExa_nombres";
             ddl_tipoRegion.DataValueField = "tipoExa_id";
             ddl_tipoRegion.DataBind();
-            ddl_tipoRegion.Items.Insert(0, new ListItem("Seleccione ........", "0"));
+            //ddl_tipoRegion.Items.Insert(0, new ListItem("Seleccione ........", "0"));
 
             tipreg = CN_HistorialMedico.ObtenerTipoRegionxReg(regionid);
         }

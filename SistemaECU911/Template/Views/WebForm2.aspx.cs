@@ -25,6 +25,7 @@ namespace SistemaECU911.Template.Views
             }
         }
 
+
         protected void btnCertificado_Click(object sender, EventArgs e)
         {
             string nombre = txt_priNombre.Text + " " + txt_segNombre.Text + " " + txt_priApellido.Text + " " + txt_segApellido.Text;
@@ -61,13 +62,14 @@ namespace SistemaECU911.Template.Views
             pdfDoc.Add(new Chunk(Chunk.NEWLINE));
             pdfDoc.Add(new Paragraph("Tipo de contingencia: " + ddl_tipoContingencia.SelectedItem, parrafo) { Alignment = Element.ALIGN_JUSTIFIED });
             pdfDoc.Add(new Chunk(Chunk.NEWLINE));
-            pdfDoc.Add(new Paragraph("Diagnóstico: " + txt_diagnostico.Text, parrafo) { Alignment = Element.ALIGN_JUSTIFIED });
+            pdfDoc.Add(new Paragraph("Diagnóstico: " + txt_diagnostico.Text + "  " + "CIE 10: " + txt_cie.Text, parrafo) { Alignment = Element.ALIGN_JUSTIFIED });
             pdfDoc.Add(new Chunk(Chunk.NEWLINE));
             pdfDoc.Add(new Paragraph("Por lo expuesto requiere:", parrafo) { Alignment = Element.ALIGN_JUSTIFIED });
             pdfDoc.Add(new Chunk(Chunk.NEWLINE));
             pdfDoc.Add(new Paragraph(txt_recomendacion.Text, parrafo) { Alignment = Element.ALIGN_JUSTIFIED });
             pdfDoc.Add(new Chunk(Chunk.NEWLINE));
             pdfDoc.Add(new Paragraph("Es todo en cuanto puedo certificar en honor a la verdad.", parrafo) { Alignment = Element.ALIGN_JUSTIFIED });
+            pdfDoc.Add(new Chunk(Chunk.NEWLINE));
             pdfDoc.Add(new Chunk(Chunk.NEWLINE));
             pdfDoc.Add(new Chunk(Chunk.NEWLINE));
             pdfDoc.Add(new Paragraph("Atentamente,", parrafo) { Alignment = Element.ALIGN_CENTER });
@@ -148,6 +150,60 @@ namespace SistemaECU911.Template.Views
                 txt_segApellido.Text = segApellido;
             }
         }
+
+        //Metodo obtener codigo cie10
+        [WebMethod]
+        [ScriptMethod]
+        public static List<string> ObtenerCie10(string prefixText)
+        {
+            List<string> lista = new List<string>();
+            try
+            {
+                string oConn = @"Data Source=.;Initial Catalog=SistemaECU911;Integrated Security=True";
+
+                SqlConnection con = new SqlConnection(oConn);
+                con.Open();
+                SqlCommand cmd = new SqlCommand("select top(10) dec10 from cie10 where dec10 LIKE + @Name + '%'", con);
+                cmd.Parameters.AddWithValue("@Name", prefixText);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+                IDataReader lector = cmd.ExecuteReader();
+
+                while (lector.Read())
+                {
+                    lista.Add(lector.GetString(0));
+                }
+
+                lector.Close();
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex);
+                return null;
+            }
+        }
+
+        protected void txt_diagnostico_TextChanged(object sender, EventArgs e)
+        {
+            ObtenerCodigo();
+        }
+
+        private void ObtenerCodigo()
+        {
+            string descripcion = txt_diagnostico.Text;
+
+            var lista = from c in dc.cie10
+                        where c.dec10 == descripcion
+                        select c;
+
+            foreach (var item in lista)
+            {
+                string codigo = item.id10;
+                txt_cie.Text = codigo;
+            }
+        }
+        
     }   
     
 }

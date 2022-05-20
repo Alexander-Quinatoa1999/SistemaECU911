@@ -77,13 +77,13 @@
                         <div class="container">
                             <asp:Table class="table table-bordered table-responsive text-center" Style="width: 100%" runat="server" align="left">
                                 <asp:TableRow Style="text-align: center">
-                                    <asp:TableCell Text="ESTABLECIMIENTO DE SALUD" Style="width: 310px; background-color: #cdfecc; font-size: 15px; font-family:Arial"></asp:TableCell>
+                                    <asp:TableCell Text="ESTABLECIMIENTO DE SALUD" Style="width: 280px; background-color: #cdfecc; font-size: 15px; font-family:Arial"></asp:TableCell>
                                     <asp:TableCell Text="PRIMER NOMBRE" Style="width: 150px; background-color: #cdfecc; font-size: 15px; font-family:Arial"></asp:TableCell>
                                     <asp:TableCell Text="SEGUNDO NOMBRE" Style="width: 150px; background-color: #cdfecc; font-size: 15px; font-family:Arial"></asp:TableCell>
                                     <asp:TableCell Text="PRIMER APELLIDO" Style="width: 150px; background-color: #cdfecc; font-size: 15px; font-family:Arial"></asp:TableCell>
                                     <asp:TableCell Text="SEGUNDO APELLIDO" Style="width: 150px; background-color: #cdfecc; font-size: 15px; font-family:Arial"></asp:TableCell>
                                     <asp:TableCell Text="SEXO" Style="width: 50px; background-color: #cdfecc; font-size: 15px; font-family:Arial"></asp:TableCell>
-                                    <asp:TableCell Text="EDAD" Style="width: 125px; background-color: #cdfecc; font-size: 15px; font-family:Arial"></asp:TableCell>
+                                    <asp:TableCell Text="EDAD" Style="width: 155px; background-color: #cdfecc; font-size: 15px; font-family:Arial"></asp:TableCell>
                                     <asp:TableCell Text="N° HISTORIA CLÍNICA" Style="width: 160px; background-color: #cdfecc; font-size: 15px; font-family:Arial"></asp:TableCell>
                                 </asp:TableRow>
                                 <asp:TableRow>
@@ -189,9 +189,9 @@
                     <div class="list-group list-group-flush" style="padding: 10px; text-align: center">
                         <asp:Table class="table table-bordered table-responsive text-center" runat="server">
                             <asp:TableRow Style="text-align: center">
-                                <asp:TableCell Text="TIPO DE ANTECEDENTE" Style="width: 400px; background-color: #cdfecc; font-weight:bold; font-size: 15px; font-family:Arial"></asp:TableCell>
-                                <asp:TableCell Text="ANTECEDENTE" Style="width: 700px; background-color: #cdfecc; font-weight:bold; font-size: 15px; font-family:Arial"></asp:TableCell>
-                                <asp:TableCell Text="DESCRIPCIÓN" Style="width: 200px; background-color: #cdfecc; font-weight:bold; font-size: 15px; font-family:Arial"></asp:TableCell>
+                                <asp:TableCell Text="TIPO DE ANTECEDENTE" Style="width: 400px; background-color: #cdfecc; font-size: 15px; font-family:Arial"></asp:TableCell>
+                                <asp:TableCell Text="ANTECEDENTE" Style="width: 700px; background-color: #cdfecc; font-size: 15px; font-family:Arial"></asp:TableCell>
+                                <asp:TableCell Text="DESCRIPCIÓN" Style="width: 200px; background-color: #cdfecc; font-size: 15px; font-family:Arial"></asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
                                 <asp:TableCell Style="background-color: white">
@@ -574,7 +574,7 @@
                             </asp:TableRow>
                             <asp:TableRow>
                                 <asp:TableCell Style="width: 200px; background-color: white; font-size: 14px">
-                                    <asp:TextBox runat="server" ID="txt_fechahora" BorderStyle="None" Style="width: 100%; text-align: center" TextMode="DateTime"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_fechahora" BorderStyle="None" Style="width: 100%; text-align: center" TextMode="DateTimeLocal"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="width: 400px; background-color: white; font-size: 14px">
                                     <asp:DropDownList ID="ddl_especialidad" CssClass="form-check" Style="width: 100%; border: none" runat="server"></asp:DropDownList>

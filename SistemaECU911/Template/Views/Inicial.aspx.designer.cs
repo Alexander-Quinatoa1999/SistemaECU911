@@ -1932,13 +1932,22 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.Label Label29;
 
         /// <summary>
-        /// Control Label30.
+        /// Control Label94.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label30;
+        protected global::System.Web.UI.WebControls.Label Label94;
+
+        /// <summary>
+        /// Control txt_otrosFisico.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_otrosFisico;
 
         /// <summary>
         /// Control txt_puestodetrabajo.
@@ -5541,6 +5550,15 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_descripdiagnostico2;
 
         /// <summary>
+        /// Control AutoCompleteExtender3.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::AjaxControlToolkit.AutoCompleteExtender AutoCompleteExtender3;
+
+        /// <summary>
         /// Control txt_cie2.
         /// </summary>
         /// <remarks>
@@ -5575,6 +5593,15 @@ namespace SistemaECU911.Template.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_descripdiagnostico3;
+
+        /// <summary>
+        /// Control AutoCompleteExtender4.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::AjaxControlToolkit.AutoCompleteExtender AutoCompleteExtender4;
 
         /// <summary>
         /// Control txt_cie3.

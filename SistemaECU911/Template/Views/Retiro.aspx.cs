@@ -67,7 +67,7 @@ namespace SistemaECU911.Template.Views
                             {
                                 ckb_noCalificadoIESSAcciTrabajo.Checked = true;
                             }
-                            //----------- ACCIDENTES DE TRABAJO ( DESCRIPCIÓN) -----------
+                            //----------- ENFERMEDADES PROFESIONALES -----------
                             if (reti.ret_siCalificadoIESSEnferProfesionales == null)
                             {
                                 ckb_siCalificadoIESSEnferProfesionales.Checked = false;

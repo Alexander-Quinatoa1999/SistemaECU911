@@ -100,7 +100,7 @@ namespace CapaNegocio
             try
             {
                 fichasmedicas.estado = "A";
-                fichasmedicas.fechaHora = DateTime.Now;
+                fichasmedicas.fechaHoraGuardado = DateTime.Now;
                 dc.Tbl_FichasMedicas.InsertOnSubmit(fichasmedicas);
                 dc.SubmitChanges();
             }

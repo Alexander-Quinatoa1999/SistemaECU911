@@ -28,7 +28,7 @@ namespace SistemaECU911.Template.Views
             var query = from i in dc.Tbl_Inicial
                         join p in dc.Tbl_Personas on i.Per_id equals p.Per_id
                         join pro in dc.Tbl_Profesional on i.prof_id equals pro.prof_id
-                        orderby i.inicial_fecha_hora descending
+                        orderby i.inicial_fecha_horaGuardado descending
                         select new
                         {
                             i.inicial_id,
@@ -36,7 +36,7 @@ namespace SistemaECU911.Template.Views
                             p.Per_priNombre,
                             p.Per_priApellido,
                             pro.prof_NomApe,
-                            i.inicial_fecha_hora
+                            i.inicial_fecha_horaGuardado
                         };
 
             grvPacientesInicial.DataSource = query.ToList();

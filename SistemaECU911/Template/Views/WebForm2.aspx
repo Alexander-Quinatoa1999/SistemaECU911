@@ -59,97 +59,116 @@
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     <%--<asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>--%>
-            <div class="row" style="font-family: Arial">
-                <div class="col-12 grid-margin">
-                    <div class="card">
-                        <div class="card-body">
-                            <h4 class="card-title">Certificado Médico</h4>
-                            <div id="example-vertical-wizard">
-                                <div>
-                                    <h3>Datos Paciente</h3>
-                                    <section>
-                                        <div class="row">
-                                            <div class="col-md-4">
-                                                <label>Numero de Cedula</label>
-                                                <asp:TextBox CssClass="required form-control" ID="txt_cedula" OnTextChanged="txt_cedula_TextChanged" AutoPostBack="true" runat="server"></asp:TextBox>
-                                                <ajaxToolkit:AutoCompleteExtender ID="AutoCompleteExtender" runat="server" CompletionInterval="10" DelimiterCharacters="" Enabled="True"
-                                                    MinimumPrefixLength="1" ServiceMethod="ObtenerNumHClinica"
-                                                    TargetControlID="txt_cedula" CompletionListCssClass="CompletionList"
-                                                    CompletionListHighlightedItemCssClass="CompletionListHighlightedItem"
-                                                    CompletionListItemCssClass="CompletionListItem">
-                                                </ajaxToolkit:AutoCompleteExtender>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Primer Nombre</label>
-                                                <asp:TextBox CssClass="required form-control" ID="txt_priNombre" runat="server"></asp:TextBox>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label>Segundo Nombre</label>
-                                                <asp:TextBox CssClass="required form-control" ID="txt_segNombre" runat="server"></asp:TextBox>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Primer Apellido</label>
-                                                <asp:TextBox CssClass="required form-control" ID="txt_priApellido" runat="server"></asp:TextBox>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label>Segundo Apellido</label>
-                                                <asp:TextBox CssClass="required form-control" ID="txt_segApellido" runat="server"></asp:TextBox>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Cargo</label>
-                                                <asp:TextBox CssClass="required form-control" ID="txt_Cargo" runat="server"></asp:TextBox>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label>Institución</label>
-                                                <asp:TextBox CssClass="required form-control" ID="txt_Institución" runat="server"></asp:TextBox>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Domicilio</label>
-                                                <asp:TextBox CssClass="required form-control" ID="txt_Domicilio" runat="server"></asp:TextBox>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label>Telefono</label>
-                                                <asp:TextBox CssClass="required form-control" ID="txt_Telefono" runat="server"></asp:TextBox>
-                                            </div>
-                                        </div>
-                                    </section>
-                                    <h3>Datos Medicos</h3>
-                                    <section>
-                                        <div class="form-group">
-                                            <label>Razon de la antencion</label>
-                                            <asp:TextBox CssClass="required form-control" ID="txt_Atencion" runat="server"></asp:TextBox>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Tipo de Contingencia</label>
-                                            <asp:DropDownList CssClass="required form-control" ID="ddl_tipoContingencia" runat="server">
-                                                <asp:ListItem Value="1">Enfermedad General</asp:ListItem>
-                                            </asp:DropDownList>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Diagnóstico</label>
-                                            <asp:TextBox CssClass="required form-control" ID="txt_diagnostico" runat="server"></asp:TextBox>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Recomendaciones</label>
-                                            <asp:TextBox CssClass="required form-control" ID="txt_recomendacion" TextMode="MultiLine" Rows="5" runat="server"></asp:TextBox>
-                                        </div>
-                                    </section>
+    <div class="row" style="font-family: Arial">
+        <div class="col-12 grid-margin">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Certificado Médico</h4>
+                    <div id="example-vertical-wizard">
+                        <div>
+                            <h3>Datos Paciente</h3>
+                            <section>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <label>Numero de Cedula</label>
+                                        <asp:TextBox CssClass="required form-control" ID="txt_cedula" OnTextChanged="txt_cedula_TextChanged" AutoPostBack="true" runat="server"></asp:TextBox>
+                                        <ajaxToolkit:AutoCompleteExtender ID="AutoCompleteExtender" runat="server" CompletionInterval="10" DelimiterCharacters="" Enabled="True"
+                                            MinimumPrefixLength="1" ServiceMethod="ObtenerNumHClinica"
+                                            TargetControlID="txt_cedula" CompletionListCssClass="CompletionList"
+                                            CompletionListHighlightedItemCssClass="CompletionListHighlightedItem"
+                                            CompletionListItemCssClass="CompletionListItem">
+                                        </ajaxToolkit:AutoCompleteExtender>
+                                    </div>
                                 </div>
-                            </div>
-                            <asp:Button ID="btnCertificado" OnClick="btnCertificado_Click" CssClass="btn btn-info" runat="server" Text="Generar Certificado" />
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Primer Nombre</label>
+                                        <asp:TextBox CssClass="required form-control" ID="txt_priNombre" runat="server"></asp:TextBox>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label>Segundo Nombre</label>
+                                        <asp:TextBox CssClass="required form-control" ID="txt_segNombre" runat="server"></asp:TextBox>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Primer Apellido</label>
+                                        <asp:TextBox CssClass="required form-control" ID="txt_priApellido" runat="server"></asp:TextBox>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label>Segundo Apellido</label>
+                                        <asp:TextBox CssClass="required form-control" ID="txt_segApellido" runat="server"></asp:TextBox>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Cargo</label>
+                                        <asp:TextBox CssClass="required form-control" ID="txt_Cargo" runat="server"></asp:TextBox>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label>Institución</label>
+                                        <asp:TextBox CssClass="required form-control" ID="txt_Institución" runat="server"></asp:TextBox>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Domicilio</label>
+                                        <asp:TextBox CssClass="required form-control" ID="txt_Domicilio" runat="server"></asp:TextBox>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label>Telefono</label>
+                                        <asp:TextBox CssClass="required form-control" ID="txt_Telefono" runat="server"></asp:TextBox>
+                                    </div>
+                                </div>
+                            </section>
+                            <h3>Datos Medicos</h3>
+                            <section>
+                                <div class="form-group">
+                                    <label>Razon de la antencion</label>
+                                    <asp:TextBox CssClass="required form-control" ID="txt_Atencion" runat="server"></asp:TextBox>
+                                </div>
+                                <div class="form-group">
+                                    <label>Tipo de Contingencia</label>
+                                    <asp:DropDownList CssClass="required form-control" ID="ddl_tipoContingencia" runat="server">
+                                        <asp:ListItem Value="0">Seleccione ----------</asp:ListItem>
+                                        <asp:ListItem Value="1">Enfermedad General</asp:ListItem>
+                                        <asp:ListItem Value="2">Enfermedad Ocupacional</asp:ListItem>
+                                        <asp:ListItem Value="3">Gineco Obstetricia</asp:ListItem>
+                                    </asp:DropDownList>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-9">
+                                        <label>Diagnóstico</label>
+                                        <asp:TextBox CssClass="required form-control" ID="txt_diagnostico" OnTextChanged="txt_diagnostico_TextChanged" AutoPostBack="true" runat="server"></asp:TextBox>
+                                        <ajaxToolkit:AutoCompleteExtender ID="AutoCompleteExtender2" runat="server" CompletionInterval="10" DelimiterCharacters="" Enabled="True"
+                                            MinimumPrefixLength="1" ServiceMethod="ObtenerCie10"
+                                            TargetControlID="txt_diagnostico" CompletionListCssClass="CompletionList"
+                                            CompletionListHighlightedItemCssClass="CompletionListHighlightedItem"
+                                            CompletionListItemCssClass="CompletionListItem">
+                                        </ajaxToolkit:AutoCompleteExtender>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label>CIE 10</label>
+                                        <asp:TextBox CssClass="required form-control" ID="txt_cie" runat="server"></asp:TextBox>
+                                    </div>
+                                </div>
+                            </section>
+                            <h3>Recomendaciones</h3>
+                            <section>
+                                <div class="form-group">
+                                    <label>Recomendaciones</label>
+                                    <asp:TextBox CssClass="required form-control" ID="txt_recomendacion" TextMode="MultiLine" Rows="7" runat="server"></asp:TextBox>
+                                </div>
+                            </section>
                         </div>
                     </div>
+                    <asp:Button ID="btnCertificado" OnClick="btnCertificado_Click" CssClass="btn btn-info" runat="server" Text="Generar Certificado" />
                 </div>
             </div>
-        <%--</ContentTemplate>
+        </div>
+    </div>
+    <%--</ContentTemplate>
         <Triggers>
             <asp:PostBackTrigger ControlID="btnCertificado"/>
         </Triggers>

@@ -170,7 +170,7 @@ namespace SistemaECU911.Template.Views
                                 ckb_nocalificadoprofesional.Checked = true;
                             }
 
-                            //Antecedentes Profesionales (Detallar el Parentesco)
+                            //Antecedentes Familiares (Detallar el Parentesco)
                             if (perio.perio_cardVascular == null)
                             {
                                 ckb_enfermedadcardiovascular.Checked = false;
@@ -2462,7 +2462,7 @@ namespace SistemaECU911.Template.Views
             List<string> lista = new List<string>();
             try
             {
-                string oConn = @"Data Source=ZOCAPO\SQLEXPRESS;Initial Catalog=SistemaECU911;Integrated Security=True";
+                string oConn = @"Data Source=.;Initial Catalog=SistemaECU911;Integrated Security=True";
 
                 SqlConnection con = new SqlConnection(oConn);
                 con.Open();
@@ -2530,7 +2530,7 @@ namespace SistemaECU911.Template.Views
             List<string> lista = new List<string>();
             try
             {
-                string oConn = @"Data Source=ZOCAPO\SQLEXPRESS;Initial Catalog=SistemaECU911;Integrated Security=True";
+                string oConn = @"Data Source=.;Initial Catalog=SistemaECU911;Integrated Security=True";
 
                 SqlConnection con = new SqlConnection(oConn);
                 con.Open();
@@ -2647,7 +2647,7 @@ namespace SistemaECU911.Template.Views
                     perio.perio_noCalificadoIESSEnferProfesionales = "SI";
                 }
 
-                //Antecedentes Profesionales (Detallar el Parentesco)
+                //Antecedentes familiares (Detallar el Parentesco)
                 if (ckb_enfermedadcardiovascular.Checked == true)
                 {
                     perio.perio_cardVascular = "SI";
@@ -3865,7 +3865,7 @@ namespace SistemaECU911.Template.Views
                     perio.perio_noCalificadoIESSEnferProfesionales = null;
                 }
 
-                //Antecedentes Profesionales (Detallar el Parentesco)
+                //Antecedentes Familiares (Detallar el Parentesco)
                 if (ckb_enfermedadcardiovascular.Checked == true)
                 {
                     perio.perio_cardVascular = "SI";

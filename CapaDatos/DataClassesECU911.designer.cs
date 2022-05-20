@@ -96,7 +96,7 @@ namespace CapaDatos
     #endregion
 		
 		public DataClassesECU911DataContext() : 
-				base(global::CapaDatos.Properties.Settings.Default.SistemaECU911ConnectionString6, mappingSource)
+				base(global::CapaDatos.Properties.Settings.Default.SistemaECU911ConnectionString4, mappingSource)
 		{
 			OnCreated();
 		}
@@ -4157,8 +4157,6 @@ namespace CapaDatos
 		
 		private int _idFichaMedica;
 		
-		private System.Nullable<long> _edad;
-		
 		private string _moConsulta;
 		
 		private string _seAcompañanteMc;
@@ -4277,6 +4275,8 @@ namespace CapaDatos
 		
 		private System.Nullable<int> _Per_id;
 		
+		private System.Nullable<System.DateTime> _fechaHoraGuardado;
+		
 		private string _estado;
 		
 		private EntityRef<Tbl_Especialidad> _Tbl_Especialidad;
@@ -4295,8 +4295,6 @@ namespace CapaDatos
     partial void OnCreated();
     partial void OnidFichaMedicaChanging(int value);
     partial void OnidFichaMedicaChanged();
-    partial void OnedadChanging(System.Nullable<long> value);
-    partial void OnedadChanged();
     partial void OnmoConsultaChanging(string value);
     partial void OnmoConsultaChanged();
     partial void OnseAcompañanteMcChanging(string value);
@@ -4415,6 +4413,8 @@ namespace CapaDatos
     partial void OncodigoProChanged();
     partial void OnPer_idChanging(System.Nullable<int> value);
     partial void OnPer_idChanged();
+    partial void OnfechaHoraGuardadoChanging(System.Nullable<System.DateTime> value);
+    partial void OnfechaHoraGuardadoChanged();
     partial void OnestadoChanging(string value);
     partial void OnestadoChanged();
     #endregion
@@ -4445,26 +4445,6 @@ namespace CapaDatos
 					this._idFichaMedica = value;
 					this.SendPropertyChanged("idFichaMedica");
 					this.OnidFichaMedicaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_edad", DbType="BigInt")]
-		public System.Nullable<long> edad
-		{
-			get
-			{
-				return this._edad;
-			}
-			set
-			{
-				if ((this._edad != value))
-				{
-					this.OnedadChanging(value);
-					this.SendPropertyChanging();
-					this._edad = value;
-					this.SendPropertyChanged("edad");
-					this.OnedadChanged();
 				}
 			}
 		}
@@ -5665,6 +5645,26 @@ namespace CapaDatos
 					this._Per_id = value;
 					this.SendPropertyChanged("Per_id");
 					this.OnPer_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fechaHoraGuardado", DbType="DateTime")]
+		public System.Nullable<System.DateTime> fechaHoraGuardado
+		{
+			get
+			{
+				return this._fechaHoraGuardado;
+			}
+			set
+			{
+				if ((this._fechaHoraGuardado != value))
+				{
+					this.OnfechaHoraGuardadoChanging(value);
+					this.SendPropertyChanging();
+					this._fechaHoraGuardado = value;
+					this.SendPropertyChanged("fechaHoraGuardado");
+					this.OnfechaHoraGuardadoChanged();
 				}
 			}
 		}
@@ -6922,6 +6922,8 @@ namespace CapaDatos
 		
 		private System.Nullable<int> _Per_id;
 		
+		private System.Nullable<System.DateTime> _inicial_fecha_horaGuardado;
+		
 		private string _inicial_estado;
 		
 		private EntityRef<Tbl_Especialidad> _Tbl_Especialidad;
@@ -7970,6 +7972,8 @@ namespace CapaDatos
     partial void Oninicial_codChanged();
     partial void OnPer_idChanging(System.Nullable<int> value);
     partial void OnPer_idChanged();
+    partial void Oninicial_fecha_horaGuardadoChanging(System.Nullable<System.DateTime> value);
+    partial void Oninicial_fecha_horaGuardadoChanged();
     partial void Oninicial_estadoChanging(string value);
     partial void Oninicial_estadoChanged();
     #endregion
@@ -8562,7 +8566,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_fechUltiMenstrua", DbType="DateTime")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_fechUltiMenstrua", DbType="Date")]
 		public System.Nullable<System.DateTime> inicial_fechUltiMenstrua
 		{
 			get
@@ -11042,7 +11046,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_fechaCalificadoIESSAcciTrabajo", DbType="DateTime")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_fechaCalificadoIESSAcciTrabajo", DbType="Date")]
 		public System.Nullable<System.DateTime> inicial_fechaCalificadoIESSAcciTrabajo
 		{
 			get
@@ -11142,7 +11146,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_fechaCalificadoIESSEnfProfesionales", DbType="DateTime")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_fechaCalificadoIESSEnfProfesionales", DbType="Date")]
 		public System.Nullable<System.DateTime> inicial_fechaCalificadoIESSEnfProfesionales
 		{
 			get
@@ -17602,7 +17606,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_fecha", DbType="DateTime")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_fecha", DbType="Date")]
 		public System.Nullable<System.DateTime> inicial_fecha
 		{
 			get
@@ -17662,7 +17666,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_fecha2", DbType="DateTime")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_fecha2", DbType="Date")]
 		public System.Nullable<System.DateTime> inicial_fecha2
 		{
 			get
@@ -17722,7 +17726,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_fecha3", DbType="DateTime")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_fecha3", DbType="Date")]
 		public System.Nullable<System.DateTime> inicial_fecha3
 		{
 			get
@@ -17782,7 +17786,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_fecha4", DbType="DateTime")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_fecha4", DbType="Date")]
 		public System.Nullable<System.DateTime> inicial_fecha4
 		{
 			get
@@ -18242,7 +18246,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_fecha_hora", DbType="DateTime")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_fecha_hora", DbType="Date")]
 		public System.Nullable<System.DateTime> inicial_fecha_hora
 		{
 			get
@@ -18350,6 +18354,26 @@ namespace CapaDatos
 					this._Per_id = value;
 					this.SendPropertyChanged("Per_id");
 					this.OnPer_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_fecha_horaGuardado", DbType="DateTime")]
+		public System.Nullable<System.DateTime> inicial_fecha_horaGuardado
+		{
+			get
+			{
+				return this._inicial_fecha_horaGuardado;
+			}
+			set
+			{
+				if ((this._inicial_fecha_horaGuardado != value))
+				{
+					this.Oninicial_fecha_horaGuardadoChanging(value);
+					this.SendPropertyChanging();
+					this._inicial_fecha_horaGuardado = value;
+					this.SendPropertyChanged("inicial_fecha_horaGuardado");
+					this.Oninicial_fecha_horaGuardadoChanged();
 				}
 			}
 		}
@@ -34703,7 +34727,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_fechaNacimiento", DbType="DateTime")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_fechaNacimiento", DbType="Date")]
 		public System.Nullable<System.DateTime> Per_fechaNacimiento
 		{
 			get
