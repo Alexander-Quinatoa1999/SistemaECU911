@@ -330,9 +330,9 @@ namespace SistemaECU911.Template.Views
                 fichasmedicas.talla = Convert.ToDecimal(txt_talla.Text);
                 fichasmedicas.indMasaCorporal = Convert.ToDecimal(txt_indMasCorporal.Text);
                 fichasmedicas.perimetroAbdominal = Convert.ToDecimal(txt_perAbdominal.Text);
-                ////7
-                //fichasmedicas.Regiones_id = Convert.ToInt32(ddl_region.SelectedValue);
-                //fichasmedicas.tipoExa_id = Convert.ToInt32(ddl_tipoRegion.SelectedValue);
+                //7
+                fichasmedicas.Regiones_id = Convert.ToInt32(ddl_region.SelectedValue);
+                fichasmedicas.tipoExa_id = Convert.ToInt32(ddl_tipoRegion.SelectedValue);
                 fichasmedicas.descripcionEF = txt_exafisdescripcion.Text;
                 //8
                 fichasmedicas.diagnostico = txt_diagnosticosDiagnostico.Text;
@@ -499,7 +499,7 @@ namespace SistemaECU911.Template.Views
             ddl_tipoRegion.DataTextField = "tipoExa_nombres";
             ddl_tipoRegion.DataValueField = "tipoExa_id";
             ddl_tipoRegion.DataBind();
-            //ddl_tipoRegion.Items.Insert(0, new ListItem("Seleccione ........", "0"));
+            ddl_tipoRegion.Items.Insert(0, new ListItem("Seleccione ........", "0"));
 
             tipreg = CN_HistorialMedico.ObtenerTipoRegionxReg(regionid);
         }
