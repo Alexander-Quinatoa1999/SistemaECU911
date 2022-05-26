@@ -3420,12 +3420,16 @@ namespace SistemaECU911.Template.Views
 
                         }
 
+                        txt_numHClinica.Text = per.Per_cedula.ToString();
                         txt_priNombre.Text = per.Per_priNombre.ToString();
                         txt_segNombre.Text = per.Per_segNombre.ToString();
                         txt_priApellido.Text = per.Per_priApellido.ToString();
                         txt_segApellido.Text = per.Per_segApellido.ToString();
                         txt_sexo.Text = per.Per_genero.ToString();
-                        txt_numHClinica.Text = per.Per_cedula.ToString();
+                        DateTime edad = Convert.ToDateTime(per.Per_fechaNacimiento);
+                        DateTime naci = Convert.ToDateTime(edad);
+                        DateTime actual = DateTime.Now;
+                        Calculo(naci, actual);                        
                         txt_fechaingresotrabajo.Text = Convert.ToDateTime(per.Per_fechInicioTrabajo).ToString("yyyy-MM-dd");
                         txt_puestodetrabajociuo.Text = per.Per_puestoTrabajo.ToString();
                         txt_areadetrabajo.Text = per.Per_areaTrabajo.ToString();
@@ -3434,26 +3438,8 @@ namespace SistemaECU911.Template.Views
                         {
                             //A
                             txt_numArchivo.Text = inicial.inicial_numArchivo.ToString();
-                            txt_edad.Text = inicial.inicial_edad.ToString();
-                            //txt_catolica.Text = inicial.inicial_catolicaRel.ToString();
-                            //txt_evangelica.Text = inicial.inicial_evangelicaRel.ToString();
-                            //txt_testigo.Text = inicial.inicial_testJehovaRel.ToString();
-                            //txt_mormona.Text = inicial.inicial_mormonaRel.ToString();
-                            //txt_otrareligion.Text = inicial.inicial_otrasRel.ToString();
                             txt_gruposanguineo.Text = inicial.inicial_groSanguineo.ToString();
                             txt_lateralidad.Text = inicial.inicial_lateralidad.ToString();
-                            //txt_lesbiana.Text = inicial.inicial__lesbianaOriSex.ToString();
-                            //txt_gay.Text = inicial.inicial_gayOriSex.ToString();
-                            //txt_bisexual.Text = inicial.inicial_bisexualOriSex.ToString();
-                            //txt_heterosexual.Text = inicial.inicial_heterosexualOriSex.ToString();
-                            //txt_noRespondeOriSex.Text = inicial.inicial_norespondeOriSex.ToString();
-                            //txt_femenino.Text = inicial.inicial_femeninoIdenGen.ToString();
-                            //txt_masculino.Text = inicial.inicial_masculinoIdenGen.ToString();
-                            //txt_transfemenino.Text = inicial.inicial_transFemeninoIdenGen.ToString();
-                            //txt_transmasculino.Text = inicial.inicial_transMasculinoIdenGen.ToString();
-                            //txt_noRespondeIdeGen.Text = inicial.inicial_norespondeIdenGen.ToString();
-                            //txt_sidiscapacidad.Text = inicial.inicial_siDis.ToString();
-                            //txt_nodiscapacidad.Text = inicial.inicial_noDis.ToString();
                             txt_tipodiscapacidad.Text = inicial.inicial_tipoDis.ToString();
                             txt_porcentajediscapacidad.Text = inicial.inicial_porcentDis.ToString();
                             txt_actividadesrelevantes.Text = inicial.inicial_actRelePuesTrabajo.ToString();
@@ -3465,62 +3451,50 @@ namespace SistemaECU911.Template.Views
                             txt_antCliQuiDescripcion.Text = inicial.inicial_descripcionAnteceCliniQuirur.ToString();
                             txt_menarquiaAntGinObste.Text = inicial.inicial_menarquia.ToString();
                             txt_ciclosAntGinObste.Text = inicial.inicial_ciclos.ToString();
-                            txt_fechUltiMensAntGinObste.Text = Convert.ToDateTime(inicial.inicial_fechUltiMenstrua).ToString("yyyy-MM-dd");
+
+                            if (inicial.inicial_fechUltiMenstrua == "")
+                            {
+                                txt_fechUltiMensAntGinObste.Text = inicial.inicial_fechUltiMenstrua.ToString();
+                            }
+                            else
+                            {
+                                txt_fechUltiMensAntGinObste.Text = Convert.ToDateTime(inicial.inicial_fechUltiMenstrua).ToString("yyyy-MM-dd");
+                            }
+                                                       
                             txt_gestasAntGinObste.Text = inicial.inicial_gestas.ToString();
                             txt_partosAntGinObste.Text = inicial.inicial_partos.ToString();
                             txt_cesareasAntGinObste.Text = inicial.inicial_cesareas.ToString();
                             txt_abortosAntGinObste.Text = inicial.inicial_abortos.ToString();
                             txt_vivosAntGinObste.Text = inicial.inicial_vivosHij.ToString();
                             txt_muertosAntGinObste.Text = inicial.inicial_muertosHij.ToString();
-                            //txt_siVidSexAntGinObste.Text = antper.inicial_siVidaSexActiva.ToString();
-                            //txt_noVidSexAntGinObste.Text = antper.inicial_noVidaSexActiva.ToString();
-                            //txt_siMetPlaniAntGinObste.Text = antper.inicial_siMetPlanifiFamiliar.ToString();
-                            //txt_noMetPlaniAntGinObste.Text = antper.inicial_noMetPlanifiFamiliar.ToString();
                             txt_tipoMetPlaniAntGinObste.Text = inicial.inicial_tipoMetPlanifiFamiliar.ToString();
-                            //txt_siPapaniAntGinObste.Text = antper.inicial_siExaRealiPapanicolaou.ToString();
-                            //txt_noPapaniAntGinObste.Text = antper.inicial_noExaRealiPapanicolaou.ToString();
+
                             txt_tiempoPapaniAntGinObste.Text = inicial.inicial_tiempoExaRealiPapanicolaou.ToString();
                             txt_resultadoPapaniAntGinObste.Text = inicial.inicial_resultadoExaRealiPapanicolaou.ToString();
-                            //txt_siEcoMamaAntGinObste.Text = antper.inicial_siExaRealiEcoMamario.ToString();
-                            //txt_noEcoMamaAntGinObste.Text = antper.inicial_noExaRealiEcoMamario.ToString();
                             txt_tiempoEcoMamaAntGinObste.Text = inicial.inicial_tiempoExaRealiEcoMamario.ToString();
                             txt_resultadoEcoMamaAntGinObste.Text = inicial.inicial_resultadoExaRealiEcoMamario.ToString();
-                            //txt_siColposAntGinObste.Text = antper.inicial_siExaRealiColposcopia.ToString();
-                            //txt_noColposAntGinObste.Text = antper.inicial_noExaRealiColposcopia.ToString();
                             txt_tiempoColposAntGinObste.Text = inicial.inicial_tiempoExaRealiColposcopia.ToString();
                             txt_resultadoColposAntGinObste.Text = inicial.inicial_resultadoExaRealiColposcopia.ToString();
-                            //txt_siMamograAntGinObste.Text = antper.inicial_siExaRealiMamografia.ToString();
-                            //txt_noMamograAntGinObste.Text = antper.inicial_noExaRealiMamografia.ToString();
                             txt_tiempoMamograAntGinObste.Text = inicial.inicial_tiempoExaRealiMamografia.ToString();
                             txt_resultadoMamograAntGinObste.Text = inicial.inicial_resultadoExaRealiMamografia.ToString();
-                            //txt_siExaRealiAntProstaAntReproMascu.Text = antper.inicial_siExaRealiAntiProstatico.ToString();
-                            //txt_noExaRealiAntProstaAntReproMascu.Text = antper.inicial_noExaRealiAntiProstatico.ToString();
+
                             txt_tiempoExaRealiAntProstaAntReproMascu.Text = inicial.inicial_tiempoExaRealiAntiProstatico.ToString();
                             txt_resultadoExaRealiAntProstaAntReproMascu.Text = inicial.inicial_resultadoExaRealiAntiProstatico.ToString();
-                            //txt_siMetPlaniAntReproMascu.Text = antper.inicial_siMetPlanifiFamiAntReproMascu.ToString();
-                            //txt_noMetPlaniAntReproMascu.Text = antper.inicial_noMetPlanifiFamiAntReproMascu.ToString();
                             txt_tipo1MetPlaniAntReproMascu.Text = inicial.inicial_tipo1MetPlanifiFamiAntReproMascu.ToString();
                             txt_vivosHijosAntReproMascu.Text = inicial.inicial_vivosHijAntReproMascu.ToString();
                             txt_muertosHijosAntReproMascu.Text = inicial.inicial_muertosHijAntReproMascu.ToString();
-                            //txt_siExaRealiEcoProstaAntReproMascu.Text = antper.inicial_siExaRealiEcoProstatico.ToString();
-                            //txt_noExaRealiEcoProstaAntReproMascu.Text = antper.inicial_noExaRealiEcoProstatico.ToString();
                             txt_tiempoExaRealiEcoProstaAntReproMascu.Text = inicial.inicial_tiempoExaRealiEcoProstatico.ToString();
                             txt_resultadoExaRealiEcoProstaAntReproMascu.Text = inicial.inicial_resultadoExaRealiEcoProstatico.ToString();
                             txt_tipo2MetPlaniAntReproMascu.Text = inicial.inicial_tipo2MetPlanifiFamiAntReproMascu.ToString();
-                            //txt_siConsuNociTabaHabToxi.Text = antper.inicial_siConsuNocivosTabaco.ToString();
-                            //txt_noConsuNociTabaHabToxi.Text = antper.inicial_noConsuNocivosTabaco.ToString();
+
                             txt_tiemConConsuNociTabaHabToxi.Text = inicial.inicial_tiempoConsuConsuNocivosTabaco.ToString();
                             txt_cantiConsuNociTabaHabToxi.Text = inicial.inicial_cantidadConsuNocivosTabaco.ToString();
                             txt_exConsumiConsuNociTabaHabToxi.Text = inicial.inicial_exConsumiConsuNocivosTabaco.ToString();
                             txt_tiemAbstiConsuNociTabaHabToxi.Text = inicial.inicial_tiempoAbstiConsuNocivosTabaco.ToString();
-                            //txt_siConsuNociAlcoHabToxi.Text = antper.inicial_siConsuNocivosAlcohol.ToString();
-                            //txt_noConsuNociAlcoHabToxi.Text = antper.inicial_noConsuNocivosAlcohol.ToString();
                             txt_tiemConConsuNociAlcoHabToxi.Text = inicial.inicial_tiempoConsuConsuNocivosAlcohol.ToString();
                             txt_cantiConsuNociAlcoHabToxi.Text = inicial.inicial_cantidadConsuNocivosAlcohol.ToString();
                             txt_exConsumiConsuNociAlcoHabToxi.Text = inicial.inicial_exConsumiConsuNocivosAlcohol.ToString();
                             txt_tiemAbstiConsuNociAlcoHabToxi.Text = inicial.inicial_tiempoAbstiConsuNocivosAlcohol.ToString();
-                            //txt_siConsuNociOtrasDroHabToxi.Text = antper.inicial_siConsuNocivosOtrasDrogas.ToString();
-                            //txt_noConsuNociOtrasDroHabToxi.Text = antper.inicial_noConsuNocivosOtrasDrogas.ToString();
                             txt_tiemCon1ConsuNociOtrasDroHabToxi.Text = inicial.inicial_tiempoConsu1ConsuNocivosOtrasDrogas.ToString();
                             txt_canti1ConsuNociOtrasDroHabToxi.Text = inicial.inicial_cantidad1ConsuNocivosOtrasDrogas.ToString();
                             txt_exConsumi1ConsuNociOtrasDroHabToxi.Text = inicial.inicial_exConsumi1ConsuNocivosOtrasDrogas.ToString();
@@ -3530,12 +3504,9 @@ namespace SistemaECU911.Template.Views
                             txt_canti2ConsuNociOtrasDroHabToxi.Text = inicial.inicial_cantidad2ConsuNocivosOtrasDrogas.ToString();
                             txt_exConsumi2ConsuNociOtrasDroHabToxi.Text = inicial.inicial_exConsumi2ConsuNocivosOtrasDrogas.ToString();
                             txt_tiemAbsti2ConsuNociOtrasDroHabToxi.Text = inicial.inicial_tiempoAbsti2ConsuNocivosOtrasDrogas.ToString();
-                            //txt_siEstVidaActFisiEstVida.Text = antper.inicial_siEstiVidaActFisica.ToString();
-                            //txt_noEstVidaActFisiEstVida.Text = antper.inicial_noEstiVidaActFisica.ToString();
+
                             txt_cualEstVidaActFisiEstVida.Text = inicial.inicial_cualEstiVidaActFisica.ToString();
                             txt_tiemCanEstVidaActFisiEstVida.Text = inicial.inicial_tiem_cantEstiVidaActFisica.ToString();
-                            //txt_siEstVidaMedHabiEstVida.Text = antper.inicial_siEstiVidaMediHabitual.ToString();
-                            //txt_noEstVidaMedHabiEstVida.Text = antper.inicial_noEstiVidaMediHabitual.ToString();
                             txt_cual1EstVidaMedHabiEstVida.Text = inicial.inicial_cual2EstiVidaMediHabitual.ToString();
                             txt_tiemCan1EstVidaMedHabiEstVida.Text = inicial.inicial_tiem_cant2EstiVidaMediHabitual.ToString();
                             txt_cual2EstVidaMedHabiEstVida.Text = inicial.inicial_cual3EstiVidaMediHabitual.ToString();
@@ -3548,96 +3519,62 @@ namespace SistemaECU911.Template.Views
                             txt_puestotrabajo.Text = inicial.inicial_puestoTrabajo.ToString();
                             txt_actdesempeña.Text = inicial.inicial_actDesemp.ToString();
                             txt_tiempotrabajo.Text = inicial.inicial_tiemTrabajo.ToString();
-                            //txt_fisico.Text = inicial.inicial_fisicoRies.ToString();
-                            //txt_mecanico.Text = inicial.inicial_mecanicoRies.ToString();
-                            //txt_quimico.Text = inicial.inicial_quimicoRies.ToString();
-                            //txt_biologico.Text = inicial.inicial_biologicoRies.ToString();
-                            //txt_ergonomico.Text = inicial.inicial_ergonomicoRies.ToString();
-                            //txt_psicosocial.Text = inicial.inicial_psicosocial.ToString();
                             txt_obseantempleanteriores.Text = inicial.inicial_observacionesAnteEmpleAnteriores.ToString();
-                            //txt_si.Text = inicial.inicial_siCalificadoIESSAcciTrabajo.ToString();
+                            txt_empresa2.Text = inicial.inicial_nomEmpresa2.ToString();
+                            txt_puestotrabajo2.Text = inicial.inicial_puestoTrabajo2.ToString();
+                            txt_actdesempeña2.Text = inicial.inicial_actDesemp2.ToString();
+                            txt_tiempotrabajo2.Text = inicial.inicial_tiemTrabajo2.ToString();
+                            txt_obseantempleanteriores2.Text = inicial.inicial_observacionesAnteEmpleAnteriores2.ToString();
+                            txt_empresa3.Text = inicial.inicial_nomEmpresa3.ToString();
+                            txt_puestotrabajo3.Text = inicial.inicial_puestoTrabajo3.ToString();
+                            txt_actdesempeña3.Text = inicial.inicial_actDesemp3.ToString();
+                            txt_tiempotrabajo3.Text = inicial.inicial_tiemTrabajo3.ToString();
+                            txt_obseantempleanteriores3.Text = inicial.inicial_observacionesAnteEmpleAnteriores3.ToString();
+                            txt_empresa4.Text = inicial.inicial_nomEmpresa4.ToString();
+                            txt_puestotrabajo4.Text = inicial.inicial_puestoTrabajo4.ToString();
+                            txt_actdesempeña4.Text = inicial.inicial_actDesemp4.ToString();
+                            txt_tiempotrabajo4.Text = inicial.inicial_tiemTrabajo4.ToString();
+                            txt_obseantempleanteriores4.Text = inicial.inicial_observacionesAnteEmpleAnteriores4.ToString();
+
                             txt_especificar.Text = inicial.inicial_especificarCalificadoIESSAcciTrabajo.ToString();
-                            //txt_no.Text = inicial.inicial_noCalificadoIESSAcciTrabajo.ToString();
-                            txt_fecha.Text = Convert.ToDateTime(inicial.inicial_fechaCalificadoIESSAcciTrabajo).ToString("yyyy-MM-dd");
+                            if (inicial.inicial_fechaCalificadoIESSAcciTrabajo == "")
+                            {
+                                txt_fecha.Text = inicial.inicial_fechaCalificadoIESSAcciTrabajo.ToString();
+                            }
+                            else
+                            {
+                                txt_fecha.Text = Convert.ToDateTime(inicial.inicial_fechaCalificadoIESSAcciTrabajo).ToString("yyyy-MM-dd");
+                            }
                             txt_observaciones2.Text = inicial.inicial_obserAcciTrabajo.ToString();
-                            //txt_siprofesional.Text = inicial.inicial_siCalificadoIESSEnfProfesionales.ToString();
+
                             txt_espeprofesional.Text = inicial.inicial_especificarCalificadoIESSEnfProfesionales.ToString();
-                            //txt_noprofesional.Text = inicial.inicial_noCalificadoIESSEnfProfesionales.ToString();
-                            txt_fechaprofesional.Text = Convert.ToDateTime(inicial.inicial_fechaCalificadoIESSEnfProfesionales).ToString("yyyy-MM-dd");
+                            if (inicial.inicial_fechaCalificadoIESSEnfProfesionales == "")
+                            {
+                                txt_fechaprofesional.Text = inicial.inicial_fechaCalificadoIESSEnfProfesionales.ToString();
+                            }
+                            else
+                            {
+                                txt_fechaprofesional.Text = Convert.ToDateTime(inicial.inicial_fechaCalificadoIESSEnfProfesionales).ToString("yyyy-MM-dd");
+                            }
+                            txt_observaciones3.Text = inicial.inicial_obserEnfProfesionales.ToString();
 
                             //E
-                            //txt_enfermedadcardiovascular.Text = inicial.inicial_enfCarVas.ToString();
-                            //txt_enfermedadmetabolica.Text = inicial.inicial_enfMeta.ToString();
-                            //txt_enfermedadneurologica.Text = inicial.inicial_enfNeuro.ToString();
-                            //txt_enfermedadoncologica.Text = inicial.inicial_enfOnco.ToString();
-                            //txt_enfermedadinfecciosa.Text = inicial.inicial_enfInfe.ToString();
-                            //txt_enfermedadhereditaria.Text = inicial.inicial_enfHereConge.ToString();
-                            //txt_discapacidades.Text = inicial.inicial_discapa.ToString();
-                            //txt_otrosenfer.Text = inicial.inicial_otros.ToString();
                             txt_descripcionantefamiliares.Text = inicial.inicial_descripcionAnteFamiliares.ToString();
 
                             //F
                             txt_puestodetrabajo.Text = inicial.inicial_area.ToString();
                             txt_act.Text = inicial.inicial_actividades.ToString();
-                            //txt_tempbajas.Text = inicial.inicial_temBajasFis.ToString();
-                            //txt_radiacion.Text = inicial.inicial_radIonizanteFis.ToString();
-                            //txt_noradiacion.Text = inicial.inicial_radNoIonizanteFis.ToString();
-                            //txt_ruido.Text = inicial.inicial_ruidoFis.ToString();
-                            //txt_vibracion.Text = inicial.inicial_vibracionFis.ToString();
-                            //txt_iluminacion.Text = inicial.inicial_iluminacionFis.ToString();
-                            //txt_ventilacion.Text = inicial.inicial_ventilacionFis.ToString();
-                            //txt_fluidoelectrico.Text = inicial.inicial_fluElectricoFis.ToString();
-                            //txt_otrosFisico.Text = inicial.inicial_otrosFis.ToString();
-                            //txt_atrapmaquinas.Text = inicial.inicial_atraMaquinasMec.ToString();
-                            //txt_atrapsuperficie.Text = inicial.inicial_atraSuperfiiesMec.ToString();
-                            //txt_atrapobjetos.Text = inicial.inicial_atraObjetosMec.ToString();
-                            //txt_caidaobjetos.Text = inicial.inicial_caidaObjetosMec.ToString();
-                            //txt_caidamisnivel.Text = inicial.inicial_caidaMisNivelMec.ToString();
-                            //txt_caidadifnivel.Text = inicial.inicial_caidaDifNivelMec.ToString();
-                            //txt_contaelectrico.Text = inicial.inicial_contactoElecMec.ToString();
-                            //txt_contasuptrabajo.Text = inicial.inicial_conSuperTrabaMec.ToString();
-                            //txt_proyparticulas.Text = inicial.inicial_proPartiFragMec.ToString();
-                            //txt_proyefluidos.Text = inicial.inicial_proFluidosMec.ToString();
-                            //txt_pinchazos.Text = inicial.inicial_pinchazosMec.ToString();
-                            //txt_cortes.Text = inicial.inicial_cortesMec.ToString();
-                            //txt_atroporvehiculos.Text = inicial.inicial_atropeVehiMec.ToString();
-                            //txt_choques.Text = inicial.inicial_coliVehiMec.ToString();
-                            //txt_otrosMecanico.Text = inicial.inicial_otrosMec.ToString();
-                            //txt_solidos.Text = inicial.inicial_solidosQui.ToString();
-                            //txt_polvos.Text = inicial.inicial_polvosQui.ToString();
-                            //txt_humos.Text = inicial.inicial_humosQui.ToString();
-                            //txt_liquidos.Text = inicial.inicial_liquidosQui.ToString();
-                            //txt_vapores.Text = inicial.inicial_vaporesQui.ToString();
-                            //txt_aerosoles.Text = inicial.inicial_aerosolesQui.ToString();
-                            //txt_neblinas.Text = inicial.inicial_neblinasQui.ToString();
-                            //txt_gaseosos.Text = inicial.inicial_gaseososQui.ToString();
-                            //txt_otrosQuimico.Text = inicial.inicial_otrosBio.ToString();
-                            //txt_virus.Text = inicial.inicial_virusBio.ToString();
-                            //txt_hongos.Text = inicial.inicial_hongosBio.ToString();
-                            //txt_bacterias.Text = inicial.inicial_bacteriasBio.ToString();
-                            //txt_parasitos.Text = inicial.inicial_parasitosBio.ToString();
-                            //txt_expoavectores.Text = inicial.inicial_expVectBio.ToString();
-                            //txt_expoanimselvaticos.Text = inicial.inicial_expAniSelvaBio.ToString();
-                            //txt_otrosBiologico.Text = inicial.inicial_otrosBio.ToString();
-                            //txt_manmanualcargas.Text = inicial.inicial_maneManCarErg.ToString();
-                            //txt_movrepetitivo.Text = inicial.inicial_movRepeErg.ToString();
-                            //txt_postforzadas.Text = inicial.inicial_posForzaErg.ToString();
-                            //txt_trabajopvd.Text = inicial.inicial_trabPvdErg.ToString();
-                            //txt_otrosErgonomico.Text = inicial.inicial_otrosErg.ToString();
-                            //txt_montrabajo.Text = inicial.inicial_monoTrabPsi.ToString();
-                            //txt_sobrecargalaboral.Text = inicial.inicial_sobrecarLabPsi.ToString();
-                            //txt_minustarea.Text = inicial.inicial_minuTareaPsi.ToString();
-                            //txt_altarespon.Text = inicial.inicial_altaResponPsi.ToString();
-                            //txt_automadesiciones.Text = inicial.inicial_autoTomaDesiPsi.ToString();
-                            //txt_supyestdireficiente.Text = inicial.inicial_supEstDirecDefiPsi.ToString();
-                            //txt_conflictorol.Text = inicial.inicial_conflicRolPsi.ToString();
-                            //txt_faltaclarfunciones.Text = inicial.inicial_falClariFunPsi.ToString();
-                            //txt_incorrdistrabajo.Text = inicial.inicial_incoDistriTrabPsi.ToString();
-                            //txt_turnorotat.Text = inicial.inicial_turnosRotaPsi.ToString();
-                            //txt_relacinterpersonales.Text = inicial.inicial_relInterperPsi.ToString();
-                            //txt_inestalaboral.Text = inicial.inicial_inesLabPsi.ToString();
-                            //txt_otrosPsicosocial.Text = inicial.inicial_otrosPsi.ToString();
+                            txt_puestodetrabajo2.Text = inicial.inicial_area2.ToString();
+                            txt_act2.Text = inicial.inicial_actividades2.ToString();
+                            txt_puestodetrabajo3.Text = inicial.inicial_area3.ToString();
+                            txt_act3.Text = inicial.inicial_actividades3.ToString();
+                            txt_puestodetrabajo4.Text = inicial.inicial_area4.ToString();   
+                            txt_act4.Text = inicial.inicial_actividades4.ToString();
+                            
                             txt_medpreventivas.Text = inicial.inicial_medPreventivas.ToString();
+                            txt_medpreventivas2.Text = inicial.inicial_medPreventivas.ToString();
+                            txt_medpreventivas3.Text = inicial.inicial_medPreventivas.ToString();
+                            txt_medpreventivas4.Text = inicial.inicial_medPreventivas.ToString();
 
                             //G
                             txt_descrextralaborales.Text = inicial.inicial_descripActExtLab.ToString();
@@ -3646,78 +3583,80 @@ namespace SistemaECU911.Template.Views
                             txt_enfermedadactualinicial.Text = inicial.inicial_descripEnfActual.ToString();
 
                             //I
-                            //txt_pielanexos.Text = inicial.RevActOrgSis_pielAnexos.ToString();
-                            //txt_organossentidos.Text = inicial.RevActOrgSis_orgSentidos.ToString();
-                            //txt_respiratorio.Text = inicial.RevActOrgSis_respiratorio.ToString();
-                            //txt_cardiovascular.Text = inicial.RevActOrgSis_cardVascular.ToString();
-                            //txt_digestivo.Text = inicial.RevActOrgSis_digestivo.ToString();
-                            //txt_genitourinario.Text = inicial.RevActOrgSis_genUrinario.ToString();
-                            //txt_musculosesqueleticos.Text = inicial.RevActOrgSis_muscEsqueletico.ToString();
-                            //txt_endocrino.Text = inicial.RevActOrgSis_endocrino.ToString();
-                            //txt_hemolinfatico.Text = inicial.RevActOrgSis_hemoLimfa.ToString();
-                            //txt_nervioso.Text = inicial.RevActOrgSis_nervioso.ToString();
                             txt_descrorganosysistemas.Text = inicial.inicial_descripRevActOrgSis.ToString();
 
-                            //K
-                            //txt_cicatrices.Text = examfisregional.exaFisRegInicial_cicatricesPiel.ToString();
-                            //txt_tatuajes.Text = examfisregional.exaFisRegInicial_tatuajesPiel.ToString();
-                            //txt_pielyfaneras.Text = examfisregional.exaFisRegInicial_pielFacerasPiel.ToString();
-                            //txt_parpados.Text = examfisregional.exaFisRegInicial_parpadosOjos.ToString();
-                            //txt_conjuntivas.Text = examfisregional.exaFisRegInicial_conjuntuvasOjos.ToString();
-                            //txt_pupilas.Text = examfisregional.exaFisRegInicial_pupilasOjos.ToString();
-                            //txt_cornea.Text = examfisregional.exaFisRegInicial_corneaOjos.ToString();
-                            //txt_motilidad.Text = examfisregional.exaFisRegInicial_motilidadOjos.ToString();
-                            //txt_auditivoexterno.Text = examfisregional.exaFisRegInicial_cAudiExtreOido.ToString();
-                            //txt_pabellon.Text = examfisregional.exaFisRegInicial_pabellonOido.ToString();
-                            //txt_timpanos.Text = examfisregional.exaFisRegInicial_timpanosOido.ToString();
-                            //txt_labios.Text = examfisregional.exaFisRegInicial_labiosOroFa.ToString();
-                            //txt_lengua.Text = examfisregional.exaFisRegInicial_lenguaOroFa.ToString();
-                            //txt_faringe.Text = examfisregional.exaFisRegInicial_faringeOroFa.ToString();
-                            //txt_amigdalas.Text = examfisregional.exaFisRegInicial_amigdalasOroFa.ToString();
-                            //txt_dentadura.Text = examfisregional.exaFisRegInicial_dentaduraOroFa.ToString();
-                            //txt_tabique.Text = examfisregional.exaFisRegInicial_tabiqueNariz.ToString();
-                            //txt_cornetes.Text = examfisregional.exaFisRegInicial_cornetesNariz.ToString();
-                            //txt_mucosa.Text = examfisregional.exaFisRegInicial_mucosasNariz.ToString();
-                            //txt_senosparanasales.Text = examfisregional.exaFisRegInicial_senosParanaNariz.ToString();
-                            //txt_tiroides.Text = examfisregional.exaFisRegInicial_tiroiMasasCuello.ToString();
-                            //txt_movilidad.Text = examfisregional.exaFisRegInicial_movilidadCuello.ToString();
-                            //txt_mamas.Text = examfisregional.exaFisRegInicial_mamasTorax.ToString();
-                            //txt_corazon.Text = examfisregional.exaFisRegInicial_corazonTorax.ToString();
-                            //txt_pulmones.Text = examfisregional.exaFisRegInicial_pulmonesTorax2.ToString();
-                            //txt_parrillacostal.Text = examfisregional.exaFisRegInicial_parriCostalTorax2.ToString();
-                            //txt_visceras.Text = examfisregional.exaFisRegInicial_viscerasAbdomen.ToString();
-                            //txt_paredabdominal.Text = examfisregional.exaFisRegInicial_paredAbdomiAbdomen.ToString();
-                            //txt_flexibilidad.Text = examfisregional.exaFisRegInicial_flexibilidadColumna.ToString();
-                            //txt_desviacion.Text = examfisregional.exaFisRegInicial_desviacionColumna.ToString();
-                            //txt_dolor.Text = examfisregional.exaFisRegInicial_dolorColumna.ToString();
-                            //txt_pelvis.Text = examfisregional.exaFisRegInicial_pelvisPelvis.ToString();
-                            //txt_genitales.Text = examfisregional.exaFisRegInicial_genitalesPelvis.ToString();
-                            //txt_vascular.Text = examfisregional.exaFisRegInicial_vascularExtre.ToString();
-                            //txt_miembrosuinicialres.Text = examfisregional.exaFisRegInicial_miemSupeExtre.ToString();
-                            //txt_miembrosinferiores.Text = examfisregional.exaFisRegInicial_miemInfeExtre.ToString();
-                            //txt_fuerza.Text = examfisregional.exaFisRegInicial_fuerzaNeuro.ToString();
-                            //txt_sensibilidad.Text = examfisregional.exaFisRegInicial_sensibiNeuro.ToString();
-                            //txt_marcha.Text = examfisregional.exaFisRegInicial_marchaNeuro.ToString();
-                            //txt_reflejos.Text = examfisregional.exaFisRegInicial_refleNeuro.ToString();
+                            //J
+                            txt_descrorganosysistemas.Text = inicial.inicial_descripRevActOrgSis.ToString();
+                            txt_preArterial.Text = inicial.inicial_preArterial.ToString();
+                            txt_temperatura.Text = inicial.inicial_temperatura.ToString();
+                            txt_freCardica.Text = inicial.inicial_frecCardiacan.ToString();
+                            txt_satOxigeno.Text = inicial.inicial_satOxigenon.ToString();
+                            txt_freRespiratoria.Text = inicial.inicial_frecRespiratorian.ToString();
+                            txt_peso.Text = inicial.inicial_peson.ToString();
+                            txt_talla.Text = inicial.inicial_tallan.ToString();
+                            txt_imc.Text = inicial.inicial_indMasCorporaln.ToString();
+                            txt_perAbdominal.Text = inicial.inicial_perAbdominaln.ToString();
+
+                            //K                            
                             txt_obervexamenfisicoregional.Text = inicial.inicial_observaExaFisRegInicial.ToString();
 
                             //L
                             txt_examen.Text = inicial.inicial_examen.ToString();
-                            txt_fechaexamen.Text = Convert.ToDateTime(inicial.inicial_fecha).ToString("yyyy-MM-dd");
+                            if (inicial.inicial_fecha == "")
+                            {
+                                txt_fechaexamen.Text = inicial.inicial_fecha.ToString();
+                            }
+                            else
+                            {
+                                txt_fechaexamen.Text = Convert.ToDateTime(inicial.inicial_fecha).ToString("yyyy-MM-dd");
+                            }
                             txt_resultadoexamen.Text = inicial.inicial_resultados.ToString();
+
+                            txt_examen2.Text = inicial.inicial_examen2.ToString();
+                            if (inicial.inicial_fecha2 == "")
+                            {
+                                txt_fechaexamen2.Text = inicial.inicial_fecha2.ToString();
+                            }
+                            else
+                            {
+                                txt_fechaexamen2.Text = Convert.ToDateTime(inicial.inicial_fecha2).ToString("yyyy-MM-dd");
+                            }
+                            txt_resultadoexamen2.Text = inicial.inicial_resultados2.ToString();
+
+                            txt_examen3.Text = inicial.inicial_examen3.ToString();
+                            if (inicial.inicial_fecha3 == "")
+                            {
+                                txt_fechaexamen3.Text = inicial.inicial_fecha3.ToString();
+                            }
+                            else
+                            {
+                                txt_fechaexamen3.Text = Convert.ToDateTime(inicial.inicial_fecha3).ToString("yyyy-MM-dd");
+                            }
+                            txt_resultadoexamen3.Text = inicial.inicial_resultados3.ToString();
+
+                            txt_examen4.Text = inicial.inicial_examen4.ToString();
+
+                            if (inicial.inicial_fecha4 == "")
+                            {
+                                txt_fechaexamen4.Text = inicial.inicial_fecha4.ToString();
+                            }
+                            else
+                            {
+                                txt_fechaexamen4.Text = Convert.ToDateTime(inicial.inicial_fecha4).ToString("yyyy-MM-dd");
+                            }
+                            txt_resultadoexamen4.Text = inicial.inicial_resultados4.ToString();
+
                             txt_observacionexamen.Text = inicial.inicial_observacionesResExaGenEspRiesTrabajo.ToString();
 
                             //M
                             txt_descripdiagnostico.Text = inicial.inicial_descripciondiagnostico.ToString();
                             txt_cie.Text = inicial.inicial_cie.ToString();
-                            //txt_pre.Text = inicial.Diag_pre.ToString();
-                            //txt_def.Text = inicial.Diag_def.ToString();
+                            txt_descripdiagnostico2.Text = inicial.inicial_descripcioninicialnostico2.ToString();
+                            txt_cie2.Text = inicial.inicial_cie2.ToString();
+                            txt_descripdiagnostico3.Text = inicial.inicial_descripcioninicialnostico3.ToString();
+                            txt_cie3.Text = inicial.inicial_cie3.ToString();
 
                             //N
-                            //txt_apto.Text = inicial.inicial_apto.ToString();
-                            //txt_aptoobservacion.Text = inicial.inicial_aptoObserva.ToString();
-                            //txt_aptolimitacion.Text = inicial.inicial_aptoLimi.ToString();
-                            //txt_noapto.Text = inicial.inicial_NoApto.ToString();
                             txt_observacionaptitud.Text = inicial.inicial_ObservAptMed.ToString();
                             txt_limitacionaptitud.Text = inicial.inicial_LimitAptMed.ToString();
 
@@ -3725,7 +3664,14 @@ namespace SistemaECU911.Template.Views
                             txt_descripciontratamiento.Text = inicial.inicial_descripcionRecTra.ToString();
 
                             //P
-                            txt_fechahora.Text = Convert.ToDateTime(inicial.inicial_fecha_hora).ToString("yyyy-MM-ddTHH:mm");
+                            if (inicial.inicial_fecha_hora == "")
+                            {
+                                txt_fechahora.Text = inicial.inicial_fecha_hora.ToString();
+                            }
+                            else
+                            {
+                                txt_fechahora.Text = Convert.ToDateTime(inicial.inicial_fecha_hora).ToString("yyyy-MM-ddTHH:mm");
+                            }
                             ddl_profesional.SelectedValue = inicial.prof_id.ToString();
                             txt_codigoDatProf.Text = inicial.inicial_cod.ToString();
                         }
@@ -3949,8 +3895,10 @@ namespace SistemaECU911.Template.Views
                 int perso = Convert.ToInt32(per.Per_id.ToString());
 
                 inicial = new Tbl_Inicial();
-                
+
                 //A
+                inicial.inicial_numArchivo = txt_numArchivo.Text;
+
                 if (ckb_catolica.Checked == true)
                 {
                     inicial.inicial_catolicaRel = "Si";
@@ -4035,7 +3983,7 @@ namespace SistemaECU911.Template.Views
                     inicial.inicial_noDis = "Si";
                 }
                 inicial.inicial_tipoDis = txt_tipodiscapacidad.Text;
-                inicial.inicial_porcentDis = Convert.ToInt32(txt_porcentajediscapacidad.Text);
+                inicial.inicial_porcentDis = txt_porcentajediscapacidad.Text;
 
                 //-----------------------------------
 
@@ -4051,13 +3999,13 @@ namespace SistemaECU911.Template.Views
 
                 inicial.inicial_menarquia = txt_menarquiaAntGinObste.Text;
                 inicial.inicial_ciclos = txt_ciclosAntGinObste.Text;
-                inicial.inicial_fechUltiMenstrua = Convert.ToDateTime(txt_fechUltiMensAntGinObste.Text);
+                inicial.inicial_fechUltiMenstrua = txt_fechUltiMensAntGinObste.Text;
                 inicial.inicial_gestas = txt_gestasAntGinObste.Text;
                 inicial.inicial_partos = txt_partosAntGinObste.Text;
                 inicial.inicial_cesareas = txt_cesareasAntGinObste.Text;
                 inicial.inicial_abortos = txt_abortosAntGinObste.Text;
-                inicial.inicial_vivosHij = Convert.ToInt32(txt_vivosAntGinObste.Text);
-                inicial.inicial_muertosHij = Convert.ToInt32(txt_muertosAntGinObste.Text);
+                inicial.inicial_vivosHij = txt_vivosAntGinObste.Text;
+                inicial.inicial_muertosHij = txt_muertosAntGinObste.Text;
 
                 if (ckb_siVidSexAntGinObste.Checked == true)
                 {
@@ -4087,7 +4035,7 @@ namespace SistemaECU911.Template.Views
                 {
                     inicial.inicial_noExaRealiPapanicolaou = "Si";
                 }
-                inicial.inicial_tiempoExaRealiPapanicolaou = Convert.ToInt32(txt_tiempoPapaniAntGinObste.Text);
+                inicial.inicial_tiempoExaRealiPapanicolaou = txt_tiempoPapaniAntGinObste.Text;
                 inicial.inicial_resultadoExaRealiPapanicolaou = txt_resultadoPapaniAntGinObste.Text;
 
                 if (ckb_siEcoMamaAntGinObste.Checked == true)
@@ -4098,7 +4046,7 @@ namespace SistemaECU911.Template.Views
                 {
                     inicial.inicial_noExaRealiEcoMamario = "Si";
                 }
-                inicial.inicial_tiempoExaRealiEcoMamario = Convert.ToInt32(txt_tiempoEcoMamaAntGinObste.Text);
+                inicial.inicial_tiempoExaRealiEcoMamario = txt_tiempoEcoMamaAntGinObste.Text;
                 inicial.inicial_resultadoExaRealiEcoMamario = txt_resultadoEcoMamaAntGinObste.Text;
 
                 if (ckb_siColposAntGinObste.Checked == true)
@@ -4109,7 +4057,7 @@ namespace SistemaECU911.Template.Views
                 {
                     inicial.inicial_noExaRealiColposcopia = "Si";
                 }
-                inicial.inicial_tiempoExaRealiColposcopia = Convert.ToInt32(txt_tiempoColposAntGinObste.Text);
+                inicial.inicial_tiempoExaRealiColposcopia = txt_tiempoColposAntGinObste.Text;
                 inicial.inicial_resultadoExaRealiColposcopia = txt_resultadoColposAntGinObste.Text;
 
                 if (ckb_siMamograAntGinObste.Checked == true)
@@ -4120,7 +4068,7 @@ namespace SistemaECU911.Template.Views
                 {
                     inicial.inicial_noExaRealiMamografia = "Si";
                 }
-                inicial.inicial_tiempoExaRealiMamografia = Convert.ToInt32(txt_tiempoMamograAntGinObste.Text);
+                inicial.inicial_tiempoExaRealiMamografia = txt_tiempoMamograAntGinObste.Text;
                 inicial.inicial_resultadoExaRealiMamografia = txt_resultadoMamograAntGinObste.Text;
 
                 //-----------------------------------
@@ -4133,7 +4081,7 @@ namespace SistemaECU911.Template.Views
                 {
                     inicial.inicial_noExaRealiAntiProstatico = "Si";
                 }
-                inicial.inicial_tiempoExaRealiAntiProstatico = Convert.ToInt32(txt_tiempoExaRealiAntProstaAntReproMascu.Text);
+                inicial.inicial_tiempoExaRealiAntiProstatico = txt_tiempoExaRealiAntProstaAntReproMascu.Text;
                 inicial.inicial_resultadoExaRealiAntiProstatico = txt_resultadoExaRealiAntProstaAntReproMascu.Text;
 
                 if (ckb_siMetPlaniAntReproMascu.Checked == true)
@@ -4146,8 +4094,8 @@ namespace SistemaECU911.Template.Views
                 }
                 inicial.inicial_tipo1MetPlanifiFamiAntReproMascu = txt_tipo1MetPlaniAntReproMascu.Text;
 
-                inicial.inicial_vivosHijAntReproMascu = Convert.ToInt32(txt_vivosHijosAntReproMascu.Text);
-                inicial.inicial_muertosHijAntReproMascu = Convert.ToInt32(txt_muertosHijosAntReproMascu.Text);
+                inicial.inicial_vivosHijAntReproMascu = txt_vivosHijosAntReproMascu.Text;
+                inicial.inicial_muertosHijAntReproMascu = txt_muertosHijosAntReproMascu.Text;
 
                 if (ckb_siExaRealiEcoProstaAntReproMascu.Checked == true)
                 {
@@ -4157,7 +4105,7 @@ namespace SistemaECU911.Template.Views
                 {
                     inicial.inicial_noExaRealiEcoProstatico = "Si";
                 }
-                inicial.inicial_tiempoExaRealiEcoProstatico = Convert.ToInt32(txt_tiempoExaRealiEcoProstaAntReproMascu.Text);
+                inicial.inicial_tiempoExaRealiEcoProstatico = txt_tiempoExaRealiEcoProstaAntReproMascu.Text;
                 inicial.inicial_resultadoExaRealiEcoProstatico = txt_resultadoExaRealiEcoProstaAntReproMascu.Text;
                 inicial.inicial_tipo2MetPlanifiFamiAntReproMascu = txt_tipo2MetPlaniAntReproMascu.Text;
 
@@ -4171,10 +4119,10 @@ namespace SistemaECU911.Template.Views
                 {
                     inicial.inicial_noConsuNocivosTabaco = "Si";
                 }
-                inicial.inicial_tiempoConsuConsuNocivosTabaco = Convert.ToInt32(txt_tiemConConsuNociTabaHabToxi.Text);
+                inicial.inicial_tiempoConsuConsuNocivosTabaco = txt_tiemConConsuNociTabaHabToxi.Text;
                 inicial.inicial_cantidadConsuNocivosTabaco = txt_cantiConsuNociTabaHabToxi.Text;
                 inicial.inicial_exConsumiConsuNocivosTabaco = txt_exConsumiConsuNociTabaHabToxi.Text;
-                inicial.inicial_tiempoAbstiConsuNocivosTabaco = Convert.ToInt32(txt_tiemAbstiConsuNociTabaHabToxi.Text);
+                inicial.inicial_tiempoAbstiConsuNocivosTabaco = txt_tiemAbstiConsuNociTabaHabToxi.Text;
                 if (ckb_siConsuNociAlcoHabToxi.Checked == true)
                 {
                     inicial.inicial_siConsuNocivosAlcohol = "Si";
@@ -4183,10 +4131,10 @@ namespace SistemaECU911.Template.Views
                 {
                     inicial.inicial_noConsuNocivosAlcohol = "Si";
                 }
-                inicial.inicial_tiempoConsuConsuNocivosAlcohol = Convert.ToInt32(txt_tiemConConsuNociAlcoHabToxi.Text);
+                inicial.inicial_tiempoConsuConsuNocivosAlcohol = txt_tiemConConsuNociAlcoHabToxi.Text;
                 inicial.inicial_cantidadConsuNocivosAlcohol = txt_cantiConsuNociAlcoHabToxi.Text;
                 inicial.inicial_exConsumiConsuNocivosAlcohol = txt_exConsumiConsuNociAlcoHabToxi.Text;
-                inicial.inicial_tiempoAbstiConsuNocivosAlcohol = Convert.ToInt32(txt_tiemAbstiConsuNociAlcoHabToxi.Text);
+                inicial.inicial_tiempoAbstiConsuNocivosAlcohol = txt_tiemAbstiConsuNociAlcoHabToxi.Text;
                 if (ckb_siConsuNociOtrasDroHabToxi.Checked == true)
                 {
                     inicial.inicial_siConsuNocivosOtrasDrogas = "Si";
@@ -4195,15 +4143,15 @@ namespace SistemaECU911.Template.Views
                 {
                     inicial.inicial_noConsuNocivosOtrasDrogas = "Si";
                 }
-                inicial.inicial_tiempoConsu1ConsuNocivosOtrasDrogas = Convert.ToInt32(txt_tiemCon1ConsuNociOtrasDroHabToxi.Text);
+                inicial.inicial_tiempoConsu1ConsuNocivosOtrasDrogas = txt_tiemCon1ConsuNociOtrasDroHabToxi.Text;
                 inicial.inicial_cantidad1ConsuNocivosOtrasDrogas = txt_canti1ConsuNociOtrasDroHabToxi.Text;
                 inicial.inicial_exConsumi1ConsuNocivosOtrasDrogas = txt_exConsumi1ConsuNociOtrasDroHabToxi.Text;
-                inicial.inicial_tiempoAbsti1ConsuNocivosOtrasDrogas = Convert.ToInt32(txt_tiemAbsti1ConsuNociOtrasDroHabToxi.Text);
+                inicial.inicial_tiempoAbsti1ConsuNocivosOtrasDrogas = txt_tiemAbsti1ConsuNociOtrasDroHabToxi.Text;
                 inicial.inicial_otrasConsuNocivos = txt_otrasConsuNociOtrasDroHabToxi.Text;
-                inicial.inicial_tiempoConsu2ConsuNocivosOtrasDrogas = Convert.ToInt32(txt_tiemCon2ConsuNociOtrasDroHabToxi.Text);
+                inicial.inicial_tiempoConsu2ConsuNocivosOtrasDrogas = txt_tiemCon2ConsuNociOtrasDroHabToxi.Text;
                 inicial.inicial_cantidad2ConsuNocivosOtrasDrogas = txt_canti2ConsuNociOtrasDroHabToxi.Text;
                 inicial.inicial_exConsumi2ConsuNocivosOtrasDrogas = txt_exConsumi2ConsuNociOtrasDroHabToxi.Text;
-                inicial.inicial_tiempoAbsti2ConsuNocivosOtrasDrogas = Convert.ToInt32(txt_tiemAbsti2ConsuNociOtrasDroHabToxi.Text);
+                inicial.inicial_tiempoAbsti2ConsuNocivosOtrasDrogas = txt_tiemAbsti2ConsuNociOtrasDroHabToxi.Text;
                 if (ckb_siEstVidaActFisiEstVida.Checked == true)
                 {
                     inicial.inicial_siEstiVidaActFisica = "Si";
@@ -4228,6 +4176,8 @@ namespace SistemaECU911.Template.Views
                 inicial.inicial_tiem_cant3EstiVidaMediHabitual = txt_tiemCan2EstVidaMedHabiEstVida.Text;
                 inicial.inicial_cual4EstiVidaMediHabitual = txt_cual3EstVidaMedHabiEstVida.Text;
                 inicial.inicial_tiem_cant4EstiVidaMediHabitual = txt_tiemCan3EstVidaMedHabiEstVida.Text;
+
+
                 inicial.inicial_nomEmpresa = txt_empresa.Text;
                 inicial.inicial_puestoTrabajo = txt_puestotrabajo.Text;
                 inicial.inicial_actDesemp = txt_actdesempeña.Text;
@@ -4257,6 +4207,11 @@ namespace SistemaECU911.Template.Views
                     inicial.inicial_psicosocial = "Si";
                 }
                 inicial.inicial_observacionesAnteEmpleAnteriores = txt_obseantempleanteriores.Text;
+
+                inicial.inicial_nomEmpresa2 = txt_empresa2.Text;
+                inicial.inicial_puestoTrabajo2 = txt_puestotrabajo2.Text;
+                inicial.inicial_actDesemp2 = txt_actdesempeña2.Text;
+                inicial.inicial_tiemTrabajo2 = txt_tiempotrabajo2.Text;
                 if (ckb_fisico2.Checked == true)
                 {
                     inicial.inicial_fisicoRies2 = "Si";
@@ -4281,7 +4236,13 @@ namespace SistemaECU911.Template.Views
                 {
                     inicial.inicial_psicosocial2 = "Si";
                 }
-                inicial.inicial_observacionesAnteEmpleAnteriores2 = txt_obseantempleanteriores.Text;
+                inicial.inicial_observacionesAnteEmpleAnteriores2 = txt_obseantempleanteriores2.Text;
+
+
+                inicial.inicial_nomEmpresa3 = txt_empresa3.Text;
+                inicial.inicial_puestoTrabajo3 = txt_puestotrabajo3.Text;
+                inicial.inicial_actDesemp3 = txt_actdesempeña3.Text;
+                inicial.inicial_tiemTrabajo3 = txt_tiempotrabajo3.Text;
                 if (ckb_fisico3.Checked == true)
                 {
                     inicial.inicial_fisicoRies3 = "Si";
@@ -4306,7 +4267,13 @@ namespace SistemaECU911.Template.Views
                 {
                     inicial.inicial_psicosocial3 = "Si";
                 }
-                inicial.inicial_observacionesAnteEmpleAnteriores3 = txt_obseantempleanteriores.Text;
+                inicial.inicial_observacionesAnteEmpleAnteriores3 = txt_obseantempleanteriores3.Text;
+
+
+                inicial.inicial_nomEmpresa4 = txt_empresa4.Text;
+                inicial.inicial_puestoTrabajo4 = txt_puestotrabajo4.Text;
+                inicial.inicial_actDesemp4 = txt_actdesempeña4.Text;
+                inicial.inicial_tiemTrabajo4 = txt_tiempotrabajo4.Text;
                 if (ckb_fisico4.Checked == true)
                 {
                     inicial.inicial_fisicoRies4 = "Si";
@@ -4331,7 +4298,10 @@ namespace SistemaECU911.Template.Views
                 {
                     inicial.inicial_psicosocial4 = "Si";
                 }
-                inicial.inicial_observacionesAnteEmpleAnteriores4 = txt_obseantempleanteriores.Text;
+                inicial.inicial_observacionesAnteEmpleAnteriores4 = txt_obseantempleanteriores4.Text;
+
+
+
                 if (ckb_siAccTrabDescrip.Checked == true)
                 {
                     inicial.inicial_siCalificadoIESSAcciTrabajo = "Si";
@@ -4341,7 +4311,8 @@ namespace SistemaECU911.Template.Views
                 {
                     inicial.inicial_noCalificadoIESSAcciTrabajo = "Si";
                 }
-                inicial.inicial_fechaCalificadoIESSAcciTrabajo = Convert.ToDateTime(txt_fecha.Text);
+                inicial.inicial_fechaCalificadoIESSAcciTrabajo = txt_fecha.Text;
+
                 inicial.inicial_obserAcciTrabajo = txt_observaciones2.Text;
                 if (ckb_siprofesional.Checked == true)
                 {
@@ -4352,8 +4323,12 @@ namespace SistemaECU911.Template.Views
                 {
                     inicial.inicial_noCalificadoIESSEnfProfesionales = "Si";
                 }
-                inicial.inicial_fechaCalificadoIESSEnfProfesionales = Convert.ToDateTime(txt_fechaprofesional.Text);
+                inicial.inicial_fechaCalificadoIESSEnfProfesionales = txt_fechaprofesional.Text;
                 inicial.inicial_obserEnfProfesionales = txt_observaciones3.Text;
+
+
+
+
                 if (ckb_enfermedadcardiovascular.Checked == true)
                 {
                     inicial.inicial_enfCarVasAnteFamiliares = "Si";
@@ -4387,6 +4362,10 @@ namespace SistemaECU911.Template.Views
                     inicial.inicial_otrosAnteFamiliares = "Si";
                 }
                 inicial.inicial_descripcionAnteFamiliares = txt_descripcionantefamiliares.Text;
+
+
+
+
                 inicial.inicial_area = txt_puestodetrabajo.Text;
                 inicial.inicial_actividades = txt_act.Text;
                 if (ckb_tempaltas.Checked == true)
@@ -4429,8 +4408,8 @@ namespace SistemaECU911.Template.Views
                 {
                     inicial.inicial_otrosFis = "Si";
                 }
-                inicial.inicial_area2 = txt_puestodetrabajo.Text;
-                inicial.inicial_actividades2 = txt_act.Text;
+                inicial.inicial_area2 = txt_puestodetrabajo2.Text;
+                inicial.inicial_actividades2 = txt_act2.Text;
                 if (ckb_tempaltas2.Checked == true)
                 {
                     inicial.inicial_temAltasFis2 = "Si";
@@ -4471,8 +4450,8 @@ namespace SistemaECU911.Template.Views
                 {
                     inicial.inicial_otrosFis2 = "Si";
                 }
-                inicial.inicial_area3 = txt_puestodetrabajo.Text;
-                inicial.inicial_actividades3 = txt_act.Text;
+                inicial.inicial_area3 = txt_puestodetrabajo3.Text;
+                inicial.inicial_actividades3 = txt_act3.Text;
                 if (ckb_tempaltas3.Checked == true)
                 {
                     inicial.inicial_temAltasFis3 = "Si";
@@ -4513,8 +4492,8 @@ namespace SistemaECU911.Template.Views
                 {
                     inicial.inicial_otrosFis3 = "Si";
                 }
-                inicial.inicial_area4 = txt_puestodetrabajo.Text;
-                inicial.inicial_actividades4 = txt_act.Text;
+                inicial.inicial_area4 = txt_puestodetrabajo4.Text;
+                inicial.inicial_actividades4 = txt_act4.Text;
                 if (ckb_tempaltas4.Checked == true)
                 {
                     inicial.inicial_temAltasFis4 = "Si";
@@ -4939,8 +4918,8 @@ namespace SistemaECU911.Template.Views
                 {
                     inicial.inicial_otrosQui4 = "Si";
                 }
-                inicial.inicial_puestoTrabajo = txt_puestodetrabajo21.Text;
-                inicial.inicial_actividades = txt_act21.Text;
+                //inicial.area = txt_puestodetrabajo21.Text;
+                //inicial.inicial_actividades = txt_act21.Text;
                 if (ckb_virus.Checked == true)
                 {
                     inicial.inicial_virusBio = "Si";
@@ -4989,8 +4968,9 @@ namespace SistemaECU911.Template.Views
                 {
                     inicial.inicial_otrosErg = "Si";
                 }
-                inicial.inicial_puestoTrabajo2 = txt_puestodetrabajo22.Text;
-                inicial.inicial_actividades2 = txt_act22.Text;
+                
+                //inicial.inicial_puestoTrabajo2 = txt_puestodetrabajo22.Text;
+                //inicial.inicial_actividades2 = txt_act22.Text;
                 if (ckb_virus2.Checked == true)
                 {
                     inicial.inicial_virusBio2 = "Si";
@@ -5039,8 +5019,9 @@ namespace SistemaECU911.Template.Views
                 {
                     inicial.inicial_otrosErg2 = "Si";
                 }
-                inicial.inicial_puestoTrabajo3 = txt_puestodetrabajo23.Text;
-                inicial.inicial_actividades3 = txt_act23.Text;
+                
+                //inicial.inicial_puestoTrabajo3 = txt_puestodetrabajo23.Text;
+                //inicial.inicial_actividades3 = txt_act23.Text;
                 if (ckb_virus3.Checked == true)
                 {
                     inicial.inicial_virusBio3 = "Si";
@@ -5089,8 +5070,9 @@ namespace SistemaECU911.Template.Views
                 {
                     inicial.inicial_otrosErg3 = "Si";
                 }
-                inicial.inicial_puestoTrabajo4 = txt_puestodetrabajo24.Text;
-                inicial.inicial_actividades4 = txt_act24.Text;
+                
+                //inicial.inicial_puestoTrabajo4 = txt_puestodetrabajo24.Text;
+                //inicial.inicial_actividades4 = txt_act24.Text;
                 if (ckb_virus4.Checked == true)
                 {
                     inicial.inicial_virusBio4 = "Si";
@@ -5351,6 +5333,9 @@ namespace SistemaECU911.Template.Views
                     inicial.inicial_otrosPsi4 = "Si";
                 }
                 inicial.inicial_medPreventivas4 = txt_medpreventivas4.Text;
+
+
+
                 inicial.inicial_descripActExtLab = txt_descrextralaborales.Text;
                 inicial.inicial_descripEnfActual = txt_enfermedadactualinicial.Text;
                 if (ckb_pielanexos.Checked == true)
@@ -5394,15 +5379,21 @@ namespace SistemaECU911.Template.Views
                     inicial.inicial_nervioso = "Si";
                 }
                 inicial.inicial_descripRevActOrgSis = txt_descrorganosysistemas.Text;
+
+
+
                 inicial.inicial_preArterial = txt_preArterial.Text;
-                inicial.inicial_temperatura = Convert.ToInt32(txt_temperatura.Text);
-                inicial.inicial_frecCardiacan = Convert.ToInt32(txt_freCardica.Text);
-                inicial.inicial_satOxigenon = Convert.ToInt32(txt_satOxigeno.Text);
-                inicial.inicial_frecRespiratorian = Convert.ToInt32(txt_freRespiratoria.Text);
-                inicial.inicial_peson = Convert.ToInt32(txt_peso.Text);
-                inicial.inicial_tallan = Convert.ToInt32(txt_talla.Text);
-                inicial.inicial_indMasCorporaln = Convert.ToInt32(txt_imc.Text);
-                inicial.inicial_perAbdominaln = Convert.ToInt32(txt_perAbdominal.Text);
+                inicial.inicial_temperatura = txt_temperatura.Text;
+                inicial.inicial_frecCardiacan = txt_freCardica.Text;
+                inicial.inicial_satOxigenon = txt_satOxigeno.Text;
+                inicial.inicial_frecRespiratorian = txt_freRespiratoria.Text;
+                inicial.inicial_peson = txt_peso.Text;
+                inicial.inicial_tallan = txt_talla.Text;
+                inicial.inicial_indMasCorporaln = txt_imc.Text;
+                inicial.inicial_perAbdominaln = txt_perAbdominal.Text;
+
+
+
                 if (ckb_cicatrices.Checked == true)
                 {
                     inicial.inicial_cicatricesPiel = "Si";
@@ -5565,16 +5556,16 @@ namespace SistemaECU911.Template.Views
                 }
                 inicial.inicial_observaExaFisRegInicial = txt_obervexamenfisicoregional.Text;
                 inicial.inicial_examen = txt_examen.Text;
-                inicial.inicial_fecha = Convert.ToDateTime(txt_fechaexamen.Text);
+                inicial.inicial_fecha = txt_fechaexamen.Text;
                 inicial.inicial_resultados = txt_resultadoexamen.Text;
                 inicial.inicial_examen2 = txt_examen2.Text;
-                inicial.inicial_fecha2 = Convert.ToDateTime(txt_fechaexamen2.Text);
+                inicial.inicial_fecha2 = txt_fechaexamen2.Text;
                 inicial.inicial_resultados2 = txt_resultadoexamen2.Text;
                 inicial.inicial_examen3 = txt_examen3.Text;
-                inicial.inicial_fecha3 = Convert.ToDateTime(txt_fechaexamen3.Text);
+                inicial.inicial_fecha3 = txt_fechaexamen3.Text;
                 inicial.inicial_resultados3 = txt_resultadoexamen3.Text;
                 inicial.inicial_examen4 = txt_examen4.Text;
-                inicial.inicial_fecha4 = Convert.ToDateTime(txt_fechaexamen4.Text);
+                inicial.inicial_fecha4 = txt_fechaexamen4.Text;
                 inicial.inicial_resultados4 = txt_resultadoexamen4.Text;
                 inicial.inicial_observacionesResExaGenEspRiesTrabajo = txt_observacionexamen.Text;
 
@@ -5627,8 +5618,8 @@ namespace SistemaECU911.Template.Views
                 inicial.inicial_ObservAptMed = txt_observacionaptitud.Text;
                 inicial.inicial_LimitAptMed = txt_limitacionaptitud.Text;
                 inicial.inicial_descripcionRecTra = txt_descripciontratamiento.Text;
-                inicial.inicial_fecha_hora = Convert.ToDateTime(txt_fechahora.Text);
-                //inicial.prof_id = Convert.ToInt32(ddl_profesional.SelectedValue);
+                inicial.inicial_fecha_hora = txt_fechahora.Text;
+                inicial.prof_id = Convert.ToInt32(ddl_profesional.SelectedValue);
                 inicial.inicial_cod = txt_codigoDatProf.Text;
                 inicial.Per_id = perso;
 
@@ -5789,20 +5780,20 @@ namespace SistemaECU911.Template.Views
                     inicial.inicial_noDis = null;
                 }
                 inicial.inicial_tipoDis = txt_tipodiscapacidad.Text;
-                inicial.inicial_porcentDis = Convert.ToInt32(txt_porcentajediscapacidad.Text);
+                inicial.inicial_porcentDis = txt_porcentajediscapacidad.Text;
                 inicial.inicial_actRelePuesTrabajo = txt_actividadesrelevantes.Text;
                 inicial.inicial_descripcionMotivoConsulta = txt_motivoconsultainicial.Text;
                 inicial.inicial_descripcionAnteceCliniQuirur = txt_antCliQuiDescripcion.Text;
                 inicial.inicial_descripcionAnteceCliniQuirur = txt_antCliQuiDescripcion.Text;
                 inicial.inicial_menarquia = txt_menarquiaAntGinObste.Text;
                 inicial.inicial_ciclos = txt_ciclosAntGinObste.Text;
-                inicial.inicial_fechUltiMenstrua = Convert.ToDateTime(txt_fechUltiMensAntGinObste.Text);
+                inicial.inicial_fechUltiMenstrua = txt_fechUltiMensAntGinObste.Text;
                 inicial.inicial_gestas = txt_gestasAntGinObste.Text;
                 inicial.inicial_partos = txt_partosAntGinObste.Text;
                 inicial.inicial_cesareas = txt_cesareasAntGinObste.Text;
                 inicial.inicial_abortos = txt_abortosAntGinObste.Text;
-                inicial.inicial_vivosHij = Convert.ToInt32(txt_vivosAntGinObste.Text);
-                inicial.inicial_muertosHij = Convert.ToInt32(txt_muertosAntGinObste.Text);
+                inicial.inicial_vivosHij = txt_vivosAntGinObste.Text;
+                inicial.inicial_muertosHij = txt_muertosAntGinObste.Text;
                 if (ckb_siVidSexAntGinObste.Checked == true)
                 {
                     inicial.inicial_siVidaSexActiva = "Si";
@@ -5852,7 +5843,7 @@ namespace SistemaECU911.Template.Views
                 {
                     inicial.inicial_noExaRealiPapanicolaou = null;
                 }
-                inicial.inicial_tiempoExaRealiPapanicolaou = Convert.ToInt32(txt_tiempoPapaniAntGinObste.Text);
+                inicial.inicial_tiempoExaRealiPapanicolaou = txt_tiempoPapaniAntGinObste.Text;
                 inicial.inicial_resultadoExaRealiPapanicolaou = txt_resultadoPapaniAntGinObste.Text;
                 if (ckb_siEcoMamaAntGinObste.Checked == true)
                 {
@@ -5870,7 +5861,7 @@ namespace SistemaECU911.Template.Views
                 {
                     inicial.inicial_noExaRealiEcoMamario = null;
                 }
-                inicial.inicial_tiempoExaRealiEcoMamario = Convert.ToInt32(txt_tiempoEcoMamaAntGinObste.Text);
+                inicial.inicial_tiempoExaRealiEcoMamario = txt_tiempoEcoMamaAntGinObste.Text;
                 inicial.inicial_resultadoExaRealiEcoMamario = txt_resultadoEcoMamaAntGinObste.Text;
                 if (ckb_siColposAntGinObste.Checked == true)
                 {
@@ -5888,7 +5879,7 @@ namespace SistemaECU911.Template.Views
                 {
                     inicial.inicial_noExaRealiColposcopia = null;
                 }
-                inicial.inicial_tiempoExaRealiColposcopia = Convert.ToInt32(txt_tiempoColposAntGinObste.Text);
+                inicial.inicial_tiempoExaRealiColposcopia = txt_tiempoColposAntGinObste.Text;
                 inicial.inicial_resultadoExaRealiColposcopia = txt_resultadoColposAntGinObste.Text;
                 if (ckb_siMamograAntGinObste.Checked == true)
                 {
@@ -5906,7 +5897,7 @@ namespace SistemaECU911.Template.Views
                 {
                     inicial.inicial_noExaRealiMamografia = null;
                 }
-                inicial.inicial_tiempoExaRealiMamografia = Convert.ToInt32(txt_tiempoMamograAntGinObste.Text);
+                inicial.inicial_tiempoExaRealiMamografia = txt_tiempoMamograAntGinObste.Text;
                 inicial.inicial_resultadoExaRealiMamografia = txt_resultadoMamograAntGinObste.Text;
                 if (ckb_siExaRealiAntProstaAntReproMascu.Checked == true)
                 {
@@ -5924,7 +5915,7 @@ namespace SistemaECU911.Template.Views
                 {
                     inicial.inicial_noExaRealiAntiProstatico = null;
                 }
-                inicial.inicial_tiempoExaRealiAntiProstatico = Convert.ToInt32(txt_tiempoExaRealiAntProstaAntReproMascu.Text);
+                inicial.inicial_tiempoExaRealiAntiProstatico = txt_tiempoExaRealiAntProstaAntReproMascu.Text;
                 inicial.inicial_resultadoExaRealiAntiProstatico = txt_resultadoExaRealiAntProstaAntReproMascu.Text;
                 if (ckb_siMetPlaniAntReproMascu.Checked == true)
                 {
@@ -5943,8 +5934,8 @@ namespace SistemaECU911.Template.Views
                     inicial.inicial_noMetPlanifiFamiAntReproMascu = null;
                 }
                 inicial.inicial_tipo1MetPlanifiFamiAntReproMascu = txt_tipo1MetPlaniAntReproMascu.Text;
-                inicial.inicial_vivosHijAntReproMascu = Convert.ToInt32(txt_vivosHijosAntReproMascu.Text);
-                inicial.inicial_muertosHijAntReproMascu = Convert.ToInt32(txt_muertosHijosAntReproMascu.Text);
+                inicial.inicial_vivosHijAntReproMascu = txt_vivosHijosAntReproMascu.Text;
+                inicial.inicial_muertosHijAntReproMascu = txt_muertosHijosAntReproMascu.Text;
                 if (ckb_siExaRealiEcoProstaAntReproMascu.Checked == true)
                 {
                     inicial.inicial_siExaRealiEcoProstatico = "Si";
@@ -5961,7 +5952,7 @@ namespace SistemaECU911.Template.Views
                 {
                     inicial.inicial_noExaRealiEcoProstatico = null;
                 }
-                inicial.inicial_tiempoExaRealiEcoProstatico = Convert.ToInt32(txt_tiempoExaRealiEcoProstaAntReproMascu.Text);
+                inicial.inicial_tiempoExaRealiEcoProstatico = txt_tiempoExaRealiEcoProstaAntReproMascu.Text;
                 inicial.inicial_resultadoExaRealiEcoProstatico = txt_resultadoExaRealiEcoProstaAntReproMascu.Text;
                 inicial.inicial_tipo2MetPlanifiFamiAntReproMascu = txt_tipo2MetPlaniAntReproMascu.Text;
                 if (ckb_siConsuNociTabaHabToxi.Checked == true)
@@ -5980,10 +5971,10 @@ namespace SistemaECU911.Template.Views
                 {
                     inicial.inicial_noConsuNocivosTabaco = null;
                 }
-                inicial.inicial_tiempoConsuConsuNocivosTabaco = Convert.ToInt32(txt_tiemConConsuNociTabaHabToxi.Text);
+                inicial.inicial_tiempoConsuConsuNocivosTabaco = txt_tiemConConsuNociTabaHabToxi.Text;
                 inicial.inicial_cantidadConsuNocivosTabaco = txt_cantiConsuNociTabaHabToxi.Text;
                 inicial.inicial_exConsumiConsuNocivosTabaco = txt_exConsumiConsuNociTabaHabToxi.Text;
-                inicial.inicial_tiempoAbstiConsuNocivosTabaco = Convert.ToInt32(txt_tiemAbstiConsuNociTabaHabToxi.Text);
+                inicial.inicial_tiempoAbstiConsuNocivosTabaco = txt_tiemAbstiConsuNociTabaHabToxi.Text;
                 if (ckb_siConsuNociAlcoHabToxi.Checked == true)
                 {
                     inicial.inicial_siConsuNocivosAlcohol = "Si";
@@ -6000,10 +5991,10 @@ namespace SistemaECU911.Template.Views
                 {
                     inicial.inicial_noConsuNocivosAlcohol = null;
                 }
-                inicial.inicial_tiempoConsuConsuNocivosAlcohol = Convert.ToInt32(txt_tiemConConsuNociAlcoHabToxi.Text);
+                inicial.inicial_tiempoConsuConsuNocivosAlcohol = txt_tiemConConsuNociAlcoHabToxi.Text;
                 inicial.inicial_cantidadConsuNocivosAlcohol = txt_cantiConsuNociAlcoHabToxi.Text;
                 inicial.inicial_exConsumiConsuNocivosAlcohol = txt_exConsumiConsuNociAlcoHabToxi.Text;
-                inicial.inicial_tiempoAbstiConsuNocivosAlcohol = Convert.ToInt32(txt_tiemAbstiConsuNociAlcoHabToxi.Text);
+                inicial.inicial_tiempoAbstiConsuNocivosAlcohol = txt_tiemAbstiConsuNociAlcoHabToxi.Text;
                 if (ckb_siConsuNociOtrasDroHabToxi.Checked == true)
                 {
                     inicial.inicial_siConsuNocivosOtrasDrogas = "Si";
@@ -6020,15 +6011,15 @@ namespace SistemaECU911.Template.Views
                 {
                     inicial.inicial_noConsuNocivosOtrasDrogas = null;
                 }
-                inicial.inicial_tiempoConsu1ConsuNocivosOtrasDrogas = Convert.ToInt32(txt_tiemCon1ConsuNociOtrasDroHabToxi.Text);
+                inicial.inicial_tiempoConsu1ConsuNocivosOtrasDrogas = txt_tiemCon1ConsuNociOtrasDroHabToxi.Text;
                 inicial.inicial_cantidad1ConsuNocivosOtrasDrogas = txt_canti1ConsuNociOtrasDroHabToxi.Text;
                 inicial.inicial_exConsumi1ConsuNocivosOtrasDrogas = txt_exConsumi1ConsuNociOtrasDroHabToxi.Text;
-                inicial.inicial_tiempoAbsti1ConsuNocivosOtrasDrogas = Convert.ToInt32(txt_tiemAbsti1ConsuNociOtrasDroHabToxi.Text);
+                inicial.inicial_tiempoAbsti1ConsuNocivosOtrasDrogas = txt_tiemAbsti1ConsuNociOtrasDroHabToxi.Text;
                 inicial.inicial_otrasConsuNocivos = txt_otrasConsuNociOtrasDroHabToxi.Text;
-                inicial.inicial_tiempoConsu2ConsuNocivosOtrasDrogas = Convert.ToInt32(txt_tiemCon2ConsuNociOtrasDroHabToxi.Text);
+                inicial.inicial_tiempoConsu2ConsuNocivosOtrasDrogas = txt_tiemCon2ConsuNociOtrasDroHabToxi.Text;
                 inicial.inicial_cantidad2ConsuNocivosOtrasDrogas = txt_canti2ConsuNociOtrasDroHabToxi.Text;
                 inicial.inicial_exConsumi2ConsuNocivosOtrasDrogas = txt_exConsumi2ConsuNociOtrasDroHabToxi.Text;
-                inicial.inicial_tiempoAbsti2ConsuNocivosOtrasDrogas = Convert.ToInt32(txt_tiemAbsti2ConsuNociOtrasDroHabToxi.Text);
+                inicial.inicial_tiempoAbsti2ConsuNocivosOtrasDrogas = txt_tiemAbsti2ConsuNociOtrasDroHabToxi.Text;
                 if (ckb_siEstVidaActFisiEstVida.Checked == true)
                 {
                     inicial.inicial_siEstiVidaActFisica = "Si";
@@ -6069,6 +6060,7 @@ namespace SistemaECU911.Template.Views
                 inicial.inicial_tiem_cant3EstiVidaMediHabitual = txt_tiemCan2EstVidaMedHabiEstVida.Text;
                 inicial.inicial_cual4EstiVidaMediHabitual = txt_cual3EstVidaMedHabiEstVida.Text;
                 inicial.inicial_tiem_cant4EstiVidaMediHabitual = txt_tiemCan3EstVidaMedHabiEstVida.Text;
+
                 inicial.inicial_nomEmpresa = txt_empresa.Text;
                 inicial.inicial_puestoTrabajo = txt_puestotrabajo.Text;
                 inicial.inicial_actDesemp = txt_actdesempeña.Text;
@@ -6122,6 +6114,11 @@ namespace SistemaECU911.Template.Views
                     inicial.inicial_psicosocial = null;
                 }
                 inicial.inicial_observacionesAnteEmpleAnteriores = txt_obseantempleanteriores.Text;
+
+                inicial.inicial_nomEmpresa2 = txt_empresa2.Text;
+                inicial.inicial_puestoTrabajo2 = txt_puestotrabajo2.Text;
+                inicial.inicial_actDesemp2 = txt_actdesempeña2.Text;
+                inicial.inicial_tiemTrabajo2 = txt_tiempotrabajo2.Text;
                 if (ckb_fisico2.Checked == true)
                 {
                     inicial.inicial_fisicoRies2 = "Si";
@@ -6170,7 +6167,12 @@ namespace SistemaECU911.Template.Views
                 {
                     inicial.inicial_psicosocial2 = null;
                 }
-                inicial.inicial_observacionesAnteEmpleAnteriores2 = txt_obseantempleanteriores.Text;
+                inicial.inicial_observacionesAnteEmpleAnteriores2 = txt_obseantempleanteriores2.Text;
+
+                inicial.inicial_nomEmpresa3 = txt_empresa3.Text;
+                inicial.inicial_puestoTrabajo3 = txt_puestotrabajo3.Text;
+                inicial.inicial_actDesemp3 = txt_actdesempeña3.Text;
+                inicial.inicial_tiemTrabajo3 = txt_tiempotrabajo3.Text;
                 if (ckb_fisico3.Checked == true)
                 {
                     inicial.inicial_fisicoRies3 = "Si";
@@ -6219,7 +6221,12 @@ namespace SistemaECU911.Template.Views
                 {
                     inicial.inicial_psicosocial3 = null;
                 }
-                inicial.inicial_observacionesAnteEmpleAnteriores3 = txt_obseantempleanteriores.Text;
+                inicial.inicial_observacionesAnteEmpleAnteriores3 = txt_obseantempleanteriores3.Text;
+
+                inicial.inicial_nomEmpresa4 = txt_empresa4.Text;
+                inicial.inicial_puestoTrabajo4 = txt_puestotrabajo4.Text;
+                inicial.inicial_actDesemp4 = txt_actdesempeña4.Text;
+                inicial.inicial_tiemTrabajo4 = txt_tiempotrabajo4.Text;
                 if (ckb_fisico4.Checked == true)
                 {
                     inicial.inicial_fisicoRies4 = "Si";
@@ -6268,7 +6275,9 @@ namespace SistemaECU911.Template.Views
                 {
                     inicial.inicial_psicosocial4 = null;
                 }
-                inicial.inicial_observacionesAnteEmpleAnteriores4 = txt_obseantempleanteriores.Text;
+                inicial.inicial_observacionesAnteEmpleAnteriores4 = txt_obseantempleanteriores4.Text;
+
+
                 if (ckb_siAccTrabDescrip.Checked == true)
                 {
                     inicial.inicial_siCalificadoIESSAcciTrabajo = "Si";
@@ -6286,8 +6295,10 @@ namespace SistemaECU911.Template.Views
                 {
                     inicial.inicial_noCalificadoIESSAcciTrabajo = null;
                 }
-                inicial.inicial_fechaCalificadoIESSAcciTrabajo = Convert.ToDateTime(txt_fecha.Text);
+                inicial.inicial_fechaCalificadoIESSAcciTrabajo = txt_fecha.Text;
                 inicial.inicial_obserAcciTrabajo = txt_observaciones2.Text;
+
+
                 if (ckb_siprofesional.Checked == true)
                 {
                     inicial.inicial_siCalificadoIESSEnfProfesionales = "Si";
@@ -6305,8 +6316,10 @@ namespace SistemaECU911.Template.Views
                 {
                     inicial.inicial_noCalificadoIESSEnfProfesionales = null;
                 }
-                inicial.inicial_fechaCalificadoIESSEnfProfesionales = Convert.ToDateTime(txt_fechaprofesional.Text);
+                inicial.inicial_fechaCalificadoIESSEnfProfesionales = txt_fechaprofesional.Text;
                 inicial.inicial_obserEnfProfesionales = txt_observaciones3.Text;
+
+
                 if (ckb_enfermedadcardiovascular.Checked == true)
                 {
                     inicial.inicial_enfCarVasAnteFamiliares = "Si";
@@ -6372,6 +6385,8 @@ namespace SistemaECU911.Template.Views
                     inicial.inicial_otrosAnteFamiliares = null;
                 }
                 inicial.inicial_descripcionAnteFamiliares = txt_descripcionantefamiliares.Text;
+
+
                 inicial.inicial_area = txt_puestodetrabajo.Text;
                 inicial.inicial_actividades = txt_act.Text;
                 if (ckb_tempaltas.Checked == true)
@@ -6454,8 +6469,9 @@ namespace SistemaECU911.Template.Views
                 {
                     inicial.inicial_otrosFis = null;
                 }
-                inicial.inicial_area2 = txt_puestodetrabajo.Text;
-                inicial.inicial_actividades2 = txt_act.Text;
+
+                inicial.inicial_area2 = txt_puestodetrabajo2.Text;
+                inicial.inicial_actividades2 = txt_act2.Text;
                 if (ckb_tempaltas2.Checked == true)
                 {
                     inicial.inicial_temAltasFis2 = "Si";
@@ -6536,8 +6552,9 @@ namespace SistemaECU911.Template.Views
                 {
                     inicial.inicial_otrosFis2 = null;
                 }
-                inicial.inicial_area3 = txt_puestodetrabajo.Text;
-                inicial.inicial_actividades3 = txt_act.Text;
+
+                inicial.inicial_area3 = txt_puestodetrabajo3.Text;
+                inicial.inicial_actividades3 = txt_act3.Text;
                 if (ckb_tempaltas3.Checked == true)
                 {
                     inicial.inicial_temAltasFis3 = "Si";
@@ -6618,8 +6635,9 @@ namespace SistemaECU911.Template.Views
                 {
                     inicial.inicial_otrosFis3 = null;
                 }
-                inicial.inicial_area4 = txt_puestodetrabajo.Text;
-                inicial.inicial_actividades4 = txt_act.Text;
+
+                inicial.inicial_area4 = txt_puestodetrabajo4.Text;
+                inicial.inicial_actividades4 = txt_act4.Text;   
                 if (ckb_tempaltas4.Checked == true)
                 {
                     inicial.inicial_temAltasFis4 = "Si";
@@ -8364,16 +8382,22 @@ namespace SistemaECU911.Template.Views
                 {
                     inicial.inicial_nervioso = null;
                 }
+
+
+
                 inicial.inicial_descripRevActOrgSis = txt_descrorganosysistemas.Text;
                 inicial.inicial_preArterial = txt_preArterial.Text;
-                inicial.inicial_temperatura = Convert.ToInt32(txt_temperatura.Text);
-                inicial.inicial_frecCardiacan = Convert.ToInt32(txt_freCardica.Text);
-                inicial.inicial_satOxigenon = Convert.ToInt32(txt_satOxigeno.Text);
-                inicial.inicial_frecRespiratorian = Convert.ToInt32(txt_freRespiratoria.Text);
-                inicial.inicial_peson = Convert.ToInt32(txt_peso.Text);
-                inicial.inicial_tallan = Convert.ToInt32(txt_talla.Text);
-                inicial.inicial_indMasCorporaln = Convert.ToInt32(txt_imc.Text);
-                inicial.inicial_perAbdominaln = Convert.ToInt32(txt_perAbdominal.Text);
+                inicial.inicial_temperatura = txt_temperatura.Text;
+                inicial.inicial_frecCardiacan = txt_freCardica.Text;
+                inicial.inicial_satOxigenon = txt_satOxigeno.Text;
+                inicial.inicial_frecRespiratorian = txt_freRespiratoria.Text;
+                inicial.inicial_peson = txt_peso.Text;
+                inicial.inicial_tallan = txt_talla.Text;
+                inicial.inicial_indMasCorporaln = txt_imc.Text;
+                inicial.inicial_perAbdominaln = txt_perAbdominal.Text;
+
+
+
                 if (ckb_cicatrices.Checked == true)
                 {
                     inicial.inicial_cicatricesPiel = "Si";
@@ -8696,16 +8720,16 @@ namespace SistemaECU911.Template.Views
                 }
                 inicial.inicial_observaExaFisRegInicial = txt_obervexamenfisicoregional.Text;
                 inicial.inicial_examen = txt_examen.Text;
-                inicial.inicial_fecha = Convert.ToDateTime(txt_fechaexamen.Text);
+                inicial.inicial_fecha = txt_fechaexamen.Text;
                 inicial.inicial_resultados = txt_resultadoexamen.Text;
                 inicial.inicial_examen2 = txt_examen2.Text;
-                inicial.inicial_fecha2 = Convert.ToDateTime(txt_fechaexamen2.Text);
+                inicial.inicial_fecha2 = txt_fechaexamen2.Text;
                 inicial.inicial_resultados2 = txt_resultadoexamen2.Text;
                 inicial.inicial_examen3 = txt_examen3.Text;
-                inicial.inicial_fecha3 = Convert.ToDateTime(txt_fechaexamen3.Text);
+                inicial.inicial_fecha3 = txt_fechaexamen3.Text;
                 inicial.inicial_resultados3 = txt_resultadoexamen3.Text;
                 inicial.inicial_examen4 = txt_examen4.Text;
-                inicial.inicial_fecha4 = Convert.ToDateTime(txt_fechaexamen4.Text);
+                inicial.inicial_fecha4 = txt_fechaexamen4.Text;
                 inicial.inicial_resultados4 = txt_resultadoexamen4.Text;
                 inicial.inicial_observacionesResExaGenEspRiesTrabajo = txt_observacionexamen.Text;
 
@@ -8798,7 +8822,7 @@ namespace SistemaECU911.Template.Views
                 inicial.inicial_ObservAptMed = txt_observacionaptitud.Text;
                 inicial.inicial_LimitAptMed = txt_limitacionaptitud.Text;
                 inicial.inicial_descripcionRecTra = txt_descripciontratamiento.Text;
-                inicial.inicial_fecha_hora = Convert.ToDateTime(txt_fechahora.Text);
+                inicial.inicial_fecha_hora = txt_fechahora.Text;
                 inicial.prof_id = Convert.ToInt32(ddl_profesional.SelectedValue);
                 inicial.inicial_cod = txt_codigoDatProf.Text;
 

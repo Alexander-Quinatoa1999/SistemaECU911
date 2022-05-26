@@ -1914,8 +1914,6 @@ namespace CapaDatos
 		
 		private EntitySet<Tbl_FichasMedicas> _Tbl_FichasMedicas;
 		
-		private EntitySet<Tbl_Inicial> _Tbl_Inicial;
-		
 		private EntitySet<Tbl_Periodica> _Tbl_Periodica;
 		
 		private EntitySet<Tbl_Reintegro> _Tbl_Reintegro;
@@ -1937,7 +1935,6 @@ namespace CapaDatos
 		public Tbl_Especialidad()
 		{
 			this._Tbl_FichasMedicas = new EntitySet<Tbl_FichasMedicas>(new Action<Tbl_FichasMedicas>(this.attach_Tbl_FichasMedicas), new Action<Tbl_FichasMedicas>(this.detach_Tbl_FichasMedicas));
-			this._Tbl_Inicial = new EntitySet<Tbl_Inicial>(new Action<Tbl_Inicial>(this.attach_Tbl_Inicial), new Action<Tbl_Inicial>(this.detach_Tbl_Inicial));
 			this._Tbl_Periodica = new EntitySet<Tbl_Periodica>(new Action<Tbl_Periodica>(this.attach_Tbl_Periodica), new Action<Tbl_Periodica>(this.detach_Tbl_Periodica));
 			this._Tbl_Reintegro = new EntitySet<Tbl_Reintegro>(new Action<Tbl_Reintegro>(this.attach_Tbl_Reintegro), new Action<Tbl_Reintegro>(this.detach_Tbl_Reintegro));
 			this._Tbl_Retiro = new EntitySet<Tbl_Retiro>(new Action<Tbl_Retiro>(this.attach_Tbl_Retiro), new Action<Tbl_Retiro>(this.detach_Tbl_Retiro));
@@ -2017,19 +2014,6 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Especialidad_Tbl_Inicial", Storage="_Tbl_Inicial", ThisKey="espec_id", OtherKey="espec_id")]
-		public EntitySet<Tbl_Inicial> Tbl_Inicial
-		{
-			get
-			{
-				return this._Tbl_Inicial;
-			}
-			set
-			{
-				this._Tbl_Inicial.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Especialidad_Tbl_Periodica", Storage="_Tbl_Periodica", ThisKey="espec_id", OtherKey="espec_id")]
 		public EntitySet<Tbl_Periodica> Tbl_Periodica
 		{
@@ -2096,18 +2080,6 @@ namespace CapaDatos
 		}
 		
 		private void detach_Tbl_FichasMedicas(Tbl_FichasMedicas entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tbl_Especialidad = null;
-		}
-		
-		private void attach_Tbl_Inicial(Tbl_Inicial entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tbl_Especialidad = this;
-		}
-		
-		private void detach_Tbl_Inicial(Tbl_Inicial entity)
 		{
 			this.SendPropertyChanging();
 			entity.Tbl_Especialidad = null;
@@ -5890,8 +5862,6 @@ namespace CapaDatos
 		
 		private string _inicial_numArchivo;
 		
-		private System.Nullable<long> _inicial_edad;
-		
 		private string _inicial_catolicaRel;
 		
 		private string _inicial_evangelicaRel;
@@ -5932,7 +5902,7 @@ namespace CapaDatos
 		
 		private string _inicial_tipoDis;
 		
-		private System.Nullable<long> _inicial_porcentDis;
+		private string _inicial_porcentDis;
 		
 		private string _inicial_actRelePuesTrabajo;
 		
@@ -5944,7 +5914,7 @@ namespace CapaDatos
 		
 		private string _inicial_ciclos;
 		
-		private System.Nullable<System.DateTime> _inicial_fechUltiMenstrua;
+		private string _inicial_fechUltiMenstrua;
 		
 		private string _inicial_gestas;
 		
@@ -5954,9 +5924,9 @@ namespace CapaDatos
 		
 		private string _inicial_abortos;
 		
-		private System.Nullable<long> _inicial_vivosHij;
+		private string _inicial_vivosHij;
 		
-		private System.Nullable<long> _inicial_muertosHij;
+		private string _inicial_muertosHij;
 		
 		private string _inicial_siVidaSexActiva;
 		
@@ -5976,9 +5946,9 @@ namespace CapaDatos
 		
 		private string _inicial_noExaRealiColposcopia;
 		
-		private System.Nullable<long> _inicial_tiempoExaRealiPapanicolaou;
+		private string _inicial_tiempoExaRealiPapanicolaou;
 		
-		private System.Nullable<long> _inicial_tiempoExaRealiColposcopia;
+		private string _inicial_tiempoExaRealiColposcopia;
 		
 		private string _inicial_resultadoExaRealiPapanicolaou;
 		
@@ -5992,9 +5962,9 @@ namespace CapaDatos
 		
 		private string _inicial_noExaRealiMamografia;
 		
-		private System.Nullable<long> _inicial_tiempoExaRealiEcoMamario;
+		private string _inicial_tiempoExaRealiEcoMamario;
 		
-		private System.Nullable<long> _inicial_tiempoExaRealiMamografia;
+		private string _inicial_tiempoExaRealiMamografia;
 		
 		private string _inicial_resultadoExaRealiEcoMamario;
 		
@@ -6008,9 +5978,9 @@ namespace CapaDatos
 		
 		private string _inicial_noExaRealiEcoProstatico;
 		
-		private System.Nullable<long> _inicial_tiempoExaRealiAntiProstatico;
+		private string _inicial_tiempoExaRealiAntiProstatico;
 		
-		private System.Nullable<long> _inicial_tiempoExaRealiEcoProstatico;
+		private string _inicial_tiempoExaRealiEcoProstatico;
 		
 		private string _inicial_resultadoExaRealiAntiProstatico;
 		
@@ -6024,9 +5994,9 @@ namespace CapaDatos
 		
 		private string _inicial_tipo2MetPlanifiFamiAntReproMascu;
 		
-		private System.Nullable<long> _inicial_vivosHijAntReproMascu;
+		private string _inicial_vivosHijAntReproMascu;
 		
-		private System.Nullable<long> _inicial_muertosHijAntReproMascu;
+		private string _inicial_muertosHijAntReproMascu;
 		
 		private string _inicial_siConsuNocivosTabaco;
 		
@@ -6042,13 +6012,13 @@ namespace CapaDatos
 		
 		private string _inicial_noConsuNocivosOtrasDrogas;
 		
-		private System.Nullable<long> _inicial_tiempoConsuConsuNocivosTabaco;
+		private string _inicial_tiempoConsuConsuNocivosTabaco;
 		
-		private System.Nullable<long> _inicial_tiempoConsuConsuNocivosAlcohol;
+		private string _inicial_tiempoConsuConsuNocivosAlcohol;
 		
-		private System.Nullable<long> _inicial_tiempoConsu1ConsuNocivosOtrasDrogas;
+		private string _inicial_tiempoConsu1ConsuNocivosOtrasDrogas;
 		
-		private System.Nullable<long> _inicial_tiempoConsu2ConsuNocivosOtrasDrogas;
+		private string _inicial_tiempoConsu2ConsuNocivosOtrasDrogas;
 		
 		private string _inicial_cantidadConsuNocivosTabaco;
 		
@@ -6066,13 +6036,13 @@ namespace CapaDatos
 		
 		private string _inicial_exConsumi2ConsuNocivosOtrasDrogas;
 		
-		private System.Nullable<long> _inicial_tiempoAbstiConsuNocivosTabaco;
+		private string _inicial_tiempoAbstiConsuNocivosTabaco;
 		
-		private System.Nullable<long> _inicial_tiempoAbstiConsuNocivosAlcohol;
+		private string _inicial_tiempoAbstiConsuNocivosAlcohol;
 		
-		private System.Nullable<long> _inicial_tiempoAbsti1ConsuNocivosOtrasDrogas;
+		private string _inicial_tiempoAbsti1ConsuNocivosOtrasDrogas;
 		
-		private System.Nullable<long> _inicial_tiempoAbsti2ConsuNocivosOtrasDrogas;
+		private string _inicial_tiempoAbsti2ConsuNocivosOtrasDrogas;
 		
 		private string _inicial_siEstiVidaActFisica;
 		
@@ -6192,7 +6162,7 @@ namespace CapaDatos
 		
 		private string _inicial_noCalificadoIESSAcciTrabajo;
 		
-		private System.Nullable<System.DateTime> _inicial_fechaCalificadoIESSAcciTrabajo;
+		private string _inicial_fechaCalificadoIESSAcciTrabajo;
 		
 		private string _inicial_obserAcciTrabajo;
 		
@@ -6202,7 +6172,7 @@ namespace CapaDatos
 		
 		private string _inicial_noCalificadoIESSEnfProfesionales;
 		
-		private System.Nullable<System.DateTime> _inicial_fechaCalificadoIESSEnfProfesionales;
+		private string _inicial_fechaCalificadoIESSEnfProfesionales;
 		
 		private string _inicial_obserEnfProfesionales;
 		
@@ -6748,21 +6718,21 @@ namespace CapaDatos
 		
 		private string _inicial_preArterial;
 		
-		private System.Nullable<long> _inicial_temperatura;
+		private string _inicial_temperatura;
 		
-		private System.Nullable<long> _inicial_frecCardiacan;
+		private string _inicial_frecCardiacan;
 		
-		private System.Nullable<long> _inicial_satOxigenon;
+		private string _inicial_satOxigenon;
 		
-		private System.Nullable<long> _inicial_frecRespiratorian;
+		private string _inicial_frecRespiratorian;
 		
-		private System.Nullable<long> _inicial_peson;
+		private string _inicial_peson;
 		
-		private System.Nullable<long> _inicial_tallan;
+		private string _inicial_tallan;
 		
-		private System.Nullable<long> _inicial_indMasCorporaln;
+		private string _inicial_indMasCorporaln;
 		
-		private System.Nullable<long> _inicial_perAbdominaln;
+		private string _inicial_perAbdominaln;
 		
 		private string _inicial_cicatricesPiel;
 		
@@ -6848,25 +6818,25 @@ namespace CapaDatos
 		
 		private string _inicial_examen;
 		
-		private System.Nullable<System.DateTime> _inicial_fecha;
+		private string _inicial_fecha;
 		
 		private string _inicial_resultados;
 		
 		private string _inicial_examen2;
 		
-		private System.Nullable<System.DateTime> _inicial_fecha2;
+		private string _inicial_fecha2;
 		
 		private string _inicial_resultados2;
 		
 		private string _inicial_examen3;
 		
-		private System.Nullable<System.DateTime> _inicial_fecha3;
+		private string _inicial_fecha3;
 		
 		private string _inicial_resultados3;
 		
 		private string _inicial_examen4;
 		
-		private System.Nullable<System.DateTime> _inicial_fecha4;
+		private string _inicial_fecha4;
 		
 		private string _inicial_resultados4;
 		
@@ -6912,11 +6882,9 @@ namespace CapaDatos
 		
 		private string _inicial_descripcionRecTra;
 		
-		private System.Nullable<System.DateTime> _inicial_fecha_hora;
+		private string _inicial_fecha_hora;
 		
 		private System.Nullable<int> _prof_id;
-		
-		private System.Nullable<int> _espec_id;
 		
 		private string _inicial_cod;
 		
@@ -6925,8 +6893,6 @@ namespace CapaDatos
 		private System.Nullable<System.DateTime> _inicial_fecha_horaGuardado;
 		
 		private string _inicial_estado;
-		
-		private EntityRef<Tbl_Especialidad> _Tbl_Especialidad;
 		
 		private EntityRef<Tbl_Personas> _Tbl_Personas;
 		
@@ -6940,8 +6906,6 @@ namespace CapaDatos
     partial void Oninicial_idChanged();
     partial void Oninicial_numArchivoChanging(string value);
     partial void Oninicial_numArchivoChanged();
-    partial void Oninicial_edadChanging(System.Nullable<long> value);
-    partial void Oninicial_edadChanged();
     partial void Oninicial_catolicaRelChanging(string value);
     partial void Oninicial_catolicaRelChanged();
     partial void Oninicial_evangelicaRelChanging(string value);
@@ -6982,7 +6946,7 @@ namespace CapaDatos
     partial void Oninicial_noDisChanged();
     partial void Oninicial_tipoDisChanging(string value);
     partial void Oninicial_tipoDisChanged();
-    partial void Oninicial_porcentDisChanging(System.Nullable<long> value);
+    partial void Oninicial_porcentDisChanging(string value);
     partial void Oninicial_porcentDisChanged();
     partial void Oninicial_actRelePuesTrabajoChanging(string value);
     partial void Oninicial_actRelePuesTrabajoChanged();
@@ -6994,7 +6958,7 @@ namespace CapaDatos
     partial void Oninicial_menarquiaChanged();
     partial void Oninicial_ciclosChanging(string value);
     partial void Oninicial_ciclosChanged();
-    partial void Oninicial_fechUltiMenstruaChanging(System.Nullable<System.DateTime> value);
+    partial void Oninicial_fechUltiMenstruaChanging(string value);
     partial void Oninicial_fechUltiMenstruaChanged();
     partial void Oninicial_gestasChanging(string value);
     partial void Oninicial_gestasChanged();
@@ -7004,9 +6968,9 @@ namespace CapaDatos
     partial void Oninicial_cesareasChanged();
     partial void Oninicial_abortosChanging(string value);
     partial void Oninicial_abortosChanged();
-    partial void Oninicial_vivosHijChanging(System.Nullable<long> value);
+    partial void Oninicial_vivosHijChanging(string value);
     partial void Oninicial_vivosHijChanged();
-    partial void Oninicial_muertosHijChanging(System.Nullable<long> value);
+    partial void Oninicial_muertosHijChanging(string value);
     partial void Oninicial_muertosHijChanged();
     partial void Oninicial_siVidaSexActivaChanging(string value);
     partial void Oninicial_siVidaSexActivaChanged();
@@ -7026,9 +6990,9 @@ namespace CapaDatos
     partial void Oninicial_noExaRealiPapanicolaouChanged();
     partial void Oninicial_noExaRealiColposcopiaChanging(string value);
     partial void Oninicial_noExaRealiColposcopiaChanged();
-    partial void Oninicial_tiempoExaRealiPapanicolaouChanging(System.Nullable<long> value);
+    partial void Oninicial_tiempoExaRealiPapanicolaouChanging(string value);
     partial void Oninicial_tiempoExaRealiPapanicolaouChanged();
-    partial void Oninicial_tiempoExaRealiColposcopiaChanging(System.Nullable<long> value);
+    partial void Oninicial_tiempoExaRealiColposcopiaChanging(string value);
     partial void Oninicial_tiempoExaRealiColposcopiaChanged();
     partial void Oninicial_resultadoExaRealiPapanicolaouChanging(string value);
     partial void Oninicial_resultadoExaRealiPapanicolaouChanged();
@@ -7042,9 +7006,9 @@ namespace CapaDatos
     partial void Oninicial_noExaRealiEcoMamarioChanged();
     partial void Oninicial_noExaRealiMamografiaChanging(string value);
     partial void Oninicial_noExaRealiMamografiaChanged();
-    partial void Oninicial_tiempoExaRealiEcoMamarioChanging(System.Nullable<long> value);
+    partial void Oninicial_tiempoExaRealiEcoMamarioChanging(string value);
     partial void Oninicial_tiempoExaRealiEcoMamarioChanged();
-    partial void Oninicial_tiempoExaRealiMamografiaChanging(System.Nullable<long> value);
+    partial void Oninicial_tiempoExaRealiMamografiaChanging(string value);
     partial void Oninicial_tiempoExaRealiMamografiaChanged();
     partial void Oninicial_resultadoExaRealiEcoMamarioChanging(string value);
     partial void Oninicial_resultadoExaRealiEcoMamarioChanged();
@@ -7058,9 +7022,9 @@ namespace CapaDatos
     partial void Oninicial_noExaRealiAntiProstaticoChanged();
     partial void Oninicial_noExaRealiEcoProstaticoChanging(string value);
     partial void Oninicial_noExaRealiEcoProstaticoChanged();
-    partial void Oninicial_tiempoExaRealiAntiProstaticoChanging(System.Nullable<long> value);
+    partial void Oninicial_tiempoExaRealiAntiProstaticoChanging(string value);
     partial void Oninicial_tiempoExaRealiAntiProstaticoChanged();
-    partial void Oninicial_tiempoExaRealiEcoProstaticoChanging(System.Nullable<long> value);
+    partial void Oninicial_tiempoExaRealiEcoProstaticoChanging(string value);
     partial void Oninicial_tiempoExaRealiEcoProstaticoChanged();
     partial void Oninicial_resultadoExaRealiAntiProstaticoChanging(string value);
     partial void Oninicial_resultadoExaRealiAntiProstaticoChanged();
@@ -7074,9 +7038,9 @@ namespace CapaDatos
     partial void Oninicial_tipo1MetPlanifiFamiAntReproMascuChanged();
     partial void Oninicial_tipo2MetPlanifiFamiAntReproMascuChanging(string value);
     partial void Oninicial_tipo2MetPlanifiFamiAntReproMascuChanged();
-    partial void Oninicial_vivosHijAntReproMascuChanging(System.Nullable<long> value);
+    partial void Oninicial_vivosHijAntReproMascuChanging(string value);
     partial void Oninicial_vivosHijAntReproMascuChanged();
-    partial void Oninicial_muertosHijAntReproMascuChanging(System.Nullable<long> value);
+    partial void Oninicial_muertosHijAntReproMascuChanging(string value);
     partial void Oninicial_muertosHijAntReproMascuChanged();
     partial void Oninicial_siConsuNocivosTabacoChanging(string value);
     partial void Oninicial_siConsuNocivosTabacoChanged();
@@ -7092,13 +7056,13 @@ namespace CapaDatos
     partial void Oninicial_noConsuNocivosAlcoholChanged();
     partial void Oninicial_noConsuNocivosOtrasDrogasChanging(string value);
     partial void Oninicial_noConsuNocivosOtrasDrogasChanged();
-    partial void Oninicial_tiempoConsuConsuNocivosTabacoChanging(System.Nullable<long> value);
+    partial void Oninicial_tiempoConsuConsuNocivosTabacoChanging(string value);
     partial void Oninicial_tiempoConsuConsuNocivosTabacoChanged();
-    partial void Oninicial_tiempoConsuConsuNocivosAlcoholChanging(System.Nullable<long> value);
+    partial void Oninicial_tiempoConsuConsuNocivosAlcoholChanging(string value);
     partial void Oninicial_tiempoConsuConsuNocivosAlcoholChanged();
-    partial void Oninicial_tiempoConsu1ConsuNocivosOtrasDrogasChanging(System.Nullable<long> value);
+    partial void Oninicial_tiempoConsu1ConsuNocivosOtrasDrogasChanging(string value);
     partial void Oninicial_tiempoConsu1ConsuNocivosOtrasDrogasChanged();
-    partial void Oninicial_tiempoConsu2ConsuNocivosOtrasDrogasChanging(System.Nullable<long> value);
+    partial void Oninicial_tiempoConsu2ConsuNocivosOtrasDrogasChanging(string value);
     partial void Oninicial_tiempoConsu2ConsuNocivosOtrasDrogasChanged();
     partial void Oninicial_cantidadConsuNocivosTabacoChanging(string value);
     partial void Oninicial_cantidadConsuNocivosTabacoChanged();
@@ -7116,13 +7080,13 @@ namespace CapaDatos
     partial void Oninicial_exConsumi1ConsuNocivosOtrasDrogasChanged();
     partial void Oninicial_exConsumi2ConsuNocivosOtrasDrogasChanging(string value);
     partial void Oninicial_exConsumi2ConsuNocivosOtrasDrogasChanged();
-    partial void Oninicial_tiempoAbstiConsuNocivosTabacoChanging(System.Nullable<long> value);
+    partial void Oninicial_tiempoAbstiConsuNocivosTabacoChanging(string value);
     partial void Oninicial_tiempoAbstiConsuNocivosTabacoChanged();
-    partial void Oninicial_tiempoAbstiConsuNocivosAlcoholChanging(System.Nullable<long> value);
+    partial void Oninicial_tiempoAbstiConsuNocivosAlcoholChanging(string value);
     partial void Oninicial_tiempoAbstiConsuNocivosAlcoholChanged();
-    partial void Oninicial_tiempoAbsti1ConsuNocivosOtrasDrogasChanging(System.Nullable<long> value);
+    partial void Oninicial_tiempoAbsti1ConsuNocivosOtrasDrogasChanging(string value);
     partial void Oninicial_tiempoAbsti1ConsuNocivosOtrasDrogasChanged();
-    partial void Oninicial_tiempoAbsti2ConsuNocivosOtrasDrogasChanging(System.Nullable<long> value);
+    partial void Oninicial_tiempoAbsti2ConsuNocivosOtrasDrogasChanging(string value);
     partial void Oninicial_tiempoAbsti2ConsuNocivosOtrasDrogasChanged();
     partial void Oninicial_siEstiVidaActFisicaChanging(string value);
     partial void Oninicial_siEstiVidaActFisicaChanged();
@@ -7242,7 +7206,7 @@ namespace CapaDatos
     partial void Oninicial_especificarCalificadoIESSAcciTrabajoChanged();
     partial void Oninicial_noCalificadoIESSAcciTrabajoChanging(string value);
     partial void Oninicial_noCalificadoIESSAcciTrabajoChanged();
-    partial void Oninicial_fechaCalificadoIESSAcciTrabajoChanging(System.Nullable<System.DateTime> value);
+    partial void Oninicial_fechaCalificadoIESSAcciTrabajoChanging(string value);
     partial void Oninicial_fechaCalificadoIESSAcciTrabajoChanged();
     partial void Oninicial_obserAcciTrabajoChanging(string value);
     partial void Oninicial_obserAcciTrabajoChanged();
@@ -7252,7 +7216,7 @@ namespace CapaDatos
     partial void Oninicial_especificarCalificadoIESSEnfProfesionalesChanged();
     partial void Oninicial_noCalificadoIESSEnfProfesionalesChanging(string value);
     partial void Oninicial_noCalificadoIESSEnfProfesionalesChanged();
-    partial void Oninicial_fechaCalificadoIESSEnfProfesionalesChanging(System.Nullable<System.DateTime> value);
+    partial void Oninicial_fechaCalificadoIESSEnfProfesionalesChanging(string value);
     partial void Oninicial_fechaCalificadoIESSEnfProfesionalesChanged();
     partial void Oninicial_obserEnfProfesionalesChanging(string value);
     partial void Oninicial_obserEnfProfesionalesChanged();
@@ -7798,21 +7762,21 @@ namespace CapaDatos
     partial void Oninicial_descripRevActOrgSisChanged();
     partial void Oninicial_preArterialChanging(string value);
     partial void Oninicial_preArterialChanged();
-    partial void Oninicial_temperaturaChanging(System.Nullable<long> value);
+    partial void Oninicial_temperaturaChanging(string value);
     partial void Oninicial_temperaturaChanged();
-    partial void Oninicial_frecCardiacanChanging(System.Nullable<long> value);
+    partial void Oninicial_frecCardiacanChanging(string value);
     partial void Oninicial_frecCardiacanChanged();
-    partial void Oninicial_satOxigenonChanging(System.Nullable<long> value);
+    partial void Oninicial_satOxigenonChanging(string value);
     partial void Oninicial_satOxigenonChanged();
-    partial void Oninicial_frecRespiratorianChanging(System.Nullable<long> value);
+    partial void Oninicial_frecRespiratorianChanging(string value);
     partial void Oninicial_frecRespiratorianChanged();
-    partial void Oninicial_pesonChanging(System.Nullable<long> value);
+    partial void Oninicial_pesonChanging(string value);
     partial void Oninicial_pesonChanged();
-    partial void Oninicial_tallanChanging(System.Nullable<long> value);
+    partial void Oninicial_tallanChanging(string value);
     partial void Oninicial_tallanChanged();
-    partial void Oninicial_indMasCorporalnChanging(System.Nullable<long> value);
+    partial void Oninicial_indMasCorporalnChanging(string value);
     partial void Oninicial_indMasCorporalnChanged();
-    partial void Oninicial_perAbdominalnChanging(System.Nullable<long> value);
+    partial void Oninicial_perAbdominalnChanging(string value);
     partial void Oninicial_perAbdominalnChanged();
     partial void Oninicial_cicatricesPielChanging(string value);
     partial void Oninicial_cicatricesPielChanged();
@@ -7898,25 +7862,25 @@ namespace CapaDatos
     partial void Oninicial_observaExaFisRegInicialChanged();
     partial void Oninicial_examenChanging(string value);
     partial void Oninicial_examenChanged();
-    partial void Oninicial_fechaChanging(System.Nullable<System.DateTime> value);
+    partial void Oninicial_fechaChanging(string value);
     partial void Oninicial_fechaChanged();
     partial void Oninicial_resultadosChanging(string value);
     partial void Oninicial_resultadosChanged();
     partial void Oninicial_examen2Changing(string value);
     partial void Oninicial_examen2Changed();
-    partial void Oninicial_fecha2Changing(System.Nullable<System.DateTime> value);
+    partial void Oninicial_fecha2Changing(string value);
     partial void Oninicial_fecha2Changed();
     partial void Oninicial_resultados2Changing(string value);
     partial void Oninicial_resultados2Changed();
     partial void Oninicial_examen3Changing(string value);
     partial void Oninicial_examen3Changed();
-    partial void Oninicial_fecha3Changing(System.Nullable<System.DateTime> value);
+    partial void Oninicial_fecha3Changing(string value);
     partial void Oninicial_fecha3Changed();
     partial void Oninicial_resultados3Changing(string value);
     partial void Oninicial_resultados3Changed();
     partial void Oninicial_examen4Changing(string value);
     partial void Oninicial_examen4Changed();
-    partial void Oninicial_fecha4Changing(System.Nullable<System.DateTime> value);
+    partial void Oninicial_fecha4Changing(string value);
     partial void Oninicial_fecha4Changed();
     partial void Oninicial_resultados4Changing(string value);
     partial void Oninicial_resultados4Changed();
@@ -7962,12 +7926,10 @@ namespace CapaDatos
     partial void Oninicial_LimitAptMedChanged();
     partial void Oninicial_descripcionRecTraChanging(string value);
     partial void Oninicial_descripcionRecTraChanged();
-    partial void Oninicial_fecha_horaChanging(System.Nullable<System.DateTime> value);
+    partial void Oninicial_fecha_horaChanging(string value);
     partial void Oninicial_fecha_horaChanged();
     partial void Onprof_idChanging(System.Nullable<int> value);
     partial void Onprof_idChanged();
-    partial void Onespec_idChanging(System.Nullable<int> value);
-    partial void Onespec_idChanged();
     partial void Oninicial_codChanging(string value);
     partial void Oninicial_codChanged();
     partial void OnPer_idChanging(System.Nullable<int> value);
@@ -7980,7 +7942,6 @@ namespace CapaDatos
 		
 		public Tbl_Inicial()
 		{
-			this._Tbl_Especialidad = default(EntityRef<Tbl_Especialidad>);
 			this._Tbl_Personas = default(EntityRef<Tbl_Personas>);
 			this._Tbl_Profesional = default(EntityRef<Tbl_Profesional>);
 			OnCreated();
@@ -8022,26 +7983,6 @@ namespace CapaDatos
 					this._inicial_numArchivo = value;
 					this.SendPropertyChanged("inicial_numArchivo");
 					this.Oninicial_numArchivoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_edad", DbType="BigInt")]
-		public System.Nullable<long> inicial_edad
-		{
-			get
-			{
-				return this._inicial_edad;
-			}
-			set
-			{
-				if ((this._inicial_edad != value))
-				{
-					this.Oninicial_edadChanging(value);
-					this.SendPropertyChanging();
-					this._inicial_edad = value;
-					this.SendPropertyChanged("inicial_edad");
-					this.Oninicial_edadChanged();
 				}
 			}
 		}
@@ -8446,8 +8387,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_porcentDis", DbType="BigInt")]
-		public System.Nullable<long> inicial_porcentDis
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_porcentDis", DbType="VarChar(MAX)")]
+		public string inicial_porcentDis
 		{
 			get
 			{
@@ -8566,8 +8507,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_fechUltiMenstrua", DbType="Date")]
-		public System.Nullable<System.DateTime> inicial_fechUltiMenstrua
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_fechUltiMenstrua", DbType="VarChar(MAX)")]
+		public string inicial_fechUltiMenstrua
 		{
 			get
 			{
@@ -8666,8 +8607,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_vivosHij", DbType="BigInt")]
-		public System.Nullable<long> inicial_vivosHij
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_vivosHij", DbType="VarChar(MAX)")]
+		public string inicial_vivosHij
 		{
 			get
 			{
@@ -8686,8 +8627,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_muertosHij", DbType="BigInt")]
-		public System.Nullable<long> inicial_muertosHij
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_muertosHij", DbType="VarChar(MAX)")]
+		public string inicial_muertosHij
 		{
 			get
 			{
@@ -8886,8 +8827,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_tiempoExaRealiPapanicolaou", DbType="BigInt")]
-		public System.Nullable<long> inicial_tiempoExaRealiPapanicolaou
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_tiempoExaRealiPapanicolaou", DbType="VarChar(MAX)")]
+		public string inicial_tiempoExaRealiPapanicolaou
 		{
 			get
 			{
@@ -8906,8 +8847,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_tiempoExaRealiColposcopia", DbType="BigInt")]
-		public System.Nullable<long> inicial_tiempoExaRealiColposcopia
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_tiempoExaRealiColposcopia", DbType="VarChar(MAX)")]
+		public string inicial_tiempoExaRealiColposcopia
 		{
 			get
 			{
@@ -9046,8 +8987,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_tiempoExaRealiEcoMamario", DbType="BigInt")]
-		public System.Nullable<long> inicial_tiempoExaRealiEcoMamario
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_tiempoExaRealiEcoMamario", DbType="VarChar(MAX)")]
+		public string inicial_tiempoExaRealiEcoMamario
 		{
 			get
 			{
@@ -9066,8 +9007,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_tiempoExaRealiMamografia", DbType="BigInt")]
-		public System.Nullable<long> inicial_tiempoExaRealiMamografia
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_tiempoExaRealiMamografia", DbType="VarChar(MAX)")]
+		public string inicial_tiempoExaRealiMamografia
 		{
 			get
 			{
@@ -9206,8 +9147,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_tiempoExaRealiAntiProstatico", DbType="BigInt")]
-		public System.Nullable<long> inicial_tiempoExaRealiAntiProstatico
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_tiempoExaRealiAntiProstatico", DbType="VarChar(MAX)")]
+		public string inicial_tiempoExaRealiAntiProstatico
 		{
 			get
 			{
@@ -9226,8 +9167,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_tiempoExaRealiEcoProstatico", DbType="BigInt")]
-		public System.Nullable<long> inicial_tiempoExaRealiEcoProstatico
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_tiempoExaRealiEcoProstatico", DbType="VarChar(MAX)")]
+		public string inicial_tiempoExaRealiEcoProstatico
 		{
 			get
 			{
@@ -9366,8 +9307,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_vivosHijAntReproMascu", DbType="BigInt")]
-		public System.Nullable<long> inicial_vivosHijAntReproMascu
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_vivosHijAntReproMascu", DbType="VarChar(MAX)")]
+		public string inicial_vivosHijAntReproMascu
 		{
 			get
 			{
@@ -9386,8 +9327,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_muertosHijAntReproMascu", DbType="BigInt")]
-		public System.Nullable<long> inicial_muertosHijAntReproMascu
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_muertosHijAntReproMascu", DbType="VarChar(MAX)")]
+		public string inicial_muertosHijAntReproMascu
 		{
 			get
 			{
@@ -9546,8 +9487,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_tiempoConsuConsuNocivosTabaco", DbType="BigInt")]
-		public System.Nullable<long> inicial_tiempoConsuConsuNocivosTabaco
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_tiempoConsuConsuNocivosTabaco", DbType="VarChar(MAX)")]
+		public string inicial_tiempoConsuConsuNocivosTabaco
 		{
 			get
 			{
@@ -9566,8 +9507,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_tiempoConsuConsuNocivosAlcohol", DbType="BigInt")]
-		public System.Nullable<long> inicial_tiempoConsuConsuNocivosAlcohol
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_tiempoConsuConsuNocivosAlcohol", DbType="VarChar(MAX)")]
+		public string inicial_tiempoConsuConsuNocivosAlcohol
 		{
 			get
 			{
@@ -9586,8 +9527,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_tiempoConsu1ConsuNocivosOtrasDrogas", DbType="BigInt")]
-		public System.Nullable<long> inicial_tiempoConsu1ConsuNocivosOtrasDrogas
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_tiempoConsu1ConsuNocivosOtrasDrogas", DbType="VarChar(MAX)")]
+		public string inicial_tiempoConsu1ConsuNocivosOtrasDrogas
 		{
 			get
 			{
@@ -9606,8 +9547,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_tiempoConsu2ConsuNocivosOtrasDrogas", DbType="BigInt")]
-		public System.Nullable<long> inicial_tiempoConsu2ConsuNocivosOtrasDrogas
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_tiempoConsu2ConsuNocivosOtrasDrogas", DbType="VarChar(MAX)")]
+		public string inicial_tiempoConsu2ConsuNocivosOtrasDrogas
 		{
 			get
 			{
@@ -9786,8 +9727,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_tiempoAbstiConsuNocivosTabaco", DbType="BigInt")]
-		public System.Nullable<long> inicial_tiempoAbstiConsuNocivosTabaco
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_tiempoAbstiConsuNocivosTabaco", DbType="VarChar(MAX)")]
+		public string inicial_tiempoAbstiConsuNocivosTabaco
 		{
 			get
 			{
@@ -9806,8 +9747,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_tiempoAbstiConsuNocivosAlcohol", DbType="BigInt")]
-		public System.Nullable<long> inicial_tiempoAbstiConsuNocivosAlcohol
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_tiempoAbstiConsuNocivosAlcohol", DbType="VarChar(MAX)")]
+		public string inicial_tiempoAbstiConsuNocivosAlcohol
 		{
 			get
 			{
@@ -9826,8 +9767,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_tiempoAbsti1ConsuNocivosOtrasDrogas", DbType="BigInt")]
-		public System.Nullable<long> inicial_tiempoAbsti1ConsuNocivosOtrasDrogas
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_tiempoAbsti1ConsuNocivosOtrasDrogas", DbType="VarChar(MAX)")]
+		public string inicial_tiempoAbsti1ConsuNocivosOtrasDrogas
 		{
 			get
 			{
@@ -9846,8 +9787,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_tiempoAbsti2ConsuNocivosOtrasDrogas", DbType="BigInt")]
-		public System.Nullable<long> inicial_tiempoAbsti2ConsuNocivosOtrasDrogas
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_tiempoAbsti2ConsuNocivosOtrasDrogas", DbType="VarChar(MAX)")]
+		public string inicial_tiempoAbsti2ConsuNocivosOtrasDrogas
 		{
 			get
 			{
@@ -11046,8 +10987,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_fechaCalificadoIESSAcciTrabajo", DbType="Date")]
-		public System.Nullable<System.DateTime> inicial_fechaCalificadoIESSAcciTrabajo
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_fechaCalificadoIESSAcciTrabajo", DbType="VarChar(MAX)")]
+		public string inicial_fechaCalificadoIESSAcciTrabajo
 		{
 			get
 			{
@@ -11146,8 +11087,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_fechaCalificadoIESSEnfProfesionales", DbType="Date")]
-		public System.Nullable<System.DateTime> inicial_fechaCalificadoIESSEnfProfesionales
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_fechaCalificadoIESSEnfProfesionales", DbType="VarChar(MAX)")]
+		public string inicial_fechaCalificadoIESSEnfProfesionales
 		{
 			get
 			{
@@ -16606,8 +16547,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_temperatura", DbType="BigInt")]
-		public System.Nullable<long> inicial_temperatura
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_temperatura", DbType="VarChar(MAX)")]
+		public string inicial_temperatura
 		{
 			get
 			{
@@ -16626,8 +16567,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_frecCardiacan", DbType="BigInt")]
-		public System.Nullable<long> inicial_frecCardiacan
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_frecCardiacan", DbType="VarChar(MAX)")]
+		public string inicial_frecCardiacan
 		{
 			get
 			{
@@ -16646,8 +16587,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_satOxigenon", DbType="BigInt")]
-		public System.Nullable<long> inicial_satOxigenon
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_satOxigenon", DbType="VarChar(MAX)")]
+		public string inicial_satOxigenon
 		{
 			get
 			{
@@ -16666,8 +16607,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_frecRespiratorian", DbType="BigInt")]
-		public System.Nullable<long> inicial_frecRespiratorian
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_frecRespiratorian", DbType="VarChar(MAX)")]
+		public string inicial_frecRespiratorian
 		{
 			get
 			{
@@ -16686,8 +16627,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_peson", DbType="BigInt")]
-		public System.Nullable<long> inicial_peson
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_peson", DbType="VarChar(MAX)")]
+		public string inicial_peson
 		{
 			get
 			{
@@ -16706,8 +16647,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_tallan", DbType="BigInt")]
-		public System.Nullable<long> inicial_tallan
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_tallan", DbType="VarChar(MAX)")]
+		public string inicial_tallan
 		{
 			get
 			{
@@ -16726,8 +16667,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_indMasCorporaln", DbType="BigInt")]
-		public System.Nullable<long> inicial_indMasCorporaln
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_indMasCorporaln", DbType="VarChar(MAX)")]
+		public string inicial_indMasCorporaln
 		{
 			get
 			{
@@ -16746,8 +16687,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_perAbdominaln", DbType="BigInt")]
-		public System.Nullable<long> inicial_perAbdominaln
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_perAbdominaln", DbType="VarChar(MAX)")]
+		public string inicial_perAbdominaln
 		{
 			get
 			{
@@ -17606,8 +17547,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_fecha", DbType="Date")]
-		public System.Nullable<System.DateTime> inicial_fecha
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_fecha", DbType="VarChar(MAX)")]
+		public string inicial_fecha
 		{
 			get
 			{
@@ -17666,8 +17607,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_fecha2", DbType="Date")]
-		public System.Nullable<System.DateTime> inicial_fecha2
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_fecha2", DbType="VarChar(MAX)")]
+		public string inicial_fecha2
 		{
 			get
 			{
@@ -17726,8 +17667,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_fecha3", DbType="Date")]
-		public System.Nullable<System.DateTime> inicial_fecha3
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_fecha3", DbType="VarChar(MAX)")]
+		public string inicial_fecha3
 		{
 			get
 			{
@@ -17786,8 +17727,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_fecha4", DbType="Date")]
-		public System.Nullable<System.DateTime> inicial_fecha4
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_fecha4", DbType="VarChar(MAX)")]
+		public string inicial_fecha4
 		{
 			get
 			{
@@ -18246,8 +18187,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_fecha_hora", DbType="Date")]
-		public System.Nullable<System.DateTime> inicial_fecha_hora
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_fecha_hora", DbType="VarChar(MAX)")]
+		public string inicial_fecha_hora
 		{
 			get
 			{
@@ -18286,30 +18227,6 @@ namespace CapaDatos
 					this._prof_id = value;
 					this.SendPropertyChanged("prof_id");
 					this.Onprof_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_espec_id", DbType="Int")]
-		public System.Nullable<int> espec_id
-		{
-			get
-			{
-				return this._espec_id;
-			}
-			set
-			{
-				if ((this._espec_id != value))
-				{
-					if (this._Tbl_Especialidad.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.Onespec_idChanging(value);
-					this.SendPropertyChanging();
-					this._espec_id = value;
-					this.SendPropertyChanged("espec_id");
-					this.Onespec_idChanged();
 				}
 			}
 		}
@@ -18394,40 +18311,6 @@ namespace CapaDatos
 					this._inicial_estado = value;
 					this.SendPropertyChanged("inicial_estado");
 					this.Oninicial_estadoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Especialidad_Tbl_Inicial", Storage="_Tbl_Especialidad", ThisKey="espec_id", OtherKey="espec_id", IsForeignKey=true)]
-		public Tbl_Especialidad Tbl_Especialidad
-		{
-			get
-			{
-				return this._Tbl_Especialidad.Entity;
-			}
-			set
-			{
-				Tbl_Especialidad previousValue = this._Tbl_Especialidad.Entity;
-				if (((previousValue != value) 
-							|| (this._Tbl_Especialidad.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Tbl_Especialidad.Entity = null;
-						previousValue.Tbl_Inicial.Remove(this);
-					}
-					this._Tbl_Especialidad.Entity = value;
-					if ((value != null))
-					{
-						value.Tbl_Inicial.Add(this);
-						this._espec_id = value.espec_id;
-					}
-					else
-					{
-						this._espec_id = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Tbl_Especialidad");
 				}
 			}
 		}
