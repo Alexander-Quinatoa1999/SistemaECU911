@@ -123,7 +123,7 @@
                                 <asp:TableCell Style="background-color: white; font-size: 14px">
                                     <asp:TextBox runat="server" ID="txt_segNombre" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
                                 </asp:TableCell>
-                                <asp:TableCell Style="background-color: white; font-size: 14px">
+                                <asp:TableCell Style="background-color: white; font-size: 14px; width: 155px">
                                     <asp:TextBox runat="server" ID="txt_edad" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>

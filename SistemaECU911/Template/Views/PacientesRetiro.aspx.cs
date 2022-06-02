@@ -28,7 +28,7 @@ namespace SistemaECU911.Template.Views
             var query = from r in dc.Tbl_Retiro
                         join p in dc.Tbl_Personas on r.Per_id equals p.Per_id
                         join pro in dc.Tbl_Profesional on r.prof_id equals pro.prof_id
-                        orderby r.ret_fecha_hora descending
+                        orderby r.ret_fechaHoraGuardado descending
                         select new
                         {
                             r.ret_id,
@@ -36,7 +36,7 @@ namespace SistemaECU911.Template.Views
                             p.Per_priNombre,
                             p.Per_priApellido,
                             pro.prof_NomApe,
-                            r.ret_fecha_hora
+                            r.ret_fechaHoraGuardado
                         };
 
             grvPacientesRetiro.DataSource = query.ToList();

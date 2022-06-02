@@ -39,7 +39,7 @@
                                             </asp:TemplateField>
                                             <asp:TemplateField HeaderText="Fecha y Hora">
                                                 <ItemTemplate>
-                                                    <asp:Label ID="inmu_fechaHora" runat="server" Text='<%#Eval("inmu_fechaHora")%>'></asp:Label>
+                                                    <asp:Label ID="inmu_fechaHora" runat="server" Text='<%#Eval("inmu_fechaHoraGuardado")%>'></asp:Label>
                                                 </ItemTemplate>
                                             </asp:TemplateField>
                                             <asp:TemplateField ItemStyle-Width="17" HeaderStyle-Width="17" HeaderText="">

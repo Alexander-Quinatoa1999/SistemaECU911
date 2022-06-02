@@ -28,7 +28,7 @@ namespace SistemaECU911.Template.Views
             var query = from pe in dc.Tbl_Periodica
                         join p in dc.Tbl_Personas on pe.Per_id equals p.Per_id
                         join pro in dc.Tbl_Profesional on pe.prof_id equals pro.prof_id
-                        orderby pe.perio_fecha_hora descending
+                        orderby pe.perio_fechaHoraGuardado descending
                         select new
                         {
                             pe.perio_id,
@@ -36,7 +36,7 @@ namespace SistemaECU911.Template.Views
                             p.Per_priNombre,
                             p.Per_priApellido,
                             pro.prof_NomApe,
-                            pe.perio_fecha_hora
+                            pe.perio_fechaHoraGuardado
                         };
 
             grvPacientesPeriodica.DataSource = query.ToList();

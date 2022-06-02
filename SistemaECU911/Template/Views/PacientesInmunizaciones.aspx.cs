@@ -26,14 +26,14 @@ namespace SistemaECU911.Template.Views
         {
             var query = from i in dc.Tbl_Inmunizaciones
                         join p in dc.Tbl_Personas on i.Per_id equals p.Per_id
-                        orderby i.inmu_fechaHora descending
+                        orderby i.inmu_fechaHoraGuardado descending
                         select new
                         {
                             i.inmu_id,
                             p.Per_cedula,
                             p.Per_priNombre,
                             p.Per_priApellido,
-                            i.inmu_fechaHora
+                            i.inmu_fechaHoraGuardado
                         };
 
             grvPacientesInmunizaciones.DataSource = query.ToList();

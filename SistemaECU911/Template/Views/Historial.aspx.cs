@@ -355,7 +355,7 @@ namespace SistemaECU911.Template.Views
                 //11
                 fichasmedicas.prescripciones = txt_prescipciones.Text;
                 //Final
-                fichasmedicas.fechaHora = Convert.ToDateTime(txt_fechahora.Text);
+                fichasmedicas.fechaHora = txt_fechahora.Text;
                 fichasmedicas.espec_id = Convert.ToInt32(ddl_especialidad.SelectedValue);
                 fichasmedicas.prof_id = Convert.ToInt32(ddl_profesional.SelectedValue);
                 fichasmedicas.codigoPro = txt_codigo.Text;
@@ -434,7 +434,7 @@ namespace SistemaECU911.Template.Views
                 fichasmedicas.planTratamiento = txt_tratamiento.Text;
                 fichasmedicas.evolucion = txt_evolucion.Text;
                 fichasmedicas.prescripciones = txt_prescipciones.Text;
-                fichasmedicas.fechaHora = Convert.ToDateTime(txt_fechahora.Text);
+                fichasmedicas.fechaHora = txt_fechahora.Text;
                 fichasmedicas.espec_id = Convert.ToInt32(ddl_especialidad.SelectedValue);
                 fichasmedicas.prof_id = Convert.ToInt32(ddl_profesional.SelectedValue);
                 fichasmedicas.codigoPro = txt_codigo.Text;

@@ -24,6 +24,14 @@ namespace SistemaECU911.Template.Views_Socio_Economico
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            tabladiscapacidad.Visible = false;
+            tabladependencia.Visible = false;
+            tablaacargofamiliar.Visible = false;
+            tabladatosdiscapacidad.Visible = false;
+            tbc_tipodiscapacidad.Visible = false;
+            tbc_txtdiscapacidad.Visible = false;
+            tbl_estadogestacion.Visible = false;
+
             if (!IsPostBack)
             {
                 if (Request["cod"] != null)
@@ -47,18 +55,22 @@ namespace SistemaECU911.Template.Views_Socio_Economico
 
                         if (sso != null)
                         {
-                            txt_fecha.Text = sso.Socio_economico_fechaHora.ToString();
+                            txt_fecharegistro.Text = sso.Socio_economico_fechaHora.ToString();
+
+                            //Datos código y versión
+                            txt_codigoinicio.Text = sso.Socio_economico_codigo_inicial.ToString();
+                            txt_version.Text = sso.Socio_economico_version.ToString();
 
                             //Datos Generales
                             txt_fechaingresoalsisecu.Text = sso.Socio_economico_fecha_ingreso_al_Ecu.ToString();
-                            txt_tipodesangre.Text = sso.Socio_economico_tipodesangre.ToString();
+                            txt_tipodesangre.Text = sso.Socio_economico_tipo_de_sangre.ToString();
 
-                            txt_telconvecional.Text = sso.Socio_economico_telefonoconvencional.ToString();
-                            txt_telcelular.Text = sso.Socio_economico_telefonocelular.ToString();
+                            txt_telconvecional.Text = sso.Socio_economico_telefono_convencional.ToString();
+                            txt_telcelular.Text = sso.Socio_economico_telefono_celular.ToString();
                             txt_email.Text = sso.Socio_economico_email.ToString();
 
-                            txt_lugarnacimiento.Text = sso.Socio_economico_lugardenacimiento.ToString();
-                            txt_fechanacimiento.Text = sso.Socio_economico_fechadeNacimiento.ToString();
+                            txt_lugarnacimiento.Text = sso.Socio_economico_lugar_nacimiento.ToString();
+                            txt_fechanacimiento.Text = sso.Socio_economico_fecha_nacimiento.ToString();
                             txt_edad.Text = sso.Socio_economico_edad.ToString();
 
                             txt_provincia.Text = sso.Socio_economico_direcciondomicilio_provincia.ToString();
@@ -70,11 +82,8 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                             txt_callesecundaria.Text = sso.Socio_economico_calle_secundaria.ToString();
                             txt_refubicardomicilio.Text = sso.Socio_economico_referencia_ubicar_domicilio.ToString();
 
-                            txt_otrosector.Text = sso.Socio_economico_sectorvive_otro_indique.ToString();
                             txt_tipoviviendaotro.Text = sso.Socio_economico_tipovivienda_otro_indique.ToString();
 
-                            txt_personanvivenusted.Text = sso.Socio_economico_cuantas_personas_viven_con_usted.ToString();
-                            txt_personanviveneventualusted.Text = sso.Socio_economico_cuantas_personas_viven_eventual_con_usted.ToString();
                             txt_emernomyape.Text = sso.Socio_economico_contacto_emergencia_nombres_apellidos.ToString();
                             txt_emeparentesco.Text = sso.Socio_economico_contacto_emergencia_parentesco.ToString();
                             txt_emetelefono.Text = sso.Socio_economico_contacto_emergencia_telefono.ToString();
@@ -83,24 +92,24 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                             txt_emecallesecun.Text = sso.Socio_economico_contacto_emergencia_calle_secundaria.ToString();
                             txt_emerefubicardomicilio.Text = sso.Socio_economico_contacto_emergencia_referencia_domicilio.ToString();
 
-                            //txt_distanciadomiciotrabajo.Text = sso.Socio_economico_distancia_domicilio_trabajo.ToString();
+                            txt_movilizatrabajoovivienda.Text = sso.Socio_economico_moviliza_trabajo_vivienda.ToString();
 
                             //Salud
-                            txt_poseeenfermedadingresarEcu.Text = sso.Socio_economico_posee_enfermedad.ToString();
+                            txt_poseeenfermedadprexistente.Text = sso.Socio_economico_posee_enfermedad.ToString();
                             txt_tipodiscapacidad.Text = sso.Socio_economico_discapacidad_tipo.ToString();
                             txt_porcentajediscapacidad.Text = sso.Socio_economico_discapacidad_porcentaje.ToString();
                             txt_numcarnetconadis.Text = sso.Socio_economico_discapacidad_carnet_conadis.ToString();
                             txt_fechacaducidadcarnet.Text = sso.Socio_economico_discapacidad_fecha_caducidad_carnet.ToString();
 
-                            txt_mesgestacion.Text = sso.Socio_economico_mes_gestacion.ToString();
+                            txt_gestacióntiempo.Text = sso.Socio_economico_estado_gestacion_tiempo.ToString();
                             txt_fechatentativaparto.Text = sso.Socio_economico_fecha_tentativa_parto.ToString();
                             txt_fechaculmicacionlactancia.Text = sso.Socio_economico_periodo_lactancia_fecha_culminacion.ToString();
 
                             txt_cualcatastrofica.Text = sso.Socio_economico_enfermedad_cronica_cual.ToString();
-                            txt_otrasenfermedades.Text = sso.Socio_economico_enfermedad_cronica_otras.ToString();
+                            txt_otrasenfermedadescat.Text = sso.Socio_economico_enfermedad_cronica_otras_enfermedades.ToString();
                             txt_enfermedadraracual.Text = sso.Socio_economico_enfermedad_rara_cual.ToString();
 
-                            txt_frecuenciaconsumoalcohol.Text = sso.Socio_economico_consume_alcohol_frecuencia_consumo.ToString();
+                            txt_causaconsumoalcohol.Text = sso.Socio_economico_consume_alcohol_causa.ToString();
                             txt_tiempoconsumoalcohol.Text = sso.Socio_economico_consume_alcohol_tiempo_consumo.ToString();
                             txt_frecuenciaconsumotabaco.Text = sso.Socio_economico_consume_tabaco_frecuencia_consumo.ToString();
                             txt_tiempoconsumotabaco.Text = sso.Socio_economico_consume_tabaco_tiempo_consumo.ToString();
@@ -108,72 +117,63 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                             txt_sustanciapsicotropicafrecuencia.Text = sso.Socio_economico_consume_sustancia_psicotropica_frecuencia_consumo.ToString();
 
                             //Situacion económica del servidor
-                            txt_totalingreso1.Text = sso.Socio_economico_total_ingresos_mensuales_proyectados_1.ToString();
-                            txt_ayudafamiliares1.Text = sso.Socio_economico_ayuda_padres1.ToString();
-                            txt_otrosingresos1.Text = sso.Socio_economico_otros_ingresos1.ToString();
-                            txt_alimentacion.Text = sso.Socio_economico_total_egresos_mensuales_proyectados_alimentacion.ToString();
+                            txt_totalingresos1.Text = sso.Socio_economico_total_ingresos_mensuales_proyectados_1.ToString();
+                            txt_ayuda1.Text = sso.Socio_economico_ayuda1.ToString();
+                            txt_otros1.Text = sso.Socio_economico_otros1.ToString();
+                            txt_alimentación.Text = sso.Socio_economico_total_egresos_alimentacion.ToString();
 
-                            txt_totalingreso2.Text = sso.Socio_economico_total_ingresos_mensuales_proyectados_2.ToString();
-                            txt_ayudafamiliares2.Text = sso.Socio_economico_ayuda_padres2.ToString();
-                            txt_otrosingresos2.Text = sso.Socio_economico_otros_ingresos2.ToString();
-                            txt_vivienda.Text = sso.Socio_economico_total_egresos_mensuales_proyectados_vivienda.ToString();
+                            txt_totalingresos2.Text = sso.Socio_economico_total_ingresos_mensuales_proyectados_2.ToString();
+                            txt_ayuda2.Text = sso.Socio_economico_ayuda2.ToString();
+                            txt_otros2.Text = sso.Socio_economico_otros2.ToString();
+                            txt_vivienda.Text = sso.Socio_economico_total_egresos_vivienda.ToString();
 
-                            txt_totalingreso3.Text = sso.Socio_economico_total_ingresos_mensuales_proyectados_3.ToString();
-                            txt_ayudafamiliares3.Text = sso.Socio_economico_ayuda_padres3.ToString();
-                            txt_otrosingresos3.Text = sso.Socio_economico_otros_ingresos3.ToString();
-                            txt_educacion.Text = sso.Socio_economico_total_egresos_mensuales_proyectados_educacion.ToString();
+                            txt_totalingresos3.Text = sso.Socio_economico_total_ingresos_mensuales_proyectados_3.ToString();
+                            txt_ayuda3.Text = sso.Socio_economico_ayuda3.ToString();
+                            txt_otros3.Text = sso.Socio_economico_otros3.ToString();
+                            txt_educación.Text = sso.Socio_economico_total_egresos_educacion.ToString();
 
-                            txt_totalingreso4.Text = sso.Socio_economico_total_ingresos_mensuales_proyectados_4.ToString();
-                            txt_ayudafamiliares4.Text = sso.Socio_economico_ayuda_padres4.ToString();
-                            txt_otrosingresos4.Text = sso.Socio_economico_otros_ingresos4.ToString();
-                            txt_serviciosbasicos.Text = sso.Socio_economico_total_egresos_mensuales_proyectados_servicios_basicos.ToString();
+                            txt_totalingresos4.Text = sso.Socio_economico_total_ingresos_mensuales_proyectados_4.ToString();
+                            txt_ayuda4.Text = sso.Socio_economico_ayuda4.ToString();
+                            txt_otros4.Text = sso.Socio_economico_otros4.ToString();
+                            txt_serviciosbasicos.Text = sso.Socio_economico_total_egresos_servicios_basicos.ToString();
 
-                            txt_totalingreso5.Text = sso.Socio_economico_total_ingresos_mensuales_proyectados_5.ToString();
-                            txt_ayudafamiliares5.Text = sso.Socio_economico_ayuda_padres5.ToString();
-                            txt_otrosingresos5.Text = sso.Socio_economico_otros_ingresos5.ToString();
-                            txt_Salud.Text = sso.Socio_economico_total_egresos_mensuales_proyectados_salud.ToString();
+                            txt_totalingresos5.Text = sso.Socio_economico_total_ingresos_mensuales_proyectados_5.ToString();
+                            txt_ayuda5.Text = sso.Socio_economico_ayuda5.ToString();
+                            txt_otros5.Text = sso.Socio_economico_otros5.ToString();
+                            txt_salud.Text = sso.Socio_economico_total_egresos_salud.ToString();
 
-                            txt_totalingreso6.Text = sso.Socio_economico_total_ingresos_mensuales_proyectados_6.ToString();
-                            txt_ayudafamiliares6.Text = sso.Socio_economico_ayuda_padres6.ToString();
-                            txt_otrosingresos6.Text = sso.Socio_economico_otros_ingresos6.ToString();
-                            txt_movilizacion.Text = sso.Socio_economico_total_egresos_mensuales_proyectados_movilizacion.ToString();
+                            txt_totalingresos6.Text = sso.Socio_economico_total_ingresos_mensuales_proyectados_6.ToString();
+                            txt_ayuda6.Text = sso.Socio_economico_ayuda6.ToString();
+                            txt_otros6.Text = sso.Socio_economico_otros6.ToString();
+                            txt_movilización.Text = sso.Socio_economico_total_egresos_movilizacion.ToString();
 
-                            txt_totalingreso7.Text = sso.Socio_economico_total_ingresos_mensuales_proyectados_7.ToString();
-                            txt_ayudafamiliares7.Text = sso.Socio_economico_ayuda_padres7.ToString();
-                            txt_otrosingresos7.Text = sso.Socio_economico_otros_ingresos7.ToString();
-                            txt_deudas.Text = sso.Socio_economico_total_egresos_mensuales_proyectados_deudas.ToString();
+                            txt_totalingresos7.Text = sso.Socio_economico_total_ingresos_mensuales_proyectados_7.ToString();
+                            txt_ayuda7.Text = sso.Socio_economico_ayuda7.ToString();
+                            txt_otros7.Text = sso.Socio_economico_otros7.ToString();
+                            txt_deudas.Text = sso.Socio_economico_total_egresos_deudas.ToString();
 
-                            txt_totalingreso8.Text = sso.Socio_economico_total_ingresos_mensuales_proyectados_8.ToString();
-                            txt_ayudafamiliares8.Text = sso.Socio_economico_ayuda_padres8.ToString();
-                            txt_otrosingresos8.Text = sso.Socio_economico_otros_ingresos8.ToString();
-                            txt_otropensionesvarios.Text = sso.Socio_economico_total_egresos_mensuales_proyectados_otros.ToString();
+                            txt_totalingresos8.Text = sso.Socio_economico_total_ingresos_mensuales_proyectados_8.ToString();
+                            txt_ayuda8.Text = sso.Socio_economico_ayuda8.ToString();
+                            txt_otros8.Text = sso.Socio_economico_otros8.ToString();
+                            txt_otrospensiones.Text = sso.Socio_economico_total_egresos_pensiones_otros.ToString();
 
-                            txt_totalingreso9.Text = sso.Socio_economico_total_ingresos_mensuales_proyectados_total_9.ToString();
-                            txt_ayudafamiliares9.Text = sso.Socio_economico_ayuda_padres_total9.ToString();
-                            txt_otrosingresos9.Text = sso.Socio_economico_otros_ingresos_total9.ToString();
-                            txt_totalegresosmensualesproyectados.Text = sso.Socio_economico_total_egresos_mensuales_proyectados_total.ToString();
+                            txt_totalingresos9.Text = sso.Socio_economico_total_ingresos_mensuales_proyectados_total_9.ToString();
+                            txt_totalayudayotros9.Text = sso.Socio_economico_ayuda_y_otros_total_9.ToString();
+                            txt_totalegresos.Text = sso.Socio_economico_total_egresos_total_9.ToString();
 
-                            txt_totalfinal.Text = sso.Socio_economico_total_egresos_mensuales_proyectados_total_general.ToString();
 
-                            txt_valorcasa.Text = sso.Socio_economico_descripcion_mueble_valor_casa.ToString();
-                            txt_direccioncasa.Text = sso.Socio_economico_descripcion_mueble_detalle_direccion_casa.ToString();
-                            txt_valordepartamento.Text = sso.Socio_economico_descripcion_mueble_valor_departamento.ToString();
-                            txt_direcciondepartamento.Text = sso.Socio_economico_descripcion_mueble_detalle_direccion_departamento.ToString();
-                            txt_valorvehiculo.Text = sso.Socio_economico_descripcion_mueble_valor_vehiculo.ToString();
-                            txt_detallevehiculo.Text = sso.Socio_economico_descripcion_mueble_detalle_detalle_vehiculo.ToString();
-                            txt_valorterreno.Text = sso.Socio_economico_descripcion_mueble_valor_terreno.ToString();
-                            txt_sectorterreno.Text = sso.Socio_economico_descripcion_mueble_detalle_sector_terreno.ToString();
-                            txt_valornegocio.Text = sso.Socio_economico_descripcion_mueble_valor_negocio.ToString();
-                            txt_detallenegocio.Text = sso.Socio_economico_descripcion_mueble_detalle_detalle_negocio.ToString();
-                            txt_valormueblesenseres.Text = sso.Socio_economico_descripcion_mueble_valor_muebles_enseres.ToString();
-                            txt_detallemueblesenseres.Text = sso.Socio_economico_descripcion_mueble_detalle_detalle_muebles_enseres.ToString();
+                            txt_biencasa.Text = sso.Socio_economico_descripcion_mueble_valor_casa.ToString();
+                            txt_biendepartamento.Text = sso.Socio_economico_descripcion_mueble_valor_departamento.ToString();
+                            txt_bienvehiculo.Text = sso.Socio_economico_descripcion_mueble_valor_vehiculo.ToString();
+                            txt_bienterreno.Text = sso.Socio_economico_descripcion_mueble_valor_terreno.ToString();
+                            txt_bienegocio.Text = sso.Socio_economico_descripcion_mueble_valor_negocio.ToString();
+                            txt_bienmueblesyenseres.Text = sso.Socio_economico_descripcion_mueble_valor_muebles_enseres.ToString();
 
-                            txt_otrodescrpcionfamilia.Text = sso.Socio_economico_caracteristica_vivienda_descripcion_otra_especifique.ToString();
+                            txt_otrodescripcionviviendafamilia.Text = sso.Socio_economico_caracteristica_vivienda_descripcion_otra_especifique.ToString();
                             txt_otratenencia.Text = sso.Socio_economico_caracteristica_vivienda_tenencia_otra_especifique.ToString();
                             txt_otrotipodecasa.Text = sso.Socio_economico_caracteristica_vivienda_tipo_otro_especifique.ToString();
-                            //txt_otradistribucioncasa.Text = sso.Socio_economico_caracteristica_vivienda_distribucion_otro_especifique.ToString();
+                            txt_otradistribucioncasa.Text = sso.Socio_economico_caracteristica_vivienda_distribucion_otro_especifique.ToString();
                             txt_otrainformacioncasa.Text = sso.Socio_economico_caracteristica_vivienda_otro_especifique.ToString();
-                            txt_movilizadecasaatrabajo.Text = sso.Socio_economico_como_moviliza_vivienda_a_trabajo.ToString();
 
                             //Información Familiar
                             txt_nomapellidos1.Text = sso.Socio_economico_nombres_apellidos_familiar1.ToString();
@@ -198,6 +198,14 @@ namespace SistemaECU911.Template.Views_Socio_Economico
 
                             txt_nomapellidos5.Text = sso.Socio_economico_nombres_apellidos_familiar5.ToString();
                             txt_parentesco5.Text = sso.Socio_economico_parentesco_familiar5.ToString();
+                            //if (sso.Socio_economico_fecha_nacimiento_familiar5 == "")
+                            //{
+                            //    txt_fechanacimiento5.Text = sso.Socio_economico_fecha_nacimiento_familiar5.ToString();
+                            //}
+                            //else
+                            //{
+                            //    txt_fechanacimiento5.Text = Convert.ToDateTime(sso.Socio_economico_fecha_nacimiento_familiar5).ToString("yyyy-MM-dd");
+                            //}
                             txt_fechanacimiento5.Text = sso.Socio_economico_fecha_nacimiento_familiar5.ToString();
                             txt_edad5.Text = sso.Socio_economico_edad_familiar5.ToString();
 
@@ -215,9 +223,10 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                             txt_familiardiscapacitadoparentesco2.Text = sso.Socio_economico_familiar_discapacidad_parentesco2.ToString();
                             txt_familiardiscapacitadofechanacimiento2.Text = sso.Socio_economico_familiar_discapacidad_fecha_nacimiento2.ToString();
 
+                            txt_dependenciaministeriotrabajotiempo.Text = sso.Socio_economico_registrar_dependencia_familiar_MT_tiempo.ToString();
                             txt_numcarnetMSP.Text = sso.Socio_economico_registrar_dependencia_familiar_MT_numero_carnetMSP.ToString();
-                            txt_familiarenfermedadraraparentesco.Text = sso.Socio_economico_familiar_enfermedad_catastrofica_rara_parentesco.ToString();
-                            txtfamiliarenfermedadraratipo.Text = sso.Socio_economico_a_cargo_familiar_enfermedad_catastrofica_rara_tipoenfermedad.ToString();
+                            txt_acargofamiliarenfermedadraratiempo.Text = sso.Socio_economico_a_cargo_familiar_enfermedad_catastrofica_rara_tiempo.ToString();
+                            txt_familiarenfermedadraratipo.Text = sso.Socio_economico_a_cargo_familiar_enfermedad_catastrofica_rara_tipoenfermedad.ToString();
 
                             //Actividad tiempo libre
                             txt_otraactividad.Text = sso.Socio_economico_otro_especifique.ToString();
@@ -239,27 +248,24 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                             txt_observacionesgenerales.Text = sso.Socio_economico_familia_observaciones.ToString();
                             txt_informacionadicional.Text = sso.Socio_economico_informacion_adicional.ToString();
 
-
-
                             //DATOS GENERALES
                             //Modalidad de Trabajo
-                            if (sso.Socio_economico_modalidadcontrato_leyorgserpublico == null)
+                            if (sso.Socio_economico_modalidadvinculacion_leyorgserpublico == null)
                             {
-                                cb_modalidadlosep.Checked = false;
+                                cb_modalidadvinculacionlosep.Checked = false;
                             }
                             else
                             {
-                                cb_modalidadlosep.Checked = true;
+                                cb_modalidadvinculacionlosep.Checked = true;
                             }
-                            if (sso.Socio_economico_modalidadcontrato_codigotrabajo == null)
+                            if (sso.Socio_economico_modalidadvinculacion_codigotrabajo == null)
                             {
-                                //cb_modalidadcodigotrabajo.Checked = false;
+                                cb_modalidadvinculacioncodigotrabajo.Checked = false;
                             }
                             else
                             {
-                                //cb_modalidadcodigotrabajo.Checked = true;
+                                cb_modalidadvinculacioncodigotrabajo.Checked = true;
                             }
-
                             //Estado Civil
                             if (sso.Socio_economico_estadocivil_soltero == null)
                             {
@@ -335,7 +341,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                             {
                                 cb_donanteno.Checked = true;
                             }
-                            //Titulo
+                            //Nivel de Educación
                             if (sso.Socio_economico_titulo_primaria == null)
                             {
                                 cb_primaria.Checked = false;
@@ -383,14 +389,6 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                             else
                             {
                                 cb_maestria.Checked = true;
-                            }
-                            if (sso.Socio_economico_titulo_doctorado == null)
-                            {
-                                cb_doctorado.Checked = false;
-                            }
-                            else
-                            {
-                                cb_doctorado.Checked = true;
                             }
                             //Autoidentificacion Étnica
                             if (sso.Socio_economico_autoidentificacionetnica_blanco == null)
@@ -458,13 +456,22 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                             {
                                 cb_sur.Checked = true;
                             }
-                            if (sso.Socio_economico_sectorvive_otro == null)
+
+                            if (sso.Socio_economico_sectorvive_valle == null)
                             {
-                                //cb_otro_sector.Checked = false;
+                                cb_valle.Checked = false;
                             }
                             else
                             {
-                                //cb_otro_sector.Checked = true;
+                                cb_valle.Checked = true;
+                            }
+                            if (sso.Socio_economico_sectorvive_valledeloschillos == null)
+                            {
+                                cb_valledeloschillos.Checked = false;
+                            }
+                            else
+                            {
+                                cb_valledeloschillos.Checked = true;
                             }
                             //Tipo de vivienda
                             if (sso.Socio_economico_tipovivienda_casa == null)
@@ -482,14 +489,6 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                             else
                             {
                                 cb_departamento.Checked = true;
-                            }
-                            if (sso.Socio_economico_tipovivienda_otro == null)
-                            {
-                                cb_otrovivienda.Checked = false;
-                            }
-                            else
-                            {
-                                cb_otrovivienda.Checked = true;
                             }
                             //Riesgo Delincuencial
                             if (sso.Socio_economico_riesgo_delincuencial_alto == null)
@@ -567,15 +566,6 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                             {
                                 cb_recorridono.Checked = true;
                             }
-                            if (sso.Socio_economico_recorrido_institucional_no_existe == null)
-                            {
-                                cb_recorridonoexiste.Checked = false;
-                            }
-                            else
-                            {
-                                cb_recorridonoexiste.Checked = true;
-                            }
-
                             //SALUD
                             //Posee Discapacidad
                             if (sso.Socio_economico_discapacidad_si == null)
@@ -594,22 +584,22 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                             {
                                 cb_discapacidadno.Checked = true;
                             }
-                            //Embarazada 
-                            if (sso.Socio_economico_conyugue_embarazada_si == null)
+                            //Gestacion 
+                            if (sso.Socio_economico_estado_gestacion_si == null)
                             {
-                                cb_embarazadasi.Checked = false;
+                                cb_gestaciónsi.Checked = false;
                             }
                             else
                             {
-                                cb_embarazadasi.Checked = true;
+                                cb_gestaciónsi.Checked = true;
                             }
-                            if (sso.Socio_economico_conyugue_embarazada_no == null)
+                            if (sso.Socio_economico_estado_gestacion_no == null)
                             {
-                                cb_embarazadano.Checked = false;
+                                cb_gestaciónno.Checked = false;
                             }
                             else
                             {
-                                cb_embarazadano.Checked = true;
+                                cb_gestaciónno.Checked = true;
                             }
                             //Periodo Lactancia
                             if (sso.Socio_economico_periodo_lactancia_si == null)
@@ -679,6 +669,47 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                             {
                                 cb_alcoholno.Checked = true;
                             }
+                            //Frecuencia consumo alcohol
+                            if (sso.Socio_economico_consume_alcohol_frecuencia_diaria == null)
+                            {
+                                cb_consumoalcoholdiario.Checked = false;
+                            }
+                            else
+                            {
+                                cb_consumoalcoholdiario.Checked = true;
+                            }
+                            if (sso.Socio_economico_consume_alcohol_frecuencia_semanal == null)
+                            {
+                                cb_consumoalcoholsemanal.Checked = false;
+                            }
+                            else
+                            {
+                                cb_consumoalcoholsemanal.Checked = true;
+                            }
+                            if (sso.Socio_economico_consume_alcohol_frecuencia_quincenal == null)
+                            {
+                                cb_consumoalcoholquincenal.Checked = false;
+                            }
+                            else
+                            {
+                                cb_consumoalcoholquincenal.Checked = true;
+                            }
+                            if (sso.Socio_economico_consume_alcohol_frecuencia_mensual == null)
+                            {
+                                cb_consumoalcoholmensual.Checked = false;
+                            }
+                            else
+                            {
+                                cb_consumoalcoholmensual.Checked = true;
+                            }
+                            if (sso.Socio_economico_consume_alcohol_frecuencia_reuniones == null)
+                            {
+                                cb_consumoalcoholreuniones.Checked = false;
+                            }
+                            else
+                            {
+                                cb_consumoalcoholreuniones.Checked = true;
+                            }
                             //Consumo tabaco
                             if (sso.Socio_economico_consume_tabaco_si == null)
                             {
@@ -713,7 +744,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                             {
                                 cb_sustanciapsicotropicano.Checked = true;
                             }
-                            //Consumo sustancia psicotrópica
+                            //Problemas relacionados al consumo
                             if (sso.Socio_economico_problemas_consumo_familiares == null)
                             {
                                 cb_familiares.Checked = false;
@@ -980,23 +1011,6 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                             {
                                 cb_dependenciaministeriotrabajono.Checked = true;
                             }
-                            //Enfermedad catastrófica en su nucleo
-                            if (sso.Socio_economico_familiar_enfermedad_catastrofica_rara_si == null)
-                            {
-                                cb_familiarenfermedadrarasi.Checked = false;
-                            }
-                            else
-                            {
-                                cb_familiarenfermedadrarasi.Checked = true;
-                            }
-                            if (sso.Socio_economico_familiar_enfermedad_catastrofica_rara_no == null)
-                            {
-                                cb_familiarenfermedadrarano.Checked = false;
-                            }
-                            else
-                            {
-                                cb_familiarenfermedadrarano.Checked = true;
-                            }
                             //A cargo de persona con enfermedad catastrófica
                             if (sso.Socio_economico_a_cargo_familiar_enfermedad_catastrofica_rara_si == null)
                             {
@@ -1048,14 +1062,6 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                             else
                             {
                                 cb_actividadesartisticas.Checked = true;
-                            }
-                            if (sso.Socio_economico_otro == null)
-                            {
-                                cb_otraactividad.Checked = false;
-                            }
-                            else
-                            {
-                                cb_otraactividad.Checked = true;
                             }
                             //Actividad economica adicional
                             if (sso.Socio_economico_actividad_economica_adicional_si == null)
@@ -1151,14 +1157,6 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                             else
                             {
                                 cb_monoparental.Checked = true;
-                            }
-                            if (sso.Socio_economico_tipo_familia_padremadresoltero == null)
-                            {
-                                cb_padremadresoltero.Checked = false;
-                            }
-                            else
-                            {
-                                cb_padremadresoltero.Checked = true;
                             }
                             if (sso.Socio_economico_tipo_familia_vive_solo == null)
                             {
@@ -1284,14 +1282,6 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                                 cb_relacionconhijosmala.Checked = true;
                             }
                             //Problemas familiares
-                            if (sso.Socio_economico_problemas_familiares_antpenales == null)
-                            {
-                                cb_antpenales.Checked = false;
-                            }
-                            else
-                            {
-                                cb_antpenales.Checked = true;
-                            }
                             if (sso.Socio_economico_problemas_familiares_economicos == null)
                             {
                                 cb_economico.Checked = false;
@@ -1359,11 +1349,11 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                             }
                             if (sso.Socio_economico_problemas_familiares_violencia_sexual == null)
                             {
-                                //cb_sexual.Checked = false;
+                                cb_sexual.Checked = false;
                             }
                             else
                             {
-                                //cb_sexual.Checked = true;
+                                cb_sexual.Checked = true;
                             }
                             //Rol
                             if (sso.Socio_economico_miembro_familiar_rol_si == null)
@@ -1452,7 +1442,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                         }
                     }
                 }
-                txt_fecha.Text = DateTime.Now.ToString("yyyy-MM-dd");
+                txt_fecharegistro.Text = DateTime.Now.ToString("yyyy-MM-dd");
             }
         }
 
@@ -1551,17 +1541,21 @@ namespace SistemaECU911.Template.Views_Socio_Economico
 
                 sso = new Tbl_SocioEconomico
                 {
+                    //Datos código y versión
+                    Socio_economico_codigo_inicial = txt_codigoinicio.Text,
+                    Socio_economico_version = Convert.ToInt32(txt_version.Text),
+
                     //Datos Generales
                     Socio_economico_fecha_ingreso_al_Ecu = Convert.ToDateTime(txt_fechaingresoalsisecu.Text),
-                    Socio_economico_tipodesangre = txt_tipodesangre.Text,
+                    Socio_economico_tipo_de_sangre = txt_tipodesangre.Text,
 
-                    Socio_economico_telefonoconvencional = txt_telconvecional.Text,
-                    Socio_economico_telefonocelular = txt_telcelular.Text,
+                    Socio_economico_telefono_convencional = txt_telconvecional.Text,
+                    Socio_economico_telefono_celular = txt_telcelular.Text,
                     Socio_economico_email = txt_email.Text,
 
-                    Socio_economico_lugardenacimiento = txt_lugarnacimiento.Text,
-                    Socio_economico_fechadeNacimiento = Convert.ToDateTime(txt_fechanacimiento.Text),
-                    Socio_economico_edad = Convert.ToInt32(txt_edad.Text),
+                    Socio_economico_lugar_nacimiento = txt_lugarnacimiento.Text,
+                    Socio_economico_fecha_nacimiento = Convert.ToDateTime(txt_fechanacimiento.Text),
+                    Socio_economico_edad = txt_edad.Text,
 
                     Socio_economico_direcciondomicilio_provincia = txt_provincia.Text,
                     Socio_economico_direcciondomicilio_canton = txt_canton.Text,
@@ -1572,11 +1566,8 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                     Socio_economico_calle_secundaria = txt_callesecundaria.Text,
                     Socio_economico_referencia_ubicar_domicilio = txt_refubicardomicilio.Text,
 
-                    Socio_economico_sectorvive_otro_indique = txt_otrosector.Text,
                     Socio_economico_tipovivienda_otro_indique = txt_tipoviviendaotro.Text,
 
-                    Socio_economico_cuantas_personas_viven_con_usted = txt_personanvivenusted.Text,
-                    Socio_economico_cuantas_personas_viven_eventual_con_usted = txt_personanviveneventualusted.Text,
                     Socio_economico_contacto_emergencia_nombres_apellidos = txt_emernomyape.Text,
                     Socio_economico_contacto_emergencia_parentesco = txt_emeparentesco.Text,
                     Socio_economico_contacto_emergencia_telefono = txt_emetelefono.Text,
@@ -1585,24 +1576,24 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                     Socio_economico_contacto_emergencia_calle_secundaria = txt_emecallesecun.Text,
                     Socio_economico_contacto_emergencia_referencia_domicilio = txt_emerefubicardomicilio.Text,
 
-                    //Socio_economico_distancia_domicilio_trabajo = txt_distanciadomiciotrabajo.Text,
+                    Socio_economico_moviliza_trabajo_vivienda = txt_movilizatrabajoovivienda.Text,
 
                     //Salud
-                    Socio_economico_posee_enfermedad = txt_poseeenfermedadingresarEcu.Text,
+                    Socio_economico_posee_enfermedad = txt_poseeenfermedadprexistente.Text,
                     Socio_economico_discapacidad_tipo = txt_tipodiscapacidad.Text,
                     Socio_economico_discapacidad_porcentaje = Convert.ToInt32(txt_porcentajediscapacidad.Text),
                     Socio_economico_discapacidad_carnet_conadis = txt_numcarnetconadis.Text,
                     Socio_economico_discapacidad_fecha_caducidad_carnet = Convert.ToDateTime(txt_fechacaducidadcarnet.Text),
 
-                    Socio_economico_mes_gestacion = txt_mesgestacion.Text,
+                    Socio_economico_estado_gestacion_tiempo = txt_gestacióntiempo.Text,
                     Socio_economico_fecha_tentativa_parto = Convert.ToDateTime(txt_fechatentativaparto.Text),
                     Socio_economico_periodo_lactancia_fecha_culminacion = Convert.ToDateTime(txt_fechaculmicacionlactancia.Text),
 
                     Socio_economico_enfermedad_cronica_cual = txt_cualcatastrofica.Text,
-                    Socio_economico_enfermedad_cronica_otras = txt_otrasenfermedades.Text,
+                    Socio_economico_enfermedad_cronica_otras_enfermedades = txt_otrasenfermedadescat.Text,
                     Socio_economico_enfermedad_rara_cual = txt_enfermedadraracual.Text,
 
-                    Socio_economico_consume_alcohol_frecuencia_consumo = txt_frecuenciaconsumoalcohol.Text,
+                    Socio_economico_consume_alcohol_causa = txt_causaconsumoalcohol.Text,
                     Socio_economico_consume_alcohol_tiempo_consumo = txt_tiempoconsumoalcohol.Text,
                     Socio_economico_consume_tabaco_frecuencia_consumo = txt_frecuenciaconsumotabaco.Text,
                     Socio_economico_consume_tabaco_tiempo_consumo = txt_tiempoconsumotabaco.Text,
@@ -1610,72 +1601,64 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                     Socio_economico_consume_sustancia_psicotropica_frecuencia_consumo = txt_sustanciapsicotropicafrecuencia.Text,
 
                     //Situacion económica del servidor
-                    Socio_economico_total_ingresos_mensuales_proyectados_1 = Convert.ToInt32(txt_totalingreso1.Text),
-                    Socio_economico_ayuda_padres1 = Convert.ToInt32(txt_ayudafamiliares1.Text),
-                    Socio_economico_otros_ingresos1 = Convert.ToInt32(txt_otrosingresos1.Text),
-                    Socio_economico_total_egresos_mensuales_proyectados_alimentacion = Convert.ToInt32(txt_alimentacion.Text),
+                    Socio_economico_numero_miembro_economicamente_activos = Convert.ToInt32(txt_miembroactivoseconomicamente.Text),
 
-                    Socio_economico_total_ingresos_mensuales_proyectados_2 = Convert.ToInt32(txt_totalingreso2.Text),
-                    Socio_economico_ayuda_padres2 = Convert.ToInt32(txt_ayudafamiliares2.Text),
-                    Socio_economico_otros_ingresos2 = Convert.ToInt32(txt_otrosingresos2.Text),
-                    Socio_economico_total_egresos_mensuales_proyectados_vivienda = Convert.ToInt32(txt_vivienda.Text),
+                    Socio_economico_total_ingresos_mensuales_proyectados_1 = Convert.ToInt32(txt_totalingresos1.Text),
+                    Socio_economico_ayuda1 = Convert.ToInt32(txt_ayuda1.Text),
+                    Socio_economico_otros1 = Convert.ToInt32(txt_otros1.Text),
+                    Socio_economico_total_egresos_alimentacion = Convert.ToInt32(txt_alimentación.Text),
 
-                    Socio_economico_total_ingresos_mensuales_proyectados_3 = Convert.ToInt32(txt_totalingreso3.Text),
-                    Socio_economico_ayuda_padres3 = Convert.ToInt32(txt_ayudafamiliares3.Text),
-                    Socio_economico_otros_ingresos3 = Convert.ToInt32(txt_otrosingresos3.Text),
-                    Socio_economico_total_egresos_mensuales_proyectados_educacion = Convert.ToInt32(txt_educacion.Text),
+                    Socio_economico_total_ingresos_mensuales_proyectados_2 = Convert.ToInt32(txt_totalingresos2.Text),
+                    Socio_economico_ayuda2 = Convert.ToInt32(txt_ayuda2.Text),
+                    Socio_economico_otros2 = Convert.ToInt32(txt_otros2.Text),
+                    Socio_economico_total_egresos_vivienda = Convert.ToInt32(txt_vivienda.Text),
 
-                    Socio_economico_total_ingresos_mensuales_proyectados_4 = Convert.ToInt32(txt_totalingreso4.Text),
-                    Socio_economico_ayuda_padres4 = Convert.ToInt32(txt_ayudafamiliares4.Text),
-                    Socio_economico_otros_ingresos4 = Convert.ToInt32(txt_otrosingresos4.Text),
-                    Socio_economico_total_egresos_mensuales_proyectados_servicios_basicos = Convert.ToInt32(txt_serviciosbasicos.Text),
+                    Socio_economico_total_ingresos_mensuales_proyectados_3 = Convert.ToInt32(txt_totalingresos3.Text),
+                    Socio_economico_ayuda3 = Convert.ToInt32(txt_ayuda3.Text),
+                    Socio_economico_otros3 = Convert.ToInt32(txt_otros3.Text),
+                    Socio_economico_total_egresos_educacion = Convert.ToInt32(txt_educación.Text),
 
-                    Socio_economico_total_ingresos_mensuales_proyectados_5 = Convert.ToInt32(txt_totalingreso5.Text),
-                    Socio_economico_ayuda_padres5 = Convert.ToInt32(txt_ayudafamiliares5.Text),
-                    Socio_economico_otros_ingresos5 = Convert.ToInt32(txt_otrosingresos5.Text),
-                    Socio_economico_total_egresos_mensuales_proyectados_salud = Convert.ToInt32(txt_Salud.Text),
+                    Socio_economico_total_ingresos_mensuales_proyectados_4 = Convert.ToInt32(txt_totalingresos4.Text),
+                    Socio_economico_ayuda4 = Convert.ToInt32(txt_ayuda4.Text),
+                    Socio_economico_otros4 = Convert.ToInt32(txt_otros4.Text),
+                    Socio_economico_total_egresos_servicios_basicos = Convert.ToInt32(txt_serviciosbasicos.Text),
 
-                    Socio_economico_total_ingresos_mensuales_proyectados_6 = Convert.ToInt32(txt_totalingreso6.Text),
-                    Socio_economico_ayuda_padres6 = Convert.ToInt32(txt_ayudafamiliares6.Text),
-                    Socio_economico_otros_ingresos6 = Convert.ToInt32(txt_otrosingresos6.Text),
-                    Socio_economico_total_egresos_mensuales_proyectados_movilizacion = Convert.ToInt32(txt_movilizacion.Text),
+                    Socio_economico_total_ingresos_mensuales_proyectados_5 = Convert.ToInt32(txt_totalingresos5.Text),
+                    Socio_economico_ayuda5 = Convert.ToInt32(txt_ayuda5.Text),
+                    Socio_economico_otros5 = Convert.ToInt32(txt_otros5.Text),
+                    Socio_economico_total_egresos_salud = Convert.ToInt32(txt_salud.Text),
 
-                    Socio_economico_total_ingresos_mensuales_proyectados_7 = Convert.ToInt32(txt_totalingreso7.Text),
-                    Socio_economico_ayuda_padres7 = Convert.ToInt32(txt_ayudafamiliares7.Text),
-                    Socio_economico_otros_ingresos7 = Convert.ToInt32(txt_otrosingresos7.Text),
-                    Socio_economico_total_egresos_mensuales_proyectados_deudas = Convert.ToInt32(txt_deudas.Text),
+                    Socio_economico_total_ingresos_mensuales_proyectados_6 = Convert.ToInt32(txt_totalingresos6.Text),
+                    Socio_economico_ayuda6 = Convert.ToInt32(txt_ayuda6.Text),
+                    Socio_economico_otros6 = Convert.ToInt32(txt_otros6.Text),
+                    Socio_economico_total_egresos_movilizacion = Convert.ToInt32(txt_movilización.Text),
 
-                    Socio_economico_total_ingresos_mensuales_proyectados_8 = Convert.ToInt32(txt_totalingreso8.Text),
-                    Socio_economico_ayuda_padres8 = Convert.ToInt32(txt_ayudafamiliares8.Text),
-                    Socio_economico_otros_ingresos8 = Convert.ToInt32(txt_otrosingresos8.Text),
-                    Socio_economico_total_egresos_mensuales_proyectados_otros = Convert.ToInt32(txt_otropensionesvarios.Text),
+                    Socio_economico_total_ingresos_mensuales_proyectados_7 = Convert.ToInt32(txt_totalingresos7.Text),
+                    Socio_economico_ayuda7 = Convert.ToInt32(txt_ayuda7.Text),
+                    Socio_economico_otros7 = Convert.ToInt32(txt_otros7.Text),
+                    Socio_economico_total_egresos_deudas = Convert.ToInt32(txt_deudas.Text),
 
-                    Socio_economico_total_ingresos_mensuales_proyectados_total_9 = Convert.ToInt32(txt_totalingreso9.Text),
-                    Socio_economico_ayuda_padres_total9 = Convert.ToInt32(txt_ayudafamiliares9.Text),
-                    Socio_economico_otros_ingresos_total9 = Convert.ToInt32(txt_otrosingresos9.Text),
-                    Socio_economico_total_egresos_mensuales_proyectados_total = Convert.ToInt32(txt_totalegresosmensualesproyectados.Text),
+                    Socio_economico_total_ingresos_mensuales_proyectados_8 = Convert.ToInt32(txt_totalingresos8.Text),
+                    Socio_economico_ayuda8 = Convert.ToInt32(txt_ayuda8.Text),
+                    Socio_economico_otros8 = Convert.ToInt32(txt_otros8.Text),
+                    Socio_economico_total_egresos_pensiones_otros = Convert.ToInt32(txt_otrospensiones.Text),
 
-                    Socio_economico_total_egresos_mensuales_proyectados_total_general = Convert.ToInt32(txt_totalfinal.Text),
+                    Socio_economico_total_ingresos_mensuales_proyectados_total_9 = Convert.ToInt32(txt_totalingresos9.Text),
+                    Socio_economico_ayuda_y_otros_total_9 = Convert.ToInt32(txt_totalayudayotros9.Text),
+                    Socio_economico_total_egresos_total_9 = Convert.ToInt32(txt_totalegresos.Text),
 
-                    Socio_economico_descripcion_mueble_valor_casa = Convert.ToInt32(txt_valorcasa.Text),
-                    Socio_economico_descripcion_mueble_detalle_direccion_casa = txt_direccioncasa.Text,
-                    Socio_economico_descripcion_mueble_valor_departamento = Convert.ToInt32(txt_valordepartamento.Text),
-                    Socio_economico_descripcion_mueble_detalle_direccion_departamento = txt_direcciondepartamento.Text,
-                    Socio_economico_descripcion_mueble_valor_vehiculo = Convert.ToInt32(txt_valorvehiculo.Text),
-                    Socio_economico_descripcion_mueble_detalle_detalle_vehiculo = txt_detallevehiculo.Text,
-                    Socio_economico_descripcion_mueble_valor_terreno = Convert.ToInt32(txt_valorterreno.Text),
-                    Socio_economico_descripcion_mueble_detalle_sector_terreno = txt_sectorterreno.Text,
-                    Socio_economico_descripcion_mueble_valor_negocio = Convert.ToInt32(txt_valornegocio.Text),
-                    Socio_economico_descripcion_mueble_detalle_detalle_negocio = txt_detallenegocio.Text,
-                    Socio_economico_descripcion_mueble_valor_muebles_enseres = Convert.ToInt32(txt_valormueblesenseres.Text),
-                    Socio_economico_descripcion_mueble_detalle_detalle_muebles_enseres = txt_detallemueblesenseres.Text,
+                    Socio_economico_descripcion_mueble_valor_casa = Convert.ToInt32(txt_biencasa.Text),
+                    Socio_economico_descripcion_mueble_valor_departamento = Convert.ToInt32(txt_biendepartamento.Text),
+                    Socio_economico_descripcion_mueble_valor_vehiculo = Convert.ToInt32(txt_bienvehiculo.Text),
+                    Socio_economico_descripcion_mueble_valor_terreno = Convert.ToInt32(txt_bienterreno.Text),
+                    Socio_economico_descripcion_mueble_valor_negocio = Convert.ToInt32(txt_bienegocio.Text),
+                    Socio_economico_descripcion_mueble_valor_muebles_enseres = Convert.ToInt32(txt_bienmueblesyenseres.Text),
 
-                    Socio_economico_caracteristica_vivienda_descripcion_otra_especifique = txt_otrodescrpcionfamilia.Text,
+                    Socio_economico_caracteristica_vivienda_descripcion_otra_especifique = txt_otrodescripcionviviendafamilia.Text,
                     Socio_economico_caracteristica_vivienda_tenencia_otra_especifique = txt_otratenencia.Text,
                     Socio_economico_caracteristica_vivienda_tipo_otro_especifique = txt_otrotipodecasa.Text,
-                    //Socio_economico_caracteristica_vivienda_distribucion_otro_especifique = txt_otradistribucioncasa.Text,
+                    Socio_economico_caracteristica_vivienda_distribucion_otro_especifique = txt_otradistribucioncasa.Text,
                     Socio_economico_caracteristica_vivienda_otro_especifique = txt_otrainformacioncasa.Text,
-                    Socio_economico_como_moviliza_vivienda_a_trabajo = txt_movilizadecasaatrabajo.Text,
 
                     //Información Familiar
                     Socio_economico_nombres_apellidos_familiar1 = txt_nomapellidos1.Text,
@@ -1717,9 +1700,10 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                     Socio_economico_familiar_discapacidad_parentesco2 = txt_familiardiscapacitadoparentesco2.Text,
                     Socio_economico_familiar_discapacidad_fecha_nacimiento2 = Convert.ToDateTime(txt_familiardiscapacitadofechanacimiento2.Text),
 
+                    Socio_economico_registrar_dependencia_familiar_MT_tiempo = txt_dependenciaministeriotrabajotiempo.Text,
                     Socio_economico_registrar_dependencia_familiar_MT_numero_carnetMSP = txt_numcarnetMSP.Text,
-                    Socio_economico_familiar_enfermedad_catastrofica_rara_parentesco = txt_familiarenfermedadraraparentesco.Text,
-                    Socio_economico_a_cargo_familiar_enfermedad_catastrofica_rara_tipoenfermedad = txtfamiliarenfermedadraratipo.Text,
+                    Socio_economico_a_cargo_familiar_enfermedad_catastrofica_rara_tiempo = txt_acargofamiliarenfermedadraratiempo.Text,
+                    Socio_economico_a_cargo_familiar_enfermedad_catastrofica_rara_tipoenfermedad = txt_familiarenfermedadraratipo.Text,
 
                     //Actividad tiempo libre
                     Socio_economico_otro_especifique = txt_otraactividad.Text,
@@ -1746,14 +1730,14 @@ namespace SistemaECU911.Template.Views_Socio_Economico
 
                 //DATOS GENERALES
                 //Modalidad de Trabajo
-                if (cb_modalidadlosep.Checked == true)
+                if (cb_modalidadvinculacionlosep.Checked == true)
                 {
-                    sso.Socio_economico_modalidadcontrato_leyorgserpublico = "SI";
+                    sso.Socio_economico_modalidadvinculacion_leyorgserpublico = "SI";
                 }
-                //if (cb_modalidadcodigotrabajo.Checked == true)
-                //{
-                //    sso.Socio_economico_modalidadcontrato_codigotrabajo = "SI";
-                //}
+                if (cb_modalidadvinculacioncodigotrabajo.Checked == true)
+                {
+                    sso.Socio_economico_modalidadvinculacion_codigotrabajo = "SI";
+                }
                 //Estado Civil
                 if (cb_soltero.Checked == true)
                 {
@@ -1793,7 +1777,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                 {
                     sso.Socio_economico_es_donante_no = "SI";
                 }
-                //Titulo
+                //Nivel de Educación
                 if (cb_primaria.Checked == true)
                 {
                     sso.Socio_economico_titulo_primaria = "SI";
@@ -1817,10 +1801,6 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                 if (cb_maestria.Checked == true)
                 {
                     sso.Socio_economico_titulo_maestria = "SI";
-                }
-                if (cb_doctorado.Checked == true)
-                {
-                    sso.Socio_economico_titulo_doctorado = "SI";
                 }
                 //Autoidentificacion Étnica
                 if (cb_blanco.Checked == true)
@@ -1856,10 +1836,14 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                 {
                     sso.Socio_economico_sectorvive_sur = "SI";
                 }
-                //if (cb_otro_sector.Checked == true)
-                //{
-                //    sso.Socio_economico_sectorvive_otro = "SI";
-                //}
+                if (cb_valle.Checked == true)
+                {
+                    sso.Socio_economico_sectorvive_valle = "SI";
+                }
+                if (cb_valledeloschillos.Checked == true)
+                {
+                    sso.Socio_economico_sectorvive_valledeloschillos = "SI";
+                }
                 //Tipo de vivienda
                 if (cb_casa.Checked == true)
                 {
@@ -1868,10 +1852,6 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                 if (cb_departamento.Checked == true)
                 {
                     sso.Socio_economico_tipovivienda_departamento = "SI";
-                }
-                if (cb_otrovivienda.Checked == true)
-                {
-                    sso.Socio_economico_tipovivienda_otro = "SI";
                 }
                 //Riesgo Delincuencial
                 if (cb_riesgoalto.Checked == true)
@@ -1913,10 +1893,6 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                 {
                     sso.Socio_economico_recorrido_institucional_no = "SI";
                 }
-                if (cb_recorridonoexiste.Checked == true)
-                {
-                    sso.Socio_economico_recorrido_institucional_no_existe = "SI";
-                }
 
                 //SALUD
                 //Posee Discapacidad
@@ -1928,14 +1904,14 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                 {
                     sso.Socio_economico_discapacidad_no = "SI";
                 }
-                //Embarazada 
-                if (cb_embarazadasi.Checked == true)
+                //Gestacion 
+                if (cb_gestaciónsi.Checked == true)
                 {
-                    sso.Socio_economico_conyugue_embarazada_si = "SI";
+                    sso.Socio_economico_estado_gestacion_si = "SI";
                 }
-                if (cb_embarazadano.Checked == true)
+                if (cb_gestaciónno.Checked == true)
                 {
-                    sso.Socio_economico_conyugue_embarazada_no = "SI";
+                    sso.Socio_economico_estado_gestacion_no = "SI";
                 }
                 //Periodo Lactancia
                 if (cb_lactaciasi.Checked == true)
@@ -1972,6 +1948,27 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                 if (cb_alcoholno.Checked == true)
                 {
                     sso.Socio_economico_consume_alcohol_no = "SI";
+                }
+                //Frecuencia consumo alcohol
+                if (cb_consumoalcoholdiario.Checked == true)
+                {
+                    sso.Socio_economico_consume_alcohol_frecuencia_diaria = "SI";
+                }
+                if (cb_consumoalcoholsemanal.Checked == true)
+                {
+                    sso.Socio_economico_consume_alcohol_frecuencia_semanal = "SI";
+                }
+                if (cb_consumoalcoholquincenal.Checked == true)
+                {
+                    sso.Socio_economico_consume_alcohol_frecuencia_quincenal = "SI";
+                }
+                if (cb_consumoalcoholmensual.Checked == true)
+                {
+                    sso.Socio_economico_consume_alcohol_frecuencia_mensual = "SI";
+                }
+                if (cb_consumoalcoholreuniones.Checked == true)
+                {
+                    sso.Socio_economico_consume_alcohol_frecuencia_reuniones = "SI";
                 }
                 //Consumo tabaco
                 if (cb_tabacosi.Checked == true)
@@ -2103,7 +2100,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                     sso.Socio_economico_caracteristica_vivienda_distribucion_bodega = "SI";
                 }
 
-                //INFORMACION FAMILIAR
+                //INFORMACION GENERAL
                 //Persona discapacidad
                 if (cb_nucleodiscapacidadsi.Checked == true)
                 {
@@ -2129,15 +2126,6 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                 if (cb_dependenciaministeriotrabajono.Checked == true)
                 {
                     sso.Socio_economico_registrar_dependencia_familiar_MT_no = "SI";
-                }
-                //Enfermedad catastrófica en su nucleo
-                if (cb_familiarenfermedadrarasi.Checked == true)
-                {
-                    sso.Socio_economico_familiar_enfermedad_catastrofica_rara_si = "SI";
-                }
-                if (cb_familiarenfermedadrarano.Checked == true)
-                {
-                    sso.Socio_economico_familiar_enfermedad_catastrofica_rara_no = "SI";
                 }
                 //A cargo de persona con enfermedad catastrófica
                 if (cb_acargofamiliarenfermedadrarasi.Checked == true)
@@ -2166,10 +2154,6 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                 if (cb_actividadesartisticas.Checked == true)
                 {
                     sso.Socio_economico_actividades_artisticas = "SI";
-                }
-                if (cb_otraactividad.Checked == true)
-                {
-                    sso.Socio_economico_otro = "SI";
                 }
                 //Actividad economica adicional
                 if (cb_actividadeconomicasi.Checked == true)
@@ -2221,10 +2205,6 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                 if (cb_monoparental.Checked == true)
                 {
                     sso.Socio_economico_tipo_familia_monoparental = "SI";
-                }
-                if (cb_padremadresoltero.Checked == true)
-                {
-                    sso.Socio_economico_tipo_familia_padremadresoltero = "SI";
                 }
                 if (cb_vivesolo.Checked == true)
                 {
@@ -2290,10 +2270,6 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                     sso.Socio_economico_evaluacion_relacion_hijos_mala = "SI";
                 }
                 //Problemas familiares
-                if (cb_antpenales.Checked == true)
-                {
-                    sso.Socio_economico_problemas_familiares_antpenales = "SI";
-                }
                 if (cb_economico.Checked == true)
                 {
                     sso.Socio_economico_problemas_familiares_economicos = "SI";
@@ -2327,7 +2303,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                 {
                     sso.Socio_economico_problemas_familiares_violencia_verbal = "SI";
                 }
-                //if (cb_sexual.Checked == true)
+                if (cb_sexual.Checked == true)
                 {
                     sso.Socio_economico_problemas_familiares_violencia_sexual = "SI";
                 }
@@ -2396,19 +2372,23 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             try
             {
-                sso.Socio_economico_fechaHora = Convert.ToDateTime(txt_fecha.Text);
+                sso.Socio_economico_fechaHora = Convert.ToDateTime(txt_fecharegistro.Text);
+
+                //Datos código y versión
+                sso.Socio_economico_codigo_inicial = txt_codigoinicio.Text;
+                sso.Socio_economico_version = Convert.ToInt32(txt_version.Text);
 
                 //Datos Generales
                 sso.Socio_economico_fecha_ingreso_al_Ecu = Convert.ToDateTime(txt_fechaingresoalsisecu.Text);
-                sso.Socio_economico_tipodesangre = txt_tipodesangre.Text;
+                sso.Socio_economico_tipo_de_sangre = txt_tipodesangre.Text;
 
-                sso.Socio_economico_telefonoconvencional = txt_telconvecional.Text;
-                sso.Socio_economico_telefonocelular = txt_telcelular.Text;
+                sso.Socio_economico_telefono_convencional = txt_telconvecional.Text;
+                sso.Socio_economico_telefono_celular = txt_telcelular.Text;
                 sso.Socio_economico_email = txt_email.Text;
 
-                sso.Socio_economico_lugardenacimiento = txt_lugarnacimiento.Text;
-                sso.Socio_economico_fechadeNacimiento = Convert.ToDateTime(txt_fechanacimiento.Text);
-                sso.Socio_economico_edad = Convert.ToInt32(txt_edad.Text);
+                sso.Socio_economico_lugar_nacimiento = txt_lugarnacimiento.Text;
+                sso.Socio_economico_fecha_nacimiento = Convert.ToDateTime(txt_fechanacimiento.Text);
+                sso.Socio_economico_edad = txt_edad.Text;
 
                 sso.Socio_economico_direcciondomicilio_provincia = txt_provincia.Text;
                 sso.Socio_economico_direcciondomicilio_canton = txt_canton.Text;
@@ -2419,11 +2399,8 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                 sso.Socio_economico_calle_secundaria = txt_callesecundaria.Text;
                 sso.Socio_economico_referencia_ubicar_domicilio = txt_refubicardomicilio.Text;
 
-                sso.Socio_economico_sectorvive_otro_indique = txt_otrosector.Text;
                 sso.Socio_economico_tipovivienda_otro_indique = txt_tipoviviendaotro.Text;
 
-                sso.Socio_economico_cuantas_personas_viven_con_usted = txt_personanvivenusted.Text;
-                sso.Socio_economico_cuantas_personas_viven_eventual_con_usted = txt_personanviveneventualusted.Text;
                 sso.Socio_economico_contacto_emergencia_nombres_apellidos = txt_emernomyape.Text;
                 sso.Socio_economico_contacto_emergencia_parentesco = txt_emeparentesco.Text;
                 sso.Socio_economico_contacto_emergencia_telefono = txt_emetelefono.Text;
@@ -2432,24 +2409,24 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                 sso.Socio_economico_contacto_emergencia_calle_secundaria = txt_emecallesecun.Text;
                 sso.Socio_economico_contacto_emergencia_referencia_domicilio = txt_emerefubicardomicilio.Text;
 
-                //sso.Socio_economico_distancia_domicilio_trabajo = txt_distanciadomiciotrabajo.Text;
+                sso.Socio_economico_moviliza_trabajo_vivienda = txt_movilizatrabajoovivienda.Text;
 
                 //Salud
-                sso.Socio_economico_posee_enfermedad = txt_poseeenfermedadingresarEcu.Text;
+                sso.Socio_economico_posee_enfermedad = txt_poseeenfermedadprexistente.Text;
                 sso.Socio_economico_discapacidad_tipo = txt_tipodiscapacidad.Text;
                 sso.Socio_economico_discapacidad_porcentaje = Convert.ToInt32(txt_porcentajediscapacidad.Text);
                 sso.Socio_economico_discapacidad_carnet_conadis = txt_numcarnetconadis.Text;
                 sso.Socio_economico_discapacidad_fecha_caducidad_carnet = Convert.ToDateTime(txt_fechacaducidadcarnet.Text);
 
-                sso.Socio_economico_mes_gestacion = txt_mesgestacion.Text;
+                sso.Socio_economico_estado_gestacion_tiempo = txt_gestacióntiempo.Text;
                 sso.Socio_economico_fecha_tentativa_parto = Convert.ToDateTime(txt_fechatentativaparto.Text);
                 sso.Socio_economico_periodo_lactancia_fecha_culminacion = Convert.ToDateTime(txt_fechaculmicacionlactancia.Text);
 
                 sso.Socio_economico_enfermedad_cronica_cual = txt_cualcatastrofica.Text;
-                sso.Socio_economico_enfermedad_cronica_otras = txt_otrasenfermedades.Text;
+                sso.Socio_economico_enfermedad_cronica_otras_enfermedades = txt_otrasenfermedadescat.Text;
                 sso.Socio_economico_enfermedad_rara_cual = txt_enfermedadraracual.Text;
 
-                sso.Socio_economico_consume_alcohol_frecuencia_consumo = txt_frecuenciaconsumoalcohol.Text;
+                sso.Socio_economico_consume_alcohol_causa = txt_causaconsumoalcohol.Text;
                 sso.Socio_economico_consume_alcohol_tiempo_consumo = txt_tiempoconsumoalcohol.Text;
                 sso.Socio_economico_consume_tabaco_frecuencia_consumo = txt_frecuenciaconsumotabaco.Text;
                 sso.Socio_economico_consume_tabaco_tiempo_consumo = txt_tiempoconsumotabaco.Text;
@@ -2457,72 +2434,64 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                 sso.Socio_economico_consume_sustancia_psicotropica_frecuencia_consumo = txt_sustanciapsicotropicafrecuencia.Text;
 
                 //Situacion económica del servidor
-                sso.Socio_economico_total_ingresos_mensuales_proyectados_1 = Convert.ToInt32(txt_totalingreso1.Text);
-                sso.Socio_economico_ayuda_padres1 = Convert.ToInt32(txt_ayudafamiliares1.Text);
-                sso.Socio_economico_otros_ingresos1 = Convert.ToInt32(txt_otrosingresos1.Text);
-                sso.Socio_economico_total_egresos_mensuales_proyectados_alimentacion = Convert.ToInt32(txt_alimentacion.Text);
+                sso.Socio_economico_numero_miembro_economicamente_activos = Convert.ToInt32(txt_miembroactivoseconomicamente.Text);
 
-                sso.Socio_economico_total_ingresos_mensuales_proyectados_2 = Convert.ToInt32(txt_totalingreso2.Text);
-                sso.Socio_economico_ayuda_padres2 = Convert.ToInt32(txt_ayudafamiliares2.Text);
-                sso.Socio_economico_otros_ingresos2 = Convert.ToInt32(txt_otrosingresos2.Text);
-                sso.Socio_economico_total_egresos_mensuales_proyectados_vivienda = Convert.ToInt32(txt_vivienda.Text);
+                sso.Socio_economico_total_ingresos_mensuales_proyectados_1 = Convert.ToInt32(txt_totalingresos1.Text);
+                sso.Socio_economico_ayuda1 = Convert.ToInt32(txt_ayuda1.Text);
+                sso.Socio_economico_otros1 = Convert.ToInt32(txt_otros1.Text);
+                sso.Socio_economico_total_egresos_alimentacion = Convert.ToInt32(txt_alimentación.Text);
 
-                sso.Socio_economico_total_ingresos_mensuales_proyectados_3 = Convert.ToInt32(txt_totalingreso3.Text);
-                sso.Socio_economico_ayuda_padres3 = Convert.ToInt32(txt_ayudafamiliares3.Text);
-                sso.Socio_economico_otros_ingresos3 = Convert.ToInt32(txt_otrosingresos3.Text);
-                sso.Socio_economico_total_egresos_mensuales_proyectados_educacion = Convert.ToInt32(txt_educacion.Text);
+                sso.Socio_economico_total_ingresos_mensuales_proyectados_2 = Convert.ToInt32(txt_totalingresos2.Text);
+                sso.Socio_economico_ayuda2 = Convert.ToInt32(txt_ayuda2.Text);
+                sso.Socio_economico_otros2 = Convert.ToInt32(txt_otros2.Text);
+                sso.Socio_economico_total_egresos_vivienda = Convert.ToInt32(txt_vivienda.Text);
 
-                sso.Socio_economico_total_ingresos_mensuales_proyectados_4 = Convert.ToInt32(txt_totalingreso4.Text);
-                sso.Socio_economico_ayuda_padres4 = Convert.ToInt32(txt_ayudafamiliares4.Text);
-                sso.Socio_economico_otros_ingresos4 = Convert.ToInt32(txt_otrosingresos4.Text);
-                sso.Socio_economico_total_egresos_mensuales_proyectados_servicios_basicos = Convert.ToInt32(txt_serviciosbasicos.Text);
+                sso.Socio_economico_total_ingresos_mensuales_proyectados_3 = Convert.ToInt32(txt_totalingresos3.Text);
+                sso.Socio_economico_ayuda3 = Convert.ToInt32(txt_ayuda3.Text);
+                sso.Socio_economico_otros3 = Convert.ToInt32(txt_otros3.Text);
+                sso.Socio_economico_total_egresos_educacion = Convert.ToInt32(txt_educación.Text);
 
-                sso.Socio_economico_total_ingresos_mensuales_proyectados_5 = Convert.ToInt32(txt_totalingreso5.Text);
-                sso.Socio_economico_ayuda_padres5 = Convert.ToInt32(txt_ayudafamiliares5.Text);
-                sso.Socio_economico_otros_ingresos5 = Convert.ToInt32(txt_otrosingresos5.Text);
-                sso.Socio_economico_total_egresos_mensuales_proyectados_salud = Convert.ToInt32(txt_Salud.Text);
+                sso.Socio_economico_total_ingresos_mensuales_proyectados_4 = Convert.ToInt32(txt_totalingresos4.Text);
+                sso.Socio_economico_ayuda4 = Convert.ToInt32(txt_ayuda4.Text);
+                sso.Socio_economico_otros4 = Convert.ToInt32(txt_otros4.Text);
+                sso.Socio_economico_total_egresos_servicios_basicos = Convert.ToInt32(txt_serviciosbasicos.Text);
 
-                sso.Socio_economico_total_ingresos_mensuales_proyectados_6 = Convert.ToInt32(txt_totalingreso6.Text);
-                sso.Socio_economico_ayuda_padres6 = Convert.ToInt32(txt_ayudafamiliares6.Text);
-                sso.Socio_economico_otros_ingresos6 = Convert.ToInt32(txt_otrosingresos6.Text);
-                sso.Socio_economico_total_egresos_mensuales_proyectados_movilizacion = Convert.ToInt32(txt_movilizacion.Text);
+                sso.Socio_economico_total_ingresos_mensuales_proyectados_5 = Convert.ToInt32(txt_totalingresos5.Text);
+                sso.Socio_economico_ayuda5 = Convert.ToInt32(txt_ayuda5.Text);
+                sso.Socio_economico_otros5 = Convert.ToInt32(txt_otros5.Text);
+                sso.Socio_economico_total_egresos_salud = Convert.ToInt32(txt_salud.Text);
 
-                sso.Socio_economico_total_ingresos_mensuales_proyectados_7 = Convert.ToInt32(txt_totalingreso7.Text);
-                sso.Socio_economico_ayuda_padres7 = Convert.ToInt32(txt_ayudafamiliares7.Text);
-                sso.Socio_economico_otros_ingresos7 = Convert.ToInt32(txt_otrosingresos7.Text);
-                sso.Socio_economico_total_egresos_mensuales_proyectados_deudas = Convert.ToInt32(txt_deudas.Text);
+                sso.Socio_economico_total_ingresos_mensuales_proyectados_6 = Convert.ToInt32(txt_totalingresos6.Text);
+                sso.Socio_economico_ayuda6 = Convert.ToInt32(txt_ayuda6.Text);
+                sso.Socio_economico_otros6 = Convert.ToInt32(txt_otros6.Text);
+                sso.Socio_economico_total_egresos_movilizacion = Convert.ToInt32(txt_movilización.Text);
 
-                sso.Socio_economico_total_ingresos_mensuales_proyectados_8 = Convert.ToInt32(txt_totalingreso8.Text);
-                sso.Socio_economico_ayuda_padres8 = Convert.ToInt32(txt_ayudafamiliares8.Text);
-                sso.Socio_economico_otros_ingresos8 = Convert.ToInt32(txt_otrosingresos8.Text);
-                sso.Socio_economico_total_egresos_mensuales_proyectados_otros = Convert.ToInt32(txt_otropensionesvarios.Text);
+                sso.Socio_economico_total_ingresos_mensuales_proyectados_7 = Convert.ToInt32(txt_totalingresos7.Text);
+                sso.Socio_economico_ayuda7 = Convert.ToInt32(txt_ayuda7.Text);
+                sso.Socio_economico_otros7 = Convert.ToInt32(txt_otros7.Text);
+                sso.Socio_economico_total_egresos_deudas = Convert.ToInt32(txt_deudas.Text);
 
-                sso.Socio_economico_total_ingresos_mensuales_proyectados_total_9 = Convert.ToInt32(txt_totalingreso9.Text);
-                sso.Socio_economico_ayuda_padres_total9 = Convert.ToInt32(txt_ayudafamiliares9.Text);
-                sso.Socio_economico_otros_ingresos_total9 = Convert.ToInt32(txt_otrosingresos9.Text);
-                sso.Socio_economico_total_egresos_mensuales_proyectados_total = Convert.ToInt32(txt_totalegresosmensualesproyectados.Text);
+                sso.Socio_economico_total_ingresos_mensuales_proyectados_8 = Convert.ToInt32(txt_totalingresos8.Text);
+                sso.Socio_economico_ayuda8 = Convert.ToInt32(txt_ayuda8.Text);
+                sso.Socio_economico_otros8 = Convert.ToInt32(txt_otros8.Text);
+                sso.Socio_economico_total_egresos_pensiones_otros = Convert.ToInt32(txt_otrospensiones.Text);
 
-                sso.Socio_economico_total_egresos_mensuales_proyectados_total_general = Convert.ToInt32(txt_totalfinal.Text);
+                sso.Socio_economico_total_ingresos_mensuales_proyectados_total_9 = Convert.ToInt32(txt_totalingresos9.Text);
+                sso.Socio_economico_ayuda_y_otros_total_9 = Convert.ToInt32(txt_totalayudayotros9.Text);
+                sso.Socio_economico_total_egresos_total_9 = Convert.ToInt32(txt_totalegresos.Text);
 
-                sso.Socio_economico_descripcion_mueble_valor_casa = Convert.ToInt32(txt_valorcasa.Text);
-                sso.Socio_economico_descripcion_mueble_detalle_direccion_casa = txt_direccioncasa.Text;
-                sso.Socio_economico_descripcion_mueble_valor_departamento = Convert.ToInt32(txt_valordepartamento.Text);
-                sso.Socio_economico_descripcion_mueble_detalle_direccion_departamento = txt_direcciondepartamento.Text;
-                sso.Socio_economico_descripcion_mueble_valor_vehiculo = Convert.ToInt32(txt_valorvehiculo.Text);
-                sso.Socio_economico_descripcion_mueble_detalle_detalle_vehiculo = txt_detallevehiculo.Text;
-                sso.Socio_economico_descripcion_mueble_valor_terreno = Convert.ToInt32(txt_valorterreno.Text);
-                sso.Socio_economico_descripcion_mueble_detalle_sector_terreno = txt_sectorterreno.Text;
-                sso.Socio_economico_descripcion_mueble_valor_negocio = Convert.ToInt32(txt_valornegocio.Text);
-                sso.Socio_economico_descripcion_mueble_detalle_detalle_negocio = txt_detallenegocio.Text;
-                sso.Socio_economico_descripcion_mueble_valor_muebles_enseres = Convert.ToInt32(txt_valormueblesenseres.Text);
-                sso.Socio_economico_descripcion_mueble_detalle_detalle_muebles_enseres = txt_detallemueblesenseres.Text;
+                sso.Socio_economico_descripcion_mueble_valor_casa = Convert.ToInt32(txt_biencasa.Text);
+                sso.Socio_economico_descripcion_mueble_valor_departamento = Convert.ToInt32(txt_biendepartamento.Text);
+                sso.Socio_economico_descripcion_mueble_valor_vehiculo = Convert.ToInt32(txt_bienvehiculo.Text);
+                sso.Socio_economico_descripcion_mueble_valor_terreno = Convert.ToInt32(txt_bienterreno.Text);
+                sso.Socio_economico_descripcion_mueble_valor_negocio = Convert.ToInt32(txt_bienegocio.Text);
+                sso.Socio_economico_descripcion_mueble_valor_muebles_enseres = Convert.ToInt32(txt_bienmueblesyenseres.Text);
 
-                sso.Socio_economico_caracteristica_vivienda_descripcion_otra_especifique = txt_otrodescrpcionfamilia.Text;
+                sso.Socio_economico_caracteristica_vivienda_descripcion_otra_especifique = txt_otrodescripcionviviendafamilia.Text;
                 sso.Socio_economico_caracteristica_vivienda_tenencia_otra_especifique = txt_otratenencia.Text;
                 sso.Socio_economico_caracteristica_vivienda_tipo_otro_especifique = txt_otrotipodecasa.Text;
-                //sso.Socio_economico_caracteristica_vivienda_distribucion_otro_especifique = txt_otradistribucioncasa.Text;
+                sso.Socio_economico_caracteristica_vivienda_distribucion_otro_especifique = txt_otradistribucioncasa.Text;
                 sso.Socio_economico_caracteristica_vivienda_otro_especifique = txt_otrainformacioncasa.Text;
-                sso.Socio_economico_como_moviliza_vivienda_a_trabajo = txt_movilizadecasaatrabajo.Text;
 
                 //Información Familiar
                 sso.Socio_economico_nombres_apellidos_familiar1 = txt_nomapellidos1.Text;
@@ -2564,9 +2533,10 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                 sso.Socio_economico_familiar_discapacidad_parentesco2 = txt_familiardiscapacitadoparentesco2.Text;
                 sso.Socio_economico_familiar_discapacidad_fecha_nacimiento2 = Convert.ToDateTime(txt_familiardiscapacitadofechanacimiento2.Text);
 
+                sso.Socio_economico_registrar_dependencia_familiar_MT_tiempo = txt_dependenciaministeriotrabajotiempo.Text;
                 sso.Socio_economico_registrar_dependencia_familiar_MT_numero_carnetMSP = txt_numcarnetMSP.Text;
-                sso.Socio_economico_familiar_enfermedad_catastrofica_rara_parentesco = txt_familiarenfermedadraraparentesco.Text;
-                sso.Socio_economico_a_cargo_familiar_enfermedad_catastrofica_rara_tipoenfermedad = txtfamiliarenfermedadraratipo.Text;
+                sso.Socio_economico_a_cargo_familiar_enfermedad_catastrofica_rara_tiempo = txt_acargofamiliarenfermedadraratiempo.Text;
+                sso.Socio_economico_a_cargo_familiar_enfermedad_catastrofica_rara_tipoenfermedad = txt_familiarenfermedadraratipo.Text;
 
                 //Actividad tiempo libre
                 sso.Socio_economico_otro_especifique = txt_otraactividad.Text;
@@ -2590,22 +2560,22 @@ namespace SistemaECU911.Template.Views_Socio_Economico
 
                 //DATOS GENERALES
                 //Modalidad de Trabajo
-                if (cb_modalidadlosep.Checked == true)
+                if (cb_modalidadvinculacionlosep.Checked == true)
                 {
-                    sso.Socio_economico_modalidadcontrato_leyorgserpublico = "SI";
+                    sso.Socio_economico_modalidadvinculacion_leyorgserpublico = "SI";
                 }
                 else
                 {
-                    sso.Socio_economico_modalidadcontrato_leyorgserpublico = null;
+                    sso.Socio_economico_modalidadvinculacion_leyorgserpublico = null;
                 }
-                //if (cb_modalidadcodigotrabajo.Checked == true)
-                //{
-                //    sso.Socio_economico_modalidadcontrato_codigotrabajo = "SI";
-                //}
-                //else
-                //{
-                //    sso.Socio_economico_modalidadcontrato_codigotrabajo = null;
-                //}
+                if (cb_modalidadvinculacioncodigotrabajo.Checked == true)
+                {
+                    sso.Socio_economico_modalidadvinculacion_codigotrabajo = "SI";
+                }
+                else
+                {
+                    sso.Socio_economico_modalidadvinculacion_codigotrabajo = null;
+                }
                 //Estado Civil
                 if (cb_soltero.Checked == true)
                 {
@@ -2681,7 +2651,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                 {
                     sso.Socio_economico_es_donante_no = null;
                 }
-                //Titulo
+                //Nivel de educación
                 if (cb_primaria.Checked == true)
                 {
                     sso.Socio_economico_titulo_primaria = "SI";
@@ -2729,14 +2699,6 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                 else
                 {
                     sso.Socio_economico_titulo_maestria = null;
-                }
-                if (cb_doctorado.Checked == true)
-                {
-                    sso.Socio_economico_titulo_doctorado = "SI";
-                }
-                else
-                {
-                    sso.Socio_economico_titulo_doctorado = null;
                 }
                 //Autoidentificacion Étnica
                 if (cb_blanco.Checked == true)
@@ -2804,14 +2766,22 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                 {
                     sso.Socio_economico_sectorvive_sur = null;
                 }
-                //if (cb_otro_sector.Checked == true)
-                //{
-                //    sso.Socio_economico_sectorvive_otro = "SI";
-                //}
-                //else
-                //{
-                //    sso.Socio_economico_sectorvive_otro = null;
-                //}
+                if (cb_valle.Checked == true)
+                {
+                    sso.Socio_economico_sectorvive_valle = "SI";
+                }
+                else
+                {
+                    sso.Socio_economico_sectorvive_valle = null;
+                }
+                if (cb_valledeloschillos.Checked == true)
+                {
+                    sso.Socio_economico_sectorvive_valledeloschillos = "SI";
+                }
+                else
+                {
+                    sso.Socio_economico_sectorvive_valledeloschillos = null;
+                }
                 //Tipo de vivienda
                 if (cb_casa.Checked == true)
                 {
@@ -2828,14 +2798,6 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                 else
                 {
                     sso.Socio_economico_tipovivienda_departamento = null;
-                }
-                if (cb_otrovivienda.Checked == true)
-                {
-                    sso.Socio_economico_tipovivienda_otro = "SI";
-                }
-                else
-                {
-                    sso.Socio_economico_tipovivienda_otro = null;
                 }
                 //Riesgo Delincuencial
                 if (cb_riesgoalto.Checked == true)
@@ -2913,14 +2875,6 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                 {
                     sso.Socio_economico_recorrido_institucional_no = null;
                 }
-                if (cb_recorridonoexiste.Checked == true)
-                {
-                    sso.Socio_economico_recorrido_institucional_no_existe = "SI";
-                }
-                else
-                {
-                    sso.Socio_economico_recorrido_institucional_no_existe = null;
-                }
 
                 //SALUD
                 //Posee Discapacidad
@@ -2940,22 +2894,22 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                 {
                     sso.Socio_economico_discapacidad_no = null;
                 }
-                //Embarazada 
-                if (cb_embarazadasi.Checked == true)
+                //Gestacion 
+                if (cb_gestaciónsi.Checked == true)
                 {
-                    sso.Socio_economico_conyugue_embarazada_si = "SI";
+                    sso.Socio_economico_estado_gestacion_si = "SI";
                 }
                 else
                 {
-                    sso.Socio_economico_conyugue_embarazada_si = null;
+                    sso.Socio_economico_estado_gestacion_si = null;
                 }
-                if (cb_embarazadano.Checked == true)
+                if (cb_gestaciónno.Checked == true)
                 {
-                    sso.Socio_economico_conyugue_embarazada_no = "SI";
+                    sso.Socio_economico_estado_gestacion_no = "SI";
                 }
                 else
                 {
-                    sso.Socio_economico_conyugue_embarazada_no = null;
+                    sso.Socio_economico_estado_gestacion_no = null;
                 }
                 //Periodo Lactancia
                 if (cb_lactaciasi.Checked == true)
@@ -3024,6 +2978,47 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                 else
                 {
                     sso.Socio_economico_consume_alcohol_no = null;
+                }
+                //Frecuencia consumo alcohol
+                if (cb_consumoalcoholdiario.Checked == true)
+                {
+                    sso.Socio_economico_consume_alcohol_frecuencia_diaria = "SI";
+                }
+                else
+                {
+                    sso.Socio_economico_consume_alcohol_frecuencia_diaria = null;
+                }
+                if (cb_consumoalcoholsemanal.Checked == true)
+                {
+                    sso.Socio_economico_consume_alcohol_frecuencia_semanal = "SI";
+                }
+                else
+                {
+                    sso.Socio_economico_consume_alcohol_frecuencia_semanal = null;
+                }
+                if (cb_consumoalcoholquincenal.Checked == true)
+                {
+                    sso.Socio_economico_consume_alcohol_frecuencia_quincenal = "SI";
+                }
+                else
+                {
+                    sso.Socio_economico_consume_alcohol_frecuencia_quincenal = null;
+                }
+                if (cb_consumoalcoholmensual.Checked == true)
+                {
+                    sso.Socio_economico_consume_alcohol_frecuencia_mensual = "SI";
+                }
+                else
+                {
+                    sso.Socio_economico_consume_alcohol_frecuencia_mensual = null;
+                }
+                if (cb_consumoalcoholreuniones.Checked == true)
+                {
+                    sso.Socio_economico_consume_alcohol_frecuencia_reuniones = "SI";
+                }
+                else
+                {
+                    sso.Socio_economico_consume_alcohol_frecuencia_reuniones = null;
                 }
                 //Consumo tabaco
                 if (cb_tabacosi.Checked == true)
@@ -3326,23 +3321,6 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                 {
                     sso.Socio_economico_registrar_dependencia_familiar_MT_no = null;
                 }
-                //Enfermedad catastrófica en su nucleo
-                if (cb_familiarenfermedadrarasi.Checked == true)
-                {
-                    sso.Socio_economico_familiar_enfermedad_catastrofica_rara_si = "SI";
-                }
-                else
-                {
-                    sso.Socio_economico_familiar_enfermedad_catastrofica_rara_si = null;
-                }
-                if (cb_familiarenfermedadrarano.Checked == true)
-                {
-                    sso.Socio_economico_familiar_enfermedad_catastrofica_rara_no = "SI";
-                }
-                else
-                {
-                    sso.Socio_economico_familiar_enfermedad_catastrofica_rara_no = null;
-                }
                 //A cargo de persona con enfermedad catastrófica
                 if (cb_acargofamiliarenfermedadrarasi.Checked == true)
                 {
@@ -3394,14 +3372,6 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                 else
                 {
                     sso.Socio_economico_actividades_artisticas = null;
-                }
-                if (cb_otraactividad.Checked == true)
-                {
-                    sso.Socio_economico_otro = "SI";
-                }
-                else
-                {
-                    sso.Socio_economico_otro = null;
                 }
                 //Actividad economica adicional
                 if (cb_actividadeconomicasi.Checked == true)
@@ -3497,14 +3467,6 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                 else
                 {
                     sso.Socio_economico_tipo_familia_monoparental = null;
-                }
-                if (cb_padremadresoltero.Checked == true)
-                {
-                    sso.Socio_economico_tipo_familia_padremadresoltero = "SI";
-                }
-                else
-                {
-                    sso.Socio_economico_tipo_familia_padremadresoltero = null;
                 }
                 if (cb_vivesolo.Checked == true)
                 {
@@ -3630,14 +3592,6 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                     sso.Socio_economico_evaluacion_relacion_hijos_mala = null;
                 }
                 //Problemas familiares
-                if (cb_antpenales.Checked == true)
-                {
-                    sso.Socio_economico_problemas_familiares_antpenales = "SI";
-                }
-                else
-                {
-                    sso.Socio_economico_problemas_familiares_antpenales = null;
-                }
                 if (cb_economico.Checked == true)
                 {
                     sso.Socio_economico_problemas_familiares_economicos = "SI";
@@ -3703,14 +3657,14 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                 {
                     sso.Socio_economico_problemas_familiares_violencia_verbal = null;
                 }
-                //if (cb_sexual.Checked == true)
-                //{
-                //    sso.Socio_economico_problemas_familiares_violencia_sexual = "SI";
-                //}
-                //else
-                //{
-                //    sso.Socio_economico_problemas_familiares_violencia_sexual = null;
-                //}
+                if (cb_sexual.Checked == true)
+                {
+                    sso.Socio_economico_problemas_familiares_violencia_sexual = "SI";
+                }
+                else
+                {
+                    sso.Socio_economico_problemas_familiares_violencia_sexual = null;
+                }
                 //Rol
                 if (cb_rolfamiliarsi.Checked == true)
                 {
@@ -3812,12 +3766,2089 @@ namespace SistemaECU911.Template.Views_Socio_Economico
 
         protected void btn_guardar_Click(object sender, EventArgs e)
         {
-            Guardar_modificar_datos(Convert.ToInt32(Request["cod"]));
+            //Guardar_modificar_datos(Convert.ToInt32(Request["cod"]));
         }
 
         protected void btn_cancelar_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/Template/Views_Socio_Economico/Inicio.aspx");
+        }
+
+
+
+        //VALIDACIONES CHECKBOX Y TEXTBOX
+
+        //I.DATOS PERSONALES DEL SERVIDOR/A
+        protected void cb_modalidadvinculacionlosep_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_modalidadvinculacionlosep.Checked == true)
+            {
+                cb_modalidadvinculacioncodigotrabajo.Enabled = false;
+                txt_tipodesangre.Enabled = false;
+            }
+            else
+            {
+                cb_modalidadvinculacioncodigotrabajo.Enabled = true;
+            }
+        }
+
+        protected void cb_modalidadvinculacioncodigotrabajo_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_modalidadvinculacioncodigotrabajo.Checked == true)
+            {
+                cb_modalidadvinculacionlosep.Enabled = false;
+            }
+            else
+            {
+                cb_modalidadvinculacionlosep.Enabled = true;
+            }
+        }
+
+        protected void cb_soltero_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_soltero.Checked == true)
+            {
+                cb_casado.Enabled = false;
+                cb_viudo.Enabled = false;
+                cb_unionlibre.Enabled = false;
+                cb_divorciado.Enabled = false;
+            }
+            else
+            {
+                cb_soltero.Enabled = true;
+                cb_casado.Enabled = true;
+                cb_viudo.Enabled = true;
+                cb_unionlibre.Enabled = true;
+                cb_divorciado.Enabled = true;
+            }
+        }
+
+        protected void cb_casado_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_casado.Checked == true)
+            {
+                cb_soltero.Enabled = false;
+                cb_viudo.Enabled = false;
+                cb_unionlibre.Enabled = false;
+                cb_divorciado.Enabled = false;
+            }
+            else
+            {
+                cb_soltero.Enabled = true;
+                cb_casado.Enabled = true;
+                cb_viudo.Enabled = true;
+                cb_unionlibre.Enabled = true;
+                cb_divorciado.Enabled = true;
+            }
+        }
+
+        protected void cb_viudo_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_viudo.Checked == true)
+            {
+                cb_soltero.Enabled = false;
+                cb_casado.Enabled = false;
+                cb_unionlibre.Enabled = false;
+                cb_divorciado.Enabled = false;
+            }
+            else
+            {
+                cb_soltero.Enabled = true;
+                cb_casado.Enabled = true;
+                cb_viudo.Enabled = true;
+                cb_unionlibre.Enabled = true;
+                cb_divorciado.Enabled = true;
+            }
+        }
+
+        protected void cb_unionlibre_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_unionlibre.Checked == true)
+            {
+                cb_soltero.Enabled = false;
+                cb_casado.Enabled = false;
+                cb_viudo.Enabled = false;
+                cb_divorciado.Enabled = false;
+            }
+            else
+            {
+                cb_soltero.Enabled = true;
+                cb_casado.Enabled = true;
+                cb_viudo.Enabled = true;
+                cb_unionlibre.Enabled = true;
+                cb_divorciado.Enabled = true;
+            }
+        }
+
+        protected void cb_divorciado_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_divorciado.Checked == true)
+            {
+                cb_soltero.Enabled = false;
+                cb_casado.Enabled = false;
+                cb_viudo.Enabled = false;
+                cb_unionlibre.Enabled = false;
+            }
+            else
+            {
+                cb_soltero.Enabled = true;
+                cb_casado.Enabled = true;
+                cb_viudo.Enabled = true;
+                cb_unionlibre.Enabled = true;
+                cb_divorciado.Enabled = true;
+            }
+        }
+
+        protected void cb_genmasculino_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_genmasculino.Checked == true)
+            {
+                cb_genfemenino.Enabled = false;
+            }
+            else
+            {
+                cb_genmasculino.Enabled = true;
+                cb_genfemenino.Enabled = true;
+            }
+        }
+
+        protected void cb_genfemenino_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_genfemenino.Checked == true)
+            {
+                cb_genmasculino.Enabled = false;
+            }
+            else
+            {
+                cb_genmasculino.Enabled = true;
+                cb_genfemenino.Enabled = true;
+            }
+        }
+
+        protected void cb_donantesi_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_donantesi.Checked == true)
+            {
+                cb_donanteno.Enabled = false;
+            }
+            else
+            {
+                cb_donantesi.Enabled = true;
+                cb_donanteno.Enabled = true;
+            }
+        }
+
+        protected void cb_donanteno_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_donanteno.Checked == true)
+            {
+                cb_donantesi.Enabled = false;
+            }
+            else
+            {
+                cb_donantesi.Enabled = true;
+                cb_donanteno.Enabled = true;
+            }
+        }
+
+        protected void cb_primaria_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_primaria.Checked == true)
+            {
+                cb_secundaria.Enabled = false;
+                cb_superior.Enabled = false;
+                cb_especializacion.Enabled = false;
+                cb_diplomado.Enabled = false;
+                cb_maestria.Enabled = false;
+            }
+            else
+            {
+                cb_primaria.Enabled = true;
+                cb_secundaria.Enabled = true;
+                cb_superior.Enabled = true;
+                cb_especializacion.Enabled = true;
+                cb_diplomado.Enabled = true;
+                cb_maestria.Enabled = true;
+            }
+        }
+
+        protected void cb_secundaria_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_secundaria.Checked == true)
+            {
+                cb_primaria.Checked = true;
+                cb_superior.Enabled = false;
+                cb_especializacion.Enabled = false;
+                cb_diplomado.Enabled = false;
+                cb_maestria.Enabled = false;
+            }
+            else
+            {
+                cb_primaria.Checked = false;
+                cb_secundaria.Enabled = true;
+                cb_superior.Enabled = true;
+                cb_especializacion.Enabled = true;
+                cb_diplomado.Enabled = true;
+                cb_maestria.Enabled = true;
+            }
+        }
+
+        protected void cb_superior_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_superior.Checked == true)
+            {
+                cb_primaria.Checked = true;
+                cb_secundaria.Checked = true;
+                cb_especializacion.Enabled = false;
+                cb_diplomado.Enabled = false;
+                cb_maestria.Enabled = false;
+            }
+            else
+            {
+                cb_primaria.Checked = false;
+                cb_secundaria.Checked = false;
+                cb_superior.Enabled = true;
+                cb_especializacion.Enabled = true;
+                cb_diplomado.Enabled = true;
+                cb_maestria.Enabled = true;
+            }
+        }
+
+        protected void cb_especializacion_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_especializacion.Checked == true)
+            {
+                cb_primaria.Checked = true;
+                cb_secundaria.Checked = true;
+                cb_superior.Checked = true;
+                cb_diplomado.Enabled = false;
+                cb_maestria.Enabled = false;
+            }
+            else
+            {
+                cb_primaria.Checked = false;
+                cb_secundaria.Checked = false;
+                cb_superior.Checked = false;
+                cb_especializacion.Enabled = true;
+                cb_diplomado.Enabled = true;
+                cb_maestria.Enabled = true;
+            }
+        }
+
+        protected void cb_diplomado_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_diplomado.Checked == true)
+            {
+                cb_primaria.Checked = true;
+                cb_secundaria.Checked = true;
+                cb_superior.Checked = true;
+                cb_especializacion.Checked = true;
+                cb_maestria.Enabled = false;
+            }
+            else
+            {
+                cb_primaria.Checked = false;
+                cb_secundaria.Checked = false;
+                cb_superior.Checked = false;
+                cb_especializacion.Checked = false;
+                cb_diplomado.Enabled = true;
+                cb_maestria.Enabled = true;
+            }
+        }
+
+        protected void cb_maestria_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_maestria.Checked == true)
+            {
+                cb_primaria.Checked = true;
+                cb_secundaria.Checked = true;
+                cb_superior.Checked = true;
+                cb_especializacion.Checked = true;
+                cb_diplomado.Checked = true;
+            }
+            else
+            {
+                cb_primaria.Checked = false;
+                cb_secundaria.Checked = false;
+                cb_superior.Checked = false;
+                cb_especializacion.Checked = false;
+                cb_diplomado.Checked = false;
+                cb_maestria.Enabled = true;
+            }
+        }
+
+        protected void cb_blanco_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_blanco.Checked == true)
+            {
+                cb_mestizo.Enabled = false;
+                cb_afro.Enabled = false;
+                cb_indigena.Enabled = false;
+                cb_montubio.Enabled = false;
+            }
+            else
+            {
+                cb_blanco.Enabled = true;
+                cb_mestizo.Enabled = true;
+                cb_afro.Enabled = true;
+                cb_indigena.Enabled = true;
+                cb_montubio.Enabled = true;
+            }
+        }
+
+        protected void cb_mestizo_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_mestizo.Checked == true)
+            {
+                cb_blanco.Enabled = false;
+                cb_afro.Enabled = false;
+                cb_indigena.Enabled = false;
+                cb_montubio.Enabled = false;
+            }
+            else
+            {
+                cb_blanco.Enabled = true;
+                cb_mestizo.Enabled = true;
+                cb_afro.Enabled = true;
+                cb_indigena.Enabled = true;
+                cb_montubio.Enabled = true;
+            }
+        }
+
+        protected void cb_afro_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_afro.Checked == true)
+            {
+                cb_blanco.Enabled = false;
+                cb_mestizo.Enabled = false;
+                cb_indigena.Enabled = false;
+                cb_montubio.Enabled = false;
+            }
+            else
+            {
+                cb_blanco.Enabled = true;
+                cb_mestizo.Enabled = true;
+                cb_afro.Enabled = true;
+                cb_indigena.Enabled = true;
+                cb_montubio.Enabled = true;
+            }
+        }
+
+        protected void cb_indigena_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_indigena.Checked == true)
+            {
+                cb_blanco.Enabled = false;
+                cb_mestizo.Enabled = false;
+                cb_afro.Enabled = false;
+                cb_montubio.Enabled = false;
+            }
+            else
+            {
+                cb_blanco.Enabled = true;
+                cb_mestizo.Enabled = true;
+                cb_afro.Enabled = true;
+                cb_indigena.Enabled = true;
+                cb_montubio.Enabled = true;
+            }
+        }
+
+        protected void cb_montubio_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_montubio.Checked == true)
+            {
+                cb_blanco.Enabled = false;
+                cb_mestizo.Enabled = false;
+                cb_afro.Enabled = false;
+                cb_indigena.Enabled = false;
+            }
+            else
+            {
+                cb_blanco.Enabled = true;
+                cb_mestizo.Enabled = true;
+                cb_afro.Enabled = true;
+                cb_indigena.Enabled = true;
+                cb_montubio.Enabled = true;
+            }
+        }
+
+        protected void cb_norte_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_norte.Checked == true)
+            {
+                cb_centro.Enabled = false;
+                cb_sur.Enabled = false;
+                cb_valle.Enabled = false;
+                cb_valledeloschillos.Enabled = false;
+            }
+            else
+            {
+                cb_norte.Enabled = true;
+                cb_centro.Enabled = true;
+                cb_sur.Enabled = true;
+                cb_valle.Enabled = true;
+                cb_valledeloschillos.Enabled = true;
+            }
+        }
+
+        protected void cb_centro_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_centro.Checked == true)
+            {
+                cb_norte.Enabled = false;
+                cb_sur.Enabled = false;
+                cb_valle.Enabled = false;
+                cb_valledeloschillos.Enabled = false;
+            }
+            else
+            {
+                cb_norte.Enabled = true;
+                cb_centro.Enabled = true;
+                cb_sur.Enabled = true;
+                cb_valle.Enabled = true;
+                cb_valledeloschillos.Enabled = true;
+            }
+        }
+
+        protected void cb_sur_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_sur.Checked == true)
+            {
+                cb_norte.Enabled = false;
+                cb_centro.Enabled = false;
+                cb_valle.Enabled = false;
+                cb_valledeloschillos.Enabled = false;
+            }
+            else
+            {
+                cb_norte.Enabled = true;
+                cb_centro.Enabled = true;
+                cb_sur.Enabled = true;
+                cb_valle.Enabled = true;
+                cb_valledeloschillos.Enabled = true;
+            }
+        }
+
+        protected void cb_valle_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_valle.Checked == true)
+            {
+                cb_norte.Enabled = false;
+                cb_centro.Enabled = false;
+                cb_sur.Enabled = false;
+                cb_valledeloschillos.Enabled = false;
+            }
+            else
+            {
+                cb_norte.Enabled = true;
+                cb_centro.Enabled = true;
+                cb_sur.Enabled = true;
+                cb_valle.Enabled = true;
+                cb_valledeloschillos.Enabled = true;
+            }
+        }
+
+        protected void cb_valledeloschillos_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_valledeloschillos.Checked == true)
+            {
+                cb_norte.Enabled = false;
+                cb_centro.Enabled = false;
+                cb_sur.Enabled = false;
+                cb_valle.Enabled = false;
+            }
+            else
+            {
+                cb_norte.Enabled = true;
+                cb_centro.Enabled = true;
+                cb_sur.Enabled = true;
+                cb_valle.Enabled = true;
+                cb_valledeloschillos.Enabled = true;
+            }
+        }
+
+        protected void cb_casa_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_casa.Checked == true)
+            {
+                cb_departamento.Enabled = false;
+                txt_tipoviviendaotro.Enabled = false;
+                tbc_otro.Visible = false;
+                tbc_otravivienda.Visible = false;
+                tbc_otravivienda.Text = "";
+            }
+            else
+            {
+                cb_casa.Enabled = true;
+                cb_departamento.Enabled = true;
+                txt_tipoviviendaotro.Enabled = true;
+                tbc_otro.Visible = true;
+                tbc_otravivienda.Visible = true;
+            }
+        }
+
+        protected void cb_departamento_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_departamento.Checked == true)
+            {
+                cb_casa.Enabled = false;
+                txt_tipoviviendaotro.Enabled = false;
+                txt_tipoviviendaotro.Visible = false;
+                tbc_otro.Visible = false;
+                tbc_otravivienda.Visible = false;
+                tbc_otravivienda.Text = "";
+            }
+            else
+            {
+                cb_casa.Enabled = true;
+                cb_departamento.Enabled = true;
+                txt_tipoviviendaotro.Enabled = true;
+                txt_tipoviviendaotro.Visible = true;
+                tbc_otro.Visible = true;
+                tbc_otravivienda.Visible = true;
+            }
+        }
+
+        protected void cb_riesgoalto_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_riesgoalto.Checked == true)
+            {
+                cb_riesgomedio.Enabled = false;
+                cb_riesgobajo.Enabled = false;
+            }
+            else
+            {
+                cb_riesgoalto.Enabled = true;
+                cb_riesgomedio.Enabled = true;
+                cb_riesgobajo.Enabled = true;
+            }
+        }
+
+        protected void cb_riesgomedio_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_riesgomedio.Checked == true)
+            {
+                cb_riesgoalto.Enabled = false;
+                cb_riesgobajo.Enabled = false;
+            }
+            else
+            {
+                cb_riesgoalto.Enabled = true;
+                cb_riesgomedio.Enabled = true;
+                cb_riesgobajo.Enabled = true;
+            }
+        }
+
+        protected void cb_riesgobajo_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_riesgobajo.Checked == true)
+            {
+                cb_riesgoalto.Enabled = false;
+                cb_riesgomedio.Enabled = false;
+            }
+            else
+            {
+                cb_riesgoalto.Enabled = true;
+                cb_riesgomedio.Enabled = true;
+                cb_riesgobajo.Enabled = true;
+            }
+        }
+
+        protected void cb_dineroahorrosi_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_dineroahorrosi.Checked == true)
+            {
+                cb_dineroahorrono.Enabled = false;
+            }
+            else
+            {
+                cb_dineroahorrosi.Enabled = true;
+                cb_dineroahorrono.Enabled = true;
+            }
+        }
+
+        protected void cb_dineroahorrono_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_dineroahorrono.Checked == true)
+            {
+                cb_dineroahorrosi.Enabled = false;
+            }
+            else
+            {
+                cb_dineroahorrosi.Enabled = true;
+                cb_dineroahorrono.Enabled = true;
+            }
+        }
+
+        protected void cb_vehiculosi_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_vehiculosi.Checked == true)
+            {
+                cb_vehiculono.Enabled = false;
+            }
+            else
+            {
+                cb_vehiculosi.Enabled = true;
+                cb_vehiculono.Enabled = true;
+            }
+        }
+
+        protected void cb_vehiculono_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_vehiculono.Checked == true)
+            {
+                cb_vehiculosi.Enabled = false;
+            }
+            else
+            {
+                cb_vehiculosi.Enabled = true;
+                cb_vehiculono.Enabled = true;
+            }
+        }
+
+        protected void cb_recorridosi_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_recorridosi.Checked == true)
+            {
+                cb_recorridono.Enabled = false;
+            }
+            else
+            {
+                cb_recorridosi.Enabled = true;
+                cb_recorridono.Enabled = true;
+            }
+        }
+
+        protected void cb_recorridono_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_recorridono.Checked == true)
+            {
+                cb_recorridosi.Enabled = false;
+            }
+            else
+            {
+                cb_recorridosi.Enabled = true;
+                cb_recorridono.Enabled = true;
+            }
+        }
+
+        //II.DATOS DE SALUD DEL SERVIDOR/A
+        protected void cb_discapacidadsi_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_discapacidadsi.Checked == true)
+            {
+                cb_discapacidadno.Enabled = false;
+                tabladatosdiscapacidad.Visible = true;
+                tbc_tipodiscapacidad.Visible = true;
+                tbc_txtdiscapacidad.Visible = true;
+            }
+            else
+            {
+                cb_discapacidadsi.Enabled = true;
+                cb_discapacidadno.Enabled = true;
+                tabladatosdiscapacidad.Visible = false;
+                tbc_tipodiscapacidad.Visible = false;
+                tbc_txtdiscapacidad.Visible = false;
+            }
+        }
+
+        protected void cb_discapacidadno_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_discapacidadno.Checked == true)
+            {
+                cb_discapacidadsi.Enabled = false;
+            }
+            else
+            {
+                cb_discapacidadsi.Enabled = true;
+                cb_discapacidadno.Enabled = true;
+            }
+        }
+
+        protected void cb_gestaciónsi_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_gestaciónsi.Checked == true)
+            {
+                cb_gestaciónno.Enabled = false;
+                tbl_estadogestacion.Visible = true;
+            }
+            else
+            {
+                cb_gestaciónsi.Enabled = true;
+                cb_gestaciónno.Enabled = true;
+                tbl_estadogestacion.Visible = false;
+            }
+        }
+
+        protected void cb_gestaciónno_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_gestaciónno.Checked == true)
+            {
+                cb_gestaciónsi.Enabled = false;
+            }
+            else
+            {
+                cb_gestaciónsi.Enabled = true;
+                cb_gestaciónno.Enabled = true;
+            }
+        }
+
+        protected void cb_lactaciasi_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_lactaciasi.Checked == true)
+            {
+                cb_lactaciano.Enabled = false;
+            }
+            else
+            {
+                cb_lactaciasi.Enabled = true;
+                cb_lactaciano.Enabled = true;
+                txt_fechaculmicacionlactancia.Enabled = true;
+            }
+        }
+
+        protected void cb_lactaciano_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_lactaciano.Checked == true)
+            {
+                cb_lactaciasi.Enabled = false;
+                txt_fechaculmicacionlactancia.Enabled = false;
+            }
+            else
+            {
+                cb_lactaciasi.Enabled = true;
+                cb_lactaciano.Enabled = true;
+                txt_fechaculmicacionlactancia.Enabled = true;
+            }
+        }
+
+        protected void cb_catastroficasi_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_catastroficasi.Checked == true)
+            {
+                cb_catastroficano.Enabled = false;
+            }
+            else
+            {
+                cb_catastroficasi.Enabled = true;
+                cb_catastroficano.Enabled = true;
+                txt_cualcatastrofica.Enabled = true;
+                txt_otrasenfermedadescat.Enabled = true;
+            }
+        }
+
+        protected void cb_catastroficano_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_catastroficano.Checked == true)
+            {
+                cb_catastroficasi.Enabled = false;
+                txt_cualcatastrofica.Enabled = false;
+                txt_otrasenfermedadescat.Enabled = false;
+            }
+            else
+            {
+                cb_catastroficasi.Enabled = true;
+                cb_catastroficano.Enabled = true;
+                txt_cualcatastrofica.Enabled = true;
+                txt_otrasenfermedadescat.Enabled = true;
+            }
+        }
+
+        protected void cb_enfermedadrarasi_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_enfermedadrarasi.Checked == true)
+            {
+                cb_enfermedadrarano.Enabled = false;
+            }
+            else
+            {
+                cb_enfermedadrarasi.Enabled = true;
+                cb_enfermedadrarano.Enabled = true;
+                txt_enfermedadraracual.Enabled = true;
+            }
+        }
+
+        protected void cb_enfermedadrarano_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_enfermedadrarano.Checked == true)
+            {
+                cb_enfermedadrarasi.Enabled = false;
+                txt_enfermedadraracual.Enabled = false;
+            }
+            else
+            {
+                cb_enfermedadrarasi.Enabled = true;
+                cb_enfermedadrarano.Enabled = true;
+                txt_enfermedadraracual.Enabled = true;
+            }
+        }
+
+        protected void cb_alcoholsi_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_alcoholsi.Checked == true)
+            {
+                cb_alcoholno.Enabled = false;
+            }
+            else
+            {
+                cb_alcoholsi.Enabled = true;
+                cb_alcoholno.Enabled = true;
+                txt_causaconsumoalcohol.Enabled = true;
+                cb_consumoalcoholdiario.Enabled = true;
+                cb_consumoalcoholsemanal.Enabled = true;
+                cb_consumoalcoholquincenal.Enabled = true;
+                cb_consumoalcoholmensual.Enabled = true;
+                cb_consumoalcoholreuniones.Enabled = true;
+                txt_tiempoconsumoalcohol.Enabled = true;
+            }
+        }
+
+        protected void cb_alcoholno_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_alcoholno.Checked == true)
+            {
+                cb_alcoholsi.Enabled = false;
+                txt_causaconsumoalcohol.Enabled = false;
+                cb_consumoalcoholdiario.Enabled = false;
+                cb_consumoalcoholsemanal.Enabled = false;
+                cb_consumoalcoholquincenal.Enabled = false;
+                cb_consumoalcoholmensual.Enabled = false;
+                cb_consumoalcoholreuniones.Enabled = false;
+                txt_tiempoconsumoalcohol.Enabled = false;
+                tablafrecuenciaalcohol.Visible = false;
+            }
+            else
+            {
+                cb_alcoholsi.Enabled = true;
+                cb_alcoholno.Enabled = true;
+                txt_causaconsumoalcohol.Enabled = true;
+                cb_consumoalcoholdiario.Enabled = true;
+                cb_consumoalcoholsemanal.Enabled = true;
+                cb_consumoalcoholquincenal.Enabled = true;
+                cb_consumoalcoholmensual.Enabled = true;
+                cb_consumoalcoholreuniones.Enabled = true;
+                txt_tiempoconsumoalcohol.Enabled = true;
+                tablafrecuenciaalcohol.Visible = true;
+            }
+        }
+
+        protected void cb_consumoalcoholdiario_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_consumoalcoholdiario.Checked == true)
+            {
+                cb_consumoalcoholsemanal.Enabled = false;
+                cb_consumoalcoholquincenal.Enabled = false;
+                cb_consumoalcoholmensual.Enabled = false;
+                cb_consumoalcoholreuniones.Enabled = false;
+            }
+            else
+            {
+                cb_consumoalcoholdiario.Enabled = true;
+                cb_consumoalcoholsemanal.Enabled = true;
+                cb_consumoalcoholquincenal.Enabled = true;
+                cb_consumoalcoholmensual.Enabled = true;
+                cb_consumoalcoholreuniones.Enabled = true;
+            }
+        }
+
+        protected void cb_consumoalcoholsemanal_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_consumoalcoholsemanal.Checked == true)
+            {
+                cb_consumoalcoholdiario.Enabled = false;
+                cb_consumoalcoholquincenal.Enabled = false;
+                cb_consumoalcoholmensual.Enabled = false;
+                cb_consumoalcoholreuniones.Enabled = false;
+            }
+            else
+            {
+                cb_consumoalcoholdiario.Enabled = true;
+                cb_consumoalcoholsemanal.Enabled = true;
+                cb_consumoalcoholquincenal.Enabled = true;
+                cb_consumoalcoholmensual.Enabled = true;
+                cb_consumoalcoholreuniones.Enabled = true;
+            }
+        }
+
+        protected void cb_consumoalcoholquincenal_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_consumoalcoholquincenal.Checked == true)
+            {
+                cb_consumoalcoholdiario.Enabled = false;
+                cb_consumoalcoholsemanal.Enabled = false;
+                cb_consumoalcoholmensual.Enabled = false;
+                cb_consumoalcoholreuniones.Enabled = false;
+            }
+            else
+            {
+                cb_consumoalcoholdiario.Enabled = true;
+                cb_consumoalcoholsemanal.Enabled = true;
+                cb_consumoalcoholquincenal.Enabled = true;
+                cb_consumoalcoholmensual.Enabled = true;
+                cb_consumoalcoholreuniones.Enabled = true;
+            }
+        }
+
+        protected void cb_consumoalcoholmensual_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_consumoalcoholmensual.Checked == true)
+            {
+                cb_consumoalcoholdiario.Enabled = false;
+                cb_consumoalcoholsemanal.Enabled = false;
+                cb_consumoalcoholquincenal.Enabled = false;
+                cb_consumoalcoholreuniones.Enabled = false;
+            }
+            else
+            {
+                cb_consumoalcoholdiario.Enabled = true;
+                cb_consumoalcoholsemanal.Enabled = true;
+                cb_consumoalcoholquincenal.Enabled = true;
+                cb_consumoalcoholmensual.Enabled = true;
+                cb_consumoalcoholreuniones.Enabled = true;
+            }
+        }
+
+        protected void cb_consumoalcoholreuniones_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_consumoalcoholreuniones.Checked == true)
+            {
+                cb_consumoalcoholdiario.Enabled = false;
+                cb_consumoalcoholsemanal.Enabled = false;
+                cb_consumoalcoholquincenal.Enabled = false;
+                cb_consumoalcoholmensual.Enabled = false;
+            }
+            else
+            {
+                cb_consumoalcoholdiario.Enabled = true;
+                cb_consumoalcoholsemanal.Enabled = true;
+                cb_consumoalcoholquincenal.Enabled = true;
+                cb_consumoalcoholmensual.Enabled = true;
+                cb_consumoalcoholreuniones.Enabled = true;
+            }
+        }
+
+        protected void cb_tabacosi_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_tabacosi.Checked == true)
+            {
+                cb_tabacono.Enabled = false;
+            }
+            else
+            {
+                cb_tabacosi.Enabled = true;
+                cb_tabacono.Enabled = true;
+                txt_frecuenciaconsumotabaco.Enabled = true;
+                txt_tiempoconsumotabaco.Enabled = true;
+            }
+        }
+
+        protected void cb_tabacono_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_tabacono.Checked == true)
+            {
+                cb_tabacosi.Enabled = false;
+                txt_frecuenciaconsumotabaco.Enabled = false;
+                txt_tiempoconsumotabaco.Enabled = false;
+            }
+            else
+            {
+                cb_tabacosi.Enabled = true;
+                cb_tabacono.Enabled = true;
+                txt_frecuenciaconsumotabaco.Enabled = true;
+                txt_tiempoconsumotabaco.Enabled = true;
+            }
+        }
+
+        protected void cb_sustanciapsicotropicasi_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_sustanciapsicotropicasi.Checked == true)
+            {
+                cb_sustanciapsicotropicano.Enabled = false;
+            }
+            else
+            {
+                cb_sustanciapsicotropicasi.Enabled = true;
+                cb_sustanciapsicotropicano.Enabled = true;
+                txt_sustanciapsicotropicatipo.Enabled = true;
+                txt_sustanciapsicotropicafrecuencia.Enabled = true;
+            }
+        }
+
+        protected void cb_sustanciapsicotropicano_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_sustanciapsicotropicano.Checked == true)
+            {
+                cb_sustanciapsicotropicasi.Enabled = false;
+                txt_sustanciapsicotropicatipo.Enabled = false;
+                txt_sustanciapsicotropicafrecuencia.Enabled = false;
+            }
+            else
+            {
+                cb_sustanciapsicotropicasi.Enabled = true;
+                cb_sustanciapsicotropicano.Enabled = true;
+                txt_sustanciapsicotropicatipo.Enabled = true;
+                txt_sustanciapsicotropicafrecuencia.Enabled = true;
+            }
+        }
+
+        //III.SITUACIÓN ECONÓMICA DEL SERVIDOR/A
+        protected void cb_unifamiliar_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_unifamiliar.Checked == true)
+            {
+                cb_multifamiliar.Enabled = false;
+                txt_otrodescripcionviviendafamilia.Enabled = false;
+            }
+            else
+            {
+                cb_unifamiliar.Enabled = true;
+                cb_multifamiliar.Enabled = true;
+                txt_otrodescripcionviviendafamilia.Enabled = true;
+            }
+        }
+
+        protected void cb_multifamiliar_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_multifamiliar.Checked == true)
+            {
+                cb_unifamiliar.Enabled = false;
+                txt_otrodescripcionviviendafamilia.Enabled = false;
+            }
+            else
+            {
+                cb_unifamiliar.Enabled = true;
+                cb_multifamiliar.Enabled = true;
+                txt_otrodescripcionviviendafamilia.Enabled = true;
+            }
+        }
+
+        protected void cb_propiasindeuda_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_propiasindeuda.Checked == true)
+            {
+                cb_arrendada.Enabled = false;
+                cb_defamilia.Enabled = false;
+                cb_hipotecada.Enabled = false;
+                cb_prestada.Enabled = false;
+                cb_anticreces.Enabled = false;
+                txt_otratenencia.Enabled = false;
+            }
+            else
+            {
+                cb_propiasindeuda.Enabled = true;
+                cb_arrendada.Enabled = true;
+                cb_defamilia.Enabled = true;
+                cb_hipotecada.Enabled = true;
+                cb_prestada.Enabled = true;
+                cb_anticreces.Enabled = true;
+                txt_otratenencia.Enabled = true;
+            }
+        }
+
+        protected void cb_arrendada_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_arrendada.Checked == true)
+            {
+                cb_propiasindeuda.Enabled = false;
+                cb_defamilia.Enabled = false;
+                cb_hipotecada.Enabled = false;
+                cb_prestada.Enabled = false;
+                cb_anticreces.Enabled = false;
+                txt_otratenencia.Enabled = false;
+            }
+            else
+            {
+                cb_propiasindeuda.Enabled = true;
+                cb_arrendada.Enabled = true;
+                cb_defamilia.Enabled = true;
+                cb_hipotecada.Enabled = true;
+                cb_prestada.Enabled = true;
+                cb_anticreces.Enabled = true;
+                txt_otratenencia.Enabled = true;
+            }
+        }
+
+        protected void cb_defamilia_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_defamilia.Checked == true)
+            {
+                cb_propiasindeuda.Enabled = false;
+                cb_arrendada.Enabled = false;
+                cb_hipotecada.Enabled = false;
+                cb_prestada.Enabled = false;
+                cb_anticreces.Enabled = false;
+                txt_otratenencia.Enabled = false;
+            }
+            else
+            {
+                cb_propiasindeuda.Enabled = true;
+                cb_arrendada.Enabled = true;
+                cb_defamilia.Enabled = true;
+                cb_hipotecada.Enabled = true;
+                cb_prestada.Enabled = true;
+                cb_anticreces.Enabled = true;
+                txt_otratenencia.Enabled = true;
+            }
+        }
+
+        protected void cb_hipotecada_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_hipotecada.Checked == true)
+            {
+                cb_propiasindeuda.Enabled = false;
+                cb_arrendada.Enabled = false;
+                cb_defamilia.Enabled = false;
+                cb_prestada.Enabled = false;
+                cb_anticreces.Enabled = false;
+                txt_otratenencia.Enabled = false;
+            }
+            else
+            {
+                cb_propiasindeuda.Enabled = true;
+                cb_arrendada.Enabled = true;
+                cb_defamilia.Enabled = true;
+                cb_hipotecada.Enabled = true;
+                cb_prestada.Enabled = true;
+                cb_anticreces.Enabled = true;
+                txt_otratenencia.Enabled = true;
+            }
+        }
+
+        protected void cb_prestada_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_prestada.Checked == true)
+            {
+                cb_propiasindeuda.Enabled = false;
+                cb_arrendada.Enabled = false;
+                cb_defamilia.Enabled = false;
+                cb_hipotecada.Enabled = false;
+                cb_anticreces.Enabled = false;
+                txt_otratenencia.Enabled = false;
+            }
+            else
+            {
+                cb_propiasindeuda.Enabled = true;
+                cb_arrendada.Enabled = true;
+                cb_defamilia.Enabled = true;
+                cb_hipotecada.Enabled = true;
+                cb_prestada.Enabled = true;
+                cb_anticreces.Enabled = true;
+                txt_otratenencia.Enabled = true;
+            }
+        }
+
+        protected void cb_anticreces_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_anticreces.Checked == true)
+            {
+                cb_propiasindeuda.Enabled = false;
+                cb_arrendada.Enabled = false;
+                cb_defamilia.Enabled = false;
+                cb_hipotecada.Enabled = false;
+                cb_prestada.Enabled = false;
+                txt_otratenencia.Enabled = false;
+            }
+            else
+            {
+                cb_propiasindeuda.Enabled = true;
+                cb_arrendada.Enabled = true;
+                cb_defamilia.Enabled = true;
+                cb_hipotecada.Enabled = true;
+                cb_prestada.Enabled = true;
+                cb_anticreces.Enabled = true;
+                txt_otratenencia.Enabled = true;
+            }
+        }
+
+        protected void cb_tipocasa_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_tipocasa.Checked == true)
+            {
+                cb_tiposuit.Enabled = false;
+                cb_tipomediagua.Enabled = false;
+                cb_tipodepartamento.Enabled = false;
+                cb_tipopieza.Enabled = false;
+                txt_otrotipodecasa.Enabled = false;
+            }
+            else
+            {
+                cb_tipocasa.Enabled = true;
+                cb_tiposuit.Enabled = true;
+                cb_tipomediagua.Enabled = true;
+                cb_tipodepartamento.Enabled = true;
+                cb_tipopieza.Enabled = true;
+                txt_otrotipodecasa.Enabled = true;
+            }
+        }
+
+        protected void cb_tiposuit_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_tiposuit.Checked == true)
+            {
+                cb_tipocasa.Enabled = false;
+                cb_tipomediagua.Enabled = false;
+                cb_tipodepartamento.Enabled = false;
+                cb_tipopieza.Enabled = false;
+                txt_otrotipodecasa.Enabled = false;
+            }
+            else
+            {
+                cb_tipocasa.Enabled = true;
+                cb_tiposuit.Enabled = true;
+                cb_tipomediagua.Enabled = true;
+                cb_tipodepartamento.Enabled = true;
+                cb_tipopieza.Enabled = true;
+                txt_otrotipodecasa.Enabled = true;
+            }
+        }
+
+        protected void cb_tipomediagua_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_tipomediagua.Checked == true)
+            {
+                cb_tipocasa.Enabled = false;
+                cb_tiposuit.Enabled = false;
+                cb_tipodepartamento.Enabled = false;
+                cb_tipopieza.Enabled = false;
+                txt_otrotipodecasa.Enabled = false;
+            }
+            else
+            {
+                cb_tipocasa.Enabled = true;
+                cb_tiposuit.Enabled = true;
+                cb_tipomediagua.Enabled = true;
+                cb_tipodepartamento.Enabled = true;
+                cb_tipopieza.Enabled = true;
+                txt_otrotipodecasa.Enabled = true;
+            }
+        }
+
+        protected void cb_tipodepartamento_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_tipodepartamento.Checked == true)
+            {
+                cb_tipocasa.Enabled = false;
+                cb_tiposuit.Enabled = false;
+                cb_tipomediagua.Enabled = false;
+                cb_tipopieza.Enabled = false;
+                txt_otrotipodecasa.Enabled = false;
+            }
+            else
+            {
+                cb_tipocasa.Enabled = true;
+                cb_tiposuit.Enabled = true;
+                cb_tipomediagua.Enabled = true;
+                cb_tipodepartamento.Enabled = true;
+                cb_tipopieza.Enabled = true;
+                txt_otrotipodecasa.Enabled = true;
+            }
+        }
+
+        protected void cb_tipopieza_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_tipopieza.Checked == true)
+            {
+                cb_tipocasa.Enabled = false;
+                cb_tiposuit.Enabled = false;
+                cb_tipomediagua.Enabled = false;
+                cb_tipodepartamento.Enabled = false;
+                txt_otrotipodecasa.Enabled = false;
+            }
+            else
+            {
+                cb_tipocasa.Enabled = true;
+                cb_tiposuit.Enabled = true;
+                cb_tipomediagua.Enabled = true;
+                cb_tipodepartamento.Enabled = true;
+                cb_tipopieza.Enabled = true;
+                txt_otrotipodecasa.Enabled = true;
+            }
+        }
+
+        //IV.INFORMACIÓN GENERAL DEL SERVIDOR/A
+        protected void cb_nucleodiscapacidadsi_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_nucleodiscapacidadsi.Checked == true)
+            {
+                cb_nucleodiscapacidadno.Enabled = false;
+            }
+            else
+            {
+                cb_nucleodiscapacidadsi.Enabled = true;
+                cb_nucleodiscapacidadno.Enabled = true;
+            }
+        }
+
+        protected void cb_nucleodiscapacidadno_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_nucleodiscapacidadno.Checked == true)
+            {
+                cb_nucleodiscapacidadsi.Enabled = false;
+                cb_acargofamiliardiacapacitadosi.Enabled = false;
+                cb_acargofamiliardiacapacitadono.Enabled = false;
+                txt_familiardiscapacitadonomape1.Enabled = false;
+                txt_familiardiscapacitadofechacaducidadcarnet1.Enabled = false;
+                txt_familiardiscapacitadotipodiscapacidad1.Enabled = false;
+                txt_familiardiscapacitadoporcentajediscapacidad1.Enabled = false;
+                txt_familiardiscapacitadoparentesco1.Enabled = false;
+                txt_familiardiscapacitadofechanacimiento1.Enabled = false;
+                txt_familiardiscapacitadonomape2.Enabled = false;
+                txt_familiardiscapacitadofechacaducidadcarnet2.Enabled = false;
+                txt_familiardiscapacitadotipodiscapacidad2.Enabled = false;
+                txt_familiardiscapacitadoporcentajediscapacidad2.Enabled = false;
+                txt_familiardiscapacitadoparentesco2.Enabled = false;
+                txt_familiardiscapacitadofechanacimiento2.Enabled = false;
+                cb_dependenciaministeriotrabajosi.Enabled = false;
+                cb_dependenciaministeriotrabajono.Enabled = false;
+                txt_dependenciaministeriotrabajotiempo.Enabled = false;
+                txt_numcarnetMSP.Enabled = false;
+                cb_acargofamiliarenfermedadrarasi.Enabled = false;
+                cb_acargofamiliarenfermedadrarano.Enabled = false;
+                txt_acargofamiliarenfermedadraratiempo.Enabled = false;
+                txt_familiarenfermedadraratipo.Enabled = false;
+            }
+            else
+            {
+                cb_nucleodiscapacidadsi.Enabled = true;
+                cb_nucleodiscapacidadno.Enabled = true;
+                cb_acargofamiliardiacapacitadosi.Enabled = true;
+                cb_acargofamiliardiacapacitadono.Enabled = true;
+                txt_familiardiscapacitadonomape1.Enabled = true;
+                txt_familiardiscapacitadofechacaducidadcarnet1.Enabled = true;
+                txt_familiardiscapacitadotipodiscapacidad1.Enabled = true;
+                txt_familiardiscapacitadoporcentajediscapacidad1.Enabled = true;
+                txt_familiardiscapacitadoparentesco1.Enabled = true;
+                txt_familiardiscapacitadofechanacimiento1.Enabled = true;
+                txt_familiardiscapacitadonomape2.Enabled = true;
+                txt_familiardiscapacitadofechacaducidadcarnet2.Enabled = true;
+                txt_familiardiscapacitadotipodiscapacidad2.Enabled = true;
+                txt_familiardiscapacitadoporcentajediscapacidad2.Enabled = true;
+                txt_familiardiscapacitadoparentesco2.Enabled = true;
+                txt_familiardiscapacitadofechanacimiento2.Enabled = true;
+                cb_dependenciaministeriotrabajosi.Enabled = true;
+                cb_dependenciaministeriotrabajono.Enabled = true;
+                txt_dependenciaministeriotrabajotiempo.Enabled = true;
+                txt_numcarnetMSP.Enabled = true;
+                cb_acargofamiliarenfermedadrarasi.Enabled = true;
+                cb_acargofamiliarenfermedadrarano.Enabled = true;
+                txt_acargofamiliarenfermedadraratiempo.Enabled = true;
+                txt_familiarenfermedadraratipo.Enabled = true;
+            }
+        }
+
+        protected void cb_acargofamiliardiacapacitadosi_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_acargofamiliardiacapacitadosi.Checked == true)
+            {
+                tabladiscapacidad.Visible = true;
+                tabladependencia.Visible = true;
+                tablaacargofamiliar.Visible = true;
+                cb_acargofamiliardiacapacitadono.Enabled = false;
+            }
+            else
+            {
+                tabladiscapacidad.Visible = false;
+                tabladependencia.Visible = false;
+                tablaacargofamiliar.Visible = false;
+                cb_acargofamiliardiacapacitadosi.Enabled = true;
+                cb_acargofamiliardiacapacitadono.Enabled = true;
+            }
+        }
+
+        protected void cb_acargofamiliardiacapacitadono_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_acargofamiliardiacapacitadono.Checked == true)
+            {
+                cb_acargofamiliardiacapacitadosi.Enabled = false;
+                tabladiscapacidad.Visible = false;
+                tabladependencia.Visible = false;
+                tablaacargofamiliar.Visible = false;
+            }
+            else
+            {
+                cb_acargofamiliardiacapacitadosi.Enabled = true;
+                cb_acargofamiliardiacapacitadono.Enabled = true;
+            }
+        }
+
+        protected void cb_dependenciaministeriotrabajosi_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_dependenciaministeriotrabajosi.Checked == true)
+            {
+                cb_dependenciaministeriotrabajono.Enabled = false;
+                tabladiscapacidad.Visible = true;
+                tabladependencia.Visible = true;
+                tablaacargofamiliar.Visible = true;
+            }
+            else
+            {
+                cb_dependenciaministeriotrabajosi.Enabled = true;
+                cb_dependenciaministeriotrabajono.Enabled = true;
+                tabladiscapacidad.Visible = true;
+                tabladependencia.Visible = true;
+                tablaacargofamiliar.Visible = true;
+            }
+        }
+
+        protected void cb_dependenciaministeriotrabajono_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_dependenciaministeriotrabajono.Checked == true)
+            {
+                cb_dependenciaministeriotrabajosi.Enabled = false;
+                txt_dependenciaministeriotrabajotiempo.Enabled = false;
+                txt_numcarnetMSP.Enabled = false;
+                tabladiscapacidad.Visible = true;
+                tabladependencia.Visible = true;
+                tablaacargofamiliar.Visible = true;
+            }
+            else
+            {
+                cb_dependenciaministeriotrabajosi.Enabled = true;
+                cb_dependenciaministeriotrabajono.Enabled = true;
+                txt_dependenciaministeriotrabajotiempo.Enabled = true;
+                txt_numcarnetMSP.Enabled = true;
+                tabladiscapacidad.Visible = true;
+                tabladependencia.Visible = true;
+                tablaacargofamiliar.Visible = true;
+            }
+        }
+
+        protected void cb_acargofamiliarenfermedadrarasi_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_acargofamiliarenfermedadrarasi.Checked == true)
+            {
+                cb_acargofamiliarenfermedadrarano.Enabled = false;
+                tabladiscapacidad.Visible = true;
+                tabladependencia.Visible = true;
+                tablaacargofamiliar.Visible = true;
+            }
+            else
+            {
+                cb_acargofamiliarenfermedadrarasi.Enabled = true;
+                cb_acargofamiliarenfermedadrarano.Enabled = true;
+                tabladiscapacidad.Visible = true;
+                tabladependencia.Visible = true;
+                tablaacargofamiliar.Visible = true;
+            }
+        }
+
+        protected void cb_acargofamiliarenfermedadrarano_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_acargofamiliarenfermedadrarano.Checked == true)
+            {
+                cb_acargofamiliarenfermedadrarasi.Enabled = false;
+                txt_acargofamiliarenfermedadraratiempo.Enabled = false;
+                txt_familiarenfermedadraratipo.Enabled = false;
+                tabladiscapacidad.Visible = true;
+                tabladependencia.Visible = true;
+                tablaacargofamiliar.Visible = true;
+            }
+            else
+            {
+                cb_acargofamiliarenfermedadrarasi.Enabled = true;
+                cb_acargofamiliarenfermedadrarano.Enabled = true;
+                txt_acargofamiliarenfermedadraratiempo.Enabled = true;
+                txt_familiarenfermedadraratipo.Enabled = true;
+                tabladiscapacidad.Visible = true;
+                tabladependencia.Visible = true;
+                tablaacargofamiliar.Visible = true;
+            }
+        }
+
+        //V.ACTIVIDADES QUE  REALIZA EN TIEMPO LIBRE EL SERVIDOR/A
+        protected void cb_actividadeconomicasi_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_actividadeconomicasi.Checked == true)
+            {
+                cb_actividadeconomicano.Enabled = false;
+            }
+            else
+            {
+                cb_actividadeconomicasi.Enabled = true;
+                cb_actividadeconomicano.Enabled = true;
+            }
+        }
+
+        protected void cb_actividadeconomicano_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_actividadeconomicano.Checked == true)
+            {
+                cb_actividadeconomicasi.Enabled = false;
+                txt_actividadeconomicadetalle.Enabled = false;
+                tabla_actividadeconomica.Visible = false;
+            }
+            else
+            {
+                cb_actividadeconomicasi.Enabled = true;
+                cb_actividadeconomicano.Enabled = true;
+                txt_actividadeconomicadetalle.Enabled = true;
+                tabla_actividadeconomica.Visible = true;
+            }
+        }
+
+        protected void cb_deportesi_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_deportesi.Checked == true)
+            {
+                cb_deporteno.Enabled = false;
+            }
+            else
+            {
+                cb_deportesi.Enabled = true;
+                cb_deporteno.Enabled = true;
+            }
+        }
+
+        protected void cb_deporteno_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_deporteno.Checked == true)
+            {
+                cb_deportesi.Enabled = false;
+                txt_especifiquedeporte.Enabled = false;
+                txt_frecuenciadeporte.Enabled = false;
+                txt_edadpracticadeporte.Enabled = false;
+            }
+            else
+            {
+                cb_deportesi.Enabled = true;
+                cb_deporteno.Enabled = true;
+                txt_especifiquedeporte.Enabled = true;
+                txt_frecuenciadeporte.Enabled = true;
+                txt_edadpracticadeporte.Enabled = true;
+            }
+        }
+
+        protected void cb_lesionsi_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_lesionsi.Checked == true)
+            {
+                cb_lesionno.Enabled = false;
+            }
+            else
+            {
+                cb_lesionsi.Enabled = true;
+                cb_lesionno.Enabled = true;
+            }
+        }
+
+        protected void cb_lesionno_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_lesionno.Checked == true)
+            {
+                cb_lesionsi.Enabled = false;
+                txt_tipolesion.Enabled = false;
+                txt_edadlesion.Enabled = false;
+            }
+            else
+            {
+                cb_lesionsi.Enabled = true;
+                cb_lesionno.Enabled = true;
+                txt_tipolesion.Enabled = true;
+                txt_edadlesion.Enabled = true;
+            }
+        }
+
+        protected void cb_tratamientosi_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_tratamientosi.Checked == true)
+            {
+                cb_tratamientono.Enabled = false;
+            }
+            else
+            {
+                cb_tratamientosi.Enabled = true;
+                cb_tratamientono.Enabled = true;
+            }
+        }
+
+        protected void cb_tratamientono_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_tratamientono.Checked == true)
+            {
+                cb_tratamientosi.Enabled = false;
+            }
+            else
+            {
+                cb_tratamientosi.Enabled = true;
+                cb_tratamientono.Enabled = true;
+            }
+        }
+
+        //VI. INFORMACIÓN UNICAMENTE PARA USO DE BIENESTAR LABORAL DEL SERVIDOR/A
+        protected void cb_nuclear_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_nuclear.Checked == true)
+            {
+                cb_ampliada.Enabled = false;
+                cb_monoparental.Enabled = false;
+                cb_vivesolo.Enabled = false;
+                cb_viveconamigos.Enabled = false;
+                cb_familiasinhijos.Enabled = false;
+            }
+            else
+            {
+                cb_nuclear.Enabled = true;
+                cb_ampliada.Enabled = true;
+                cb_monoparental.Enabled = true;
+                cb_vivesolo.Enabled = true;
+                cb_viveconamigos.Enabled = true;
+                cb_familiasinhijos.Enabled = true;
+            }
+        }
+
+        protected void cb_ampliada_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_ampliada.Checked == true)
+            {
+                cb_nuclear.Enabled = false;
+                cb_monoparental.Enabled = false;
+                cb_vivesolo.Enabled = false;
+                cb_viveconamigos.Enabled = false;
+                cb_familiasinhijos.Enabled = false;
+            }
+            else
+            {
+                cb_nuclear.Enabled = true;
+                cb_ampliada.Enabled = true;
+                cb_monoparental.Enabled = true;
+                cb_vivesolo.Enabled = true;
+                cb_viveconamigos.Enabled = true;
+                cb_familiasinhijos.Enabled = true;
+            }
+        }
+
+        protected void cb_monoparental_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_monoparental.Checked == true)
+            {
+                cb_nuclear.Enabled = false;
+                cb_ampliada.Enabled = false;
+                cb_vivesolo.Enabled = false;
+                cb_viveconamigos.Enabled = false;
+                cb_familiasinhijos.Enabled = false;
+            }
+            else
+            {
+                cb_nuclear.Enabled = true;
+                cb_ampliada.Enabled = true;
+                cb_monoparental.Enabled = true;
+                cb_vivesolo.Enabled = true;
+                cb_viveconamigos.Enabled = true;
+                cb_familiasinhijos.Enabled = true;
+            }
+        }
+
+        protected void cb_vivesolo_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_vivesolo.Checked == true)
+            {
+                cb_nuclear.Enabled = false;
+                cb_ampliada.Enabled = false;
+                cb_monoparental.Enabled = false;
+                cb_viveconamigos.Enabled = false;
+                cb_familiasinhijos.Enabled = false;
+            }
+            else
+            {
+                cb_nuclear.Enabled = true;
+                cb_ampliada.Enabled = true;
+                cb_monoparental.Enabled = true;
+                cb_vivesolo.Enabled = true;
+                cb_viveconamigos.Enabled = true;
+                cb_familiasinhijos.Enabled = true;
+            }
+        }
+
+        protected void cb_viveconamigos_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_viveconamigos.Checked == true)
+            {
+                cb_nuclear.Enabled = false;
+                cb_ampliada.Enabled = false;
+                cb_monoparental.Enabled = false;
+                cb_vivesolo.Enabled = false;
+                cb_familiasinhijos.Enabled = false;
+            }
+            else
+            {
+                cb_nuclear.Enabled = true;
+                cb_ampliada.Enabled = true;
+                cb_monoparental.Enabled = true;
+                cb_vivesolo.Enabled = true;
+                cb_viveconamigos.Enabled = true;
+                cb_familiasinhijos.Enabled = true;
+            }
+        }
+
+        protected void cb_familiasinhijos_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_familiasinhijos.Checked == true)
+            {
+                cb_nuclear.Enabled = false;
+                cb_ampliada.Enabled = false;
+                cb_monoparental.Enabled = false;
+                cb_vivesolo.Enabled = false;
+                cb_viveconamigos.Enabled = false;
+            }
+            else
+            {
+                cb_nuclear.Enabled = true;
+                cb_ampliada.Enabled = true;
+                cb_monoparental.Enabled = true;
+                cb_vivesolo.Enabled = true;
+                cb_viveconamigos.Enabled = true;
+                cb_familiasinhijos.Enabled = true;
+            }
+        }
+
+        protected void cb_relacionfamiliarmuybuena_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_relacionfamiliarmuybuena.Checked == true)
+            {
+                cb_relacionfamiliarbuena.Enabled = false;
+                cb_relacionfamiliarregular.Enabled = false;
+                cb_relacionfamiliarmala.Enabled = false;
+            }
+            else
+            {
+                cb_relacionfamiliarmuybuena.Enabled = true;
+                cb_relacionfamiliarbuena.Enabled = true;
+                cb_relacionfamiliarregular.Enabled = true;
+                cb_relacionfamiliarmala.Enabled = true;
+            }
+        }
+
+        protected void cb_relacionfamiliarbuena_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_relacionfamiliarbuena.Checked == true)
+            {
+                cb_relacionfamiliarmuybuena.Enabled = false;
+                cb_relacionfamiliarregular.Enabled = false;
+                cb_relacionfamiliarmala.Enabled = false;
+            }
+            else
+            {
+                cb_relacionfamiliarmuybuena.Enabled = true;
+                cb_relacionfamiliarbuena.Enabled = true;
+                cb_relacionfamiliarregular.Enabled = true;
+                cb_relacionfamiliarmala.Enabled = true;
+            }
+        }
+
+        protected void cb_relacionfamiliarregular_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_relacionfamiliarregular.Checked == true)
+            {
+                cb_relacionfamiliarmuybuena.Enabled = false;
+                cb_relacionfamiliarbuena.Enabled = false;
+                cb_relacionfamiliarmala.Enabled = false;
+            }
+            else
+            {
+                cb_relacionfamiliarmuybuena.Enabled = true;
+                cb_relacionfamiliarbuena.Enabled = true;
+                cb_relacionfamiliarregular.Enabled = true;
+                cb_relacionfamiliarmala.Enabled = true;
+            }
+        }
+
+        protected void cb_relacionfamiliarmala_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_relacionfamiliarmala.Checked == true)
+            {
+                cb_relacionfamiliarmuybuena.Enabled = false;
+                cb_relacionfamiliarbuena.Enabled = false;
+                cb_relacionfamiliarregular.Enabled = false;
+            }
+            else
+            {
+                cb_relacionfamiliarmuybuena.Enabled = true;
+                cb_relacionfamiliarbuena.Enabled = true;
+                cb_relacionfamiliarregular.Enabled = true;
+                cb_relacionfamiliarmala.Enabled = true;
+            }
+        }
+
+        protected void cb_relacionparejamuybuena_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_relacionparejamuybuena.Checked == true)
+            {
+                cb_relacionparejabuena.Enabled = false;
+                cb_relacionparejaregular.Enabled = false;
+                cb_relacionparejamala.Enabled = false;
+            }
+            else
+            {
+                cb_relacionparejamuybuena.Enabled = true;
+                cb_relacionparejabuena.Enabled = true;
+                cb_relacionparejaregular.Enabled = true;
+                cb_relacionparejamala.Enabled = true;
+            }
+        }
+
+        protected void cb_relacionparejabuena_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_relacionparejabuena.Checked == true)
+            {
+                cb_relacionparejamuybuena.Enabled = false;
+                cb_relacionparejaregular.Enabled = false;
+                cb_relacionparejamala.Enabled = false;
+            }
+            else
+            {
+                cb_relacionparejamuybuena.Enabled = true;
+                cb_relacionparejabuena.Enabled = true;
+                cb_relacionparejaregular.Enabled = true;
+                cb_relacionparejamala.Enabled = true;
+            }
+        }
+
+        protected void cb_relacionparejaregular_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_relacionparejaregular.Checked == true)
+            {
+                cb_relacionparejamuybuena.Enabled = false;
+                cb_relacionparejabuena.Enabled = false;
+                cb_relacionparejamala.Enabled = false;
+            }
+            else
+            {
+                cb_relacionparejamuybuena.Enabled = true;
+                cb_relacionparejabuena.Enabled = true;
+                cb_relacionparejaregular.Enabled = true;
+                cb_relacionparejamala.Enabled = true;
+            }
+        }
+
+        protected void cb_relacionparejamala_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_relacionparejamala.Checked == true)
+            {
+                cb_relacionparejamuybuena.Enabled = false;
+                cb_relacionparejabuena.Enabled = false;
+                cb_relacionparejaregular.Enabled = false;
+            }
+            else
+            {
+                cb_relacionparejamuybuena.Enabled = true;
+                cb_relacionparejabuena.Enabled = true;
+                cb_relacionparejaregular.Enabled = true;
+                cb_relacionparejamala.Enabled = true;
+            }
+        }
+
+        protected void cb_relacionconhijosmuybuena_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_relacionconhijosmuybuena.Checked == true)
+            {
+                cb_relacionconhijosbuena.Enabled = false;
+                cb_relacionconhijosregular.Enabled = false;
+                cb_relacionconhijosmala.Enabled = false;
+            }
+            else
+            {
+                cb_relacionconhijosmuybuena.Enabled = true;
+                cb_relacionconhijosbuena.Enabled = true;
+                cb_relacionconhijosregular.Enabled = true;
+                cb_relacionconhijosmala.Enabled = true;
+            }
+        }
+
+        protected void cb_relacionconhijosbuena_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_relacionconhijosbuena.Checked == true)
+            {
+                cb_relacionconhijosmuybuena.Enabled = false;
+                cb_relacionconhijosregular.Enabled = false;
+                cb_relacionconhijosmala.Enabled = false;
+            }
+            else
+            {
+                cb_relacionconhijosmuybuena.Enabled = true;
+                cb_relacionconhijosbuena.Enabled = true;
+                cb_relacionconhijosregular.Enabled = true;
+                cb_relacionconhijosmala.Enabled = true;
+            }
+        }
+
+        protected void cb_relacionconhijosregular_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_relacionconhijosregular.Checked == true)
+            {
+                cb_relacionconhijosmuybuena.Enabled = false;
+                cb_relacionconhijosbuena.Enabled = false;
+                cb_relacionconhijosmala.Enabled = false;
+            }
+            else
+            {
+                cb_relacionconhijosmuybuena.Enabled = true;
+                cb_relacionconhijosbuena.Enabled = true;
+                cb_relacionconhijosregular.Enabled = true;
+                cb_relacionconhijosmala.Enabled = true;
+            }
+        }
+
+        protected void cb_relacionconhijosmala_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_relacionconhijosmala.Checked == true)
+            {
+                cb_relacionconhijosmuybuena.Enabled = false;
+                cb_relacionconhijosbuena.Enabled = false;
+                cb_relacionconhijosregular.Enabled = false;
+            }
+            else
+            {
+                cb_relacionconhijosmuybuena.Enabled = true;
+                cb_relacionconhijosbuena.Enabled = true;
+                cb_relacionconhijosregular.Enabled = true;
+                cb_relacionconhijosmala.Enabled = true;
+            }
+        }
+
+        protected void cb_rolfamiliarsi_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_rolfamiliarsi.Checked == true)
+            {
+                cb_rolfamiliarno.Enabled = false;
+            }
+            else
+            {
+                cb_rolfamiliarsi.Enabled = true;
+                cb_rolfamiliarno.Enabled = true;
+            }
+        }
+
+        protected void cb_rolfamiliarno_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_rolfamiliarno.Checked == true)
+            {
+                cb_rolfamiliarsi.Enabled = false;
+            }
+            else
+            {
+                cb_rolfamiliarsi.Enabled = true;
+                cb_rolfamiliarno.Enabled = true;
+            }
+        }
+
+        protected void cb_nivelsaludfamiliarmuybuena_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_nivelsaludfamiliarmuybuena.Checked == true)
+            {
+                cb_nivelsaludfamiliarbuena.Enabled = false;
+                cb_nivelsaludfamiliarregular.Enabled = false;
+                cb_nivelsaludfamiliarmala.Enabled = false;
+            }
+            else
+            {
+                cb_nivelsaludfamiliarmuybuena.Enabled = true;
+                cb_nivelsaludfamiliarbuena.Enabled = true;
+                cb_nivelsaludfamiliarregular.Enabled = true;
+                cb_nivelsaludfamiliarmala.Enabled = true;
+            }
+        }
+
+        protected void cb_nivelsaludfamiliarbuena_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_nivelsaludfamiliarbuena.Checked == true)
+            {
+                cb_nivelsaludfamiliarmuybuena.Enabled = false;
+                cb_nivelsaludfamiliarregular.Enabled = false;
+                cb_nivelsaludfamiliarmala.Enabled = false;
+            }
+            else
+            {
+                cb_nivelsaludfamiliarmuybuena.Enabled = true;
+                cb_nivelsaludfamiliarbuena.Enabled = true;
+                cb_nivelsaludfamiliarregular.Enabled = true;
+                cb_nivelsaludfamiliarmala.Enabled = true;
+            }
+        }
+
+        protected void cb_nivelsaludfamiliarregular_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_nivelsaludfamiliarregular.Checked == true)
+            {
+                cb_nivelsaludfamiliarmuybuena.Enabled = false;
+                cb_nivelsaludfamiliarbuena.Enabled = false;
+                cb_nivelsaludfamiliarmala.Enabled = false;
+            }
+            else
+            {
+                cb_nivelsaludfamiliarmuybuena.Enabled = true;
+                cb_nivelsaludfamiliarbuena.Enabled = true;
+                cb_nivelsaludfamiliarregular.Enabled = true;
+                cb_nivelsaludfamiliarmala.Enabled = true;
+            }
+        }
+
+        protected void cb_nivelsaludfamiliarmala_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_nivelsaludfamiliarmala.Checked == true)
+            {
+                cb_nivelsaludfamiliarmuybuena.Enabled = false;
+                cb_nivelsaludfamiliarbuena.Enabled = false;
+                cb_nivelsaludfamiliarregular.Enabled = false;
+            }
+            else
+            {
+                cb_nivelsaludfamiliarmuybuena.Enabled = true;
+                cb_nivelsaludfamiliarbuena.Enabled = true;
+                cb_nivelsaludfamiliarregular.Enabled = true;
+                cb_nivelsaludfamiliarmala.Enabled = true;
+            }
+        }
+
+        protected void cb_funcional_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_funcional.Checked == true)
+            {
+                cb_disfuncional.Enabled = false;
+            }
+            else
+            {
+                cb_funcional.Enabled = true;
+                cb_disfuncional.Enabled = true;
+            }
+        }
+
+        protected void cb_disfuncional_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_disfuncional.Checked == true)
+            {
+                cb_funcional.Enabled = false;
+            }
+            else
+            {
+                cb_funcional.Enabled = true;
+                cb_disfuncional.Enabled = true;
+            }
+        }
+
+        protected void cb_certificosi_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_certificosi.Checked == true)
+            {
+                cb_certificono.Enabled = false;
+            }
+            else
+            {
+                cb_certificosi.Enabled = true;
+                cb_certificono.Enabled = true;
+            }
+        }
+
+        protected void cb_certificono_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_certificono.Checked == true)
+            {
+                cb_certificosi.Enabled = false;
+            }
+            else
+            {
+                cb_certificosi.Enabled = true;
+                cb_certificono.Enabled = true;
+            }
         }
     }
 }

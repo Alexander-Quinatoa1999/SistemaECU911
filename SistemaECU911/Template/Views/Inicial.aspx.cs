@@ -3586,7 +3586,6 @@ namespace SistemaECU911.Template.Views
                             txt_descrorganosysistemas.Text = inicial.inicial_descripRevActOrgSis.ToString();
 
                             //J
-                            txt_descrorganosysistemas.Text = inicial.inicial_descripRevActOrgSis.ToString();
                             txt_preArterial.Text = inicial.inicial_preArterial.ToString();
                             txt_temperatura.Text = inicial.inicial_temperatura.ToString();
                             txt_freCardica.Text = inicial.inicial_frecCardiacan.ToString();
@@ -3594,7 +3593,7 @@ namespace SistemaECU911.Template.Views
                             txt_freRespiratoria.Text = inicial.inicial_frecRespiratorian.ToString();
                             txt_peso.Text = inicial.inicial_peson.ToString();
                             txt_talla.Text = inicial.inicial_tallan.ToString();
-                            txt_imc.Text = inicial.inicial_indMasCorporaln.ToString();
+                            txt_indMasCorporal.Text = inicial.inicial_indMasCorporaln.ToString();
                             txt_perAbdominal.Text = inicial.inicial_perAbdominaln.ToString();
 
                             //K                            
@@ -3677,6 +3676,7 @@ namespace SistemaECU911.Template.Views
                         }
                     }
                 }
+
                 if (inicial.inicial_fecha_hora == null)
                 {
                     txt_fechahora.Text = DateTime.Now.ToLocalTime().ToString("yyyy-MM-ddTHH:mm");
@@ -5389,7 +5389,7 @@ namespace SistemaECU911.Template.Views
                 inicial.inicial_frecRespiratorian = txt_freRespiratoria.Text;
                 inicial.inicial_peson = txt_peso.Text;
                 inicial.inicial_tallan = txt_talla.Text;
-                inicial.inicial_indMasCorporaln = txt_imc.Text;
+                inicial.inicial_indMasCorporaln = txt_indMasCorporal.Text;
                 inicial.inicial_perAbdominaln = txt_perAbdominal.Text;
 
 
@@ -8382,10 +8382,8 @@ namespace SistemaECU911.Template.Views
                 {
                     inicial.inicial_nervioso = null;
                 }
-
-
-
                 inicial.inicial_descripRevActOrgSis = txt_descrorganosysistemas.Text;
+
                 inicial.inicial_preArterial = txt_preArterial.Text;
                 inicial.inicial_temperatura = txt_temperatura.Text;
                 inicial.inicial_frecCardiacan = txt_freCardica.Text;
@@ -8393,10 +8391,8 @@ namespace SistemaECU911.Template.Views
                 inicial.inicial_frecRespiratorian = txt_freRespiratoria.Text;
                 inicial.inicial_peson = txt_peso.Text;
                 inicial.inicial_tallan = txt_talla.Text;
-                inicial.inicial_indMasCorporaln = txt_imc.Text;
+                inicial.inicial_indMasCorporaln = txt_indMasCorporal.Text;
                 inicial.inicial_perAbdominaln = txt_perAbdominal.Text;
-
-
 
                 if (ckb_cicatrices.Checked == true)
                 {
@@ -8876,6 +8872,33 @@ namespace SistemaECU911.Template.Views
             ddl_profesional.DataBind();
         }
 
-        
+        protected void txt_talla_TextChanged(object sender, EventArgs e)
+        {
+            if (txt_talla.Text != "")
+            {
+                txt_peso.Enabled = true;
+            }
+        }
+
+        protected void txt_peso_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                int peso = Convert.ToInt32(txt_peso.Text);
+                decimal talla = Convert.ToDecimal(txt_talla.Text);
+                decimal toTalla = (talla * talla) / 10000;
+                decimal calculo = peso / toTalla;
+                calculo = decimal.Round(calculo, 2, MidpointRounding.AwayFromZero);
+
+                txt_indMasCorporal.Text = calculo.ToString();
+
+            }
+            catch (Exception)
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Llenar primero la talla')", true);
+                txt_peso.Text = "";
+                txt_talla.Focus();
+            }
+        }   
     }
 }

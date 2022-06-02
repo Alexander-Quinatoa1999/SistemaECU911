@@ -4875,13 +4875,13 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_talla;
 
         /// <summary>
-        /// Control txt_imc.
+        /// Control txt_indMasCorporal.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_imc;
+        protected global::System.Web.UI.WebControls.TextBox txt_indMasCorporal;
 
         /// <summary>
         /// Control txt_perAbdominal.

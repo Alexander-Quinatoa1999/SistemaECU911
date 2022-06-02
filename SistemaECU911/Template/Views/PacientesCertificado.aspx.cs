@@ -27,7 +27,7 @@ namespace SistemaECU911.Template.Views
             var query = from c in dc.Tbl_Certificado
                         join p in dc.Tbl_Personas on c.Per_id equals p.Per_id
                         join pro in dc.Tbl_Profesional on c.prof_id equals pro.prof_id
-                        orderby c.certi_fechaHora descending
+                        orderby c.certi_fechaHoraGuardado descending
                         select new
                         {
                             c.certi_id,
@@ -35,7 +35,7 @@ namespace SistemaECU911.Template.Views
                             p.Per_priNombre,
                             p.Per_priApellido,
                             pro.prof_NomApe,
-                            c.certi_fechaHora
+                            c.certi_fechaHoraGuardado
                         };
 
             grvPacientesCertificado.DataSource = query.ToList();

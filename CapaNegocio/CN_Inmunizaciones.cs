@@ -44,7 +44,7 @@ namespace CapaNegocio
             try
             {
                 inmunizaciones.inmu_estado = "A";
-                inmunizaciones.inmu_fechaHora = DateTime.Now;
+                inmunizaciones.inmu_fechaHoraGuardado = DateTime.Now;
                 dc.Tbl_Inmunizaciones.InsertOnSubmit(inmunizaciones);
                 dc.SubmitChanges();
             }

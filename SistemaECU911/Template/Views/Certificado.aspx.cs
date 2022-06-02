@@ -36,6 +36,152 @@ namespace SistemaECU911.Template.Views
 
                     if (per != null)
                     {
+
+                        //Datos Generales
+                        if (certi.certi_ingreso == null)
+                        {
+                            ckb_ingreso.Checked = false;
+                        }
+                        else
+                        {
+                            ckb_ingreso.Checked = true;
+                        }
+                        if (certi.certi_periodico == null)
+                        {
+                            ckb_periodico.Checked = false;
+                        }
+                        else
+                        {
+                            ckb_periodico.Checked = true;
+                        }
+                        if (certi.certi_reintegro == null)
+                        {
+                            ckb_reintegro.Checked = false;
+                        }
+                        else
+                        {
+                            ckb_reintegro.Checked = true;
+                        }
+                        if (certi.certi_retiro == null)
+                        {
+                            ckb_retiro.Checked = false;
+                        }
+                        else
+                        {
+                            ckb_retiro.Checked = true;
+                        }
+
+                        //Aptitud Medica para el trabajo
+                        if (certi.certi_apto == null)
+                        {
+                            ckb_apto.Checked = false;
+                        }
+                        else
+                        {
+                            ckb_apto.Checked = true;
+
+                        }
+                        if (certi.certi_aptoObserva == null)
+                        {
+                            ckb_aptoObservacion.Checked = false;
+                        }
+                        else
+                        {
+                            ckb_aptoObservacion.Checked = true;
+
+                        }
+                        if (certi.certi_aptoLimi == null)
+                        {
+                            ckb_aptoLimitaciones.Checked = false;
+                        }
+                        else
+                        {
+                            ckb_aptoLimitaciones.Checked = true;
+
+                        }
+                        if (certi.certi_NoApto == null)
+                        {
+                            ckb_noApto.Checked = false;
+                        }
+                        else
+                        {
+                            ckb_noApto.Checked = true;
+
+                        }
+
+                        // Evaluación Médica de retiro
+                        if (certi.certi_siUsuEvaMed == null)
+                        {
+                            ckb_siEvaMedRetiro.Checked = false;
+                        }
+                        else
+                        {
+                            ckb_siEvaMedRetiro.Checked = true;
+
+                        }
+                        if (certi.certi_noUsuEvaMed == null)
+                        {
+                            ckb_noEvaMedRetiro.Checked = false;
+                        }
+                        else
+                        {
+                            ckb_noEvaMedRetiro.Checked = true;
+
+                        }
+                        if (certi.certi_presunCondiDiag == null)
+                        {
+                            ckb_presuntivaCondiDiag.Checked = false;
+                        }
+                        else
+                        {
+                            ckb_presuntivaCondiDiag.Checked = true;
+
+                        }
+                        if (certi.certi_defiCondiDiag == null)
+                        {
+                            ckb_definitivaCondiDiag.Checked = false;
+                        }
+                        else
+                        {
+                            ckb_definitivaCondiDiag.Checked = true;
+
+                        }
+                        if (certi.certi_noAplicaCondiDiag == null)
+                        {
+                            ckb_noAplicaCondiDiag.Checked = false;
+                        }
+                        else
+                        {
+                            ckb_noAplicaCondiDiag.Checked = true;
+
+                        }
+                        if (certi.certi_siCondiSalud == null)
+                        {
+                            ckb_siCondiSalud.Checked = false;
+                        }
+                        else
+                        {
+                            ckb_siCondiSalud.Checked = true;
+
+                        }
+                        if (certi.certi_noCondiSalud == null)
+                        {
+                            ckb_noCondiSalud.Checked = false;
+                        }
+                        else
+                        {
+                            ckb_noCondiSalud.Checked = true;
+
+                        }
+                        if (certi.certi_noAplicaCondiSalud == null)
+                        {
+                            ckb_noAplicaCondiSalud.Checked = false;
+                        }
+                        else
+                        {
+                            ckb_noAplicaCondiSalud.Checked = true;
+                        }
+
                         txt_priNombre.Text = per.Per_priNombre.ToString();
                         txt_segNombre.Text = per.Per_segNombre.ToString();
                         txt_priApellido.Text = per.Per_priApellido.ToString();
@@ -47,178 +193,21 @@ namespace SistemaECU911.Template.Views
                         if (certi != null)
                         {
 
-                            //Datos Generales
-                            if (certi.certi_ingreso == null)
-                            {
-                                ckb_ingreso.Checked = false;
-                            }
-                            else
-                            {
-                                ckb_ingreso.Checked = true;
-                            }
-                            if (certi.certi_periodico == null)
-                            {
-                                ckb_periodico.Checked = false;
-                            }
-                            else
-                            {
-                                ckb_periodico.Checked = true;
-                            }
-                            if (certi.certi_reintegro == null)
-                            {
-                                ckb_reintegro.Checked = false;
-                            }
-                            else
-                            {
-                                ckb_reintegro.Checked = true;
-                            }
-                            if (certi.certi_retiro == null)
-                            {
-                                ckb_retiro.Checked = false;
-                            }
-                            else
-                            {
-                                ckb_retiro.Checked = true;
-                            }
-
-                            //Aptitud Medica para el trabajo
-                            if (certi.certi_apto == null)
-                            {
-                                ckb_apto.Checked = false;
-                            }
-                            else
-                            {
-                                ckb_apto.Checked = true;
-
-                            }
-                            if (certi.certi_aptoObserva == null)
-                            {
-                                ckb_aptoObservacion.Checked = false;
-                            }
-                            else
-                            {
-                                ckb_aptoObservacion.Checked = true;
-
-                            }
-                            if (certi.certi_aptoLimi == null)
-                            {
-                                ckb_aptoLimitaciones.Checked = false;
-                            }
-                            else
-                            {
-                                ckb_aptoLimitaciones.Checked = true;
-
-                            }
-                            if (certi.certi_NoApto == null)
-                            {
-                                ckb_noApto.Checked = false;
-                            }
-                            else
-                            {
-                                ckb_noApto.Checked = true;
-
-                            }
-
-                            // Evaluación Médica de retiro
-                            if (certi.certi_siUsuEvaMed == null)
-                            {
-                                ckb_siEvaMedRetiro.Checked = false;
-                            }
-                            else
-                            {
-                                ckb_siEvaMedRetiro.Checked = true;
-
-                            }
-                            if (certi.certi_noUsuEvaMed == null)
-                            {
-                                ckb_noEvaMedRetiro.Checked = false;
-                            }
-                            else
-                            {
-                                ckb_noEvaMedRetiro.Checked = true;
-
-                            }
-                            if (certi.certi_presunCondiDiag == null)
-                            {
-                                ckb_presuntivaCondiDiag.Checked = false;
-                            }
-                            else
-                            {
-                                ckb_presuntivaCondiDiag.Checked = true;
-
-                            }
-                            if (certi.certi_defiCondiDiag == null)
-                            {
-                                ckb_definitivaCondiDiag.Checked = false;
-                            }
-                            else
-                            {
-                                ckb_definitivaCondiDiag.Checked = true;
-
-                            }
-                            if (certi.certi_noAplicaCondiDiag == null)
-                            {
-                                ckb_noAplicaCondiDiag.Checked = false;
-                            }
-                            else
-                            {
-                                ckb_noAplicaCondiDiag.Checked = true;
-
-                            }
-                            if (certi.certi_siCondiSalud == null)
-                            {
-                                ckb_siCondiSalud.Checked = false;
-                            }
-                            else
-                            {
-                                ckb_siCondiSalud.Checked = true;
-
-                            }
-                            if (certi.certi_noCondiSalud == null)
-                            {
-                                ckb_noCondiSalud.Checked = false;
-                            }
-                            else
-                            {
-                                ckb_noCondiSalud.Checked = true;
-
-                            }
-                            if (certi.certi_noAplicaCondiSalud == null)
-                            {
-                                ckb_noAplicaCondiSalud.Checked = false;
-                            }
-                            else
-                            {
-                                ckb_noAplicaCondiSalud.Checked = true;
-                            }
-
-
                             //A
                             txt_numArchivo.Text = certi.certi_numArchivo.ToString();
 
                             //B
-                            txt_fechaEmision.Text = certi.certi_fechEmision.ToString();
-                            //txt_ingreso.Text = certi.certi_ingreso.ToString();
-                            //txt_certidico.Text = certi.certi_certidico.ToString();
-                            //txt_reintegro.Text = certi.certi_reintegro.ToString();
-                            //txt_retiro.Text = certi.certi_retiro.ToString();
+                            if (certi.certi_fechEmision == "")
+                            {
+                                txt_fechaEmision.Text = certi.certi_fechEmision.ToString();
+                            }
+                            else
+                            {
+                                txt_fechaEmision.Text = Convert.ToDateTime(certi.certi_fechEmision).ToString("yyyy-MM-dd");
+                            }                            
 
-                            ////C
-                            //txt_apto.Text = certi.certi_apto.ToString();
-                            //txt_aptoObservacion.Text = certi.certi_aptoObserva.ToString();
-                            //txt_aptoLimitaciones.Text = certi.certi_aptoLimi.ToString();
-                            //txt_noApto.Text = certi.certi_NoApto.ToString();
+                            //C
                             txt_detaObservaAptiMedLaboral.Text = certi.certi_ObservAptiMedLaboral.ToString();
-
-                            ////D
-                            //txt_siEvaMedRetiro.Text = certi.certi_siUsuEvaMed.ToString();
-                            //txt_noEvaMedRetiro.Text = certi.certi_noUsuEvaMed.ToString();
-                            //txt_presuntivaEvaMedRetiro.Text = certi.certi_presunCondiDiag.ToString();
-                            //txt_definitivaEvaMedRetiro.Text = certi.certi_defiCondiDiag.ToString();
-                            //txt_noAplicaEvaMedRetiro.Text = certi.certi_noAplicaCondiDiag.ToString();
-                            //txt_si2EvaMedRetiro.Text = certi.certi_siCondiSalud.ToString();
-                            //txt_no2EvaMedRetiro.Text = certi.certi_noAplicaCondiSalud.ToString();
-                            //txt_noAplica2EvaMedRetiro.Text = certi.certi_noAplicaCondiSalud.ToString();
 
                             //E
                             txt_descripRecomendaciones.Text = certi.certi_descripcionRecomendaciones.ToString();
@@ -390,28 +379,10 @@ namespace SistemaECU911.Template.Views
                     certi_numArchivo = txt_numArchivo.Text,
 
                     //B.
-                    certi_fechEmision = Convert.ToDateTime(txt_fechaEmision.Text),
-                    //certi_ingreso = txt_ingreso.Text,
-                    //certi_certidico = txt_certidico.Text,
-                    //certi_reintegro = txt_reintegro.Text,
-                    //certi_retiro = txt_retiro.Text,
+                    certi_fechEmision = txt_fechaEmision.Text,
 
                     //C.
-                    //certi_apto = txt_apto.Text,
-                    //certi_aptoObserva = txt_aptoObservacion.Text,
-                    //certi_aptoLimi = txt_aptoLimitaciones.Text,
-                    //certi_NoApto = txt_noApto.Text,
                     certi_ObservAptiMedLaboral = txt_detaObservaAptiMedLaboral.Text,
-
-                    //D.
-                    //certi_siUsuEvaMed = txt_siEvaMedRetiro.Text,
-                    //certi_noUsuEvaMed = txt_noEvaMedRetiro.Text,
-                    //certi_presunCondiDiag = txt_presuntivaEvaMedRetiro.Text,
-                    //certi_defiCondiDiag = txt_definitivaEvaMedRetiro.Text,
-                    //certi_noAplicaCondiDiag = txt_noAplicaEvaMedRetiro.Text,
-                    //certi_siCondiSalud = txt_si2EvaMedRetiro.Text,
-                    //certi_noCondiSalud = txt_no2EvaMedRetiro.Text,
-                    //certi_noAplicaCondiSalud = txt_noAplica2EvaMedRetiro.Text,
 
                     //E.
                     certi_descripcionRecomendaciones = txt_descripRecomendaciones.Text,
@@ -579,28 +550,10 @@ namespace SistemaECU911.Template.Views
                 certi.certi_numArchivo = txt_numArchivo.Text;
 
                 //B.
-                certi.certi_fechEmision = Convert.ToDateTime(txt_fechaEmision.Text);
-                //certi.certi_ingreso = txt_ingreso.Text;
-                //certi.certi_certidico = txt_certidico.Text;
-                //certi.certi_reintegro = txt_reintegro.Text;
-                //certi.certi_retiro = txt_retiro.Text;
+                certi.certi_fechEmision = txt_fechaEmision.Text;
 
                 //C.
-                //certi.certi_apto = txt_apto.Text;
-                //certi.certi_aptoObserva = txt_aptoObservacion.Text;
-                //certi.certi_aptoLimi = txt_aptoLimitaciones.Text;
-                //certi.certi_NoApto = txt_noApto.Text;
                 certi.certi_ObservAptiMedLaboral = txt_detaObservaAptiMedLaboral.Text;
-
-                //D.
-                //certi.certi_siUsuEvaMed = txt_siEvaMedRetiro.Text;
-                //certi.certi_noUsuEvaMed = txt_noEvaMedRetiro.Text;
-                //certi.certi_presunCondiDiag = txt_presuntivaEvaMedRetiro.Text;
-                //certi.certi_defiCondiDiag = txt_definitivaEvaMedRetiro.Text;
-                //certi.certi_noAplicaCondiDiag = txt_noAplicaEvaMedRetiro.Text;
-                //certi.certi_siCondiSalud = txt_si2EvaMedRetiro.Text;
-                //certi.certi_noAplicaCondiSalud = txt_no2EvaMedRetiro.Text;
-                //certi.certi_noAplicaCondiSalud = txt_noAplica2EvaMedRetiro.Text;
 
                 //E.
                 certi.certi_descripcionRecomendaciones = txt_descripRecomendaciones.Text;

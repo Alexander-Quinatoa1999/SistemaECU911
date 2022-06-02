@@ -777,7 +777,7 @@
                                 <asp:TextBox runat="server" ID="txt_actdesempeña" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center" placeholder="-"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                <asp:TextBox runat="server" ID="txt_tiempotrabajo" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center" placeholder="-"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_tiempotrabajo" BorderStyle="None" TextMode="Number" Style="background-color: transparent; width: 100%; text-align: center" placeholder="-"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
                                 <asp:CheckBox ID="ckb_fisico" Checked="false" runat="server" />
@@ -818,7 +818,7 @@
                                 <asp:TextBox runat="server" ID="txt_actdesempeña2" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center" placeholder="-"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                <asp:TextBox runat="server" ID="txt_tiempotrabajo2" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center" placeholder="-"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_tiempotrabajo2" BorderStyle="None" TextMode="Number" Style="background-color: transparent; width: 100%; text-align: center" placeholder="-"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
                                 <asp:CheckBox ID="ckb_fisico2" Checked="false" runat="server" />
@@ -859,7 +859,7 @@
                                 <asp:TextBox runat="server" ID="txt_actdesempeña3" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center" placeholder="-"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                <asp:TextBox runat="server" ID="txt_tiempotrabajo3" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center" placeholder="-"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_tiempotrabajo3" BorderStyle="None" TextMode="Number" Style="background-color: transparent; width: 100%; text-align: center" placeholder="-"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
                                 <asp:CheckBox ID="ckb_fisico3" Checked="false" runat="server" />
@@ -900,7 +900,7 @@
                                 <asp:TextBox runat="server" ID="txt_actdesempeña4" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center" placeholder="-"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                <asp:TextBox runat="server" ID="txt_tiempotrabajo4" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center" placeholder="-"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_tiempotrabajo4" BorderStyle="None" TextMode="Number" Style="background-color: transparent; width: 100%; text-align: center" placeholder="-"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
                                 <asp:CheckBox ID="ckb_fisico4" Checked="false" runat="server" />
@@ -2452,13 +2452,13 @@
                                         <asp:TextBox ID="txt_freRespiratoria" runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell style="background-color: white; font-size: 14px">
-                                        <asp:TextBox ID="txt_peso" runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
+                                        <asp:TextBox ID="txt_peso" runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center" OnTextChanged="txt_peso_TextChanged" AutoPostBack="true"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell style="background-color: white; font-size: 14px">
-                                        <asp:TextBox ID="txt_talla" runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
+                                        <asp:TextBox ID="txt_talla" runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center" OnTextChanged="txt_talla_TextChanged" AutoPostBack="true"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell style="background-color: white; font-size: 14px">
-                                        <asp:TextBox ID="txt_imc" runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
+                                        <asp:TextBox ID="txt_indMasCorporal" runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell style="background-color: white; font-size: 14px">
                                         <asp:TextBox ID="txt_perAbdominal" runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>

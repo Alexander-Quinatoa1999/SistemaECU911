@@ -52,51 +52,156 @@ namespace SistemaECU911.Template.Views
                             txt_numArchivo.Text = evo.evo_numArchivo.ToString();
 
                             //B
-                            txt_fecha1.Text = evo.evo_fecha1.ToString();
+                            if (evo.evo_fecha1 == "")
+                            {
+                                txt_fecha1.Text = Convert.ToDateTime(evo.evo_fecha1).ToString("yyyy-MM-dd");
+                            }
+                            else
+                            {
+                                txt_fecha1.Text = Convert.ToDateTime(evo.evo_fecha1).ToString("yyyy-MM-dd");
+                            }
                             txt_hora1.Text = evo.evo_hora1.ToString();
                             txt_notas1.Text = evo.evo_notasEvolucion1.ToString();
-                            txt_fecha2.Text = evo.evo_fecha2.ToString();
+                            if (evo.evo_fecha2 == "")
+                            {
+                                txt_fecha2.Text = Convert.ToDateTime(evo.evo_fecha2).ToString("yyyy-MM-dd");
+                            }
+                            else
+                            {
+                                txt_fecha2.Text = Convert.ToDateTime(evo.evo_fecha2).ToString("yyyy-MM-dd");
+                            }
                             txt_hora2.Text = evo.evo_hora2.ToString();
                             txt_notas2.Text = evo.evo_notasEvolucion2.ToString();
-                            txt_fecha3.Text = evo.evo_fecha3.ToString();
+                            if (evo.evo_fecha3 == "")
+                            {
+                                txt_fecha3.Text = Convert.ToDateTime(evo.evo_fecha3).ToString("yyyy-MM-dd");
+                            }
+                            else
+                            {
+                                txt_fecha3.Text = Convert.ToDateTime(evo.evo_fecha3).ToString("yyyy-MM-dd");
+                            }
                             txt_hora3.Text = evo.evo_hora3.ToString();
                             txt_notas3.Text = evo.evo_notasEvolucion3.ToString();
-                            txt_fecha4.Text = evo.evo_fecha4.ToString();
+                            if (evo.evo_fecha4 == "")
+                            {
+                                txt_fecha4.Text = Convert.ToDateTime(evo.evo_fecha4).ToString("yyyy-MM-dd");
+                            }
+                            else
+                            {
+                                txt_fecha4.Text = Convert.ToDateTime(evo.evo_fecha4).ToString("yyyy-MM-dd");
+                            }
                             txt_hora4.Text = evo.evo_hora4.ToString();
                             txt_notas4.Text = evo.evo_notasEvolucion4.ToString();
-                            txt_fecha5.Text = evo.evo_fecha5.ToString();
+                            if (evo.evo_fecha5 == "")
+                            {
+                                txt_fecha5.Text = Convert.ToDateTime(evo.evo_fecha5).ToString("yyyy-MM-dd");
+                            }
+                            else
+                            {
+                                txt_fecha5.Text = Convert.ToDateTime(evo.evo_fecha5).ToString("yyyy-MM-dd");
+                            }
                             txt_hora5.Text = evo.evo_hora5.ToString();
                             txt_notas5.Text = evo.evo_notasEvolucion5.ToString();
-                            txt_fecha6.Text = evo.evo_fecha6.ToString();
+                            if (evo.evo_fecha6 == "")
+                            {
+                                txt_fecha6.Text = Convert.ToDateTime(evo.evo_fecha6).ToString("yyyy-MM-dd");
+                            }
+                            else
+                            {
+                                txt_fecha6.Text = Convert.ToDateTime(evo.evo_fecha6).ToString("yyyy-MM-dd");
+                            }
                             txt_hora6.Text = evo.evo_hora6.ToString();
                             txt_notas6.Text = evo.evo_notasEvolucion6.ToString();
-                            txt_fecha7.Text = evo.evo_fecha7.ToString();
+                            if (evo.evo_fecha7 == "")
+                            {
+                                txt_fecha7.Text = Convert.ToDateTime(evo.evo_fecha7).ToString("yyyy-MM-dd");
+                            }
+                            else
+                            {
+                                txt_fecha7.Text = Convert.ToDateTime(evo.evo_fecha7).ToString("yyyy-MM-dd");
+                            }
                             txt_hora7.Text = evo.evo_hora7.ToString();
                             txt_notas7.Text = evo.evo_notasEvolucion7.ToString();
-                            txt_fecha8.Text = evo.evo_fecha8.ToString();
+                            if (evo.evo_fecha8 == "")
+                            {
+                                txt_fecha8.Text = Convert.ToDateTime(evo.evo_fecha8).ToString("yyyy-MM-dd");
+                            }
+                            else
+                            {
+                                txt_fecha8.Text = Convert.ToDateTime(evo.evo_fecha8).ToString("yyyy-MM-dd");
+                            }
                             txt_hora8.Text = evo.evo_hora8.ToString();
                             txt_notas8.Text = evo.evo_notasEvolucion8.ToString();
-                            txt_fecha9.Text = evo.evo_fecha9.ToString();
+                            if (evo.evo_fecha9 == "")
+                            {
+                                txt_fecha9.Text = Convert.ToDateTime(evo.evo_fecha9).ToString("yyyy-MM-dd");
+                            }
+                            else
+                            {
+                                txt_fecha9.Text = Convert.ToDateTime(evo.evo_fecha9).ToString("yyyy-MM-dd");
+                            }
                             txt_hora9.Text = evo.evo_hora9.ToString();
                             txt_notas9.Text = evo.evo_notasEvolucion9.ToString();
-                            txt_fecha10.Text = evo.evo_fecha10.ToString();
+                            if (evo.evo_fecha10 == "")
+                            {
+                                txt_fecha10.Text = Convert.ToDateTime(evo.evo_fecha10).ToString("yyyy-MM-dd");
+                            }
+                            else
+                            {
+                                txt_fecha10.Text = Convert.ToDateTime(evo.evo_fecha10).ToString("yyyy-MM-dd");
+                            }
                             txt_hora10.Text = evo.evo_hora10.ToString();
                             txt_notas10.Text = evo.evo_notasEvolucion10.ToString();
-                            txt_fecha11.Text = evo.evo_fecha11.ToString();
+                            if (evo.evo_fecha11 == "")
+                            {
+                                txt_fecha11.Text = Convert.ToDateTime(evo.evo_fecha11).ToString("yyyy-MM-dd");
+                            }
+                            else
+                            {
+                                txt_fecha11.Text = Convert.ToDateTime(evo.evo_fecha11).ToString("yyyy-MM-dd");
+                            }
                             txt_hora11.Text = evo.evo_hora11.ToString();
                             txt_notas11.Text = evo.evo_notasEvolucion11.ToString();
-                            txt_fecha12.Text = evo.evo_fecha12.ToString();
+                            if (evo.evo_fecha12 == "")
+                            {
+                                txt_fecha12.Text = Convert.ToDateTime(evo.evo_fecha12).ToString("yyyy-MM-dd");
+                            }
+                            else
+                            {
+                                txt_fecha12.Text = Convert.ToDateTime(evo.evo_fecha12).ToString("yyyy-MM-dd");
+                            }
                             txt_hora12.Text = evo.evo_hora12.ToString();
                             txt_notas12.Text = evo.evo_notasEvolucion12.ToString();
-                            txt_fecha13.Text = evo.evo_fecha13.ToString();
+                            if (evo.evo_fecha13 == "")
+                            {
+                                txt_fecha13.Text = Convert.ToDateTime(evo.evo_fecha13).ToString("yyyy-MM-dd");
+                            }
+                            else
+                            {
+                                txt_fecha13.Text = Convert.ToDateTime(evo.evo_fecha13).ToString("yyyy-MM-dd");
+                            }
                             txt_hora13.Text = evo.evo_hora13.ToString();
                             txt_notas13.Text = evo.evo_notasEvolucion13.ToString();
-                            txt_fecha14.Text = evo.evo_fecha14.ToString();
+                            if (evo.evo_fecha14 == "")
+                            {
+                                txt_fecha14.Text = Convert.ToDateTime(evo.evo_fecha14).ToString("yyyy-MM-dd");
+                            }
+                            else
+                            {
+                                txt_fecha14.Text = Convert.ToDateTime(evo.evo_fecha14).ToString("yyyy-MM-dd");
+                            }
                             txt_hora14.Text = evo.evo_hora14.ToString();
                             txt_notas14.Text = evo.evo_notasEvolucion14.ToString();
-                            txt_fecha15.Text = evo.evo_fecha15.ToString();
+                            if (evo.evo_fecha15 == "")
+                            {
+                                txt_fecha15.Text = Convert.ToDateTime(evo.evo_fecha15).ToString("yyyy-MM-dd");
+                            }
+                            else
+                            {
+                                txt_fecha15.Text = Convert.ToDateTime(evo.evo_fecha15).ToString("yyyy-MM-dd");
+                            }
                             txt_hora15.Text = evo.evo_hora15.ToString();
-                            txt_notas15.Text = evo.evo_notasEvolucion15.ToString();
+                            txt_notas15.Text = evo.evo_notasEvolucion15.ToString();                            
 
                             //C
                             txt_farmacoterapia1.Text = evo.evo_farmacoIndicaciones1.ToString();
@@ -143,7 +248,7 @@ namespace SistemaECU911.Template.Views
             List<string> lista = new List<string>();
             try
             {
-                string oConn = @"Data Source=ZOCAPO\SQLEXPRESS;Initial Catalog=SistemaECU911;Integrated Security=True";
+                string oConn = @"Data Source=.;Initial Catalog=SistemaECU911;Integrated Security=True";
 
                 SqlConnection con = new SqlConnection(oConn);
                 con.Open();
@@ -218,50 +323,50 @@ namespace SistemaECU911.Template.Views
                     evo_numArchivo = txt_numArchivo.Text,
 
                     //B. Captura de datos Evolucion
-                    evo_fecha1 = Convert.ToDateTime(txt_fecha1.Text),
-                    evo_hora1 = Convert.ToDateTime(txt_hora1.Text),
+                    evo_fecha1 = txt_fecha1.Text,
+                    evo_hora1 = txt_hora1.Text,
                     evo_notasEvolucion1 = txt_notas1.Text,
-                    evo_fecha2 = Convert.ToDateTime(txt_fecha2.Text),
-                    evo_hora2 = Convert.ToDateTime(txt_hora2.Text),
+                    evo_fecha2 = txt_fecha2.Text,
+                    evo_hora2 = txt_hora2.Text,
                     evo_notasEvolucion2 = txt_notas2.Text,
-                    evo_fecha3 = Convert.ToDateTime(txt_fecha3.Text),
-                    evo_hora3 = Convert.ToDateTime(txt_hora3.Text),
+                    evo_fecha3 = txt_fecha3.Text,
+                    evo_hora3 = txt_hora3.Text,
                     evo_notasEvolucion3 = txt_notas3.Text,
-                    evo_fecha4 = Convert.ToDateTime(txt_fecha4.Text),
-                    evo_hora4 = Convert.ToDateTime(txt_hora4.Text),
+                    evo_fecha4 = txt_fecha4.Text,
+                    evo_hora4 = txt_hora4.Text,
                     evo_notasEvolucion4 = txt_notas4.Text,
-                    evo_fecha5 = Convert.ToDateTime(txt_fecha5.Text),
-                    evo_hora5 = Convert.ToDateTime(txt_hora5.Text),
+                    evo_fecha5 = txt_fecha5.Text,
+                    evo_hora5 = txt_hora5.Text,
                     evo_notasEvolucion5 = txt_notas5.Text,
-                    evo_fecha6 = Convert.ToDateTime(txt_fecha6.Text),
-                    evo_hora6 = Convert.ToDateTime(txt_hora6.Text),
+                    evo_fecha6 = txt_fecha6.Text,
+                    evo_hora6 = txt_hora6.Text,
                     evo_notasEvolucion6 = txt_notas6.Text,
-                    evo_fecha7 = Convert.ToDateTime(txt_fecha7.Text),
-                    evo_hora7 = Convert.ToDateTime(txt_hora7.Text),
+                    evo_fecha7 = txt_fecha7.Text,
+                    evo_hora7 = txt_hora7.Text,
                     evo_notasEvolucion7 = txt_notas7.Text,
-                    evo_fecha8 = Convert.ToDateTime(txt_fecha8.Text),
-                    evo_hora8 = Convert.ToDateTime(txt_hora8.Text),
+                    evo_fecha8 = txt_fecha8.Text,
+                    evo_hora8 = txt_hora8.Text,
                     evo_notasEvolucion8 = txt_notas8.Text,
-                    evo_fecha9 = Convert.ToDateTime(txt_fecha9.Text),
-                    evo_hora9 = Convert.ToDateTime(txt_hora9.Text),
+                    evo_fecha9 = txt_fecha9.Text,
+                    evo_hora9 = txt_hora9.Text,
                     evo_notasEvolucion9 = txt_notas9.Text,
-                    evo_fecha10 = Convert.ToDateTime(txt_fecha10.Text),
-                    evo_hora10 = Convert.ToDateTime(txt_hora10.Text),
+                    evo_fecha10 = txt_fecha10.Text,
+                    evo_hora10 = txt_hora10.Text,
                     evo_notasEvolucion10 = txt_notas10.Text,
-                    evo_fecha11 = Convert.ToDateTime(txt_fecha11.Text),
-                    evo_hora11 = Convert.ToDateTime(txt_hora11.Text),
+                    evo_fecha11 = txt_fecha11.Text,
+                    evo_hora11 = txt_hora11.Text,
                     evo_notasEvolucion11 = txt_notas11.Text,
-                    evo_fecha12 = Convert.ToDateTime(txt_fecha12.Text),
-                    evo_hora12 = Convert.ToDateTime(txt_hora12.Text),
+                    evo_fecha12 = txt_fecha12.Text,
+                    evo_hora12 = txt_hora12.Text,
                     evo_notasEvolucion12 = txt_notas12.Text,
-                    evo_fecha13 = Convert.ToDateTime(txt_fecha13.Text),
-                    evo_hora13 = Convert.ToDateTime(txt_hora13.Text),
+                    evo_fecha13 = txt_fecha13.Text,
+                    evo_hora13 = txt_hora13.Text,
                     evo_notasEvolucion13 = txt_notas13.Text,
-                    evo_fecha14 = Convert.ToDateTime(txt_fecha14.Text),
-                    evo_hora14 = Convert.ToDateTime(txt_hora14.Text),
+                    evo_fecha14 = txt_fecha14.Text,
+                    evo_hora14 = txt_hora14.Text,
                     evo_notasEvolucion14 = txt_notas14.Text,
-                    evo_fecha15 = Convert.ToDateTime(txt_fecha15.Text),
-                    evo_hora15 = Convert.ToDateTime(txt_hora15.Text),
+                    evo_fecha15 = txt_fecha15.Text,
+                    evo_hora15 = txt_hora15.Text,
                     evo_notasEvolucion15 = txt_notas15.Text,
 
                     //C. Captura de Datos Prescripcion
@@ -320,50 +425,50 @@ namespace SistemaECU911.Template.Views
                 evo.evo_numArchivo = txt_numArchivo.Text;
 
                 //B. Captura de datos Evolucion
-                evo.evo_fecha1 = Convert.ToDateTime(txt_fecha1.Text);
-                evo.evo_hora1 = Convert.ToDateTime(txt_hora1.Text);
+                evo.evo_fecha1 = txt_fecha1.Text;
+                evo.evo_hora1 = txt_hora1.Text;
                 evo.evo_notasEvolucion1 = txt_notas1.Text;
-                evo.evo_fecha2 = Convert.ToDateTime(txt_fecha2.Text);
-                evo.evo_hora2 = Convert.ToDateTime(txt_hora2.Text);
+                evo.evo_fecha2 = txt_fecha2.Text;
+                evo.evo_hora2 = txt_hora2.Text;
                 evo.evo_notasEvolucion2 = txt_notas2.Text;
-                evo.evo_fecha3 = Convert.ToDateTime(txt_fecha3.Text);
-                evo.evo_hora3 = Convert.ToDateTime(txt_hora3.Text);
+                evo.evo_fecha3 = txt_fecha3.Text;
+                evo.evo_hora3 = txt_hora3.Text;
                 evo.evo_notasEvolucion3 = txt_notas3.Text;
-                evo.evo_fecha4 = Convert.ToDateTime(txt_fecha4.Text);
-                evo.evo_hora4 = Convert.ToDateTime(txt_hora4.Text);
+                evo.evo_fecha4 = txt_fecha4.Text;
+                evo.evo_hora4 = txt_hora4.Text;
                 evo.evo_notasEvolucion4 = txt_notas4.Text;
-                evo.evo_fecha5 = Convert.ToDateTime(txt_fecha5.Text);
-                evo.evo_hora5 = Convert.ToDateTime(txt_hora5.Text);
+                evo.evo_fecha5 = txt_fecha5.Text;
+                evo.evo_hora5 = txt_hora5.Text;
                 evo.evo_notasEvolucion5 = txt_notas5.Text;
-                evo.evo_fecha6 = Convert.ToDateTime(txt_fecha6.Text);
-                evo.evo_hora6 = Convert.ToDateTime(txt_hora6.Text);
+                evo.evo_fecha6 = txt_fecha6.Text;
+                evo.evo_hora6 = txt_hora6.Text;
                 evo.evo_notasEvolucion6 = txt_notas6.Text;
-                evo.evo_fecha7 = Convert.ToDateTime(txt_fecha7.Text);
-                evo.evo_hora7 = Convert.ToDateTime(txt_hora7.Text);
+                evo.evo_fecha7 = txt_fecha7.Text;
+                evo.evo_hora7 = txt_hora7.Text;
                 evo.evo_notasEvolucion7 = txt_notas7.Text;
-                evo.evo_fecha8 = Convert.ToDateTime(txt_fecha8.Text);
-                evo.evo_hora8 = Convert.ToDateTime(txt_hora8.Text);
+                evo.evo_fecha8 = txt_fecha8.Text;
+                evo.evo_hora8 = txt_hora8.Text;
                 evo.evo_notasEvolucion8 = txt_notas8.Text;
-                evo.evo_fecha9 = Convert.ToDateTime(txt_fecha9.Text);
-                evo.evo_hora9 = Convert.ToDateTime(txt_hora9.Text);
+                evo.evo_fecha9 = txt_fecha9.Text;
+                evo.evo_hora9 = txt_hora9.Text;
                 evo.evo_notasEvolucion9 = txt_notas9.Text;
-                evo.evo_fecha10 = Convert.ToDateTime(txt_fecha10.Text);
-                evo.evo_hora10 = Convert.ToDateTime(txt_hora10.Text);
+                evo.evo_fecha10 = txt_fecha10.Text;
+                evo.evo_hora10 = txt_hora10.Text;
                 evo.evo_notasEvolucion10 = txt_notas10.Text;
-                evo.evo_fecha11 = Convert.ToDateTime(txt_fecha11.Text);
-                evo.evo_hora11 = Convert.ToDateTime(txt_hora11.Text);
+                evo.evo_fecha11 = txt_fecha11.Text;
+                evo.evo_hora11 = txt_hora11.Text;
                 evo.evo_notasEvolucion11 = txt_notas11.Text;
-                evo.evo_fecha12 = Convert.ToDateTime(txt_fecha12.Text);
-                evo.evo_hora12 = Convert.ToDateTime(txt_hora12.Text);
+                evo.evo_fecha12 = txt_fecha12.Text;
+                evo.evo_hora12 = txt_hora12.Text;
                 evo.evo_notasEvolucion12 = txt_notas12.Text;
-                evo.evo_fecha13 = Convert.ToDateTime(txt_fecha13.Text);
-                evo.evo_hora13 = Convert.ToDateTime(txt_hora13.Text);
+                evo.evo_fecha13 = txt_fecha13.Text;
+                evo.evo_hora13 = txt_hora13.Text;
                 evo.evo_notasEvolucion13 = txt_notas13.Text;
-                evo.evo_fecha14 = Convert.ToDateTime(txt_fecha14.Text);
-                evo.evo_hora14 = Convert.ToDateTime(txt_hora14.Text);
+                evo.evo_fecha14 = txt_fecha14.Text;
+                evo.evo_hora14 = txt_hora14.Text;
                 evo.evo_notasEvolucion14 = txt_notas14.Text;
-                evo.evo_fecha15 = Convert.ToDateTime(txt_fecha15.Text);
-                evo.evo_hora15 = Convert.ToDateTime(txt_hora15.Text);
+                evo.evo_fecha15 = txt_fecha15.Text;
+                evo.evo_hora15 = txt_hora15.Text;
                 evo.evo_notasEvolucion15 = txt_notas15.Text;
 
                 //C. Captura de Datos Prescripcion

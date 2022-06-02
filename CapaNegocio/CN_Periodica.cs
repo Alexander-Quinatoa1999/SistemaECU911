@@ -46,7 +46,7 @@ namespace CapaNegocio
             try
             {
                 periodica.perio_estado = "A";
-                periodica.perio_fecha_hora = DateTime.Now;
+                periodica.perio_fechaHoraGuardado = DateTime.Now;
                 dc.Tbl_Periodica.InsertOnSubmit(periodica);
                 dc.SubmitChanges();
             }

@@ -40,7 +40,7 @@
                                             </asp:TemplateField>
                                             <asp:TemplateField HeaderText="Fecha y Hora">
                                                 <ItemTemplate>
-                                                    <asp:Label ID="pedExa_fechaHora" runat="server" Text='<%#Eval("pedExa_fechaHora")%>'></asp:Label>
+                                                    <asp:Label ID="pedExa_fechaHora" runat="server" Text='<%#Eval("pedExa_fechaHoraGuardado")%>'></asp:Label>
                                                 </ItemTemplate>
                                             </asp:TemplateField>
                                             <asp:TemplateField ItemStyle-Width="17" HeaderStyle-Width="17" HeaderText="">

@@ -37,479 +37,496 @@ namespace SistemaECU911.Template.Views
 
                     if (per != null)
                     {
+
+                        //Regiones
+                        if (reinte.rein_cicatricesPiel == null)
+                        {
+                            ckb_cicatrices.Checked = false;
+                        }
+                        else
+                        {
+                            ckb_cicatrices.Checked = true;
+
+                        }
+                        if (reinte.rein_tatuajesPiel == null)
+                        {
+                            ckb_tatuajes.Checked = false;
+                        }
+                        else
+                        {
+                            ckb_tatuajes.Checked = true;
+
+                        }
+                        if (reinte.rein_pielFacerasPiel == null)
+                        {
+                            ckb_pielyfaneras.Checked = false;
+                        }
+                        else
+                        {
+                            ckb_pielyfaneras.Checked = true;
+
+                        }
+                        if (reinte.rein_parpadosOjos == null)
+                        {
+                            ckb_parpados.Checked = false;
+                        }
+                        else
+                        {
+                            ckb_parpados.Checked = true;
+
+                        }
+                        if (reinte.rein_conjuntuvasOjos == null)
+                        {
+                            ckb_conjuntivas.Checked = false;
+                        }
+                        else
+                        {
+                            ckb_conjuntivas.Checked = true;
+
+                        }
+                        if (reinte.rein_pupilasOjos == null)
+                        {
+                            ckb_pupilas.Checked = false;
+                        }
+                        else
+                        {
+                            ckb_pupilas.Checked = true;
+
+                        }
+                        if (reinte.rein_corneaOjos == null)
+                        {
+                            ckb_cornea.Checked = false;
+                        }
+                        else
+                        {
+                            ckb_cornea.Checked = true;
+
+                        }
+                        if (reinte.rein_motilidadOjos == null)
+                        {
+                            ckb_motilidad.Checked = false;
+                        }
+                        else
+                        {
+                            ckb_motilidad.Checked = true;
+
+                        }
+                        if (reinte.rein_cAudiExtreOido == null)
+                        {
+                            ckb_auditivoexterno.Checked = false;
+                        }
+                        else
+                        {
+                            ckb_auditivoexterno.Checked = true;
+
+                        }
+                        if (reinte.rein_pabellonOido == null)
+                        {
+                            ckb_pabellon.Checked = false;
+                        }
+                        else
+                        {
+                            ckb_pabellon.Checked = true;
+
+                        }
+                        if (reinte.rein_timpanosOido == null)
+                        {
+                            ckb_timpanos.Checked = false;
+                        }
+                        else
+                        {
+                            ckb_timpanos.Checked = true;
+
+                        }
+                        if (reinte.rein_labiosOroFa == null)
+                        {
+                            ckb_labios.Checked = false;
+                        }
+                        else
+                        {
+                            ckb_labios.Checked = true;
+
+                        }
+                        if (reinte.rein_lenguaOroFa == null)
+                        {
+                            ckb_lengua.Checked = false;
+                        }
+                        else
+                        {
+                            ckb_lengua.Checked = true;
+
+                        }
+                        if (reinte.rein_faringeOroFa == null)
+                        {
+                            ckb_faringe.Checked = false;
+                        }
+                        else
+                        {
+                            ckb_faringe.Checked = true;
+
+                        }
+                        if (reinte.rein_amigdalasOroFa == null)
+                        {
+                            ckb_amigdalas.Checked = false;
+                        }
+                        else
+                        {
+                            ckb_amigdalas.Checked = true;
+
+                        }
+                        if (reinte.rein_dentaduraOroFa == null)
+                        {
+                            ckb_dentadura.Checked = false;
+                        }
+                        else
+                        {
+                            ckb_dentadura.Checked = true;
+
+                        }
+                        if (reinte.rein_tabiqueNariz == null)
+                        {
+                            ckb_tabique.Checked = false;
+                        }
+                        else
+                        {
+                            ckb_tabique.Checked = true;
+
+                        }
+                        if (reinte.rein_cornetesNariz == null)
+                        {
+                            ckb_cornetes.Checked = false;
+                        }
+                        else
+                        {
+                            ckb_cornetes.Checked = true;
+
+                        }
+                        if (reinte.rein_mucosasNariz == null)
+                        {
+                            ckb_mucosa.Checked = false;
+                        }
+                        else
+                        {
+                            ckb_mucosa.Checked = true;
+
+                        }
+                        if (reinte.rein_senosParanaNariz == null)
+                        {
+                            ckb_senosparanasales.Checked = false;
+                        }
+                        else
+                        {
+                            ckb_senosparanasales.Checked = true;
+
+                        }
+                        if (reinte.rein_tiroiMasasCuello == null)
+                        {
+                            ckb_tiroides.Checked = false;
+                        }
+                        else
+                        {
+                            ckb_tiroides.Checked = true;
+
+                        }
+                        if (reinte.rein_movilidadCuello == null)
+                        {
+                            ckb_movilidad.Checked = false;
+                        }
+                        else
+                        {
+                            ckb_movilidad.Checked = true;
+
+                        }
+                        if (reinte.rein_mamasTorax == null)
+                        {
+                            ckb_mamas.Checked = false;
+                        }
+                        else
+                        {
+                            ckb_mamas.Checked = true;
+
+                        }
+                        if (reinte.rein_corazonTorax == null)
+                        {
+                            ckb_corazon.Checked = false;
+                        }
+                        else
+                        {
+                            ckb_corazon.Checked = true;
+
+                        }
+                        if (reinte.rein_pulmonesTorax2 == null)
+                        {
+                            ckb_pulmones.Checked = false;
+                        }
+                        else
+                        {
+                            ckb_pulmones.Checked = true;
+
+                        }
+                        if (reinte.rein_parriCostalTorax2 == null)
+                        {
+                            ckb_parrillacostal.Checked = false;
+                        }
+                        else
+                        {
+                            ckb_parrillacostal.Checked = true;
+
+                        }
+                        if (reinte.rein_viscerasAbdomen == null)
+                        {
+                            ckb_visceras.Checked = false;
+                        }
+                        else
+                        {
+                            ckb_visceras.Checked = true;
+
+                        }
+                        if (reinte.rein_paredAbdomiAbdomen == null)
+                        {
+                            ckb_paredabdominal.Checked = false;
+                        }
+                        else
+                        {
+                            ckb_paredabdominal.Checked = true;
+
+                        }
+                        if (reinte.rein_flexibilidadColumna == null)
+                        {
+                            ckb_flexibilidad.Checked = false;
+                        }
+                        else
+                        {
+                            ckb_flexibilidad.Checked = true;
+
+                        }
+                        if (reinte.rein_desviacionColumna == null)
+                        {
+                            ckb_desviacion.Checked = false;
+                        }
+                        else
+                        {
+                            ckb_desviacion.Checked = true;
+
+                        }
+                        if (reinte.rein_dolorColumna == null)
+                        {
+                            ckb_dolor.Checked = false;
+                        }
+                        else
+                        {
+                            ckb_dolor.Checked = true;
+
+                        }
+                        if (reinte.rein_pelvisPelvis == null)
+                        {
+                            ckb_pelvis.Checked = false;
+                        }
+                        else
+                        {
+                            ckb_pelvis.Checked = true;
+
+                        }
+                        if (reinte.rein_genitalesPelvis == null)
+                        {
+                            ckb_genitales.Checked = false;
+                        }
+                        else
+                        {
+                            ckb_genitales.Checked = true;
+
+                        }
+                        if (reinte.rein_vascularExtre == null)
+                        {
+                            ckb_vascular.Checked = false;
+                        }
+                        else
+                        {
+                            ckb_vascular.Checked = true;
+
+                        }
+                        if (reinte.rein_miemSupeExtre == null)
+                        {
+                            ckb_miembrosuperiores.Checked = false;
+                        }
+                        else
+                        {
+                            ckb_miembrosuperiores.Checked = true;
+
+                        }
+                        if (reinte.rein_miemInfeExtre == null)
+                        {
+                            ckb_miembrosinferiores.Checked = false;
+                        }
+                        else
+                        {
+                            ckb_miembrosinferiores.Checked = true;
+
+                        }
+                        if (reinte.rein_fuerzaNeuro == null)
+                        {
+                            ckb_fuerza.Checked = false;
+                        }
+                        else
+                        {
+                            ckb_fuerza.Checked = true;
+
+                        }
+                        if (reinte.rein_sensibiNeuro == null)
+                        {
+                            ckb_sensibilidad.Checked = false;
+                        }
+                        else
+                        {
+                            ckb_sensibilidad.Checked = true;
+
+                        }
+                        if (reinte.rein_marchaNeuro == null)
+                        {
+                            ckb_marcha.Checked = false;
+                        }
+                        else
+                        {
+                            ckb_marcha.Checked = true;
+
+                        }
+                        if (reinte.rein_refleNeuro == null)
+                        {
+                            ckb_reflejos.Checked = false;
+                        }
+                        else
+                        {
+                            ckb_reflejos.Checked = true;
+
+                        }
+
+                        //Diagnostco
+                        if (reinte.rein_pre == null)
+                        {
+                            ckb_pre.Checked = false;
+                        }
+                        else
+                        {
+                            ckb_pre.Checked = true;
+
+                        }
+                        if (reinte.rein_pre2 == null)
+                        {
+                            ckb_pre2.Checked = false;
+                        }
+                        else
+                        {
+                            ckb_pre2.Checked = true;
+
+                        }
+                        if (reinte.rein_pre3 == null)
+                        {
+                            ckb_pre3.Checked = false;
+                        }
+                        else
+                        {
+                            ckb_pre3.Checked = true;
+
+                        }
+                        if (reinte.rein_def == null)
+                        {
+                            ckb_def.Checked = false;
+                        }
+                        else
+                        {
+                            ckb_def.Checked = true;
+
+                        }
+                        if (reinte.rein_def2 == null)
+                        {
+                            ckb_def2.Checked = false;
+                        }
+                        else
+                        {
+                            ckb_def2.Checked = true;
+
+                        }
+                        if (reinte.rein_def3 == null)
+                        {
+                            ckb_def3.Checked = false;
+                        }
+                        else
+                        {
+                            ckb_def3.Checked = true;
+
+                        }
+
+                        //Aptitud Medica para el trabajo
+                        if (reinte.rein_apto == null)
+                        {
+                            ckb_apto.Checked = false;
+                        }
+                        else
+                        {
+                            ckb_apto.Checked = true;
+
+                        }
+                        if (reinte.rein_aptoObserva == null)
+                        {
+                            ckb_aptoobservacion.Checked = false;
+                        }
+                        else
+                        {
+                            ckb_aptoobservacion.Checked = true;
+
+                        }
+                        if (reinte.rein_aptoLimi == null)
+                        {
+                            ckb_aptolimitacion.Checked = false;
+                        }
+                        else
+                        {
+                            ckb_aptolimitacion.Checked = true;
+
+                        }
+                        if (reinte.rein_NoApto == null)
+                        {
+                            ckb_noapto.Checked = false;
+                        }
+                        else
+                        {
+                            ckb_noapto.Checked = true;
+
+                        }
+
                         //A
                         txt_priNombre.Text = per.Per_priNombre.ToString();
                         txt_segNombre.Text = per.Per_segNombre.ToString();
                         txt_priApellido.Text = per.Per_priApellido.ToString();
                         txt_segApellido.Text = per.Per_segApellido.ToString();
                         txt_sexo.Text = per.Per_genero.ToString();
+                        DateTime edad = Convert.ToDateTime(per.Per_fechaNacimiento);
+                        DateTime naci = Convert.ToDateTime(edad);
+                        DateTime actual = DateTime.Now;
+                        Calculo(naci, actual);
                         txt_numHClinica.Text = per.Per_cedula.ToString();
                         txt_puestoTrabajo.Text = per.Per_puestoTrabajo.ToString();
 
                         if (reinte != null)
                         {
-
-                            //Regiones
-                            if (reinte.rein_cicatricesPiel == null)
-                            {
-                                ckb_cicatrices.Checked = false;
-                            }
-                            else
-                            {
-                                ckb_cicatrices.Checked = true;
-
-                            }
-                            if (reinte.rein_tatuajesPiel == null)
-                            {
-                                ckb_tatuajes.Checked = false;
-                            }
-                            else
-                            {
-                                ckb_tatuajes.Checked = true;
-
-                            }
-                            if (reinte.rein_pielFacerasPiel == null)
-                            {
-                                ckb_pielyfaneras.Checked = false;
-                            }
-                            else
-                            {
-                                ckb_pielyfaneras.Checked = true;
-
-                            }
-                            if (reinte.rein_parpadosOjos == null)
-                            {
-                                ckb_parpados.Checked = false;
-                            }
-                            else
-                            {
-                                ckb_parpados.Checked = true;
-
-                            }
-                            if (reinte.rein_conjuntuvasOjos == null)
-                            {
-                                ckb_conjuntivas.Checked = false;
-                            }
-                            else
-                            {
-                                ckb_conjuntivas.Checked = true;
-
-                            }
-                            if (reinte.rein_pupilasOjos == null)
-                            {
-                                ckb_pupilas.Checked = false;
-                            }
-                            else
-                            {
-                                ckb_pupilas.Checked = true;
-
-                            }
-                            if (reinte.rein_corneaOjos == null)
-                            {
-                                ckb_cornea.Checked = false;
-                            }
-                            else
-                            {
-                                ckb_cornea.Checked = true;
-
-                            }
-                            if (reinte.rein_motilidadOjos == null)
-                            {
-                                ckb_motilidad.Checked = false;
-                            }
-                            else
-                            {
-                                ckb_motilidad.Checked = true;
-
-                            }
-                            if (reinte.rein_cAudiExtreOido == null)
-                            {
-                                ckb_auditivoexterno.Checked = false;
-                            }
-                            else
-                            {
-                                ckb_auditivoexterno.Checked = true;
-
-                            }
-                            if (reinte.rein_pabellonOido == null)
-                            {
-                                ckb_pabellon.Checked = false;
-                            }
-                            else
-                            {
-                                ckb_pabellon.Checked = true;
-
-                            }
-                            if (reinte.rein_timpanosOido == null)
-                            {
-                                ckb_timpanos.Checked = false;
-                            }
-                            else
-                            {
-                                ckb_timpanos.Checked = true;
-
-                            }
-                            if (reinte.rein_labiosOroFa == null)
-                            {
-                                ckb_labios.Checked = false;
-                            }
-                            else
-                            {
-                                ckb_labios.Checked = true;
-
-                            }
-                            if (reinte.rein_lenguaOroFa == null)
-                            {
-                                ckb_lengua.Checked = false;
-                            }
-                            else
-                            {
-                                ckb_lengua.Checked = true;
-
-                            }
-                            if (reinte.rein_faringeOroFa == null)
-                            {
-                                ckb_faringe.Checked = false;
-                            }
-                            else
-                            {
-                                ckb_faringe.Checked = true;
-
-                            }
-                            if (reinte.rein_amigdalasOroFa == null)
-                            {
-                                ckb_amigdalas.Checked = false;
-                            }
-                            else
-                            {
-                                ckb_amigdalas.Checked = true;
-
-                            }
-                            if (reinte.rein_dentaduraOroFa == null)
-                            {
-                                ckb_dentadura.Checked = false;
-                            }
-                            else
-                            {
-                                ckb_dentadura.Checked = true;
-
-                            }
-                            if (reinte.rein_tabiqueNariz == null)
-                            {
-                                ckb_tabique.Checked = false;
-                            }
-                            else
-                            {
-                                ckb_tabique.Checked = true;
-
-                            }
-                            if (reinte.rein_cornetesNariz == null)
-                            {
-                                ckb_cornetes.Checked = false;
-                            }
-                            else
-                            {
-                                ckb_cornetes.Checked = true;
-
-                            }
-                            if (reinte.rein_mucosasNariz == null)
-                            {
-                                ckb_mucosa.Checked = false;
-                            }
-                            else
-                            {
-                                ckb_mucosa.Checked = true;
-
-                            }
-                            if (reinte.rein_senosParanaNariz == null)
-                            {
-                                ckb_senosparanasales.Checked = false;
-                            }
-                            else
-                            {
-                                ckb_senosparanasales.Checked = true;
-
-                            }
-                            if (reinte.rein_tiroiMasasCuello == null)
-                            {
-                                ckb_tiroides.Checked = false;
-                            }
-                            else
-                            {
-                                ckb_tiroides.Checked = true;
-
-                            }
-                            if (reinte.rein_movilidadCuello == null)
-                            {
-                                ckb_movilidad.Checked = false;
-                            }
-                            else
-                            {
-                                ckb_movilidad.Checked = true;
-
-                            }
-                            if (reinte.rein_mamasTorax == null)
-                            {
-                                ckb_mamas.Checked = false;
-                            }
-                            else
-                            {
-                                ckb_mamas.Checked = true;
-
-                            }
-                            if (reinte.rein_corazonTorax == null)
-                            {
-                                ckb_corazon.Checked = false;
-                            }
-                            else
-                            {
-                                ckb_corazon.Checked = true;
-
-                            }
-                            if (reinte.rein_pulmonesTorax2 == null)
-                            {
-                                ckb_pulmones.Checked = false;
-                            }
-                            else
-                            {
-                                ckb_pulmones.Checked = true;
-
-                            }
-                            if (reinte.rein_parriCostalTorax2 == null)
-                            {
-                                ckb_parrillacostal.Checked = false;
-                            }
-                            else
-                            {
-                                ckb_parrillacostal.Checked = true;
-
-                            }
-                            if (reinte.rein_viscerasAbdomen == null)
-                            {
-                                ckb_visceras.Checked = false;
-                            }
-                            else
-                            {
-                                ckb_visceras.Checked = true;
-
-                            }
-                            if (reinte.rein_paredAbdomiAbdomen == null)
-                            {
-                                ckb_paredabdominal.Checked = false;
-                            }
-                            else
-                            {
-                                ckb_paredabdominal.Checked = true;
-
-                            }
-                            if (reinte.rein_flexibilidadColumna == null)
-                            {
-                                ckb_flexibilidad.Checked = false;
-                            }
-                            else
-                            {
-                                ckb_flexibilidad.Checked = true;
-
-                            }
-                            if (reinte.rein_desviacionColumna == null)
-                            {
-                                ckb_desviacion.Checked = false;
-                            }
-                            else
-                            {
-                                ckb_desviacion.Checked = true;
-
-                            }
-                            if (reinte.rein_dolorColumna == null)
-                            {
-                                ckb_dolor.Checked = false;
-                            }
-                            else
-                            {
-                                ckb_dolor.Checked = true;
-
-                            }
-                            if (reinte.rein_pelvisPelvis == null)
-                            {
-                                ckb_pelvis.Checked = false;
-                            }
-                            else
-                            {
-                                ckb_pelvis.Checked = true;
-
-                            }
-                            if (reinte.rein_genitalesPelvis == null)
-                            {
-                                ckb_genitales.Checked = false;
-                            }
-                            else
-                            {
-                                ckb_genitales.Checked = true;
-
-                            }
-                            if (reinte.rein_vascularExtre == null)
-                            {
-                                ckb_vascular.Checked = false;
-                            }
-                            else
-                            {
-                                ckb_vascular.Checked = true;
-
-                            }
-                            if (reinte.rein_miemSupeExtre == null)
-                            {
-                                ckb_miembrosuperiores.Checked = false;
-                            }
-                            else
-                            {
-                                ckb_miembrosuperiores.Checked = true;
-
-                            }
-                            if (reinte.rein_miemInfeExtre == null)
-                            {
-                                ckb_miembrosinferiores.Checked = false;
-                            }
-                            else
-                            {
-                                ckb_miembrosinferiores.Checked = true;
-
-                            }
-                            if (reinte.rein_fuerzaNeuro == null)
-                            {
-                                ckb_fuerza.Checked = false;
-                            }
-                            else
-                            {
-                                ckb_fuerza.Checked = true;
-
-                            }
-                            if (reinte.rein_sensibiNeuro == null)
-                            {
-                                ckb_sensibilidad.Checked = false;
-                            }
-                            else
-                            {
-                                ckb_sensibilidad.Checked = true;
-
-                            }
-                            if (reinte.rein_marchaNeuro == null)
-                            {
-                                ckb_marcha.Checked = false;
-                            }
-                            else
-                            {
-                                ckb_marcha.Checked = true;
-
-                            }
-                            if (reinte.rein_refleNeuro == null)
-                            {
-                                ckb_reflejos.Checked = false;
-                            }
-                            else
-                            {
-                                ckb_reflejos.Checked = true;
-
-                            }
-
-                            //Diagnostco
-                            if (reinte.rein_pre == null)
-                            {
-                                ckb_pre.Checked = false;
-                            }
-                            else
-                            {
-                                ckb_pre.Checked = true;
-
-                            }
-                            if (reinte.rein_pre2 == null)
-                            {
-                                ckb_pre2.Checked = false;
-                            }
-                            else
-                            {
-                                ckb_pre2.Checked = true;
-
-                            }
-                            if (reinte.rein_pre3 == null)
-                            {
-                                ckb_pre3.Checked = false;
-                            }
-                            else
-                            {
-                                ckb_pre3.Checked = true;
-
-                            }
-                            if (reinte.rein_def == null)
-                            {
-                                ckb_def.Checked = false;
-                            }
-                            else
-                            {
-                                ckb_def.Checked = true;
-
-                            }
-                            if (reinte.rein_def2 == null)
-                            {
-                                ckb_def2.Checked = false;
-                            }
-                            else
-                            {
-                                ckb_def2.Checked = true;
-
-                            }
-                            if (reinte.rein_def3 == null)
-                            {
-                                ckb_def3.Checked = false;
-                            }
-                            else
-                            {
-                                ckb_def3.Checked = true;
-
-                            }
-
-                            //Aptitud Medica para el trabajo
-                            if (reinte.rein_apto == null)
-                            {
-                                ckb_apto.Checked = false;
-                            }
-                            else
-                            {
-                                ckb_apto.Checked = true;
-
-                            }
-                            if (reinte.rein_aptoObserva == null)
-                            {
-                                ckb_aptoobservacion.Checked = false;
-                            }
-                            else
-                            {
-                                ckb_aptoobservacion.Checked = true;
-
-                            }
-                            if (reinte.rein_aptoLimi == null)
-                            {
-                                ckb_aptolimitacion.Checked = false;
-                            }
-                            else
-                            {
-                                ckb_aptolimitacion.Checked = true;
-
-                            }
-                            if (reinte.rein_NoApto == null)
-                            {
-                                ckb_noapto.Checked = false;
-                            }
-                            else
-                            {
-                                ckb_noapto.Checked = true;
-
-                            }
-
                             //A
                             txt_numArchivo.Text = reinte.rein_numArchivo.ToString();
-                            txt_edad.Text = reinte.rein_edad.ToString();
-                            txt_fechaUltiDiaLaboral.Text = reinte.rein__fechUltDiaLaboral.ToString();
-                            txt_fechaReingreso.Text = reinte.rein_fechReingreso.ToString();
+                            if (reinte.rein__fechUltDiaLaboral == "")
+                            {
+                                txt_fechaUltiDiaLaboral.Text = reinte.rein__fechUltDiaLaboral.ToString();
+                            }
+                            else
+                            {
+                                txt_fechaUltiDiaLaboral.Text = Convert.ToDateTime(reinte.rein__fechUltDiaLaboral).ToString("yyyy-MM-dd");
+                            }
+                            if (reinte.rein_fechReingreso == "")
+                            {
+                                txt_fechaReingreso.Text = reinte.rein_fechReingreso.ToString();
+                            }
+                            else
+                            {
+                                txt_fechaReingreso.Text = Convert.ToDateTime(reinte.rein_fechReingreso).ToString("yyyy-MM-dd");
+                            }                            
                             txt_total.Text = reinte.rein_total.ToString();
                             txt_causaSalida.Text = reinte.rein_causaSalida.ToString();
 
@@ -519,66 +536,62 @@ namespace SistemaECU911.Template.Views
                             //C
                             txt_enfermedadactualreintegro.Text = reinte.rein_descripenfActual.ToString();
 
-                            ////E
-                            //txt_cicatrices.Text = reinte.rein_cicatricesPiel.ToString();
-                            //txt_tatuajes.Text = reinte.rein_tatuajesPiel.ToString();
-                            //txt_pielyfaneras.Text = reinte.rein_pielFacerasPiel.ToString();
-                            //txt_parpados.Text = reinte.rein_parpadosOjos.ToString();
-                            //txt_conjuntivas.Text = reinte.rein_conjuntuvasOjos.ToString();
-                            //txt_pupilas.Text = reinte.rein_pupilasOjos.ToString();
-                            //txt_cornea.Text = reinte.rein_corneaOjos.ToString();
-                            //txt_motilidad.Text = reinte.rein_motilidadOjos.ToString();
-                            //txt_auditivoexterno.Text = reinte.rein_cAudiExtreOido.ToString();
-                            //txt_pabellon.Text = reinte.rein_pabellonOido.ToString();
-                            //txt_timpanos.Text = reinte.rein_timpanosOido.ToString();
-                            //txt_labios.Text = reinte.rein_labiosOroFa.ToString();
-                            //txt_lengua.Text = reinte.rein_lenguaOroFa.ToString();
-                            //txt_faringe.Text = reinte.rein_faringeOroFa.ToString();
-                            //txt_amigdalas.Text = reinte.rein_amigdalasOroFa.ToString();
-                            //txt_dentadura.Text = reinte.rein_dentaduraOroFa.ToString();
-                            //txt_tabique.Text = reinte.rein_tabiqueNariz.ToString();
-                            //txt_cornetes.Text = reinte.rein_cornetesNariz.ToString();
-                            //txt_mucosa.Text = reinte.rein_mucosasNariz.ToString();
-                            //txt_senosparanasales.Text = reinte.rein_senosParanaNariz.ToString();
-                            //txt_tiroides.Text = reinte.rein_tiroiMasasCuello.ToString();
-                            //txt_movilidad.Text = reinte.rein_movilidadCuello.ToString();
-                            //txt_mamas.Text = reinte.rein_mamasTorax.ToString();
-                            //txt_corazon.Text = reinte.rein_corazonTorax.ToString();
-                            //txt_pulmones.Text = reinte.rein_pulmonesTorax2.ToString();
-                            //txt_parrillacostal.Text = reinte.rein_parriCostalTorax2.ToString();
-                            //txt_visceras.Text = reinte.rein_viscerasAbdomen.ToString();
-                            //txt_paredabdominal.Text = reinte.rein_paredAbdomiAbdomen.ToString();
-                            //txt_flexibilidad.Text = reinte.rein_flexibilidadColumna.ToString();
-                            //txt_desviacion.Text = reinte.rein_desviacionColumna.ToString();
-                            //txt_dolor.Text = reinte.rein_dolorColumna.ToString();
-                            //txt_pelvis.Text = reinte.rein_pelvisPelvis.ToString();
-                            //txt_genitales.Text = reinte.rein_genitalesPelvis.ToString();
-                            //txt_vascular.Text = reinte.rein_vascularExtre.ToString();
-                            //txt_miembrosureinres.Text = reinte.rein_miemSupeExtre.ToString();
-                            //txt_miembrosinferiores.Text = reinte.rein_miemInfeExtre.ToString();
-                            //txt_fuerza.Text = reinte.rein_fuerzaNeuro.ToString();
-                            //txt_sensibilidad.Text = reinte.rein_sensibiNeuro.ToString();
-                            //txt_marcha.Text = reinte.rein_marchaNeuro.ToString();
-                            //txt_reflejos.Text = reinte.rein_refleNeuro.ToString();
+                            //D
+                            txt_preArterial.Text = reinte.rein_preArterial.ToString();
+                            txt_temperatura.Text = reinte.rein_temperatura.ToString();
+                            txt_freCardica.Text = reinte.rein_frecCardiacan.ToString();
+                            txt_satOxigeno.Text = reinte.rein_satOxigenon.ToString();
+                            txt_freRespiratoria.Text = reinte.rein_frecRespiratorian.ToString();
+                            txt_peso.Text = reinte.rein_peson.ToString();
+                            txt_talla.Text = reinte.rein_tallan.ToString();
+                            txt_indMasCorporal.Text = reinte.rein_indMasCorporaln.ToString();
+                            txt_perAbdominal.Text = reinte.rein_perAbdominaln.ToString();
+
+                            //E                            
                             txt_observexamenfisicoregional.Text = reinte.rein_observaexaFisRegional.ToString();
 
                             //F
                             txt_examen.Text = reinte.rein_examen.ToString();
-                            txt_fechaexamen.Text = reinte.rein_fecha.ToString();
+                            if (reinte.rein_fecha == "")
+                            {
+                                txt_fechaexamen.Text = reinte.rein_fecha.ToString();
+                            }
+                            else
+                            {
+                                txt_fechaexamen.Text = Convert.ToDateTime(reinte.rein_fecha).ToString("yyyy-MM-dd");
+                            }                            
                             txt_resultadoexamen.Text = reinte.rein_resultados.ToString();
+                            txt_examen2.Text = reinte.rein_examen2.ToString();
+                            if (reinte.rein_fecha2 == "")
+                            {
+                                txt_fechaexamen2.Text = reinte.rein_fecha2.ToString();
+                            }
+                            else
+                            {
+                                txt_fechaexamen2.Text = Convert.ToDateTime(reinte.rein_fecha2).ToString("yyyy-MM-dd");
+                            }                            
+                            txt_resultadoexamen2.Text = reinte.rein_resultados2.ToString();
+                            txt_examen3.Text = reinte.rein_examen3.ToString();
+                            if (reinte.rein_fecha3 == "")
+                            {
+                                txt_fechaexamen3.Text = reinte.rein_fecha3.ToString();
+                            }
+                            else
+                            {
+                                txt_fechaexamen3.Text = Convert.ToDateTime(reinte.rein_fecha3).ToString("yyyy-MM-dd");
+                            }                            
+                            txt_resultadoexamen3.Text = reinte.rein_resultados3.ToString();
                             txt_observacionexamen.Text = reinte.rein_observacionesResExaGenEspRiesTrabajo.ToString();
 
                             //G
                             txt_descripdiagnostico.Text = reinte.rein_descripcionDiagnostico.ToString();
                             txt_cie.Text = reinte.rein_cie.ToString();
-                            //txt_pre.Text = reinte.rein_pre.ToString();
-                            //txt_def.Text = reinte.rein_def.ToString();
-
+                            txt_descripdiagnostico2.Text = reinte.rein_descripcionDiagnostico2.ToString();
+                            txt_cie2.Text = reinte.rein_cie2.ToString();
+                            txt_descripdiagnostico3.Text = reinte.rein_descripcionDiagnostico3.ToString();
+                            txt_cie3.Text = reinte.rein_cie3.ToString();
+                            
                             //H
-                            //txt_apto.Text = reinte.rein_apto.ToString();
-                            //txt_aptoobservacion.Text = reinte.rein_aptoObserva.ToString();
-                            //txt_aptolimitacion.Text = reinte.rein_aptoLimi.ToString();
-                            //txt_noapto.Text = reinte.rein_NoApto.ToString();
                             txt_observacionaptitud.Text = reinte.rein_ObservAptMedica.ToString();
                             txt_limitacionaptitud.Text = reinte.rein_LimitAptMedica.ToString();
                             txt_reubicacionaptitud.Text = reinte.rein_ReubicaAptMedica.ToString();
@@ -587,19 +600,57 @@ namespace SistemaECU911.Template.Views
                             txt_descripciontratamientoreintegro.Text = reinte.rein_descripcionRecoTratamiento.ToString();
 
                             //J
-                            txt_fechahora.Text = reinte.rein_fecha_hora.ToString();
+                            if (reinte.rein_fecha_hora == "")
+                            {
+                                txt_fechahora.Text = reinte.rein_fecha_hora.ToString(); 
+                            }
+                            else
+                            {
+                                txt_fechahora.Text = Convert.ToDateTime(reinte.rein_fecha_hora).ToString("yyyy-MM-ddTHH:mm");
+                            }                            
                             ddl_profesional.SelectedValue = reinte.prof_id.ToString();
                             txt_codigoDatProf.Text = reinte.rein_cod.ToString();
                         }
                     }                    
                 }
 
-                txt_fechahora.Text = DateTime.Now.ToString(" dd/MM/yyyy " + " HH:mm ");
+                if (reinte.rein_fecha_hora == null)
+                {
+                    txt_fechahora.Text = DateTime.Now.ToLocalTime().ToString("yyyy-MM-ddTHH:mm");
+                }
+
                 cargarProfesional();
             }
         }
 
-        //Metodo obtener cedula por numero de HC REINTEGRO
+        public void Calculo(DateTime nac, DateTime actual)
+        {
+            int año = nac.Year;
+            int mes = nac.Month;
+            int dia = nac.Day;
+
+            int añoBisiesto = 0;
+
+            for (int i = año; i < actual.Year; i++)
+            {
+                if (DateTime.IsLeapYear(i))
+                {
+                    ++añoBisiesto;
+                }
+            }
+
+            TimeSpan ts = actual.Subtract(nac);
+            dia = ts.Days - añoBisiesto;
+            int r = 0;
+
+            año = Math.DivRem(dia, 365, out r);
+            mes = Math.DivRem(r, 30, out r);
+            dia = r;
+
+            txt_edad.Text = año + "A, " + mes + "M, " + dia + "D";
+        }
+
+        //Metodo obtener numero de cedula
         [WebMethod]
         [ScriptMethod]
         public static List<string> ObtenerNumHClinica(string prefixText)
@@ -662,6 +713,12 @@ namespace SistemaECU911.Template.Views
                 string sexo = item.Per_genero;
                 txt_sexo.Text = sexo;
 
+                DateTime edad = Convert.ToDateTime(item.Per_fechaNacimiento);
+                DateTime naci = Convert.ToDateTime(edad);
+
+                DateTime actual = DateTime.Now;
+                Calculo(naci, actual);
+
                 string puestoTrabajo = item.Per_puestoTrabajo;
                 txt_puestoTrabajo.Text = puestoTrabajo;
 
@@ -718,6 +775,46 @@ namespace SistemaECU911.Template.Views
             {
                 string codigo = item.id10;
                 txt_cie.Text = codigo;
+            }
+        }
+
+        protected void txt_descripdiagnostico2_TextChanged(object sender, EventArgs e)
+        {
+            ObtenerCodigo2();
+        }
+
+        private void ObtenerCodigo2()
+        {
+            string descripcion2 = txt_descripdiagnostico2.Text;
+
+            var lista = from c in dc.cie10
+                        where c.dec10 == descripcion2
+                        select c;
+
+            foreach (var item in lista)
+            {
+                string codigo2 = item.id10;
+                txt_cie2.Text = codigo2;
+            }
+        }
+
+        protected void txt_descripdiagnostico3_TextChanged(object sender, EventArgs e)
+        {
+            ObtenerCodigo3();
+        }
+
+        private void ObtenerCodigo3()
+        {
+            string descripcion3 = txt_descripdiagnostico3.Text;
+
+            var lista = from c in dc.cie10
+                        where c.dec10 == descripcion3
+                        select c;
+
+            foreach (var item in lista)
+            {
+                string codigo3 = item.id10;
+                txt_cie3.Text = codigo3;
             }
         }
 
@@ -939,10 +1036,9 @@ namespace SistemaECU911.Template.Views
                 {
                     //A
                     rein_numArchivo = txt_numArchivo.Text,
-                    rein_edad = Convert.ToInt32(txt_edad.Text),
-                    rein__fechUltDiaLaboral = Convert.ToDateTime(txt_fechaUltiDiaLaboral.Text),
-                    rein_fechReingreso = Convert.ToDateTime(txt_fechaReingreso.Text),
-                    rein_total = Convert.ToInt32(txt_total.Text),
+                    rein__fechUltDiaLaboral = txt_fechaUltiDiaLaboral.Text,
+                    rein_fechReingreso = txt_fechaReingreso.Text,
+                    rein_total = txt_total.Text,
                     rein_causaSalida = txt_causaSalida.Text,
 
                     //B.
@@ -951,66 +1047,41 @@ namespace SistemaECU911.Template.Views
                     //C.
                     rein_descripenfActual = txt_enfermedadactualreintegro.Text,
 
-                    ////E.
-                    //rein_cicatricesPiel = txt_cicatrices.Text,
-                    //rein_tatuajesPiel = txt_tatuajes.Text,
-                    //rein_pielFacerasPiel = txt_pielyfaneras.Text,
-                    //rein_parpadosOjos = txt_parpados.Text,
-                    //rein_conjuntuvasOjos = txt_conjuntivas.Text,
-                    //rein_pupilasOjos = txt_pupilas.Text,
-                    //rein_corneaOjos = txt_cornea.Text,
-                    //rein_motilidadOjos = txt_motilidad.Text,
-                    //rein_cAudiExtreOido = txt_auditivoexterno.Text,
-                    //rein_pabellonOido = txt_pabellon.Text,
-                    //rein_timpanosOido = txt_timpanos.Text,
-                    //rein_labiosOroFa = txt_labios.Text,
-                    //rein_lenguaOroFa = txt_lengua.Text,
-                    //rein_faringeOroFa = txt_faringe.Text,
-                    //rein_amigdalasOroFa = txt_amigdalas.Text,
-                    //rein_dentaduraOroFa = txt_dentadura.Text,
-                    //rein_tabiqueNariz = txt_tabique.Text,
-                    //rein_cornetesNariz = txt_cornetes.Text,
-                    //rein_mucosasNariz = txt_mucosa.Text,
-                    //rein_senosParanaNariz = txt_senosparanasales.Text,
-                    //rein_tiroiMasasCuello = txt_tiroides.Text,
-                    //rein_movilidadCuello = txt_movilidad.Text,
-                    //rein_mamasTorax = txt_mamas.Text,
-                    //rein_corazonTorax = txt_corazon.Text,
-                    //rein_pulmonesTorax2 = txt_pulmones.Text,
-                    //rein_parriCostalTorax2 = txt_parrillacostal.Text,
-                    //rein_viscerasAbdomen = txt_visceras.Text,
-                    //rein_paredAbdomiAbdomen = txt_paredabdominal.Text,
-                    //rein_flexibilidadColumna = txt_flexibilidad.Text,
-                    //rein_desviacionColumna = txt_desviacion.Text,
-                    //rein_dolorColumna = txt_dolor.Text,
-                    //rein_pelvisPelvis = txt_pelvis.Text,
-                    //rein_genitalesPelvis = txt_genitales.Text,
-                    //rein_vascularExtre = txt_vascular.Text,
-                    //rein_miemSupeExtre = txt_miembrosureinres.Text,
-                    //rein_miemInfeExtre = txt_miembrosinferiores.Text,
-                    //rein_fuerzaNeuro = txt_fuerza.Text,
-                    //rein_sensibiNeuro = txt_sensibilidad.Text,
-                    //rein_marchaNeuro = txt_marcha.Text,
-                    //rein_refleNeuro = txt_reflejos.Text,
+                    //D
+                    rein_preArterial = txt_preArterial.Text,
+                    rein_temperatura = txt_temperatura.Text,
+                    rein_frecCardiacan = txt_freCardica.Text,
+                    rein_satOxigenon = txt_satOxigeno.Text,
+                    rein_frecRespiratorian = txt_freRespiratoria.Text,
+                    rein_peson = txt_peso.Text,
+                    rein_tallan = txt_talla.Text,
+                    rein_indMasCorporaln = txt_indMasCorporal.Text,
+                    rein_perAbdominaln = txt_perAbdominal.Text,
+
+                    //E.                    
                     rein_observaexaFisRegional = txt_observexamenfisicoregional.Text,
 
                     //F.
                     rein_examen = txt_examen.Text,
-                    rein_fecha = Convert.ToDateTime(txt_fechaexamen.Text),
+                    rein_fecha = txt_fechaexamen.Text,
                     rein_resultados = txt_resultadoexamen.Text,
+                    rein_examen2 = txt_examen2.Text,
+                    rein_fecha2 = txt_fechaexamen2.Text,
+                    rein_resultados2 = txt_resultadoexamen2.Text,
+                    rein_examen3 = txt_examen3.Text,
+                    rein_fecha3 = txt_fechaexamen3.Text,
+                    rein_resultados3 = txt_resultadoexamen3.Text,
                     rein_observacionesResExaGenEspRiesTrabajo = txt_observacionexamen.Text,
 
                     //G.
                     rein_descripcionDiagnostico = txt_descripdiagnostico.Text,
                     rein_cie = txt_cie.Text,
-                    //rein_pre = txt_pre.Text,
-                    //rein_def = txt_def.Text,
+                    rein_descripcionDiagnostico2 = txt_descripdiagnostico2.Text,
+                    rein_cie2 = txt_cie2.Text,
+                    rein_descripcionDiagnostico3 = txt_descripdiagnostico3.Text,
+                    rein_cie3 = txt_cie3.Text,                    
 
                     //H.
-                    //rein_apto = txt_apto.Text,
-                    //rein_aptoObserva = txt_aptoobservacion.Text,
-                    //rein_aptoLimi = txt_aptolimitacion.Text,
-                    //rein_NoApto = txt_noapto.Text,
                     rein_ObservAptMedica = txt_observacionaptitud.Text,
                     rein_LimitAptMedica = txt_limitacionaptitud.Text,
                     rein_ReubicaAptMedica = txt_reubicacionaptitud.Text,
@@ -1019,7 +1090,7 @@ namespace SistemaECU911.Template.Views
                     rein_descripcionRecoTratamiento = txt_descripciontratamientoreintegro.Text,
 
                     //J.
-                    rein_fecha_hora = Convert.ToDateTime(txt_fechahora.Text),
+                    rein_fecha_hora = txt_fechahora.Text,
                     prof_id = Convert.ToInt32(ddl_profesional.SelectedValue),
                     rein_cod = txt_codigoDatProf.Text,
                     Per_id = perso
@@ -1452,10 +1523,9 @@ namespace SistemaECU911.Template.Views
 
                 //A
                 reinte.rein_numArchivo = txt_numArchivo.Text;
-                reinte.rein_edad = Convert.ToInt32(txt_edad.Text);
-                reinte.rein__fechUltDiaLaboral = Convert.ToDateTime(txt_fechaUltiDiaLaboral.Text);
-                reinte.rein_fechReingreso = Convert.ToDateTime(txt_fechaReingreso.Text);
-                reinte.rein_total = Convert.ToInt32(txt_total.Text);
+                reinte.rein__fechUltDiaLaboral = txt_fechaUltiDiaLaboral.Text;
+                reinte.rein_fechReingreso = txt_fechaReingreso.Text;
+                reinte.rein_total = txt_total.Text;
                 reinte.rein_causaSalida = txt_causaSalida.Text;
 
                 //B.
@@ -1464,66 +1534,41 @@ namespace SistemaECU911.Template.Views
                 //C.
                 reinte.rein_descripenfActual = txt_enfermedadactualreintegro.Text;
 
-                ////E.
-                //reinte.rein_cicatricesPiel = txt_cicatrices.Text;
-                //reinte.rein_tatuajesPiel = txt_tatuajes.Text;
-                //reinte.rein_pielFacerasPiel = txt_pielyfaneras.Text;
-                //reinte.rein_parpadosOjos = txt_parpados.Text;
-                //reinte.rein_conjuntuvasOjos = txt_conjuntivas.Text;
-                //reinte.rein_pupilasOjos = txt_pupilas.Text;
-                //reinte.rein_corneaOjos = txt_cornea.Text;
-                //reinte.rein_motilidadOjos = txt_motilidad.Text;
-                //reinte.rein_cAudiExtreOido = txt_auditivoexterno.Text;
-                //reinte.rein_pabellonOido = txt_pabellon.Text;
-                //reinte.rein_timpanosOido = txt_timpanos.Text;
-                //reinte.rein_labiosOroFa = txt_labios.Text;
-                //reinte.rein_lenguaOroFa = txt_lengua.Text;
-                //reinte.rein_faringeOroFa = txt_faringe.Text;
-                //reinte.rein_amigdalasOroFa = txt_amigdalas.Text;
-                //reinte.rein_dentaduraOroFa = txt_dentadura.Text;
-                //reinte.rein_tabiqueNariz = txt_tabique.Text;
-                //reinte.rein_cornetesNariz = txt_cornetes.Text;
-                //reinte.rein_mucosasNariz = txt_mucosa.Text;
-                //reinte.rein_senosParanaNariz = txt_senosparanasales.Text;
-                //reinte.rein_tiroiMasasCuello = txt_tiroides.Text;
-                //reinte.rein_movilidadCuello = txt_movilidad.Text;
-                //reinte.rein_mamasTorax = txt_mamas.Text;
-                //reinte.rein_corazonTorax = txt_corazon.Text;
-                //reinte.rein_pulmonesTorax2 = txt_pulmones.Text;
-                //reinte.rein_parriCostalTorax2 = txt_parrillacostal.Text;
-                //reinte.rein_viscerasAbdomen = txt_visceras.Text;
-                //reinte.rein_paredAbdomiAbdomen = txt_paredabdominal.Text;
-                //reinte.rein_flexibilidadColumna = txt_flexibilidad.Text;
-                //reinte.rein_desviacionColumna = txt_desviacion.Text;
-                //reinte.rein_dolorColumna = txt_dolor.Text;
-                //reinte.rein_pelvisPelvis = txt_pelvis.Text;
-                //reinte.rein_genitalesPelvis = txt_genitales.Text;
-                //reinte.rein_vascularExtre = txt_vascular.Text;
-                //reinte.rein_miemSupeExtre = txt_miembrosureinres.Text;
-                //reinte.rein_miemInfeExtre = txt_miembrosinferiores.Text;
-                //reinte.rein_fuerzaNeuro = txt_fuerza.Text;
-                //reinte.rein_sensibiNeuro = txt_sensibilidad.Text;
-                //reinte.rein_marchaNeuro = txt_marcha.Text;
-                //reinte.rein_refleNeuro = txt_reflejos.Text;
+                //D
+                reinte.rein_preArterial = txt_preArterial.Text;
+                reinte.rein_temperatura = txt_temperatura.Text;
+                reinte.rein_frecCardiacan = txt_freCardica.Text;
+                reinte.rein_satOxigenon = txt_satOxigeno.Text;
+                reinte.rein_frecRespiratorian = txt_freRespiratoria.Text;
+                reinte.rein_peson = txt_peso.Text;
+                reinte.rein_tallan = txt_talla.Text;
+                reinte.rein_indMasCorporaln = txt_indMasCorporal.Text;
+                reinte.rein_perAbdominaln = txt_perAbdominal.Text;
+
+                //E.                
                 reinte.rein_observaexaFisRegional = txt_observexamenfisicoregional.Text;
 
                 //F.
                 reinte.rein_examen = txt_examen.Text;
-                reinte.rein_fecha = Convert.ToDateTime(txt_fechaexamen.Text);
+                reinte.rein_fecha = txt_fechaexamen.Text;
                 reinte.rein_resultados = txt_resultadoexamen.Text;
+                reinte.rein_examen2 = txt_examen2.Text;
+                reinte.rein_fecha2 = txt_fechaexamen2.Text;
+                reinte.rein_resultados2 = txt_resultadoexamen2.Text;
+                reinte.rein_examen3 = txt_examen3.Text;
+                reinte.rein_fecha3 = txt_fechaexamen3.Text;
+                reinte.rein_resultados3 = txt_resultadoexamen3.Text;
                 reinte.rein_observacionesResExaGenEspRiesTrabajo = txt_observacionexamen.Text;
 
                 //G.
                 reinte.rein_descripcionDiagnostico = txt_descripdiagnostico.Text;
                 reinte.rein_cie = txt_cie.Text;
-                //reinte.rein_pre = txt_pre.Text;
-                //reinte.rein_def = txt_def.Text;
+                reinte.rein_descripcionDiagnostico2 = txt_descripdiagnostico2.Text;
+                reinte.rein_cie2 = txt_cie2.Text;
+                reinte.rein_descripcionDiagnostico3 = txt_descripdiagnostico3.Text;
+                reinte.rein_cie3 = txt_cie3.Text;
 
                 //H.
-                //reinte.rein_apto = txt_apto.Text;
-                //reinte.rein_aptoObserva = txt_aptoobservacion.Text;
-                //reinte.rein_aptoLimi = txt_aptolimitacion.Text;
-                //reinte.rein_NoApto = txt_noapto.Text;
                 reinte.rein_ObservAptMedica = txt_observacionaptitud.Text;
                 reinte.rein_LimitAptMedica = txt_limitacionaptitud.Text;
                 reinte.rein_ReubicaAptMedica = txt_reubicacionaptitud.Text;
@@ -1532,7 +1577,7 @@ namespace SistemaECU911.Template.Views
                 reinte.rein_descripcionRecoTratamiento = txt_descripciontratamientoreintegro.Text;
 
                 //J.
-                reinte.rein_fecha_hora = Convert.ToDateTime(txt_fechahora.Text);
+                reinte.rein_fecha_hora = txt_fechahora.Text;
                 reinte.prof_id = Convert.ToInt32(ddl_profesional.SelectedValue);
                 reinte.rein_cod = txt_codigoDatProf.Text;
 
@@ -1589,5 +1634,33 @@ namespace SistemaECU911.Template.Views
             ddl_profesional.DataBind();
         }
 
+        protected void txt_talla_TextChanged(object sender, EventArgs e)
+        {
+            if (txt_talla.Text != "")
+            {
+                txt_peso.Enabled = true;
+            }
+        }
+
+        protected void txt_peso_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                int peso = Convert.ToInt32(txt_peso.Text);
+                decimal talla = Convert.ToDecimal(txt_talla.Text);
+                decimal toTalla = (talla * talla) / 10000;
+                decimal calculo = peso / toTalla;
+                calculo = decimal.Round(calculo, 2, MidpointRounding.AwayFromZero);
+
+                txt_indMasCorporal.Text = calculo.ToString();
+
+            }
+            catch (Exception)
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Llenar primero la talla')", true);
+                txt_peso.Text = "";
+                txt_talla.Focus();
+            }
+        }
     }
 }

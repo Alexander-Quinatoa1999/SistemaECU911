@@ -46,7 +46,7 @@ namespace CapaNegocio
             try
             {
                 certificado.certi_estado = "A";
-                certificado.certi_fechaHora = DateTime.Now;
+                certificado.certi_fechaHoraGuardado = DateTime.Now;
                 dc.Tbl_Certificado.InsertOnSubmit(certificado);
                 dc.SubmitChanges();
             }

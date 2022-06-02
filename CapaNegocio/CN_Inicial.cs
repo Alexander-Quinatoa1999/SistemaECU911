@@ -46,7 +46,7 @@ namespace CapaNegocio
             try
             {
                 inicial.inicial_estado = "A";
-                inicial.inicial_fecha_horaGuardado = DateTime.Now;
+                inicial.inicial_fechaHoraGuardado = DateTime.Now;
                 dc.Tbl_Inicial.InsertOnSubmit(inicial);
                 dc.SubmitChanges();
             }
