@@ -41,9 +41,9 @@ namespace SistemaECU911.Template.Views
             Font cuadro = new Font(fuente3, 10f, Font.NORMAL, new BaseColor(0, 0, 0));
 
             pdfDoc.Open();
-            string imageURL = Server.MapPath("../Template Principal/images") + "/LogoMedico.PNG";
+            string imageURL = Server.MapPath("../Template Principal/images") + "/Bandera.PNG";
             iTextSharp.text.Image bandera = iTextSharp.text.Image.GetInstance(imageURL);
-            bandera.ScaleAbsolute(410, 70);
+            bandera.ScaleAbsolute(510, 50);
             pdfDoc.Add(bandera);
             pdfDoc.Add(new Chunk(Chunk.NEWLINE));
             pdfDoc.Add(new Chunk(Chunk.NEWLINE));
@@ -81,6 +81,11 @@ namespace SistemaECU911.Template.Views
             pdfDoc.Add(new Paragraph("Médico General", parrafo) { Alignment = Element.ALIGN_CENTER });
             pdfDoc.Add(new Paragraph("1711131415", parrafo) { Alignment = Element.ALIGN_CENTER });
             pdfDoc.Add(new Paragraph("cobitos2002.fc@gmail.com", parrafo) { Alignment = Element.ALIGN_CENTER });
+            string imageURL2 = Server.MapPath("../Template Principal/images") + "/footer.png";
+            iTextSharp.text.Image footer = iTextSharp.text.Image.GetInstance(imageURL2);
+            footer.ScaleAbsolute(520, 50);
+            footer.SetAbsolutePosition(41f, 41f);
+            pdfDoc.Add(footer);
             pdfDoc.Close();
             Response.ContentType = "application/pdf";
             Response.AddHeader("content-disposition", "attachment;filename=Certificado_Médico.pdf");
