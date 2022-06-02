@@ -17,7 +17,7 @@ namespace CapaNegocio
         //metodo traer para la empresa
         public static List<Tbl_Empresa> ObtenerEmpresa()
         {
-            var listaEmp = dc.Tbl_Empresa.Where(emp => emp.Emp_estado == 'A');
+            var listaEmp = dc.Tbl_Empresa.Where(emp => emp.Emp_estado == "A");
             return listaEmp.ToList();
         }
 

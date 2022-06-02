@@ -1535,10 +1535,10 @@ namespace SistemaECU911.Template.Views_Pacientes
                 {
                     //Datos código y versión
                     Socio_economico_codigo_inicial = txt_codigoinicio.Text,
-                    Socio_economico_version = Convert.ToInt32(txt_version.Text),
+                    Socio_economico_version = txt_version.Text,
 
                     //Datos Generales
-                    Socio_economico_fecha_ingreso_al_Ecu = Convert.ToDateTime(txt_fechaingresoalsisecu.Text),
+                    Socio_economico_fecha_ingreso_al_Ecu = txt_fechaingresoalsisecu.Text,
                     Socio_economico_tipo_de_sangre = txt_tipodesangre.Text,
 
                     Socio_economico_telefono_convencional = txt_telconvecional.Text,
@@ -1546,7 +1546,7 @@ namespace SistemaECU911.Template.Views_Pacientes
                     Socio_economico_email = txt_email.Text,
 
                     Socio_economico_lugar_nacimiento = txt_lugarnacimiento.Text,
-                    Socio_economico_fecha_nacimiento = Convert.ToDateTime(txt_fechanacimiento.Text),
+                    Socio_economico_fecha_nacimiento = txt_fechanacimiento.Text,
                     Socio_economico_edad = txt_edad.Text,
 
                     Socio_economico_direcciondomicilio_provincia = txt_provincia.Text,
@@ -1573,13 +1573,13 @@ namespace SistemaECU911.Template.Views_Pacientes
                     //Salud
                     Socio_economico_posee_enfermedad = txt_poseeenfermedadprexistente.Text,
                     Socio_economico_discapacidad_tipo = txt_tipodiscapacidad.Text,
-                    Socio_economico_discapacidad_porcentaje = Convert.ToInt32(txt_porcentajediscapacidad.Text),
+                    Socio_economico_discapacidad_porcentaje = txt_porcentajediscapacidad.Text,
                     Socio_economico_discapacidad_carnet_conadis = txt_numcarnetconadis.Text,
-                    Socio_economico_discapacidad_fecha_caducidad_carnet = Convert.ToDateTime(txt_fechacaducidadcarnet.Text),
+                    Socio_economico_discapacidad_fecha_caducidad_carnet = txt_fechacaducidadcarnet.Text,
 
                     Socio_economico_estado_gestacion_tiempo = txt_gestacióntiempo.Text,
-                    Socio_economico_fecha_tentativa_parto = Convert.ToDateTime(txt_fechatentativaparto.Text),
-                    Socio_economico_periodo_lactancia_fecha_culminacion = Convert.ToDateTime(txt_fechaculmicacionlactancia.Text),
+                    Socio_economico_fecha_tentativa_parto = txt_fechatentativaparto.Text,
+                    Socio_economico_periodo_lactancia_fecha_culminacion = txt_fechaculmicacionlactancia.Text,
 
                     Socio_economico_enfermedad_cronica_cual = txt_cualcatastrofica.Text,
                     Socio_economico_enfermedad_cronica_otras_enfermedades = txt_otrasenfermedadescat.Text,
@@ -1655,42 +1655,42 @@ namespace SistemaECU911.Template.Views_Pacientes
                     //Información Familiar
                     Socio_economico_nombres_apellidos_familiar1 = txt_nomapellidos1.Text,
                     Socio_economico_parentesco_familiar1 = txt_parentesco1.Text,
-                    Socio_economico_fecha_nacimiento_familiar1 = Convert.ToDateTime(txt_fechanacimiento1.Text),
-                    Socio_economico_edad_familiar1 = Convert.ToInt32(txt_edad1.Text),
+                    Socio_economico_fecha_nacimiento_familiar1 = txt_fechanacimiento1.Text,
+                    Socio_economico_edad_familiar1 = txt_edad1.Text,
 
                     Socio_economico_nombres_apellidos_familiar2 = txt_nomapellidos2.Text,
                     Socio_economico_parentesco_familiar2 = txt_parentesco2.Text,
-                    Socio_economico_fecha_nacimiento_familiar2 = Convert.ToDateTime(txt_fechanacimiento2.Text),
-                    Socio_economico_edad_familiar2 = Convert.ToInt32(txt_edad2.Text),
+                    Socio_economico_fecha_nacimiento_familiar2 = txt_fechanacimiento2.Text,
+                    Socio_economico_edad_familiar2 = txt_edad2.Text,
 
                     Socio_economico_nombres_apellidos_familiar3 = txt_nomapellidos3.Text,
                     Socio_economico_parentesco_familiar3 = txt_parentesco3.Text,
-                    Socio_economico_fecha_nacimiento_familiar3 = Convert.ToDateTime(txt_fechanacimiento3.Text),
-                    Socio_economico_edad_familiar3 = Convert.ToInt32(txt_edad3.Text),
+                    Socio_economico_fecha_nacimiento_familiar3 = txt_fechanacimiento3.Text,
+                    Socio_economico_edad_familiar3 = txt_edad3.Text,
 
                     Socio_economico_nombres_apellidos_familiar4 = txt_nomapellidos4.Text,
                     Socio_economico_parentesco_familiar4 = txt_parentesco4.Text,
-                    Socio_economico_fecha_nacimiento_familiar4 = Convert.ToDateTime(txt_fechanacimiento4.Text),
-                    Socio_economico_edad_familiar4 = Convert.ToInt32(txt_edad4.Text),
+                    Socio_economico_fecha_nacimiento_familiar4 = txt_fechanacimiento4.Text,
+                    Socio_economico_edad_familiar4 = txt_edad4.Text,
 
                     Socio_economico_nombres_apellidos_familiar5 = txt_nomapellidos5.Text,
                     Socio_economico_parentesco_familiar5 = txt_parentesco5.Text,
-                    Socio_economico_fecha_nacimiento_familiar5 = Convert.ToDateTime(txt_fechanacimiento5.Text),
-                    Socio_economico_edad_familiar5 = Convert.ToInt32(txt_edad5.Text),
+                    Socio_economico_fecha_nacimiento_familiar5 = txt_fechanacimiento5.Text,
+                    Socio_economico_edad_familiar5 = txt_edad5.Text,
 
                     Socio_economico_nombres_apellidos_familiar_discapacidad1 = txt_familiardiscapacitadonomape1.Text,
-                    Socio_economico_fecha_caducidad_carnet_familiar_discapacidad1 = Convert.ToDateTime(txt_familiardiscapacitadofechacaducidadcarnet1.Text),
+                    Socio_economico_fecha_caducidad_carnet_familiar_discapacidad1 = txt_familiardiscapacitadofechacaducidadcarnet1.Text,
                     Socio_economico_familiar_discapacidad_tipo1 = txt_familiardiscapacitadotipodiscapacidad1.Text,
-                    Socio_economico_familiar_discapacidad_porcentaje1 = Convert.ToInt32(txt_familiardiscapacitadoporcentajediscapacidad1.Text),
+                    Socio_economico_familiar_discapacidad_porcentaje1 = txt_familiardiscapacitadoporcentajediscapacidad1.Text,
                     Socio_economico_familiar_discapacidad_parentesco1 = txt_familiardiscapacitadoparentesco1.Text,
-                    Socio_economico_familiar_discapacidad_fecha_nacimiento1 = Convert.ToDateTime(txt_familiardiscapacitadofechanacimiento1.Text),
+                    Socio_economico_familiar_discapacidad_fecha_nacimiento1 = txt_familiardiscapacitadofechanacimiento1.Text,
 
                     Socio_economico_nombres_apellidos_familiar_discapacidad2 = txt_familiardiscapacitadonomape2.Text,
-                    Socio_economico_fecha_caducidad_carnet_familiar_discapacidad2 = Convert.ToDateTime(txt_familiardiscapacitadofechacaducidadcarnet2.Text),
+                    Socio_economico_fecha_caducidad_carnet_familiar_discapacidad2 = txt_familiardiscapacitadofechacaducidadcarnet2.Text,
                     Socio_economico_familiar_discapacidad_tipo2 = txt_familiardiscapacitadotipodiscapacidad2.Text,
-                    Socio_economico_familiar_discapacidad_porcentaje2 = Convert.ToInt32(txt_familiardiscapacitadoporcentajediscapacidad2.Text),
+                    Socio_economico_familiar_discapacidad_porcentaje2 = txt_familiardiscapacitadoporcentajediscapacidad2.Text,
                     Socio_economico_familiar_discapacidad_parentesco2 = txt_familiardiscapacitadoparentesco2.Text,
-                    Socio_economico_familiar_discapacidad_fecha_nacimiento2 = Convert.ToDateTime(txt_familiardiscapacitadofechanacimiento2.Text),
+                    Socio_economico_familiar_discapacidad_fecha_nacimiento2 = txt_familiardiscapacitadofechanacimiento2.Text,
 
                     Socio_economico_registrar_dependencia_familiar_MT_tiempo = txt_dependenciaministeriotrabajotiempo.Text,
                     Socio_economico_registrar_dependencia_familiar_MT_numero_carnetMSP = txt_numcarnetMSP.Text,
@@ -1704,9 +1704,9 @@ namespace SistemaECU911.Template.Views_Pacientes
                     Socio_economico_actividad_economica_adicional_hace_tiempo = txt_actividadeconomicatiemporealiza.Text,
                     Socio_economico_actividad_deportiva_especificar = txt_especifiquedeporte.Text,
                     Socio_economico_actividad_deportiva_frecuencia = txt_frecuenciadeporte.Text,
-                    Socio_economico_actividad_deportiva_edad = Convert.ToInt32(txt_edadpracticadeporte.Text),
+                    Socio_economico_actividad_deportiva_edad = txt_edadpracticadeporte.Text,
                     Socio_economico_lesion_tipo = txt_tipolesion.Text,
-                    Socio_economico_lesion_edad = Convert.ToInt32(txt_edadlesion.Text),
+                    Socio_economico_lesion_edad = txt_edadlesion.Text,
 
                     //Informacion para uso de bienestar familiar
                     Socio_economico_evaluacion_relacion_familiar_porque = txt_relacionfamiliarporque.Text,
@@ -2364,14 +2364,14 @@ namespace SistemaECU911.Template.Views_Pacientes
         {
             try
             {
-                sso.Socio_economico_fechaHora = Convert.ToDateTime(txt_fecharegistro.Text);
+                sso.Socio_economico_fechaHora = txt_fecharegistro.Text;
 
                 //Datos código y versión
                 sso.Socio_economico_codigo_inicial = txt_codigoinicio.Text;
-                sso.Socio_economico_version = Convert.ToInt32(txt_version.Text);
+                sso.Socio_economico_version = txt_version.Text;
 
                 //Datos Generales
-                sso.Socio_economico_fecha_ingreso_al_Ecu = Convert.ToDateTime(txt_fechaingresoalsisecu.Text);
+                sso.Socio_economico_fecha_ingreso_al_Ecu = txt_fechaingresoalsisecu.Text;
                 sso.Socio_economico_tipo_de_sangre = txt_tipodesangre.Text;
 
                 sso.Socio_economico_telefono_convencional = txt_telconvecional.Text;
@@ -2379,7 +2379,7 @@ namespace SistemaECU911.Template.Views_Pacientes
                 sso.Socio_economico_email = txt_email.Text;
 
                 sso.Socio_economico_lugar_nacimiento = txt_lugarnacimiento.Text;
-                sso.Socio_economico_fecha_nacimiento = Convert.ToDateTime(txt_fechanacimiento.Text);
+                sso.Socio_economico_fecha_nacimiento = txt_fechanacimiento.Text;
                 sso.Socio_economico_edad = txt_edad.Text;
 
                 sso.Socio_economico_direcciondomicilio_provincia = txt_provincia.Text;
@@ -2406,13 +2406,13 @@ namespace SistemaECU911.Template.Views_Pacientes
                 //Salud
                 sso.Socio_economico_posee_enfermedad = txt_poseeenfermedadprexistente.Text;
                 sso.Socio_economico_discapacidad_tipo = txt_tipodiscapacidad.Text;
-                sso.Socio_economico_discapacidad_porcentaje = Convert.ToInt32(txt_porcentajediscapacidad.Text);
+                sso.Socio_economico_discapacidad_porcentaje = txt_porcentajediscapacidad.Text;
                 sso.Socio_economico_discapacidad_carnet_conadis = txt_numcarnetconadis.Text;
-                sso.Socio_economico_discapacidad_fecha_caducidad_carnet = Convert.ToDateTime(txt_fechacaducidadcarnet.Text);
+                sso.Socio_economico_discapacidad_fecha_caducidad_carnet = txt_fechacaducidadcarnet.Text;
 
                 sso.Socio_economico_estado_gestacion_tiempo = txt_gestacióntiempo.Text;
-                sso.Socio_economico_fecha_tentativa_parto = Convert.ToDateTime(txt_fechatentativaparto.Text);
-                sso.Socio_economico_periodo_lactancia_fecha_culminacion = Convert.ToDateTime(txt_fechaculmicacionlactancia.Text);
+                sso.Socio_economico_fecha_tentativa_parto = txt_fechatentativaparto.Text;
+                sso.Socio_economico_periodo_lactancia_fecha_culminacion = txt_fechaculmicacionlactancia.Text;
 
                 sso.Socio_economico_enfermedad_cronica_cual = txt_cualcatastrofica.Text;
                 sso.Socio_economico_enfermedad_cronica_otras_enfermedades = txt_otrasenfermedadescat.Text;
@@ -2488,42 +2488,42 @@ namespace SistemaECU911.Template.Views_Pacientes
                 //Información Familiar
                 sso.Socio_economico_nombres_apellidos_familiar1 = txt_nomapellidos1.Text;
                 sso.Socio_economico_parentesco_familiar1 = txt_parentesco1.Text;
-                sso.Socio_economico_fecha_nacimiento_familiar1 = Convert.ToDateTime(txt_fechanacimiento1.Text);
-                sso.Socio_economico_edad_familiar1 = Convert.ToInt32(txt_edad1.Text);
+                sso.Socio_economico_fecha_nacimiento_familiar1 = txt_fechanacimiento1.Text;
+                sso.Socio_economico_edad_familiar1 = txt_edad1.Text;
 
                 sso.Socio_economico_nombres_apellidos_familiar2 = txt_nomapellidos2.Text;
                 sso.Socio_economico_parentesco_familiar2 = txt_parentesco2.Text;
-                sso.Socio_economico_fecha_nacimiento_familiar2 = Convert.ToDateTime(txt_fechanacimiento2.Text);
-                sso.Socio_economico_edad_familiar2 = Convert.ToInt32(txt_edad2.Text);
+                sso.Socio_economico_fecha_nacimiento_familiar2 = txt_fechanacimiento2.Text;
+                sso.Socio_economico_edad_familiar2 = txt_edad2.Text;
 
                 sso.Socio_economico_nombres_apellidos_familiar3 = txt_nomapellidos3.Text;
                 sso.Socio_economico_parentesco_familiar3 = txt_parentesco3.Text;
-                sso.Socio_economico_fecha_nacimiento_familiar3 = Convert.ToDateTime(txt_fechanacimiento3.Text);
-                sso.Socio_economico_edad_familiar3 = Convert.ToInt32(txt_edad3.Text);
+                sso.Socio_economico_fecha_nacimiento_familiar3 = txt_fechanacimiento3.Text;
+                sso.Socio_economico_edad_familiar3 = txt_edad3.Text;
 
                 sso.Socio_economico_nombres_apellidos_familiar4 = txt_nomapellidos4.Text;
                 sso.Socio_economico_parentesco_familiar4 = txt_parentesco4.Text;
-                sso.Socio_economico_fecha_nacimiento_familiar4 = Convert.ToDateTime(txt_fechanacimiento4.Text);
-                sso.Socio_economico_edad_familiar4 = Convert.ToInt32(txt_edad4.Text);
+                sso.Socio_economico_fecha_nacimiento_familiar4 = txt_fechanacimiento4.Text;
+                sso.Socio_economico_edad_familiar4 = txt_edad4.Text;
 
                 sso.Socio_economico_nombres_apellidos_familiar5 = txt_nomapellidos5.Text;
                 sso.Socio_economico_parentesco_familiar5 = txt_parentesco5.Text;
-                sso.Socio_economico_fecha_nacimiento_familiar5 = Convert.ToDateTime(txt_fechanacimiento5.Text);
-                sso.Socio_economico_edad_familiar5 = Convert.ToInt32(txt_edad5.Text);
+                sso.Socio_economico_fecha_nacimiento_familiar5 = txt_fechanacimiento5.Text;
+                sso.Socio_economico_edad_familiar5 = txt_edad5.Text;
 
                 sso.Socio_economico_nombres_apellidos_familiar_discapacidad1 = txt_familiardiscapacitadonomape1.Text;
-                sso.Socio_economico_fecha_caducidad_carnet_familiar_discapacidad1 = Convert.ToDateTime(txt_familiardiscapacitadofechacaducidadcarnet1.Text);
+                sso.Socio_economico_fecha_caducidad_carnet_familiar_discapacidad1 = txt_familiardiscapacitadofechacaducidadcarnet1.Text;
                 sso.Socio_economico_familiar_discapacidad_tipo1 = txt_familiardiscapacitadotipodiscapacidad1.Text;
-                sso.Socio_economico_familiar_discapacidad_porcentaje1 = Convert.ToInt32(txt_familiardiscapacitadoporcentajediscapacidad1.Text);
+                sso.Socio_economico_familiar_discapacidad_porcentaje1 = txt_familiardiscapacitadoporcentajediscapacidad1.Text;
                 sso.Socio_economico_familiar_discapacidad_parentesco1 = txt_familiardiscapacitadoparentesco1.Text;
-                sso.Socio_economico_familiar_discapacidad_fecha_nacimiento1 = Convert.ToDateTime(txt_familiardiscapacitadofechanacimiento1.Text);
+                sso.Socio_economico_familiar_discapacidad_fecha_nacimiento1 = txt_familiardiscapacitadofechanacimiento1.Text;
 
                 sso.Socio_economico_nombres_apellidos_familiar_discapacidad2 = txt_familiardiscapacitadonomape2.Text;
-                sso.Socio_economico_fecha_caducidad_carnet_familiar_discapacidad2 = Convert.ToDateTime(txt_familiardiscapacitadofechacaducidadcarnet2.Text);
+                sso.Socio_economico_fecha_caducidad_carnet_familiar_discapacidad2 = txt_familiardiscapacitadofechacaducidadcarnet2.Text;
                 sso.Socio_economico_familiar_discapacidad_tipo2 = txt_familiardiscapacitadotipodiscapacidad2.Text;
-                sso.Socio_economico_familiar_discapacidad_porcentaje2 = Convert.ToInt32(txt_familiardiscapacitadoporcentajediscapacidad2.Text);
+                sso.Socio_economico_familiar_discapacidad_porcentaje2 = txt_familiardiscapacitadoporcentajediscapacidad2.Text;
                 sso.Socio_economico_familiar_discapacidad_parentesco2 = txt_familiardiscapacitadoparentesco2.Text;
-                sso.Socio_economico_familiar_discapacidad_fecha_nacimiento2 = Convert.ToDateTime(txt_familiardiscapacitadofechanacimiento2.Text);
+                sso.Socio_economico_familiar_discapacidad_fecha_nacimiento2 = txt_familiardiscapacitadofechanacimiento2.Text;
 
                 sso.Socio_economico_registrar_dependencia_familiar_MT_tiempo = txt_dependenciaministeriotrabajotiempo.Text;
                 sso.Socio_economico_registrar_dependencia_familiar_MT_numero_carnetMSP = txt_numcarnetMSP.Text;
@@ -2537,9 +2537,9 @@ namespace SistemaECU911.Template.Views_Pacientes
                 sso.Socio_economico_actividad_economica_adicional_hace_tiempo = txt_actividadeconomicatiemporealiza.Text;
                 sso.Socio_economico_actividad_deportiva_especificar = txt_especifiquedeporte.Text;
                 sso.Socio_economico_actividad_deportiva_frecuencia = txt_frecuenciadeporte.Text;
-                sso.Socio_economico_actividad_deportiva_edad = Convert.ToInt32(txt_edadpracticadeporte.Text);
+                sso.Socio_economico_actividad_deportiva_edad = txt_edadpracticadeporte.Text;
                 sso.Socio_economico_lesion_tipo = txt_tipolesion.Text;
-                sso.Socio_economico_lesion_edad = Convert.ToInt32(txt_edadlesion.Text);
+                sso.Socio_economico_lesion_edad = txt_edadlesion.Text;
 
                 //Informacion para uso de bienestar familiar
                 sso.Socio_economico_evaluacion_relacion_familiar_porque = txt_relacionfamiliarporque.Text;

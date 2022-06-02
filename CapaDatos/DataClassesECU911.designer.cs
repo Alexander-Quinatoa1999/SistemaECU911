@@ -39,9 +39,6 @@ namespace CapaDatos
     partial void InsertTbl_Certificado(Tbl_Certificado instance);
     partial void UpdateTbl_Certificado(Tbl_Certificado instance);
     partial void DeleteTbl_Certificado(Tbl_Certificado instance);
-    partial void InsertTbl_Emp_Per(Tbl_Emp_Per instance);
-    partial void UpdateTbl_Emp_Per(Tbl_Emp_Per instance);
-    partial void DeleteTbl_Emp_Per(Tbl_Emp_Per instance);
     partial void InsertTbl_Empresa(Tbl_Empresa instance);
     partial void UpdateTbl_Empresa(Tbl_Empresa instance);
     partial void DeleteTbl_Empresa(Tbl_Empresa instance);
@@ -96,7 +93,7 @@ namespace CapaDatos
     #endregion
 		
 		public DataClassesECU911DataContext() : 
-				base(global::CapaDatos.Properties.Settings.Default.SistemaECU911ConnectionString6, mappingSource)
+				base(global::CapaDatos.Properties.Settings.Default.SistemaECU911ConnectionString4, mappingSource)
 		{
 			OnCreated();
 		}
@@ -146,14 +143,6 @@ namespace CapaDatos
 			get
 			{
 				return this.GetTable<Tbl_Certificado>();
-			}
-		}
-		
-		public System.Data.Linq.Table<Tbl_Emp_Per> Tbl_Emp_Per
-		{
-			get
-			{
-				return this.GetTable<Tbl_Emp_Per>();
 			}
 		}
 		
@@ -827,7 +816,7 @@ namespace CapaDatos
 		
 		private string _certi_fechaHora;
 		
-		private System.Nullable<int> _Per_id;
+		private System.Nullable<long> _Per_id;
 		
 		private System.Nullable<System.DateTime> _certi_fechaHoraGuardado;
 		
@@ -891,7 +880,7 @@ namespace CapaDatos
     partial void Oncerti_codChanged();
     partial void Oncerti_fechaHoraChanging(string value);
     partial void Oncerti_fechaHoraChanged();
-    partial void OnPer_idChanging(System.Nullable<int> value);
+    partial void OnPer_idChanging(System.Nullable<long> value);
     partial void OnPer_idChanged();
     partial void Oncerti_fechaHoraGuardadoChanging(System.Nullable<System.DateTime> value);
     partial void Oncerti_fechaHoraGuardadoChanged();
@@ -1410,8 +1399,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_id", DbType="Int")]
-		public System.Nullable<int> Per_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_id", DbType="BigInt")]
+		public System.Nullable<long> Per_id
 		{
 			get
 			{
@@ -1501,7 +1490,7 @@ namespace CapaDatos
 					}
 					else
 					{
-						this._Per_id = default(Nullable<int>);
+						this._Per_id = default(Nullable<long>);
 					}
 					this.SendPropertyChanged("Tbl_Personas");
 				}
@@ -1563,157 +1552,6 @@ namespace CapaDatos
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_Emp_Per")]
-	public partial class Tbl_Emp_Per : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _EmpPer_id;
-		
-		private System.Nullable<int> _Emp_id;
-		
-		private System.Nullable<int> _Per_id;
-		
-		private EntityRef<Tbl_Empresa> _Tbl_Empresa;
-		
-    #region Definiciones de métodos de extensibilidad
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnEmpPer_idChanging(int value);
-    partial void OnEmpPer_idChanged();
-    partial void OnEmp_idChanging(System.Nullable<int> value);
-    partial void OnEmp_idChanged();
-    partial void OnPer_idChanging(System.Nullable<int> value);
-    partial void OnPer_idChanged();
-    #endregion
-		
-		public Tbl_Emp_Per()
-		{
-			this._Tbl_Empresa = default(EntityRef<Tbl_Empresa>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmpPer_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int EmpPer_id
-		{
-			get
-			{
-				return this._EmpPer_id;
-			}
-			set
-			{
-				if ((this._EmpPer_id != value))
-				{
-					this.OnEmpPer_idChanging(value);
-					this.SendPropertyChanging();
-					this._EmpPer_id = value;
-					this.SendPropertyChanged("EmpPer_id");
-					this.OnEmpPer_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Emp_id", DbType="Int")]
-		public System.Nullable<int> Emp_id
-		{
-			get
-			{
-				return this._Emp_id;
-			}
-			set
-			{
-				if ((this._Emp_id != value))
-				{
-					if (this._Tbl_Empresa.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnEmp_idChanging(value);
-					this.SendPropertyChanging();
-					this._Emp_id = value;
-					this.SendPropertyChanged("Emp_id");
-					this.OnEmp_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_id", DbType="Int")]
-		public System.Nullable<int> Per_id
-		{
-			get
-			{
-				return this._Per_id;
-			}
-			set
-			{
-				if ((this._Per_id != value))
-				{
-					this.OnPer_idChanging(value);
-					this.SendPropertyChanging();
-					this._Per_id = value;
-					this.SendPropertyChanged("Per_id");
-					this.OnPer_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Empresa_Tbl_Emp_Per", Storage="_Tbl_Empresa", ThisKey="Emp_id", OtherKey="Emp_id", IsForeignKey=true)]
-		public Tbl_Empresa Tbl_Empresa
-		{
-			get
-			{
-				return this._Tbl_Empresa.Entity;
-			}
-			set
-			{
-				Tbl_Empresa previousValue = this._Tbl_Empresa.Entity;
-				if (((previousValue != value) 
-							|| (this._Tbl_Empresa.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Tbl_Empresa.Entity = null;
-						previousValue.Tbl_Emp_Per.Remove(this);
-					}
-					this._Tbl_Empresa.Entity = value;
-					if ((value != null))
-					{
-						value.Tbl_Emp_Per.Add(this);
-						this._Emp_id = value.Emp_id;
-					}
-					else
-					{
-						this._Emp_id = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Tbl_Empresa");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_Empresa")]
 	public partial class Tbl_Empresa : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -1724,15 +1562,15 @@ namespace CapaDatos
 		
 		private string _Emp_nombre;
 		
-		private System.Nullable<int> _Emp_ruc;
+		private string _Emp_zonal;
 		
-		private System.Nullable<int> _Emp_ciiu;
+		private string _Emp_RUC;
 		
-		private string _Emp_estabSalud;
+		private string _Emp_dirrecionInstitucional;
 		
-		private System.Nullable<char> _Emp_estado;
+		private string _Emp_estado;
 		
-		private EntitySet<Tbl_Emp_Per> _Tbl_Emp_Per;
+		private EntitySet<Tbl_Personas> _Tbl_Personas;
 		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
@@ -1742,19 +1580,19 @@ namespace CapaDatos
     partial void OnEmp_idChanged();
     partial void OnEmp_nombreChanging(string value);
     partial void OnEmp_nombreChanged();
-    partial void OnEmp_rucChanging(System.Nullable<int> value);
-    partial void OnEmp_rucChanged();
-    partial void OnEmp_ciiuChanging(System.Nullable<int> value);
-    partial void OnEmp_ciiuChanged();
-    partial void OnEmp_estabSaludChanging(string value);
-    partial void OnEmp_estabSaludChanged();
-    partial void OnEmp_estadoChanging(System.Nullable<char> value);
+    partial void OnEmp_zonalChanging(string value);
+    partial void OnEmp_zonalChanged();
+    partial void OnEmp_RUCChanging(string value);
+    partial void OnEmp_RUCChanged();
+    partial void OnEmp_dirrecionInstitucionalChanging(string value);
+    partial void OnEmp_dirrecionInstitucionalChanged();
+    partial void OnEmp_estadoChanging(string value);
     partial void OnEmp_estadoChanged();
     #endregion
 		
 		public Tbl_Empresa()
 		{
-			this._Tbl_Emp_Per = new EntitySet<Tbl_Emp_Per>(new Action<Tbl_Emp_Per>(this.attach_Tbl_Emp_Per), new Action<Tbl_Emp_Per>(this.detach_Tbl_Emp_Per));
+			this._Tbl_Personas = new EntitySet<Tbl_Personas>(new Action<Tbl_Personas>(this.attach_Tbl_Personas), new Action<Tbl_Personas>(this.detach_Tbl_Personas));
 			OnCreated();
 		}
 		
@@ -1778,7 +1616,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Emp_nombre", DbType="VarChar(100)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Emp_nombre", DbType="VarChar(MAX)")]
 		public string Emp_nombre
 		{
 			get
@@ -1798,68 +1636,68 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Emp_ruc", DbType="Int")]
-		public System.Nullable<int> Emp_ruc
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Emp_zonal", DbType="VarChar(MAX)")]
+		public string Emp_zonal
 		{
 			get
 			{
-				return this._Emp_ruc;
+				return this._Emp_zonal;
 			}
 			set
 			{
-				if ((this._Emp_ruc != value))
+				if ((this._Emp_zonal != value))
 				{
-					this.OnEmp_rucChanging(value);
+					this.OnEmp_zonalChanging(value);
 					this.SendPropertyChanging();
-					this._Emp_ruc = value;
-					this.SendPropertyChanged("Emp_ruc");
-					this.OnEmp_rucChanged();
+					this._Emp_zonal = value;
+					this.SendPropertyChanged("Emp_zonal");
+					this.OnEmp_zonalChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Emp_ciiu", DbType="Int")]
-		public System.Nullable<int> Emp_ciiu
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Emp_RUC", DbType="VarChar(MAX)")]
+		public string Emp_RUC
 		{
 			get
 			{
-				return this._Emp_ciiu;
+				return this._Emp_RUC;
 			}
 			set
 			{
-				if ((this._Emp_ciiu != value))
+				if ((this._Emp_RUC != value))
 				{
-					this.OnEmp_ciiuChanging(value);
+					this.OnEmp_RUCChanging(value);
 					this.SendPropertyChanging();
-					this._Emp_ciiu = value;
-					this.SendPropertyChanged("Emp_ciiu");
-					this.OnEmp_ciiuChanged();
+					this._Emp_RUC = value;
+					this.SendPropertyChanged("Emp_RUC");
+					this.OnEmp_RUCChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Emp_estabSalud", DbType="VarChar(100)")]
-		public string Emp_estabSalud
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Emp_dirrecionInstitucional", DbType="VarChar(MAX)")]
+		public string Emp_dirrecionInstitucional
 		{
 			get
 			{
-				return this._Emp_estabSalud;
+				return this._Emp_dirrecionInstitucional;
 			}
 			set
 			{
-				if ((this._Emp_estabSalud != value))
+				if ((this._Emp_dirrecionInstitucional != value))
 				{
-					this.OnEmp_estabSaludChanging(value);
+					this.OnEmp_dirrecionInstitucionalChanging(value);
 					this.SendPropertyChanging();
-					this._Emp_estabSalud = value;
-					this.SendPropertyChanged("Emp_estabSalud");
-					this.OnEmp_estabSaludChanged();
+					this._Emp_dirrecionInstitucional = value;
+					this.SendPropertyChanged("Emp_dirrecionInstitucional");
+					this.OnEmp_dirrecionInstitucionalChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Emp_estado", DbType="Char(1)")]
-		public System.Nullable<char> Emp_estado
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Emp_estado", DbType="VarChar(1)")]
+		public string Emp_estado
 		{
 			get
 			{
@@ -1878,16 +1716,16 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Empresa_Tbl_Emp_Per", Storage="_Tbl_Emp_Per", ThisKey="Emp_id", OtherKey="Emp_id")]
-		public EntitySet<Tbl_Emp_Per> Tbl_Emp_Per
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Empresa_Tbl_Personas", Storage="_Tbl_Personas", ThisKey="Emp_id", OtherKey="Emp_id")]
+		public EntitySet<Tbl_Personas> Tbl_Personas
 		{
 			get
 			{
-				return this._Tbl_Emp_Per;
+				return this._Tbl_Personas;
 			}
 			set
 			{
-				this._Tbl_Emp_Per.Assign(value);
+				this._Tbl_Personas.Assign(value);
 			}
 		}
 		
@@ -1911,13 +1749,13 @@ namespace CapaDatos
 			}
 		}
 		
-		private void attach_Tbl_Emp_Per(Tbl_Emp_Per entity)
+		private void attach_Tbl_Personas(Tbl_Personas entity)
 		{
 			this.SendPropertyChanging();
 			entity.Tbl_Empresa = this;
 		}
 		
-		private void detach_Tbl_Emp_Per(Tbl_Emp_Per entity)
+		private void detach_Tbl_Personas(Tbl_Personas entity)
 		{
 			this.SendPropertyChanging();
 			entity.Tbl_Empresa = null;
@@ -2308,7 +2146,7 @@ namespace CapaDatos
 		
 		private string _evo_fechaHora;
 		
-		private System.Nullable<int> _Per_id;
+		private System.Nullable<long> _Per_id;
 		
 		private System.Nullable<System.DateTime> _evo_fechaHoraGuardado;
 		
@@ -2476,7 +2314,7 @@ namespace CapaDatos
     partial void Onevo_adminisFarmacos15Changed();
     partial void Onevo_fechaHoraChanging(string value);
     partial void Onevo_fechaHoraChanged();
-    partial void OnPer_idChanging(System.Nullable<int> value);
+    partial void OnPer_idChanging(System.Nullable<long> value);
     partial void OnPer_idChanged();
     partial void Onevo_fechaHoraGuardadoChanging(System.Nullable<System.DateTime> value);
     partial void Onevo_fechaHoraGuardadoChanged();
@@ -4050,8 +3888,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_id", DbType="Int")]
-		public System.Nullable<int> Per_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_id", DbType="BigInt")]
+		public System.Nullable<long> Per_id
 		{
 			get
 			{
@@ -4141,7 +3979,7 @@ namespace CapaDatos
 					}
 					else
 					{
-						this._Per_id = default(Nullable<int>);
+						this._Per_id = default(Nullable<long>);
 					}
 					this.SendPropertyChanged("Tbl_Personas");
 				}
@@ -4293,7 +4131,7 @@ namespace CapaDatos
 		
 		private string _codigoPro;
 		
-		private System.Nullable<int> _Per_id;
+		private System.Nullable<long> _Per_id;
 		
 		private System.Nullable<System.DateTime> _fechaHoraGuardado;
 		
@@ -4431,7 +4269,7 @@ namespace CapaDatos
     partial void Onprof_idChanged();
     partial void OncodigoProChanging(string value);
     partial void OncodigoProChanged();
-    partial void OnPer_idChanging(System.Nullable<int> value);
+    partial void OnPer_idChanging(System.Nullable<long> value);
     partial void OnPer_idChanged();
     partial void OnfechaHoraGuardadoChanging(System.Nullable<System.DateTime> value);
     partial void OnfechaHoraGuardadoChanged();
@@ -5645,8 +5483,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_id", DbType="Int")]
-		public System.Nullable<int> Per_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_id", DbType="BigInt")]
+		public System.Nullable<long> Per_id
 		{
 			get
 			{
@@ -5770,7 +5608,7 @@ namespace CapaDatos
 					}
 					else
 					{
-						this._Per_id = default(Nullable<int>);
+						this._Per_id = default(Nullable<long>);
 					}
 					this.SendPropertyChanged("Tbl_Personas");
 				}
@@ -6936,7 +6774,7 @@ namespace CapaDatos
 		
 		private string _inicial_cod;
 		
-		private System.Nullable<int> _Per_id;
+		private System.Nullable<long> _Per_id;
 		
 		private System.Nullable<System.DateTime> _inicial_fechaHoraGuardado;
 		
@@ -7980,7 +7818,7 @@ namespace CapaDatos
     partial void Onprof_idChanged();
     partial void Oninicial_codChanging(string value);
     partial void Oninicial_codChanged();
-    partial void OnPer_idChanging(System.Nullable<int> value);
+    partial void OnPer_idChanging(System.Nullable<long> value);
     partial void OnPer_idChanged();
     partial void Oninicial_fechaHoraGuardadoChanging(System.Nullable<System.DateTime> value);
     partial void Oninicial_fechaHoraGuardadoChanged();
@@ -18299,8 +18137,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_id", DbType="Int")]
-		public System.Nullable<int> Per_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_id", DbType="BigInt")]
+		public System.Nullable<long> Per_id
 		{
 			get
 			{
@@ -18390,7 +18228,7 @@ namespace CapaDatos
 					}
 					else
 					{
-						this._Per_id = default(Nullable<int>);
+						this._Per_id = default(Nullable<long>);
 					}
 					this.SendPropertyChanged("Tbl_Personas");
 				}
@@ -18764,7 +18602,7 @@ namespace CapaDatos
 		
 		private string _inmu_fechaHora;
 		
-		private System.Nullable<int> _Per_id;
+		private System.Nullable<long> _Per_id;
 		
 		private System.Nullable<System.DateTime> _inmu_fechaHoraGuardado;
 		
@@ -19082,7 +18920,7 @@ namespace CapaDatos
     partial void Oninmu_2observaInmuAcuerTipoEmpRies5Changed();
     partial void Oninmu_fechaHoraChanging(string value);
     partial void Oninmu_fechaHoraChanged();
-    partial void OnPer_idChanging(System.Nullable<int> value);
+    partial void OnPer_idChanging(System.Nullable<long> value);
     partial void OnPer_idChanged();
     partial void Oninmu_fechaHoraGuardadoChanging(System.Nullable<System.DateTime> value);
     partial void Oninmu_fechaHoraGuardadoChanged();
@@ -22156,8 +21994,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_id", DbType="Int")]
-		public System.Nullable<int> Per_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_id", DbType="BigInt")]
+		public System.Nullable<long> Per_id
 		{
 			get
 			{
@@ -22247,7 +22085,7 @@ namespace CapaDatos
 					}
 					else
 					{
-						this._Per_id = default(Nullable<int>);
+						this._Per_id = default(Nullable<long>);
 					}
 					this.SendPropertyChanged("Tbl_Personas");
 				}
@@ -22585,7 +22423,7 @@ namespace CapaDatos
 		
 		private string _pedExa_fechaHora;
 		
-		private System.Nullable<int> _Per_id;
+		private System.Nullable<long> _Per_id;
 		
 		private System.Nullable<System.DateTime> _pedExa_fechaHoraGuardado;
 		
@@ -22901,7 +22739,7 @@ namespace CapaDatos
     partial void OnpedExa_descripOtros3Changed();
     partial void OnpedExa_fechaHoraChanging(string value);
     partial void OnpedExa_fechaHoraChanged();
-    partial void OnPer_idChanging(System.Nullable<int> value);
+    partial void OnPer_idChanging(System.Nullable<long> value);
     partial void OnPer_idChanged();
     partial void OnpedExa_fechaHoraGuardadoChanging(System.Nullable<System.DateTime> value);
     partial void OnpedExa_fechaHoraGuardadoChanged();
@@ -25955,8 +25793,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_id", DbType="Int")]
-		public System.Nullable<int> Per_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_id", DbType="BigInt")]
+		public System.Nullable<long> Per_id
 		{
 			get
 			{
@@ -26046,7 +25884,7 @@ namespace CapaDatos
 					}
 					else
 					{
-						this._Per_id = default(Nullable<int>);
+						this._Per_id = default(Nullable<long>);
 					}
 					this.SendPropertyChanged("Tbl_Personas");
 				}
@@ -26760,7 +26598,7 @@ namespace CapaDatos
 		
 		private string _perio_cod;
 		
-		private System.Nullable<int> _Per_id;
+		private System.Nullable<long> _Per_id;
 		
 		private System.Nullable<System.DateTime> _perio_fechaHoraGuardado;
 		
@@ -27456,7 +27294,7 @@ namespace CapaDatos
     partial void Onespec_idChanged();
     partial void Onperio_codChanging(string value);
     partial void Onperio_codChanged();
-    partial void OnPer_idChanging(System.Nullable<int> value);
+    partial void OnPer_idChanging(System.Nullable<long> value);
     partial void OnPer_idChanged();
     partial void Onperio_fechaHoraGuardadoChanging(System.Nullable<System.DateTime> value);
     partial void Onperio_fechaHoraGuardadoChanged();
@@ -34280,8 +34118,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_id", DbType="Int")]
-		public System.Nullable<int> Per_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_id", DbType="BigInt")]
+		public System.Nullable<long> Per_id
 		{
 			get
 			{
@@ -34405,7 +34243,7 @@ namespace CapaDatos
 					}
 					else
 					{
-						this._Per_id = default(Nullable<int>);
+						this._Per_id = default(Nullable<long>);
 					}
 					this.SendPropertyChanged("Tbl_Personas");
 				}
@@ -34473,7 +34311,7 @@ namespace CapaDatos
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _Per_id;
+		private long _Per_id;
 		
 		private string _Per_cedula;
 		
@@ -34485,17 +34323,19 @@ namespace CapaDatos
 		
 		private string _Per_segNombre;
 		
-		private string _Per_genero;
-		
 		private System.Nullable<System.DateTime> _Per_fechaNacimiento;
 		
+		private string _Per_genero;
+		
+		private System.Nullable<int> _Emp_id;
+		
 		private string _Per_puestoTrabajo;
+		
+		private string _Per_cargoOcupacion;
 		
 		private string _Per_areaTrabajo;
 		
 		private System.Nullable<System.DateTime> _Per_fechInicioTrabajo;
-		
-		private string _Per_cargoOcupacion;
 		
 		private string _Per_estado;
 		
@@ -34519,11 +34359,13 @@ namespace CapaDatos
 		
 		private EntitySet<Tbl_SocioEconomico> _Tbl_SocioEconomico;
 		
+		private EntityRef<Tbl_Empresa> _Tbl_Empresa;
+		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnPer_idChanging(int value);
+    partial void OnPer_idChanging(long value);
     partial void OnPer_idChanged();
     partial void OnPer_cedulaChanging(string value);
     partial void OnPer_cedulaChanged();
@@ -34535,18 +34377,20 @@ namespace CapaDatos
     partial void OnPer_priNombreChanged();
     partial void OnPer_segNombreChanging(string value);
     partial void OnPer_segNombreChanged();
-    partial void OnPer_generoChanging(string value);
-    partial void OnPer_generoChanged();
     partial void OnPer_fechaNacimientoChanging(System.Nullable<System.DateTime> value);
     partial void OnPer_fechaNacimientoChanged();
+    partial void OnPer_generoChanging(string value);
+    partial void OnPer_generoChanged();
+    partial void OnEmp_idChanging(System.Nullable<int> value);
+    partial void OnEmp_idChanged();
     partial void OnPer_puestoTrabajoChanging(string value);
     partial void OnPer_puestoTrabajoChanged();
+    partial void OnPer_cargoOcupacionChanging(string value);
+    partial void OnPer_cargoOcupacionChanged();
     partial void OnPer_areaTrabajoChanging(string value);
     partial void OnPer_areaTrabajoChanged();
     partial void OnPer_fechInicioTrabajoChanging(System.Nullable<System.DateTime> value);
     partial void OnPer_fechInicioTrabajoChanged();
-    partial void OnPer_cargoOcupacionChanging(string value);
-    partial void OnPer_cargoOcupacionChanged();
     partial void OnPer_estadoChanging(string value);
     partial void OnPer_estadoChanged();
     #endregion
@@ -34563,11 +34407,12 @@ namespace CapaDatos
 			this._Tbl_Reintegro = new EntitySet<Tbl_Reintegro>(new Action<Tbl_Reintegro>(this.attach_Tbl_Reintegro), new Action<Tbl_Reintegro>(this.detach_Tbl_Reintegro));
 			this._Tbl_Retiro = new EntitySet<Tbl_Retiro>(new Action<Tbl_Retiro>(this.attach_Tbl_Retiro), new Action<Tbl_Retiro>(this.detach_Tbl_Retiro));
 			this._Tbl_SocioEconomico = new EntitySet<Tbl_SocioEconomico>(new Action<Tbl_SocioEconomico>(this.attach_Tbl_SocioEconomico), new Action<Tbl_SocioEconomico>(this.detach_Tbl_SocioEconomico));
+			this._Tbl_Empresa = default(EntityRef<Tbl_Empresa>);
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int Per_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_id", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public long Per_id
 		{
 			get
 			{
@@ -34686,6 +34531,26 @@ namespace CapaDatos
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_fechaNacimiento", DbType="Date")]
+		public System.Nullable<System.DateTime> Per_fechaNacimiento
+		{
+			get
+			{
+				return this._Per_fechaNacimiento;
+			}
+			set
+			{
+				if ((this._Per_fechaNacimiento != value))
+				{
+					this.OnPer_fechaNacimientoChanging(value);
+					this.SendPropertyChanging();
+					this._Per_fechaNacimiento = value;
+					this.SendPropertyChanged("Per_fechaNacimiento");
+					this.OnPer_fechaNacimientoChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_genero", DbType="VarChar(MAX)")]
 		public string Per_genero
 		{
@@ -34706,22 +34571,26 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_fechaNacimiento", DbType="Date")]
-		public System.Nullable<System.DateTime> Per_fechaNacimiento
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Emp_id", DbType="Int")]
+		public System.Nullable<int> Emp_id
 		{
 			get
 			{
-				return this._Per_fechaNacimiento;
+				return this._Emp_id;
 			}
 			set
 			{
-				if ((this._Per_fechaNacimiento != value))
+				if ((this._Emp_id != value))
 				{
-					this.OnPer_fechaNacimientoChanging(value);
+					if (this._Tbl_Empresa.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnEmp_idChanging(value);
 					this.SendPropertyChanging();
-					this._Per_fechaNacimiento = value;
-					this.SendPropertyChanged("Per_fechaNacimiento");
-					this.OnPer_fechaNacimientoChanged();
+					this._Emp_id = value;
+					this.SendPropertyChanged("Emp_id");
+					this.OnEmp_idChanged();
 				}
 			}
 		}
@@ -34746,46 +34615,6 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_areaTrabajo", DbType="VarChar(MAX)")]
-		public string Per_areaTrabajo
-		{
-			get
-			{
-				return this._Per_areaTrabajo;
-			}
-			set
-			{
-				if ((this._Per_areaTrabajo != value))
-				{
-					this.OnPer_areaTrabajoChanging(value);
-					this.SendPropertyChanging();
-					this._Per_areaTrabajo = value;
-					this.SendPropertyChanged("Per_areaTrabajo");
-					this.OnPer_areaTrabajoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_fechInicioTrabajo", DbType="DateTime")]
-		public System.Nullable<System.DateTime> Per_fechInicioTrabajo
-		{
-			get
-			{
-				return this._Per_fechInicioTrabajo;
-			}
-			set
-			{
-				if ((this._Per_fechInicioTrabajo != value))
-				{
-					this.OnPer_fechInicioTrabajoChanging(value);
-					this.SendPropertyChanging();
-					this._Per_fechInicioTrabajo = value;
-					this.SendPropertyChanged("Per_fechInicioTrabajo");
-					this.OnPer_fechInicioTrabajoChanged();
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_cargoOcupacion", DbType="VarChar(MAX)")]
 		public string Per_cargoOcupacion
 		{
@@ -34806,7 +34635,47 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_estado", DbType="VarChar(1)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_areaTrabajo", DbType="VarChar(MAX)")]
+		public string Per_areaTrabajo
+		{
+			get
+			{
+				return this._Per_areaTrabajo;
+			}
+			set
+			{
+				if ((this._Per_areaTrabajo != value))
+				{
+					this.OnPer_areaTrabajoChanging(value);
+					this.SendPropertyChanging();
+					this._Per_areaTrabajo = value;
+					this.SendPropertyChanged("Per_areaTrabajo");
+					this.OnPer_areaTrabajoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_fechInicioTrabajo", DbType="Date")]
+		public System.Nullable<System.DateTime> Per_fechInicioTrabajo
+		{
+			get
+			{
+				return this._Per_fechInicioTrabajo;
+			}
+			set
+			{
+				if ((this._Per_fechInicioTrabajo != value))
+				{
+					this.OnPer_fechInicioTrabajoChanging(value);
+					this.SendPropertyChanging();
+					this._Per_fechInicioTrabajo = value;
+					this.SendPropertyChanged("Per_fechInicioTrabajo");
+					this.OnPer_fechInicioTrabajoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_estado", DbType="VarChar(2)")]
 		public string Per_estado
 		{
 			get
@@ -34953,6 +34822,40 @@ namespace CapaDatos
 			set
 			{
 				this._Tbl_SocioEconomico.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Empresa_Tbl_Personas", Storage="_Tbl_Empresa", ThisKey="Emp_id", OtherKey="Emp_id", IsForeignKey=true)]
+		public Tbl_Empresa Tbl_Empresa
+		{
+			get
+			{
+				return this._Tbl_Empresa.Entity;
+			}
+			set
+			{
+				Tbl_Empresa previousValue = this._Tbl_Empresa.Entity;
+				if (((previousValue != value) 
+							|| (this._Tbl_Empresa.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Tbl_Empresa.Entity = null;
+						previousValue.Tbl_Personas.Remove(this);
+					}
+					this._Tbl_Empresa.Entity = value;
+					if ((value != null))
+					{
+						value.Tbl_Personas.Add(this);
+						this._Emp_id = value.Emp_id;
+					}
+					else
+					{
+						this._Emp_id = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Tbl_Empresa");
+				}
 			}
 		}
 		
@@ -35731,7 +35634,7 @@ namespace CapaDatos
 		
 		private string _rein_cod;
 		
-		private System.Nullable<int> _Per_id;
+		private System.Nullable<long> _Per_id;
 		
 		private System.Nullable<System.DateTime> _rein_fechaHoraGuardado;
 		
@@ -35931,7 +35834,7 @@ namespace CapaDatos
     partial void Onespec_idChanged();
     partial void Onrein_codChanging(string value);
     partial void Onrein_codChanged();
-    partial void OnPer_idChanging(System.Nullable<int> value);
+    partial void OnPer_idChanging(System.Nullable<long> value);
     partial void OnPer_idChanged();
     partial void Onrein_fechaHoraGuardadoChanging(System.Nullable<System.DateTime> value);
     partial void Onrein_fechaHoraGuardadoChanged();
@@ -37795,8 +37698,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_id", DbType="Int")]
-		public System.Nullable<int> Per_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_id", DbType="BigInt")]
+		public System.Nullable<long> Per_id
 		{
 			get
 			{
@@ -37954,7 +37857,7 @@ namespace CapaDatos
 					}
 					else
 					{
-						this._Per_id = default(Nullable<int>);
+						this._Per_id = default(Nullable<long>);
 					}
 					this.SendPropertyChanged("Tbl_Personas");
 				}
@@ -38190,7 +38093,7 @@ namespace CapaDatos
 		
 		private string _ret_cod;
 		
-		private System.Nullable<int> _Per_id;
+		private System.Nullable<long> _Per_id;
 		
 		private System.Nullable<System.DateTime> _ret_fechaHoraGuardado;
 		
@@ -38408,7 +38311,7 @@ namespace CapaDatos
     partial void Onespec_idChanged();
     partial void Onret_codChanging(string value);
     partial void Onret_codChanged();
-    partial void OnPer_idChanging(System.Nullable<int> value);
+    partial void OnPer_idChanging(System.Nullable<long> value);
     partial void OnPer_idChanged();
     partial void Onret_fechaHoraGuardadoChanging(System.Nullable<System.DateTime> value);
     partial void Onret_fechaHoraGuardadoChanged();
@@ -40452,8 +40355,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_id", DbType="Int")]
-		public System.Nullable<int> Per_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_id", DbType="BigInt")]
+		public System.Nullable<long> Per_id
 		{
 			get
 			{
@@ -40611,7 +40514,7 @@ namespace CapaDatos
 					}
 					else
 					{
-						this._Per_id = default(Nullable<int>);
+						this._Per_id = default(Nullable<long>);
 					}
 					this.SendPropertyChanged("Tbl_Personas");
 				}
@@ -40649,13 +40552,13 @@ namespace CapaDatos
 		
 		private string _Socio_economico_codigo_inicial;
 		
-		private System.Nullable<int> _Socio_economico_version;
+		private string _Socio_economico_version;
 		
 		private string _Socio_economico_modalidadvinculacion_leyorgserpublico;
 		
 		private string _Socio_economico_modalidadvinculacion_codigotrabajo;
 		
-		private System.Nullable<System.DateTime> _Socio_economico_fecha_ingreso_al_Ecu;
+		private string _Socio_economico_fecha_ingreso_al_Ecu;
 		
 		private string _Socio_economico_estadocivil_soltero;
 		
@@ -40685,7 +40588,7 @@ namespace CapaDatos
 		
 		private string _Socio_economico_lugar_nacimiento;
 		
-		private System.Nullable<System.DateTime> _Socio_economico_fecha_nacimiento;
+		private string _Socio_economico_fecha_nacimiento;
 		
 		private string _Socio_economico_edad;
 		
@@ -40783,11 +40686,11 @@ namespace CapaDatos
 		
 		private string _Socio_economico_discapacidad_tipo;
 		
-		private System.Nullable<long> _Socio_economico_discapacidad_porcentaje;
+		private string _Socio_economico_discapacidad_porcentaje;
 		
 		private string _Socio_economico_discapacidad_carnet_conadis;
 		
-		private System.Nullable<System.DateTime> _Socio_economico_discapacidad_fecha_caducidad_carnet;
+		private string _Socio_economico_discapacidad_fecha_caducidad_carnet;
 		
 		private string _Socio_economico_estado_gestacion_si;
 		
@@ -40795,13 +40698,13 @@ namespace CapaDatos
 		
 		private string _Socio_economico_estado_gestacion_tiempo;
 		
-		private System.Nullable<System.DateTime> _Socio_economico_fecha_tentativa_parto;
+		private string _Socio_economico_fecha_tentativa_parto;
 		
 		private string _Socio_economico_periodo_lactancia_si;
 		
 		private string _Socio_economico_periodo_lactancia_no;
 		
-		private System.Nullable<System.DateTime> _Socio_economico_periodo_lactancia_fecha_culminacion;
+		private string _Socio_economico_periodo_lactancia_fecha_culminacion;
 		
 		private string _Socio_economico_enfermedad_cronica_si;
 		
@@ -41001,41 +40904,41 @@ namespace CapaDatos
 		
 		private string _Socio_economico_parentesco_familiar1;
 		
-		private System.Nullable<System.DateTime> _Socio_economico_fecha_nacimiento_familiar1;
+		private string _Socio_economico_fecha_nacimiento_familiar1;
 		
-		private System.Nullable<long> _Socio_economico_edad_familiar1;
+		private string _Socio_economico_edad_familiar1;
 		
 		private string _Socio_economico_nombres_apellidos_familiar2;
 		
 		private string _Socio_economico_parentesco_familiar2;
 		
-		private System.Nullable<System.DateTime> _Socio_economico_fecha_nacimiento_familiar2;
+		private string _Socio_economico_fecha_nacimiento_familiar2;
 		
-		private System.Nullable<long> _Socio_economico_edad_familiar2;
+		private string _Socio_economico_edad_familiar2;
 		
 		private string _Socio_economico_nombres_apellidos_familiar3;
 		
 		private string _Socio_economico_parentesco_familiar3;
 		
-		private System.Nullable<System.DateTime> _Socio_economico_fecha_nacimiento_familiar3;
+		private string _Socio_economico_fecha_nacimiento_familiar3;
 		
-		private System.Nullable<long> _Socio_economico_edad_familiar3;
+		private string _Socio_economico_edad_familiar3;
 		
 		private string _Socio_economico_nombres_apellidos_familiar4;
 		
 		private string _Socio_economico_parentesco_familiar4;
 		
-		private System.Nullable<System.DateTime> _Socio_economico_fecha_nacimiento_familiar4;
+		private string _Socio_economico_fecha_nacimiento_familiar4;
 		
-		private System.Nullable<long> _Socio_economico_edad_familiar4;
+		private string _Socio_economico_edad_familiar4;
 		
 		private string _Socio_economico_nombres_apellidos_familiar5;
 		
 		private string _Socio_economico_parentesco_familiar5;
 		
-		private System.Nullable<System.DateTime> _Socio_economico_fecha_nacimiento_familiar5;
+		private string _Socio_economico_fecha_nacimiento_familiar5;
 		
-		private System.Nullable<long> _Socio_economico_edad_familiar5;
+		private string _Socio_economico_edad_familiar5;
 		
 		private string _Socio_economico_nucleofamiliar_persona_discapacidad_si;
 		
@@ -41047,27 +40950,27 @@ namespace CapaDatos
 		
 		private string _Socio_economico_nombres_apellidos_familiar_discapacidad1;
 		
-		private System.Nullable<System.DateTime> _Socio_economico_fecha_caducidad_carnet_familiar_discapacidad1;
+		private string _Socio_economico_fecha_caducidad_carnet_familiar_discapacidad1;
 		
 		private string _Socio_economico_familiar_discapacidad_tipo1;
 		
-		private System.Nullable<long> _Socio_economico_familiar_discapacidad_porcentaje1;
+		private string _Socio_economico_familiar_discapacidad_porcentaje1;
 		
 		private string _Socio_economico_familiar_discapacidad_parentesco1;
 		
-		private System.Nullable<System.DateTime> _Socio_economico_familiar_discapacidad_fecha_nacimiento1;
+		private string _Socio_economico_familiar_discapacidad_fecha_nacimiento1;
 		
 		private string _Socio_economico_nombres_apellidos_familiar_discapacidad2;
 		
-		private System.Nullable<System.DateTime> _Socio_economico_fecha_caducidad_carnet_familiar_discapacidad2;
+		private string _Socio_economico_fecha_caducidad_carnet_familiar_discapacidad2;
 		
 		private string _Socio_economico_familiar_discapacidad_tipo2;
 		
-		private System.Nullable<long> _Socio_economico_familiar_discapacidad_porcentaje2;
+		private string _Socio_economico_familiar_discapacidad_porcentaje2;
 		
 		private string _Socio_economico_familiar_discapacidad_parentesco2;
 		
-		private System.Nullable<System.DateTime> _Socio_economico_familiar_discapacidad_fecha_nacimiento2;
+		private string _Socio_economico_familiar_discapacidad_fecha_nacimiento2;
 		
 		private string _Socio_economico_registrar_dependencia_familiar_MT_si;
 		
@@ -41113,7 +41016,7 @@ namespace CapaDatos
 		
 		private string _Socio_economico_actividad_deportiva_frecuencia;
 		
-		private System.Nullable<long> _Socio_economico_actividad_deportiva_edad;
+		private string _Socio_economico_actividad_deportiva_edad;
 		
 		private string _Socio_economico_lesion_si;
 		
@@ -41121,7 +41024,7 @@ namespace CapaDatos
 		
 		private string _Socio_economico_lesion_tipo;
 		
-		private System.Nullable<long> _Socio_economico_lesion_edad;
+		private string _Socio_economico_lesion_edad;
 		
 		private string _Socio_economico_lesion_tratamiento_si;
 		
@@ -41215,9 +41118,11 @@ namespace CapaDatos
 		
 		private string _Socio_economico_informacion_general_real_no;
 		
-		private System.Nullable<System.DateTime> _Socio_economico_fechaHora;
+		private string _Socio_economico_fechaHora;
 		
-		private System.Nullable<int> _Per_id;
+		private System.Nullable<long> _Per_id;
+		
+		private System.Nullable<System.DateTime> _Socio_economico_fechaHoraGuardado;
 		
 		private string _Socio_economico__estado;
 		
@@ -41231,13 +41136,13 @@ namespace CapaDatos
     partial void OnSocio_economico_idChanged();
     partial void OnSocio_economico_codigo_inicialChanging(string value);
     partial void OnSocio_economico_codigo_inicialChanged();
-    partial void OnSocio_economico_versionChanging(System.Nullable<int> value);
+    partial void OnSocio_economico_versionChanging(string value);
     partial void OnSocio_economico_versionChanged();
     partial void OnSocio_economico_modalidadvinculacion_leyorgserpublicoChanging(string value);
     partial void OnSocio_economico_modalidadvinculacion_leyorgserpublicoChanged();
     partial void OnSocio_economico_modalidadvinculacion_codigotrabajoChanging(string value);
     partial void OnSocio_economico_modalidadvinculacion_codigotrabajoChanged();
-    partial void OnSocio_economico_fecha_ingreso_al_EcuChanging(System.Nullable<System.DateTime> value);
+    partial void OnSocio_economico_fecha_ingreso_al_EcuChanging(string value);
     partial void OnSocio_economico_fecha_ingreso_al_EcuChanged();
     partial void OnSocio_economico_estadocivil_solteroChanging(string value);
     partial void OnSocio_economico_estadocivil_solteroChanged();
@@ -41267,7 +41172,7 @@ namespace CapaDatos
     partial void OnSocio_economico_emailChanged();
     partial void OnSocio_economico_lugar_nacimientoChanging(string value);
     partial void OnSocio_economico_lugar_nacimientoChanged();
-    partial void OnSocio_economico_fecha_nacimientoChanging(System.Nullable<System.DateTime> value);
+    partial void OnSocio_economico_fecha_nacimientoChanging(string value);
     partial void OnSocio_economico_fecha_nacimientoChanged();
     partial void OnSocio_economico_edadChanging(string value);
     partial void OnSocio_economico_edadChanged();
@@ -41365,11 +41270,11 @@ namespace CapaDatos
     partial void OnSocio_economico_discapacidad_noChanged();
     partial void OnSocio_economico_discapacidad_tipoChanging(string value);
     partial void OnSocio_economico_discapacidad_tipoChanged();
-    partial void OnSocio_economico_discapacidad_porcentajeChanging(System.Nullable<long> value);
+    partial void OnSocio_economico_discapacidad_porcentajeChanging(string value);
     partial void OnSocio_economico_discapacidad_porcentajeChanged();
     partial void OnSocio_economico_discapacidad_carnet_conadisChanging(string value);
     partial void OnSocio_economico_discapacidad_carnet_conadisChanged();
-    partial void OnSocio_economico_discapacidad_fecha_caducidad_carnetChanging(System.Nullable<System.DateTime> value);
+    partial void OnSocio_economico_discapacidad_fecha_caducidad_carnetChanging(string value);
     partial void OnSocio_economico_discapacidad_fecha_caducidad_carnetChanged();
     partial void OnSocio_economico_estado_gestacion_siChanging(string value);
     partial void OnSocio_economico_estado_gestacion_siChanged();
@@ -41377,13 +41282,13 @@ namespace CapaDatos
     partial void OnSocio_economico_estado_gestacion_noChanged();
     partial void OnSocio_economico_estado_gestacion_tiempoChanging(string value);
     partial void OnSocio_economico_estado_gestacion_tiempoChanged();
-    partial void OnSocio_economico_fecha_tentativa_partoChanging(System.Nullable<System.DateTime> value);
+    partial void OnSocio_economico_fecha_tentativa_partoChanging(string value);
     partial void OnSocio_economico_fecha_tentativa_partoChanged();
     partial void OnSocio_economico_periodo_lactancia_siChanging(string value);
     partial void OnSocio_economico_periodo_lactancia_siChanged();
     partial void OnSocio_economico_periodo_lactancia_noChanging(string value);
     partial void OnSocio_economico_periodo_lactancia_noChanged();
-    partial void OnSocio_economico_periodo_lactancia_fecha_culminacionChanging(System.Nullable<System.DateTime> value);
+    partial void OnSocio_economico_periodo_lactancia_fecha_culminacionChanging(string value);
     partial void OnSocio_economico_periodo_lactancia_fecha_culminacionChanged();
     partial void OnSocio_economico_enfermedad_cronica_siChanging(string value);
     partial void OnSocio_economico_enfermedad_cronica_siChanged();
@@ -41583,41 +41488,41 @@ namespace CapaDatos
     partial void OnSocio_economico_nombres_apellidos_familiar1Changed();
     partial void OnSocio_economico_parentesco_familiar1Changing(string value);
     partial void OnSocio_economico_parentesco_familiar1Changed();
-    partial void OnSocio_economico_fecha_nacimiento_familiar1Changing(System.Nullable<System.DateTime> value);
+    partial void OnSocio_economico_fecha_nacimiento_familiar1Changing(string value);
     partial void OnSocio_economico_fecha_nacimiento_familiar1Changed();
-    partial void OnSocio_economico_edad_familiar1Changing(System.Nullable<long> value);
+    partial void OnSocio_economico_edad_familiar1Changing(string value);
     partial void OnSocio_economico_edad_familiar1Changed();
     partial void OnSocio_economico_nombres_apellidos_familiar2Changing(string value);
     partial void OnSocio_economico_nombres_apellidos_familiar2Changed();
     partial void OnSocio_economico_parentesco_familiar2Changing(string value);
     partial void OnSocio_economico_parentesco_familiar2Changed();
-    partial void OnSocio_economico_fecha_nacimiento_familiar2Changing(System.Nullable<System.DateTime> value);
+    partial void OnSocio_economico_fecha_nacimiento_familiar2Changing(string value);
     partial void OnSocio_economico_fecha_nacimiento_familiar2Changed();
-    partial void OnSocio_economico_edad_familiar2Changing(System.Nullable<long> value);
+    partial void OnSocio_economico_edad_familiar2Changing(string value);
     partial void OnSocio_economico_edad_familiar2Changed();
     partial void OnSocio_economico_nombres_apellidos_familiar3Changing(string value);
     partial void OnSocio_economico_nombres_apellidos_familiar3Changed();
     partial void OnSocio_economico_parentesco_familiar3Changing(string value);
     partial void OnSocio_economico_parentesco_familiar3Changed();
-    partial void OnSocio_economico_fecha_nacimiento_familiar3Changing(System.Nullable<System.DateTime> value);
+    partial void OnSocio_economico_fecha_nacimiento_familiar3Changing(string value);
     partial void OnSocio_economico_fecha_nacimiento_familiar3Changed();
-    partial void OnSocio_economico_edad_familiar3Changing(System.Nullable<long> value);
+    partial void OnSocio_economico_edad_familiar3Changing(string value);
     partial void OnSocio_economico_edad_familiar3Changed();
     partial void OnSocio_economico_nombres_apellidos_familiar4Changing(string value);
     partial void OnSocio_economico_nombres_apellidos_familiar4Changed();
     partial void OnSocio_economico_parentesco_familiar4Changing(string value);
     partial void OnSocio_economico_parentesco_familiar4Changed();
-    partial void OnSocio_economico_fecha_nacimiento_familiar4Changing(System.Nullable<System.DateTime> value);
+    partial void OnSocio_economico_fecha_nacimiento_familiar4Changing(string value);
     partial void OnSocio_economico_fecha_nacimiento_familiar4Changed();
-    partial void OnSocio_economico_edad_familiar4Changing(System.Nullable<long> value);
+    partial void OnSocio_economico_edad_familiar4Changing(string value);
     partial void OnSocio_economico_edad_familiar4Changed();
     partial void OnSocio_economico_nombres_apellidos_familiar5Changing(string value);
     partial void OnSocio_economico_nombres_apellidos_familiar5Changed();
     partial void OnSocio_economico_parentesco_familiar5Changing(string value);
     partial void OnSocio_economico_parentesco_familiar5Changed();
-    partial void OnSocio_economico_fecha_nacimiento_familiar5Changing(System.Nullable<System.DateTime> value);
+    partial void OnSocio_economico_fecha_nacimiento_familiar5Changing(string value);
     partial void OnSocio_economico_fecha_nacimiento_familiar5Changed();
-    partial void OnSocio_economico_edad_familiar5Changing(System.Nullable<long> value);
+    partial void OnSocio_economico_edad_familiar5Changing(string value);
     partial void OnSocio_economico_edad_familiar5Changed();
     partial void OnSocio_economico_nucleofamiliar_persona_discapacidad_siChanging(string value);
     partial void OnSocio_economico_nucleofamiliar_persona_discapacidad_siChanged();
@@ -41629,27 +41534,27 @@ namespace CapaDatos
     partial void OnSocio_economico_acargo_de_persona_discapacidad_noChanged();
     partial void OnSocio_economico_nombres_apellidos_familiar_discapacidad1Changing(string value);
     partial void OnSocio_economico_nombres_apellidos_familiar_discapacidad1Changed();
-    partial void OnSocio_economico_fecha_caducidad_carnet_familiar_discapacidad1Changing(System.Nullable<System.DateTime> value);
+    partial void OnSocio_economico_fecha_caducidad_carnet_familiar_discapacidad1Changing(string value);
     partial void OnSocio_economico_fecha_caducidad_carnet_familiar_discapacidad1Changed();
     partial void OnSocio_economico_familiar_discapacidad_tipo1Changing(string value);
     partial void OnSocio_economico_familiar_discapacidad_tipo1Changed();
-    partial void OnSocio_economico_familiar_discapacidad_porcentaje1Changing(System.Nullable<long> value);
+    partial void OnSocio_economico_familiar_discapacidad_porcentaje1Changing(string value);
     partial void OnSocio_economico_familiar_discapacidad_porcentaje1Changed();
     partial void OnSocio_economico_familiar_discapacidad_parentesco1Changing(string value);
     partial void OnSocio_economico_familiar_discapacidad_parentesco1Changed();
-    partial void OnSocio_economico_familiar_discapacidad_fecha_nacimiento1Changing(System.Nullable<System.DateTime> value);
+    partial void OnSocio_economico_familiar_discapacidad_fecha_nacimiento1Changing(string value);
     partial void OnSocio_economico_familiar_discapacidad_fecha_nacimiento1Changed();
     partial void OnSocio_economico_nombres_apellidos_familiar_discapacidad2Changing(string value);
     partial void OnSocio_economico_nombres_apellidos_familiar_discapacidad2Changed();
-    partial void OnSocio_economico_fecha_caducidad_carnet_familiar_discapacidad2Changing(System.Nullable<System.DateTime> value);
+    partial void OnSocio_economico_fecha_caducidad_carnet_familiar_discapacidad2Changing(string value);
     partial void OnSocio_economico_fecha_caducidad_carnet_familiar_discapacidad2Changed();
     partial void OnSocio_economico_familiar_discapacidad_tipo2Changing(string value);
     partial void OnSocio_economico_familiar_discapacidad_tipo2Changed();
-    partial void OnSocio_economico_familiar_discapacidad_porcentaje2Changing(System.Nullable<long> value);
+    partial void OnSocio_economico_familiar_discapacidad_porcentaje2Changing(string value);
     partial void OnSocio_economico_familiar_discapacidad_porcentaje2Changed();
     partial void OnSocio_economico_familiar_discapacidad_parentesco2Changing(string value);
     partial void OnSocio_economico_familiar_discapacidad_parentesco2Changed();
-    partial void OnSocio_economico_familiar_discapacidad_fecha_nacimiento2Changing(System.Nullable<System.DateTime> value);
+    partial void OnSocio_economico_familiar_discapacidad_fecha_nacimiento2Changing(string value);
     partial void OnSocio_economico_familiar_discapacidad_fecha_nacimiento2Changed();
     partial void OnSocio_economico_registrar_dependencia_familiar_MT_siChanging(string value);
     partial void OnSocio_economico_registrar_dependencia_familiar_MT_siChanged();
@@ -41695,7 +41600,7 @@ namespace CapaDatos
     partial void OnSocio_economico_actividad_deportiva_especificarChanged();
     partial void OnSocio_economico_actividad_deportiva_frecuenciaChanging(string value);
     partial void OnSocio_economico_actividad_deportiva_frecuenciaChanged();
-    partial void OnSocio_economico_actividad_deportiva_edadChanging(System.Nullable<long> value);
+    partial void OnSocio_economico_actividad_deportiva_edadChanging(string value);
     partial void OnSocio_economico_actividad_deportiva_edadChanged();
     partial void OnSocio_economico_lesion_siChanging(string value);
     partial void OnSocio_economico_lesion_siChanged();
@@ -41703,7 +41608,7 @@ namespace CapaDatos
     partial void OnSocio_economico_lesion_noChanged();
     partial void OnSocio_economico_lesion_tipoChanging(string value);
     partial void OnSocio_economico_lesion_tipoChanged();
-    partial void OnSocio_economico_lesion_edadChanging(System.Nullable<long> value);
+    partial void OnSocio_economico_lesion_edadChanging(string value);
     partial void OnSocio_economico_lesion_edadChanged();
     partial void OnSocio_economico_lesion_tratamiento_siChanging(string value);
     partial void OnSocio_economico_lesion_tratamiento_siChanged();
@@ -41797,10 +41702,12 @@ namespace CapaDatos
     partial void OnSocio_economico_informacion_general_real_siChanged();
     partial void OnSocio_economico_informacion_general_real_noChanging(string value);
     partial void OnSocio_economico_informacion_general_real_noChanged();
-    partial void OnSocio_economico_fechaHoraChanging(System.Nullable<System.DateTime> value);
+    partial void OnSocio_economico_fechaHoraChanging(string value);
     partial void OnSocio_economico_fechaHoraChanged();
-    partial void OnPer_idChanging(System.Nullable<int> value);
+    partial void OnPer_idChanging(System.Nullable<long> value);
     partial void OnPer_idChanged();
+    partial void OnSocio_economico_fechaHoraGuardadoChanging(System.Nullable<System.DateTime> value);
+    partial void OnSocio_economico_fechaHoraGuardadoChanged();
     partial void OnSocio_economico__estadoChanging(string value);
     partial void OnSocio_economico__estadoChanged();
     #endregion
@@ -41851,8 +41758,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_version", DbType="Int")]
-		public System.Nullable<int> Socio_economico_version
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_version", DbType="VarChar(MAX)")]
+		public string Socio_economico_version
 		{
 			get
 			{
@@ -41911,8 +41818,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_fecha_ingreso_al_Ecu", DbType="DateTime")]
-		public System.Nullable<System.DateTime> Socio_economico_fecha_ingreso_al_Ecu
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_fecha_ingreso_al_Ecu", DbType="VarChar(MAX)")]
+		public string Socio_economico_fecha_ingreso_al_Ecu
 		{
 			get
 			{
@@ -42211,8 +42118,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_fecha_nacimiento", DbType="DateTime")]
-		public System.Nullable<System.DateTime> Socio_economico_fecha_nacimiento
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_fecha_nacimiento", DbType="VarChar(MAX)")]
+		public string Socio_economico_fecha_nacimiento
 		{
 			get
 			{
@@ -43191,8 +43098,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_discapacidad_porcentaje", DbType="BigInt")]
-		public System.Nullable<long> Socio_economico_discapacidad_porcentaje
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_discapacidad_porcentaje", DbType="VarChar(MAX)")]
+		public string Socio_economico_discapacidad_porcentaje
 		{
 			get
 			{
@@ -43231,8 +43138,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_discapacidad_fecha_caducidad_carnet", DbType="DateTime")]
-		public System.Nullable<System.DateTime> Socio_economico_discapacidad_fecha_caducidad_carnet
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_discapacidad_fecha_caducidad_carnet", DbType="VarChar(MAX)")]
+		public string Socio_economico_discapacidad_fecha_caducidad_carnet
 		{
 			get
 			{
@@ -43311,8 +43218,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_fecha_tentativa_parto", DbType="DateTime")]
-		public System.Nullable<System.DateTime> Socio_economico_fecha_tentativa_parto
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_fecha_tentativa_parto", DbType="VarChar(MAX)")]
+		public string Socio_economico_fecha_tentativa_parto
 		{
 			get
 			{
@@ -43371,8 +43278,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_periodo_lactancia_fecha_culminacion", DbType="DateTime")]
-		public System.Nullable<System.DateTime> Socio_economico_periodo_lactancia_fecha_culminacion
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_periodo_lactancia_fecha_culminacion", DbType="VarChar(MAX)")]
+		public string Socio_economico_periodo_lactancia_fecha_culminacion
 		{
 			get
 			{
@@ -45371,8 +45278,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_fecha_nacimiento_familiar1", DbType="DateTime")]
-		public System.Nullable<System.DateTime> Socio_economico_fecha_nacimiento_familiar1
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_fecha_nacimiento_familiar1", DbType="VarChar(MAX)")]
+		public string Socio_economico_fecha_nacimiento_familiar1
 		{
 			get
 			{
@@ -45391,8 +45298,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_edad_familiar1", DbType="BigInt")]
-		public System.Nullable<long> Socio_economico_edad_familiar1
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_edad_familiar1", DbType="VarChar(MAX)")]
+		public string Socio_economico_edad_familiar1
 		{
 			get
 			{
@@ -45451,8 +45358,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_fecha_nacimiento_familiar2", DbType="DateTime")]
-		public System.Nullable<System.DateTime> Socio_economico_fecha_nacimiento_familiar2
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_fecha_nacimiento_familiar2", DbType="VarChar(MAX)")]
+		public string Socio_economico_fecha_nacimiento_familiar2
 		{
 			get
 			{
@@ -45471,8 +45378,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_edad_familiar2", DbType="BigInt")]
-		public System.Nullable<long> Socio_economico_edad_familiar2
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_edad_familiar2", DbType="VarChar(MAX)")]
+		public string Socio_economico_edad_familiar2
 		{
 			get
 			{
@@ -45531,8 +45438,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_fecha_nacimiento_familiar3", DbType="DateTime")]
-		public System.Nullable<System.DateTime> Socio_economico_fecha_nacimiento_familiar3
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_fecha_nacimiento_familiar3", DbType="VarChar(MAX)")]
+		public string Socio_economico_fecha_nacimiento_familiar3
 		{
 			get
 			{
@@ -45551,8 +45458,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_edad_familiar3", DbType="BigInt")]
-		public System.Nullable<long> Socio_economico_edad_familiar3
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_edad_familiar3", DbType="VarChar(MAX)")]
+		public string Socio_economico_edad_familiar3
 		{
 			get
 			{
@@ -45611,8 +45518,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_fecha_nacimiento_familiar4", DbType="DateTime")]
-		public System.Nullable<System.DateTime> Socio_economico_fecha_nacimiento_familiar4
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_fecha_nacimiento_familiar4", DbType="VarChar(MAX)")]
+		public string Socio_economico_fecha_nacimiento_familiar4
 		{
 			get
 			{
@@ -45631,8 +45538,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_edad_familiar4", DbType="BigInt")]
-		public System.Nullable<long> Socio_economico_edad_familiar4
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_edad_familiar4", DbType="VarChar(MAX)")]
+		public string Socio_economico_edad_familiar4
 		{
 			get
 			{
@@ -45691,8 +45598,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_fecha_nacimiento_familiar5", DbType="DateTime")]
-		public System.Nullable<System.DateTime> Socio_economico_fecha_nacimiento_familiar5
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_fecha_nacimiento_familiar5", DbType="VarChar(MAX)")]
+		public string Socio_economico_fecha_nacimiento_familiar5
 		{
 			get
 			{
@@ -45711,8 +45618,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_edad_familiar5", DbType="BigInt")]
-		public System.Nullable<long> Socio_economico_edad_familiar5
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_edad_familiar5", DbType="VarChar(MAX)")]
+		public string Socio_economico_edad_familiar5
 		{
 			get
 			{
@@ -45831,8 +45738,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_fecha_caducidad_carnet_familiar_discapacidad1", DbType="DateTime")]
-		public System.Nullable<System.DateTime> Socio_economico_fecha_caducidad_carnet_familiar_discapacidad1
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_fecha_caducidad_carnet_familiar_discapacidad1", DbType="VarChar(MAX)")]
+		public string Socio_economico_fecha_caducidad_carnet_familiar_discapacidad1
 		{
 			get
 			{
@@ -45871,8 +45778,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_familiar_discapacidad_porcentaje1", DbType="BigInt")]
-		public System.Nullable<long> Socio_economico_familiar_discapacidad_porcentaje1
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_familiar_discapacidad_porcentaje1", DbType="VarChar(MAX)")]
+		public string Socio_economico_familiar_discapacidad_porcentaje1
 		{
 			get
 			{
@@ -45911,8 +45818,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_familiar_discapacidad_fecha_nacimiento1", DbType="DateTime")]
-		public System.Nullable<System.DateTime> Socio_economico_familiar_discapacidad_fecha_nacimiento1
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_familiar_discapacidad_fecha_nacimiento1", DbType="VarChar(MAX)")]
+		public string Socio_economico_familiar_discapacidad_fecha_nacimiento1
 		{
 			get
 			{
@@ -45951,8 +45858,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_fecha_caducidad_carnet_familiar_discapacidad2", DbType="DateTime")]
-		public System.Nullable<System.DateTime> Socio_economico_fecha_caducidad_carnet_familiar_discapacidad2
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_fecha_caducidad_carnet_familiar_discapacidad2", DbType="VarChar(MAX)")]
+		public string Socio_economico_fecha_caducidad_carnet_familiar_discapacidad2
 		{
 			get
 			{
@@ -45991,8 +45898,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_familiar_discapacidad_porcentaje2", DbType="BigInt")]
-		public System.Nullable<long> Socio_economico_familiar_discapacidad_porcentaje2
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_familiar_discapacidad_porcentaje2", DbType="VarChar(MAX)")]
+		public string Socio_economico_familiar_discapacidad_porcentaje2
 		{
 			get
 			{
@@ -46031,8 +45938,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_familiar_discapacidad_fecha_nacimiento2", DbType="DateTime")]
-		public System.Nullable<System.DateTime> Socio_economico_familiar_discapacidad_fecha_nacimiento2
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_familiar_discapacidad_fecha_nacimiento2", DbType="VarChar(MAX)")]
+		public string Socio_economico_familiar_discapacidad_fecha_nacimiento2
 		{
 			get
 			{
@@ -46491,8 +46398,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_actividad_deportiva_edad", DbType="BigInt")]
-		public System.Nullable<long> Socio_economico_actividad_deportiva_edad
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_actividad_deportiva_edad", DbType="VarChar(MAX)")]
+		public string Socio_economico_actividad_deportiva_edad
 		{
 			get
 			{
@@ -46571,8 +46478,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_lesion_edad", DbType="BigInt")]
-		public System.Nullable<long> Socio_economico_lesion_edad
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_lesion_edad", DbType="VarChar(MAX)")]
+		public string Socio_economico_lesion_edad
 		{
 			get
 			{
@@ -47511,8 +47418,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_fechaHora", DbType="DateTime")]
-		public System.Nullable<System.DateTime> Socio_economico_fechaHora
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_fechaHora", DbType="VarChar(MAX)")]
+		public string Socio_economico_fechaHora
 		{
 			get
 			{
@@ -47531,8 +47438,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_id", DbType="Int")]
-		public System.Nullable<int> Per_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_id", DbType="BigInt")]
+		public System.Nullable<long> Per_id
 		{
 			get
 			{
@@ -47551,6 +47458,26 @@ namespace CapaDatos
 					this._Per_id = value;
 					this.SendPropertyChanged("Per_id");
 					this.OnPer_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_fechaHoraGuardado", DbType="DateTime")]
+		public System.Nullable<System.DateTime> Socio_economico_fechaHoraGuardado
+		{
+			get
+			{
+				return this._Socio_economico_fechaHoraGuardado;
+			}
+			set
+			{
+				if ((this._Socio_economico_fechaHoraGuardado != value))
+				{
+					this.OnSocio_economico_fechaHoraGuardadoChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_fechaHoraGuardado = value;
+					this.SendPropertyChanged("Socio_economico_fechaHoraGuardado");
+					this.OnSocio_economico_fechaHoraGuardadoChanged();
 				}
 			}
 		}
@@ -47602,7 +47529,7 @@ namespace CapaDatos
 					}
 					else
 					{
-						this._Per_id = default(Nullable<int>);
+						this._Per_id = default(Nullable<long>);
 					}
 					this.SendPropertyChanged("Tbl_Personas");
 				}
