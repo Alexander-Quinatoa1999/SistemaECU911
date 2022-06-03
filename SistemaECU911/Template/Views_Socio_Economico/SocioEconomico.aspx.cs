@@ -54,7 +54,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                         txt_cargoinstitucional.Text = per.Per_cargoOcupacion.ToString();
 
                         if (sso != null)
-                        {
+                        {                          
                             txt_fecharegistro.Text = sso.Socio_economico_fechaHora.ToString();
 
                             //Datos código y versión
@@ -62,7 +62,15 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                             txt_version.Text = sso.Socio_economico_version.ToString();
 
                             //Datos Generales
-                            txt_fechaingresoalsisecu.Text = sso.Socio_economico_fecha_ingreso_al_Ecu.ToString();
+                            //txt_fechaingresoalsisecu.Text = sso.Socio_economico_fecha_ingreso_al_Ecu.ToString();
+                            if (sso.Socio_economico_fecha_ingreso_al_Ecu == "")
+                            {
+                                txt_fechaingresoalsisecu.Text = sso.Socio_economico_fecha_ingreso_al_Ecu.ToString();
+                            }
+                            else
+                            {
+                                txt_fechaingresoalsisecu.Text = Convert.ToDateTime(sso.Socio_economico_fecha_ingreso_al_Ecu).ToString("yyyy-MM-dd");
+                            }
                             txt_tipodesangre.Text = sso.Socio_economico_tipo_de_sangre.ToString();
 
                             txt_telconvecional.Text = sso.Socio_economico_telefono_convencional.ToString();
@@ -70,7 +78,15 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                             txt_email.Text = sso.Socio_economico_email.ToString();
 
                             txt_lugarnacimiento.Text = sso.Socio_economico_lugar_nacimiento.ToString();
-                            txt_fechanacimiento.Text = sso.Socio_economico_fecha_nacimiento.ToString();
+                            //txt_fechanacimiento.Text = sso.Socio_economico_fecha_nacimiento.ToString();
+                            if (sso.Socio_economico_fecha_nacimiento == "")
+                            {
+                                txt_fechanacimiento.Text = sso.Socio_economico_fecha_nacimiento.ToString();
+                            }
+                            else
+                            {
+                                txt_fechanacimiento.Text = Convert.ToDateTime(sso.Socio_economico_fecha_nacimiento).ToString("yyyy-MM-dd");
+                            }
                             txt_edad.Text = sso.Socio_economico_edad.ToString();
 
                             txt_provincia.Text = sso.Socio_economico_direcciondomicilio_provincia.ToString();
@@ -99,11 +115,35 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                             txt_tipodiscapacidad.Text = sso.Socio_economico_discapacidad_tipo.ToString();
                             txt_porcentajediscapacidad.Text = sso.Socio_economico_discapacidad_porcentaje.ToString();
                             txt_numcarnetconadis.Text = sso.Socio_economico_discapacidad_carnet_conadis.ToString();
-                            txt_fechacaducidadcarnet.Text = sso.Socio_economico_discapacidad_fecha_caducidad_carnet.ToString();
+                            //txt_fechacaducidadcarnet.Text = sso.Socio_economico_discapacidad_fecha_caducidad_carnet.ToString();
+                            if (sso.Socio_economico_discapacidad_fecha_caducidad_carnet == "")
+                            {
+                                txt_fechacaducidadcarnet.Text = sso.Socio_economico_discapacidad_fecha_caducidad_carnet.ToString();
+                            }
+                            else
+                            {
+                                txt_fechacaducidadcarnet.Text = Convert.ToDateTime(sso.Socio_economico_discapacidad_fecha_caducidad_carnet).ToString("yyyy-MM-dd");
+                            }
 
                             txt_gestacióntiempo.Text = sso.Socio_economico_estado_gestacion_tiempo.ToString();
-                            txt_fechatentativaparto.Text = sso.Socio_economico_fecha_tentativa_parto.ToString();
-                            txt_fechaculmicacionlactancia.Text = sso.Socio_economico_periodo_lactancia_fecha_culminacion.ToString();
+                            //txt_fechatentativaparto.Text = sso.Socio_economico_fecha_tentativa_parto.ToString();
+                            if (sso.Socio_economico_fecha_tentativa_parto == "")
+                            {
+                                txt_fechatentativaparto.Text = sso.Socio_economico_fecha_tentativa_parto.ToString();
+                            }
+                            else
+                            {
+                                txt_fechatentativaparto.Text = Convert.ToDateTime(sso.Socio_economico_fecha_tentativa_parto).ToString("yyyy-MM-dd");
+                            }
+                            //txt_fechaculmicacionlactancia.Text = sso.Socio_economico_periodo_lactancia_fecha_culminacion.ToString();
+                            if (sso.Socio_economico_periodo_lactancia_fecha_culminacion == "")
+                            {
+                                txt_fechaculmicacionlactancia.Text = sso.Socio_economico_periodo_lactancia_fecha_culminacion.ToString();
+                            }
+                            else
+                            {
+                                txt_fechaculmicacionlactancia.Text = Convert.ToDateTime(sso.Socio_economico_periodo_lactancia_fecha_culminacion).ToString("yyyy-MM-dd");
+                            }
 
                             txt_cualcatastrofica.Text = sso.Socio_economico_enfermedad_cronica_cual.ToString();
                             txt_otrasenfermedadescat.Text = sso.Socio_economico_enfermedad_cronica_otras_enfermedades.ToString();
@@ -117,6 +157,8 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                             txt_sustanciapsicotropicafrecuencia.Text = sso.Socio_economico_consume_sustancia_psicotropica_frecuencia_consumo.ToString();
 
                             //Situacion económica del servidor
+                            txt_miembroactivoseconomicamente.Text = sso.Socio_economico_numero_miembro_economicamente_activos.ToString();
+
                             txt_totalingresos1.Text = sso.Socio_economico_total_ingresos_mensuales_proyectados_1.ToString();
                             txt_ayuda1.Text = sso.Socio_economico_ayuda1.ToString();
                             txt_otros1.Text = sso.Socio_economico_otros1.ToString();
@@ -161,7 +203,6 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                             txt_totalayudayotros9.Text = sso.Socio_economico_ayuda_y_otros_total_9.ToString();
                             txt_totalegresos.Text = sso.Socio_economico_total_egresos_total_9.ToString();
 
-
                             txt_biencasa.Text = sso.Socio_economico_descripcion_mueble_valor_casa.ToString();
                             txt_biendepartamento.Text = sso.Socio_economico_descripcion_mueble_valor_departamento.ToString();
                             txt_bienvehiculo.Text = sso.Socio_economico_descripcion_mueble_valor_vehiculo.ToString();
@@ -178,50 +219,114 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                             //Información Familiar
                             txt_nomapellidos1.Text = sso.Socio_economico_nombres_apellidos_familiar1.ToString();
                             txt_parentesco1.Text = sso.Socio_economico_parentesco_familiar1.ToString();
-                            txt_fechanacimiento1.Text = sso.Socio_economico_fecha_nacimiento_familiar1.ToString();
+                            //txt_fechanacimiento1.Text = sso.Socio_economico_fecha_nacimiento_familiar1.ToString();
+                            if (sso.Socio_economico_fecha_nacimiento_familiar1 == "")
+                            {
+                                txt_fechanacimiento1.Text = sso.Socio_economico_fecha_nacimiento_familiar1.ToString();
+                            }
+                            else
+                            {
+                                txt_fechanacimiento1.Text = Convert.ToDateTime(sso.Socio_economico_fecha_nacimiento_familiar1).ToString("yyyy-MM-dd");
+                            }
                             txt_edad1.Text = sso.Socio_economico_edad_familiar1.ToString();
 
                             txt_nomapellidos2.Text = sso.Socio_economico_nombres_apellidos_familiar2.ToString();
                             txt_parentesco2.Text = sso.Socio_economico_parentesco_familiar2.ToString();
-                            txt_fechanacimiento2.Text = sso.Socio_economico_fecha_nacimiento_familiar2.ToString();
+                            //txt_fechanacimiento2.Text = sso.Socio_economico_fecha_nacimiento_familiar2.ToString();
+                            if (sso.Socio_economico_fecha_nacimiento_familiar2 == "")
+                            {
+                                txt_fechanacimiento2.Text = sso.Socio_economico_fecha_nacimiento_familiar2.ToString();
+                            }
+                            else
+                            {
+                                txt_fechanacimiento2.Text = Convert.ToDateTime(sso.Socio_economico_fecha_nacimiento_familiar2).ToString("yyyy-MM-dd");
+                            }
                             txt_edad2.Text = sso.Socio_economico_edad_familiar2.ToString();
 
                             txt_nomapellidos3.Text = sso.Socio_economico_nombres_apellidos_familiar3.ToString();
                             txt_parentesco3.Text = sso.Socio_economico_parentesco_familiar3.ToString();
-                            txt_fechanacimiento3.Text = sso.Socio_economico_fecha_nacimiento_familiar3.ToString();
+                            //txt_fechanacimiento3.Text = sso.Socio_economico_fecha_nacimiento_familiar3.ToString();
+                            if (sso.Socio_economico_fecha_nacimiento_familiar3 == "")
+                            {
+                                txt_fechanacimiento3.Text = sso.Socio_economico_fecha_nacimiento_familiar3.ToString();
+                            }
+                            else
+                            {
+                                txt_fechanacimiento3.Text = Convert.ToDateTime(sso.Socio_economico_fecha_nacimiento_familiar3).ToString("yyyy-MM-dd");
+                            }
                             txt_edad3.Text = sso.Socio_economico_edad_familiar3.ToString();
 
                             txt_nomapellidos4.Text = sso.Socio_economico_nombres_apellidos_familiar4.ToString();
                             txt_parentesco4.Text = sso.Socio_economico_parentesco_familiar4.ToString();
-                            txt_fechanacimiento4.Text = sso.Socio_economico_fecha_nacimiento_familiar4.ToString();
+                            //txt_fechanacimiento4.Text = sso.Socio_economico_fecha_nacimiento_familiar4.ToString();
+                            if (sso.Socio_economico_fecha_nacimiento_familiar4 == "")
+                            {
+                                txt_fechanacimiento4.Text = sso.Socio_economico_fecha_nacimiento_familiar4.ToString();
+                            }
+                            else
+                            {
+                                txt_fechanacimiento4.Text = Convert.ToDateTime(sso.Socio_economico_fecha_nacimiento_familiar4).ToString("yyyy-MM-dd");
+                            }
                             txt_edad4.Text = sso.Socio_economico_edad_familiar4.ToString();
 
                             txt_nomapellidos5.Text = sso.Socio_economico_nombres_apellidos_familiar5.ToString();
-                            txt_parentesco5.Text = sso.Socio_economico_parentesco_familiar5.ToString();
-                            //if (sso.Socio_economico_fecha_nacimiento_familiar5 == "")
-                            //{
-                            //    txt_fechanacimiento5.Text = sso.Socio_economico_fecha_nacimiento_familiar5.ToString();
-                            //}
-                            //else
-                            //{
-                            //    txt_fechanacimiento5.Text = Convert.ToDateTime(sso.Socio_economico_fecha_nacimiento_familiar5).ToString("yyyy-MM-dd");
-                            //}
-                            txt_fechanacimiento5.Text = sso.Socio_economico_fecha_nacimiento_familiar5.ToString();
+                            txt_parentesco5.Text = sso.Socio_economico_parentesco_familiar5.ToString();                      
+                            //txt_fechanacimiento5.Text = sso.Socio_economico_fecha_nacimiento_familiar5.ToString();
+                            if (sso.Socio_economico_fecha_nacimiento_familiar5 == "")
+                            {
+                                txt_fechanacimiento5.Text = sso.Socio_economico_fecha_nacimiento_familiar5.ToString();
+                            }
+                            else
+                            {
+                                txt_fechanacimiento5.Text = Convert.ToDateTime(sso.Socio_economico_fecha_nacimiento_familiar5).ToString("yyyy-MM-dd");
+                            }
                             txt_edad5.Text = sso.Socio_economico_edad_familiar5.ToString();
 
                             txt_familiardiscapacitadonomape1.Text = sso.Socio_economico_nombres_apellidos_familiar_discapacidad1.ToString();
-                            txt_familiardiscapacitadofechacaducidadcarnet1.Text = sso.Socio_economico_fecha_caducidad_carnet_familiar_discapacidad1.ToString();
+                            //txt_familiardiscapacitadofechacaducidadcarnet1.Text = sso.Socio_economico_fecha_caducidad_carnet_familiar_discapacidad1.ToString();
+                            if (sso.Socio_economico_fecha_caducidad_carnet_familiar_discapacidad1 == "")
+                            {
+                                txt_familiardiscapacitadofechacaducidadcarnet1.Text = sso.Socio_economico_fecha_caducidad_carnet_familiar_discapacidad1.ToString();
+                            }
+                            else
+                            {
+                                txt_familiardiscapacitadofechacaducidadcarnet1.Text = Convert.ToDateTime(sso.Socio_economico_fecha_caducidad_carnet_familiar_discapacidad1).ToString("yyyy-MM-dd");
+                            }
                             txt_familiardiscapacitadotipodiscapacidad1.Text = sso.Socio_economico_familiar_discapacidad_tipo1.ToString();
                             txt_familiardiscapacitadoporcentajediscapacidad1.Text = sso.Socio_economico_familiar_discapacidad_porcentaje1.ToString();
                             txt_familiardiscapacitadoparentesco1.Text = sso.Socio_economico_familiar_discapacidad_parentesco1.ToString();
-                            txt_familiardiscapacitadofechanacimiento1.Text = sso.Socio_economico_familiar_discapacidad_fecha_nacimiento1.ToString();
+                            //txt_familiardiscapacitadofechanacimiento1.Text = sso.Socio_economico_familiar_discapacidad_fecha_nacimiento1.ToString();
+                            if (sso.Socio_economico_familiar_discapacidad_fecha_nacimiento1 == "")
+                            {
+                                txt_familiardiscapacitadofechanacimiento1.Text = sso.Socio_economico_familiar_discapacidad_fecha_nacimiento1.ToString();
+                            }
+                            else
+                            {
+                                txt_familiardiscapacitadofechanacimiento1.Text = Convert.ToDateTime(sso.Socio_economico_familiar_discapacidad_fecha_nacimiento1).ToString("yyyy-MM-dd");
+                            }
 
                             txt_familiardiscapacitadonomape2.Text = sso.Socio_economico_nombres_apellidos_familiar_discapacidad2.ToString();
-                            txt_familiardiscapacitadofechacaducidadcarnet2.Text = sso.Socio_economico_fecha_caducidad_carnet_familiar_discapacidad2.ToString();
+                            //txt_familiardiscapacitadofechacaducidadcarnet2.Text = sso.Socio_economico_fecha_caducidad_carnet_familiar_discapacidad2.ToString();
+                            if (sso.Socio_economico_fecha_caducidad_carnet_familiar_discapacidad2 == "")
+                            {
+                                txt_familiardiscapacitadofechacaducidadcarnet2.Text = sso.Socio_economico_fecha_caducidad_carnet_familiar_discapacidad2.ToString();
+                            }
+                            else
+                            {
+                                txt_familiardiscapacitadofechacaducidadcarnet2.Text = Convert.ToDateTime(sso.Socio_economico_fecha_caducidad_carnet_familiar_discapacidad2).ToString("yyyy-MM-dd");
+                            }
                             txt_familiardiscapacitadotipodiscapacidad2.Text = sso.Socio_economico_familiar_discapacidad_tipo2.ToString();
                             txt_familiardiscapacitadoporcentajediscapacidad2.Text = sso.Socio_economico_familiar_discapacidad_porcentaje2.ToString();
                             txt_familiardiscapacitadoparentesco2.Text = sso.Socio_economico_familiar_discapacidad_parentesco2.ToString();
-                            txt_familiardiscapacitadofechanacimiento2.Text = sso.Socio_economico_familiar_discapacidad_fecha_nacimiento2.ToString();
+                            //txt_familiardiscapacitadofechanacimiento2.Text = sso.Socio_economico_familiar_discapacidad_fecha_nacimiento2.ToString();
+                            if (sso.Socio_economico_familiar_discapacidad_fecha_nacimiento2 == "")
+                            {
+                                txt_familiardiscapacitadofechanacimiento2.Text = sso.Socio_economico_familiar_discapacidad_fecha_nacimiento2.ToString();
+                            }
+                            else
+                            {
+                                txt_familiardiscapacitadofechanacimiento2.Text = Convert.ToDateTime(sso.Socio_economico_familiar_discapacidad_fecha_nacimiento2).ToString("yyyy-MM-dd");
+                            }
 
                             txt_dependenciaministeriotrabajotiempo.Text = sso.Socio_economico_registrar_dependencia_familiar_MT_tiempo.ToString();
                             txt_numcarnetMSP.Text = sso.Socio_economico_registrar_dependencia_familiar_MT_numero_carnetMSP.ToString();
@@ -1541,6 +1646,8 @@ namespace SistemaECU911.Template.Views_Socio_Economico
 
                 sso = new Tbl_SocioEconomico
                 {
+                    Socio_economico_fechaHora = txt_fecharegistro.Text, 
+
                     //Datos código y versión
                     Socio_economico_codigo_inicial = txt_codigoinicio.Text,
                     Socio_economico_version = txt_version.Text,
@@ -3750,8 +3857,6 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                     sso.Socio_economico_informacion_general_real_no = null;
                 }
 
-
-
                 CN_SocioEconomico.ModificarSocioEconomico(sso);
 
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos Modificados Exitosamente')", true);
@@ -3766,7 +3871,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
 
         protected void btn_guardar_Click(object sender, EventArgs e)
         {
-            //Guardar_modificar_datos(Convert.ToInt32(Request["cod"]));
+            Guardar_modificar_datos(Convert.ToInt32(Request["cod"]));
         }
 
         protected void btn_cancelar_Click(object sender, EventArgs e)
@@ -3774,7 +3879,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             Response.Redirect("~/Template/Views_Socio_Economico/Inicio.aspx");
         }
 
-
+       
 
         //VALIDACIONES CHECKBOX Y TEXTBOX
 
@@ -3784,10 +3889,10 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             if (cb_modalidadvinculacionlosep.Checked == true)
             {
                 cb_modalidadvinculacioncodigotrabajo.Enabled = false;
-                txt_tipodesangre.Enabled = false;
             }
             else
             {
+                cb_modalidadvinculacionlosep.Enabled = true;
                 cb_modalidadvinculacioncodigotrabajo.Enabled = true;
             }
         }
@@ -3801,6 +3906,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             else
             {
                 cb_modalidadvinculacionlosep.Enabled = true;
+                cb_modalidadvinculacioncodigotrabajo.Enabled = true;
             }
         }
 

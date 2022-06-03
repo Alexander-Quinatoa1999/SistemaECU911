@@ -55,7 +55,7 @@ namespace SistemaECU911.Template.Views_Pacientes
 
                         if (sso != null)
                         {
-                            txt_fecharegistro.Text = sso.Socio_economico_fechaHora.ToString();
+                            txt_fecharegistro.Text = sso.Socio_economico_fechaHoraGuardado.ToString();
 
                             //Datos código y versión
                             txt_codigoinicio.Text = sso.Socio_economico_codigo_inicial.ToString();
@@ -2364,7 +2364,7 @@ namespace SistemaECU911.Template.Views_Pacientes
         {
             try
             {
-                sso.Socio_economico_fechaHora = txt_fecharegistro.Text;
+                sso.Socio_economico_fechaHoraGuardado = Convert.ToDateTime(txt_fecharegistro.Text);
 
                 //Datos código y versión
                 sso.Socio_economico_codigo_inicial = txt_codigoinicio.Text;

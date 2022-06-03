@@ -1699,8 +1699,8 @@
                             </asp:TableRow>
                         </asp:Table>
                         <div class="container" align="center">
-                            <asp:Button CssClass="btn btn-success" ID="btn_guardar" runat="server" Text="Guardar" UseSubmitBehavior="False" />
-                            <asp:Button CssClass="btn btn-danger" ID="btn_cancelar" runat="server" Text="Cancelar" UseSubmitBehavior="False" />
+                            <asp:Button CssClass="btn btn-success" ID="btn_guardar" OnClick="btn_guardar_Click" runat="server" Text="Guardar" UseSubmitBehavior="False" />
+                            <asp:Button CssClass="btn btn-danger" ID="btn_cancelar" OnClick="btn_cancelar_Click" runat="server" Text="Cancelar" UseSubmitBehavior="False" />
                         </div>
                     </div>
                 </div>

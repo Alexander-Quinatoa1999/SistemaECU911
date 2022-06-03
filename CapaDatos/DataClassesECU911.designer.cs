@@ -93,7 +93,7 @@ namespace CapaDatos
     #endregion
 		
 		public DataClassesECU911DataContext() : 
-				base(global::CapaDatos.Properties.Settings.Default.SistemaECU911ConnectionString4, mappingSource)
+				base(global::CapaDatos.Properties.Settings.Default.SistemaECU911ConnectionString5, mappingSource)
 		{
 			OnCreated();
 		}
@@ -280,6 +280,34 @@ namespace CapaDatos
 			{
 				return this.GetTable<Tbl_TipoUsuario>();
 			}
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Autentificacion_Usuario")]
+		public ISingleResult<Autentificacion_UsuarioResult> Autentificacion_Usuario([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string usuario, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string pass)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), usuario, pass);
+			return ((ISingleResult<Autentificacion_UsuarioResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Validar_Existencia")]
+		public ISingleResult<Validar_ExistenciaResult> Validar_Existencia([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string usuario)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), usuario);
+			return ((ISingleResult<Validar_ExistenciaResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GuardarPersonasHistorial")]
+		public int GuardarPersonasHistorial([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string priNombre, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string priApellido, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(1)")] string sexo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CedulaHisCli", DbType="Int")] System.Nullable<int> cedulaHisCli, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(1)")] string estado)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), priNombre, priApellido, sexo, cedulaHisCli, estado);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Identificar_rol")]
+		public ISingleResult<Identificar_rolResult> Identificar_rol([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> tusu)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), tusu);
+			return ((ISingleResult<Identificar_rolResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -41778,7 +41806,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_modalidadvinculacion_leyorgserpublico", DbType="VarChar(1)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_modalidadvinculacion_leyorgserpublico", DbType="VarChar(2)")]
 		public string Socio_economico_modalidadvinculacion_leyorgserpublico
 		{
 			get
@@ -41798,7 +41826,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_modalidadvinculacion_codigotrabajo", DbType="VarChar(1)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_modalidadvinculacion_codigotrabajo", DbType="VarChar(2)")]
 		public string Socio_economico_modalidadvinculacion_codigotrabajo
 		{
 			get
@@ -48005,6 +48033,120 @@ namespace CapaDatos
 		{
 			this.SendPropertyChanging();
 			entity.Tbl_TipoUsuario = null;
+		}
+	}
+	
+	public partial class Autentificacion_UsuarioResult
+	{
+		
+		private string _usu_nombre;
+		
+		private System.Nullable<int> _tusu_id;
+		
+		public Autentificacion_UsuarioResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_nombre", DbType="VarChar(150)")]
+		public string usu_nombre
+		{
+			get
+			{
+				return this._usu_nombre;
+			}
+			set
+			{
+				if ((this._usu_nombre != value))
+				{
+					this._usu_nombre = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tusu_id", DbType="Int")]
+		public System.Nullable<int> tusu_id
+		{
+			get
+			{
+				return this._tusu_id;
+			}
+			set
+			{
+				if ((this._tusu_id != value))
+				{
+					this._tusu_id = value;
+				}
+			}
+		}
+	}
+	
+	public partial class Validar_ExistenciaResult
+	{
+		
+		private string _usu_nombre;
+		
+		private System.Nullable<int> _tusu_id;
+		
+		public Validar_ExistenciaResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_nombre", DbType="VarChar(150)")]
+		public string usu_nombre
+		{
+			get
+			{
+				return this._usu_nombre;
+			}
+			set
+			{
+				if ((this._usu_nombre != value))
+				{
+					this._usu_nombre = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tusu_id", DbType="Int")]
+		public System.Nullable<int> tusu_id
+		{
+			get
+			{
+				return this._tusu_id;
+			}
+			set
+			{
+				if ((this._tusu_id != value))
+				{
+					this._tusu_id = value;
+				}
+			}
+		}
+	}
+	
+	public partial class Identificar_rolResult
+	{
+		
+		private string _usu_nombre;
+		
+		public Identificar_rolResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_nombre", DbType="VarChar(150)")]
+		public string usu_nombre
+		{
+			get
+			{
+				return this._usu_nombre;
+			}
+			set
+			{
+				if ((this._usu_nombre != value))
+				{
+					this._usu_nombre = value;
+				}
+			}
 		}
 	}
 }

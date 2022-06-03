@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SistemaECU911" Class="DataClassesECU911DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=SistemaECU911;Integrated Security=True" SettingsObjectName="CapaDatos.Properties.Settings" SettingsPropertyName="SistemaECU911ConnectionString4" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=ZOCAPO\SQLEXPRESS;Initial Catalog=SistemaECU911;Integrated Security=True" SettingsObjectName="CapaDatos.Properties.Settings" SettingsPropertyName="SistemaECU911ConnectionString5" Provider="System.Data.SqlClient" />
   <Table Name="dbo.cie10" Member="cie10">
     <Type Name="cie10">
       <Column Name="id10" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -1701,8 +1701,8 @@
       <Column Name="Socio_economico_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Socio_economico_codigo_inicial" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
       <Column Name="Socio_economico_version" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="Socio_economico_modalidadvinculacion_leyorgserpublico" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-      <Column Name="Socio_economico_modalidadvinculacion_codigotrabajo" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="Socio_economico_modalidadvinculacion_leyorgserpublico" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="Socio_economico_modalidadvinculacion_codigotrabajo" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
       <Column Name="Socio_economico_fecha_ingreso_al_Ecu" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="Socio_economico_estadocivil_soltero" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="Socio_economico_estadocivil_casado" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
@@ -2015,4 +2015,33 @@
       <Association Name="Tbl_TipoUsuario_Tbl_Usuario" Member="Tbl_Usuario" ThisKey="tusu_id" OtherKey="tusu_id" Type="Tbl_Usuario" />
     </Type>
   </Table>
+  <Function Name="dbo.Autentificacion_Usuario" Method="Autentificacion_Usuario">
+    <Parameter Name="usuario" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="pass" Type="System.String" DbType="VarChar(100)" />
+    <ElementType Name="Autentificacion_UsuarioResult">
+      <Column Name="usu_nombre" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="tusu_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Validar_Existencia" Method="Validar_Existencia">
+    <Parameter Name="usuario" Type="System.String" DbType="VarChar(100)" />
+    <ElementType Name="Validar_ExistenciaResult">
+      <Column Name="usu_nombre" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="tusu_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GuardarPersonasHistorial" Method="GuardarPersonasHistorial">
+    <Parameter Name="priNombre" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="priApellido" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="sexo" Type="System.String" DbType="VarChar(1)" />
+    <Parameter Name="CedulaHisCli" Parameter="cedulaHisCli" Type="System.Int32" DbType="Int" />
+    <Parameter Name="estado" Type="System.String" DbType="VarChar(1)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Identificar_rol" Method="Identificar_rol">
+    <Parameter Name="tusu" Type="System.Int32" DbType="Int" />
+    <ElementType Name="Identificar_rolResult">
+      <Column Name="usu_nombre" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+    </ElementType>
+  </Function>
 </Database>
