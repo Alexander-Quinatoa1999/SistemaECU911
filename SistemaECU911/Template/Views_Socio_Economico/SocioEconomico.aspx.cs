@@ -52,6 +52,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                         txt_segnombre.Text = per.Per_segNombre.ToString();
                         txt_areatrabajo.Text = per.Per_areaTrabajo.ToString();
                         txt_cargoinstitucional.Text = per.Per_cargoOcupacion.ToString();
+                        txt_fechanacimiento.Text = Convert.ToDateTime(per.Per_fechaNacimiento).ToString("yyyy-MM-dd");
 
                         if (sso != null)
                         {                          
@@ -1559,7 +1560,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             List<string> lista = new List<string>();
             try
             {
-                string oConn = @"Data Source=ZOCAPO\SQLEXPRESS;Initial Catalog=SistemaECU911;Integrated Security=True";
+                string oConn = @"Data Source=.;Initial Catalog=SistemaECU911;Integrated Security=True";
 
                 SqlConnection con = new SqlConnection(oConn);
                 con.Open();

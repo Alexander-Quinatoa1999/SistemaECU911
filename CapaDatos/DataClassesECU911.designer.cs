@@ -93,7 +93,7 @@ namespace CapaDatos
     #endregion
 		
 		public DataClassesECU911DataContext() : 
-				base(global::CapaDatos.Properties.Settings.Default.SistemaECU911ConnectionString5, mappingSource)
+				base(global::CapaDatos.Properties.Settings.Default.SistemaECU911ConnectionString4, mappingSource)
 		{
 			OnCreated();
 		}
@@ -41786,7 +41786,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_version", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_version", DbType="VarChar(50)")]
 		public string Socio_economico_version
 		{
 			get
@@ -41846,7 +41846,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_fecha_ingreso_al_Ecu", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_fecha_ingreso_al_Ecu", DbType="VarChar(25)")]
 		public string Socio_economico_fecha_ingreso_al_Ecu
 		{
 			get
@@ -41866,7 +41866,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_estadocivil_soltero", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_estadocivil_soltero", DbType="VarChar(2)")]
 		public string Socio_economico_estadocivil_soltero
 		{
 			get
@@ -41886,7 +41886,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_estadocivil_casado", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_estadocivil_casado", DbType="VarChar(2)")]
 		public string Socio_economico_estadocivil_casado
 		{
 			get
@@ -41906,7 +41906,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_estadocivil_viudo", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_estadocivil_viudo", DbType="VarChar(2)")]
 		public string Socio_economico_estadocivil_viudo
 		{
 			get
@@ -41926,7 +41926,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_estadocivil_unionlibre", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_estadocivil_unionlibre", DbType="VarChar(2)")]
 		public string Socio_economico_estadocivil_unionlibre
 		{
 			get
@@ -41946,7 +41946,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_estadocivil_divorciado", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_estadocivil_divorciado", DbType="VarChar(2)")]
 		public string Socio_economico_estadocivil_divorciado
 		{
 			get
@@ -41966,7 +41966,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_genero_masculino", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_genero_masculino", DbType="VarChar(2)")]
 		public string Socio_economico_genero_masculino
 		{
 			get
@@ -41986,7 +41986,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_genero_femenino", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_genero_femenino", DbType="VarChar(2)")]
 		public string Socio_economico_genero_femenino
 		{
 			get
@@ -42026,7 +42026,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_es_donante_si", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_es_donante_si", DbType="VarChar(2)")]
 		public string Socio_economico_es_donante_si
 		{
 			get
@@ -42046,7 +42046,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_es_donante_no", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_es_donante_no", DbType="VarChar(2)")]
 		public string Socio_economico_es_donante_no
 		{
 			get
@@ -42146,7 +42146,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_fecha_nacimiento", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_fecha_nacimiento", DbType="VarChar(50)")]
 		public string Socio_economico_fecha_nacimiento
 		{
 			get
@@ -42166,7 +42166,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_edad", DbType="VarChar(25)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_edad", DbType="VarChar(50)")]
 		public string Socio_economico_edad
 		{
 			get
@@ -42186,7 +42186,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_titulo_primaria", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_titulo_primaria", DbType="VarChar(2)")]
 		public string Socio_economico_titulo_primaria
 		{
 			get
@@ -42206,7 +42206,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_titulo_secundaria", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_titulo_secundaria", DbType="VarChar(2)")]
 		public string Socio_economico_titulo_secundaria
 		{
 			get
@@ -42226,7 +42226,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_titulo_superior", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_titulo_superior", DbType="VarChar(2)")]
 		public string Socio_economico_titulo_superior
 		{
 			get
@@ -42246,7 +42246,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_titulo_especializacion", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_titulo_especializacion", DbType="VarChar(2)")]
 		public string Socio_economico_titulo_especializacion
 		{
 			get
@@ -42266,7 +42266,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_titulo_diplomado", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_titulo_diplomado", DbType="VarChar(2)")]
 		public string Socio_economico_titulo_diplomado
 		{
 			get
@@ -42286,7 +42286,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_titulo_maestria", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_titulo_maestria", DbType="VarChar(2)")]
 		public string Socio_economico_titulo_maestria
 		{
 			get
@@ -42306,7 +42306,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_autoidentificacionetnica_blanco", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_autoidentificacionetnica_blanco", DbType="VarChar(2)")]
 		public string Socio_economico_autoidentificacionetnica_blanco
 		{
 			get
@@ -42326,7 +42326,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_autoidentificacionetnica_mestizo", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_autoidentificacionetnica_mestizo", DbType="VarChar(2)")]
 		public string Socio_economico_autoidentificacionetnica_mestizo
 		{
 			get
@@ -42346,7 +42346,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_autoidentificacionetnica_afrodescendiente", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_autoidentificacionetnica_afrodescendiente", DbType="VarChar(2)")]
 		public string Socio_economico_autoidentificacionetnica_afrodescendiente
 		{
 			get
@@ -42366,7 +42366,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_autoidentificacionetnica_indigena", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_autoidentificacionetnica_indigena", DbType="VarChar(2)")]
 		public string Socio_economico_autoidentificacionetnica_indigena
 		{
 			get
@@ -42386,7 +42386,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_autoidentificacionetnica_montubio", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_autoidentificacionetnica_montubio", DbType="VarChar(2)")]
 		public string Socio_economico_autoidentificacionetnica_montubio
 		{
 			get
@@ -42406,7 +42406,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_direcciondomicilio_provincia", DbType="VarChar(100)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_direcciondomicilio_provincia", DbType="VarChar(50)")]
 		public string Socio_economico_direcciondomicilio_provincia
 		{
 			get
@@ -42426,7 +42426,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_direcciondomicilio_canton", DbType="VarChar(100)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_direcciondomicilio_canton", DbType="VarChar(50)")]
 		public string Socio_economico_direcciondomicilio_canton
 		{
 			get
@@ -42446,7 +42446,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_direcciondomicilio_parroquia", DbType="VarChar(250)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_direcciondomicilio_parroquia", DbType="VarChar(100)")]
 		public string Socio_economico_direcciondomicilio_parroquia
 		{
 			get
@@ -42466,7 +42466,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_direcciondomicilio_barrio", DbType="VarChar(250)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_direcciondomicilio_barrio", DbType="VarChar(100)")]
 		public string Socio_economico_direcciondomicilio_barrio
 		{
 			get
@@ -42546,7 +42546,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_sectorvive_norte", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_sectorvive_norte", DbType="VarChar(2)")]
 		public string Socio_economico_sectorvive_norte
 		{
 			get
@@ -42566,7 +42566,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_sectorvive_centro", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_sectorvive_centro", DbType="VarChar(2)")]
 		public string Socio_economico_sectorvive_centro
 		{
 			get
@@ -42586,7 +42586,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_sectorvive_sur", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_sectorvive_sur", DbType="VarChar(2)")]
 		public string Socio_economico_sectorvive_sur
 		{
 			get
@@ -42606,7 +42606,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_sectorvive_valle", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_sectorvive_valle", DbType="VarChar(2)")]
 		public string Socio_economico_sectorvive_valle
 		{
 			get
@@ -42626,7 +42626,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_sectorvive_valledeloschillos", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_sectorvive_valledeloschillos", DbType="VarChar(2)")]
 		public string Socio_economico_sectorvive_valledeloschillos
 		{
 			get
@@ -42646,7 +42646,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_tipovivienda_casa", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_tipovivienda_casa", DbType="VarChar(2)")]
 		public string Socio_economico_tipovivienda_casa
 		{
 			get
@@ -42666,7 +42666,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_tipovivienda_departamento", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_tipovivienda_departamento", DbType="VarChar(2)")]
 		public string Socio_economico_tipovivienda_departamento
 		{
 			get
@@ -42686,7 +42686,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_tipovivienda_otro_indique", DbType="VarChar(250)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_tipovivienda_otro_indique", DbType="VarChar(100)")]
 		public string Socio_economico_tipovivienda_otro_indique
 		{
 			get
@@ -42706,7 +42706,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_riesgo_delincuencial_alto", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_riesgo_delincuencial_alto", DbType="VarChar(2)")]
 		public string Socio_economico_riesgo_delincuencial_alto
 		{
 			get
@@ -42726,7 +42726,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_riesgo_delincuencial_medio", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_riesgo_delincuencial_medio", DbType="VarChar(2)")]
 		public string Socio_economico_riesgo_delincuencial_medio
 		{
 			get
@@ -42746,7 +42746,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_riesgo_delincuencial_bajo", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_riesgo_delincuencial_bajo", DbType="VarChar(2)")]
 		public string Socio_economico_riesgo_delincuencial_bajo
 		{
 			get
@@ -42786,7 +42786,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_contacto_emergencia_parentesco", DbType="VarChar(100)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_contacto_emergencia_parentesco", DbType="VarChar(50)")]
 		public string Socio_economico_contacto_emergencia_parentesco
 		{
 			get
@@ -42906,7 +42906,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_dinero_ahorro_si", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_dinero_ahorro_si", DbType="VarChar(2)")]
 		public string Socio_economico_dinero_ahorro_si
 		{
 			get
@@ -42926,7 +42926,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_dinero_ahorro_no", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_dinero_ahorro_no", DbType="VarChar(2)")]
 		public string Socio_economico_dinero_ahorro_no
 		{
 			get
@@ -42946,7 +42946,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_vehiculo_propio_si", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_vehiculo_propio_si", DbType="VarChar(2)")]
 		public string Socio_economico_vehiculo_propio_si
 		{
 			get
@@ -42966,7 +42966,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_vehiculo_propio_no", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_vehiculo_propio_no", DbType="VarChar(2)")]
 		public string Socio_economico_vehiculo_propio_no
 		{
 			get
@@ -42986,7 +42986,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_recorrido_institucional_si", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_recorrido_institucional_si", DbType="VarChar(2)")]
 		public string Socio_economico_recorrido_institucional_si
 		{
 			get
@@ -43006,7 +43006,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_recorrido_institucional_no", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_recorrido_institucional_no", DbType="VarChar(2)")]
 		public string Socio_economico_recorrido_institucional_no
 		{
 			get
@@ -43046,7 +43046,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_posee_enfermedad", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_posee_enfermedad", DbType="VarChar(250)")]
 		public string Socio_economico_posee_enfermedad
 		{
 			get
@@ -43066,7 +43066,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_discapacidad_si", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_discapacidad_si", DbType="VarChar(2)")]
 		public string Socio_economico_discapacidad_si
 		{
 			get
@@ -43086,7 +43086,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_discapacidad_no", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_discapacidad_no", DbType="VarChar(2)")]
 		public string Socio_economico_discapacidad_no
 		{
 			get
@@ -43106,7 +43106,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_discapacidad_tipo", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_discapacidad_tipo", DbType="VarChar(100)")]
 		public string Socio_economico_discapacidad_tipo
 		{
 			get
@@ -43126,7 +43126,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_discapacidad_porcentaje", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_discapacidad_porcentaje", DbType="VarChar(5)")]
 		public string Socio_economico_discapacidad_porcentaje
 		{
 			get
@@ -43146,7 +43146,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_discapacidad_carnet_conadis", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_discapacidad_carnet_conadis", DbType="VarChar(50)")]
 		public string Socio_economico_discapacidad_carnet_conadis
 		{
 			get
@@ -43166,7 +43166,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_discapacidad_fecha_caducidad_carnet", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_discapacidad_fecha_caducidad_carnet", DbType="VarChar(25)")]
 		public string Socio_economico_discapacidad_fecha_caducidad_carnet
 		{
 			get
@@ -43186,7 +43186,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_estado_gestacion_si", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_estado_gestacion_si", DbType="VarChar(2)")]
 		public string Socio_economico_estado_gestacion_si
 		{
 			get
@@ -43206,7 +43206,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_estado_gestacion_no", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_estado_gestacion_no", DbType="VarChar(2)")]
 		public string Socio_economico_estado_gestacion_no
 		{
 			get
@@ -43226,7 +43226,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_estado_gestacion_tiempo", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_estado_gestacion_tiempo", DbType="VarChar(25)")]
 		public string Socio_economico_estado_gestacion_tiempo
 		{
 			get
@@ -43246,7 +43246,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_fecha_tentativa_parto", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_fecha_tentativa_parto", DbType="VarChar(25)")]
 		public string Socio_economico_fecha_tentativa_parto
 		{
 			get
@@ -43266,7 +43266,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_periodo_lactancia_si", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_periodo_lactancia_si", DbType="VarChar(2)")]
 		public string Socio_economico_periodo_lactancia_si
 		{
 			get
@@ -43286,7 +43286,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_periodo_lactancia_no", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_periodo_lactancia_no", DbType="VarChar(2)")]
 		public string Socio_economico_periodo_lactancia_no
 		{
 			get
@@ -43306,7 +43306,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_periodo_lactancia_fecha_culminacion", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_periodo_lactancia_fecha_culminacion", DbType="VarChar(25)")]
 		public string Socio_economico_periodo_lactancia_fecha_culminacion
 		{
 			get
@@ -43326,7 +43326,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_enfermedad_cronica_si", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_enfermedad_cronica_si", DbType="VarChar(2)")]
 		public string Socio_economico_enfermedad_cronica_si
 		{
 			get
@@ -43346,7 +43346,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_enfermedad_cronica_no", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_enfermedad_cronica_no", DbType="VarChar(2)")]
 		public string Socio_economico_enfermedad_cronica_no
 		{
 			get
@@ -43366,7 +43366,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_enfermedad_cronica_cual", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_enfermedad_cronica_cual", DbType="VarChar(50)")]
 		public string Socio_economico_enfermedad_cronica_cual
 		{
 			get
@@ -43406,7 +43406,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_enfermedad_rara_si", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_enfermedad_rara_si", DbType="VarChar(2)")]
 		public string Socio_economico_enfermedad_rara_si
 		{
 			get
@@ -43426,7 +43426,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_enfermedad_rara_no", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_enfermedad_rara_no", DbType="VarChar(2)")]
 		public string Socio_economico_enfermedad_rara_no
 		{
 			get
@@ -43446,7 +43446,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_enfermedad_rara_cual", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_enfermedad_rara_cual", DbType="VarChar(50)")]
 		public string Socio_economico_enfermedad_rara_cual
 		{
 			get
@@ -43466,7 +43466,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_consume_alcohol_si", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_consume_alcohol_si", DbType="VarChar(2)")]
 		public string Socio_economico_consume_alcohol_si
 		{
 			get
@@ -43486,7 +43486,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_consume_alcohol_no", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_consume_alcohol_no", DbType="VarChar(2)")]
 		public string Socio_economico_consume_alcohol_no
 		{
 			get
@@ -43506,7 +43506,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_consume_alcohol_causa", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_consume_alcohol_causa", DbType="VarChar(250)")]
 		public string Socio_economico_consume_alcohol_causa
 		{
 			get
@@ -43526,7 +43526,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_consume_alcohol_frecuencia_diaria", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_consume_alcohol_frecuencia_diaria", DbType="VarChar(2)")]
 		public string Socio_economico_consume_alcohol_frecuencia_diaria
 		{
 			get
@@ -43546,7 +43546,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_consume_alcohol_frecuencia_semanal", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_consume_alcohol_frecuencia_semanal", DbType="VarChar(2)")]
 		public string Socio_economico_consume_alcohol_frecuencia_semanal
 		{
 			get
@@ -43566,7 +43566,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_consume_alcohol_frecuencia_quincenal", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_consume_alcohol_frecuencia_quincenal", DbType="VarChar(2)")]
 		public string Socio_economico_consume_alcohol_frecuencia_quincenal
 		{
 			get
@@ -43586,7 +43586,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_consume_alcohol_frecuencia_mensual", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_consume_alcohol_frecuencia_mensual", DbType="VarChar(2)")]
 		public string Socio_economico_consume_alcohol_frecuencia_mensual
 		{
 			get
@@ -43606,7 +43606,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_consume_alcohol_frecuencia_reuniones", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_consume_alcohol_frecuencia_reuniones", DbType="VarChar(2)")]
 		public string Socio_economico_consume_alcohol_frecuencia_reuniones
 		{
 			get
@@ -43626,7 +43626,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_consume_alcohol_tiempo_consumo", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_consume_alcohol_tiempo_consumo", DbType="VarChar(100)")]
 		public string Socio_economico_consume_alcohol_tiempo_consumo
 		{
 			get
@@ -43646,7 +43646,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_consume_tabaco_si", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_consume_tabaco_si", DbType="VarChar(2)")]
 		public string Socio_economico_consume_tabaco_si
 		{
 			get
@@ -43666,7 +43666,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_consume_tabaco_no", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_consume_tabaco_no", DbType="VarChar(2)")]
 		public string Socio_economico_consume_tabaco_no
 		{
 			get
@@ -43686,7 +43686,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_consume_tabaco_frecuencia_consumo", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_consume_tabaco_frecuencia_consumo", DbType="VarChar(100)")]
 		public string Socio_economico_consume_tabaco_frecuencia_consumo
 		{
 			get
@@ -43706,7 +43706,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_consume_tabaco_tiempo_consumo", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_consume_tabaco_tiempo_consumo", DbType="VarChar(100)")]
 		public string Socio_economico_consume_tabaco_tiempo_consumo
 		{
 			get
@@ -43726,7 +43726,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_consume_sustancia_psicotropica_si", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_consume_sustancia_psicotropica_si", DbType="VarChar(2)")]
 		public string Socio_economico_consume_sustancia_psicotropica_si
 		{
 			get
@@ -43746,7 +43746,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_consume_sustancia_psicotropica_no", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_consume_sustancia_psicotropica_no", DbType="VarChar(2)")]
 		public string Socio_economico_consume_sustancia_psicotropica_no
 		{
 			get
@@ -43766,7 +43766,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_consume_sustancia_psicotropica_tipo", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_consume_sustancia_psicotropica_tipo", DbType="VarChar(100)")]
 		public string Socio_economico_consume_sustancia_psicotropica_tipo
 		{
 			get
@@ -43786,7 +43786,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_consume_sustancia_psicotropica_frecuencia_consumo", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_consume_sustancia_psicotropica_frecuencia_consumo", DbType="VarChar(100)")]
 		public string Socio_economico_consume_sustancia_psicotropica_frecuencia_consumo
 		{
 			get
@@ -43806,7 +43806,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_problemas_consumo_familiares", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_problemas_consumo_familiares", DbType="VarChar(2)")]
 		public string Socio_economico_problemas_consumo_familiares
 		{
 			get
@@ -43826,7 +43826,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_problemas_consumo_laborales", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_problemas_consumo_laborales", DbType="VarChar(2)")]
 		public string Socio_economico_problemas_consumo_laborales
 		{
 			get
@@ -43846,7 +43846,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_problemas_consumo_economicos", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_problemas_consumo_economicos", DbType="VarChar(2)")]
 		public string Socio_economico_problemas_consumo_economicos
 		{
 			get
@@ -43866,7 +43866,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_problemas_consumo_salud", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_problemas_consumo_salud", DbType="VarChar(2)")]
 		public string Socio_economico_problemas_consumo_salud
 		{
 			get
@@ -43886,7 +43886,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_problemas_consumo_legales", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_problemas_consumo_legales", DbType="VarChar(2)")]
 		public string Socio_economico_problemas_consumo_legales
 		{
 			get
@@ -44746,7 +44746,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_caracteristica_vivienda_descripcion_unifamiliar", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_caracteristica_vivienda_descripcion_unifamiliar", DbType="VarChar(2)")]
 		public string Socio_economico_caracteristica_vivienda_descripcion_unifamiliar
 		{
 			get
@@ -44766,7 +44766,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_caracteristica_vivienda_descripcion_multifamiliar", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_caracteristica_vivienda_descripcion_multifamiliar", DbType="VarChar(2)")]
 		public string Socio_economico_caracteristica_vivienda_descripcion_multifamiliar
 		{
 			get
@@ -44786,7 +44786,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_caracteristica_vivienda_descripcion_otra_especifique", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_caracteristica_vivienda_descripcion_otra_especifique", DbType="VarChar(50)")]
 		public string Socio_economico_caracteristica_vivienda_descripcion_otra_especifique
 		{
 			get
@@ -44806,7 +44806,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_caracteristica_vivienda_tenencia_propia_sin_deuda", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_caracteristica_vivienda_tenencia_propia_sin_deuda", DbType="VarChar(2)")]
 		public string Socio_economico_caracteristica_vivienda_tenencia_propia_sin_deuda
 		{
 			get
@@ -44826,7 +44826,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_caracteristica_vivienda_tenencia_arrendada", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_caracteristica_vivienda_tenencia_arrendada", DbType="VarChar(2)")]
 		public string Socio_economico_caracteristica_vivienda_tenencia_arrendada
 		{
 			get
@@ -44846,7 +44846,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_caracteristica_vivienda_tenencia_de_familia", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_caracteristica_vivienda_tenencia_de_familia", DbType="VarChar(2)")]
 		public string Socio_economico_caracteristica_vivienda_tenencia_de_familia
 		{
 			get
@@ -44866,7 +44866,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_caracteristica_vivienda_tenencia_hipotecada", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_caracteristica_vivienda_tenencia_hipotecada", DbType="VarChar(2)")]
 		public string Socio_economico_caracteristica_vivienda_tenencia_hipotecada
 		{
 			get
@@ -44886,7 +44886,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_caracteristica_vivienda_tenencia_prestada", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_caracteristica_vivienda_tenencia_prestada", DbType="VarChar(2)")]
 		public string Socio_economico_caracteristica_vivienda_tenencia_prestada
 		{
 			get
@@ -44906,7 +44906,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_caracteristica_vivienda_tenencia_anticreces", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_caracteristica_vivienda_tenencia_anticreces", DbType="VarChar(2)")]
 		public string Socio_economico_caracteristica_vivienda_tenencia_anticreces
 		{
 			get
@@ -44926,7 +44926,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_caracteristica_vivienda_tenencia_otra_especifique", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_caracteristica_vivienda_tenencia_otra_especifique", DbType="VarChar(50)")]
 		public string Socio_economico_caracteristica_vivienda_tenencia_otra_especifique
 		{
 			get
@@ -44946,7 +44946,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_caracteristica_vivienda_tipo_casa", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_caracteristica_vivienda_tipo_casa", DbType="VarChar(2)")]
 		public string Socio_economico_caracteristica_vivienda_tipo_casa
 		{
 			get
@@ -44966,7 +44966,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_caracteristica_vivienda_tipo_suit", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_caracteristica_vivienda_tipo_suit", DbType="VarChar(2)")]
 		public string Socio_economico_caracteristica_vivienda_tipo_suit
 		{
 			get
@@ -44986,7 +44986,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_caracteristica_vivienda_tipo_mediagua", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_caracteristica_vivienda_tipo_mediagua", DbType="VarChar(2)")]
 		public string Socio_economico_caracteristica_vivienda_tipo_mediagua
 		{
 			get
@@ -45006,7 +45006,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_caracteristica_vivienda_tipo_departamento", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_caracteristica_vivienda_tipo_departamento", DbType="VarChar(2)")]
 		public string Socio_economico_caracteristica_vivienda_tipo_departamento
 		{
 			get
@@ -45026,7 +45026,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_caracteristica_vivienda_tipo_pieza", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_caracteristica_vivienda_tipo_pieza", DbType="VarChar(2)")]
 		public string Socio_economico_caracteristica_vivienda_tipo_pieza
 		{
 			get
@@ -45046,7 +45046,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_caracteristica_vivienda_tipo_otro_especifique", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_caracteristica_vivienda_tipo_otro_especifique", DbType="VarChar(50)")]
 		public string Socio_economico_caracteristica_vivienda_tipo_otro_especifique
 		{
 			get
@@ -45066,7 +45066,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_caracteristica_vivienda_distribucion_habitacion", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_caracteristica_vivienda_distribucion_habitacion", DbType="VarChar(2)")]
 		public string Socio_economico_caracteristica_vivienda_distribucion_habitacion
 		{
 			get
@@ -45086,7 +45086,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_caracteristica_vivienda_distribucion_sala", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_caracteristica_vivienda_distribucion_sala", DbType="VarChar(2)")]
 		public string Socio_economico_caracteristica_vivienda_distribucion_sala
 		{
 			get
@@ -45106,7 +45106,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_caracteristica_vivienda_distribucion_baño", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_caracteristica_vivienda_distribucion_baño", DbType="VarChar(2)")]
 		public string Socio_economico_caracteristica_vivienda_distribucion_baño
 		{
 			get
@@ -45126,7 +45126,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_caracteristica_vivienda_distribucion_garage", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_caracteristica_vivienda_distribucion_garage", DbType="VarChar(2)")]
 		public string Socio_economico_caracteristica_vivienda_distribucion_garage
 		{
 			get
@@ -45146,7 +45146,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_caracteristica_vivienda_distribucion_comedor", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_caracteristica_vivienda_distribucion_comedor", DbType="VarChar(2)")]
 		public string Socio_economico_caracteristica_vivienda_distribucion_comedor
 		{
 			get
@@ -45166,7 +45166,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_caracteristica_vivienda_distribucion_cocina", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_caracteristica_vivienda_distribucion_cocina", DbType="VarChar(2)")]
 		public string Socio_economico_caracteristica_vivienda_distribucion_cocina
 		{
 			get
@@ -45186,7 +45186,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_caracteristica_vivienda_distribucion_patio", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_caracteristica_vivienda_distribucion_patio", DbType="VarChar(2)")]
 		public string Socio_economico_caracteristica_vivienda_distribucion_patio
 		{
 			get
@@ -45206,7 +45206,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_caracteristica_vivienda_distribucion_bodega", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_caracteristica_vivienda_distribucion_bodega", DbType="VarChar(2)")]
 		public string Socio_economico_caracteristica_vivienda_distribucion_bodega
 		{
 			get
@@ -45226,7 +45226,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_caracteristica_vivienda_distribucion_otro_especifique", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_caracteristica_vivienda_distribucion_otro_especifique", DbType="VarChar(100)")]
 		public string Socio_economico_caracteristica_vivienda_distribucion_otro_especifique
 		{
 			get
@@ -45266,7 +45266,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_nombres_apellidos_familiar1", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_nombres_apellidos_familiar1", DbType="VarChar(250)")]
 		public string Socio_economico_nombres_apellidos_familiar1
 		{
 			get
@@ -45286,7 +45286,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_parentesco_familiar1", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_parentesco_familiar1", DbType="VarChar(50)")]
 		public string Socio_economico_parentesco_familiar1
 		{
 			get
@@ -45306,7 +45306,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_fecha_nacimiento_familiar1", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_fecha_nacimiento_familiar1", DbType="VarChar(25)")]
 		public string Socio_economico_fecha_nacimiento_familiar1
 		{
 			get
@@ -45326,7 +45326,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_edad_familiar1", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_edad_familiar1", DbType="VarChar(25)")]
 		public string Socio_economico_edad_familiar1
 		{
 			get
@@ -45346,7 +45346,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_nombres_apellidos_familiar2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_nombres_apellidos_familiar2", DbType="VarChar(250)")]
 		public string Socio_economico_nombres_apellidos_familiar2
 		{
 			get
@@ -45366,7 +45366,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_parentesco_familiar2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_parentesco_familiar2", DbType="VarChar(50)")]
 		public string Socio_economico_parentesco_familiar2
 		{
 			get
@@ -45386,7 +45386,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_fecha_nacimiento_familiar2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_fecha_nacimiento_familiar2", DbType="VarChar(25)")]
 		public string Socio_economico_fecha_nacimiento_familiar2
 		{
 			get
@@ -45406,7 +45406,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_edad_familiar2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_edad_familiar2", DbType="VarChar(25)")]
 		public string Socio_economico_edad_familiar2
 		{
 			get
@@ -45426,7 +45426,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_nombres_apellidos_familiar3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_nombres_apellidos_familiar3", DbType="VarChar(250)")]
 		public string Socio_economico_nombres_apellidos_familiar3
 		{
 			get
@@ -45446,7 +45446,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_parentesco_familiar3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_parentesco_familiar3", DbType="VarChar(50)")]
 		public string Socio_economico_parentesco_familiar3
 		{
 			get
@@ -45466,7 +45466,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_fecha_nacimiento_familiar3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_fecha_nacimiento_familiar3", DbType="VarChar(25)")]
 		public string Socio_economico_fecha_nacimiento_familiar3
 		{
 			get
@@ -45486,7 +45486,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_edad_familiar3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_edad_familiar3", DbType="VarChar(25)")]
 		public string Socio_economico_edad_familiar3
 		{
 			get
@@ -45506,7 +45506,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_nombres_apellidos_familiar4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_nombres_apellidos_familiar4", DbType="VarChar(250)")]
 		public string Socio_economico_nombres_apellidos_familiar4
 		{
 			get
@@ -45526,7 +45526,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_parentesco_familiar4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_parentesco_familiar4", DbType="VarChar(50)")]
 		public string Socio_economico_parentesco_familiar4
 		{
 			get
@@ -45546,7 +45546,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_fecha_nacimiento_familiar4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_fecha_nacimiento_familiar4", DbType="VarChar(25)")]
 		public string Socio_economico_fecha_nacimiento_familiar4
 		{
 			get
@@ -45566,7 +45566,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_edad_familiar4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_edad_familiar4", DbType="VarChar(25)")]
 		public string Socio_economico_edad_familiar4
 		{
 			get
@@ -45586,7 +45586,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_nombres_apellidos_familiar5", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_nombres_apellidos_familiar5", DbType="VarChar(250)")]
 		public string Socio_economico_nombres_apellidos_familiar5
 		{
 			get
@@ -45606,7 +45606,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_parentesco_familiar5", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_parentesco_familiar5", DbType="VarChar(50)")]
 		public string Socio_economico_parentesco_familiar5
 		{
 			get
@@ -45626,7 +45626,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_fecha_nacimiento_familiar5", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_fecha_nacimiento_familiar5", DbType="VarChar(25)")]
 		public string Socio_economico_fecha_nacimiento_familiar5
 		{
 			get
@@ -45646,7 +45646,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_edad_familiar5", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_edad_familiar5", DbType="VarChar(25)")]
 		public string Socio_economico_edad_familiar5
 		{
 			get
@@ -45666,7 +45666,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_nucleofamiliar_persona_discapacidad_si", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_nucleofamiliar_persona_discapacidad_si", DbType="VarChar(2)")]
 		public string Socio_economico_nucleofamiliar_persona_discapacidad_si
 		{
 			get
@@ -45686,7 +45686,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_nucleofamiliar_persona_discapacidad_no", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_nucleofamiliar_persona_discapacidad_no", DbType="VarChar(2)")]
 		public string Socio_economico_nucleofamiliar_persona_discapacidad_no
 		{
 			get
@@ -45706,7 +45706,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_acargo_de_persona_discapacidad_si", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_acargo_de_persona_discapacidad_si", DbType="VarChar(2)")]
 		public string Socio_economico_acargo_de_persona_discapacidad_si
 		{
 			get
@@ -45726,7 +45726,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_acargo_de_persona_discapacidad_no", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_acargo_de_persona_discapacidad_no", DbType="VarChar(2)")]
 		public string Socio_economico_acargo_de_persona_discapacidad_no
 		{
 			get
@@ -45746,7 +45746,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_nombres_apellidos_familiar_discapacidad1", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_nombres_apellidos_familiar_discapacidad1", DbType="VarChar(250)")]
 		public string Socio_economico_nombres_apellidos_familiar_discapacidad1
 		{
 			get
@@ -45766,7 +45766,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_fecha_caducidad_carnet_familiar_discapacidad1", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_fecha_caducidad_carnet_familiar_discapacidad1", DbType="VarChar(25)")]
 		public string Socio_economico_fecha_caducidad_carnet_familiar_discapacidad1
 		{
 			get
@@ -45786,7 +45786,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_familiar_discapacidad_tipo1", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_familiar_discapacidad_tipo1", DbType="VarChar(100)")]
 		public string Socio_economico_familiar_discapacidad_tipo1
 		{
 			get
@@ -45806,7 +45806,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_familiar_discapacidad_porcentaje1", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_familiar_discapacidad_porcentaje1", DbType="VarChar(5)")]
 		public string Socio_economico_familiar_discapacidad_porcentaje1
 		{
 			get
@@ -45826,7 +45826,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_familiar_discapacidad_parentesco1", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_familiar_discapacidad_parentesco1", DbType="VarChar(50)")]
 		public string Socio_economico_familiar_discapacidad_parentesco1
 		{
 			get
@@ -45846,7 +45846,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_familiar_discapacidad_fecha_nacimiento1", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_familiar_discapacidad_fecha_nacimiento1", DbType="VarChar(25)")]
 		public string Socio_economico_familiar_discapacidad_fecha_nacimiento1
 		{
 			get
@@ -45866,7 +45866,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_nombres_apellidos_familiar_discapacidad2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_nombres_apellidos_familiar_discapacidad2", DbType="VarChar(250)")]
 		public string Socio_economico_nombres_apellidos_familiar_discapacidad2
 		{
 			get
@@ -45886,7 +45886,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_fecha_caducidad_carnet_familiar_discapacidad2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_fecha_caducidad_carnet_familiar_discapacidad2", DbType="VarChar(25)")]
 		public string Socio_economico_fecha_caducidad_carnet_familiar_discapacidad2
 		{
 			get
@@ -45906,7 +45906,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_familiar_discapacidad_tipo2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_familiar_discapacidad_tipo2", DbType="VarChar(100)")]
 		public string Socio_economico_familiar_discapacidad_tipo2
 		{
 			get
@@ -45926,7 +45926,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_familiar_discapacidad_porcentaje2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_familiar_discapacidad_porcentaje2", DbType="VarChar(5)")]
 		public string Socio_economico_familiar_discapacidad_porcentaje2
 		{
 			get
@@ -45946,7 +45946,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_familiar_discapacidad_parentesco2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_familiar_discapacidad_parentesco2", DbType="VarChar(50)")]
 		public string Socio_economico_familiar_discapacidad_parentesco2
 		{
 			get
@@ -45966,7 +45966,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_familiar_discapacidad_fecha_nacimiento2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_familiar_discapacidad_fecha_nacimiento2", DbType="VarChar(25)")]
 		public string Socio_economico_familiar_discapacidad_fecha_nacimiento2
 		{
 			get
@@ -45986,7 +45986,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_registrar_dependencia_familiar_MT_si", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_registrar_dependencia_familiar_MT_si", DbType="VarChar(2)")]
 		public string Socio_economico_registrar_dependencia_familiar_MT_si
 		{
 			get
@@ -46006,7 +46006,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_registrar_dependencia_familiar_MT_no", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_registrar_dependencia_familiar_MT_no", DbType="VarChar(2)")]
 		public string Socio_economico_registrar_dependencia_familiar_MT_no
 		{
 			get
@@ -46026,7 +46026,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_registrar_dependencia_familiar_MT_tiempo", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_registrar_dependencia_familiar_MT_tiempo", DbType="VarChar(25)")]
 		public string Socio_economico_registrar_dependencia_familiar_MT_tiempo
 		{
 			get
@@ -46046,7 +46046,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_registrar_dependencia_familiar_MT_numero_carnetMSP", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_registrar_dependencia_familiar_MT_numero_carnetMSP", DbType="VarChar(50)")]
 		public string Socio_economico_registrar_dependencia_familiar_MT_numero_carnetMSP
 		{
 			get
@@ -46066,7 +46066,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_a_cargo_familiar_enfermedad_catastrofica_rara_si", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_a_cargo_familiar_enfermedad_catastrofica_rara_si", DbType="VarChar(2)")]
 		public string Socio_economico_a_cargo_familiar_enfermedad_catastrofica_rara_si
 		{
 			get
@@ -46086,7 +46086,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_a_cargo_familiar_enfermedad_catastrofica_rara_no", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_a_cargo_familiar_enfermedad_catastrofica_rara_no", DbType="VarChar(2)")]
 		public string Socio_economico_a_cargo_familiar_enfermedad_catastrofica_rara_no
 		{
 			get
@@ -46106,7 +46106,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_a_cargo_familiar_enfermedad_catastrofica_rara_tiempo", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_a_cargo_familiar_enfermedad_catastrofica_rara_tiempo", DbType="VarChar(25)")]
 		public string Socio_economico_a_cargo_familiar_enfermedad_catastrofica_rara_tiempo
 		{
 			get
@@ -46126,7 +46126,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_a_cargo_familiar_enfermedad_catastrofica_rara_tipoenfermedad", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_a_cargo_familiar_enfermedad_catastrofica_rara_tipoenfermedad", DbType="VarChar(100)")]
 		public string Socio_economico_a_cargo_familiar_enfermedad_catastrofica_rara_tipoenfermedad
 		{
 			get
@@ -46146,7 +46146,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_hogar", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_hogar", DbType="VarChar(2)")]
 		public string Socio_economico_hogar
 		{
 			get
@@ -46166,7 +46166,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_paseos_familiares", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_paseos_familiares", DbType="VarChar(2)")]
 		public string Socio_economico_paseos_familiares
 		{
 			get
@@ -46186,7 +46186,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_estudios", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_estudios", DbType="VarChar(2)")]
 		public string Socio_economico_estudios
 		{
 			get
@@ -46206,7 +46206,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_actividades_artisticas", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_actividades_artisticas", DbType="VarChar(2)")]
 		public string Socio_economico_actividades_artisticas
 		{
 			get
@@ -46226,7 +46226,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_otro_especifique", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_otro_especifique", DbType="VarChar(250)")]
 		public string Socio_economico_otro_especifique
 		{
 			get
@@ -46246,7 +46246,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_actividad_economica_adicional_si", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_actividad_economica_adicional_si", DbType="VarChar(2)")]
 		public string Socio_economico_actividad_economica_adicional_si
 		{
 			get
@@ -46266,7 +46266,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_actividad_economica_adicional_no", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_actividad_economica_adicional_no", DbType="VarChar(2)")]
 		public string Socio_economico_actividad_economica_adicional_no
 		{
 			get
@@ -46286,7 +46286,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_actividad_economica_adicional_detalle", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_actividad_economica_adicional_detalle", DbType="VarChar(250)")]
 		public string Socio_economico_actividad_economica_adicional_detalle
 		{
 			get
@@ -46306,7 +46306,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_actividad_economica_adicional_tiempo_destina", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_actividad_economica_adicional_tiempo_destina", DbType="VarChar(100)")]
 		public string Socio_economico_actividad_economica_adicional_tiempo_destina
 		{
 			get
@@ -46326,7 +46326,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_actividad_economica_adicional_hace_tiempo", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_actividad_economica_adicional_hace_tiempo", DbType="VarChar(100)")]
 		public string Socio_economico_actividad_economica_adicional_hace_tiempo
 		{
 			get
@@ -46346,7 +46346,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_actividad_deportiva_si", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_actividad_deportiva_si", DbType="VarChar(2)")]
 		public string Socio_economico_actividad_deportiva_si
 		{
 			get
@@ -46366,7 +46366,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_actividad_deportiva_no", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_actividad_deportiva_no", DbType="VarChar(2)")]
 		public string Socio_economico_actividad_deportiva_no
 		{
 			get
@@ -46386,7 +46386,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_actividad_deportiva_especificar", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_actividad_deportiva_especificar", DbType="VarChar(100)")]
 		public string Socio_economico_actividad_deportiva_especificar
 		{
 			get
@@ -46406,7 +46406,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_actividad_deportiva_frecuencia", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_actividad_deportiva_frecuencia", DbType="VarChar(100)")]
 		public string Socio_economico_actividad_deportiva_frecuencia
 		{
 			get
@@ -46426,7 +46426,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_actividad_deportiva_edad", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_actividad_deportiva_edad", DbType="VarChar(25)")]
 		public string Socio_economico_actividad_deportiva_edad
 		{
 			get
@@ -46446,7 +46446,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_lesion_si", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_lesion_si", DbType="VarChar(2)")]
 		public string Socio_economico_lesion_si
 		{
 			get
@@ -46466,7 +46466,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_lesion_no", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_lesion_no", DbType="VarChar(2)")]
 		public string Socio_economico_lesion_no
 		{
 			get
@@ -46486,7 +46486,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_lesion_tipo", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_lesion_tipo", DbType="VarChar(100)")]
 		public string Socio_economico_lesion_tipo
 		{
 			get
@@ -46506,7 +46506,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_lesion_edad", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_lesion_edad", DbType="VarChar(25)")]
 		public string Socio_economico_lesion_edad
 		{
 			get
@@ -46526,7 +46526,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_lesion_tratamiento_si", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_lesion_tratamiento_si", DbType="VarChar(2)")]
 		public string Socio_economico_lesion_tratamiento_si
 		{
 			get
@@ -46546,7 +46546,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_lesion_tratamiento_no", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_lesion_tratamiento_no", DbType="VarChar(2)")]
 		public string Socio_economico_lesion_tratamiento_no
 		{
 			get
@@ -46566,7 +46566,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_tipo_familia_nuclear", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_tipo_familia_nuclear", DbType="VarChar(2)")]
 		public string Socio_economico_tipo_familia_nuclear
 		{
 			get
@@ -46586,7 +46586,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_tipo_familia_ampliada", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_tipo_familia_ampliada", DbType="VarChar(2)")]
 		public string Socio_economico_tipo_familia_ampliada
 		{
 			get
@@ -46606,7 +46606,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_tipo_familia_monoparental", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_tipo_familia_monoparental", DbType="VarChar(2)")]
 		public string Socio_economico_tipo_familia_monoparental
 		{
 			get
@@ -46626,7 +46626,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_tipo_familia_vive_solo", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_tipo_familia_vive_solo", DbType="VarChar(2)")]
 		public string Socio_economico_tipo_familia_vive_solo
 		{
 			get
@@ -46646,7 +46646,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_tipo_familia_vive_amigos", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_tipo_familia_vive_amigos", DbType="VarChar(2)")]
 		public string Socio_economico_tipo_familia_vive_amigos
 		{
 			get
@@ -46666,7 +46666,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_tipo_familia_sin_hijos", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_tipo_familia_sin_hijos", DbType="VarChar(2)")]
 		public string Socio_economico_tipo_familia_sin_hijos
 		{
 			get
@@ -46686,7 +46686,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_evaluacion_relacion_familiar_muybueno", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_evaluacion_relacion_familiar_muybueno", DbType="VarChar(2)")]
 		public string Socio_economico_evaluacion_relacion_familiar_muybueno
 		{
 			get
@@ -46706,7 +46706,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_evaluacion_relacion_familiar_bueno", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_evaluacion_relacion_familiar_bueno", DbType="VarChar(2)")]
 		public string Socio_economico_evaluacion_relacion_familiar_bueno
 		{
 			get
@@ -46726,7 +46726,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_evaluacion_relacion_familiar_regular", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_evaluacion_relacion_familiar_regular", DbType="VarChar(2)")]
 		public string Socio_economico_evaluacion_relacion_familiar_regular
 		{
 			get
@@ -46746,7 +46746,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_evaluacion_relacion_familiar_mala", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_evaluacion_relacion_familiar_mala", DbType="VarChar(2)")]
 		public string Socio_economico_evaluacion_relacion_familiar_mala
 		{
 			get
@@ -46786,7 +46786,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_evaluacion_relacion_pareja_muybueno", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_evaluacion_relacion_pareja_muybueno", DbType="VarChar(2)")]
 		public string Socio_economico_evaluacion_relacion_pareja_muybueno
 		{
 			get
@@ -46806,7 +46806,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_evaluacion_relacion_pareja_bueno", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_evaluacion_relacion_pareja_bueno", DbType="VarChar(2)")]
 		public string Socio_economico_evaluacion_relacion_pareja_bueno
 		{
 			get
@@ -46826,7 +46826,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_evaluacion_relacion_pareja_regular", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_evaluacion_relacion_pareja_regular", DbType="VarChar(2)")]
 		public string Socio_economico_evaluacion_relacion_pareja_regular
 		{
 			get
@@ -46846,7 +46846,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_evaluacion_relacion_pareja_mala", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_evaluacion_relacion_pareja_mala", DbType="VarChar(2)")]
 		public string Socio_economico_evaluacion_relacion_pareja_mala
 		{
 			get
@@ -46886,7 +46886,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_evaluacion_relacion_hijos_muybueno", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_evaluacion_relacion_hijos_muybueno", DbType="VarChar(2)")]
 		public string Socio_economico_evaluacion_relacion_hijos_muybueno
 		{
 			get
@@ -46906,7 +46906,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_evaluacion_relacion_hijos_bueno", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_evaluacion_relacion_hijos_bueno", DbType="VarChar(2)")]
 		public string Socio_economico_evaluacion_relacion_hijos_bueno
 		{
 			get
@@ -46926,7 +46926,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_evaluacion_relacion_hijos_regular", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_evaluacion_relacion_hijos_regular", DbType="VarChar(2)")]
 		public string Socio_economico_evaluacion_relacion_hijos_regular
 		{
 			get
@@ -46946,7 +46946,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_evaluacion_relacion_hijos_mala", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_evaluacion_relacion_hijos_mala", DbType="VarChar(2)")]
 		public string Socio_economico_evaluacion_relacion_hijos_mala
 		{
 			get
@@ -46986,7 +46986,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_problemas_familiares_economicos", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_problemas_familiares_economicos", DbType="VarChar(2)")]
 		public string Socio_economico_problemas_familiares_economicos
 		{
 			get
@@ -47006,7 +47006,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_problemas_familiares_comunicacion", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_problemas_familiares_comunicacion", DbType="VarChar(2)")]
 		public string Socio_economico_problemas_familiares_comunicacion
 		{
 			get
@@ -47026,7 +47026,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_problemas_familiares_conyugales", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_problemas_familiares_conyugales", DbType="VarChar(2)")]
 		public string Socio_economico_problemas_familiares_conyugales
 		{
 			get
@@ -47046,7 +47046,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_problemas_familiares_crianza_hijos", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_problemas_familiares_crianza_hijos", DbType="VarChar(2)")]
 		public string Socio_economico_problemas_familiares_crianza_hijos
 		{
 			get
@@ -47066,7 +47066,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_problemas_familiares_adicciones", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_problemas_familiares_adicciones", DbType="VarChar(2)")]
 		public string Socio_economico_problemas_familiares_adicciones
 		{
 			get
@@ -47086,7 +47086,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_problemas_familiares_violencia_fisica", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_problemas_familiares_violencia_fisica", DbType="VarChar(2)")]
 		public string Socio_economico_problemas_familiares_violencia_fisica
 		{
 			get
@@ -47106,7 +47106,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_problemas_familiares_violencia_psicologica", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_problemas_familiares_violencia_psicologica", DbType="VarChar(2)")]
 		public string Socio_economico_problemas_familiares_violencia_psicologica
 		{
 			get
@@ -47126,7 +47126,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_problemas_familiares_violencia_verbal", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_problemas_familiares_violencia_verbal", DbType="VarChar(2)")]
 		public string Socio_economico_problemas_familiares_violencia_verbal
 		{
 			get
@@ -47146,7 +47146,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_problemas_familiares_violencia_sexual", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_problemas_familiares_violencia_sexual", DbType="VarChar(2)")]
 		public string Socio_economico_problemas_familiares_violencia_sexual
 		{
 			get
@@ -47186,7 +47186,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_miembro_familiar_rol_si", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_miembro_familiar_rol_si", DbType="VarChar(2)")]
 		public string Socio_economico_miembro_familiar_rol_si
 		{
 			get
@@ -47206,7 +47206,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_miembro_familiar_rol_no", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_miembro_familiar_rol_no", DbType="VarChar(2)")]
 		public string Socio_economico_miembro_familiar_rol_no
 		{
 			get
@@ -47226,7 +47226,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_nivel_salud_familia_muybueno", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_nivel_salud_familia_muybueno", DbType="VarChar(2)")]
 		public string Socio_economico_nivel_salud_familia_muybueno
 		{
 			get
@@ -47246,7 +47246,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_nivel_salud_familia_bueno", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_nivel_salud_familia_bueno", DbType="VarChar(2)")]
 		public string Socio_economico_nivel_salud_familia_bueno
 		{
 			get
@@ -47266,7 +47266,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_nivel_salud_familia_regular", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_nivel_salud_familia_regular", DbType="VarChar(2)")]
 		public string Socio_economico_nivel_salud_familia_regular
 		{
 			get
@@ -47286,7 +47286,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_nivel_salud_familia_mala", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_nivel_salud_familia_mala", DbType="VarChar(2)")]
 		public string Socio_economico_nivel_salud_familia_mala
 		{
 			get
@@ -47326,7 +47326,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_familia_funcional", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_familia_funcional", DbType="VarChar(2)")]
 		public string Socio_economico_familia_funcional
 		{
 			get
@@ -47346,7 +47346,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_familia_disfuncional", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_familia_disfuncional", DbType="VarChar(2)")]
 		public string Socio_economico_familia_disfuncional
 		{
 			get
@@ -47406,7 +47406,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_informacion_general_real_si", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_informacion_general_real_si", DbType="VarChar(2)")]
 		public string Socio_economico_informacion_general_real_si
 		{
 			get
@@ -47426,7 +47426,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_informacion_general_real_no", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_informacion_general_real_no", DbType="VarChar(2)")]
 		public string Socio_economico_informacion_general_real_no
 		{
 			get
@@ -47446,7 +47446,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_fechaHora", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_fechaHora", DbType="VarChar(25)")]
 		public string Socio_economico_fechaHora
 		{
 			get
