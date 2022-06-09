@@ -114,6 +114,15 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         protected global::AjaxControlToolkit.AutoCompleteExtender AutoCompleteExtender1;
 
         /// <summary>
+        /// Control RequiredFieldValidator_txtcedula.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator_txtcedula;
+
+        /// <summary>
         /// Control txt_areatrabajo.
         /// </summary>
         /// <remarks>
@@ -1221,6 +1230,15 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         protected global::System.Web.UI.WebControls.TextBox txt_miembroactivoseconomicamente;
 
         /// <summary>
+        /// Control RequiredFieldValidator_miembros_economicamente.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator_miembros_economicamente;
+
+        /// <summary>
         /// Control txt_totalingresos1.
         /// </summary>
         /// <remarks>
@@ -1509,6 +1527,15 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         protected global::System.Web.UI.WebControls.TextBox txt_otrospensiones;
 
         /// <summary>
+        /// Control btn_totalingresos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_totalingresos;
+
+        /// <summary>
         /// Control txt_totalingresos9.
         /// </summary>
         /// <remarks>
@@ -1516,6 +1543,24 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_totalingresos9;
+
+        /// <summary>
+        /// Control RequiredFieldValidator_total_ingresos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator_total_ingresos;
+
+        /// <summary>
+        /// Control btn_total_ayuda_otros.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_total_ayuda_otros;
 
         /// <summary>
         /// Control txt_totalayudayotros9.
@@ -1527,6 +1572,24 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         protected global::System.Web.UI.WebControls.TextBox txt_totalayudayotros9;
 
         /// <summary>
+        /// Control RequiredFieldValidator_total_ayuda_otros.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator_total_ayuda_otros;
+
+        /// <summary>
+        /// Control btn_totalegresos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_totalegresos;
+
+        /// <summary>
         /// Control txt_totalegresos.
         /// </summary>
         /// <remarks>
@@ -1534,6 +1597,42 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_totalegresos;
+
+        /// <summary>
+        /// Control RequiredFieldValidator_total_egresos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator_total_egresos;
+
+        /// <summary>
+        /// Control lbl_total_ingresos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_total_ingresos;
+
+        /// <summary>
+        /// Control lbl_total_ayuda_otros.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_total_ayuda_otros;
+
+        /// <summary>
+        /// Control lbl_total_egresos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_total_egresos;
 
         /// <summary>
         /// Control txt_biencasa.
@@ -1588,6 +1687,15 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_bienmueblesyenseres;
+
+        /// <summary>
+        /// Control lbl_bienes.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_bienes;
 
         /// <summary>
         /// Control cb_unifamiliar.
@@ -2866,5 +2974,14 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btn_cancelar;
+
+        /// <summary>
+        /// Control btn_imprimir.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_imprimir;
     }
 }

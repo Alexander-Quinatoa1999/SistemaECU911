@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SistemaECU911" Class="DataClassesECU911DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=SistemaECU911;Integrated Security=True" SettingsObjectName="CapaDatos.Properties.Settings" SettingsPropertyName="SistemaECU911ConnectionString4" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=ZOCAPO\SQLEXPRESS;Initial Catalog=SistemaECU911;Integrated Security=True" SettingsObjectName="CapaDatos.Properties.Settings" SettingsPropertyName="SistemaECU911ConnectionString5" Provider="System.Data.SqlClient" />
   <Table Name="dbo.cie10" Member="cie10">
     <Type Name="cie10">
       <Column Name="id10" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -1703,7 +1703,6 @@
       <Column Name="Socio_economico_version" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="Socio_economico_modalidadvinculacion_leyorgserpublico" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
       <Column Name="Socio_economico_modalidadvinculacion_codigotrabajo" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
-      <Column Name="Socio_economico_fecha_ingreso_al_Ecu" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
       <Column Name="Socio_economico_estadocivil_soltero" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
       <Column Name="Socio_economico_estadocivil_casado" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
       <Column Name="Socio_economico_estadocivil_viudo" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
@@ -1718,8 +1717,6 @@
       <Column Name="Socio_economico_telefono_celular" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
       <Column Name="Socio_economico_email" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
       <Column Name="Socio_economico_lugar_nacimiento" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
-      <Column Name="Socio_economico_fecha_nacimiento" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Socio_economico_edad" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="Socio_economico_titulo_primaria" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
       <Column Name="Socio_economico_titulo_secundaria" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
       <Column Name="Socio_economico_titulo_superior" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />

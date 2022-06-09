@@ -10,6 +10,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using CapaDatos;
 using CapaNegocio;
+using HtmlAgilityPack;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
 
 namespace SistemaECU911.Template.Views_Socio_Economico
 {
@@ -52,10 +55,15 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                         txt_segnombre.Text = per.Per_segNombre.ToString();
                         txt_areatrabajo.Text = per.Per_areaTrabajo.ToString();
                         txt_cargoinstitucional.Text = per.Per_cargoOcupacion.ToString();
+                        txt_fechaingresoalsisecu.Text = Convert.ToDateTime(per.Per_fechInicioTrabajo).ToString("yyyy-MM-dd");
                         txt_fechanacimiento.Text = Convert.ToDateTime(per.Per_fechaNacimiento).ToString("yyyy-MM-dd");
+                        DateTime edad = Convert.ToDateTime(per.Per_fechaNacimiento);
+                        DateTime naci = Convert.ToDateTime(edad);
+                        DateTime actual = DateTime.Now;
+                        Calculo(naci, actual);
 
                         if (sso != null)
-                        {                          
+                        {
                             txt_fecharegistro.Text = sso.Socio_economico_fechaHora.ToString();
 
                             //Datos código y versión
@@ -63,15 +71,6 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                             txt_version.Text = sso.Socio_economico_version.ToString();
 
                             //Datos Generales
-                            //txt_fechaingresoalsisecu.Text = sso.Socio_economico_fecha_ingreso_al_Ecu.ToString();
-                            if (sso.Socio_economico_fecha_ingreso_al_Ecu == "")
-                            {
-                                txt_fechaingresoalsisecu.Text = sso.Socio_economico_fecha_ingreso_al_Ecu.ToString();
-                            }
-                            else
-                            {
-                                txt_fechaingresoalsisecu.Text = Convert.ToDateTime(sso.Socio_economico_fecha_ingreso_al_Ecu).ToString("yyyy-MM-dd");
-                            }
                             txt_tipodesangre.Text = sso.Socio_economico_tipo_de_sangre.ToString();
 
                             txt_telconvecional.Text = sso.Socio_economico_telefono_convencional.ToString();
@@ -79,20 +78,10 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                             txt_email.Text = sso.Socio_economico_email.ToString();
 
                             txt_lugarnacimiento.Text = sso.Socio_economico_lugar_nacimiento.ToString();
-                            //txt_fechanacimiento.Text = sso.Socio_economico_fecha_nacimiento.ToString();
-                            if (sso.Socio_economico_fecha_nacimiento == "")
-                            {
-                                txt_fechanacimiento.Text = sso.Socio_economico_fecha_nacimiento.ToString();
-                            }
-                            else
-                            {
-                                txt_fechanacimiento.Text = Convert.ToDateTime(sso.Socio_economico_fecha_nacimiento).ToString("yyyy-MM-dd");
-                            }
-                            txt_edad.Text = sso.Socio_economico_edad.ToString();
 
                             txt_provincia.Text = sso.Socio_economico_direcciondomicilio_provincia.ToString();
                             txt_canton.Text = sso.Socio_economico_direcciondomicilio_canton.ToString();
-                            txt_canton.Text = sso.Socio_economico_direcciondomicilio_parroquia.ToString();
+                            txt_parroquia.Text = sso.Socio_economico_direcciondomicilio_parroquia.ToString();
                             txt_barrio.Text = sso.Socio_economico_direcciondomicilio_barrio.ToString();
 
                             txt_calleubicada.Text = sso.Socio_economico_calle_vivienda_numeracion.ToString();
@@ -271,7 +260,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                             txt_edad4.Text = sso.Socio_economico_edad_familiar4.ToString();
 
                             txt_nomapellidos5.Text = sso.Socio_economico_nombres_apellidos_familiar5.ToString();
-                            txt_parentesco5.Text = sso.Socio_economico_parentesco_familiar5.ToString();                      
+                            txt_parentesco5.Text = sso.Socio_economico_parentesco_familiar5.ToString();
                             //txt_fechanacimiento5.Text = sso.Socio_economico_fecha_nacimiento_familiar5.ToString();
                             if (sso.Socio_economico_fecha_nacimiento_familiar5 == "")
                             {
@@ -1552,6 +1541,33 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             }
         }
 
+        public void Calculo(DateTime nac, DateTime actual)
+        {
+            int año = nac.Year;
+            int mes = nac.Month;
+            int dia = nac.Day;
+
+            int añoBisiesto = 0;
+
+            for (int i = año; i < actual.Year; i++)
+            {
+                if (DateTime.IsLeapYear(i))
+                {
+                    ++añoBisiesto;
+                }
+            }
+
+            TimeSpan ts = actual.Subtract(nac);
+            dia = ts.Days - añoBisiesto;
+            int r = 0;
+
+            año = Math.DivRem(dia, 365, out r);
+            mes = Math.DivRem(r, 30, out r);
+            dia = r;
+
+            txt_edad.Text = año + " Años, " + mes + " Meses, " + dia + " Días";
+        }
+
         //Metodo obtener cedula por numero de Socio Economico
         [WebMethod]
         [ScriptMethod]
@@ -1560,7 +1576,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             List<string> lista = new List<string>();
             try
             {
-                string oConn = @"Data Source=.;Initial Catalog=SistemaECU911;Integrated Security=True";
+                string oConn = @"Data Source=ZOCAPO\SQLEXPRESS;Initial Catalog=SistemaECU911;Integrated Security=True";
 
                 SqlConnection con = new SqlConnection(oConn);
                 con.Open();
@@ -1617,6 +1633,18 @@ namespace SistemaECU911.Template.Views_Socio_Economico
 
                 string cargo = item.Per_cargoOcupacion;
                 txt_cargoinstitucional.Text = cargo;
+
+                DateTime fechaIngresoEcu = Convert.ToDateTime(item.Per_fechInicioTrabajo);
+                txt_fechaingresoalsisecu.Text = Convert.ToDateTime(fechaIngresoEcu).ToString("yyyy-MM-dd");
+
+                DateTime fechaNacimiento = Convert.ToDateTime(item.Per_fechaNacimiento);
+                txt_fechanacimiento.Text = Convert.ToDateTime(fechaNacimiento).ToString("yyyy-MM-dd");
+
+                DateTime edad = Convert.ToDateTime(item.Per_fechaNacimiento);
+                DateTime naci = Convert.ToDateTime(edad);
+
+                DateTime actual = DateTime.Now;
+                Calculo(naci, actual);
             }
         }
 
@@ -1647,14 +1675,13 @@ namespace SistemaECU911.Template.Views_Socio_Economico
 
                 sso = new Tbl_SocioEconomico
                 {
-                    Socio_economico_fechaHora = txt_fecharegistro.Text, 
+                    Socio_economico_fechaHora = txt_fecharegistro.Text,
 
                     //Datos código y versión
                     Socio_economico_codigo_inicial = txt_codigoinicio.Text,
                     Socio_economico_version = txt_version.Text,
 
                     //Datos Generales
-                    Socio_economico_fecha_ingreso_al_Ecu = txt_fechaingresoalsisecu.Text,
                     Socio_economico_tipo_de_sangre = txt_tipodesangre.Text,
 
                     Socio_economico_telefono_convencional = txt_telconvecional.Text,
@@ -1662,12 +1689,10 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                     Socio_economico_email = txt_email.Text,
 
                     Socio_economico_lugar_nacimiento = txt_lugarnacimiento.Text,
-                    Socio_economico_fecha_nacimiento = txt_fechanacimiento.Text,
-                    Socio_economico_edad = txt_edad.Text,
 
                     Socio_economico_direcciondomicilio_provincia = txt_provincia.Text,
                     Socio_economico_direcciondomicilio_canton = txt_canton.Text,
-                    Socio_economico_direcciondomicilio_parroquia = txt_canton.Text,
+                    Socio_economico_direcciondomicilio_parroquia = txt_parroquia.Text,
                     Socio_economico_direcciondomicilio_barrio = txt_barrio.Text,
 
                     Socio_economico_calle_vivienda_numeracion = txt_calleubicada.Text,
@@ -2487,7 +2512,6 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                 sso.Socio_economico_version = txt_version.Text;
 
                 //Datos Generales
-                sso.Socio_economico_fecha_ingreso_al_Ecu = txt_fechaingresoalsisecu.Text;
                 sso.Socio_economico_tipo_de_sangre = txt_tipodesangre.Text;
 
                 sso.Socio_economico_telefono_convencional = txt_telconvecional.Text;
@@ -2495,12 +2519,10 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                 sso.Socio_economico_email = txt_email.Text;
 
                 sso.Socio_economico_lugar_nacimiento = txt_lugarnacimiento.Text;
-                sso.Socio_economico_fecha_nacimiento = txt_fechanacimiento.Text;
-                sso.Socio_economico_edad = txt_edad.Text;
 
                 sso.Socio_economico_direcciondomicilio_provincia = txt_provincia.Text;
                 sso.Socio_economico_direcciondomicilio_canton = txt_canton.Text;
-                sso.Socio_economico_direcciondomicilio_parroquia = txt_canton.Text;
+                sso.Socio_economico_direcciondomicilio_parroquia = txt_parroquia.Text;
                 sso.Socio_economico_direcciondomicilio_barrio = txt_barrio.Text;
 
                 sso.Socio_economico_calle_vivienda_numeracion = txt_calleubicada.Text;
@@ -3872,7 +3894,22 @@ namespace SistemaECU911.Template.Views_Socio_Economico
 
         protected void btn_guardar_Click(object sender, EventArgs e)
         {
-            Guardar_modificar_datos(Convert.ToInt32(Request["cod"]));
+            if (txt_biencasa.Text.Equals("") || txt_biendepartamento.Text.Equals("") || txt_bienvehiculo.Text.Equals("") ||
+                txt_bienvehiculo.Text.Equals("") || txt_bienegocio.Text.Equals("") || txt_bienmueblesyenseres.Text.Equals(""))
+            {
+                lbl_bienes.Text = "Complete todos estos campos";
+            }
+            else
+            {
+                if (cb_certificosi.Checked == true)
+                {
+                    Guardar_modificar_datos(Convert.ToInt32(Request["cod"]));
+                }
+                else
+                {
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Por favor, marque la casilla SI, para validar que la información suministrada es real')", true);
+                }
+            }                     
         }
 
         protected void btn_cancelar_Click(object sender, EventArgs e)
@@ -3880,7 +3917,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             Response.Redirect("~/Template/Views_Socio_Economico/Inicio.aspx");
         }
 
-       
+
 
         //VALIDACIONES CHECKBOX Y TEXTBOX
 
@@ -5956,6 +5993,267 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                 cb_certificosi.Enabled = true;
                 cb_certificono.Enabled = true;
             }
+        }
+
+        protected void btn_totalingresos_Click(object sender, EventArgs e)
+        {
+            if (txt_totalingresos1.Text.Equals("") || txt_totalingresos2.Text.Equals("") || txt_totalingresos3.Text.Equals("") || txt_totalingresos4.Text.Equals("") ||
+                txt_totalingresos5.Text.Equals("") || txt_totalingresos6.Text.Equals("") || txt_totalingresos7.Text.Equals("") || txt_totalingresos8.Text.Equals(""))
+            {
+                lbl_total_ingresos.Text = "!Complete los campos!";
+            }
+            else
+            {
+                int valor1 = Convert.ToInt32(txt_totalingresos1.Text.ToString().Trim());
+                int valor2 = Convert.ToInt32(txt_totalingresos2.Text.ToString().Trim());
+                int valor3 = Convert.ToInt32(txt_totalingresos3.Text.ToString().Trim());
+                int valor4 = Convert.ToInt32(txt_totalingresos4.Text.ToString().Trim());
+                int valor5 = Convert.ToInt32(txt_totalingresos5.Text.ToString().Trim());
+                int valor6 = Convert.ToInt32(txt_totalingresos6.Text.ToString().Trim());
+                int valor7 = Convert.ToInt32(txt_totalingresos7.Text.ToString().Trim());
+                int valor8 = Convert.ToInt32(txt_totalingresos8.Text.ToString().Trim());
+
+                int total = valor1 + valor2 + valor3 + valor4 + valor5 + valor6 + valor7 + valor8;
+
+                txt_totalingresos9.Text = total.ToString();
+
+                lbl_total_ingresos.Visible = false;                
+            }
+        }
+
+        protected void btn_total_ayuda_otros_Click(object sender, EventArgs e)
+        {
+            if (txt_ayuda1.Text.Equals("") || txt_ayuda2.Text.Equals("") || txt_ayuda3.Text.Equals("") || txt_ayuda4.Text.Equals("") ||
+                txt_ayuda5.Text.Equals("") || txt_ayuda6.Text.Equals("") || txt_ayuda7.Text.Equals("") || txt_ayuda8.Text.Equals("") ||
+                txt_otros1.Text.Equals("") || txt_otros2.Text.Equals("") || txt_otros3.Text.Equals("") || txt_otros4.Text.Equals("") ||
+                txt_otros5.Text.Equals("") || txt_otros6.Text.Equals("") || txt_otros7.Text.Equals("") || txt_otros8.Text.Equals(""))
+            {
+                lbl_total_ayuda_otros.Text = "!Complete los campos!";
+            }
+            else
+            {
+                int ayuda1 = Convert.ToInt32(txt_ayuda1.Text.ToString().Trim());
+                int ayuda2 = Convert.ToInt32(txt_ayuda2.Text.ToString().Trim());
+                int ayuda3 = Convert.ToInt32(txt_ayuda3.Text.ToString().Trim());
+                int ayuda4 = Convert.ToInt32(txt_ayuda4.Text.ToString().Trim());
+                int ayuda5 = Convert.ToInt32(txt_ayuda5.Text.ToString().Trim());
+                int ayuda6 = Convert.ToInt32(txt_ayuda6.Text.ToString().Trim());
+                int ayuda7 = Convert.ToInt32(txt_ayuda7.Text.ToString().Trim());
+                int ayuda8 = Convert.ToInt32(txt_ayuda8.Text.ToString().Trim());
+
+                int otros1 = Convert.ToInt32(txt_otros1.Text.ToString().Trim());
+                int otros2 = Convert.ToInt32(txt_otros2.Text.ToString().Trim());
+                int otros3 = Convert.ToInt32(txt_otros3.Text.ToString().Trim());
+                int otros4 = Convert.ToInt32(txt_otros4.Text.ToString().Trim());
+                int otros5 = Convert.ToInt32(txt_otros5.Text.ToString().Trim());
+                int otros6 = Convert.ToInt32(txt_otros6.Text.ToString().Trim());
+                int otros7 = Convert.ToInt32(txt_otros7.Text.ToString().Trim());
+                int otros8 = Convert.ToInt32(txt_otros8.Text.ToString().Trim());
+
+                int total = ayuda1 + ayuda2 + ayuda3 + ayuda4 + ayuda5 + ayuda6 + ayuda7 + ayuda8 +
+                            otros1 + otros2 + otros3 + otros4 + otros5 + otros6 + otros7 + otros8;
+
+                txt_totalayudayotros9.Text = total.ToString();
+
+                lbl_total_ayuda_otros.Visible = false;
+            }
+
+        }
+
+        protected void btn_totalegresos_Click(object sender, EventArgs e)
+        {
+            if (txt_alimentación.Text.Equals("") || txt_vivienda.Text.Equals("") || txt_educación.Text.Equals("") || txt_serviciosbasicos.Text.Equals("") ||
+                txt_salud.Text.Equals("") || txt_movilización.Text.Equals("") || txt_deudas.Text.Equals("") || txt_otrospensiones.Text.Equals(""))
+            {
+                lbl_total_egresos.Text = "!Complete los campos!";
+            }
+            else
+            {
+                int egreso1 = Convert.ToInt32(txt_alimentación.Text.ToString().Trim());
+                int egreso2 = Convert.ToInt32(txt_vivienda.Text.ToString().Trim());
+                int egreso3 = Convert.ToInt32(txt_educación.Text.ToString().Trim());
+                int egreso4 = Convert.ToInt32(txt_serviciosbasicos.Text.ToString().Trim());
+                int egreso5 = Convert.ToInt32(txt_salud.Text.ToString().Trim());
+                int egreso6 = Convert.ToInt32(txt_movilización.Text.ToString().Trim());
+                int egreso7 = Convert.ToInt32(txt_deudas.Text.ToString().Trim());
+                int egreso8 = Convert.ToInt32(txt_otrospensiones.Text.ToString().Trim());
+
+                int total = egreso1 + egreso2 + egreso3 + egreso4 + egreso5 + egreso6 + egreso7 + egreso8;
+
+                txt_totalegresos.Text = total.ToString();
+
+                lbl_total_egresos.Visible = false;
+            }
+
+        }
+        protected void btn_imprimir_Click(object sender, EventArgs e)
+        {
+            HtmlNode.ElementsFlags["img"] = HtmlElementFlag.Closed;
+            HtmlNode.ElementsFlags["br"] = HtmlElementFlag.Closed;
+            Document pdfDoc = new Document(PageSize.A4, 15f, 15f, 15f, 15f);
+            PdfWriter writer = PdfWriter.GetInstance(pdfDoc, Response.OutputStream);
+            BaseFont fuente = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, true);
+            Font titulo = new Font(fuente, 10f, Font.NORMAL, new BaseColor(0, 0, 0));
+            BaseFont fuente2 = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, true);
+            Font parrafo = new Font(fuente2, 12f, Font.NORMAL, new BaseColor(0, 0, 0));
+            BaseFont fuente3 = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, true);
+            Font cuadro = new Font(fuente3, 10f, Font.NORMAL, new BaseColor(0, 0, 0));
+
+            pdfDoc.Open();
+            pdfDoc.Add(new Paragraph("GESTIÓN DEL TALENTO HUMANO", titulo) { Alignment = Element.ALIGN_CENTER });
+            pdfDoc.Add(new Paragraph("GESTIÓN DE BIENESTAR LABORAL Y SALUD OCUPACIONAL", titulo) { Alignment = Element.ALIGN_CENTER });
+            pdfDoc.Add(new Paragraph("FICHA SOCIOECONÓMICA", titulo) { Alignment = Element.ALIGN_CENTER });
+            pdfDoc.Add(new Paragraph(" "));
+
+            var tblcvTitulo = new PdfPTable(new float[] { 200f, 200f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblcvTitulo.AddCell(new PdfPCell(new Paragraph("Código", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblcvTitulo.AddCell(new PdfPCell(new Paragraph("Versión", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            pdfDoc.Add(tblcvTitulo);
+            var tblcvDatos = new PdfPTable(new float[] { 70f, 50f, 50f, 50f, 50f, 30f, 50f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblcvDatos.AddCell(new PdfPCell(new Paragraph(txt_codigoinicio.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblcvDatos.AddCell(new PdfPCell(new Paragraph(txt_version.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            pdfDoc.Add(tblcvDatos);
+            pdfDoc.Add(new Paragraph(" "));
+            pdfDoc.Add(new Paragraph(" "));
+
+            var tbldatospersonales = new PdfPTable(new float[] { 70f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tbldatospersonales.AddCell(new PdfPCell(new Paragraph("I. DATOS PERSONALES DEL SERVIDOR/A", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(204, 205, 254), HorizontalAlignment = Element.ALIGN_LEFT });
+            pdfDoc.Add(tbldatospersonales);
+            pdfDoc.Add(new Paragraph(" "));
+            var tbldpTitulo = new PdfPTable(new float[] { 100f, 50f, 50f, 50f, 50f, 50f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tbldpTitulo.AddCell(new PdfPCell(new Paragraph("Nombres y Apellidos:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            tbldpTitulo.AddCell(new PdfPCell(new Paragraph(txt_prinombre.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            tbldpTitulo.AddCell(new PdfPCell(new Paragraph(txt_segnombre.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            tbldpTitulo.AddCell(new PdfPCell(new Paragraph(txt_priapellido.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            tbldpTitulo.AddCell(new PdfPCell(new Paragraph(txt_segapellido.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            tbldpTitulo.AddCell(new PdfPCell(new Paragraph("Cédula:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            tbldpTitulo.AddCell(new PdfPCell(new Paragraph(txt_cedula.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            pdfDoc.Add(tbldpTitulo);
+            pdfDoc.Add(new Paragraph(" "));
+            var tbldaTitulo = new PdfPTable(new float[] { 150f, 150f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tbldaTitulo.AddCell(new PdfPCell(new Paragraph("Departamento / Área en la que trabaja:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            tbldaTitulo.AddCell(new PdfPCell(new Paragraph(txt_areatrabajo.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            pdfDoc.Add(tbldaTitulo);
+            pdfDoc.Add(new Paragraph(" "));
+            var tblciTitulo = new PdfPTable(new float[] { 200f, 200f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblciTitulo.AddCell(new PdfPCell(new Paragraph("Cargo Institucional:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblciTitulo.AddCell(new PdfPCell(new Paragraph(txt_cargoinstitucional.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            pdfDoc.Add(tblciTitulo);
+            pdfDoc.Add(new Paragraph(" "));
+            var tblmvTitulo = new PdfPTable(new float[] { 70f, 70f, 15f, 60f, 15f, 60f, 35f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblmvTitulo.AddCell(new PdfPCell(new Paragraph("Modalidad de vinculación:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblmvTitulo.AddCell(new PdfPCell(new Paragraph("Ley Organica del Sector Público (LOSEP)", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblmvTitulo.AddCell(new PdfPCell(new Paragraph(Convert.ToString(cb_modalidadvinculacionlosep.Checked), cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblmvTitulo.AddCell(new PdfPCell(new Paragraph("Código de trabajo", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblmvTitulo.AddCell(new PdfPCell(new Paragraph(Convert.ToString(cb_modalidadvinculacioncodigotrabajo.Checked), cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblmvTitulo.AddCell(new PdfPCell(new Paragraph("Fecha ingreso al ECU", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblmvTitulo.AddCell(new PdfPCell(new Paragraph(txt_fechaingresoalsisecu.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            pdfDoc.Add(tblmvTitulo);
+            pdfDoc.Add(new Paragraph(" "));
+            var tblecTitulo = new PdfPTable(new float[] { 40f, 40f, 15f, 40f, 15f, 40f, 15f, 40f, 15f, 40f, 15f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblecTitulo.AddCell(new PdfPCell(new Paragraph("Estado Civil:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblecTitulo.AddCell(new PdfPCell(new Paragraph("Soltero", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblecTitulo.AddCell(new PdfPCell(new Paragraph(Convert.ToString(cb_soltero.Checked), cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblecTitulo.AddCell(new PdfPCell(new Paragraph("Casado", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblecTitulo.AddCell(new PdfPCell(new Paragraph(Convert.ToString(cb_casado.Checked), cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblecTitulo.AddCell(new PdfPCell(new Paragraph("Viudo", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblecTitulo.AddCell(new PdfPCell(new Paragraph(Convert.ToString(cb_viudo.Checked), cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblecTitulo.AddCell(new PdfPCell(new Paragraph("Unión Libre", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblecTitulo.AddCell(new PdfPCell(new Paragraph(Convert.ToString(cb_unionlibre.Checked), cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblecTitulo.AddCell(new PdfPCell(new Paragraph("Divorciado", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblecTitulo.AddCell(new PdfPCell(new Paragraph(Convert.ToString(cb_divorciado.Checked), cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            pdfDoc.Add(tblecTitulo);
+            pdfDoc.Add(new Paragraph(" "));
+            var tblgTitulo = new PdfPTable(new float[] { 30f, 30f, 15f, 30f, 15f, 40f, 30f, 40f, 15f, 15f, 15f, 15f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblgTitulo.AddCell(new PdfPCell(new Paragraph("Género:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblgTitulo.AddCell(new PdfPCell(new Paragraph("Masculino", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblgTitulo.AddCell(new PdfPCell(new Paragraph(Convert.ToString(cb_genmasculino.Checked), cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblgTitulo.AddCell(new PdfPCell(new Paragraph("Femenino", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblgTitulo.AddCell(new PdfPCell(new Paragraph(Convert.ToString(cb_genfemenino.Checked), cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblgTitulo.AddCell(new PdfPCell(new Paragraph("Tipo de Sangre:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblgTitulo.AddCell(new PdfPCell(new Paragraph(txt_tipodesangre.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblgTitulo.AddCell(new PdfPCell(new Paragraph("¿Es donante?", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblgTitulo.AddCell(new PdfPCell(new Paragraph("Si", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblgTitulo.AddCell(new PdfPCell(new Paragraph(Convert.ToString(cb_donantesi.Checked), cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblgTitulo.AddCell(new PdfPCell(new Paragraph("No", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblgTitulo.AddCell(new PdfPCell(new Paragraph(Convert.ToString(cb_donanteno.Checked), cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            pdfDoc.Add(tblgTitulo);
+            pdfDoc.Add(new Paragraph(" "));
+            var tbltelfTitulo = new PdfPTable(new float[] { 150f, 75f, 100f, 75f, 50f, 150f}) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tbltelfTitulo.AddCell(new PdfPCell(new Paragraph("Teléfono Convencional:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            tbltelfTitulo.AddCell(new PdfPCell(new Paragraph(txt_telconvecional.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            tbltelfTitulo.AddCell(new PdfPCell(new Paragraph("Teléfono Celular:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            tbltelfTitulo.AddCell(new PdfPCell(new Paragraph(txt_telcelular.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            tbltelfTitulo.AddCell(new PdfPCell(new Paragraph("Email:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            tbltelfTitulo.AddCell(new PdfPCell(new Paragraph(txt_email.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            pdfDoc.Add(tbltelfTitulo);
+            pdfDoc.Add(new Paragraph(" "));
+            var tbllnTitulo = new PdfPTable(new float[] { 150f, 100f, 150f, 100f, 50, 150f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tbllnTitulo.AddCell(new PdfPCell(new Paragraph("Lugar de Nacimiento:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            tbllnTitulo.AddCell(new PdfPCell(new Paragraph(txt_lugarnacimiento.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            tbllnTitulo.AddCell(new PdfPCell(new Paragraph("Fecha de Nacimiento:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            tbllnTitulo.AddCell(new PdfPCell(new Paragraph(txt_fechanacimiento.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            tbllnTitulo.AddCell(new PdfPCell(new Paragraph("Edad:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            tbllnTitulo.AddCell(new PdfPCell(new Paragraph(txt_edad.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            pdfDoc.Add(tbllnTitulo);
+            pdfDoc.Add(new Paragraph(" "));
+            var tblneTitulo = new PdfPTable(new float[] { 40f, 30f, 15f, 30f, 15f, 25f, 15f, 40f, 15f, 30f, 15f, 25f, 15f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblneTitulo.AddCell(new PdfPCell(new Paragraph("Nivel de Educación:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblneTitulo.AddCell(new PdfPCell(new Paragraph("Primaria", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblneTitulo.AddCell(new PdfPCell(new Paragraph(Convert.ToString(cb_primaria.Checked), cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblneTitulo.AddCell(new PdfPCell(new Paragraph("Secundaria", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblneTitulo.AddCell(new PdfPCell(new Paragraph(Convert.ToString(cb_secundaria.Checked), cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblneTitulo.AddCell(new PdfPCell(new Paragraph("Superior", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblneTitulo.AddCell(new PdfPCell(new Paragraph(Convert.ToString(cb_superior.Checked), cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblneTitulo.AddCell(new PdfPCell(new Paragraph("Especialización", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblneTitulo.AddCell(new PdfPCell(new Paragraph(Convert.ToString(cb_especializacion.Checked), cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblneTitulo.AddCell(new PdfPCell(new Paragraph("Diplomado", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblneTitulo.AddCell(new PdfPCell(new Paragraph(Convert.ToString(cb_diplomado.Checked), cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblneTitulo.AddCell(new PdfPCell(new Paragraph("Maestría", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblneTitulo.AddCell(new PdfPCell(new Paragraph(Convert.ToString(cb_maestria.Checked), cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            pdfDoc.Add(tblneTitulo);
+            pdfDoc.Add(new Paragraph(" "));
+            var tblaiTitulo = new PdfPTable(new float[] { 45f, 30f, 15f, 30f, 15f, 50f, 15f, 30f, 15f, 30f, 15f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblaiTitulo.AddCell(new PdfPCell(new Paragraph("Autoidentificación Étnica:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblaiTitulo.AddCell(new PdfPCell(new Paragraph("Blanco", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblaiTitulo.AddCell(new PdfPCell(new Paragraph(Convert.ToString(cb_blanco.Checked), cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblaiTitulo.AddCell(new PdfPCell(new Paragraph("Mestizo", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblaiTitulo.AddCell(new PdfPCell(new Paragraph(Convert.ToString(cb_mestizo.Checked), cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblaiTitulo.AddCell(new PdfPCell(new Paragraph("Afrodescendiente", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblaiTitulo.AddCell(new PdfPCell(new Paragraph(Convert.ToString(cb_afro.Checked), cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblaiTitulo.AddCell(new PdfPCell(new Paragraph("Indígena", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblaiTitulo.AddCell(new PdfPCell(new Paragraph(Convert.ToString(cb_indigena.Checked), cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblaiTitulo.AddCell(new PdfPCell(new Paragraph("Montubio", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblaiTitulo.AddCell(new PdfPCell(new Paragraph(Convert.ToString(cb_montubio.Checked), cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            pdfDoc.Add(tblaiTitulo);
+            pdfDoc.Add(new Paragraph(" "));
+            var tblddTitulo = new PdfPTable(new float[] { 150f, 100f, 100f, 75f, 100, 100f, 100f, 75f, 125f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblddTitulo.AddCell(new PdfPCell(new Paragraph("Dirección del domicilio:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblddTitulo.AddCell(new PdfPCell(new Paragraph("Provincia:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblddTitulo.AddCell(new PdfPCell(new Paragraph(txt_provincia.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblddTitulo.AddCell(new PdfPCell(new Paragraph("Canton:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblddTitulo.AddCell(new PdfPCell(new Paragraph(txt_canton.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblddTitulo.AddCell(new PdfPCell(new Paragraph("Parroquia:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblddTitulo.AddCell(new PdfPCell(new Paragraph(txt_parroquia.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblddTitulo.AddCell(new PdfPCell(new Paragraph("Barrio:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblddTitulo.AddCell(new PdfPCell(new Paragraph(txt_barrio.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            pdfDoc.Add(tblddTitulo);
+            pdfDoc.Add(new Paragraph(" "));
+            var tblccTitulo = new PdfPTable(new float[] { 150f, 150f, 100f, 150f, 100, 150f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblccTitulo.AddCell(new PdfPCell(new Paragraph("Calle donde está ubicada la vivienda y numeración:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblccTitulo.AddCell(new PdfPCell(new Paragraph(txt_calleubicada.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblccTitulo.AddCell(new PdfPCell(new Paragraph("Calle secundaria:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblccTitulo.AddCell(new PdfPCell(new Paragraph(txt_callesecundaria.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblccTitulo.AddCell(new PdfPCell(new Paragraph("Referencia para ubicar el domicilio:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblccTitulo.AddCell(new PdfPCell(new Paragraph(txt_refubicardomicilio.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            pdfDoc.Add(tblccTitulo);
+
+            pdfDoc.Close();
+            Response.ContentType = "application/pdf";
+            Response.AddHeader("content-disposition", "attachment;filename=FichaMedica.pdf");
+            Response.Cache.SetCacheability(HttpCacheability.NoCache);
+            Response.Write(pdfDoc);
+            Response.End();
         }
     }
 }

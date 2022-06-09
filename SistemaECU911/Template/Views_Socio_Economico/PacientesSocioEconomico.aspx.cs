@@ -26,14 +26,14 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             var query = from r in dc.Tbl_SocioEconomico
                         join p in dc.Tbl_Personas on r.Per_id equals p.Per_id
-                        orderby r.Socio_economico_fechaHora descending
+                        orderby r.Socio_economico_fechaHoraGuardado descending
                         select new
                         {
                             r.Socio_economico_id,
                             p.Per_cedula,
                             p.Per_priNombre,
                             p.Per_priApellido,
-                            r.Socio_economico_fechaHora
+                            r.Socio_economico_fechaHoraGuardado
                         };
 
             grvPacientesSocioEconomico.DataSource = query.ToList();
