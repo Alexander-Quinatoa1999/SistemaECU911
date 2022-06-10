@@ -1032,69 +1032,68 @@ namespace SistemaECU911.Template.Views
                     reinte.rein_NoApto = "SI";
                 }
 
-                reinte = new Tbl_Reintegro
-                {
-                    //A
-                    rein_numArchivo = txt_numArchivo.Text,
-                    rein__fechUltDiaLaboral = txt_fechaUltiDiaLaboral.Text,
-                    rein_fechReingreso = txt_fechaReingreso.Text,
-                    rein_total = txt_total.Text,
-                    rein_causaSalida = txt_causaSalida.Text,
+                reinte = new Tbl_Reintegro();
 
-                    //B.
-                    rein_descripmotCon = txt_motivoconsultareintegro.Text,
+                //A
+                reinte.rein_numArchivo = txt_numArchivo.Text;
+                reinte.rein__fechUltDiaLaboral = txt_fechaUltiDiaLaboral.Text;
+                reinte.rein_fechReingreso = txt_fechaReingreso.Text;
+                reinte.rein_total = txt_total.Text;
+                reinte.rein_causaSalida = txt_causaSalida.Text;
 
-                    //C.
-                    rein_descripenfActual = txt_enfermedadactualreintegro.Text,
+                //B.
+                reinte.rein_descripmotCon = txt_motivoconsultareintegro.Text;
 
-                    //D
-                    rein_preArterial = txt_preArterial.Text,
-                    rein_temperatura = txt_temperatura.Text,
-                    rein_frecCardiacan = txt_freCardica.Text,
-                    rein_satOxigenon = txt_satOxigeno.Text,
-                    rein_frecRespiratorian = txt_freRespiratoria.Text,
-                    rein_peson = txt_peso.Text,
-                    rein_tallan = txt_talla.Text,
-                    rein_indMasCorporaln = txt_indMasCorporal.Text,
-                    rein_perAbdominaln = txt_perAbdominal.Text,
+                //C.
+                reinte.rein_descripenfActual = txt_enfermedadactualreintegro.Text;
 
-                    //E.                    
-                    rein_observaexaFisRegional = txt_observexamenfisicoregional.Text,
+                //D
+                reinte.rein_preArterial = txt_preArterial.Text;
+                reinte.rein_temperatura = txt_temperatura.Text;
+                reinte.rein_frecCardiacan = txt_freCardica.Text;
+                reinte.rein_satOxigenon = txt_satOxigeno.Text;
+                reinte.rein_frecRespiratorian = txt_freRespiratoria.Text;
+                reinte.rein_peson = txt_peso.Text;
+                reinte.rein_tallan = txt_talla.Text;
+                reinte.rein_indMasCorporaln = txt_indMasCorporal.Text;
+                reinte.rein_perAbdominaln = txt_perAbdominal.Text;
 
-                    //F.
-                    rein_examen = txt_examen.Text,
-                    rein_fecha = txt_fechaexamen.Text,
-                    rein_resultados = txt_resultadoexamen.Text,
-                    rein_examen2 = txt_examen2.Text,
-                    rein_fecha2 = txt_fechaexamen2.Text,
-                    rein_resultados2 = txt_resultadoexamen2.Text,
-                    rein_examen3 = txt_examen3.Text,
-                    rein_fecha3 = txt_fechaexamen3.Text,
-                    rein_resultados3 = txt_resultadoexamen3.Text,
-                    rein_observacionesResExaGenEspRiesTrabajo = txt_observacionexamen.Text,
+                //E.                    
+                reinte.rein_observaexaFisRegional = txt_observexamenfisicoregional.Text;
 
-                    //G.
-                    rein_descripcionDiagnostico = txt_descripdiagnostico.Text,
-                    rein_cie = txt_cie.Text,
-                    rein_descripcionDiagnostico2 = txt_descripdiagnostico2.Text,
-                    rein_cie2 = txt_cie2.Text,
-                    rein_descripcionDiagnostico3 = txt_descripdiagnostico3.Text,
-                    rein_cie3 = txt_cie3.Text,                    
+                //F.
+                reinte.rein_examen = txt_examen.Text;
+                reinte.rein_fecha = txt_fechaexamen.Text;
+                reinte.rein_resultados = txt_resultadoexamen.Text;
+                reinte.rein_examen2 = txt_examen2.Text;
+                reinte.rein_fecha2 = txt_fechaexamen2.Text;
+                reinte.rein_resultados2 = txt_resultadoexamen2.Text;
+                reinte.rein_examen3 = txt_examen3.Text;
+                reinte.rein_fecha3 = txt_fechaexamen3.Text;
+                reinte.rein_resultados3 = txt_resultadoexamen3.Text;
+                reinte.rein_observacionesResExaGenEspRiesTrabajo = txt_observacionexamen.Text;
 
-                    //H.
-                    rein_ObservAptMedica = txt_observacionaptitud.Text,
-                    rein_LimitAptMedica = txt_limitacionaptitud.Text,
-                    rein_ReubicaAptMedica = txt_reubicacionaptitud.Text,
+                //G.
+                reinte.rein_descripcionDiagnostico = txt_descripdiagnostico.Text;
+                reinte.rein_cie = txt_cie.Text;
+                reinte.rein_descripcionDiagnostico2 = txt_descripdiagnostico2.Text;
+                reinte.rein_cie2 = txt_cie2.Text;
+                reinte.rein_descripcionDiagnostico3 = txt_descripdiagnostico3.Text;
+                reinte.rein_cie3 = txt_cie3.Text;
 
-                    //I.
-                    rein_descripcionRecoTratamiento = txt_descripciontratamientoreintegro.Text,
+                //H.
+                reinte.rein_ObservAptMedica = txt_observacionaptitud.Text;
+                reinte.rein_LimitAptMedica = txt_limitacionaptitud.Text;
+                reinte.rein_ReubicaAptMedica = txt_reubicacionaptitud.Text;
 
-                    //J.
-                    rein_fecha_hora = txt_fechahora.Text,
-                    prof_id = Convert.ToInt32(ddl_profesional.SelectedValue),
-                    rein_cod = txt_codigoDatProf.Text,
-                    Per_id = perso
-                };
+                //I.
+                reinte.rein_descripcionRecoTratamiento = txt_descripciontratamientoreintegro.Text;
+
+                //J.
+                reinte.rein_fecha_hora = txt_fechahora.Text;
+                reinte.prof_id = Convert.ToInt32(ddl_profesional.SelectedValue);
+                reinte.rein_cod = txt_codigoDatProf.Text;
+                reinte.Per_id = perso;
 
                 CN_Reintegro.GuardarReintegro(reinte);
 
@@ -1545,7 +1544,7 @@ namespace SistemaECU911.Template.Views
                 reinte.rein_indMasCorporaln = txt_indMasCorporal.Text;
                 reinte.rein_perAbdominaln = txt_perAbdominal.Text;
 
-                //E.                
+                //E.                    
                 reinte.rein_observaexaFisRegional = txt_observexamenfisicoregional.Text;
 
                 //F.

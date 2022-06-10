@@ -470,15 +470,32 @@
                             </asp:TableRow>
                             <asp:TableRow>
                                 <asp:TableCell Style="background-color: white">
-                                    <asp:DropDownList ID="ddl_region" CssClass="form-check" Style="width: 100%; border: none; font-size: 14px" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddl_region_SelectedIndexChanged"></asp:DropDownList>
+                                    <asp:TextBox runat="server" ID="txt_region" BorderStyle="None" Style="width: 100%" TextMode="MultiLine" Rows="3"></asp:TextBox>
+                                    <%--<asp:DropDownList ID="ddl_region" CssClass="form-check" Style="width: 100%; border: none; font-size: 14px" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddl_region_SelectedIndexChanged"></asp:DropDownList>--%>
                                     <%--<asp:RequiredFieldValidator ErrorMessage="Required" ControlToValidate="ddl_tipoAntPer" InitialValue="0" runat="server" ForeColor="Red" />--%>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white">
-                                    <asp:DropDownList ID="ddl_tipoRegion" CssClass="form-check" Style="width: 100%; border: none; font-size: 14px" runat="server"></asp:DropDownList>
+                                    <asp:TextBox runat="server" ID="txt_tipoRegion" BorderStyle="None" Style="width: 100%" TextMode="MultiLine" Rows="3"></asp:TextBox>
+                                    <%--<asp:DropDownList ID="ddl_tipoRegion" CssClass="form-check" Style="width: 100%; border: none; font-size: 14px" runat="server"></asp:DropDownList>--%>
                                     <%--<asp:RequiredFieldValidator ErrorMessage="Required" ControlToValidate="ddl_tipoAntPer" InitialValue="0" runat="server" ForeColor="Red" />--%>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white; font-size: 14px">
                                     <asp:TextBox runat="server" ID="txt_exafisdescripcion" BorderStyle="None" Style="width: 100%" TextMode="MultiLine" Rows="3"></asp:TextBox>
+                                </asp:TableCell>
+                            </asp:TableRow>
+                            <asp:TableRow>
+                                <asp:TableCell Style="background-color: white">
+                                    <asp:TextBox runat="server" ID="txt_region2" BorderStyle="None" Style="width: 100%" TextMode="MultiLine" Rows="3"></asp:TextBox>
+                                    <%--<asp:DropDownList ID="ddl_region" CssClass="form-check" Style="width: 100%; border: none; font-size: 14px" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddl_region_SelectedIndexChanged"></asp:DropDownList>--%>
+                                    <%--<asp:RequiredFieldValidator ErrorMessage="Required" ControlToValidate="ddl_tipoAntPer" InitialValue="0" runat="server" ForeColor="Red" />--%>
+                                </asp:TableCell>
+                                <asp:TableCell Style="background-color: white">
+                                    <asp:TextBox runat="server" ID="txt_tipoRegion2" BorderStyle="None" Style="width: 100%" TextMode="MultiLine" Rows="3"></asp:TextBox>
+                                    <%--<asp:DropDownList ID="ddl_tipoRegion" CssClass="form-check" Style="width: 100%; border: none; font-size: 14px" runat="server"></asp:DropDownList>--%>
+                                    <%--<asp:RequiredFieldValidator ErrorMessage="Required" ControlToValidate="ddl_tipoAntPer" InitialValue="0" runat="server" ForeColor="Red" />--%>
+                                </asp:TableCell>
+                                <asp:TableCell Style="background-color: white; font-size: 14px">
+                                    <asp:TextBox runat="server" ID="txt_exafisdescripcion2" BorderStyle="None" Style="width: 100%" TextMode="MultiLine" Rows="3"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                         </asp:Table>

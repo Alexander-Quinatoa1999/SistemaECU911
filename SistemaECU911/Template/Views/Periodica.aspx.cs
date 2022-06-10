@@ -3711,115 +3711,114 @@ namespace SistemaECU911.Template.Views
                     perio.perio_NoApto = "SI";
                 }
 
-                perio = new Tbl_Periodica
-                {
-                    //A
-                    perio_numArchivo = txt_numArchivo.Text,
+                perio = new Tbl_Periodica();
+                
+                //A
+                perio.perio_numArchivo = txt_numArchivo.Text;
 
-                    //B.
-                    perio_descripMotiConsulta = txt_motivoconsultaperiodica.Text,
+                //B.
+                perio.perio_descripMotiConsulta = txt_motivoconsultaperiodica.Text;
 
-                    //C.
-                    perio_descripcionAntCliQuirurgicos = txt_antCliQuiDescripcion.Text,
+                //C.
+                perio.perio_descripcionAntCliQuirurgicos = txt_antCliQuiDescripcion.Text;
 
-                    perio_tiempoConsuConsuNocivosTabaco = txt_tiemConConsuNociTabaHabToxi.Text,
-                    perio_cantidadConsuNocivosTabaco = txt_cantiConsuNociTabaHabToxi.Text,
-                    perio_exConsumiConsuNocivosTabaco = txt_exConsumiConsuNociTabaHabToxi.Text,
-                    perio_tiempoAbstiConsuNocivosTabaco = txt_tiemAbstiConsuNociTabaHabToxi.Text,
+                perio.perio_tiempoConsuConsuNocivosTabaco = txt_tiemConConsuNociTabaHabToxi.Text;
+                perio.perio_cantidadConsuNocivosTabaco = txt_cantiConsuNociTabaHabToxi.Text;
+                perio.perio_exConsumiConsuNocivosTabaco = txt_exConsumiConsuNociTabaHabToxi.Text;
+                perio.perio_tiempoAbstiConsuNocivosTabaco = txt_tiemAbstiConsuNociTabaHabToxi.Text;
 
-                    perio_tiempoConsuConsuNocivosAlcohol = txt_tiemConConsuNociAlcoHabToxi.Text,
-                    perio_cantidadConsuNocivosAlcohol = txt_cantiConsuNociAlcoHabToxi.Text,
-                    perio_exConsumiConsuNocivosAlcohol = txt_exConsumiConsuNociAlcoHabToxi.Text,
-                    perio_tiempoAbstiConsuNocivosAlcohol = txt_tiemAbstiConsuNociAlcoHabToxi.Text,
+                perio.perio_tiempoConsuConsuNocivosAlcohol = txt_tiemConConsuNociAlcoHabToxi.Text;
+                perio.perio_cantidadConsuNocivosAlcohol = txt_cantiConsuNociAlcoHabToxi.Text;
+                perio.perio_exConsumiConsuNocivosAlcohol = txt_exConsumiConsuNociAlcoHabToxi.Text;
+                perio.perio_tiempoAbstiConsuNocivosAlcohol = txt_tiemAbstiConsuNociAlcoHabToxi.Text;
 
-                    perio_tiempoConsu1ConsuNocivosOtrasDrogas = txt_tiemCon1ConsuNociOtrasDroHabToxi.Text,
-                    perio_cantidad1ConsuNocivosOtrasDrogas = txt_canti1ConsuNociOtrasDroHabToxi.Text,
-                    perio_exConsumi1ConsuNocivosOtrasDrogas = txt_exConsumi1ConsuNociOtrasDroHabToxi.Text,
-                    perio_tiempoAbsti1ConsuNocivosOtrasDrogas = txt_tiemAbsti1ConsuNociOtrasDroHabToxi.Text,
-                    perio_otrasConsuNocivos = txt_otrasConsuNociOtrasDroHabToxi.Text,
-                    perio_tiempoConsu2ConsuNocivosOtrasDrogas = txt_tiemCon2ConsuNociOtrasDroHabToxi.Text,
-                    perio_cantidad2ConsuNocivosOtrasDrogas = txt_canti2ConsuNociOtrasDroHabToxi.Text,
-                    perio_exConsumi2ConsuNocivosOtrasDrogas = txt_exConsumi2ConsuNociOtrasDroHabToxi.Text,
-                    perio_tiempoAbsti2ConsuNocivosOtrasDrogas = txt_tiemAbsti2ConsuNociOtrasDroHabToxi.Text,
+                perio.perio_tiempoConsu1ConsuNocivosOtrasDrogas = txt_tiemCon1ConsuNociOtrasDroHabToxi.Text;
+                perio.perio_cantidad1ConsuNocivosOtrasDrogas = txt_canti1ConsuNociOtrasDroHabToxi.Text;
+                perio.perio_exConsumi1ConsuNocivosOtrasDrogas = txt_exConsumi1ConsuNociOtrasDroHabToxi.Text;
+                perio.perio_tiempoAbsti1ConsuNocivosOtrasDrogas = txt_tiemAbsti1ConsuNociOtrasDroHabToxi.Text;
+                perio.perio_otrasConsuNocivos = txt_otrasConsuNociOtrasDroHabToxi.Text;
+                perio.perio_tiempoConsu2ConsuNocivosOtrasDrogas = txt_tiemCon2ConsuNociOtrasDroHabToxi.Text;
+                perio.perio_cantidad2ConsuNocivosOtrasDrogas = txt_canti2ConsuNociOtrasDroHabToxi.Text;
+                perio.perio_exConsumi2ConsuNocivosOtrasDrogas = txt_exConsumi2ConsuNociOtrasDroHabToxi.Text;
+                perio.perio_tiempoAbsti2ConsuNocivosOtrasDrogas = txt_tiemAbsti2ConsuNociOtrasDroHabToxi.Text;
 
-                    perio_cualEstiVidaActFisica = txt_cualEstVidaActFisiEstVida.Text,
-                    perio_tiem_cantEstiVidaActFisica = txt_tiemCanEstVidaActFisiEstVida.Text,
+                perio.perio_cualEstiVidaActFisica = txt_cualEstVidaActFisiEstVida.Text;
+                perio.perio_tiem_cantEstiVidaActFisica = txt_tiemCanEstVidaActFisiEstVida.Text;
 
-                    perio_cual1EstiVidaMediHabitual = txt_cual1EstVidaMedHabiEstVida.Text,
-                    perio_tiem_cant1EstiVidaMediHabitual = txt_tiemCan1EstVidaMedHabiEstVida.Text,
-                    perio_cual2EstiVidaMediHabitual = txt_cual2EstVidaMedHabiEstVida.Text,
-                    perio_tiem_cant2EstiVidaMediHabitual = txt_tiemCan2EstVidaMedHabiEstVida.Text,
-                    perio_cual3EstiVidaMediHabitual = txt_cual3EstVidaMedHabiEstVida.Text,
-                    perio_tiem_cant3EstiVidaMediHabitual = txt_tiemCan3EstVidaMedHabiEstVida.Text,
+                perio.perio_cual1EstiVidaMediHabitual = txt_cual1EstVidaMedHabiEstVida.Text;
+                perio.perio_tiem_cant1EstiVidaMediHabitual = txt_tiemCan1EstVidaMedHabiEstVida.Text;
+                perio.perio_cual2EstiVidaMediHabitual = txt_cual2EstVidaMedHabiEstVida.Text;
+                perio.perio_tiem_cant2EstiVidaMediHabitual = txt_tiemCan2EstVidaMedHabiEstVida.Text;
+                perio.perio_cual3EstiVidaMediHabitual = txt_cual3EstVidaMedHabiEstVida.Text;
+                perio.perio_tiem_cant3EstiVidaMediHabitual = txt_tiemCan3EstVidaMedHabiEstVida.Text;
 
-                    perio_descripIncidentes = txt_incidentesperiodica.Text,
+                perio.perio_descripIncidentes = txt_incidentesperiodica.Text;
 
-                    perio_EspecifiCalificadoIESSAcciTrabajo = txt_especificarcalificadotrabajo.Text,
-                    perio_fechaCalificadoIESSAcciTrabajo = txt_fechacalificadotrabajo.Text,
-                    perio_observacionesAcciTrabajo = txt_obsercalificadotrabajo.Text,
+                perio.perio_EspecifiCalificadoIESSAcciTrabajo = txt_especificarcalificadotrabajo.Text;
+                perio.perio_fechaCalificadoIESSAcciTrabajo = txt_fechacalificadotrabajo.Text;
+                perio.perio_observacionesAcciTrabajo = txt_obsercalificadotrabajo.Text;
 
-                    perio_EspecifiCalificadoIESSEnferProfesionales = txt_especificarcalificadoprofesional.Text,
-                    perio_fechaCalificadoIESSEnferProfesionales = txt_fechacalificadoprofesional.Text,
-                    perio_observacionesEnferProfesionales = txt_obsercalificadoprofesional.Text,
+                perio.perio_EspecifiCalificadoIESSEnferProfesionales = txt_especificarcalificadoprofesional.Text;
+                perio.perio_fechaCalificadoIESSEnferProfesionales = txt_fechacalificadoprofesional.Text;
+                perio.perio_observacionesEnferProfesionales = txt_obsercalificadoprofesional.Text;
 
-                    //D.
-                    perio_descripcionAntFamiliares = txt_descripcionantefamiliares.Text,
+                //D.
+                perio.perio_descripcionAntFamiliares = txt_descripcionantefamiliares.Text;
 
-                    //E.
-                    perio_medPreventivas = txt_medpreventivas.Text,
-                    perio_medPreventivas2 = txt_medpreventivas2.Text,
-                    perio_medPreventivas3 = txt_medpreventivas3.Text,
+                //E.
+                perio.perio_medPreventivas = txt_medpreventivas.Text;
+                perio.perio_medPreventivas2 = txt_medpreventivas2.Text;
+                perio.perio_medPreventivas3 = txt_medpreventivas3.Text;
 
-                    //F.
-                    perio_descripEnfActual = txt_enfermedadactualperiodica.Text,
+                //F.
+                perio.perio_descripEnfActual = txt_enfermedadactualperiodica.Text;
 
-                    //G.
-                    perio_descripRevOrgaSistemas = txt_descrorganosysistemasperiodica.Text,
+                //G.
+                perio.perio_descripRevOrgaSistemas = txt_descrorganosysistemasperiodica.Text;
 
-                    //H.
-                    perio_preArterial = txt_preArterial.Text,
-                    perio_temperatura = txt_temperatura.Text,
-                    perio_frecCardiacan = txt_freCardica.Text,
-                    perio_satOxigenon = txt_satOxigeno.Text,
-                    perio_frecRespiratorian = txt_freRespiratoria.Text,
-                    perio_peson = txt_peso.Text,
-                    perio_tallan = txt_talla.Text,
-                    perio_indMasCorporaln = txt_indMasCorporal.Text,
-                    perio_perAbdominaln = txt_perAbdominal.Text,
+                //H.
+                perio.perio_preArterial = txt_preArterial.Text;
+                perio.perio_temperatura = txt_temperatura.Text;
+                perio.perio_frecCardiacan = txt_freCardica.Text;
+                perio.perio_satOxigenon = txt_satOxigeno.Text;
+                perio.perio_frecRespiratorian = txt_freRespiratoria.Text;
+                perio.perio_peson = txt_peso.Text;
+                perio.perio_tallan = txt_talla.Text;
+                perio.perio_indMasCorporaln = txt_indMasCorporal.Text;
+                perio.perio_perAbdominaln = txt_perAbdominal.Text;
 
-                    //I.
-                    perio_observaExaFisRegional = txt_observexamenfisicoregional.Text,
+                //I.
+                perio.perio_observaExaFisRegional = txt_observexamenfisicoregional.Text;
 
-                    //J.
-                    perio_examen = txt_examen.Text,
-                    perio_examen2 = txt_examen2.Text,
-                    perio_fecha = txt_fechaexamen.Text,
-                    perio_fecha2 = txt_fechaexamen2.Text,
-                    perio_resultado = txt_resultadoexamen.Text,
-                    perio_resultado2 = txt_resultadoexamen2.Text,
-                    perio_observacionesResExaGenEspPuesTrabajo = txt_observacionexamen.Text,
+                //J.
+                perio.perio_examen = txt_examen.Text;
+                perio.perio_examen2 = txt_examen2.Text;
+                perio.perio_fecha = txt_fechaexamen.Text;
+                perio.perio_fecha2 = txt_fechaexamen2.Text;
+                perio.perio_resultado = txt_resultadoexamen.Text;
+                perio.perio_resultado2 = txt_resultadoexamen2.Text;
+                perio.perio_observacionesResExaGenEspPuesTrabajo = txt_observacionexamen.Text;
 
-                    //K.
-                    perio_descripcionDiagnostico = txt_descripdiagnostico.Text,
-                    perio_descripcionDiagnostico2 = txt_descripdiagnostico2.Text,
-                    perio_descripcionDiagnostico3 = txt_descripdiagnostico3.Text,
-                    perio_cie = txt_cie.Text,
-                    perio_cie2 = txt_cie2.Text,
-                    perio_cie3 = txt_cie3.Text,
+                //K.
+                perio.perio_descripcionDiagnostico = txt_descripdiagnostico.Text;
+                perio.perio_descripcionDiagnostico2 = txt_descripdiagnostico2.Text;
+                perio.perio_descripcionDiagnostico3 = txt_descripdiagnostico3.Text;
+                perio.perio_cie = txt_cie.Text;
+                perio.perio_cie2 = txt_cie2.Text;
+                perio.perio_cie3 = txt_cie3.Text;
 
-                    //L.
-                    perio_ObservAptMedTrabajo = txt_observacionaptitud.Text,
-                    perio_LimitAptMedTrabajo = txt_limitacionaptitud.Text,
+                //L.
+                perio.perio_ObservAptMedTrabajo = txt_observacionaptitud.Text;
+                perio.perio_LimitAptMedTrabajo = txt_limitacionaptitud.Text;
 
-                    //M.
-                    perio_descripcionRecoTratamiento = txt_descripciontratamientoperiodica.Text,
+                //M.
+                perio.perio_descripcionRecoTratamiento = txt_descripciontratamientoperiodica.Text;
 
-                    //N.
-                    perio_fecha_hora = txt_fechahora.Text,
-                    prof_id = Convert.ToInt32(ddl_profesional.SelectedValue),
-                    perio_cod = txt_codigoDatProf.Text,
-                    Per_id = perso
-                };
+                //N.
+                perio.perio_fecha_hora = txt_fechahora.Text;
+                perio.prof_id = Convert.ToInt32(ddl_profesional.SelectedValue);
+                perio.perio_cod = txt_codigoDatProf.Text;
+                perio.Per_id = perso;
 
                 CN_Periodica.GuardarPeriodica(perio);
 
@@ -5907,22 +5906,16 @@ namespace SistemaECU911.Template.Views
                 //C.
                 perio.perio_descripcionAntCliQuirurgicos = txt_antCliQuiDescripcion.Text;
 
-                //perio.perio_siConsuNocivosTabaco = txt_siConsuNociTabaHabToxi.Text;
-                //perio.perio_noConsuNocivosTabaco = txt_noConsuNociTabaHabToxi.Text;
                 perio.perio_tiempoConsuConsuNocivosTabaco = txt_tiemConConsuNociTabaHabToxi.Text;
                 perio.perio_cantidadConsuNocivosTabaco = txt_cantiConsuNociTabaHabToxi.Text;
                 perio.perio_exConsumiConsuNocivosTabaco = txt_exConsumiConsuNociTabaHabToxi.Text;
                 perio.perio_tiempoAbstiConsuNocivosTabaco = txt_tiemAbstiConsuNociTabaHabToxi.Text;
 
-                //perio.perio_siConsuNocivosAlcohol = txt_siConsuNociAlcoHabToxi.Text;
-                //perio.perio_noConsuNocivosAlcohol = txt_noConsuNociAlcoHabToxi.Text;
                 perio.perio_tiempoConsuConsuNocivosAlcohol = txt_tiemConConsuNociAlcoHabToxi.Text;
                 perio.perio_cantidadConsuNocivosAlcohol = txt_cantiConsuNociAlcoHabToxi.Text;
                 perio.perio_exConsumiConsuNocivosAlcohol = txt_exConsumiConsuNociAlcoHabToxi.Text;
                 perio.perio_tiempoAbstiConsuNocivosAlcohol = txt_tiemAbstiConsuNociAlcoHabToxi.Text;
 
-                //perio.perio_siConsuNocivosOtrasDrogas = txt_siConsuNociOtrasDroHabToxi.Text;
-                //perio.perio_noConsuNocivosOtrasDrogas = txt_noConsuNociOtrasDroHabToxi.Text;
                 perio.perio_tiempoConsu1ConsuNocivosOtrasDrogas = txt_tiemCon1ConsuNociOtrasDroHabToxi.Text;
                 perio.perio_cantidad1ConsuNocivosOtrasDrogas = txt_canti1ConsuNociOtrasDroHabToxi.Text;
                 perio.perio_exConsumi1ConsuNocivosOtrasDrogas = txt_exConsumi1ConsuNociOtrasDroHabToxi.Text;
@@ -5933,13 +5926,9 @@ namespace SistemaECU911.Template.Views
                 perio.perio_exConsumi2ConsuNocivosOtrasDrogas = txt_exConsumi2ConsuNociOtrasDroHabToxi.Text;
                 perio.perio_tiempoAbsti2ConsuNocivosOtrasDrogas = txt_tiemAbsti2ConsuNociOtrasDroHabToxi.Text;
 
-                //perio.perio_siEstiVidaActFisica = txt_siEstVidaActFisiEstVida.Text;
-                //perio.perio_noEstiVidaActFisica = txt_noEstVidaActFisiEstVida.Text;
                 perio.perio_cualEstiVidaActFisica = txt_cualEstVidaActFisiEstVida.Text;
                 perio.perio_tiem_cantEstiVidaActFisica = txt_tiemCanEstVidaActFisiEstVida.Text;
 
-                //perio.perio_siEstiVidaMediHabitual = txt_siEstVidaMedHabiEstVida.Text;
-                //perio.perio_noEstiVidaMediHabitual = txt_noEstVidaMedHabiEstVida.Text;
                 perio.perio_cual1EstiVidaMediHabitual = txt_cual1EstVidaMedHabiEstVida.Text;
                 perio.perio_tiem_cant1EstiVidaMediHabitual = txt_tiemCan1EstVidaMedHabiEstVida.Text;
                 perio.perio_cual2EstiVidaMediHabitual = txt_cual2EstVidaMedHabiEstVida.Text;
@@ -5949,108 +5938,26 @@ namespace SistemaECU911.Template.Views
 
                 perio.perio_descripIncidentes = txt_incidentesperiodica.Text;
 
-                //perio.perio_siCalificadoIESSAcciTrabajo = txt_sicalificadotrabajo.Text;
                 perio.perio_EspecifiCalificadoIESSAcciTrabajo = txt_especificarcalificadotrabajo.Text;
-                //perio.perio_noCalificadoIESSAcciTrabajo = txt_nocalificadotrabajo.Text;
                 perio.perio_fechaCalificadoIESSAcciTrabajo = txt_fechacalificadotrabajo.Text;
                 perio.perio_observacionesAcciTrabajo = txt_obsercalificadotrabajo.Text;
 
-                //perio.perio_siCalificadoIESSEnferProfesionales = txt_sicalificadoprofesional.Text;
                 perio.perio_EspecifiCalificadoIESSEnferProfesionales = txt_especificarcalificadoprofesional.Text;
-                //perio.perio_noCalificadoIESSEnferProfesionales = txt_nocalificadoprofesional.Text;
                 perio.perio_fechaCalificadoIESSEnferProfesionales = txt_fechacalificadoprofesional.Text;
                 perio.perio_observacionesEnferProfesionales = txt_obsercalificadoprofesional.Text;
 
                 //D.
-                //perio.perio_enfCarVas = txt_enfermedadcardiovascular.Text;
-                //perio.perio_enfMeta = txt_enfermedadmetabolica.Text;
-                //perio.perio_enfNeuro = txt_enfermedadneurologica.Text;
-                //perio.perio_enfOnco = txt_enfermedadoncologica.Text;
-                //perio.perio_enfInfe = txt_enfermedadinfecciosa.Text;
-                //perio.perio_enfHereConge = txt_enfermedadhereditaria.Text;
-                //perio.perio_discapa = txt_discapacidades.Text;
-                //perio.perio_otros = txt_otrosenfer.Text;
                 perio.perio_descripcionAntFamiliares = txt_descripcionantefamiliares.Text;
 
                 //E.
-                //facriestrabperio.periodica.FacRiesTrabActperio.periodica_area = txt_puestotrabajoperio.periodica.Text;
-                //facriestrabperio.periodica.FacRiesTrabActperio.periodica_actividades = txt_act.Text;
-                //facriestrabperio.periodica.FacRiesTrabActperio.periodica_tiemTrabperio.periodica = txt_tiempotrabajo.Text;
-                //facriestrabperio.periodica.FacRiesTrabActperio.periodica_temAltasFis = txt_tempaltas.Text;
-                //facriestrabperio.periodica.FacRiesTrabActperio.periodica_temBajasFis = txt_tempbajas.Text;
-                //facriestrabperio.periodica.FacRiesTrabActperio.periodica_radIonizanteFis = txt_radiacion.Text;
-                //facriestrabperio.periodica.FacRiesTrabActperio.periodica_radNoIonizanteFis = txt_noradiacion.Text;
-                //facriestrabperio.periodica.FacRiesTrabActperio.periodica_ruidoFis = txt_ruido.Text;
-                //facriestrabperio.periodica.FacRiesTrabActperio.periodica_vibracionFis = txt_vibracion.Text;
-                //facriestrabperio.periodica.FacRiesTrabActperio.periodica_iluminacionFis = txt_iluminacion.Text;
-                //facriestrabperio.periodica.FacRiesTrabActperio.periodica_ventilacionFis = txt_ventilacion.Text;
-                //facriestrabperio.periodica.FacRiesTrabActperio.periodica_fluElectricoFis = txt_fluidoelectrico.Text;
-                //facriestrabperio.periodica.FacRiesTrabActperio.periodica_otrosFis = txt_otros1.Text;
-                //facriestrabperio.periodica.FacRiesTrabActperio.periodica_atraMaquinasMec = txt_atrapmaquinas.Text;
-                //facriestrabperio.periodica.FacRiesTrabActperio.periodica_atraSuperfiiesMec = txt_atrapsuperficie.Text;
-                //facriestrabperio.periodica.FacRiesTrabActperio.periodica_atraObjetosMec = txt_atrapobjetos.Text;
-                //facriestrabperio.periodica.FacRiesTrabActperio.periodica_caidaObjetosMec = txt_caidaobjetos.Text;
-                //facriestrabperio.periodica.FacRiesTrabActperio.periodica_caidaMisNivelMec = txt_caidamisnivel.Text;
-                //facriestrabperio.periodica.FacRiesTrabActperio.periodica_caidaDifNivelMec = txt_caidadifnivel.Text;
-                //facriestrabperio.periodica.FacRiesTrabActperio.periodica_contactoElecMec = txt_contaelectrico.Text;
-                //facriestrabperio.periodica.FacRiesTrabActperio.periodica_conSuperTrabaMec = txt_contasuptrabajo.Text;
-                //facriestrabperio.periodica.FacRiesTrabActperio.periodica_proPartiFragMec = txt_proyparticulas.Text;
-                //facriestrabperio.periodica.FacRiesTrabActperio.periodica_proFluidosMec = txt_proyefluidos.Text;
-                //facriestrabperio.periodica.FacRiesTrabActperio.periodica_pinchazosMec = txt_pinchazos.Text;
-                //facriestrabperio.periodica.FacRiesTrabActperio.periodica_cortesMec = txt_cortes.Text;
-                //facriestrabperio.periodica.FacRiesTrabActperio.periodica_atropeVehiMec = txt_atroporvehiculos.Text;
-                //facriestrabperio.periodica.FacRiesTrabActperio.periodica_coliVehiMec = txt_choques.Text;
-                //facriestrabperio.periodica.FacRiesTrabActperio.periodica_otrosMec = txt_otros2.Text;
-                //facriestrabperio.periodica.FacRiesTrabActperio.periodica_solidosQui = txt_solidos.Text;
-                //facriestrabperio.periodica.FacRiesTrabActperio.periodica_polvosQui = txt_polvos.Text;
-                //facriestrabperio.periodica.FacRiesTrabActperio.periodica_humosQui = txt_humos.Text;
-                //facriestrabperio.periodica.FacRiesTrabActperio.periodica_liquidosQui = txt_liquidos.Text;
-                //facriestrabperio.periodica.FacRiesTrabActperio.periodica_vaporesQui = txt_vapores.Text;
-                //facriestrabperio.periodica.FacRiesTrabActperio.periodica_aerosolesQui = txt_aerosoles.Text;
-                //facriestrabperio.periodica.FacRiesTrabActperio.periodica_neblinasQui = txt_neblinas.Text;
-                //facriestrabperio.periodica.FacRiesTrabActperio.periodica_gaseososQui = txt_gaseosos.Text;
-                //facriestrabperio.periodica.FacRiesTrabActperio.periodica_otrosBio = txt_otros3.Text;
-                //facriestrabperio.periodica.FacRiesTrabActperio.periodica_virusBio = txt_virus.Text;
-                //facriestrabperio.periodica.FacRiesTrabActperio.periodica_hongosBio = txt_hongos.Text;
-                //facriestrabperio.periodica.FacRiesTrabActperio.periodica_bacteriasBio = txt_bacterias.Text;
-                //facriestrabperio.periodica.FacRiesTrabActperio.periodica_parasitosBio = txt_parasitos.Text;
-                //facriestrabperio.periodica.FacRiesTrabActperio.periodica_expVectBio = txt_expoavectores.Text;
-                //facriestrabperio.periodica.FacRiesTrabActperio.periodica_expAniSelvaBio = txt_expoanimselvaticos.Text;
-                //facriestrabperio.periodica.FacRiesTrabActperio.periodica_otrosBio = txt_otros4.Text;
-                //facriestrabperio.periodica.FacRiesTrabActperio.periodica_maneManCarErg = txt_manmanualcargas.Text;
-                //facriestrabperio.periodica.FacRiesTrabActperio.periodica_movRepeErg = txt_movrepetitivo.Text;
-                //facriestrabperio.periodica.FacRiesTrabActperio.periodica_posForzaErg = txt_postforzadas.Text;
-                //facriestrabperio.periodica.FacRiesTrabActperio.periodica_trabPvdErg = txt_trabajopvd.Text;
-                //facriestrabperio.periodica.FacRiesTrabActperio.periodica_otrosErg = txt_otros5.Text;
-                //facriestrabperio.periodica.FacRiesTrabActperio.periodica_monoTrabPsi = txt_montrabajo.Text;
-                //facriestrabperio.periodica.FacRiesTrabActperio.periodica_sobrecarLabPsi = txt_sobrecargalaboral.Text;
-                //facriestrabperio.periodica.FacRiesTrabActperio.periodica_minuTareaPsi = txt_minustarea.Text;
-                //facriestrabperio.periodica.FacRiesTrabActperio.periodica_altaResponPsi = txt_altarespon.Text;
-                //facriestrabperio.periodica.FacRiesTrabActperio.periodica_autoTomaDesiPsi = txt_automadesiciones.Text;
-                //facriestrabperio.periodica.FacRiesTrabActperio.periodica_supEstDirecDefiPsi = txt_supyestdireficiente.Text;
-                //facriestrabperio.periodica.FacRiesTrabActperio.periodica_conflicRolPsi = txt_conflictorol.Text;
-                //facriestrabperio.periodica.FacRiesTrabActperio.periodica_falClariFunPsi = txt_faltaclarfunciones.Text;
-                //facriestrabperio.periodica.FacRiesTrabActperio.periodica_incoDistriTrabPsi = txt_incorrdistrabajo.Text;
-                //facriestrabperio.periodica.FacRiesTrabActperio.periodica_turnosRotaPsi = txt_turnorotat.Text;
-                //facriestrabperio.periodica.FacRiesTrabActperio.periodica_relInterperPsi = txt_relacinterpersonales.Text;
-                //facriestrabperio.periodica.FacRiesTrabActperio.periodica_inesLabPsi = txt_inestalaboral.Text;
-                //facriestrabperio.periodica.FacRiesTrabActperio.periodica_otrosPsi = txt_otros6.Text;
-                //facriestrabperio.periodica.FacRiesTrabActperio.periodica_medPreventivas = txt_medpreventivas.Text;
+                perio.perio_medPreventivas = txt_medpreventivas.Text;
+                perio.perio_medPreventivas2 = txt_medpreventivas2.Text;
+                perio.perio_medPreventivas3 = txt_medpreventivas3.Text;
 
                 //F.
                 perio.perio_descripEnfActual = txt_enfermedadactualperiodica.Text;
 
-                ////G.
-                //perio.perio_pielAnexos = txt_pielanexos.Text;
-                //perio.perio_orgSentidos = txt_organossentidos.Text;
-                //perio.perio_respiratorio = txt_respiratorio.Text;
-                //perio.perio_cardVascular = txt_cardiovascular.Text;
-                //perio.perio_digestivo = txt_digestivo.Text;
-                //perio.perio_genUrinario = txt_genitourinario.Text;
-                //perio.perio_muscEsqueletico = txt_musculosesqueleticos.Text;
-                //perio.perio_endocrino = txt_endocrino.Text;
-                //perio.perio_hemoLimfa = txt_hemolinfatico.Text;
-                //perio.perio_nervioso = txt_nervioso.Text;
+                //G.
                 perio.perio_descripRevOrgaSistemas = txt_descrorganosysistemasperiodica.Text;
 
                 //H.
@@ -6064,66 +5971,27 @@ namespace SistemaECU911.Template.Views
                 perio.perio_indMasCorporaln = txt_indMasCorporal.Text;
                 perio.perio_perAbdominaln = txt_perAbdominal.Text;
 
-                ////I.
-                //perio.perio_cicatricesPiel = txt_cicatrices.Text;
-                //perio.perio_tatuajesPiel = txt_tatuajes.Text;
-                //perio.perio_pielFacerasPiel = txt_pielyfaneras.Text;
-                //perio.perio_parpadosOjos = txt_parpados.Text;
-                //perio.perio_conjuntuvasOjos = txt_conjuntivas.Text;
-                //perio.perio_pupilasOjos = txt_pupilas.Text;
-                //perio.perio_corneaOjos = txt_cornea.Text;
-                //perio.perio_motilidadOjos = txt_motilidad.Text;
-                //perio.perio_cAudiExtreOido = txt_auditivoexterno.Text;
-                //perio.perio_pabellonOido = txt_pabellon.Text;
-                //perio.perio_timpanosOido = txt_timpanos.Text;
-                //perio.perio_labiosOroFa = txt_labios.Text;
-                //perio.perio_lenguaOroFa = txt_lengua.Text;
-                //perio.perio_faringeOroFa = txt_faringe.Text;
-                //perio.perio_amigdalasOroFa = txt_amigdalas.Text;
-                //perio.perio_dentaduraOroFa = txt_dentadura.Text;
-                //perio.perio_tabiqueNariz = txt_tabique.Text;
-                //perio.perio_cornetesNariz = txt_cornetes.Text;
-                //perio.perio_mucosasNariz = txt_mucosa.Text;
-                //perio.perio_senosParanaNariz = txt_senosparanasales.Text;
-                //perio.perio_tiroiMasasCuello = txt_tiroides.Text;
-                //perio.perio_movilidadCuello = txt_movilidad.Text;
-                //perio.perio_mamasTorax = txt_mamas.Text;
-                //perio.perio_corazonTorax = txt_corazon.Text;
-                //perio.perio_pulmonesTorax2 = txt_pulmones.Text;
-                //perio.perio_parriCostalTorax2 = txt_parrillacostal.Text;
-                //perio.perio_viscerasAbdomen = txt_visceras.Text;
-                //perio.perio_paredAbdomiAbdomen = txt_paredabdominal.Text;
-                //perio.perio_flexibilidadColumna = txt_flexibilidad.Text;
-                //perio.perio_desviacionColumna = txt_desviacion.Text;
-                //perio.perio_dolorColumna = txt_dolor.Text;
-                //perio.perio_pelvisPelvis = txt_pelvis.Text;
-                //perio.perio_genitalesPelvis = txt_genitales.Text;
-                //perio.perio_vascularExtre = txt_vascular.Text;
-                //perio.perio_miemSupeExtre = txt_miembrosuperiores.Text;
-                //perio.perio_miemInfeExtre = txt_miembrosinferiores.Text;
-                //perio.perio_fuerzaNeuro = txt_fuerza.Text;
-                //perio.perio_sensibiNeuro = txt_sensibilidad.Text;
-                //perio.perio_marchaNeuro = txt_marcha.Text;
-                //perio.perio_refleNeuro = txt_reflejos.Text;
+                //I.
                 perio.perio_observaExaFisRegional = txt_observexamenfisicoregional.Text;
 
                 //J.
                 perio.perio_examen = txt_examen.Text;
+                perio.perio_examen2 = txt_examen2.Text;
                 perio.perio_fecha = txt_fechaexamen.Text;
+                perio.perio_fecha2 = txt_fechaexamen2.Text;
                 perio.perio_resultado = txt_resultadoexamen.Text;
+                perio.perio_resultado2 = txt_resultadoexamen2.Text;
                 perio.perio_observacionesResExaGenEspPuesTrabajo = txt_observacionexamen.Text;
 
                 //K.
                 perio.perio_descripcionDiagnostico = txt_descripdiagnostico.Text;
+                perio.perio_descripcionDiagnostico2 = txt_descripdiagnostico2.Text;
+                perio.perio_descripcionDiagnostico3 = txt_descripdiagnostico3.Text;
                 perio.perio_cie = txt_cie.Text;
-                //perio.perio_pre = txt_pre.Text;
-                //perio.perio_def = txt_def.Text;
+                perio.perio_cie2 = txt_cie2.Text;
+                perio.perio_cie3 = txt_cie3.Text;
 
                 //L.
-                //perio.perio_apto = txt_apto.Text;
-                //perio.perio_aptoObserva = txt_aptoobservacion.Text;
-                //perio.perio_aptoLimi = txt_aptolimitacion.Text;
-                //perio.perio_NoApto = txt_noapto.Text;
                 perio.perio_ObservAptMedTrabajo = txt_observacionaptitud.Text;
                 perio.perio_LimitAptMedTrabajo = txt_limitacionaptitud.Text;
 

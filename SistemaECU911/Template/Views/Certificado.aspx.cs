@@ -373,25 +373,24 @@ namespace SistemaECU911.Template.Views
                     certi.certi_noAplicaCondiSalud = "SI";                    
                 }
 
-                certi = new Tbl_Certificado
-                {
-                    //A
-                    certi_numArchivo = txt_numArchivo.Text,
+                certi = new Tbl_Certificado();
 
-                    //B.
-                    certi_fechEmision = txt_fechaEmision.Text,
+                //A
+                certi.certi_numArchivo = txt_numArchivo.Text;
 
-                    //C.
-                    certi_ObservAptiMedLaboral = txt_detaObservaAptiMedLaboral.Text,
+                //B.
+                certi.certi_fechEmision = txt_fechaEmision.Text;
 
-                    //E.
-                    certi_descripcionRecomendaciones = txt_descripRecomendaciones.Text,
+                //C.
+                certi.certi_ObservAptiMedLaboral = txt_detaObservaAptiMedLaboral.Text;
 
-                    //F.
-                    prof_id = Convert.ToInt32(ddl_profesional.SelectedValue),
-                    certi_cod = txt_codigo.Text,
-                    Per_id = perso
-                };
+                //E.
+                certi.certi_descripcionRecomendaciones = txt_descripRecomendaciones.Text;
+
+                //F.
+                certi.prof_id = Convert.ToInt32(ddl_profesional.SelectedValue);
+                certi.certi_cod = txt_codigo.Text;
+                certi.Per_id = perso;
 
                 CN_Certificado.GuardarCertificado(certi);
 

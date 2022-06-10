@@ -317,91 +317,90 @@ namespace SistemaECU911.Template.Views
 
                 int perso = Convert.ToInt32(per.Per_id.ToString());
 
-                evo = new Tbl_Evolucion 
-                {
-                    //A Captura de datos Establecimiento
-                    evo_numArchivo = txt_numArchivo.Text,
+                evo = new Tbl_Evolucion();
 
-                    //B. Captura de datos Evolucion
-                    evo_fecha1 = txt_fecha1.Text,
-                    evo_hora1 = txt_hora1.Text,
-                    evo_notasEvolucion1 = txt_notas1.Text,
-                    evo_fecha2 = txt_fecha2.Text,
-                    evo_hora2 = txt_hora2.Text,
-                    evo_notasEvolucion2 = txt_notas2.Text,
-                    evo_fecha3 = txt_fecha3.Text,
-                    evo_hora3 = txt_hora3.Text,
-                    evo_notasEvolucion3 = txt_notas3.Text,
-                    evo_fecha4 = txt_fecha4.Text,
-                    evo_hora4 = txt_hora4.Text,
-                    evo_notasEvolucion4 = txt_notas4.Text,
-                    evo_fecha5 = txt_fecha5.Text,
-                    evo_hora5 = txt_hora5.Text,
-                    evo_notasEvolucion5 = txt_notas5.Text,
-                    evo_fecha6 = txt_fecha6.Text,
-                    evo_hora6 = txt_hora6.Text,
-                    evo_notasEvolucion6 = txt_notas6.Text,
-                    evo_fecha7 = txt_fecha7.Text,
-                    evo_hora7 = txt_hora7.Text,
-                    evo_notasEvolucion7 = txt_notas7.Text,
-                    evo_fecha8 = txt_fecha8.Text,
-                    evo_hora8 = txt_hora8.Text,
-                    evo_notasEvolucion8 = txt_notas8.Text,
-                    evo_fecha9 = txt_fecha9.Text,
-                    evo_hora9 = txt_hora9.Text,
-                    evo_notasEvolucion9 = txt_notas9.Text,
-                    evo_fecha10 = txt_fecha10.Text,
-                    evo_hora10 = txt_hora10.Text,
-                    evo_notasEvolucion10 = txt_notas10.Text,
-                    evo_fecha11 = txt_fecha11.Text,
-                    evo_hora11 = txt_hora11.Text,
-                    evo_notasEvolucion11 = txt_notas11.Text,
-                    evo_fecha12 = txt_fecha12.Text,
-                    evo_hora12 = txt_hora12.Text,
-                    evo_notasEvolucion12 = txt_notas12.Text,
-                    evo_fecha13 = txt_fecha13.Text,
-                    evo_hora13 = txt_hora13.Text,
-                    evo_notasEvolucion13 = txt_notas13.Text,
-                    evo_fecha14 = txt_fecha14.Text,
-                    evo_hora14 = txt_hora14.Text,
-                    evo_notasEvolucion14 = txt_notas14.Text,
-                    evo_fecha15 = txt_fecha15.Text,
-                    evo_hora15 = txt_hora15.Text,
-                    evo_notasEvolucion15 = txt_notas15.Text,
+                //A Captura de datos Establecimiento
+                evo.evo_numArchivo = txt_numArchivo.Text;
 
-                    //C. Captura de Datos Prescripcion
-                    evo_farmacoIndicaciones1 = txt_farmacoterapia1.Text,
-                    evo_adminisFarmacos1 = txt_administracion1.Text,
-                    evo_farmacoIndicaciones2 = txt_farmacoterapia2.Text,
-                    evo_adminisFarmacos2 = txt_administracion2.Text,
-                    evo_farmacoIndicaciones3 = txt_farmacoterapia3.Text,
-                    evo_adminisFarmacos3 = txt_administracion3.Text,
-                    evo_farmacoIndicaciones4 = txt_farmacoterapia4.Text,
-                    evo_adminisFarmacos4 = txt_administracion4.Text,
-                    evo_farmacoIndicaciones5 = txt_farmacoterapia5.Text,
-                    evo_adminisFarmacos5 = txt_administracion5.Text,
-                    evo_farmacoIndicaciones6 = txt_farmacoterapia6.Text,
-                    evo_adminisFarmacos6 = txt_administracion6.Text,
-                    evo_farmacoIndicaciones7 = txt_farmacoterapia7.Text,
-                    evo_adminisFarmacos7 = txt_administracion7.Text,
-                    evo_farmacoIndicaciones8 = txt_farmacoterapia8.Text,
-                    evo_adminisFarmacos8 = txt_administracion8.Text,
-                    evo_farmacoIndicaciones9 = txt_farmacoterapia9.Text,
-                    evo_adminisFarmacos9 = txt_administracion9.Text,
-                    evo_farmacoIndicaciones10 = txt_farmacoterapia10.Text,
-                    evo_adminisFarmacos10 = txt_administracion10.Text,
-                    evo_farmacoIndicaciones11 = txt_farmacoterapia11.Text,
-                    evo_adminisFarmacos11 = txt_administracion11.Text,
-                    evo_farmacoIndicaciones12 = txt_farmacoterapia12.Text,
-                    evo_adminisFarmacos12 = txt_administracion12.Text,
-                    evo_farmacoIndicaciones13 = txt_farmacoterapia13.Text,
-                    evo_adminisFarmacos13 = txt_administracion13.Text,
-                    evo_farmacoIndicaciones14 = txt_farmacoterapia14.Text,
-                    evo_adminisFarmacos14 = txt_administracion14.Text,
-                    evo_farmacoIndicaciones15 = txt_farmacoterapia15.Text,
-                    evo_adminisFarmacos15 = txt_administracion15.Text,
-                    Per_id = perso
-                };
+                //B. Captura de datos Evolucion
+                evo.evo_fecha1 = txt_fecha1.Text;
+                evo.evo_hora1 = txt_hora1.Text;
+                evo.evo_notasEvolucion1 = txt_notas1.Text;
+                evo.evo_fecha2 = txt_fecha2.Text;
+                evo.evo_hora2 = txt_hora2.Text;
+                evo.evo_notasEvolucion2 = txt_notas2.Text;
+                evo.evo_fecha3 = txt_fecha3.Text;
+                evo.evo_hora3 = txt_hora3.Text;
+                evo.evo_notasEvolucion3 = txt_notas3.Text;
+                evo.evo_fecha4 = txt_fecha4.Text;
+                evo.evo_hora4 = txt_hora4.Text;
+                evo.evo_notasEvolucion4 = txt_notas4.Text;
+                evo.evo_fecha5 = txt_fecha5.Text;
+                evo.evo_hora5 = txt_hora5.Text;
+                evo.evo_notasEvolucion5 = txt_notas5.Text;
+                evo.evo_fecha6 = txt_fecha6.Text;
+                evo.evo_hora6 = txt_hora6.Text;
+                evo.evo_notasEvolucion6 = txt_notas6.Text;
+                evo.evo_fecha7 = txt_fecha7.Text;
+                evo.evo_hora7 = txt_hora7.Text;
+                evo.evo_notasEvolucion7 = txt_notas7.Text;
+                evo.evo_fecha8 = txt_fecha8.Text;
+                evo.evo_hora8 = txt_hora8.Text;
+                evo.evo_notasEvolucion8 = txt_notas8.Text;
+                evo.evo_fecha9 = txt_fecha9.Text;
+                evo.evo_hora9 = txt_hora9.Text;
+                evo.evo_notasEvolucion9 = txt_notas9.Text;
+                evo.evo_fecha10 = txt_fecha10.Text;
+                evo.evo_hora10 = txt_hora10.Text;
+                evo.evo_notasEvolucion10 = txt_notas10.Text;
+                evo.evo_fecha11 = txt_fecha11.Text;
+                evo.evo_hora11 = txt_hora11.Text;
+                evo.evo_notasEvolucion11 = txt_notas11.Text;
+                evo.evo_fecha12 = txt_fecha12.Text;
+                evo.evo_hora12 = txt_hora12.Text;
+                evo.evo_notasEvolucion12 = txt_notas12.Text;
+                evo.evo_fecha13 = txt_fecha13.Text;
+                evo.evo_hora13 = txt_hora13.Text;
+                evo.evo_notasEvolucion13 = txt_notas13.Text;
+                evo.evo_fecha14 = txt_fecha14.Text;
+                evo.evo_hora14 = txt_hora14.Text;
+                evo.evo_notasEvolucion14 = txt_notas14.Text;
+                evo.evo_fecha15 = txt_fecha15.Text;
+                evo.evo_hora15 = txt_hora15.Text;
+                evo.evo_notasEvolucion15 = txt_notas15.Text;
+
+                //C. Captura de Datos Prescripcion
+                evo.evo_farmacoIndicaciones1 = txt_farmacoterapia1.Text;
+                evo.evo_adminisFarmacos1 = txt_administracion1.Text;
+                evo.evo_farmacoIndicaciones2 = txt_farmacoterapia2.Text;
+                evo.evo_adminisFarmacos2 = txt_administracion2.Text;
+                evo.evo_farmacoIndicaciones3 = txt_farmacoterapia3.Text;
+                evo.evo_adminisFarmacos3 = txt_administracion3.Text;
+                evo.evo_farmacoIndicaciones4 = txt_farmacoterapia4.Text;
+                evo.evo_adminisFarmacos4 = txt_administracion4.Text;
+                evo.evo_farmacoIndicaciones5 = txt_farmacoterapia5.Text;
+                evo.evo_adminisFarmacos5 = txt_administracion5.Text;
+                evo.evo_farmacoIndicaciones6 = txt_farmacoterapia6.Text;
+                evo.evo_adminisFarmacos6 = txt_administracion6.Text;
+                evo.evo_farmacoIndicaciones7 = txt_farmacoterapia7.Text;
+                evo.evo_adminisFarmacos7 = txt_administracion7.Text;
+                evo.evo_farmacoIndicaciones8 = txt_farmacoterapia8.Text;
+                evo.evo_adminisFarmacos8 = txt_administracion8.Text;
+                evo.evo_farmacoIndicaciones9 = txt_farmacoterapia9.Text;
+                evo.evo_adminisFarmacos9 = txt_administracion9.Text;
+                evo.evo_farmacoIndicaciones10 = txt_farmacoterapia10.Text;
+                evo.evo_adminisFarmacos10 = txt_administracion10.Text;
+                evo.evo_farmacoIndicaciones11 = txt_farmacoterapia11.Text;
+                evo.evo_adminisFarmacos11 = txt_administracion11.Text;
+                evo.evo_farmacoIndicaciones12 = txt_farmacoterapia12.Text;
+                evo.evo_adminisFarmacos12 = txt_administracion12.Text;
+                evo.evo_farmacoIndicaciones13 = txt_farmacoterapia13.Text;
+                evo.evo_adminisFarmacos13 = txt_administracion13.Text;
+                evo.evo_farmacoIndicaciones14 = txt_farmacoterapia14.Text;
+                evo.evo_adminisFarmacos14 = txt_administracion14.Text;
+                evo.evo_farmacoIndicaciones15 = txt_farmacoterapia15.Text;
+                evo.evo_adminisFarmacos15 = txt_administracion15.Text;
+                evo.Per_id = perso;
 
                 CN_Evolucion.GuardarEvolucion(evo);
 

@@ -492,22 +492,22 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_perAbdominal;
 
         /// <summary>
-        /// Control ddl_region.
+        /// Control txt_region.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddl_region;
+        protected global::System.Web.UI.WebControls.TextBox txt_region;
 
         /// <summary>
-        /// Control ddl_tipoRegion.
+        /// Control txt_tipoRegion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddl_tipoRegion;
+        protected global::System.Web.UI.WebControls.TextBox txt_tipoRegion;
 
         /// <summary>
         /// Control txt_exafisdescripcion.
@@ -517,6 +517,33 @@ namespace SistemaECU911.Template.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_exafisdescripcion;
+
+        /// <summary>
+        /// Control txt_region2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_region2;
+
+        /// <summary>
+        /// Control txt_tipoRegion2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_tipoRegion2;
+
+        /// <summary>
+        /// Control txt_exafisdescripcion2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_exafisdescripcion2;
 
         /// <summary>
         /// Control txt_diagnosticosDiagnostico.

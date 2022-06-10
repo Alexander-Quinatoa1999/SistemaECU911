@@ -1,4 +1,4 @@
-﻿using System;
+﻿    using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -3901,7 +3901,7 @@ namespace SistemaECU911.Template.Views
 
                 if (ckb_catolica.Checked == true)
                 {
-                    inicial.inicial_catolicaRel = "Si";
+                    inicial.inicial_catolicaRel = "SI";
                 }
                 if (ckb_evangelica.Checked == true)
                 {

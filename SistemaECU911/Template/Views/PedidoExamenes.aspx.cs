@@ -1368,6 +1368,7 @@ namespace SistemaECU911.Template.Views
 
                 int perso = Convert.ToInt32(per.Per_id.ToString());
 
+                pedexa = new Tbl_PedidoExamenes();
 
                 //Hematologia
                 if (ckb_bioHematica.Checked == true)
@@ -1985,21 +1986,17 @@ namespace SistemaECU911.Template.Views
                     pedexa.pedExa_helicobacterPylotiHeces = "SI";
                 }
 
-                pedexa = new Tbl_PedidoExamenes
-                {
-                    //A.
-                    pedExa_numArchivo = txt_numArchivo.Text,
-                };
+                //A.
+                pedexa.pedExa_numArchivo = txt_numArchivo.Text;
 
                 pedexa.Per_id = perso;
 
                 CN_PedidoExamenes.GuardarPedidoExamenes(pedexa);
 
-
                 //Mensaje de confirmacion
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos Guardados Exitosamente')", true);
 
-                Response.Redirect("~/Template/Views/Inicio.aspx");
+                Response.Redirect("~/Template/Views/PacientesPedidoExamenes.aspx");
             }
             catch (Exception)
             {
@@ -2011,7 +2008,6 @@ namespace SistemaECU911.Template.Views
         {
             try
             {
-
                 //Hematologia
                 if (ckb_bioHematica.Checked == true)
                 {

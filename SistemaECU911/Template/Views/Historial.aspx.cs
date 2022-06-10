@@ -26,7 +26,6 @@ namespace SistemaECU911.Template.Views
 
         private Tbl_Personas per = new Tbl_Personas();
         private Tbl_FichasMedicas fichasmedicas = new Tbl_FichasMedicas();
-        private Tbl_TipoExaFisRegional tipreg = new Tbl_TipoExaFisRegional();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -98,9 +97,12 @@ namespace SistemaECU911.Template.Views
                             txt_talla.Text = fichasmedicas.talla.ToString();
                             txt_indMasCorporal.Text = fichasmedicas.indMasaCorporal.ToString();
                             txt_perAbdominal.Text = fichasmedicas.perimetroAbdominal.ToString();
-                            ddl_region.SelectedValue = fichasmedicas.Regiones_id.ToString();
-                            ddl_tipoRegion.SelectedValue = fichasmedicas.tipoExa_id.ToString();
+                            txt_region.Text = fichasmedicas.regionAnatomica.ToString();
+                            txt_tipoRegion.Text = fichasmedicas.evidenciaPatologica.ToString();
                             txt_exafisdescripcion.Text = fichasmedicas.descripcionEF.ToString();
+                            txt_region2.Text = fichasmedicas.regionAnatomica2.ToString();
+                            txt_tipoRegion2.Text = fichasmedicas.evidenciaPatologica2.ToString();
+                            txt_exafisdescripcion2.Text = fichasmedicas.descripcionEF2.ToString();
                             txt_diagnosticosDiagnostico.Text = fichasmedicas.diagnostico.ToString();
                             txt_codigoDiagnostico.Text = fichasmedicas.codigoDiag.ToString();
                             txt_tipoDiagnostico.Text = fichasmedicas.tipoDiag.ToString();
@@ -121,7 +123,6 @@ namespace SistemaECU911.Template.Views
                 {
                     txt_fechahora.Text = DateTime.Now.ToLocalTime().ToString("yyyy-MM-ddTHH:mm");
                 }
-                cargarRegion();
                 cargarEspecialidad();
                 cargarProfesional();
             }            
@@ -329,18 +330,21 @@ namespace SistemaECU911.Template.Views
                 fichasmedicas.descripcionTeg = txt_descTegumentario.Text;
                 //6
                 fichasmedicas.persionArterial = txt_presArterial.Text;
-                fichasmedicas.temperatura = Convert.ToDecimal(txt_temperatura.Text);
-                fichasmedicas.frecuenciaCardica = Convert.ToDecimal(txt_frecCardiaca.Text);
-                fichasmedicas.saturacionOxigeno = Convert.ToDecimal(txt_satOxigeno.Text);
-                fichasmedicas.frecuenciaRespiratoria = Convert.ToDecimal(txt_frecRespiratoria.Text);
-                fichasmedicas.peso = Convert.ToDecimal(txt_peso.Text);
-                fichasmedicas.talla = Convert.ToDecimal(txt_talla.Text);
-                fichasmedicas.indMasaCorporal = Convert.ToDecimal(txt_indMasCorporal.Text);
-                fichasmedicas.perimetroAbdominal = Convert.ToDecimal(txt_perAbdominal.Text);
+                fichasmedicas.temperatura = txt_temperatura.Text;
+                fichasmedicas.frecuenciaCardica = txt_frecCardiaca.Text;
+                fichasmedicas.saturacionOxigeno = txt_satOxigeno.Text;
+                fichasmedicas.frecuenciaRespiratoria = txt_frecRespiratoria.Text;
+                fichasmedicas.peso = txt_peso.Text;
+                fichasmedicas.talla = txt_talla.Text;
+                fichasmedicas.indMasaCorporal = txt_indMasCorporal.Text;
+                fichasmedicas.perimetroAbdominal = txt_perAbdominal.Text;
                 //7
-                fichasmedicas.Regiones_id = Convert.ToInt32(ddl_region.SelectedValue);
-                fichasmedicas.tipoExa_id = Convert.ToInt32(ddl_tipoRegion.SelectedValue);
+                fichasmedicas.regionAnatomica = txt_region.Text;
+                fichasmedicas.evidenciaPatologica = txt_tipoRegion.Text;
                 fichasmedicas.descripcionEF = txt_exafisdescripcion.Text;
+                fichasmedicas.regionAnatomica2 = txt_region2.Text;
+                fichasmedicas.evidenciaPatologica2 = txt_tipoRegion2.Text;
+                fichasmedicas.descripcionEF2 = txt_exafisdescripcion2.Text;
                 //8
                 fichasmedicas.diagnostico = txt_diagnosticosDiagnostico.Text;
                 fichasmedicas.codigoDiag = txt_codigoDiagnostico.Text;
@@ -414,17 +418,20 @@ namespace SistemaECU911.Template.Views
                 fichasmedicas.tegumentario = Convert.ToInt32(ddl_tegumentario.SelectedValue);
                 fichasmedicas.descripcionTeg = txt_descTegumentario.Text;
                 fichasmedicas.persionArterial = txt_presArterial.Text;
-                fichasmedicas.temperatura = Convert.ToDecimal(txt_temperatura.Text);
-                fichasmedicas.frecuenciaCardica = Convert.ToDecimal(txt_frecCardiaca.Text);
-                fichasmedicas.saturacionOxigeno = Convert.ToDecimal(txt_satOxigeno.Text);
-                fichasmedicas.frecuenciaRespiratoria = Convert.ToDecimal(txt_frecRespiratoria.Text);
-                fichasmedicas.peso = Convert.ToDecimal(txt_peso.Text);
-                fichasmedicas.talla = Convert.ToDecimal(txt_talla.Text);
-                fichasmedicas.indMasaCorporal = Convert.ToDecimal(txt_indMasCorporal.Text);
-                fichasmedicas.perimetroAbdominal = Convert.ToDecimal(txt_perAbdominal.Text);
-                fichasmedicas.Regiones_id = Convert.ToInt32(ddl_region.SelectedValue);
-                fichasmedicas.tipoExa_id = Convert.ToInt32(ddl_tipoRegion.SelectedValue);
+                fichasmedicas.temperatura = txt_temperatura.Text;
+                fichasmedicas.frecuenciaCardica = txt_frecCardiaca.Text;
+                fichasmedicas.saturacionOxigeno = txt_satOxigeno.Text;
+                fichasmedicas.frecuenciaRespiratoria = txt_frecRespiratoria.Text;
+                fichasmedicas.peso = txt_peso.Text;
+                fichasmedicas.talla = txt_talla.Text;
+                fichasmedicas.indMasaCorporal = txt_indMasCorporal.Text;
+                fichasmedicas.perimetroAbdominal = txt_perAbdominal.Text;
+                fichasmedicas.regionAnatomica = txt_region.Text;
+                fichasmedicas.evidenciaPatologica = txt_tipoRegion.Text;
                 fichasmedicas.descripcionEF = txt_exafisdescripcion.Text;
+                fichasmedicas.regionAnatomica2 = txt_region2.Text;
+                fichasmedicas.evidenciaPatologica2 = txt_tipoRegion2.Text;
+                fichasmedicas.descripcionEF2 = txt_exafisdescripcion2.Text;
                 fichasmedicas.diagnostico = txt_diagnosticosDiagnostico.Text;
                 fichasmedicas.codigoDiag = txt_codigoDiagnostico.Text;
                 fichasmedicas.tipoDiag = txt_tipoDiagnostico.Text;
@@ -477,39 +484,7 @@ namespace SistemaECU911.Template.Views
             Response.Redirect("~/Template/Views/Inicio.aspx");
         }
 
-        private void cargarRegion()
-        {
-            List<Tbl_Regiones> listaReg = new List<Tbl_Regiones>();
-            listaReg = CN_HistorialMedico.ObtenerRegion();
-            listaReg.Insert(0, new Tbl_Regiones() { Regiones_nombres = "Seleccione ........" });
 
-            ddl_region.DataSource = listaReg;
-            ddl_region.DataTextField = "Regiones_nombres";
-            ddl_region.DataValueField = "Regiones_id";
-            ddl_region.DataBind();
-            ddl_tipoRegion.Items.Insert(0, new ListItem("Seleccione ........", "0"));
-
-        }
-
-        protected void ddl_region_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            CargarTipoRegion();
-        }
-
-        private void CargarTipoRegion()
-        {
-            int regionid = Convert.ToInt32(ddl_region.SelectedValue);
-
-            var query = from tipreg in dc.Tbl_TipoExaFisRegional where tipreg.Regiones_id == regionid select tipreg;
-
-            ddl_tipoRegion.DataSource = query.ToList();
-            ddl_tipoRegion.DataTextField = "tipoExa_nombres";
-            ddl_tipoRegion.DataValueField = "tipoExa_id";
-            ddl_tipoRegion.DataBind();
-            ddl_tipoRegion.Items.Insert(0, new ListItem("Seleccione ........", "0"));
-
-            tipreg = CN_HistorialMedico.ObtenerTipoRegionxReg(regionid);
-        }
 
         private void cargarProfesional()
         {

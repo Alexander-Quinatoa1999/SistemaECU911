@@ -1037,75 +1037,73 @@ namespace SistemaECU911.Template.Views
                     reti.ret_no = "SI";
                 }
 
+                reti = new Tbl_Retiro();
 
-                reti = new Tbl_Retiro 
-                {
-                    //A.
-                    ret_fechSalida = txt_fechaSalida.Text,
-                    ret_fechIniLaboral = txt_fechaIniLabores.Text,
-                    ret_tiempo = txt_tiempo.Text,
-                    ret_actividades = txt_actividades1.Text,
-                    ret_facRiesgo = txt_facRiesgo1.Text,
-                    ret_actividades2 = txt_actividades2.Text,
-                    ret_facRiesgo2 = txt_facRiesgo2.Text,
-                    ret_actividades3 = txt_actividades3.Text,
-                    ret_facRiesgo3 = txt_facRiesgo3.Text,
+                //A.
+                reti.ret_fechSalida = txt_fechaSalida.Text;
+                reti.ret_fechIniLaboral = txt_fechaIniLabores.Text;
+                reti.ret_tiempo = txt_tiempo.Text;
+                reti.ret_actividades = txt_actividades1.Text;
+                reti.ret_facRiesgo = txt_facRiesgo1.Text;
+                reti.ret_actividades2 = txt_actividades2.Text;
+                reti.ret_facRiesgo2 = txt_facRiesgo2.Text;
+                reti.ret_actividades3 = txt_actividades3.Text;
+                reti.ret_facRiesgo3 = txt_facRiesgo3.Text;
 
-                    //B.
-                    ret_descripAntCliQuiru = txt_descripcionantiqui.Text,
-                    ret_EspecifiCalificadoIESSAcciTrabajo = txt_EspecifiCalificadoIESSAcciTrabajo.Text,
-                    ret_fechaCalificadoIESSAcciTrabajo = txt_fechaCalificadoIESSAcciTrabajo.Text,
-                    ret_observacionesAcciTrabajo = txt_observacionesAcciTrabajo.Text,
-                    ret_detalleAcciTrabajo = txt_detalleAcciTrabajo.Text,
+                //B.
+                reti.ret_descripAntCliQuiru = txt_descripcionantiqui.Text;
+                reti.ret_EspecifiCalificadoIESSAcciTrabajo = txt_EspecifiCalificadoIESSAcciTrabajo.Text;
+                reti.ret_fechaCalificadoIESSAcciTrabajo = txt_fechaCalificadoIESSAcciTrabajo.Text;
+                reti.ret_observacionesAcciTrabajo = txt_observacionesAcciTrabajo.Text;
+                reti.ret_detalleAcciTrabajo = txt_detalleAcciTrabajo.Text;
 
-                    ret_EspecifiCalificadoIESSEnferProfesionales = txt_EspecifiCalificadoIESSEnferProfesionales.Text,
-                    ret_fechaCalificadoIESSEnferProfesionales = txt_fechaCalificadoIESSEnferProfesionales.Text,
-                    ret_observacionesEnferProfesionales = txt_observacionesEnferProfesionales.Text,
-                    ret_detalleEnferProfesionales = txt_detalleEnferProfesionales.Text,
+                reti.ret_EspecifiCalificadoIESSEnferProfesionales = txt_EspecifiCalificadoIESSEnferProfesionales.Text;
+                reti.ret_fechaCalificadoIESSEnferProfesionales = txt_fechaCalificadoIESSEnferProfesionales.Text;
+                reti.ret_observacionesEnferProfesionales = txt_observacionesEnferProfesionales.Text;
+                reti.ret_detalleEnferProfesionales = txt_detalleEnferProfesionales.Text;
 
-                    //C
-                    ret_preArterial = txt_preArterial.Text,
-                    ret_temperatura = txt_temperatura.Text,
-                    ret_frecCardiacan = txt_freCardica.Text,
-                    ret_satOxigenon = txt_satOxigeno.Text,
-                    ret_frecRespiratorian = txt_freRespiratoria.Text,
-                    ret_peson = txt_peso.Text,
-                    ret_tallan = txt_talla.Text,
-                    ret_indMasCorporaln = txt_indMasCorporal.Text,
-                    ret_perAbdominaln = txt_perAbdominal.Text,
+                //C
+                reti.ret_preArterial = txt_preArterial.Text;
+                reti.ret_temperatura = txt_temperatura.Text;
+                reti.ret_frecCardiacan = txt_freCardica.Text;
+                reti.ret_satOxigenon = txt_satOxigeno.Text;
+                reti.ret_frecRespiratorian = txt_freRespiratoria.Text;
+                reti.ret_peson = txt_peso.Text;
+                reti.ret_tallan = txt_talla.Text;
+                reti.ret_indMasCorporaln = txt_indMasCorporal.Text;
+                reti.ret_perAbdominaln = txt_perAbdominal.Text;
 
-                    //D.                    
-                    ret_observaExaFisRegional = txt_obervexamenfisicoregional.Text,
+                //D.                    
+                reti.ret_observaExaFisRegional = txt_obervexamenfisicoregional.Text;
 
-                    //E.
-                    ret_examen = txt_examen.Text,
-                    ret_fecha = txt_fechaexamen.Text,
-                    ret_resultados = txt_resultadoexamen.Text,
-                    ret_examen2 = txt_examen2.Text,
-                    ret_fecha2 = txt_fechaexamen2.Text,
-                    ret_resultados2 = txt_resultadoexamen2.Text,
-                    ret_observacionesResExaGenEspRiesTrabajo = txt_observacionexamen.Text,
+                //E.
+                reti.ret_examen = txt_examen.Text;
+                reti.ret_fecha = txt_fechaexamen.Text;
+                reti.ret_resultados = txt_resultadoexamen.Text;
+                reti.ret_examen2 = txt_examen2.Text;
+                reti.ret_fecha2 = txt_fechaexamen2.Text;
+                reti.ret_resultados2 = txt_resultadoexamen2.Text;
+                reti.ret_observacionesResExaGenEspRiesTrabajo = txt_observacionexamen.Text;
 
-                    //F
-                    ret_descripcionDiagnostico = txt_descripdiagnostico.Text,
-                    ret_cie = txt_cie.Text,
-                    ret_descripcionDiagnostico2 = txt_descripdiagnostico2.Text,
-                    ret_cie2 = txt_cie2.Text,
-                    ret_descripcionDiagnostico3 = txt_descripdiagnostico3.Text,
-                    ret_cie3 = txt_cie3.Text,
+                //F
+                reti.ret_descripcionDiagnostico = txt_descripdiagnostico.Text;
+                reti.ret_cie = txt_cie.Text;
+                reti.ret_descripcionDiagnostico2 = txt_descripdiagnostico2.Text;
+                reti.ret_cie2 = txt_cie2.Text;
+                reti.ret_descripcionDiagnostico3 = txt_descripdiagnostico3.Text;
+                reti.ret_cie3 = txt_cie3.Text;
 
-                    //G
-                    ret_observacionesEvaMedRetiro = txt_obserevamed.Text,
+                //G
+                reti.ret_observacionesEvaMedRetiro = txt_obserevamed.Text;
 
-                    //H.
-                    ret_descripcionRecoTratamiento = txt_descripciontratamientoretiro.Text,
+                //H.
+                reti.ret_descripcionRecoTratamiento = txt_descripciontratamientoretiro.Text;
 
-                    //I.
-                    ret_fecha_hora = txt_fechahora.Text,
-                    prof_id = Convert.ToInt32(ddl_profesional.SelectedValue),
-                    ret_cod = txt_codigoDatProf.Text,
-                    Per_id = perso
-                };
+                //I.
+                reti.ret_fecha_hora = txt_fechahora.Text;
+                reti.prof_id = Convert.ToInt32(ddl_profesional.SelectedValue);
+                reti.ret_cod = txt_codigoDatProf.Text;
+                reti.Per_id = perso;
 
                 CN_Retiro.GuardarrRetiro(reti);
 
@@ -1553,7 +1551,6 @@ namespace SistemaECU911.Template.Views
                     reti.ret_no = null;
                 }
 
-
                 //A.
                 reti.ret_fechSalida = txt_fechaSalida.Text;
                 reti.ret_fechIniLaboral = txt_fechaIniLabores.Text;
@@ -1567,7 +1564,6 @@ namespace SistemaECU911.Template.Views
 
                 //B.
                 reti.ret_descripAntCliQuiru = txt_descripcionantiqui.Text;
-
                 reti.ret_EspecifiCalificadoIESSAcciTrabajo = txt_EspecifiCalificadoIESSAcciTrabajo.Text;
                 reti.ret_fechaCalificadoIESSAcciTrabajo = txt_fechaCalificadoIESSAcciTrabajo.Text;
                 reti.ret_observacionesAcciTrabajo = txt_observacionesAcciTrabajo.Text;
@@ -1589,7 +1585,7 @@ namespace SistemaECU911.Template.Views
                 reti.ret_indMasCorporaln = txt_indMasCorporal.Text;
                 reti.ret_perAbdominaln = txt_perAbdominal.Text;
 
-                //D.
+                //D.                    
                 reti.ret_observaExaFisRegional = txt_obervexamenfisicoregional.Text;
 
                 //E.
@@ -1601,7 +1597,7 @@ namespace SistemaECU911.Template.Views
                 reti.ret_resultados2 = txt_resultadoexamen2.Text;
                 reti.ret_observacionesResExaGenEspRiesTrabajo = txt_observacionexamen.Text;
 
-                //F.
+                //F
                 reti.ret_descripcionDiagnostico = txt_descripdiagnostico.Text;
                 reti.ret_cie = txt_cie.Text;
                 reti.ret_descripcionDiagnostico2 = txt_descripdiagnostico2.Text;
@@ -1609,7 +1605,7 @@ namespace SistemaECU911.Template.Views
                 reti.ret_descripcionDiagnostico3 = txt_descripdiagnostico3.Text;
                 reti.ret_cie3 = txt_cie3.Text;
 
-                //G.
+                //G
                 reti.ret_observacionesEvaMedRetiro = txt_obserevamed.Text;
 
                 //H.

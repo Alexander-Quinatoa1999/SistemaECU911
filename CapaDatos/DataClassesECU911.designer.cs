@@ -69,9 +69,6 @@ namespace CapaDatos
     partial void InsertTbl_Profesional(Tbl_Profesional instance);
     partial void UpdateTbl_Profesional(Tbl_Profesional instance);
     partial void DeleteTbl_Profesional(Tbl_Profesional instance);
-    partial void InsertTbl_Regiones(Tbl_Regiones instance);
-    partial void UpdateTbl_Regiones(Tbl_Regiones instance);
-    partial void DeleteTbl_Regiones(Tbl_Regiones instance);
     partial void InsertTbl_Reintegro(Tbl_Reintegro instance);
     partial void UpdateTbl_Reintegro(Tbl_Reintegro instance);
     partial void DeleteTbl_Reintegro(Tbl_Reintegro instance);
@@ -81,9 +78,6 @@ namespace CapaDatos
     partial void InsertTbl_SocioEconomico(Tbl_SocioEconomico instance);
     partial void UpdateTbl_SocioEconomico(Tbl_SocioEconomico instance);
     partial void DeleteTbl_SocioEconomico(Tbl_SocioEconomico instance);
-    partial void InsertTbl_TipoExaFisRegional(Tbl_TipoExaFisRegional instance);
-    partial void UpdateTbl_TipoExaFisRegional(Tbl_TipoExaFisRegional instance);
-    partial void DeleteTbl_TipoExaFisRegional(Tbl_TipoExaFisRegional instance);
     partial void InsertTbl_Tipos_de_Enfermedades(Tbl_Tipos_de_Enfermedades instance);
     partial void UpdateTbl_Tipos_de_Enfermedades(Tbl_Tipos_de_Enfermedades instance);
     partial void DeleteTbl_Tipos_de_Enfermedades(Tbl_Tipos_de_Enfermedades instance);
@@ -226,14 +220,6 @@ namespace CapaDatos
 			}
 		}
 		
-		public System.Data.Linq.Table<Tbl_Regiones> Tbl_Regiones
-		{
-			get
-			{
-				return this.GetTable<Tbl_Regiones>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Tbl_Reintegro> Tbl_Reintegro
 		{
 			get
@@ -258,14 +244,6 @@ namespace CapaDatos
 			}
 		}
 		
-		public System.Data.Linq.Table<Tbl_TipoExaFisRegional> Tbl_TipoExaFisRegional
-		{
-			get
-			{
-				return this.GetTable<Tbl_TipoExaFisRegional>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Tbl_Tipos_de_Enfermedades> Tbl_Tipos_de_Enfermedades
 		{
 			get
@@ -280,34 +258,6 @@ namespace CapaDatos
 			{
 				return this.GetTable<Tbl_TipoUsuario>();
 			}
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Autentificacion_Usuario")]
-		public ISingleResult<Autentificacion_UsuarioResult> Autentificacion_Usuario([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string usuario, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string pass)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), usuario, pass);
-			return ((ISingleResult<Autentificacion_UsuarioResult>)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Validar_Existencia")]
-		public ISingleResult<Validar_ExistenciaResult> Validar_Existencia([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string usuario)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), usuario);
-			return ((ISingleResult<Validar_ExistenciaResult>)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GuardarPersonasHistorial")]
-		public int GuardarPersonasHistorial([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string priNombre, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string priApellido, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(1)")] string sexo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CedulaHisCli", DbType="Int")] System.Nullable<int> cedulaHisCli, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(1)")] string estado)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), priNombre, priApellido, sexo, cedulaHisCli, estado);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Identificar_rol")]
-		public ISingleResult<Identificar_rolResult> Identificar_rol([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> tusu)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), tusu);
-			return ((ISingleResult<Identificar_rolResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -842,8 +792,6 @@ namespace CapaDatos
 		
 		private string _certi_cod;
 		
-		private string _certi_fechaHora;
-		
 		private System.Nullable<long> _Per_id;
 		
 		private System.Nullable<System.DateTime> _certi_fechaHoraGuardado;
@@ -906,8 +854,6 @@ namespace CapaDatos
     partial void Onprof_idChanged();
     partial void Oncerti_codChanging(string value);
     partial void Oncerti_codChanged();
-    partial void Oncerti_fechaHoraChanging(string value);
-    partial void Oncerti_fechaHoraChanged();
     partial void OnPer_idChanging(System.Nullable<long> value);
     partial void OnPer_idChanged();
     partial void Oncerti_fechaHoraGuardadoChanging(System.Nullable<System.DateTime> value);
@@ -943,7 +889,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_certi_numArchivo", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_certi_numArchivo", DbType="VarChar(25)")]
 		public string certi_numArchivo
 		{
 			get
@@ -963,7 +909,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_certi_fechEmision", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_certi_fechEmision", DbType="VarChar(10)")]
 		public string certi_fechEmision
 		{
 			get
@@ -983,7 +929,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_certi_ingreso", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_certi_ingreso", DbType="VarChar(2)")]
 		public string certi_ingreso
 		{
 			get
@@ -1003,7 +949,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_certi_periodico", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_certi_periodico", DbType="VarChar(2)")]
 		public string certi_periodico
 		{
 			get
@@ -1023,7 +969,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_certi_reintegro", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_certi_reintegro", DbType="VarChar(2)")]
 		public string certi_reintegro
 		{
 			get
@@ -1043,7 +989,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_certi_retiro", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_certi_retiro", DbType="VarChar(2)")]
 		public string certi_retiro
 		{
 			get
@@ -1083,7 +1029,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_certi_apto", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_certi_apto", DbType="VarChar(2)")]
 		public string certi_apto
 		{
 			get
@@ -1103,7 +1049,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_certi_aptoObserva", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_certi_aptoObserva", DbType="VarChar(2)")]
 		public string certi_aptoObserva
 		{
 			get
@@ -1123,7 +1069,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_certi_aptoLimi", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_certi_aptoLimi", DbType="VarChar(2)")]
 		public string certi_aptoLimi
 		{
 			get
@@ -1143,7 +1089,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_certi_NoApto", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_certi_NoApto", DbType="VarChar(2)")]
 		public string certi_NoApto
 		{
 			get
@@ -1183,7 +1129,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_certi_siUsuEvaMed", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_certi_siUsuEvaMed", DbType="VarChar(2)")]
 		public string certi_siUsuEvaMed
 		{
 			get
@@ -1203,7 +1149,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_certi_noUsuEvaMed", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_certi_noUsuEvaMed", DbType="VarChar(2)")]
 		public string certi_noUsuEvaMed
 		{
 			get
@@ -1223,7 +1169,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_certi_presunCondiDiag", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_certi_presunCondiDiag", DbType="VarChar(2)")]
 		public string certi_presunCondiDiag
 		{
 			get
@@ -1243,7 +1189,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_certi_defiCondiDiag", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_certi_defiCondiDiag", DbType="VarChar(2)")]
 		public string certi_defiCondiDiag
 		{
 			get
@@ -1263,7 +1209,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_certi_noAplicaCondiDiag", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_certi_noAplicaCondiDiag", DbType="VarChar(2)")]
 		public string certi_noAplicaCondiDiag
 		{
 			get
@@ -1283,7 +1229,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_certi_siCondiSalud", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_certi_siCondiSalud", DbType="VarChar(2)")]
 		public string certi_siCondiSalud
 		{
 			get
@@ -1303,7 +1249,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_certi_noCondiSalud", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_certi_noCondiSalud", DbType="VarChar(2)")]
 		public string certi_noCondiSalud
 		{
 			get
@@ -1323,7 +1269,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_certi_noAplicaCondiSalud", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_certi_noAplicaCondiSalud", DbType="VarChar(2)")]
 		public string certi_noAplicaCondiSalud
 		{
 			get
@@ -1387,7 +1333,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_certi_cod", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_certi_cod", DbType="VarChar(25)")]
 		public string certi_cod
 		{
 			get
@@ -1403,26 +1349,6 @@ namespace CapaDatos
 					this._certi_cod = value;
 					this.SendPropertyChanged("certi_cod");
 					this.Oncerti_codChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_certi_fechaHora", DbType="VarChar(MAX)")]
-		public string certi_fechaHora
-		{
-			get
-			{
-				return this._certi_fechaHora;
-			}
-			set
-			{
-				if ((this._certi_fechaHora != value))
-				{
-					this.Oncerti_fechaHoraChanging(value);
-					this.SendPropertyChanging();
-					this._certi_fechaHora = value;
-					this.SendPropertyChanged("certi_fechaHora");
-					this.Oncerti_fechaHoraChanged();
 				}
 			}
 		}
@@ -1644,7 +1570,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Emp_nombre", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Emp_nombre", DbType="VarChar(250)")]
 		public string Emp_nombre
 		{
 			get
@@ -1664,7 +1590,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Emp_zonal", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Emp_zonal", DbType="VarChar(25)")]
 		public string Emp_zonal
 		{
 			get
@@ -1684,7 +1610,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Emp_RUC", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Emp_RUC", DbType="VarChar(13)")]
 		public string Emp_RUC
 		{
 			get
@@ -2172,8 +2098,6 @@ namespace CapaDatos
 		
 		private string _evo_adminisFarmacos15;
 		
-		private string _evo_fechaHora;
-		
 		private System.Nullable<long> _Per_id;
 		
 		private System.Nullable<System.DateTime> _evo_fechaHoraGuardado;
@@ -2340,8 +2264,6 @@ namespace CapaDatos
     partial void Onevo_farmacoIndicaciones15Changed();
     partial void Onevo_adminisFarmacos15Changing(string value);
     partial void Onevo_adminisFarmacos15Changed();
-    partial void Onevo_fechaHoraChanging(string value);
-    partial void Onevo_fechaHoraChanged();
     partial void OnPer_idChanging(System.Nullable<long> value);
     partial void OnPer_idChanged();
     partial void Onevo_fechaHoraGuardadoChanging(System.Nullable<System.DateTime> value);
@@ -2376,7 +2298,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_evo_numArchivo", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_evo_numArchivo", DbType="VarChar(25)")]
 		public string evo_numArchivo
 		{
 			get
@@ -2396,7 +2318,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_evo_fecha1", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_evo_fecha1", DbType="VarChar(10)")]
 		public string evo_fecha1
 		{
 			get
@@ -2416,7 +2338,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_evo_hora1", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_evo_hora1", DbType="VarChar(10)")]
 		public string evo_hora1
 		{
 			get
@@ -2456,7 +2378,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_evo_fecha2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_evo_fecha2", DbType="VarChar(10)")]
 		public string evo_fecha2
 		{
 			get
@@ -2476,7 +2398,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_evo_hora2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_evo_hora2", DbType="VarChar(10)")]
 		public string evo_hora2
 		{
 			get
@@ -2516,7 +2438,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_evo_fecha3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_evo_fecha3", DbType="VarChar(10)")]
 		public string evo_fecha3
 		{
 			get
@@ -2536,7 +2458,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_evo_hora3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_evo_hora3", DbType="VarChar(10)")]
 		public string evo_hora3
 		{
 			get
@@ -2576,7 +2498,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_evo_fecha4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_evo_fecha4", DbType="VarChar(10)")]
 		public string evo_fecha4
 		{
 			get
@@ -2596,7 +2518,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_evo_hora4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_evo_hora4", DbType="VarChar(10)")]
 		public string evo_hora4
 		{
 			get
@@ -2636,7 +2558,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_evo_fecha5", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_evo_fecha5", DbType="VarChar(10)")]
 		public string evo_fecha5
 		{
 			get
@@ -2656,7 +2578,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_evo_hora5", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_evo_hora5", DbType="VarChar(10)")]
 		public string evo_hora5
 		{
 			get
@@ -2696,7 +2618,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_evo_fecha6", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_evo_fecha6", DbType="VarChar(10)")]
 		public string evo_fecha6
 		{
 			get
@@ -2716,7 +2638,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_evo_hora6", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_evo_hora6", DbType="VarChar(10)")]
 		public string evo_hora6
 		{
 			get
@@ -2756,7 +2678,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_evo_fecha7", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_evo_fecha7", DbType="VarChar(10)")]
 		public string evo_fecha7
 		{
 			get
@@ -2776,7 +2698,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_evo_hora7", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_evo_hora7", DbType="VarChar(10)")]
 		public string evo_hora7
 		{
 			get
@@ -2816,7 +2738,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_evo_fecha8", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_evo_fecha8", DbType="VarChar(10)")]
 		public string evo_fecha8
 		{
 			get
@@ -2836,7 +2758,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_evo_hora8", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_evo_hora8", DbType="VarChar(10)")]
 		public string evo_hora8
 		{
 			get
@@ -2876,7 +2798,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_evo_fecha9", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_evo_fecha9", DbType="VarChar(10)")]
 		public string evo_fecha9
 		{
 			get
@@ -2896,7 +2818,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_evo_hora9", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_evo_hora9", DbType="VarChar(10)")]
 		public string evo_hora9
 		{
 			get
@@ -2936,7 +2858,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_evo_fecha10", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_evo_fecha10", DbType="VarChar(10)")]
 		public string evo_fecha10
 		{
 			get
@@ -2956,7 +2878,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_evo_hora10", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_evo_hora10", DbType="VarChar(10)")]
 		public string evo_hora10
 		{
 			get
@@ -2996,7 +2918,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_evo_fecha11", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_evo_fecha11", DbType="VarChar(10)")]
 		public string evo_fecha11
 		{
 			get
@@ -3016,7 +2938,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_evo_hora11", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_evo_hora11", DbType="VarChar(10)")]
 		public string evo_hora11
 		{
 			get
@@ -3056,7 +2978,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_evo_fecha12", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_evo_fecha12", DbType="VarChar(10)")]
 		public string evo_fecha12
 		{
 			get
@@ -3076,7 +2998,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_evo_hora12", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_evo_hora12", DbType="VarChar(10)")]
 		public string evo_hora12
 		{
 			get
@@ -3116,7 +3038,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_evo_fecha13", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_evo_fecha13", DbType="VarChar(10)")]
 		public string evo_fecha13
 		{
 			get
@@ -3136,7 +3058,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_evo_hora13", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_evo_hora13", DbType="VarChar(10)")]
 		public string evo_hora13
 		{
 			get
@@ -3176,7 +3098,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_evo_fecha14", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_evo_fecha14", DbType="VarChar(10)")]
 		public string evo_fecha14
 		{
 			get
@@ -3196,7 +3118,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_evo_hora14", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_evo_hora14", DbType="VarChar(10)")]
 		public string evo_hora14
 		{
 			get
@@ -3236,7 +3158,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_evo_fecha15", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_evo_fecha15", DbType="VarChar(10)")]
 		public string evo_fecha15
 		{
 			get
@@ -3256,7 +3178,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_evo_hora15", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_evo_hora15", DbType="VarChar(10)")]
 		public string evo_hora15
 		{
 			get
@@ -3896,26 +3818,6 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_evo_fechaHora", DbType="VarChar(MAX)")]
-		public string evo_fechaHora
-		{
-			get
-			{
-				return this._evo_fechaHora;
-			}
-			set
-			{
-				if ((this._evo_fechaHora != value))
-				{
-					this.Onevo_fechaHoraChanging(value);
-					this.SendPropertyChanging();
-					this._evo_fechaHora = value;
-					this.SendPropertyChanged("evo_fechaHora");
-					this.Onevo_fechaHoraChanged();
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_id", DbType="BigInt")]
 		public System.Nullable<long> Per_id
 		{
@@ -4111,27 +4013,33 @@ namespace CapaDatos
 		
 		private string _persionArterial;
 		
-		private System.Nullable<decimal> _frecuenciaCardica;
+		private string _frecuenciaCardica;
 		
-		private System.Nullable<decimal> _frecuenciaRespiratoria;
+		private string _frecuenciaRespiratoria;
 		
-		private System.Nullable<decimal> _talla;
+		private string _talla;
 		
-		private System.Nullable<decimal> _perimetroAbdominal;
+		private string _perimetroAbdominal;
 		
-		private System.Nullable<decimal> _temperatura;
+		private string _temperatura;
 		
-		private System.Nullable<decimal> _saturacionOxigeno;
+		private string _saturacionOxigeno;
 		
-		private System.Nullable<decimal> _peso;
+		private string _peso;
 		
-		private System.Nullable<decimal> _indMasaCorporal;
+		private string _indMasaCorporal;
 		
-		private System.Nullable<int> _Regiones_id;
+		private string _regionAnatomica;
 		
-		private System.Nullable<int> _tipoExa_id;
+		private string _evidenciaPatologica;
 		
 		private string _descripcionEF;
+		
+		private string _regionAnatomica2;
+		
+		private string _evidenciaPatologica2;
+		
+		private string _descripcionEF2;
 		
 		private string _diagnostico;
 		
@@ -4170,10 +4078,6 @@ namespace CapaDatos
 		private EntityRef<Tbl_Personas> _Tbl_Personas;
 		
 		private EntityRef<Tbl_Profesional> _Tbl_Profesional;
-		
-		private EntityRef<Tbl_Regiones> _Tbl_Regiones;
-		
-		private EntityRef<Tbl_TipoExaFisRegional> _Tbl_TipoExaFisRegional;
 		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
@@ -4249,28 +4153,34 @@ namespace CapaDatos
     partial void OndescripcionTegChanged();
     partial void OnpersionArterialChanging(string value);
     partial void OnpersionArterialChanged();
-    partial void OnfrecuenciaCardicaChanging(System.Nullable<decimal> value);
+    partial void OnfrecuenciaCardicaChanging(string value);
     partial void OnfrecuenciaCardicaChanged();
-    partial void OnfrecuenciaRespiratoriaChanging(System.Nullable<decimal> value);
+    partial void OnfrecuenciaRespiratoriaChanging(string value);
     partial void OnfrecuenciaRespiratoriaChanged();
-    partial void OntallaChanging(System.Nullable<decimal> value);
+    partial void OntallaChanging(string value);
     partial void OntallaChanged();
-    partial void OnperimetroAbdominalChanging(System.Nullable<decimal> value);
+    partial void OnperimetroAbdominalChanging(string value);
     partial void OnperimetroAbdominalChanged();
-    partial void OntemperaturaChanging(System.Nullable<decimal> value);
+    partial void OntemperaturaChanging(string value);
     partial void OntemperaturaChanged();
-    partial void OnsaturacionOxigenoChanging(System.Nullable<decimal> value);
+    partial void OnsaturacionOxigenoChanging(string value);
     partial void OnsaturacionOxigenoChanged();
-    partial void OnpesoChanging(System.Nullable<decimal> value);
+    partial void OnpesoChanging(string value);
     partial void OnpesoChanged();
-    partial void OnindMasaCorporalChanging(System.Nullable<decimal> value);
+    partial void OnindMasaCorporalChanging(string value);
     partial void OnindMasaCorporalChanged();
-    partial void OnRegiones_idChanging(System.Nullable<int> value);
-    partial void OnRegiones_idChanged();
-    partial void OntipoExa_idChanging(System.Nullable<int> value);
-    partial void OntipoExa_idChanged();
+    partial void OnregionAnatomicaChanging(string value);
+    partial void OnregionAnatomicaChanged();
+    partial void OnevidenciaPatologicaChanging(string value);
+    partial void OnevidenciaPatologicaChanged();
     partial void OndescripcionEFChanging(string value);
     partial void OndescripcionEFChanged();
+    partial void OnregionAnatomica2Changing(string value);
+    partial void OnregionAnatomica2Changed();
+    partial void OnevidenciaPatologica2Changing(string value);
+    partial void OnevidenciaPatologica2Changed();
+    partial void OndescripcionEF2Changing(string value);
+    partial void OndescripcionEF2Changed();
     partial void OndiagnosticoChanging(string value);
     partial void OndiagnosticoChanged();
     partial void OncodigoDiagChanging(string value);
@@ -4310,8 +4220,6 @@ namespace CapaDatos
 			this._Tbl_Especialidad = default(EntityRef<Tbl_Especialidad>);
 			this._Tbl_Personas = default(EntityRef<Tbl_Personas>);
 			this._Tbl_Profesional = default(EntityRef<Tbl_Profesional>);
-			this._Tbl_Regiones = default(EntityRef<Tbl_Regiones>);
-			this._Tbl_TipoExaFisRegional = default(EntityRef<Tbl_TipoExaFisRegional>);
 			OnCreated();
 		}
 		
@@ -4995,7 +4903,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_persionArterial", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_persionArterial", DbType="VarChar(10)")]
 		public string persionArterial
 		{
 			get
@@ -5015,8 +4923,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_frecuenciaCardica", DbType="Decimal(10,2)")]
-		public System.Nullable<decimal> frecuenciaCardica
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_frecuenciaCardica", DbType="VarChar(10)")]
+		public string frecuenciaCardica
 		{
 			get
 			{
@@ -5035,8 +4943,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_frecuenciaRespiratoria", DbType="Decimal(10,2)")]
-		public System.Nullable<decimal> frecuenciaRespiratoria
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_frecuenciaRespiratoria", DbType="VarChar(10)")]
+		public string frecuenciaRespiratoria
 		{
 			get
 			{
@@ -5055,8 +4963,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_talla", DbType="Decimal(10,2)")]
-		public System.Nullable<decimal> talla
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_talla", DbType="VarChar(10)")]
+		public string talla
 		{
 			get
 			{
@@ -5075,8 +4983,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perimetroAbdominal", DbType="Decimal(10,2)")]
-		public System.Nullable<decimal> perimetroAbdominal
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perimetroAbdominal", DbType="VarChar(10)")]
+		public string perimetroAbdominal
 		{
 			get
 			{
@@ -5095,8 +5003,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_temperatura", DbType="Decimal(10,2)")]
-		public System.Nullable<decimal> temperatura
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_temperatura", DbType="VarChar(10)")]
+		public string temperatura
 		{
 			get
 			{
@@ -5115,8 +5023,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_saturacionOxigeno", DbType="Decimal(10,2)")]
-		public System.Nullable<decimal> saturacionOxigeno
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_saturacionOxigeno", DbType="VarChar(10)")]
+		public string saturacionOxigeno
 		{
 			get
 			{
@@ -5135,8 +5043,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_peso", DbType="Decimal(10,2)")]
-		public System.Nullable<decimal> peso
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_peso", DbType="VarChar(10)")]
+		public string peso
 		{
 			get
 			{
@@ -5155,8 +5063,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_indMasaCorporal", DbType="Decimal(10,2)")]
-		public System.Nullable<decimal> indMasaCorporal
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_indMasaCorporal", DbType="VarChar(10)")]
+		public string indMasaCorporal
 		{
 			get
 			{
@@ -5175,50 +5083,42 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Regiones_id", DbType="Int")]
-		public System.Nullable<int> Regiones_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_regionAnatomica", DbType="VarChar(MAX)")]
+		public string regionAnatomica
 		{
 			get
 			{
-				return this._Regiones_id;
+				return this._regionAnatomica;
 			}
 			set
 			{
-				if ((this._Regiones_id != value))
+				if ((this._regionAnatomica != value))
 				{
-					if (this._Tbl_Regiones.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnRegiones_idChanging(value);
+					this.OnregionAnatomicaChanging(value);
 					this.SendPropertyChanging();
-					this._Regiones_id = value;
-					this.SendPropertyChanged("Regiones_id");
-					this.OnRegiones_idChanged();
+					this._regionAnatomica = value;
+					this.SendPropertyChanged("regionAnatomica");
+					this.OnregionAnatomicaChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tipoExa_id", DbType="Int")]
-		public System.Nullable<int> tipoExa_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_evidenciaPatologica", DbType="VarChar(MAX)")]
+		public string evidenciaPatologica
 		{
 			get
 			{
-				return this._tipoExa_id;
+				return this._evidenciaPatologica;
 			}
 			set
 			{
-				if ((this._tipoExa_id != value))
+				if ((this._evidenciaPatologica != value))
 				{
-					if (this._Tbl_TipoExaFisRegional.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OntipoExa_idChanging(value);
+					this.OnevidenciaPatologicaChanging(value);
 					this.SendPropertyChanging();
-					this._tipoExa_id = value;
-					this.SendPropertyChanged("tipoExa_id");
-					this.OntipoExa_idChanged();
+					this._evidenciaPatologica = value;
+					this.SendPropertyChanged("evidenciaPatologica");
+					this.OnevidenciaPatologicaChanged();
 				}
 			}
 		}
@@ -5243,6 +5143,66 @@ namespace CapaDatos
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_regionAnatomica2", DbType="VarChar(MAX)")]
+		public string regionAnatomica2
+		{
+			get
+			{
+				return this._regionAnatomica2;
+			}
+			set
+			{
+				if ((this._regionAnatomica2 != value))
+				{
+					this.OnregionAnatomica2Changing(value);
+					this.SendPropertyChanging();
+					this._regionAnatomica2 = value;
+					this.SendPropertyChanged("regionAnatomica2");
+					this.OnregionAnatomica2Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_evidenciaPatologica2", DbType="VarChar(MAX)")]
+		public string evidenciaPatologica2
+		{
+			get
+			{
+				return this._evidenciaPatologica2;
+			}
+			set
+			{
+				if ((this._evidenciaPatologica2 != value))
+				{
+					this.OnevidenciaPatologica2Changing(value);
+					this.SendPropertyChanging();
+					this._evidenciaPatologica2 = value;
+					this.SendPropertyChanged("evidenciaPatologica2");
+					this.OnevidenciaPatologica2Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_descripcionEF2", DbType="VarChar(MAX)")]
+		public string descripcionEF2
+		{
+			get
+			{
+				return this._descripcionEF2;
+			}
+			set
+			{
+				if ((this._descripcionEF2 != value))
+				{
+					this.OndescripcionEF2Changing(value);
+					this.SendPropertyChanging();
+					this._descripcionEF2 = value;
+					this.SendPropertyChanged("descripcionEF2");
+					this.OndescripcionEF2Changed();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_diagnostico", DbType="VarChar(MAX)")]
 		public string diagnostico
 		{
@@ -5263,7 +5223,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_codigoDiag", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_codigoDiag", DbType="VarChar(10)")]
 		public string codigoDiag
 		{
 			get
@@ -5283,7 +5243,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tipoDiag", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tipoDiag", DbType="VarChar(25)")]
 		public string tipoDiag
 		{
 			get
@@ -5303,7 +5263,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_condicionDiag", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_condicionDiag", DbType="VarChar(25)")]
 		public string condicionDiag
 		{
 			get
@@ -5323,7 +5283,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cronologiaDiag", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cronologiaDiag", DbType="VarChar(25)")]
 		public string cronologiaDiag
 		{
 			get
@@ -5423,7 +5383,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fechaHora", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fechaHora", DbType="VarChar(25)")]
 		public string fechaHora
 		{
 			get
@@ -5491,7 +5451,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_codigoPro", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_codigoPro", DbType="VarChar(25)")]
 		public string codigoPro
 		{
 			get
@@ -5673,74 +5633,6 @@ namespace CapaDatos
 						this._prof_id = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("Tbl_Profesional");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Regiones_Tbl_FichasMedicas", Storage="_Tbl_Regiones", ThisKey="Regiones_id", OtherKey="Regiones_id", IsForeignKey=true)]
-		public Tbl_Regiones Tbl_Regiones
-		{
-			get
-			{
-				return this._Tbl_Regiones.Entity;
-			}
-			set
-			{
-				Tbl_Regiones previousValue = this._Tbl_Regiones.Entity;
-				if (((previousValue != value) 
-							|| (this._Tbl_Regiones.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Tbl_Regiones.Entity = null;
-						previousValue.Tbl_FichasMedicas.Remove(this);
-					}
-					this._Tbl_Regiones.Entity = value;
-					if ((value != null))
-					{
-						value.Tbl_FichasMedicas.Add(this);
-						this._Regiones_id = value.Regiones_id;
-					}
-					else
-					{
-						this._Regiones_id = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Tbl_Regiones");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_TipoExaFisRegional_Tbl_FichasMedicas", Storage="_Tbl_TipoExaFisRegional", ThisKey="tipoExa_id", OtherKey="tipoExa_id", IsForeignKey=true)]
-		public Tbl_TipoExaFisRegional Tbl_TipoExaFisRegional
-		{
-			get
-			{
-				return this._Tbl_TipoExaFisRegional.Entity;
-			}
-			set
-			{
-				Tbl_TipoExaFisRegional previousValue = this._Tbl_TipoExaFisRegional.Entity;
-				if (((previousValue != value) 
-							|| (this._Tbl_TipoExaFisRegional.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Tbl_TipoExaFisRegional.Entity = null;
-						previousValue.Tbl_FichasMedicas.Remove(this);
-					}
-					this._Tbl_TipoExaFisRegional.Entity = value;
-					if ((value != null))
-					{
-						value.Tbl_FichasMedicas.Add(this);
-						this._tipoExa_id = value.tipoExa_id;
-					}
-					else
-					{
-						this._tipoExa_id = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Tbl_TipoExaFisRegional");
 				}
 			}
 		}
@@ -6779,8 +6671,6 @@ namespace CapaDatos
 		private string _inicial_pre3;
 		
 		private string _inicial_def3;
-		
-		private string _inicial_calificada;
 		
 		private string _inicial_apto;
 		
@@ -7824,8 +7714,6 @@ namespace CapaDatos
     partial void Oninicial_pre3Changed();
     partial void Oninicial_def3Changing(string value);
     partial void Oninicial_def3Changed();
-    partial void Oninicial_calificadaChanging(string value);
-    partial void Oninicial_calificadaChanged();
     partial void Oninicial_aptoChanging(string value);
     partial void Oninicial_aptoChanged();
     partial void Oninicial_aptoObservaChanging(string value);
@@ -7881,7 +7769,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_numArchivo", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_numArchivo", DbType="VarChar(25)")]
 		public string inicial_numArchivo
 		{
 			get
@@ -7901,7 +7789,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_catolicaRel", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_catolicaRel", DbType="VarChar(2)")]
 		public string inicial_catolicaRel
 		{
 			get
@@ -7921,7 +7809,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_evangelicaRel", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_evangelicaRel", DbType="VarChar(2)")]
 		public string inicial_evangelicaRel
 		{
 			get
@@ -7941,7 +7829,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_testJehovaRel", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_testJehovaRel", DbType="VarChar(2)")]
 		public string inicial_testJehovaRel
 		{
 			get
@@ -7961,7 +7849,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_mormonaRel", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_mormonaRel", DbType="VarChar(2)")]
 		public string inicial_mormonaRel
 		{
 			get
@@ -7981,7 +7869,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_otrasRel", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_otrasRel", DbType="VarChar(2)")]
 		public string inicial_otrasRel
 		{
 			get
@@ -8001,7 +7889,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_groSanguineo", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_groSanguineo", DbType="VarChar(25)")]
 		public string inicial_groSanguineo
 		{
 			get
@@ -8021,7 +7909,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_lateralidad", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_lateralidad", DbType="VarChar(50)")]
 		public string inicial_lateralidad
 		{
 			get
@@ -8041,7 +7929,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial__lesbianaOriSex", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial__lesbianaOriSex", DbType="VarChar(2)")]
 		public string inicial__lesbianaOriSex
 		{
 			get
@@ -8061,7 +7949,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_gayOriSex", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_gayOriSex", DbType="VarChar(2)")]
 		public string inicial_gayOriSex
 		{
 			get
@@ -8081,7 +7969,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_bisexualOriSex", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_bisexualOriSex", DbType="VarChar(2)")]
 		public string inicial_bisexualOriSex
 		{
 			get
@@ -8101,7 +7989,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_heterosexualOriSex", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_heterosexualOriSex", DbType="VarChar(2)")]
 		public string inicial_heterosexualOriSex
 		{
 			get
@@ -8121,7 +8009,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_norespondeOriSex", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_norespondeOriSex", DbType="VarChar(2)")]
 		public string inicial_norespondeOriSex
 		{
 			get
@@ -8141,7 +8029,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_femeninoIdenGen", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_femeninoIdenGen", DbType="VarChar(2)")]
 		public string inicial_femeninoIdenGen
 		{
 			get
@@ -8161,7 +8049,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_masculinoIdenGen", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_masculinoIdenGen", DbType="VarChar(2)")]
 		public string inicial_masculinoIdenGen
 		{
 			get
@@ -8181,7 +8069,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_transFemeninoIdenGen", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_transFemeninoIdenGen", DbType="VarChar(2)")]
 		public string inicial_transFemeninoIdenGen
 		{
 			get
@@ -8201,7 +8089,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_transMasculinoIdenGen", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_transMasculinoIdenGen", DbType="VarChar(2)")]
 		public string inicial_transMasculinoIdenGen
 		{
 			get
@@ -8221,7 +8109,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_norespondeIdenGen", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_norespondeIdenGen", DbType="VarChar(2)")]
 		public string inicial_norespondeIdenGen
 		{
 			get
@@ -8241,7 +8129,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_siDis", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_siDis", DbType="VarChar(2)")]
 		public string inicial_siDis
 		{
 			get
@@ -8261,7 +8149,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_noDis", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_noDis", DbType="VarChar(2)")]
 		public string inicial_noDis
 		{
 			get
@@ -8281,7 +8169,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_tipoDis", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_tipoDis", DbType="VarChar(25)")]
 		public string inicial_tipoDis
 		{
 			get
@@ -8301,7 +8189,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_porcentDis", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_porcentDis", DbType="VarChar(3)")]
 		public string inicial_porcentDis
 		{
 			get
@@ -8381,7 +8269,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_menarquia", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_menarquia", DbType="VarChar(50)")]
 		public string inicial_menarquia
 		{
 			get
@@ -8401,7 +8289,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_ciclos", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_ciclos", DbType="VarChar(25)")]
 		public string inicial_ciclos
 		{
 			get
@@ -8421,7 +8309,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_fechUltiMenstrua", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_fechUltiMenstrua", DbType="VarChar(10)")]
 		public string inicial_fechUltiMenstrua
 		{
 			get
@@ -8441,7 +8329,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_gestas", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_gestas", DbType="VarChar(25)")]
 		public string inicial_gestas
 		{
 			get
@@ -8461,7 +8349,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_partos", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_partos", DbType="VarChar(25)")]
 		public string inicial_partos
 		{
 			get
@@ -8481,7 +8369,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_cesareas", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_cesareas", DbType="VarChar(25)")]
 		public string inicial_cesareas
 		{
 			get
@@ -8501,7 +8389,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_abortos", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_abortos", DbType="VarChar(25)")]
 		public string inicial_abortos
 		{
 			get
@@ -8521,7 +8409,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_vivosHij", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_vivosHij", DbType="VarChar(2)")]
 		public string inicial_vivosHij
 		{
 			get
@@ -8541,7 +8429,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_muertosHij", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_muertosHij", DbType="VarChar(2)")]
 		public string inicial_muertosHij
 		{
 			get
@@ -8561,7 +8449,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_siVidaSexActiva", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_siVidaSexActiva", DbType="VarChar(2)")]
 		public string inicial_siVidaSexActiva
 		{
 			get
@@ -8581,7 +8469,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_noVidaSexActiva", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_noVidaSexActiva", DbType="VarChar(2)")]
 		public string inicial_noVidaSexActiva
 		{
 			get
@@ -8601,7 +8489,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_siMetPlanifiFamiliar", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_siMetPlanifiFamiliar", DbType="VarChar(2)")]
 		public string inicial_siMetPlanifiFamiliar
 		{
 			get
@@ -8621,7 +8509,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_noMetPlanifiFamiliar", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_noMetPlanifiFamiliar", DbType="VarChar(2)")]
 		public string inicial_noMetPlanifiFamiliar
 		{
 			get
@@ -8641,7 +8529,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_tipoMetPlanifiFamiliar", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_tipoMetPlanifiFamiliar", DbType="VarChar(25)")]
 		public string inicial_tipoMetPlanifiFamiliar
 		{
 			get
@@ -8661,7 +8549,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_siExaRealiPapanicolaou", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_siExaRealiPapanicolaou", DbType="VarChar(2)")]
 		public string inicial_siExaRealiPapanicolaou
 		{
 			get
@@ -8681,7 +8569,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_siExaRealiColposcopia", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_siExaRealiColposcopia", DbType="VarChar(2)")]
 		public string inicial_siExaRealiColposcopia
 		{
 			get
@@ -8701,7 +8589,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_noExaRealiPapanicolaou", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_noExaRealiPapanicolaou", DbType="VarChar(2)")]
 		public string inicial_noExaRealiPapanicolaou
 		{
 			get
@@ -8721,7 +8609,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_noExaRealiColposcopia", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_noExaRealiColposcopia", DbType="VarChar(2)")]
 		public string inicial_noExaRealiColposcopia
 		{
 			get
@@ -8741,7 +8629,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_tiempoExaRealiPapanicolaou", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_tiempoExaRealiPapanicolaou", DbType="VarChar(2)")]
 		public string inicial_tiempoExaRealiPapanicolaou
 		{
 			get
@@ -8761,7 +8649,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_tiempoExaRealiColposcopia", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_tiempoExaRealiColposcopia", DbType="VarChar(2)")]
 		public string inicial_tiempoExaRealiColposcopia
 		{
 			get
@@ -8781,7 +8669,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_resultadoExaRealiPapanicolaou", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_resultadoExaRealiPapanicolaou", DbType="VarChar(50)")]
 		public string inicial_resultadoExaRealiPapanicolaou
 		{
 			get
@@ -8801,7 +8689,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_resultadoExaRealiColposcopia", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_resultadoExaRealiColposcopia", DbType="VarChar(50)")]
 		public string inicial_resultadoExaRealiColposcopia
 		{
 			get
@@ -8821,7 +8709,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_siExaRealiEcoMamario", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_siExaRealiEcoMamario", DbType="VarChar(2)")]
 		public string inicial_siExaRealiEcoMamario
 		{
 			get
@@ -8841,7 +8729,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_siExaRealiMamografia", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_siExaRealiMamografia", DbType="VarChar(2)")]
 		public string inicial_siExaRealiMamografia
 		{
 			get
@@ -8861,7 +8749,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_noExaRealiEcoMamario", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_noExaRealiEcoMamario", DbType="VarChar(2)")]
 		public string inicial_noExaRealiEcoMamario
 		{
 			get
@@ -8881,7 +8769,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_noExaRealiMamografia", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_noExaRealiMamografia", DbType="VarChar(2)")]
 		public string inicial_noExaRealiMamografia
 		{
 			get
@@ -8901,7 +8789,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_tiempoExaRealiEcoMamario", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_tiempoExaRealiEcoMamario", DbType="VarChar(2)")]
 		public string inicial_tiempoExaRealiEcoMamario
 		{
 			get
@@ -8921,7 +8809,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_tiempoExaRealiMamografia", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_tiempoExaRealiMamografia", DbType="VarChar(2)")]
 		public string inicial_tiempoExaRealiMamografia
 		{
 			get
@@ -8941,7 +8829,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_resultadoExaRealiEcoMamario", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_resultadoExaRealiEcoMamario", DbType="VarChar(50)")]
 		public string inicial_resultadoExaRealiEcoMamario
 		{
 			get
@@ -8961,7 +8849,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_resultadoExaRealiMamografia", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_resultadoExaRealiMamografia", DbType="VarChar(50)")]
 		public string inicial_resultadoExaRealiMamografia
 		{
 			get
@@ -8981,7 +8869,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_siExaRealiAntiProstatico", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_siExaRealiAntiProstatico", DbType="VarChar(2)")]
 		public string inicial_siExaRealiAntiProstatico
 		{
 			get
@@ -9001,7 +8889,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_siExaRealiEcoProstatico", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_siExaRealiEcoProstatico", DbType="VarChar(2)")]
 		public string inicial_siExaRealiEcoProstatico
 		{
 			get
@@ -9021,7 +8909,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_noExaRealiAntiProstatico", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_noExaRealiAntiProstatico", DbType="VarChar(2)")]
 		public string inicial_noExaRealiAntiProstatico
 		{
 			get
@@ -9041,7 +8929,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_noExaRealiEcoProstatico", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_noExaRealiEcoProstatico", DbType="VarChar(2)")]
 		public string inicial_noExaRealiEcoProstatico
 		{
 			get
@@ -9061,7 +8949,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_tiempoExaRealiAntiProstatico", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_tiempoExaRealiAntiProstatico", DbType="VarChar(2)")]
 		public string inicial_tiempoExaRealiAntiProstatico
 		{
 			get
@@ -9081,7 +8969,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_tiempoExaRealiEcoProstatico", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_tiempoExaRealiEcoProstatico", DbType="VarChar(2)")]
 		public string inicial_tiempoExaRealiEcoProstatico
 		{
 			get
@@ -9101,7 +8989,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_resultadoExaRealiAntiProstatico", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_resultadoExaRealiAntiProstatico", DbType="VarChar(50)")]
 		public string inicial_resultadoExaRealiAntiProstatico
 		{
 			get
@@ -9121,7 +9009,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_resultadoExaRealiEcoProstatico", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_resultadoExaRealiEcoProstatico", DbType="VarChar(50)")]
 		public string inicial_resultadoExaRealiEcoProstatico
 		{
 			get
@@ -9141,7 +9029,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_siMetPlanifiFamiAntReproMascu", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_siMetPlanifiFamiAntReproMascu", DbType="VarChar(2)")]
 		public string inicial_siMetPlanifiFamiAntReproMascu
 		{
 			get
@@ -9161,7 +9049,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_noMetPlanifiFamiAntReproMascu", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_noMetPlanifiFamiAntReproMascu", DbType="VarChar(2)")]
 		public string inicial_noMetPlanifiFamiAntReproMascu
 		{
 			get
@@ -9181,7 +9069,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_tipo1MetPlanifiFamiAntReproMascu", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_tipo1MetPlanifiFamiAntReproMascu", DbType="VarChar(50)")]
 		public string inicial_tipo1MetPlanifiFamiAntReproMascu
 		{
 			get
@@ -9201,7 +9089,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_tipo2MetPlanifiFamiAntReproMascu", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_tipo2MetPlanifiFamiAntReproMascu", DbType="VarChar(50)")]
 		public string inicial_tipo2MetPlanifiFamiAntReproMascu
 		{
 			get
@@ -9221,7 +9109,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_vivosHijAntReproMascu", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_vivosHijAntReproMascu", DbType="VarChar(2)")]
 		public string inicial_vivosHijAntReproMascu
 		{
 			get
@@ -9241,7 +9129,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_muertosHijAntReproMascu", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_muertosHijAntReproMascu", DbType="VarChar(2)")]
 		public string inicial_muertosHijAntReproMascu
 		{
 			get
@@ -9261,7 +9149,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_siConsuNocivosTabaco", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_siConsuNocivosTabaco", DbType="VarChar(2)")]
 		public string inicial_siConsuNocivosTabaco
 		{
 			get
@@ -9281,7 +9169,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_siConsuNocivosAlcohol", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_siConsuNocivosAlcohol", DbType="VarChar(2)")]
 		public string inicial_siConsuNocivosAlcohol
 		{
 			get
@@ -9301,7 +9189,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_siConsuNocivosOtrasDrogas", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_siConsuNocivosOtrasDrogas", DbType="VarChar(2)")]
 		public string inicial_siConsuNocivosOtrasDrogas
 		{
 			get
@@ -9321,7 +9209,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_otrasConsuNocivos", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_otrasConsuNocivos", DbType="VarChar(25)")]
 		public string inicial_otrasConsuNocivos
 		{
 			get
@@ -9341,7 +9229,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_noConsuNocivosTabaco", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_noConsuNocivosTabaco", DbType="VarChar(2)")]
 		public string inicial_noConsuNocivosTabaco
 		{
 			get
@@ -9361,7 +9249,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_noConsuNocivosAlcohol", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_noConsuNocivosAlcohol", DbType="VarChar(2)")]
 		public string inicial_noConsuNocivosAlcohol
 		{
 			get
@@ -9381,7 +9269,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_noConsuNocivosOtrasDrogas", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_noConsuNocivosOtrasDrogas", DbType="VarChar(2)")]
 		public string inicial_noConsuNocivosOtrasDrogas
 		{
 			get
@@ -9401,7 +9289,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_tiempoConsuConsuNocivosTabaco", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_tiempoConsuConsuNocivosTabaco", DbType="VarChar(3)")]
 		public string inicial_tiempoConsuConsuNocivosTabaco
 		{
 			get
@@ -9421,7 +9309,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_tiempoConsuConsuNocivosAlcohol", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_tiempoConsuConsuNocivosAlcohol", DbType="VarChar(3)")]
 		public string inicial_tiempoConsuConsuNocivosAlcohol
 		{
 			get
@@ -9441,7 +9329,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_tiempoConsu1ConsuNocivosOtrasDrogas", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_tiempoConsu1ConsuNocivosOtrasDrogas", DbType="VarChar(3)")]
 		public string inicial_tiempoConsu1ConsuNocivosOtrasDrogas
 		{
 			get
@@ -9461,7 +9349,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_tiempoConsu2ConsuNocivosOtrasDrogas", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_tiempoConsu2ConsuNocivosOtrasDrogas", DbType="VarChar(3)")]
 		public string inicial_tiempoConsu2ConsuNocivosOtrasDrogas
 		{
 			get
@@ -9481,7 +9369,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_cantidadConsuNocivosTabaco", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_cantidadConsuNocivosTabaco", DbType="VarChar(25)")]
 		public string inicial_cantidadConsuNocivosTabaco
 		{
 			get
@@ -9501,7 +9389,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_cantidadConsuNocivosAlcohol", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_cantidadConsuNocivosAlcohol", DbType="VarChar(25)")]
 		public string inicial_cantidadConsuNocivosAlcohol
 		{
 			get
@@ -9521,7 +9409,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_cantidad1ConsuNocivosOtrasDrogas", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_cantidad1ConsuNocivosOtrasDrogas", DbType="VarChar(25)")]
 		public string inicial_cantidad1ConsuNocivosOtrasDrogas
 		{
 			get
@@ -9541,7 +9429,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_cantidad2ConsuNocivosOtrasDrogas", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_cantidad2ConsuNocivosOtrasDrogas", DbType="VarChar(25)")]
 		public string inicial_cantidad2ConsuNocivosOtrasDrogas
 		{
 			get
@@ -9561,7 +9449,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_exConsumiConsuNocivosTabaco", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_exConsumiConsuNocivosTabaco", DbType="VarChar(25)")]
 		public string inicial_exConsumiConsuNocivosTabaco
 		{
 			get
@@ -9581,7 +9469,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_exConsumiConsuNocivosAlcohol", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_exConsumiConsuNocivosAlcohol", DbType="VarChar(25)")]
 		public string inicial_exConsumiConsuNocivosAlcohol
 		{
 			get
@@ -9601,7 +9489,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_exConsumi1ConsuNocivosOtrasDrogas", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_exConsumi1ConsuNocivosOtrasDrogas", DbType="VarChar(25)")]
 		public string inicial_exConsumi1ConsuNocivosOtrasDrogas
 		{
 			get
@@ -9621,7 +9509,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_exConsumi2ConsuNocivosOtrasDrogas", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_exConsumi2ConsuNocivosOtrasDrogas", DbType="VarChar(25)")]
 		public string inicial_exConsumi2ConsuNocivosOtrasDrogas
 		{
 			get
@@ -9641,7 +9529,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_tiempoAbstiConsuNocivosTabaco", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_tiempoAbstiConsuNocivosTabaco", DbType="VarChar(2)")]
 		public string inicial_tiempoAbstiConsuNocivosTabaco
 		{
 			get
@@ -9661,7 +9549,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_tiempoAbstiConsuNocivosAlcohol", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_tiempoAbstiConsuNocivosAlcohol", DbType="VarChar(2)")]
 		public string inicial_tiempoAbstiConsuNocivosAlcohol
 		{
 			get
@@ -9681,7 +9569,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_tiempoAbsti1ConsuNocivosOtrasDrogas", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_tiempoAbsti1ConsuNocivosOtrasDrogas", DbType="VarChar(2)")]
 		public string inicial_tiempoAbsti1ConsuNocivosOtrasDrogas
 		{
 			get
@@ -9701,7 +9589,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_tiempoAbsti2ConsuNocivosOtrasDrogas", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_tiempoAbsti2ConsuNocivosOtrasDrogas", DbType="VarChar(2)")]
 		public string inicial_tiempoAbsti2ConsuNocivosOtrasDrogas
 		{
 			get
@@ -9721,7 +9609,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_siEstiVidaActFisica", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_siEstiVidaActFisica", DbType="VarChar(2)")]
 		public string inicial_siEstiVidaActFisica
 		{
 			get
@@ -9741,7 +9629,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_siEstiVidaMediHabitual", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_siEstiVidaMediHabitual", DbType="VarChar(2)")]
 		public string inicial_siEstiVidaMediHabitual
 		{
 			get
@@ -9761,7 +9649,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_noEstiVidaActFisica", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_noEstiVidaActFisica", DbType="VarChar(2)")]
 		public string inicial_noEstiVidaActFisica
 		{
 			get
@@ -9781,7 +9669,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_noEstiVidaMediHabitual", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_noEstiVidaMediHabitual", DbType="VarChar(2)")]
 		public string inicial_noEstiVidaMediHabitual
 		{
 			get
@@ -9801,7 +9689,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_cualEstiVidaActFisica", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_cualEstiVidaActFisica", DbType="VarChar(50)")]
 		public string inicial_cualEstiVidaActFisica
 		{
 			get
@@ -9821,7 +9709,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_cual2EstiVidaMediHabitual", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_cual2EstiVidaMediHabitual", DbType="VarChar(50)")]
 		public string inicial_cual2EstiVidaMediHabitual
 		{
 			get
@@ -9841,7 +9729,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_cual3EstiVidaMediHabitual", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_cual3EstiVidaMediHabitual", DbType="VarChar(50)")]
 		public string inicial_cual3EstiVidaMediHabitual
 		{
 			get
@@ -9861,7 +9749,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_cual4EstiVidaMediHabitual", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_cual4EstiVidaMediHabitual", DbType="VarChar(50)")]
 		public string inicial_cual4EstiVidaMediHabitual
 		{
 			get
@@ -9881,7 +9769,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[inicial_tiem/cantEstiVidaActFisica]", Storage="_inicial_tiem_cantEstiVidaActFisica", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[inicial_tiem/cantEstiVidaActFisica]", Storage="_inicial_tiem_cantEstiVidaActFisica", DbType="VarChar(50)")]
 		public string inicial_tiem_cantEstiVidaActFisica
 		{
 			get
@@ -9901,7 +9789,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[inicial_tiem/cant2EstiVidaMediHabitual]", Storage="_inicial_tiem_cant2EstiVidaMediHabitual", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[inicial_tiem/cant2EstiVidaMediHabitual]", Storage="_inicial_tiem_cant2EstiVidaMediHabitual", DbType="VarChar(50)")]
 		public string inicial_tiem_cant2EstiVidaMediHabitual
 		{
 			get
@@ -9921,7 +9809,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[inicial_tiem/cant3EstiVidaMediHabitual]", Storage="_inicial_tiem_cant3EstiVidaMediHabitual", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[inicial_tiem/cant3EstiVidaMediHabitual]", Storage="_inicial_tiem_cant3EstiVidaMediHabitual", DbType="VarChar(50)")]
 		public string inicial_tiem_cant3EstiVidaMediHabitual
 		{
 			get
@@ -9941,7 +9829,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[inicial_tiem/cant4EstiVidaMediHabitual]", Storage="_inicial_tiem_cant4EstiVidaMediHabitual", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[inicial_tiem/cant4EstiVidaMediHabitual]", Storage="_inicial_tiem_cant4EstiVidaMediHabitual", DbType="VarChar(50)")]
 		public string inicial_tiem_cant4EstiVidaMediHabitual
 		{
 			get
@@ -9961,7 +9849,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_nomEmpresa", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_nomEmpresa", DbType="VarChar(100)")]
 		public string inicial_nomEmpresa
 		{
 			get
@@ -9981,7 +9869,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_puestoTrabajo", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_puestoTrabajo", DbType="VarChar(100)")]
 		public string inicial_puestoTrabajo
 		{
 			get
@@ -10001,7 +9889,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_actDesemp", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_actDesemp", DbType="VarChar(100)")]
 		public string inicial_actDesemp
 		{
 			get
@@ -10021,7 +9909,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_tiemTrabajo", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_tiemTrabajo", DbType="VarChar(3)")]
 		public string inicial_tiemTrabajo
 		{
 			get
@@ -10041,7 +9929,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_fisicoRies", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_fisicoRies", DbType="VarChar(2)")]
 		public string inicial_fisicoRies
 		{
 			get
@@ -10061,7 +9949,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_mecanicoRies", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_mecanicoRies", DbType="VarChar(2)")]
 		public string inicial_mecanicoRies
 		{
 			get
@@ -10081,7 +9969,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_quimicoRies", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_quimicoRies", DbType="VarChar(2)")]
 		public string inicial_quimicoRies
 		{
 			get
@@ -10101,7 +9989,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_biologicoRies", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_biologicoRies", DbType="VarChar(2)")]
 		public string inicial_biologicoRies
 		{
 			get
@@ -10121,7 +10009,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_ergonomicoRies", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_ergonomicoRies", DbType="VarChar(2)")]
 		public string inicial_ergonomicoRies
 		{
 			get
@@ -10141,7 +10029,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_psicosocial", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_psicosocial", DbType="VarChar(2)")]
 		public string inicial_psicosocial
 		{
 			get
@@ -10181,7 +10069,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_nomEmpresa2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_nomEmpresa2", DbType="VarChar(100)")]
 		public string inicial_nomEmpresa2
 		{
 			get
@@ -10201,7 +10089,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_puestoTrabajo2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_puestoTrabajo2", DbType="VarChar(100)")]
 		public string inicial_puestoTrabajo2
 		{
 			get
@@ -10221,7 +10109,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_actDesemp2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_actDesemp2", DbType="VarChar(100)")]
 		public string inicial_actDesemp2
 		{
 			get
@@ -10241,7 +10129,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_tiemTrabajo2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_tiemTrabajo2", DbType="VarChar(3)")]
 		public string inicial_tiemTrabajo2
 		{
 			get
@@ -10261,7 +10149,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_fisicoRies2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_fisicoRies2", DbType="VarChar(2)")]
 		public string inicial_fisicoRies2
 		{
 			get
@@ -10281,7 +10169,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_mecanicoRies2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_mecanicoRies2", DbType="VarChar(2)")]
 		public string inicial_mecanicoRies2
 		{
 			get
@@ -10301,7 +10189,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_quimicoRies2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_quimicoRies2", DbType="VarChar(2)")]
 		public string inicial_quimicoRies2
 		{
 			get
@@ -10321,7 +10209,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_biologicoRies2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_biologicoRies2", DbType="VarChar(2)")]
 		public string inicial_biologicoRies2
 		{
 			get
@@ -10341,7 +10229,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_ergonomicoRies2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_ergonomicoRies2", DbType="VarChar(2)")]
 		public string inicial_ergonomicoRies2
 		{
 			get
@@ -10361,7 +10249,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_psicosocial2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_psicosocial2", DbType="VarChar(2)")]
 		public string inicial_psicosocial2
 		{
 			get
@@ -10401,7 +10289,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_nomEmpresa3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_nomEmpresa3", DbType="VarChar(100)")]
 		public string inicial_nomEmpresa3
 		{
 			get
@@ -10421,7 +10309,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_puestoTrabajo3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_puestoTrabajo3", DbType="VarChar(100)")]
 		public string inicial_puestoTrabajo3
 		{
 			get
@@ -10441,7 +10329,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_actDesemp3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_actDesemp3", DbType="VarChar(100)")]
 		public string inicial_actDesemp3
 		{
 			get
@@ -10461,7 +10349,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_tiemTrabajo3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_tiemTrabajo3", DbType="VarChar(3)")]
 		public string inicial_tiemTrabajo3
 		{
 			get
@@ -10481,7 +10369,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_fisicoRies3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_fisicoRies3", DbType="VarChar(2)")]
 		public string inicial_fisicoRies3
 		{
 			get
@@ -10501,7 +10389,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_mecanicoRies3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_mecanicoRies3", DbType="VarChar(2)")]
 		public string inicial_mecanicoRies3
 		{
 			get
@@ -10521,7 +10409,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_quimicoRies3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_quimicoRies3", DbType="VarChar(2)")]
 		public string inicial_quimicoRies3
 		{
 			get
@@ -10541,7 +10429,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_biologicoRies3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_biologicoRies3", DbType="VarChar(2)")]
 		public string inicial_biologicoRies3
 		{
 			get
@@ -10561,7 +10449,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_ergonomicoRies3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_ergonomicoRies3", DbType="VarChar(2)")]
 		public string inicial_ergonomicoRies3
 		{
 			get
@@ -10581,7 +10469,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_psicosocial3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_psicosocial3", DbType="VarChar(2)")]
 		public string inicial_psicosocial3
 		{
 			get
@@ -10621,7 +10509,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_nomEmpresa4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_nomEmpresa4", DbType="VarChar(100)")]
 		public string inicial_nomEmpresa4
 		{
 			get
@@ -10641,7 +10529,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_puestoTrabajo4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_puestoTrabajo4", DbType="VarChar(100)")]
 		public string inicial_puestoTrabajo4
 		{
 			get
@@ -10661,7 +10549,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_actDesemp4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_actDesemp4", DbType="VarChar(100)")]
 		public string inicial_actDesemp4
 		{
 			get
@@ -10681,7 +10569,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_tiemTrabajo4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_tiemTrabajo4", DbType="VarChar(3)")]
 		public string inicial_tiemTrabajo4
 		{
 			get
@@ -10701,7 +10589,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_fisicoRies4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_fisicoRies4", DbType="VarChar(2)")]
 		public string inicial_fisicoRies4
 		{
 			get
@@ -10721,7 +10609,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_mecanicoRies4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_mecanicoRies4", DbType="VarChar(2)")]
 		public string inicial_mecanicoRies4
 		{
 			get
@@ -10741,7 +10629,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_quimicoRies4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_quimicoRies4", DbType="VarChar(2)")]
 		public string inicial_quimicoRies4
 		{
 			get
@@ -10761,7 +10649,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_biologicoRies4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_biologicoRies4", DbType="VarChar(2)")]
 		public string inicial_biologicoRies4
 		{
 			get
@@ -10781,7 +10669,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_ergonomicoRies4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_ergonomicoRies4", DbType="VarChar(2)")]
 		public string inicial_ergonomicoRies4
 		{
 			get
@@ -10801,7 +10689,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_psicosocial4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_psicosocial4", DbType="VarChar(2)")]
 		public string inicial_psicosocial4
 		{
 			get
@@ -10841,7 +10729,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_siCalificadoIESSAcciTrabajo", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_siCalificadoIESSAcciTrabajo", DbType="VarChar(2)")]
 		public string inicial_siCalificadoIESSAcciTrabajo
 		{
 			get
@@ -10861,7 +10749,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_especificarCalificadoIESSAcciTrabajo", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_especificarCalificadoIESSAcciTrabajo", DbType="VarChar(50)")]
 		public string inicial_especificarCalificadoIESSAcciTrabajo
 		{
 			get
@@ -10881,7 +10769,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_noCalificadoIESSAcciTrabajo", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_noCalificadoIESSAcciTrabajo", DbType="VarChar(2)")]
 		public string inicial_noCalificadoIESSAcciTrabajo
 		{
 			get
@@ -10901,7 +10789,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_fechaCalificadoIESSAcciTrabajo", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_fechaCalificadoIESSAcciTrabajo", DbType="VarChar(10)")]
 		public string inicial_fechaCalificadoIESSAcciTrabajo
 		{
 			get
@@ -10941,7 +10829,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_siCalificadoIESSEnfProfesionales", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_siCalificadoIESSEnfProfesionales", DbType="VarChar(2)")]
 		public string inicial_siCalificadoIESSEnfProfesionales
 		{
 			get
@@ -10961,7 +10849,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_especificarCalificadoIESSEnfProfesionales", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_especificarCalificadoIESSEnfProfesionales", DbType="VarChar(50)")]
 		public string inicial_especificarCalificadoIESSEnfProfesionales
 		{
 			get
@@ -10981,7 +10869,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_noCalificadoIESSEnfProfesionales", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_noCalificadoIESSEnfProfesionales", DbType="VarChar(2)")]
 		public string inicial_noCalificadoIESSEnfProfesionales
 		{
 			get
@@ -11001,7 +10889,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_fechaCalificadoIESSEnfProfesionales", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_fechaCalificadoIESSEnfProfesionales", DbType="VarChar(10)")]
 		public string inicial_fechaCalificadoIESSEnfProfesionales
 		{
 			get
@@ -11041,7 +10929,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_enfCarVasAnteFamiliares", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_enfCarVasAnteFamiliares", DbType="VarChar(2)")]
 		public string inicial_enfCarVasAnteFamiliares
 		{
 			get
@@ -11061,7 +10949,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_enfMetaAnteFamiliares", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_enfMetaAnteFamiliares", DbType="VarChar(2)")]
 		public string inicial_enfMetaAnteFamiliares
 		{
 			get
@@ -11081,7 +10969,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_enfNeuroAnteFamiliares", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_enfNeuroAnteFamiliares", DbType="VarChar(2)")]
 		public string inicial_enfNeuroAnteFamiliares
 		{
 			get
@@ -11101,7 +10989,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_enfOncoAnteFamiliares", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_enfOncoAnteFamiliares", DbType="VarChar(2)")]
 		public string inicial_enfOncoAnteFamiliares
 		{
 			get
@@ -11121,7 +11009,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_enfInfeAnteFamiliares", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_enfInfeAnteFamiliares", DbType="VarChar(2)")]
 		public string inicial_enfInfeAnteFamiliares
 		{
 			get
@@ -11141,7 +11029,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_enfHereCongeAnteFamiliares", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_enfHereCongeAnteFamiliares", DbType="VarChar(2)")]
 		public string inicial_enfHereCongeAnteFamiliares
 		{
 			get
@@ -11161,7 +11049,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_discapaAnteFamiliares", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_discapaAnteFamiliares", DbType="VarChar(2)")]
 		public string inicial_discapaAnteFamiliares
 		{
 			get
@@ -11181,7 +11069,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_otrosAnteFamiliares", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_otrosAnteFamiliares", DbType="VarChar(2)")]
 		public string inicial_otrosAnteFamiliares
 		{
 			get
@@ -11221,7 +11109,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_area", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_area", DbType="VarChar(250)")]
 		public string inicial_area
 		{
 			get
@@ -11241,7 +11129,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_actividades", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_actividades", DbType="VarChar(250)")]
 		public string inicial_actividades
 		{
 			get
@@ -11261,7 +11149,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_temAltasFis", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_temAltasFis", DbType="VarChar(2)")]
 		public string inicial_temAltasFis
 		{
 			get
@@ -11281,7 +11169,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_temBajasFis", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_temBajasFis", DbType="VarChar(2)")]
 		public string inicial_temBajasFis
 		{
 			get
@@ -11301,7 +11189,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_radIonizanteFis", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_radIonizanteFis", DbType="VarChar(2)")]
 		public string inicial_radIonizanteFis
 		{
 			get
@@ -11321,7 +11209,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_radNoIonizanteFis", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_radNoIonizanteFis", DbType="VarChar(2)")]
 		public string inicial_radNoIonizanteFis
 		{
 			get
@@ -11341,7 +11229,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_ruidoFis", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_ruidoFis", DbType="VarChar(2)")]
 		public string inicial_ruidoFis
 		{
 			get
@@ -11361,7 +11249,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_vibracionFis", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_vibracionFis", DbType="VarChar(2)")]
 		public string inicial_vibracionFis
 		{
 			get
@@ -11381,7 +11269,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_iluminacionFis", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_iluminacionFis", DbType="VarChar(2)")]
 		public string inicial_iluminacionFis
 		{
 			get
@@ -11401,7 +11289,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_ventilacionFis", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_ventilacionFis", DbType="VarChar(2)")]
 		public string inicial_ventilacionFis
 		{
 			get
@@ -11421,7 +11309,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_fluElectricoFis", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_fluElectricoFis", DbType="VarChar(2)")]
 		public string inicial_fluElectricoFis
 		{
 			get
@@ -11441,7 +11329,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_otrosFis", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_otrosFis", DbType="VarChar(2)")]
 		public string inicial_otrosFis
 		{
 			get
@@ -11461,7 +11349,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_atraMaquinasMec", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_atraMaquinasMec", DbType="VarChar(2)")]
 		public string inicial_atraMaquinasMec
 		{
 			get
@@ -11481,7 +11369,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_atraSuperfiiesMec", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_atraSuperfiiesMec", DbType="VarChar(2)")]
 		public string inicial_atraSuperfiiesMec
 		{
 			get
@@ -11501,7 +11389,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_atraObjetosMec", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_atraObjetosMec", DbType="VarChar(2)")]
 		public string inicial_atraObjetosMec
 		{
 			get
@@ -11521,7 +11409,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_caidaObjetosMec", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_caidaObjetosMec", DbType="VarChar(2)")]
 		public string inicial_caidaObjetosMec
 		{
 			get
@@ -11541,7 +11429,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_caidaMisNivelMec", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_caidaMisNivelMec", DbType="VarChar(2)")]
 		public string inicial_caidaMisNivelMec
 		{
 			get
@@ -11561,7 +11449,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_caidaDifNivelMec", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_caidaDifNivelMec", DbType="VarChar(2)")]
 		public string inicial_caidaDifNivelMec
 		{
 			get
@@ -11581,7 +11469,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_contactoElecMec", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_contactoElecMec", DbType="VarChar(2)")]
 		public string inicial_contactoElecMec
 		{
 			get
@@ -11601,7 +11489,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_conSuperTrabaMec", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_conSuperTrabaMec", DbType="VarChar(2)")]
 		public string inicial_conSuperTrabaMec
 		{
 			get
@@ -11621,7 +11509,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_proPartiFragMec", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_proPartiFragMec", DbType="VarChar(2)")]
 		public string inicial_proPartiFragMec
 		{
 			get
@@ -11641,7 +11529,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_proFluidosMec", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_proFluidosMec", DbType="VarChar(2)")]
 		public string inicial_proFluidosMec
 		{
 			get
@@ -11661,7 +11549,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_pinchazosMec", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_pinchazosMec", DbType="VarChar(2)")]
 		public string inicial_pinchazosMec
 		{
 			get
@@ -11681,7 +11569,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_cortesMec", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_cortesMec", DbType="VarChar(2)")]
 		public string inicial_cortesMec
 		{
 			get
@@ -11701,7 +11589,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_atropeVehiMec", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_atropeVehiMec", DbType="VarChar(2)")]
 		public string inicial_atropeVehiMec
 		{
 			get
@@ -11721,7 +11609,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_coliVehiMec", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_coliVehiMec", DbType="VarChar(2)")]
 		public string inicial_coliVehiMec
 		{
 			get
@@ -11741,7 +11629,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_otrosMec", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_otrosMec", DbType="VarChar(2)")]
 		public string inicial_otrosMec
 		{
 			get
@@ -11761,7 +11649,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_solidosQui", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_solidosQui", DbType="VarChar(2)")]
 		public string inicial_solidosQui
 		{
 			get
@@ -11781,7 +11669,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_polvosQui", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_polvosQui", DbType="VarChar(2)")]
 		public string inicial_polvosQui
 		{
 			get
@@ -11801,7 +11689,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_humosQui", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_humosQui", DbType="VarChar(2)")]
 		public string inicial_humosQui
 		{
 			get
@@ -11821,7 +11709,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_liquidosQui", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_liquidosQui", DbType="VarChar(2)")]
 		public string inicial_liquidosQui
 		{
 			get
@@ -11841,7 +11729,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_vaporesQui", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_vaporesQui", DbType="VarChar(2)")]
 		public string inicial_vaporesQui
 		{
 			get
@@ -11861,7 +11749,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_aerosolesQui", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_aerosolesQui", DbType="VarChar(2)")]
 		public string inicial_aerosolesQui
 		{
 			get
@@ -11881,7 +11769,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_neblinasQui", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_neblinasQui", DbType="VarChar(2)")]
 		public string inicial_neblinasQui
 		{
 			get
@@ -11901,7 +11789,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_gaseososQui", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_gaseososQui", DbType="VarChar(2)")]
 		public string inicial_gaseososQui
 		{
 			get
@@ -11921,7 +11809,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_otrosQui", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_otrosQui", DbType="VarChar(2)")]
 		public string inicial_otrosQui
 		{
 			get
@@ -11941,7 +11829,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_virusBio", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_virusBio", DbType="VarChar(2)")]
 		public string inicial_virusBio
 		{
 			get
@@ -11961,7 +11849,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_hongosBio", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_hongosBio", DbType="VarChar(2)")]
 		public string inicial_hongosBio
 		{
 			get
@@ -11981,7 +11869,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_bacteriasBio", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_bacteriasBio", DbType="VarChar(2)")]
 		public string inicial_bacteriasBio
 		{
 			get
@@ -12001,7 +11889,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_parasitosBio", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_parasitosBio", DbType="VarChar(2)")]
 		public string inicial_parasitosBio
 		{
 			get
@@ -12021,7 +11909,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_expVectBio", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_expVectBio", DbType="VarChar(2)")]
 		public string inicial_expVectBio
 		{
 			get
@@ -12041,7 +11929,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_expAniSelvaBio", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_expAniSelvaBio", DbType="VarChar(2)")]
 		public string inicial_expAniSelvaBio
 		{
 			get
@@ -12061,7 +11949,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_otrosBio", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_otrosBio", DbType="VarChar(2)")]
 		public string inicial_otrosBio
 		{
 			get
@@ -12081,7 +11969,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_maneManCarErg", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_maneManCarErg", DbType="VarChar(2)")]
 		public string inicial_maneManCarErg
 		{
 			get
@@ -12101,7 +11989,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_movRepeErg", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_movRepeErg", DbType="VarChar(2)")]
 		public string inicial_movRepeErg
 		{
 			get
@@ -12121,7 +12009,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_posForzaErg", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_posForzaErg", DbType="VarChar(2)")]
 		public string inicial_posForzaErg
 		{
 			get
@@ -12141,7 +12029,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_trabPvdErg", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_trabPvdErg", DbType="VarChar(2)")]
 		public string inicial_trabPvdErg
 		{
 			get
@@ -12161,7 +12049,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_otrosErg", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_otrosErg", DbType="VarChar(2)")]
 		public string inicial_otrosErg
 		{
 			get
@@ -12181,7 +12069,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_monoTrabPsi", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_monoTrabPsi", DbType="VarChar(2)")]
 		public string inicial_monoTrabPsi
 		{
 			get
@@ -12201,7 +12089,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_sobrecarLabPsi", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_sobrecarLabPsi", DbType="VarChar(2)")]
 		public string inicial_sobrecarLabPsi
 		{
 			get
@@ -12221,7 +12109,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_minuTareaPsi", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_minuTareaPsi", DbType="VarChar(2)")]
 		public string inicial_minuTareaPsi
 		{
 			get
@@ -12241,7 +12129,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_altaResponPsi", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_altaResponPsi", DbType="VarChar(2)")]
 		public string inicial_altaResponPsi
 		{
 			get
@@ -12261,7 +12149,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_autoTomaDesiPsi", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_autoTomaDesiPsi", DbType="VarChar(2)")]
 		public string inicial_autoTomaDesiPsi
 		{
 			get
@@ -12281,7 +12169,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_supEstDirecDefiPsi", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_supEstDirecDefiPsi", DbType="VarChar(2)")]
 		public string inicial_supEstDirecDefiPsi
 		{
 			get
@@ -12301,7 +12189,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_conflicRolPsi", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_conflicRolPsi", DbType="VarChar(2)")]
 		public string inicial_conflicRolPsi
 		{
 			get
@@ -12321,7 +12209,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_falClariFunPsi", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_falClariFunPsi", DbType="VarChar(2)")]
 		public string inicial_falClariFunPsi
 		{
 			get
@@ -12341,7 +12229,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_incoDistriTrabPsi", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_incoDistriTrabPsi", DbType="VarChar(2)")]
 		public string inicial_incoDistriTrabPsi
 		{
 			get
@@ -12361,7 +12249,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_turnosRotaPsi", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_turnosRotaPsi", DbType="VarChar(2)")]
 		public string inicial_turnosRotaPsi
 		{
 			get
@@ -12381,7 +12269,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_relInterperPsi", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_relInterperPsi", DbType="VarChar(2)")]
 		public string inicial_relInterperPsi
 		{
 			get
@@ -12401,7 +12289,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_inesLabPsi", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_inesLabPsi", DbType="VarChar(2)")]
 		public string inicial_inesLabPsi
 		{
 			get
@@ -12421,7 +12309,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_otrosPsi", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_otrosPsi", DbType="VarChar(2)")]
 		public string inicial_otrosPsi
 		{
 			get
@@ -12461,7 +12349,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_area2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_area2", DbType="VarChar(250)")]
 		public string inicial_area2
 		{
 			get
@@ -12481,7 +12369,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_actividades2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_actividades2", DbType="VarChar(250)")]
 		public string inicial_actividades2
 		{
 			get
@@ -12501,7 +12389,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_temAltasFis2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_temAltasFis2", DbType="VarChar(2)")]
 		public string inicial_temAltasFis2
 		{
 			get
@@ -12521,7 +12409,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_temBajasFis2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_temBajasFis2", DbType="VarChar(2)")]
 		public string inicial_temBajasFis2
 		{
 			get
@@ -12541,7 +12429,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_radIonizanteFis2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_radIonizanteFis2", DbType="VarChar(2)")]
 		public string inicial_radIonizanteFis2
 		{
 			get
@@ -12561,7 +12449,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_radNoIonizanteFis2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_radNoIonizanteFis2", DbType="VarChar(2)")]
 		public string inicial_radNoIonizanteFis2
 		{
 			get
@@ -12581,7 +12469,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_ruidoFis2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_ruidoFis2", DbType="VarChar(2)")]
 		public string inicial_ruidoFis2
 		{
 			get
@@ -12601,7 +12489,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_vibracionFis2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_vibracionFis2", DbType="VarChar(2)")]
 		public string inicial_vibracionFis2
 		{
 			get
@@ -12621,7 +12509,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_iluminacionFis2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_iluminacionFis2", DbType="VarChar(2)")]
 		public string inicial_iluminacionFis2
 		{
 			get
@@ -12641,7 +12529,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_ventilacionFis2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_ventilacionFis2", DbType="VarChar(2)")]
 		public string inicial_ventilacionFis2
 		{
 			get
@@ -12661,7 +12549,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_fluElectricoFis2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_fluElectricoFis2", DbType="VarChar(2)")]
 		public string inicial_fluElectricoFis2
 		{
 			get
@@ -12681,7 +12569,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_otrosFis2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_otrosFis2", DbType="VarChar(2)")]
 		public string inicial_otrosFis2
 		{
 			get
@@ -12701,7 +12589,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_atraMaquinasMec2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_atraMaquinasMec2", DbType="VarChar(2)")]
 		public string inicial_atraMaquinasMec2
 		{
 			get
@@ -12721,7 +12609,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_atraSuperfiiesMec2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_atraSuperfiiesMec2", DbType="VarChar(2)")]
 		public string inicial_atraSuperfiiesMec2
 		{
 			get
@@ -12741,7 +12629,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_atraObjetosMec2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_atraObjetosMec2", DbType="VarChar(2)")]
 		public string inicial_atraObjetosMec2
 		{
 			get
@@ -12761,7 +12649,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_caidaObjetosMec2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_caidaObjetosMec2", DbType="VarChar(2)")]
 		public string inicial_caidaObjetosMec2
 		{
 			get
@@ -12781,7 +12669,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_caidaMisNivelMec2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_caidaMisNivelMec2", DbType="VarChar(2)")]
 		public string inicial_caidaMisNivelMec2
 		{
 			get
@@ -12801,7 +12689,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_caidaDifNivelMec2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_caidaDifNivelMec2", DbType="VarChar(2)")]
 		public string inicial_caidaDifNivelMec2
 		{
 			get
@@ -12821,7 +12709,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_contactoElecMec2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_contactoElecMec2", DbType="VarChar(2)")]
 		public string inicial_contactoElecMec2
 		{
 			get
@@ -12841,7 +12729,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_conSuperTrabaMec2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_conSuperTrabaMec2", DbType="VarChar(2)")]
 		public string inicial_conSuperTrabaMec2
 		{
 			get
@@ -12861,7 +12749,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_proPartiFragMec2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_proPartiFragMec2", DbType="VarChar(2)")]
 		public string inicial_proPartiFragMec2
 		{
 			get
@@ -12881,7 +12769,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_proFluidosMec2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_proFluidosMec2", DbType="VarChar(2)")]
 		public string inicial_proFluidosMec2
 		{
 			get
@@ -12901,7 +12789,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_pinchazosMec2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_pinchazosMec2", DbType="VarChar(2)")]
 		public string inicial_pinchazosMec2
 		{
 			get
@@ -12921,7 +12809,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_cortesMec2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_cortesMec2", DbType="VarChar(2)")]
 		public string inicial_cortesMec2
 		{
 			get
@@ -12941,7 +12829,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_atropeVehiMec2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_atropeVehiMec2", DbType="VarChar(2)")]
 		public string inicial_atropeVehiMec2
 		{
 			get
@@ -12961,7 +12849,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_coliVehiMec2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_coliVehiMec2", DbType="VarChar(2)")]
 		public string inicial_coliVehiMec2
 		{
 			get
@@ -12981,7 +12869,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_otrosMec2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_otrosMec2", DbType="VarChar(2)")]
 		public string inicial_otrosMec2
 		{
 			get
@@ -13001,7 +12889,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_solidosQui2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_solidosQui2", DbType="VarChar(2)")]
 		public string inicial_solidosQui2
 		{
 			get
@@ -13021,7 +12909,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_polvosQui2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_polvosQui2", DbType="VarChar(2)")]
 		public string inicial_polvosQui2
 		{
 			get
@@ -13041,7 +12929,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_humosQui2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_humosQui2", DbType="VarChar(2)")]
 		public string inicial_humosQui2
 		{
 			get
@@ -13061,7 +12949,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_liquidosQui2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_liquidosQui2", DbType="VarChar(2)")]
 		public string inicial_liquidosQui2
 		{
 			get
@@ -13081,7 +12969,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_vaporesQui2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_vaporesQui2", DbType="VarChar(2)")]
 		public string inicial_vaporesQui2
 		{
 			get
@@ -13101,7 +12989,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_aerosolesQui2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_aerosolesQui2", DbType="VarChar(2)")]
 		public string inicial_aerosolesQui2
 		{
 			get
@@ -13121,7 +13009,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_neblinasQui2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_neblinasQui2", DbType="VarChar(2)")]
 		public string inicial_neblinasQui2
 		{
 			get
@@ -13141,7 +13029,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_gaseososQui2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_gaseososQui2", DbType="VarChar(2)")]
 		public string inicial_gaseososQui2
 		{
 			get
@@ -13161,7 +13049,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_otrosQui2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_otrosQui2", DbType="VarChar(2)")]
 		public string inicial_otrosQui2
 		{
 			get
@@ -13181,7 +13069,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_virusBio2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_virusBio2", DbType="VarChar(2)")]
 		public string inicial_virusBio2
 		{
 			get
@@ -13201,7 +13089,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_hongosBio2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_hongosBio2", DbType="VarChar(2)")]
 		public string inicial_hongosBio2
 		{
 			get
@@ -13221,7 +13109,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_bacteriasBio2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_bacteriasBio2", DbType="VarChar(2)")]
 		public string inicial_bacteriasBio2
 		{
 			get
@@ -13241,7 +13129,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_parasitosBio2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_parasitosBio2", DbType="VarChar(2)")]
 		public string inicial_parasitosBio2
 		{
 			get
@@ -13261,7 +13149,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_expVectBio2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_expVectBio2", DbType="VarChar(2)")]
 		public string inicial_expVectBio2
 		{
 			get
@@ -13281,7 +13169,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_expAniSelvaBio2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_expAniSelvaBio2", DbType="VarChar(2)")]
 		public string inicial_expAniSelvaBio2
 		{
 			get
@@ -13301,7 +13189,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_otrosBio2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_otrosBio2", DbType="VarChar(2)")]
 		public string inicial_otrosBio2
 		{
 			get
@@ -13321,7 +13209,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_maneManCarErg2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_maneManCarErg2", DbType="VarChar(2)")]
 		public string inicial_maneManCarErg2
 		{
 			get
@@ -13341,7 +13229,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_movRepeErg2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_movRepeErg2", DbType="VarChar(2)")]
 		public string inicial_movRepeErg2
 		{
 			get
@@ -13361,7 +13249,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_posForzaErg2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_posForzaErg2", DbType="VarChar(2)")]
 		public string inicial_posForzaErg2
 		{
 			get
@@ -13381,7 +13269,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_trabPvdErg2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_trabPvdErg2", DbType="VarChar(2)")]
 		public string inicial_trabPvdErg2
 		{
 			get
@@ -13401,7 +13289,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_otrosErg2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_otrosErg2", DbType="VarChar(2)")]
 		public string inicial_otrosErg2
 		{
 			get
@@ -13421,7 +13309,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_monoTrabPsi2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_monoTrabPsi2", DbType="VarChar(2)")]
 		public string inicial_monoTrabPsi2
 		{
 			get
@@ -13441,7 +13329,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_sobrecarLabPsi2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_sobrecarLabPsi2", DbType="VarChar(2)")]
 		public string inicial_sobrecarLabPsi2
 		{
 			get
@@ -13461,7 +13349,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_minuTareaPsi2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_minuTareaPsi2", DbType="VarChar(2)")]
 		public string inicial_minuTareaPsi2
 		{
 			get
@@ -13481,7 +13369,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_altaResponPsi2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_altaResponPsi2", DbType="VarChar(2)")]
 		public string inicial_altaResponPsi2
 		{
 			get
@@ -13501,7 +13389,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_autoTomaDesiPsi2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_autoTomaDesiPsi2", DbType="VarChar(2)")]
 		public string inicial_autoTomaDesiPsi2
 		{
 			get
@@ -13521,7 +13409,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_supEstDirecDefiPsi2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_supEstDirecDefiPsi2", DbType="VarChar(2)")]
 		public string inicial_supEstDirecDefiPsi2
 		{
 			get
@@ -13541,7 +13429,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_conflicRolPsi2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_conflicRolPsi2", DbType="VarChar(2)")]
 		public string inicial_conflicRolPsi2
 		{
 			get
@@ -13561,7 +13449,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_falClariFunPsi2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_falClariFunPsi2", DbType="VarChar(2)")]
 		public string inicial_falClariFunPsi2
 		{
 			get
@@ -13581,7 +13469,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_incoDistriTrabPsi2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_incoDistriTrabPsi2", DbType="VarChar(2)")]
 		public string inicial_incoDistriTrabPsi2
 		{
 			get
@@ -13601,7 +13489,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_turnosRotaPsi2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_turnosRotaPsi2", DbType="VarChar(2)")]
 		public string inicial_turnosRotaPsi2
 		{
 			get
@@ -13621,7 +13509,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_relInterperPsi2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_relInterperPsi2", DbType="VarChar(2)")]
 		public string inicial_relInterperPsi2
 		{
 			get
@@ -13641,7 +13529,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_inesLabPsi2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_inesLabPsi2", DbType="VarChar(2)")]
 		public string inicial_inesLabPsi2
 		{
 			get
@@ -13661,7 +13549,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_otrosPsi2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_otrosPsi2", DbType="VarChar(2)")]
 		public string inicial_otrosPsi2
 		{
 			get
@@ -13701,7 +13589,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_area3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_area3", DbType="VarChar(250)")]
 		public string inicial_area3
 		{
 			get
@@ -13721,7 +13609,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_actividades3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_actividades3", DbType="VarChar(250)")]
 		public string inicial_actividades3
 		{
 			get
@@ -13741,7 +13629,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_temAltasFis3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_temAltasFis3", DbType="VarChar(2)")]
 		public string inicial_temAltasFis3
 		{
 			get
@@ -13761,7 +13649,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_temBajasFis3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_temBajasFis3", DbType="VarChar(2)")]
 		public string inicial_temBajasFis3
 		{
 			get
@@ -13781,7 +13669,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_radIonizanteFis3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_radIonizanteFis3", DbType="VarChar(2)")]
 		public string inicial_radIonizanteFis3
 		{
 			get
@@ -13801,7 +13689,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_radNoIonizanteFis3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_radNoIonizanteFis3", DbType="VarChar(2)")]
 		public string inicial_radNoIonizanteFis3
 		{
 			get
@@ -13821,7 +13709,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_ruidoFis3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_ruidoFis3", DbType="VarChar(2)")]
 		public string inicial_ruidoFis3
 		{
 			get
@@ -13841,7 +13729,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_vibracionFis3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_vibracionFis3", DbType="VarChar(2)")]
 		public string inicial_vibracionFis3
 		{
 			get
@@ -13861,7 +13749,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_iluminacionFis3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_iluminacionFis3", DbType="VarChar(2)")]
 		public string inicial_iluminacionFis3
 		{
 			get
@@ -13881,7 +13769,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_ventilacionFis3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_ventilacionFis3", DbType="VarChar(2)")]
 		public string inicial_ventilacionFis3
 		{
 			get
@@ -13901,7 +13789,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_fluElectricoFis3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_fluElectricoFis3", DbType="VarChar(2)")]
 		public string inicial_fluElectricoFis3
 		{
 			get
@@ -13921,7 +13809,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_otrosFis3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_otrosFis3", DbType="VarChar(2)")]
 		public string inicial_otrosFis3
 		{
 			get
@@ -13941,7 +13829,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_atraMaquinasMec3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_atraMaquinasMec3", DbType="VarChar(2)")]
 		public string inicial_atraMaquinasMec3
 		{
 			get
@@ -13961,7 +13849,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_atraSuperfiiesMec3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_atraSuperfiiesMec3", DbType="VarChar(2)")]
 		public string inicial_atraSuperfiiesMec3
 		{
 			get
@@ -13981,7 +13869,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_atraObjetosMec3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_atraObjetosMec3", DbType="VarChar(2)")]
 		public string inicial_atraObjetosMec3
 		{
 			get
@@ -14001,7 +13889,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_caidaObjetosMec3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_caidaObjetosMec3", DbType="VarChar(2)")]
 		public string inicial_caidaObjetosMec3
 		{
 			get
@@ -14021,7 +13909,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_caidaMisNivelMec3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_caidaMisNivelMec3", DbType="VarChar(2)")]
 		public string inicial_caidaMisNivelMec3
 		{
 			get
@@ -14041,7 +13929,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_caidaDifNivelMec3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_caidaDifNivelMec3", DbType="VarChar(2)")]
 		public string inicial_caidaDifNivelMec3
 		{
 			get
@@ -14061,7 +13949,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_contactoElecMec3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_contactoElecMec3", DbType="VarChar(2)")]
 		public string inicial_contactoElecMec3
 		{
 			get
@@ -14081,7 +13969,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_conSuperTrabaMec3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_conSuperTrabaMec3", DbType="VarChar(2)")]
 		public string inicial_conSuperTrabaMec3
 		{
 			get
@@ -14101,7 +13989,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_proPartiFragMec3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_proPartiFragMec3", DbType="VarChar(2)")]
 		public string inicial_proPartiFragMec3
 		{
 			get
@@ -14121,7 +14009,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_proFluidosMec3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_proFluidosMec3", DbType="VarChar(2)")]
 		public string inicial_proFluidosMec3
 		{
 			get
@@ -14141,7 +14029,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_pinchazosMec3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_pinchazosMec3", DbType="VarChar(2)")]
 		public string inicial_pinchazosMec3
 		{
 			get
@@ -14161,7 +14049,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_cortesMec3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_cortesMec3", DbType="VarChar(2)")]
 		public string inicial_cortesMec3
 		{
 			get
@@ -14181,7 +14069,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_atropeVehiMec3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_atropeVehiMec3", DbType="VarChar(2)")]
 		public string inicial_atropeVehiMec3
 		{
 			get
@@ -14201,7 +14089,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_coliVehiMec3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_coliVehiMec3", DbType="VarChar(2)")]
 		public string inicial_coliVehiMec3
 		{
 			get
@@ -14221,7 +14109,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_otrosMec3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_otrosMec3", DbType="VarChar(2)")]
 		public string inicial_otrosMec3
 		{
 			get
@@ -14241,7 +14129,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_solidosQui3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_solidosQui3", DbType="VarChar(2)")]
 		public string inicial_solidosQui3
 		{
 			get
@@ -14261,7 +14149,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_polvosQui3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_polvosQui3", DbType="VarChar(2)")]
 		public string inicial_polvosQui3
 		{
 			get
@@ -14281,7 +14169,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_humosQui3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_humosQui3", DbType="VarChar(2)")]
 		public string inicial_humosQui3
 		{
 			get
@@ -14301,7 +14189,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_liquidosQui3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_liquidosQui3", DbType="VarChar(2)")]
 		public string inicial_liquidosQui3
 		{
 			get
@@ -14321,7 +14209,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_vaporesQui3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_vaporesQui3", DbType="VarChar(2)")]
 		public string inicial_vaporesQui3
 		{
 			get
@@ -14341,7 +14229,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_aerosolesQui3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_aerosolesQui3", DbType="VarChar(2)")]
 		public string inicial_aerosolesQui3
 		{
 			get
@@ -14361,7 +14249,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_neblinasQui3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_neblinasQui3", DbType="VarChar(2)")]
 		public string inicial_neblinasQui3
 		{
 			get
@@ -14381,7 +14269,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_gaseososQui3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_gaseososQui3", DbType="VarChar(2)")]
 		public string inicial_gaseososQui3
 		{
 			get
@@ -14401,7 +14289,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_otrosQui3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_otrosQui3", DbType="VarChar(2)")]
 		public string inicial_otrosQui3
 		{
 			get
@@ -14421,7 +14309,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_virusBio3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_virusBio3", DbType="VarChar(2)")]
 		public string inicial_virusBio3
 		{
 			get
@@ -14441,7 +14329,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_hongosBio3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_hongosBio3", DbType="VarChar(2)")]
 		public string inicial_hongosBio3
 		{
 			get
@@ -14461,7 +14349,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_bacteriasBio3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_bacteriasBio3", DbType="VarChar(2)")]
 		public string inicial_bacteriasBio3
 		{
 			get
@@ -14481,7 +14369,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_parasitosBio3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_parasitosBio3", DbType="VarChar(2)")]
 		public string inicial_parasitosBio3
 		{
 			get
@@ -14501,7 +14389,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_expVectBio3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_expVectBio3", DbType="VarChar(2)")]
 		public string inicial_expVectBio3
 		{
 			get
@@ -14521,7 +14409,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_expAniSelvaBio3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_expAniSelvaBio3", DbType="VarChar(2)")]
 		public string inicial_expAniSelvaBio3
 		{
 			get
@@ -14541,7 +14429,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_otrosBio3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_otrosBio3", DbType="VarChar(2)")]
 		public string inicial_otrosBio3
 		{
 			get
@@ -14561,7 +14449,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_maneManCarErg3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_maneManCarErg3", DbType="VarChar(2)")]
 		public string inicial_maneManCarErg3
 		{
 			get
@@ -14581,7 +14469,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_movRepeErg3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_movRepeErg3", DbType="VarChar(2)")]
 		public string inicial_movRepeErg3
 		{
 			get
@@ -14601,7 +14489,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_posForzaErg3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_posForzaErg3", DbType="VarChar(2)")]
 		public string inicial_posForzaErg3
 		{
 			get
@@ -14621,7 +14509,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_trabPvdErg3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_trabPvdErg3", DbType="VarChar(2)")]
 		public string inicial_trabPvdErg3
 		{
 			get
@@ -14641,7 +14529,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_otrosErg3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_otrosErg3", DbType="VarChar(2)")]
 		public string inicial_otrosErg3
 		{
 			get
@@ -14661,7 +14549,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_monoTrabPsi3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_monoTrabPsi3", DbType="VarChar(2)")]
 		public string inicial_monoTrabPsi3
 		{
 			get
@@ -14681,7 +14569,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_sobrecarLabPsi3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_sobrecarLabPsi3", DbType="VarChar(2)")]
 		public string inicial_sobrecarLabPsi3
 		{
 			get
@@ -14701,7 +14589,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_minuTareaPsi3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_minuTareaPsi3", DbType="VarChar(2)")]
 		public string inicial_minuTareaPsi3
 		{
 			get
@@ -14721,7 +14609,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_altaResponPsi3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_altaResponPsi3", DbType="VarChar(2)")]
 		public string inicial_altaResponPsi3
 		{
 			get
@@ -14741,7 +14629,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_autoTomaDesiPsi3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_autoTomaDesiPsi3", DbType="VarChar(2)")]
 		public string inicial_autoTomaDesiPsi3
 		{
 			get
@@ -14761,7 +14649,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_supEstDirecDefiPsi3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_supEstDirecDefiPsi3", DbType="VarChar(2)")]
 		public string inicial_supEstDirecDefiPsi3
 		{
 			get
@@ -14781,7 +14669,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_conflicRolPsi3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_conflicRolPsi3", DbType="VarChar(2)")]
 		public string inicial_conflicRolPsi3
 		{
 			get
@@ -14801,7 +14689,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_falClariFunPsi3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_falClariFunPsi3", DbType="VarChar(2)")]
 		public string inicial_falClariFunPsi3
 		{
 			get
@@ -14821,7 +14709,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_incoDistriTrabPsi3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_incoDistriTrabPsi3", DbType="VarChar(2)")]
 		public string inicial_incoDistriTrabPsi3
 		{
 			get
@@ -14841,7 +14729,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_turnosRotaPsi3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_turnosRotaPsi3", DbType="VarChar(2)")]
 		public string inicial_turnosRotaPsi3
 		{
 			get
@@ -14861,7 +14749,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_relInterperPsi3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_relInterperPsi3", DbType="VarChar(2)")]
 		public string inicial_relInterperPsi3
 		{
 			get
@@ -14881,7 +14769,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_inesLabPsi3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_inesLabPsi3", DbType="VarChar(2)")]
 		public string inicial_inesLabPsi3
 		{
 			get
@@ -14901,7 +14789,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_otrosPsi3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_otrosPsi3", DbType="VarChar(2)")]
 		public string inicial_otrosPsi3
 		{
 			get
@@ -14941,7 +14829,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_area4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_area4", DbType="VarChar(250)")]
 		public string inicial_area4
 		{
 			get
@@ -14961,7 +14849,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_actividades4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_actividades4", DbType="VarChar(250)")]
 		public string inicial_actividades4
 		{
 			get
@@ -14981,7 +14869,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_temAltasFis4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_temAltasFis4", DbType="VarChar(2)")]
 		public string inicial_temAltasFis4
 		{
 			get
@@ -15001,7 +14889,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_temBajasFis4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_temBajasFis4", DbType="VarChar(2)")]
 		public string inicial_temBajasFis4
 		{
 			get
@@ -15021,7 +14909,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_radIonizanteFis4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_radIonizanteFis4", DbType="VarChar(2)")]
 		public string inicial_radIonizanteFis4
 		{
 			get
@@ -15041,7 +14929,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_radNoIonizanteFis4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_radNoIonizanteFis4", DbType="VarChar(2)")]
 		public string inicial_radNoIonizanteFis4
 		{
 			get
@@ -15061,7 +14949,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_ruidoFis4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_ruidoFis4", DbType="VarChar(2)")]
 		public string inicial_ruidoFis4
 		{
 			get
@@ -15081,7 +14969,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_vibracionFis4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_vibracionFis4", DbType="VarChar(2)")]
 		public string inicial_vibracionFis4
 		{
 			get
@@ -15101,7 +14989,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_iluminacionFis4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_iluminacionFis4", DbType="VarChar(2)")]
 		public string inicial_iluminacionFis4
 		{
 			get
@@ -15121,7 +15009,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_ventilacionFis4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_ventilacionFis4", DbType="VarChar(2)")]
 		public string inicial_ventilacionFis4
 		{
 			get
@@ -15141,7 +15029,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_fluElectricoFis4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_fluElectricoFis4", DbType="VarChar(2)")]
 		public string inicial_fluElectricoFis4
 		{
 			get
@@ -15161,7 +15049,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_otrosFis4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_otrosFis4", DbType="VarChar(2)")]
 		public string inicial_otrosFis4
 		{
 			get
@@ -15181,7 +15069,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_atraMaquinasMec4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_atraMaquinasMec4", DbType="VarChar(2)")]
 		public string inicial_atraMaquinasMec4
 		{
 			get
@@ -15201,7 +15089,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_atraSuperfiiesMec4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_atraSuperfiiesMec4", DbType="VarChar(2)")]
 		public string inicial_atraSuperfiiesMec4
 		{
 			get
@@ -15221,7 +15109,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_atraObjetosMec4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_atraObjetosMec4", DbType="VarChar(2)")]
 		public string inicial_atraObjetosMec4
 		{
 			get
@@ -15241,7 +15129,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_caidaObjetosMec4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_caidaObjetosMec4", DbType="VarChar(2)")]
 		public string inicial_caidaObjetosMec4
 		{
 			get
@@ -15261,7 +15149,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_caidaMisNivelMec4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_caidaMisNivelMec4", DbType="VarChar(2)")]
 		public string inicial_caidaMisNivelMec4
 		{
 			get
@@ -15281,7 +15169,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_caidaDifNivelMec4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_caidaDifNivelMec4", DbType="VarChar(2)")]
 		public string inicial_caidaDifNivelMec4
 		{
 			get
@@ -15301,7 +15189,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_contactoElecMec4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_contactoElecMec4", DbType="VarChar(2)")]
 		public string inicial_contactoElecMec4
 		{
 			get
@@ -15321,7 +15209,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_conSuperTrabaMec4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_conSuperTrabaMec4", DbType="VarChar(2)")]
 		public string inicial_conSuperTrabaMec4
 		{
 			get
@@ -15341,7 +15229,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_proPartiFragMec4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_proPartiFragMec4", DbType="VarChar(2)")]
 		public string inicial_proPartiFragMec4
 		{
 			get
@@ -15361,7 +15249,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_proFluidosMec4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_proFluidosMec4", DbType="VarChar(2)")]
 		public string inicial_proFluidosMec4
 		{
 			get
@@ -15381,7 +15269,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_pinchazosMec4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_pinchazosMec4", DbType="VarChar(2)")]
 		public string inicial_pinchazosMec4
 		{
 			get
@@ -15401,7 +15289,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_cortesMec4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_cortesMec4", DbType="VarChar(2)")]
 		public string inicial_cortesMec4
 		{
 			get
@@ -15421,7 +15309,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_atropeVehiMec4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_atropeVehiMec4", DbType="VarChar(2)")]
 		public string inicial_atropeVehiMec4
 		{
 			get
@@ -15441,7 +15329,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_coliVehiMec4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_coliVehiMec4", DbType="VarChar(2)")]
 		public string inicial_coliVehiMec4
 		{
 			get
@@ -15461,7 +15349,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_otrosMec4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_otrosMec4", DbType="VarChar(2)")]
 		public string inicial_otrosMec4
 		{
 			get
@@ -15481,7 +15369,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_solidosQui4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_solidosQui4", DbType="VarChar(2)")]
 		public string inicial_solidosQui4
 		{
 			get
@@ -15501,7 +15389,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_polvosQui4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_polvosQui4", DbType="VarChar(2)")]
 		public string inicial_polvosQui4
 		{
 			get
@@ -15521,7 +15409,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_humosQui4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_humosQui4", DbType="VarChar(2)")]
 		public string inicial_humosQui4
 		{
 			get
@@ -15541,7 +15429,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_liquidosQui4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_liquidosQui4", DbType="VarChar(2)")]
 		public string inicial_liquidosQui4
 		{
 			get
@@ -15561,7 +15449,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_vaporesQui4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_vaporesQui4", DbType="VarChar(2)")]
 		public string inicial_vaporesQui4
 		{
 			get
@@ -15581,7 +15469,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_aerosolesQui4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_aerosolesQui4", DbType="VarChar(2)")]
 		public string inicial_aerosolesQui4
 		{
 			get
@@ -15601,7 +15489,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_neblinasQui4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_neblinasQui4", DbType="VarChar(2)")]
 		public string inicial_neblinasQui4
 		{
 			get
@@ -15621,7 +15509,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_gaseososQui4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_gaseososQui4", DbType="VarChar(2)")]
 		public string inicial_gaseososQui4
 		{
 			get
@@ -15641,7 +15529,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_otrosQui4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_otrosQui4", DbType="VarChar(2)")]
 		public string inicial_otrosQui4
 		{
 			get
@@ -15661,7 +15549,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_virusBio4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_virusBio4", DbType="VarChar(2)")]
 		public string inicial_virusBio4
 		{
 			get
@@ -15681,7 +15569,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_hongosBio4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_hongosBio4", DbType="VarChar(2)")]
 		public string inicial_hongosBio4
 		{
 			get
@@ -15701,7 +15589,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_bacteriasBio4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_bacteriasBio4", DbType="VarChar(2)")]
 		public string inicial_bacteriasBio4
 		{
 			get
@@ -15721,7 +15609,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_parasitosBio4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_parasitosBio4", DbType="VarChar(2)")]
 		public string inicial_parasitosBio4
 		{
 			get
@@ -15741,7 +15629,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_expVectBio4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_expVectBio4", DbType="VarChar(2)")]
 		public string inicial_expVectBio4
 		{
 			get
@@ -15761,7 +15649,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_expAniSelvaBio4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_expAniSelvaBio4", DbType="VarChar(2)")]
 		public string inicial_expAniSelvaBio4
 		{
 			get
@@ -15781,7 +15669,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_otrosBio4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_otrosBio4", DbType="VarChar(2)")]
 		public string inicial_otrosBio4
 		{
 			get
@@ -15801,7 +15689,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_maneManCarErg4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_maneManCarErg4", DbType="VarChar(2)")]
 		public string inicial_maneManCarErg4
 		{
 			get
@@ -15821,7 +15709,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_movRepeErg4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_movRepeErg4", DbType="VarChar(2)")]
 		public string inicial_movRepeErg4
 		{
 			get
@@ -15841,7 +15729,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_posForzaErg4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_posForzaErg4", DbType="VarChar(2)")]
 		public string inicial_posForzaErg4
 		{
 			get
@@ -15861,7 +15749,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_trabPvdErg4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_trabPvdErg4", DbType="VarChar(2)")]
 		public string inicial_trabPvdErg4
 		{
 			get
@@ -15881,7 +15769,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_otrosErg4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_otrosErg4", DbType="VarChar(2)")]
 		public string inicial_otrosErg4
 		{
 			get
@@ -15901,7 +15789,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_monoTrabPsi4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_monoTrabPsi4", DbType="VarChar(2)")]
 		public string inicial_monoTrabPsi4
 		{
 			get
@@ -15921,7 +15809,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_sobrecarLabPsi4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_sobrecarLabPsi4", DbType="VarChar(2)")]
 		public string inicial_sobrecarLabPsi4
 		{
 			get
@@ -15941,7 +15829,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_minuTareaPsi4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_minuTareaPsi4", DbType="VarChar(2)")]
 		public string inicial_minuTareaPsi4
 		{
 			get
@@ -15961,7 +15849,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_altaResponPsi4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_altaResponPsi4", DbType="VarChar(2)")]
 		public string inicial_altaResponPsi4
 		{
 			get
@@ -15981,7 +15869,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_autoTomaDesiPsi4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_autoTomaDesiPsi4", DbType="VarChar(2)")]
 		public string inicial_autoTomaDesiPsi4
 		{
 			get
@@ -16001,7 +15889,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_supEstDirecDefiPsi4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_supEstDirecDefiPsi4", DbType="VarChar(2)")]
 		public string inicial_supEstDirecDefiPsi4
 		{
 			get
@@ -16021,7 +15909,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_conflicRolPsi4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_conflicRolPsi4", DbType="VarChar(2)")]
 		public string inicial_conflicRolPsi4
 		{
 			get
@@ -16041,7 +15929,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_falClariFunPsi4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_falClariFunPsi4", DbType="VarChar(2)")]
 		public string inicial_falClariFunPsi4
 		{
 			get
@@ -16061,7 +15949,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_incoDistriTrabPsi4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_incoDistriTrabPsi4", DbType="VarChar(2)")]
 		public string inicial_incoDistriTrabPsi4
 		{
 			get
@@ -16081,7 +15969,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_turnosRotaPsi4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_turnosRotaPsi4", DbType="VarChar(2)")]
 		public string inicial_turnosRotaPsi4
 		{
 			get
@@ -16101,7 +15989,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_relInterperPsi4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_relInterperPsi4", DbType="VarChar(2)")]
 		public string inicial_relInterperPsi4
 		{
 			get
@@ -16121,7 +16009,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_inesLabPsi4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_inesLabPsi4", DbType="VarChar(2)")]
 		public string inicial_inesLabPsi4
 		{
 			get
@@ -16141,7 +16029,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_otrosPsi4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_otrosPsi4", DbType="VarChar(2)")]
 		public string inicial_otrosPsi4
 		{
 			get
@@ -16221,7 +16109,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_pielAnexos", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_pielAnexos", DbType="VarChar(2)")]
 		public string inicial_pielAnexos
 		{
 			get
@@ -16241,7 +16129,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_orgSentidos", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_orgSentidos", DbType="VarChar(2)")]
 		public string inicial_orgSentidos
 		{
 			get
@@ -16261,7 +16149,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_respiratorio", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_respiratorio", DbType="VarChar(2)")]
 		public string inicial_respiratorio
 		{
 			get
@@ -16281,7 +16169,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_cardVascular", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_cardVascular", DbType="VarChar(2)")]
 		public string inicial_cardVascular
 		{
 			get
@@ -16301,7 +16189,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_digestivo", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_digestivo", DbType="VarChar(2)")]
 		public string inicial_digestivo
 		{
 			get
@@ -16321,7 +16209,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_genUrinario", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_genUrinario", DbType="VarChar(2)")]
 		public string inicial_genUrinario
 		{
 			get
@@ -16341,7 +16229,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_muscEsqueletico", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_muscEsqueletico", DbType="VarChar(2)")]
 		public string inicial_muscEsqueletico
 		{
 			get
@@ -16361,7 +16249,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_endocrino", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_endocrino", DbType="VarChar(2)")]
 		public string inicial_endocrino
 		{
 			get
@@ -16381,7 +16269,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_hemoLimfa", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_hemoLimfa", DbType="VarChar(2)")]
 		public string inicial_hemoLimfa
 		{
 			get
@@ -16401,7 +16289,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_nervioso", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_nervioso", DbType="VarChar(2)")]
 		public string inicial_nervioso
 		{
 			get
@@ -16441,7 +16329,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_preArterial", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_preArterial", DbType="VarChar(10)")]
 		public string inicial_preArterial
 		{
 			get
@@ -16461,7 +16349,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_temperatura", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_temperatura", DbType="VarChar(10)")]
 		public string inicial_temperatura
 		{
 			get
@@ -16481,7 +16369,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_frecCardiacan", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_frecCardiacan", DbType="VarChar(10)")]
 		public string inicial_frecCardiacan
 		{
 			get
@@ -16501,7 +16389,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_satOxigenon", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_satOxigenon", DbType="VarChar(10)")]
 		public string inicial_satOxigenon
 		{
 			get
@@ -16521,7 +16409,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_frecRespiratorian", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_frecRespiratorian", DbType="VarChar(10)")]
 		public string inicial_frecRespiratorian
 		{
 			get
@@ -16541,7 +16429,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_peson", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_peson", DbType="VarChar(10)")]
 		public string inicial_peson
 		{
 			get
@@ -16561,7 +16449,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_tallan", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_tallan", DbType="VarChar(10)")]
 		public string inicial_tallan
 		{
 			get
@@ -16581,7 +16469,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_indMasCorporaln", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_indMasCorporaln", DbType="VarChar(10)")]
 		public string inicial_indMasCorporaln
 		{
 			get
@@ -16601,7 +16489,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_perAbdominaln", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_perAbdominaln", DbType="VarChar(10)")]
 		public string inicial_perAbdominaln
 		{
 			get
@@ -16621,7 +16509,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_cicatricesPiel", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_cicatricesPiel", DbType="VarChar(2)")]
 		public string inicial_cicatricesPiel
 		{
 			get
@@ -16641,7 +16529,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_tatuajesPiel", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_tatuajesPiel", DbType="VarChar(2)")]
 		public string inicial_tatuajesPiel
 		{
 			get
@@ -16661,7 +16549,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_pielFacerasPiel", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_pielFacerasPiel", DbType="VarChar(2)")]
 		public string inicial_pielFacerasPiel
 		{
 			get
@@ -16681,7 +16569,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_parpadosOjos", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_parpadosOjos", DbType="VarChar(2)")]
 		public string inicial_parpadosOjos
 		{
 			get
@@ -16701,7 +16589,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_conjuntuvasOjos", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_conjuntuvasOjos", DbType="VarChar(2)")]
 		public string inicial_conjuntuvasOjos
 		{
 			get
@@ -16721,7 +16609,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_pupilasOjos", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_pupilasOjos", DbType="VarChar(2)")]
 		public string inicial_pupilasOjos
 		{
 			get
@@ -16741,7 +16629,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_corneaOjos", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_corneaOjos", DbType="VarChar(2)")]
 		public string inicial_corneaOjos
 		{
 			get
@@ -16761,7 +16649,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_motilidadOjos", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_motilidadOjos", DbType="VarChar(2)")]
 		public string inicial_motilidadOjos
 		{
 			get
@@ -16781,7 +16669,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_cAudiExtreOido", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_cAudiExtreOido", DbType="VarChar(2)")]
 		public string inicial_cAudiExtreOido
 		{
 			get
@@ -16801,7 +16689,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_pabellonOido", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_pabellonOido", DbType="VarChar(2)")]
 		public string inicial_pabellonOido
 		{
 			get
@@ -16821,7 +16709,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_timpanosOido", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_timpanosOido", DbType="VarChar(2)")]
 		public string inicial_timpanosOido
 		{
 			get
@@ -16841,7 +16729,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_labiosOroFa", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_labiosOroFa", DbType="VarChar(2)")]
 		public string inicial_labiosOroFa
 		{
 			get
@@ -16861,7 +16749,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_lenguaOroFa", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_lenguaOroFa", DbType="VarChar(2)")]
 		public string inicial_lenguaOroFa
 		{
 			get
@@ -16881,7 +16769,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_faringeOroFa", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_faringeOroFa", DbType="VarChar(2)")]
 		public string inicial_faringeOroFa
 		{
 			get
@@ -16901,7 +16789,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_amigdalasOroFa", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_amigdalasOroFa", DbType="VarChar(2)")]
 		public string inicial_amigdalasOroFa
 		{
 			get
@@ -16921,7 +16809,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_dentaduraOroFa", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_dentaduraOroFa", DbType="VarChar(2)")]
 		public string inicial_dentaduraOroFa
 		{
 			get
@@ -16941,7 +16829,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_tabiqueNariz", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_tabiqueNariz", DbType="VarChar(2)")]
 		public string inicial_tabiqueNariz
 		{
 			get
@@ -16961,7 +16849,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_cornetesNariz", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_cornetesNariz", DbType="VarChar(2)")]
 		public string inicial_cornetesNariz
 		{
 			get
@@ -16981,7 +16869,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_mucosasNariz", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_mucosasNariz", DbType="VarChar(2)")]
 		public string inicial_mucosasNariz
 		{
 			get
@@ -17001,7 +16889,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_senosParanaNariz", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_senosParanaNariz", DbType="VarChar(2)")]
 		public string inicial_senosParanaNariz
 		{
 			get
@@ -17021,7 +16909,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_tiroiMasasCuello", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_tiroiMasasCuello", DbType="VarChar(2)")]
 		public string inicial_tiroiMasasCuello
 		{
 			get
@@ -17041,7 +16929,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_movilidadCuello", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_movilidadCuello", DbType="VarChar(2)")]
 		public string inicial_movilidadCuello
 		{
 			get
@@ -17061,7 +16949,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_mamasTorax", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_mamasTorax", DbType="VarChar(2)")]
 		public string inicial_mamasTorax
 		{
 			get
@@ -17081,7 +16969,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_corazonTorax", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_corazonTorax", DbType="VarChar(2)")]
 		public string inicial_corazonTorax
 		{
 			get
@@ -17101,7 +16989,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_pulmonesTorax2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_pulmonesTorax2", DbType="VarChar(2)")]
 		public string inicial_pulmonesTorax2
 		{
 			get
@@ -17121,7 +17009,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_parriCostalTorax2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_parriCostalTorax2", DbType="VarChar(2)")]
 		public string inicial_parriCostalTorax2
 		{
 			get
@@ -17141,7 +17029,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_viscerasAbdomen", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_viscerasAbdomen", DbType="VarChar(2)")]
 		public string inicial_viscerasAbdomen
 		{
 			get
@@ -17161,7 +17049,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_paredAbdomiAbdomen", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_paredAbdomiAbdomen", DbType="VarChar(2)")]
 		public string inicial_paredAbdomiAbdomen
 		{
 			get
@@ -17181,7 +17069,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_flexibilidadColumna", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_flexibilidadColumna", DbType="VarChar(2)")]
 		public string inicial_flexibilidadColumna
 		{
 			get
@@ -17201,7 +17089,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_desviacionColumna", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_desviacionColumna", DbType="VarChar(2)")]
 		public string inicial_desviacionColumna
 		{
 			get
@@ -17221,7 +17109,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_dolorColumna", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_dolorColumna", DbType="VarChar(2)")]
 		public string inicial_dolorColumna
 		{
 			get
@@ -17241,7 +17129,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_pelvisPelvis", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_pelvisPelvis", DbType="VarChar(2)")]
 		public string inicial_pelvisPelvis
 		{
 			get
@@ -17261,7 +17149,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_genitalesPelvis", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_genitalesPelvis", DbType="VarChar(2)")]
 		public string inicial_genitalesPelvis
 		{
 			get
@@ -17281,7 +17169,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_vascularExtre", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_vascularExtre", DbType="VarChar(2)")]
 		public string inicial_vascularExtre
 		{
 			get
@@ -17301,7 +17189,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_miemSupeExtre", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_miemSupeExtre", DbType="VarChar(2)")]
 		public string inicial_miemSupeExtre
 		{
 			get
@@ -17321,7 +17209,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_miemInfeExtre", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_miemInfeExtre", DbType="VarChar(2)")]
 		public string inicial_miemInfeExtre
 		{
 			get
@@ -17341,7 +17229,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_fuerzaNeuro", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_fuerzaNeuro", DbType="VarChar(2)")]
 		public string inicial_fuerzaNeuro
 		{
 			get
@@ -17361,7 +17249,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_sensibiNeuro", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_sensibiNeuro", DbType="VarChar(2)")]
 		public string inicial_sensibiNeuro
 		{
 			get
@@ -17381,7 +17269,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_marchaNeuro", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_marchaNeuro", DbType="VarChar(2)")]
 		public string inicial_marchaNeuro
 		{
 			get
@@ -17401,7 +17289,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_refleNeuro", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_refleNeuro", DbType="VarChar(2)")]
 		public string inicial_refleNeuro
 		{
 			get
@@ -17441,7 +17329,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_examen", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_examen", DbType="VarChar(250)")]
 		public string inicial_examen
 		{
 			get
@@ -17461,7 +17349,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_fecha", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_fecha", DbType="VarChar(10)")]
 		public string inicial_fecha
 		{
 			get
@@ -17481,7 +17369,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_resultados", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_resultados", DbType="VarChar(250)")]
 		public string inicial_resultados
 		{
 			get
@@ -17501,7 +17389,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_examen2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_examen2", DbType="VarChar(250)")]
 		public string inicial_examen2
 		{
 			get
@@ -17521,7 +17409,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_fecha2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_fecha2", DbType="VarChar(10)")]
 		public string inicial_fecha2
 		{
 			get
@@ -17541,7 +17429,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_resultados2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_resultados2", DbType="VarChar(250)")]
 		public string inicial_resultados2
 		{
 			get
@@ -17561,7 +17449,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_examen3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_examen3", DbType="VarChar(250)")]
 		public string inicial_examen3
 		{
 			get
@@ -17581,7 +17469,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_fecha3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_fecha3", DbType="VarChar(10)")]
 		public string inicial_fecha3
 		{
 			get
@@ -17601,7 +17489,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_resultados3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_resultados3", DbType="VarChar(250)")]
 		public string inicial_resultados3
 		{
 			get
@@ -17621,7 +17509,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_examen4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_examen4", DbType="VarChar(250)")]
 		public string inicial_examen4
 		{
 			get
@@ -17641,7 +17529,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_fecha4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_fecha4", DbType="VarChar(10)")]
 		public string inicial_fecha4
 		{
 			get
@@ -17661,7 +17549,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_resultados4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_resultados4", DbType="VarChar(250)")]
 		public string inicial_resultados4
 		{
 			get
@@ -17721,7 +17609,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_cie", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_cie", DbType="VarChar(10)")]
 		public string inicial_cie
 		{
 			get
@@ -17741,7 +17629,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_pre", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_pre", DbType="VarChar(2)")]
 		public string inicial_pre
 		{
 			get
@@ -17761,7 +17649,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_def", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_def", DbType="VarChar(2)")]
 		public string inicial_def
 		{
 			get
@@ -17801,7 +17689,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_cie2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_cie2", DbType="VarChar(10)")]
 		public string inicial_cie2
 		{
 			get
@@ -17821,7 +17709,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_pre2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_pre2", DbType="VarChar(2)")]
 		public string inicial_pre2
 		{
 			get
@@ -17841,7 +17729,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_def2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_def2", DbType="VarChar(2)")]
 		public string inicial_def2
 		{
 			get
@@ -17881,7 +17769,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_cie3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_cie3", DbType="VarChar(10)")]
 		public string inicial_cie3
 		{
 			get
@@ -17901,7 +17789,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_pre3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_pre3", DbType="VarChar(2)")]
 		public string inicial_pre3
 		{
 			get
@@ -17921,7 +17809,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_def3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_def3", DbType="VarChar(2)")]
 		public string inicial_def3
 		{
 			get
@@ -17941,27 +17829,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_calificada", DbType="VarChar(MAX)")]
-		public string inicial_calificada
-		{
-			get
-			{
-				return this._inicial_calificada;
-			}
-			set
-			{
-				if ((this._inicial_calificada != value))
-				{
-					this.Oninicial_calificadaChanging(value);
-					this.SendPropertyChanging();
-					this._inicial_calificada = value;
-					this.SendPropertyChanged("inicial_calificada");
-					this.Oninicial_calificadaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_apto", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_apto", DbType="VarChar(2)")]
 		public string inicial_apto
 		{
 			get
@@ -17981,7 +17849,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_aptoObserva", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_aptoObserva", DbType="VarChar(2)")]
 		public string inicial_aptoObserva
 		{
 			get
@@ -18001,7 +17869,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_aptoLimi", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_aptoLimi", DbType="VarChar(2)")]
 		public string inicial_aptoLimi
 		{
 			get
@@ -18021,7 +17889,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_NoApto", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_NoApto", DbType="VarChar(2)")]
 		public string inicial_NoApto
 		{
 			get
@@ -18101,7 +17969,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_fecha_hora", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_fecha_hora", DbType="VarChar(25)")]
 		public string inicial_fecha_hora
 		{
 			get
@@ -18145,7 +18013,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_cod", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_cod", DbType="VarChar(25)")]
 		public string inicial_cod
 		{
 			get
@@ -18628,8 +18496,6 @@ namespace CapaDatos
 		
 		private string _inmu_2observaInmuAcuerTipoEmpRies5;
 		
-		private string _inmu_fechaHora;
-		
 		private System.Nullable<long> _Per_id;
 		
 		private System.Nullable<System.DateTime> _inmu_fechaHoraGuardado;
@@ -18946,8 +18812,6 @@ namespace CapaDatos
     partial void Oninmu_2estaSaludColocoVacuInmuAcuerTipoEmpRies5Changed();
     partial void Oninmu_2observaInmuAcuerTipoEmpRies5Changing(string value);
     partial void Oninmu_2observaInmuAcuerTipoEmpRies5Changed();
-    partial void Oninmu_fechaHoraChanging(string value);
-    partial void Oninmu_fechaHoraChanged();
     partial void OnPer_idChanging(System.Nullable<long> value);
     partial void OnPer_idChanged();
     partial void Oninmu_fechaHoraGuardadoChanging(System.Nullable<System.DateTime> value);
@@ -18982,7 +18846,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_numArchivo", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_numArchivo", DbType="VarChar(25)")]
 		public string inmu_numArchivo
 		{
 			get
@@ -19002,7 +18866,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_fechaTetanos1", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_fechaTetanos1", DbType="VarChar(10)")]
 		public string inmu_fechaTetanos1
 		{
 			get
@@ -19022,7 +18886,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_loteTetanos1", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_loteTetanos1", DbType="VarChar(25)")]
 		public string inmu_loteTetanos1
 		{
 			get
@@ -19042,7 +18906,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_esqueCompleTetanos1", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_esqueCompleTetanos1", DbType="VarChar(25)")]
 		public string inmu_esqueCompleTetanos1
 		{
 			get
@@ -19062,7 +18926,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_nomCompleResponVacuTetanos1", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_nomCompleResponVacuTetanos1", DbType="VarChar(50)")]
 		public string inmu_nomCompleResponVacuTetanos1
 		{
 			get
@@ -19082,7 +18946,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_estaSaludColocoVacuTetanos1", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_estaSaludColocoVacuTetanos1", DbType="VarChar(50)")]
 		public string inmu_estaSaludColocoVacuTetanos1
 		{
 			get
@@ -19122,7 +18986,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_fechaTetanos2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_fechaTetanos2", DbType="VarChar(10)")]
 		public string inmu_fechaTetanos2
 		{
 			get
@@ -19142,7 +19006,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_loteTetanos2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_loteTetanos2", DbType="VarChar(25)")]
 		public string inmu_loteTetanos2
 		{
 			get
@@ -19162,7 +19026,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_esqueCompleTetanos2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_esqueCompleTetanos2", DbType="VarChar(25)")]
 		public string inmu_esqueCompleTetanos2
 		{
 			get
@@ -19182,7 +19046,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_nomCompleResponVacuTetanos2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_nomCompleResponVacuTetanos2", DbType="VarChar(50)")]
 		public string inmu_nomCompleResponVacuTetanos2
 		{
 			get
@@ -19202,7 +19066,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_estaSaludColocoVacuTetanos2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_estaSaludColocoVacuTetanos2", DbType="VarChar(50)")]
 		public string inmu_estaSaludColocoVacuTetanos2
 		{
 			get
@@ -19242,7 +19106,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_fechaTetanos3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_fechaTetanos3", DbType="VarChar(10)")]
 		public string inmu_fechaTetanos3
 		{
 			get
@@ -19262,7 +19126,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_loteTetanos3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_loteTetanos3", DbType="VarChar(25)")]
 		public string inmu_loteTetanos3
 		{
 			get
@@ -19282,7 +19146,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_esqueCompleTetanos3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_esqueCompleTetanos3", DbType="VarChar(25)")]
 		public string inmu_esqueCompleTetanos3
 		{
 			get
@@ -19302,7 +19166,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_nomCompleResponVacuTetanos3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_nomCompleResponVacuTetanos3", DbType="VarChar(50)")]
 		public string inmu_nomCompleResponVacuTetanos3
 		{
 			get
@@ -19322,7 +19186,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_estaSaludColocoVacuTetanos3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_estaSaludColocoVacuTetanos3", DbType="VarChar(50)")]
 		public string inmu_estaSaludColocoVacuTetanos3
 		{
 			get
@@ -19362,7 +19226,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_fechaTetanos4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_fechaTetanos4", DbType="VarChar(10)")]
 		public string inmu_fechaTetanos4
 		{
 			get
@@ -19382,7 +19246,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_loteTetanos4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_loteTetanos4", DbType="VarChar(25)")]
 		public string inmu_loteTetanos4
 		{
 			get
@@ -19402,7 +19266,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_esqueCompleTetanos4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_esqueCompleTetanos4", DbType="VarChar(25)")]
 		public string inmu_esqueCompleTetanos4
 		{
 			get
@@ -19422,7 +19286,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_nomCompleResponVacuTetanos4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_nomCompleResponVacuTetanos4", DbType="VarChar(50)")]
 		public string inmu_nomCompleResponVacuTetanos4
 		{
 			get
@@ -19442,7 +19306,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_estaSaludColocoVacuTetanos4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_estaSaludColocoVacuTetanos4", DbType="VarChar(50)")]
 		public string inmu_estaSaludColocoVacuTetanos4
 		{
 			get
@@ -19482,7 +19346,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_fechaTetanos5", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_fechaTetanos5", DbType="VarChar(10)")]
 		public string inmu_fechaTetanos5
 		{
 			get
@@ -19502,7 +19366,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_loteTetanos5", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_loteTetanos5", DbType="VarChar(25)")]
 		public string inmu_loteTetanos5
 		{
 			get
@@ -19522,7 +19386,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_esqueCompleTetanos5", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_esqueCompleTetanos5", DbType="VarChar(25)")]
 		public string inmu_esqueCompleTetanos5
 		{
 			get
@@ -19542,7 +19406,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_nomCompleResponVacuTetanos5", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_nomCompleResponVacuTetanos5", DbType="VarChar(50)")]
 		public string inmu_nomCompleResponVacuTetanos5
 		{
 			get
@@ -19562,7 +19426,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_estaSaludColocoVacuTetanos5", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_estaSaludColocoVacuTetanos5", DbType="VarChar(50)")]
 		public string inmu_estaSaludColocoVacuTetanos5
 		{
 			get
@@ -19602,7 +19466,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_fechaHepatitisA1", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_fechaHepatitisA1", DbType="VarChar(10)")]
 		public string inmu_fechaHepatitisA1
 		{
 			get
@@ -19622,7 +19486,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_loteHepatitisA1", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_loteHepatitisA1", DbType="VarChar(25)")]
 		public string inmu_loteHepatitisA1
 		{
 			get
@@ -19642,7 +19506,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_esqueCompleHepatitisA1", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_esqueCompleHepatitisA1", DbType="VarChar(25)")]
 		public string inmu_esqueCompleHepatitisA1
 		{
 			get
@@ -19662,7 +19526,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_nomCompleResponVacuHepatitisA1", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_nomCompleResponVacuHepatitisA1", DbType="VarChar(50)")]
 		public string inmu_nomCompleResponVacuHepatitisA1
 		{
 			get
@@ -19682,7 +19546,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_estaSaludColocoVaciHepatitisA1", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_estaSaludColocoVaciHepatitisA1", DbType="VarChar(50)")]
 		public string inmu_estaSaludColocoVaciHepatitisA1
 		{
 			get
@@ -19722,7 +19586,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_fechaHepatitisA2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_fechaHepatitisA2", DbType="VarChar(10)")]
 		public string inmu_fechaHepatitisA2
 		{
 			get
@@ -19742,7 +19606,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_loteHepatitisA2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_loteHepatitisA2", DbType="VarChar(25)")]
 		public string inmu_loteHepatitisA2
 		{
 			get
@@ -19762,7 +19626,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_esqueCompleHepatitisA2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_esqueCompleHepatitisA2", DbType="VarChar(25)")]
 		public string inmu_esqueCompleHepatitisA2
 		{
 			get
@@ -19782,7 +19646,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_nomCompleResponVacuHepatitisA2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_nomCompleResponVacuHepatitisA2", DbType="VarChar(50)")]
 		public string inmu_nomCompleResponVacuHepatitisA2
 		{
 			get
@@ -19802,7 +19666,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_estaSaludColocoVaciHepatitisA2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_estaSaludColocoVaciHepatitisA2", DbType="VarChar(50)")]
 		public string inmu_estaSaludColocoVaciHepatitisA2
 		{
 			get
@@ -19842,7 +19706,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_fechaHepatitisA3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_fechaHepatitisA3", DbType="VarChar(10)")]
 		public string inmu_fechaHepatitisA3
 		{
 			get
@@ -19862,7 +19726,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_loteHepatitisA3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_loteHepatitisA3", DbType="VarChar(25)")]
 		public string inmu_loteHepatitisA3
 		{
 			get
@@ -19882,7 +19746,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_esqueCompleHepatitisA3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_esqueCompleHepatitisA3", DbType="VarChar(25)")]
 		public string inmu_esqueCompleHepatitisA3
 		{
 			get
@@ -19902,7 +19766,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_nomCompleResponVacuHepatitisA3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_nomCompleResponVacuHepatitisA3", DbType="VarChar(50)")]
 		public string inmu_nomCompleResponVacuHepatitisA3
 		{
 			get
@@ -19922,7 +19786,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_estaSaludColocoVaciHepatitisA3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_estaSaludColocoVaciHepatitisA3", DbType="VarChar(50)")]
 		public string inmu_estaSaludColocoVaciHepatitisA3
 		{
 			get
@@ -19962,7 +19826,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_fechaHepatitisB1", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_fechaHepatitisB1", DbType="VarChar(10)")]
 		public string inmu_fechaHepatitisB1
 		{
 			get
@@ -19982,7 +19846,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_loteHepatitisB1", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_loteHepatitisB1", DbType="VarChar(25)")]
 		public string inmu_loteHepatitisB1
 		{
 			get
@@ -20002,7 +19866,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_esqueCompleHepatitisB1", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_esqueCompleHepatitisB1", DbType="VarChar(25)")]
 		public string inmu_esqueCompleHepatitisB1
 		{
 			get
@@ -20022,7 +19886,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_nomCompleResponVacuHepatitisB1", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_nomCompleResponVacuHepatitisB1", DbType="VarChar(50)")]
 		public string inmu_nomCompleResponVacuHepatitisB1
 		{
 			get
@@ -20042,7 +19906,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_estaSaludColocoVaciHepatitisB1", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_estaSaludColocoVaciHepatitisB1", DbType="VarChar(50)")]
 		public string inmu_estaSaludColocoVaciHepatitisB1
 		{
 			get
@@ -20082,7 +19946,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_fechaHepatitisB2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_fechaHepatitisB2", DbType="VarChar(10)")]
 		public string inmu_fechaHepatitisB2
 		{
 			get
@@ -20102,7 +19966,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_loteHepatitisB2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_loteHepatitisB2", DbType="VarChar(25)")]
 		public string inmu_loteHepatitisB2
 		{
 			get
@@ -20122,7 +19986,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_esqueCompleHepatitisB2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_esqueCompleHepatitisB2", DbType="VarChar(25)")]
 		public string inmu_esqueCompleHepatitisB2
 		{
 			get
@@ -20142,7 +20006,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_nomCompleResponVacuHepatitisB2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_nomCompleResponVacuHepatitisB2", DbType="VarChar(50)")]
 		public string inmu_nomCompleResponVacuHepatitisB2
 		{
 			get
@@ -20162,7 +20026,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_estaSaludColocoVaciHepatitisB2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_estaSaludColocoVaciHepatitisB2", DbType="VarChar(50)")]
 		public string inmu_estaSaludColocoVaciHepatitisB2
 		{
 			get
@@ -20202,7 +20066,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_fechaHepatitisB3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_fechaHepatitisB3", DbType="VarChar(10)")]
 		public string inmu_fechaHepatitisB3
 		{
 			get
@@ -20222,7 +20086,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_loteHepatitisB3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_loteHepatitisB3", DbType="VarChar(25)")]
 		public string inmu_loteHepatitisB3
 		{
 			get
@@ -20242,7 +20106,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_esqueCompleHepatitisB3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_esqueCompleHepatitisB3", DbType="VarChar(25)")]
 		public string inmu_esqueCompleHepatitisB3
 		{
 			get
@@ -20262,7 +20126,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_nomCompleResponVacuHepatitisB3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_nomCompleResponVacuHepatitisB3", DbType="VarChar(50)")]
 		public string inmu_nomCompleResponVacuHepatitisB3
 		{
 			get
@@ -20282,7 +20146,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_estaSaludColocoVaciHepatitisB3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_estaSaludColocoVaciHepatitisB3", DbType="VarChar(50)")]
 		public string inmu_estaSaludColocoVaciHepatitisB3
 		{
 			get
@@ -20322,7 +20186,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_fechaInfluenza", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_fechaInfluenza", DbType="VarChar(10)")]
 		public string inmu_fechaInfluenza
 		{
 			get
@@ -20342,7 +20206,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_loteInfluenza", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_loteInfluenza", DbType="VarChar(25)")]
 		public string inmu_loteInfluenza
 		{
 			get
@@ -20362,7 +20226,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_esqueCompleInfluenza", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_esqueCompleInfluenza", DbType="VarChar(25)")]
 		public string inmu_esqueCompleInfluenza
 		{
 			get
@@ -20382,7 +20246,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_nomCompleResponVacuInfluenza", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_nomCompleResponVacuInfluenza", DbType="VarChar(50)")]
 		public string inmu_nomCompleResponVacuInfluenza
 		{
 			get
@@ -20402,7 +20266,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_estaSaludColocoVacuInfluenza", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_estaSaludColocoVacuInfluenza", DbType="VarChar(50)")]
 		public string inmu_estaSaludColocoVacuInfluenza
 		{
 			get
@@ -20442,7 +20306,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_fechaFiebreAmarilla", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_fechaFiebreAmarilla", DbType="VarChar(10)")]
 		public string inmu_fechaFiebreAmarilla
 		{
 			get
@@ -20462,7 +20326,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_loteFiebreAmarilla", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_loteFiebreAmarilla", DbType="VarChar(25)")]
 		public string inmu_loteFiebreAmarilla
 		{
 			get
@@ -20482,7 +20346,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_esqueCompleFiebreAmarilla", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_esqueCompleFiebreAmarilla", DbType="VarChar(25)")]
 		public string inmu_esqueCompleFiebreAmarilla
 		{
 			get
@@ -20502,7 +20366,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_nomCompleResponVacuFiebreAmarilla", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_nomCompleResponVacuFiebreAmarilla", DbType="VarChar(50)")]
 		public string inmu_nomCompleResponVacuFiebreAmarilla
 		{
 			get
@@ -20522,7 +20386,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_estaSaludColocoVacuFiebreAmarilla", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_estaSaludColocoVacuFiebreAmarilla", DbType="VarChar(50)")]
 		public string inmu_estaSaludColocoVacuFiebreAmarilla
 		{
 			get
@@ -20562,7 +20426,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_fechaSarampion1", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_fechaSarampion1", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
 		public string inmu_fechaSarampion1
 		{
 			get
@@ -20582,7 +20446,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_loteSarampion1", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_loteSarampion1", DbType="VarChar(25)")]
 		public string inmu_loteSarampion1
 		{
 			get
@@ -20602,7 +20466,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_esqueCompleSarampion1", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_esqueCompleSarampion1", DbType="VarChar(25)")]
 		public string inmu_esqueCompleSarampion1
 		{
 			get
@@ -20622,7 +20486,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_nomCompleResponVacuSarampion1", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_nomCompleResponVacuSarampion1", DbType="VarChar(50)")]
 		public string inmu_nomCompleResponVacuSarampion1
 		{
 			get
@@ -20642,7 +20506,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_estaSaludColocoVacuSarampion1", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_estaSaludColocoVacuSarampion1", DbType="VarChar(50)")]
 		public string inmu_estaSaludColocoVacuSarampion1
 		{
 			get
@@ -20682,7 +20546,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_fechaSarampion2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_fechaSarampion2", DbType="VarChar(10)")]
 		public string inmu_fechaSarampion2
 		{
 			get
@@ -20702,7 +20566,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_loteSarampion2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_loteSarampion2", DbType="VarChar(25)")]
 		public string inmu_loteSarampion2
 		{
 			get
@@ -20722,7 +20586,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_esqueCompleSarampion2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_esqueCompleSarampion2", DbType="VarChar(25)")]
 		public string inmu_esqueCompleSarampion2
 		{
 			get
@@ -20742,7 +20606,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_nomCompleResponVacuSarampion2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_nomCompleResponVacuSarampion2", DbType="VarChar(50)")]
 		public string inmu_nomCompleResponVacuSarampion2
 		{
 			get
@@ -20762,7 +20626,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_estaSaludColocoVacuSarampion2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_estaSaludColocoVacuSarampion2", DbType="VarChar(50)")]
 		public string inmu_estaSaludColocoVacuSarampion2
 		{
 			get
@@ -20802,7 +20666,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_1fechaInmuAcuerTipoEmpRies1", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_1fechaInmuAcuerTipoEmpRies1", DbType="VarChar(10)")]
 		public string inmu_1fechaInmuAcuerTipoEmpRies1
 		{
 			get
@@ -20822,7 +20686,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_1loteInmuAcuerTipoEmpRies1", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_1loteInmuAcuerTipoEmpRies1", DbType="VarChar(25)")]
 		public string inmu_1loteInmuAcuerTipoEmpRies1
 		{
 			get
@@ -20842,7 +20706,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_1esqueCompleInmuAcuerTipoEmpRies1", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_1esqueCompleInmuAcuerTipoEmpRies1", DbType="VarChar(25)")]
 		public string inmu_1esqueCompleInmuAcuerTipoEmpRies1
 		{
 			get
@@ -20862,7 +20726,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_1nomCompleResponVacuInmuAcuerTipoEmpRies1", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_1nomCompleResponVacuInmuAcuerTipoEmpRies1", DbType="VarChar(50)")]
 		public string inmu_1nomCompleResponVacuInmuAcuerTipoEmpRies1
 		{
 			get
@@ -20882,7 +20746,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_1estaSaludColocoVacuInmuAcuerTipoEmpRies1", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_1estaSaludColocoVacuInmuAcuerTipoEmpRies1", DbType="VarChar(50)")]
 		public string inmu_1estaSaludColocoVacuInmuAcuerTipoEmpRies1
 		{
 			get
@@ -20922,7 +20786,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_1fechaInmuAcuerTipoEmpRies2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_1fechaInmuAcuerTipoEmpRies2", DbType="VarChar(10)")]
 		public string inmu_1fechaInmuAcuerTipoEmpRies2
 		{
 			get
@@ -20942,7 +20806,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_1loteInmuAcuerTipoEmpRies2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_1loteInmuAcuerTipoEmpRies2", DbType="VarChar(25)")]
 		public string inmu_1loteInmuAcuerTipoEmpRies2
 		{
 			get
@@ -20962,7 +20826,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_1esqueCompleInmuAcuerTipoEmpRies2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_1esqueCompleInmuAcuerTipoEmpRies2", DbType="VarChar(25)")]
 		public string inmu_1esqueCompleInmuAcuerTipoEmpRies2
 		{
 			get
@@ -20982,7 +20846,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_1nomCompleResponVacuInmuAcuerTipoEmpRies2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_1nomCompleResponVacuInmuAcuerTipoEmpRies2", DbType="VarChar(50)")]
 		public string inmu_1nomCompleResponVacuInmuAcuerTipoEmpRies2
 		{
 			get
@@ -21002,7 +20866,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_1estaSaludColocoVacuInmuAcuerTipoEmpRies2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_1estaSaludColocoVacuInmuAcuerTipoEmpRies2", DbType="VarChar(50)")]
 		public string inmu_1estaSaludColocoVacuInmuAcuerTipoEmpRies2
 		{
 			get
@@ -21042,7 +20906,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_1fechaInmuAcuerTipoEmpRies3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_1fechaInmuAcuerTipoEmpRies3", DbType="VarChar(10)")]
 		public string inmu_1fechaInmuAcuerTipoEmpRies3
 		{
 			get
@@ -21062,7 +20926,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_1loteInmuAcuerTipoEmpRies3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_1loteInmuAcuerTipoEmpRies3", DbType="VarChar(25)")]
 		public string inmu_1loteInmuAcuerTipoEmpRies3
 		{
 			get
@@ -21082,7 +20946,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_1esqueCompleInmuAcuerTipoEmpRies3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_1esqueCompleInmuAcuerTipoEmpRies3", DbType="VarChar(25)")]
 		public string inmu_1esqueCompleInmuAcuerTipoEmpRies3
 		{
 			get
@@ -21102,7 +20966,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_1nomCompleResponVacuInmuAcuerTipoEmpRies3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_1nomCompleResponVacuInmuAcuerTipoEmpRies3", DbType="VarChar(50)")]
 		public string inmu_1nomCompleResponVacuInmuAcuerTipoEmpRies3
 		{
 			get
@@ -21122,7 +20986,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_1estaSaludColocoVacuInmuAcuerTipoEmpRies3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_1estaSaludColocoVacuInmuAcuerTipoEmpRies3", DbType="VarChar(50)")]
 		public string inmu_1estaSaludColocoVacuInmuAcuerTipoEmpRies3
 		{
 			get
@@ -21162,7 +21026,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_1fechaInmuAcuerTipoEmpRies4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_1fechaInmuAcuerTipoEmpRies4", DbType="VarChar(10)")]
 		public string inmu_1fechaInmuAcuerTipoEmpRies4
 		{
 			get
@@ -21182,7 +21046,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_1loteInmuAcuerTipoEmpRies4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_1loteInmuAcuerTipoEmpRies4", DbType="VarChar(25)")]
 		public string inmu_1loteInmuAcuerTipoEmpRies4
 		{
 			get
@@ -21202,7 +21066,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_1esqueCompleInmuAcuerTipoEmpRies4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_1esqueCompleInmuAcuerTipoEmpRies4", DbType="VarChar(25)")]
 		public string inmu_1esqueCompleInmuAcuerTipoEmpRies4
 		{
 			get
@@ -21222,7 +21086,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_1nomCompleResponVacuInmuAcuerTipoEmpRies4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_1nomCompleResponVacuInmuAcuerTipoEmpRies4", DbType="VarChar(50)")]
 		public string inmu_1nomCompleResponVacuInmuAcuerTipoEmpRies4
 		{
 			get
@@ -21242,7 +21106,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_1estaSaludColocoVacuInmuAcuerTipoEmpRies4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_1estaSaludColocoVacuInmuAcuerTipoEmpRies4", DbType="VarChar(50)")]
 		public string inmu_1estaSaludColocoVacuInmuAcuerTipoEmpRies4
 		{
 			get
@@ -21282,7 +21146,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_1fechaInmuAcuerTipoEmpRies5", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_1fechaInmuAcuerTipoEmpRies5", DbType="VarChar(10)")]
 		public string inmu_1fechaInmuAcuerTipoEmpRies5
 		{
 			get
@@ -21302,7 +21166,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_1loteInmuAcuerTipoEmpRies5", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_1loteInmuAcuerTipoEmpRies5", DbType="VarChar(25)")]
 		public string inmu_1loteInmuAcuerTipoEmpRies5
 		{
 			get
@@ -21322,7 +21186,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_1esqueCompleInmuAcuerTipoEmpRies5", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_1esqueCompleInmuAcuerTipoEmpRies5", DbType="VarChar(25)")]
 		public string inmu_1esqueCompleInmuAcuerTipoEmpRies5
 		{
 			get
@@ -21342,7 +21206,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_1nomCompleResponVacuInmuAcuerTipoEmpRies5", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_1nomCompleResponVacuInmuAcuerTipoEmpRies5", DbType="VarChar(50)")]
 		public string inmu_1nomCompleResponVacuInmuAcuerTipoEmpRies5
 		{
 			get
@@ -21362,7 +21226,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_1estaSaludColocoVacuInmuAcuerTipoEmpRies5", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_1estaSaludColocoVacuInmuAcuerTipoEmpRies5", DbType="VarChar(50)")]
 		public string inmu_1estaSaludColocoVacuInmuAcuerTipoEmpRies5
 		{
 			get
@@ -21402,7 +21266,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_2fechaInmuAcuerTipoEmpRies1", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_2fechaInmuAcuerTipoEmpRies1", DbType="VarChar(10)")]
 		public string inmu_2fechaInmuAcuerTipoEmpRies1
 		{
 			get
@@ -21422,7 +21286,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_2loteInmuAcuerTipoEmpRies1", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_2loteInmuAcuerTipoEmpRies1", DbType="VarChar(25)")]
 		public string inmu_2loteInmuAcuerTipoEmpRies1
 		{
 			get
@@ -21442,7 +21306,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_2esqueCompleInmuAcuerTipoEmpRies1", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_2esqueCompleInmuAcuerTipoEmpRies1", DbType="VarChar(25)")]
 		public string inmu_2esqueCompleInmuAcuerTipoEmpRies1
 		{
 			get
@@ -21462,7 +21326,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_2nomCompleResponVacuInmuAcuerTipoEmpRies1", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_2nomCompleResponVacuInmuAcuerTipoEmpRies1", DbType="VarChar(50)")]
 		public string inmu_2nomCompleResponVacuInmuAcuerTipoEmpRies1
 		{
 			get
@@ -21482,7 +21346,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_2estaSaludColocoVacuInmuAcuerTipoEmpRies1", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_2estaSaludColocoVacuInmuAcuerTipoEmpRies1", DbType="VarChar(50)")]
 		public string inmu_2estaSaludColocoVacuInmuAcuerTipoEmpRies1
 		{
 			get
@@ -21522,7 +21386,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_2fechaInmuAcuerTipoEmpRies2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_2fechaInmuAcuerTipoEmpRies2", DbType="VarChar(10)")]
 		public string inmu_2fechaInmuAcuerTipoEmpRies2
 		{
 			get
@@ -21542,7 +21406,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_2loteInmuAcuerTipoEmpRies2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_2loteInmuAcuerTipoEmpRies2", DbType="VarChar(25)")]
 		public string inmu_2loteInmuAcuerTipoEmpRies2
 		{
 			get
@@ -21562,7 +21426,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_2esqueCompleInmuAcuerTipoEmpRies2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_2esqueCompleInmuAcuerTipoEmpRies2", DbType="VarChar(25)")]
 		public string inmu_2esqueCompleInmuAcuerTipoEmpRies2
 		{
 			get
@@ -21582,7 +21446,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_2nomCompleResponVacuInmuAcuerTipoEmpRies2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_2nomCompleResponVacuInmuAcuerTipoEmpRies2", DbType="VarChar(50)")]
 		public string inmu_2nomCompleResponVacuInmuAcuerTipoEmpRies2
 		{
 			get
@@ -21602,7 +21466,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_2estaSaludColocoVacuInmuAcuerTipoEmpRies2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_2estaSaludColocoVacuInmuAcuerTipoEmpRies2", DbType="VarChar(50)")]
 		public string inmu_2estaSaludColocoVacuInmuAcuerTipoEmpRies2
 		{
 			get
@@ -21642,7 +21506,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_2fechaInmuAcuerTipoEmpRies3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_2fechaInmuAcuerTipoEmpRies3", DbType="VarChar(10)")]
 		public string inmu_2fechaInmuAcuerTipoEmpRies3
 		{
 			get
@@ -21662,7 +21526,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_2loteInmuAcuerTipoEmpRies3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_2loteInmuAcuerTipoEmpRies3", DbType="VarChar(25)")]
 		public string inmu_2loteInmuAcuerTipoEmpRies3
 		{
 			get
@@ -21682,7 +21546,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_2esqueCompleInmuAcuerTipoEmpRies3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_2esqueCompleInmuAcuerTipoEmpRies3", DbType="VarChar(25)")]
 		public string inmu_2esqueCompleInmuAcuerTipoEmpRies3
 		{
 			get
@@ -21702,7 +21566,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_2nomCompleResponVacuInmuAcuerTipoEmpRies3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_2nomCompleResponVacuInmuAcuerTipoEmpRies3", DbType="VarChar(50)")]
 		public string inmu_2nomCompleResponVacuInmuAcuerTipoEmpRies3
 		{
 			get
@@ -21722,7 +21586,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_2estaSaludColocoVacuInmuAcuerTipoEmpRies3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_2estaSaludColocoVacuInmuAcuerTipoEmpRies3", DbType="VarChar(50)")]
 		public string inmu_2estaSaludColocoVacuInmuAcuerTipoEmpRies3
 		{
 			get
@@ -21762,7 +21626,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_2fechaInmuAcuerTipoEmpRies4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_2fechaInmuAcuerTipoEmpRies4", DbType="VarChar(10)")]
 		public string inmu_2fechaInmuAcuerTipoEmpRies4
 		{
 			get
@@ -21782,7 +21646,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_2loteInmuAcuerTipoEmpRies4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_2loteInmuAcuerTipoEmpRies4", DbType="VarChar(25)")]
 		public string inmu_2loteInmuAcuerTipoEmpRies4
 		{
 			get
@@ -21802,7 +21666,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_2esqueCompleInmuAcuerTipoEmpRies4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_2esqueCompleInmuAcuerTipoEmpRies4", DbType="VarChar(25)")]
 		public string inmu_2esqueCompleInmuAcuerTipoEmpRies4
 		{
 			get
@@ -21822,7 +21686,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_2nomCompleResponVacuInmuAcuerTipoEmpRies4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_2nomCompleResponVacuInmuAcuerTipoEmpRies4", DbType="VarChar(50)")]
 		public string inmu_2nomCompleResponVacuInmuAcuerTipoEmpRies4
 		{
 			get
@@ -21842,7 +21706,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_2estaSaludColocoVacuInmuAcuerTipoEmpRies4", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_2estaSaludColocoVacuInmuAcuerTipoEmpRies4", DbType="VarChar(50)")]
 		public string inmu_2estaSaludColocoVacuInmuAcuerTipoEmpRies4
 		{
 			get
@@ -21882,7 +21746,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_2fechaInmuAcuerTipoEmpRies5", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_2fechaInmuAcuerTipoEmpRies5", DbType="VarChar(10)")]
 		public string inmu_2fechaInmuAcuerTipoEmpRies5
 		{
 			get
@@ -21902,7 +21766,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_2loteInmuAcuerTipoEmpRies5", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_2loteInmuAcuerTipoEmpRies5", DbType="VarChar(25)")]
 		public string inmu_2loteInmuAcuerTipoEmpRies5
 		{
 			get
@@ -21922,7 +21786,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_2esqueCompleInmuAcuerTipoEmpRies5", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_2esqueCompleInmuAcuerTipoEmpRies5", DbType="VarChar(25)")]
 		public string inmu_2esqueCompleInmuAcuerTipoEmpRies5
 		{
 			get
@@ -21942,7 +21806,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_2nomCompleResponVacuInmuAcuerTipoEmpRies5", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_2nomCompleResponVacuInmuAcuerTipoEmpRies5", DbType="VarChar(50)")]
 		public string inmu_2nomCompleResponVacuInmuAcuerTipoEmpRies5
 		{
 			get
@@ -21962,7 +21826,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_2estaSaludColocoVacuInmuAcuerTipoEmpRies5", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_2estaSaludColocoVacuInmuAcuerTipoEmpRies5", DbType="VarChar(50)")]
 		public string inmu_2estaSaludColocoVacuInmuAcuerTipoEmpRies5
 		{
 			get
@@ -21998,26 +21862,6 @@ namespace CapaDatos
 					this._inmu_2observaInmuAcuerTipoEmpRies5 = value;
 					this.SendPropertyChanged("inmu_2observaInmuAcuerTipoEmpRies5");
 					this.Oninmu_2observaInmuAcuerTipoEmpRies5Changed();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_fechaHora", DbType="VarChar(MAX)")]
-		public string inmu_fechaHora
-		{
-			get
-			{
-				return this._inmu_fechaHora;
-			}
-			set
-			{
-				if ((this._inmu_fechaHora != value))
-				{
-					this.Oninmu_fechaHoraChanging(value);
-					this.SendPropertyChanging();
-					this._inmu_fechaHora = value;
-					this.SendPropertyChanged("inmu_fechaHora");
-					this.Oninmu_fechaHoraChanged();
 				}
 			}
 		}
@@ -22449,8 +22293,6 @@ namespace CapaDatos
 		
 		private string _pedExa_descripOtros3;
 		
-		private string _pedExa_fechaHora;
-		
 		private System.Nullable<long> _Per_id;
 		
 		private System.Nullable<System.DateTime> _pedExa_fechaHoraGuardado;
@@ -22765,8 +22607,6 @@ namespace CapaDatos
     partial void OnpedExa_Otros3Changed();
     partial void OnpedExa_descripOtros3Changing(string value);
     partial void OnpedExa_descripOtros3Changed();
-    partial void OnpedExa_fechaHoraChanging(string value);
-    partial void OnpedExa_fechaHoraChanged();
     partial void OnPer_idChanging(System.Nullable<long> value);
     partial void OnPer_idChanged();
     partial void OnpedExa_fechaHoraGuardadoChanging(System.Nullable<System.DateTime> value);
@@ -22801,7 +22641,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_numArchivo", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_numArchivo", DbType="VarChar(25)")]
 		public string pedExa_numArchivo
 		{
 			get
@@ -22821,7 +22661,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_bioHematicaHema", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_bioHematicaHema", DbType="VarChar(2)")]
 		public string pedExa_bioHematicaHema
 		{
 			get
@@ -22841,7 +22681,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_hematocritoHema", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_hematocritoHema", DbType="VarChar(2)")]
 		public string pedExa_hematocritoHema
 		{
 			get
@@ -22861,7 +22701,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_hemoglobinaHema", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_hemoglobinaHema", DbType="VarChar(2)")]
 		public string pedExa_hemoglobinaHema
 		{
 			get
@@ -22881,7 +22721,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_vsgHema", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_vsgHema", DbType="VarChar(2)")]
 		public string pedExa_vsgHema
 		{
 			get
@@ -22901,7 +22741,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_coombsDirectoInmuHema", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_coombsDirectoInmuHema", DbType="VarChar(2)")]
 		public string pedExa_coombsDirectoInmuHema
 		{
 			get
@@ -22921,7 +22761,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_coombsIndirectoInmuHema", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_coombsIndirectoInmuHema", DbType="VarChar(2)")]
 		public string pedExa_coombsIndirectoInmuHema
 		{
 			get
@@ -22941,7 +22781,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_grupoSanguiFacRhInmuHema", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_grupoSanguiFacRhInmuHema", DbType="VarChar(2)")]
 		public string pedExa_grupoSanguiFacRhInmuHema
 		{
 			get
@@ -22961,7 +22801,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_celularLeInmuHema", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_celularLeInmuHema", DbType="VarChar(2)")]
 		public string pedExa_celularLeInmuHema
 		{
 			get
@@ -22981,7 +22821,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_plaquetasCoagu", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_plaquetasCoagu", DbType="VarChar(2)")]
 		public string pedExa_plaquetasCoagu
 		{
 			get
@@ -23001,7 +22841,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_fibrinogenoCoagu", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_fibrinogenoCoagu", DbType="VarChar(2)")]
 		public string pedExa_fibrinogenoCoagu
 		{
 			get
@@ -23021,7 +22861,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_TpCoagu", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_TpCoagu", DbType="VarChar(2)")]
 		public string pedExa_TpCoagu
 		{
 			get
@@ -23041,7 +22881,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_TtpCoagu", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_TtpCoagu", DbType="VarChar(2)")]
 		public string pedExa_TtpCoagu
 		{
 			get
@@ -23061,7 +22901,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_InrCoagu", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_InrCoagu", DbType="VarChar(2)")]
 		public string pedExa_InrCoagu
 		{
 			get
@@ -23081,7 +22921,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_tiemCoagulacionCoagu", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_tiemCoagulacionCoagu", DbType="VarChar(2)")]
 		public string pedExa_tiemCoagulacionCoagu
 		{
 			get
@@ -23101,7 +22941,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_tiemSangriaCoagu", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_tiemSangriaCoagu", DbType="VarChar(2)")]
 		public string pedExa_tiemSangriaCoagu
 		{
 			get
@@ -23121,7 +22961,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_antiLupicoCoagu", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_antiLupicoCoagu", DbType="VarChar(2)")]
 		public string pedExa_antiLupicoCoagu
 		{
 			get
@@ -23141,7 +22981,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_dimeroDCoagu", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_dimeroDCoagu", DbType="VarChar(2)")]
 		public string pedExa_dimeroDCoagu
 		{
 			get
@@ -23161,7 +23001,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_glucoBasalQSangui", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_glucoBasalQSangui", DbType="VarChar(2)")]
 		public string pedExa_glucoBasalQSangui
 		{
 			get
@@ -23181,7 +23021,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_ureaQSangui", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_ureaQSangui", DbType="VarChar(2)")]
 		public string pedExa_ureaQSangui
 		{
 			get
@@ -23201,7 +23041,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_bumQSangui", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_bumQSangui", DbType="VarChar(2)")]
 		public string pedExa_bumQSangui
 		{
 			get
@@ -23221,7 +23061,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_creatininaQSangui", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_creatininaQSangui", DbType="VarChar(2)")]
 		public string pedExa_creatininaQSangui
 		{
 			get
@@ -23241,7 +23081,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_acUricoQSangui", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_acUricoQSangui", DbType="VarChar(2)")]
 		public string pedExa_acUricoQSangui
 		{
 			get
@@ -23261,7 +23101,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_colesTotalQSangui", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_colesTotalQSangui", DbType="VarChar(2)")]
 		public string pedExa_colesTotalQSangui
 		{
 			get
@@ -23281,7 +23121,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_hdlcQSangui", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_hdlcQSangui", DbType="VarChar(2)")]
 		public string pedExa_hdlcQSangui
 		{
 			get
@@ -23301,7 +23141,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_ldlcQSangui", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_ldlcQSangui", DbType="VarChar(2)")]
 		public string pedExa_ldlcQSangui
 		{
 			get
@@ -23321,7 +23161,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_trigliceridosQSangui", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_trigliceridosQSangui", DbType="VarChar(2)")]
 		public string pedExa_trigliceridosQSangui
 		{
 			get
@@ -23341,7 +23181,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_bilirrubinaTotalQSangui", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_bilirrubinaTotalQSangui", DbType="VarChar(2)")]
 		public string pedExa_bilirrubinaTotalQSangui
 		{
 			get
@@ -23361,7 +23201,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_bilirrubinaDirectaQSangui", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_bilirrubinaDirectaQSangui", DbType="VarChar(2)")]
 		public string pedExa_bilirrubinaDirectaQSangui
 		{
 			get
@@ -23381,7 +23221,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_bilirrubinaIndirectaQSangui", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_bilirrubinaIndirectaQSangui", DbType="VarChar(2)")]
 		public string pedExa_bilirrubinaIndirectaQSangui
 		{
 			get
@@ -23401,7 +23241,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_proteTotalesQSangui", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_proteTotalesQSangui", DbType="VarChar(2)")]
 		public string pedExa_proteTotalesQSangui
 		{
 			get
@@ -23421,7 +23261,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_albuminaQSangui", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_albuminaQSangui", DbType="VarChar(2)")]
 		public string pedExa_albuminaQSangui
 		{
 			get
@@ -23441,7 +23281,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_globulinaQSangui", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_globulinaQSangui", DbType="VarChar(2)")]
 		public string pedExa_globulinaQSangui
 		{
 			get
@@ -23461,7 +23301,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_testOsullivanQSangui", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_testOsullivanQSangui", DbType="VarChar(2)")]
 		public string pedExa_testOsullivanQSangui
 		{
 			get
@@ -23481,7 +23321,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_glucosa2hppQSangui", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_glucosa2hppQSangui", DbType="VarChar(2)")]
 		public string pedExa_glucosa2hppQSangui
 		{
 			get
@@ -23501,7 +23341,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_curvaToleranciaQSangui", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_curvaToleranciaQSangui", DbType="VarChar(2)")]
 		public string pedExa_curvaToleranciaQSangui
 		{
 			get
@@ -23521,7 +23361,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_glucosaHorasQSangui", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_glucosaHorasQSangui", DbType="VarChar(5)")]
 		public string pedExa_glucosaHorasQSangui
 		{
 			get
@@ -23541,7 +23381,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_hemogloGlicosiladaQSangui", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_hemogloGlicosiladaQSangui", DbType="VarChar(2)")]
 		public string pedExa_hemogloGlicosiladaQSangui
 		{
 			get
@@ -23561,7 +23401,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_hierroSericoQSangui", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_hierroSericoQSangui", DbType="VarChar(2)")]
 		public string pedExa_hierroSericoQSangui
 		{
 			get
@@ -23581,7 +23421,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_ferritinaQSangui", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_ferritinaQSangui", DbType="VarChar(2)")]
 		public string pedExa_ferritinaQSangui
 		{
 			get
@@ -23601,7 +23441,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_transferritinaQSangui", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_transferritinaQSangui", DbType="VarChar(2)")]
 		public string pedExa_transferritinaQSangui
 		{
 			get
@@ -23621,7 +23461,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_tgoEnzi", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_tgoEnzi", DbType="VarChar(2)")]
 		public string pedExa_tgoEnzi
 		{
 			get
@@ -23641,7 +23481,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_tgpEnzi", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_tgpEnzi", DbType="VarChar(2)")]
 		public string pedExa_tgpEnzi
 		{
 			get
@@ -23661,7 +23501,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_amilasaEnzi", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_amilasaEnzi", DbType="VarChar(2)")]
 		public string pedExa_amilasaEnzi
 		{
 			get
@@ -23681,7 +23521,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_lipasaEnzi", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_lipasaEnzi", DbType="VarChar(2)")]
 		public string pedExa_lipasaEnzi
 		{
 			get
@@ -23701,7 +23541,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_cpkEnzi", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_cpkEnzi", DbType="VarChar(2)")]
 		public string pedExa_cpkEnzi
 		{
 			get
@@ -23721,7 +23561,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_cpkMbEnzi", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_cpkMbEnzi", DbType="VarChar(2)")]
 		public string pedExa_cpkMbEnzi
 		{
 			get
@@ -23741,7 +23581,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_ldhEnzi", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_ldhEnzi", DbType="VarChar(2)")]
 		public string pedExa_ldhEnzi
 		{
 			get
@@ -23761,7 +23601,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_fosfatasaAlcalinaEnzi", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_fosfatasaAlcalinaEnzi", DbType="VarChar(2)")]
 		public string pedExa_fosfatasaAlcalinaEnzi
 		{
 			get
@@ -23781,7 +23621,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_fosfatasaAcidaTotalEnzi", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_fosfatasaAcidaTotalEnzi", DbType="VarChar(2)")]
 		public string pedExa_fosfatasaAcidaTotalEnzi
 		{
 			get
@@ -23801,7 +23641,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_fosfatasaAcidaProstaticaEnzi", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_fosfatasaAcidaProstaticaEnzi", DbType="VarChar(2)")]
 		public string pedExa_fosfatasaAcidaProstaticaEnzi
 		{
 			get
@@ -23821,7 +23661,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_NakClElectro", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_NakClElectro", DbType="VarChar(2)")]
 		public string pedExa_NakClElectro
 		{
 			get
@@ -23841,7 +23681,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_calcioIonicoElectro", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_calcioIonicoElectro", DbType="VarChar(2)")]
 		public string pedExa_calcioIonicoElectro
 		{
 			get
@@ -23861,7 +23701,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_calcioTotalElectro", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_calcioTotalElectro", DbType="VarChar(2)")]
 		public string pedExa_calcioTotalElectro
 		{
 			get
@@ -23881,7 +23721,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_magnesioElectro", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_magnesioElectro", DbType="VarChar(2)")]
 		public string pedExa_magnesioElectro
 		{
 			get
@@ -23901,7 +23741,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_fosforoElectro", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_fosforoElectro", DbType="VarChar(2)")]
 		public string pedExa_fosforoElectro
 		{
 			get
@@ -23921,7 +23761,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_pcrCuantitativoSero", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_pcrCuantitativoSero", DbType="VarChar(2)")]
 		public string pedExa_pcrCuantitativoSero
 		{
 			get
@@ -23941,7 +23781,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_frLatexSero", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_frLatexSero", DbType="VarChar(2)")]
 		public string pedExa_frLatexSero
 		{
 			get
@@ -23961,7 +23801,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_astoSero", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_astoSero", DbType="VarChar(2)")]
 		public string pedExa_astoSero
 		{
 			get
@@ -23981,7 +23821,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_aglutinacionesFebrilesSero", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_aglutinacionesFebrilesSero", DbType="VarChar(2)")]
 		public string pedExa_aglutinacionesFebrilesSero
 		{
 			get
@@ -24001,7 +23841,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_vdrlSero", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_vdrlSero", DbType="VarChar(2)")]
 		public string pedExa_vdrlSero
 		{
 			get
@@ -24021,7 +23861,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_lhHormo", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_lhHormo", DbType="VarChar(2)")]
 		public string pedExa_lhHormo
 		{
 			get
@@ -24041,7 +23881,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_fshHormo", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_fshHormo", DbType="VarChar(2)")]
 		public string pedExa_fshHormo
 		{
 			get
@@ -24061,7 +23901,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_estradiolHormo", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_estradiolHormo", DbType="VarChar(2)")]
 		public string pedExa_estradiolHormo
 		{
 			get
@@ -24081,7 +23921,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_progesteronaHormo", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_progesteronaHormo", DbType="VarChar(2)")]
 		public string pedExa_progesteronaHormo
 		{
 			get
@@ -24101,7 +23941,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_prolactinaHormo", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_prolactinaHormo", DbType="VarChar(2)")]
 		public string pedExa_prolactinaHormo
 		{
 			get
@@ -24121,7 +23961,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_testosteronaHormo", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_testosteronaHormo", DbType="VarChar(2)")]
 		public string pedExa_testosteronaHormo
 		{
 			get
@@ -24141,7 +23981,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_dheasHormo", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_dheasHormo", DbType="VarChar(2)")]
 		public string pedExa_dheasHormo
 		{
 			get
@@ -24161,7 +24001,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_cortisolHormo", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_cortisolHormo", DbType="VarChar(2)")]
 		public string pedExa_cortisolHormo
 		{
 			get
@@ -24181,7 +24021,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_insulinaHormo", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_insulinaHormo", DbType="VarChar(2)")]
 		public string pedExa_insulinaHormo
 		{
 			get
@@ -24201,7 +24041,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_peptidoCHormo", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_peptidoCHormo", DbType="VarChar(2)")]
 		public string pedExa_peptidoCHormo
 		{
 			get
@@ -24221,7 +24061,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_indiceHomaHormo", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_indiceHomaHormo", DbType="VarChar(2)")]
 		public string pedExa_indiceHomaHormo
 		{
 			get
@@ -24241,7 +24081,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_bhcgHormo", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_bhcgHormo", DbType="VarChar(2)")]
 		public string pedExa_bhcgHormo
 		{
 			get
@@ -24261,7 +24101,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_t3Hormo", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_t3Hormo", DbType="VarChar(2)")]
 		public string pedExa_t3Hormo
 		{
 			get
@@ -24281,7 +24121,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_ft4Hormo", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_ft4Hormo", DbType="VarChar(2)")]
 		public string pedExa_ft4Hormo
 		{
 			get
@@ -24301,7 +24141,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_tshHormo", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_tshHormo", DbType="VarChar(2)")]
 		public string pedExa_tshHormo
 		{
 			get
@@ -24321,7 +24161,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_17OhProgesteronaHormo", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_17OhProgesteronaHormo", DbType="VarChar(2)")]
 		public string pedExa_17OhProgesteronaHormo
 		{
 			get
@@ -24341,7 +24181,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_hghHormo", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_hghHormo", DbType="VarChar(2)")]
 		public string pedExa_hghHormo
 		{
 			get
@@ -24361,7 +24201,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_prolactinaInmu", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_prolactinaInmu", DbType="VarChar(2)")]
 		public string pedExa_prolactinaInmu
 		{
 			get
@@ -24381,7 +24221,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_antiNuclearesInmu", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_antiNuclearesInmu", DbType="VarChar(2)")]
 		public string pedExa_antiNuclearesInmu
 		{
 			get
@@ -24401,7 +24241,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_antiDnaInmu", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_antiDnaInmu", DbType="VarChar(2)")]
 		public string pedExa_antiDnaInmu
 		{
 			get
@@ -24421,7 +24261,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_antiFosfolipidosInmu", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_antiFosfolipidosInmu", DbType="VarChar(2)")]
 		public string pedExa_antiFosfolipidosInmu
 		{
 			get
@@ -24441,7 +24281,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_lgGAntiFosfoInmu", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_lgGAntiFosfoInmu", DbType="VarChar(2)")]
 		public string pedExa_lgGAntiFosfoInmu
 		{
 			get
@@ -24461,7 +24301,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_lgMAntiFosfoInmu", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_lgMAntiFosfoInmu", DbType="VarChar(2)")]
 		public string pedExa_lgMAntiFosfoInmu
 		{
 			get
@@ -24481,7 +24321,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_lgAAntiFosfoInmu", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_lgAAntiFosfoInmu", DbType="VarChar(2)")]
 		public string pedExa_lgAAntiFosfoInmu
 		{
 			get
@@ -24501,7 +24341,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_antiCardiolipinasInmu", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_antiCardiolipinasInmu", DbType="VarChar(2)")]
 		public string pedExa_antiCardiolipinasInmu
 		{
 			get
@@ -24521,7 +24361,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_lgGAntiCardioInmu", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_lgGAntiCardioInmu", DbType="VarChar(2)")]
 		public string pedExa_lgGAntiCardioInmu
 		{
 			get
@@ -24541,7 +24381,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_lgMAntiCardioInmu", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_lgMAntiCardioInmu", DbType="VarChar(2)")]
 		public string pedExa_lgMAntiCardioInmu
 		{
 			get
@@ -24561,7 +24401,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_lgAAntiCardioInmu", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_lgAAntiCardioInmu", DbType="VarChar(2)")]
 		public string pedExa_lgAAntiCardioInmu
 		{
 			get
@@ -24581,7 +24421,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_b2GlicoproteinaInmu", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_b2GlicoproteinaInmu", DbType="VarChar(2)")]
 		public string pedExa_b2GlicoproteinaInmu
 		{
 			get
@@ -24601,7 +24441,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_lgGB2GlicoInmu", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_lgGB2GlicoInmu", DbType="VarChar(2)")]
 		public string pedExa_lgGB2GlicoInmu
 		{
 			get
@@ -24621,7 +24461,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_lgMB2GlicoInmu", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_lgMB2GlicoInmu", DbType="VarChar(2)")]
 		public string pedExa_lgMB2GlicoInmu
 		{
 			get
@@ -24641,7 +24481,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_antiGliadinaInmu", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_antiGliadinaInmu", DbType="VarChar(2)")]
 		public string pedExa_antiGliadinaInmu
 		{
 			get
@@ -24661,7 +24501,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_lgGAntiGliaInmu", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_lgGAntiGliaInmu", DbType="VarChar(2)")]
 		public string pedExa_lgGAntiGliaInmu
 		{
 			get
@@ -24681,7 +24521,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_lgAAntiGliaInmu", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_lgAAntiGliaInmu", DbType="VarChar(2)")]
 		public string pedExa_lgAAntiGliaInmu
 		{
 			get
@@ -24701,7 +24541,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_antiAnexinaVInmu", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_antiAnexinaVInmu", DbType="VarChar(2)")]
 		public string pedExa_antiAnexinaVInmu
 		{
 			get
@@ -24721,7 +24561,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_lgGAntiAnexInmu", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_lgGAntiAnexInmu", DbType="VarChar(2)")]
 		public string pedExa_lgGAntiAnexInmu
 		{
 			get
@@ -24741,7 +24581,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_lgMAntiAnexInmu", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_lgMAntiAnexInmu", DbType="VarChar(2)")]
 		public string pedExa_lgMAntiAnexInmu
 		{
 			get
@@ -24761,7 +24601,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_antiTpoInmu", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_antiTpoInmu", DbType="VarChar(2)")]
 		public string pedExa_antiTpoInmu
 		{
 			get
@@ -24781,7 +24621,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_antiTiroglobulinaInmu", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_antiTiroglobulinaInmu", DbType="VarChar(2)")]
 		public string pedExa_antiTiroglobulinaInmu
 		{
 			get
@@ -24801,7 +24641,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_antiCcpInmu", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_antiCcpInmu", DbType="VarChar(2)")]
 		public string pedExa_antiCcpInmu
 		{
 			get
@@ -24821,7 +24661,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_torchInmuInfecc", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_torchInmuInfecc", DbType="VarChar(2)")]
 		public string pedExa_torchInmuInfecc
 		{
 			get
@@ -24841,7 +24681,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_toxoGondiiInmuInfecc", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_toxoGondiiInmuInfecc", DbType="VarChar(2)")]
 		public string pedExa_toxoGondiiInmuInfecc
 		{
 			get
@@ -24861,7 +24701,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_clamydiaTrachoInmuInfecc", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_clamydiaTrachoInmuInfecc", DbType="VarChar(2)")]
 		public string pedExa_clamydiaTrachoInmuInfecc
 		{
 			get
@@ -24881,7 +24721,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_lgGClamyTrachoInmuInfecc", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_lgGClamyTrachoInmuInfecc", DbType="VarChar(2)")]
 		public string pedExa_lgGClamyTrachoInmuInfecc
 		{
 			get
@@ -24901,7 +24741,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_lgMClamyTrachoInmuInfecc", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_lgMClamyTrachoInmuInfecc", DbType="VarChar(2)")]
 		public string pedExa_lgMClamyTrachoInmuInfecc
 		{
 			get
@@ -24921,7 +24761,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_havInmuInfecc", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_havInmuInfecc", DbType="VarChar(2)")]
 		public string pedExa_havInmuInfecc
 		{
 			get
@@ -24941,7 +24781,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_lgGHavInmuInfecc", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_lgGHavInmuInfecc", DbType="VarChar(2)")]
 		public string pedExa_lgGHavInmuInfecc
 		{
 			get
@@ -24961,7 +24801,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_lgMHavInmuInfecc", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_lgMHavInmuInfecc", DbType="VarChar(2)")]
 		public string pedExa_lgMHavInmuInfecc
 		{
 			get
@@ -24981,7 +24821,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_vihInmuInfecc", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_vihInmuInfecc", DbType="VarChar(2)")]
 		public string pedExa_vihInmuInfecc
 		{
 			get
@@ -25001,7 +24841,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_hbsAgInmuInfecc", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_hbsAgInmuInfecc", DbType="VarChar(2)")]
 		public string pedExa_hbsAgInmuInfecc
 		{
 			get
@@ -25021,7 +24861,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_hcvInmuInfecc", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_hcvInmuInfecc", DbType="VarChar(2)")]
 		public string pedExa_hcvInmuInfecc
 		{
 			get
@@ -25041,7 +24881,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_ftaAbsInmuInfecc", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_ftaAbsInmuInfecc", DbType="VarChar(2)")]
 		public string pedExa_ftaAbsInmuInfecc
 		{
 			get
@@ -25061,7 +24901,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_ca125MarcaTumo", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_ca125MarcaTumo", DbType="VarChar(2)")]
 		public string pedExa_ca125MarcaTumo
 		{
 			get
@@ -25081,7 +24921,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_he4MarcaTumo", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_he4MarcaTumo", DbType="VarChar(2)")]
 		public string pedExa_he4MarcaTumo
 		{
 			get
@@ -25101,7 +24941,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_indiceRomaMarcaTumo", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_indiceRomaMarcaTumo", DbType="VarChar(2)")]
 		public string pedExa_indiceRomaMarcaTumo
 		{
 			get
@@ -25121,7 +24961,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_afpMarcaTumo", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_afpMarcaTumo", DbType="VarChar(2)")]
 		public string pedExa_afpMarcaTumo
 		{
 			get
@@ -25141,7 +24981,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_ceaMarcaTurno", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_ceaMarcaTurno", DbType="VarChar(2)")]
 		public string pedExa_ceaMarcaTurno
 		{
 			get
@@ -25161,7 +25001,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_ca156MarcaTumo", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_ca156MarcaTumo", DbType="VarChar(2)")]
 		public string pedExa_ca156MarcaTumo
 		{
 			get
@@ -25181,7 +25021,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_ca159MarcaTumo", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_ca159MarcaTumo", DbType="VarChar(2)")]
 		public string pedExa_ca159MarcaTumo
 		{
 			get
@@ -25201,7 +25041,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_tiroglobulinaMarcaTumo", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_tiroglobulinaMarcaTumo", DbType="VarChar(2)")]
 		public string pedExa_tiroglobulinaMarcaTumo
 		{
 			get
@@ -25221,7 +25061,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_psaTotalMarcaTumo", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_psaTotalMarcaTumo", DbType="VarChar(2)")]
 		public string pedExa_psaTotalMarcaTumo
 		{
 			get
@@ -25241,7 +25081,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_muestraDeMicro", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_muestraDeMicro", DbType="VarChar(50)")]
 		public string pedExa_muestraDeMicro
 		{
 			get
@@ -25261,7 +25101,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_muestraDeMicroDescrip", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_muestraDeMicroDescrip", DbType="VarChar(2)")]
 		public string pedExa_muestraDeMicroDescrip
 		{
 			get
@@ -25281,7 +25121,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_gramMicro", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_gramMicro", DbType="VarChar(2)")]
 		public string pedExa_gramMicro
 		{
 			get
@@ -25301,7 +25141,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_frescoMicro", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_frescoMicro", DbType="VarChar(2)")]
 		public string pedExa_frescoMicro
 		{
 			get
@@ -25321,7 +25161,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_kohMicro", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_kohMicro", DbType="VarChar(2)")]
 		public string pedExa_kohMicro
 		{
 			get
@@ -25341,7 +25181,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_cultivoAntibiogramaMicro", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_cultivoAntibiogramaMicro", DbType="VarChar(2)")]
 		public string pedExa_cultivoAntibiogramaMicro
 		{
 			get
@@ -25361,7 +25201,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_esperCompletoEstEspecia", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_esperCompletoEstEspecia", DbType="VarChar(2)")]
 		public string pedExa_esperCompletoEstEspecia
 		{
 			get
@@ -25381,7 +25221,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_cristalografiaEstEspecia", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_cristalografiaEstEspecia", DbType="VarChar(2)")]
 		public string pedExa_cristalografiaEstEspecia
 		{
 			get
@@ -25401,7 +25241,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_screeningPrenatalEstEspecia", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_screeningPrenatalEstEspecia", DbType="VarChar(2)")]
 		public string pedExa_screeningPrenatalEstEspecia
 		{
 			get
@@ -25421,7 +25261,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_emoOrina", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_emoOrina", DbType="VarChar(2)")]
 		public string pedExa_emoOrina
 		{
 			get
@@ -25441,7 +25281,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_cultivoAntibiogramaOrina", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_cultivoAntibiogramaOrina", DbType="VarChar(2)")]
 		public string pedExa_cultivoAntibiogramaOrina
 		{
 			get
@@ -25461,7 +25301,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_gramGotaFrescaOrina", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_gramGotaFrescaOrina", DbType="VarChar(2)")]
 		public string pedExa_gramGotaFrescaOrina
 		{
 			get
@@ -25481,7 +25321,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_microalbuminuriaOrina", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_microalbuminuriaOrina", DbType="VarChar(2)")]
 		public string pedExa_microalbuminuriaOrina
 		{
 			get
@@ -25501,7 +25341,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_coproparasitarioHeces", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_coproparasitarioHeces", DbType="VarChar(2)")]
 		public string pedExa_coproparasitarioHeces
 		{
 			get
@@ -25521,7 +25361,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_coproparasitarioSeriadoHeces", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_coproparasitarioSeriadoHeces", DbType="VarChar(2)")]
 		public string pedExa_coproparasitarioSeriadoHeces
 		{
 			get
@@ -25541,7 +25381,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_sangreOcultaHeces", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_sangreOcultaHeces", DbType="VarChar(2)")]
 		public string pedExa_sangreOcultaHeces
 		{
 			get
@@ -25561,7 +25401,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_pmnHeces", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_pmnHeces", DbType="VarChar(2)")]
 		public string pedExa_pmnHeces
 		{
 			get
@@ -25581,7 +25421,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_rotavirusHeces", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_rotavirusHeces", DbType="VarChar(2)")]
 		public string pedExa_rotavirusHeces
 		{
 			get
@@ -25601,7 +25441,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_helicobacterPylotiHeces", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_helicobacterPylotiHeces", DbType="VarChar(2)")]
 		public string pedExa_helicobacterPylotiHeces
 		{
 			get
@@ -25621,7 +25461,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_fenobarbitalDrogas", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_fenobarbitalDrogas", DbType="VarChar(2)")]
 		public string pedExa_fenobarbitalDrogas
 		{
 			get
@@ -25641,7 +25481,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_teofilinaDrogas", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_teofilinaDrogas", DbType="VarChar(2)")]
 		public string pedExa_teofilinaDrogas
 		{
 			get
@@ -25661,7 +25501,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_acValproicoDrogas", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_acValproicoDrogas", DbType="VarChar(2)")]
 		public string pedExa_acValproicoDrogas
 		{
 			get
@@ -25681,7 +25521,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_Otros1", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_Otros1", DbType="VarChar(2)")]
 		public string pedExa_Otros1
 		{
 			get
@@ -25701,7 +25541,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_descripOtros1", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_descripOtros1", DbType="VarChar(50)")]
 		public string pedExa_descripOtros1
 		{
 			get
@@ -25721,7 +25561,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_Otros2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_Otros2", DbType="VarChar(2)")]
 		public string pedExa_Otros2
 		{
 			get
@@ -25741,7 +25581,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_descripOtros2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_descripOtros2", DbType="VarChar(50)")]
 		public string pedExa_descripOtros2
 		{
 			get
@@ -25761,7 +25601,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_Otros3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_Otros3", DbType="VarChar(2)")]
 		public string pedExa_Otros3
 		{
 			get
@@ -25781,7 +25621,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_descripOtros3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_descripOtros3", DbType="VarChar(50)")]
 		public string pedExa_descripOtros3
 		{
 			get
@@ -25797,26 +25637,6 @@ namespace CapaDatos
 					this._pedExa_descripOtros3 = value;
 					this.SendPropertyChanged("pedExa_descripOtros3");
 					this.OnpedExa_descripOtros3Changed();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_fechaHora", DbType="VarChar(MAX)")]
-		public string pedExa_fechaHora
-		{
-			get
-			{
-				return this._pedExa_fechaHora;
-			}
-			set
-			{
-				if ((this._pedExa_fechaHora != value))
-				{
-					this.OnpedExa_fechaHoraChanging(value);
-					this.SendPropertyChanging();
-					this._pedExa_fechaHora = value;
-					this.SendPropertyChanged("pedExa_fechaHora");
-					this.OnpedExa_fechaHoraChanged();
 				}
 			}
 		}
@@ -27358,7 +27178,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_numArchivo", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_numArchivo", DbType="VarChar(25)")]
 		public string perio_numArchivo
 		{
 			get
@@ -27418,7 +27238,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_siConsuNocivosTabaco", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_siConsuNocivosTabaco", DbType="VarChar(2)")]
 		public string perio_siConsuNocivosTabaco
 		{
 			get
@@ -27438,7 +27258,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_siConsuNocivosAlcohol", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_siConsuNocivosAlcohol", DbType="VarChar(2)")]
 		public string perio_siConsuNocivosAlcohol
 		{
 			get
@@ -27458,7 +27278,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_siConsuNocivosOtrasDrogas", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_siConsuNocivosOtrasDrogas", DbType="VarChar(2)")]
 		public string perio_siConsuNocivosOtrasDrogas
 		{
 			get
@@ -27478,7 +27298,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_otrasConsuNocivos", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_otrasConsuNocivos", DbType="VarChar(25)")]
 		public string perio_otrasConsuNocivos
 		{
 			get
@@ -27498,7 +27318,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_noConsuNocivosTabaco", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_noConsuNocivosTabaco", DbType="VarChar(2)")]
 		public string perio_noConsuNocivosTabaco
 		{
 			get
@@ -27518,7 +27338,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_noConsuNocivosAlcohol", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_noConsuNocivosAlcohol", DbType="VarChar(2)")]
 		public string perio_noConsuNocivosAlcohol
 		{
 			get
@@ -27538,7 +27358,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_noConsuNocivosOtrasDrogas", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_noConsuNocivosOtrasDrogas", DbType="VarChar(2)")]
 		public string perio_noConsuNocivosOtrasDrogas
 		{
 			get
@@ -27558,7 +27378,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_tiempoConsuConsuNocivosTabaco", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_tiempoConsuConsuNocivosTabaco", DbType="VarChar(2)")]
 		public string perio_tiempoConsuConsuNocivosTabaco
 		{
 			get
@@ -27578,7 +27398,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_tiempoConsuConsuNocivosAlcohol", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_tiempoConsuConsuNocivosAlcohol", DbType="VarChar(2)")]
 		public string perio_tiempoConsuConsuNocivosAlcohol
 		{
 			get
@@ -27598,7 +27418,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_tiempoConsu1ConsuNocivosOtrasDrogas", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_tiempoConsu1ConsuNocivosOtrasDrogas", DbType="VarChar(2)")]
 		public string perio_tiempoConsu1ConsuNocivosOtrasDrogas
 		{
 			get
@@ -27618,7 +27438,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_tiempoConsu2ConsuNocivosOtrasDrogas", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_tiempoConsu2ConsuNocivosOtrasDrogas", DbType="VarChar(2)")]
 		public string perio_tiempoConsu2ConsuNocivosOtrasDrogas
 		{
 			get
@@ -27638,7 +27458,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_cantidadConsuNocivosTabaco", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_cantidadConsuNocivosTabaco", DbType="VarChar(25)")]
 		public string perio_cantidadConsuNocivosTabaco
 		{
 			get
@@ -27658,7 +27478,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_cantidadConsuNocivosAlcohol", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_cantidadConsuNocivosAlcohol", DbType="VarChar(25)")]
 		public string perio_cantidadConsuNocivosAlcohol
 		{
 			get
@@ -27678,7 +27498,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_cantidad1ConsuNocivosOtrasDrogas", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_cantidad1ConsuNocivosOtrasDrogas", DbType="VarChar(25)")]
 		public string perio_cantidad1ConsuNocivosOtrasDrogas
 		{
 			get
@@ -27698,7 +27518,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_cantidad2ConsuNocivosOtrasDrogas", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_cantidad2ConsuNocivosOtrasDrogas", DbType="VarChar(25)")]
 		public string perio_cantidad2ConsuNocivosOtrasDrogas
 		{
 			get
@@ -27718,7 +27538,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_exConsumiConsuNocivosTabaco", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_exConsumiConsuNocivosTabaco", DbType="VarChar(25)")]
 		public string perio_exConsumiConsuNocivosTabaco
 		{
 			get
@@ -27738,7 +27558,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_exConsumiConsuNocivosAlcohol", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_exConsumiConsuNocivosAlcohol", DbType="VarChar(25)")]
 		public string perio_exConsumiConsuNocivosAlcohol
 		{
 			get
@@ -27758,7 +27578,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_exConsumi1ConsuNocivosOtrasDrogas", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_exConsumi1ConsuNocivosOtrasDrogas", DbType="VarChar(25)")]
 		public string perio_exConsumi1ConsuNocivosOtrasDrogas
 		{
 			get
@@ -27778,7 +27598,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_exConsumi2ConsuNocivosOtrasDrogas", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_exConsumi2ConsuNocivosOtrasDrogas", DbType="VarChar(25)")]
 		public string perio_exConsumi2ConsuNocivosOtrasDrogas
 		{
 			get
@@ -27798,7 +27618,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_tiempoAbstiConsuNocivosTabaco", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_tiempoAbstiConsuNocivosTabaco", DbType="VarChar(2)")]
 		public string perio_tiempoAbstiConsuNocivosTabaco
 		{
 			get
@@ -27818,7 +27638,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_tiempoAbstiConsuNocivosAlcohol", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_tiempoAbstiConsuNocivosAlcohol", DbType="VarChar(2)")]
 		public string perio_tiempoAbstiConsuNocivosAlcohol
 		{
 			get
@@ -27838,7 +27658,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_tiempoAbsti1ConsuNocivosOtrasDrogas", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_tiempoAbsti1ConsuNocivosOtrasDrogas", DbType="VarChar(2)")]
 		public string perio_tiempoAbsti1ConsuNocivosOtrasDrogas
 		{
 			get
@@ -27858,7 +27678,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_tiempoAbsti2ConsuNocivosOtrasDrogas", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_tiempoAbsti2ConsuNocivosOtrasDrogas", DbType="VarChar(2)")]
 		public string perio_tiempoAbsti2ConsuNocivosOtrasDrogas
 		{
 			get
@@ -27878,7 +27698,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_siEstiVidaActFisica", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_siEstiVidaActFisica", DbType="VarChar(2)")]
 		public string perio_siEstiVidaActFisica
 		{
 			get
@@ -27898,7 +27718,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_siEstiVidaMediHabitual", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_siEstiVidaMediHabitual", DbType="VarChar(2)")]
 		public string perio_siEstiVidaMediHabitual
 		{
 			get
@@ -27918,7 +27738,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_noEstiVidaActFisica", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_noEstiVidaActFisica", DbType="VarChar(2)")]
 		public string perio_noEstiVidaActFisica
 		{
 			get
@@ -27938,7 +27758,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_noEstiVidaMediHabitual", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_noEstiVidaMediHabitual", DbType="VarChar(2)")]
 		public string perio_noEstiVidaMediHabitual
 		{
 			get
@@ -28038,7 +27858,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[perio_tiem/cantEstiVidaActFisica]", Storage="_perio_tiem_cantEstiVidaActFisica", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[perio_tiem/cantEstiVidaActFisica]", Storage="_perio_tiem_cantEstiVidaActFisica", DbType="VarChar(25)")]
 		public string perio_tiem_cantEstiVidaActFisica
 		{
 			get
@@ -28058,7 +27878,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[perio_tiem/cant1EstiVidaMediHabitual]", Storage="_perio_tiem_cant1EstiVidaMediHabitual", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[perio_tiem/cant1EstiVidaMediHabitual]", Storage="_perio_tiem_cant1EstiVidaMediHabitual", DbType="VarChar(25)")]
 		public string perio_tiem_cant1EstiVidaMediHabitual
 		{
 			get
@@ -28078,7 +27898,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[perio_tiem/cant2EstiVidaMediHabitual]", Storage="_perio_tiem_cant2EstiVidaMediHabitual", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[perio_tiem/cant2EstiVidaMediHabitual]", Storage="_perio_tiem_cant2EstiVidaMediHabitual", DbType="VarChar(25)")]
 		public string perio_tiem_cant2EstiVidaMediHabitual
 		{
 			get
@@ -28098,7 +27918,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[perio_tiem/cant3EstiVidaMediHabitual]", Storage="_perio_tiem_cant3EstiVidaMediHabitual", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[perio_tiem/cant3EstiVidaMediHabitual]", Storage="_perio_tiem_cant3EstiVidaMediHabitual", DbType="VarChar(25)")]
 		public string perio_tiem_cant3EstiVidaMediHabitual
 		{
 			get
@@ -28138,7 +27958,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_siCalificadoIESSAcciTrabajo", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_siCalificadoIESSAcciTrabajo", DbType="VarChar(2)")]
 		public string perio_siCalificadoIESSAcciTrabajo
 		{
 			get
@@ -28178,7 +27998,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_noCalificadoIESSAcciTrabajo", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_noCalificadoIESSAcciTrabajo", DbType="VarChar(2)")]
 		public string perio_noCalificadoIESSAcciTrabajo
 		{
 			get
@@ -28198,7 +28018,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_fechaCalificadoIESSAcciTrabajo", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_fechaCalificadoIESSAcciTrabajo", DbType="VarChar(10)")]
 		public string perio_fechaCalificadoIESSAcciTrabajo
 		{
 			get
@@ -28238,7 +28058,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_siCalificadoIESSEnferProfesionales", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_siCalificadoIESSEnferProfesionales", DbType="VarChar(2)")]
 		public string perio_siCalificadoIESSEnferProfesionales
 		{
 			get
@@ -28278,7 +28098,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_noCalificadoIESSEnferProfesionales", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_noCalificadoIESSEnferProfesionales", DbType="VarChar(2)")]
 		public string perio_noCalificadoIESSEnferProfesionales
 		{
 			get
@@ -28298,7 +28118,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_fechaCalificadoIESSEnferProfesionales", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_fechaCalificadoIESSEnferProfesionales", DbType="VarChar(10)")]
 		public string perio_fechaCalificadoIESSEnferProfesionales
 		{
 			get
@@ -28338,7 +28158,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_enfCarVas", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_enfCarVas", DbType="VarChar(2)")]
 		public string perio_enfCarVas
 		{
 			get
@@ -28358,7 +28178,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_enfMeta", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_enfMeta", DbType="VarChar(2)")]
 		public string perio_enfMeta
 		{
 			get
@@ -28378,7 +28198,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_enfNeuro", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_enfNeuro", DbType="VarChar(2)")]
 		public string perio_enfNeuro
 		{
 			get
@@ -28398,7 +28218,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_enfOnco", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_enfOnco", DbType="VarChar(2)")]
 		public string perio_enfOnco
 		{
 			get
@@ -28418,7 +28238,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_enfInfe", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_enfInfe", DbType="VarChar(2)")]
 		public string perio_enfInfe
 		{
 			get
@@ -28438,7 +28258,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_enfHereConge", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_enfHereConge", DbType="VarChar(2)")]
 		public string perio_enfHereConge
 		{
 			get
@@ -28458,7 +28278,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_discapa", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_discapa", DbType="VarChar(2)")]
 		public string perio_discapa
 		{
 			get
@@ -28478,7 +28298,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_otros", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_otros", DbType="VarChar(2)")]
 		public string perio_otros
 		{
 			get
@@ -28518,7 +28338,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_area", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_area", DbType="VarChar(250)")]
 		public string perio_area
 		{
 			get
@@ -28538,7 +28358,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_actividades", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_actividades", DbType="VarChar(250)")]
 		public string perio_actividades
 		{
 			get
@@ -28558,7 +28378,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_tiemTrabajo", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_tiemTrabajo", DbType="VarChar(2)")]
 		public string perio_tiemTrabajo
 		{
 			get
@@ -28578,7 +28398,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_temAltasFis", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_temAltasFis", DbType="VarChar(2)")]
 		public string perio_temAltasFis
 		{
 			get
@@ -28598,7 +28418,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_temBajasFis", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_temBajasFis", DbType="VarChar(2)")]
 		public string perio_temBajasFis
 		{
 			get
@@ -28618,7 +28438,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_radIonizanteFis", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_radIonizanteFis", DbType="VarChar(2)")]
 		public string perio_radIonizanteFis
 		{
 			get
@@ -28638,7 +28458,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_radNoIonizanteFis", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_radNoIonizanteFis", DbType="VarChar(2)")]
 		public string perio_radNoIonizanteFis
 		{
 			get
@@ -28658,7 +28478,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_ruidoFis", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_ruidoFis", DbType="VarChar(2)")]
 		public string perio_ruidoFis
 		{
 			get
@@ -28678,7 +28498,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_vibracionFis", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_vibracionFis", DbType="VarChar(2)")]
 		public string perio_vibracionFis
 		{
 			get
@@ -28698,7 +28518,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_iluminacionFis", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_iluminacionFis", DbType="VarChar(2)")]
 		public string perio_iluminacionFis
 		{
 			get
@@ -28718,7 +28538,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_ventilacionFis", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_ventilacionFis", DbType="VarChar(2)")]
 		public string perio_ventilacionFis
 		{
 			get
@@ -28738,7 +28558,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_fluElectricoFis", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_fluElectricoFis", DbType="VarChar(2)")]
 		public string perio_fluElectricoFis
 		{
 			get
@@ -28758,7 +28578,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_otrosFis", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_otrosFis", DbType="VarChar(2)")]
 		public string perio_otrosFis
 		{
 			get
@@ -28778,7 +28598,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_atraMaquinasMec", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_atraMaquinasMec", DbType="VarChar(2)")]
 		public string perio_atraMaquinasMec
 		{
 			get
@@ -28798,7 +28618,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_atraSuperfiiesMec", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_atraSuperfiiesMec", DbType="VarChar(2)")]
 		public string perio_atraSuperfiiesMec
 		{
 			get
@@ -28818,7 +28638,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_atraObjetosMec", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_atraObjetosMec", DbType="VarChar(2)")]
 		public string perio_atraObjetosMec
 		{
 			get
@@ -28838,7 +28658,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_caidaObjetosMec", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_caidaObjetosMec", DbType="VarChar(2)")]
 		public string perio_caidaObjetosMec
 		{
 			get
@@ -28858,7 +28678,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_caidaMisNivelMec", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_caidaMisNivelMec", DbType="VarChar(2)")]
 		public string perio_caidaMisNivelMec
 		{
 			get
@@ -28878,7 +28698,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_caidaDifNivelMec", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_caidaDifNivelMec", DbType="VarChar(2)")]
 		public string perio_caidaDifNivelMec
 		{
 			get
@@ -28898,7 +28718,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_contactoElecMec", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_contactoElecMec", DbType="VarChar(2)")]
 		public string perio_contactoElecMec
 		{
 			get
@@ -28918,7 +28738,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_conSuperTrabaMec", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_conSuperTrabaMec", DbType="VarChar(2)")]
 		public string perio_conSuperTrabaMec
 		{
 			get
@@ -28938,7 +28758,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_proPartiFragMec", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_proPartiFragMec", DbType="VarChar(2)")]
 		public string perio_proPartiFragMec
 		{
 			get
@@ -28958,7 +28778,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_proFluidosMec", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_proFluidosMec", DbType="VarChar(2)")]
 		public string perio_proFluidosMec
 		{
 			get
@@ -28978,7 +28798,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_pinchazosMec", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_pinchazosMec", DbType="VarChar(2)")]
 		public string perio_pinchazosMec
 		{
 			get
@@ -28998,7 +28818,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_cortesMec", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_cortesMec", DbType="VarChar(2)")]
 		public string perio_cortesMec
 		{
 			get
@@ -29018,7 +28838,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_atropeVehiMec", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_atropeVehiMec", DbType="VarChar(2)")]
 		public string perio_atropeVehiMec
 		{
 			get
@@ -29038,7 +28858,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_coliVehiMec", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_coliVehiMec", DbType="VarChar(2)")]
 		public string perio_coliVehiMec
 		{
 			get
@@ -29058,7 +28878,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_otrosMec", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_otrosMec", DbType="VarChar(2)")]
 		public string perio_otrosMec
 		{
 			get
@@ -29078,7 +28898,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_solidosQui", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_solidosQui", DbType="VarChar(2)")]
 		public string perio_solidosQui
 		{
 			get
@@ -29098,7 +28918,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_polvosQui", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_polvosQui", DbType="VarChar(2)")]
 		public string perio_polvosQui
 		{
 			get
@@ -29118,7 +28938,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_humosQui", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_humosQui", DbType="VarChar(2)")]
 		public string perio_humosQui
 		{
 			get
@@ -29138,7 +28958,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_liquidosQui", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_liquidosQui", DbType="VarChar(2)")]
 		public string perio_liquidosQui
 		{
 			get
@@ -29158,7 +28978,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_vaporesQui", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_vaporesQui", DbType="VarChar(2)")]
 		public string perio_vaporesQui
 		{
 			get
@@ -29178,7 +28998,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_aerosolesQui", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_aerosolesQui", DbType="VarChar(2)")]
 		public string perio_aerosolesQui
 		{
 			get
@@ -29198,7 +29018,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_neblinasQui", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_neblinasQui", DbType="VarChar(2)")]
 		public string perio_neblinasQui
 		{
 			get
@@ -29218,7 +29038,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_gaseososQui", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_gaseososQui", DbType="VarChar(2)")]
 		public string perio_gaseososQui
 		{
 			get
@@ -29238,7 +29058,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_otrosQui", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_otrosQui", DbType="VarChar(2)")]
 		public string perio_otrosQui
 		{
 			get
@@ -29258,7 +29078,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_virusBio", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_virusBio", DbType="VarChar(2)")]
 		public string perio_virusBio
 		{
 			get
@@ -29278,7 +29098,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_hongosBio", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_hongosBio", DbType="VarChar(2)")]
 		public string perio_hongosBio
 		{
 			get
@@ -29298,7 +29118,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_bacteriasBio", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_bacteriasBio", DbType="VarChar(2)")]
 		public string perio_bacteriasBio
 		{
 			get
@@ -29318,7 +29138,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_parasitosBio", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_parasitosBio", DbType="VarChar(2)")]
 		public string perio_parasitosBio
 		{
 			get
@@ -29338,7 +29158,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_expVectBio", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_expVectBio", DbType="VarChar(2)")]
 		public string perio_expVectBio
 		{
 			get
@@ -29358,7 +29178,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_expAniSelvaBio", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_expAniSelvaBio", DbType="VarChar(2)")]
 		public string perio_expAniSelvaBio
 		{
 			get
@@ -29378,7 +29198,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_otrosBio", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_otrosBio", DbType="VarChar(2)")]
 		public string perio_otrosBio
 		{
 			get
@@ -29398,7 +29218,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_maneManCarErg", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_maneManCarErg", DbType="VarChar(2)")]
 		public string perio_maneManCarErg
 		{
 			get
@@ -29418,7 +29238,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_movRepeErg", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_movRepeErg", DbType="VarChar(2)")]
 		public string perio_movRepeErg
 		{
 			get
@@ -29438,7 +29258,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_posForzaErg", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_posForzaErg", DbType="VarChar(2)")]
 		public string perio_posForzaErg
 		{
 			get
@@ -29458,7 +29278,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_trabPvdErg", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_trabPvdErg", DbType="VarChar(2)")]
 		public string perio_trabPvdErg
 		{
 			get
@@ -29478,7 +29298,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_otrosErg", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_otrosErg", DbType="VarChar(2)")]
 		public string perio_otrosErg
 		{
 			get
@@ -29498,7 +29318,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_monoTrabPsi", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_monoTrabPsi", DbType="VarChar(2)")]
 		public string perio_monoTrabPsi
 		{
 			get
@@ -29518,7 +29338,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_sobrecarLabPsi", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_sobrecarLabPsi", DbType="VarChar(2)")]
 		public string perio_sobrecarLabPsi
 		{
 			get
@@ -29538,7 +29358,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_minuTareaPsi", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_minuTareaPsi", DbType="VarChar(2)")]
 		public string perio_minuTareaPsi
 		{
 			get
@@ -29558,7 +29378,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_altaResponPsi", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_altaResponPsi", DbType="VarChar(2)")]
 		public string perio_altaResponPsi
 		{
 			get
@@ -29578,7 +29398,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_autoTomaDesiPsi", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_autoTomaDesiPsi", DbType="VarChar(2)")]
 		public string perio_autoTomaDesiPsi
 		{
 			get
@@ -29598,7 +29418,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_supEstDirecDefiPsi", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_supEstDirecDefiPsi", DbType="VarChar(2)")]
 		public string perio_supEstDirecDefiPsi
 		{
 			get
@@ -29618,7 +29438,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_conflicRolPsi", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_conflicRolPsi", DbType="VarChar(2)")]
 		public string perio_conflicRolPsi
 		{
 			get
@@ -29638,7 +29458,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_falClariFunPsi", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_falClariFunPsi", DbType="VarChar(2)")]
 		public string perio_falClariFunPsi
 		{
 			get
@@ -29658,7 +29478,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_incoDistriTrabPsi", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_incoDistriTrabPsi", DbType="VarChar(2)")]
 		public string perio_incoDistriTrabPsi
 		{
 			get
@@ -29678,7 +29498,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_turnosRotaPsi", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_turnosRotaPsi", DbType="VarChar(2)")]
 		public string perio_turnosRotaPsi
 		{
 			get
@@ -29698,7 +29518,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_relInterperPsi", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_relInterperPsi", DbType="VarChar(2)")]
 		public string perio_relInterperPsi
 		{
 			get
@@ -29718,7 +29538,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_inesLabPsi", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_inesLabPsi", DbType="VarChar(2)")]
 		public string perio_inesLabPsi
 		{
 			get
@@ -29738,7 +29558,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_otrosPsi", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_otrosPsi", DbType="VarChar(2)")]
 		public string perio_otrosPsi
 		{
 			get
@@ -29778,7 +29598,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_area2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_area2", DbType="VarChar(250)")]
 		public string perio_area2
 		{
 			get
@@ -29798,7 +29618,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_actividades2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_actividades2", DbType="VarChar(25)")]
 		public string perio_actividades2
 		{
 			get
@@ -29818,7 +29638,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_tiemTrabajo2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_tiemTrabajo2", DbType="VarChar(2)")]
 		public string perio_tiemTrabajo2
 		{
 			get
@@ -29838,7 +29658,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_temAltasFis2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_temAltasFis2", DbType="VarChar(2)")]
 		public string perio_temAltasFis2
 		{
 			get
@@ -29858,7 +29678,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_temBajasFis2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_temBajasFis2", DbType="VarChar(2)")]
 		public string perio_temBajasFis2
 		{
 			get
@@ -29878,7 +29698,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_radIonizanteFis2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_radIonizanteFis2", DbType="VarChar(2)")]
 		public string perio_radIonizanteFis2
 		{
 			get
@@ -29898,7 +29718,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_radNoIonizanteFis2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_radNoIonizanteFis2", DbType="VarChar(2)")]
 		public string perio_radNoIonizanteFis2
 		{
 			get
@@ -29918,7 +29738,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_ruidoFis2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_ruidoFis2", DbType="VarChar(2)")]
 		public string perio_ruidoFis2
 		{
 			get
@@ -29938,7 +29758,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_vibracionFis2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_vibracionFis2", DbType="VarChar(2)")]
 		public string perio_vibracionFis2
 		{
 			get
@@ -29958,7 +29778,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_iluminacionFis2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_iluminacionFis2", DbType="VarChar(2)")]
 		public string perio_iluminacionFis2
 		{
 			get
@@ -29978,7 +29798,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_ventilacionFis2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_ventilacionFis2", DbType="VarChar(2)")]
 		public string perio_ventilacionFis2
 		{
 			get
@@ -29998,7 +29818,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_fluElectricoFis2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_fluElectricoFis2", DbType="VarChar(2)")]
 		public string perio_fluElectricoFis2
 		{
 			get
@@ -30018,7 +29838,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_otrosFis2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_otrosFis2", DbType="VarChar(2)")]
 		public string perio_otrosFis2
 		{
 			get
@@ -30038,7 +29858,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_atraMaquinasMec2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_atraMaquinasMec2", DbType="VarChar(2)")]
 		public string perio_atraMaquinasMec2
 		{
 			get
@@ -30058,7 +29878,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_atraSuperfiiesMec2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_atraSuperfiiesMec2", DbType="VarChar(2)")]
 		public string perio_atraSuperfiiesMec2
 		{
 			get
@@ -30078,7 +29898,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_atraObjetosMec2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_atraObjetosMec2", DbType="VarChar(2)")]
 		public string perio_atraObjetosMec2
 		{
 			get
@@ -30098,7 +29918,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_caidaObjetosMec2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_caidaObjetosMec2", DbType="VarChar(2)")]
 		public string perio_caidaObjetosMec2
 		{
 			get
@@ -30118,7 +29938,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_caidaMisNivelMec2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_caidaMisNivelMec2", DbType="VarChar(2)")]
 		public string perio_caidaMisNivelMec2
 		{
 			get
@@ -30138,7 +29958,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_caidaDifNivelMec2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_caidaDifNivelMec2", DbType="VarChar(2)")]
 		public string perio_caidaDifNivelMec2
 		{
 			get
@@ -30158,7 +29978,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_contactoElecMec2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_contactoElecMec2", DbType="VarChar(2)")]
 		public string perio_contactoElecMec2
 		{
 			get
@@ -30178,7 +29998,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_conSuperTrabaMec2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_conSuperTrabaMec2", DbType="VarChar(2)")]
 		public string perio_conSuperTrabaMec2
 		{
 			get
@@ -30198,7 +30018,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_proPartiFragMec2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_proPartiFragMec2", DbType="VarChar(2)")]
 		public string perio_proPartiFragMec2
 		{
 			get
@@ -30218,7 +30038,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_proFluidosMec2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_proFluidosMec2", DbType="VarChar(2)")]
 		public string perio_proFluidosMec2
 		{
 			get
@@ -30238,7 +30058,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_pinchazosMec2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_pinchazosMec2", DbType="VarChar(2)")]
 		public string perio_pinchazosMec2
 		{
 			get
@@ -30258,7 +30078,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_cortesMec2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_cortesMec2", DbType="VarChar(2)")]
 		public string perio_cortesMec2
 		{
 			get
@@ -30278,7 +30098,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_atropeVehiMec2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_atropeVehiMec2", DbType="VarChar(2)")]
 		public string perio_atropeVehiMec2
 		{
 			get
@@ -30298,7 +30118,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_coliVehiMec2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_coliVehiMec2", DbType="VarChar(2)")]
 		public string perio_coliVehiMec2
 		{
 			get
@@ -30318,7 +30138,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_otrosMec2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_otrosMec2", DbType="VarChar(2)")]
 		public string perio_otrosMec2
 		{
 			get
@@ -30338,7 +30158,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_solidosQui2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_solidosQui2", DbType="VarChar(2)")]
 		public string perio_solidosQui2
 		{
 			get
@@ -30358,7 +30178,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_polvosQui2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_polvosQui2", DbType="VarChar(2)")]
 		public string perio_polvosQui2
 		{
 			get
@@ -30378,7 +30198,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_humosQui2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_humosQui2", DbType="VarChar(2)")]
 		public string perio_humosQui2
 		{
 			get
@@ -30398,7 +30218,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_liquidosQui2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_liquidosQui2", DbType="VarChar(2)")]
 		public string perio_liquidosQui2
 		{
 			get
@@ -30418,7 +30238,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_vaporesQui2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_vaporesQui2", DbType="VarChar(2)")]
 		public string perio_vaporesQui2
 		{
 			get
@@ -30438,7 +30258,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_aerosolesQui2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_aerosolesQui2", DbType="VarChar(2)")]
 		public string perio_aerosolesQui2
 		{
 			get
@@ -30458,7 +30278,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_neblinasQui2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_neblinasQui2", DbType="VarChar(2)")]
 		public string perio_neblinasQui2
 		{
 			get
@@ -30478,7 +30298,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_gaseososQui2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_gaseososQui2", DbType="VarChar(2)")]
 		public string perio_gaseososQui2
 		{
 			get
@@ -30498,7 +30318,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_otrosQui2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_otrosQui2", DbType="VarChar(2)")]
 		public string perio_otrosQui2
 		{
 			get
@@ -30518,7 +30338,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_virusBio2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_virusBio2", DbType="VarChar(2)")]
 		public string perio_virusBio2
 		{
 			get
@@ -30538,7 +30358,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_hongosBio2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_hongosBio2", DbType="VarChar(2)")]
 		public string perio_hongosBio2
 		{
 			get
@@ -30558,7 +30378,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_bacteriasBio2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_bacteriasBio2", DbType="VarChar(2)")]
 		public string perio_bacteriasBio2
 		{
 			get
@@ -30578,7 +30398,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_parasitosBio2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_parasitosBio2", DbType="VarChar(2)")]
 		public string perio_parasitosBio2
 		{
 			get
@@ -30598,7 +30418,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_expVectBio2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_expVectBio2", DbType="VarChar(2)")]
 		public string perio_expVectBio2
 		{
 			get
@@ -30618,7 +30438,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_expAniSelvaBio2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_expAniSelvaBio2", DbType="VarChar(2)")]
 		public string perio_expAniSelvaBio2
 		{
 			get
@@ -30638,7 +30458,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_otrosBio2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_otrosBio2", DbType="VarChar(2)")]
 		public string perio_otrosBio2
 		{
 			get
@@ -30658,7 +30478,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_maneManCarErg2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_maneManCarErg2", DbType="VarChar(2)")]
 		public string perio_maneManCarErg2
 		{
 			get
@@ -30678,7 +30498,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_movRepeErg2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_movRepeErg2", DbType="VarChar(2)")]
 		public string perio_movRepeErg2
 		{
 			get
@@ -30698,7 +30518,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_posForzaErg2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_posForzaErg2", DbType="VarChar(2)")]
 		public string perio_posForzaErg2
 		{
 			get
@@ -30718,7 +30538,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_trabPvdErg2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_trabPvdErg2", DbType="VarChar(2)")]
 		public string perio_trabPvdErg2
 		{
 			get
@@ -30738,7 +30558,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_otrosErg2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_otrosErg2", DbType="VarChar(2)")]
 		public string perio_otrosErg2
 		{
 			get
@@ -30758,7 +30578,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_monoTrabPsi2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_monoTrabPsi2", DbType="VarChar(2)")]
 		public string perio_monoTrabPsi2
 		{
 			get
@@ -30778,7 +30598,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_sobrecarLabPsi2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_sobrecarLabPsi2", DbType="VarChar(2)")]
 		public string perio_sobrecarLabPsi2
 		{
 			get
@@ -30798,7 +30618,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_minuTareaPsi2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_minuTareaPsi2", DbType="VarChar(2)")]
 		public string perio_minuTareaPsi2
 		{
 			get
@@ -30818,7 +30638,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_altaResponPsi2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_altaResponPsi2", DbType="VarChar(2)")]
 		public string perio_altaResponPsi2
 		{
 			get
@@ -30838,7 +30658,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_autoTomaDesiPsi2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_autoTomaDesiPsi2", DbType="VarChar(2)")]
 		public string perio_autoTomaDesiPsi2
 		{
 			get
@@ -30858,7 +30678,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_supEstDirecDefiPsi2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_supEstDirecDefiPsi2", DbType="VarChar(2)")]
 		public string perio_supEstDirecDefiPsi2
 		{
 			get
@@ -30878,7 +30698,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_conflicRolPsi2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_conflicRolPsi2", DbType="VarChar(2)")]
 		public string perio_conflicRolPsi2
 		{
 			get
@@ -30898,7 +30718,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_falClariFunPsi2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_falClariFunPsi2", DbType="VarChar(2)")]
 		public string perio_falClariFunPsi2
 		{
 			get
@@ -30918,7 +30738,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_incoDistriTrabPsi2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_incoDistriTrabPsi2", DbType="VarChar(2)")]
 		public string perio_incoDistriTrabPsi2
 		{
 			get
@@ -30938,7 +30758,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_turnosRotaPsi2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_turnosRotaPsi2", DbType="VarChar(2)")]
 		public string perio_turnosRotaPsi2
 		{
 			get
@@ -30958,7 +30778,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_relInterperPsi2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_relInterperPsi2", DbType="VarChar(2)")]
 		public string perio_relInterperPsi2
 		{
 			get
@@ -30978,7 +30798,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_inesLabPsi2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_inesLabPsi2", DbType="VarChar(2)")]
 		public string perio_inesLabPsi2
 		{
 			get
@@ -30998,7 +30818,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_otrosPsi2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_otrosPsi2", DbType="VarChar(2)")]
 		public string perio_otrosPsi2
 		{
 			get
@@ -31038,7 +30858,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_area3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_area3", DbType="VarChar(250)")]
 		public string perio_area3
 		{
 			get
@@ -31058,7 +30878,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_actividades3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_actividades3", DbType="VarChar(250)")]
 		public string perio_actividades3
 		{
 			get
@@ -31078,7 +30898,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_tiemTrabajo3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_tiemTrabajo3", DbType="VarChar(2)")]
 		public string perio_tiemTrabajo3
 		{
 			get
@@ -31098,7 +30918,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_temAltasFis3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_temAltasFis3", DbType="VarChar(2)")]
 		public string perio_temAltasFis3
 		{
 			get
@@ -31118,7 +30938,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_temBajasFis3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_temBajasFis3", DbType="VarChar(2)")]
 		public string perio_temBajasFis3
 		{
 			get
@@ -31138,7 +30958,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_radIonizanteFis3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_radIonizanteFis3", DbType="VarChar(2)")]
 		public string perio_radIonizanteFis3
 		{
 			get
@@ -31158,7 +30978,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_radNoIonizanteFis3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_radNoIonizanteFis3", DbType="VarChar(2)")]
 		public string perio_radNoIonizanteFis3
 		{
 			get
@@ -31178,7 +30998,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_ruidoFis3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_ruidoFis3", DbType="VarChar(2)")]
 		public string perio_ruidoFis3
 		{
 			get
@@ -31198,7 +31018,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_vibracionFis3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_vibracionFis3", DbType="VarChar(2)")]
 		public string perio_vibracionFis3
 		{
 			get
@@ -31218,7 +31038,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_iluminacionFis3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_iluminacionFis3", DbType="VarChar(2)")]
 		public string perio_iluminacionFis3
 		{
 			get
@@ -31238,7 +31058,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_ventilacionFis3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_ventilacionFis3", DbType="VarChar(2)")]
 		public string perio_ventilacionFis3
 		{
 			get
@@ -31258,7 +31078,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_fluElectricoFis3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_fluElectricoFis3", DbType="VarChar(2)")]
 		public string perio_fluElectricoFis3
 		{
 			get
@@ -31278,7 +31098,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_otrosFis3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_otrosFis3", DbType="VarChar(2)")]
 		public string perio_otrosFis3
 		{
 			get
@@ -31298,7 +31118,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_atraMaquinasMec3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_atraMaquinasMec3", DbType="VarChar(2)")]
 		public string perio_atraMaquinasMec3
 		{
 			get
@@ -31318,7 +31138,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_atraSuperfiiesMec3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_atraSuperfiiesMec3", DbType="VarChar(2)")]
 		public string perio_atraSuperfiiesMec3
 		{
 			get
@@ -31338,7 +31158,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_atraObjetosMec3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_atraObjetosMec3", DbType="VarChar(2)")]
 		public string perio_atraObjetosMec3
 		{
 			get
@@ -31358,7 +31178,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_caidaObjetosMec3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_caidaObjetosMec3", DbType="VarChar(2)")]
 		public string perio_caidaObjetosMec3
 		{
 			get
@@ -31378,7 +31198,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_caidaMisNivelMec3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_caidaMisNivelMec3", DbType="VarChar(2)")]
 		public string perio_caidaMisNivelMec3
 		{
 			get
@@ -31398,7 +31218,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_caidaDifNivelMec3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_caidaDifNivelMec3", DbType="VarChar(2)")]
 		public string perio_caidaDifNivelMec3
 		{
 			get
@@ -31418,7 +31238,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_contactoElecMec3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_contactoElecMec3", DbType="VarChar(2)")]
 		public string perio_contactoElecMec3
 		{
 			get
@@ -31438,7 +31258,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_conSuperTrabaMec3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_conSuperTrabaMec3", DbType="VarChar(2)")]
 		public string perio_conSuperTrabaMec3
 		{
 			get
@@ -31458,7 +31278,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_proPartiFragMec3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_proPartiFragMec3", DbType="VarChar(2)")]
 		public string perio_proPartiFragMec3
 		{
 			get
@@ -31478,7 +31298,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_proFluidosMec3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_proFluidosMec3", DbType="VarChar(2)")]
 		public string perio_proFluidosMec3
 		{
 			get
@@ -31498,7 +31318,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_pinchazosMec3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_pinchazosMec3", DbType="VarChar(2)")]
 		public string perio_pinchazosMec3
 		{
 			get
@@ -31518,7 +31338,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_cortesMec3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_cortesMec3", DbType="VarChar(2)")]
 		public string perio_cortesMec3
 		{
 			get
@@ -31538,7 +31358,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_atropeVehiMec3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_atropeVehiMec3", DbType="VarChar(2)")]
 		public string perio_atropeVehiMec3
 		{
 			get
@@ -31558,7 +31378,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_coliVehiMec3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_coliVehiMec3", DbType="VarChar(2)")]
 		public string perio_coliVehiMec3
 		{
 			get
@@ -31578,7 +31398,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_otrosMec3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_otrosMec3", DbType="VarChar(2)")]
 		public string perio_otrosMec3
 		{
 			get
@@ -31598,7 +31418,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_solidosQui3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_solidosQui3", DbType="VarChar(2)")]
 		public string perio_solidosQui3
 		{
 			get
@@ -31618,7 +31438,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_polvosQui3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_polvosQui3", DbType="VarChar(2)")]
 		public string perio_polvosQui3
 		{
 			get
@@ -31638,7 +31458,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_humosQui3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_humosQui3", DbType="VarChar(2)")]
 		public string perio_humosQui3
 		{
 			get
@@ -31658,7 +31478,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_liquidosQui3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_liquidosQui3", DbType="VarChar(2)")]
 		public string perio_liquidosQui3
 		{
 			get
@@ -31678,7 +31498,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_vaporesQui3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_vaporesQui3", DbType="VarChar(2)")]
 		public string perio_vaporesQui3
 		{
 			get
@@ -31698,7 +31518,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_aerosolesQui3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_aerosolesQui3", DbType="VarChar(2)")]
 		public string perio_aerosolesQui3
 		{
 			get
@@ -31718,7 +31538,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_neblinasQui3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_neblinasQui3", DbType="VarChar(2)")]
 		public string perio_neblinasQui3
 		{
 			get
@@ -31738,7 +31558,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_gaseososQui3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_gaseososQui3", DbType="VarChar(2)")]
 		public string perio_gaseososQui3
 		{
 			get
@@ -31758,7 +31578,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_otrosQui3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_otrosQui3", DbType="VarChar(2)")]
 		public string perio_otrosQui3
 		{
 			get
@@ -31778,7 +31598,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_virusBio3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_virusBio3", DbType="VarChar(2)")]
 		public string perio_virusBio3
 		{
 			get
@@ -31798,7 +31618,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_hongosBio3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_hongosBio3", DbType="VarChar(2)")]
 		public string perio_hongosBio3
 		{
 			get
@@ -31818,7 +31638,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_bacteriasBio3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_bacteriasBio3", DbType="VarChar(2)")]
 		public string perio_bacteriasBio3
 		{
 			get
@@ -31838,7 +31658,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_parasitosBio3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_parasitosBio3", DbType="VarChar(2)")]
 		public string perio_parasitosBio3
 		{
 			get
@@ -31858,7 +31678,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_expVectBio3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_expVectBio3", DbType="VarChar(2)")]
 		public string perio_expVectBio3
 		{
 			get
@@ -31878,7 +31698,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_expAniSelvaBio3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_expAniSelvaBio3", DbType="VarChar(2)")]
 		public string perio_expAniSelvaBio3
 		{
 			get
@@ -31898,7 +31718,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_otrosBio3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_otrosBio3", DbType="VarChar(2)")]
 		public string perio_otrosBio3
 		{
 			get
@@ -31918,7 +31738,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_maneManCarErg3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_maneManCarErg3", DbType="VarChar(2)")]
 		public string perio_maneManCarErg3
 		{
 			get
@@ -31938,7 +31758,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_movRepeErg3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_movRepeErg3", DbType="VarChar(2)")]
 		public string perio_movRepeErg3
 		{
 			get
@@ -31958,7 +31778,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_posForzaErg3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_posForzaErg3", DbType="VarChar(2)")]
 		public string perio_posForzaErg3
 		{
 			get
@@ -31978,7 +31798,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_trabPvdErg3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_trabPvdErg3", DbType="VarChar(2)")]
 		public string perio_trabPvdErg3
 		{
 			get
@@ -31998,7 +31818,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_otrosErg3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_otrosErg3", DbType="VarChar(2)")]
 		public string perio_otrosErg3
 		{
 			get
@@ -32018,7 +31838,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_monoTrabPsi3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_monoTrabPsi3", DbType="VarChar(2)")]
 		public string perio_monoTrabPsi3
 		{
 			get
@@ -32038,7 +31858,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_sobrecarLabPsi3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_sobrecarLabPsi3", DbType="VarChar(2)")]
 		public string perio_sobrecarLabPsi3
 		{
 			get
@@ -32058,7 +31878,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_minuTareaPsi3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_minuTareaPsi3", DbType="VarChar(2)")]
 		public string perio_minuTareaPsi3
 		{
 			get
@@ -32078,7 +31898,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_altaResponPsi3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_altaResponPsi3", DbType="VarChar(2)")]
 		public string perio_altaResponPsi3
 		{
 			get
@@ -32098,7 +31918,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_autoTomaDesiPsi3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_autoTomaDesiPsi3", DbType="VarChar(2)")]
 		public string perio_autoTomaDesiPsi3
 		{
 			get
@@ -32118,7 +31938,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_supEstDirecDefiPsi3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_supEstDirecDefiPsi3", DbType="VarChar(2)")]
 		public string perio_supEstDirecDefiPsi3
 		{
 			get
@@ -32138,7 +31958,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_conflicRolPsi3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_conflicRolPsi3", DbType="VarChar(2)")]
 		public string perio_conflicRolPsi3
 		{
 			get
@@ -32158,7 +31978,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_falClariFunPsi3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_falClariFunPsi3", DbType="VarChar(2)")]
 		public string perio_falClariFunPsi3
 		{
 			get
@@ -32178,7 +31998,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_incoDistriTrabPsi3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_incoDistriTrabPsi3", DbType="VarChar(2)")]
 		public string perio_incoDistriTrabPsi3
 		{
 			get
@@ -32198,7 +32018,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_turnosRotaPsi3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_turnosRotaPsi3", DbType="VarChar(2)")]
 		public string perio_turnosRotaPsi3
 		{
 			get
@@ -32218,7 +32038,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_relInterperPsi3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_relInterperPsi3", DbType="VarChar(2)")]
 		public string perio_relInterperPsi3
 		{
 			get
@@ -32238,7 +32058,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_inesLabPsi3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_inesLabPsi3", DbType="VarChar(2)")]
 		public string perio_inesLabPsi3
 		{
 			get
@@ -32258,7 +32078,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_otrosPsi3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_otrosPsi3", DbType="VarChar(2)")]
 		public string perio_otrosPsi3
 		{
 			get
@@ -32318,7 +32138,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_pielAnexos", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_pielAnexos", DbType="VarChar(2)")]
 		public string perio_pielAnexos
 		{
 			get
@@ -32338,7 +32158,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_orgSentidos", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_orgSentidos", DbType="VarChar(2)")]
 		public string perio_orgSentidos
 		{
 			get
@@ -32358,7 +32178,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_respiratorio", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_respiratorio", DbType="VarChar(2)")]
 		public string perio_respiratorio
 		{
 			get
@@ -32378,7 +32198,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_cardVascular", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_cardVascular", DbType="VarChar(2)")]
 		public string perio_cardVascular
 		{
 			get
@@ -32398,7 +32218,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_digestivo", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_digestivo", DbType="VarChar(2)")]
 		public string perio_digestivo
 		{
 			get
@@ -32418,7 +32238,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_genUrinario", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_genUrinario", DbType="VarChar(2)")]
 		public string perio_genUrinario
 		{
 			get
@@ -32438,7 +32258,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_muscEsqueletico", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_muscEsqueletico", DbType="VarChar(2)")]
 		public string perio_muscEsqueletico
 		{
 			get
@@ -32458,7 +32278,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_endocrino", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_endocrino", DbType="VarChar(2)")]
 		public string perio_endocrino
 		{
 			get
@@ -32478,7 +32298,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_hemoLimfa", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_hemoLimfa", DbType="VarChar(2)")]
 		public string perio_hemoLimfa
 		{
 			get
@@ -32498,7 +32318,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_nervioso", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_nervioso", DbType="VarChar(2)")]
 		public string perio_nervioso
 		{
 			get
@@ -32538,7 +32358,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_preArterial", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_preArterial", DbType="VarChar(10)")]
 		public string perio_preArterial
 		{
 			get
@@ -32558,7 +32378,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_temperatura", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_temperatura", DbType="VarChar(10)")]
 		public string perio_temperatura
 		{
 			get
@@ -32578,7 +32398,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_frecCardiacan", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_frecCardiacan", DbType="VarChar(10)")]
 		public string perio_frecCardiacan
 		{
 			get
@@ -32598,7 +32418,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_satOxigenon", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_satOxigenon", DbType="VarChar(10)")]
 		public string perio_satOxigenon
 		{
 			get
@@ -32618,7 +32438,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_frecRespiratorian", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_frecRespiratorian", DbType="VarChar(10)")]
 		public string perio_frecRespiratorian
 		{
 			get
@@ -32638,7 +32458,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_peson", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_peson", DbType="VarChar(10)")]
 		public string perio_peson
 		{
 			get
@@ -32658,7 +32478,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_tallan", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_tallan", DbType="VarChar(10)")]
 		public string perio_tallan
 		{
 			get
@@ -32678,7 +32498,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_indMasCorporaln", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_indMasCorporaln", DbType="VarChar(10)")]
 		public string perio_indMasCorporaln
 		{
 			get
@@ -32698,7 +32518,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_perAbdominaln", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_perAbdominaln", DbType="VarChar(10)")]
 		public string perio_perAbdominaln
 		{
 			get
@@ -32718,7 +32538,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_cicatricesPiel", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_cicatricesPiel", DbType="VarChar(2)")]
 		public string perio_cicatricesPiel
 		{
 			get
@@ -32738,7 +32558,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_tatuajesPiel", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_tatuajesPiel", DbType="VarChar(2)")]
 		public string perio_tatuajesPiel
 		{
 			get
@@ -32758,7 +32578,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_pielFacerasPiel", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_pielFacerasPiel", DbType="VarChar(2)")]
 		public string perio_pielFacerasPiel
 		{
 			get
@@ -32778,7 +32598,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_parpadosOjos", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_parpadosOjos", DbType="VarChar(2)")]
 		public string perio_parpadosOjos
 		{
 			get
@@ -32798,7 +32618,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_conjuntuvasOjos", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_conjuntuvasOjos", DbType="VarChar(2)")]
 		public string perio_conjuntuvasOjos
 		{
 			get
@@ -32818,7 +32638,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_pupilasOjos", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_pupilasOjos", DbType="VarChar(2)")]
 		public string perio_pupilasOjos
 		{
 			get
@@ -32838,7 +32658,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_corneaOjos", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_corneaOjos", DbType="VarChar(2)")]
 		public string perio_corneaOjos
 		{
 			get
@@ -32858,7 +32678,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_motilidadOjos", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_motilidadOjos", DbType="VarChar(2)")]
 		public string perio_motilidadOjos
 		{
 			get
@@ -32878,7 +32698,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_cAudiExtreOido", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_cAudiExtreOido", DbType="VarChar(2)")]
 		public string perio_cAudiExtreOido
 		{
 			get
@@ -32898,7 +32718,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_pabellonOido", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_pabellonOido", DbType="VarChar(2)")]
 		public string perio_pabellonOido
 		{
 			get
@@ -32918,7 +32738,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_timpanosOido", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_timpanosOido", DbType="VarChar(2)")]
 		public string perio_timpanosOido
 		{
 			get
@@ -32938,7 +32758,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_labiosOroFa", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_labiosOroFa", DbType="VarChar(2)")]
 		public string perio_labiosOroFa
 		{
 			get
@@ -32958,7 +32778,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_lenguaOroFa", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_lenguaOroFa", DbType="VarChar(2)")]
 		public string perio_lenguaOroFa
 		{
 			get
@@ -32978,7 +32798,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_faringeOroFa", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_faringeOroFa", DbType="VarChar(2)")]
 		public string perio_faringeOroFa
 		{
 			get
@@ -32998,7 +32818,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_amigdalasOroFa", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_amigdalasOroFa", DbType="VarChar(2)")]
 		public string perio_amigdalasOroFa
 		{
 			get
@@ -33018,7 +32838,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_dentaduraOroFa", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_dentaduraOroFa", DbType="VarChar(2)")]
 		public string perio_dentaduraOroFa
 		{
 			get
@@ -33038,7 +32858,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_tabiqueNariz", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_tabiqueNariz", DbType="VarChar(2)")]
 		public string perio_tabiqueNariz
 		{
 			get
@@ -33058,7 +32878,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_cornetesNariz", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_cornetesNariz", DbType="VarChar(2)")]
 		public string perio_cornetesNariz
 		{
 			get
@@ -33078,7 +32898,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_mucosasNariz", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_mucosasNariz", DbType="VarChar(2)")]
 		public string perio_mucosasNariz
 		{
 			get
@@ -33098,7 +32918,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_senosParanaNariz", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_senosParanaNariz", DbType="VarChar(2)")]
 		public string perio_senosParanaNariz
 		{
 			get
@@ -33118,7 +32938,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_tiroiMasasCuello", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_tiroiMasasCuello", DbType="VarChar(2)")]
 		public string perio_tiroiMasasCuello
 		{
 			get
@@ -33138,7 +32958,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_movilidadCuello", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_movilidadCuello", DbType="VarChar(2)")]
 		public string perio_movilidadCuello
 		{
 			get
@@ -33158,7 +32978,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_mamasTorax", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_mamasTorax", DbType="VarChar(2)")]
 		public string perio_mamasTorax
 		{
 			get
@@ -33178,7 +32998,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_corazonTorax", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_corazonTorax", DbType="VarChar(2)")]
 		public string perio_corazonTorax
 		{
 			get
@@ -33198,7 +33018,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_pulmonesTorax2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_pulmonesTorax2", DbType="VarChar(2)")]
 		public string perio_pulmonesTorax2
 		{
 			get
@@ -33218,7 +33038,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_parriCostalTorax2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_parriCostalTorax2", DbType="VarChar(2)")]
 		public string perio_parriCostalTorax2
 		{
 			get
@@ -33238,7 +33058,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_viscerasAbdomen", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_viscerasAbdomen", DbType="VarChar(2)")]
 		public string perio_viscerasAbdomen
 		{
 			get
@@ -33258,7 +33078,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_paredAbdomiAbdomen", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_paredAbdomiAbdomen", DbType="VarChar(2)")]
 		public string perio_paredAbdomiAbdomen
 		{
 			get
@@ -33278,7 +33098,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_flexibilidadColumna", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_flexibilidadColumna", DbType="VarChar(2)")]
 		public string perio_flexibilidadColumna
 		{
 			get
@@ -33298,7 +33118,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_desviacionColumna", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_desviacionColumna", DbType="VarChar(2)")]
 		public string perio_desviacionColumna
 		{
 			get
@@ -33318,7 +33138,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_dolorColumna", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_dolorColumna", DbType="VarChar(2)")]
 		public string perio_dolorColumna
 		{
 			get
@@ -33338,7 +33158,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_pelvisPelvis", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_pelvisPelvis", DbType="VarChar(2)")]
 		public string perio_pelvisPelvis
 		{
 			get
@@ -33358,7 +33178,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_genitalesPelvis", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_genitalesPelvis", DbType="VarChar(2)")]
 		public string perio_genitalesPelvis
 		{
 			get
@@ -33378,7 +33198,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_vascularExtre", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_vascularExtre", DbType="VarChar(2)")]
 		public string perio_vascularExtre
 		{
 			get
@@ -33398,7 +33218,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_miemSupeExtre", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_miemSupeExtre", DbType="VarChar(2)")]
 		public string perio_miemSupeExtre
 		{
 			get
@@ -33418,7 +33238,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_miemInfeExtre", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_miemInfeExtre", DbType="VarChar(2)")]
 		public string perio_miemInfeExtre
 		{
 			get
@@ -33438,7 +33258,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_fuerzaNeuro", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_fuerzaNeuro", DbType="VarChar(2)")]
 		public string perio_fuerzaNeuro
 		{
 			get
@@ -33458,7 +33278,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_sensibiNeuro", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_sensibiNeuro", DbType="VarChar(2)")]
 		public string perio_sensibiNeuro
 		{
 			get
@@ -33478,7 +33298,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_marchaNeuro", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_marchaNeuro", DbType="VarChar(2)")]
 		public string perio_marchaNeuro
 		{
 			get
@@ -33498,7 +33318,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_refleNeuro", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_refleNeuro", DbType="VarChar(2)")]
 		public string perio_refleNeuro
 		{
 			get
@@ -33538,7 +33358,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_examen", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_examen", DbType="VarChar(250)")]
 		public string perio_examen
 		{
 			get
@@ -33558,7 +33378,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_fecha", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_fecha", DbType="VarChar(10)")]
 		public string perio_fecha
 		{
 			get
@@ -33578,7 +33398,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_resultado", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_resultado", DbType="VarChar(250)")]
 		public string perio_resultado
 		{
 			get
@@ -33598,7 +33418,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_examen2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_examen2", DbType="VarChar(250)")]
 		public string perio_examen2
 		{
 			get
@@ -33618,7 +33438,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_fecha2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_fecha2", DbType="VarChar(10)")]
 		public string perio_fecha2
 		{
 			get
@@ -33638,7 +33458,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_resultado2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_resultado2", DbType="VarChar(250)")]
 		public string perio_resultado2
 		{
 			get
@@ -33698,7 +33518,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_cie", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_cie", DbType="VarChar(10)")]
 		public string perio_cie
 		{
 			get
@@ -33718,7 +33538,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_pre", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_pre", DbType="VarChar(2)")]
 		public string perio_pre
 		{
 			get
@@ -33738,7 +33558,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_def", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_def", DbType="VarChar(2)")]
 		public string perio_def
 		{
 			get
@@ -33778,7 +33598,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_cie2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_cie2", DbType="VarChar(10)")]
 		public string perio_cie2
 		{
 			get
@@ -33798,7 +33618,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_pre2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_pre2", DbType="VarChar(2)")]
 		public string perio_pre2
 		{
 			get
@@ -33818,7 +33638,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_def2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_def2", DbType="VarChar(2)")]
 		public string perio_def2
 		{
 			get
@@ -33858,7 +33678,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_cie3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_cie3", DbType="VarChar(10)")]
 		public string perio_cie3
 		{
 			get
@@ -33878,7 +33698,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_pre3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_pre3", DbType="VarChar(2)")]
 		public string perio_pre3
 		{
 			get
@@ -33898,7 +33718,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_def3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_def3", DbType="VarChar(2)")]
 		public string perio_def3
 		{
 			get
@@ -33918,7 +33738,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_apto", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_apto", DbType="VarChar(2)")]
 		public string perio_apto
 		{
 			get
@@ -33938,7 +33758,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_aptoObserva", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_aptoObserva", DbType="VarChar(2)")]
 		public string perio_aptoObserva
 		{
 			get
@@ -33958,7 +33778,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_aptoLimi", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_aptoLimi", DbType="VarChar(2)")]
 		public string perio_aptoLimi
 		{
 			get
@@ -33978,7 +33798,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_NoApto", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_NoApto", DbType="VarChar(2)")]
 		public string perio_NoApto
 		{
 			get
@@ -34058,7 +33878,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_fecha_hora", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_fecha_hora", DbType="VarChar(25)")]
 		public string perio_fecha_hora
 		{
 			get
@@ -34126,7 +33946,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_cod", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_cod", DbType="VarChar(25)")]
 		public string perio_cod
 		{
 			get
@@ -34459,7 +34279,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_cedula", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_cedula", DbType="VarChar(10)")]
 		public string Per_cedula
 		{
 			get
@@ -34479,7 +34299,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_priApellido", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_priApellido", DbType="VarChar(25)")]
 		public string Per_priApellido
 		{
 			get
@@ -34499,7 +34319,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_segApellido", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_segApellido", DbType="VarChar(25)")]
 		public string Per_segApellido
 		{
 			get
@@ -34519,7 +34339,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_priNombre", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_priNombre", DbType="VarChar(25)")]
 		public string Per_priNombre
 		{
 			get
@@ -34539,7 +34359,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_segNombre", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_segNombre", DbType="VarChar(25)")]
 		public string Per_segNombre
 		{
 			get
@@ -34579,7 +34399,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_genero", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_genero", DbType="VarChar(2)")]
 		public string Per_genero
 		{
 			get
@@ -35306,172 +35126,6 @@ namespace CapaDatos
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_Regiones")]
-	public partial class Tbl_Regiones : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _Regiones_id;
-		
-		private string _Regiones_nombres;
-		
-		private string _Regiones_estado;
-		
-		private EntitySet<Tbl_FichasMedicas> _Tbl_FichasMedicas;
-		
-		private EntitySet<Tbl_TipoExaFisRegional> _Tbl_TipoExaFisRegional;
-		
-    #region Definiciones de métodos de extensibilidad
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnRegiones_idChanging(int value);
-    partial void OnRegiones_idChanged();
-    partial void OnRegiones_nombresChanging(string value);
-    partial void OnRegiones_nombresChanged();
-    partial void OnRegiones_estadoChanging(string value);
-    partial void OnRegiones_estadoChanged();
-    #endregion
-		
-		public Tbl_Regiones()
-		{
-			this._Tbl_FichasMedicas = new EntitySet<Tbl_FichasMedicas>(new Action<Tbl_FichasMedicas>(this.attach_Tbl_FichasMedicas), new Action<Tbl_FichasMedicas>(this.detach_Tbl_FichasMedicas));
-			this._Tbl_TipoExaFisRegional = new EntitySet<Tbl_TipoExaFisRegional>(new Action<Tbl_TipoExaFisRegional>(this.attach_Tbl_TipoExaFisRegional), new Action<Tbl_TipoExaFisRegional>(this.detach_Tbl_TipoExaFisRegional));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Regiones_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int Regiones_id
-		{
-			get
-			{
-				return this._Regiones_id;
-			}
-			set
-			{
-				if ((this._Regiones_id != value))
-				{
-					this.OnRegiones_idChanging(value);
-					this.SendPropertyChanging();
-					this._Regiones_id = value;
-					this.SendPropertyChanged("Regiones_id");
-					this.OnRegiones_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Regiones_nombres", DbType="VarChar(50)")]
-		public string Regiones_nombres
-		{
-			get
-			{
-				return this._Regiones_nombres;
-			}
-			set
-			{
-				if ((this._Regiones_nombres != value))
-				{
-					this.OnRegiones_nombresChanging(value);
-					this.SendPropertyChanging();
-					this._Regiones_nombres = value;
-					this.SendPropertyChanged("Regiones_nombres");
-					this.OnRegiones_nombresChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Regiones_estado", DbType="VarChar(1)")]
-		public string Regiones_estado
-		{
-			get
-			{
-				return this._Regiones_estado;
-			}
-			set
-			{
-				if ((this._Regiones_estado != value))
-				{
-					this.OnRegiones_estadoChanging(value);
-					this.SendPropertyChanging();
-					this._Regiones_estado = value;
-					this.SendPropertyChanged("Regiones_estado");
-					this.OnRegiones_estadoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Regiones_Tbl_FichasMedicas", Storage="_Tbl_FichasMedicas", ThisKey="Regiones_id", OtherKey="Regiones_id")]
-		public EntitySet<Tbl_FichasMedicas> Tbl_FichasMedicas
-		{
-			get
-			{
-				return this._Tbl_FichasMedicas;
-			}
-			set
-			{
-				this._Tbl_FichasMedicas.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Regiones_Tbl_TipoExaFisRegional", Storage="_Tbl_TipoExaFisRegional", ThisKey="Regiones_id", OtherKey="Regiones_id")]
-		public EntitySet<Tbl_TipoExaFisRegional> Tbl_TipoExaFisRegional
-		{
-			get
-			{
-				return this._Tbl_TipoExaFisRegional;
-			}
-			set
-			{
-				this._Tbl_TipoExaFisRegional.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Tbl_FichasMedicas(Tbl_FichasMedicas entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tbl_Regiones = this;
-		}
-		
-		private void detach_Tbl_FichasMedicas(Tbl_FichasMedicas entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tbl_Regiones = null;
-		}
-		
-		private void attach_Tbl_TipoExaFisRegional(Tbl_TipoExaFisRegional entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tbl_Regiones = this;
-		}
-		
-		private void detach_Tbl_TipoExaFisRegional(Tbl_TipoExaFisRegional entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tbl_Regiones = null;
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_Reintegro")]
 	public partial class Tbl_Reintegro : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -35898,7 +35552,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_numArchivo", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_numArchivo", DbType="VarChar(25)")]
 		public string rein_numArchivo
 		{
 			get
@@ -35918,7 +35572,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein__fechUltDiaLaboral", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein__fechUltDiaLaboral", DbType="VarChar(10)")]
 		public string rein__fechUltDiaLaboral
 		{
 			get
@@ -35938,7 +35592,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_fechReingreso", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_fechReingreso", DbType="VarChar(10)")]
 		public string rein_fechReingreso
 		{
 			get
@@ -35958,7 +35612,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_total", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_total", DbType="VarChar(3)")]
 		public string rein_total
 		{
 			get
@@ -36038,7 +35692,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_preArterial", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_preArterial", DbType="VarChar(10)")]
 		public string rein_preArterial
 		{
 			get
@@ -36058,7 +35712,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_temperatura", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_temperatura", DbType="VarChar(10)")]
 		public string rein_temperatura
 		{
 			get
@@ -36078,7 +35732,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_frecCardiacan", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_frecCardiacan", DbType="VarChar(10)")]
 		public string rein_frecCardiacan
 		{
 			get
@@ -36098,7 +35752,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_satOxigenon", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_satOxigenon", DbType="VarChar(10)")]
 		public string rein_satOxigenon
 		{
 			get
@@ -36118,7 +35772,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_frecRespiratorian", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_frecRespiratorian", DbType="VarChar(10)")]
 		public string rein_frecRespiratorian
 		{
 			get
@@ -36138,7 +35792,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_peson", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_peson", DbType="VarChar(10)")]
 		public string rein_peson
 		{
 			get
@@ -36158,7 +35812,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_tallan", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_tallan", DbType="VarChar(10)")]
 		public string rein_tallan
 		{
 			get
@@ -36178,7 +35832,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_indMasCorporaln", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_indMasCorporaln", DbType="VarChar(10)")]
 		public string rein_indMasCorporaln
 		{
 			get
@@ -36198,7 +35852,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_perAbdominaln", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_perAbdominaln", DbType="VarChar(10)")]
 		public string rein_perAbdominaln
 		{
 			get
@@ -36218,7 +35872,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_cicatricesPiel", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_cicatricesPiel", DbType="VarChar(2)")]
 		public string rein_cicatricesPiel
 		{
 			get
@@ -36238,7 +35892,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_tatuajesPiel", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_tatuajesPiel", DbType="VarChar(2)")]
 		public string rein_tatuajesPiel
 		{
 			get
@@ -36258,7 +35912,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_pielFacerasPiel", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_pielFacerasPiel", DbType="VarChar(2)")]
 		public string rein_pielFacerasPiel
 		{
 			get
@@ -36278,7 +35932,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_parpadosOjos", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_parpadosOjos", DbType="VarChar(2)")]
 		public string rein_parpadosOjos
 		{
 			get
@@ -36298,7 +35952,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_conjuntuvasOjos", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_conjuntuvasOjos", DbType="VarChar(2)")]
 		public string rein_conjuntuvasOjos
 		{
 			get
@@ -36318,7 +35972,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_pupilasOjos", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_pupilasOjos", DbType="VarChar(2)")]
 		public string rein_pupilasOjos
 		{
 			get
@@ -36338,7 +35992,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_corneaOjos", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_corneaOjos", DbType="VarChar(2)")]
 		public string rein_corneaOjos
 		{
 			get
@@ -36358,7 +36012,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_motilidadOjos", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_motilidadOjos", DbType="VarChar(2)")]
 		public string rein_motilidadOjos
 		{
 			get
@@ -36378,7 +36032,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_cAudiExtreOido", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_cAudiExtreOido", DbType="VarChar(2)")]
 		public string rein_cAudiExtreOido
 		{
 			get
@@ -36398,7 +36052,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_pabellonOido", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_pabellonOido", DbType="VarChar(2)")]
 		public string rein_pabellonOido
 		{
 			get
@@ -36418,7 +36072,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_timpanosOido", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_timpanosOido", DbType="VarChar(2)")]
 		public string rein_timpanosOido
 		{
 			get
@@ -36438,7 +36092,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_labiosOroFa", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_labiosOroFa", DbType="VarChar(2)")]
 		public string rein_labiosOroFa
 		{
 			get
@@ -36458,7 +36112,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_lenguaOroFa", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_lenguaOroFa", DbType="VarChar(2)")]
 		public string rein_lenguaOroFa
 		{
 			get
@@ -36478,7 +36132,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_faringeOroFa", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_faringeOroFa", DbType="VarChar(2)")]
 		public string rein_faringeOroFa
 		{
 			get
@@ -36498,7 +36152,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_amigdalasOroFa", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_amigdalasOroFa", DbType="VarChar(2)")]
 		public string rein_amigdalasOroFa
 		{
 			get
@@ -36518,7 +36172,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_dentaduraOroFa", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_dentaduraOroFa", DbType="VarChar(2)")]
 		public string rein_dentaduraOroFa
 		{
 			get
@@ -36538,7 +36192,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_tabiqueNariz", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_tabiqueNariz", DbType="VarChar(2)")]
 		public string rein_tabiqueNariz
 		{
 			get
@@ -36558,7 +36212,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_cornetesNariz", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_cornetesNariz", DbType="VarChar(2)")]
 		public string rein_cornetesNariz
 		{
 			get
@@ -36578,7 +36232,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_mucosasNariz", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_mucosasNariz", DbType="VarChar(2)")]
 		public string rein_mucosasNariz
 		{
 			get
@@ -36598,7 +36252,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_senosParanaNariz", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_senosParanaNariz", DbType="VarChar(2)")]
 		public string rein_senosParanaNariz
 		{
 			get
@@ -36618,7 +36272,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_tiroiMasasCuello", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_tiroiMasasCuello", DbType="VarChar(2)")]
 		public string rein_tiroiMasasCuello
 		{
 			get
@@ -36638,7 +36292,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_movilidadCuello", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_movilidadCuello", DbType="VarChar(2)")]
 		public string rein_movilidadCuello
 		{
 			get
@@ -36658,7 +36312,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_mamasTorax", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_mamasTorax", DbType="VarChar(2)")]
 		public string rein_mamasTorax
 		{
 			get
@@ -36678,7 +36332,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_corazonTorax", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_corazonTorax", DbType="VarChar(2)")]
 		public string rein_corazonTorax
 		{
 			get
@@ -36698,7 +36352,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_pulmonesTorax2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_pulmonesTorax2", DbType="VarChar(2)")]
 		public string rein_pulmonesTorax2
 		{
 			get
@@ -36718,7 +36372,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_parriCostalTorax2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_parriCostalTorax2", DbType="VarChar(2)")]
 		public string rein_parriCostalTorax2
 		{
 			get
@@ -36738,7 +36392,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_viscerasAbdomen", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_viscerasAbdomen", DbType="VarChar(2)")]
 		public string rein_viscerasAbdomen
 		{
 			get
@@ -36758,7 +36412,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_paredAbdomiAbdomen", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_paredAbdomiAbdomen", DbType="VarChar(2)")]
 		public string rein_paredAbdomiAbdomen
 		{
 			get
@@ -36778,7 +36432,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_flexibilidadColumna", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_flexibilidadColumna", DbType="VarChar(2)")]
 		public string rein_flexibilidadColumna
 		{
 			get
@@ -36798,7 +36452,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_desviacionColumna", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_desviacionColumna", DbType="VarChar(2)")]
 		public string rein_desviacionColumna
 		{
 			get
@@ -36818,7 +36472,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_dolorColumna", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_dolorColumna", DbType="VarChar(2)")]
 		public string rein_dolorColumna
 		{
 			get
@@ -36838,7 +36492,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_pelvisPelvis", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_pelvisPelvis", DbType="VarChar(2)")]
 		public string rein_pelvisPelvis
 		{
 			get
@@ -36858,7 +36512,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_genitalesPelvis", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_genitalesPelvis", DbType="VarChar(2)")]
 		public string rein_genitalesPelvis
 		{
 			get
@@ -36878,7 +36532,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_vascularExtre", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_vascularExtre", DbType="VarChar(2)")]
 		public string rein_vascularExtre
 		{
 			get
@@ -36898,7 +36552,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_miemSupeExtre", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_miemSupeExtre", DbType="VarChar(2)")]
 		public string rein_miemSupeExtre
 		{
 			get
@@ -36918,7 +36572,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_miemInfeExtre", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_miemInfeExtre", DbType="VarChar(2)")]
 		public string rein_miemInfeExtre
 		{
 			get
@@ -36938,7 +36592,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_fuerzaNeuro", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_fuerzaNeuro", DbType="VarChar(2)")]
 		public string rein_fuerzaNeuro
 		{
 			get
@@ -36958,7 +36612,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_sensibiNeuro", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_sensibiNeuro", DbType="VarChar(2)")]
 		public string rein_sensibiNeuro
 		{
 			get
@@ -36978,7 +36632,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_marchaNeuro", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_marchaNeuro", DbType="VarChar(2)")]
 		public string rein_marchaNeuro
 		{
 			get
@@ -36998,7 +36652,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_refleNeuro", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_refleNeuro", DbType="VarChar(2)")]
 		public string rein_refleNeuro
 		{
 			get
@@ -37038,7 +36692,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_examen", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_examen", DbType="VarChar(250)")]
 		public string rein_examen
 		{
 			get
@@ -37058,7 +36712,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_fecha", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_fecha", DbType="VarChar(10)")]
 		public string rein_fecha
 		{
 			get
@@ -37078,7 +36732,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_resultados", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_resultados", DbType="VarChar(250)")]
 		public string rein_resultados
 		{
 			get
@@ -37098,7 +36752,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_examen2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_examen2", DbType="VarChar(250)")]
 		public string rein_examen2
 		{
 			get
@@ -37118,7 +36772,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_fecha2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_fecha2", DbType="VarChar(10)")]
 		public string rein_fecha2
 		{
 			get
@@ -37138,7 +36792,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_resultados2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_resultados2", DbType="VarChar(250)")]
 		public string rein_resultados2
 		{
 			get
@@ -37158,7 +36812,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_examen3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_examen3", DbType="VarChar(250)")]
 		public string rein_examen3
 		{
 			get
@@ -37178,7 +36832,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_fecha3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_fecha3", DbType="VarChar(10)")]
 		public string rein_fecha3
 		{
 			get
@@ -37198,7 +36852,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_resultados3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_resultados3", DbType="VarChar(250)")]
 		public string rein_resultados3
 		{
 			get
@@ -37258,7 +36912,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_cie", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_cie", DbType="VarChar(10)")]
 		public string rein_cie
 		{
 			get
@@ -37278,7 +36932,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_pre", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_pre", DbType="VarChar(2)")]
 		public string rein_pre
 		{
 			get
@@ -37298,7 +36952,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_def", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_def", DbType="VarChar(2)")]
 		public string rein_def
 		{
 			get
@@ -37338,7 +36992,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_cie2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_cie2", DbType="VarChar(10)")]
 		public string rein_cie2
 		{
 			get
@@ -37358,7 +37012,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_pre2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_pre2", DbType="VarChar(2)")]
 		public string rein_pre2
 		{
 			get
@@ -37378,7 +37032,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_def2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_def2", DbType="VarChar(2)")]
 		public string rein_def2
 		{
 			get
@@ -37418,7 +37072,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_cie3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_cie3", DbType="VarChar(10)")]
 		public string rein_cie3
 		{
 			get
@@ -37438,7 +37092,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_pre3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_pre3", DbType="VarChar(2)")]
 		public string rein_pre3
 		{
 			get
@@ -37458,7 +37112,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_def3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_def3", DbType="VarChar(2)")]
 		public string rein_def3
 		{
 			get
@@ -37478,7 +37132,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_apto", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_apto", DbType="VarChar(2)")]
 		public string rein_apto
 		{
 			get
@@ -37498,7 +37152,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_aptoObserva", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_aptoObserva", DbType="VarChar(2)")]
 		public string rein_aptoObserva
 		{
 			get
@@ -37518,7 +37172,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_aptoLimi", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_aptoLimi", DbType="VarChar(2)")]
 		public string rein_aptoLimi
 		{
 			get
@@ -37538,7 +37192,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_NoApto", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_NoApto", DbType="VarChar(2)")]
 		public string rein_NoApto
 		{
 			get
@@ -37638,7 +37292,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_fecha_hora", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_fecha_hora", DbType="VarChar(25)")]
 		public string rein_fecha_hora
 		{
 			get
@@ -37706,7 +37360,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_cod", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_cod", DbType="VarChar(25)")]
 		public string rein_cod
 		{
 			get
@@ -38375,7 +38029,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_numArchivo", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_numArchivo", DbType="VarChar(25)")]
 		public string ret_numArchivo
 		{
 			get
@@ -38395,7 +38049,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_fechIniLaboral", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_fechIniLaboral", DbType="VarChar(10)")]
 		public string ret_fechIniLaboral
 		{
 			get
@@ -38415,7 +38069,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_fechSalida", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_fechSalida", DbType="VarChar(10)")]
 		public string ret_fechSalida
 		{
 			get
@@ -38435,7 +38089,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_tiempo", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_tiempo", DbType="VarChar(3)")]
 		public string ret_tiempo
 		{
 			get
@@ -38455,7 +38109,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_actividades", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_actividades", DbType="VarChar(250)")]
 		public string ret_actividades
 		{
 			get
@@ -38495,7 +38149,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_actividades2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_actividades2", DbType="VarChar(250)")]
 		public string ret_actividades2
 		{
 			get
@@ -38535,7 +38189,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_actividades3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_actividades3", DbType="VarChar(250)")]
 		public string ret_actividades3
 		{
 			get
@@ -38595,7 +38249,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_siCalificadoIESSAcciTrabajo", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_siCalificadoIESSAcciTrabajo", DbType="VarChar(2)")]
 		public string ret_siCalificadoIESSAcciTrabajo
 		{
 			get
@@ -38635,7 +38289,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_noCalificadoIESSAcciTrabajo", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_noCalificadoIESSAcciTrabajo", DbType="VarChar(2)")]
 		public string ret_noCalificadoIESSAcciTrabajo
 		{
 			get
@@ -38655,7 +38309,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_fechaCalificadoIESSAcciTrabajo", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_fechaCalificadoIESSAcciTrabajo", DbType="VarChar(10)")]
 		public string ret_fechaCalificadoIESSAcciTrabajo
 		{
 			get
@@ -38715,7 +38369,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_siCalificadoIESSEnferProfesionales", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_siCalificadoIESSEnferProfesionales", DbType="VarChar(2)")]
 		public string ret_siCalificadoIESSEnferProfesionales
 		{
 			get
@@ -38755,7 +38409,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_noCalificadoIESSEnferProfesionales", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_noCalificadoIESSEnferProfesionales", DbType="VarChar(2)")]
 		public string ret_noCalificadoIESSEnferProfesionales
 		{
 			get
@@ -38775,7 +38429,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_fechaCalificadoIESSEnferProfesionales", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_fechaCalificadoIESSEnferProfesionales", DbType="VarChar(10)")]
 		public string ret_fechaCalificadoIESSEnferProfesionales
 		{
 			get
@@ -38835,7 +38489,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_preArterial", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_preArterial", DbType="VarChar(10)")]
 		public string ret_preArterial
 		{
 			get
@@ -38855,7 +38509,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_temperatura", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_temperatura", DbType="VarChar(10)")]
 		public string ret_temperatura
 		{
 			get
@@ -38875,7 +38529,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_frecCardiacan", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_frecCardiacan", DbType="VarChar(10)")]
 		public string ret_frecCardiacan
 		{
 			get
@@ -38895,7 +38549,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_satOxigenon", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_satOxigenon", DbType="VarChar(10)")]
 		public string ret_satOxigenon
 		{
 			get
@@ -38915,7 +38569,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_frecRespiratorian", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_frecRespiratorian", DbType="VarChar(10)")]
 		public string ret_frecRespiratorian
 		{
 			get
@@ -38935,7 +38589,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_peson", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_peson", DbType="VarChar(10)")]
 		public string ret_peson
 		{
 			get
@@ -38955,7 +38609,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_tallan", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_tallan", DbType="VarChar(10)")]
 		public string ret_tallan
 		{
 			get
@@ -38975,7 +38629,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_indMasCorporaln", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_indMasCorporaln", DbType="VarChar(10)")]
 		public string ret_indMasCorporaln
 		{
 			get
@@ -38995,7 +38649,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_perAbdominaln", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_perAbdominaln", DbType="VarChar(10)")]
 		public string ret_perAbdominaln
 		{
 			get
@@ -39015,7 +38669,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_cicatricesPiel", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_cicatricesPiel", DbType="VarChar(2)")]
 		public string ret_cicatricesPiel
 		{
 			get
@@ -39035,7 +38689,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_tatuajesPiel", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_tatuajesPiel", DbType="VarChar(2)")]
 		public string ret_tatuajesPiel
 		{
 			get
@@ -39055,7 +38709,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_pielFacerasPiel", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_pielFacerasPiel", DbType="VarChar(2)")]
 		public string ret_pielFacerasPiel
 		{
 			get
@@ -39075,7 +38729,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_parpadosOjos", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_parpadosOjos", DbType="VarChar(2)")]
 		public string ret_parpadosOjos
 		{
 			get
@@ -39095,7 +38749,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_conjuntuvasOjos", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_conjuntuvasOjos", DbType="VarChar(2)")]
 		public string ret_conjuntuvasOjos
 		{
 			get
@@ -39115,7 +38769,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_pupilasOjos", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_pupilasOjos", DbType="VarChar(2)")]
 		public string ret_pupilasOjos
 		{
 			get
@@ -39135,7 +38789,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_corneaOjos", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_corneaOjos", DbType="VarChar(2)")]
 		public string ret_corneaOjos
 		{
 			get
@@ -39155,7 +38809,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_motilidadOjos", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_motilidadOjos", DbType="VarChar(2)")]
 		public string ret_motilidadOjos
 		{
 			get
@@ -39175,7 +38829,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_cAudiExtreOido", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_cAudiExtreOido", DbType="VarChar(2)")]
 		public string ret_cAudiExtreOido
 		{
 			get
@@ -39195,7 +38849,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_pabellonOido", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_pabellonOido", DbType="VarChar(2)")]
 		public string ret_pabellonOido
 		{
 			get
@@ -39215,7 +38869,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_timpanosOido", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_timpanosOido", DbType="VarChar(2)")]
 		public string ret_timpanosOido
 		{
 			get
@@ -39235,7 +38889,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_labiosOroFa", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_labiosOroFa", DbType="VarChar(2)")]
 		public string ret_labiosOroFa
 		{
 			get
@@ -39255,7 +38909,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_lenguaOroFa", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_lenguaOroFa", DbType="VarChar(2)")]
 		public string ret_lenguaOroFa
 		{
 			get
@@ -39275,7 +38929,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_faringeOroFa", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_faringeOroFa", DbType="VarChar(2)")]
 		public string ret_faringeOroFa
 		{
 			get
@@ -39295,7 +38949,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_amigdalasOroFa", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_amigdalasOroFa", DbType="VarChar(2)")]
 		public string ret_amigdalasOroFa
 		{
 			get
@@ -39315,7 +38969,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_dentaduraOroFa", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_dentaduraOroFa", DbType="VarChar(2)")]
 		public string ret_dentaduraOroFa
 		{
 			get
@@ -39335,7 +38989,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_tabiqueNariz", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_tabiqueNariz", DbType="VarChar(2)")]
 		public string ret_tabiqueNariz
 		{
 			get
@@ -39355,7 +39009,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_cornetesNariz", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_cornetesNariz", DbType="VarChar(2)")]
 		public string ret_cornetesNariz
 		{
 			get
@@ -39375,7 +39029,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_mucosasNariz", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_mucosasNariz", DbType="VarChar(2)")]
 		public string ret_mucosasNariz
 		{
 			get
@@ -39395,7 +39049,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_senosParanaNariz", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_senosParanaNariz", DbType="VarChar(2)")]
 		public string ret_senosParanaNariz
 		{
 			get
@@ -39415,7 +39069,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_tiroiMasasCuello", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_tiroiMasasCuello", DbType="VarChar(2)")]
 		public string ret_tiroiMasasCuello
 		{
 			get
@@ -39435,7 +39089,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_movilidadCuello", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_movilidadCuello", DbType="VarChar(2)")]
 		public string ret_movilidadCuello
 		{
 			get
@@ -39455,7 +39109,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_mamasTorax", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_mamasTorax", DbType="VarChar(2)")]
 		public string ret_mamasTorax
 		{
 			get
@@ -39475,7 +39129,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_corazonTorax", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_corazonTorax", DbType="VarChar(2)")]
 		public string ret_corazonTorax
 		{
 			get
@@ -39495,7 +39149,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_pulmonesTorax2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_pulmonesTorax2", DbType="VarChar(2)")]
 		public string ret_pulmonesTorax2
 		{
 			get
@@ -39515,7 +39169,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_parriCostalTorax2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_parriCostalTorax2", DbType="VarChar(2)")]
 		public string ret_parriCostalTorax2
 		{
 			get
@@ -39535,7 +39189,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_viscerasAbdomen", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_viscerasAbdomen", DbType="VarChar(2)")]
 		public string ret_viscerasAbdomen
 		{
 			get
@@ -39555,7 +39209,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_paredAbdomiAbdomen", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_paredAbdomiAbdomen", DbType="VarChar(2)")]
 		public string ret_paredAbdomiAbdomen
 		{
 			get
@@ -39575,7 +39229,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_flexibilidadColumna", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_flexibilidadColumna", DbType="VarChar(2)")]
 		public string ret_flexibilidadColumna
 		{
 			get
@@ -39595,7 +39249,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_desviacionColumna", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_desviacionColumna", DbType="VarChar(2)")]
 		public string ret_desviacionColumna
 		{
 			get
@@ -39615,7 +39269,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_dolorColumna", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_dolorColumna", DbType="VarChar(2)")]
 		public string ret_dolorColumna
 		{
 			get
@@ -39635,7 +39289,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_pelvisPelvis", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_pelvisPelvis", DbType="VarChar(2)")]
 		public string ret_pelvisPelvis
 		{
 			get
@@ -39655,7 +39309,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_genitalesPelvis", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_genitalesPelvis", DbType="VarChar(2)")]
 		public string ret_genitalesPelvis
 		{
 			get
@@ -39675,7 +39329,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_vascularExtre", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_vascularExtre", DbType="VarChar(2)")]
 		public string ret_vascularExtre
 		{
 			get
@@ -39695,7 +39349,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_miemSupeExtre", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_miemSupeExtre", DbType="VarChar(2)")]
 		public string ret_miemSupeExtre
 		{
 			get
@@ -39715,7 +39369,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_miemInfeExtre", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_miemInfeExtre", DbType="VarChar(2)")]
 		public string ret_miemInfeExtre
 		{
 			get
@@ -39735,7 +39389,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_fuerzaNeuro", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_fuerzaNeuro", DbType="VarChar(2)")]
 		public string ret_fuerzaNeuro
 		{
 			get
@@ -39755,7 +39409,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_sensibiNeuro", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_sensibiNeuro", DbType="VarChar(2)")]
 		public string ret_sensibiNeuro
 		{
 			get
@@ -39775,7 +39429,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_marchaNeuro", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_marchaNeuro", DbType="VarChar(2)")]
 		public string ret_marchaNeuro
 		{
 			get
@@ -39795,7 +39449,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_refleNeuro", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_refleNeuro", DbType="VarChar(2)")]
 		public string ret_refleNeuro
 		{
 			get
@@ -39835,7 +39489,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_examen", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_examen", DbType="VarChar(250)")]
 		public string ret_examen
 		{
 			get
@@ -39855,7 +39509,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_fecha", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_fecha", DbType="VarChar(10)")]
 		public string ret_fecha
 		{
 			get
@@ -39875,7 +39529,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_resultados", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_resultados", DbType="VarChar(250)")]
 		public string ret_resultados
 		{
 			get
@@ -39895,7 +39549,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_examen2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_examen2", DbType="VarChar(250)")]
 		public string ret_examen2
 		{
 			get
@@ -39915,7 +39569,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_fecha2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_fecha2", DbType="VarChar(10)")]
 		public string ret_fecha2
 		{
 			get
@@ -39935,7 +39589,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_resultados2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_resultados2", DbType="VarChar(250)")]
 		public string ret_resultados2
 		{
 			get
@@ -39995,7 +39649,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_cie", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_cie", DbType="VarChar(10)")]
 		public string ret_cie
 		{
 			get
@@ -40015,7 +39669,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_pre", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_pre", DbType="VarChar(2)")]
 		public string ret_pre
 		{
 			get
@@ -40035,7 +39689,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_def", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_def", DbType="VarChar(2)")]
 		public string ret_def
 		{
 			get
@@ -40075,7 +39729,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_cie2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_cie2", DbType="VarChar(10)")]
 		public string ret_cie2
 		{
 			get
@@ -40095,7 +39749,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_pre2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_pre2", DbType="VarChar(2)")]
 		public string ret_pre2
 		{
 			get
@@ -40115,7 +39769,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_def2", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_def2", DbType="VarChar(2)")]
 		public string ret_def2
 		{
 			get
@@ -40155,7 +39809,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_cie3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_cie3", DbType="VarChar(10)")]
 		public string ret_cie3
 		{
 			get
@@ -40175,7 +39829,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_pre3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_pre3", DbType="VarChar(2)")]
 		public string ret_pre3
 		{
 			get
@@ -40195,7 +39849,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_def3", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_def3", DbType="VarChar(2)")]
 		public string ret_def3
 		{
 			get
@@ -40215,7 +39869,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_si", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_si", DbType="VarChar(2)")]
 		public string ret_si
 		{
 			get
@@ -40235,7 +39889,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_no", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_no", DbType="VarChar(2)")]
 		public string ret_no
 		{
 			get
@@ -40295,7 +39949,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_fecha_hora", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_fecha_hora", DbType="VarChar(25)")]
 		public string ret_fecha_hora
 		{
 			get
@@ -40363,7 +40017,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_cod", DbType="VarChar(MAX)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_cod", DbType="VarChar(25)")]
 		public string ret_cod
 		{
 			get
@@ -47513,209 +47167,6 @@ namespace CapaDatos
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_TipoExaFisRegional")]
-	public partial class Tbl_TipoExaFisRegional : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _tipoExa_id;
-		
-		private System.Nullable<int> _Regiones_id;
-		
-		private string _tipoExa_nombres;
-		
-		private string _tipoExa_estado;
-		
-		private EntitySet<Tbl_FichasMedicas> _Tbl_FichasMedicas;
-		
-		private EntityRef<Tbl_Regiones> _Tbl_Regiones;
-		
-    #region Definiciones de métodos de extensibilidad
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OntipoExa_idChanging(int value);
-    partial void OntipoExa_idChanged();
-    partial void OnRegiones_idChanging(System.Nullable<int> value);
-    partial void OnRegiones_idChanged();
-    partial void OntipoExa_nombresChanging(string value);
-    partial void OntipoExa_nombresChanged();
-    partial void OntipoExa_estadoChanging(string value);
-    partial void OntipoExa_estadoChanged();
-    #endregion
-		
-		public Tbl_TipoExaFisRegional()
-		{
-			this._Tbl_FichasMedicas = new EntitySet<Tbl_FichasMedicas>(new Action<Tbl_FichasMedicas>(this.attach_Tbl_FichasMedicas), new Action<Tbl_FichasMedicas>(this.detach_Tbl_FichasMedicas));
-			this._Tbl_Regiones = default(EntityRef<Tbl_Regiones>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tipoExa_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int tipoExa_id
-		{
-			get
-			{
-				return this._tipoExa_id;
-			}
-			set
-			{
-				if ((this._tipoExa_id != value))
-				{
-					this.OntipoExa_idChanging(value);
-					this.SendPropertyChanging();
-					this._tipoExa_id = value;
-					this.SendPropertyChanged("tipoExa_id");
-					this.OntipoExa_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Regiones_id", DbType="Int")]
-		public System.Nullable<int> Regiones_id
-		{
-			get
-			{
-				return this._Regiones_id;
-			}
-			set
-			{
-				if ((this._Regiones_id != value))
-				{
-					if (this._Tbl_Regiones.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnRegiones_idChanging(value);
-					this.SendPropertyChanging();
-					this._Regiones_id = value;
-					this.SendPropertyChanged("Regiones_id");
-					this.OnRegiones_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tipoExa_nombres", DbType="VarChar(100)")]
-		public string tipoExa_nombres
-		{
-			get
-			{
-				return this._tipoExa_nombres;
-			}
-			set
-			{
-				if ((this._tipoExa_nombres != value))
-				{
-					this.OntipoExa_nombresChanging(value);
-					this.SendPropertyChanging();
-					this._tipoExa_nombres = value;
-					this.SendPropertyChanged("tipoExa_nombres");
-					this.OntipoExa_nombresChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tipoExa_estado", DbType="VarChar(1)")]
-		public string tipoExa_estado
-		{
-			get
-			{
-				return this._tipoExa_estado;
-			}
-			set
-			{
-				if ((this._tipoExa_estado != value))
-				{
-					this.OntipoExa_estadoChanging(value);
-					this.SendPropertyChanging();
-					this._tipoExa_estado = value;
-					this.SendPropertyChanged("tipoExa_estado");
-					this.OntipoExa_estadoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_TipoExaFisRegional_Tbl_FichasMedicas", Storage="_Tbl_FichasMedicas", ThisKey="tipoExa_id", OtherKey="tipoExa_id")]
-		public EntitySet<Tbl_FichasMedicas> Tbl_FichasMedicas
-		{
-			get
-			{
-				return this._Tbl_FichasMedicas;
-			}
-			set
-			{
-				this._Tbl_FichasMedicas.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Regiones_Tbl_TipoExaFisRegional", Storage="_Tbl_Regiones", ThisKey="Regiones_id", OtherKey="Regiones_id", IsForeignKey=true)]
-		public Tbl_Regiones Tbl_Regiones
-		{
-			get
-			{
-				return this._Tbl_Regiones.Entity;
-			}
-			set
-			{
-				Tbl_Regiones previousValue = this._Tbl_Regiones.Entity;
-				if (((previousValue != value) 
-							|| (this._Tbl_Regiones.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Tbl_Regiones.Entity = null;
-						previousValue.Tbl_TipoExaFisRegional.Remove(this);
-					}
-					this._Tbl_Regiones.Entity = value;
-					if ((value != null))
-					{
-						value.Tbl_TipoExaFisRegional.Add(this);
-						this._Regiones_id = value.Regiones_id;
-					}
-					else
-					{
-						this._Regiones_id = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Tbl_Regiones");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Tbl_FichasMedicas(Tbl_FichasMedicas entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tbl_TipoExaFisRegional = this;
-		}
-		
-		private void detach_Tbl_FichasMedicas(Tbl_FichasMedicas entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tbl_TipoExaFisRegional = null;
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_Tipos_de_Enfermedades")]
 	public partial class Tbl_Tipos_de_Enfermedades : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -47961,120 +47412,6 @@ namespace CapaDatos
 		{
 			this.SendPropertyChanging();
 			entity.Tbl_TipoUsuario = null;
-		}
-	}
-	
-	public partial class Autentificacion_UsuarioResult
-	{
-		
-		private string _usu_nombre;
-		
-		private System.Nullable<int> _tusu_id;
-		
-		public Autentificacion_UsuarioResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_nombre", DbType="VarChar(150)")]
-		public string usu_nombre
-		{
-			get
-			{
-				return this._usu_nombre;
-			}
-			set
-			{
-				if ((this._usu_nombre != value))
-				{
-					this._usu_nombre = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tusu_id", DbType="Int")]
-		public System.Nullable<int> tusu_id
-		{
-			get
-			{
-				return this._tusu_id;
-			}
-			set
-			{
-				if ((this._tusu_id != value))
-				{
-					this._tusu_id = value;
-				}
-			}
-		}
-	}
-	
-	public partial class Validar_ExistenciaResult
-	{
-		
-		private string _usu_nombre;
-		
-		private System.Nullable<int> _tusu_id;
-		
-		public Validar_ExistenciaResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_nombre", DbType="VarChar(150)")]
-		public string usu_nombre
-		{
-			get
-			{
-				return this._usu_nombre;
-			}
-			set
-			{
-				if ((this._usu_nombre != value))
-				{
-					this._usu_nombre = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tusu_id", DbType="Int")]
-		public System.Nullable<int> tusu_id
-		{
-			get
-			{
-				return this._tusu_id;
-			}
-			set
-			{
-				if ((this._tusu_id != value))
-				{
-					this._tusu_id = value;
-				}
-			}
-		}
-	}
-	
-	public partial class Identificar_rolResult
-	{
-		
-		private string _usu_nombre;
-		
-		public Identificar_rolResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_nombre", DbType="VarChar(150)")]
-		public string usu_nombre
-		{
-			get
-			{
-				return this._usu_nombre;
-			}
-			set
-			{
-				if ((this._usu_nombre != value))
-				{
-					this._usu_nombre = value;
-				}
-			}
 		}
 	}
 }

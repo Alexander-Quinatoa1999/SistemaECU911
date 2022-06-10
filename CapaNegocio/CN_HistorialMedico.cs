@@ -67,18 +67,6 @@ namespace CapaNegocio
             return fmid;
         }
 
-        //metodo para traer tiporegion x region
-        public static Tbl_TipoExaFisRegional ObtenerTipoRegionxReg(int tipexafisid)
-        {
-            var tipexaf = dc.Tbl_TipoExaFisRegional.FirstOrDefault(tipexafis => tipexafis.Regiones_id.Equals(tipexafisid) && tipexafis.tipoExa_estado == "A");
-            return tipexaf;
-        }
-        //metodo para traer regiones de examenes
-        public static List<Tbl_Regiones> ObtenerRegion()
-        {
-            var lista = dc.Tbl_Regiones.Where(reg => reg.Regiones_estado == "A");
-            return lista.ToList();
-        }
 
         //metodo traer especialidad
         public static List<Tbl_Especialidad> ObtenerEspecialidad()
