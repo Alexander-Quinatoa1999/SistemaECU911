@@ -87,7 +87,7 @@ namespace CapaDatos
     #endregion
 		
 		public DataClassesECU911DataContext() : 
-				base(global::CapaDatos.Properties.Settings.Default.SistemaECU911ConnectionString5, mappingSource)
+				base(global::CapaDatos.Properties.Settings.Default.SistemaECU911ConnectionString4, mappingSource)
 		{
 			OnCreated();
 		}
@@ -23361,7 +23361,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_glucosaHorasQSangui", DbType="VarChar(5)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_glucosaHorasQSangui", DbType="VarChar(3)")]
 		public string pedExa_glucosaHorasQSangui
 		{
 			get
@@ -34279,7 +34279,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_cedula", DbType="VarChar(10)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_cedula", DbType="VarChar(50)")]
 		public string Per_cedula
 		{
 			get
@@ -40240,6 +40240,8 @@ namespace CapaDatos
 		
 		private string _Socio_economico_modalidadvinculacion_codigotrabajo;
 		
+		private string _Socio_economico_fecha_ingreso_al_Ecu;
+		
 		private string _Socio_economico_estadocivil_soltero;
 		
 		private string _Socio_economico_estadocivil_casado;
@@ -40267,6 +40269,10 @@ namespace CapaDatos
 		private string _Socio_economico_email;
 		
 		private string _Socio_economico_lugar_nacimiento;
+		
+		private string _Socio_economico_fecha_nacimiento;
+		
+		private string _Socio_economico_edad;
 		
 		private string _Socio_economico_titulo_primaria;
 		
@@ -40818,6 +40824,8 @@ namespace CapaDatos
     partial void OnSocio_economico_modalidadvinculacion_leyorgserpublicoChanged();
     partial void OnSocio_economico_modalidadvinculacion_codigotrabajoChanging(string value);
     partial void OnSocio_economico_modalidadvinculacion_codigotrabajoChanged();
+    partial void OnSocio_economico_fecha_ingreso_al_EcuChanging(string value);
+    partial void OnSocio_economico_fecha_ingreso_al_EcuChanged();
     partial void OnSocio_economico_estadocivil_solteroChanging(string value);
     partial void OnSocio_economico_estadocivil_solteroChanged();
     partial void OnSocio_economico_estadocivil_casadoChanging(string value);
@@ -40846,6 +40854,10 @@ namespace CapaDatos
     partial void OnSocio_economico_emailChanged();
     partial void OnSocio_economico_lugar_nacimientoChanging(string value);
     partial void OnSocio_economico_lugar_nacimientoChanged();
+    partial void OnSocio_economico_fecha_nacimientoChanging(string value);
+    partial void OnSocio_economico_fecha_nacimientoChanged();
+    partial void OnSocio_economico_edadChanging(string value);
+    partial void OnSocio_economico_edadChanged();
     partial void OnSocio_economico_titulo_primariaChanging(string value);
     partial void OnSocio_economico_titulo_primariaChanged();
     partial void OnSocio_economico_titulo_secundariaChanging(string value);
@@ -41488,6 +41500,26 @@ namespace CapaDatos
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_fecha_ingreso_al_Ecu", DbType="VarChar(25)")]
+		public string Socio_economico_fecha_ingreso_al_Ecu
+		{
+			get
+			{
+				return this._Socio_economico_fecha_ingreso_al_Ecu;
+			}
+			set
+			{
+				if ((this._Socio_economico_fecha_ingreso_al_Ecu != value))
+				{
+					this.OnSocio_economico_fecha_ingreso_al_EcuChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_fecha_ingreso_al_Ecu = value;
+					this.SendPropertyChanged("Socio_economico_fecha_ingreso_al_Ecu");
+					this.OnSocio_economico_fecha_ingreso_al_EcuChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_estadocivil_soltero", DbType="VarChar(2)")]
 		public string Socio_economico_estadocivil_soltero
 		{
@@ -41764,6 +41796,46 @@ namespace CapaDatos
 					this._Socio_economico_lugar_nacimiento = value;
 					this.SendPropertyChanged("Socio_economico_lugar_nacimiento");
 					this.OnSocio_economico_lugar_nacimientoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_fecha_nacimiento", DbType="VarChar(50)")]
+		public string Socio_economico_fecha_nacimiento
+		{
+			get
+			{
+				return this._Socio_economico_fecha_nacimiento;
+			}
+			set
+			{
+				if ((this._Socio_economico_fecha_nacimiento != value))
+				{
+					this.OnSocio_economico_fecha_nacimientoChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_fecha_nacimiento = value;
+					this.SendPropertyChanged("Socio_economico_fecha_nacimiento");
+					this.OnSocio_economico_fecha_nacimientoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_edad", DbType="VarChar(50)")]
+		public string Socio_economico_edad
+		{
+			get
+			{
+				return this._Socio_economico_edad;
+			}
+			set
+			{
+				if ((this._Socio_economico_edad != value))
+				{
+					this.OnSocio_economico_edadChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_edad = value;
+					this.SendPropertyChanged("Socio_economico_edad");
+					this.OnSocio_economico_edadChanged();
 				}
 			}
 		}

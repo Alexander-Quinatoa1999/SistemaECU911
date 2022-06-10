@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SistemaECU911" Class="DataClassesECU911DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=ZOCAPO\SQLEXPRESS;Initial Catalog=SistemaECU911;Integrated Security=True" SettingsObjectName="CapaDatos.Properties.Settings" SettingsPropertyName="SistemaECU911ConnectionString5" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=SistemaECU911;Integrated Security=True" SettingsObjectName="CapaDatos.Properties.Settings" SettingsPropertyName="SistemaECU911ConnectionString4" Provider="System.Data.SqlClient" />
   <Table Name="dbo.cie10" Member="cie10">
     <Type Name="cie10">
       <Column Name="id10" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -958,7 +958,7 @@
       <Column Name="pedExa_testOsullivanQSangui" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
       <Column Name="pedExa_glucosa2hppQSangui" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
       <Column Name="pedExa_curvaToleranciaQSangui" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
-      <Column Name="pedExa_glucosaHorasQSangui" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="pedExa_glucosaHorasQSangui" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
       <Column Name="pedExa_hemogloGlicosiladaQSangui" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
       <Column Name="pedExa_hierroSericoQSangui" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
       <Column Name="pedExa_ferritinaQSangui" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
@@ -1431,7 +1431,7 @@
   <Table Name="dbo.Tbl_Personas" Member="Tbl_Personas">
     <Type Name="Tbl_Personas">
       <Column Name="Per_id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Per_cedula" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Per_cedula" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="Per_priApellido" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
       <Column Name="Per_segApellido" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
       <Column Name="Per_priNombre" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
@@ -1690,6 +1690,7 @@
       <Column Name="Socio_economico_version" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="Socio_economico_modalidadvinculacion_leyorgserpublico" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
       <Column Name="Socio_economico_modalidadvinculacion_codigotrabajo" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="Socio_economico_fecha_ingreso_al_Ecu" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
       <Column Name="Socio_economico_estadocivil_soltero" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
       <Column Name="Socio_economico_estadocivil_casado" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
       <Column Name="Socio_economico_estadocivil_viudo" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
@@ -1704,6 +1705,8 @@
       <Column Name="Socio_economico_telefono_celular" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
       <Column Name="Socio_economico_email" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
       <Column Name="Socio_economico_lugar_nacimiento" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Socio_economico_fecha_nacimiento" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Socio_economico_edad" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="Socio_economico_titulo_primaria" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
       <Column Name="Socio_economico_titulo_secundaria" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
       <Column Name="Socio_economico_titulo_superior" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
