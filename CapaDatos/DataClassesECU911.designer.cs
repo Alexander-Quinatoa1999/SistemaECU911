@@ -87,7 +87,11 @@ namespace CapaDatos
     #endregion
 		
 		public DataClassesECU911DataContext() : 
+<<<<<<< HEAD
 				base(global::CapaDatos.Properties.Settings.Default.SistemaECU911ConnectionString4, mappingSource)
+=======
+				base(global::CapaDatos.Properties.Settings.Default.SistemaECU911ConnectionString6, mappingSource)
+>>>>>>> certificado acomodado
 		{
 			OnCreated();
 		}
@@ -41460,7 +41464,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_modalidadvinculacion_leyorgserpublico", DbType="VarChar(2)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_modalidadvinculacion_leyorgserpublico", DbType="VarChar(1)")]
 		public string Socio_economico_modalidadvinculacion_leyorgserpublico
 		{
 			get
@@ -41480,7 +41484,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_modalidadvinculacion_codigotrabajo", DbType="VarChar(2)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_modalidadvinculacion_codigotrabajo", DbType="VarChar(1)")]
 		public string Socio_economico_modalidadvinculacion_codigotrabajo
 		{
 			get

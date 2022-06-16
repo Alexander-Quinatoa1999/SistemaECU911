@@ -1,5 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SistemaECU911" Class="DataClassesECU911DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+<<<<<<< HEAD
   <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=SistemaECU911;Integrated Security=True" SettingsObjectName="CapaDatos.Properties.Settings" SettingsPropertyName="SistemaECU911ConnectionString4" Provider="System.Data.SqlClient" />
+=======
+  <Connection Mode="AppSettings" ConnectionString="Data Source=MAYCKYANDER\MAYCKYANDER;Initial Catalog=SistemaECU911;Integrated Security=True" SettingsObjectName="CapaDatos.Properties.Settings" SettingsPropertyName="SistemaECU911ConnectionString6" Provider="System.Data.SqlClient" />
+>>>>>>> certificado acomodado
   <Table Name="dbo.cie10" Member="cie10">
     <Type Name="cie10">
       <Column Name="id10" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -1687,6 +1691,7 @@
     <Type Name="Tbl_SocioEconomico">
       <Column Name="Socio_economico_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Socio_economico_codigo_inicial" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+<<<<<<< HEAD
       <Column Name="Socio_economico_version" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="Socio_economico_modalidadvinculacion_leyorgserpublico" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
       <Column Name="Socio_economico_modalidadvinculacion_codigotrabajo" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
@@ -1698,6 +1703,19 @@
       <Column Name="Socio_economico_estadocivil_divorciado" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
       <Column Name="Socio_economico_genero_masculino" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
       <Column Name="Socio_economico_genero_femenino" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+=======
+      <Column Name="Socio_economico_version" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Socio_economico_modalidadvinculacion_leyorgserpublico" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="Socio_economico_modalidadvinculacion_codigotrabajo" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="Socio_economico_fecha_ingreso_al_Ecu" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Socio_economico_estadocivil_soltero" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Socio_economico_estadocivil_casado" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Socio_economico_estadocivil_viudo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Socio_economico_estadocivil_unionlibre" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Socio_economico_estadocivil_divorciado" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Socio_economico_genero_masculino" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Socio_economico_genero_femenino" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+>>>>>>> certificado acomodado
       <Column Name="Socio_economico_tipo_de_sangre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="Socio_economico_es_donante_si" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
       <Column Name="Socio_economico_es_donante_no" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />

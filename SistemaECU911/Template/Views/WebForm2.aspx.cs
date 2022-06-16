@@ -47,6 +47,8 @@ namespace SistemaECU911.Template.Views
             pdfDoc.Add(bandera);
             pdfDoc.Add(new Chunk(Chunk.NEWLINE));
             pdfDoc.Add(new Chunk(Chunk.NEWLINE));
+            pdfDoc.Add(new Chunk(Chunk.NEWLINE));
+            pdfDoc.Add(new Chunk(Chunk.NEWLINE));
             pdfDoc.Add(new Paragraph("Quito, " + DateTime.Now.ToString("dd 'de' MMMM 'del' yyyy "), parrafo) { Alignment = Element.ALIGN_RIGHT });
             pdfDoc.Add(new Chunk(Chunk.NEWLINE));
             pdfDoc.Add(new Chunk(Chunk.NEWLINE));
@@ -84,7 +86,7 @@ namespace SistemaECU911.Template.Views
             string imageURL2 = Server.MapPath("../Template Principal/images") + "/footer.png";
             iTextSharp.text.Image footer = iTextSharp.text.Image.GetInstance(imageURL2);
             footer.ScaleAbsolute(520, 50);
-            footer.SetAbsolutePosition(41f, 41f);
+            footer.SetAbsolutePosition(41f, 5f);
             pdfDoc.Add(footer);
             pdfDoc.Close();
             Response.ContentType = "application/pdf";
