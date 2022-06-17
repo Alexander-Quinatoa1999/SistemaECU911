@@ -125,13 +125,14 @@
                                 <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 200px">Cédula Ciudadanía:</asp:TableCell>
                                 <asp:TableCell Style="background-color: white; text-align: left">
                                     <asp:TextBox runat="server" ID="txt_cedula" OnTextChanged="txt_cedula_TextChanged" BorderStyle="None" Style="width: 100%; background-color: transparent" AutoPostBack="true"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="rfv_numHClinica" runat="server" ForeColor="Red" ControlToValidate="txt_cedula" ErrorMessage="!Este campo es obligatorio!"></asp:RequiredFieldValidator>
                                     <ajaxToolkit:AutoCompleteExtender ID="AutoCompleteExtender1" runat="server" CompletionInterval="10" DelimiterCharacters="" Enabled="True"
                                         MinimumPrefixLength="1" ServiceMethod="ObtenerNumHClinica"
                                         TargetControlID="txt_cedula" CompletionListCssClass="CompletionList"
                                         CompletionListHighlightedItemCssClass="CompletionListHighlightedItem"
                                         CompletionListItemCssClass="CompletionListItem">
                                     </ajaxToolkit:AutoCompleteExtender>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator_txtcedula" runat="server" ErrorMessage="!Este campo es obligatorio!" ControlToValidate="txt_cedula" ForeColor="Red" ValidationGroup="GroupValidation"></asp:RequiredFieldValidator>
+                                    <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator_txtcedula" runat="server" ErrorMessage="!Este campo es obligatorio!" ControlToValidate="txt_cedula" ForeColor="Red" ValidationGroup="GroupValidation"></asp:RequiredFieldValidator>--%>
                                 </asp:TableCell>
                             </asp:TableRow>
                         </asp:Table>
@@ -139,13 +140,13 @@
                             <asp:TableRow>
                                 <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 300px">Área a la que pertenece:</asp:TableCell>
                                 <asp:TableCell Style="background-color: white; text-align: left">
-                                    <asp:TextBox runat="server" ID="txt_areatrabajo" BorderStyle="None" BackColor="white" Style="width: 100%; text-transform:uppercase"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_areatrabajo" BorderStyle="None" BackColor="white" Style="width: 100%; text-transform:uppercase" ReadOnly="true"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
                                 <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 300px">Cargo Institucional:</asp:TableCell>
                                 <asp:TableCell Style="background-color: white; text-align: left">
-                                    <asp:TextBox runat="server" ID="txt_cargoinstitucional" BorderStyle="None" BackColor="white" Style="width: 100%; text-transform:uppercase"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_cargoinstitucional" BorderStyle="None" BackColor="white" Style="width: 100%; text-transform:uppercase" ReadOnly="true"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                         </asp:Table>

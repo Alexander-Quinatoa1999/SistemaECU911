@@ -105,6 +105,15 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         protected global::System.Web.UI.WebControls.TextBox txt_cedula;
 
         /// <summary>
+        /// Control rfv_numHClinica.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_numHClinica;
+
+        /// <summary>
         /// Control AutoCompleteExtender1.
         /// </summary>
         /// <remarks>
@@ -112,15 +121,6 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::AjaxControlToolkit.AutoCompleteExtender AutoCompleteExtender1;
-
-        /// <summary>
-        /// Control RequiredFieldValidator_txtcedula.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator_txtcedula;
 
         /// <summary>
         /// Control txt_areatrabajo.

@@ -620,7 +620,7 @@ namespace SistemaECU911.Template.Views
                 }
 
                 cargarProfesional();
-                defaultValidaciones();
+                //defaultValidaciones();
             }
         }
 
