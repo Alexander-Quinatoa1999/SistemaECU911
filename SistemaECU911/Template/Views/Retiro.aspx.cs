@@ -646,6 +646,7 @@ namespace SistemaECU911.Template.Views
                 }
 
                 cargarProfesional();
+                defaultValidaciones();
             }
         }
 
@@ -817,6 +818,8 @@ namespace SistemaECU911.Template.Views
                 per = CN_HistorialMedico.ObtenerIdPersonasxCedula(Convert.ToInt32(txt_numHClinica.Text));
 
                 int perso = Convert.ToInt32(per.Per_id.ToString());
+
+                reti = new Tbl_Retiro();
 
                 //ANTECEDENTES PERSONALES
                 //----------- ACCIDENTES DE TRABAJO ( DESCRIPCIÓN) -----------
@@ -1036,8 +1039,6 @@ namespace SistemaECU911.Template.Views
                 {
                     reti.ret_no = "SI";
                 }
-
-                reti = new Tbl_Retiro();
 
                 //A.
                 reti.ret_fechSalida = txt_fechaSalida.Text;
@@ -1697,5 +1698,136 @@ namespace SistemaECU911.Template.Views
             }
         }
 
+
+        protected void ckb_siCalificadoIESSAcciTrabajo_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckb_siCalificadoIESSAcciTrabajo.Checked == true)
+            {
+                txt_EspecifiCalificadoIESSAcciTrabajo.Enabled = true;
+                txt_fechaCalificadoIESSAcciTrabajo.Enabled = true;
+                txt_observacionesAcciTrabajo.Enabled = true;
+                ckb_noCalificadoIESSEnferProfesionales.Checked = false;
+            }
+            else
+            {
+                txt_EspecifiCalificadoIESSAcciTrabajo.Enabled = false;
+                txt_fechaCalificadoIESSAcciTrabajo.Enabled = false;
+                txt_observacionesAcciTrabajo.Enabled = false;
+                ckb_noCalificadoIESSAcciTrabajo.Checked = false;
+            }
+        }
+
+        protected void ckb_noCalificadoIESSAcciTrabajo_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckb_noCalificadoIESSAcciTrabajo.Checked == true)
+            {
+                txt_EspecifiCalificadoIESSAcciTrabajo.Enabled = false;
+                txt_EspecifiCalificadoIESSAcciTrabajo.Text = "";
+                txt_fechaCalificadoIESSAcciTrabajo.Enabled = false;
+                txt_fechaCalificadoIESSAcciTrabajo.Text = "";
+                txt_observacionesAcciTrabajo.Enabled = false;
+                txt_observacionesAcciTrabajo.Text = "";
+                ckb_siCalificadoIESSAcciTrabajo.Checked = false;
+            }
+        }
+
+        protected void ckb_siCalificadoIESSEnferProfesionales_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckb_siCalificadoIESSEnferProfesionales.Checked == true)
+            {
+                txt_EspecifiCalificadoIESSEnferProfesionales.Enabled = true;
+                txt_fechaCalificadoIESSEnferProfesionales.Enabled = true;
+                txt_observacionesEnferProfesionales.Enabled = true;
+                ckb_noCalificadoIESSEnferProfesionales.Checked = false;
+            }
+            else
+            {
+                txt_EspecifiCalificadoIESSEnferProfesionales.Enabled = false;
+                txt_fechaCalificadoIESSEnferProfesionales.Enabled = false;
+                txt_observacionesEnferProfesionales.Enabled = false;
+                ckb_noCalificadoIESSEnferProfesionales.Checked = false;
+            }
+        }
+        protected void ckb_noCalificadoIESSEnferProfesionales_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckb_noCalificadoIESSEnferProfesionales.Checked == true)
+            {
+                txt_EspecifiCalificadoIESSEnferProfesionales.Enabled = false;
+                txt_EspecifiCalificadoIESSEnferProfesionales.Text = "";
+                txt_fechaCalificadoIESSEnferProfesionales.Enabled = false;
+                txt_fechaCalificadoIESSEnferProfesionales.Text = "";
+                txt_observacionesEnferProfesionales.Enabled = false;
+                txt_observacionesEnferProfesionales.Text = "";
+                ckb_siCalificadoIESSEnferProfesionales.Checked = false;
+            }
+        }
+
+        
+
+        protected void ckb_pre_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckb_pre.Checked == true)
+            {
+                ckb_def.Checked = false;
+            }
+        }
+
+        protected void ckb_def_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckb_def.Checked == true)
+            {
+                ckb_pre.Checked = false;
+            }
+        }
+
+        protected void ckb_pre2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckb_pre2.Checked == true)
+            {
+                ckb_def2.Checked = false;
+            }
+        }
+
+        protected void ckb_def2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckb_def2.Checked == true)
+            {
+                ckb_pre2.Checked = false;
+            }
+        }
+
+        protected void ckb_pre3_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckb_pre3.Checked == true)
+            {
+                ckb_def3.Checked = false;
+            }
+        }
+
+        protected void ckb_def3_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckb_def3.Checked == true)
+            {
+                ckb_pre3.Checked = false;
+            }
+        }
+
+        protected void ckb_sievamed_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckb_sievamed.Checked == true)
+            {
+                ckb_noevamed.Checked = false;
+                txt_obserevamed.Enabled = true;
+            }
+        }
+
+        protected void ckb_noevamed_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckb_noevamed.Checked == true)
+            {
+                ckb_sievamed.Checked = false;
+                txt_obserevamed.Text = "";
+            }
+        }
     }
 }

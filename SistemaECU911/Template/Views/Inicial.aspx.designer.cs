@@ -69,6 +69,15 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_numHClinica;
 
         /// <summary>
+        /// Control rfv_numHClinica.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_numHClinica;
+
+        /// <summary>
         /// Control AutoCompleteExtender2.
         /// </summary>
         /// <remarks>
@@ -204,31 +213,31 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.CheckBox ckb_evangelica;
 
         /// <summary>
-        /// Control cbk_testigo.
+        /// Control ckb_testigo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox cbk_testigo;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_testigo;
 
         /// <summary>
-        /// Control cbk_mormona.
+        /// Control ckb_mormona.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox cbk_mormona;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_mormona;
 
         /// <summary>
-        /// Control cbk_otrareligion.
+        /// Control ckb_otrareligion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox cbk_otrareligion;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_otrareligion;
 
         /// <summary>
         /// Control txt_gruposanguineo.
@@ -5710,6 +5719,15 @@ namespace SistemaECU911.Template.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddl_profesional;
+
+        /// <summary>
+        /// Control rfv_profesional.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_profesional;
 
         /// <summary>
         /// Control txt_codigoDatProf.

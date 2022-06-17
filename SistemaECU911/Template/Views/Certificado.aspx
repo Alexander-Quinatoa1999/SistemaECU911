@@ -60,7 +60,7 @@
             <div class="container" style="background-color: white; font-family: Arial">
                 <br />
                 <div class="container">
-                    <div class="text-center" style="font-size: 25px">
+                    <div class="text-center" style="font-size: 25px; font-weight:bold; font-family:Arial">
                         GESTIÓN DE SEGURIDAD Y SALUD OCUPACIONAL<br />
                         HISTORIA CLÍNICA OCUPACIONAL - CERTIFICADO
                     </div>
@@ -82,19 +82,20 @@
                             </asp:TableRow>
                             <asp:TableRow>
                                 <asp:TableCell Style="background-color: white; font-size: 14px">
-                                    <asp:TextBox runat="server" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center;" Text="Servicio Integrado de Seguridad Sis Ecu 911" ReadOnly="true"></asp:TextBox>
+                                    <asp:TextBox runat="server" BorderStyle="None" style="background-color: transparent; width: 100%; text-align:center; text-transform:uppercase" Text="Servicio Integrado de Seguridad Sis Ecu 911" ReadOnly="true"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white; font-size: 14px">
-                                    <asp:TextBox runat="server" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center" Text="1768174880001" ReadOnly="true"></asp:TextBox>
+                                    <asp:TextBox runat="server" BorderStyle="None" style="background-color: transparent; width: 100%; text-align:center; text-transform:uppercase" Text="1768174880001" ReadOnly="true"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white; font-size: 14px">
-                                    <asp:TextBox runat="server" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                                    <asp:TextBox runat="server" BorderStyle="None" style="background-color: transparent; width: 100%; text-align:center; text-transform:uppercase"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white; font-size: 14px">
-                                    <asp:TextBox runat="server" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center" Text="Consultorio Médico" ReadOnly="true"></asp:TextBox>
+                                    <asp:TextBox runat="server" BorderStyle="None" style="background-color: transparent; width: 100%; text-align:center; text-transform:uppercase" Text="Consultorio Médico" ReadOnly="true"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white; font-size: 14px">
-                                    <asp:TextBox runat="server" ID="txt_numHClinica" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center" OnTextChanged="txt_numHistoCli_TextChanged" AutoPostBack="true"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_numHClinica" BorderStyle="None" style="background-color: transparent; width: 100%; text-align:center; text-transform:uppercase" OnTextChanged="txt_numHistoCli_TextChanged" AutoPostBack="true"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="rfv_numHClinica" runat="server" ForeColor="Red" ControlToValidate="txt_numHClinica" ErrorMessage="CAMPO OBLIGATORIO"></asp:RequiredFieldValidator>
                                     <ajaxToolkit:AutoCompleteExtender ID="AutoCompleteExtender2" runat="server" CompletionInterval="10" DelimiterCharacters="" Enabled="True"
                                         MinimumPrefixLength="1" ServiceMethod="ObtenerNumHClinica"
                                         TargetControlID="txt_numHClinica" CompletionListCssClass="CompletionList"
@@ -103,7 +104,7 @@
                                         </ajaxToolkit:AutoCompleteExtender>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white; font-size: 14px">
-                                    <asp:TextBox runat="server" ID="txt_numArchivo" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_numArchivo" BorderStyle="None" style="background-color: transparent; width: 100%; text-align:center; text-transform:uppercase"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                         </asp:Table>
@@ -118,22 +119,22 @@
                             </asp:TableRow>
                             <asp:TableRow>
                                 <asp:TableCell Style="background-color: white; font-size: 14px">
-                                    <asp:TextBox runat="server" ID="txt_priApellido" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_priApellido" BorderStyle="None" style="background-color: transparent; width: 100%; text-align:center; text-transform:uppercase" ReadOnly="true"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white; font-size: 14px">
-                                    <asp:TextBox runat="server" ID="txt_segApellido" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_segApellido" BorderStyle="None" style="background-color: transparent; width: 100%; text-align:center; text-transform:uppercase" ReadOnly="true"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white; font-size: 14px">
-                                    <asp:TextBox runat="server" ID="txt_priNombre" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_priNombre" BorderStyle="None" style="background-color: transparent; width: 100%; text-align:center; text-transform:uppercase" ReadOnly="true"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white; font-size: 14px">
-                                    <asp:TextBox runat="server" ID="txt_segNombre" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_segNombre" BorderStyle="None" style="background-color: transparent; width: 100%; text-align:center; text-transform:uppercase" ReadOnly="true"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white; font-size: 14px">
-                                    <asp:TextBox runat="server" ID="txt_sexo" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_sexo" BorderStyle="None" style="background-color: transparent; width: 100%; text-align:center; text-transform:uppercase" ReadOnly="true"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white; font-size: 14px">
-                                    <asp:TextBox runat="server" ID="txt_puestoTrabajo" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center" TextMode="MultiLine" Rows="3"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_puestoTrabajo" BorderStyle="None" style="background-color: transparent; width: 100%; text-align:center; text-transform:uppercase" TextMode="MultiLine" Rows="3" ReadOnly="true"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                         </asp:Table>
@@ -149,7 +150,7 @@
                             <asp:TableRow>
                                 <asp:TableCell Text="FECHA DE EMISIÓN:" Style="width: 350px; background-color: #cdfecc; font-size:15px"></asp:TableCell>
                                 <asp:TableCell Style="width: 1000px; background-color: white; font-size: 14px" ColumnSpan="8">
-                                    <asp:TextBox runat="server" ID="txt_fechaEmision" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center" TextMode="Date"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_fechaEmision" BorderStyle="None" style="background-color: transparent; width: 100%; text-align:center; text-transform:uppercase" TextMode="Date"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
@@ -157,22 +158,22 @@
                                 <asp:TableCell Text="INGRESO" Style="width: 150px; background-color: #cdfecc; font-size:15px"></asp:TableCell>
                                 <asp:TableCell Style="width: 75px; background-color: white; font-size: 14px">
                                     <asp:CheckBox ID="ckb_ingreso" Checked="false" runat="server" />
-                                    <%--<asp:TextBox runat="server" ID="txt_ingreso" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>--%>
+                                    <%--<asp:TextBox runat="server" ID="txt_ingreso" BorderStyle="None" style="background-color: transparent; width: 100%; text-align:center; text-transform:uppercase"></asp:TextBox>--%>
                                 </asp:TableCell>
                                 <asp:TableCell Text="PERIÓDICO" Style="width: 150px; background-color: #cdfecc; font-size:15px"></asp:TableCell>
                                 <asp:TableCell Style="width: 75px; background-color: white; font-size: 14px">
                                     <asp:CheckBox ID="ckb_periodico" Checked="false" runat="server" />
-                                    <%--<asp:TextBox runat="server" ID="txt_periodico" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>--%>
+                                    <%--<asp:TextBox runat="server" ID="txt_periodico" BorderStyle="None" style="background-color: transparent; width: 100%; text-align:center; text-transform:uppercase"></asp:TextBox>--%>
                                 </asp:TableCell>
                                 <asp:TableCell Text="REINTEGRO" Style="width: 150px; background-color: #cdfecc; font-size:15px"></asp:TableCell>
                                 <asp:TableCell Style="width: 75px; background-color: white; font-size: 14px">
                                     <asp:CheckBox ID="ckb_reintegro" Checked="false" runat="server" />
-                                    <%--<asp:TextBox runat="server" ID="txt_reintegro" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>--%>
+                                    <%--<asp:TextBox runat="server" ID="txt_reintegro" BorderStyle="None" style="background-color: transparent; width: 100%; text-align:center; text-transform:uppercase"></asp:TextBox>--%>
                                 </asp:TableCell>
                                 <asp:TableCell Text="RETIRO" Style="width: 150px; background-color: #cdfecc; font-size:15px"></asp:TableCell>
                                 <asp:TableCell Style="width: 75px; background-color: white; font-size: 14px">
                                     <asp:CheckBox ID="ckb_retiro" Checked="false" runat="server" />
-                                    <%--<asp:TextBox runat="server" ID="txt_retiro" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>--%>
+                                    <%--<asp:TextBox runat="server" ID="txt_retiro" BorderStyle="None" style="background-color: transparent; width: 100%; text-align:center; text-transform:uppercase"></asp:TextBox>--%>
                                 </asp:TableCell>
                             </asp:TableRow>
                         </asp:Table>
@@ -186,36 +187,36 @@
                     <div class="list-group list-group-flush">
                         <asp:Table class="table table-bordered table-light table-responsive text-center" runat="server">
                             <asp:TableRow>
-                                <asp:TableCell ColumnSpan="5" Text="Después de la valoración médica ocupacional se certifica que la persona en mención, es calificada como:" Style="text-align: left; background-color: white; font-size:15px"></asp:TableCell>
+                                <asp:TableCell ColumnSpan="5" Text="Después de la valoración médica ocupacional se certifica que la persona en mención, es calificada como:" Style="text-align: left; background-color: white; font-size:15px; text-transform:uppercase"></asp:TableCell>
                                 <asp:TableCell ColumnSpan="3" style="background-color: white">
-                                    <asp:TextBox runat="server" ID="txt_valoraMedicaOcupacional" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center" TextMode="MultiLine" Rows="2"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_valoraMedicaOcupacional" BorderStyle="None" style="background-color: transparent; width: 100%; text-align:center; text-transform:uppercase" TextMode="MultiLine" Rows="2"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
                                 <asp:TableCell Style="width: 275px; background-color: #cdfecc; font-size:15px">APTO</asp:TableCell>
                                 <asp:TableCell Style="width: 50px; background-color: white; font-size: 14px">
                                     <asp:CheckBox ID="ckb_apto" Checked="false" runat="server" />
-                                    <%--<asp:TextBox runat="server" ID="ckb_apto" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>--%>
+                                    <%--<asp:TextBox runat="server" ID="ckb_apto" BorderStyle="None" style="background-color: transparent; width: 100%; text-align:center; text-transform:uppercase"></asp:TextBox>--%>
                                 </asp:TableCell>
                                 <asp:TableCell Style="width: 275px; background-color: #cdfecc; font-size:15px">APTO EN OBSERVACIÓN</asp:TableCell>
                                 <asp:TableCell Style="width: 50px; background-color: white; font-size: 14px">
                                     <asp:CheckBox ID="ckb_aptoObservacion" Checked="false" runat="server" />
-                                    <%--<asp:TextBox runat="server" ID="ckb_aptoObservacion" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>--%>
+                                    <%--<asp:TextBox runat="server" ID="ckb_aptoObservacion" BorderStyle="None" style="background-color: transparent; width: 100%; text-align:center; text-transform:uppercase"></asp:TextBox>--%>
                                 </asp:TableCell>
                                 <asp:TableCell Style="width: 275px; background-color: #cdfecc; font-size:15px">APTO CON LIMITACIONES</asp:TableCell>
                                 <asp:TableCell Style="width: 50px; background-color: white; font-size: 14px">
                                     <asp:CheckBox ID="ckb_aptoLimitaciones" Checked="false" runat="server" />
-                                    <%--<asp:TextBox runat="server" ID="ckb_aptoLimitaciones" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>--%>
+                                    <%--<asp:TextBox runat="server" ID="ckb_aptoLimitaciones" BorderStyle="None" style="background-color: transparent; width: 100%; text-align:center; text-transform:uppercase"></asp:TextBox>--%>
                                 </asp:TableCell>
                                 <asp:TableCell Style="width: 275px; background-color: #cdfecc; font-size:15px">NO APTO</asp:TableCell>
                                 <asp:TableCell Style="width: 50px; background-color: white; font-size: 14px">
                                     <asp:CheckBox ID="ckb_noApto" Checked="false" runat="server" />
-                                    <%--<asp:TextBox runat="server" ID="ckb_noApto" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>--%>
+                                    <%--<asp:TextBox runat="server" ID="ckb_noApto" BorderStyle="None" style="background-color: transparent; width: 100%; text-align:center; text-transform:uppercase"></asp:TextBox>--%>
                                 </asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
                                 <asp:TableCell ColumnSpan="8" Style="background-color: white">
-                                    <asp:TextBox runat="server" ID="txt_detaObservaAptiMedLaboral" BorderStyle="None" Style="background-color: transparent; width: 100%" TextMode="MultiLine" Rows="4" placeholder="Detalle de Observaciones:"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_detaObservaAptiMedLaboral" BorderStyle="None" Style="background-color: transparent; width: 100%; text-transform:uppercase" TextMode="MultiLine" Rows="4" placeholder="Detalle de Observaciones:"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                         </asp:Table>
@@ -229,54 +230,54 @@
                     <div class="list-group list-group-flush">
                         <asp:Table class="table table-bordered table-light table-responsive text-center" runat="server">
                             <asp:TableRow>
-                                <asp:TableCell Text="El usuario se realizó la evaluación médica de retiro" Style="width: 850px; text-align: left; background-color: white; font-size:15px"></asp:TableCell>
-                                <asp:TableCell Text="SI" Style="width: 100px; background-color: #cdfecc; font-size:15px"></asp:TableCell>
+                                <asp:TableCell Text="El usuario se realizó la evaluación médica de retiro" Style="width: 850px; text-align: left; background-color: white; font-size:15px; text-transform:uppercase"></asp:TableCell>
+                                <asp:TableCell Text="SI" Style="width: 100px; background-color: #cdfecc; font-size:15px; text-transform:uppercase"></asp:TableCell>
                                 <asp:TableCell Style="width: 50px; background-color: white; font-size: 14px">
-                                    <asp:CheckBox ID="ckb_siEvaMedRetiro" Checked="false" runat="server" />
-                                    <%--<asp:TextBox runat="server" ID="ckb_siEvaMedRetiro" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>--%>
+                                    <asp:CheckBox ID="ckb_siEvaMedRetiro" Checked="false" OnCheckedChanged="ckb_siEvaMedRetiro_CheckedChanged" AutoPostBack="true" runat="server" />
+                                    <%--<asp:TextBox runat="server" ID="ckb_siEvaMedRetiro" BorderStyle="None" style="background-color: transparent; width: 100%; text-align:center; text-transform:uppercase"></asp:TextBox>--%>
                                 </asp:TableCell>
-                                <asp:TableCell Text="NO" Style="width: 100px; background-color: #cdfecc; font-size:15px"></asp:TableCell>
+                                <asp:TableCell Text="NO" Style="width: 100px; background-color: #cdfecc; font-size:15px; text-transform:uppercase"></asp:TableCell>
                                 <asp:TableCell Style="width: 50px; background-color: white; font-size: 14px">
-                                    <asp:CheckBox ID="ckb_noEvaMedRetiro" Checked="false" runat="server" />
-                                    <%--<asp:TextBox runat="server" ID="ckb_noEvaMedRetiro" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>--%>
+                                    <asp:CheckBox ID="ckb_noEvaMedRetiro" Checked="false" OnCheckedChanged="ckb_noEvaMedRetiro_CheckedChanged" AutoPostBack="true" runat="server" />
+                                    <%--<asp:TextBox runat="server" ID="ckb_noEvaMedRetiro" BorderStyle="None" style="background-color: transparent; width: 100%; text-align:center; text-transform:uppercase"></asp:TextBox>--%>
                                 </asp:TableCell>
                                 <asp:TableCell Style="width: 100px; background-color: white; font-size: 14px" BorderColor="Transparent"></asp:TableCell>
                                 <asp:TableCell Style="width: 50px; background-color: white; font-size: 14px" BorderColor="Transparent"></asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
-                                <asp:TableCell Text="Condición del diagnóstico" Style="text-align: left; background-color: white; font-size:15px"></asp:TableCell>
-                                <asp:TableCell Text="Presuntiva" Style="background-color: #cdfecc; font-size:15px"></asp:TableCell>
+                                <asp:TableCell Text="Condición del diagnóstico" Style="text-align: left; background-color: white; font-size:15px; text-transform:uppercase"></asp:TableCell>
+                                <asp:TableCell Text="Presuntiva" Style="background-color: #cdfecc; font-size:15px; text-transform:uppercase"></asp:TableCell>
                                 <asp:TableCell Style="background-color: white; font-size: 14px">
-                                    <asp:CheckBox ID="ckb_presuntivaCondiDiag" Checked="false" runat="server" />
-                                    <%--<asp:TextBox runat="server" ID="ckb_presuntivaEvaMedRetiro" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>--%>
+                                    <asp:CheckBox ID="ckb_presuntivaCondiDiag" Checked="false" OnCheckedChanged="ckb_presuntivaCondiDiag_CheckedChanged" AutoPostBack="true" runat="server" />
+                                    <%--<asp:TextBox runat="server" ID="ckb_presuntivaEvaMedRetiro" BorderStyle="None" style="background-color: transparent; width: 100%; text-align:center; text-transform:uppercase"></asp:TextBox>--%>
                                 </asp:TableCell>
-                                <asp:TableCell Text="Definitiva" Style="background-color: #cdfecc; font-size:15px"></asp:TableCell>
+                                <asp:TableCell Text="Definitiva" Style="background-color: #cdfecc; font-size:15px; text-transform:uppercase"></asp:TableCell>
                                 <asp:TableCell Style="background-color: white; font-size: 14px">
-                                    <asp:CheckBox ID="ckb_definitivaCondiDiag" Checked="false" runat="server" />
-                                    <%--<asp:TextBox runat="server" ID="ckb_definitivaEvaMedRetiro" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>--%>
+                                    <asp:CheckBox ID="ckb_definitivaCondiDiag" Checked="false" OnCheckedChanged="ckb_definitivaCondiDiag_CheckedChanged" AutoPostBack="true" runat="server" />
+                                    <%--<asp:TextBox runat="server" ID="ckb_definitivaEvaMedRetiro" BorderStyle="None" style="background-color: transparent; width: 100%; text-align:center; text-transform:uppercase"></asp:TextBox>--%>
                                 </asp:TableCell>
-                                <asp:TableCell Text="No aplica" Style="background-color: #cdfecc; font-size:15px"></asp:TableCell>
+                                <asp:TableCell Text="No aplica" Style="background-color: #cdfecc; font-size:15px; text-transform:uppercase"></asp:TableCell>
                                 <asp:TableCell Style="background-color: white; font-size: 14px">
-                                    <asp:CheckBox ID="ckb_noAplicaCondiDiag" Checked="false" runat="server" />
-                                    <%--<asp:TextBox runat="server" ID="ckb_noAplicaEvaMedRetiro" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>--%>
+                                    <asp:CheckBox ID="ckb_noAplicaCondiDiag" Checked="false" OnCheckedChanged="ckb_noAplicaCondiDiag_CheckedChanged" AutoPostBack="true" runat="server" />
+                                    <%--<asp:TextBox runat="server" ID="ckb_noAplicaEvaMedRetiro" BorderStyle="None" style="background-color: transparent; width: 100%; text-align:center; text-transform:uppercase"></asp:TextBox>--%>
                                 </asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
-                                <asp:TableCell Text="La condición de salud esta relacionada con el trabajo" Style="width: 750px; text-align: left; background-color: white; font-size:15px"></asp:TableCell>
-                                <asp:TableCell Text="SI" Style="width: 75px; background-color: #cdfecc; font-size:15px"></asp:TableCell>
+                                <asp:TableCell Text="La condición de salud esta relacionada con el trabajo" Style="width: 750px; text-align: left; background-color: white; font-size:15px; text-transform:uppercase"></asp:TableCell>
+                                <asp:TableCell Text="SI" Style="width: 75px; background-color: #cdfecc; font-size:15px; text-transform:uppercase"></asp:TableCell>
                                 <asp:TableCell Style="width: 75px; background-color: white; font-size: 14px">
-                                    <asp:CheckBox ID="ckb_siCondiSalud" Checked="false" runat="server" />
-                                    <%--<asp:TextBox runat="server" ID="ckb_si2EvaMedRetiro" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>--%>
+                                    <asp:CheckBox ID="ckb_siCondiSalud" Checked="false" OnCheckedChanged="ckb_siCondiSalud_CheckedChanged" AutoPostBack="true" runat="server" />
+                                    <%--<asp:TextBox runat="server" ID="ckb_si2EvaMedRetiro" BorderStyle="None" style="background-color: transparent; width: 100%; text-align:center; text-transform:uppercase"></asp:TextBox>--%>
                                 </asp:TableCell>
-                                <asp:TableCell Text="NO" Style="width: 75px; background-color: #cdfecc; font-size:15px"></asp:TableCell>
+                                <asp:TableCell Text="NO" Style="width: 75px; background-color: #cdfecc; font-size:15px; text-transform:uppercase"></asp:TableCell>
                                 <asp:TableCell Style="width: 75px; background-color: white; font-size: 14px">
-                                    <asp:CheckBox ID="ckb_noCondiSalud" Checked="false" runat="server" />
-                                    <%--<asp:TextBox runat="server" ID="ckb_no2EvaMedRetiro" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>--%>
+                                    <asp:CheckBox ID="ckb_noCondiSalud" Checked="false" OnCheckedChanged="ckb_noCondiSalud_CheckedChanged" AutoPostBack="true" runat="server" />
+                                    <%--<asp:TextBox runat="server" ID="ckb_no2EvaMedRetiro" BorderStyle="None" style="background-color: transparent; width: 100%; text-align:center; text-transform:uppercase"></asp:TextBox>--%>
                                 </asp:TableCell>
-                                <asp:TableCell Text="No aplica" Style="width: 75px; background-color: #cdfecc; font-size:15px"></asp:TableCell>
+                                <asp:TableCell Text="No aplica" Style="width: 75px; background-color: #cdfecc; font-size:15px; text-transform:uppercase"></asp:TableCell>
                                 <asp:TableCell Style="width: 75px; background-color: white; font-size: 14px">
-                                    <asp:CheckBox ID="ckb_noAplicaCondiSalud" Checked="false" runat="server" />
-                                    <%--<asp:TextBox runat="server" ID="ckb_noAplica2EvaMedRetiro" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>--%>
+                                    <asp:CheckBox ID="ckb_noAplicaCondiSalud" Checked="false" OnCheckedChanged="ckb_noAplicaCondiSalud_CheckedChanged" AutoPostBack="true" runat="server" />
+                                    <%--<asp:TextBox runat="server" ID="ckb_noAplica2EvaMedRetiro" BorderStyle="None" style="background-color: transparent; width: 100%; text-align:center; text-transform:uppercase"></asp:TextBox>--%>
                                 </asp:TableCell>
                             </asp:TableRow>
                         </asp:Table>
@@ -288,11 +289,11 @@
                         E. RECOMENDACIONES 
                     </div>
                     <div class="list-group list-group-flush">
-                        <asp:TextBox runat="server" ID="txt_descripRecomendaciones" BorderStyle="None" Style="width: 100%" TextMode="MultiLine" Rows="3" placeholder="Descripción"></asp:TextBox>
+                        <asp:TextBox runat="server" ID="txt_descripRecomendaciones" BorderStyle="None" Style="width: 100%; text-transform:uppercase" TextMode="MultiLine" Rows="3" placeholder="Descripción"></asp:TextBox>
                     </div>
                 </div>
                 <br />
-                <div class="container" style="text-align: center">
+                <div class="container" style="text-align:center; text-transform:uppercase">
                     <p align="center">
                         <strong>"Con este documento certifico que el trabajador se ha sometido a la evaluación médica requerida para 
                             (el ingreso /la ejecución/ el reintegro y retiro) al puesto laboral y se ha informado sobre los riesgos relacionados 
@@ -314,15 +315,16 @@
                             <asp:TableRow>
                                 <asp:TableCell Style="width: 200px; background-color: #cdfecc; font-size:15px">NOMBRES Y APELLIDOS</asp:TableCell>
                                 <asp:TableCell Style="width: 400px; background-color: white; font-size: 14px">
-                                    <asp:DropDownList ID="ddl_profesional" CssClass="form-check" Style="width: 100%; border: none; background-color: transparent" runat="server"></asp:DropDownList>
+                                    <asp:DropDownList ID="ddl_profesional" CssClass="form-check" Style="width: 100%; text-transform:uppercase; border: none; background-color: transparent; text-align:center       " runat="server"></asp:DropDownList>
+                                    <asp:RequiredFieldValidator ID="rfv_profesional" runat="server" ForeColor="Red" InitialValue="0" ControlToValidate="ddl_profesional" ErrorMessage="CAMPO OBLIGATORIO"></asp:RequiredFieldValidator>
                                 </asp:TableCell>
                                 <asp:TableCell Style="width: 150px; background-color: #cdfecc; font-size:15px">CÓDIGO</asp:TableCell>
                                 <asp:TableCell Style="width: 200px; background-color: white; font-size: 14px">
-                                    <asp:TextBox runat="server" ID="txt_codigo" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_codigo" BorderStyle="None" style="background-color: transparent; width: 100%; text-align:center; text-transform:uppercase"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="width: 150px; background-color: #cdfecc; font-size:15px">FIRMA Y SELLO</asp:TableCell>
                                 <asp:TableCell Style="width: 200px; background-color: white; font-size: 14px">
-                                    <asp:TextBox runat="server" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center"></asp:TextBox>
+                                    <asp:TextBox runat="server" BorderStyle="None" style="background-color: transparent; width: 100%; text-align:center; text-transform:uppercase"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                         </asp:Table>

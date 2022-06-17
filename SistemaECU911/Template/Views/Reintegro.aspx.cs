@@ -620,6 +620,7 @@ namespace SistemaECU911.Template.Views
                 }
 
                 cargarProfesional();
+                defaultValidaciones();
             }
         }
 
@@ -826,6 +827,8 @@ namespace SistemaECU911.Template.Views
 
                 int perso = Convert.ToInt32(per.Per_id.ToString());
 
+                reinte = new Tbl_Reintegro();
+
                 //Regiones
                 if (ckb_cicatrices.Checked == true)
                 {
@@ -1031,8 +1034,6 @@ namespace SistemaECU911.Template.Views
                 {
                     reinte.rein_NoApto = "SI";
                 }
-
-                reinte = new Tbl_Reintegro();
 
                 //A
                 reinte.rein_numArchivo = txt_numArchivo.Text;
@@ -1661,5 +1662,55 @@ namespace SistemaECU911.Template.Views
                 txt_talla.Focus();
             }
         }
+
+        protected void ckb_pre_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckb_pre.Checked == true)
+            {
+                ckb_def.Checked = false;
+            }
+        }
+
+        protected void ckb_def_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckb_def.Checked == true)
+            {
+                ckb_pre.Checked = false;
+            }
+        }
+
+        protected void ckb_pre2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckb_pre2.Checked == true)
+            {
+                ckb_def2.Checked = false;
+            }
+        }
+
+        protected void ckb_def2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckb_def2.Checked == true)
+            {
+                ckb_pre2.Checked = false;
+            }
+        }
+
+        protected void ckb_def3_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckb_def3.Checked == true)
+            {
+                ckb_pre3.Checked = false;
+            }
+        }
+
+        protected void ckb_pre3_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckb_pre3.Checked == true)
+            {
+                ckb_def3.Checked = false;
+            }
+        }
+
+        
     }
 }

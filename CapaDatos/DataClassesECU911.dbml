@@ -1052,8 +1052,8 @@
       <Column Name="pedExa_ca159MarcaTumo" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
       <Column Name="pedExa_tiroglobulinaMarcaTumo" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
       <Column Name="pedExa_psaTotalMarcaTumo" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
-      <Column Name="pedExa_muestraDeMicro" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="pedExa_muestraDeMicroDescrip" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="pedExa_muestraDeMicro" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="pedExa_muestraDeMicroDescrip" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="pedExa_gramMicro" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
       <Column Name="pedExa_frescoMicro" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
       <Column Name="pedExa_kohMicro" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />

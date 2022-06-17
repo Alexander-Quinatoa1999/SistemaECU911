@@ -1244,6 +1244,8 @@ namespace SistemaECU911.Template.Views
                         }
                     }
                 }
+
+                defaultValidaciones();
             }
         }
 
@@ -3227,6 +3229,71 @@ namespace SistemaECU911.Template.Views
         protected void btn_cancelar_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/Template/Views/Inicio.aspx");
+        }
+
+        protected void ckb_muestra_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckb_muestra.Checked == true)
+            {
+                txt_muestra.Enabled = true;
+            }
+            else
+            {
+                txt_muestra.Text = "";
+                txt_muestra.Enabled = false;
+            }
+        }
+
+        protected void ckb_curvaTolerancia_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckb_curvaTolerancia.Checked == true)
+            {
+                txt_glucosa.Enabled = true;
+            }
+            else
+            {
+                txt_glucosa.Text = "";
+                txt_glucosa.Enabled = false;
+            }
+        }
+
+        protected void ckb_otros1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckb_otros1.Checked == true)
+            {
+                txt_otros1.Enabled = true;
+            }
+            else
+            {
+                txt_otros1.Text = "";
+                txt_otros1.Enabled = false;
+            }
+        }
+
+        protected void ckb_otros2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckb_otros2.Checked == true)
+            {
+                txt_otros2.Enabled = true;
+            }
+            else
+            {
+                txt_otros2.Text = "";
+                txt_otros2.Enabled = false;
+            }
+        }
+
+        protected void ckb_otros3_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckb_otros3.Checked == true)
+            {
+                txt_otros3.Enabled = true;
+            }
+            else
+            {
+                txt_otros3.Text = "";
+                txt_otros3.Enabled = false;
+            }
         }
     }
 }

@@ -299,6 +299,8 @@ namespace SistemaECU911.Template.Views
 
                 int perso = Convert.ToInt32(per.Per_id.ToString());
 
+                certi = new Tbl_Certificado();
+
                 //Datos Generales
                 if (ckb_ingreso.Checked == true)
                 {
@@ -372,8 +374,6 @@ namespace SistemaECU911.Template.Views
                 {
                     certi.certi_noAplicaCondiSalud = "SI";                    
                 }
-
-                certi = new Tbl_Certificado();
 
                 //A
                 certi.certi_numArchivo = txt_numArchivo.Text;
@@ -615,6 +615,75 @@ namespace SistemaECU911.Template.Views
             ddl_profesional.DataBind();
         }
 
+        protected void ckb_siEvaMedRetiro_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckb_siEvaMedRetiro.Checked == true)
+            {
+                ckb_noEvaMedRetiro.Checked = false;
+            }
+        }
+
+        protected void ckb_noEvaMedRetiro_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckb_noEvaMedRetiro.Checked == true)
+            {
+                ckb_siEvaMedRetiro.Checked = false;
+            }
+        }
+
+        protected void ckb_presuntivaCondiDiag_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckb_presuntivaCondiDiag.Checked == true)
+            {
+                ckb_definitivaCondiDiag.Checked = false;
+                ckb_noAplicaCondiDiag.Checked = false;
+            }
+        }
+
+        protected void ckb_definitivaCondiDiag_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckb_definitivaCondiDiag.Checked == true)
+            {
+                ckb_presuntivaCondiDiag.Checked = false;
+                ckb_noAplicaCondiDiag.Checked = false;
+            }
+        }
+
+        protected void ckb_noAplicaCondiDiag_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckb_noAplicaCondiDiag.Checked == true)
+            {
+                ckb_presuntivaCondiDiag.Checked = false;
+                ckb_definitivaCondiDiag.Checked = false;
+            }
+        }
+
+        protected void ckb_siCondiSalud_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckb_siCondiSalud.Checked == true)
+            {
+                ckb_noCondiSalud.Checked = false;
+                ckb_noAplicaCondiSalud.Checked = false;
+            }
+        }
+
+        protected void ckb_noCondiSalud_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckb_noCondiSalud.Checked == true)
+            {
+                ckb_siCondiSalud.Checked = false;
+                ckb_noAplicaCondiSalud.Checked = false;
+            }
+        }
+
+        protected void ckb_noAplicaCondiSalud_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckb_noAplicaCondiSalud.Checked == true)
+            {
+                ckb_siCondiSalud.Checked = false;
+                ckb_noCondiSalud.Checked = false;
+            }
+        }
     }
    
 }

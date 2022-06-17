@@ -43,6 +43,8 @@ namespace SistemaECU911.Template.Views
 
                     if (per != null)
                     {
+                        txt_numHClinica.ReadOnly = true;
+
                         txt_priNombre.Text = per.Per_priNombre.ToString();
                         txt_segNombre.Text = per.Per_segNombre.ToString();
                         txt_priApellido.Text = per.Per_priApellido.ToString();

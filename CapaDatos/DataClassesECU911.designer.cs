@@ -25089,7 +25089,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_muestraDeMicro", DbType="VarChar(50)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_muestraDeMicro", DbType="VarChar(2)")]
 		public string pedExa_muestraDeMicro
 		{
 			get
@@ -25109,7 +25109,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_muestraDeMicroDescrip", DbType="VarChar(2)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_muestraDeMicroDescrip", DbType="VarChar(50)")]
 		public string pedExa_muestraDeMicroDescrip
 		{
 			get

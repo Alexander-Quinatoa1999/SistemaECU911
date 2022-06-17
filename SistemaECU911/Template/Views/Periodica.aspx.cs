@@ -37,6 +37,8 @@ namespace SistemaECU911.Template.Views
 
                     if (per != null)
                     {
+                        txt_numHClinica.ReadOnly = true;
+
                         //Habitos Toxicos
                         if (perio.perio_siConsuNocivosTabaco == null)
                         {
@@ -2497,6 +2499,7 @@ namespace SistemaECU911.Template.Views
                 }
 
                 cargarProfesional();
+                defaultValidaciones();
             }
         }
 
@@ -2663,11 +2666,14 @@ namespace SistemaECU911.Template.Views
 
         private void GuardarPeriodica()
         {
+
             try
             {
                 per = CN_HistorialMedico.ObtenerIdPersonasxCedula(Convert.ToInt32(txt_numHClinica.Text));
 
                 int perso = Convert.ToInt32(per.Per_id.ToString());
+
+                perio = new Tbl_Periodica();
 
                 //Habitos Toxicos
                 if (ckb_siConsuNociTabaHabToxi.Checked == true)
@@ -3711,8 +3717,6 @@ namespace SistemaECU911.Template.Views
                     perio.perio_NoApto = "SI";
                 }
 
-                perio = new Tbl_Periodica();
-                
                 //A
                 perio.perio_numArchivo = txt_numArchivo.Text;
 
@@ -3832,7 +3836,6 @@ namespace SistemaECU911.Template.Views
             {
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos No Guardados')", true);
             }
-
         }
 
         private void ModificarPeriodica(Tbl_Periodica perio)
@@ -6031,371 +6034,6 @@ namespace SistemaECU911.Template.Views
             }
         }
 
-        protected void ckb_siConsuNociTabaHabToxi_CheckedChanged(object sender, EventArgs e)
-        {
-            if (ckb_siConsuNociTabaHabToxi.Checked == true)
-            {
-                txt_tiemConConsuNociTabaHabToxi.Enabled = true;
-                txt_cantiConsuNociTabaHabToxi.Enabled = true;
-                txt_exConsumiConsuNociTabaHabToxi.Enabled = true;
-                txt_tiemAbstiConsuNociTabaHabToxi.Enabled = true;
-                ckb_noConsuNociTabaHabToxi.Enabled = false;
-            }
-            else
-            {
-                txt_tiemConConsuNociTabaHabToxi.Enabled = false;
-                txt_cantiConsuNociTabaHabToxi.Enabled = false;
-                txt_exConsumiConsuNociTabaHabToxi.Enabled = false;
-                txt_tiemAbstiConsuNociTabaHabToxi.Enabled = false;
-                ckb_noConsuNociTabaHabToxi.Enabled = true;
-            }
-        }
-
-        protected void ckb_noConsuNociTabaHabToxi_CheckedChanged(object sender, EventArgs e)
-        {
-            if (ckb_noConsuNociTabaHabToxi.Checked == true)
-            {
-                txt_tiemConConsuNociTabaHabToxi.Enabled = false;
-                txt_tiemConConsuNociTabaHabToxi.Text = "";
-                txt_cantiConsuNociTabaHabToxi.Enabled = false;
-                txt_cantiConsuNociTabaHabToxi.Text = "";
-                txt_exConsumiConsuNociTabaHabToxi.Enabled = false;
-                txt_exConsumiConsuNociTabaHabToxi.Text = "";
-                txt_tiemAbstiConsuNociTabaHabToxi.Enabled = false;
-                txt_tiemAbstiConsuNociTabaHabToxi.Text = "";
-                ckb_siConsuNociTabaHabToxi.Enabled = false;
-            }
-            else
-            {
-                ckb_siConsuNociTabaHabToxi.Enabled = true;
-            }
-        }
-
-        protected void ckb_siConsuNociAlcoHabToxi_CheckedChanged(object sender, EventArgs e)
-        {
-            if (ckb_siConsuNociAlcoHabToxi.Checked == true)
-            {
-                txt_tiemConConsuNociAlcoHabToxi.Enabled = true;
-                txt_cantiConsuNociAlcoHabToxi.Enabled = true;
-                txt_exConsumiConsuNociAlcoHabToxi.Enabled = true;
-                txt_tiemAbstiConsuNociAlcoHabToxi.Enabled = true;
-                ckb_noConsuNociAlcoHabToxi.Enabled = false;
-            }
-            else
-            {
-                txt_tiemConConsuNociAlcoHabToxi.Enabled = false;
-                txt_cantiConsuNociAlcoHabToxi.Enabled = false;
-                txt_exConsumiConsuNociAlcoHabToxi.Enabled = false;
-                txt_tiemAbstiConsuNociAlcoHabToxi.Enabled = false;
-                ckb_noConsuNociAlcoHabToxi.Enabled = true;
-            }
-        }
-
-        protected void ckb_noConsuNociAlcoHabToxi_CheckedChanged(object sender, EventArgs e)
-        {
-            if (ckb_noConsuNociAlcoHabToxi.Checked == true)
-            {
-                txt_tiemConConsuNociAlcoHabToxi.Enabled = false;
-                txt_tiemConConsuNociAlcoHabToxi.Text = "";
-                txt_cantiConsuNociAlcoHabToxi.Enabled = false;
-                txt_cantiConsuNociAlcoHabToxi.Text = "";
-                txt_exConsumiConsuNociAlcoHabToxi.Enabled = false;
-                txt_exConsumiConsuNociAlcoHabToxi.Text = "";
-                txt_tiemAbstiConsuNociAlcoHabToxi.Enabled = false;
-                txt_tiemAbstiConsuNociAlcoHabToxi.Text = "";
-                ckb_siConsuNociAlcoHabToxi.Enabled = false;
-            }
-            else
-            {
-                ckb_siConsuNociAlcoHabToxi.Enabled = true;
-            }
-        }
-
-        protected void ckb_siConsuNociOtrasDroHabToxi_CheckedChanged(object sender, EventArgs e)
-        {
-            if (ckb_siConsuNociOtrasDroHabToxi.Checked == true)
-            {
-                txt_tiemCon1ConsuNociOtrasDroHabToxi.Enabled = true;
-                txt_canti1ConsuNociOtrasDroHabToxi.Enabled = true;
-                txt_exConsumi1ConsuNociOtrasDroHabToxi.Enabled = true;
-                txt_tiemAbsti1ConsuNociOtrasDroHabToxi.Enabled = true;
-                txt_otrasConsuNociOtrasDroHabToxi.Enabled = true;
-                txt_tiemCon2ConsuNociOtrasDroHabToxi.Enabled = true;
-                txt_canti2ConsuNociOtrasDroHabToxi.Enabled = true;
-                txt_exConsumi2ConsuNociOtrasDroHabToxi.Enabled = true;
-                txt_tiemAbsti2ConsuNociOtrasDroHabToxi.Enabled = true;
-                ckb_noConsuNociOtrasDroHabToxi.Enabled = false;
-            }
-            else
-            {
-                txt_tiemCon1ConsuNociOtrasDroHabToxi.Enabled = false;
-                txt_canti1ConsuNociOtrasDroHabToxi.Enabled = false;
-                txt_exConsumi1ConsuNociOtrasDroHabToxi.Enabled = false;
-                txt_tiemAbsti1ConsuNociOtrasDroHabToxi.Enabled = false;
-                txt_otrasConsuNociOtrasDroHabToxi.Enabled = false;
-                txt_tiemCon2ConsuNociOtrasDroHabToxi.Enabled = false;
-                txt_canti2ConsuNociOtrasDroHabToxi.Enabled = false;
-                txt_exConsumi2ConsuNociOtrasDroHabToxi.Enabled = false;
-                txt_tiemAbsti2ConsuNociOtrasDroHabToxi.Enabled = false;
-                ckb_noConsuNociOtrasDroHabToxi.Enabled = true;
-            }
-        }
-
-        protected void ckb_noConsuNociOtrasDroHabToxi_CheckedChanged(object sender, EventArgs e)
-        {
-            if (ckb_noConsuNociOtrasDroHabToxi.Checked == true)
-            {
-                txt_tiemCon1ConsuNociOtrasDroHabToxi.Enabled = false;
-                txt_tiemCon1ConsuNociOtrasDroHabToxi.Text = "";
-                txt_canti1ConsuNociOtrasDroHabToxi.Enabled = false;
-                txt_canti1ConsuNociOtrasDroHabToxi.Text = "";
-                txt_exConsumi1ConsuNociOtrasDroHabToxi.Enabled = false;
-                txt_exConsumi1ConsuNociOtrasDroHabToxi.Text = "";
-                txt_tiemAbsti1ConsuNociOtrasDroHabToxi.Enabled = false;
-                txt_tiemAbsti1ConsuNociOtrasDroHabToxi.Text = "";
-                txt_otrasConsuNociOtrasDroHabToxi.Enabled = false;
-                txt_otrasConsuNociOtrasDroHabToxi.Text = "";
-                txt_tiemCon2ConsuNociOtrasDroHabToxi.Enabled = false;
-                txt_tiemCon2ConsuNociOtrasDroHabToxi.Text = "";
-                txt_canti2ConsuNociOtrasDroHabToxi.Enabled = false;
-                txt_canti2ConsuNociOtrasDroHabToxi.Text = "";
-                txt_exConsumi2ConsuNociOtrasDroHabToxi.Enabled = false;
-                txt_exConsumi2ConsuNociOtrasDroHabToxi.Text = "";
-                txt_tiemAbsti2ConsuNociOtrasDroHabToxi.Enabled = false;
-                txt_tiemAbsti2ConsuNociOtrasDroHabToxi.Text = "";
-                ckb_siConsuNociOtrasDroHabToxi.Enabled = false;
-            }
-            else
-            {
-                ckb_siConsuNociOtrasDroHabToxi.Enabled = true;
-            }
-        }
-
-        protected void ckb_siEstVidaActFisiEstVida_CheckedChanged(object sender, EventArgs e)
-        {
-            if (ckb_siEstVidaActFisiEstVida.Checked == true)
-            {
-                txt_cualEstVidaActFisiEstVida.Enabled = true;
-                txt_tiemCanEstVidaActFisiEstVida.Enabled = true;
-                ckb_noEstVidaActFisiEstVida.Enabled = false;
-            }
-            else
-            {
-                txt_cualEstVidaActFisiEstVida.Enabled = false;
-                txt_tiemCanEstVidaActFisiEstVida.Enabled = false;
-                ckb_noEstVidaActFisiEstVida.Enabled = true;
-            }
-        }
-
-        protected void ckb_noEstVidaActFisiEstVida_CheckedChanged(object sender, EventArgs e)
-        {
-            if (ckb_noEstVidaActFisiEstVida.Checked == true)
-            {
-                txt_cualEstVidaActFisiEstVida.Enabled = false;
-                txt_cualEstVidaActFisiEstVida.Text = "";
-                txt_tiemCanEstVidaActFisiEstVida.Enabled = false;
-                txt_tiemCanEstVidaActFisiEstVida.Text = "";
-                ckb_siEstVidaActFisiEstVida.Enabled = false;
-            }
-            else
-            {
-                ckb_siEstVidaActFisiEstVida.Enabled = true;
-            }
-        }
-
-        protected void ckb_siEstVidaMedHabiEstVida_CheckedChanged(object sender, EventArgs e)
-        {
-            if (ckb_siEstVidaMedHabiEstVida.Checked == true)
-            {
-                txt_cual1EstVidaMedHabiEstVida.Enabled = true;
-                txt_tiemCan1EstVidaMedHabiEstVida.Enabled = true;
-                txt_cual2EstVidaMedHabiEstVida.Enabled = true;
-                txt_tiemCan2EstVidaMedHabiEstVida.Enabled = true;
-                txt_cual3EstVidaMedHabiEstVida.Enabled = true;
-                txt_tiemCan3EstVidaMedHabiEstVida.Enabled = true;
-                ckb_noEstVidaMedHabiEstVida.Enabled = false;
-            }
-            else
-            {
-                txt_cual1EstVidaMedHabiEstVida.Enabled = false;
-                txt_tiemCan1EstVidaMedHabiEstVida.Enabled = false;
-                txt_cual2EstVidaMedHabiEstVida.Enabled = false;
-                txt_tiemCan2EstVidaMedHabiEstVida.Enabled = false;
-                txt_cual3EstVidaMedHabiEstVida.Enabled = false;
-                txt_tiemCan3EstVidaMedHabiEstVida.Enabled = false;
-                ckb_noEstVidaMedHabiEstVida.Enabled = true;
-
-            }
-        }
-
-        protected void ckb_noEstVidaMedHabiEstVida_CheckedChanged(object sender, EventArgs e)
-        {
-            if (ckb_noEstVidaMedHabiEstVida.Checked == true)
-            {
-                txt_cual1EstVidaMedHabiEstVida.Enabled = false;
-                txt_cual1EstVidaMedHabiEstVida.Text = "";
-                txt_tiemCan1EstVidaMedHabiEstVida.Enabled = false;
-                txt_tiemCan1EstVidaMedHabiEstVida.Text = "";
-                txt_cual2EstVidaMedHabiEstVida.Enabled = false;
-                txt_cual2EstVidaMedHabiEstVida.Text = "";
-                txt_tiemCan2EstVidaMedHabiEstVida.Enabled = false;
-                txt_tiemCan2EstVidaMedHabiEstVida.Text = "";
-                txt_cual3EstVidaMedHabiEstVida.Enabled = false;
-                txt_cual3EstVidaMedHabiEstVida.Text = "";
-                txt_tiemCan3EstVidaMedHabiEstVida.Enabled = false;
-                txt_tiemCan3EstVidaMedHabiEstVida.Text = "";
-                ckb_siEstVidaMedHabiEstVida.Enabled = false;
-            }
-            else
-            {
-                ckb_siEstVidaMedHabiEstVida.Enabled = true;
-            }
-        }
-
-        protected void ckb_sicalificadotrabajo_CheckedChanged(object sender, EventArgs e)
-        {
-            if (ckb_sicalificadotrabajo.Checked == true)
-            {
-                txt_especificarcalificadotrabajo.Enabled = true;
-                ckb_nocalificadotrabajo.Enabled = false;
-                txt_fechacalificadotrabajo.Enabled = true;
-                txt_obsercalificadotrabajo.Enabled = true;
-            }
-            else
-            {
-                txt_especificarcalificadotrabajo.Enabled = false;
-                ckb_nocalificadotrabajo.Enabled = true;
-                txt_fechacalificadotrabajo.Enabled = false;
-                txt_obsercalificadotrabajo.Enabled = false;
-            }
-        }
-
-        protected void ckb_nocalificadotrabajo_CheckedChanged(object sender, EventArgs e)
-        {
-            if (ckb_nocalificadotrabajo.Checked == true)
-            {
-                txt_especificarcalificadotrabajo.Enabled = false;
-                txt_especificarcalificadotrabajo.Text = "";
-                ckb_sicalificadotrabajo.Enabled = false;
-                txt_fechacalificadotrabajo.Enabled = false;
-                txt_fechacalificadotrabajo.Text = "";
-                txt_obsercalificadotrabajo.Enabled = false;
-                txt_obsercalificadotrabajo.Text = "";
-            }
-            else
-            {
-                ckb_sicalificadotrabajo.Enabled = true;
-            }
-        }
-
-        protected void ckb_sicalificadoprofesional_CheckedChanged(object sender, EventArgs e)
-        {
-            if (ckb_sicalificadoprofesional.Checked == true)
-            {
-                txt_especificarcalificadoprofesional.Enabled = true;
-                ckb_nocalificadoprofesional.Enabled = false;
-                txt_fechacalificadoprofesional.Enabled = true;
-                txt_obsercalificadoprofesional.Enabled = true;
-            }
-            else
-            {
-                txt_especificarcalificadoprofesional.Enabled = false;
-                ckb_nocalificadoprofesional.Enabled = true;
-                txt_fechacalificadoprofesional.Enabled = false;
-                txt_obsercalificadoprofesional.Enabled = false;
-            }
-        }
-
-        protected void ckb_nocalificadoprofesional_CheckedChanged(object sender, EventArgs e)
-        {
-            if (ckb_nocalificadoprofesional.Checked == true)
-            {
-                txt_especificarcalificadoprofesional.Enabled = false;
-                txt_especificarcalificadoprofesional.Text = "";
-                ckb_sicalificadoprofesional.Enabled = false;
-                txt_fechacalificadoprofesional.Enabled = false;
-                txt_fechacalificadoprofesional.Text = "";
-                txt_obsercalificadoprofesional.Enabled = false;
-                txt_obsercalificadoprofesional.Text = "";
-            }
-            else
-            {
-                ckb_sicalificadoprofesional.Enabled = true;
-            }
-        }
-
-        protected void ckb_pre_CheckedChanged(object sender, EventArgs e)
-        {
-            if (ckb_pre.Checked == true)
-            {
-                ckb_def.Enabled = false;
-            }
-            else
-            {
-                ckb_def.Enabled = true;
-            }
-        }
-
-        protected void ckb_def_CheckedChanged(object sender, EventArgs e)
-        {
-            if (ckb_def.Checked == true)
-            {
-                ckb_pre.Enabled = false;
-            }
-            else
-            {
-                ckb_pre.Enabled = true;
-            }
-        }
-
-        protected void ckb_pre2_CheckedChanged(object sender, EventArgs e)
-        {
-            if (ckb_pre2.Checked == true)
-            {
-                ckb_def2.Enabled = false;
-            }
-            else
-            {
-                ckb_def2.Enabled = true;
-            }
-        }
-
-        protected void ckb_def2_CheckedChanged(object sender, EventArgs e)
-        {
-            if (ckb_def2.Checked == true)
-            {
-                ckb_pre2.Enabled = false;
-            }
-            else
-            {
-                ckb_pre2.Enabled = true;
-            }
-        }
-
-        protected void ckb_pre3_CheckedChanged(object sender, EventArgs e)
-        {
-            if (ckb_pre3.Checked == true)
-            {
-                ckb_def3.Enabled = false;
-            }
-            else
-            {
-                ckb_def3.Enabled = true;
-            }
-        }
-
-        protected void ckb_def3_CheckedChanged(object sender, EventArgs e)
-        {
-            if (ckb_def3.Checked == true)
-            {
-                ckb_pre3.Enabled = false;
-            }
-            else
-            {
-                ckb_pre3.Enabled = true;
-            }
-        }
-
         protected void btn_guardar_Click(object sender, EventArgs e)
         {
             guardar_modificar_datos(Convert.ToInt32(Request["cod"]));
@@ -6444,6 +6082,366 @@ namespace SistemaECU911.Template.Views
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Llenar primero la talla')", true);
                 txt_peso.Text = "";
                 txt_talla.Focus();
+            }
+        }
+
+        private void defaultValidaciones()
+        {
+            txt_tiemConConsuNociTabaHabToxi.Enabled = false;
+            txt_cantiConsuNociTabaHabToxi.Enabled = false;
+            txt_exConsumiConsuNociTabaHabToxi.Enabled = false;
+            txt_tiemAbstiConsuNociTabaHabToxi.Enabled = false;
+            txt_tiemConConsuNociAlcoHabToxi.Enabled = false;
+            txt_cantiConsuNociAlcoHabToxi.Enabled = false;
+            txt_exConsumiConsuNociAlcoHabToxi.Enabled = false;
+            txt_tiemAbstiConsuNociAlcoHabToxi.Enabled = false;
+            txt_tiemCon1ConsuNociOtrasDroHabToxi.Enabled = false;
+            txt_canti1ConsuNociOtrasDroHabToxi.Enabled = false;
+            txt_exConsumi1ConsuNociOtrasDroHabToxi.Enabled = false;
+            txt_tiemAbsti1ConsuNociOtrasDroHabToxi.Enabled = false;
+            txt_otrasConsuNociOtrasDroHabToxi.Enabled = false;
+            txt_tiemCon2ConsuNociOtrasDroHabToxi.Enabled = false;
+            txt_canti2ConsuNociOtrasDroHabToxi.Enabled = false;
+            txt_exConsumi2ConsuNociOtrasDroHabToxi.Enabled = false;
+            txt_tiemAbsti2ConsuNociOtrasDroHabToxi.Enabled = false;
+            txt_cualEstVidaActFisiEstVida.Enabled = false;
+            txt_tiemCanEstVidaActFisiEstVida.Enabled = false;
+            txt_cual1EstVidaMedHabiEstVida.Enabled = false;
+            txt_tiemCan1EstVidaMedHabiEstVida.Enabled = false;
+            txt_cual2EstVidaMedHabiEstVida.Enabled = false;
+            txt_tiemCan2EstVidaMedHabiEstVida.Enabled = false;
+            txt_cual3EstVidaMedHabiEstVida.Enabled = false;
+            txt_tiemCan3EstVidaMedHabiEstVida.Enabled = false;
+            txt_especificarcalificadotrabajo.Enabled = false;
+            txt_fechacalificadotrabajo.Enabled = false;
+            txt_obsercalificadotrabajo.Enabled = false;
+            txt_especificarcalificadoprofesional.Enabled = false;
+            txt_fechacalificadoprofesional.Enabled = false;
+            txt_obsercalificadoprofesional.Enabled = false;
+        }
+
+        protected void ckb_siConsuNociTabaHabToxi_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckb_siConsuNociTabaHabToxi.Checked == true)
+            {
+                txt_tiemConConsuNociTabaHabToxi.Enabled = true;
+                txt_cantiConsuNociTabaHabToxi.Enabled = true;
+                txt_exConsumiConsuNociTabaHabToxi.Enabled = true;
+                txt_tiemAbstiConsuNociTabaHabToxi.Enabled = true;
+                ckb_noConsuNociTabaHabToxi.Checked = false;
+            }
+            else
+            {
+                txt_tiemConConsuNociTabaHabToxi.Enabled = false;
+                txt_cantiConsuNociTabaHabToxi.Enabled = false;
+                txt_exConsumiConsuNociTabaHabToxi.Enabled = false;
+                txt_tiemAbstiConsuNociTabaHabToxi.Enabled = false;
+                ckb_noConsuNociTabaHabToxi.Checked = false;
+            }
+        }
+
+        protected void ckb_noConsuNociTabaHabToxi_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckb_noConsuNociTabaHabToxi.Checked == true)
+            {
+                txt_tiemConConsuNociTabaHabToxi.Enabled = false;
+                txt_tiemConConsuNociTabaHabToxi.Text = "";
+                txt_cantiConsuNociTabaHabToxi.Enabled = false;
+                txt_cantiConsuNociTabaHabToxi.Text = "";
+                txt_exConsumiConsuNociTabaHabToxi.Enabled = false;
+                txt_exConsumiConsuNociTabaHabToxi.Text = "";
+                txt_tiemAbstiConsuNociTabaHabToxi.Enabled = false;
+                txt_tiemAbstiConsuNociTabaHabToxi.Text = "";
+                ckb_siConsuNociTabaHabToxi.Checked = false;
+            }
+        }
+
+        protected void ckb_siConsuNociAlcoHabToxi_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckb_siConsuNociAlcoHabToxi.Checked == true)
+            {
+                txt_tiemConConsuNociAlcoHabToxi.Enabled = true;
+                txt_cantiConsuNociAlcoHabToxi.Enabled = true;
+                txt_exConsumiConsuNociAlcoHabToxi.Enabled = true;
+                txt_tiemAbstiConsuNociAlcoHabToxi.Enabled = true;
+                ckb_noConsuNociAlcoHabToxi.Checked = false;
+            }
+            else
+            {
+                txt_tiemConConsuNociAlcoHabToxi.Enabled = false;
+                txt_cantiConsuNociAlcoHabToxi.Enabled = false;
+                txt_exConsumiConsuNociAlcoHabToxi.Enabled = false;
+                txt_tiemAbstiConsuNociAlcoHabToxi.Enabled = false;
+                ckb_noConsuNociAlcoHabToxi.Checked = false;
+            }
+        }
+
+        protected void ckb_noConsuNociAlcoHabToxi_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckb_noConsuNociAlcoHabToxi.Checked == true)
+            {
+                txt_tiemConConsuNociAlcoHabToxi.Enabled = false;
+                txt_tiemConConsuNociAlcoHabToxi.Text = "";
+                txt_cantiConsuNociAlcoHabToxi.Enabled = false;
+                txt_cantiConsuNociAlcoHabToxi.Text = "";
+                txt_exConsumiConsuNociAlcoHabToxi.Enabled = false;
+                txt_exConsumiConsuNociAlcoHabToxi.Text = "";
+                txt_tiemAbstiConsuNociAlcoHabToxi.Enabled = false;
+                txt_tiemAbstiConsuNociAlcoHabToxi.Text = "";
+                ckb_siConsuNociAlcoHabToxi.Checked = false;
+            }
+        }
+
+        protected void ckb_siConsuNociOtrasDroHabToxi_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckb_siConsuNociOtrasDroHabToxi.Checked == true)
+            {
+                txt_tiemCon1ConsuNociOtrasDroHabToxi.Enabled = true;
+                txt_canti1ConsuNociOtrasDroHabToxi.Enabled = true;
+                txt_exConsumi1ConsuNociOtrasDroHabToxi.Enabled = true;
+                txt_tiemAbsti1ConsuNociOtrasDroHabToxi.Enabled = true;
+                txt_otrasConsuNociOtrasDroHabToxi.Enabled = true;
+                txt_tiemCon2ConsuNociOtrasDroHabToxi.Enabled = true;
+                txt_canti2ConsuNociOtrasDroHabToxi.Enabled = true;
+                txt_exConsumi2ConsuNociOtrasDroHabToxi.Enabled = true;
+                txt_tiemAbsti2ConsuNociOtrasDroHabToxi.Enabled = true;
+                ckb_noConsuNociOtrasDroHabToxi.Checked = false;
+            }
+            else
+            {
+                txt_tiemCon1ConsuNociOtrasDroHabToxi.Enabled = false;
+                txt_canti1ConsuNociOtrasDroHabToxi.Enabled = false;
+                txt_exConsumi1ConsuNociOtrasDroHabToxi.Enabled = false;
+                txt_tiemAbsti1ConsuNociOtrasDroHabToxi.Enabled = false;
+                txt_otrasConsuNociOtrasDroHabToxi.Enabled = false;
+                txt_tiemCon2ConsuNociOtrasDroHabToxi.Enabled = false;
+                txt_canti2ConsuNociOtrasDroHabToxi.Enabled = false;
+                txt_exConsumi2ConsuNociOtrasDroHabToxi.Enabled = false;
+                txt_tiemAbsti2ConsuNociOtrasDroHabToxi.Enabled = false;
+                ckb_noConsuNociOtrasDroHabToxi.Checked = false;
+            }
+        }
+
+        protected void ckb_noConsuNociOtrasDroHabToxi_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckb_noConsuNociOtrasDroHabToxi.Checked == true)
+            {
+                txt_tiemCon1ConsuNociOtrasDroHabToxi.Enabled = false;
+                txt_tiemCon1ConsuNociOtrasDroHabToxi.Text = "";
+                txt_canti1ConsuNociOtrasDroHabToxi.Enabled = false;
+                txt_canti1ConsuNociOtrasDroHabToxi.Text = "";
+                txt_exConsumi1ConsuNociOtrasDroHabToxi.Enabled = false;
+                txt_exConsumi1ConsuNociOtrasDroHabToxi.Text = "";
+                txt_tiemAbsti1ConsuNociOtrasDroHabToxi.Enabled = false;
+                txt_tiemAbsti1ConsuNociOtrasDroHabToxi.Text = "";
+                txt_otrasConsuNociOtrasDroHabToxi.Enabled = false;
+                txt_otrasConsuNociOtrasDroHabToxi.Text = "";
+                txt_tiemCon2ConsuNociOtrasDroHabToxi.Enabled = false;
+                txt_tiemCon2ConsuNociOtrasDroHabToxi.Text = "";
+                txt_canti2ConsuNociOtrasDroHabToxi.Enabled = false;
+                txt_canti2ConsuNociOtrasDroHabToxi.Text = "";
+                txt_exConsumi2ConsuNociOtrasDroHabToxi.Enabled = false;
+                txt_exConsumi2ConsuNociOtrasDroHabToxi.Text = "";
+                txt_tiemAbsti2ConsuNociOtrasDroHabToxi.Enabled = false;
+                txt_tiemAbsti2ConsuNociOtrasDroHabToxi.Text = "";
+                ckb_siConsuNociOtrasDroHabToxi.Checked = false;
+            }
+        }
+
+        protected void ckb_siEstVidaActFisiEstVida_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckb_siEstVidaActFisiEstVida.Checked == true)
+            {
+                txt_cualEstVidaActFisiEstVida.Enabled = true;
+                txt_tiemCanEstVidaActFisiEstVida.Enabled = true;
+                ckb_noEstVidaActFisiEstVida.Checked = false;
+            }
+            else
+            {
+                txt_cualEstVidaActFisiEstVida.Enabled = false;
+                txt_tiemCanEstVidaActFisiEstVida.Enabled = false;
+                ckb_noEstVidaActFisiEstVida.Checked = false;
+            }
+        }
+
+        protected void ckb_noEstVidaActFisiEstVida_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckb_noEstVidaActFisiEstVida.Checked == true)
+            {
+                txt_cualEstVidaActFisiEstVida.Enabled = false;
+                txt_cualEstVidaActFisiEstVida.Text = "";
+                txt_tiemCanEstVidaActFisiEstVida.Enabled = false;
+                txt_tiemCanEstVidaActFisiEstVida.Text = "";
+                ckb_siEstVidaActFisiEstVida.Checked = false;
+            }
+        }
+
+        protected void ckb_siEstVidaMedHabiEstVida_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckb_siEstVidaMedHabiEstVida.Checked == true)
+            {
+                txt_cual1EstVidaMedHabiEstVida.Enabled = true;
+                txt_tiemCan1EstVidaMedHabiEstVida.Enabled = true;
+                txt_cual2EstVidaMedHabiEstVida.Enabled = true;
+                txt_tiemCan2EstVidaMedHabiEstVida.Enabled = true;
+                txt_cual3EstVidaMedHabiEstVida.Enabled = true;
+                txt_tiemCan3EstVidaMedHabiEstVida.Enabled = true;
+                ckb_noEstVidaMedHabiEstVida.Checked = false;
+            }
+            else
+            {
+                txt_cual1EstVidaMedHabiEstVida.Enabled = false;
+                txt_tiemCan1EstVidaMedHabiEstVida.Enabled = false;
+                txt_cual2EstVidaMedHabiEstVida.Enabled = false;
+                txt_tiemCan2EstVidaMedHabiEstVida.Enabled = false;
+                txt_cual3EstVidaMedHabiEstVida.Enabled = false;
+                txt_tiemCan3EstVidaMedHabiEstVida.Enabled = false;
+                ckb_noEstVidaMedHabiEstVida.Checked = false;
+
+            }
+        }
+
+        protected void ckb_noEstVidaMedHabiEstVida_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckb_noEstVidaMedHabiEstVida.Checked == true)
+            {
+                txt_cual1EstVidaMedHabiEstVida.Enabled = false;
+                txt_cual1EstVidaMedHabiEstVida.Text = "";
+                txt_tiemCan1EstVidaMedHabiEstVida.Enabled = false;
+                txt_tiemCan1EstVidaMedHabiEstVida.Text = "";
+                txt_cual2EstVidaMedHabiEstVida.Enabled = false;
+                txt_cual2EstVidaMedHabiEstVida.Text = "";
+                txt_tiemCan2EstVidaMedHabiEstVida.Enabled = false;
+                txt_tiemCan2EstVidaMedHabiEstVida.Text = "";
+                txt_cual3EstVidaMedHabiEstVida.Enabled = false;
+                txt_cual3EstVidaMedHabiEstVida.Text = "";
+                txt_tiemCan3EstVidaMedHabiEstVida.Enabled = false;
+                txt_tiemCan3EstVidaMedHabiEstVida.Text = "";
+                ckb_siEstVidaMedHabiEstVida.Checked = false;
+            }
+        }
+
+        protected void ckb_sicalificadotrabajo_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckb_sicalificadotrabajo.Checked == true)
+            {
+                txt_especificarcalificadotrabajo.Enabled = true;
+                txt_fechacalificadotrabajo.Enabled = true;
+                txt_obsercalificadotrabajo.Enabled = true;
+                ckb_nocalificadotrabajo.Checked = false;
+            }
+            else
+            {
+                txt_especificarcalificadotrabajo.Enabled = false;
+                txt_fechacalificadotrabajo.Enabled = false;
+                txt_obsercalificadotrabajo.Enabled = false;
+                ckb_nocalificadotrabajo.Checked = false;
+            }
+        }
+
+        protected void ckb_nocalificadotrabajo_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckb_nocalificadotrabajo.Checked == true)
+            {
+                txt_especificarcalificadotrabajo.Enabled = false;
+                txt_especificarcalificadotrabajo.Text = "";
+                txt_fechacalificadotrabajo.Enabled = false;
+                txt_fechacalificadotrabajo.Text = "";
+                txt_obsercalificadotrabajo.Enabled = false;
+                txt_obsercalificadotrabajo.Text = "";
+                ckb_sicalificadotrabajo.Checked = false;
+            }
+        }
+
+        protected void ckb_sicalificadoprofesional_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckb_sicalificadoprofesional.Checked == true)
+            {
+                txt_especificarcalificadoprofesional.Enabled = true;
+                ckb_nocalificadoprofesional.Checked = false;
+                txt_fechacalificadoprofesional.Enabled = true;
+                txt_obsercalificadoprofesional.Enabled = true;
+            }
+            else
+            {
+                txt_especificarcalificadoprofesional.Enabled = false;
+                ckb_nocalificadoprofesional.Checked = false;
+                txt_fechacalificadoprofesional.Enabled = false;
+                txt_obsercalificadoprofesional.Enabled = false;
+            }
+        }
+
+        protected void ckb_nocalificadoprofesional_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckb_nocalificadoprofesional.Checked == true)
+            {
+                txt_especificarcalificadoprofesional.Enabled = false;
+                txt_especificarcalificadoprofesional.Text = "";
+                ckb_sicalificadoprofesional.Checked = false;
+                txt_fechacalificadoprofesional.Enabled = false;
+                txt_fechacalificadoprofesional.Text = "";
+                txt_obsercalificadoprofesional.Enabled = false;
+                txt_obsercalificadoprofesional.Text = "";
+            }
+        }
+
+        protected void ckb_pre_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckb_pre.Checked == true)
+            {
+                ckb_def.Checked = false;
+            }
+            else
+            {
+                ckb_def.Checked = false;
+            }
+        }
+
+        protected void ckb_def_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckb_def.Checked == true)
+            {
+                ckb_pre.Checked = false;
+            }
+        }
+
+        protected void ckb_pre2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckb_pre2.Checked == true)
+            {
+                ckb_def2.Checked = false;
+            }
+            else
+            {
+                ckb_def2.Checked = false;
+            }
+        }
+
+        protected void ckb_def2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckb_def2.Checked == true)
+            {
+                ckb_pre2.Checked = false;
+            }
+        }
+
+        protected void ckb_pre3_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckb_pre3.Checked == true)
+            {
+                ckb_def3.Checked = false;
+            }
+            else
+            {
+                ckb_def3.Checked = false;
+            }
+        }
+
+        protected void ckb_def3_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckb_def3.Checked == true)
+            {
+                ckb_pre3.Checked = false;
             }
         }
     }
