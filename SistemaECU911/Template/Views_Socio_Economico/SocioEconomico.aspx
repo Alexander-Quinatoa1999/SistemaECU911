@@ -57,51 +57,43 @@
                 <br />
                 <%--Título--%>
 
-                <div class="card" style="background-color: #cccdfe">
-                    <div class="card-body">
-                        <div class="text-center" style="font-display: auto; font-family: Arial; font-size: 30px; background-color: #cccdfe">
-                            <h6>GESTIÓN DEL TALENTO HUMANO</h6>
-                            <h6>GESTIÓN DE BIENESTAR LABORAL Y SALUD OCUPACIONAL</h6>
-                            <h6>FICHA SOCIOECONÓMICA</h6>
-                        </div>
-                    </div>
-                </div>
-                <br />
-
-                <%--Código y Versión--%>
-
-                <div class="list-group list-group-flush">
-                    <asp:Table class="table table-bordered table-light" runat="server">
-                        <asp:TableRow>
-                            <asp:TableCell Style="text-align: center; border: medium; font-family: Arial">
-                                <div class="card-header" style="background-color: #cccdfe; font-weight: bold; font-family: Arial">
-                                    CÓDIGO
-                                </div>
-                            </asp:TableCell>
-                            <asp:TableCell Style="text-align: center; border: medium; font-family: Arial">
-                                <div class="card-header" style="background-color: #cccdfe; font-weight: bold; font-family: Arial">
-                                    VERSIÓN
-                                </div>
-                            </asp:TableCell>
-                        </asp:TableRow>
-                        <asp:TableRow>
-                            <asp:TableCell Style="background-color: white; border: medium; font-family: Arial">
-                                <asp:TextBox runat="server" ID="txt_codigoinicio" BorderStyle="None" Style="width: 100%; text-align: center" Text="" ReadOnly="true">GTH_FOR_21</asp:TextBox>
-                            </asp:TableCell>
-                            <asp:TableCell Style="background-color: white; border: medium; font-family: Arial">
-                                <asp:TextBox runat="server" ID="txt_version" BorderStyle="None" Style="width: 100%; text-align: center" Text="1" ReadOnly="true"></asp:TextBox>
-                            </asp:TableCell>
-                        </asp:TableRow>
-                    </asp:Table>
-                </div>
+                <asp:Table class="table table-bordered text-center" runat="server">
+                    <asp:TableRow>
+                        <asp:TableCell Style="font-family: Arial; width:400px" RowSpan="6">
+                                    <img src="../Template Principal/images/ecu911.jpg" Style="width:40%; height:25%" runat="server"/>
+                        </asp:TableCell>
+                    </asp:TableRow>
+                    <asp:TableRow>
+                        <asp:TableCell Style="font-family: Arial; font-weight: bold;" ColumnSpan="2">GESTIÓN DEL TALENTO HUMANO</asp:TableCell>
+                    </asp:TableRow>
+                    <asp:TableRow>
+                        <asp:TableCell Style="font-family: Arial; font-weight: bold;" ColumnSpan="2">GESTIÓN DE BIENESTAR LABORAL Y SALUD OCUPACIONAL</asp:TableCell>
+                    </asp:TableRow>
+                    <asp:TableRow>
+                        <asp:TableCell Style="font-family: Arial; font-weight: bold;" ColumnSpan="2">FICHA SOCIOECONÓMICA</asp:TableCell>
+                    </asp:TableRow>
+                    <asp:TableRow>
+                        <asp:TableCell Style="font-family: Arial">CÓDIGO
+                        </asp:TableCell>
+                        <asp:TableCell Style="font-family: Arial">VERSIÓN</asp:TableCell>
+                    </asp:TableRow>
+                    <asp:TableRow>
+                        <asp:TableCell Style="background-color: white; font-family: Arial">
+                            <asp:TextBox runat="server" ID="txt_codigoinicio" BorderStyle="None" Style="width: 100%; text-align: center; text-transform: uppercase" ReadOnly="false">GTH_FOR_21</asp:TextBox>
+                        </asp:TableCell>
+                        <asp:TableCell Style="background-color: white; font-family: Arial">
+                            <asp:TextBox runat="server" ID="txt_version" BorderStyle="None" Style="width: 100%; text-align: center; text-transform: uppercase" ReadOnly="false">2</asp:TextBox>
+                        </asp:TableCell>
+                    </asp:TableRow>
+                </asp:Table>
 
                 <%--Fecha de Registro--%>
 
                 <div class="list-group list-group-flush">
                     <asp:Table class="table table-bordered table-light" runat="server">
                         <asp:TableRow>
-                            <asp:TableCell Style="text-align: right; background: #cdfecc; border: medium; font-family: Arial">Fecha de Registro:</asp:TableCell>
-                            <asp:TableCell Style="width: 100px; border: medium">
+                            <asp:TableCell Style="text-align: right; font-family: Arial; background-color: white;">Fecha de ingreso:</asp:TableCell>
+                            <asp:TableCell Style="width: 100px; background-color: white;">
                                 <asp:TextBox runat="server" ID="txt_fecharegistro" BorderStyle="None" Style="width: 100%;" TextMode="Date"></asp:TextBox>
                             </asp:TableCell>
                         </asp:TableRow>
@@ -119,16 +111,16 @@
                             <asp:TableRow>
                                 <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 200px">Nombres y Apellidos:</asp:TableCell>
                                 <asp:TableCell Style="background-color: white; text-align: left">
-                                    <asp:TextBox runat="server" ID="txt_prinombre" BorderStyle="None" Style="width: 100%" ReadOnly="true" BackColor="white"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_prinombre" BorderStyle="None" Style="width: 100%; text-transform:uppercase" ReadOnly="true" BackColor="white"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white; text-align: left">
-                                    <asp:TextBox runat="server" ID="txt_segnombre" BorderStyle="None" Style="width: 100%" ReadOnly="true" BackColor="white"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_segnombre" BorderStyle="None" Style="width: 100%; text-transform:uppercase" ReadOnly="true" BackColor="white"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white; text-align: left">
-                                    <asp:TextBox runat="server" ID="txt_priapellido" BorderStyle="None" Style="width: 100%" ReadOnly="true" BackColor="white"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_priapellido" BorderStyle="None" Style="width: 100%; text-transform:uppercase" ReadOnly="true" BackColor="white"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white; text-align: left">
-                                    <asp:TextBox runat="server" ID="txt_segapellido" BorderStyle="None" Style="width: 100%" ReadOnly="true" BackColor="white"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_segapellido" BorderStyle="None" Style="width: 100%; text-transform:uppercase" ReadOnly="true" BackColor="white"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 200px">Cédula Ciudadanía:</asp:TableCell>
                                 <asp:TableCell Style="background-color: white; text-align: left">
@@ -145,15 +137,15 @@
                         </asp:Table>
                         <asp:Table class="table table-bordered text-center" runat="server">
                             <asp:TableRow>
-                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 300px">Departamento / Área en la que trabaja:</asp:TableCell>
+                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 300px">Área a la que pertenece:</asp:TableCell>
                                 <asp:TableCell Style="background-color: white; text-align: left">
-                                    <asp:TextBox runat="server" ID="txt_areatrabajo" BorderStyle="None" BackColor="white" Style="width: 100%"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_areatrabajo" BorderStyle="None" BackColor="white" Style="width: 100%; text-transform:uppercase"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
                                 <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 300px">Cargo Institucional:</asp:TableCell>
                                 <asp:TableCell Style="background-color: white; text-align: left">
-                                    <asp:TextBox runat="server" ID="txt_cargoinstitucional" BorderStyle="None" BackColor="white" Style="width: 100%"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_cargoinstitucional" BorderStyle="None" BackColor="white" Style="width: 100%; text-transform:uppercase"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                         </asp:Table>
@@ -237,7 +229,7 @@
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 50px">Email:</asp:TableCell>
                                 <asp:TableCell Style="background-color: white; width: 100px; text-align: left">
-                                    <asp:TextBox runat="server" ID="txt_email" BorderStyle="None" BackColor="white" Style="width: 100%"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_email" BorderStyle="None" BackColor="white" Style="width: 100%; text-transform:uppercase"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                         </asp:Table>
@@ -245,7 +237,7 @@
                             <asp:TableRow>
                                 <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 50px">Lugar de Nacimiento:</asp:TableCell>
                                 <asp:TableCell Style="background-color: white; width: 100px; text-align: left">
-                                    <asp:TextBox runat="server" ID="txt_lugarnacimiento" BorderStyle="None" BackColor="white" Style="width: 100%"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_lugarnacimiento" BorderStyle="None" BackColor="white" Style="width: 100%; text-transform:uppercase"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 50px">Fecha de Nacimiento:</asp:TableCell>
                                 <asp:TableCell Style="background-color: white; width: 50px; text-align: left">
@@ -253,7 +245,7 @@
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 50px">Edad:</asp:TableCell>
                                 <asp:TableCell Style="background-color: white; width: 100px; text-align: left">
-                                    <asp:TextBox runat="server" ID="txt_edad" BorderStyle="None" BackColor="white" Style="width: 100%" ReadOnly="true"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_edad" BorderStyle="None" BackColor="white" Style="width: 100%; text-transform:uppercase" ReadOnly="true"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                         </asp:Table>
@@ -314,37 +306,41 @@
                         <asp:Table class="table table-bordered text-center" runat="server">
                             <asp:TableRow>
                                 <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 150px">Dirección del domicilio:</asp:TableCell>
-                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 50px">Provincia</asp:TableCell>
+                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 50px">Provincia:</asp:TableCell>
                                 <asp:TableCell Style="background-color: white; width: 100px; text-align: left">
-                                    <asp:TextBox runat="server" ID="txt_provincia" BorderStyle="None" BackColor="white" Style="width: 100%"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_provincia" BorderStyle="None" BackColor="white" Style="width: 100%; text-transform:uppercase"></asp:TextBox>
                                 </asp:TableCell>
-                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 50px">Cantón</asp:TableCell>
+                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 50px">Cantón:</asp:TableCell>
                                 <asp:TableCell Style="background-color: white; width: 100px; text-align: left">
-                                    <asp:TextBox runat="server" ID="txt_canton" BorderStyle="None" BackColor="white" Style="width: 100%"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_canton" BorderStyle="None" BackColor="white" Style="width: 100%; text-transform:uppercase"></asp:TextBox>
                                 </asp:TableCell>
-                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 50px">Parroquia</asp:TableCell>
+                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 50px">Parroquia:</asp:TableCell>
                                 <asp:TableCell Style="background-color: white; width: 100px; text-align: left">
-                                    <asp:TextBox runat="server" ID="txt_parroquia" BorderStyle="None" BackColor="white" Style="width: 100%"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_parroquia" BorderStyle="None" BackColor="white" Style="width: 100%; text-transform:uppercase"></asp:TextBox>
                                 </asp:TableCell>
-                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 50px">Barrio</asp:TableCell>
+                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 50px">Barrio:</asp:TableCell>
                                 <asp:TableCell Style="background-color: white; width: 100px; text-align: left">
-                                    <asp:TextBox runat="server" ID="txt_barrio" BorderStyle="None" BackColor="white" Style="width: 100%"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_barrio" BorderStyle="None" BackColor="white" Style="width: 100%; text-transform:uppercase"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                         </asp:Table>
                         <asp:Table class="table table-bordered text-center" runat="server">
                             <asp:TableRow>
-                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 75px">Calle donde está ubicada la vivienda y numeración:</asp:TableCell>
+                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 75px">Calle principal:</asp:TableCell>
                                 <asp:TableCell Style="background-color: white; width: 100px; text-align: left">
-                                    <asp:TextBox runat="server" ID="txt_calleubicada" BorderStyle="None" BackColor="white" Style="width: 100%"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_calleprincipal" BorderStyle="None" BackColor="white" Style="width: 100%; text-transform:uppercase"></asp:TextBox>
+                                </asp:TableCell>
+                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 25px">Nº:</asp:TableCell>
+                                <asp:TableCell Style="background-color: white; width: 50px; text-align: left">
+                                    <asp:TextBox runat="server" ID="txt_mumerodecasa" BorderStyle="None" BackColor="white" Style="width: 100%; text-transform:uppercase"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 50px">Calle secundaria:</asp:TableCell>
                                 <asp:TableCell Style="background-color: white; width: 100px; text-align: left">
-                                    <asp:TextBox runat="server" ID="txt_callesecundaria" BorderStyle="None" BackColor="white" Style="width: 100%"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_callesecundaria" BorderStyle="None" BackColor="white" Style="width: 100%; text-transform:uppercase"></asp:TextBox>
                                 </asp:TableCell>
-                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 50px">Referencia para ubicar el domicilio:</asp:TableCell>
+                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 50px">Referencia:</asp:TableCell>
                                 <asp:TableCell Style="background-color: white; width: 100px; text-align: left">
-                                    <asp:TextBox runat="server" ID="txt_refubicardomicilio" BorderStyle="None" BackColor="white" Style="width: 100%"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_refubicardomicilio" BorderStyle="None" BackColor="white" Style="width: 100%; text-transform:uppercase"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                         </asp:Table>
@@ -386,7 +382,7 @@
                                 </asp:TableCell>
                                 <asp:TableCell ID="tbc_otro" Style="background-color: #cdfecc; color: black; font-family: Arial; width: 25px">Otro</asp:TableCell>
                                 <asp:TableCell ID="tbc_otravivienda" Style="background-color: white; width: 100px; text-align: left">
-                                    <asp:TextBox runat="server" ID="txt_tipoviviendaotro" BorderStyle="None" BackColor="white" Style="width: 100%" Placeholder="Indique cuál"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_tipoviviendaotro" BorderStyle="None" BackColor="white" Style="width: 100%; text-transform:uppercase" Placeholder="Indique cuál"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 70px">Riesgo Delincuencial:</asp:TableCell>
                                 <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 25px">Alto</asp:TableCell>
@@ -405,14 +401,14 @@
                         </asp:Table>
                         <asp:Table class="table table-bordered text-center" runat="server">
                             <asp:TableRow>
-                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 250px">Persona para contacto de emergencia:</asp:TableCell>
-                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 150px">Nombres y Apellidos</asp:TableCell>
+                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 250px">Contacto de emergencia:</asp:TableCell>
+                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 150px">Nombre y Apellido</asp:TableCell>
                                 <asp:TableCell Style="background-color: white; text-align: left; width: 300px">
-                                    <asp:TextBox runat="server" ID="txt_emernomyape" BorderStyle="None" BackColor="white" Style="width: 100%"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_emernomyape" BorderStyle="None" BackColor="white" Style="width: 100%; text-transform:uppercase"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 50px">Parentesco</asp:TableCell>
                                 <asp:TableCell Style="background-color: white; text-align: left">
-                                    <asp:TextBox runat="server" ID="txt_emeparentesco" BorderStyle="None" BackColor="white" Style="width: 100%"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_emeparentesco" BorderStyle="None" BackColor="white" Style="width: 100%; text-transform:uppercase"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 50px">Teléfono</asp:TableCell>
                                 <asp:TableCell Style="background-color: white; text-align: left">
@@ -422,84 +418,50 @@
                         </asp:Table>
                         <asp:Table class="table table-bordered text-center" runat="server">
                             <asp:TableRow>
-                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 50px" RowSpan="2">Dirección del familiar:</asp:TableCell>
                                 <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 50px">Calle Principal</asp:TableCell>
                                 <asp:TableCell Style="background-color: white; text-align: left; width: 100px">
-                                    <asp:TextBox runat="server" ID="txt_emecalleprincipal" BorderStyle="None" BackColor="white" Style="width: 100%"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_emecalleprincipal" BorderStyle="None" BackColor="white" Style="width: 100%; text-transform:uppercase"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 50px">Nº del domicilio</asp:TableCell>
                                 <asp:TableCell Style="background-color: white; text-align: left">
-                                    <asp:TextBox runat="server" ID="txt_emenumdomicilio" BorderStyle="None" BackColor="white" Style="width: 100%"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_emenumdomicilio" BorderStyle="None" BackColor="white" Style="width: 100%; text-transform:uppercase"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
                                 <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 50px">Calle secundaria</asp:TableCell>
                                 <asp:TableCell Style="background-color: white; text-align: left; width: 100px">
-                                    <asp:TextBox runat="server" ID="txt_emecallesecun" BorderStyle="None" BackColor="white" Style="width: 100%"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_emecallesecun" BorderStyle="None" BackColor="white" Style="width: 100%; text-transform:uppercase"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial">Referencia para ubicar el domicilio</asp:TableCell>
                                 <asp:TableCell Style="background-color: white; width: 100px; text-align: left">
-                                    <asp:TextBox runat="server" ID="txt_emerefubicardomicilio" BorderStyle="None" BackColor="white" Style="width: 100%"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_emerefubicardomicilio" BorderStyle="None" BackColor="white" Style="width: 100%; text-transform:uppercase"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
-                        </asp:Table>
-                        <asp:Table class="table table-bordered text-center" runat="server">
-                            <asp:TableRow>
-                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 350px">¿Destina algún dinero para el ahorro?</asp:TableCell>
-                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 30px">SI</asp:TableCell>
-                                <asp:TableCell Style="background-color: white; width: 20px">
-                                    <asp:CheckBox ID="cb_dineroahorrosi" OnCheckedChanged="cb_dineroahorrosi_CheckedChanged" AutoPostBack="true" runat="server" />
-                                </asp:TableCell>
-                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 30px">NO</asp:TableCell>
-                                <asp:TableCell Style="background-color: white; width: 20px">
-                                    <asp:CheckBox ID="cb_dineroahorrono" OnCheckedChanged="cb_dineroahorrono_CheckedChanged" AutoPostBack="true" runat="server" />
-                                </asp:TableCell>
-                                <asp:TableCell Style="background-color: white">
-                                </asp:TableCell>
-                            </asp:TableRow>
-                        </asp:Table>
-                        <asp:Table class="table table-bordered text-center" runat="server">
-                            <asp:TableRow>
-                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 130px">¿Vehículo propio?</asp:TableCell>
-                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 30px">SI</asp:TableCell>
-                                <asp:TableCell Style="background-color: white; width: 20px">
-                                    <asp:CheckBox ID="cb_vehiculosi" OnCheckedChanged="cb_vehiculosi_CheckedChanged" AutoPostBack="true" runat="server" />
-                                </asp:TableCell>
-                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 30px">NO</asp:TableCell>
-                                <asp:TableCell Style="background-color: white; width: 20px">
-                                    <asp:CheckBox ID="cb_vehiculono" OnCheckedChanged="cb_vehiculono_CheckedChanged" AutoPostBack="true" runat="server" />
-                                </asp:TableCell>
-                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 200px">¿Usa recorrido institucional?</asp:TableCell>
-                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 20px">SI</asp:TableCell>
-                                <asp:TableCell Style="background-color: white; width: 20px">
-                                    <asp:CheckBox ID="cb_recorridosi" OnCheckedChanged="cb_recorridosi_CheckedChanged" AutoPostBack="true" runat="server" />
-                                </asp:TableCell>
-                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 20px">NO</asp:TableCell>
-                                <asp:TableCell Style="background-color: white; width: 20px">
-                                    <asp:CheckBox ID="cb_recorridono" OnCheckedChanged="cb_recorridono_CheckedChanged" AutoPostBack="true" runat="server" />
-                                </asp:TableCell>
-                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 300px">¿Cómo se moviliza hacia el trabajo o vivienda?</asp:TableCell>
-                                <asp:TableCell Style="background-color: white; text-align: left">
-                                    <asp:TextBox runat="server" ID="txt_movilizatrabajoovivienda" BorderStyle="None" BackColor="white" Style="width: 100%"></asp:TextBox>
-                                </asp:TableCell>
-                            </asp:TableRow>
-                        </asp:Table>
+                        </asp:Table>                       
                     </div>
                 </div>
                 <br />
 
-                <%--II. DATOS DE SALUD DEL SERVIDOR/A--%>
+                <%--II. SITUACIÓN MÉDICA Y DE SALUD DEL SERVIDOR/A--%>
 
                 <div class="card card-responsive" style="width: auto;">
                     <div class="card-header" style="background-color: #cccdfe; font-weight: bold; font-family: Arial">
-                        II. DATOS DE SALUD DEL SERVIDOR/A
+                        II. SITUACIÓN MÉDICA Y DE SALUD DEL SERVIDOR/A
                     </div>
                     <div class="list-group list-group-flush" style="padding: 10px; text-align: center">
                         <asp:Table class="table table-bordered text-center" runat="server">
                             <asp:TableRow>
                                 <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 300px">¿Posee alguna enfermedad pre-existente?</asp:TableCell>
+                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 30px">SI</asp:TableCell>
+                                <asp:TableCell Style="background-color: white; width: 20px">
+                                    <asp:CheckBox ID="cb_sienfermedad" OnCheckedChanged="cb_sienfermedad_CheckedChanged" AutoPostBack="true" runat="server" />
+                                </asp:TableCell>
+                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 30px">NO</asp:TableCell>
+                                <asp:TableCell Style="background-color: white; width: 20px">
+                                    <asp:CheckBox ID="cb_noenfermedad" OnCheckedChanged="cb_noenfermedad_CheckedChanged" AutoPostBack="true" runat="server" />
+                                </asp:TableCell>
                                 <asp:TableCell Style="background-color: white; text-align: left">
-                                    <asp:TextBox runat="server" ID="txt_poseeenfermedadprexistente" BorderStyle="None" Style="width: 100%; background-color: transparent" placeholder="Indique la enfermedad que padece"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_poseeenfermedadprexistente" BorderStyle="None" Style="width: 100%; text-transform:uppercase; background-color: transparent" placeholder="Indique la enfermedad que padece"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                         </asp:Table>
@@ -516,21 +478,21 @@
                                 </asp:TableCell>
                                 <asp:TableCell ID="tbc_tipodiscapacidad" Style="background-color: #cdfecc; color: black; font-family: Arial; width: 200px">Tipo de discapacidad</asp:TableCell>
                                 <asp:TableCell ID="tbc_txtdiscapacidad" Style="background-color: white">
-                                    <asp:TextBox runat="server" ID="txt_tipodiscapacidad" BorderStyle="None" Style="width: 100%;" BackColor="white" Placeholder="Detalle la o las discapacidades en caso de poseer"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_tipodiscapacidad" BorderStyle="None" Style="width: 100%; text-transform:uppercase;" BackColor="white"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                         </asp:Table>
                         <asp:Table ID="tabladatosdiscapacidad" class="table table-bordered text-center" runat="server">
                             <asp:TableRow>
-                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 250px">¿Cuál es su porcentaje discapacidad?</asp:TableCell>
+                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 250px">Porcentaje de discapacidad</asp:TableCell>
                                 <asp:TableCell Style="background-color: white; width: 60px">
                                     <asp:TextBox runat="server" ID="txt_porcentajediscapacidad" BorderStyle="None" Style="width: 100%;" BackColor="white" Placeholder="%"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 300px">Nº de Carnet otorgado por el MSP o CONADIS</asp:TableCell>
                                 <asp:TableCell Style="background-color: white">
-                                    <asp:TextBox runat="server" ID="txt_numcarnetconadis" BorderStyle="None" Style="width: 100%;" BackColor="white"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_numcarnetconadis" BorderStyle="None" Style="width: 100%; text-transform:uppercase;" BackColor="white"></asp:TextBox>
                                 </asp:TableCell>
-                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 200px">Fecha de caducidad</asp:TableCell>
+                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 200px">Fecha de caducidad del carnét</asp:TableCell>
                                 <asp:TableCell Style="background-color: white">
                                     <asp:TextBox runat="server" ID="txt_fechacaducidadcarnet" BorderStyle="None" Style="width: 100%;" BackColor="white" TextMode="Date"></asp:TextBox>
                                 </asp:TableCell>
@@ -538,7 +500,7 @@
                         </asp:Table>
                         <asp:Table class="table table-bordered text-center" runat="server">
                             <asp:TableRow>
-                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 500px">¿Se encuentra en estado de gestación?  (Adjuntar certificado médico)    </asp:TableCell>
+                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 250px">¿Se encuentra en estado de gestación?  (Adjuntar certificado médico)    </asp:TableCell>
                                 <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 30px">SI</asp:TableCell>
                                 <asp:TableCell Style="background-color: white; width: 20px">
                                     <asp:CheckBox ID="cb_gestaciónsi" OnCheckedChanged="cb_gestaciónsi_CheckedChanged" AutoPostBack="true" runat="server" />
@@ -547,17 +509,11 @@
                                 <asp:TableCell Style="background-color: white; width: 20px">
                                     <asp:CheckBox ID="cb_gestaciónno" OnCheckedChanged="cb_gestaciónno_CheckedChanged" AutoPostBack="true" runat="server" />
                                 </asp:TableCell>
+                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 150px">Tiempo de gestación</asp:TableCell>
                                 <asp:TableCell Style="background-color: white">
+                                    <asp:TextBox runat="server" ID="txt_gestacióntiempo" BorderStyle="None" Style="width: 100%; text-transform:uppercase;" BackColor="white"></asp:TextBox>
                                 </asp:TableCell>
-                            </asp:TableRow>
-                        </asp:Table>
-                        <asp:Table ID="tbl_estadogestacion" class="table table-bordered text-center" runat="server">
-                            <asp:TableRow>
-                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 200px">Tiempo de gestación</asp:TableCell>
-                                <asp:TableCell Style="background-color: white">
-                                    <asp:TextBox runat="server" ID="txt_gestacióntiempo" BorderStyle="None" Style="width: 100%;" BackColor="white"></asp:TextBox>
-                                </asp:TableCell>
-                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 250px">Fecha tentativa de parto</asp:TableCell>
+                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 200px">Fecha tentativa de parto</asp:TableCell>
                                 <asp:TableCell Style="background-color: white">
                                     <asp:TextBox runat="server" ID="txt_fechatentativaparto" BorderStyle="None" Style="width: 100%;" BackColor="white" TextMode="Date"></asp:TextBox>
                                 </asp:TableCell>
@@ -565,7 +521,7 @@
                         </asp:Table>
                         <asp:Table class="table table-bordered text-center" runat="server">
                             <asp:TableRow>
-                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 400px">¿Se encuentra usted en periodo de lactancia de ser el caso?</asp:TableCell>
+                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 250px">¿Se encuentra en periodo de lactancia</asp:TableCell>
                                 <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 30px">SI</asp:TableCell>
                                 <asp:TableCell Style="background-color: white; width: 20px">
                                     <asp:CheckBox ID="cb_lactaciasi" OnCheckedChanged="cb_lactaciasi_CheckedChanged" AutoPostBack="true" runat="server" />
@@ -574,7 +530,7 @@
                                 <asp:TableCell Style="background-color: white; width: 20px">
                                     <asp:CheckBox ID="cb_lactaciano" OnCheckedChanged="cb_lactaciano_CheckedChanged" AutoPostBack="true" runat="server" />
                                 </asp:TableCell>
-                                <asp:TableCell ID="txt_fechaculminacion" Style="background-color: #cdfecc; color: black; font-family: Arial; width: 200px">Fecha de culminación</asp:TableCell>
+                                <asp:TableCell ID="txt_fechaculminacion" Style="background-color: #cdfecc; color: black; font-family: Arial; width: 350px">Fecha de culminación del periodo de lactancia</asp:TableCell>
                                 <asp:TableCell ID="fechacumlimnacion" Style="background-color: white">
                                     <asp:TextBox runat="server" ID="txt_fechaculmicacionlactancia" BorderStyle="None" Style="width: 100%;" BackColor="white" TextMode="Date"></asp:TextBox>
                                 </asp:TableCell>
@@ -582,7 +538,7 @@
                         </asp:Table>
                         <asp:Table class="table table-bordered text-center" runat="server">
                             <asp:TableRow>
-                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 500px">¿Posee alguna enfermedad crónica y/o catastrófica? (adjuntar certificado médico)</asp:TableCell>
+                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 350px">¿Posee alguna enfermedad crónica y/o catastrófica? (Adjuntar certificado médico)</asp:TableCell>
                                 <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 30px">SI</asp:TableCell>
                                 <asp:TableCell Style="background-color: white; width: 20px">
                                     <asp:CheckBox ID="cb_catastroficasi" OnCheckedChanged="cb_catastroficasi_CheckedChanged" AutoPostBack="true" runat="server" />
@@ -591,21 +547,15 @@
                                 <asp:TableCell Style="background-color: white; width: 20px">
                                     <asp:CheckBox ID="cb_catastroficano" OnCheckedChanged="cb_catastroficano_CheckedChanged" AutoPostBack="true" runat="server" />
                                 </asp:TableCell>
-                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 30px">¿Cuál?</asp:TableCell>
+                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 200px">Nombre de la enfermedad:</asp:TableCell>
                                 <asp:TableCell Style="background-color: white">
-                                    <asp:TextBox runat="server" ID="txt_cualcatastrofica" BorderStyle="None" Style="width: 100%;" BackColor="white"></asp:TextBox>
-                                </asp:TableCell>
-                            </asp:TableRow>
-                            <asp:TableRow>
-                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 100px">Otras enfermedades</asp:TableCell>
-                                <asp:TableCell Style="background-color: white" ColumnSpan="6">
-                                    <asp:TextBox runat="server" ID="txt_otrasenfermedadescat" BorderStyle="None" Style="width: 100%;" BackColor="white"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_cualcatastrofica" BorderStyle="None" Style="width: 100%; text-transform:uppercase;" BackColor="white"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                         </asp:Table>
                         <asp:Table class="table table-bordered text-center" runat="server">
                             <asp:TableRow>
-                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 550px">¿Posee alguna enfermedad rara o húerfana según el Ente Rector que lo determina? (adjuntar certificado médico)</asp:TableCell>
+                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 450px">¿Posee alguna enfermedad rara o húerfana, según el Ente Rector que lo determine? (Adjuntar certificado médico)</asp:TableCell>
                                 <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 30px">SI</asp:TableCell>
                                 <asp:TableCell Style="background-color: white; width: 20px">
                                     <asp:CheckBox ID="cb_enfermedadrarasi" OnCheckedChanged="cb_enfermedadrarasi_CheckedChanged" AutoPostBack="true" runat="server" />
@@ -614,9 +564,9 @@
                                 <asp:TableCell Style="background-color: white; width: 20px">
                                     <asp:CheckBox ID="cb_enfermedadrarano" OnCheckedChanged="cb_enfermedadrarano_CheckedChanged" AutoPostBack="true" runat="server" />
                                 </asp:TableCell>
-                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 30px">¿Cuál?</asp:TableCell>
+                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 200px">Nombre de la enfermedad:</asp:TableCell>
                                 <asp:TableCell Style="background-color: white">
-                                    <asp:TextBox runat="server" ID="txt_enfermedadraracual" BorderStyle="None" Style="width: 100%;" BackColor="white"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_enfermedadraracual" BorderStyle="None" Style="width: 100%; text-transform:uppercase;" BackColor="white"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                         </asp:Table>
@@ -631,42 +581,15 @@
                                 <asp:TableCell Style="background-color: white; width: 20px">
                                     <asp:CheckBox ID="cb_alcoholno" OnCheckedChanged="cb_alcoholno_CheckedChanged" AutoPostBack="true" runat="server" />
                                 </asp:TableCell>
-                                <asp:TableCell ID="tbc_causa" Style="background-color: #cdfecc; color: black; font-family: Arial; width: 170px">Causa:</asp:TableCell>
+                                <asp:TableCell ID="tbc_causa" Style="background-color: #cdfecc; color: black; font-family: Arial; width: 125px">Frecuencia:</asp:TableCell>
                                 <asp:TableCell ID="txt_causa" Style="background-color: white">
-                                    <asp:TextBox runat="server" ID="txt_causaconsumoalcohol" BorderStyle="None" Style="width: 100%;" BackColor="white"></asp:TextBox>
-                                </asp:TableCell>
-                            </asp:TableRow>
-                        </asp:Table>
-                        <asp:Table ID="tablafrecuenciaalcohol" class="table table-bordered text-center" runat="server">
-                            <asp:TableRow>
-                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 170px">Frecuencia de consumo:</asp:TableCell>
-                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial">Diario</asp:TableCell>
-                                <asp:TableCell Style="background-color: white; width: 20px">
-                                    <asp:CheckBox ID="cb_consumoalcoholdiario" OnCheckedChanged="cb_consumoalcoholdiario_CheckedChanged" AutoPostBack="true" runat="server" />
-                                </asp:TableCell>
-                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial">Semanal</asp:TableCell>
-                                <asp:TableCell Style="background-color: white; width: 20px">
-                                    <asp:CheckBox ID="cb_consumoalcoholsemanal" OnCheckedChanged="cb_consumoalcoholsemanal_CheckedChanged" AutoPostBack="true" runat="server" />
-                                </asp:TableCell>
-                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial">Quincenal</asp:TableCell>
-                                <asp:TableCell Style="background-color: white; width: 20px">
-                                    <asp:CheckBox ID="cb_consumoalcoholquincenal" OnCheckedChanged="cb_consumoalcoholquincenal_CheckedChanged" AutoPostBack="true" runat="server" />
-                                </asp:TableCell>
-                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial">Mensual</asp:TableCell>
-                                <asp:TableCell Style="background-color: white; width: 20px">
-                                    <asp:CheckBox ID="cb_consumoalcoholmensual" OnCheckedChanged="cb_consumoalcoholmensual_CheckedChanged" AutoPostBack="true" runat="server" />
-                                </asp:TableCell>
-                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial">En reuniones</asp:TableCell>
-                                <asp:TableCell Style="background-color: white; width: 20px">
-                                    <asp:CheckBox ID="cb_consumoalcoholreuniones" OnCheckedChanged="cb_consumoalcoholreuniones_CheckedChanged" AutoPostBack="true" runat="server" />
+                                    <asp:TextBox runat="server" ID="txt_causaconsumoalcohol" BorderStyle="None" Style="width: 100%; text-transform:uppercase;" BackColor="white"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 230px">¿Hace cuanto tiempo consume?</asp:TableCell>
                                 <asp:TableCell Style="background-color: white">
-                                    <asp:TextBox runat="server" ID="txt_tiempoconsumoalcohol" BorderStyle="None" Style="width: 100%;" BackColor="white"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_tiempoconsumoalcohol" BorderStyle="None" Style="width: 100%; text-transform:uppercase;" BackColor="white"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
-                        </asp:Table>
-                        <asp:Table class="table table-bordered text-center" runat="server">
                             <asp:TableRow>
                                 <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 200px">¿Consume tabaco?</asp:TableCell>
                                 <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 30px">SI</asp:TableCell>
@@ -677,19 +600,17 @@
                                 <asp:TableCell Style="background-color: white; width: 20px">
                                     <asp:CheckBox ID="cb_tabacono" OnCheckedChanged="cb_tabacono_CheckedChanged" AutoPostBack="true" runat="server" />
                                 </asp:TableCell>
-                                <asp:TableCell ID="tbc_frecuenciatabaco" Style="background-color: #cdfecc; color: black; font-family: Arial; width: 100px">Frecuencia:</asp:TableCell>
+                                <asp:TableCell ID="tbc_frecuenciatabaco" Style="background-color: #cdfecc; color: black; font-family: Arial; width: 125px">Frecuencia:</asp:TableCell>
                                 <asp:TableCell ID="txt_frecuenciatabaco" Style="background-color: white">
-                                    <asp:TextBox runat="server" ID="txt_frecuenciaconsumotabaco" BorderStyle="None" Style="width: 100%;" BackColor="white"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_frecuenciaconsumotabaco" BorderStyle="None" Style="width: 100%; text-transform:uppercase;" BackColor="white"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell ID="tbc_tiempotabaco" Style="background-color: #cdfecc; color: black; font-family: Arial; width: 230px">¿Hace cuanto tiempo consume?</asp:TableCell>
                                 <asp:TableCell ID="txt_tiempotabaco" Style="background-color: white">
-                                    <asp:TextBox runat="server" ID="txt_tiempoconsumotabaco" BorderStyle="None" Style="width: 100%;" BackColor="white"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_tiempoconsumotabaco" BorderStyle="None" Style="width: 100%; text-transform:uppercase;" BackColor="white"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
-                        </asp:Table>
-                        <asp:Table class="table table-bordered text-center" runat="server">
                             <asp:TableRow>
-                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 300px">¿Consume usted alguna sustancia psicotrópica?</asp:TableCell>
+                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 200px">¿Consume usted alguna sustancia psicotrópica?</asp:TableCell>
                                 <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 30px">SI</asp:TableCell>
                                 <asp:TableCell Style="background-color: white; width: 20px">
                                     <asp:CheckBox ID="cb_sustanciapsicotropicasi" OnCheckedChanged="cb_sustanciapsicotropicasi_CheckedChanged" AutoPostBack="true" runat="server" />
@@ -700,17 +621,17 @@
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 125px">Tipo de sustancia:</asp:TableCell>
                                 <asp:TableCell Style="background-color: white">
-                                    <asp:TextBox runat="server" ID="txt_sustanciapsicotropicatipo" BorderStyle="None" Style="width: 100%;" BackColor="white"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_sustanciapsicotropicatipo" BorderStyle="None" Style="width: 100%; text-transform:uppercase;" BackColor="white"></asp:TextBox>
                                 </asp:TableCell>
-                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 160px">Frecuencia de consumo:</asp:TableCell>
+                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 160px">Frecuencia:</asp:TableCell>
                                 <asp:TableCell Style="background-color: white">
-                                    <asp:TextBox runat="server" ID="txt_sustanciapsicotropicafrecuencia" BorderStyle="None" Style="width: 100%;" BackColor="white"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_sustanciapsicotropicafrecuencia" BorderStyle="None" Style="width: 100%; text-transform:uppercase;" BackColor="white"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                         </asp:Table>
                         <asp:Table class="table table-bordered text-center" runat="server">
                             <asp:TableRow>
-                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 200px">Problemas relacionados con el consumo</asp:TableCell>
+                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 250px">Problemas relacionados con el consumo de alcohol o sustancias psicotrópicas</asp:TableCell>
                                 <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 50px">Familiares</asp:TableCell>
                                 <asp:TableCell Style="background-color: white; width: 20px">
                                     <asp:CheckBox ID="cb_familiares" runat="server" />
@@ -746,24 +667,19 @@
                     <div class="list-group list-group-flush" style="padding: 10px; text-align: center">
                         <asp:Table class="table table-bordered text-center" runat="server">
                             <asp:TableRow>
-                                <asp:TableCell Style="background-color: #cdfecc; color: red; font-family: Arial">
-                                    <strong> 
-                                        <i>POR FAVOR INGRESE VALORES ENTEROS, SIN COMAS Y SIN PUNTOS. EJEMPLO: 700, DE NO TENER VALORES DE INGRESO, POR FAVOR ESCRIBIR EL NÚMERO 0.</i> 
-                                    </strong> 
+                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 500px">NÚMERO DE MIEMBROS ECONOMICAMENTE ACTIVOS CON LOS QUE VIVE:</asp:TableCell>
+                                <asp:TableCell Style="background-color: white">
+                                    <asp:TextBox runat="server" ID="txt_miembroactivoseconomicamente" BorderStyle="None" Style="width: 100%; background-color: transparent; text-align: center"></asp:TextBox>
+                                </asp:TableCell>
+                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial">SITUACIÓN LABORAL DEL CONYUGUE</asp:TableCell>
+                                <asp:TableCell Style="background-color: white">
+                                    <asp:TextBox runat="server" ID="txt_situacionlaboralconyugue" BorderStyle="None" Style="width: 100%; background-color: transparent; text-align: center"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                         </asp:Table>
                         <div class="row">
                             <div class="col-sm-9">
-                                <asp:Table class="table table-bordered table-light" runat="server">
-                                    <asp:TableRow>
-                                        <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 550px" ColumnSpan="2">NÚMERO DE MIEMBROS ECONOMICAMENTE ACTIVOS:</asp:TableCell>
-                                        <asp:TableCell Style="background-color: white">
-                                            <asp:TextBox runat="server" ID="txt_miembroactivoseconomicamente" BorderStyle="None" Style="width: 100%; background-color: transparent; text-align:center" TextMode="Number"></asp:TextBox>
-                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator_miembros_economicamente" runat="server" ErrorMessage="!Complete!" ControlToValidate="txt_miembroactivoseconomicamente" ForeColor="Red" ValidationGroup="GroupValidation"></asp:RequiredFieldValidator>
-                                        </asp:TableCell>
-                                        <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial" ColumnSpan="3">SITUACIÓN LABORAL DEL CONYUGUE</asp:TableCell>
-                                    </asp:TableRow>
+                                <asp:Table class="table table-bordered table-light" runat="server">                              
                                     <asp:TableRow>
                                         <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial" ColumnSpan="2">TOTAL INGRESOS MENSUALES PROYECTADOS</asp:TableCell>
                                         <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial">AYUDA</asp:TableCell>
@@ -772,156 +688,122 @@
                                     </asp:TableRow>
                                     <asp:TableRow>
                                         <asp:TableCell Style="background-color: white" ColumnSpan="2">
-                                            <asp:TextBox runat="server" ID="txt_totalingresos1" BorderStyle="None" Style="width: 100%; background-color: transparent; text-align:center" TextMode="Number"></asp:TextBox>
+                                            <asp:TextBox runat="server" ID="txt_totalingresos1" BorderStyle="None" Style="width: 100%; background-color: transparent; text-align:center"></asp:TextBox>
                                         </asp:TableCell>
                                         <asp:TableCell Style="background-color: white">
-                                            <asp:TextBox runat="server" ID="txt_ayuda1" BorderStyle="None" Style="width: 100%; background-color: transparent; text-align:center" TextMode="Number"></asp:TextBox>
+                                            <asp:TextBox runat="server" ID="txt_ayuda1" BorderStyle="None" Style="width: 100%; background-color: transparent; text-align:center"></asp:TextBox>
                                         </asp:TableCell>
                                         <asp:TableCell Style="background-color: white">
-                                            <asp:TextBox runat="server" ID="txt_otros1" BorderStyle="None" Style="width: 100%; background-color: transparent; text-align:center" TextMode="Number"></asp:TextBox>
+                                            <asp:TextBox runat="server" ID="txt_otros1" BorderStyle="None" Style="width: 100%; background-color: transparent; text-align:center"></asp:TextBox>
                                         </asp:TableCell>
                                         <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial">Alimentación</asp:TableCell>
                                         <asp:TableCell Style="background-color: white">
-                                            <asp:TextBox runat="server" ID="txt_alimentación" BorderStyle="None" Style="width: 100%; background-color: transparent; text-align:center" TextMode="Number"></asp:TextBox>
+                                            <asp:TextBox runat="server" ID="txt_alimentación" BorderStyle="None" Style="width: 100%; background-color: transparent; text-align:center"></asp:TextBox>
                                         </asp:TableCell>
                                     </asp:TableRow>
                                     <asp:TableRow>
                                         <asp:TableCell Style="background-color: white" ColumnSpan="2">
-                                            <asp:TextBox runat="server" ID="txt_totalingresos2" BorderStyle="None" Style="width: 100%; background-color: transparent; text-align:center" TextMode="Number"></asp:TextBox>
+                                            <asp:TextBox runat="server" ID="txt_totalingresos2" BorderStyle="None" Style="width: 100%; background-color: transparent; text-align:center"></asp:TextBox>
                                         </asp:TableCell>
                                         <asp:TableCell Style="background-color: white">
-                                            <asp:TextBox runat="server" ID="txt_ayuda2" BorderStyle="None" Style="width: 100%; background-color: transparent; text-align:center" TextMode="Number"></asp:TextBox>
+                                            <asp:TextBox runat="server" ID="txt_ayuda2" BorderStyle="None" Style="width: 100%; background-color: transparent; text-align:center"></asp:TextBox>
                                         </asp:TableCell>
                                         <asp:TableCell Style="background-color: white">
-                                            <asp:TextBox runat="server" ID="txt_otros2" BorderStyle="None" Style="width: 100%; background-color: transparent; text-align:center" TextMode="Number"></asp:TextBox>
+                                            <asp:TextBox runat="server" ID="txt_otros2" BorderStyle="None" Style="width: 100%; background-color: transparent; text-align:center"></asp:TextBox>
                                         </asp:TableCell>
                                         <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial">Vivienda</asp:TableCell>
                                         <asp:TableCell Style="background-color: white">
-                                            <asp:TextBox runat="server" ID="txt_vivienda" BorderStyle="None" Style="width: 100%; background-color: transparent; text-align:center" TextMode="Number"></asp:TextBox>
+                                            <asp:TextBox runat="server" ID="txt_vivienda" BorderStyle="None" Style="width: 100%; background-color: transparent; text-align:center"></asp:TextBox>
                                         </asp:TableCell>
                                     </asp:TableRow>
                                     <asp:TableRow>
                                         <asp:TableCell Style="background-color: white" ColumnSpan="2">
-                                            <asp:TextBox runat="server" ID="txt_totalingresos3" BorderStyle="None" Style="width: 100%; background-color: transparent; text-align:center" TextMode="Number"></asp:TextBox>
+                                            <asp:TextBox runat="server" ID="txt_totalingresos3" BorderStyle="None" Style="width: 100%; background-color: transparent; text-align:center"></asp:TextBox>
                                         </asp:TableCell>
                                         <asp:TableCell Style="background-color: white">
-                                            <asp:TextBox runat="server" ID="txt_ayuda3" BorderStyle="None" Style="width: 100%; background-color: transparent; text-align:center" TextMode="Number"></asp:TextBox>
+                                            <asp:TextBox runat="server" ID="txt_ayuda3" BorderStyle="None" Style="width: 100%; background-color: transparent; text-align:center"></asp:TextBox>
                                         </asp:TableCell>
                                         <asp:TableCell Style="background-color: white">
-                                            <asp:TextBox runat="server" ID="txt_otros3" BorderStyle="None" Style="width: 100%; background-color: transparent; text-align:center" TextMode="Number"></asp:TextBox>
+                                            <asp:TextBox runat="server" ID="txt_otros3" BorderStyle="None" Style="width: 100%; background-color: transparent; text-align:center"></asp:TextBox>
                                         </asp:TableCell>
                                         <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial">Educación</asp:TableCell>
                                         <asp:TableCell Style="background-color: white">
-                                            <asp:TextBox runat="server" ID="txt_educación" BorderStyle="None" Style="width: 100%; background-color: transparent; text-align:center" TextMode="Number"></asp:TextBox>
+                                            <asp:TextBox runat="server" ID="txt_educación" BorderStyle="None" Style="width: 100%; background-color: transparent; text-align:center"></asp:TextBox>
                                         </asp:TableCell>
                                     </asp:TableRow>
                                     <asp:TableRow>
                                         <asp:TableCell Style="background-color: white" ColumnSpan="2">
-                                            <asp:TextBox runat="server" ID="txt_totalingresos4" BorderStyle="None" Style="width: 100%; background-color: transparent; text-align:center" TextMode="Number"></asp:TextBox>
+                                            <asp:TextBox runat="server" ID="txt_totalingresos4" BorderStyle="None" Style="width: 100%; background-color: transparent; text-align:center"></asp:TextBox>
                                         </asp:TableCell>
                                         <asp:TableCell Style="background-color: white">
-                                            <asp:TextBox runat="server" ID="txt_ayuda4" BorderStyle="None" Style="width: 100%; background-color: transparent; text-align:center" TextMode="Number"></asp:TextBox>
+                                            <asp:TextBox runat="server" ID="txt_ayuda4" BorderStyle="None" Style="width: 100%; background-color: transparent; text-align:center"></asp:TextBox>
                                         </asp:TableCell>
                                         <asp:TableCell Style="background-color: white">
-                                            <asp:TextBox runat="server" ID="txt_otros4" BorderStyle="None" Style="width: 100%; background-color: transparent; text-align:center" TextMode="Number"></asp:TextBox>
+                                            <asp:TextBox runat="server" ID="txt_otros4" BorderStyle="None" Style="width: 100%; background-color: transparent; text-align:center"></asp:TextBox>
                                         </asp:TableCell>
                                         <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial">Servicios Básicos</asp:TableCell>
                                         <asp:TableCell Style="background-color: white">
-                                            <asp:TextBox runat="server" ID="txt_serviciosbasicos" BorderStyle="None" Style="width: 100%; background-color: transparent; text-align:center" TextMode="Number"></asp:TextBox>
+                                            <asp:TextBox runat="server" ID="txt_serviciosbasicos" BorderStyle="None" Style="width: 100%; background-color: transparent; text-align:center"></asp:TextBox>
                                         </asp:TableCell>
                                     </asp:TableRow>
                                     <asp:TableRow>
                                         <asp:TableCell Style="background-color: white" ColumnSpan="2">
-                                            <asp:TextBox runat="server" ID="txt_totalingresos5" BorderStyle="None" Style="width: 100%; background-color: transparent; text-align:center" TextMode="Number"></asp:TextBox>
+                                            <asp:TextBox runat="server" ID="txt_totalingresos5" BorderStyle="None" Style="width: 100%; background-color: transparent; text-align:center"></asp:TextBox>
                                         </asp:TableCell>
                                         <asp:TableCell Style="background-color: white">
-                                            <asp:TextBox runat="server" ID="txt_ayuda5" BorderStyle="None" Style="width: 100%; background-color: transparent; text-align:center" TextMode="Number"></asp:TextBox>
+                                            <asp:TextBox runat="server" ID="txt_ayuda5" BorderStyle="None" Style="width: 100%; background-color: transparent; text-align:center"></asp:TextBox>
                                         </asp:TableCell>
                                         <asp:TableCell Style="background-color: white">
-                                            <asp:TextBox runat="server" ID="txt_otros5" BorderStyle="None" Style="width: 100%; background-color: transparent; text-align:center" TextMode="Number"></asp:TextBox>
+                                            <asp:TextBox runat="server" ID="txt_otros5" BorderStyle="None" Style="width: 100%; background-color: transparent; text-align:center"></asp:TextBox>
                                         </asp:TableCell>
                                         <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial">Salud</asp:TableCell>
                                         <asp:TableCell Style="background-color: white">
-                                            <asp:TextBox runat="server" ID="txt_salud" BorderStyle="None" Style="width: 100%; background-color: transparent; text-align:center" TextMode="Number"></asp:TextBox>
+                                            <asp:TextBox runat="server" ID="txt_salud" BorderStyle="None" Style="width: 100%; background-color: transparent; text-align:center"></asp:TextBox>
                                         </asp:TableCell>
                                     </asp:TableRow>
                                     <asp:TableRow>
                                         <asp:TableCell Style="background-color: white" ColumnSpan="2">
-                                            <asp:TextBox runat="server" ID="txt_totalingresos6" BorderStyle="None" Style="width: 100%; background-color: transparent; text-align:center" TextMode="Number"></asp:TextBox>
+                                            <asp:TextBox runat="server" ID="txt_totalingresos6" BorderStyle="None" Style="width: 100%; background-color: transparent; text-align:center"></asp:TextBox>
                                         </asp:TableCell>
                                         <asp:TableCell Style="background-color: white">
-                                            <asp:TextBox runat="server" ID="txt_ayuda6" BorderStyle="None" Style="width: 100%; background-color: transparent; text-align:center" TextMode="Number"></asp:TextBox>
+                                            <asp:TextBox runat="server" ID="txt_ayuda6" BorderStyle="None" Style="width: 100%; background-color: transparent; text-align:center"></asp:TextBox>
                                         </asp:TableCell>
                                         <asp:TableCell Style="background-color: white">
-                                            <asp:TextBox runat="server" ID="txt_otros6" BorderStyle="None" Style="width: 100%; background-color: transparent; text-align:center" TextMode="Number"></asp:TextBox>
+                                            <asp:TextBox runat="server" ID="txt_otros6" BorderStyle="None" Style="width: 100%; background-color: transparent; text-align:center"></asp:TextBox>
                                         </asp:TableCell>
                                         <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial">Movilización</asp:TableCell>
                                         <asp:TableCell Style="background-color: white">
-                                            <asp:TextBox runat="server" ID="txt_movilización" BorderStyle="None" Style="width: 100%; background-color: transparent; text-align:center" TextMode="Number"></asp:TextBox>
+                                            <asp:TextBox runat="server" ID="txt_movilización" BorderStyle="None" Style="width: 100%; background-color: transparent; text-align:center"></asp:TextBox>
                                         </asp:TableCell>
                                     </asp:TableRow>
                                     <asp:TableRow>
                                         <asp:TableCell Style="background-color: white" ColumnSpan="2">
-                                            <asp:TextBox runat="server" ID="txt_totalingresos7" BorderStyle="None" Style="width: 100%; background-color: transparent; text-align:center" TextMode="Number"></asp:TextBox>
+                                            <asp:TextBox runat="server" ID="txt_totalingresos7" BorderStyle="None" Style="width: 100%; background-color: transparent; text-align:center"></asp:TextBox>
                                         </asp:TableCell>
                                         <asp:TableCell Style="background-color: white">
-                                            <asp:TextBox runat="server" ID="txt_ayuda7" BorderStyle="None" Style="width: 100%; background-color: transparent; text-align:center" TextMode="Number"></asp:TextBox>
+                                            <asp:TextBox runat="server" ID="txt_ayuda7" BorderStyle="None" Style="width: 100%; background-color: transparent; text-align:center"></asp:TextBox>
                                         </asp:TableCell>
                                         <asp:TableCell Style="background-color: white">
-                                            <asp:TextBox runat="server" ID="txt_otros7" BorderStyle="None" Style="width: 100%; background-color: transparent; text-align:center" TextMode="Number"></asp:TextBox>
+                                            <asp:TextBox runat="server" ID="txt_otros7" BorderStyle="None" Style="width: 100%; background-color: transparent; text-align:center"></asp:TextBox>
                                         </asp:TableCell>
                                         <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial">Deudas</asp:TableCell>
                                         <asp:TableCell Style="background-color: white">
-                                            <asp:TextBox runat="server" ID="txt_deudas" BorderStyle="None" Style="width: 100%; background-color: transparent; text-align:center" TextMode="Number"></asp:TextBox>
+                                            <asp:TextBox runat="server" ID="txt_deudas" BorderStyle="None" Style="width: 100%; background-color: transparent; text-align:center"></asp:TextBox>
                                         </asp:TableCell>
                                     </asp:TableRow>
                                     <asp:TableRow>
                                         <asp:TableCell Style="background-color: white" ColumnSpan="2">
-                                            <asp:TextBox runat="server" ID="txt_totalingresos8" BorderStyle="None" Style="width: 100%; background-color: transparent; text-align:center" TextMode="Number"></asp:TextBox>
+                                            <asp:TextBox runat="server" ID="txt_totalingresos8" BorderStyle="None" Style="width: 100%; background-color: transparent; text-align:center"></asp:TextBox>
                                         </asp:TableCell>
                                         <asp:TableCell Style="background-color: white">
-                                            <asp:TextBox runat="server" ID="txt_ayuda8" BorderStyle="None" Style="width: 100%; background-color: transparent; text-align:center" TextMode="Number"></asp:TextBox>
+                                            <asp:TextBox runat="server" ID="txt_ayuda8" BorderStyle="None" Style="width: 100%; background-color: transparent; text-align:center"></asp:TextBox>
                                         </asp:TableCell>
                                         <asp:TableCell Style="background-color: white">
-                                            <asp:TextBox runat="server" ID="txt_otros8" BorderStyle="None" Style="width: 100%; background-color: transparent; text-align:center" TextMode="Number"></asp:TextBox>
+                                            <asp:TextBox runat="server" ID="txt_otros8" BorderStyle="None" Style="width: 100%; background-color: transparent; text-align:center"></asp:TextBox>
                                         </asp:TableCell>
-                                        <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial">Otros (Pensiones, Varios)</asp:TableCell>
+                                        <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial">Otros</asp:TableCell>
                                         <asp:TableCell Style="background-color: white">
-                                            <asp:TextBox runat="server" ID="txt_otrospensiones" BorderStyle="None" Style="width: 100%; background-color: transparent; text-align:center" TextMode="Number"></asp:TextBox>
-                                        </asp:TableCell>
-                                    </asp:TableRow>
-                                    <asp:TableRow>
-                                        <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial">
-                                            <asp:Button ID="btn_totalingresos" runat="server" Text="Calcular" OnClick="btn_totalingresos_Click" ToolTip="Presione para calcular el total de los valores de la columna Ingresos Mensuales Proyectados" />
-                                        </asp:TableCell>
-                                        <asp:TableCell Style="background-color: #cdfecc">
-                                            <asp:TextBox runat="server" ID="txt_totalingresos9" BorderStyle="None" Style="width: 100%; background-color: transparent; text-align: center" placeholder="$" ReadOnly="true"></asp:TextBox>
-                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator_total_ingresos" runat="server" ErrorMessage="!Complete!" ControlToValidate="txt_totalingresos9" ForeColor="Red" ValidationGroup="GroupValidation"></asp:RequiredFieldValidator>
-                                        </asp:TableCell>
-                                        <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial">
-                                            <asp:Button ID="btn_total_ayuda_otros" runat="server" Text="Calcular" OnClick="btn_total_ayuda_otros_Click" ToolTip="Presione para calcular el total de los valores de la columna Ayuda y otros"/>
-                                        </asp:TableCell>
-                                        <asp:TableCell Style="background-color: #cdfecc">
-                                            <asp:TextBox runat="server" ID="txt_totalayudayotros9" BorderStyle="None" Style="width: 100%; background-color: transparent; text-align: center" placeholder="$" ReadOnly="true"></asp:TextBox>
-                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator_total_ayuda_otros" runat="server" ErrorMessage="!Complete!" ControlToValidate="txt_totalayudayotros9" ForeColor="Red" ValidationGroup="GroupValidation"></asp:RequiredFieldValidator>
-                                        </asp:TableCell>
-                                        <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial">
-                                            <asp:Button ID="btn_totalegresos" runat="server" Text="Calcular" OnClick="btn_totalegresos_Click" ToolTip="Presione para calcular el total de los valores de la columna Total Egresos"/>
-                                        </asp:TableCell>
-                                        <asp:TableCell Style="background-color: #cdfecc">
-                                            <asp:TextBox runat="server" ID="txt_totalegresos" BorderStyle="None" Style="width: 100%; background-color: transparent; text-align: center" placeholder="$" ReadOnly="true"></asp:TextBox>
-                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator_total_egresos" runat="server" ErrorMessage="!Complete!" ControlToValidate="txt_totalegresos" ForeColor="Red" ValidationGroup="GroupValidation"></asp:RequiredFieldValidator>
-                                        </asp:TableCell>
-                                    </asp:TableRow>
-                                    <asp:TableRow>
-                                        <asp:TableCell ColumnSpan="2">
-                                            <asp:Label ID="lbl_total_ingresos" runat="server" ForeColor="Red" Style="font-family: Arial"></asp:Label>
-                                        </asp:TableCell>
-                                        <asp:TableCell ColumnSpan="2">
-                                            <asp:Label ID="lbl_total_ayuda_otros" runat="server" ForeColor="Red" Style="font-family: Arial"></asp:Label>
-                                        </asp:TableCell>
-                                        <asp:TableCell ColumnSpan="2">
-                                            <asp:Label ID="lbl_total_egresos" runat="server" ForeColor="Red" Style="font-family: Arial"></asp:Label>
+                                            <asp:TextBox runat="server" ID="txt_otrospensiones" BorderStyle="None" Style="width: 100%; background-color: transparent; text-align:center"></asp:TextBox>
                                         </asp:TableCell>
                                     </asp:TableRow>
                                 </asp:Table>
@@ -938,48 +820,57 @@
                                     <asp:TableRow>
                                         <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial">Casa</asp:TableCell>
                                         <asp:TableCell Style="background-color: white">
-                                            <asp:TextBox runat="server" ID="txt_biencasa" BorderStyle="None" Style="width: 100%; background-color: transparent; text-align:center" TextMode="Number"></asp:TextBox>
+                                            <asp:TextBox runat="server" ID="txt_biencasa" BorderStyle="None" Style="width: 100%; background-color: transparent; text-align:center"></asp:TextBox>
                                         </asp:TableCell>
                                     </asp:TableRow>
                                     <asp:TableRow>
                                         <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial">Departamento</asp:TableCell>
                                         <asp:TableCell Style="background-color: white">
-                                            <asp:TextBox runat="server" ID="txt_biendepartamento" BorderStyle="None" Style="width: 100%; background-color: transparent; text-align:center" TextMode="Number"></asp:TextBox>
+                                            <asp:TextBox runat="server" ID="txt_biendepartamento" BorderStyle="None" Style="width: 100%; background-color: transparent; text-align:center"></asp:TextBox>
                                         </asp:TableCell>
                                     </asp:TableRow>
                                     <asp:TableRow>
                                         <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial">Vehiculo</asp:TableCell>
                                         <asp:TableCell Style="background-color: white">
-                                            <asp:TextBox runat="server" ID="txt_bienvehiculo" BorderStyle="None" Style="width: 100%; background-color: transparent; text-align:center" TextMode="Number"></asp:TextBox>
+                                            <asp:TextBox runat="server" ID="txt_bienvehiculo" BorderStyle="None" Style="width: 100%; background-color: transparent; text-align:center"></asp:TextBox>
                                         </asp:TableCell>
                                     </asp:TableRow>
                                     <asp:TableRow>
                                         <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial">Terreno</asp:TableCell>
                                         <asp:TableCell Style="background-color: white">
-                                            <asp:TextBox runat="server" ID="txt_bienterreno" BorderStyle="None" Style="width: 100%; background-color: transparent; text-align:center" TextMode="Number"></asp:TextBox>
+                                            <asp:TextBox runat="server" ID="txt_bienterreno" BorderStyle="None" Style="width: 100%; background-color: transparent; text-align:center"></asp:TextBox>
                                         </asp:TableCell>
                                     </asp:TableRow>
                                     <asp:TableRow>
                                         <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial">Negocio</asp:TableCell>
                                         <asp:TableCell Style="background-color: white">
-                                            <asp:TextBox runat="server" ID="txt_bienegocio" BorderStyle="None" Style="width: 100%; background-color: transparent; text-align:center" TextMode="Number"></asp:TextBox>
+                                            <asp:TextBox runat="server" ID="txt_bienegocio" BorderStyle="None" Style="width: 100%; background-color: transparent; text-align:center"></asp:TextBox>
                                         </asp:TableCell>
                                     </asp:TableRow>
                                     <asp:TableRow>
                                         <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial">Muebles y Enseres</asp:TableCell>
                                         <asp:TableCell Style="background-color: white">
-                                            <asp:TextBox runat="server" ID="txt_bienmueblesyenseres" BorderStyle="None" Style="width: 100%; background-color: transparent; text-align:center" TextMode="Number"></asp:TextBox>
-                                        </asp:TableCell>
-                                    </asp:TableRow>
-                                    <asp:TableRow>
-                                        <asp:TableCell ColumnSpan="2">
-                                            <asp:Label ID="lbl_bienes" runat="server" ForeColor="Red" Style="font-family: Arial"></asp:Label>
+                                            <asp:TextBox runat="server" ID="txt_bienmueblesyenseres" BorderStyle="None" Style="width: 100%; background-color: transparent; text-align:center"></asp:TextBox>
                                         </asp:TableCell>
                                     </asp:TableRow>
                                 </asp:Table>
                             </div>
                         </div>
-                        <br />
+                        <asp:Table class="table table-bordered text-center" runat="server">
+                            <asp:TableRow>
+                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 350px">¿Destina algún dinero para el ahorro?</asp:TableCell>
+                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 30px">SI</asp:TableCell>
+                                <asp:TableCell Style="background-color: white; width: 20px">
+                                    <asp:CheckBox ID="cb_dineroahorrosi" OnCheckedChanged="cb_dineroahorrosi_CheckedChanged" AutoPostBack="true" runat="server" />
+                                </asp:TableCell>
+                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 30px">NO</asp:TableCell>
+                                <asp:TableCell Style="background-color: white; width: 20px">
+                                    <asp:CheckBox ID="cb_dineroahorrono" OnCheckedChanged="cb_dineroahorrono_CheckedChanged" AutoPostBack="true" runat="server" />
+                                </asp:TableCell>
+                                <asp:TableCell Style="background-color: white">
+                                </asp:TableCell>
+                            </asp:TableRow>
+                        </asp:Table>                        
                         <asp:Table class="table table-bordered text-center" runat="server">
                             <asp:TableRow>
                                 <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; text-align: left">CARACTERÍSTICAS DE LA VIVIENDA</asp:TableCell>
@@ -998,7 +889,7 @@
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial">Otro especifique</asp:TableCell>
                                 <asp:TableCell Style="background-color: white">
-                                    <asp:TextBox runat="server" ID="txt_otrodescripcionviviendafamilia" BorderStyle="None" Style="width: 100%;" BackColor="white"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_otrodescripcionviviendafamilia" BorderStyle="None" Style="width: 100%; text-transform:uppercase;" BackColor="white"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                         </asp:Table>
@@ -1019,7 +910,7 @@
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial" RowSpan="2">Otro especifique</asp:TableCell>
                                 <asp:TableCell Style="background-color: white" RowSpan="2">
-                                    <asp:TextBox runat="server" ID="txt_otratenencia" BorderStyle="None" Style="width: 100%;" BackColor="white"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_otratenencia" BorderStyle="None" Style="width: 100%; text-transform:uppercase;" BackColor="white"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
@@ -1031,7 +922,7 @@
                                 <asp:TableCell Style="background-color: white; width: 50px">
                                     <asp:CheckBox ID="cb_prestada" OnCheckedChanged="cb_prestada_CheckedChanged" AutoPostBack="true" runat="server" />
                                 </asp:TableCell>
-                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial">Antricreces</asp:TableCell>
+                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial">Anticresis</asp:TableCell>
                                 <asp:TableCell Style="background-color: white; width: 50px">
                                     <asp:CheckBox ID="cb_anticreces" OnCheckedChanged="cb_anticreces_CheckedChanged" AutoPostBack="true" runat="server" />
                                 </asp:TableCell>
@@ -1062,7 +953,7 @@
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial">Otro especifique</asp:TableCell>
                                 <asp:TableCell Style="background-color: white">
-                                    <asp:TextBox runat="server" ID="txt_otrotipodecasa" BorderStyle="None" Style="width: 100%;" BackColor="white"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_otrotipodecasa" BorderStyle="None" Style="width: 100%; text-transform:uppercase;" BackColor="white"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                         </asp:Table>
@@ -1087,7 +978,7 @@
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial" RowSpan="2">Otro especifique</asp:TableCell>
                                 <asp:TableCell Style="background-color: white" RowSpan="2">
-                                    <asp:TextBox runat="server" ID="txt_otradistribucioncasa" BorderStyle="None" Style="width: 100%;" BackColor="white"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_otradistribucioncasa" BorderStyle="None" Style="width: 100%; text-transform:uppercase;" BackColor="white"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
@@ -1111,9 +1002,23 @@
                         </asp:Table>
                         <asp:Table class="table table-bordered text-center" runat="server">
                             <asp:TableRow>
-                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial">Otro especifique</asp:TableCell>
-                                <asp:TableCell Style="background-color: white">
-                                    <asp:TextBox runat="server" ID="txt_otrainformacioncasa" BorderStyle="None" Style="width: 100%;" BackColor="white"></asp:TextBox>
+                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 150px">¿Dispone vehículo?</asp:TableCell>
+                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 30px">SI</asp:TableCell>
+                                <asp:TableCell Style="background-color: white; width: 20px">
+                                    <asp:CheckBox ID="cb_vehiculosi" OnCheckedChanged="cb_vehiculosi_CheckedChanged" AutoPostBack="true" runat="server" />
+                                </asp:TableCell>
+                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 30px">NO</asp:TableCell>
+                                <asp:TableCell Style="background-color: white; width: 20px">
+                                    <asp:CheckBox ID="cb_vehiculono" OnCheckedChanged="cb_vehiculono_CheckedChanged" AutoPostBack="true" runat="server" />
+                                </asp:TableCell>
+                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 200px">¿Hace uso del recorrido institucional?</asp:TableCell>
+                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 20px">SI</asp:TableCell>
+                                <asp:TableCell Style="background-color: white; width: 20px">
+                                    <asp:CheckBox ID="cb_recorridosi" OnCheckedChanged="cb_recorridosi_CheckedChanged" AutoPostBack="true" runat="server" />
+                                </asp:TableCell>
+                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 20px">NO</asp:TableCell>
+                                <asp:TableCell Style="background-color: white; width: 20px">
+                                    <asp:CheckBox ID="cb_recorridono" OnCheckedChanged="cb_recorridono_CheckedChanged" AutoPostBack="true" runat="server" />
                                 </asp:TableCell>
                             </asp:TableRow>
                         </asp:Table>
@@ -1130,7 +1035,7 @@
                     <div class="list-group list-group-flush" style="padding: 10px; text-align: center">
                         <asp:Table class="table table-bordered text-center" runat="server">
                             <asp:TableRow>
-                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial">COMPOSICIÓN FAMILIAR DEL SERVIDOR/A, TRABAJADOR/A QUE VIVAN CON USTED EN FORMA PERMANENTE</asp:TableCell>
+                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial">COMPOSICIÓN FAMILIAR DEL SERVIDOR/A, TRABAJADOR/A CON LOS QUE CONVIVE DE FORMA PERMANENTE EN EL MISMO LUGAR</asp:TableCell>
                             </asp:TableRow>
                         </asp:Table>
                         <asp:Table class="table table-bordered text-center" runat="server">
@@ -1142,72 +1047,72 @@
                             </asp:TableRow>
                             <asp:TableRow>
                                 <asp:TableCell Style="background-color: white; color: black; font-family: Arial">
-                                    <asp:TextBox runat="server" ID="txt_nomapellidos1" BorderStyle="None" Style="width: 100%;" BackColor="white"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_nomapellidos1" BorderStyle="None" Style="width: 100%; text-transform:uppercase;" BackColor="white"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white; color: black; font-family: Arial">
-                                    <asp:TextBox runat="server" ID="txt_parentesco1" BorderStyle="None" Style="width: 100%;" BackColor="white"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_parentesco1" BorderStyle="None" Style="width: 100%; text-transform:uppercase;" BackColor="white"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white; color: black; font-family: Arial">
                                     <asp:TextBox runat="server" ID="txt_fechanacimiento1" BorderStyle="None" Style="width: 100%; text-align: center" BackColor="white" TextMode="Date"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white; color: black; font-family: Arial">
-                                    <asp:TextBox runat="server" ID="txt_edad1" BorderStyle="None" Style="width: 100%;" BackColor="white"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_edad1" BorderStyle="None" Style="width: 100%; text-transform:uppercase;" BackColor="white"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
                                 <asp:TableCell Style="background-color: white; color: black; font-family: Arial">
-                                    <asp:TextBox runat="server" ID="txt_nomapellidos2" BorderStyle="None" Style="width: 100%;" BackColor="white"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_nomapellidos2" BorderStyle="None" Style="width: 100%; text-transform:uppercase;" BackColor="white"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white; color: black; font-family: Arial">
-                                    <asp:TextBox runat="server" ID="txt_parentesco2" BorderStyle="None" Style="width: 100%;" BackColor="white"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_parentesco2" BorderStyle="None" Style="width: 100%; text-transform:uppercase;" BackColor="white"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white; color: black; font-family: Arial">
                                     <asp:TextBox runat="server" ID="txt_fechanacimiento2" BorderStyle="None" Style="width: 100%; text-align: center" BackColor="white" TextMode="Date"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white; color: black; font-family: Arial">
-                                    <asp:TextBox runat="server" ID="txt_edad2" BorderStyle="None" Style="width: 100%;" BackColor="white"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_edad2" BorderStyle="None" Style="width: 100%; text-transform:uppercase;" BackColor="white"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
                                 <asp:TableCell Style="background-color: white; color: black; font-family: Arial">
-                                    <asp:TextBox runat="server" ID="txt_nomapellidos3" BorderStyle="None" Style="width: 100%;" BackColor="white"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_nomapellidos3" BorderStyle="None" Style="width: 100%; text-transform:uppercase;" BackColor="white"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white; color: black; font-family: Arial">
-                                    <asp:TextBox runat="server" ID="txt_parentesco3" BorderStyle="None" Style="width: 100%;" BackColor="white"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_parentesco3" BorderStyle="None" Style="width: 100%; text-transform:uppercase;" BackColor="white"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white; color: black; font-family: Arial">
                                     <asp:TextBox runat="server" ID="txt_fechanacimiento3" BorderStyle="None" Style="width: 100%; text-align: center" BackColor="white" TextMode="Date"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white; color: black; font-family: Arial">
-                                    <asp:TextBox runat="server" ID="txt_edad3" BorderStyle="None" Style="width: 100%;" BackColor="white"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_edad3" BorderStyle="None" Style="width: 100%; text-transform:uppercase;" BackColor="white"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
                                 <asp:TableCell Style="background-color: white; color: black; font-family: Arial">
-                                    <asp:TextBox runat="server" ID="txt_nomapellidos4" BorderStyle="None" Style="width: 100%;" BackColor="white"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_nomapellidos4" BorderStyle="None" Style="width: 100%; text-transform:uppercase;" BackColor="white"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white; color: black; font-family: Arial">
-                                    <asp:TextBox runat="server" ID="txt_parentesco4" BorderStyle="None" Style="width: 100%;" BackColor="white"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_parentesco4" BorderStyle="None" Style="width: 100%; text-transform:uppercase;" BackColor="white"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white; color: black; font-family: Arial">
                                     <asp:TextBox runat="server" ID="txt_fechanacimiento4" BorderStyle="None" Style="width: 100%; text-align: center" BackColor="white" TextMode="Date"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white; color: black; font-family: Arial">
-                                    <asp:TextBox runat="server" ID="txt_edad4" BorderStyle="None" Style="width: 100%;" BackColor="white"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_edad4" BorderStyle="None" Style="width: 100%; text-transform:uppercase;" BackColor="white"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
                                 <asp:TableCell Style="background-color: white; color: black; font-family: Arial">
-                                    <asp:TextBox runat="server" ID="txt_nomapellidos5" BorderStyle="None" Style="width: 100%;" BackColor="white"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_nomapellidos5" BorderStyle="None" Style="width: 100%; text-transform:uppercase;" BackColor="white"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white; color: black; font-family: Arial">
-                                    <asp:TextBox runat="server" ID="txt_parentesco5" BorderStyle="None" Style="width: 100%;" BackColor="white"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_parentesco5" BorderStyle="None" Style="width: 100%; text-transform:uppercase;" BackColor="white"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white; color: black; font-family: Arial">
                                     <asp:TextBox runat="server" ID="txt_fechanacimiento5" BorderStyle="None" Style="width: 100%; text-align: center" BackColor="white" TextMode="Date"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white; color: black; font-family: Arial">
-                                    <asp:TextBox runat="server" ID="txt_edad5" BorderStyle="None" Style="width: 100%;" BackColor="white"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_edad5" BorderStyle="None" Style="width: 100%; text-transform:uppercase;" BackColor="white"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                         </asp:Table>
@@ -1222,10 +1127,7 @@
                                 <asp:TableCell Style="background-color: white; width: 20px">
                                     <asp:CheckBox ID="cb_nucleodiscapacidadno" OnCheckedChanged="cb_nucleodiscapacidadno_CheckedChanged" AutoPostBack="true" runat="server" />
                                 </asp:TableCell>
-                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 200px">Si su respuesta es si, continúe a la siguiente pregunta</asp:TableCell>
-                            </asp:TableRow>
-                            <asp:TableRow>
-                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 175px">¿Se encuentra usted a cargo de esta persona con discapacidad? Calificada por el MSP o CONADIS</asp:TableCell>
+                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 175px">¿Se encuentra a cargo de esta persona con discapacidad? Calificada por el MSP o CONADIS</asp:TableCell>
                                 <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 30px">SI</asp:TableCell>
                                 <asp:TableCell Style="background-color: white; width: 20px">
                                     <asp:CheckBox ID="cb_acargofamiliardiacapacitadosi" OnCheckedChanged="cb_acargofamiliardiacapacitadosi_CheckedChanged" AutoPostBack="true" runat="server" />
@@ -1234,13 +1136,9 @@
                                 <asp:TableCell Style="background-color: white; width: 20px">
                                     <asp:CheckBox ID="cb_acargofamiliardiacapacitadono" OnCheckedChanged="cb_acargofamiliardiacapacitadono_CheckedChanged" AutoPostBack="true" runat="server" />
                                 </asp:TableCell>
-                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 200px">Si su respuesta es si, sírvase en llenar el cuadro a continuación</asp:TableCell>
                             </asp:TableRow>
                         </asp:Table>
                         <asp:Table ID="tabladiscapacidad" class="table table-bordered text-center" runat="server">
-                            <asp:TableRow>
-                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial" ColumnSpan="6">Señale los nombres y apellidos del familiar con discapacidad a su cargo (Que posea carnét de discapacidad)</asp:TableCell>
-                            </asp:TableRow>
                             <asp:TableRow>
                                 <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial">Apellidos y Nombres</asp:TableCell>
                                 <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 150px">Fecha de caducidad del carnét</asp:TableCell>
@@ -1251,19 +1149,19 @@
                             </asp:TableRow>
                             <asp:TableRow>
                                 <asp:TableCell Style="background-color: white; color: black; font-family: Arial">
-                                    <asp:TextBox runat="server" ID="txt_familiardiscapacitadonomape1" BorderStyle="None" Style="width: 100%;" BackColor="white"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_familiardiscapacitadonomape1" BorderStyle="None" Style="width: 100%; text-transform:uppercase;" BackColor="white"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white; color: black; font-family: Arial">
                                     <asp:TextBox runat="server" ID="txt_familiardiscapacitadofechacaducidadcarnet1" BorderStyle="None" Style="width: 100%; text-align: center" BackColor="white" TextMode="Date"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white; color: black; font-family: Arial">
-                                    <asp:TextBox runat="server" ID="txt_familiardiscapacitadotipodiscapacidad1" BorderStyle="None" Style="width: 100%;" BackColor="white"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_familiardiscapacitadotipodiscapacidad1" BorderStyle="None" Style="width: 100%; text-transform:uppercase;" BackColor="white"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white; color: black; font-family: Arial">
                                     <asp:TextBox runat="server" ID="txt_familiardiscapacitadoporcentajediscapacidad1" BorderStyle="None" Style="width: 100%;" BackColor="white"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white; color: black; font-family: Arial">
-                                    <asp:TextBox runat="server" ID="txt_familiardiscapacitadoparentesco1" BorderStyle="None" Style="width: 100%;" BackColor="white"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_familiardiscapacitadoparentesco1" BorderStyle="None" Style="width: 100%; text-transform:uppercase;" BackColor="white"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white; color: black; font-family: Arial">
                                     <asp:TextBox runat="server" ID="txt_familiardiscapacitadofechanacimiento1" BorderStyle="None" Style="width: 100%; text-align: center" BackColor="white" TextMode="Date"></asp:TextBox>
@@ -1271,19 +1169,19 @@
                             </asp:TableRow>
                             <asp:TableRow>
                                 <asp:TableCell Style="background-color: white; color: black; font-family: Arial">
-                                    <asp:TextBox runat="server" ID="txt_familiardiscapacitadonomape2" BorderStyle="None" Style="width: 100%;" BackColor="white"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_familiardiscapacitadonomape2" BorderStyle="None" Style="width: 100%; text-transform:uppercase;" BackColor="white"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white; color: black; font-family: Arial">
                                     <asp:TextBox runat="server" ID="txt_familiardiscapacitadofechacaducidadcarnet2" BorderStyle="None" Style="width: 100%; text-align: center" BackColor="white" TextMode="Date"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white; color: black; font-family: Arial">
-                                    <asp:TextBox runat="server" ID="txt_familiardiscapacitadotipodiscapacidad2" BorderStyle="None" Style="width: 100%;" BackColor="white"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_familiardiscapacitadotipodiscapacidad2" BorderStyle="None" Style="width: 100%; text-transform:uppercase;" BackColor="white"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white; color: black; font-family: Arial">
                                     <asp:TextBox runat="server" ID="txt_familiardiscapacitadoporcentajediscapacidad2" BorderStyle="None" Style="width: 100%;" BackColor="white"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white; color: black; font-family: Arial">
-                                    <asp:TextBox runat="server" ID="txt_familiardiscapacitadoparentesco2" BorderStyle="None" Style="width: 100%;" BackColor="white"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_familiardiscapacitadoparentesco2" BorderStyle="None" Style="width: 100%; text-transform:uppercase;" BackColor="white"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white; color: black; font-family: Arial">
                                     <asp:TextBox runat="server" ID="txt_familiardiscapacitadofechanacimiento2" BorderStyle="None" Style="width: 100%; text-align: center" BackColor="white" TextMode="Date"></asp:TextBox>
@@ -1301,19 +1199,19 @@
                                 <asp:TableCell Style="background-color: white; width: 20px">
                                     <asp:CheckBox ID="cb_dependenciaministeriotrabajono" OnCheckedChanged="cb_dependenciaministeriotrabajono_CheckedChanged" AutoPostBack="true" runat="server" />
                                 </asp:TableCell>
-                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial">Tiempo</asp:TableCell>
+                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial">Tiempo:</asp:TableCell>
                                 <asp:TableCell Style="background-color: white">
-                                    <asp:TextBox runat="server" ID="txt_dependenciaministeriotrabajotiempo" BorderStyle="None" Style="width: 100%; background-color: transparent"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_dependenciaministeriotrabajotiempo" BorderStyle="None" Style="width: 100%; text-transform:uppercase; background-color: transparent"></asp:TextBox>
                                 </asp:TableCell>
-                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial">Nº Carnét MSP</asp:TableCell>
+                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial">Nº Carnét Ministerio de Trabajo:</asp:TableCell>
                                 <asp:TableCell Style="background-color: white">
-                                    <asp:TextBox runat="server" ID="txt_numcarnetMSP" BorderStyle="None" Style="width: 100%; background-color: transparent"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_numcarnetMSP" BorderStyle="None" Style="width: 100%; text-transform:uppercase; background-color: transparent"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                         </asp:Table>
                         <asp:Table ID="tablaacargofamiliar" class="table table-bordered text-center" runat="server">
                             <asp:TableRow>
-                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 550px">¿Se encuentra usted a cargo de esta persona con enfermedad catastrófica o rara? Registrada en el MSP</asp:TableCell>
+                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 550px">¿Se encuentra a cargo de un familiar con enfermedad catastrófica o rara?</asp:TableCell>
                                 <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 30px">SI</asp:TableCell>
                                 <asp:TableCell Style="background-color: white; width: 20px">
                                     <asp:CheckBox ID="cb_acargofamiliarenfermedadrarasi" OnCheckedChanged="cb_acargofamiliarenfermedadrarasi_CheckedChanged" AutoPostBack="true" runat="server" />
@@ -1322,13 +1220,13 @@
                                 <asp:TableCell Style="background-color: white; width: 20px">
                                     <asp:CheckBox ID="cb_acargofamiliarenfermedadrarano" OnCheckedChanged="cb_acargofamiliarenfermedadrarano_CheckedChanged" AutoPostBack="true" runat="server" />
                                 </asp:TableCell>
-                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial">Tiempo</asp:TableCell>
+                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial">Tiempo:</asp:TableCell>
                                 <asp:TableCell Style="background-color: white">
-                                    <asp:TextBox runat="server" ID="txt_acargofamiliarenfermedadraratiempo" BorderStyle="None" Style="width: 100%; background-color: transparent"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_acargofamiliarenfermedadraratiempo" BorderStyle="None" Style="width: 100%; text-transform:uppercase; background-color: transparent"></asp:TextBox>
                                 </asp:TableCell>
-                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial">Tipo de enfermedad</asp:TableCell>
+                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial">Tipo de enfermedad:</asp:TableCell>
                                 <asp:TableCell Style="background-color: white">
-                                    <asp:TextBox runat="server" ID="txt_familiarenfermedadraratipo" BorderStyle="None" Style="width: 100%; background-color: transparent"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_familiarenfermedadraratipo" BorderStyle="None" Style="width: 100%; text-transform:uppercase; background-color: transparent"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                         </asp:Table>
@@ -1363,7 +1261,7 @@
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial">Otros</asp:TableCell>
                                 <asp:TableCell Style="background-color: white">
-                                    <asp:TextBox runat="server" ID="txt_otraactividad" BorderStyle="None" Style="width: 100%; background-color: transparent" placeholder="Indique cual"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_otraactividad" BorderStyle="None" Style="width: 100%; text-transform:uppercase; background-color: transparent" placeholder="Indique cual"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                         </asp:Table>
@@ -1378,9 +1276,9 @@
                                 <asp:TableCell Style="background-color: white; width: 20px">
                                     <asp:CheckBox ID="cb_actividadeconomicano" OnCheckedChanged="cb_actividadeconomicano_CheckedChanged" AutoPostBack="true" runat="server" />
                                 </asp:TableCell>
-                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 300px">Detalle la actividad económica que realiza</asp:TableCell>
+                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 300px">Detalle la actividad que realiza</asp:TableCell>
                                 <asp:TableCell Style="background-color: white">
-                                    <asp:TextBox runat="server" ID="txt_actividadeconomicadetalle" BorderStyle="None" Style="width: 100%; background-color: transparent"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_actividadeconomicadetalle" BorderStyle="None" Style="width: 100%; text-transform:uppercase; background-color: transparent"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                         </asp:Table>
@@ -1388,11 +1286,11 @@
                             <asp:TableRow>
                                 <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 250px">Tiempo que destina a la actividad</asp:TableCell>
                                 <asp:TableCell Style="background-color: white">
-                                    <asp:TextBox runat="server" ID="txt_actividadeconomicatiempodestina" BorderStyle="None" Style="width: 100%; background-color: transparent"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_actividadeconomicatiempodestina" BorderStyle="None" Style="width: 100%; text-transform:uppercase; background-color: transparent"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 300px">¿Hace cuánto tiempo realiza la actividad?</asp:TableCell>
                                 <asp:TableCell Style="background-color: white">
-                                    <asp:TextBox runat="server" ID="txt_actividadeconomicatiemporealiza" BorderStyle="None" Style="width: 100%; background-color: transparent"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_actividadeconomicatiemporealiza" BorderStyle="None" Style="width: 100%; text-transform:uppercase; background-color: transparent"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                         </asp:Table>
@@ -1407,17 +1305,17 @@
                                 <asp:TableCell Style="background-color: white; width: 20px">
                                     <asp:CheckBox ID="cb_deporteno" OnCheckedChanged="cb_deporteno_CheckedChanged" AutoPostBack="true" runat="server" />
                                 </asp:TableCell>
-                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial">Si su respuesta es sí, especifique la actividad que realiza</asp:TableCell>
+                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial">Detalle la actividad que realiza:</asp:TableCell>
                                 <asp:TableCell Style="background-color: white">
-                                    <asp:TextBox runat="server" ID="txt_especifiquedeporte" BorderStyle="None" Style="width: 100%; background-color: transparent"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_especifiquedeporte" BorderStyle="None" Style="width: 100%; text-transform:uppercase; background-color: transparent"></asp:TextBox>
                                 </asp:TableCell>
-                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial">Frecuencia</asp:TableCell>
+                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial">Frecuencia:</asp:TableCell>
                                 <asp:TableCell Style="background-color: white">
-                                    <asp:TextBox runat="server" ID="txt_frecuenciadeporte" BorderStyle="None" Style="width: 100%; background-color: transparent"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_frecuenciadeporte" BorderStyle="None" Style="width: 100%; text-transform:uppercase; background-color: transparent"></asp:TextBox>
                                 </asp:TableCell>
-                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial">¿Desde qué edad practica ese deporte?</asp:TableCell>
+                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial">¿Desde qué edad practica esta actividad?</asp:TableCell>
                                 <asp:TableCell Style="background-color: white">
-                                    <asp:TextBox runat="server" ID="txt_edadpracticadeporte" BorderStyle="None" Style="width: 100%; background-color: transparent"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_edadpracticadeporte" BorderStyle="None" Style="width: 100%; text-transform:uppercase; background-color: transparent"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                         </asp:Table>
@@ -1434,11 +1332,11 @@
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial">Tipo de lesión</asp:TableCell>
                                 <asp:TableCell Style="background-color: white">
-                                    <asp:TextBox runat="server" ID="txt_tipolesion" BorderStyle="None" Style="width: 100%; background-color: transparent"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_tipolesion" BorderStyle="None" Style="width: 100%; text-transform:uppercase; background-color: transparent"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial">Edad a la que sufrió la lesión</asp:TableCell>
                                 <asp:TableCell Style="background-color: white">
-                                    <asp:TextBox runat="server" ID="txt_edadlesion" BorderStyle="None" Style="width: 100%; background-color: transparent" placeholder="en años"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_edadlesion" BorderStyle="None" Style="width: 100%; text-transform:uppercase; background-color: transparent" placeholder="en años"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial">¿Recibió algún tratamiento o rehabilitación?</asp:TableCell>
                                 <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial">SI</asp:TableCell>
@@ -1455,11 +1353,11 @@
                 </div>
                 <br />
 
-                <%--VI. INFORMACIÓN UNICAMENTE PARA USO DE BIENESTAR LABORAL DEL SERVIDOR/A--%>
+                <%--VI. INFORMACIÓN PARA USO DE BIENESTAR LABORAL DEL SERVIDOR/A--%>
 
                 <div class="card card-responsive" style="width: auto;">
                     <div class="card-header" style="background-color: #cccdfe; font-weight: bold; font-family: Arial">
-                        VI. INFORMACIÓN UNICAMENTE PARA USO DE BIENESTAR LABORAL DEL SERVIDOR/A
+                        VI. INFORMACIÓN PARA USO DE BIENESTAR LABORAL DEL SERVIDOR/A
                     </div>
                     <div class="list-group list-group-flush" style="padding: 10px; text-align: center">
                         <asp:Table class="table table-bordered text-center" runat="server">
@@ -1512,7 +1410,7 @@
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial">¿Por qué?</asp:TableCell>
                                 <asp:TableCell Style="background-color: white">
-                                    <asp:TextBox runat="server" ID="txt_relacionfamiliarporque" BorderStyle="None" Style="width: 100%; background-color: transparent" placeholder="Especifique"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_relacionfamiliarporque" BorderStyle="None" Style="width: 100%; text-transform:uppercase; background-color: transparent"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
@@ -1535,7 +1433,7 @@
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial">¿Por qué?</asp:TableCell>
                                 <asp:TableCell Style="background-color: white">
-                                    <asp:TextBox runat="server" ID="txt_relacionparejaporque" BorderStyle="None" Style="width: 100%; background-color: transparent" placeholder="Especifique"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_relacionparejaporque" BorderStyle="None" Style="width: 100%; text-transform:uppercase; background-color: transparent"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
@@ -1558,13 +1456,13 @@
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial">¿Por qué?</asp:TableCell>
                                 <asp:TableCell Style="background-color: white">
-                                    <asp:TextBox runat="server" ID="txt_relacionconhijosporque" BorderStyle="None" Style="width: 100%; background-color: transparent" placeholder="Especifique"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_relacionconhijosporque" BorderStyle="None" Style="width: 100%; text-transform:uppercase; background-color: transparent"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                         </asp:Table>
                         <asp:Table class="table table-bordered text-center" runat="server">
                             <asp:TableRow>
-                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial">Problemas familiares:</asp:TableCell>
+                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial" RowSpan="2">Problemas familiares:</asp:TableCell>
                                 <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial">Económicos</asp:TableCell>
                                 <asp:TableCell Style="background-color: white; width: 20px">
                                     <asp:CheckBox ID="cb_economico" runat="server" />
@@ -1587,20 +1485,19 @@
                                 </asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
-                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial">Violencia:</asp:TableCell>
-                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial">Física</asp:TableCell>
+                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial">Violencia física</asp:TableCell>
                                 <asp:TableCell Style="background-color: white; width: 20px">
                                     <asp:CheckBox ID="cb_fisica" runat="server" />
                                 </asp:TableCell>
-                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial">Psicológica</asp:TableCell>
+                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial">Violencia psicológica</asp:TableCell>
                                 <asp:TableCell Style="background-color: white; width: 20px">
                                     <asp:CheckBox ID="cb_psicologica" runat="server" />
                                 </asp:TableCell>
-                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial">Verbal</asp:TableCell>
+                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial">Violencia verbal</asp:TableCell>
                                 <asp:TableCell Style="background-color: white; width: 20px">
                                     <asp:CheckBox ID="cb_verbal" runat="server" />
                                 </asp:TableCell>
-                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial">Sexual</asp:TableCell>
+                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial">Violencia sexual</asp:TableCell>
                                 <asp:TableCell Style="background-color: white; width: 20px">
                                     <asp:CheckBox ID="cb_sexual" runat="server" />
                                 </asp:TableCell>
@@ -1612,7 +1509,7 @@
                             </asp:TableRow>
                             <asp:TableRow>
                                 <asp:TableCell Style="background-color: white">
-                                    <asp:TextBox runat="server" ID="txt_observacionesfamiliares" BorderStyle="None" Style="width: 100%;" BackColor="white" TextMode="MultiLine" Rows="2"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_observacionesfamiliares" BorderStyle="None" Style="width: 100%; text-transform:uppercase;" BackColor="white" TextMode="MultiLine" Rows="2"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                         </asp:Table>
@@ -1650,13 +1547,13 @@
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial">¿Por qué?</asp:TableCell>
                                 <asp:TableCell Style="background-color: white">
-                                    <asp:TextBox runat="server" ID="txt_nivelsaludfamiliarporque" BorderStyle="None" Style="width: 100%; background-color: transparent" placeholder="Especifique"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_nivelsaludfamiliarporque" BorderStyle="None" Style="width: 100%; text-transform:uppercase; background-color: transparent"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                         </asp:Table>
                         <asp:Table class="table table-bordered text-center" runat="server">
                             <asp:TableRow>
-                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 200px">Por lo tanto: ¿La familia es?</asp:TableCell>
+                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 200px">¿Considera que su familia es?</asp:TableCell>
                                 <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; width: 100px">Funcional</asp:TableCell>
                                 <asp:TableCell Style="background-color: white; width: 20px">
                                     <asp:CheckBox ID="cb_funcional" OnCheckedChanged="cb_funcional_CheckedChanged" AutoPostBack="true" runat="server" />
@@ -1673,33 +1570,26 @@
                             </asp:TableRow>
                             <asp:TableRow>
                                 <asp:TableCell Style="background-color: white">
-                                    <asp:TextBox runat="server" ID="txt_observacionesgenerales" BorderStyle="None" Style="width: 100%;" BackColor="white" TextMode="MultiLine" Rows="2"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_observacionesgenerales" BorderStyle="None" Style="width: 100%; text-transform:uppercase;" BackColor="white" TextMode="MultiLine" Rows="2"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                         </asp:Table>
                         <asp:Table class="table table-bordered text-center" runat="server">
                             <asp:TableRow>
-                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial">Alguna información adicional que la institución deba conocer : (Médica, Familiar , Legal , etc )</asp:TableCell>
+                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial">Alguna información adicional que la Institución deba conocer</asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
                                 <asp:TableCell Style="background-color: white">
-                                    <asp:TextBox runat="server" ID="txt_informacionadicional" BorderStyle="None" Style="width: 100%;" BackColor="white" TextMode="MultiLine" Rows="2"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_informacionadicional" BorderStyle="None" Style="width: 100%; text-transform:uppercase;" BackColor="white" TextMode="MultiLine" Rows="2"></asp:TextBox>
                                 </asp:TableCell>
-                            </asp:TableRow>
-                        </asp:Table>
-                        <asp:Table class="table table-bordered text-center" runat="server">
-                            <asp:TableRow>
-                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial">
-                                    <i>La información es solicitada con el fin de actualizar nuestros registros Socio Económicos y 
-                                        Bienestar Laboral de los servidores SIS ECU 911.</i> </asp:TableCell>
                             </asp:TableRow>
                         </asp:Table>
                         <asp:Table class="table table-bordered text-center" runat="server">
                             <asp:TableRow>
                                 <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial">
                                     <strong> 
-                                        <i> Certifico que la información aquí suministrada es veraz, real, completa y podrá ser verificada 
-                                        en el momento que el ECU crea necesario.
+                                        <i> Certifico que la información aquí suministrada es veráz, real, completa y podrá ser verificada 
+                                        en el momento que la Institución crea necesario.
                                         </i> 
                                     </strong> 
                                 </asp:TableCell>
@@ -1723,7 +1613,15 @@
                         </div>
                         <asp:Table class="table table-bordered text-center" runat="server">
                             <asp:TableRow>
-                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial"> <strong>MUCHAS GRACIAS POR SU COLABORACIÓN</strong> </asp:TableCell>
+                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial">
+                                    <i>Esta información es solicitada con el fin de actualizar nuestros registros socioeconómicos y de
+                                        bienestar laboral de los servidores del Servicio Integrado de Seguridad ECU 911.</i>
+                                </asp:TableCell>
+                            </asp:TableRow>
+                        </asp:Table>
+                        <asp:Table class="table table-bordered text-center" runat="server">
+                            <asp:TableRow>
+                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial"> <strong>GRACIAS POR SU COLABORACIÓN</strong> </asp:TableCell>
                             </asp:TableRow>
                         </asp:Table>
                         <asp:Table class="table table-bordered text-center" runat="server">
@@ -1736,8 +1634,19 @@
                                 </asp:TableCell>
                             </asp:TableRow>
                         </asp:Table>
+                        <asp:Table class="table table-bordered text-center" runat="server">
+                            <asp:TableRow>
+                                <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial"> <strong>Georeferencia de la vivienda</strong> </asp:TableCell>
+                            </asp:TableRow>
+                            <asp:TableRow>
+                                <asp:TableCell Style="background-color: white">
+                                    <asp:FileUpload ID="FileUpload1" runat="server" />
+                                </asp:TableCell>
+                            </asp:TableRow>
+                        </asp:Table>
+
                         <div class="container" align="center">
-                            <asp:Button CssClass="btn btn-success" ID="btn_guardar" OnClick="btn_guardar_Click" runat="server" Text="Guardar" UseSubmitBehavior="False" ValidationGroup="GroupValidation"/>
+                            <asp:Button CssClass="btn btn-success" ID="btn_guardar" OnClick="btn_guardar_Click" runat="server" Text="Guardar" UseSubmitBehavior="False"/>
                             <asp:Button CssClass="btn btn-danger" ID="btn_cancelar" OnClick="btn_cancelar_Click" runat="server" Text="Cancelar" UseSubmitBehavior="False" />
                             <asp:Button CssClass="btn btn-info" ID="btn_imprimir" OnClick="btn_imprimir_Click" runat="server" Text="Imprimir" UseSubmitBehavior="False" />
                         </div>

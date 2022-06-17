@@ -447,13 +447,22 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         protected global::System.Web.UI.WebControls.TextBox txt_barrio;
 
         /// <summary>
-        /// Control txt_calleubicada.
+        /// Control txt_calleprincipal.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_calleubicada;
+        protected global::System.Web.UI.WebControls.TextBox txt_calleprincipal;
+
+        /// <summary>
+        /// Control txt_mumerodecasa.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_mumerodecasa;
 
         /// <summary>
         /// Control txt_callesecundaria.
@@ -654,67 +663,22 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         protected global::System.Web.UI.WebControls.TextBox txt_emerefubicardomicilio;
 
         /// <summary>
-        /// Control cb_dineroahorrosi.
+        /// Control cb_sienfermedad.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox cb_dineroahorrosi;
+        protected global::System.Web.UI.WebControls.CheckBox cb_sienfermedad;
 
         /// <summary>
-        /// Control cb_dineroahorrono.
+        /// Control cb_noenfermedad.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox cb_dineroahorrono;
-
-        /// <summary>
-        /// Control cb_vehiculosi.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox cb_vehiculosi;
-
-        /// <summary>
-        /// Control cb_vehiculono.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox cb_vehiculono;
-
-        /// <summary>
-        /// Control cb_recorridosi.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox cb_recorridosi;
-
-        /// <summary>
-        /// Control cb_recorridono.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox cb_recorridono;
-
-        /// <summary>
-        /// Control txt_movilizatrabajoovivienda.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_movilizatrabajoovivienda;
+        protected global::System.Web.UI.WebControls.CheckBox cb_noenfermedad;
 
         /// <summary>
         /// Control txt_poseeenfermedadprexistente.
@@ -825,15 +789,6 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         protected global::System.Web.UI.WebControls.CheckBox cb_gestaciónno;
 
         /// <summary>
-        /// Control tbl_estadogestacion.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Table tbl_estadogestacion;
-
-        /// <summary>
         /// Control txt_gestacióntiempo.
         /// </summary>
         /// <remarks>
@@ -924,15 +879,6 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         protected global::System.Web.UI.WebControls.TextBox txt_cualcatastrofica;
 
         /// <summary>
-        /// Control txt_otrasenfermedadescat.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_otrasenfermedadescat;
-
-        /// <summary>
         /// Control cb_enfermedadrarasi.
         /// </summary>
         /// <remarks>
@@ -1003,60 +949,6 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_causaconsumoalcohol;
-
-        /// <summary>
-        /// Control tablafrecuenciaalcohol.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Table tablafrecuenciaalcohol;
-
-        /// <summary>
-        /// Control cb_consumoalcoholdiario.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox cb_consumoalcoholdiario;
-
-        /// <summary>
-        /// Control cb_consumoalcoholsemanal.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox cb_consumoalcoholsemanal;
-
-        /// <summary>
-        /// Control cb_consumoalcoholquincenal.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox cb_consumoalcoholquincenal;
-
-        /// <summary>
-        /// Control cb_consumoalcoholmensual.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox cb_consumoalcoholmensual;
-
-        /// <summary>
-        /// Control cb_consumoalcoholreuniones.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox cb_consumoalcoholreuniones;
 
         /// <summary>
         /// Control txt_tiempoconsumoalcohol.
@@ -1230,13 +1122,13 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         protected global::System.Web.UI.WebControls.TextBox txt_miembroactivoseconomicamente;
 
         /// <summary>
-        /// Control RequiredFieldValidator_miembros_economicamente.
+        /// Control txt_situacionlaboralconyugue.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator_miembros_economicamente;
+        protected global::System.Web.UI.WebControls.TextBox txt_situacionlaboralconyugue;
 
         /// <summary>
         /// Control txt_totalingresos1.
@@ -1527,114 +1419,6 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         protected global::System.Web.UI.WebControls.TextBox txt_otrospensiones;
 
         /// <summary>
-        /// Control btn_totalingresos.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_totalingresos;
-
-        /// <summary>
-        /// Control txt_totalingresos9.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_totalingresos9;
-
-        /// <summary>
-        /// Control RequiredFieldValidator_total_ingresos.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator_total_ingresos;
-
-        /// <summary>
-        /// Control btn_total_ayuda_otros.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_total_ayuda_otros;
-
-        /// <summary>
-        /// Control txt_totalayudayotros9.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_totalayudayotros9;
-
-        /// <summary>
-        /// Control RequiredFieldValidator_total_ayuda_otros.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator_total_ayuda_otros;
-
-        /// <summary>
-        /// Control btn_totalegresos.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_totalegresos;
-
-        /// <summary>
-        /// Control txt_totalegresos.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_totalegresos;
-
-        /// <summary>
-        /// Control RequiredFieldValidator_total_egresos.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator_total_egresos;
-
-        /// <summary>
-        /// Control lbl_total_ingresos.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_total_ingresos;
-
-        /// <summary>
-        /// Control lbl_total_ayuda_otros.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_total_ayuda_otros;
-
-        /// <summary>
-        /// Control lbl_total_egresos.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_total_egresos;
-
-        /// <summary>
         /// Control txt_biencasa.
         /// </summary>
         /// <remarks>
@@ -1689,13 +1473,22 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         protected global::System.Web.UI.WebControls.TextBox txt_bienmueblesyenseres;
 
         /// <summary>
-        /// Control lbl_bienes.
+        /// Control cb_dineroahorrosi.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_bienes;
+        protected global::System.Web.UI.WebControls.CheckBox cb_dineroahorrosi;
+
+        /// <summary>
+        /// Control cb_dineroahorrono.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_dineroahorrono;
 
         /// <summary>
         /// Control cb_unifamiliar.
@@ -1923,13 +1716,40 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         protected global::System.Web.UI.WebControls.CheckBox cb_bodega;
 
         /// <summary>
-        /// Control txt_otrainformacioncasa.
+        /// Control cb_vehiculosi.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_otrainformacioncasa;
+        protected global::System.Web.UI.WebControls.CheckBox cb_vehiculosi;
+
+        /// <summary>
+        /// Control cb_vehiculono.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_vehiculono;
+
+        /// <summary>
+        /// Control cb_recorridosi.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_recorridosi;
+
+        /// <summary>
+        /// Control cb_recorridono.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_recorridono;
 
         /// <summary>
         /// Control txt_nomapellidos1.
@@ -2956,6 +2776,15 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_firmadelservidor;
+
+        /// <summary>
+        /// Control FileUpload1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
 
         /// <summary>
         /// Control btn_guardar.

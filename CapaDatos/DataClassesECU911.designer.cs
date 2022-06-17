@@ -87,7 +87,7 @@ namespace CapaDatos
     #endregion
 		
 		public DataClassesECU911DataContext() : 
-				base(global::CapaDatos.Properties.Settings.Default.SistemaECU911ConnectionString4, mappingSource)
+				base(global::CapaDatos.Properties.Settings.Default.SistemaECU911ConnectionString5, mappingSource)
 		{
 			OnCreated();
 		}
@@ -40304,11 +40304,13 @@ namespace CapaDatos
 		
 		private string _Socio_economico_direcciondomicilio_barrio;
 		
-		private string _Socio_economico_calle_vivienda_numeracion;
+		private string _Socio_economico_direcciondomicilio_calle_principal;
 		
-		private string _Socio_economico_calle_secundaria;
+		private string _Socio_economico_direcciondomicilio_numero;
 		
-		private string _Socio_economico_referencia_ubicar_domicilio;
+		private string _Socio_economico_direcciondomicilio_calle_secundaria;
+		
+		private string _Socio_economico_direcciondomicilio_referencia;
 		
 		private string _Socio_economico_sectorvive_norte;
 		
@@ -40346,19 +40348,9 @@ namespace CapaDatos
 		
 		private string _Socio_economico_contacto_emergencia_referencia_domicilio;
 		
-		private string _Socio_economico_dinero_ahorro_si;
+		private string _Socio_economico_posee_enfermedad_si;
 		
-		private string _Socio_economico_dinero_ahorro_no;
-		
-		private string _Socio_economico_vehiculo_propio_si;
-		
-		private string _Socio_economico_vehiculo_propio_no;
-		
-		private string _Socio_economico_recorrido_institucional_si;
-		
-		private string _Socio_economico_recorrido_institucional_no;
-		
-		private string _Socio_economico_moviliza_trabajo_vivienda;
+		private string _Socio_economico_posee_enfermedad_no;
 		
 		private string _Socio_economico_posee_enfermedad;
 		
@@ -40394,8 +40386,6 @@ namespace CapaDatos
 		
 		private string _Socio_economico_enfermedad_cronica_cual;
 		
-		private string _Socio_economico_enfermedad_cronica_otras_enfermedades;
-		
 		private string _Socio_economico_enfermedad_rara_si;
 		
 		private string _Socio_economico_enfermedad_rara_no;
@@ -40406,17 +40396,7 @@ namespace CapaDatos
 		
 		private string _Socio_economico_consume_alcohol_no;
 		
-		private string _Socio_economico_consume_alcohol_causa;
-		
-		private string _Socio_economico_consume_alcohol_frecuencia_diaria;
-		
-		private string _Socio_economico_consume_alcohol_frecuencia_semanal;
-		
-		private string _Socio_economico_consume_alcohol_frecuencia_quincenal;
-		
-		private string _Socio_economico_consume_alcohol_frecuencia_mensual;
-		
-		private string _Socio_economico_consume_alcohol_frecuencia_reuniones;
+		private string _Socio_economico_consume_alcohol_frecuencia;
 		
 		private string _Socio_economico_consume_alcohol_tiempo_consumo;
 		
@@ -40446,89 +40426,89 @@ namespace CapaDatos
 		
 		private string _Socio_economico_problemas_consumo_legales;
 		
-		private System.Nullable<long> _Socio_economico_numero_miembro_economicamente_activos;
+		private string _Socio_economico_numero_miembro_economicamente_activos;
 		
-		private System.Nullable<long> _Socio_economico_total_ingresos_mensuales_proyectados_1;
+		private string _Socio_economico_situación_laboral_del_conyugue;
 		
-		private System.Nullable<long> _Socio_economico_ayuda1;
+		private string _Socio_economico_total_ingresos_mensuales_proyectados_1;
 		
-		private System.Nullable<long> _Socio_economico_otros1;
+		private string _Socio_economico_ayuda1;
 		
-		private System.Nullable<long> _Socio_economico_total_egresos_alimentacion;
+		private string _Socio_economico_otros1;
 		
-		private System.Nullable<long> _Socio_economico_total_ingresos_mensuales_proyectados_2;
+		private string _Socio_economico_total_egresos_alimentacion;
 		
-		private System.Nullable<long> _Socio_economico_ayuda2;
+		private string _Socio_economico_total_ingresos_mensuales_proyectados_2;
 		
-		private System.Nullable<long> _Socio_economico_otros2;
+		private string _Socio_economico_ayuda2;
 		
-		private System.Nullable<long> _Socio_economico_total_egresos_vivienda;
+		private string _Socio_economico_otros2;
 		
-		private System.Nullable<long> _Socio_economico_total_ingresos_mensuales_proyectados_3;
+		private string _Socio_economico_total_egresos_vivienda;
 		
-		private System.Nullable<long> _Socio_economico_ayuda3;
+		private string _Socio_economico_total_ingresos_mensuales_proyectados_3;
 		
-		private System.Nullable<long> _Socio_economico_otros3;
+		private string _Socio_economico_ayuda3;
 		
-		private System.Nullable<long> _Socio_economico_total_egresos_educacion;
+		private string _Socio_economico_otros3;
 		
-		private System.Nullable<long> _Socio_economico_total_ingresos_mensuales_proyectados_4;
+		private string _Socio_economico_total_egresos_educacion;
 		
-		private System.Nullable<long> _Socio_economico_ayuda4;
+		private string _Socio_economico_total_ingresos_mensuales_proyectados_4;
 		
-		private System.Nullable<long> _Socio_economico_otros4;
+		private string _Socio_economico_ayuda4;
 		
-		private System.Nullable<long> _Socio_economico_total_egresos_servicios_basicos;
+		private string _Socio_economico_otros4;
 		
-		private System.Nullable<long> _Socio_economico_total_ingresos_mensuales_proyectados_5;
+		private string _Socio_economico_total_egresos_servicios_basicos;
 		
-		private System.Nullable<long> _Socio_economico_ayuda5;
+		private string _Socio_economico_total_ingresos_mensuales_proyectados_5;
 		
-		private System.Nullable<long> _Socio_economico_otros5;
+		private string _Socio_economico_ayuda5;
 		
-		private System.Nullable<long> _Socio_economico_total_egresos_salud;
+		private string _Socio_economico_otros5;
 		
-		private System.Nullable<long> _Socio_economico_total_ingresos_mensuales_proyectados_6;
+		private string _Socio_economico_total_egresos_salud;
 		
-		private System.Nullable<long> _Socio_economico_ayuda6;
+		private string _Socio_economico_total_ingresos_mensuales_proyectados_6;
 		
-		private System.Nullable<long> _Socio_economico_otros6;
+		private string _Socio_economico_ayuda6;
 		
-		private System.Nullable<long> _Socio_economico_total_egresos_movilizacion;
+		private string _Socio_economico_otros6;
 		
-		private System.Nullable<long> _Socio_economico_total_ingresos_mensuales_proyectados_7;
+		private string _Socio_economico_total_egresos_movilizacion;
 		
-		private System.Nullable<long> _Socio_economico_ayuda7;
+		private string _Socio_economico_total_ingresos_mensuales_proyectados_7;
 		
-		private System.Nullable<long> _Socio_economico_otros7;
+		private string _Socio_economico_ayuda7;
 		
-		private System.Nullable<long> _Socio_economico_total_egresos_deudas;
+		private string _Socio_economico_otros7;
 		
-		private System.Nullable<long> _Socio_economico_total_ingresos_mensuales_proyectados_8;
+		private string _Socio_economico_total_egresos_deudas;
 		
-		private System.Nullable<long> _Socio_economico_ayuda8;
+		private string _Socio_economico_total_ingresos_mensuales_proyectados_8;
 		
-		private System.Nullable<long> _Socio_economico_otros8;
+		private string _Socio_economico_ayuda8;
 		
-		private System.Nullable<long> _Socio_economico_total_egresos_pensiones_otros;
+		private string _Socio_economico_otros8;
 		
-		private System.Nullable<long> _Socio_economico_total_ingresos_mensuales_proyectados_total_9;
+		private string _Socio_economico_total_egresos_pensiones_otros;
 		
-		private System.Nullable<long> _Socio_economico_ayuda_y_otros_total_9;
+		private string _Socio_economico_descripcion_mueble_valor_casa;
 		
-		private System.Nullable<long> _Socio_economico_total_egresos_total_9;
+		private string _Socio_economico_descripcion_mueble_valor_departamento;
 		
-		private System.Nullable<long> _Socio_economico_descripcion_mueble_valor_casa;
+		private string _Socio_economico_descripcion_mueble_valor_vehiculo;
 		
-		private System.Nullable<long> _Socio_economico_descripcion_mueble_valor_departamento;
+		private string _Socio_economico_descripcion_mueble_valor_terreno;
 		
-		private System.Nullable<long> _Socio_economico_descripcion_mueble_valor_vehiculo;
+		private string _Socio_economico_descripcion_mueble_valor_negocio;
 		
-		private System.Nullable<long> _Socio_economico_descripcion_mueble_valor_terreno;
+		private string _Socio_economico_descripcion_mueble_valor_muebles_enseres;
 		
-		private System.Nullable<long> _Socio_economico_descripcion_mueble_valor_negocio;
+		private string _Socio_economico_dinero_ahorro_si;
 		
-		private System.Nullable<long> _Socio_economico_descripcion_mueble_valor_muebles_enseres;
+		private string _Socio_economico_dinero_ahorro_no;
 		
 		private string _Socio_economico_caracteristica_vivienda_descripcion_unifamiliar;
 		
@@ -40580,7 +40560,13 @@ namespace CapaDatos
 		
 		private string _Socio_economico_caracteristica_vivienda_distribucion_otro_especifique;
 		
-		private string _Socio_economico_caracteristica_vivienda_otro_especifique;
+		private string _Socio_economico_vehiculo_propio_si;
+		
+		private string _Socio_economico_vehiculo_propio_no;
+		
+		private string _Socio_economico_recorrido_institucional_si;
+		
+		private string _Socio_economico_recorrido_institucional_no;
 		
 		private string _Socio_economico_nombres_apellidos_familiar1;
 		
@@ -40888,12 +40874,14 @@ namespace CapaDatos
     partial void OnSocio_economico_direcciondomicilio_parroquiaChanged();
     partial void OnSocio_economico_direcciondomicilio_barrioChanging(string value);
     partial void OnSocio_economico_direcciondomicilio_barrioChanged();
-    partial void OnSocio_economico_calle_vivienda_numeracionChanging(string value);
-    partial void OnSocio_economico_calle_vivienda_numeracionChanged();
-    partial void OnSocio_economico_calle_secundariaChanging(string value);
-    partial void OnSocio_economico_calle_secundariaChanged();
-    partial void OnSocio_economico_referencia_ubicar_domicilioChanging(string value);
-    partial void OnSocio_economico_referencia_ubicar_domicilioChanged();
+    partial void OnSocio_economico_direcciondomicilio_calle_principalChanging(string value);
+    partial void OnSocio_economico_direcciondomicilio_calle_principalChanged();
+    partial void OnSocio_economico_direcciondomicilio_numeroChanging(string value);
+    partial void OnSocio_economico_direcciondomicilio_numeroChanged();
+    partial void OnSocio_economico_direcciondomicilio_calle_secundariaChanging(string value);
+    partial void OnSocio_economico_direcciondomicilio_calle_secundariaChanged();
+    partial void OnSocio_economico_direcciondomicilio_referenciaChanging(string value);
+    partial void OnSocio_economico_direcciondomicilio_referenciaChanged();
     partial void OnSocio_economico_sectorvive_norteChanging(string value);
     partial void OnSocio_economico_sectorvive_norteChanged();
     partial void OnSocio_economico_sectorvive_centroChanging(string value);
@@ -40930,20 +40918,10 @@ namespace CapaDatos
     partial void OnSocio_economico_contacto_emergencia_calle_secundariaChanged();
     partial void OnSocio_economico_contacto_emergencia_referencia_domicilioChanging(string value);
     partial void OnSocio_economico_contacto_emergencia_referencia_domicilioChanged();
-    partial void OnSocio_economico_dinero_ahorro_siChanging(string value);
-    partial void OnSocio_economico_dinero_ahorro_siChanged();
-    partial void OnSocio_economico_dinero_ahorro_noChanging(string value);
-    partial void OnSocio_economico_dinero_ahorro_noChanged();
-    partial void OnSocio_economico_vehiculo_propio_siChanging(string value);
-    partial void OnSocio_economico_vehiculo_propio_siChanged();
-    partial void OnSocio_economico_vehiculo_propio_noChanging(string value);
-    partial void OnSocio_economico_vehiculo_propio_noChanged();
-    partial void OnSocio_economico_recorrido_institucional_siChanging(string value);
-    partial void OnSocio_economico_recorrido_institucional_siChanged();
-    partial void OnSocio_economico_recorrido_institucional_noChanging(string value);
-    partial void OnSocio_economico_recorrido_institucional_noChanged();
-    partial void OnSocio_economico_moviliza_trabajo_viviendaChanging(string value);
-    partial void OnSocio_economico_moviliza_trabajo_viviendaChanged();
+    partial void OnSocio_economico_posee_enfermedad_siChanging(string value);
+    partial void OnSocio_economico_posee_enfermedad_siChanged();
+    partial void OnSocio_economico_posee_enfermedad_noChanging(string value);
+    partial void OnSocio_economico_posee_enfermedad_noChanged();
     partial void OnSocio_economico_posee_enfermedadChanging(string value);
     partial void OnSocio_economico_posee_enfermedadChanged();
     partial void OnSocio_economico_discapacidad_siChanging(string value);
@@ -40978,8 +40956,6 @@ namespace CapaDatos
     partial void OnSocio_economico_enfermedad_cronica_noChanged();
     partial void OnSocio_economico_enfermedad_cronica_cualChanging(string value);
     partial void OnSocio_economico_enfermedad_cronica_cualChanged();
-    partial void OnSocio_economico_enfermedad_cronica_otras_enfermedadesChanging(string value);
-    partial void OnSocio_economico_enfermedad_cronica_otras_enfermedadesChanged();
     partial void OnSocio_economico_enfermedad_rara_siChanging(string value);
     partial void OnSocio_economico_enfermedad_rara_siChanged();
     partial void OnSocio_economico_enfermedad_rara_noChanging(string value);
@@ -40990,18 +40966,8 @@ namespace CapaDatos
     partial void OnSocio_economico_consume_alcohol_siChanged();
     partial void OnSocio_economico_consume_alcohol_noChanging(string value);
     partial void OnSocio_economico_consume_alcohol_noChanged();
-    partial void OnSocio_economico_consume_alcohol_causaChanging(string value);
-    partial void OnSocio_economico_consume_alcohol_causaChanged();
-    partial void OnSocio_economico_consume_alcohol_frecuencia_diariaChanging(string value);
-    partial void OnSocio_economico_consume_alcohol_frecuencia_diariaChanged();
-    partial void OnSocio_economico_consume_alcohol_frecuencia_semanalChanging(string value);
-    partial void OnSocio_economico_consume_alcohol_frecuencia_semanalChanged();
-    partial void OnSocio_economico_consume_alcohol_frecuencia_quincenalChanging(string value);
-    partial void OnSocio_economico_consume_alcohol_frecuencia_quincenalChanged();
-    partial void OnSocio_economico_consume_alcohol_frecuencia_mensualChanging(string value);
-    partial void OnSocio_economico_consume_alcohol_frecuencia_mensualChanged();
-    partial void OnSocio_economico_consume_alcohol_frecuencia_reunionesChanging(string value);
-    partial void OnSocio_economico_consume_alcohol_frecuencia_reunionesChanged();
+    partial void OnSocio_economico_consume_alcohol_frecuenciaChanging(string value);
+    partial void OnSocio_economico_consume_alcohol_frecuenciaChanged();
     partial void OnSocio_economico_consume_alcohol_tiempo_consumoChanging(string value);
     partial void OnSocio_economico_consume_alcohol_tiempo_consumoChanged();
     partial void OnSocio_economico_consume_tabaco_siChanging(string value);
@@ -41030,90 +40996,90 @@ namespace CapaDatos
     partial void OnSocio_economico_problemas_consumo_saludChanged();
     partial void OnSocio_economico_problemas_consumo_legalesChanging(string value);
     partial void OnSocio_economico_problemas_consumo_legalesChanged();
-    partial void OnSocio_economico_numero_miembro_economicamente_activosChanging(System.Nullable<long> value);
+    partial void OnSocio_economico_numero_miembro_economicamente_activosChanging(string value);
     partial void OnSocio_economico_numero_miembro_economicamente_activosChanged();
-    partial void OnSocio_economico_total_ingresos_mensuales_proyectados_1Changing(System.Nullable<long> value);
+    partial void OnSocio_economico_situación_laboral_del_conyugueChanging(string value);
+    partial void OnSocio_economico_situación_laboral_del_conyugueChanged();
+    partial void OnSocio_economico_total_ingresos_mensuales_proyectados_1Changing(string value);
     partial void OnSocio_economico_total_ingresos_mensuales_proyectados_1Changed();
-    partial void OnSocio_economico_ayuda1Changing(System.Nullable<long> value);
+    partial void OnSocio_economico_ayuda1Changing(string value);
     partial void OnSocio_economico_ayuda1Changed();
-    partial void OnSocio_economico_otros1Changing(System.Nullable<long> value);
+    partial void OnSocio_economico_otros1Changing(string value);
     partial void OnSocio_economico_otros1Changed();
-    partial void OnSocio_economico_total_egresos_alimentacionChanging(System.Nullable<long> value);
+    partial void OnSocio_economico_total_egresos_alimentacionChanging(string value);
     partial void OnSocio_economico_total_egresos_alimentacionChanged();
-    partial void OnSocio_economico_total_ingresos_mensuales_proyectados_2Changing(System.Nullable<long> value);
+    partial void OnSocio_economico_total_ingresos_mensuales_proyectados_2Changing(string value);
     partial void OnSocio_economico_total_ingresos_mensuales_proyectados_2Changed();
-    partial void OnSocio_economico_ayuda2Changing(System.Nullable<long> value);
+    partial void OnSocio_economico_ayuda2Changing(string value);
     partial void OnSocio_economico_ayuda2Changed();
-    partial void OnSocio_economico_otros2Changing(System.Nullable<long> value);
+    partial void OnSocio_economico_otros2Changing(string value);
     partial void OnSocio_economico_otros2Changed();
-    partial void OnSocio_economico_total_egresos_viviendaChanging(System.Nullable<long> value);
+    partial void OnSocio_economico_total_egresos_viviendaChanging(string value);
     partial void OnSocio_economico_total_egresos_viviendaChanged();
-    partial void OnSocio_economico_total_ingresos_mensuales_proyectados_3Changing(System.Nullable<long> value);
+    partial void OnSocio_economico_total_ingresos_mensuales_proyectados_3Changing(string value);
     partial void OnSocio_economico_total_ingresos_mensuales_proyectados_3Changed();
-    partial void OnSocio_economico_ayuda3Changing(System.Nullable<long> value);
+    partial void OnSocio_economico_ayuda3Changing(string value);
     partial void OnSocio_economico_ayuda3Changed();
-    partial void OnSocio_economico_otros3Changing(System.Nullable<long> value);
+    partial void OnSocio_economico_otros3Changing(string value);
     partial void OnSocio_economico_otros3Changed();
-    partial void OnSocio_economico_total_egresos_educacionChanging(System.Nullable<long> value);
+    partial void OnSocio_economico_total_egresos_educacionChanging(string value);
     partial void OnSocio_economico_total_egresos_educacionChanged();
-    partial void OnSocio_economico_total_ingresos_mensuales_proyectados_4Changing(System.Nullable<long> value);
+    partial void OnSocio_economico_total_ingresos_mensuales_proyectados_4Changing(string value);
     partial void OnSocio_economico_total_ingresos_mensuales_proyectados_4Changed();
-    partial void OnSocio_economico_ayuda4Changing(System.Nullable<long> value);
+    partial void OnSocio_economico_ayuda4Changing(string value);
     partial void OnSocio_economico_ayuda4Changed();
-    partial void OnSocio_economico_otros4Changing(System.Nullable<long> value);
+    partial void OnSocio_economico_otros4Changing(string value);
     partial void OnSocio_economico_otros4Changed();
-    partial void OnSocio_economico_total_egresos_servicios_basicosChanging(System.Nullable<long> value);
+    partial void OnSocio_economico_total_egresos_servicios_basicosChanging(string value);
     partial void OnSocio_economico_total_egresos_servicios_basicosChanged();
-    partial void OnSocio_economico_total_ingresos_mensuales_proyectados_5Changing(System.Nullable<long> value);
+    partial void OnSocio_economico_total_ingresos_mensuales_proyectados_5Changing(string value);
     partial void OnSocio_economico_total_ingresos_mensuales_proyectados_5Changed();
-    partial void OnSocio_economico_ayuda5Changing(System.Nullable<long> value);
+    partial void OnSocio_economico_ayuda5Changing(string value);
     partial void OnSocio_economico_ayuda5Changed();
-    partial void OnSocio_economico_otros5Changing(System.Nullable<long> value);
+    partial void OnSocio_economico_otros5Changing(string value);
     partial void OnSocio_economico_otros5Changed();
-    partial void OnSocio_economico_total_egresos_saludChanging(System.Nullable<long> value);
+    partial void OnSocio_economico_total_egresos_saludChanging(string value);
     partial void OnSocio_economico_total_egresos_saludChanged();
-    partial void OnSocio_economico_total_ingresos_mensuales_proyectados_6Changing(System.Nullable<long> value);
+    partial void OnSocio_economico_total_ingresos_mensuales_proyectados_6Changing(string value);
     partial void OnSocio_economico_total_ingresos_mensuales_proyectados_6Changed();
-    partial void OnSocio_economico_ayuda6Changing(System.Nullable<long> value);
+    partial void OnSocio_economico_ayuda6Changing(string value);
     partial void OnSocio_economico_ayuda6Changed();
-    partial void OnSocio_economico_otros6Changing(System.Nullable<long> value);
+    partial void OnSocio_economico_otros6Changing(string value);
     partial void OnSocio_economico_otros6Changed();
-    partial void OnSocio_economico_total_egresos_movilizacionChanging(System.Nullable<long> value);
+    partial void OnSocio_economico_total_egresos_movilizacionChanging(string value);
     partial void OnSocio_economico_total_egresos_movilizacionChanged();
-    partial void OnSocio_economico_total_ingresos_mensuales_proyectados_7Changing(System.Nullable<long> value);
+    partial void OnSocio_economico_total_ingresos_mensuales_proyectados_7Changing(string value);
     partial void OnSocio_economico_total_ingresos_mensuales_proyectados_7Changed();
-    partial void OnSocio_economico_ayuda7Changing(System.Nullable<long> value);
+    partial void OnSocio_economico_ayuda7Changing(string value);
     partial void OnSocio_economico_ayuda7Changed();
-    partial void OnSocio_economico_otros7Changing(System.Nullable<long> value);
+    partial void OnSocio_economico_otros7Changing(string value);
     partial void OnSocio_economico_otros7Changed();
-    partial void OnSocio_economico_total_egresos_deudasChanging(System.Nullable<long> value);
+    partial void OnSocio_economico_total_egresos_deudasChanging(string value);
     partial void OnSocio_economico_total_egresos_deudasChanged();
-    partial void OnSocio_economico_total_ingresos_mensuales_proyectados_8Changing(System.Nullable<long> value);
+    partial void OnSocio_economico_total_ingresos_mensuales_proyectados_8Changing(string value);
     partial void OnSocio_economico_total_ingresos_mensuales_proyectados_8Changed();
-    partial void OnSocio_economico_ayuda8Changing(System.Nullable<long> value);
+    partial void OnSocio_economico_ayuda8Changing(string value);
     partial void OnSocio_economico_ayuda8Changed();
-    partial void OnSocio_economico_otros8Changing(System.Nullable<long> value);
+    partial void OnSocio_economico_otros8Changing(string value);
     partial void OnSocio_economico_otros8Changed();
-    partial void OnSocio_economico_total_egresos_pensiones_otrosChanging(System.Nullable<long> value);
+    partial void OnSocio_economico_total_egresos_pensiones_otrosChanging(string value);
     partial void OnSocio_economico_total_egresos_pensiones_otrosChanged();
-    partial void OnSocio_economico_total_ingresos_mensuales_proyectados_total_9Changing(System.Nullable<long> value);
-    partial void OnSocio_economico_total_ingresos_mensuales_proyectados_total_9Changed();
-    partial void OnSocio_economico_ayuda_y_otros_total_9Changing(System.Nullable<long> value);
-    partial void OnSocio_economico_ayuda_y_otros_total_9Changed();
-    partial void OnSocio_economico_total_egresos_total_9Changing(System.Nullable<long> value);
-    partial void OnSocio_economico_total_egresos_total_9Changed();
-    partial void OnSocio_economico_descripcion_mueble_valor_casaChanging(System.Nullable<long> value);
+    partial void OnSocio_economico_descripcion_mueble_valor_casaChanging(string value);
     partial void OnSocio_economico_descripcion_mueble_valor_casaChanged();
-    partial void OnSocio_economico_descripcion_mueble_valor_departamentoChanging(System.Nullable<long> value);
+    partial void OnSocio_economico_descripcion_mueble_valor_departamentoChanging(string value);
     partial void OnSocio_economico_descripcion_mueble_valor_departamentoChanged();
-    partial void OnSocio_economico_descripcion_mueble_valor_vehiculoChanging(System.Nullable<long> value);
+    partial void OnSocio_economico_descripcion_mueble_valor_vehiculoChanging(string value);
     partial void OnSocio_economico_descripcion_mueble_valor_vehiculoChanged();
-    partial void OnSocio_economico_descripcion_mueble_valor_terrenoChanging(System.Nullable<long> value);
+    partial void OnSocio_economico_descripcion_mueble_valor_terrenoChanging(string value);
     partial void OnSocio_economico_descripcion_mueble_valor_terrenoChanged();
-    partial void OnSocio_economico_descripcion_mueble_valor_negocioChanging(System.Nullable<long> value);
+    partial void OnSocio_economico_descripcion_mueble_valor_negocioChanging(string value);
     partial void OnSocio_economico_descripcion_mueble_valor_negocioChanged();
-    partial void OnSocio_economico_descripcion_mueble_valor_muebles_enseresChanging(System.Nullable<long> value);
+    partial void OnSocio_economico_descripcion_mueble_valor_muebles_enseresChanging(string value);
     partial void OnSocio_economico_descripcion_mueble_valor_muebles_enseresChanged();
+    partial void OnSocio_economico_dinero_ahorro_siChanging(string value);
+    partial void OnSocio_economico_dinero_ahorro_siChanged();
+    partial void OnSocio_economico_dinero_ahorro_noChanging(string value);
+    partial void OnSocio_economico_dinero_ahorro_noChanged();
     partial void OnSocio_economico_caracteristica_vivienda_descripcion_unifamiliarChanging(string value);
     partial void OnSocio_economico_caracteristica_vivienda_descripcion_unifamiliarChanged();
     partial void OnSocio_economico_caracteristica_vivienda_descripcion_multifamiliarChanging(string value);
@@ -41164,8 +41130,14 @@ namespace CapaDatos
     partial void OnSocio_economico_caracteristica_vivienda_distribucion_bodegaChanged();
     partial void OnSocio_economico_caracteristica_vivienda_distribucion_otro_especifiqueChanging(string value);
     partial void OnSocio_economico_caracteristica_vivienda_distribucion_otro_especifiqueChanged();
-    partial void OnSocio_economico_caracteristica_vivienda_otro_especifiqueChanging(string value);
-    partial void OnSocio_economico_caracteristica_vivienda_otro_especifiqueChanged();
+    partial void OnSocio_economico_vehiculo_propio_siChanging(string value);
+    partial void OnSocio_economico_vehiculo_propio_siChanged();
+    partial void OnSocio_economico_vehiculo_propio_noChanging(string value);
+    partial void OnSocio_economico_vehiculo_propio_noChanged();
+    partial void OnSocio_economico_recorrido_institucional_siChanging(string value);
+    partial void OnSocio_economico_recorrido_institucional_siChanged();
+    partial void OnSocio_economico_recorrido_institucional_noChanging(string value);
+    partial void OnSocio_economico_recorrido_institucional_noChanged();
     partial void OnSocio_economico_nombres_apellidos_familiar1Changing(string value);
     partial void OnSocio_economico_nombres_apellidos_familiar1Changed();
     partial void OnSocio_economico_parentesco_familiar1Changing(string value);
@@ -41500,7 +41472,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_fecha_ingreso_al_Ecu", DbType="VarChar(25)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_fecha_ingreso_al_Ecu", DbType="VarChar(50)")]
 		public string Socio_economico_fecha_ingreso_al_Ecu
 		{
 			get
@@ -41720,7 +41692,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_telefono_convencional", DbType="VarChar(25)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_telefono_convencional", DbType="VarChar(50)")]
 		public string Socio_economico_telefono_convencional
 		{
 			get
@@ -41740,7 +41712,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_telefono_celular", DbType="VarChar(25)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_telefono_celular", DbType="VarChar(50)")]
 		public string Socio_economico_telefono_celular
 		{
 			get
@@ -42060,7 +42032,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_direcciondomicilio_provincia", DbType="VarChar(50)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_direcciondomicilio_provincia", DbType="VarChar(100)")]
 		public string Socio_economico_direcciondomicilio_provincia
 		{
 			get
@@ -42080,7 +42052,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_direcciondomicilio_canton", DbType="VarChar(50)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_direcciondomicilio_canton", DbType="VarChar(100)")]
 		public string Socio_economico_direcciondomicilio_canton
 		{
 			get
@@ -42140,62 +42112,82 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_calle_vivienda_numeracion", DbType="VarChar(250)")]
-		public string Socio_economico_calle_vivienda_numeracion
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_direcciondomicilio_calle_principal", DbType="VarChar(250)")]
+		public string Socio_economico_direcciondomicilio_calle_principal
 		{
 			get
 			{
-				return this._Socio_economico_calle_vivienda_numeracion;
+				return this._Socio_economico_direcciondomicilio_calle_principal;
 			}
 			set
 			{
-				if ((this._Socio_economico_calle_vivienda_numeracion != value))
+				if ((this._Socio_economico_direcciondomicilio_calle_principal != value))
 				{
-					this.OnSocio_economico_calle_vivienda_numeracionChanging(value);
+					this.OnSocio_economico_direcciondomicilio_calle_principalChanging(value);
 					this.SendPropertyChanging();
-					this._Socio_economico_calle_vivienda_numeracion = value;
-					this.SendPropertyChanged("Socio_economico_calle_vivienda_numeracion");
-					this.OnSocio_economico_calle_vivienda_numeracionChanged();
+					this._Socio_economico_direcciondomicilio_calle_principal = value;
+					this.SendPropertyChanged("Socio_economico_direcciondomicilio_calle_principal");
+					this.OnSocio_economico_direcciondomicilio_calle_principalChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_calle_secundaria", DbType="VarChar(250)")]
-		public string Socio_economico_calle_secundaria
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_direcciondomicilio_numero", DbType="VarChar(50)")]
+		public string Socio_economico_direcciondomicilio_numero
 		{
 			get
 			{
-				return this._Socio_economico_calle_secundaria;
+				return this._Socio_economico_direcciondomicilio_numero;
 			}
 			set
 			{
-				if ((this._Socio_economico_calle_secundaria != value))
+				if ((this._Socio_economico_direcciondomicilio_numero != value))
 				{
-					this.OnSocio_economico_calle_secundariaChanging(value);
+					this.OnSocio_economico_direcciondomicilio_numeroChanging(value);
 					this.SendPropertyChanging();
-					this._Socio_economico_calle_secundaria = value;
-					this.SendPropertyChanged("Socio_economico_calle_secundaria");
-					this.OnSocio_economico_calle_secundariaChanged();
+					this._Socio_economico_direcciondomicilio_numero = value;
+					this.SendPropertyChanged("Socio_economico_direcciondomicilio_numero");
+					this.OnSocio_economico_direcciondomicilio_numeroChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_referencia_ubicar_domicilio", DbType="VarChar(250)")]
-		public string Socio_economico_referencia_ubicar_domicilio
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_direcciondomicilio_calle_secundaria", DbType="VarChar(250)")]
+		public string Socio_economico_direcciondomicilio_calle_secundaria
 		{
 			get
 			{
-				return this._Socio_economico_referencia_ubicar_domicilio;
+				return this._Socio_economico_direcciondomicilio_calle_secundaria;
 			}
 			set
 			{
-				if ((this._Socio_economico_referencia_ubicar_domicilio != value))
+				if ((this._Socio_economico_direcciondomicilio_calle_secundaria != value))
 				{
-					this.OnSocio_economico_referencia_ubicar_domicilioChanging(value);
+					this.OnSocio_economico_direcciondomicilio_calle_secundariaChanging(value);
 					this.SendPropertyChanging();
-					this._Socio_economico_referencia_ubicar_domicilio = value;
-					this.SendPropertyChanged("Socio_economico_referencia_ubicar_domicilio");
-					this.OnSocio_economico_referencia_ubicar_domicilioChanged();
+					this._Socio_economico_direcciondomicilio_calle_secundaria = value;
+					this.SendPropertyChanged("Socio_economico_direcciondomicilio_calle_secundaria");
+					this.OnSocio_economico_direcciondomicilio_calle_secundariaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_direcciondomicilio_referencia", DbType="VarChar(250)")]
+		public string Socio_economico_direcciondomicilio_referencia
+		{
+			get
+			{
+				return this._Socio_economico_direcciondomicilio_referencia;
+			}
+			set
+			{
+				if ((this._Socio_economico_direcciondomicilio_referencia != value))
+				{
+					this.OnSocio_economico_direcciondomicilio_referenciaChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_direcciondomicilio_referencia = value;
+					this.SendPropertyChanged("Socio_economico_direcciondomicilio_referencia");
+					this.OnSocio_economico_direcciondomicilio_referenciaChanged();
 				}
 			}
 		}
@@ -42460,7 +42452,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_contacto_emergencia_telefono", DbType="VarChar(25)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_contacto_emergencia_telefono", DbType="VarChar(50)")]
 		public string Socio_economico_contacto_emergencia_telefono
 		{
 			get
@@ -42560,142 +42552,42 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_dinero_ahorro_si", DbType="VarChar(2)")]
-		public string Socio_economico_dinero_ahorro_si
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_posee_enfermedad_si", DbType="VarChar(2)")]
+		public string Socio_economico_posee_enfermedad_si
 		{
 			get
 			{
-				return this._Socio_economico_dinero_ahorro_si;
+				return this._Socio_economico_posee_enfermedad_si;
 			}
 			set
 			{
-				if ((this._Socio_economico_dinero_ahorro_si != value))
+				if ((this._Socio_economico_posee_enfermedad_si != value))
 				{
-					this.OnSocio_economico_dinero_ahorro_siChanging(value);
+					this.OnSocio_economico_posee_enfermedad_siChanging(value);
 					this.SendPropertyChanging();
-					this._Socio_economico_dinero_ahorro_si = value;
-					this.SendPropertyChanged("Socio_economico_dinero_ahorro_si");
-					this.OnSocio_economico_dinero_ahorro_siChanged();
+					this._Socio_economico_posee_enfermedad_si = value;
+					this.SendPropertyChanged("Socio_economico_posee_enfermedad_si");
+					this.OnSocio_economico_posee_enfermedad_siChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_dinero_ahorro_no", DbType="VarChar(2)")]
-		public string Socio_economico_dinero_ahorro_no
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_posee_enfermedad_no", DbType="VarChar(2)")]
+		public string Socio_economico_posee_enfermedad_no
 		{
 			get
 			{
-				return this._Socio_economico_dinero_ahorro_no;
+				return this._Socio_economico_posee_enfermedad_no;
 			}
 			set
 			{
-				if ((this._Socio_economico_dinero_ahorro_no != value))
+				if ((this._Socio_economico_posee_enfermedad_no != value))
 				{
-					this.OnSocio_economico_dinero_ahorro_noChanging(value);
+					this.OnSocio_economico_posee_enfermedad_noChanging(value);
 					this.SendPropertyChanging();
-					this._Socio_economico_dinero_ahorro_no = value;
-					this.SendPropertyChanged("Socio_economico_dinero_ahorro_no");
-					this.OnSocio_economico_dinero_ahorro_noChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_vehiculo_propio_si", DbType="VarChar(2)")]
-		public string Socio_economico_vehiculo_propio_si
-		{
-			get
-			{
-				return this._Socio_economico_vehiculo_propio_si;
-			}
-			set
-			{
-				if ((this._Socio_economico_vehiculo_propio_si != value))
-				{
-					this.OnSocio_economico_vehiculo_propio_siChanging(value);
-					this.SendPropertyChanging();
-					this._Socio_economico_vehiculo_propio_si = value;
-					this.SendPropertyChanged("Socio_economico_vehiculo_propio_si");
-					this.OnSocio_economico_vehiculo_propio_siChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_vehiculo_propio_no", DbType="VarChar(2)")]
-		public string Socio_economico_vehiculo_propio_no
-		{
-			get
-			{
-				return this._Socio_economico_vehiculo_propio_no;
-			}
-			set
-			{
-				if ((this._Socio_economico_vehiculo_propio_no != value))
-				{
-					this.OnSocio_economico_vehiculo_propio_noChanging(value);
-					this.SendPropertyChanging();
-					this._Socio_economico_vehiculo_propio_no = value;
-					this.SendPropertyChanged("Socio_economico_vehiculo_propio_no");
-					this.OnSocio_economico_vehiculo_propio_noChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_recorrido_institucional_si", DbType="VarChar(2)")]
-		public string Socio_economico_recorrido_institucional_si
-		{
-			get
-			{
-				return this._Socio_economico_recorrido_institucional_si;
-			}
-			set
-			{
-				if ((this._Socio_economico_recorrido_institucional_si != value))
-				{
-					this.OnSocio_economico_recorrido_institucional_siChanging(value);
-					this.SendPropertyChanging();
-					this._Socio_economico_recorrido_institucional_si = value;
-					this.SendPropertyChanged("Socio_economico_recorrido_institucional_si");
-					this.OnSocio_economico_recorrido_institucional_siChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_recorrido_institucional_no", DbType="VarChar(2)")]
-		public string Socio_economico_recorrido_institucional_no
-		{
-			get
-			{
-				return this._Socio_economico_recorrido_institucional_no;
-			}
-			set
-			{
-				if ((this._Socio_economico_recorrido_institucional_no != value))
-				{
-					this.OnSocio_economico_recorrido_institucional_noChanging(value);
-					this.SendPropertyChanging();
-					this._Socio_economico_recorrido_institucional_no = value;
-					this.SendPropertyChanged("Socio_economico_recorrido_institucional_no");
-					this.OnSocio_economico_recorrido_institucional_noChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_moviliza_trabajo_vivienda", DbType="VarChar(250)")]
-		public string Socio_economico_moviliza_trabajo_vivienda
-		{
-			get
-			{
-				return this._Socio_economico_moviliza_trabajo_vivienda;
-			}
-			set
-			{
-				if ((this._Socio_economico_moviliza_trabajo_vivienda != value))
-				{
-					this.OnSocio_economico_moviliza_trabajo_viviendaChanging(value);
-					this.SendPropertyChanging();
-					this._Socio_economico_moviliza_trabajo_vivienda = value;
-					this.SendPropertyChanged("Socio_economico_moviliza_trabajo_vivienda");
-					this.OnSocio_economico_moviliza_trabajo_viviendaChanged();
+					this._Socio_economico_posee_enfermedad_no = value;
+					this.SendPropertyChanged("Socio_economico_posee_enfermedad_no");
+					this.OnSocio_economico_posee_enfermedad_noChanged();
 				}
 			}
 		}
@@ -42780,7 +42672,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_discapacidad_porcentaje", DbType="VarChar(5)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_discapacidad_porcentaje", DbType="VarChar(50)")]
 		public string Socio_economico_discapacidad_porcentaje
 		{
 			get
@@ -42820,7 +42712,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_discapacidad_fecha_caducidad_carnet", DbType="VarChar(25)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_discapacidad_fecha_caducidad_carnet", DbType="VarChar(50)")]
 		public string Socio_economico_discapacidad_fecha_caducidad_carnet
 		{
 			get
@@ -42880,7 +42772,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_estado_gestacion_tiempo", DbType="VarChar(25)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_estado_gestacion_tiempo", DbType="VarChar(50)")]
 		public string Socio_economico_estado_gestacion_tiempo
 		{
 			get
@@ -42900,7 +42792,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_fecha_tentativa_parto", DbType="VarChar(25)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_fecha_tentativa_parto", DbType="VarChar(50)")]
 		public string Socio_economico_fecha_tentativa_parto
 		{
 			get
@@ -42960,7 +42852,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_periodo_lactancia_fecha_culminacion", DbType="VarChar(25)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_periodo_lactancia_fecha_culminacion", DbType="VarChar(50)")]
 		public string Socio_economico_periodo_lactancia_fecha_culminacion
 		{
 			get
@@ -43036,26 +42928,6 @@ namespace CapaDatos
 					this._Socio_economico_enfermedad_cronica_cual = value;
 					this.SendPropertyChanged("Socio_economico_enfermedad_cronica_cual");
 					this.OnSocio_economico_enfermedad_cronica_cualChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_enfermedad_cronica_otras_enfermedades", DbType="VarChar(MAX)")]
-		public string Socio_economico_enfermedad_cronica_otras_enfermedades
-		{
-			get
-			{
-				return this._Socio_economico_enfermedad_cronica_otras_enfermedades;
-			}
-			set
-			{
-				if ((this._Socio_economico_enfermedad_cronica_otras_enfermedades != value))
-				{
-					this.OnSocio_economico_enfermedad_cronica_otras_enfermedadesChanging(value);
-					this.SendPropertyChanging();
-					this._Socio_economico_enfermedad_cronica_otras_enfermedades = value;
-					this.SendPropertyChanged("Socio_economico_enfermedad_cronica_otras_enfermedades");
-					this.OnSocio_economico_enfermedad_cronica_otras_enfermedadesChanged();
 				}
 			}
 		}
@@ -43160,122 +43032,22 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_consume_alcohol_causa", DbType="VarChar(250)")]
-		public string Socio_economico_consume_alcohol_causa
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_consume_alcohol_frecuencia", DbType="VarChar(250)")]
+		public string Socio_economico_consume_alcohol_frecuencia
 		{
 			get
 			{
-				return this._Socio_economico_consume_alcohol_causa;
+				return this._Socio_economico_consume_alcohol_frecuencia;
 			}
 			set
 			{
-				if ((this._Socio_economico_consume_alcohol_causa != value))
+				if ((this._Socio_economico_consume_alcohol_frecuencia != value))
 				{
-					this.OnSocio_economico_consume_alcohol_causaChanging(value);
+					this.OnSocio_economico_consume_alcohol_frecuenciaChanging(value);
 					this.SendPropertyChanging();
-					this._Socio_economico_consume_alcohol_causa = value;
-					this.SendPropertyChanged("Socio_economico_consume_alcohol_causa");
-					this.OnSocio_economico_consume_alcohol_causaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_consume_alcohol_frecuencia_diaria", DbType="VarChar(2)")]
-		public string Socio_economico_consume_alcohol_frecuencia_diaria
-		{
-			get
-			{
-				return this._Socio_economico_consume_alcohol_frecuencia_diaria;
-			}
-			set
-			{
-				if ((this._Socio_economico_consume_alcohol_frecuencia_diaria != value))
-				{
-					this.OnSocio_economico_consume_alcohol_frecuencia_diariaChanging(value);
-					this.SendPropertyChanging();
-					this._Socio_economico_consume_alcohol_frecuencia_diaria = value;
-					this.SendPropertyChanged("Socio_economico_consume_alcohol_frecuencia_diaria");
-					this.OnSocio_economico_consume_alcohol_frecuencia_diariaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_consume_alcohol_frecuencia_semanal", DbType="VarChar(2)")]
-		public string Socio_economico_consume_alcohol_frecuencia_semanal
-		{
-			get
-			{
-				return this._Socio_economico_consume_alcohol_frecuencia_semanal;
-			}
-			set
-			{
-				if ((this._Socio_economico_consume_alcohol_frecuencia_semanal != value))
-				{
-					this.OnSocio_economico_consume_alcohol_frecuencia_semanalChanging(value);
-					this.SendPropertyChanging();
-					this._Socio_economico_consume_alcohol_frecuencia_semanal = value;
-					this.SendPropertyChanged("Socio_economico_consume_alcohol_frecuencia_semanal");
-					this.OnSocio_economico_consume_alcohol_frecuencia_semanalChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_consume_alcohol_frecuencia_quincenal", DbType="VarChar(2)")]
-		public string Socio_economico_consume_alcohol_frecuencia_quincenal
-		{
-			get
-			{
-				return this._Socio_economico_consume_alcohol_frecuencia_quincenal;
-			}
-			set
-			{
-				if ((this._Socio_economico_consume_alcohol_frecuencia_quincenal != value))
-				{
-					this.OnSocio_economico_consume_alcohol_frecuencia_quincenalChanging(value);
-					this.SendPropertyChanging();
-					this._Socio_economico_consume_alcohol_frecuencia_quincenal = value;
-					this.SendPropertyChanged("Socio_economico_consume_alcohol_frecuencia_quincenal");
-					this.OnSocio_economico_consume_alcohol_frecuencia_quincenalChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_consume_alcohol_frecuencia_mensual", DbType="VarChar(2)")]
-		public string Socio_economico_consume_alcohol_frecuencia_mensual
-		{
-			get
-			{
-				return this._Socio_economico_consume_alcohol_frecuencia_mensual;
-			}
-			set
-			{
-				if ((this._Socio_economico_consume_alcohol_frecuencia_mensual != value))
-				{
-					this.OnSocio_economico_consume_alcohol_frecuencia_mensualChanging(value);
-					this.SendPropertyChanging();
-					this._Socio_economico_consume_alcohol_frecuencia_mensual = value;
-					this.SendPropertyChanged("Socio_economico_consume_alcohol_frecuencia_mensual");
-					this.OnSocio_economico_consume_alcohol_frecuencia_mensualChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_consume_alcohol_frecuencia_reuniones", DbType="VarChar(2)")]
-		public string Socio_economico_consume_alcohol_frecuencia_reuniones
-		{
-			get
-			{
-				return this._Socio_economico_consume_alcohol_frecuencia_reuniones;
-			}
-			set
-			{
-				if ((this._Socio_economico_consume_alcohol_frecuencia_reuniones != value))
-				{
-					this.OnSocio_economico_consume_alcohol_frecuencia_reunionesChanging(value);
-					this.SendPropertyChanging();
-					this._Socio_economico_consume_alcohol_frecuencia_reuniones = value;
-					this.SendPropertyChanged("Socio_economico_consume_alcohol_frecuencia_reuniones");
-					this.OnSocio_economico_consume_alcohol_frecuencia_reunionesChanged();
+					this._Socio_economico_consume_alcohol_frecuencia = value;
+					this.SendPropertyChanged("Socio_economico_consume_alcohol_frecuencia");
+					this.OnSocio_economico_consume_alcohol_frecuenciaChanged();
 				}
 			}
 		}
@@ -43560,8 +43332,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_numero_miembro_economicamente_activos", DbType="BigInt")]
-		public System.Nullable<long> Socio_economico_numero_miembro_economicamente_activos
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_numero_miembro_economicamente_activos", DbType="VarChar(50)")]
+		public string Socio_economico_numero_miembro_economicamente_activos
 		{
 			get
 			{
@@ -43580,8 +43352,28 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_total_ingresos_mensuales_proyectados_1", DbType="BigInt")]
-		public System.Nullable<long> Socio_economico_total_ingresos_mensuales_proyectados_1
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_situación_laboral_del_conyugue", DbType="VarChar(100)")]
+		public string Socio_economico_situación_laboral_del_conyugue
+		{
+			get
+			{
+				return this._Socio_economico_situación_laboral_del_conyugue;
+			}
+			set
+			{
+				if ((this._Socio_economico_situación_laboral_del_conyugue != value))
+				{
+					this.OnSocio_economico_situación_laboral_del_conyugueChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_situación_laboral_del_conyugue = value;
+					this.SendPropertyChanged("Socio_economico_situación_laboral_del_conyugue");
+					this.OnSocio_economico_situación_laboral_del_conyugueChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_total_ingresos_mensuales_proyectados_1", DbType="VarChar(25)")]
+		public string Socio_economico_total_ingresos_mensuales_proyectados_1
 		{
 			get
 			{
@@ -43600,8 +43392,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_ayuda1", DbType="BigInt")]
-		public System.Nullable<long> Socio_economico_ayuda1
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_ayuda1", DbType="VarChar(25)")]
+		public string Socio_economico_ayuda1
 		{
 			get
 			{
@@ -43620,8 +43412,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_otros1", DbType="BigInt")]
-		public System.Nullable<long> Socio_economico_otros1
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_otros1", DbType="VarChar(25)")]
+		public string Socio_economico_otros1
 		{
 			get
 			{
@@ -43640,8 +43432,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_total_egresos_alimentacion", DbType="BigInt")]
-		public System.Nullable<long> Socio_economico_total_egresos_alimentacion
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_total_egresos_alimentacion", DbType="VarChar(25)")]
+		public string Socio_economico_total_egresos_alimentacion
 		{
 			get
 			{
@@ -43660,8 +43452,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_total_ingresos_mensuales_proyectados_2", DbType="BigInt")]
-		public System.Nullable<long> Socio_economico_total_ingresos_mensuales_proyectados_2
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_total_ingresos_mensuales_proyectados_2", DbType="VarChar(25)")]
+		public string Socio_economico_total_ingresos_mensuales_proyectados_2
 		{
 			get
 			{
@@ -43680,8 +43472,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_ayuda2", DbType="BigInt")]
-		public System.Nullable<long> Socio_economico_ayuda2
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_ayuda2", DbType="VarChar(25)")]
+		public string Socio_economico_ayuda2
 		{
 			get
 			{
@@ -43700,8 +43492,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_otros2", DbType="BigInt")]
-		public System.Nullable<long> Socio_economico_otros2
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_otros2", DbType="VarChar(25)")]
+		public string Socio_economico_otros2
 		{
 			get
 			{
@@ -43720,8 +43512,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_total_egresos_vivienda", DbType="BigInt")]
-		public System.Nullable<long> Socio_economico_total_egresos_vivienda
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_total_egresos_vivienda", DbType="VarChar(25)")]
+		public string Socio_economico_total_egresos_vivienda
 		{
 			get
 			{
@@ -43740,8 +43532,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_total_ingresos_mensuales_proyectados_3", DbType="BigInt")]
-		public System.Nullable<long> Socio_economico_total_ingresos_mensuales_proyectados_3
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_total_ingresos_mensuales_proyectados_3", DbType="VarChar(25)")]
+		public string Socio_economico_total_ingresos_mensuales_proyectados_3
 		{
 			get
 			{
@@ -43760,8 +43552,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_ayuda3", DbType="BigInt")]
-		public System.Nullable<long> Socio_economico_ayuda3
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_ayuda3", DbType="VarChar(25)")]
+		public string Socio_economico_ayuda3
 		{
 			get
 			{
@@ -43780,8 +43572,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_otros3", DbType="BigInt")]
-		public System.Nullable<long> Socio_economico_otros3
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_otros3", DbType="VarChar(25)")]
+		public string Socio_economico_otros3
 		{
 			get
 			{
@@ -43800,8 +43592,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_total_egresos_educacion", DbType="BigInt")]
-		public System.Nullable<long> Socio_economico_total_egresos_educacion
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_total_egresos_educacion", DbType="VarChar(25)")]
+		public string Socio_economico_total_egresos_educacion
 		{
 			get
 			{
@@ -43820,8 +43612,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_total_ingresos_mensuales_proyectados_4", DbType="BigInt")]
-		public System.Nullable<long> Socio_economico_total_ingresos_mensuales_proyectados_4
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_total_ingresos_mensuales_proyectados_4", DbType="VarChar(25)")]
+		public string Socio_economico_total_ingresos_mensuales_proyectados_4
 		{
 			get
 			{
@@ -43840,8 +43632,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_ayuda4", DbType="BigInt")]
-		public System.Nullable<long> Socio_economico_ayuda4
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_ayuda4", DbType="VarChar(25)")]
+		public string Socio_economico_ayuda4
 		{
 			get
 			{
@@ -43860,8 +43652,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_otros4", DbType="BigInt")]
-		public System.Nullable<long> Socio_economico_otros4
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_otros4", DbType="VarChar(25)")]
+		public string Socio_economico_otros4
 		{
 			get
 			{
@@ -43880,8 +43672,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_total_egresos_servicios_basicos", DbType="BigInt")]
-		public System.Nullable<long> Socio_economico_total_egresos_servicios_basicos
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_total_egresos_servicios_basicos", DbType="VarChar(25)")]
+		public string Socio_economico_total_egresos_servicios_basicos
 		{
 			get
 			{
@@ -43900,8 +43692,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_total_ingresos_mensuales_proyectados_5", DbType="BigInt")]
-		public System.Nullable<long> Socio_economico_total_ingresos_mensuales_proyectados_5
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_total_ingresos_mensuales_proyectados_5", DbType="VarChar(25)")]
+		public string Socio_economico_total_ingresos_mensuales_proyectados_5
 		{
 			get
 			{
@@ -43920,8 +43712,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_ayuda5", DbType="BigInt")]
-		public System.Nullable<long> Socio_economico_ayuda5
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_ayuda5", DbType="VarChar(25)")]
+		public string Socio_economico_ayuda5
 		{
 			get
 			{
@@ -43940,8 +43732,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_otros5", DbType="BigInt")]
-		public System.Nullable<long> Socio_economico_otros5
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_otros5", DbType="VarChar(25)")]
+		public string Socio_economico_otros5
 		{
 			get
 			{
@@ -43960,8 +43752,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_total_egresos_salud", DbType="BigInt")]
-		public System.Nullable<long> Socio_economico_total_egresos_salud
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_total_egresos_salud", DbType="VarChar(25)")]
+		public string Socio_economico_total_egresos_salud
 		{
 			get
 			{
@@ -43980,8 +43772,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_total_ingresos_mensuales_proyectados_6", DbType="BigInt")]
-		public System.Nullable<long> Socio_economico_total_ingresos_mensuales_proyectados_6
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_total_ingresos_mensuales_proyectados_6", DbType="VarChar(25)")]
+		public string Socio_economico_total_ingresos_mensuales_proyectados_6
 		{
 			get
 			{
@@ -44000,8 +43792,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_ayuda6", DbType="BigInt")]
-		public System.Nullable<long> Socio_economico_ayuda6
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_ayuda6", DbType="VarChar(25)")]
+		public string Socio_economico_ayuda6
 		{
 			get
 			{
@@ -44020,8 +43812,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_otros6", DbType="BigInt")]
-		public System.Nullable<long> Socio_economico_otros6
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_otros6", DbType="VarChar(25)")]
+		public string Socio_economico_otros6
 		{
 			get
 			{
@@ -44040,8 +43832,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_total_egresos_movilizacion", DbType="BigInt")]
-		public System.Nullable<long> Socio_economico_total_egresos_movilizacion
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_total_egresos_movilizacion", DbType="VarChar(25)")]
+		public string Socio_economico_total_egresos_movilizacion
 		{
 			get
 			{
@@ -44060,8 +43852,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_total_ingresos_mensuales_proyectados_7", DbType="BigInt")]
-		public System.Nullable<long> Socio_economico_total_ingresos_mensuales_proyectados_7
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_total_ingresos_mensuales_proyectados_7", DbType="VarChar(25)")]
+		public string Socio_economico_total_ingresos_mensuales_proyectados_7
 		{
 			get
 			{
@@ -44080,8 +43872,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_ayuda7", DbType="BigInt")]
-		public System.Nullable<long> Socio_economico_ayuda7
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_ayuda7", DbType="VarChar(25)")]
+		public string Socio_economico_ayuda7
 		{
 			get
 			{
@@ -44100,8 +43892,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_otros7", DbType="BigInt")]
-		public System.Nullable<long> Socio_economico_otros7
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_otros7", DbType="VarChar(25)")]
+		public string Socio_economico_otros7
 		{
 			get
 			{
@@ -44120,8 +43912,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_total_egresos_deudas", DbType="BigInt")]
-		public System.Nullable<long> Socio_economico_total_egresos_deudas
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_total_egresos_deudas", DbType="VarChar(25)")]
+		public string Socio_economico_total_egresos_deudas
 		{
 			get
 			{
@@ -44140,8 +43932,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_total_ingresos_mensuales_proyectados_8", DbType="BigInt")]
-		public System.Nullable<long> Socio_economico_total_ingresos_mensuales_proyectados_8
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_total_ingresos_mensuales_proyectados_8", DbType="VarChar(25)")]
+		public string Socio_economico_total_ingresos_mensuales_proyectados_8
 		{
 			get
 			{
@@ -44160,8 +43952,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_ayuda8", DbType="BigInt")]
-		public System.Nullable<long> Socio_economico_ayuda8
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_ayuda8", DbType="VarChar(25)")]
+		public string Socio_economico_ayuda8
 		{
 			get
 			{
@@ -44180,8 +43972,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_otros8", DbType="BigInt")]
-		public System.Nullable<long> Socio_economico_otros8
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_otros8", DbType="VarChar(25)")]
+		public string Socio_economico_otros8
 		{
 			get
 			{
@@ -44200,8 +43992,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_total_egresos_pensiones_otros", DbType="BigInt")]
-		public System.Nullable<long> Socio_economico_total_egresos_pensiones_otros
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_total_egresos_pensiones_otros", DbType="VarChar(25)")]
+		public string Socio_economico_total_egresos_pensiones_otros
 		{
 			get
 			{
@@ -44220,68 +44012,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_total_ingresos_mensuales_proyectados_total_9", DbType="BigInt")]
-		public System.Nullable<long> Socio_economico_total_ingresos_mensuales_proyectados_total_9
-		{
-			get
-			{
-				return this._Socio_economico_total_ingresos_mensuales_proyectados_total_9;
-			}
-			set
-			{
-				if ((this._Socio_economico_total_ingresos_mensuales_proyectados_total_9 != value))
-				{
-					this.OnSocio_economico_total_ingresos_mensuales_proyectados_total_9Changing(value);
-					this.SendPropertyChanging();
-					this._Socio_economico_total_ingresos_mensuales_proyectados_total_9 = value;
-					this.SendPropertyChanged("Socio_economico_total_ingresos_mensuales_proyectados_total_9");
-					this.OnSocio_economico_total_ingresos_mensuales_proyectados_total_9Changed();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_ayuda_y_otros_total_9", DbType="BigInt")]
-		public System.Nullable<long> Socio_economico_ayuda_y_otros_total_9
-		{
-			get
-			{
-				return this._Socio_economico_ayuda_y_otros_total_9;
-			}
-			set
-			{
-				if ((this._Socio_economico_ayuda_y_otros_total_9 != value))
-				{
-					this.OnSocio_economico_ayuda_y_otros_total_9Changing(value);
-					this.SendPropertyChanging();
-					this._Socio_economico_ayuda_y_otros_total_9 = value;
-					this.SendPropertyChanged("Socio_economico_ayuda_y_otros_total_9");
-					this.OnSocio_economico_ayuda_y_otros_total_9Changed();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_total_egresos_total_9", DbType="BigInt")]
-		public System.Nullable<long> Socio_economico_total_egresos_total_9
-		{
-			get
-			{
-				return this._Socio_economico_total_egresos_total_9;
-			}
-			set
-			{
-				if ((this._Socio_economico_total_egresos_total_9 != value))
-				{
-					this.OnSocio_economico_total_egresos_total_9Changing(value);
-					this.SendPropertyChanging();
-					this._Socio_economico_total_egresos_total_9 = value;
-					this.SendPropertyChanged("Socio_economico_total_egresos_total_9");
-					this.OnSocio_economico_total_egresos_total_9Changed();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_descripcion_mueble_valor_casa", DbType="BigInt")]
-		public System.Nullable<long> Socio_economico_descripcion_mueble_valor_casa
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_descripcion_mueble_valor_casa", DbType="VarChar(25)")]
+		public string Socio_economico_descripcion_mueble_valor_casa
 		{
 			get
 			{
@@ -44300,8 +44032,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_descripcion_mueble_valor_departamento", DbType="BigInt")]
-		public System.Nullable<long> Socio_economico_descripcion_mueble_valor_departamento
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_descripcion_mueble_valor_departamento", DbType="VarChar(25)")]
+		public string Socio_economico_descripcion_mueble_valor_departamento
 		{
 			get
 			{
@@ -44320,8 +44052,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_descripcion_mueble_valor_vehiculo", DbType="BigInt")]
-		public System.Nullable<long> Socio_economico_descripcion_mueble_valor_vehiculo
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_descripcion_mueble_valor_vehiculo", DbType="VarChar(25)")]
+		public string Socio_economico_descripcion_mueble_valor_vehiculo
 		{
 			get
 			{
@@ -44340,8 +44072,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_descripcion_mueble_valor_terreno", DbType="BigInt")]
-		public System.Nullable<long> Socio_economico_descripcion_mueble_valor_terreno
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_descripcion_mueble_valor_terreno", DbType="VarChar(25)")]
+		public string Socio_economico_descripcion_mueble_valor_terreno
 		{
 			get
 			{
@@ -44360,8 +44092,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_descripcion_mueble_valor_negocio", DbType="BigInt")]
-		public System.Nullable<long> Socio_economico_descripcion_mueble_valor_negocio
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_descripcion_mueble_valor_negocio", DbType="VarChar(25)")]
+		public string Socio_economico_descripcion_mueble_valor_negocio
 		{
 			get
 			{
@@ -44380,8 +44112,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_descripcion_mueble_valor_muebles_enseres", DbType="BigInt")]
-		public System.Nullable<long> Socio_economico_descripcion_mueble_valor_muebles_enseres
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_descripcion_mueble_valor_muebles_enseres", DbType="VarChar(25)")]
+		public string Socio_economico_descripcion_mueble_valor_muebles_enseres
 		{
 			get
 			{
@@ -44396,6 +44128,46 @@ namespace CapaDatos
 					this._Socio_economico_descripcion_mueble_valor_muebles_enseres = value;
 					this.SendPropertyChanged("Socio_economico_descripcion_mueble_valor_muebles_enseres");
 					this.OnSocio_economico_descripcion_mueble_valor_muebles_enseresChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_dinero_ahorro_si", DbType="VarChar(2)")]
+		public string Socio_economico_dinero_ahorro_si
+		{
+			get
+			{
+				return this._Socio_economico_dinero_ahorro_si;
+			}
+			set
+			{
+				if ((this._Socio_economico_dinero_ahorro_si != value))
+				{
+					this.OnSocio_economico_dinero_ahorro_siChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_dinero_ahorro_si = value;
+					this.SendPropertyChanged("Socio_economico_dinero_ahorro_si");
+					this.OnSocio_economico_dinero_ahorro_siChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_dinero_ahorro_no", DbType="VarChar(2)")]
+		public string Socio_economico_dinero_ahorro_no
+		{
+			get
+			{
+				return this._Socio_economico_dinero_ahorro_no;
+			}
+			set
+			{
+				if ((this._Socio_economico_dinero_ahorro_no != value))
+				{
+					this.OnSocio_economico_dinero_ahorro_noChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_dinero_ahorro_no = value;
+					this.SendPropertyChanged("Socio_economico_dinero_ahorro_no");
+					this.OnSocio_economico_dinero_ahorro_noChanged();
 				}
 			}
 		}
@@ -44900,22 +44672,82 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_caracteristica_vivienda_otro_especifique", DbType="VarChar(MAX)")]
-		public string Socio_economico_caracteristica_vivienda_otro_especifique
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_vehiculo_propio_si", DbType="VarChar(2)")]
+		public string Socio_economico_vehiculo_propio_si
 		{
 			get
 			{
-				return this._Socio_economico_caracteristica_vivienda_otro_especifique;
+				return this._Socio_economico_vehiculo_propio_si;
 			}
 			set
 			{
-				if ((this._Socio_economico_caracteristica_vivienda_otro_especifique != value))
+				if ((this._Socio_economico_vehiculo_propio_si != value))
 				{
-					this.OnSocio_economico_caracteristica_vivienda_otro_especifiqueChanging(value);
+					this.OnSocio_economico_vehiculo_propio_siChanging(value);
 					this.SendPropertyChanging();
-					this._Socio_economico_caracteristica_vivienda_otro_especifique = value;
-					this.SendPropertyChanged("Socio_economico_caracteristica_vivienda_otro_especifique");
-					this.OnSocio_economico_caracteristica_vivienda_otro_especifiqueChanged();
+					this._Socio_economico_vehiculo_propio_si = value;
+					this.SendPropertyChanged("Socio_economico_vehiculo_propio_si");
+					this.OnSocio_economico_vehiculo_propio_siChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_vehiculo_propio_no", DbType="VarChar(2)")]
+		public string Socio_economico_vehiculo_propio_no
+		{
+			get
+			{
+				return this._Socio_economico_vehiculo_propio_no;
+			}
+			set
+			{
+				if ((this._Socio_economico_vehiculo_propio_no != value))
+				{
+					this.OnSocio_economico_vehiculo_propio_noChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_vehiculo_propio_no = value;
+					this.SendPropertyChanged("Socio_economico_vehiculo_propio_no");
+					this.OnSocio_economico_vehiculo_propio_noChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_recorrido_institucional_si", DbType="VarChar(2)")]
+		public string Socio_economico_recorrido_institucional_si
+		{
+			get
+			{
+				return this._Socio_economico_recorrido_institucional_si;
+			}
+			set
+			{
+				if ((this._Socio_economico_recorrido_institucional_si != value))
+				{
+					this.OnSocio_economico_recorrido_institucional_siChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_recorrido_institucional_si = value;
+					this.SendPropertyChanged("Socio_economico_recorrido_institucional_si");
+					this.OnSocio_economico_recorrido_institucional_siChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_recorrido_institucional_no", DbType="VarChar(2)")]
+		public string Socio_economico_recorrido_institucional_no
+		{
+			get
+			{
+				return this._Socio_economico_recorrido_institucional_no;
+			}
+			set
+			{
+				if ((this._Socio_economico_recorrido_institucional_no != value))
+				{
+					this.OnSocio_economico_recorrido_institucional_noChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_recorrido_institucional_no = value;
+					this.SendPropertyChanged("Socio_economico_recorrido_institucional_no");
+					this.OnSocio_economico_recorrido_institucional_noChanged();
 				}
 			}
 		}

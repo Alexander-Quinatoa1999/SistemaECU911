@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SistemaECU911" Class="DataClassesECU911DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=SistemaECU911;Integrated Security=True" SettingsObjectName="CapaDatos.Properties.Settings" SettingsPropertyName="SistemaECU911ConnectionString4" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=ZOCAPO\SQLEXPRESS;Initial Catalog=SistemaECU911;Integrated Security=True" SettingsObjectName="CapaDatos.Properties.Settings" SettingsPropertyName="SistemaECU911ConnectionString5" Provider="System.Data.SqlClient" />
   <Table Name="dbo.cie10" Member="cie10">
     <Type Name="cie10">
       <Column Name="id10" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -1690,7 +1690,7 @@
       <Column Name="Socio_economico_version" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="Socio_economico_modalidadvinculacion_leyorgserpublico" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
       <Column Name="Socio_economico_modalidadvinculacion_codigotrabajo" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
-      <Column Name="Socio_economico_fecha_ingreso_al_Ecu" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="Socio_economico_fecha_ingreso_al_Ecu" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="Socio_economico_estadocivil_soltero" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
       <Column Name="Socio_economico_estadocivil_casado" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
       <Column Name="Socio_economico_estadocivil_viudo" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
@@ -1701,8 +1701,8 @@
       <Column Name="Socio_economico_tipo_de_sangre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="Socio_economico_es_donante_si" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
       <Column Name="Socio_economico_es_donante_no" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
-      <Column Name="Socio_economico_telefono_convencional" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
-      <Column Name="Socio_economico_telefono_celular" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="Socio_economico_telefono_convencional" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Socio_economico_telefono_celular" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="Socio_economico_email" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
       <Column Name="Socio_economico_lugar_nacimiento" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
       <Column Name="Socio_economico_fecha_nacimiento" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
@@ -1718,13 +1718,14 @@
       <Column Name="Socio_economico_autoidentificacionetnica_afrodescendiente" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
       <Column Name="Socio_economico_autoidentificacionetnica_indigena" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
       <Column Name="Socio_economico_autoidentificacionetnica_montubio" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
-      <Column Name="Socio_economico_direcciondomicilio_provincia" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Socio_economico_direcciondomicilio_canton" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Socio_economico_direcciondomicilio_provincia" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Socio_economico_direcciondomicilio_canton" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
       <Column Name="Socio_economico_direcciondomicilio_parroquia" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
       <Column Name="Socio_economico_direcciondomicilio_barrio" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="Socio_economico_calle_vivienda_numeracion" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
-      <Column Name="Socio_economico_calle_secundaria" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
-      <Column Name="Socio_economico_referencia_ubicar_domicilio" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Socio_economico_direcciondomicilio_calle_principal" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Socio_economico_direcciondomicilio_numero" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Socio_economico_direcciondomicilio_calle_secundaria" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Socio_economico_direcciondomicilio_referencia" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
       <Column Name="Socio_economico_sectorvive_norte" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
       <Column Name="Socio_economico_sectorvive_centro" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
       <Column Name="Socio_economico_sectorvive_sur" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
@@ -1738,47 +1739,36 @@
       <Column Name="Socio_economico_riesgo_delincuencial_bajo" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
       <Column Name="Socio_economico_contacto_emergencia_nombres_apellidos" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
       <Column Name="Socio_economico_contacto_emergencia_parentesco" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Socio_economico_contacto_emergencia_telefono" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="Socio_economico_contacto_emergencia_telefono" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="Socio_economico_contacto_emergencia_calle_principal" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
       <Column Name="Socio_economico_contacto_emergencia_numero_domicilio" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
       <Column Name="Socio_economico_contacto_emergencia_calle_secundaria" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
       <Column Name="Socio_economico_contacto_emergencia_referencia_domicilio" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
-      <Column Name="Socio_economico_dinero_ahorro_si" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
-      <Column Name="Socio_economico_dinero_ahorro_no" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
-      <Column Name="Socio_economico_vehiculo_propio_si" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
-      <Column Name="Socio_economico_vehiculo_propio_no" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
-      <Column Name="Socio_economico_recorrido_institucional_si" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
-      <Column Name="Socio_economico_recorrido_institucional_no" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
-      <Column Name="Socio_economico_moviliza_trabajo_vivienda" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Socio_economico_posee_enfermedad_si" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="Socio_economico_posee_enfermedad_no" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
       <Column Name="Socio_economico_posee_enfermedad" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
       <Column Name="Socio_economico_discapacidad_si" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
       <Column Name="Socio_economico_discapacidad_no" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
       <Column Name="Socio_economico_discapacidad_tipo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="Socio_economico_discapacidad_porcentaje" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="Socio_economico_discapacidad_porcentaje" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="Socio_economico_discapacidad_carnet_conadis" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Socio_economico_discapacidad_fecha_caducidad_carnet" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="Socio_economico_discapacidad_fecha_caducidad_carnet" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="Socio_economico_estado_gestacion_si" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
       <Column Name="Socio_economico_estado_gestacion_no" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
-      <Column Name="Socio_economico_estado_gestacion_tiempo" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
-      <Column Name="Socio_economico_fecha_tentativa_parto" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="Socio_economico_estado_gestacion_tiempo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Socio_economico_fecha_tentativa_parto" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="Socio_economico_periodo_lactancia_si" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
       <Column Name="Socio_economico_periodo_lactancia_no" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
-      <Column Name="Socio_economico_periodo_lactancia_fecha_culminacion" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="Socio_economico_periodo_lactancia_fecha_culminacion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="Socio_economico_enfermedad_cronica_si" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
       <Column Name="Socio_economico_enfermedad_cronica_no" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
       <Column Name="Socio_economico_enfermedad_cronica_cual" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Socio_economico_enfermedad_cronica_otras_enfermedades" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="Socio_economico_enfermedad_rara_si" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
       <Column Name="Socio_economico_enfermedad_rara_no" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
       <Column Name="Socio_economico_enfermedad_rara_cual" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="Socio_economico_consume_alcohol_si" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
       <Column Name="Socio_economico_consume_alcohol_no" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
-      <Column Name="Socio_economico_consume_alcohol_causa" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
-      <Column Name="Socio_economico_consume_alcohol_frecuencia_diaria" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
-      <Column Name="Socio_economico_consume_alcohol_frecuencia_semanal" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
-      <Column Name="Socio_economico_consume_alcohol_frecuencia_quincenal" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
-      <Column Name="Socio_economico_consume_alcohol_frecuencia_mensual" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
-      <Column Name="Socio_economico_consume_alcohol_frecuencia_reuniones" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="Socio_economico_consume_alcohol_frecuencia" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
       <Column Name="Socio_economico_consume_alcohol_tiempo_consumo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
       <Column Name="Socio_economico_consume_tabaco_si" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
       <Column Name="Socio_economico_consume_tabaco_no" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
@@ -1793,48 +1783,48 @@
       <Column Name="Socio_economico_problemas_consumo_economicos" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
       <Column Name="Socio_economico_problemas_consumo_salud" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
       <Column Name="Socio_economico_problemas_consumo_legales" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
-      <Column Name="Socio_economico_numero_miembro_economicamente_activos" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="Socio_economico_total_ingresos_mensuales_proyectados_1" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="Socio_economico_ayuda1" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="Socio_economico_otros1" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="Socio_economico_total_egresos_alimentacion" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="Socio_economico_total_ingresos_mensuales_proyectados_2" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="Socio_economico_ayuda2" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="Socio_economico_otros2" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="Socio_economico_total_egresos_vivienda" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="Socio_economico_total_ingresos_mensuales_proyectados_3" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="Socio_economico_ayuda3" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="Socio_economico_otros3" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="Socio_economico_total_egresos_educacion" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="Socio_economico_total_ingresos_mensuales_proyectados_4" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="Socio_economico_ayuda4" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="Socio_economico_otros4" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="Socio_economico_total_egresos_servicios_basicos" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="Socio_economico_total_ingresos_mensuales_proyectados_5" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="Socio_economico_ayuda5" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="Socio_economico_otros5" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="Socio_economico_total_egresos_salud" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="Socio_economico_total_ingresos_mensuales_proyectados_6" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="Socio_economico_ayuda6" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="Socio_economico_otros6" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="Socio_economico_total_egresos_movilizacion" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="Socio_economico_total_ingresos_mensuales_proyectados_7" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="Socio_economico_ayuda7" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="Socio_economico_otros7" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="Socio_economico_total_egresos_deudas" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="Socio_economico_total_ingresos_mensuales_proyectados_8" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="Socio_economico_ayuda8" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="Socio_economico_otros8" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="Socio_economico_total_egresos_pensiones_otros" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="Socio_economico_total_ingresos_mensuales_proyectados_total_9" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="Socio_economico_ayuda_y_otros_total_9" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="Socio_economico_total_egresos_total_9" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="Socio_economico_descripcion_mueble_valor_casa" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="Socio_economico_descripcion_mueble_valor_departamento" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="Socio_economico_descripcion_mueble_valor_vehiculo" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="Socio_economico_descripcion_mueble_valor_terreno" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="Socio_economico_descripcion_mueble_valor_negocio" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="Socio_economico_descripcion_mueble_valor_muebles_enseres" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Socio_economico_numero_miembro_economicamente_activos" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Socio_economico_situación_laboral_del_conyugue" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Socio_economico_total_ingresos_mensuales_proyectados_1" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="Socio_economico_ayuda1" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="Socio_economico_otros1" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="Socio_economico_total_egresos_alimentacion" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="Socio_economico_total_ingresos_mensuales_proyectados_2" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="Socio_economico_ayuda2" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="Socio_economico_otros2" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="Socio_economico_total_egresos_vivienda" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="Socio_economico_total_ingresos_mensuales_proyectados_3" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="Socio_economico_ayuda3" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="Socio_economico_otros3" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="Socio_economico_total_egresos_educacion" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="Socio_economico_total_ingresos_mensuales_proyectados_4" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="Socio_economico_ayuda4" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="Socio_economico_otros4" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="Socio_economico_total_egresos_servicios_basicos" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="Socio_economico_total_ingresos_mensuales_proyectados_5" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="Socio_economico_ayuda5" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="Socio_economico_otros5" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="Socio_economico_total_egresos_salud" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="Socio_economico_total_ingresos_mensuales_proyectados_6" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="Socio_economico_ayuda6" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="Socio_economico_otros6" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="Socio_economico_total_egresos_movilizacion" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="Socio_economico_total_ingresos_mensuales_proyectados_7" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="Socio_economico_ayuda7" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="Socio_economico_otros7" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="Socio_economico_total_egresos_deudas" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="Socio_economico_total_ingresos_mensuales_proyectados_8" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="Socio_economico_ayuda8" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="Socio_economico_otros8" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="Socio_economico_total_egresos_pensiones_otros" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="Socio_economico_descripcion_mueble_valor_casa" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="Socio_economico_descripcion_mueble_valor_departamento" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="Socio_economico_descripcion_mueble_valor_vehiculo" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="Socio_economico_descripcion_mueble_valor_terreno" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="Socio_economico_descripcion_mueble_valor_negocio" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="Socio_economico_descripcion_mueble_valor_muebles_enseres" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="Socio_economico_dinero_ahorro_si" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="Socio_economico_dinero_ahorro_no" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
       <Column Name="Socio_economico_caracteristica_vivienda_descripcion_unifamiliar" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
       <Column Name="Socio_economico_caracteristica_vivienda_descripcion_multifamiliar" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
       <Column Name="Socio_economico_caracteristica_vivienda_descripcion_otra_especifique" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
@@ -1860,7 +1850,10 @@
       <Column Name="Socio_economico_caracteristica_vivienda_distribucion_patio" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
       <Column Name="Socio_economico_caracteristica_vivienda_distribucion_bodega" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
       <Column Name="Socio_economico_caracteristica_vivienda_distribucion_otro_especifique" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="Socio_economico_caracteristica_vivienda_otro_especifique" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Socio_economico_vehiculo_propio_si" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="Socio_economico_vehiculo_propio_no" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="Socio_economico_recorrido_institucional_si" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="Socio_economico_recorrido_institucional_no" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
       <Column Name="Socio_economico_nombres_apellidos_familiar1" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
       <Column Name="Socio_economico_parentesco_familiar1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="Socio_economico_fecha_nacimiento_familiar1" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />

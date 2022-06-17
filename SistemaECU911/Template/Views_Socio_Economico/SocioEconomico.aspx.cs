@@ -27,14 +27,6 @@ namespace SistemaECU911.Template.Views_Socio_Economico
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            tabladiscapacidad.Visible = false;
-            tabladependencia.Visible = false;
-            tablaacargofamiliar.Visible = false;
-            tabladatosdiscapacidad.Visible = false;
-            tbc_tipodiscapacidad.Visible = false;
-            tbc_txtdiscapacidad.Visible = false;
-            tbl_estadogestacion.Visible = false;
-
             if (!IsPostBack)
             {
                 if (Request["cod"] != null)
@@ -48,6 +40,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
 
                     if (per != null)
                     {
+                        txt_cedula.ReadOnly = true;
                         txt_cedula.Text = per.Per_cedula.ToString();
                         txt_priapellido.Text = per.Per_priApellido.ToString();
                         txt_segapellido.Text = per.Per_segApellido.ToString();
@@ -84,9 +77,10 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                             txt_parroquia.Text = sso.Socio_economico_direcciondomicilio_parroquia.ToString();
                             txt_barrio.Text = sso.Socio_economico_direcciondomicilio_barrio.ToString();
 
-                            txt_calleubicada.Text = sso.Socio_economico_calle_vivienda_numeracion.ToString();
-                            txt_callesecundaria.Text = sso.Socio_economico_calle_secundaria.ToString();
-                            txt_refubicardomicilio.Text = sso.Socio_economico_referencia_ubicar_domicilio.ToString();
+                            txt_calleprincipal.Text = sso.Socio_economico_direcciondomicilio_calle_principal.ToString();
+                            txt_mumerodecasa.Text = sso.Socio_economico_direcciondomicilio_numero.ToString();
+                            txt_callesecundaria.Text = sso.Socio_economico_direcciondomicilio_calle_secundaria.ToString();
+                            txt_refubicardomicilio.Text = sso.Socio_economico_direcciondomicilio_referencia.ToString();
 
                             txt_tipoviviendaotro.Text = sso.Socio_economico_tipovivienda_otro_indique.ToString();
 
@@ -97,8 +91,6 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                             txt_emenumdomicilio.Text = sso.Socio_economico_contacto_emergencia_numero_domicilio.ToString();
                             txt_emecallesecun.Text = sso.Socio_economico_contacto_emergencia_calle_secundaria.ToString();
                             txt_emerefubicardomicilio.Text = sso.Socio_economico_contacto_emergencia_referencia_domicilio.ToString();
-
-                            txt_movilizatrabajoovivienda.Text = sso.Socio_economico_moviliza_trabajo_vivienda.ToString();
 
                             //Salud
                             txt_poseeenfermedadprexistente.Text = sso.Socio_economico_posee_enfermedad.ToString();
@@ -136,10 +128,9 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                             }
 
                             txt_cualcatastrofica.Text = sso.Socio_economico_enfermedad_cronica_cual.ToString();
-                            txt_otrasenfermedadescat.Text = sso.Socio_economico_enfermedad_cronica_otras_enfermedades.ToString();
                             txt_enfermedadraracual.Text = sso.Socio_economico_enfermedad_rara_cual.ToString();
 
-                            txt_causaconsumoalcohol.Text = sso.Socio_economico_consume_alcohol_causa.ToString();
+                            txt_causaconsumoalcohol.Text = sso.Socio_economico_consume_alcohol_frecuencia.ToString();
                             txt_tiempoconsumoalcohol.Text = sso.Socio_economico_consume_alcohol_tiempo_consumo.ToString();
                             txt_frecuenciaconsumotabaco.Text = sso.Socio_economico_consume_tabaco_frecuencia_consumo.ToString();
                             txt_tiempoconsumotabaco.Text = sso.Socio_economico_consume_tabaco_tiempo_consumo.ToString();
@@ -148,6 +139,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
 
                             //Situacion económica del servidor
                             txt_miembroactivoseconomicamente.Text = sso.Socio_economico_numero_miembro_economicamente_activos.ToString();
+                            txt_situacionlaboralconyugue.Text = sso.Socio_economico_situación_laboral_del_conyugue.ToString();
 
                             txt_totalingresos1.Text = sso.Socio_economico_total_ingresos_mensuales_proyectados_1.ToString();
                             txt_ayuda1.Text = sso.Socio_economico_ayuda1.ToString();
@@ -189,10 +181,6 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                             txt_otros8.Text = sso.Socio_economico_otros8.ToString();
                             txt_otrospensiones.Text = sso.Socio_economico_total_egresos_pensiones_otros.ToString();
 
-                            txt_totalingresos9.Text = sso.Socio_economico_total_ingresos_mensuales_proyectados_total_9.ToString();
-                            txt_totalayudayotros9.Text = sso.Socio_economico_ayuda_y_otros_total_9.ToString();
-                            txt_totalegresos.Text = sso.Socio_economico_total_egresos_total_9.ToString();
-
                             txt_biencasa.Text = sso.Socio_economico_descripcion_mueble_valor_casa.ToString();
                             txt_biendepartamento.Text = sso.Socio_economico_descripcion_mueble_valor_departamento.ToString();
                             txt_bienvehiculo.Text = sso.Socio_economico_descripcion_mueble_valor_vehiculo.ToString();
@@ -204,7 +192,6 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                             txt_otratenencia.Text = sso.Socio_economico_caracteristica_vivienda_tenencia_otra_especifique.ToString();
                             txt_otrotipodecasa.Text = sso.Socio_economico_caracteristica_vivienda_tipo_otro_especifique.ToString();
                             txt_otradistribucioncasa.Text = sso.Socio_economico_caracteristica_vivienda_distribucion_otro_especifique.ToString();
-                            txt_otrainformacioncasa.Text = sso.Socio_economico_caracteristica_vivienda_otro_especifique.ToString();
 
                             //Información Familiar
                             txt_nomapellidos1.Text = sso.Socio_economico_nombres_apellidos_familiar1.ToString();
@@ -662,6 +649,23 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                                 cb_recorridono.Checked = true;
                             }
                             //SALUD
+                            //Enfermedad preexistente
+                            if (sso.Socio_economico_posee_enfermedad_si == null)
+                            {
+                                cb_sienfermedad.Checked = false;
+                            }
+                            else
+                            {
+                                cb_sienfermedad.Checked = true;
+                            }
+                            if (sso.Socio_economico_posee_enfermedad_no == null)
+                            {
+                                cb_noenfermedad.Checked = false;
+                            }
+                            else
+                            {
+                                cb_noenfermedad.Checked = true;
+                            }
                             //Posee Discapacidad
                             if (sso.Socio_economico_discapacidad_si == null)
                             {
@@ -763,47 +767,6 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                             else
                             {
                                 cb_alcoholno.Checked = true;
-                            }
-                            //Frecuencia consumo alcohol
-                            if (sso.Socio_economico_consume_alcohol_frecuencia_diaria == null)
-                            {
-                                cb_consumoalcoholdiario.Checked = false;
-                            }
-                            else
-                            {
-                                cb_consumoalcoholdiario.Checked = true;
-                            }
-                            if (sso.Socio_economico_consume_alcohol_frecuencia_semanal == null)
-                            {
-                                cb_consumoalcoholsemanal.Checked = false;
-                            }
-                            else
-                            {
-                                cb_consumoalcoholsemanal.Checked = true;
-                            }
-                            if (sso.Socio_economico_consume_alcohol_frecuencia_quincenal == null)
-                            {
-                                cb_consumoalcoholquincenal.Checked = false;
-                            }
-                            else
-                            {
-                                cb_consumoalcoholquincenal.Checked = true;
-                            }
-                            if (sso.Socio_economico_consume_alcohol_frecuencia_mensual == null)
-                            {
-                                cb_consumoalcoholmensual.Checked = false;
-                            }
-                            else
-                            {
-                                cb_consumoalcoholmensual.Checked = true;
-                            }
-                            if (sso.Socio_economico_consume_alcohol_frecuencia_reuniones == null)
-                            {
-                                cb_consumoalcoholreuniones.Checked = false;
-                            }
-                            else
-                            {
-                                cb_consumoalcoholreuniones.Checked = true;
                             }
                             //Consumo tabaco
                             if (sso.Socio_economico_consume_tabaco_si == null)
@@ -1673,193 +1636,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
 
                 int perso = Convert.ToInt32(per.Per_id.ToString());
 
-                sso = new Tbl_SocioEconomico
-                {
-                    Socio_economico_fechaHora = txt_fecharegistro.Text,
-
-                    //Datos código y versión
-                    Socio_economico_codigo_inicial = txt_codigoinicio.Text,
-                    Socio_economico_version = txt_version.Text,
-
-                    //Datos Generales
-                    Socio_economico_tipo_de_sangre = txt_tipodesangre.Text,
-
-                    Socio_economico_telefono_convencional = txt_telconvecional.Text,
-                    Socio_economico_telefono_celular = txt_telcelular.Text,
-                    Socio_economico_email = txt_email.Text,
-
-                    Socio_economico_lugar_nacimiento = txt_lugarnacimiento.Text,
-
-                    Socio_economico_direcciondomicilio_provincia = txt_provincia.Text,
-                    Socio_economico_direcciondomicilio_canton = txt_canton.Text,
-                    Socio_economico_direcciondomicilio_parroquia = txt_parroquia.Text,
-                    Socio_economico_direcciondomicilio_barrio = txt_barrio.Text,
-
-                    Socio_economico_calle_vivienda_numeracion = txt_calleubicada.Text,
-                    Socio_economico_calle_secundaria = txt_callesecundaria.Text,
-                    Socio_economico_referencia_ubicar_domicilio = txt_refubicardomicilio.Text,
-
-                    Socio_economico_tipovivienda_otro_indique = txt_tipoviviendaotro.Text,
-
-                    Socio_economico_contacto_emergencia_nombres_apellidos = txt_emernomyape.Text,
-                    Socio_economico_contacto_emergencia_parentesco = txt_emeparentesco.Text,
-                    Socio_economico_contacto_emergencia_telefono = txt_emetelefono.Text,
-                    Socio_economico_contacto_emergencia_calle_principal = txt_emecalleprincipal.Text,
-                    Socio_economico_contacto_emergencia_numero_domicilio = txt_emenumdomicilio.Text,
-                    Socio_economico_contacto_emergencia_calle_secundaria = txt_emecallesecun.Text,
-                    Socio_economico_contacto_emergencia_referencia_domicilio = txt_emerefubicardomicilio.Text,
-
-                    Socio_economico_moviliza_trabajo_vivienda = txt_movilizatrabajoovivienda.Text,
-
-                    //Salud
-                    Socio_economico_posee_enfermedad = txt_poseeenfermedadprexistente.Text,
-                    Socio_economico_discapacidad_tipo = txt_tipodiscapacidad.Text,
-                    Socio_economico_discapacidad_porcentaje = txt_porcentajediscapacidad.Text,
-                    Socio_economico_discapacidad_carnet_conadis = txt_numcarnetconadis.Text,
-                    Socio_economico_discapacidad_fecha_caducidad_carnet = txt_fechacaducidadcarnet.Text,
-
-                    Socio_economico_estado_gestacion_tiempo = txt_gestacióntiempo.Text,
-                    Socio_economico_fecha_tentativa_parto = txt_fechatentativaparto.Text,
-                    Socio_economico_periodo_lactancia_fecha_culminacion = txt_fechaculmicacionlactancia.Text,
-
-                    Socio_economico_enfermedad_cronica_cual = txt_cualcatastrofica.Text,
-                    Socio_economico_enfermedad_cronica_otras_enfermedades = txt_otrasenfermedadescat.Text,
-                    Socio_economico_enfermedad_rara_cual = txt_enfermedadraracual.Text,
-
-                    Socio_economico_consume_alcohol_causa = txt_causaconsumoalcohol.Text,
-                    Socio_economico_consume_alcohol_tiempo_consumo = txt_tiempoconsumoalcohol.Text,
-                    Socio_economico_consume_tabaco_frecuencia_consumo = txt_frecuenciaconsumotabaco.Text,
-                    Socio_economico_consume_tabaco_tiempo_consumo = txt_tiempoconsumotabaco.Text,
-                    Socio_economico_consume_sustancia_psicotropica_tipo = txt_sustanciapsicotropicatipo.Text,
-                    Socio_economico_consume_sustancia_psicotropica_frecuencia_consumo = txt_sustanciapsicotropicafrecuencia.Text,
-
-                    //Situacion económica del servidor
-                    Socio_economico_numero_miembro_economicamente_activos = Convert.ToInt32(txt_miembroactivoseconomicamente.Text),
-
-                    Socio_economico_total_ingresos_mensuales_proyectados_1 = Convert.ToInt32(txt_totalingresos1.Text),
-                    Socio_economico_ayuda1 = Convert.ToInt32(txt_ayuda1.Text),
-                    Socio_economico_otros1 = Convert.ToInt32(txt_otros1.Text),
-                    Socio_economico_total_egresos_alimentacion = Convert.ToInt32(txt_alimentación.Text),
-
-                    Socio_economico_total_ingresos_mensuales_proyectados_2 = Convert.ToInt32(txt_totalingresos2.Text),
-                    Socio_economico_ayuda2 = Convert.ToInt32(txt_ayuda2.Text),
-                    Socio_economico_otros2 = Convert.ToInt32(txt_otros2.Text),
-                    Socio_economico_total_egresos_vivienda = Convert.ToInt32(txt_vivienda.Text),
-
-                    Socio_economico_total_ingresos_mensuales_proyectados_3 = Convert.ToInt32(txt_totalingresos3.Text),
-                    Socio_economico_ayuda3 = Convert.ToInt32(txt_ayuda3.Text),
-                    Socio_economico_otros3 = Convert.ToInt32(txt_otros3.Text),
-                    Socio_economico_total_egresos_educacion = Convert.ToInt32(txt_educación.Text),
-
-                    Socio_economico_total_ingresos_mensuales_proyectados_4 = Convert.ToInt32(txt_totalingresos4.Text),
-                    Socio_economico_ayuda4 = Convert.ToInt32(txt_ayuda4.Text),
-                    Socio_economico_otros4 = Convert.ToInt32(txt_otros4.Text),
-                    Socio_economico_total_egresos_servicios_basicos = Convert.ToInt32(txt_serviciosbasicos.Text),
-
-                    Socio_economico_total_ingresos_mensuales_proyectados_5 = Convert.ToInt32(txt_totalingresos5.Text),
-                    Socio_economico_ayuda5 = Convert.ToInt32(txt_ayuda5.Text),
-                    Socio_economico_otros5 = Convert.ToInt32(txt_otros5.Text),
-                    Socio_economico_total_egresos_salud = Convert.ToInt32(txt_salud.Text),
-
-                    Socio_economico_total_ingresos_mensuales_proyectados_6 = Convert.ToInt32(txt_totalingresos6.Text),
-                    Socio_economico_ayuda6 = Convert.ToInt32(txt_ayuda6.Text),
-                    Socio_economico_otros6 = Convert.ToInt32(txt_otros6.Text),
-                    Socio_economico_total_egresos_movilizacion = Convert.ToInt32(txt_movilización.Text),
-
-                    Socio_economico_total_ingresos_mensuales_proyectados_7 = Convert.ToInt32(txt_totalingresos7.Text),
-                    Socio_economico_ayuda7 = Convert.ToInt32(txt_ayuda7.Text),
-                    Socio_economico_otros7 = Convert.ToInt32(txt_otros7.Text),
-                    Socio_economico_total_egresos_deudas = Convert.ToInt32(txt_deudas.Text),
-
-                    Socio_economico_total_ingresos_mensuales_proyectados_8 = Convert.ToInt32(txt_totalingresos8.Text),
-                    Socio_economico_ayuda8 = Convert.ToInt32(txt_ayuda8.Text),
-                    Socio_economico_otros8 = Convert.ToInt32(txt_otros8.Text),
-                    Socio_economico_total_egresos_pensiones_otros = Convert.ToInt32(txt_otrospensiones.Text),
-
-                    Socio_economico_total_ingresos_mensuales_proyectados_total_9 = Convert.ToInt32(txt_totalingresos9.Text),
-                    Socio_economico_ayuda_y_otros_total_9 = Convert.ToInt32(txt_totalayudayotros9.Text),
-                    Socio_economico_total_egresos_total_9 = Convert.ToInt32(txt_totalegresos.Text),
-
-                    Socio_economico_descripcion_mueble_valor_casa = Convert.ToInt32(txt_biencasa.Text),
-                    Socio_economico_descripcion_mueble_valor_departamento = Convert.ToInt32(txt_biendepartamento.Text),
-                    Socio_economico_descripcion_mueble_valor_vehiculo = Convert.ToInt32(txt_bienvehiculo.Text),
-                    Socio_economico_descripcion_mueble_valor_terreno = Convert.ToInt32(txt_bienterreno.Text),
-                    Socio_economico_descripcion_mueble_valor_negocio = Convert.ToInt32(txt_bienegocio.Text),
-                    Socio_economico_descripcion_mueble_valor_muebles_enseres = Convert.ToInt32(txt_bienmueblesyenseres.Text),
-
-                    Socio_economico_caracteristica_vivienda_descripcion_otra_especifique = txt_otrodescripcionviviendafamilia.Text,
-                    Socio_economico_caracteristica_vivienda_tenencia_otra_especifique = txt_otratenencia.Text,
-                    Socio_economico_caracteristica_vivienda_tipo_otro_especifique = txt_otrotipodecasa.Text,
-                    Socio_economico_caracteristica_vivienda_distribucion_otro_especifique = txt_otradistribucioncasa.Text,
-                    Socio_economico_caracteristica_vivienda_otro_especifique = txt_otrainformacioncasa.Text,
-
-                    //Información Familiar
-                    Socio_economico_nombres_apellidos_familiar1 = txt_nomapellidos1.Text,
-                    Socio_economico_parentesco_familiar1 = txt_parentesco1.Text,
-                    Socio_economico_fecha_nacimiento_familiar1 = txt_fechanacimiento1.Text,
-                    Socio_economico_edad_familiar1 = txt_edad1.Text,
-
-                    Socio_economico_nombres_apellidos_familiar2 = txt_nomapellidos2.Text,
-                    Socio_economico_parentesco_familiar2 = txt_parentesco2.Text,
-                    Socio_economico_fecha_nacimiento_familiar2 = txt_fechanacimiento2.Text,
-                    Socio_economico_edad_familiar2 = txt_edad2.Text,
-
-                    Socio_economico_nombres_apellidos_familiar3 = txt_nomapellidos3.Text,
-                    Socio_economico_parentesco_familiar3 = txt_parentesco3.Text,
-                    Socio_economico_fecha_nacimiento_familiar3 = txt_fechanacimiento3.Text,
-                    Socio_economico_edad_familiar3 = txt_edad3.Text,
-
-                    Socio_economico_nombres_apellidos_familiar4 = txt_nomapellidos4.Text,
-                    Socio_economico_parentesco_familiar4 = txt_parentesco4.Text,
-                    Socio_economico_fecha_nacimiento_familiar4 = txt_fechanacimiento4.Text,
-                    Socio_economico_edad_familiar4 = txt_edad4.Text,
-
-                    Socio_economico_nombres_apellidos_familiar5 = txt_nomapellidos5.Text,
-                    Socio_economico_parentesco_familiar5 = txt_parentesco5.Text,
-                    Socio_economico_fecha_nacimiento_familiar5 = txt_fechanacimiento5.Text,
-                    Socio_economico_edad_familiar5 = txt_edad5.Text,
-
-                    Socio_economico_nombres_apellidos_familiar_discapacidad1 = txt_familiardiscapacitadonomape1.Text,
-                    Socio_economico_fecha_caducidad_carnet_familiar_discapacidad1 = txt_familiardiscapacitadofechacaducidadcarnet1.Text,
-                    Socio_economico_familiar_discapacidad_tipo1 = txt_familiardiscapacitadotipodiscapacidad1.Text,
-                    Socio_economico_familiar_discapacidad_porcentaje1 = txt_familiardiscapacitadoporcentajediscapacidad1.Text,
-                    Socio_economico_familiar_discapacidad_parentesco1 = txt_familiardiscapacitadoparentesco1.Text,
-                    Socio_economico_familiar_discapacidad_fecha_nacimiento1 = txt_familiardiscapacitadofechanacimiento1.Text,
-
-                    Socio_economico_nombres_apellidos_familiar_discapacidad2 = txt_familiardiscapacitadonomape2.Text,
-                    Socio_economico_fecha_caducidad_carnet_familiar_discapacidad2 = txt_familiardiscapacitadofechacaducidadcarnet2.Text,
-                    Socio_economico_familiar_discapacidad_tipo2 = txt_familiardiscapacitadotipodiscapacidad2.Text,
-                    Socio_economico_familiar_discapacidad_porcentaje2 = txt_familiardiscapacitadoporcentajediscapacidad2.Text,
-                    Socio_economico_familiar_discapacidad_parentesco2 = txt_familiardiscapacitadoparentesco2.Text,
-                    Socio_economico_familiar_discapacidad_fecha_nacimiento2 = txt_familiardiscapacitadofechanacimiento2.Text,
-
-                    Socio_economico_registrar_dependencia_familiar_MT_tiempo = txt_dependenciaministeriotrabajotiempo.Text,
-                    Socio_economico_registrar_dependencia_familiar_MT_numero_carnetMSP = txt_numcarnetMSP.Text,
-                    Socio_economico_a_cargo_familiar_enfermedad_catastrofica_rara_tiempo = txt_acargofamiliarenfermedadraratiempo.Text,
-                    Socio_economico_a_cargo_familiar_enfermedad_catastrofica_rara_tipoenfermedad = txt_familiarenfermedadraratipo.Text,
-
-                    //Actividad tiempo libre
-                    Socio_economico_otro_especifique = txt_otraactividad.Text,
-                    Socio_economico_actividad_economica_adicional_detalle = txt_actividadeconomicadetalle.Text,
-                    Socio_economico_actividad_economica_adicional_tiempo_destina = txt_actividadeconomicatiempodestina.Text,
-                    Socio_economico_actividad_economica_adicional_hace_tiempo = txt_actividadeconomicatiemporealiza.Text,
-                    Socio_economico_actividad_deportiva_especificar = txt_especifiquedeporte.Text,
-                    Socio_economico_actividad_deportiva_frecuencia = txt_frecuenciadeporte.Text,
-                    Socio_economico_actividad_deportiva_edad = txt_edadpracticadeporte.Text,
-                    Socio_economico_lesion_tipo = txt_tipolesion.Text,
-                    Socio_economico_lesion_edad = txt_edadlesion.Text,
-
-                    //Informacion para uso de bienestar familiar
-                    Socio_economico_evaluacion_relacion_familiar_porque = txt_relacionfamiliarporque.Text,
-                    Socio_economico_evaluacion_relacion_pareja_porque = txt_relacionparejaporque.Text,
-                    Socio_economico_evaluacion_relacion_hijos_porque = txt_relacionconhijosporque.Text,
-                    Socio_economico_problemas_familiares_observaciones = txt_observacionesfamiliares.Text,
-                    Socio_economico_nivel_salud_familia_porque = txt_nivelsaludfamiliarporque.Text,
-                    Socio_economico_familia_observaciones = txt_observacionesgenerales.Text,
-                    Socio_economico_informacion_adicional = txt_informacionadicional.Text,
-
-                    Per_id = perso
-                };
+                sso = new Tbl_SocioEconomico();                              
 
                 //DATOS GENERALES
                 //Modalidad de Trabajo
@@ -2028,6 +1805,15 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                 }
 
                 //SALUD
+                //Enfermedad Preexistente
+                if (cb_sienfermedad.Checked == true)
+                {
+                    sso.Socio_economico_posee_enfermedad_si = "SI";
+                }
+                if (cb_noenfermedad.Checked == true)
+                {
+                    sso.Socio_economico_posee_enfermedad_no = "SI";
+                }
                 //Posee Discapacidad
                 if (cb_discapacidadsi.Checked == true)
                 {
@@ -2081,27 +1867,6 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                 if (cb_alcoholno.Checked == true)
                 {
                     sso.Socio_economico_consume_alcohol_no = "SI";
-                }
-                //Frecuencia consumo alcohol
-                if (cb_consumoalcoholdiario.Checked == true)
-                {
-                    sso.Socio_economico_consume_alcohol_frecuencia_diaria = "SI";
-                }
-                if (cb_consumoalcoholsemanal.Checked == true)
-                {
-                    sso.Socio_economico_consume_alcohol_frecuencia_semanal = "SI";
-                }
-                if (cb_consumoalcoholquincenal.Checked == true)
-                {
-                    sso.Socio_economico_consume_alcohol_frecuencia_quincenal = "SI";
-                }
-                if (cb_consumoalcoholmensual.Checked == true)
-                {
-                    sso.Socio_economico_consume_alcohol_frecuencia_mensual = "SI";
-                }
-                if (cb_consumoalcoholreuniones.Checked == true)
-                {
-                    sso.Socio_economico_consume_alcohol_frecuencia_reuniones = "SI";
                 }
                 //Consumo tabaco
                 if (cb_tabacosi.Checked == true)
@@ -2485,6 +2250,187 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                     sso.Socio_economico_informacion_general_real_no = "SI";
                 }
 
+                sso.Socio_economico_fechaHora = txt_fecharegistro.Text;
+
+                //Datos código y versión
+                sso.Socio_economico_codigo_inicial = txt_codigoinicio.Text;
+                sso.Socio_economico_version = txt_version.Text;
+
+                //Datos Generales
+                sso.Socio_economico_tipo_de_sangre = txt_tipodesangre.Text;
+
+                sso.Socio_economico_telefono_convencional = txt_telconvecional.Text;
+                sso.Socio_economico_telefono_celular = txt_telcelular.Text;
+                sso.Socio_economico_email = txt_email.Text;
+
+                sso.Socio_economico_lugar_nacimiento = txt_lugarnacimiento.Text;
+
+                sso.Socio_economico_direcciondomicilio_provincia = txt_provincia.Text;
+                sso.Socio_economico_direcciondomicilio_canton = txt_canton.Text;
+                sso.Socio_economico_direcciondomicilio_parroquia = txt_parroquia.Text;
+                sso.Socio_economico_direcciondomicilio_barrio = txt_barrio.Text;
+
+                sso.Socio_economico_direcciondomicilio_calle_principal = txt_calleprincipal.Text;
+                sso.Socio_economico_direcciondomicilio_numero = txt_mumerodecasa.Text;
+                sso.Socio_economico_direcciondomicilio_calle_secundaria = txt_callesecundaria.Text;
+                sso.Socio_economico_direcciondomicilio_referencia = txt_refubicardomicilio.Text;
+
+                sso.Socio_economico_tipovivienda_otro_indique = txt_tipoviviendaotro.Text;
+
+                sso.Socio_economico_contacto_emergencia_nombres_apellidos = txt_emernomyape.Text;
+                sso.Socio_economico_contacto_emergencia_parentesco = txt_emeparentesco.Text;
+                sso.Socio_economico_contacto_emergencia_telefono = txt_emetelefono.Text;
+                sso.Socio_economico_contacto_emergencia_calle_principal = txt_emecalleprincipal.Text;
+                sso.Socio_economico_contacto_emergencia_numero_domicilio = txt_emenumdomicilio.Text;
+                sso.Socio_economico_contacto_emergencia_calle_secundaria = txt_emecallesecun.Text;
+                sso.Socio_economico_contacto_emergencia_referencia_domicilio = txt_emerefubicardomicilio.Text;
+
+                //Salud
+                sso.Socio_economico_posee_enfermedad = txt_poseeenfermedadprexistente.Text;
+                sso.Socio_economico_discapacidad_tipo = txt_tipodiscapacidad.Text;
+                sso.Socio_economico_discapacidad_porcentaje = txt_porcentajediscapacidad.Text;
+                sso.Socio_economico_discapacidad_carnet_conadis = txt_numcarnetconadis.Text;
+                sso.Socio_economico_discapacidad_fecha_caducidad_carnet = txt_fechacaducidadcarnet.Text;
+
+                sso.Socio_economico_estado_gestacion_tiempo = txt_gestacióntiempo.Text;
+                sso.Socio_economico_fecha_tentativa_parto = txt_fechatentativaparto.Text;
+
+                sso.Socio_economico_periodo_lactancia_fecha_culminacion = txt_fechaculmicacionlactancia.Text;
+
+                sso.Socio_economico_enfermedad_cronica_cual = txt_cualcatastrofica.Text;
+
+                sso.Socio_economico_enfermedad_rara_cual = txt_enfermedadraracual.Text;
+
+                sso.Socio_economico_consume_alcohol_frecuencia = txt_causaconsumoalcohol.Text;
+                sso.Socio_economico_consume_alcohol_tiempo_consumo = txt_tiempoconsumoalcohol.Text;
+
+                sso.Socio_economico_consume_tabaco_frecuencia_consumo = txt_frecuenciaconsumotabaco.Text;
+                sso.Socio_economico_consume_tabaco_tiempo_consumo = txt_tiempoconsumotabaco.Text;
+
+                sso.Socio_economico_consume_sustancia_psicotropica_tipo = txt_sustanciapsicotropicatipo.Text;
+                sso.Socio_economico_consume_sustancia_psicotropica_frecuencia_consumo = txt_sustanciapsicotropicafrecuencia.Text;
+
+                //Situacion económica del servidor
+                sso.Socio_economico_numero_miembro_economicamente_activos = txt_miembroactivoseconomicamente.Text;
+                sso.Socio_economico_situación_laboral_del_conyugue = txt_situacionlaboralconyugue.Text;
+
+                sso.Socio_economico_total_ingresos_mensuales_proyectados_1 = txt_totalingresos1.Text;
+                sso.Socio_economico_ayuda1 = txt_ayuda1.Text;
+                sso.Socio_economico_otros1 = txt_otros1.Text;
+                sso.Socio_economico_total_egresos_alimentacion = txt_alimentación.Text;
+
+                sso.Socio_economico_total_ingresos_mensuales_proyectados_2 = txt_totalingresos2.Text;
+                sso.Socio_economico_ayuda2 = txt_ayuda2.Text;
+                sso.Socio_economico_otros2 = txt_otros2.Text;
+                sso.Socio_economico_total_egresos_vivienda = txt_vivienda.Text;
+
+                sso.Socio_economico_total_ingresos_mensuales_proyectados_3 = txt_totalingresos3.Text;
+                sso.Socio_economico_ayuda3 = txt_ayuda3.Text;
+                sso.Socio_economico_otros3 = txt_otros3.Text;
+                sso.Socio_economico_total_egresos_educacion = txt_educación.Text;
+
+                sso.Socio_economico_total_ingresos_mensuales_proyectados_4 = txt_totalingresos4.Text;
+                sso.Socio_economico_ayuda4 = txt_ayuda4.Text;
+                sso.Socio_economico_otros4 = txt_otros4.Text;
+                sso.Socio_economico_total_egresos_servicios_basicos = txt_serviciosbasicos.Text;
+
+                sso.Socio_economico_total_ingresos_mensuales_proyectados_5 = txt_totalingresos5.Text;
+                sso.Socio_economico_ayuda5 = txt_ayuda5.Text;
+                sso.Socio_economico_otros5 = txt_otros5.Text;
+                sso.Socio_economico_total_egresos_salud = txt_salud.Text;
+
+                sso.Socio_economico_total_ingresos_mensuales_proyectados_6 = txt_totalingresos6.Text;
+                sso.Socio_economico_ayuda6 = txt_ayuda6.Text;
+                sso.Socio_economico_otros6 = txt_otros6.Text;
+                sso.Socio_economico_total_egresos_movilizacion = txt_movilización.Text;
+
+                sso.Socio_economico_total_ingresos_mensuales_proyectados_7 = txt_totalingresos7.Text;
+                sso.Socio_economico_ayuda7 = txt_ayuda7.Text;
+                sso.Socio_economico_otros7 = txt_otros7.Text;
+                sso.Socio_economico_total_egresos_deudas = txt_deudas.Text;
+
+                sso.Socio_economico_total_ingresos_mensuales_proyectados_8 = txt_totalingresos8.Text;
+                sso.Socio_economico_ayuda8 = txt_ayuda8.Text;
+                sso.Socio_economico_otros8 = txt_otros8.Text;
+                sso.Socio_economico_total_egresos_pensiones_otros = txt_otrospensiones.Text;
+
+                sso.Socio_economico_descripcion_mueble_valor_casa = txt_biencasa.Text;
+                sso.Socio_economico_descripcion_mueble_valor_departamento = txt_biendepartamento.Text;
+                sso.Socio_economico_descripcion_mueble_valor_vehiculo = txt_bienvehiculo.Text;
+                sso.Socio_economico_descripcion_mueble_valor_terreno = txt_bienterreno.Text;
+                sso.Socio_economico_descripcion_mueble_valor_negocio = txt_bienegocio.Text;
+                sso.Socio_economico_descripcion_mueble_valor_muebles_enseres = txt_bienmueblesyenseres.Text;
+
+                sso.Socio_economico_caracteristica_vivienda_descripcion_otra_especifique = txt_otrodescripcionviviendafamilia.Text;
+                sso.Socio_economico_caracteristica_vivienda_tenencia_otra_especifique = txt_otratenencia.Text;
+                sso.Socio_economico_caracteristica_vivienda_tipo_otro_especifique = txt_otrotipodecasa.Text;
+                sso.Socio_economico_caracteristica_vivienda_distribucion_otro_especifique = txt_otradistribucioncasa.Text;
+
+                //Información Familiar
+                sso.Socio_economico_nombres_apellidos_familiar1 = txt_nomapellidos1.Text;
+                sso.Socio_economico_parentesco_familiar1 = txt_parentesco1.Text;
+                sso.Socio_economico_fecha_nacimiento_familiar1 = txt_fechanacimiento1.Text;
+                sso.Socio_economico_edad_familiar1 = txt_edad1.Text;
+
+                sso.Socio_economico_nombres_apellidos_familiar2 = txt_nomapellidos2.Text;
+                sso.Socio_economico_parentesco_familiar2 = txt_parentesco2.Text;
+                sso.Socio_economico_fecha_nacimiento_familiar2 = txt_fechanacimiento2.Text;
+                sso.Socio_economico_edad_familiar2 = txt_edad2.Text;
+
+                sso.Socio_economico_nombres_apellidos_familiar3 = txt_nomapellidos3.Text;
+                sso.Socio_economico_parentesco_familiar3 = txt_parentesco3.Text;
+                sso.Socio_economico_fecha_nacimiento_familiar3 = txt_fechanacimiento3.Text;
+                sso.Socio_economico_edad_familiar3 = txt_edad3.Text;
+
+                sso.Socio_economico_nombres_apellidos_familiar4 = txt_nomapellidos4.Text;
+                sso.Socio_economico_parentesco_familiar4 = txt_parentesco4.Text;
+                sso.Socio_economico_fecha_nacimiento_familiar4 = txt_fechanacimiento4.Text;
+                sso.Socio_economico_edad_familiar4 = txt_edad4.Text;
+
+                sso.Socio_economico_nombres_apellidos_familiar5 = txt_nomapellidos5.Text;
+                sso.Socio_economico_parentesco_familiar5 = txt_parentesco5.Text;
+                sso.Socio_economico_fecha_nacimiento_familiar5 = txt_fechanacimiento5.Text;
+                sso.Socio_economico_edad_familiar5 = txt_edad5.Text;
+
+                sso.Socio_economico_nombres_apellidos_familiar_discapacidad1 = txt_familiardiscapacitadonomape1.Text;
+                sso.Socio_economico_fecha_caducidad_carnet_familiar_discapacidad1 = txt_familiardiscapacitadofechacaducidadcarnet1.Text;
+                sso.Socio_economico_familiar_discapacidad_tipo1 = txt_familiardiscapacitadotipodiscapacidad1.Text;
+                sso.Socio_economico_familiar_discapacidad_porcentaje1 = txt_familiardiscapacitadoporcentajediscapacidad1.Text;
+                sso.Socio_economico_familiar_discapacidad_parentesco1 = txt_familiardiscapacitadoparentesco1.Text;
+                sso.Socio_economico_familiar_discapacidad_fecha_nacimiento1 = txt_familiardiscapacitadofechanacimiento1.Text;
+
+                sso.Socio_economico_nombres_apellidos_familiar_discapacidad2 = txt_familiardiscapacitadonomape2.Text;
+                sso.Socio_economico_fecha_caducidad_carnet_familiar_discapacidad2 = txt_familiardiscapacitadofechacaducidadcarnet2.Text;
+                sso.Socio_economico_familiar_discapacidad_tipo2 = txt_familiardiscapacitadotipodiscapacidad2.Text;
+                sso.Socio_economico_familiar_discapacidad_porcentaje2 = txt_familiardiscapacitadoporcentajediscapacidad2.Text;
+                sso.Socio_economico_familiar_discapacidad_parentesco2 = txt_familiardiscapacitadoparentesco2.Text;
+                sso.Socio_economico_familiar_discapacidad_fecha_nacimiento2 = txt_familiardiscapacitadofechanacimiento2.Text;
+
+                sso.Socio_economico_registrar_dependencia_familiar_MT_tiempo = txt_dependenciaministeriotrabajotiempo.Text;
+                sso.Socio_economico_registrar_dependencia_familiar_MT_numero_carnetMSP = txt_numcarnetMSP.Text;
+                sso.Socio_economico_a_cargo_familiar_enfermedad_catastrofica_rara_tiempo = txt_acargofamiliarenfermedadraratiempo.Text;
+                sso.Socio_economico_a_cargo_familiar_enfermedad_catastrofica_rara_tipoenfermedad = txt_familiarenfermedadraratipo.Text;
+
+                //Actividad tiempo libre
+                sso.Socio_economico_otro_especifique = txt_otraactividad.Text;
+                sso.Socio_economico_actividad_economica_adicional_detalle = txt_actividadeconomicadetalle.Text;
+                sso.Socio_economico_actividad_economica_adicional_tiempo_destina = txt_actividadeconomicatiempodestina.Text;
+                sso.Socio_economico_actividad_economica_adicional_hace_tiempo = txt_actividadeconomicatiemporealiza.Text;
+                sso.Socio_economico_actividad_deportiva_especificar = txt_especifiquedeporte.Text;
+                sso.Socio_economico_actividad_deportiva_frecuencia = txt_frecuenciadeporte.Text;
+                sso.Socio_economico_actividad_deportiva_edad = txt_edadpracticadeporte.Text;
+                sso.Socio_economico_lesion_tipo = txt_tipolesion.Text;
+                sso.Socio_economico_lesion_edad = txt_edadlesion.Text;
+
+                //Informacion para uso de bienestar familiar
+                sso.Socio_economico_evaluacion_relacion_familiar_porque = txt_relacionfamiliarporque.Text;
+                sso.Socio_economico_evaluacion_relacion_pareja_porque = txt_relacionparejaporque.Text;
+                sso.Socio_economico_evaluacion_relacion_hijos_porque = txt_relacionconhijosporque.Text;
+                sso.Socio_economico_problemas_familiares_observaciones = txt_observacionesfamiliares.Text;
+                sso.Socio_economico_nivel_salud_familia_porque = txt_nivelsaludfamiliarporque.Text;
+                sso.Socio_economico_familia_observaciones = txt_observacionesgenerales.Text;
+                sso.Socio_economico_informacion_adicional = txt_informacionadicional.Text;
+
                 sso.Per_id = perso;
 
                 CN_SocioEconomico.GuardarSocioEconomico(sso);
@@ -2525,9 +2471,10 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                 sso.Socio_economico_direcciondomicilio_parroquia = txt_parroquia.Text;
                 sso.Socio_economico_direcciondomicilio_barrio = txt_barrio.Text;
 
-                sso.Socio_economico_calle_vivienda_numeracion = txt_calleubicada.Text;
-                sso.Socio_economico_calle_secundaria = txt_callesecundaria.Text;
-                sso.Socio_economico_referencia_ubicar_domicilio = txt_refubicardomicilio.Text;
+                sso.Socio_economico_direcciondomicilio_calle_principal = txt_calleprincipal.Text;
+                sso.Socio_economico_direcciondomicilio_numero = txt_mumerodecasa.Text;
+                sso.Socio_economico_direcciondomicilio_calle_secundaria = txt_callesecundaria.Text;
+                sso.Socio_economico_direcciondomicilio_referencia = txt_refubicardomicilio.Text;
 
                 sso.Socio_economico_tipovivienda_otro_indique = txt_tipoviviendaotro.Text;
 
@@ -2539,8 +2486,6 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                 sso.Socio_economico_contacto_emergencia_calle_secundaria = txt_emecallesecun.Text;
                 sso.Socio_economico_contacto_emergencia_referencia_domicilio = txt_emerefubicardomicilio.Text;
 
-                sso.Socio_economico_moviliza_trabajo_vivienda = txt_movilizatrabajoovivienda.Text;
-
                 //Salud
                 sso.Socio_economico_posee_enfermedad = txt_poseeenfermedadprexistente.Text;
                 sso.Socio_economico_discapacidad_tipo = txt_tipodiscapacidad.Text;
@@ -2550,78 +2495,77 @@ namespace SistemaECU911.Template.Views_Socio_Economico
 
                 sso.Socio_economico_estado_gestacion_tiempo = txt_gestacióntiempo.Text;
                 sso.Socio_economico_fecha_tentativa_parto = txt_fechatentativaparto.Text;
+
                 sso.Socio_economico_periodo_lactancia_fecha_culminacion = txt_fechaculmicacionlactancia.Text;
 
                 sso.Socio_economico_enfermedad_cronica_cual = txt_cualcatastrofica.Text;
-                sso.Socio_economico_enfermedad_cronica_otras_enfermedades = txt_otrasenfermedadescat.Text;
+
                 sso.Socio_economico_enfermedad_rara_cual = txt_enfermedadraracual.Text;
 
-                sso.Socio_economico_consume_alcohol_causa = txt_causaconsumoalcohol.Text;
+                sso.Socio_economico_consume_alcohol_frecuencia = txt_causaconsumoalcohol.Text;
                 sso.Socio_economico_consume_alcohol_tiempo_consumo = txt_tiempoconsumoalcohol.Text;
+
                 sso.Socio_economico_consume_tabaco_frecuencia_consumo = txt_frecuenciaconsumotabaco.Text;
                 sso.Socio_economico_consume_tabaco_tiempo_consumo = txt_tiempoconsumotabaco.Text;
+
                 sso.Socio_economico_consume_sustancia_psicotropica_tipo = txt_sustanciapsicotropicatipo.Text;
                 sso.Socio_economico_consume_sustancia_psicotropica_frecuencia_consumo = txt_sustanciapsicotropicafrecuencia.Text;
 
                 //Situacion económica del servidor
-                sso.Socio_economico_numero_miembro_economicamente_activos = Convert.ToInt32(txt_miembroactivoseconomicamente.Text);
+                sso.Socio_economico_numero_miembro_economicamente_activos = txt_miembroactivoseconomicamente.Text;
+                sso.Socio_economico_situación_laboral_del_conyugue = txt_situacionlaboralconyugue.Text;
 
-                sso.Socio_economico_total_ingresos_mensuales_proyectados_1 = Convert.ToInt32(txt_totalingresos1.Text);
-                sso.Socio_economico_ayuda1 = Convert.ToInt32(txt_ayuda1.Text);
-                sso.Socio_economico_otros1 = Convert.ToInt32(txt_otros1.Text);
-                sso.Socio_economico_total_egresos_alimentacion = Convert.ToInt32(txt_alimentación.Text);
+                sso.Socio_economico_total_ingresos_mensuales_proyectados_1 = txt_totalingresos1.Text;
+                sso.Socio_economico_ayuda1 = txt_ayuda1.Text;
+                sso.Socio_economico_otros1 = txt_otros1.Text;
+                sso.Socio_economico_total_egresos_alimentacion = txt_alimentación.Text;
 
-                sso.Socio_economico_total_ingresos_mensuales_proyectados_2 = Convert.ToInt32(txt_totalingresos2.Text);
-                sso.Socio_economico_ayuda2 = Convert.ToInt32(txt_ayuda2.Text);
-                sso.Socio_economico_otros2 = Convert.ToInt32(txt_otros2.Text);
-                sso.Socio_economico_total_egresos_vivienda = Convert.ToInt32(txt_vivienda.Text);
+                sso.Socio_economico_total_ingresos_mensuales_proyectados_2 = txt_totalingresos2.Text;
+                sso.Socio_economico_ayuda2 = txt_ayuda2.Text;
+                sso.Socio_economico_otros2 = txt_otros2.Text;
+                sso.Socio_economico_total_egresos_vivienda = txt_vivienda.Text;
 
-                sso.Socio_economico_total_ingresos_mensuales_proyectados_3 = Convert.ToInt32(txt_totalingresos3.Text);
-                sso.Socio_economico_ayuda3 = Convert.ToInt32(txt_ayuda3.Text);
-                sso.Socio_economico_otros3 = Convert.ToInt32(txt_otros3.Text);
-                sso.Socio_economico_total_egresos_educacion = Convert.ToInt32(txt_educación.Text);
+                sso.Socio_economico_total_ingresos_mensuales_proyectados_3 = txt_totalingresos3.Text;
+                sso.Socio_economico_ayuda3 = txt_ayuda3.Text;
+                sso.Socio_economico_otros3 = txt_otros3.Text;
+                sso.Socio_economico_total_egresos_educacion = txt_educación.Text;
 
-                sso.Socio_economico_total_ingresos_mensuales_proyectados_4 = Convert.ToInt32(txt_totalingresos4.Text);
-                sso.Socio_economico_ayuda4 = Convert.ToInt32(txt_ayuda4.Text);
-                sso.Socio_economico_otros4 = Convert.ToInt32(txt_otros4.Text);
-                sso.Socio_economico_total_egresos_servicios_basicos = Convert.ToInt32(txt_serviciosbasicos.Text);
+                sso.Socio_economico_total_ingresos_mensuales_proyectados_4 = txt_totalingresos4.Text;
+                sso.Socio_economico_ayuda4 = txt_ayuda4.Text;
+                sso.Socio_economico_otros4 = txt_otros4.Text;
+                sso.Socio_economico_total_egresos_servicios_basicos = txt_serviciosbasicos.Text;
 
-                sso.Socio_economico_total_ingresos_mensuales_proyectados_5 = Convert.ToInt32(txt_totalingresos5.Text);
-                sso.Socio_economico_ayuda5 = Convert.ToInt32(txt_ayuda5.Text);
-                sso.Socio_economico_otros5 = Convert.ToInt32(txt_otros5.Text);
-                sso.Socio_economico_total_egresos_salud = Convert.ToInt32(txt_salud.Text);
+                sso.Socio_economico_total_ingresos_mensuales_proyectados_5 = txt_totalingresos5.Text;
+                sso.Socio_economico_ayuda5 = txt_ayuda5.Text;
+                sso.Socio_economico_otros5 = txt_otros5.Text;
+                sso.Socio_economico_total_egresos_salud = txt_salud.Text;
 
-                sso.Socio_economico_total_ingresos_mensuales_proyectados_6 = Convert.ToInt32(txt_totalingresos6.Text);
-                sso.Socio_economico_ayuda6 = Convert.ToInt32(txt_ayuda6.Text);
-                sso.Socio_economico_otros6 = Convert.ToInt32(txt_otros6.Text);
-                sso.Socio_economico_total_egresos_movilizacion = Convert.ToInt32(txt_movilización.Text);
+                sso.Socio_economico_total_ingresos_mensuales_proyectados_6 = txt_totalingresos6.Text;
+                sso.Socio_economico_ayuda6 = txt_ayuda6.Text;
+                sso.Socio_economico_otros6 = txt_otros6.Text;
+                sso.Socio_economico_total_egresos_movilizacion = txt_movilización.Text;
 
-                sso.Socio_economico_total_ingresos_mensuales_proyectados_7 = Convert.ToInt32(txt_totalingresos7.Text);
-                sso.Socio_economico_ayuda7 = Convert.ToInt32(txt_ayuda7.Text);
-                sso.Socio_economico_otros7 = Convert.ToInt32(txt_otros7.Text);
-                sso.Socio_economico_total_egresos_deudas = Convert.ToInt32(txt_deudas.Text);
+                sso.Socio_economico_total_ingresos_mensuales_proyectados_7 = txt_totalingresos7.Text;
+                sso.Socio_economico_ayuda7 = txt_ayuda7.Text;
+                sso.Socio_economico_otros7 = txt_otros7.Text;
+                sso.Socio_economico_total_egresos_deudas = txt_deudas.Text;
 
-                sso.Socio_economico_total_ingresos_mensuales_proyectados_8 = Convert.ToInt32(txt_totalingresos8.Text);
-                sso.Socio_economico_ayuda8 = Convert.ToInt32(txt_ayuda8.Text);
-                sso.Socio_economico_otros8 = Convert.ToInt32(txt_otros8.Text);
-                sso.Socio_economico_total_egresos_pensiones_otros = Convert.ToInt32(txt_otrospensiones.Text);
+                sso.Socio_economico_total_ingresos_mensuales_proyectados_8 = txt_totalingresos8.Text;
+                sso.Socio_economico_ayuda8 = txt_ayuda8.Text;
+                sso.Socio_economico_otros8 = txt_otros8.Text;
+                sso.Socio_economico_total_egresos_pensiones_otros = txt_otrospensiones.Text;
 
-                sso.Socio_economico_total_ingresos_mensuales_proyectados_total_9 = Convert.ToInt32(txt_totalingresos9.Text);
-                sso.Socio_economico_ayuda_y_otros_total_9 = Convert.ToInt32(txt_totalayudayotros9.Text);
-                sso.Socio_economico_total_egresos_total_9 = Convert.ToInt32(txt_totalegresos.Text);
-
-                sso.Socio_economico_descripcion_mueble_valor_casa = Convert.ToInt32(txt_biencasa.Text);
-                sso.Socio_economico_descripcion_mueble_valor_departamento = Convert.ToInt32(txt_biendepartamento.Text);
-                sso.Socio_economico_descripcion_mueble_valor_vehiculo = Convert.ToInt32(txt_bienvehiculo.Text);
-                sso.Socio_economico_descripcion_mueble_valor_terreno = Convert.ToInt32(txt_bienterreno.Text);
-                sso.Socio_economico_descripcion_mueble_valor_negocio = Convert.ToInt32(txt_bienegocio.Text);
-                sso.Socio_economico_descripcion_mueble_valor_muebles_enseres = Convert.ToInt32(txt_bienmueblesyenseres.Text);
+                sso.Socio_economico_descripcion_mueble_valor_casa = txt_biencasa.Text;
+                sso.Socio_economico_descripcion_mueble_valor_departamento = txt_biendepartamento.Text;
+                sso.Socio_economico_descripcion_mueble_valor_vehiculo = txt_bienvehiculo.Text;
+                sso.Socio_economico_descripcion_mueble_valor_terreno = txt_bienterreno.Text;
+                sso.Socio_economico_descripcion_mueble_valor_negocio = txt_bienegocio.Text;
+                sso.Socio_economico_descripcion_mueble_valor_muebles_enseres = txt_bienmueblesyenseres.Text;
 
                 sso.Socio_economico_caracteristica_vivienda_descripcion_otra_especifique = txt_otrodescripcionviviendafamilia.Text;
                 sso.Socio_economico_caracteristica_vivienda_tenencia_otra_especifique = txt_otratenencia.Text;
                 sso.Socio_economico_caracteristica_vivienda_tipo_otro_especifique = txt_otrotipodecasa.Text;
                 sso.Socio_economico_caracteristica_vivienda_distribucion_otro_especifique = txt_otradistribucioncasa.Text;
-                sso.Socio_economico_caracteristica_vivienda_otro_especifique = txt_otrainformacioncasa.Text;
 
                 //Información Familiar
                 sso.Socio_economico_nombres_apellidos_familiar1 = txt_nomapellidos1.Text;
@@ -3007,6 +2951,23 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                 }
 
                 //SALUD
+                //Enfermedad Preexistente
+                if (cb_sienfermedad.Checked == true)
+                {
+                    sso.Socio_economico_posee_enfermedad_si = "SI";
+                }
+                else
+                {
+                    sso.Socio_economico_posee_enfermedad_si = null;
+                }
+                if (cb_noenfermedad.Checked == true)
+                {
+                    sso.Socio_economico_posee_enfermedad_no = "SI";
+                }
+                else 
+                {
+                    sso.Socio_economico_posee_enfermedad_no = null;
+                }
                 //Posee Discapacidad
                 if (cb_discapacidadsi.Checked == true)
                 {
@@ -3109,47 +3070,6 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                 {
                     sso.Socio_economico_consume_alcohol_no = null;
                 }
-                //Frecuencia consumo alcohol
-                if (cb_consumoalcoholdiario.Checked == true)
-                {
-                    sso.Socio_economico_consume_alcohol_frecuencia_diaria = "SI";
-                }
-                else
-                {
-                    sso.Socio_economico_consume_alcohol_frecuencia_diaria = null;
-                }
-                if (cb_consumoalcoholsemanal.Checked == true)
-                {
-                    sso.Socio_economico_consume_alcohol_frecuencia_semanal = "SI";
-                }
-                else
-                {
-                    sso.Socio_economico_consume_alcohol_frecuencia_semanal = null;
-                }
-                if (cb_consumoalcoholquincenal.Checked == true)
-                {
-                    sso.Socio_economico_consume_alcohol_frecuencia_quincenal = "SI";
-                }
-                else
-                {
-                    sso.Socio_economico_consume_alcohol_frecuencia_quincenal = null;
-                }
-                if (cb_consumoalcoholmensual.Checked == true)
-                {
-                    sso.Socio_economico_consume_alcohol_frecuencia_mensual = "SI";
-                }
-                else
-                {
-                    sso.Socio_economico_consume_alcohol_frecuencia_mensual = null;
-                }
-                if (cb_consumoalcoholreuniones.Checked == true)
-                {
-                    sso.Socio_economico_consume_alcohol_frecuencia_reuniones = "SI";
-                }
-                else
-                {
-                    sso.Socio_economico_consume_alcohol_frecuencia_reuniones = null;
-                }
                 //Consumo tabaco
                 if (cb_tabacosi.Checked == true)
                 {
@@ -3195,11 +3115,11 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                 }
                 if (cb_laborales.Checked == true)
                 {
-                    sso.Socio_economico_problemas_consumo_familiares = "SI";
+                    sso.Socio_economico_problemas_consumo_laborales = "SI";
                 }
                 else
                 {
-                    sso.Socio_economico_problemas_consumo_familiares = null;
+                    sso.Socio_economico_problemas_consumo_laborales = null;
                 }
                 if (cb_economicos.Checked == true)
                 {
@@ -3894,22 +3814,14 @@ namespace SistemaECU911.Template.Views_Socio_Economico
 
         protected void btn_guardar_Click(object sender, EventArgs e)
         {
-            if (txt_biencasa.Text.Equals("") || txt_biendepartamento.Text.Equals("") || txt_bienvehiculo.Text.Equals("") ||
-                txt_bienvehiculo.Text.Equals("") || txt_bienegocio.Text.Equals("") || txt_bienmueblesyenseres.Text.Equals(""))
+            if (cb_certificosi.Checked == true)
             {
-                lbl_bienes.Text = "Complete todos estos campos";
+                Guardar_modificar_datos(Convert.ToInt32(Request["cod"]));
             }
             else
             {
-                if (cb_certificosi.Checked == true)
-                {
-                    Guardar_modificar_datos(Convert.ToInt32(Request["cod"]));
-                }
-                else
-                {
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Por favor, marque la casilla SI, para validar que la información suministrada es real')", true);
-                }
-            }                     
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Por favor, marque la casilla SI, para validar que la información suministrada es real')", true);
+            }                   
         }
 
         protected void btn_cancelar_Click(object sender, EventArgs e)
@@ -3926,12 +3838,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_modalidadvinculacionlosep.Checked == true)
             {
-                cb_modalidadvinculacioncodigotrabajo.Enabled = false;
-            }
-            else
-            {
-                cb_modalidadvinculacionlosep.Enabled = true;
-                cb_modalidadvinculacioncodigotrabajo.Enabled = true;
+                cb_modalidadvinculacioncodigotrabajo.Checked = false;
             }
         }
 
@@ -3939,12 +3846,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_modalidadvinculacioncodigotrabajo.Checked == true)
             {
-                cb_modalidadvinculacionlosep.Enabled = false;
-            }
-            else
-            {
-                cb_modalidadvinculacionlosep.Enabled = true;
-                cb_modalidadvinculacioncodigotrabajo.Enabled = true;
+                cb_modalidadvinculacionlosep.Checked = false;
             }
         }
 
@@ -3952,18 +3854,10 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_soltero.Checked == true)
             {
-                cb_casado.Enabled = false;
-                cb_viudo.Enabled = false;
-                cb_unionlibre.Enabled = false;
-                cb_divorciado.Enabled = false;
-            }
-            else
-            {
-                cb_soltero.Enabled = true;
-                cb_casado.Enabled = true;
-                cb_viudo.Enabled = true;
-                cb_unionlibre.Enabled = true;
-                cb_divorciado.Enabled = true;
+                cb_casado.Checked = false;
+                cb_viudo.Checked = false;
+                cb_unionlibre.Checked = false;
+                cb_divorciado.Checked = false;
             }
         }
 
@@ -3971,18 +3865,10 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_casado.Checked == true)
             {
-                cb_soltero.Enabled = false;
-                cb_viudo.Enabled = false;
-                cb_unionlibre.Enabled = false;
-                cb_divorciado.Enabled = false;
-            }
-            else
-            {
-                cb_soltero.Enabled = true;
-                cb_casado.Enabled = true;
-                cb_viudo.Enabled = true;
-                cb_unionlibre.Enabled = true;
-                cb_divorciado.Enabled = true;
+                cb_soltero.Checked = false;
+                cb_viudo.Checked = false;
+                cb_unionlibre.Checked = false;
+                cb_divorciado.Checked = false;
             }
         }
 
@@ -3990,18 +3876,10 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_viudo.Checked == true)
             {
-                cb_soltero.Enabled = false;
-                cb_casado.Enabled = false;
-                cb_unionlibre.Enabled = false;
-                cb_divorciado.Enabled = false;
-            }
-            else
-            {
-                cb_soltero.Enabled = true;
-                cb_casado.Enabled = true;
-                cb_viudo.Enabled = true;
-                cb_unionlibre.Enabled = true;
-                cb_divorciado.Enabled = true;
+                cb_soltero.Checked = false;
+                cb_casado.Checked = false;
+                cb_unionlibre.Checked = false;
+                cb_divorciado.Checked = false;
             }
         }
 
@@ -4009,18 +3887,10 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_unionlibre.Checked == true)
             {
-                cb_soltero.Enabled = false;
-                cb_casado.Enabled = false;
-                cb_viudo.Enabled = false;
-                cb_divorciado.Enabled = false;
-            }
-            else
-            {
-                cb_soltero.Enabled = true;
-                cb_casado.Enabled = true;
-                cb_viudo.Enabled = true;
-                cb_unionlibre.Enabled = true;
-                cb_divorciado.Enabled = true;
+                cb_soltero.Checked = false;
+                cb_casado.Checked = false;
+                cb_viudo.Checked = false;
+                cb_divorciado.Checked = false;
             }
         }
 
@@ -4028,18 +3898,10 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_divorciado.Checked == true)
             {
-                cb_soltero.Enabled = false;
-                cb_casado.Enabled = false;
-                cb_viudo.Enabled = false;
-                cb_unionlibre.Enabled = false;
-            }
-            else
-            {
-                cb_soltero.Enabled = true;
-                cb_casado.Enabled = true;
-                cb_viudo.Enabled = true;
-                cb_unionlibre.Enabled = true;
-                cb_divorciado.Enabled = true;
+                cb_soltero.Checked = false;
+                cb_casado.Checked = false;
+                cb_viudo.Checked = false;
+                cb_unionlibre.Checked = false;
             }
         }
 
@@ -4047,12 +3909,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_genmasculino.Checked == true)
             {
-                cb_genfemenino.Enabled = false;
-            }
-            else
-            {
-                cb_genmasculino.Enabled = true;
-                cb_genfemenino.Enabled = true;
+                cb_genfemenino.Checked = false;
             }
         }
 
@@ -4060,12 +3917,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_genfemenino.Checked == true)
             {
-                cb_genmasculino.Enabled = false;
-            }
-            else
-            {
-                cb_genmasculino.Enabled = true;
-                cb_genfemenino.Enabled = true;
+                cb_genmasculino.Checked = false;
             }
         }
 
@@ -4614,13 +4466,11 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             if (cb_gestaciónsi.Checked == true)
             {
                 cb_gestaciónno.Enabled = false;
-                tbl_estadogestacion.Visible = true;
             }
             else
             {
                 cb_gestaciónsi.Enabled = true;
                 cb_gestaciónno.Enabled = true;
-                tbl_estadogestacion.Visible = false;
             }
         }
 
@@ -4677,7 +4527,6 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                 cb_catastroficasi.Enabled = true;
                 cb_catastroficano.Enabled = true;
                 txt_cualcatastrofica.Enabled = true;
-                txt_otrasenfermedadescat.Enabled = true;
             }
         }
 
@@ -4687,14 +4536,12 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             {
                 cb_catastroficasi.Enabled = false;
                 txt_cualcatastrofica.Enabled = false;
-                txt_otrasenfermedadescat.Enabled = false;
             }
             else
             {
                 cb_catastroficasi.Enabled = true;
                 cb_catastroficano.Enabled = true;
                 txt_cualcatastrofica.Enabled = true;
-                txt_otrasenfermedadescat.Enabled = true;
             }
         }
 
@@ -4738,11 +4585,6 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                 cb_alcoholsi.Enabled = true;
                 cb_alcoholno.Enabled = true;
                 txt_causaconsumoalcohol.Enabled = true;
-                cb_consumoalcoholdiario.Enabled = true;
-                cb_consumoalcoholsemanal.Enabled = true;
-                cb_consumoalcoholquincenal.Enabled = true;
-                cb_consumoalcoholmensual.Enabled = true;
-                cb_consumoalcoholreuniones.Enabled = true;
                 txt_tiempoconsumoalcohol.Enabled = true;
             }
         }
@@ -4753,121 +4595,12 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             {
                 cb_alcoholsi.Enabled = false;
                 txt_causaconsumoalcohol.Enabled = false;
-                cb_consumoalcoholdiario.Enabled = false;
-                cb_consumoalcoholsemanal.Enabled = false;
-                cb_consumoalcoholquincenal.Enabled = false;
-                cb_consumoalcoholmensual.Enabled = false;
-                cb_consumoalcoholreuniones.Enabled = false;
-                txt_tiempoconsumoalcohol.Enabled = false;
-                tablafrecuenciaalcohol.Visible = false;
             }
             else
             {
                 cb_alcoholsi.Enabled = true;
                 cb_alcoholno.Enabled = true;
                 txt_causaconsumoalcohol.Enabled = true;
-                cb_consumoalcoholdiario.Enabled = true;
-                cb_consumoalcoholsemanal.Enabled = true;
-                cb_consumoalcoholquincenal.Enabled = true;
-                cb_consumoalcoholmensual.Enabled = true;
-                cb_consumoalcoholreuniones.Enabled = true;
-                txt_tiempoconsumoalcohol.Enabled = true;
-                tablafrecuenciaalcohol.Visible = true;
-            }
-        }
-
-        protected void cb_consumoalcoholdiario_CheckedChanged(object sender, EventArgs e)
-        {
-            if (cb_consumoalcoholdiario.Checked == true)
-            {
-                cb_consumoalcoholsemanal.Enabled = false;
-                cb_consumoalcoholquincenal.Enabled = false;
-                cb_consumoalcoholmensual.Enabled = false;
-                cb_consumoalcoholreuniones.Enabled = false;
-            }
-            else
-            {
-                cb_consumoalcoholdiario.Enabled = true;
-                cb_consumoalcoholsemanal.Enabled = true;
-                cb_consumoalcoholquincenal.Enabled = true;
-                cb_consumoalcoholmensual.Enabled = true;
-                cb_consumoalcoholreuniones.Enabled = true;
-            }
-        }
-
-        protected void cb_consumoalcoholsemanal_CheckedChanged(object sender, EventArgs e)
-        {
-            if (cb_consumoalcoholsemanal.Checked == true)
-            {
-                cb_consumoalcoholdiario.Enabled = false;
-                cb_consumoalcoholquincenal.Enabled = false;
-                cb_consumoalcoholmensual.Enabled = false;
-                cb_consumoalcoholreuniones.Enabled = false;
-            }
-            else
-            {
-                cb_consumoalcoholdiario.Enabled = true;
-                cb_consumoalcoholsemanal.Enabled = true;
-                cb_consumoalcoholquincenal.Enabled = true;
-                cb_consumoalcoholmensual.Enabled = true;
-                cb_consumoalcoholreuniones.Enabled = true;
-            }
-        }
-
-        protected void cb_consumoalcoholquincenal_CheckedChanged(object sender, EventArgs e)
-        {
-            if (cb_consumoalcoholquincenal.Checked == true)
-            {
-                cb_consumoalcoholdiario.Enabled = false;
-                cb_consumoalcoholsemanal.Enabled = false;
-                cb_consumoalcoholmensual.Enabled = false;
-                cb_consumoalcoholreuniones.Enabled = false;
-            }
-            else
-            {
-                cb_consumoalcoholdiario.Enabled = true;
-                cb_consumoalcoholsemanal.Enabled = true;
-                cb_consumoalcoholquincenal.Enabled = true;
-                cb_consumoalcoholmensual.Enabled = true;
-                cb_consumoalcoholreuniones.Enabled = true;
-            }
-        }
-
-        protected void cb_consumoalcoholmensual_CheckedChanged(object sender, EventArgs e)
-        {
-            if (cb_consumoalcoholmensual.Checked == true)
-            {
-                cb_consumoalcoholdiario.Enabled = false;
-                cb_consumoalcoholsemanal.Enabled = false;
-                cb_consumoalcoholquincenal.Enabled = false;
-                cb_consumoalcoholreuniones.Enabled = false;
-            }
-            else
-            {
-                cb_consumoalcoholdiario.Enabled = true;
-                cb_consumoalcoholsemanal.Enabled = true;
-                cb_consumoalcoholquincenal.Enabled = true;
-                cb_consumoalcoholmensual.Enabled = true;
-                cb_consumoalcoholreuniones.Enabled = true;
-            }
-        }
-
-        protected void cb_consumoalcoholreuniones_CheckedChanged(object sender, EventArgs e)
-        {
-            if (cb_consumoalcoholreuniones.Checked == true)
-            {
-                cb_consumoalcoholdiario.Enabled = false;
-                cb_consumoalcoholsemanal.Enabled = false;
-                cb_consumoalcoholquincenal.Enabled = false;
-                cb_consumoalcoholmensual.Enabled = false;
-            }
-            else
-            {
-                cb_consumoalcoholdiario.Enabled = true;
-                cb_consumoalcoholsemanal.Enabled = true;
-                cb_consumoalcoholquincenal.Enabled = true;
-                cb_consumoalcoholmensual.Enabled = true;
-                cb_consumoalcoholreuniones.Enabled = true;
             }
         }
 
@@ -5995,97 +5728,32 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             }
         }
 
-        protected void btn_totalingresos_Click(object sender, EventArgs e)
+        protected void cb_sienfermedad_CheckedChanged(object sender, EventArgs e)
         {
-            if (txt_totalingresos1.Text.Equals("") || txt_totalingresos2.Text.Equals("") || txt_totalingresos3.Text.Equals("") || txt_totalingresos4.Text.Equals("") ||
-                txt_totalingresos5.Text.Equals("") || txt_totalingresos6.Text.Equals("") || txt_totalingresos7.Text.Equals("") || txt_totalingresos8.Text.Equals(""))
+            if (cb_sienfermedad.Checked == true)
             {
-                lbl_total_ingresos.Text = "!Complete los campos!";
+                cb_noenfermedad.Enabled = false;
             }
             else
             {
-                int valor1 = Convert.ToInt32(txt_totalingresos1.Text.ToString().Trim());
-                int valor2 = Convert.ToInt32(txt_totalingresos2.Text.ToString().Trim());
-                int valor3 = Convert.ToInt32(txt_totalingresos3.Text.ToString().Trim());
-                int valor4 = Convert.ToInt32(txt_totalingresos4.Text.ToString().Trim());
-                int valor5 = Convert.ToInt32(txt_totalingresos5.Text.ToString().Trim());
-                int valor6 = Convert.ToInt32(txt_totalingresos6.Text.ToString().Trim());
-                int valor7 = Convert.ToInt32(txt_totalingresos7.Text.ToString().Trim());
-                int valor8 = Convert.ToInt32(txt_totalingresos8.Text.ToString().Trim());
-
-                int total = valor1 + valor2 + valor3 + valor4 + valor5 + valor6 + valor7 + valor8;
-
-                txt_totalingresos9.Text = total.ToString();
-
-                lbl_total_ingresos.Visible = false;                
+                cb_sienfermedad.Enabled = true;
+                cb_noenfermedad.Enabled = true;
             }
         }
 
-        protected void btn_total_ayuda_otros_Click(object sender, EventArgs e)
+        protected void cb_noenfermedad_CheckedChanged(object sender, EventArgs e)
         {
-            if (txt_ayuda1.Text.Equals("") || txt_ayuda2.Text.Equals("") || txt_ayuda3.Text.Equals("") || txt_ayuda4.Text.Equals("") ||
-                txt_ayuda5.Text.Equals("") || txt_ayuda6.Text.Equals("") || txt_ayuda7.Text.Equals("") || txt_ayuda8.Text.Equals("") ||
-                txt_otros1.Text.Equals("") || txt_otros2.Text.Equals("") || txt_otros3.Text.Equals("") || txt_otros4.Text.Equals("") ||
-                txt_otros5.Text.Equals("") || txt_otros6.Text.Equals("") || txt_otros7.Text.Equals("") || txt_otros8.Text.Equals(""))
+            if (cb_noenfermedad.Checked == true)
             {
-                lbl_total_ayuda_otros.Text = "!Complete los campos!";
+                cb_sienfermedad.Enabled = false;
             }
             else
             {
-                int ayuda1 = Convert.ToInt32(txt_ayuda1.Text.ToString().Trim());
-                int ayuda2 = Convert.ToInt32(txt_ayuda2.Text.ToString().Trim());
-                int ayuda3 = Convert.ToInt32(txt_ayuda3.Text.ToString().Trim());
-                int ayuda4 = Convert.ToInt32(txt_ayuda4.Text.ToString().Trim());
-                int ayuda5 = Convert.ToInt32(txt_ayuda5.Text.ToString().Trim());
-                int ayuda6 = Convert.ToInt32(txt_ayuda6.Text.ToString().Trim());
-                int ayuda7 = Convert.ToInt32(txt_ayuda7.Text.ToString().Trim());
-                int ayuda8 = Convert.ToInt32(txt_ayuda8.Text.ToString().Trim());
-
-                int otros1 = Convert.ToInt32(txt_otros1.Text.ToString().Trim());
-                int otros2 = Convert.ToInt32(txt_otros2.Text.ToString().Trim());
-                int otros3 = Convert.ToInt32(txt_otros3.Text.ToString().Trim());
-                int otros4 = Convert.ToInt32(txt_otros4.Text.ToString().Trim());
-                int otros5 = Convert.ToInt32(txt_otros5.Text.ToString().Trim());
-                int otros6 = Convert.ToInt32(txt_otros6.Text.ToString().Trim());
-                int otros7 = Convert.ToInt32(txt_otros7.Text.ToString().Trim());
-                int otros8 = Convert.ToInt32(txt_otros8.Text.ToString().Trim());
-
-                int total = ayuda1 + ayuda2 + ayuda3 + ayuda4 + ayuda5 + ayuda6 + ayuda7 + ayuda8 +
-                            otros1 + otros2 + otros3 + otros4 + otros5 + otros6 + otros7 + otros8;
-
-                txt_totalayudayotros9.Text = total.ToString();
-
-                lbl_total_ayuda_otros.Visible = false;
+                cb_noenfermedad.Enabled = true;
+                cb_sienfermedad.Enabled = true;
             }
-
         }
 
-        protected void btn_totalegresos_Click(object sender, EventArgs e)
-        {
-            if (txt_alimentación.Text.Equals("") || txt_vivienda.Text.Equals("") || txt_educación.Text.Equals("") || txt_serviciosbasicos.Text.Equals("") ||
-                txt_salud.Text.Equals("") || txt_movilización.Text.Equals("") || txt_deudas.Text.Equals("") || txt_otrospensiones.Text.Equals(""))
-            {
-                lbl_total_egresos.Text = "!Complete los campos!";
-            }
-            else
-            {
-                int egreso1 = Convert.ToInt32(txt_alimentación.Text.ToString().Trim());
-                int egreso2 = Convert.ToInt32(txt_vivienda.Text.ToString().Trim());
-                int egreso3 = Convert.ToInt32(txt_educación.Text.ToString().Trim());
-                int egreso4 = Convert.ToInt32(txt_serviciosbasicos.Text.ToString().Trim());
-                int egreso5 = Convert.ToInt32(txt_salud.Text.ToString().Trim());
-                int egreso6 = Convert.ToInt32(txt_movilización.Text.ToString().Trim());
-                int egreso7 = Convert.ToInt32(txt_deudas.Text.ToString().Trim());
-                int egreso8 = Convert.ToInt32(txt_otrospensiones.Text.ToString().Trim());
-
-                int total = egreso1 + egreso2 + egreso3 + egreso4 + egreso5 + egreso6 + egreso7 + egreso8;
-
-                txt_totalegresos.Text = total.ToString();
-
-                lbl_total_egresos.Visible = false;
-            }
-
-        }
         protected void btn_imprimir_Click(object sender, EventArgs e)
         {
             HtmlNode.ElementsFlags["img"] = HtmlElementFlag.Closed;
@@ -6143,9 +5811,26 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             var tblmvTitulo = new PdfPTable(new float[] { 70f, 70f, 15f, 60f, 15f, 60f, 35f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
             tblmvTitulo.AddCell(new PdfPCell(new Paragraph("Modalidad de vinculación:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
             tblmvTitulo.AddCell(new PdfPCell(new Paragraph("Ley Organica del Sector Público (LOSEP)", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
-            tblmvTitulo.AddCell(new PdfPCell(new Paragraph(Convert.ToString(cb_modalidadvinculacionlosep.Checked), cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            if (cb_modalidadvinculacionlosep.Checked == true)
+            {
+                tblmvTitulo.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER }); ;
+            }
+            else
+            {
+                tblmvTitulo.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER }); ;
+            }
             tblmvTitulo.AddCell(new PdfPCell(new Paragraph("Código de trabajo", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
-            tblmvTitulo.AddCell(new PdfPCell(new Paragraph(Convert.ToString(cb_modalidadvinculacioncodigotrabajo.Checked), cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            if (cb_modalidadvinculacioncodigotrabajo.Checked == true)
+            {
+                tblmvTitulo.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER }); ;
+            }
+            else
+            {
+                tblmvTitulo.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER }); ;
+            }
+            //tblmvTitulo.AddCell(new PdfPCell(new Paragraph(Convert.ToString(cb_modalidadvinculacionlosep.Checked), cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            //tblmvTitulo.AddCell(new PdfPCell(new Paragraph("Código de trabajo", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            //tblmvTitulo.AddCell(new PdfPCell(new Paragraph(Convert.ToString(cb_modalidadvinculacioncodigotrabajo.Checked), cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
             tblmvTitulo.AddCell(new PdfPCell(new Paragraph("Fecha ingreso al ECU", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
             tblmvTitulo.AddCell(new PdfPCell(new Paragraph(txt_fechaingresoalsisecu.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
             pdfDoc.Add(tblmvTitulo);
@@ -6241,7 +5926,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             pdfDoc.Add(new Paragraph(" "));
             var tblccTitulo = new PdfPTable(new float[] { 150f, 150f, 100f, 150f, 100, 150f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
             tblccTitulo.AddCell(new PdfPCell(new Paragraph("Calle donde está ubicada la vivienda y numeración:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
-            tblccTitulo.AddCell(new PdfPCell(new Paragraph(txt_calleubicada.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            //tblccTitulo.AddCell(new PdfPCell(new Paragraph(txt_calleubicada.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
             tblccTitulo.AddCell(new PdfPCell(new Paragraph("Calle secundaria:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
             tblccTitulo.AddCell(new PdfPCell(new Paragraph(txt_callesecundaria.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
             tblccTitulo.AddCell(new PdfPCell(new Paragraph("Referencia para ubicar el domicilio:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
@@ -6250,10 +5935,12 @@ namespace SistemaECU911.Template.Views_Socio_Economico
 
             pdfDoc.Close();
             Response.ContentType = "application/pdf";
-            Response.AddHeader("content-disposition", "attachment;filename=FichaMedica.pdf");
+            Response.AddHeader("content-disposition", "attachment;filename=Ficha_Socio_Económica.pdf");
             Response.Cache.SetCacheability(HttpCacheability.NoCache);
             Response.Write(pdfDoc);
             Response.End();
         }
+
+        
     }
 }
