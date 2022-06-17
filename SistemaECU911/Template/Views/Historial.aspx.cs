@@ -27,6 +27,7 @@ namespace SistemaECU911.Template.Views
         private Tbl_Personas per = new Tbl_Personas();
         private Tbl_FichasMedicas fichasmedicas = new Tbl_FichasMedicas();
 
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -544,10 +545,10 @@ namespace SistemaECU911.Template.Views
         {
             HtmlNode.ElementsFlags["img"] = HtmlElementFlag.Closed;
             HtmlNode.ElementsFlags["br"] = HtmlElementFlag.Closed;
-            Document pdfDoc = new Document(PageSize.A4, 5f, 5f, 5f, 5f);
+            Document pdfDoc = new Document(PageSize.A4, 20f, 20f, 20f, 20f);
             PdfWriter writer = PdfWriter.GetInstance(pdfDoc, Response.OutputStream);
             BaseFont fuente = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, true);
-            Font titulo = new Font(fuente, 25f, Font.BOLD, new BaseColor(0, 0, 0));
+            Font titulo = new Font(fuente, 18f, Font.BOLD, new BaseColor(0, 0, 0));
             BaseFont fuente2 = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, true);
             Font parrafo = new Font(fuente2, 12f, Font.NORMAL, new BaseColor(0, 0, 0));
             BaseFont fuente3 = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, true);
@@ -558,8 +559,8 @@ namespace SistemaECU911.Template.Views
             pdfDoc.Add(new Chunk(Chunk.NEWLINE));
             string imageURL = Server.MapPath("../Template Principal/images") + "/Foto_Perfil.png";
             iTextSharp.text.Image fotoperfil = iTextSharp.text.Image.GetInstance(imageURL);
-            fotoperfil.ScaleAbsolute(100, 100);
-            fotoperfil.SetAbsolutePosition(250, 675);
+            fotoperfil.ScaleAbsolute(75, 75);
+            fotoperfil.SetAbsolutePosition(260, 700);
             pdfDoc.Add(fotoperfil);
             pdfDoc.Add(new Chunk(Chunk.NEWLINE));
             pdfDoc.Add(new Chunk(Chunk.NEWLINE));
@@ -747,9 +748,65 @@ namespace SistemaECU911.Template.Views
             tblefDatos.AddCell(new PdfPCell(new Paragraph(txt_anteFamiliares.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
             tblefDatos.AddCell(new PdfPCell(new Paragraph(txt_anteFamDescripcion.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
             pdfDoc.Add(tblefDatos);
+            pdfDoc.Add(new Paragraph(" "));
+            var tbldg = new PdfPTable(new float[] { 70f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tbldg.AddCell(new PdfPCell(new Paragraph("8. DIAGNÓSTICOS", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(204, 205, 254), HorizontalAlignment = Element.ALIGN_LEFT });
+            pdfDoc.Add(tbldg);
+            var tbldgTitulo = new PdfPTable(new float[] { 80f, 30f, 20f, 40f, 40f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tbldgTitulo.AddCell(new PdfPCell(new Paragraph("DIAGNÓSTICOS", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            tbldgTitulo.AddCell(new PdfPCell(new Paragraph("CÓDIGO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            tbldgTitulo.AddCell(new PdfPCell(new Paragraph("TIPO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            tbldgTitulo.AddCell(new PdfPCell(new Paragraph("CONDICIÓN", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            tbldgTitulo.AddCell(new PdfPCell(new Paragraph("CRONOLOGÍA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            tbldgTitulo.AddCell(new PdfPCell(new Paragraph("DESCRIPCIÓN", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            pdfDoc.Add(tbldgTitulo);
+            var tbldgDatos = new PdfPTable(new float[] { 80f, 30f, 20f, 40f, 40f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tbldgDatos.AddCell(new PdfPCell(new Paragraph(txt_diagnosticosDiagnostico.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tbldgDatos.AddCell(new PdfPCell(new Paragraph(txt_codigoDiagnostico.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tbldgDatos.AddCell(new PdfPCell(new Paragraph(txt_tipoDiagnostico.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tbldgDatos.AddCell(new PdfPCell(new Paragraph(txt_condicionDiagnostico.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tbldgDatos.AddCell(new PdfPCell(new Paragraph(txt_cronologiaDiagnostico.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tbldgDatos.AddCell(new PdfPCell(new Paragraph(txt_descripcionDiagnostico.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            pdfDoc.Add(tbldgDatos);
+            pdfDoc.Add(new Paragraph(" "));
+            var tblpt = new PdfPTable(new float[] { 70f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblpt.AddCell(new PdfPCell(new Paragraph("9. PLAN DE TRATAMIENTO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(204, 205, 254), HorizontalAlignment = Element.ALIGN_LEFT });
+            pdfDoc.Add(tblpt);
+            var tblptDatos = new PdfPTable(new float[] { 70f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblptDatos.AddCell(new PdfPCell(new Paragraph(txt_tratamiento.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            pdfDoc.Add(tblptDatos);
+            pdfDoc.Add(new Paragraph(" "));
+            var tblev = new PdfPTable(new float[] { 70f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblev.AddCell(new PdfPCell(new Paragraph("10. EVOLUCIÓN", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(204, 205, 254), HorizontalAlignment = Element.ALIGN_LEFT });
+            pdfDoc.Add(tblev);
+            var tblevDatos = new PdfPTable(new float[] { 70f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblevDatos.AddCell(new PdfPCell(new Paragraph(txt_evolucion.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            pdfDoc.Add(tblevDatos);
+            pdfDoc.Add(new Paragraph(" "));
+            var tblpp = new PdfPTable(new float[] { 70f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblpp.AddCell(new PdfPCell(new Paragraph("11. PRESCRIPCIONES", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(204, 205, 254), HorizontalAlignment = Element.ALIGN_LEFT });
+            pdfDoc.Add(tblpp);
+            var tblppDatos = new PdfPTable(new float[] { 70f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblppDatos.AddCell(new PdfPCell(new Paragraph(txt_evolucion.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            pdfDoc.Add(tblppDatos);
+            pdfDoc.Add(new Paragraph(" "));
+            var tbldatTitulo = new PdfPTable(new float[] { 50f, 50f, 50f, 50f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tbldatTitulo.AddCell(new PdfPCell(new Paragraph("FECHA y HORA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            tbldatTitulo.AddCell(new PdfPCell(new Paragraph("ESPECIALIDAD", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            tbldatTitulo.AddCell(new PdfPCell(new Paragraph("NOMBRE DEL PROFESIONAL", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            tbldatTitulo.AddCell(new PdfPCell(new Paragraph("CÓDIGO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            tbldatTitulo.AddCell(new PdfPCell(new Paragraph("FIRMA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            pdfDoc.Add(tbldatTitulo);
+            var tbldatDatos = new PdfPTable(new float[] { 50f, 50f, 50f, 50f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tbldatDatos.AddCell(new PdfPCell(new Paragraph(txt_fechahora.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tbldatDatos.AddCell(new PdfPCell(new Paragraph(ddl_especialidad.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tbldatDatos.AddCell(new PdfPCell(new Paragraph(ddl_profesional.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tbldatDatos.AddCell(new PdfPCell(new Paragraph(txt_codigo.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tbldatDatos.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            pdfDoc.Add(tbldatDatos);
             pdfDoc.Close();
             Response.ContentType = "application/pdf";
-            Response.AddHeader("content-disposition", "attachment;filename=FichaMedica.pdf");
+            Response.AddHeader("content-disposition", "attachment;filename=FichaMedica_"+txt_numHClinica.Text+"_"+DateTime.Today+".pdf");
             Response.Cache.SetCacheability(HttpCacheability.NoCache);
             Response.Write(pdfDoc);
             Response.End();
