@@ -105,15 +105,6 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         protected global::System.Web.UI.WebControls.TextBox txt_cedula;
 
         /// <summary>
-        /// Control rfv_numHClinica.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_numHClinica;
-
-        /// <summary>
         /// Control AutoCompleteExtender1.
         /// </summary>
         /// <remarks>
@@ -121,6 +112,15 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::AjaxControlToolkit.AutoCompleteExtender AutoCompleteExtender1;
+
+        /// <summary>
+        /// Control RequiredFieldValidator_txtcedula.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator_txtcedula;
 
         /// <summary>
         /// Control txt_areatrabajo.
@@ -546,24 +546,6 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         protected global::System.Web.UI.WebControls.CheckBox cb_departamento;
 
         /// <summary>
-        /// Control tbc_otro.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TableCell tbc_otro;
-
-        /// <summary>
-        /// Control tbc_otravivienda.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TableCell tbc_otravivienda;
-
-        /// <summary>
         /// Control txt_tipoviviendaotro.
         /// </summary>
         /// <remarks>
@@ -708,24 +690,6 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         protected global::System.Web.UI.WebControls.CheckBox cb_discapacidadno;
 
         /// <summary>
-        /// Control tbc_tipodiscapacidad.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TableCell tbc_tipodiscapacidad;
-
-        /// <summary>
-        /// Control tbc_txtdiscapacidad.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TableCell tbc_txtdiscapacidad;
-
-        /// <summary>
         /// Control txt_tipodiscapacidad.
         /// </summary>
         /// <remarks>
@@ -733,15 +697,6 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_tipodiscapacidad;
-
-        /// <summary>
-        /// Control tabladatosdiscapacidad.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Table tabladatosdiscapacidad;
 
         /// <summary>
         /// Control txt_porcentajediscapacidad.
@@ -823,24 +778,6 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox cb_lactaciano;
-
-        /// <summary>
-        /// Control txt_fechaculminacion.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TableCell txt_fechaculminacion;
-
-        /// <summary>
-        /// Control fechacumlimnacion.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TableCell fechacumlimnacion;
 
         /// <summary>
         /// Control txt_fechaculmicacionlactancia.
@@ -978,24 +915,6 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         protected global::System.Web.UI.WebControls.CheckBox cb_tabacono;
 
         /// <summary>
-        /// Control tbc_frecuenciatabaco.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TableCell tbc_frecuenciatabaco;
-
-        /// <summary>
-        /// Control txt_frecuenciatabaco.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TableCell txt_frecuenciatabaco;
-
-        /// <summary>
         /// Control txt_frecuenciaconsumotabaco.
         /// </summary>
         /// <remarks>
@@ -1003,24 +922,6 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_frecuenciaconsumotabaco;
-
-        /// <summary>
-        /// Control tbc_tiempotabaco.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TableCell tbc_tiempotabaco;
-
-        /// <summary>
-        /// Control txt_tiempotabaco.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TableCell txt_tiempotabaco;
 
         /// <summary>
         /// Control txt_tiempoconsumotabaco.
@@ -1968,15 +1869,6 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         protected global::System.Web.UI.WebControls.CheckBox cb_acargofamiliardiacapacitadono;
 
         /// <summary>
-        /// Control tabladiscapacidad.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Table tabladiscapacidad;
-
-        /// <summary>
         /// Control txt_familiardiscapacitadonomape1.
         /// </summary>
         /// <remarks>
@@ -2085,15 +1977,6 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         protected global::System.Web.UI.WebControls.TextBox txt_familiardiscapacitadofechanacimiento2;
 
         /// <summary>
-        /// Control tabladependencia.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Table tabladependencia;
-
-        /// <summary>
         /// Control cb_dependenciaministeriotrabajosi.
         /// </summary>
         /// <remarks>
@@ -2128,15 +2011,6 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_numcarnetMSP;
-
-        /// <summary>
-        /// Control tablaacargofamiliar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Table tablaacargofamiliar;
 
         /// <summary>
         /// Control cb_acargofamiliarenfermedadrarasi.
@@ -2245,15 +2119,6 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_actividadeconomicadetalle;
-
-        /// <summary>
-        /// Control tabla_actividadeconomica.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Table tabla_actividadeconomica;
 
         /// <summary>
         /// Control txt_actividadeconomicatiempodestina.

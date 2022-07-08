@@ -25,6 +25,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
 
         private Tbl_SocioEconomico sso = new Tbl_SocioEconomico();
 
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -1632,11 +1633,11 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             try
             {
-                //per = CN_HistorialMedico.ObtenerIdPersonasxCedula(Convert.ToInt32(txt_cedula.Text));
+                per = CN_HistorialMedico.ObtenerIdPersonasxCedula(txt_cedula.Text);
 
                 int perso = Convert.ToInt32(per.Per_id.ToString());
 
-                sso = new Tbl_SocioEconomico();                              
+                sso = new Tbl_SocioEconomico();
 
                 //DATOS GENERALES
                 //Modalidad de Trabajo
@@ -2964,7 +2965,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                 {
                     sso.Socio_economico_posee_enfermedad_no = "SI";
                 }
-                else 
+                else
                 {
                     sso.Socio_economico_posee_enfermedad_no = null;
                 }
@@ -3821,14 +3822,13 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             else
             {
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Por favor, marque la casilla SI, para validar que la información suministrada es real')", true);
-            }                   
+            }
         }
 
         protected void btn_cancelar_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/Template/Views_Socio_Economico/Inicio.aspx");
         }
-
 
 
         //VALIDACIONES CHECKBOX Y TEXTBOX
@@ -3925,12 +3925,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_donantesi.Checked == true)
             {
-                cb_donanteno.Enabled = false;
-            }
-            else
-            {
-                cb_donantesi.Enabled = true;
-                cb_donanteno.Enabled = true;
+                cb_donanteno.Checked = false;
             }
         }
 
@@ -3938,12 +3933,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_donanteno.Checked == true)
             {
-                cb_donantesi.Enabled = false;
-            }
-            else
-            {
-                cb_donantesi.Enabled = true;
-                cb_donanteno.Enabled = true;
+                cb_donantesi.Checked = false;
             }
         }
 
@@ -3951,20 +3941,11 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_primaria.Checked == true)
             {
-                cb_secundaria.Enabled = false;
-                cb_superior.Enabled = false;
-                cb_especializacion.Enabled = false;
-                cb_diplomado.Enabled = false;
-                cb_maestria.Enabled = false;
-            }
-            else
-            {
-                cb_primaria.Enabled = true;
-                cb_secundaria.Enabled = true;
-                cb_superior.Enabled = true;
-                cb_especializacion.Enabled = true;
-                cb_diplomado.Enabled = true;
-                cb_maestria.Enabled = true;
+                cb_secundaria.Checked = false;
+                cb_superior.Checked = false;
+                cb_especializacion.Checked = false;
+                cb_diplomado.Checked = false;
+                cb_maestria.Checked = false;
             }
         }
 
@@ -3972,20 +3953,11 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_secundaria.Checked == true)
             {
-                cb_primaria.Checked = true;
-                cb_superior.Enabled = false;
-                cb_especializacion.Enabled = false;
-                cb_diplomado.Enabled = false;
-                cb_maestria.Enabled = false;
-            }
-            else
-            {
                 cb_primaria.Checked = false;
-                cb_secundaria.Enabled = true;
-                cb_superior.Enabled = true;
-                cb_especializacion.Enabled = true;
-                cb_diplomado.Enabled = true;
-                cb_maestria.Enabled = true;
+                cb_superior.Checked = false;
+                cb_especializacion.Checked = false;
+                cb_diplomado.Checked = false;
+                cb_maestria.Checked = false;
             }
         }
 
@@ -3993,20 +3965,11 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_superior.Checked == true)
             {
-                cb_primaria.Checked = true;
-                cb_secundaria.Checked = true;
-                cb_especializacion.Enabled = false;
-                cb_diplomado.Enabled = false;
-                cb_maestria.Enabled = false;
-            }
-            else
-            {
                 cb_primaria.Checked = false;
                 cb_secundaria.Checked = false;
-                cb_superior.Enabled = true;
-                cb_especializacion.Enabled = true;
-                cb_diplomado.Enabled = true;
-                cb_maestria.Enabled = true;
+                cb_especializacion.Checked = false;
+                cb_diplomado.Checked = false;
+                cb_maestria.Checked = false;
             }
         }
 
@@ -4014,20 +3977,11 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_especializacion.Checked == true)
             {
-                cb_primaria.Checked = true;
-                cb_secundaria.Checked = true;
-                cb_superior.Checked = true;
-                cb_diplomado.Enabled = false;
-                cb_maestria.Enabled = false;
-            }
-            else
-            {
                 cb_primaria.Checked = false;
                 cb_secundaria.Checked = false;
                 cb_superior.Checked = false;
-                cb_especializacion.Enabled = true;
-                cb_diplomado.Enabled = true;
-                cb_maestria.Enabled = true;
+                cb_diplomado.Checked = false;
+                cb_maestria.Checked = false;
             }
         }
 
@@ -4035,20 +3989,11 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_diplomado.Checked == true)
             {
-                cb_primaria.Checked = true;
-                cb_secundaria.Checked = true;
-                cb_superior.Checked = true;
-                cb_especializacion.Checked = true;
-                cb_maestria.Enabled = false;
-            }
-            else
-            {
                 cb_primaria.Checked = false;
                 cb_secundaria.Checked = false;
                 cb_superior.Checked = false;
                 cb_especializacion.Checked = false;
-                cb_diplomado.Enabled = true;
-                cb_maestria.Enabled = true;
+                cb_maestria.Checked = false;
             }
         }
 
@@ -4056,20 +4001,11 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_maestria.Checked == true)
             {
-                cb_primaria.Checked = true;
-                cb_secundaria.Checked = true;
-                cb_superior.Checked = true;
-                cb_especializacion.Checked = true;
-                cb_diplomado.Checked = true;
-            }
-            else
-            {
                 cb_primaria.Checked = false;
                 cb_secundaria.Checked = false;
                 cb_superior.Checked = false;
                 cb_especializacion.Checked = false;
                 cb_diplomado.Checked = false;
-                cb_maestria.Enabled = true;
             }
         }
 
@@ -4077,18 +4013,10 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_blanco.Checked == true)
             {
-                cb_mestizo.Enabled = false;
-                cb_afro.Enabled = false;
-                cb_indigena.Enabled = false;
-                cb_montubio.Enabled = false;
-            }
-            else
-            {
-                cb_blanco.Enabled = true;
-                cb_mestizo.Enabled = true;
-                cb_afro.Enabled = true;
-                cb_indigena.Enabled = true;
-                cb_montubio.Enabled = true;
+                cb_mestizo.Checked = false;
+                cb_afro.Checked = false;
+                cb_indigena.Checked = false;
+                cb_montubio.Checked = false;
             }
         }
 
@@ -4096,18 +4024,10 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_mestizo.Checked == true)
             {
-                cb_blanco.Enabled = false;
-                cb_afro.Enabled = false;
-                cb_indigena.Enabled = false;
-                cb_montubio.Enabled = false;
-            }
-            else
-            {
-                cb_blanco.Enabled = true;
-                cb_mestizo.Enabled = true;
-                cb_afro.Enabled = true;
-                cb_indigena.Enabled = true;
-                cb_montubio.Enabled = true;
+                cb_blanco.Checked = false;
+                cb_afro.Checked = false;
+                cb_indigena.Checked = false;
+                cb_montubio.Checked = false;
             }
         }
 
@@ -4115,18 +4035,10 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_afro.Checked == true)
             {
-                cb_blanco.Enabled = false;
-                cb_mestizo.Enabled = false;
-                cb_indigena.Enabled = false;
-                cb_montubio.Enabled = false;
-            }
-            else
-            {
-                cb_blanco.Enabled = true;
-                cb_mestizo.Enabled = true;
-                cb_afro.Enabled = true;
-                cb_indigena.Enabled = true;
-                cb_montubio.Enabled = true;
+                cb_blanco.Checked = false;
+                cb_mestizo.Checked = false;
+                cb_indigena.Checked = false;
+                cb_montubio.Checked = false;
             }
         }
 
@@ -4134,18 +4046,10 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_indigena.Checked == true)
             {
-                cb_blanco.Enabled = false;
-                cb_mestizo.Enabled = false;
-                cb_afro.Enabled = false;
-                cb_montubio.Enabled = false;
-            }
-            else
-            {
-                cb_blanco.Enabled = true;
-                cb_mestizo.Enabled = true;
-                cb_afro.Enabled = true;
-                cb_indigena.Enabled = true;
-                cb_montubio.Enabled = true;
+                cb_blanco.Checked = false;
+                cb_mestizo.Checked = false;
+                cb_afro.Checked = false;
+                cb_montubio.Checked = false;
             }
         }
 
@@ -4153,18 +4057,10 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_montubio.Checked == true)
             {
-                cb_blanco.Enabled = false;
-                cb_mestizo.Enabled = false;
-                cb_afro.Enabled = false;
-                cb_indigena.Enabled = false;
-            }
-            else
-            {
-                cb_blanco.Enabled = true;
-                cb_mestizo.Enabled = true;
-                cb_afro.Enabled = true;
-                cb_indigena.Enabled = true;
-                cb_montubio.Enabled = true;
+                cb_blanco.Checked = false;
+                cb_mestizo.Checked = false;
+                cb_afro.Checked = false;
+                cb_indigena.Checked = false;
             }
         }
 
@@ -4172,18 +4068,10 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_norte.Checked == true)
             {
-                cb_centro.Enabled = false;
-                cb_sur.Enabled = false;
-                cb_valle.Enabled = false;
-                cb_valledeloschillos.Enabled = false;
-            }
-            else
-            {
-                cb_norte.Enabled = true;
-                cb_centro.Enabled = true;
-                cb_sur.Enabled = true;
-                cb_valle.Enabled = true;
-                cb_valledeloschillos.Enabled = true;
+                cb_centro.Checked = false;
+                cb_sur.Checked = false;
+                cb_valle.Checked = false;
+                cb_valledeloschillos.Checked = false;
             }
         }
 
@@ -4191,18 +4079,10 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_centro.Checked == true)
             {
-                cb_norte.Enabled = false;
-                cb_sur.Enabled = false;
-                cb_valle.Enabled = false;
-                cb_valledeloschillos.Enabled = false;
-            }
-            else
-            {
-                cb_norte.Enabled = true;
-                cb_centro.Enabled = true;
-                cb_sur.Enabled = true;
-                cb_valle.Enabled = true;
-                cb_valledeloschillos.Enabled = true;
+                cb_norte.Checked = false;
+                cb_sur.Checked = false;
+                cb_valle.Checked = false;
+                cb_valledeloschillos.Checked = false;
             }
         }
 
@@ -4210,18 +4090,10 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_sur.Checked == true)
             {
-                cb_norte.Enabled = false;
-                cb_centro.Enabled = false;
-                cb_valle.Enabled = false;
-                cb_valledeloschillos.Enabled = false;
-            }
-            else
-            {
-                cb_norte.Enabled = true;
-                cb_centro.Enabled = true;
-                cb_sur.Enabled = true;
-                cb_valle.Enabled = true;
-                cb_valledeloschillos.Enabled = true;
+                cb_norte.Checked = false;
+                cb_centro.Checked = false;
+                cb_valle.Checked = false;
+                cb_valledeloschillos.Checked = false;
             }
         }
 
@@ -4229,18 +4101,10 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_valle.Checked == true)
             {
-                cb_norte.Enabled = false;
-                cb_centro.Enabled = false;
-                cb_sur.Enabled = false;
-                cb_valledeloschillos.Enabled = false;
-            }
-            else
-            {
-                cb_norte.Enabled = true;
-                cb_centro.Enabled = true;
-                cb_sur.Enabled = true;
-                cb_valle.Enabled = true;
-                cb_valledeloschillos.Enabled = true;
+                cb_norte.Checked = false;
+                cb_centro.Checked = false;
+                cb_sur.Checked = false;
+                cb_valledeloschillos.Checked = false;
             }
         }
 
@@ -4248,18 +4112,10 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_valledeloschillos.Checked == true)
             {
-                cb_norte.Enabled = false;
-                cb_centro.Enabled = false;
-                cb_sur.Enabled = false;
-                cb_valle.Enabled = false;
-            }
-            else
-            {
-                cb_norte.Enabled = true;
-                cb_centro.Enabled = true;
-                cb_sur.Enabled = true;
-                cb_valle.Enabled = true;
-                cb_valledeloschillos.Enabled = true;
+                cb_norte.Checked = false;
+                cb_centro.Checked = false;
+                cb_sur.Checked = false;
+                cb_valle.Checked = false;
             }
         }
 
@@ -4267,19 +4123,13 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_casa.Checked == true)
             {
-                cb_departamento.Enabled = false;
+                cb_departamento.Checked = false;
+                txt_tipoviviendaotro.Text = "";
                 txt_tipoviviendaotro.Enabled = false;
-                tbc_otro.Visible = false;
-                tbc_otravivienda.Visible = false;
-                tbc_otravivienda.Text = "";
             }
             else
             {
-                cb_casa.Enabled = true;
-                cb_departamento.Enabled = true;
                 txt_tipoviviendaotro.Enabled = true;
-                tbc_otro.Visible = true;
-                tbc_otravivienda.Visible = true;
             }
         }
 
@@ -4287,21 +4137,13 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_departamento.Checked == true)
             {
-                cb_casa.Enabled = false;
+                cb_casa.Checked = false;
+                txt_tipoviviendaotro.Text = "";
                 txt_tipoviviendaotro.Enabled = false;
-                txt_tipoviviendaotro.Visible = false;
-                tbc_otro.Visible = false;
-                tbc_otravivienda.Visible = false;
-                tbc_otravivienda.Text = "";
             }
             else
             {
-                cb_casa.Enabled = true;
-                cb_departamento.Enabled = true;
                 txt_tipoviviendaotro.Enabled = true;
-                txt_tipoviviendaotro.Visible = true;
-                tbc_otro.Visible = true;
-                tbc_otravivienda.Visible = true;
             }
         }
 
@@ -4309,14 +4151,8 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_riesgoalto.Checked == true)
             {
-                cb_riesgomedio.Enabled = false;
-                cb_riesgobajo.Enabled = false;
-            }
-            else
-            {
-                cb_riesgoalto.Enabled = true;
-                cb_riesgomedio.Enabled = true;
-                cb_riesgobajo.Enabled = true;
+                cb_riesgomedio.Checked = false;
+                cb_riesgobajo.Checked = false;
             }
         }
 
@@ -4324,14 +4160,8 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_riesgomedio.Checked == true)
             {
-                cb_riesgoalto.Enabled = false;
-                cb_riesgobajo.Enabled = false;
-            }
-            else
-            {
-                cb_riesgoalto.Enabled = true;
-                cb_riesgomedio.Enabled = true;
-                cb_riesgobajo.Enabled = true;
+                cb_riesgoalto.Checked = false;
+                cb_riesgobajo.Checked = false;
             }
         }
 
@@ -4339,112 +4169,45 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_riesgobajo.Checked == true)
             {
-                cb_riesgoalto.Enabled = false;
-                cb_riesgomedio.Enabled = false;
-            }
-            else
-            {
-                cb_riesgoalto.Enabled = true;
-                cb_riesgomedio.Enabled = true;
-                cb_riesgobajo.Enabled = true;
+                cb_riesgoalto.Checked = false;
+                cb_riesgomedio.Checked = false;
             }
         }
 
-        protected void cb_dineroahorrosi_CheckedChanged(object sender, EventArgs e)
-        {
-            if (cb_dineroahorrosi.Checked == true)
-            {
-                cb_dineroahorrono.Enabled = false;
-            }
-            else
-            {
-                cb_dineroahorrosi.Enabled = true;
-                cb_dineroahorrono.Enabled = true;
-            }
-        }
-
-        protected void cb_dineroahorrono_CheckedChanged(object sender, EventArgs e)
-        {
-            if (cb_dineroahorrono.Checked == true)
-            {
-                cb_dineroahorrosi.Enabled = false;
-            }
-            else
-            {
-                cb_dineroahorrosi.Enabled = true;
-                cb_dineroahorrono.Enabled = true;
-            }
-        }
-
-        protected void cb_vehiculosi_CheckedChanged(object sender, EventArgs e)
-        {
-            if (cb_vehiculosi.Checked == true)
-            {
-                cb_vehiculono.Enabled = false;
-            }
-            else
-            {
-                cb_vehiculosi.Enabled = true;
-                cb_vehiculono.Enabled = true;
-            }
-        }
-
-        protected void cb_vehiculono_CheckedChanged(object sender, EventArgs e)
-        {
-            if (cb_vehiculono.Checked == true)
-            {
-                cb_vehiculosi.Enabled = false;
-            }
-            else
-            {
-                cb_vehiculosi.Enabled = true;
-                cb_vehiculono.Enabled = true;
-            }
-        }
-
-        protected void cb_recorridosi_CheckedChanged(object sender, EventArgs e)
-        {
-            if (cb_recorridosi.Checked == true)
-            {
-                cb_recorridono.Enabled = false;
-            }
-            else
-            {
-                cb_recorridosi.Enabled = true;
-                cb_recorridono.Enabled = true;
-            }
-        }
-
-        protected void cb_recorridono_CheckedChanged(object sender, EventArgs e)
-        {
-            if (cb_recorridono.Checked == true)
-            {
-                cb_recorridosi.Enabled = false;
-            }
-            else
-            {
-                cb_recorridosi.Enabled = true;
-                cb_recorridono.Enabled = true;
-            }
-        }
 
         //II.DATOS DE SALUD DEL SERVIDOR/A
+        protected void cb_sienfermedad_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_sienfermedad.Checked == true)
+            {
+                cb_noenfermedad.Checked = false;
+                txt_poseeenfermedadprexistente.Enabled = true;
+            }
+        }
+
+        protected void cb_noenfermedad_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_noenfermedad.Checked == true)
+            {
+                cb_sienfermedad.Checked = false;
+                txt_poseeenfermedadprexistente.Text = "";
+                txt_poseeenfermedadprexistente.Enabled = false;
+            }
+            else
+            {
+                txt_poseeenfermedadprexistente.Enabled = true;
+            }
+        }
+
         protected void cb_discapacidadsi_CheckedChanged(object sender, EventArgs e)
         {
             if (cb_discapacidadsi.Checked == true)
             {
-                cb_discapacidadno.Enabled = false;
-                tabladatosdiscapacidad.Visible = true;
-                tbc_tipodiscapacidad.Visible = true;
-                tbc_txtdiscapacidad.Visible = true;
-            }
-            else
-            {
-                cb_discapacidadsi.Enabled = true;
-                cb_discapacidadno.Enabled = true;
-                tabladatosdiscapacidad.Visible = false;
-                tbc_tipodiscapacidad.Visible = false;
-                tbc_txtdiscapacidad.Visible = false;
+                cb_discapacidadno.Checked = false;
+                txt_tipodiscapacidad.Enabled = true;
+                txt_porcentajediscapacidad.Enabled = true;
+                txt_numcarnetconadis.Enabled = true;
+                txt_fechacaducidadcarnet.Enabled = true;
             }
         }
 
@@ -4452,12 +4215,22 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_discapacidadno.Checked == true)
             {
-                cb_discapacidadsi.Enabled = false;
+                cb_discapacidadsi.Checked = false;
+                txt_tipodiscapacidad.Text = "";
+                txt_tipodiscapacidad.Enabled = false;
+                txt_porcentajediscapacidad.Text = "";
+                txt_porcentajediscapacidad.Enabled = false;
+                txt_numcarnetconadis.Text = "";
+                txt_numcarnetconadis.Enabled = false;
+                txt_fechacaducidadcarnet.Text = "";
+                txt_fechacaducidadcarnet.Enabled = false;
             }
             else
             {
-                cb_discapacidadsi.Enabled = true;
-                cb_discapacidadno.Enabled = true;
+                txt_tipodiscapacidad.Enabled = true;
+                txt_porcentajediscapacidad.Enabled = true;
+                txt_numcarnetconadis.Enabled = true;
+                txt_fechacaducidadcarnet.Enabled = true;
             }
         }
 
@@ -4465,12 +4238,9 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_gestaciónsi.Checked == true)
             {
-                cb_gestaciónno.Enabled = false;
-            }
-            else
-            {
-                cb_gestaciónsi.Enabled = true;
-                cb_gestaciónno.Enabled = true;
+                cb_gestaciónno.Checked = false;
+                txt_gestacióntiempo.Enabled = true;
+                txt_fechatentativaparto.Enabled = true;
             }
         }
 
@@ -4478,12 +4248,16 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_gestaciónno.Checked == true)
             {
-                cb_gestaciónsi.Enabled = false;
+                cb_gestaciónsi.Checked = false;
+                txt_gestacióntiempo.Text = "";
+                txt_gestacióntiempo.Enabled = false;
+                txt_fechatentativaparto.Text = "";
+                txt_fechatentativaparto.Enabled = false;
             }
             else
             {
-                cb_gestaciónsi.Enabled = true;
-                cb_gestaciónno.Enabled = true;
+                txt_gestacióntiempo.Enabled = true;
+                txt_fechatentativaparto.Enabled = true;
             }
         }
 
@@ -4491,12 +4265,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_lactaciasi.Checked == true)
             {
-                cb_lactaciano.Enabled = false;
-            }
-            else
-            {
-                cb_lactaciasi.Enabled = true;
-                cb_lactaciano.Enabled = true;
+                cb_lactaciano.Checked = false;
                 txt_fechaculmicacionlactancia.Enabled = true;
             }
         }
@@ -4505,13 +4274,12 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_lactaciano.Checked == true)
             {
-                cb_lactaciasi.Enabled = false;
+                cb_lactaciasi.Checked = false;
+                txt_fechaculmicacionlactancia.Text = "";
                 txt_fechaculmicacionlactancia.Enabled = false;
             }
             else
             {
-                cb_lactaciasi.Enabled = true;
-                cb_lactaciano.Enabled = true;
                 txt_fechaculmicacionlactancia.Enabled = true;
             }
         }
@@ -4520,12 +4288,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_catastroficasi.Checked == true)
             {
-                cb_catastroficano.Enabled = false;
-            }
-            else
-            {
-                cb_catastroficasi.Enabled = true;
-                cb_catastroficano.Enabled = true;
+                cb_catastroficano.Checked = false;
                 txt_cualcatastrofica.Enabled = true;
             }
         }
@@ -4534,13 +4297,12 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_catastroficano.Checked == true)
             {
-                cb_catastroficasi.Enabled = false;
+                cb_catastroficasi.Checked = false;
+                txt_cualcatastrofica.Text = "";
                 txt_cualcatastrofica.Enabled = false;
             }
             else
             {
-                cb_catastroficasi.Enabled = true;
-                cb_catastroficano.Enabled = true;
                 txt_cualcatastrofica.Enabled = true;
             }
         }
@@ -4549,12 +4311,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_enfermedadrarasi.Checked == true)
             {
-                cb_enfermedadrarano.Enabled = false;
-            }
-            else
-            {
-                cb_enfermedadrarasi.Enabled = true;
-                cb_enfermedadrarano.Enabled = true;
+                cb_enfermedadrarano.Checked = false;
                 txt_enfermedadraracual.Enabled = true;
             }
         }
@@ -4563,13 +4320,12 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_enfermedadrarano.Checked == true)
             {
-                cb_enfermedadrarasi.Enabled = false;
+                cb_enfermedadrarasi.Checked = false;
+                txt_enfermedadraracual.Text = "";
                 txt_enfermedadraracual.Enabled = false;
             }
             else
             {
-                cb_enfermedadrarasi.Enabled = true;
-                cb_enfermedadrarano.Enabled = true;
                 txt_enfermedadraracual.Enabled = true;
             }
         }
@@ -4578,12 +4334,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_alcoholsi.Checked == true)
             {
-                cb_alcoholno.Enabled = false;
-            }
-            else
-            {
-                cb_alcoholsi.Enabled = true;
-                cb_alcoholno.Enabled = true;
+                cb_alcoholno.Checked = false;
                 txt_causaconsumoalcohol.Enabled = true;
                 txt_tiempoconsumoalcohol.Enabled = true;
             }
@@ -4593,14 +4344,16 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_alcoholno.Checked == true)
             {
-                cb_alcoholsi.Enabled = false;
+                cb_alcoholsi.Checked = false;
+                txt_causaconsumoalcohol.Text = "";
                 txt_causaconsumoalcohol.Enabled = false;
+                txt_tiempoconsumoalcohol.Text = "";
+                txt_tiempoconsumoalcohol.Enabled = false;
             }
             else
             {
-                cb_alcoholsi.Enabled = true;
-                cb_alcoholno.Enabled = true;
                 txt_causaconsumoalcohol.Enabled = true;
+                txt_tiempoconsumoalcohol.Enabled = true;
             }
         }
 
@@ -4608,12 +4361,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_tabacosi.Checked == true)
             {
-                cb_tabacono.Enabled = false;
-            }
-            else
-            {
-                cb_tabacosi.Enabled = true;
-                cb_tabacono.Enabled = true;
+                cb_tabacono.Checked = false;
                 txt_frecuenciaconsumotabaco.Enabled = true;
                 txt_tiempoconsumotabaco.Enabled = true;
             }
@@ -4623,14 +4371,14 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_tabacono.Checked == true)
             {
-                cb_tabacosi.Enabled = false;
+                cb_tabacosi.Checked = false;
+                txt_frecuenciaconsumotabaco.Text = "";
                 txt_frecuenciaconsumotabaco.Enabled = false;
+                txt_tiempoconsumotabaco.Text = "";
                 txt_tiempoconsumotabaco.Enabled = false;
             }
             else
             {
-                cb_tabacosi.Enabled = true;
-                cb_tabacono.Enabled = true;
                 txt_frecuenciaconsumotabaco.Enabled = true;
                 txt_tiempoconsumotabaco.Enabled = true;
             }
@@ -4640,12 +4388,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_sustanciapsicotropicasi.Checked == true)
             {
-                cb_sustanciapsicotropicano.Enabled = false;
-            }
-            else
-            {
-                cb_sustanciapsicotropicasi.Enabled = true;
-                cb_sustanciapsicotropicano.Enabled = true;
+                cb_sustanciapsicotropicano.Checked = false;
                 txt_sustanciapsicotropicatipo.Enabled = true;
                 txt_sustanciapsicotropicafrecuencia.Enabled = true;
             }
@@ -4655,31 +4398,47 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_sustanciapsicotropicano.Checked == true)
             {
-                cb_sustanciapsicotropicasi.Enabled = false;
+                cb_sustanciapsicotropicasi.Checked = false;
+                txt_sustanciapsicotropicatipo.Text = "";
                 txt_sustanciapsicotropicatipo.Enabled = false;
+                txt_sustanciapsicotropicafrecuencia.Text = "";
                 txt_sustanciapsicotropicafrecuencia.Enabled = false;
             }
             else
             {
-                cb_sustanciapsicotropicasi.Enabled = true;
-                cb_sustanciapsicotropicano.Enabled = true;
                 txt_sustanciapsicotropicatipo.Enabled = true;
                 txt_sustanciapsicotropicafrecuencia.Enabled = true;
             }
         }
 
+
         //III.SITUACIÓN ECONÓMICA DEL SERVIDOR/A
+        protected void cb_dineroahorrosi_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_dineroahorrosi.Checked == true)
+            {
+                cb_dineroahorrono.Checked = false;
+            }
+        }
+
+        protected void cb_dineroahorrono_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_dineroahorrono.Checked == true)
+            {
+                cb_dineroahorrosi.Checked = false;
+            }
+        }
+
         protected void cb_unifamiliar_CheckedChanged(object sender, EventArgs e)
         {
             if (cb_unifamiliar.Checked == true)
             {
-                cb_multifamiliar.Enabled = false;
+                cb_multifamiliar.Checked = false;
+                txt_otrodescripcionviviendafamilia.Text = "";
                 txt_otrodescripcionviviendafamilia.Enabled = false;
             }
             else
             {
-                cb_unifamiliar.Enabled = true;
-                cb_multifamiliar.Enabled = true;
                 txt_otrodescripcionviviendafamilia.Enabled = true;
             }
         }
@@ -4688,13 +4447,12 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_multifamiliar.Checked == true)
             {
-                cb_unifamiliar.Enabled = false;
+                cb_unifamiliar.Checked = false;
+                txt_otrodescripcionviviendafamilia.Text = "";
                 txt_otrodescripcionviviendafamilia.Enabled = false;
             }
             else
             {
-                cb_unifamiliar.Enabled = true;
-                cb_multifamiliar.Enabled = true;
                 txt_otrodescripcionviviendafamilia.Enabled = true;
             }
         }
@@ -4703,21 +4461,16 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_propiasindeuda.Checked == true)
             {
-                cb_arrendada.Enabled = false;
-                cb_defamilia.Enabled = false;
-                cb_hipotecada.Enabled = false;
-                cb_prestada.Enabled = false;
-                cb_anticreces.Enabled = false;
+                cb_arrendada.Checked = false;
+                cb_defamilia.Checked = false;
+                cb_hipotecada.Checked = false;
+                cb_prestada.Checked = false;
+                cb_anticreces.Checked = false;
+                txt_otratenencia.Text = "";
                 txt_otratenencia.Enabled = false;
             }
             else
             {
-                cb_propiasindeuda.Enabled = true;
-                cb_arrendada.Enabled = true;
-                cb_defamilia.Enabled = true;
-                cb_hipotecada.Enabled = true;
-                cb_prestada.Enabled = true;
-                cb_anticreces.Enabled = true;
                 txt_otratenencia.Enabled = true;
             }
         }
@@ -4726,21 +4479,16 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_arrendada.Checked == true)
             {
-                cb_propiasindeuda.Enabled = false;
-                cb_defamilia.Enabled = false;
-                cb_hipotecada.Enabled = false;
-                cb_prestada.Enabled = false;
-                cb_anticreces.Enabled = false;
+                cb_propiasindeuda.Checked = false;
+                cb_defamilia.Checked = false;
+                cb_hipotecada.Checked = false;
+                cb_prestada.Checked = false;
+                cb_anticreces.Checked = false;
+                txt_otratenencia.Text = "";
                 txt_otratenencia.Enabled = false;
             }
             else
             {
-                cb_propiasindeuda.Enabled = true;
-                cb_arrendada.Enabled = true;
-                cb_defamilia.Enabled = true;
-                cb_hipotecada.Enabled = true;
-                cb_prestada.Enabled = true;
-                cb_anticreces.Enabled = true;
                 txt_otratenencia.Enabled = true;
             }
         }
@@ -4749,21 +4497,16 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_defamilia.Checked == true)
             {
-                cb_propiasindeuda.Enabled = false;
-                cb_arrendada.Enabled = false;
-                cb_hipotecada.Enabled = false;
-                cb_prestada.Enabled = false;
-                cb_anticreces.Enabled = false;
+                cb_propiasindeuda.Checked = false;
+                cb_arrendada.Checked = false;
+                cb_hipotecada.Checked = false;
+                cb_prestada.Checked = false;
+                cb_anticreces.Checked = false;
+                txt_otratenencia.Text = "";
                 txt_otratenencia.Enabled = false;
             }
             else
             {
-                cb_propiasindeuda.Enabled = true;
-                cb_arrendada.Enabled = true;
-                cb_defamilia.Enabled = true;
-                cb_hipotecada.Enabled = true;
-                cb_prestada.Enabled = true;
-                cb_anticreces.Enabled = true;
                 txt_otratenencia.Enabled = true;
             }
         }
@@ -4772,21 +4515,16 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_hipotecada.Checked == true)
             {
-                cb_propiasindeuda.Enabled = false;
-                cb_arrendada.Enabled = false;
-                cb_defamilia.Enabled = false;
-                cb_prestada.Enabled = false;
-                cb_anticreces.Enabled = false;
+                cb_propiasindeuda.Checked = false;
+                cb_arrendada.Checked = false;
+                cb_defamilia.Checked = false;
+                cb_prestada.Checked = false;
+                cb_anticreces.Checked = false;
+                txt_otratenencia.Text = "";
                 txt_otratenencia.Enabled = false;
             }
             else
             {
-                cb_propiasindeuda.Enabled = true;
-                cb_arrendada.Enabled = true;
-                cb_defamilia.Enabled = true;
-                cb_hipotecada.Enabled = true;
-                cb_prestada.Enabled = true;
-                cb_anticreces.Enabled = true;
                 txt_otratenencia.Enabled = true;
             }
         }
@@ -4795,21 +4533,16 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_prestada.Checked == true)
             {
-                cb_propiasindeuda.Enabled = false;
-                cb_arrendada.Enabled = false;
-                cb_defamilia.Enabled = false;
-                cb_hipotecada.Enabled = false;
-                cb_anticreces.Enabled = false;
+                cb_propiasindeuda.Checked = false;
+                cb_arrendada.Checked = false;
+                cb_defamilia.Checked = false;
+                cb_hipotecada.Checked = false;
+                cb_anticreces.Checked = false;
+                txt_otratenencia.Text = "";
                 txt_otratenencia.Enabled = false;
             }
             else
             {
-                cb_propiasindeuda.Enabled = true;
-                cb_arrendada.Enabled = true;
-                cb_defamilia.Enabled = true;
-                cb_hipotecada.Enabled = true;
-                cb_prestada.Enabled = true;
-                cb_anticreces.Enabled = true;
                 txt_otratenencia.Enabled = true;
             }
         }
@@ -4818,21 +4551,16 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_anticreces.Checked == true)
             {
-                cb_propiasindeuda.Enabled = false;
-                cb_arrendada.Enabled = false;
-                cb_defamilia.Enabled = false;
-                cb_hipotecada.Enabled = false;
-                cb_prestada.Enabled = false;
+                cb_propiasindeuda.Checked = false;
+                cb_arrendada.Checked = false;
+                cb_defamilia.Checked = false;
+                cb_hipotecada.Checked = false;
+                cb_prestada.Checked = false;
+                txt_otratenencia.Text = "";
                 txt_otratenencia.Enabled = false;
             }
             else
             {
-                cb_propiasindeuda.Enabled = true;
-                cb_arrendada.Enabled = true;
-                cb_defamilia.Enabled = true;
-                cb_hipotecada.Enabled = true;
-                cb_prestada.Enabled = true;
-                cb_anticreces.Enabled = true;
                 txt_otratenencia.Enabled = true;
             }
         }
@@ -4841,19 +4569,15 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_tipocasa.Checked == true)
             {
-                cb_tiposuit.Enabled = false;
-                cb_tipomediagua.Enabled = false;
-                cb_tipodepartamento.Enabled = false;
-                cb_tipopieza.Enabled = false;
+                cb_tiposuit.Checked = false;
+                cb_tipomediagua.Checked = false;
+                cb_tipodepartamento.Checked = false;
+                cb_tipopieza.Checked = false;
+                txt_otrotipodecasa.Text = "";
                 txt_otrotipodecasa.Enabled = false;
             }
             else
             {
-                cb_tipocasa.Enabled = true;
-                cb_tiposuit.Enabled = true;
-                cb_tipomediagua.Enabled = true;
-                cb_tipodepartamento.Enabled = true;
-                cb_tipopieza.Enabled = true;
                 txt_otrotipodecasa.Enabled = true;
             }
         }
@@ -4862,19 +4586,15 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_tiposuit.Checked == true)
             {
-                cb_tipocasa.Enabled = false;
-                cb_tipomediagua.Enabled = false;
-                cb_tipodepartamento.Enabled = false;
-                cb_tipopieza.Enabled = false;
+                cb_tipocasa.Checked = false;
+                cb_tipomediagua.Checked = false;
+                cb_tipodepartamento.Checked = false;
+                cb_tipopieza.Checked = false;
+                txt_otrotipodecasa.Text = "";
                 txt_otrotipodecasa.Enabled = false;
             }
             else
             {
-                cb_tipocasa.Enabled = true;
-                cb_tiposuit.Enabled = true;
-                cb_tipomediagua.Enabled = true;
-                cb_tipodepartamento.Enabled = true;
-                cb_tipopieza.Enabled = true;
                 txt_otrotipodecasa.Enabled = true;
             }
         }
@@ -4883,19 +4603,15 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_tipomediagua.Checked == true)
             {
-                cb_tipocasa.Enabled = false;
-                cb_tiposuit.Enabled = false;
-                cb_tipodepartamento.Enabled = false;
-                cb_tipopieza.Enabled = false;
+                cb_tipocasa.Checked = false;
+                cb_tiposuit.Checked = false;
+                cb_tipodepartamento.Checked = false;
+                cb_tipopieza.Checked = false;
+                txt_otrotipodecasa.Text = "";
                 txt_otrotipodecasa.Enabled = false;
             }
             else
             {
-                cb_tipocasa.Enabled = true;
-                cb_tiposuit.Enabled = true;
-                cb_tipomediagua.Enabled = true;
-                cb_tipodepartamento.Enabled = true;
-                cb_tipopieza.Enabled = true;
                 txt_otrotipodecasa.Enabled = true;
             }
         }
@@ -4904,19 +4620,15 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_tipodepartamento.Checked == true)
             {
-                cb_tipocasa.Enabled = false;
-                cb_tiposuit.Enabled = false;
-                cb_tipomediagua.Enabled = false;
-                cb_tipopieza.Enabled = false;
+                cb_tipocasa.Checked = false;
+                cb_tiposuit.Checked = false;
+                cb_tipomediagua.Checked = false;
+                cb_tipopieza.Checked = false;
+                txt_otrotipodecasa.Text = "";
                 txt_otrotipodecasa.Enabled = false;
             }
             else
             {
-                cb_tipocasa.Enabled = true;
-                cb_tiposuit.Enabled = true;
-                cb_tipomediagua.Enabled = true;
-                cb_tipodepartamento.Enabled = true;
-                cb_tipopieza.Enabled = true;
                 txt_otrotipodecasa.Enabled = true;
             }
         }
@@ -4925,34 +4637,58 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_tipopieza.Checked == true)
             {
-                cb_tipocasa.Enabled = false;
-                cb_tiposuit.Enabled = false;
-                cb_tipomediagua.Enabled = false;
-                cb_tipodepartamento.Enabled = false;
+                cb_tipocasa.Checked = false;
+                cb_tiposuit.Checked = false;
+                cb_tipomediagua.Checked = false;
+                cb_tipodepartamento.Checked = false;
+                txt_otrotipodecasa.Text = "";
                 txt_otrotipodecasa.Enabled = false;
             }
             else
             {
-                cb_tipocasa.Enabled = true;
-                cb_tiposuit.Enabled = true;
-                cb_tipomediagua.Enabled = true;
-                cb_tipodepartamento.Enabled = true;
-                cb_tipopieza.Enabled = true;
                 txt_otrotipodecasa.Enabled = true;
             }
         }
+
+        protected void cb_vehiculosi_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_vehiculosi.Checked == true)
+            {
+                cb_vehiculono.Checked = false;
+            }
+        }
+
+        protected void cb_vehiculono_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_vehiculono.Checked == true)
+            {
+                cb_vehiculosi.Checked = false;
+            }
+        }
+
+        protected void cb_recorridosi_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_recorridosi.Checked == true)
+            {
+                cb_recorridono.Checked = false;
+            }
+        }
+
+        protected void cb_recorridono_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_recorridono.Checked == true)
+            {
+                cb_recorridosi.Checked = false;
+            }
+        }
+
 
         //IV.INFORMACIÓN GENERAL DEL SERVIDOR/A
         protected void cb_nucleodiscapacidadsi_CheckedChanged(object sender, EventArgs e)
         {
             if (cb_nucleodiscapacidadsi.Checked == true)
             {
-                cb_nucleodiscapacidadno.Enabled = false;
-            }
-            else
-            {
-                cb_nucleodiscapacidadsi.Enabled = true;
-                cb_nucleodiscapacidadno.Enabled = true;
+                cb_nucleodiscapacidadno.Checked = false;
             }
         }
 
@@ -4960,56 +4696,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_nucleodiscapacidadno.Checked == true)
             {
-                cb_nucleodiscapacidadsi.Enabled = false;
-                cb_acargofamiliardiacapacitadosi.Enabled = false;
-                cb_acargofamiliardiacapacitadono.Enabled = false;
-                txt_familiardiscapacitadonomape1.Enabled = false;
-                txt_familiardiscapacitadofechacaducidadcarnet1.Enabled = false;
-                txt_familiardiscapacitadotipodiscapacidad1.Enabled = false;
-                txt_familiardiscapacitadoporcentajediscapacidad1.Enabled = false;
-                txt_familiardiscapacitadoparentesco1.Enabled = false;
-                txt_familiardiscapacitadofechanacimiento1.Enabled = false;
-                txt_familiardiscapacitadonomape2.Enabled = false;
-                txt_familiardiscapacitadofechacaducidadcarnet2.Enabled = false;
-                txt_familiardiscapacitadotipodiscapacidad2.Enabled = false;
-                txt_familiardiscapacitadoporcentajediscapacidad2.Enabled = false;
-                txt_familiardiscapacitadoparentesco2.Enabled = false;
-                txt_familiardiscapacitadofechanacimiento2.Enabled = false;
-                cb_dependenciaministeriotrabajosi.Enabled = false;
-                cb_dependenciaministeriotrabajono.Enabled = false;
-                txt_dependenciaministeriotrabajotiempo.Enabled = false;
-                txt_numcarnetMSP.Enabled = false;
-                cb_acargofamiliarenfermedadrarasi.Enabled = false;
-                cb_acargofamiliarenfermedadrarano.Enabled = false;
-                txt_acargofamiliarenfermedadraratiempo.Enabled = false;
-                txt_familiarenfermedadraratipo.Enabled = false;
-            }
-            else
-            {
-                cb_nucleodiscapacidadsi.Enabled = true;
-                cb_nucleodiscapacidadno.Enabled = true;
-                cb_acargofamiliardiacapacitadosi.Enabled = true;
-                cb_acargofamiliardiacapacitadono.Enabled = true;
-                txt_familiardiscapacitadonomape1.Enabled = true;
-                txt_familiardiscapacitadofechacaducidadcarnet1.Enabled = true;
-                txt_familiardiscapacitadotipodiscapacidad1.Enabled = true;
-                txt_familiardiscapacitadoporcentajediscapacidad1.Enabled = true;
-                txt_familiardiscapacitadoparentesco1.Enabled = true;
-                txt_familiardiscapacitadofechanacimiento1.Enabled = true;
-                txt_familiardiscapacitadonomape2.Enabled = true;
-                txt_familiardiscapacitadofechacaducidadcarnet2.Enabled = true;
-                txt_familiardiscapacitadotipodiscapacidad2.Enabled = true;
-                txt_familiardiscapacitadoporcentajediscapacidad2.Enabled = true;
-                txt_familiardiscapacitadoparentesco2.Enabled = true;
-                txt_familiardiscapacitadofechanacimiento2.Enabled = true;
-                cb_dependenciaministeriotrabajosi.Enabled = true;
-                cb_dependenciaministeriotrabajono.Enabled = true;
-                txt_dependenciaministeriotrabajotiempo.Enabled = true;
-                txt_numcarnetMSP.Enabled = true;
-                cb_acargofamiliarenfermedadrarasi.Enabled = true;
-                cb_acargofamiliarenfermedadrarano.Enabled = true;
-                txt_acargofamiliarenfermedadraratiempo.Enabled = true;
-                txt_familiarenfermedadraratipo.Enabled = true;
+                cb_nucleodiscapacidadsi.Checked = false;
             }
         }
 
@@ -5017,18 +4704,21 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_acargofamiliardiacapacitadosi.Checked == true)
             {
-                tabladiscapacidad.Visible = true;
-                tabladependencia.Visible = true;
-                tablaacargofamiliar.Visible = true;
-                cb_acargofamiliardiacapacitadono.Enabled = false;
-            }
-            else
-            {
-                tabladiscapacidad.Visible = false;
-                tabladependencia.Visible = false;
-                tablaacargofamiliar.Visible = false;
-                cb_acargofamiliardiacapacitadosi.Enabled = true;
-                cb_acargofamiliardiacapacitadono.Enabled = true;
+                cb_acargofamiliardiacapacitadono.Checked = false;
+
+                txt_familiardiscapacitadonomape1.Enabled = true;
+                txt_familiardiscapacitadofechacaducidadcarnet1.Enabled = true;
+                txt_familiardiscapacitadotipodiscapacidad1.Enabled = true;
+                txt_familiardiscapacitadoporcentajediscapacidad1.Enabled = true;
+                txt_familiardiscapacitadoparentesco1.Enabled = true;
+                txt_familiardiscapacitadofechanacimiento1.Enabled = true;
+
+                txt_familiardiscapacitadonomape2.Enabled = true;
+                txt_familiardiscapacitadofechacaducidadcarnet2.Enabled = true;
+                txt_familiardiscapacitadotipodiscapacidad2.Enabled = true;
+                txt_familiardiscapacitadoporcentajediscapacidad2.Enabled = true;
+                txt_familiardiscapacitadoparentesco2.Enabled = true;
+                txt_familiardiscapacitadofechanacimiento2.Enabled = true;
             }
         }
 
@@ -5036,15 +4726,49 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_acargofamiliardiacapacitadono.Checked == true)
             {
-                cb_acargofamiliardiacapacitadosi.Enabled = false;
-                tabladiscapacidad.Visible = false;
-                tabladependencia.Visible = false;
-                tablaacargofamiliar.Visible = false;
+                cb_acargofamiliardiacapacitadosi.Checked = false;
+
+                txt_familiardiscapacitadonomape1.Text = "";
+                txt_familiardiscapacitadonomape1.Enabled = false;
+                txt_familiardiscapacitadofechacaducidadcarnet1.Text = "";
+                txt_familiardiscapacitadofechacaducidadcarnet1.Enabled = false; ;
+                txt_familiardiscapacitadotipodiscapacidad1.Text = "";
+                txt_familiardiscapacitadotipodiscapacidad1.Enabled = false;
+                txt_familiardiscapacitadoporcentajediscapacidad1.Text = "";
+                txt_familiardiscapacitadoporcentajediscapacidad1.Enabled = false;
+                txt_familiardiscapacitadoparentesco1.Text = "";
+                txt_familiardiscapacitadoparentesco1.Enabled = false;
+                txt_familiardiscapacitadofechanacimiento1.Text = "";
+                txt_familiardiscapacitadofechanacimiento1.Enabled = false;
+
+                txt_familiardiscapacitadonomape2.Text = "";
+                txt_familiardiscapacitadonomape2.Enabled = false;
+                txt_familiardiscapacitadofechacaducidadcarnet2.Text = "";
+                txt_familiardiscapacitadofechacaducidadcarnet2.Enabled = false; ;
+                txt_familiardiscapacitadotipodiscapacidad2.Text = "";
+                txt_familiardiscapacitadotipodiscapacidad2.Enabled = false;
+                txt_familiardiscapacitadoporcentajediscapacidad2.Text = "";
+                txt_familiardiscapacitadoporcentajediscapacidad2.Enabled = false;
+                txt_familiardiscapacitadoparentesco2.Text = "";
+                txt_familiardiscapacitadoparentesco2.Enabled = false;
+                txt_familiardiscapacitadofechanacimiento2.Text = "";
+                txt_familiardiscapacitadofechanacimiento2.Enabled = false;
             }
             else
             {
-                cb_acargofamiliardiacapacitadosi.Enabled = true;
-                cb_acargofamiliardiacapacitadono.Enabled = true;
+                txt_familiardiscapacitadonomape1.Enabled = true;
+                txt_familiardiscapacitadofechacaducidadcarnet1.Enabled = true;
+                txt_familiardiscapacitadotipodiscapacidad1.Enabled = true;
+                txt_familiardiscapacitadoporcentajediscapacidad1.Enabled = true;
+                txt_familiardiscapacitadoparentesco1.Enabled = true;
+                txt_familiardiscapacitadofechanacimiento1.Enabled = true;
+
+                txt_familiardiscapacitadonomape2.Enabled = true;
+                txt_familiardiscapacitadofechacaducidadcarnet2.Enabled = true;
+                txt_familiardiscapacitadotipodiscapacidad2.Enabled = true;
+                txt_familiardiscapacitadoporcentajediscapacidad2.Enabled = true;
+                txt_familiardiscapacitadoparentesco2.Enabled = true;
+                txt_familiardiscapacitadofechanacimiento2.Enabled = true;
             }
         }
 
@@ -5052,18 +4776,9 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_dependenciaministeriotrabajosi.Checked == true)
             {
-                cb_dependenciaministeriotrabajono.Enabled = false;
-                tabladiscapacidad.Visible = true;
-                tabladependencia.Visible = true;
-                tablaacargofamiliar.Visible = true;
-            }
-            else
-            {
-                cb_dependenciaministeriotrabajosi.Enabled = true;
-                cb_dependenciaministeriotrabajono.Enabled = true;
-                tabladiscapacidad.Visible = true;
-                tabladependencia.Visible = true;
-                tablaacargofamiliar.Visible = true;
+                cb_dependenciaministeriotrabajono.Checked = false;
+                txt_dependenciaministeriotrabajotiempo.Enabled = true;
+                txt_numcarnetMSP.Enabled = true;
             }
         }
 
@@ -5071,22 +4786,16 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_dependenciaministeriotrabajono.Checked == true)
             {
-                cb_dependenciaministeriotrabajosi.Enabled = false;
+                cb_dependenciaministeriotrabajosi.Checked = false;
+                txt_dependenciaministeriotrabajotiempo.Text = "";
                 txt_dependenciaministeriotrabajotiempo.Enabled = false;
+                txt_numcarnetMSP.Text = "";
                 txt_numcarnetMSP.Enabled = false;
-                tabladiscapacidad.Visible = true;
-                tabladependencia.Visible = true;
-                tablaacargofamiliar.Visible = true;
             }
             else
             {
-                cb_dependenciaministeriotrabajosi.Enabled = true;
-                cb_dependenciaministeriotrabajono.Enabled = true;
                 txt_dependenciaministeriotrabajotiempo.Enabled = true;
                 txt_numcarnetMSP.Enabled = true;
-                tabladiscapacidad.Visible = true;
-                tabladependencia.Visible = true;
-                tablaacargofamiliar.Visible = true;
             }
         }
 
@@ -5094,18 +4803,9 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_acargofamiliarenfermedadrarasi.Checked == true)
             {
-                cb_acargofamiliarenfermedadrarano.Enabled = false;
-                tabladiscapacidad.Visible = true;
-                tabladependencia.Visible = true;
-                tablaacargofamiliar.Visible = true;
-            }
-            else
-            {
-                cb_acargofamiliarenfermedadrarasi.Enabled = true;
-                cb_acargofamiliarenfermedadrarano.Enabled = true;
-                tabladiscapacidad.Visible = true;
-                tabladependencia.Visible = true;
-                tablaacargofamiliar.Visible = true;
+                cb_acargofamiliarenfermedadrarano.Checked = false;
+                txt_acargofamiliarenfermedadraratiempo.Enabled = true;
+                txt_familiarenfermedadraratipo.Enabled = true;
             }
         }
 
@@ -5113,36 +4813,29 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_acargofamiliarenfermedadrarano.Checked == true)
             {
-                cb_acargofamiliarenfermedadrarasi.Enabled = false;
+                cb_acargofamiliarenfermedadrarasi.Checked = false;
+                txt_acargofamiliarenfermedadraratiempo.Text = "";
                 txt_acargofamiliarenfermedadraratiempo.Enabled = false;
+                txt_familiarenfermedadraratipo.Text = "";
                 txt_familiarenfermedadraratipo.Enabled = false;
-                tabladiscapacidad.Visible = true;
-                tabladependencia.Visible = true;
-                tablaacargofamiliar.Visible = true;
             }
             else
             {
-                cb_acargofamiliarenfermedadrarasi.Enabled = true;
-                cb_acargofamiliarenfermedadrarano.Enabled = true;
                 txt_acargofamiliarenfermedadraratiempo.Enabled = true;
                 txt_familiarenfermedadraratipo.Enabled = true;
-                tabladiscapacidad.Visible = true;
-                tabladependencia.Visible = true;
-                tablaacargofamiliar.Visible = true;
             }
         }
+
 
         //V.ACTIVIDADES QUE  REALIZA EN TIEMPO LIBRE EL SERVIDOR/A
         protected void cb_actividadeconomicasi_CheckedChanged(object sender, EventArgs e)
         {
             if (cb_actividadeconomicasi.Checked == true)
             {
-                cb_actividadeconomicano.Enabled = false;
-            }
-            else
-            {
-                cb_actividadeconomicasi.Enabled = true;
-                cb_actividadeconomicano.Enabled = true;
+                cb_actividadeconomicano.Checked = false;
+                txt_actividadeconomicadetalle.Enabled = true;
+                txt_actividadeconomicatiempodestina.Enabled = true;
+                txt_actividadeconomicatiemporealiza.Enabled = true;
             }
         }
 
@@ -5150,16 +4843,19 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_actividadeconomicano.Checked == true)
             {
-                cb_actividadeconomicasi.Enabled = false;
+                cb_actividadeconomicasi.Checked = false;
+                txt_actividadeconomicadetalle.Text = "";
                 txt_actividadeconomicadetalle.Enabled = false;
-                tabla_actividadeconomica.Visible = false;
+                txt_actividadeconomicatiempodestina.Text = "";
+                txt_actividadeconomicatiempodestina.Enabled = false;
+                txt_actividadeconomicatiemporealiza.Text = "";
+                txt_actividadeconomicatiemporealiza.Enabled = false;
             }
             else
             {
-                cb_actividadeconomicasi.Enabled = true;
-                cb_actividadeconomicano.Enabled = true;
                 txt_actividadeconomicadetalle.Enabled = true;
-                tabla_actividadeconomica.Visible = true;
+                txt_actividadeconomicatiempodestina.Enabled = true;
+                txt_actividadeconomicatiemporealiza.Enabled = true;
             }
         }
 
@@ -5167,12 +4863,10 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_deportesi.Checked == true)
             {
-                cb_deporteno.Enabled = false;
-            }
-            else
-            {
-                cb_deportesi.Enabled = true;
-                cb_deporteno.Enabled = true;
+                cb_deporteno.Checked = false;
+                txt_especifiquedeporte.Enabled = true;
+                txt_frecuenciadeporte.Enabled = true;
+                txt_edadpracticadeporte.Enabled = true;
             }
         }
 
@@ -5180,15 +4874,16 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_deporteno.Checked == true)
             {
-                cb_deportesi.Enabled = false;
+                cb_deportesi.Checked = false;
+                txt_especifiquedeporte.Text = "";
                 txt_especifiquedeporte.Enabled = false;
+                txt_frecuenciadeporte.Text = "";
                 txt_frecuenciadeporte.Enabled = false;
+                txt_edadpracticadeporte.Text = "";
                 txt_edadpracticadeporte.Enabled = false;
             }
             else
             {
-                cb_deportesi.Enabled = true;
-                cb_deporteno.Enabled = true;
                 txt_especifiquedeporte.Enabled = true;
                 txt_frecuenciadeporte.Enabled = true;
                 txt_edadpracticadeporte.Enabled = true;
@@ -5199,12 +4894,9 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_lesionsi.Checked == true)
             {
-                cb_lesionno.Enabled = false;
-            }
-            else
-            {
-                cb_lesionsi.Enabled = true;
-                cb_lesionno.Enabled = true;
+                cb_lesionno.Checked = false;
+                txt_tipolesion.Enabled = true;
+                txt_edadlesion.Enabled = true;
             }
         }
 
@@ -5212,14 +4904,14 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_lesionno.Checked == true)
             {
-                cb_lesionsi.Enabled = false;
+                cb_lesionsi.Checked = false;
+                txt_tipolesion.Text = "";
                 txt_tipolesion.Enabled = false;
+                txt_edadlesion.Text = "";
                 txt_edadlesion.Enabled = false;
             }
             else
             {
-                cb_lesionsi.Enabled = true;
-                cb_lesionno.Enabled = true;
                 txt_tipolesion.Enabled = true;
                 txt_edadlesion.Enabled = true;
             }
@@ -5229,12 +4921,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_tratamientosi.Checked == true)
             {
-                cb_tratamientono.Enabled = false;
-            }
-            else
-            {
-                cb_tratamientosi.Enabled = true;
-                cb_tratamientono.Enabled = true;
+                cb_tratamientono.Checked = false;
             }
         }
 
@@ -5242,34 +4929,21 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_tratamientono.Checked == true)
             {
-                cb_tratamientosi.Enabled = false;
-            }
-            else
-            {
-                cb_tratamientosi.Enabled = true;
-                cb_tratamientono.Enabled = true;
+                cb_tratamientosi.Checked = false;
             }
         }
+
 
         //VI. INFORMACIÓN UNICAMENTE PARA USO DE BIENESTAR LABORAL DEL SERVIDOR/A
         protected void cb_nuclear_CheckedChanged(object sender, EventArgs e)
         {
             if (cb_nuclear.Checked == true)
             {
-                cb_ampliada.Enabled = false;
-                cb_monoparental.Enabled = false;
-                cb_vivesolo.Enabled = false;
-                cb_viveconamigos.Enabled = false;
-                cb_familiasinhijos.Enabled = false;
-            }
-            else
-            {
-                cb_nuclear.Enabled = true;
-                cb_ampliada.Enabled = true;
-                cb_monoparental.Enabled = true;
-                cb_vivesolo.Enabled = true;
-                cb_viveconamigos.Enabled = true;
-                cb_familiasinhijos.Enabled = true;
+                cb_ampliada.Checked = false;
+                cb_monoparental.Checked = false;
+                cb_vivesolo.Checked = false;
+                cb_viveconamigos.Checked = false;
+                cb_familiasinhijos.Checked = false;
             }
         }
 
@@ -5277,20 +4951,11 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_ampliada.Checked == true)
             {
-                cb_nuclear.Enabled = false;
-                cb_monoparental.Enabled = false;
-                cb_vivesolo.Enabled = false;
-                cb_viveconamigos.Enabled = false;
-                cb_familiasinhijos.Enabled = false;
-            }
-            else
-            {
-                cb_nuclear.Enabled = true;
-                cb_ampliada.Enabled = true;
-                cb_monoparental.Enabled = true;
-                cb_vivesolo.Enabled = true;
-                cb_viveconamigos.Enabled = true;
-                cb_familiasinhijos.Enabled = true;
+                cb_nuclear.Checked = false;
+                cb_monoparental.Checked = false;
+                cb_vivesolo.Checked = false;
+                cb_viveconamigos.Checked = false;
+                cb_familiasinhijos.Checked = false;
             }
         }
 
@@ -5298,20 +4963,11 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_monoparental.Checked == true)
             {
-                cb_nuclear.Enabled = false;
-                cb_ampliada.Enabled = false;
-                cb_vivesolo.Enabled = false;
-                cb_viveconamigos.Enabled = false;
-                cb_familiasinhijos.Enabled = false;
-            }
-            else
-            {
-                cb_nuclear.Enabled = true;
-                cb_ampliada.Enabled = true;
-                cb_monoparental.Enabled = true;
-                cb_vivesolo.Enabled = true;
-                cb_viveconamigos.Enabled = true;
-                cb_familiasinhijos.Enabled = true;
+                cb_nuclear.Checked = false;
+                cb_ampliada.Checked = false;
+                cb_vivesolo.Checked = false;
+                cb_viveconamigos.Checked = false;
+                cb_familiasinhijos.Checked = false;
             }
         }
 
@@ -5319,20 +4975,11 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_vivesolo.Checked == true)
             {
-                cb_nuclear.Enabled = false;
-                cb_ampliada.Enabled = false;
-                cb_monoparental.Enabled = false;
-                cb_viveconamigos.Enabled = false;
-                cb_familiasinhijos.Enabled = false;
-            }
-            else
-            {
-                cb_nuclear.Enabled = true;
-                cb_ampliada.Enabled = true;
-                cb_monoparental.Enabled = true;
-                cb_vivesolo.Enabled = true;
-                cb_viveconamigos.Enabled = true;
-                cb_familiasinhijos.Enabled = true;
+                cb_nuclear.Checked = false;
+                cb_ampliada.Checked = false;
+                cb_monoparental.Checked = false;
+                cb_viveconamigos.Checked = false;
+                cb_familiasinhijos.Checked = false;
             }
         }
 
@@ -5340,20 +4987,11 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_viveconamigos.Checked == true)
             {
-                cb_nuclear.Enabled = false;
-                cb_ampliada.Enabled = false;
-                cb_monoparental.Enabled = false;
-                cb_vivesolo.Enabled = false;
-                cb_familiasinhijos.Enabled = false;
-            }
-            else
-            {
-                cb_nuclear.Enabled = true;
-                cb_ampliada.Enabled = true;
-                cb_monoparental.Enabled = true;
-                cb_vivesolo.Enabled = true;
-                cb_viveconamigos.Enabled = true;
-                cb_familiasinhijos.Enabled = true;
+                cb_nuclear.Checked = false;
+                cb_ampliada.Checked = false;
+                cb_monoparental.Checked = false;
+                cb_vivesolo.Checked = false;
+                cb_familiasinhijos.Checked = false;
             }
         }
 
@@ -5361,20 +4999,11 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_familiasinhijos.Checked == true)
             {
-                cb_nuclear.Enabled = false;
-                cb_ampliada.Enabled = false;
-                cb_monoparental.Enabled = false;
-                cb_vivesolo.Enabled = false;
-                cb_viveconamigos.Enabled = false;
-            }
-            else
-            {
-                cb_nuclear.Enabled = true;
-                cb_ampliada.Enabled = true;
-                cb_monoparental.Enabled = true;
-                cb_vivesolo.Enabled = true;
-                cb_viveconamigos.Enabled = true;
-                cb_familiasinhijos.Enabled = true;
+                cb_nuclear.Checked = false;
+                cb_ampliada.Checked = false;
+                cb_monoparental.Checked = false;
+                cb_vivesolo.Checked = false;
+                cb_viveconamigos.Checked = false;
             }
         }
 
@@ -5382,16 +5011,9 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_relacionfamiliarmuybuena.Checked == true)
             {
-                cb_relacionfamiliarbuena.Enabled = false;
-                cb_relacionfamiliarregular.Enabled = false;
-                cb_relacionfamiliarmala.Enabled = false;
-            }
-            else
-            {
-                cb_relacionfamiliarmuybuena.Enabled = true;
-                cb_relacionfamiliarbuena.Enabled = true;
-                cb_relacionfamiliarregular.Enabled = true;
-                cb_relacionfamiliarmala.Enabled = true;
+                cb_relacionfamiliarbuena.Checked = false;
+                cb_relacionfamiliarregular.Checked = false;
+                cb_relacionfamiliarmala.Checked = false;
             }
         }
 
@@ -5399,16 +5021,9 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_relacionfamiliarbuena.Checked == true)
             {
-                cb_relacionfamiliarmuybuena.Enabled = false;
-                cb_relacionfamiliarregular.Enabled = false;
-                cb_relacionfamiliarmala.Enabled = false;
-            }
-            else
-            {
-                cb_relacionfamiliarmuybuena.Enabled = true;
-                cb_relacionfamiliarbuena.Enabled = true;
-                cb_relacionfamiliarregular.Enabled = true;
-                cb_relacionfamiliarmala.Enabled = true;
+                cb_relacionfamiliarmuybuena.Checked = false;
+                cb_relacionfamiliarregular.Checked = false;
+                cb_relacionfamiliarmala.Checked = false;
             }
         }
 
@@ -5416,16 +5031,9 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_relacionfamiliarregular.Checked == true)
             {
-                cb_relacionfamiliarmuybuena.Enabled = false;
-                cb_relacionfamiliarbuena.Enabled = false;
-                cb_relacionfamiliarmala.Enabled = false;
-            }
-            else
-            {
-                cb_relacionfamiliarmuybuena.Enabled = true;
-                cb_relacionfamiliarbuena.Enabled = true;
-                cb_relacionfamiliarregular.Enabled = true;
-                cb_relacionfamiliarmala.Enabled = true;
+                cb_relacionfamiliarmuybuena.Checked = false;
+                cb_relacionfamiliarbuena.Checked = false;
+                cb_relacionfamiliarmala.Checked = false;
             }
         }
 
@@ -5433,16 +5041,9 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_relacionfamiliarmala.Checked == true)
             {
-                cb_relacionfamiliarmuybuena.Enabled = false;
-                cb_relacionfamiliarbuena.Enabled = false;
-                cb_relacionfamiliarregular.Enabled = false;
-            }
-            else
-            {
-                cb_relacionfamiliarmuybuena.Enabled = true;
-                cb_relacionfamiliarbuena.Enabled = true;
-                cb_relacionfamiliarregular.Enabled = true;
-                cb_relacionfamiliarmala.Enabled = true;
+                cb_relacionfamiliarmuybuena.Checked = false;
+                cb_relacionfamiliarbuena.Checked = false;
+                cb_relacionfamiliarregular.Checked = false;
             }
         }
 
@@ -5450,16 +5051,9 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_relacionparejamuybuena.Checked == true)
             {
-                cb_relacionparejabuena.Enabled = false;
-                cb_relacionparejaregular.Enabled = false;
-                cb_relacionparejamala.Enabled = false;
-            }
-            else
-            {
-                cb_relacionparejamuybuena.Enabled = true;
-                cb_relacionparejabuena.Enabled = true;
-                cb_relacionparejaregular.Enabled = true;
-                cb_relacionparejamala.Enabled = true;
+                cb_relacionparejabuena.Checked = false;
+                cb_relacionparejaregular.Checked = false;
+                cb_relacionparejamala.Checked = false;
             }
         }
 
@@ -5467,16 +5061,9 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_relacionparejabuena.Checked == true)
             {
-                cb_relacionparejamuybuena.Enabled = false;
-                cb_relacionparejaregular.Enabled = false;
-                cb_relacionparejamala.Enabled = false;
-            }
-            else
-            {
-                cb_relacionparejamuybuena.Enabled = true;
-                cb_relacionparejabuena.Enabled = true;
-                cb_relacionparejaregular.Enabled = true;
-                cb_relacionparejamala.Enabled = true;
+                cb_relacionparejamuybuena.Checked = false;
+                cb_relacionparejaregular.Checked = false;
+                cb_relacionparejamala.Checked = false;
             }
         }
 
@@ -5484,16 +5071,9 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_relacionparejaregular.Checked == true)
             {
-                cb_relacionparejamuybuena.Enabled = false;
-                cb_relacionparejabuena.Enabled = false;
-                cb_relacionparejamala.Enabled = false;
-            }
-            else
-            {
-                cb_relacionparejamuybuena.Enabled = true;
-                cb_relacionparejabuena.Enabled = true;
-                cb_relacionparejaregular.Enabled = true;
-                cb_relacionparejamala.Enabled = true;
+                cb_relacionparejamuybuena.Checked = false;
+                cb_relacionparejabuena.Checked = false;
+                cb_relacionparejamala.Checked = false;
             }
         }
 
@@ -5501,16 +5081,9 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_relacionparejamala.Checked == true)
             {
-                cb_relacionparejamuybuena.Enabled = false;
-                cb_relacionparejabuena.Enabled = false;
-                cb_relacionparejaregular.Enabled = false;
-            }
-            else
-            {
-                cb_relacionparejamuybuena.Enabled = true;
-                cb_relacionparejabuena.Enabled = true;
-                cb_relacionparejaregular.Enabled = true;
-                cb_relacionparejamala.Enabled = true;
+                cb_relacionparejamuybuena.Checked = false;
+                cb_relacionparejabuena.Checked = false;
+                cb_relacionparejaregular.Checked = false;
             }
         }
 
@@ -5518,16 +5091,9 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_relacionconhijosmuybuena.Checked == true)
             {
-                cb_relacionconhijosbuena.Enabled = false;
-                cb_relacionconhijosregular.Enabled = false;
-                cb_relacionconhijosmala.Enabled = false;
-            }
-            else
-            {
-                cb_relacionconhijosmuybuena.Enabled = true;
-                cb_relacionconhijosbuena.Enabled = true;
-                cb_relacionconhijosregular.Enabled = true;
-                cb_relacionconhijosmala.Enabled = true;
+                cb_relacionconhijosbuena.Checked = false;
+                cb_relacionconhijosregular.Checked = false;
+                cb_relacionconhijosmala.Checked = false;
             }
         }
 
@@ -5535,16 +5101,9 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_relacionconhijosbuena.Checked == true)
             {
-                cb_relacionconhijosmuybuena.Enabled = false;
-                cb_relacionconhijosregular.Enabled = false;
-                cb_relacionconhijosmala.Enabled = false;
-            }
-            else
-            {
-                cb_relacionconhijosmuybuena.Enabled = true;
-                cb_relacionconhijosbuena.Enabled = true;
-                cb_relacionconhijosregular.Enabled = true;
-                cb_relacionconhijosmala.Enabled = true;
+                cb_relacionconhijosmuybuena.Checked = false;
+                cb_relacionconhijosregular.Checked = false;
+                cb_relacionconhijosmala.Checked = false;
             }
         }
 
@@ -5552,16 +5111,9 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_relacionconhijosregular.Checked == true)
             {
-                cb_relacionconhijosmuybuena.Enabled = false;
-                cb_relacionconhijosbuena.Enabled = false;
-                cb_relacionconhijosmala.Enabled = false;
-            }
-            else
-            {
-                cb_relacionconhijosmuybuena.Enabled = true;
-                cb_relacionconhijosbuena.Enabled = true;
-                cb_relacionconhijosregular.Enabled = true;
-                cb_relacionconhijosmala.Enabled = true;
+                cb_relacionconhijosmuybuena.Checked = false;
+                cb_relacionconhijosbuena.Checked = false;
+                cb_relacionconhijosmala.Checked = false;
             }
         }
 
@@ -5569,16 +5121,9 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_relacionconhijosmala.Checked == true)
             {
-                cb_relacionconhijosmuybuena.Enabled = false;
-                cb_relacionconhijosbuena.Enabled = false;
-                cb_relacionconhijosregular.Enabled = false;
-            }
-            else
-            {
-                cb_relacionconhijosmuybuena.Enabled = true;
-                cb_relacionconhijosbuena.Enabled = true;
-                cb_relacionconhijosregular.Enabled = true;
-                cb_relacionconhijosmala.Enabled = true;
+                cb_relacionconhijosmuybuena.Checked = false;
+                cb_relacionconhijosbuena.Checked = false;
+                cb_relacionconhijosregular.Checked = false;
             }
         }
 
@@ -5586,12 +5131,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_rolfamiliarsi.Checked == true)
             {
-                cb_rolfamiliarno.Enabled = false;
-            }
-            else
-            {
-                cb_rolfamiliarsi.Enabled = true;
-                cb_rolfamiliarno.Enabled = true;
+                cb_rolfamiliarno.Checked = false;
             }
         }
 
@@ -5599,12 +5139,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_rolfamiliarno.Checked == true)
             {
-                cb_rolfamiliarsi.Enabled = false;
-            }
-            else
-            {
-                cb_rolfamiliarsi.Enabled = true;
-                cb_rolfamiliarno.Enabled = true;
+                cb_rolfamiliarsi.Checked = false;
             }
         }
 
@@ -5612,16 +5147,9 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_nivelsaludfamiliarmuybuena.Checked == true)
             {
-                cb_nivelsaludfamiliarbuena.Enabled = false;
-                cb_nivelsaludfamiliarregular.Enabled = false;
-                cb_nivelsaludfamiliarmala.Enabled = false;
-            }
-            else
-            {
-                cb_nivelsaludfamiliarmuybuena.Enabled = true;
-                cb_nivelsaludfamiliarbuena.Enabled = true;
-                cb_nivelsaludfamiliarregular.Enabled = true;
-                cb_nivelsaludfamiliarmala.Enabled = true;
+                cb_nivelsaludfamiliarbuena.Checked = false;
+                cb_nivelsaludfamiliarregular.Checked = false;
+                cb_nivelsaludfamiliarmala.Checked = false;
             }
         }
 
@@ -5629,16 +5157,9 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_nivelsaludfamiliarbuena.Checked == true)
             {
-                cb_nivelsaludfamiliarmuybuena.Enabled = false;
-                cb_nivelsaludfamiliarregular.Enabled = false;
-                cb_nivelsaludfamiliarmala.Enabled = false;
-            }
-            else
-            {
-                cb_nivelsaludfamiliarmuybuena.Enabled = true;
-                cb_nivelsaludfamiliarbuena.Enabled = true;
-                cb_nivelsaludfamiliarregular.Enabled = true;
-                cb_nivelsaludfamiliarmala.Enabled = true;
+                cb_nivelsaludfamiliarmuybuena.Checked = false;
+                cb_nivelsaludfamiliarregular.Checked = false;
+                cb_nivelsaludfamiliarmala.Checked = false;
             }
         }
 
@@ -5646,16 +5167,9 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_nivelsaludfamiliarregular.Checked == true)
             {
-                cb_nivelsaludfamiliarmuybuena.Enabled = false;
-                cb_nivelsaludfamiliarbuena.Enabled = false;
-                cb_nivelsaludfamiliarmala.Enabled = false;
-            }
-            else
-            {
-                cb_nivelsaludfamiliarmuybuena.Enabled = true;
-                cb_nivelsaludfamiliarbuena.Enabled = true;
-                cb_nivelsaludfamiliarregular.Enabled = true;
-                cb_nivelsaludfamiliarmala.Enabled = true;
+                cb_nivelsaludfamiliarmuybuena.Checked = false;
+                cb_nivelsaludfamiliarbuena.Checked = false;
+                cb_nivelsaludfamiliarmala.Checked = false;
             }
         }
 
@@ -5663,16 +5177,9 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_nivelsaludfamiliarmala.Checked == true)
             {
-                cb_nivelsaludfamiliarmuybuena.Enabled = false;
-                cb_nivelsaludfamiliarbuena.Enabled = false;
-                cb_nivelsaludfamiliarregular.Enabled = false;
-            }
-            else
-            {
-                cb_nivelsaludfamiliarmuybuena.Enabled = true;
-                cb_nivelsaludfamiliarbuena.Enabled = true;
-                cb_nivelsaludfamiliarregular.Enabled = true;
-                cb_nivelsaludfamiliarmala.Enabled = true;
+                cb_nivelsaludfamiliarmuybuena.Checked = false;
+                cb_nivelsaludfamiliarbuena.Checked = false;
+                cb_nivelsaludfamiliarregular.Checked = false;
             }
         }
 
@@ -5680,12 +5187,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_funcional.Checked == true)
             {
-                cb_disfuncional.Enabled = false;
-            }
-            else
-            {
-                cb_funcional.Enabled = true;
-                cb_disfuncional.Enabled = true;
+                cb_disfuncional.Checked = false;
             }
         }
 
@@ -5693,12 +5195,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_disfuncional.Checked == true)
             {
-                cb_funcional.Enabled = false;
-            }
-            else
-            {
-                cb_funcional.Enabled = true;
-                cb_disfuncional.Enabled = true;
+                cb_funcional.Checked = false;
             }
         }
 
@@ -5706,12 +5203,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_certificosi.Checked == true)
             {
-                cb_certificono.Enabled = false;
-            }
-            else
-            {
-                cb_certificosi.Enabled = true;
-                cb_certificono.Enabled = true;
+                cb_certificono.Checked = false;
             }
         }
 
@@ -5719,38 +5211,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             if (cb_certificono.Checked == true)
             {
-                cb_certificosi.Enabled = false;
-            }
-            else
-            {
-                cb_certificosi.Enabled = true;
-                cb_certificono.Enabled = true;
-            }
-        }
-
-        protected void cb_sienfermedad_CheckedChanged(object sender, EventArgs e)
-        {
-            if (cb_sienfermedad.Checked == true)
-            {
-                cb_noenfermedad.Enabled = false;
-            }
-            else
-            {
-                cb_sienfermedad.Enabled = true;
-                cb_noenfermedad.Enabled = true;
-            }
-        }
-
-        protected void cb_noenfermedad_CheckedChanged(object sender, EventArgs e)
-        {
-            if (cb_noenfermedad.Checked == true)
-            {
-                cb_sienfermedad.Enabled = false;
-            }
-            else
-            {
-                cb_noenfermedad.Enabled = true;
-                cb_sienfermedad.Enabled = true;
+                cb_certificosi.Checked = false;
             }
         }
 
@@ -5761,177 +5222,983 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             Document pdfDoc = new Document(PageSize.A4, 15f, 15f, 15f, 15f);
             PdfWriter writer = PdfWriter.GetInstance(pdfDoc, Response.OutputStream);
             BaseFont fuente = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, true);
-            Font titulo = new Font(fuente, 10f, Font.NORMAL, new BaseColor(0, 0, 0));
+            Font titulo = new Font(fuente, 10f, Font.BOLD, new BaseColor(0, 0, 0));
             BaseFont fuente2 = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, true);
             Font parrafo = new Font(fuente2, 12f, Font.NORMAL, new BaseColor(0, 0, 0));
             BaseFont fuente3 = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, true);
             Font cuadro = new Font(fuente3, 10f, Font.NORMAL, new BaseColor(0, 0, 0));
 
             pdfDoc.Open();
-            pdfDoc.Add(new Paragraph("GESTIÓN DEL TALENTO HUMANO", titulo) { Alignment = Element.ALIGN_CENTER });
-            pdfDoc.Add(new Paragraph("GESTIÓN DE BIENESTAR LABORAL Y SALUD OCUPACIONAL", titulo) { Alignment = Element.ALIGN_CENTER });
-            pdfDoc.Add(new Paragraph("FICHA SOCIOECONÓMICA", titulo) { Alignment = Element.ALIGN_CENTER });
+
+            //IMAGEN ENCABEZADO
+            string imageURL = Server.MapPath("../Template Principal/images") + "/ecu911.jpg";
+            iTextSharp.text.Image fotologo = iTextSharp.text.Image.GetInstance(imageURL);
+            fotologo.ScalePercent(37f);
+
+            //ENCABEZADO
+            var tblEncabezado = new PdfPTable(new float[] { 150f, 125f, 125f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            var c1 = new PdfPCell(fotologo) { HorizontalAlignment = Element.ALIGN_CENTER, Rowspan = 5, Padding = 2 };
+            var c2 = new PdfPCell(new Phrase("GESTIÓN DEL TALENTO HUMANO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Colspan = 2, Padding = 3 };
+            c1.Border = 0;
+            tblEncabezado.AddCell(c1);
+            tblEncabezado.AddCell(c2);
+            c2.Phrase = new Phrase("GESTIÓN DE BIENESTAR LABORAL Y SALUD OCUPACIONAL", cuadro);
+            tblEncabezado.AddCell(c2);
+            c2.Phrase = new Phrase("FICHA SOCIOECONÓMICA", cuadro);
+            tblEncabezado.AddCell(c2);
+            var c3 = new PdfPCell(new Phrase("Código", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 };
+            var c4 = new PdfPCell(new Phrase("Versión", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 };
+            tblEncabezado.AddCell(c3);
+            tblEncabezado.AddCell(c4);
+            c3.Phrase = new Phrase("GTH_FOR_21", cuadro);
+            c4.Phrase = new Phrase("2", cuadro);
+            tblEncabezado.AddCell(c3);
+            tblEncabezado.AddCell(c4);
+            pdfDoc.Add(tblEncabezado);
+
+            //FECHA DE REGISTRO
+            pdfDoc.Add(new Paragraph(" "));
+            var tblfechaInicio = new PdfPTable(new float[] { 325f, 75f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblfechaInicio.AddCell(new PdfPCell(new Paragraph("Fecha de registro:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_RIGHT, Padding = 3 });
+            tblfechaInicio.AddCell(new PdfPCell(new Paragraph(txt_fecharegistro.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            pdfDoc.Add(tblfechaInicio);
             pdfDoc.Add(new Paragraph(" "));
 
-            var tblcvTitulo = new PdfPTable(new float[] { 200f, 200f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
-            tblcvTitulo.AddCell(new PdfPCell(new Paragraph("Código", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
-            tblcvTitulo.AddCell(new PdfPCell(new Paragraph("Versión", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
-            pdfDoc.Add(tblcvTitulo);
-            var tblcvDatos = new PdfPTable(new float[] { 70f, 50f, 50f, 50f, 50f, 30f, 50f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
-            tblcvDatos.AddCell(new PdfPCell(new Paragraph(txt_codigoinicio.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
-            tblcvDatos.AddCell(new PdfPCell(new Paragraph(txt_version.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
-            pdfDoc.Add(tblcvDatos);
-            pdfDoc.Add(new Paragraph(" "));
-            pdfDoc.Add(new Paragraph(" "));
-
+            //I.DATOS PERSONALES DEL SERVIDOR/ A
             var tbldatospersonales = new PdfPTable(new float[] { 70f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
-            tbldatospersonales.AddCell(new PdfPCell(new Paragraph("I. DATOS PERSONALES DEL SERVIDOR/A", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(204, 205, 254), HorizontalAlignment = Element.ALIGN_LEFT });
+            tbldatospersonales.AddCell(new PdfPCell(new Paragraph("I. DATOS PERSONALES DEL SERVIDOR/A", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(204, 205, 254), HorizontalAlignment = Element.ALIGN_LEFT, Padding = 3 });
             pdfDoc.Add(tbldatospersonales);
             pdfDoc.Add(new Paragraph(" "));
             var tbldpTitulo = new PdfPTable(new float[] { 100f, 50f, 50f, 50f, 50f, 50f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
-            tbldpTitulo.AddCell(new PdfPCell(new Paragraph("Nombres y Apellidos:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
-            tbldpTitulo.AddCell(new PdfPCell(new Paragraph(txt_prinombre.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
-            tbldpTitulo.AddCell(new PdfPCell(new Paragraph(txt_segnombre.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
-            tbldpTitulo.AddCell(new PdfPCell(new Paragraph(txt_priapellido.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
-            tbldpTitulo.AddCell(new PdfPCell(new Paragraph(txt_segapellido.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
-            tbldpTitulo.AddCell(new PdfPCell(new Paragraph("Cédula:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
-            tbldpTitulo.AddCell(new PdfPCell(new Paragraph(txt_cedula.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            tbldpTitulo.AddCell(new PdfPCell(new Paragraph("Nombres y Apellidos:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tbldpTitulo.AddCell(new PdfPCell(new Paragraph(txt_prinombre.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tbldpTitulo.AddCell(new PdfPCell(new Paragraph(txt_segnombre.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tbldpTitulo.AddCell(new PdfPCell(new Paragraph(txt_priapellido.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tbldpTitulo.AddCell(new PdfPCell(new Paragraph(txt_segapellido.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tbldpTitulo.AddCell(new PdfPCell(new Paragraph("Cédula:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tbldpTitulo.AddCell(new PdfPCell(new Paragraph(txt_cedula.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             pdfDoc.Add(tbldpTitulo);
             pdfDoc.Add(new Paragraph(" "));
-            var tbldaTitulo = new PdfPTable(new float[] { 150f, 150f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
-            tbldaTitulo.AddCell(new PdfPCell(new Paragraph("Departamento / Área en la que trabaja:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
-            tbldaTitulo.AddCell(new PdfPCell(new Paragraph(txt_areatrabajo.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            var tbldaTitulo = new PdfPTable(new float[] { 100f, 200f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tbldaTitulo.AddCell(new PdfPCell(new Paragraph("Área a la que pertenece:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tbldaTitulo.AddCell(new PdfPCell(new Paragraph(txt_areatrabajo.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             pdfDoc.Add(tbldaTitulo);
             pdfDoc.Add(new Paragraph(" "));
-            var tblciTitulo = new PdfPTable(new float[] { 200f, 200f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
-            tblciTitulo.AddCell(new PdfPCell(new Paragraph("Cargo Institucional:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
-            tblciTitulo.AddCell(new PdfPCell(new Paragraph(txt_cargoinstitucional.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            var tblciTitulo = new PdfPTable(new float[] { 100f, 250f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblciTitulo.AddCell(new PdfPCell(new Paragraph("Cargo Institucional:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblciTitulo.AddCell(new PdfPCell(new Paragraph(txt_cargoinstitucional.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             pdfDoc.Add(tblciTitulo);
             pdfDoc.Add(new Paragraph(" "));
             var tblmvTitulo = new PdfPTable(new float[] { 70f, 70f, 15f, 60f, 15f, 60f, 35f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
-            tblmvTitulo.AddCell(new PdfPCell(new Paragraph("Modalidad de vinculación:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
-            tblmvTitulo.AddCell(new PdfPCell(new Paragraph("Ley Organica del Sector Público (LOSEP)", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblmvTitulo.AddCell(new PdfPCell(new Paragraph("Modalidad de vinculación:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblmvTitulo.AddCell(new PdfPCell(new Paragraph("Ley Organica del Sector Público (LOSEP)", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             if (cb_modalidadvinculacionlosep.Checked == true)
             {
-                tblmvTitulo.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER }); ;
+                tblmvTitulo.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             }
             else
             {
-                tblmvTitulo.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER }); ;
+                tblmvTitulo.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             }
-            tblmvTitulo.AddCell(new PdfPCell(new Paragraph("Código de trabajo", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblmvTitulo.AddCell(new PdfPCell(new Paragraph("Código de trabajo", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             if (cb_modalidadvinculacioncodigotrabajo.Checked == true)
             {
-                tblmvTitulo.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER }); ;
+                tblmvTitulo.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             }
             else
             {
-                tblmvTitulo.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER }); ;
+                tblmvTitulo.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             }
-            //tblmvTitulo.AddCell(new PdfPCell(new Paragraph(Convert.ToString(cb_modalidadvinculacionlosep.Checked), cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
-            //tblmvTitulo.AddCell(new PdfPCell(new Paragraph("Código de trabajo", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
-            //tblmvTitulo.AddCell(new PdfPCell(new Paragraph(Convert.ToString(cb_modalidadvinculacioncodigotrabajo.Checked), cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
-            tblmvTitulo.AddCell(new PdfPCell(new Paragraph("Fecha ingreso al ECU", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
-            tblmvTitulo.AddCell(new PdfPCell(new Paragraph(txt_fechaingresoalsisecu.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblmvTitulo.AddCell(new PdfPCell(new Paragraph("Fecha ingreso al ECU", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblmvTitulo.AddCell(new PdfPCell(new Paragraph(txt_fechaingresoalsisecu.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             pdfDoc.Add(tblmvTitulo);
             pdfDoc.Add(new Paragraph(" "));
             var tblecTitulo = new PdfPTable(new float[] { 40f, 40f, 15f, 40f, 15f, 40f, 15f, 40f, 15f, 40f, 15f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
-            tblecTitulo.AddCell(new PdfPCell(new Paragraph("Estado Civil:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
-            tblecTitulo.AddCell(new PdfPCell(new Paragraph("Soltero", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
-            tblecTitulo.AddCell(new PdfPCell(new Paragraph(Convert.ToString(cb_soltero.Checked), cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
-            tblecTitulo.AddCell(new PdfPCell(new Paragraph("Casado", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
-            tblecTitulo.AddCell(new PdfPCell(new Paragraph(Convert.ToString(cb_casado.Checked), cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
-            tblecTitulo.AddCell(new PdfPCell(new Paragraph("Viudo", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
-            tblecTitulo.AddCell(new PdfPCell(new Paragraph(Convert.ToString(cb_viudo.Checked), cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
-            tblecTitulo.AddCell(new PdfPCell(new Paragraph("Unión Libre", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
-            tblecTitulo.AddCell(new PdfPCell(new Paragraph(Convert.ToString(cb_unionlibre.Checked), cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
-            tblecTitulo.AddCell(new PdfPCell(new Paragraph("Divorciado", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
-            tblecTitulo.AddCell(new PdfPCell(new Paragraph(Convert.ToString(cb_divorciado.Checked), cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblecTitulo.AddCell(new PdfPCell(new Paragraph("Estado Civil:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblecTitulo.AddCell(new PdfPCell(new Paragraph("Soltero", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_soltero.Checked == true)
+            {
+                tblecTitulo.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblecTitulo.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblecTitulo.AddCell(new PdfPCell(new Paragraph("Casado", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_casado.Checked == true)
+            {
+                tblecTitulo.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblecTitulo.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblecTitulo.AddCell(new PdfPCell(new Paragraph("Viudo", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_viudo.Checked == true)
+            {
+                tblecTitulo.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblecTitulo.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblecTitulo.AddCell(new PdfPCell(new Paragraph("Unión Libre", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_unionlibre.Checked == true)
+            {
+                tblecTitulo.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblecTitulo.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblecTitulo.AddCell(new PdfPCell(new Paragraph("Divorciado", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_divorciado.Checked == true)
+            {
+                tblecTitulo.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblecTitulo.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
             pdfDoc.Add(tblecTitulo);
             pdfDoc.Add(new Paragraph(" "));
             var tblgTitulo = new PdfPTable(new float[] { 30f, 30f, 15f, 30f, 15f, 40f, 30f, 40f, 15f, 15f, 15f, 15f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
-            tblgTitulo.AddCell(new PdfPCell(new Paragraph("Género:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
-            tblgTitulo.AddCell(new PdfPCell(new Paragraph("Masculino", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
-            tblgTitulo.AddCell(new PdfPCell(new Paragraph(Convert.ToString(cb_genmasculino.Checked), cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
-            tblgTitulo.AddCell(new PdfPCell(new Paragraph("Femenino", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
-            tblgTitulo.AddCell(new PdfPCell(new Paragraph(Convert.ToString(cb_genfemenino.Checked), cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
-            tblgTitulo.AddCell(new PdfPCell(new Paragraph("Tipo de Sangre:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
-            tblgTitulo.AddCell(new PdfPCell(new Paragraph(txt_tipodesangre.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
-            tblgTitulo.AddCell(new PdfPCell(new Paragraph("¿Es donante?", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
-            tblgTitulo.AddCell(new PdfPCell(new Paragraph("Si", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
-            tblgTitulo.AddCell(new PdfPCell(new Paragraph(Convert.ToString(cb_donantesi.Checked), cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
-            tblgTitulo.AddCell(new PdfPCell(new Paragraph("No", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
-            tblgTitulo.AddCell(new PdfPCell(new Paragraph(Convert.ToString(cb_donanteno.Checked), cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblgTitulo.AddCell(new PdfPCell(new Paragraph("Género:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblgTitulo.AddCell(new PdfPCell(new Paragraph("Masculino", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_genmasculino.Checked == true)
+            {
+                tblgTitulo.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblgTitulo.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblgTitulo.AddCell(new PdfPCell(new Paragraph("Femenino", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_genfemenino.Checked == true)
+            {
+                tblgTitulo.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblgTitulo.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblgTitulo.AddCell(new PdfPCell(new Paragraph("Tipo de Sangre:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblgTitulo.AddCell(new PdfPCell(new Paragraph(txt_tipodesangre.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblgTitulo.AddCell(new PdfPCell(new Paragraph("¿Es donante?", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblgTitulo.AddCell(new PdfPCell(new Paragraph("Si", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_donantesi.Checked == true)
+            {
+                tblgTitulo.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblgTitulo.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblgTitulo.AddCell(new PdfPCell(new Paragraph("No", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_donanteno.Checked == true)
+            {
+                tblgTitulo.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblgTitulo.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
             pdfDoc.Add(tblgTitulo);
             pdfDoc.Add(new Paragraph(" "));
-            var tbltelfTitulo = new PdfPTable(new float[] { 150f, 75f, 100f, 75f, 50f, 150f}) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
-            tbltelfTitulo.AddCell(new PdfPCell(new Paragraph("Teléfono Convencional:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
-            tbltelfTitulo.AddCell(new PdfPCell(new Paragraph(txt_telconvecional.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
-            tbltelfTitulo.AddCell(new PdfPCell(new Paragraph("Teléfono Celular:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
-            tbltelfTitulo.AddCell(new PdfPCell(new Paragraph(txt_telcelular.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
-            tbltelfTitulo.AddCell(new PdfPCell(new Paragraph("Email:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
-            tbltelfTitulo.AddCell(new PdfPCell(new Paragraph(txt_email.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            var tbltelfTitulo = new PdfPTable(new float[] { 150f, 75f, 100f, 75f, 50f, 150f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tbltelfTitulo.AddCell(new PdfPCell(new Paragraph("Teléfono Convencional:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tbltelfTitulo.AddCell(new PdfPCell(new Paragraph(txt_telconvecional.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tbltelfTitulo.AddCell(new PdfPCell(new Paragraph("Teléfono Celular:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tbltelfTitulo.AddCell(new PdfPCell(new Paragraph(txt_telcelular.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tbltelfTitulo.AddCell(new PdfPCell(new Paragraph("Email:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tbltelfTitulo.AddCell(new PdfPCell(new Paragraph(txt_email.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             pdfDoc.Add(tbltelfTitulo);
             pdfDoc.Add(new Paragraph(" "));
             var tbllnTitulo = new PdfPTable(new float[] { 150f, 100f, 150f, 100f, 50, 150f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
-            tbllnTitulo.AddCell(new PdfPCell(new Paragraph("Lugar de Nacimiento:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
-            tbllnTitulo.AddCell(new PdfPCell(new Paragraph(txt_lugarnacimiento.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
-            tbllnTitulo.AddCell(new PdfPCell(new Paragraph("Fecha de Nacimiento:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
-            tbllnTitulo.AddCell(new PdfPCell(new Paragraph(txt_fechanacimiento.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
-            tbllnTitulo.AddCell(new PdfPCell(new Paragraph("Edad:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
-            tbllnTitulo.AddCell(new PdfPCell(new Paragraph(txt_edad.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            tbllnTitulo.AddCell(new PdfPCell(new Paragraph("Lugar de Nacimiento:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tbllnTitulo.AddCell(new PdfPCell(new Paragraph(txt_lugarnacimiento.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tbllnTitulo.AddCell(new PdfPCell(new Paragraph("Fecha de Nacimiento:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tbllnTitulo.AddCell(new PdfPCell(new Paragraph(txt_fechanacimiento.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tbllnTitulo.AddCell(new PdfPCell(new Paragraph("Edad:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tbllnTitulo.AddCell(new PdfPCell(new Paragraph(txt_edad.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             pdfDoc.Add(tbllnTitulo);
             pdfDoc.Add(new Paragraph(" "));
             var tblneTitulo = new PdfPTable(new float[] { 40f, 30f, 15f, 30f, 15f, 25f, 15f, 40f, 15f, 30f, 15f, 25f, 15f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
-            tblneTitulo.AddCell(new PdfPCell(new Paragraph("Nivel de Educación:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
-            tblneTitulo.AddCell(new PdfPCell(new Paragraph("Primaria", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
-            tblneTitulo.AddCell(new PdfPCell(new Paragraph(Convert.ToString(cb_primaria.Checked), cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
-            tblneTitulo.AddCell(new PdfPCell(new Paragraph("Secundaria", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
-            tblneTitulo.AddCell(new PdfPCell(new Paragraph(Convert.ToString(cb_secundaria.Checked), cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
-            tblneTitulo.AddCell(new PdfPCell(new Paragraph("Superior", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
-            tblneTitulo.AddCell(new PdfPCell(new Paragraph(Convert.ToString(cb_superior.Checked), cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
-            tblneTitulo.AddCell(new PdfPCell(new Paragraph("Especialización", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
-            tblneTitulo.AddCell(new PdfPCell(new Paragraph(Convert.ToString(cb_especializacion.Checked), cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
-            tblneTitulo.AddCell(new PdfPCell(new Paragraph("Diplomado", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
-            tblneTitulo.AddCell(new PdfPCell(new Paragraph(Convert.ToString(cb_diplomado.Checked), cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
-            tblneTitulo.AddCell(new PdfPCell(new Paragraph("Maestría", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
-            tblneTitulo.AddCell(new PdfPCell(new Paragraph(Convert.ToString(cb_maestria.Checked), cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblneTitulo.AddCell(new PdfPCell(new Paragraph("Nivel de Educación:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblneTitulo.AddCell(new PdfPCell(new Paragraph("Primaria", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_primaria.Checked == true)
+            {
+                tblneTitulo.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblneTitulo.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblneTitulo.AddCell(new PdfPCell(new Paragraph("Secundaria", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_secundaria.Checked == true)
+            {
+                tblneTitulo.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblneTitulo.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblneTitulo.AddCell(new PdfPCell(new Paragraph("Superior", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_superior.Checked == true)
+            {
+                tblneTitulo.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblneTitulo.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblneTitulo.AddCell(new PdfPCell(new Paragraph("Especialización", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_especializacion.Checked == true)
+            {
+                tblneTitulo.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblneTitulo.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblneTitulo.AddCell(new PdfPCell(new Paragraph("Diplomado", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_diplomado.Checked == true)
+            {
+                tblneTitulo.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblneTitulo.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblneTitulo.AddCell(new PdfPCell(new Paragraph("Maestría", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_maestria.Checked == true)
+            {
+                tblneTitulo.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblneTitulo.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
             pdfDoc.Add(tblneTitulo);
             pdfDoc.Add(new Paragraph(" "));
             var tblaiTitulo = new PdfPTable(new float[] { 45f, 30f, 15f, 30f, 15f, 50f, 15f, 30f, 15f, 30f, 15f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
-            tblaiTitulo.AddCell(new PdfPCell(new Paragraph("Autoidentificación Étnica:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
-            tblaiTitulo.AddCell(new PdfPCell(new Paragraph("Blanco", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
-            tblaiTitulo.AddCell(new PdfPCell(new Paragraph(Convert.ToString(cb_blanco.Checked), cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
-            tblaiTitulo.AddCell(new PdfPCell(new Paragraph("Mestizo", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
-            tblaiTitulo.AddCell(new PdfPCell(new Paragraph(Convert.ToString(cb_mestizo.Checked), cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
-            tblaiTitulo.AddCell(new PdfPCell(new Paragraph("Afrodescendiente", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
-            tblaiTitulo.AddCell(new PdfPCell(new Paragraph(Convert.ToString(cb_afro.Checked), cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
-            tblaiTitulo.AddCell(new PdfPCell(new Paragraph("Indígena", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
-            tblaiTitulo.AddCell(new PdfPCell(new Paragraph(Convert.ToString(cb_indigena.Checked), cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
-            tblaiTitulo.AddCell(new PdfPCell(new Paragraph("Montubio", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
-            tblaiTitulo.AddCell(new PdfPCell(new Paragraph(Convert.ToString(cb_montubio.Checked), cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblaiTitulo.AddCell(new PdfPCell(new Paragraph("Autoidentificación Étnica:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblaiTitulo.AddCell(new PdfPCell(new Paragraph("Blanco", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_blanco.Checked == true)
+            {
+                tblaiTitulo.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblaiTitulo.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblaiTitulo.AddCell(new PdfPCell(new Paragraph("Mestizo", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_mestizo.Checked == true)
+            {
+                tblaiTitulo.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblaiTitulo.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblaiTitulo.AddCell(new PdfPCell(new Paragraph("Afrodescendiente", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_afro.Checked == true)
+            {
+                tblaiTitulo.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblaiTitulo.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblaiTitulo.AddCell(new PdfPCell(new Paragraph("Indígena", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_indigena.Checked == true)
+            {
+                tblaiTitulo.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblaiTitulo.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblaiTitulo.AddCell(new PdfPCell(new Paragraph("Montubio", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_montubio.Checked == true)
+            {
+                tblaiTitulo.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblaiTitulo.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
             pdfDoc.Add(tblaiTitulo);
             pdfDoc.Add(new Paragraph(" "));
-            var tblddTitulo = new PdfPTable(new float[] { 150f, 100f, 100f, 75f, 100, 100f, 100f, 75f, 125f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
-            tblddTitulo.AddCell(new PdfPCell(new Paragraph("Dirección del domicilio:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
-            tblddTitulo.AddCell(new PdfPCell(new Paragraph("Provincia:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
-            tblddTitulo.AddCell(new PdfPCell(new Paragraph(txt_provincia.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
-            tblddTitulo.AddCell(new PdfPCell(new Paragraph("Canton:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
-            tblddTitulo.AddCell(new PdfPCell(new Paragraph(txt_canton.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
-            tblddTitulo.AddCell(new PdfPCell(new Paragraph("Parroquia:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
-            tblddTitulo.AddCell(new PdfPCell(new Paragraph(txt_parroquia.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
-            tblddTitulo.AddCell(new PdfPCell(new Paragraph("Barrio:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
-            tblddTitulo.AddCell(new PdfPCell(new Paragraph(txt_barrio.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            var tblddTitulo = new PdfPTable(new float[] { 150f, 100f, 100f, 75f, 100f, 100f, 100f, 75f, 125f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblddTitulo.AddCell(new PdfPCell(new Paragraph("Dirección del domicilio:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblddTitulo.AddCell(new PdfPCell(new Paragraph("Provincia:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblddTitulo.AddCell(new PdfPCell(new Paragraph(txt_provincia.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblddTitulo.AddCell(new PdfPCell(new Paragraph("Canton:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblddTitulo.AddCell(new PdfPCell(new Paragraph(txt_canton.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblddTitulo.AddCell(new PdfPCell(new Paragraph("Parroquia:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblddTitulo.AddCell(new PdfPCell(new Paragraph(txt_parroquia.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblddTitulo.AddCell(new PdfPCell(new Paragraph("Barrio:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblddTitulo.AddCell(new PdfPCell(new Paragraph(txt_barrio.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             pdfDoc.Add(tblddTitulo);
             pdfDoc.Add(new Paragraph(" "));
-            var tblccTitulo = new PdfPTable(new float[] { 150f, 150f, 100f, 150f, 100, 150f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
-            tblccTitulo.AddCell(new PdfPCell(new Paragraph("Calle donde está ubicada la vivienda y numeración:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
-            //tblccTitulo.AddCell(new PdfPCell(new Paragraph(txt_calleubicada.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
-            tblccTitulo.AddCell(new PdfPCell(new Paragraph("Calle secundaria:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
-            tblccTitulo.AddCell(new PdfPCell(new Paragraph(txt_callesecundaria.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
-            tblccTitulo.AddCell(new PdfPCell(new Paragraph("Referencia para ubicar el domicilio:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
-            tblccTitulo.AddCell(new PdfPCell(new Paragraph(txt_refubicardomicilio.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            var tblccTitulo = new PdfPTable(new float[] { 150f, 150f, 50f, 100f, 150f, 150f, 100f, 150f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblccTitulo.AddCell(new PdfPCell(new Paragraph("Calle principal:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblccTitulo.AddCell(new PdfPCell(new Paragraph(txt_calleprincipal.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblccTitulo.AddCell(new PdfPCell(new Paragraph("N:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblccTitulo.AddCell(new PdfPCell(new Paragraph(txt_mumerodecasa.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblccTitulo.AddCell(new PdfPCell(new Paragraph("Calle secundaria:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblccTitulo.AddCell(new PdfPCell(new Paragraph(txt_callesecundaria.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblccTitulo.AddCell(new PdfPCell(new Paragraph("Referencia:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblccTitulo.AddCell(new PdfPCell(new Paragraph(txt_refubicardomicilio.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             pdfDoc.Add(tblccTitulo);
+            pdfDoc.Add(new Paragraph(" "));
+            var tblSectorVive = new PdfPTable(new float[] { 100f, 30f, 15f, 30f, 15f, 30f, 15f, 30f, 15f, 60f, 15f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblSectorVive.AddCell(new PdfPCell(new Paragraph("Sector donde vive:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblSectorVive.AddCell(new PdfPCell(new Paragraph("Norte", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_norte.Checked == true)
+            {
+                tblSectorVive.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblSectorVive.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblSectorVive.AddCell(new PdfPCell(new Paragraph("Centro", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_centro.Checked == true)
+            {
+                tblSectorVive.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblSectorVive.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblSectorVive.AddCell(new PdfPCell(new Paragraph("Sur", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_sur.Checked == true)
+            {
+                tblSectorVive.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblSectorVive.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblSectorVive.AddCell(new PdfPCell(new Paragraph("Valle", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_valle.Checked == true)
+            {
+                tblSectorVive.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblSectorVive.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblSectorVive.AddCell(new PdfPCell(new Paragraph("Valle de los chillos", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_valledeloschillos.Checked == true)
+            {
+                tblSectorVive.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblSectorVive.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            pdfDoc.Add(tblSectorVive);
+            pdfDoc.Add(new Paragraph(" "));
+            var tblTipoVivienda = new PdfPTable(new float[] { 75f, 30f, 15f, 70f, 15f, 50f, 30f, 100f, 30f, 15f, 30f, 15f, 30f, 15f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblTipoVivienda.AddCell(new PdfPCell(new Paragraph("Tipo de vivienda:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblTipoVivienda.AddCell(new PdfPCell(new Paragraph("Casa", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_casa.Checked == true)
+            {
+                tblTipoVivienda.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblTipoVivienda.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblTipoVivienda.AddCell(new PdfPCell(new Paragraph("Departamento", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_departamento.Checked == true)
+            {
+                tblTipoVivienda.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblTipoVivienda.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblTipoVivienda.AddCell(new PdfPCell(new Paragraph("Otro", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblTipoVivienda.AddCell(new PdfPCell(new Paragraph(txt_tipoviviendaotro.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblTipoVivienda.AddCell(new PdfPCell(new Paragraph("Riesgo Delincuencial:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblTipoVivienda.AddCell(new PdfPCell(new Paragraph("Alto", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_riesgoalto.Checked == true)
+            {
+                tblTipoVivienda.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblTipoVivienda.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblTipoVivienda.AddCell(new PdfPCell(new Paragraph("Medio", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_riesgomedio.Checked == true)
+            {
+                tblTipoVivienda.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblTipoVivienda.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblTipoVivienda.AddCell(new PdfPCell(new Paragraph("Bajo", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_riesgobajo.Checked == true)
+            {
+                tblTipoVivienda.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblTipoVivienda.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            pdfDoc.Add(tblTipoVivienda);
+            pdfDoc.Add(new Paragraph(" "));
+            var tblContacEmergencia = new PdfPTable(new float[] { 100f, 75f, 100f, 50f, 50f, 50f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblContacEmergencia.AddCell(new PdfPCell(new Paragraph("Contacto de emergencia:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblContacEmergencia.AddCell(new PdfPCell(new Paragraph("Nombre y apellido:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblContacEmergencia.AddCell(new PdfPCell(new Paragraph(txt_emernomyape.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblContacEmergencia.AddCell(new PdfPCell(new Paragraph("Parentesco:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblContacEmergencia.AddCell(new PdfPCell(new Paragraph(txt_emeparentesco.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblContacEmergencia.AddCell(new PdfPCell(new Paragraph("Telefono:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblContacEmergencia.AddCell(new PdfPCell(new Paragraph(txt_emetelefono.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            pdfDoc.Add(tblContacEmergencia);
+            pdfDoc.Add(new Paragraph(" "));
+            var tblDatosEmergencia = new PdfPTable(new float[] { 150f, 150f, 150f, 150f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblDatosEmergencia.AddCell(new PdfPCell(new Paragraph("Calle principal:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblDatosEmergencia.AddCell(new PdfPCell(new Paragraph(txt_emecalleprincipal.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblDatosEmergencia.AddCell(new PdfPCell(new Paragraph("Nº del domicilio:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblDatosEmergencia.AddCell(new PdfPCell(new Paragraph(txt_emenumdomicilio.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            pdfDoc.Add(tblDatosEmergencia);
+            pdfDoc.Add(new Paragraph(" "));
+            var tblDatoEmergencia = new PdfPTable(new float[] { 150f, 150f, 150f, 150f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblDatoEmergencia.AddCell(new PdfPCell(new Paragraph("Calle secundaria:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblDatoEmergencia.AddCell(new PdfPCell(new Paragraph(txt_emecallesecun.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblDatoEmergencia.AddCell(new PdfPCell(new Paragraph("Referencia para ubicar el domicilio:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblDatoEmergencia.AddCell(new PdfPCell(new Paragraph(txt_emerefubicardomicilio.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            pdfDoc.Add(tblDatoEmergencia);
+            pdfDoc.Add(new Paragraph(" "));
+
+            //II. SITUACIÓN MÉDICA Y DE SALUD DEL SERVIDOR/A
+            var tbldatosmedicos = new PdfPTable(new float[] { 70f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tbldatosmedicos.AddCell(new PdfPCell(new Paragraph("II. SITUACIÓN MÉDICA Y DE SALUD DEL SERVIDOR/A", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(204, 205, 254), HorizontalAlignment = Element.ALIGN_LEFT, Padding = 3 });
+            pdfDoc.Add(tbldatosmedicos);
+            pdfDoc.Add(new Paragraph(" "));
+            var tblenferprexistente = new PdfPTable(new float[] { 100f, 15f, 15f, 15f, 15f, 50f, 100f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblenferprexistente.AddCell(new PdfPCell(new Paragraph("¿Posee alguna enfermedad pre-existente?", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblenferprexistente.AddCell(new PdfPCell(new Paragraph("Si", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_sienfermedad.Checked == true)
+            {
+                tblenferprexistente.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblenferprexistente.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblenferprexistente.AddCell(new PdfPCell(new Paragraph("No", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_noenfermedad.Checked == true)
+            {
+                tblenferprexistente.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblenferprexistente.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblenferprexistente.AddCell(new PdfPCell(new Paragraph("Indique:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblenferprexistente.AddCell(new PdfPCell(new Paragraph(txt_poseeenfermedadprexistente.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            pdfDoc.Add(tblenferprexistente);
+            pdfDoc.Add(new Paragraph(" "));
+            var tbldiscapacidad = new PdfPTable(new float[] { 75f, 15f, 15f, 15f, 15f, 50f, 100f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tbldiscapacidad.AddCell(new PdfPCell(new Paragraph("¿Posee alguna discapacidad?", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tbldiscapacidad.AddCell(new PdfPCell(new Paragraph("Si", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_discapacidadsi.Checked == true)
+            {
+                tbldiscapacidad.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tbldiscapacidad.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tbldiscapacidad.AddCell(new PdfPCell(new Paragraph("No", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_discapacidadsi.Checked == true)
+            {
+                tbldiscapacidad.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tbldiscapacidad.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tbldiscapacidad.AddCell(new PdfPCell(new Paragraph("Tipo de discapacidad:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tbldiscapacidad.AddCell(new PdfPCell(new Paragraph(txt_tipodiscapacidad.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            pdfDoc.Add(tbldiscapacidad);
+            pdfDoc.Add(new Paragraph(" "));
+            var tblDatosDiscapacidad = new PdfPTable(new float[] { 125f, 50f, 175f, 75f, 175, 75f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblDatosDiscapacidad.AddCell(new PdfPCell(new Paragraph("Porcentaje de discapacidad:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblDatosDiscapacidad.AddCell(new PdfPCell(new Paragraph(txt_porcentajediscapacidad.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblDatosDiscapacidad.AddCell(new PdfPCell(new Paragraph("Nº de Carnet otorgado por el MSP o CONADIS:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblDatosDiscapacidad.AddCell(new PdfPCell(new Paragraph(txt_numcarnetconadis.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblDatosDiscapacidad.AddCell(new PdfPCell(new Paragraph("Fecha de caducidad del carnét:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblDatosDiscapacidad.AddCell(new PdfPCell(new Paragraph(txt_fechacaducidadcarnet.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            pdfDoc.Add(tblDatosDiscapacidad);
+            pdfDoc.Add(new Paragraph(" "));
+            var tblGestacion = new PdfPTable(new float[] { 150f, 15f, 15f, 15f, 15f, 50f, 50f, 75f, 75f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblGestacion.AddCell(new PdfPCell(new Paragraph("¿Se encuentra en estado de gestación? (Adjuntar certificado médico)", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblGestacion.AddCell(new PdfPCell(new Paragraph("Si", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_gestaciónsi.Checked == true)
+            {
+                tblGestacion.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblGestacion.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblGestacion.AddCell(new PdfPCell(new Paragraph("No", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_gestaciónno.Checked == true)
+            {
+                tblGestacion.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblGestacion.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblGestacion.AddCell(new PdfPCell(new Paragraph("Tiempo de gestación:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblGestacion.AddCell(new PdfPCell(new Paragraph(txt_gestacióntiempo.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblGestacion.AddCell(new PdfPCell(new Paragraph("Fecha tentativa de parto:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblGestacion.AddCell(new PdfPCell(new Paragraph(txt_fechatentativaparto.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            pdfDoc.Add(tblGestacion);
+            pdfDoc.Add(new Paragraph(" "));
+            var tblLactancia = new PdfPTable(new float[] { 100f, 15f, 15f, 15f, 15f, 150f, 75f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblLactancia.AddCell(new PdfPCell(new Paragraph("¿Se encuentra en periodo de lactancia?", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblLactancia.AddCell(new PdfPCell(new Paragraph("Si", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_lactaciasi.Checked == true)
+            {
+                tblLactancia.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblLactancia.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblLactancia.AddCell(new PdfPCell(new Paragraph("No", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_lactaciano.Checked == true)
+            {
+                tblLactancia.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblLactancia.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblLactancia.AddCell(new PdfPCell(new Paragraph("Fecha de culminación del periodo de lactancia", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblLactancia.AddCell(new PdfPCell(new Paragraph(txt_fechaculmicacionlactancia.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            pdfDoc.Add(tblLactancia);
+            pdfDoc.Add(new Paragraph(" "));
+            var tblCatastrofica = new PdfPTable(new float[] { 200f, 15f, 15f, 15f, 15f, 100f, 100f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblCatastrofica.AddCell(new PdfPCell(new Paragraph("¿Posee alguna enfermedad crónica y/o catastrófica? (Adjuntar certificado médico)", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblCatastrofica.AddCell(new PdfPCell(new Paragraph("Si", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_catastroficasi.Checked == true)
+            {
+                tblCatastrofica.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblCatastrofica.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblCatastrofica.AddCell(new PdfPCell(new Paragraph("No", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_catastroficano.Checked == true)
+            {
+                tblCatastrofica.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblCatastrofica.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblCatastrofica.AddCell(new PdfPCell(new Paragraph("Nombre de la enfermedad:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblCatastrofica.AddCell(new PdfPCell(new Paragraph(txt_cualcatastrofica.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            pdfDoc.Add(tblCatastrofica);
+            pdfDoc.Add(new Paragraph(" "));
+            var tblHuerfana = new PdfPTable(new float[] { 200f, 15f, 15f, 15f, 15f, 100f, 100f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblHuerfana.AddCell(new PdfPCell(new Paragraph("¿Posee alguna enfermedad rara o húerfana, según el Ente Rector que lo determine? (Adjuntar certificado médico)", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblHuerfana.AddCell(new PdfPCell(new Paragraph("Si", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_enfermedadrarasi.Checked == true)
+            {
+                tblHuerfana.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblHuerfana.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblHuerfana.AddCell(new PdfPCell(new Paragraph("No", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_enfermedadrarano.Checked == true)
+            {
+                tblHuerfana.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblHuerfana.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblHuerfana.AddCell(new PdfPCell(new Paragraph("Nombre de la enfermedad:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblHuerfana.AddCell(new PdfPCell(new Paragraph(txt_enfermedadraracual.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            pdfDoc.Add(tblHuerfana);
+            pdfDoc.Add(new Paragraph(" "));
+            var tblAlcohol = new PdfPTable(new float[] { 75f, 15f, 15f, 15f, 15f, 50f, 100f, 100f, 75f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblAlcohol.AddCell(new PdfPCell(new Paragraph("¿Consume alcohol?", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblAlcohol.AddCell(new PdfPCell(new Paragraph("Si", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_alcoholsi.Checked == true)
+            {
+                tblAlcohol.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblAlcohol.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblAlcohol.AddCell(new PdfPCell(new Paragraph("No", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_alcoholno.Checked == true)
+            {
+                tblAlcohol.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblAlcohol.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblAlcohol.AddCell(new PdfPCell(new Paragraph("Frecuencia:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblAlcohol.AddCell(new PdfPCell(new Paragraph(txt_causaconsumoalcohol.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblAlcohol.AddCell(new PdfPCell(new Paragraph("¿Hace cuanto tiempo consume?", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblAlcohol.AddCell(new PdfPCell(new Paragraph(txt_tiempoconsumoalcohol.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            pdfDoc.Add(tblAlcohol);
+            pdfDoc.Add(new Paragraph(" "));
+            var tblTabaco = new PdfPTable(new float[] { 75f, 15f, 15f, 15f, 15f, 50f, 100f, 100f, 75f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblTabaco.AddCell(new PdfPCell(new Paragraph("¿Consume tabaco?", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblTabaco.AddCell(new PdfPCell(new Paragraph("Si", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_tabacosi.Checked == true)
+            {
+                tblTabaco.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblTabaco.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblTabaco.AddCell(new PdfPCell(new Paragraph("No", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_tabacono.Checked == true)
+            {
+                tblTabaco.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblTabaco.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblTabaco.AddCell(new PdfPCell(new Paragraph("Frecuencia:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblTabaco.AddCell(new PdfPCell(new Paragraph(txt_frecuenciaconsumotabaco.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblTabaco.AddCell(new PdfPCell(new Paragraph("¿Hace cuanto tiempo consume?", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblTabaco.AddCell(new PdfPCell(new Paragraph(txt_tiempoconsumotabaco.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            pdfDoc.Add(tblTabaco);
+            pdfDoc.Add(new Paragraph(" "));
+            var tblSustancia = new PdfPTable(new float[] { 100f, 15f, 15f, 15f, 15f, 75f, 75f, 75f, 75f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblSustancia.AddCell(new PdfPCell(new Paragraph("¿Consume usted alguna sustancia psicotrópica?", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblSustancia.AddCell(new PdfPCell(new Paragraph("Si", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_sustanciapsicotropicasi.Checked == true)
+            {
+                tblSustancia.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblSustancia.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblSustancia.AddCell(new PdfPCell(new Paragraph("No", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_sustanciapsicotropicano.Checked == true)
+            {
+                tblSustancia.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblSustancia.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblSustancia.AddCell(new PdfPCell(new Paragraph("Tipo de sustancia:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblSustancia.AddCell(new PdfPCell(new Paragraph(txt_sustanciapsicotropicatipo.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblSustancia.AddCell(new PdfPCell(new Paragraph("Frecuencia", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblSustancia.AddCell(new PdfPCell(new Paragraph(txt_sustanciapsicotropicafrecuencia.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            pdfDoc.Add(tblSustancia);
+            pdfDoc.Add(new Paragraph(" "));
+            var tblproblemas = new PdfPTable(new float[] { 125f, 40f, 15f, 40f, 15f, 40f, 15f, 40f, 15f, 40f, 15f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblproblemas.AddCell(new PdfPCell(new Paragraph("Problemas relacionados con el consumo", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblproblemas.AddCell(new PdfPCell(new Paragraph("Familiares", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_familiares.Checked == true)
+            {
+                tblproblemas.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblproblemas.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblproblemas.AddCell(new PdfPCell(new Paragraph("Laborales", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_familiares.Checked == true)
+            {
+                tblproblemas.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblproblemas.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblproblemas.AddCell(new PdfPCell(new Paragraph("Económicos", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_economicos.Checked == true)
+            {
+                tblproblemas.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblproblemas.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblproblemas.AddCell(new PdfPCell(new Paragraph("Salud", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_salud.Checked == true)
+            {
+                tblproblemas.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblproblemas.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblproblemas.AddCell(new PdfPCell(new Paragraph("Legal", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_legales.Checked == true)
+            {
+                tblproblemas.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblproblemas.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            pdfDoc.Add(tblproblemas);
+            pdfDoc.Add(new Paragraph(" "));
+
+            //III. SITUACIÓN ECONÓMICA DEL SERVIDOR/A
+            var tbldatoseconomicos = new PdfPTable(new float[] { 70f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tbldatoseconomicos.AddCell(new PdfPCell(new Paragraph("III. SITUACIÓN ECONÓMICA DEL SERVIDOR/A", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(204, 205, 254), HorizontalAlignment = Element.ALIGN_LEFT, Padding = 3 });
+            pdfDoc.Add(tbldatoseconomicos);
+            pdfDoc.Add(new Paragraph(" "));
+            var tblmiembrosactivos = new PdfPTable(new float[] { 200f, 100f, 150f, 150f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblmiembrosactivos.AddCell(new PdfPCell(new Paragraph("Número de miembros economicamente activos con los que vive:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblmiembrosactivos.AddCell(new PdfPCell(new Paragraph(txt_miembroactivoseconomicamente.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblmiembrosactivos.AddCell(new PdfPCell(new Paragraph("Situación laboral del cónyuge:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblmiembrosactivos.AddCell(new PdfPCell(new Paragraph(txt_situacionlaboralconyugue.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            pdfDoc.Add(tblmiembrosactivos);
+            pdfDoc.Add(new Paragraph(" "));
+            var tblencabezadodatos = new PdfPTable(new float[] { 200f, 50f, 50f, 75f, 75f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblencabezadodatos.AddCell(new PdfPCell(new Paragraph("Total ingresos mensuales proyectados", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblencabezadodatos.AddCell(new PdfPCell(new Paragraph("Ayuda", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblencabezadodatos.AddCell(new PdfPCell(new Paragraph("Otros", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblencabezadodatos.AddCell(new PdfPCell(new Paragraph("Total egresos", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3, Colspan = 2 });
+            tblencabezadodatos.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            pdfDoc.Add(tblencabezadodatos);
+            var tblvalores1 = new PdfPTable(new float[] { 200f, 50f, 50f, 75f, 75f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblvalores1.AddCell(new PdfPCell(new Paragraph(txt_totalingresos1.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblvalores1.AddCell(new PdfPCell(new Paragraph(txt_ayuda1.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblvalores1.AddCell(new PdfPCell(new Paragraph(txt_otros1.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblvalores1.AddCell(new PdfPCell(new Paragraph("Alimentación", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblvalores1.AddCell(new PdfPCell(new Paragraph(txt_alimentación.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            pdfDoc.Add(tblvalores1);
+            var tblvalores2 = new PdfPTable(new float[] { 200f, 50f, 50f, 75f, 75f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblvalores2.AddCell(new PdfPCell(new Paragraph(txt_totalingresos2.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblvalores2.AddCell(new PdfPCell(new Paragraph(txt_ayuda2.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblvalores2.AddCell(new PdfPCell(new Paragraph(txt_otros2.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblvalores2.AddCell(new PdfPCell(new Paragraph("Vivienda", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblvalores2.AddCell(new PdfPCell(new Paragraph(txt_vivienda.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            pdfDoc.Add(tblvalores2);
+            var tblvalores3 = new PdfPTable(new float[] { 200f, 50f, 50f, 75f, 75f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblvalores3.AddCell(new PdfPCell(new Paragraph(txt_totalingresos3.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblvalores3.AddCell(new PdfPCell(new Paragraph(txt_ayuda3.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblvalores3.AddCell(new PdfPCell(new Paragraph(txt_otros3.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblvalores3.AddCell(new PdfPCell(new Paragraph("Educación", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblvalores3.AddCell(new PdfPCell(new Paragraph(txt_educación.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            pdfDoc.Add(tblvalores3);
+            var tblvalores4 = new PdfPTable(new float[] { 200f, 50f, 50f, 75f, 75f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblvalores4.AddCell(new PdfPCell(new Paragraph(txt_totalingresos4.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblvalores4.AddCell(new PdfPCell(new Paragraph(txt_ayuda4.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblvalores4.AddCell(new PdfPCell(new Paragraph(txt_otros4.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblvalores4.AddCell(new PdfPCell(new Paragraph("Servicios Básicos", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblvalores4.AddCell(new PdfPCell(new Paragraph(txt_serviciosbasicos.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            pdfDoc.Add(tblvalores4);
+            var tblvalores5 = new PdfPTable(new float[] { 200f, 50f, 50f, 75f, 75f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblvalores5.AddCell(new PdfPCell(new Paragraph(txt_totalingresos5.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblvalores5.AddCell(new PdfPCell(new Paragraph(txt_ayuda5.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblvalores5.AddCell(new PdfPCell(new Paragraph(txt_otros5.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblvalores5.AddCell(new PdfPCell(new Paragraph("Salud", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblvalores5.AddCell(new PdfPCell(new Paragraph(txt_salud.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            pdfDoc.Add(tblvalores5);
+            var tblvalores6 = new PdfPTable(new float[] { 200f, 50f, 50f, 75f, 75f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblvalores6.AddCell(new PdfPCell(new Paragraph(txt_totalingresos6.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblvalores6.AddCell(new PdfPCell(new Paragraph(txt_ayuda6.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblvalores6.AddCell(new PdfPCell(new Paragraph(txt_otros6.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblvalores6.AddCell(new PdfPCell(new Paragraph("Movilización", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblvalores6.AddCell(new PdfPCell(new Paragraph(txt_movilización.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            pdfDoc.Add(tblvalores6);
+            var tblvalores7 = new PdfPTable(new float[] { 200f, 50f, 50f, 75f, 75f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblvalores7.AddCell(new PdfPCell(new Paragraph(txt_totalingresos7.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblvalores7.AddCell(new PdfPCell(new Paragraph(txt_ayuda7.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblvalores7.AddCell(new PdfPCell(new Paragraph(txt_otros7.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblvalores7.AddCell(new PdfPCell(new Paragraph("Deudas", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblvalores7.AddCell(new PdfPCell(new Paragraph(txt_deudas.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            pdfDoc.Add(tblvalores7);
+            var tblvalores8 = new PdfPTable(new float[] { 200f, 50f, 50f, 75f, 75f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblvalores8.AddCell(new PdfPCell(new Paragraph(txt_totalingresos8.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblvalores8.AddCell(new PdfPCell(new Paragraph(txt_ayuda8.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblvalores8.AddCell(new PdfPCell(new Paragraph(txt_otros8.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblvalores8.AddCell(new PdfPCell(new Paragraph("Otros", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblvalores8.AddCell(new PdfPCell(new Paragraph(txt_otrospensiones.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            pdfDoc.Add(tblvalores8);
+            pdfDoc.Add(new Paragraph(" "));
+            pdfDoc.Add(new Paragraph(" "));
+            pdfDoc.Add(new Paragraph(" "));
+            pdfDoc.Add(new Paragraph(" "));
+            pdfDoc.Add(new Paragraph(" "));
+            var tblencabezadodescripcion = new PdfPTable(new float[] { 75f, 75f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblencabezadodescripcion.AddCell(new PdfPCell(new Paragraph("Descripción de los Bienes", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3, Colspan = 2 });
+            tblencabezadodescripcion.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            pdfDoc.Add(tblencabezadodescripcion);
+            var tblencabezadobienvalor = new PdfPTable(new float[] { 75f, 75f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblencabezadobienvalor.AddCell(new PdfPCell(new Paragraph("Bien", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblencabezadobienvalor.AddCell(new PdfPCell(new Paragraph("Valor", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            pdfDoc.Add(tblencabezadobienvalor);
+            var tblcasa = new PdfPTable(new float[] { 75f, 75f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblcasa.AddCell(new PdfPCell(new Paragraph("Casa", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblcasa.AddCell(new PdfPCell(new Paragraph(txt_biencasa.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            pdfDoc.Add(tblcasa);
+            var tbldepa = new PdfPTable(new float[] { 75f, 75f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tbldepa.AddCell(new PdfPCell(new Paragraph("Departamento", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tbldepa.AddCell(new PdfPCell(new Paragraph(txt_biendepartamento.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            pdfDoc.Add(tbldepa);
+            var tblvehi = new PdfPTable(new float[] { 75f, 75f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblvehi.AddCell(new PdfPCell(new Paragraph("Vehículo", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblvehi.AddCell(new PdfPCell(new Paragraph(txt_bienvehiculo.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            pdfDoc.Add(tblvehi);
+            var tblterre = new PdfPTable(new float[] { 75f, 75f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblterre.AddCell(new PdfPCell(new Paragraph("Terreno", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblterre.AddCell(new PdfPCell(new Paragraph(txt_bienterreno.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            pdfDoc.Add(tblterre);
+            var tblnego = new PdfPTable(new float[] { 75f, 75f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblnego.AddCell(new PdfPCell(new Paragraph("Negocio", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblnego.AddCell(new PdfPCell(new Paragraph(txt_bienegocio.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            pdfDoc.Add(tblnego);
+            var tblmueble = new PdfPTable(new float[] { 75f, 75f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblmueble.AddCell(new PdfPCell(new Paragraph("Muebles y enseres", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblmueble.AddCell(new PdfPCell(new Paragraph(txt_bienmueblesyenseres.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            pdfDoc.Add(tblmueble);
+            pdfDoc.Add(new Paragraph(" "));
+
+            var tbldineroahorro = new PdfPTable(new float[] { 150f, 15f, 15f, 15f, 15f, 150f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tbldineroahorro.AddCell(new PdfPCell(new Paragraph("¿Destina algún dinero para el ahorro?", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tbldineroahorro.AddCell(new PdfPCell(new Paragraph("Si", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_dineroahorrosi.Checked == true)
+            {
+                tbldineroahorro.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tbldineroahorro.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tbldineroahorro.AddCell(new PdfPCell(new Paragraph("No", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_dineroahorrono.Checked == true)
+            {
+                tbldineroahorro.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tbldineroahorro.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tbldineroahorro.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            pdfDoc.Add(tbldineroahorro);
+            pdfDoc.Add(new Paragraph(" "));
+
+            var tblCaracteristicasvivienda = new PdfPTable(new float[] { 150f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblCaracteristicasvivienda.AddCell(new PdfPCell(new Paragraph("Caracteristicas de la vivienda", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            pdfDoc.Add(tblCaracteristicasvivienda);
+            pdfDoc.Add(new Paragraph(" "));
+            var tblFamiliar = new PdfPTable(new float[] { 50f, 50f, 15f, 50f, 15f, 100f, 75f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblFamiliar.AddCell(new PdfPCell(new Paragraph("Descripción", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblFamiliar.AddCell(new PdfPCell(new Paragraph("Unifamiliar", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_unifamiliar.Checked == true)
+            {
+                tblFamiliar.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblFamiliar.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblFamiliar.AddCell(new PdfPCell(new Paragraph("Multifamiliar", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_multifamiliar.Checked == true)
+            {
+                tblFamiliar.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblFamiliar.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblFamiliar.AddCell(new PdfPCell(new Paragraph("Otro especifique", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblFamiliar.AddCell(new PdfPCell(new Paragraph(txt_otrodescripcionviviendafamilia.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            pdfDoc.Add(tblFamiliar);
+            pdfDoc.Add(new Paragraph(" "));
+            var tblTenencia = new PdfPTable(new float[] { 50f, 75f, 15f, 50f, 15f, 50f, 15f, 75f, 100f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblTenencia.AddCell(new PdfPCell(new Paragraph("Tenencia", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblTenencia.AddCell(new PdfPCell(new Paragraph("Propia sin deuda", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_propiasindeuda.Checked == true)
+            {
+                tblTenencia.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblTenencia.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblTenencia.AddCell(new PdfPCell(new Paragraph("Arrendada", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_arrendada.Checked == true)
+            {
+                tblTenencia.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblTenencia.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblTenencia.AddCell(new PdfPCell(new Paragraph("De familia", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_defamilia.Checked == true)
+            {
+                tblTenencia.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblTenencia.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblTenencia.AddCell(new PdfPCell(new Paragraph("Otro especifique", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblTenencia.AddCell(new PdfPCell(new Paragraph(txt_otratenencia.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3, Rowspan = 2 });
+            pdfDoc.Add(tblTenencia);
+            var tblTenencia2 = new PdfPTable(new float[] { 50f, 75f, 15f, 50f, 15f, 50f, 15f, 75f, 100f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblTenencia2.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblTenencia2.AddCell(new PdfPCell(new Paragraph("Hipotecada", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_hipotecada.Checked == true)
+            {
+                tblTenencia2.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblTenencia2.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblTenencia2.AddCell(new PdfPCell(new Paragraph("Prestada", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_prestada.Checked == true)
+            {
+                tblTenencia2.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblTenencia2.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblTenencia2.AddCell(new PdfPCell(new Paragraph("Anticreces", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_anticreces.Checked == true)
+            {
+                tblTenencia2.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblTenencia2.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblTenencia2.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblTenencia2.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            pdfDoc.Add(tblTenencia2);
+            pdfDoc.Add(new Paragraph(" "));
+
 
             pdfDoc.Close();
             Response.ContentType = "application/pdf";
@@ -5941,6 +6208,5 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             Response.End();
         }
 
-        
     }
 }

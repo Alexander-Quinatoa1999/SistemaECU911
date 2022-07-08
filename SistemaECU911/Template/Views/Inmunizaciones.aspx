@@ -146,11 +146,11 @@
                             <asp:TableCell Text="DOSIS" Style="width: 50px; background-color: #cdfecc; font-size: 15px; text-transform: uppercase"></asp:TableCell>
                             <asp:TableCell Text="FECHA" Style="width: 100px; background-color: #cdfecc; font-size: 15px; text-transform: uppercase"></asp:TableCell>
                             <asp:TableCell Text="LOTE" Style="width: 100px; background-color: #cdfecc; font-size: 15px; text-transform: uppercase"></asp:TableCell>
-<<<<<<< Updated upstream
+
                             <asp:TableCell Text="ESQUEMA COMPLETO (marcar X)" Style="width: 100px; background-color: #cdfecc; font-size: 15px; text-transform: uppercase"></asp:TableCell>
-=======
+
                             <asp:TableCell Text="ESQUEMA COMPLETO (marcar X)" Style="width: 110px; background-color: #cdfecc; font-size: 15px; text-transform: uppercase"></asp:TableCell>
->>>>>>> Stashed changes
+
                             <asp:TableCell Text="NOMBRES COMPLETOS DEL RESPONSABLE DE LA VACUNACIÓN" Style="width: 175px; background-color: #cdfecc; font-size: 15px; text-transform: uppercase"></asp:TableCell>
                             <asp:TableCell Text="ESTABLACIMIENTO DE SALUD DONDE SE COLOCÓ LA VACUNA" Style="width: 175px; background-color: #cdfecc; font-size: 15px; text-transform: uppercase"></asp:TableCell>
                             <asp:TableCell Text="OBSERVACIONES" Style="width: 375px; background-color: #cdfecc; font-size: 15px; text-transform: uppercase"></asp:TableCell>
