@@ -649,7 +649,7 @@ namespace SistemaECU911.Template.Views
                 }
 
                 cargarProfesional();
-                //defaultValidaciones();
+                defaultValidaciones();
             }
         }
 
@@ -818,7 +818,7 @@ namespace SistemaECU911.Template.Views
         {
             try
             {
-                per = CN_HistorialMedico.ObtenerIdPersonasxCedula(Convert.ToInt32(txt_numHClinica.Text));
+                per = CN_HistorialMedico.ObtenerIdPersonasxCedula(txt_numHClinica.Text);
 
                 int perso = Convert.ToInt32(per.Per_id.ToString());
 
@@ -1701,6 +1701,15 @@ namespace SistemaECU911.Template.Views
             }
         }
 
+        private void defaultValidaciones()
+        {
+            txt_EspecifiCalificadoIESSAcciTrabajo.Enabled = false;
+            txt_fechaCalificadoIESSAcciTrabajo.Enabled = false;
+            txt_observacionesAcciTrabajo.Enabled = false;
+            txt_EspecifiCalificadoIESSEnferProfesionales.Enabled = false;
+            txt_fechaCalificadoIESSEnferProfesionales.Enabled = false;
+            txt_observacionesEnferProfesionales.Enabled = false;
+        }
 
         protected void ckb_siCalificadoIESSAcciTrabajo_CheckedChanged(object sender, EventArgs e)
         {
@@ -1709,13 +1718,6 @@ namespace SistemaECU911.Template.Views
                 txt_EspecifiCalificadoIESSAcciTrabajo.Enabled = true;
                 txt_fechaCalificadoIESSAcciTrabajo.Enabled = true;
                 txt_observacionesAcciTrabajo.Enabled = true;
-                ckb_noCalificadoIESSEnferProfesionales.Checked = false;
-            }
-            else
-            {
-                txt_EspecifiCalificadoIESSAcciTrabajo.Enabled = false;
-                txt_fechaCalificadoIESSAcciTrabajo.Enabled = false;
-                txt_observacionesAcciTrabajo.Enabled = false;
                 ckb_noCalificadoIESSAcciTrabajo.Checked = false;
             }
         }
@@ -1741,13 +1743,6 @@ namespace SistemaECU911.Template.Views
                 txt_EspecifiCalificadoIESSEnferProfesionales.Enabled = true;
                 txt_fechaCalificadoIESSEnferProfesionales.Enabled = true;
                 txt_observacionesEnferProfesionales.Enabled = true;
-                ckb_noCalificadoIESSEnferProfesionales.Checked = false;
-            }
-            else
-            {
-                txt_EspecifiCalificadoIESSEnferProfesionales.Enabled = false;
-                txt_fechaCalificadoIESSEnferProfesionales.Enabled = false;
-                txt_observacionesEnferProfesionales.Enabled = false;
                 ckb_noCalificadoIESSEnferProfesionales.Checked = false;
             }
         }

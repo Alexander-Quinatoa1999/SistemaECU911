@@ -189,7 +189,7 @@
                                 <asp:TableCell ColumnSpan="5" Text="ORIENTACION SEXUAL" Style="width: 175px; background-color: #cdfecc; font-size: 15px"></asp:TableCell>
                                 <asp:TableCell ColumnSpan="5" Text="IDENTIDAD DE GENERO" Style="width: 175px; background-color: #cdfecc; font-size: 15px"></asp:TableCell>
                                 <asp:TableCell ColumnSpan="4" Text=" DISCAPACIDAD" Style="width: 250px; background-color: #cdfecc; font-size: 15px"></asp:TableCell>
-                                <asp:TableCell RowSpan="2" Text="FECHA DE INGRESO AL TRABAJO <br /> (dd/mm/aaaa)" Style="width: 100px; background-color: #cdfecc; font-size: 15px"></asp:TableCell>
+                                <asp:TableCell RowSpan="2" Text="FECHA DE INGRESO AL TRABAJO <br /> (DD/MM/AAAA)" Style="width: 100px; background-color: #cdfecc; font-size: 15px"></asp:TableCell>
                                 <asp:TableCell RowSpan="2" Text="PUESTO DE TRABAJO (CIUO)" Style="width: 250px; background-color: #cdfecc; font-size: 15px"></asp:TableCell>
                                 <asp:TableCell RowSpan="2" Text="ÁREA DE TRABAJO" Style="width: 300px; background-color: #cdfecc; font-size: 15px"></asp:TableCell>
                             </asp:TableRow>
@@ -341,7 +341,7 @@
                         <asp:TableRow>
                             <asp:TableCell RowSpan="2" style="width:150px; background-color: #ccffff; font-size:15px">MENARQUÍA</asp:TableCell>
                             <asp:TableCell RowSpan="2" style="width:100px; background-color: #ccffff; font-size:15px">CICLOS</asp:TableCell>
-                            <asp:TableCell RowSpan="2" style="width:100px; background-color: #ccffff; font-size:15px">FECHA DE ULTIMA MENSTRUACIÓN <br /> dd/mm/aaaa </asp:TableCell>
+                            <asp:TableCell RowSpan="2" style="width:100px; background-color: #ccffff; font-size:15px">FECHA DE ULTIMA MENSTRUACIÓN <br /> DD/MM/AAAA </asp:TableCell>
                             <asp:TableCell RowSpan="2" style="width:75px; background-color: #ccffff; font-size:15px">GESTAS</asp:TableCell>
                             <asp:TableCell RowSpan="2" style="width:75px; background-color: #ccffff; font-size:15px">PARTOS</asp:TableCell>
                             <asp:TableCell RowSpan="2" style="width:75px; background-color: #ccffff; font-size:15px">CESÁREAS</asp:TableCell>
@@ -413,12 +413,12 @@
                             <asp:TableCell style="width:200px; background-color: #ccffff; font-size:15px">EXAMENES REALIZADOS</asp:TableCell>
                             <asp:TableCell style="width:50px; background-color: #ccffff; font-size:15px">SI</asp:TableCell>
                             <asp:TableCell style="width:50px; background-color: #ccffff; font-size:15px">NO</asp:TableCell>
-                            <asp:TableCell style="width:125px; background-color: #ccffff; font-size:15px">TIEMPO <br />(años)</asp:TableCell>
+                            <asp:TableCell style="width:125px; background-color: #ccffff; font-size:15px">TIEMPO <br />(AÑOS)</asp:TableCell>
                             <asp:TableCell style="width:250px; background-color: #ccffff; font-size:15px">RESULTADO</asp:TableCell>
                             <asp:TableCell style="width:200px; background-color: #ccffff; font-size:15px">EXAMENES REALIZADOS</asp:TableCell>
                             <asp:TableCell style="width:50px; background-color: #ccffff; font-size:15px">SI</asp:TableCell>
                             <asp:TableCell style="width:50px; background-color: #ccffff; font-size:15px">NO</asp:TableCell>
-                            <asp:TableCell style="width:125px; background-color: #ccffff; font-size:15px">TIEMPO <br />(años)</asp:TableCell>
+                            <asp:TableCell style="width:125px; background-color: #ccffff; font-size:15px">TIEMPO <br />(AÑOS)</asp:TableCell>
                             <asp:TableCell style="width:250px; background-color: #ccffff; font-size:15px">RESULTADO</asp:TableCell>
                         </asp:TableRow>
                         <asp:TableRow>
@@ -496,7 +496,7 @@
                             <asp:TableCell RowSpan="2" style="width:200px; background-color: #ccffff; font-size:15px">EXAMENES REALIZADOS</asp:TableCell>
                             <asp:TableCell RowSpan="2" style="width:50px; background-color: #ccffff; font-size:15px">SI</asp:TableCell>
                             <asp:TableCell RowSpan="2" style="width:50px; background-color: #ccffff; font-size:15px">NO</asp:TableCell>
-                            <asp:TableCell RowSpan="2" style="width:125px; background-color: #ccffff; font-size:15px">TIEMPO <br />(años)</asp:TableCell>
+                            <asp:TableCell RowSpan="2" style="width:125px; background-color: #ccffff; font-size:15px">TIEMPO <br />(AÑOS)</asp:TableCell>
                             <asp:TableCell RowSpan="2" style="width:250px; background-color: #ccffff; font-size:15px">RESULTADO</asp:TableCell>
                             <asp:TableCell ColumnSpan="3" style="width:450px; background-color: #ccffff; font-size:15px">MÉTODO DE PLANIFICACIÓN FAMILIAR</asp:TableCell>
                             <asp:TableCell ColumnSpan="2" style="width:150px; background-color: #ccffff; font-size:15px">HIJOS</asp:TableCell>
@@ -573,10 +573,10 @@
                             <asp:TableCell style="width:250px; background-color: #ccffff; font-size: 15px">CONSUMOS NOCIVOS</asp:TableCell>
                             <asp:TableCell style="width:50px; background-color: #ccffff; font-size: 15px">SI</asp:TableCell>
                             <asp:TableCell style="width:50px; background-color: #ccffff; font-size: 15px">NO</asp:TableCell>
-                            <asp:TableCell style="width:250px; background-color: #ccffff; font-size: 15px">TIEMPO DE CONSUMO <br />(meses)</asp:TableCell>
+                            <asp:TableCell style="width:250px; background-color: #ccffff; font-size: 15px">TIEMPO DE CONSUMO <br />(MESES)</asp:TableCell>
                             <asp:TableCell style="width:250px; background-color: #ccffff; font-size: 15px">CANTIDAD</asp:TableCell>
                             <asp:TableCell style="width:250px; background-color: #ccffff; font-size: 15px">EX CONSUMIDOR</asp:TableCell>
-                            <asp:TableCell style="width:250px; background-color: #ccffff; font-size: 15px">TIEMPO DE ABSTINENCIA <br /> (meses)</asp:TableCell>
+                            <asp:TableCell style="width:250px; background-color: #ccffff; font-size: 15px">TIEMPO DE ABSTINENCIA <br /> (MESES)</asp:TableCell>
                         </asp:TableRow>
                         <asp:TableRow>
                             <asp:TableCell style="background-color: white; font-size: 15px">TABACO</asp:TableCell>
@@ -743,28 +743,28 @@
                             <asp:TableCell RowSpan="2" style="width:300px; background-color: #cdfecc; font-size:15px">EMPRESA</asp:TableCell>
                             <asp:TableCell RowSpan="2" style="width:200px; background-color: #cdfecc; font-size:15px">PUESTO DE TRABAJO</asp:TableCell>
                             <asp:TableCell RowSpan="2" style="width:350px; background-color: #cdfecc; font-size:15px">ACTVIDADES QUE DESEMPEÑA</asp:TableCell>
-                            <asp:TableCell RowSpan="2" style="width:100px; background-color: #cdfecc; font-size:15px">TIEMPO DE TRABAJO <br />(meses)</asp:TableCell>
+                            <asp:TableCell RowSpan="2" style="width:100px; background-color: #cdfecc; font-size:15px">TIEMPO DE TRABAJO <br />(MESES)</asp:TableCell>
                             <asp:TableCell ColumnSpan="6" style="width:150px; background-color: #cdfecc; font-size:15px">RIESGO</asp:TableCell>
                             <asp:TableCell RowSpan="2" style="width:400px; background-color: #cdfecc; font-size:15px">OBSERVACIONES</asp:TableCell>
                         </asp:TableRow>
                         <asp:TableRow>
                             <asp:TableCell style="width:20px; background-color: #cdfecc; font-size:15px">
-                                <asp:Label CssClass="in-column" ID="Label15" runat="server" Text="Físico"></asp:Label>
+                                <asp:Label CssClass="in-column" ID="Label15" runat="server" Text="FÍSICO"></asp:Label>
                             </asp:TableCell>
                             <asp:TableCell style="width:20px; background-color: #cdfecc; font-size:15px">
-                                <asp:Label CssClass="in-column" ID="Label16" runat="server" Text="Mecánico"></asp:Label>
+                                <asp:Label CssClass="in-column" ID="Label16" runat="server" Text="MECÁNICO"></asp:Label>
                             </asp:TableCell>
                             <asp:TableCell style="width:20px; background-color: #cdfecc; font-size:15px">
-                                <asp:Label CssClass="in-column" ID="Label17" runat="server" Text="Químico"></asp:Label>
+                                <asp:Label CssClass="in-column" ID="Label17" runat="server" Text="QUÍMICO"></asp:Label>
                             </asp:TableCell>
                             <asp:TableCell style="width:20px; background-color: #cdfecc; font-size:15px">
-                                <asp:Label CssClass="in-column" ID="Label18" runat="server" Text="Biólogo"></asp:Label>
+                                <asp:Label CssClass="in-column" ID="Label18" runat="server" Text="BIÓLOGO"></asp:Label>
                             </asp:TableCell>
                             <asp:TableCell style="width:20px; background-color: #cdfecc; font-size:15px">
-                                <asp:Label CssClass="in-column" ID="Label19" runat="server" Text="Ergonómico"></asp:Label>
+                                <asp:Label CssClass="in-column" ID="Label19" runat="server" Text="ERGÓNOMICO"></asp:Label>
                             </asp:TableCell>
                             <asp:TableCell style="width:20px; background-color: #cdfecc; font-size:15px">
-                                <asp:Label CssClass="in-column" ID="Label20" runat="server" Text="Psicosocial"></asp:Label>
+                                <asp:Label CssClass="in-column" ID="Label20" runat="server" Text="PSICOSOCIAL"></asp:Label>
                             </asp:TableCell>
                         </asp:TableRow>
                         <asp:TableRow>
@@ -1073,34 +1073,34 @@
                             <asp:TableCell style="width:400px; background-color: #cdfecc; font-size:15px" ColumnSpan="10">FÍSICO</asp:TableCell>                            
                         </asp:TableRow>
                         <asp:TableRow>
-                            <asp:TableCell style="background-color: #cdfecc; font-size:15px">
+                            <asp:TableCell style="background-color: #cdfecc; font-size: 15px; text-transform: uppercase">
                                 <asp:Label CssClass="in-column" ID="Label21" runat="server" Text="Temperaturas altas"></asp:Label>
                             </asp:TableCell>
-                            <asp:TableCell style="background-color: #cdfecc; font-size:15px">
+                            <asp:TableCell style="background-color: #cdfecc; font-size: 15px; text-transform: uppercase">
                                 <asp:Label CssClass="in-column" ID="Label22" runat="server" Text="Temperaturas bajas"></asp:Label>
                             </asp:TableCell>
-                            <asp:TableCell style="background-color: #cdfecc; font-size:15px">
+                            <asp:TableCell style="background-color: #cdfecc; font-size: 15px; text-transform: uppercase">
                                 <asp:Label CssClass="in-column" ID="Label23" runat="server" Text="Radiación Ionizante"></asp:Label>
                             </asp:TableCell>
-                            <asp:TableCell style="background-color: #cdfecc; font-size:15px">
+                            <asp:TableCell style="background-color: #cdfecc; font-size: 15px; text-transform: uppercase">
                                 <asp:Label CssClass="in-column" ID="Label24" runat="server" Text="Radiación No Ionizante"></asp:Label>
                             </asp:TableCell>
-                            <asp:TableCell style="background-color: #cdfecc; font-size:15px">
+                            <asp:TableCell style="background-color: #cdfecc; font-size: 15px; text-transform: uppercase">
                                 <asp:Label CssClass="in-column" ID="Label25" runat="server" Text="Ruido"></asp:Label>
                             </asp:TableCell>
-                            <asp:TableCell style="background-color: #cdfecc; font-size:15px">
+                            <asp:TableCell style="background-color: #cdfecc; font-size: 15px; text-transform: uppercase">
                                 <asp:Label CssClass="in-column" ID="Label26" runat="server" Text="Vibración"></asp:Label>
                             </asp:TableCell>
-                            <asp:TableCell style="background-color: #cdfecc; font-size:15px">
+                            <asp:TableCell style="background-color: #cdfecc; font-size: 15px; text-transform: uppercase">
                                 <asp:Label CssClass="in-column" ID="Label27" runat="server" Text="Iluminación"></asp:Label>
                             </asp:TableCell>
-                            <asp:TableCell style="background-color: #cdfecc; font-size:15px">
+                            <asp:TableCell style="background-color: #cdfecc; font-size: 15px; text-transform: uppercase">
                                 <asp:Label CssClass="in-column" ID="Label28" runat="server" Text="Ventilación"></asp:Label>
                             </asp:TableCell>
-                            <asp:TableCell style="background-color: #cdfecc; font-size:15px">
+                            <asp:TableCell style="background-color: #cdfecc; font-size: 15px; text-transform: uppercase">
                                 <asp:Label CssClass="in-column" ID="Label29" runat="server" Text="Fluido eléctrico"></asp:Label>
                             </asp:TableCell>
-                            <asp:TableCell style="background-color: #cdfecc; font-size:15px">
+                            <asp:TableCell style="background-color: #cdfecc; font-size: 15px; text-transform: uppercase">
                                 <div class="col">
                                     <asp:Label CssClass="in-column" ID="Label94" runat="server" Text="Otros"></asp:Label>
                                 </div>
@@ -1110,7 +1110,7 @@
                             </asp:TableCell>                            
                         </asp:TableRow>
                         <asp:TableRow>
-                            <asp:TableCell style="width:50px; background-color: white; font-size: 15px">1. </asp:TableCell>
+                            <asp:TableCell style="width:50px; background-color: white; font-size: 15px; text-transform: uppercase">1. </asp:TableCell>
                             <asp:TableCell style="width:400px; background-color: white; font-size: 14px">
                                 <asp:TextBox runat="server" ID="txt_puestodetrabajo" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform:uppercase" placeholder="-"></asp:TextBox>
                             </asp:TableCell>
@@ -1159,7 +1159,7 @@
                             </asp:TableCell>                            
                         </asp:TableRow>
                         <asp:TableRow>
-                            <asp:TableCell style="width:50px; background-color: white; font-size: 15px">2. </asp:TableCell>
+                            <asp:TableCell style="width:50px; background-color: white; font-size: 15px; text-transform: uppercase">2. </asp:TableCell>
                             <asp:TableCell style="width:400px; background-color: white; font-size: 14px">
                                 <asp:TextBox runat="server" ID="txt_puestodetrabajo2" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform:uppercase" placeholder="-"></asp:TextBox>
                             </asp:TableCell>
@@ -1208,7 +1208,7 @@
                             </asp:TableCell>                            
                         </asp:TableRow>
                         <asp:TableRow>
-                            <asp:TableCell style="width:50px; background-color: white; font-size: 15px">3. </asp:TableCell>
+                            <asp:TableCell style="width:50px; background-color: white; font-size: 15px; text-transform: uppercase">3. </asp:TableCell>
                             <asp:TableCell style="width:400px; background-color: white; font-size: 14px">
                                 <asp:TextBox runat="server" ID="txt_puestodetrabajo3" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform:uppercase" placeholder="-"></asp:TextBox>
                             </asp:TableCell>
@@ -1257,7 +1257,7 @@
                             </asp:TableCell>                            
                         </asp:TableRow>
                         <asp:TableRow>
-                            <asp:TableCell style="width:50px; background-color: white; font-size: 15px">4. </asp:TableCell>
+                            <asp:TableCell style="width:50px; background-color: white; font-size: 15px; text-transform: uppercase">4. </asp:TableCell>
                             <asp:TableCell style="width:400px; background-color: white; font-size: 14px">
                                 <asp:TextBox runat="server" ID="txt_puestodetrabajo4" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform:uppercase" placeholder="-"></asp:TextBox>
                             </asp:TableCell>
@@ -1312,76 +1312,76 @@
                             <asp:TableCell ColumnSpan="9" style="width:700px; background-color: #cdfecc; font-size:15px">QUÍMICO</asp:TableCell>
                         </asp:TableRow>
                         <asp:TableRow>
-                            <asp:TableCell style="background-color: #cdfecc; font-size:15px">
+                            <asp:TableCell style="background-color: #cdfecc; font-size: 15px; text-transform: uppercase">
                                 <asp:Label CssClass="in-column" ID="Label31" runat="server" Text="Atrapamiento entre máquinas"></asp:Label>
                             </asp:TableCell>
-                            <asp:TableCell style="background-color: #cdfecc; font-size:15px">
+                            <asp:TableCell style="background-color: #cdfecc; font-size: 15px; text-transform: uppercase">
                                 <asp:Label CssClass="in-column" ID="Label32" runat="server" Text="Atrapamiento entre superficies"></asp:Label>
                             </asp:TableCell>
-                            <asp:TableCell style="background-color: #cdfecc; font-size:15px">
+                            <asp:TableCell style="background-color: #cdfecc; font-size: 15px; text-transform: uppercase">
                                 <asp:Label CssClass="in-column" ID="Label33" runat="server" Text="Atrapamiento entre objetos"></asp:Label>
                             </asp:TableCell>
-                            <asp:TableCell style="background-color: #cdfecc; font-size:15px">
+                            <asp:TableCell style="background-color: #cdfecc; font-size: 15px; text-transform: uppercase">
                                 <asp:Label CssClass="in-column" ID="Label34" runat="server" Text="Caída de objetos"></asp:Label>
                             </asp:TableCell>
-                            <asp:TableCell style="background-color: #cdfecc; font-size:15px">
+                            <asp:TableCell style="background-color: #cdfecc; font-size: 15px; text-transform: uppercase">
                                 <asp:Label CssClass="in-column" ID="Label35" runat="server" Text="Caídas al mismo nivel"></asp:Label>
                             </asp:TableCell>
-                            <asp:TableCell style="background-color: #cdfecc; font-size:15px">
+                            <asp:TableCell style="background-color: #cdfecc; font-size: 15px; text-transform: uppercase">
                                 <asp:Label CssClass="in-column" ID="Label36" runat="server" Text="Caídas a diferente nivel"></asp:Label>
                             </asp:TableCell>
-                            <asp:TableCell style="background-color: #cdfecc; font-size:15px">
+                            <asp:TableCell style="background-color: #cdfecc; font-size: 15px; text-transform: uppercase">
                                 <asp:Label CssClass="in-column" ID="Label37" runat="server" Text="Contacto eléctrico"></asp:Label>
                             </asp:TableCell>
-                            <asp:TableCell style="background-color: #cdfecc; font-size:15px">
+                            <asp:TableCell style="background-color: #cdfecc; font-size: 15px; text-transform: uppercase">
                                 <asp:Label CssClass="in-column" ID="Label38" runat="server" Text="Contacto con superficies de trabajos"></asp:Label>
                             </asp:TableCell>
-                            <asp:TableCell style="background-color: #cdfecc; font-size:15px">
+                            <asp:TableCell style="background-color: #cdfecc; font-size: 15px; text-transform: uppercase">
                                 <asp:Label CssClass="in-column" ID="Label39" runat="server" Text="Proyección de partículas – fragmentos"></asp:Label>
                             </asp:TableCell>
-                            <asp:TableCell style="background-color: #cdfecc; font-size:15px">
+                            <asp:TableCell style="background-color: #cdfecc; font-size: 15px; text-transform: uppercase">
                                 <asp:Label CssClass="in-column" ID="Label40" runat="server" Text="Proyección de fluidos"></asp:Label>
                             </asp:TableCell>
-                            <asp:TableCell style="background-color: #cdfecc; font-size:15px">
+                            <asp:TableCell style="background-color: #cdfecc; font-size: 15px; text-transform: uppercase">
                                 <asp:Label CssClass="in-column" ID="Label41" runat="server" Text="Pinchazos"></asp:Label>
                             </asp:TableCell>
-                            <asp:TableCell style="background-color: #cdfecc; font-size:15px">
+                            <asp:TableCell style="background-color: #cdfecc; font-size: 15px; text-transform: uppercase">
                                 <asp:Label CssClass="in-column" ID="Label42" runat="server" Text="Cortes"></asp:Label>
                             </asp:TableCell>
-                            <asp:TableCell style="background-color: #cdfecc; font-size:15px">
+                            <asp:TableCell style="background-color: #cdfecc; font-size: 15px; text-transform: uppercase">
                                 <asp:Label CssClass="in-column" ID="Label43" runat="server" Text="Atropellamientos por vehículos"></asp:Label>
                             </asp:TableCell>
-                            <asp:TableCell style="background-color: #cdfecc; font-size:15px">
+                            <asp:TableCell style="background-color: #cdfecc; font-size: 15px; text-transform: uppercase">
                                 <asp:Label CssClass="in-column" ID="Label44" runat="server" Text="Choques /colisión vehicular"></asp:Label>
                             </asp:TableCell>
-                            <asp:TableCell style="background-color: #cdfecc; font-size:15px">
+                            <asp:TableCell style="background-color: #cdfecc; font-size: 15px; text-transform: uppercase">
                                 <asp:Label CssClass="in-column" ID="Label45" runat="server" Text="Otros __________"></asp:Label>
                             </asp:TableCell>
-                            <asp:TableCell style="background-color: #cdfecc; font-size:15px">
+                            <asp:TableCell style="background-color: #cdfecc; font-size: 15px; text-transform: uppercase">
                                 <asp:Label CssClass="in-column" ID="Label46" runat="server" Text="Sólidos"></asp:Label>
                             </asp:TableCell>
-                            <asp:TableCell style="background-color: #cdfecc; font-size:15px">
+                            <asp:TableCell style="background-color: #cdfecc; font-size: 15px; text-transform: uppercase">
                                 <asp:Label CssClass="in-column" ID="Label47" runat="server" Text="Polvos"></asp:Label>
                             </asp:TableCell>
-                            <asp:TableCell style="background-color: #cdfecc; font-size:15px">
+                            <asp:TableCell style="background-color: #cdfecc; font-size: 15px; text-transform: uppercase">
                                 <asp:Label CssClass="in-column" ID="Label48" runat="server" Text="Humos"></asp:Label>
                             </asp:TableCell>
-                            <asp:TableCell style="background-color: #cdfecc; font-size:15px">
+                            <asp:TableCell style="background-color: #cdfecc; font-size: 15px; text-transform: uppercase">
                                 <asp:Label CssClass="in-column" ID="Label49" runat="server" Text="Líquidos"></asp:Label>
                             </asp:TableCell>
-                            <asp:TableCell style="background-color: #cdfecc; font-size:15px">
+                            <asp:TableCell style="background-color: #cdfecc; font-size: 15px; text-transform: uppercase">
                                 <asp:Label CssClass="in-column" ID="Label50" runat="server" Text="Vapores"></asp:Label>
                             </asp:TableCell>
-                            <asp:TableCell style="background-color: #cdfecc; font-size:15px">
+                            <asp:TableCell style="background-color: #cdfecc; font-size: 15px; text-transform: uppercase">
                                 <asp:Label CssClass="in-column" ID="Label51" runat="server" Text="Aerosoles"></asp:Label>
                             </asp:TableCell>
-                            <asp:TableCell style="background-color: #cdfecc; font-size:15px">
+                            <asp:TableCell style="background-color: #cdfecc; font-size: 15px; text-transform: uppercase">
                                 <asp:Label CssClass="in-column" ID="Label52" runat="server" Text="Neblinas"></asp:Label>
                             </asp:TableCell>
-                            <asp:TableCell style="background-color: #cdfecc; font-size:15px">
+                            <asp:TableCell style="background-color: #cdfecc; font-size: 15px; text-transform: uppercase">
                                 <asp:Label CssClass="in-column" ID="Label53" runat="server" Text="Gaseosos"></asp:Label>
                             </asp:TableCell>
-                            <asp:TableCell style="background-color: #cdfecc; font-size:15px">
+                            <asp:TableCell style="background-color: #cdfecc; font-size: 15px; text-transform: uppercase">
                                 <asp:Label CssClass="in-column" ID="Label54" runat="server" Text="Otros __________"></asp:Label>
                             </asp:TableCell>
                         </asp:TableRow>
@@ -1786,40 +1786,40 @@
                             <asp:TableCell ColumnSpan="5" style="width:350px; background-color: #cdfecc; font-size:15px">ERGONÓMICO</asp:TableCell>                            
                         </asp:TableRow>
                         <asp:TableRow>
-                            <asp:TableCell style="background-color: #cdfecc; font-size:15px">
+                            <asp:TableCell style="background-color: #cdfecc; font-size: 15px; text-transform: uppercase">
                                 <asp:Label CssClass="in-column" ID="Label55" runat="server" Text="Virus"></asp:Label>
                             </asp:TableCell>
-                            <asp:TableCell style="background-color: #cdfecc; font-size:15px">
+                            <asp:TableCell style="background-color: #cdfecc; font-size: 15px; text-transform: uppercase">
                                 <asp:Label CssClass="in-column" ID="Label56" runat="server" Text="Hongos"></asp:Label>
                             </asp:TableCell>
-                            <asp:TableCell style="background-color: #cdfecc; font-size:15px">
+                            <asp:TableCell style="background-color: #cdfecc; font-size: 15px; text-transform: uppercase">
                                 <asp:Label CssClass="in-column" ID="Label57" runat="server" Text="Bacterias "></asp:Label>
                             </asp:TableCell>
-                            <asp:TableCell style="background-color: #cdfecc; font-size:15px">
+                            <asp:TableCell style="background-color: #cdfecc; font-size: 15px; text-transform: uppercase">
                                 <asp:Label CssClass="in-column" ID="Label58" runat="server" Text="Parásitos "></asp:Label>
                             </asp:TableCell>
-                            <asp:TableCell style="background-color: #cdfecc; font-size:15px">
+                            <asp:TableCell style="background-color: #cdfecc; font-size: 15px; text-transform: uppercase">
                                 <asp:Label CssClass="in-column" ID="Label59" runat="server" Text="Exposición a vectores"></asp:Label>
                             </asp:TableCell>
-                            <asp:TableCell style="background-color: #cdfecc; font-size:15px">
+                            <asp:TableCell style="background-color: #cdfecc; font-size: 15px; text-transform: uppercase">
                                 <asp:Label CssClass="in-column" ID="Label60" runat="server" Text="Exposición a animales selváticos "></asp:Label>
                             </asp:TableCell>
-                            <asp:TableCell style="background-color: #cdfecc; font-size:15px">
+                            <asp:TableCell style="background-color: #cdfecc; font-size: 15px; text-transform: uppercase">
                                 <asp:Label CssClass="in-column" ID="Label61" runat="server" Text="Otros __________"></asp:Label>
                             </asp:TableCell>
-                            <asp:TableCell style="background-color: #cdfecc; font-size:15px">
+                            <asp:TableCell style="background-color: #cdfecc; font-size: 15px; text-transform: uppercase">
                                 <asp:Label CssClass="in-column" ID="Label62" runat="server" Text="Manejo manual de cargas"></asp:Label>
                             </asp:TableCell>
-                            <asp:TableCell style="background-color: #cdfecc; font-size:15px">
+                            <asp:TableCell style="background-color: #cdfecc; font-size: 15px; text-transform: uppercase">
                                 <asp:Label CssClass="in-column" ID="Label63" runat="server" Text="Movimiento repetitivos"></asp:Label>
                             </asp:TableCell>
-                            <asp:TableCell style="background-color: #cdfecc; font-size:15px">
+                            <asp:TableCell style="background-color: #cdfecc; font-size: 15px; text-transform: uppercase">
                                 <asp:Label CssClass="in-column" ID="Label64" runat="server" Text="Posturas forzadas"></asp:Label>
                             </asp:TableCell>
-                            <asp:TableCell style="background-color: #cdfecc; font-size:15px">
+                            <asp:TableCell style="background-color: #cdfecc; font-size: 15px; text-transform: uppercase">
                                 <asp:Label CssClass="in-column" ID="Label65" runat="server" Text="Trabajos con PVD"></asp:Label>
                             </asp:TableCell>
-                            <asp:TableCell style="background-color: #cdfecc; font-size:15px">
+                            <asp:TableCell style="background-color: #cdfecc; font-size: 15px; text-transform: uppercase">
                                 <asp:Label CssClass="in-column" ID="Label66" runat="server" Text="Otros __________"></asp:Label>
                             </asp:TableCell>                            
                         </asp:TableRow>
@@ -2058,43 +2058,43 @@
                             <asp:TableCell RowSpan="2" style="width:650px; background-color: #cdfecc; font-size:15px">MEDIDAS PREVENTIVAS</asp:TableCell>
                         </asp:TableRow>
                         <asp:TableRow>
-                            <asp:TableCell style="background-color: #cdfecc; font-size:15px">
+                            <asp:TableCell style="background-color: #cdfecc; font-size: 15px; text-transform: uppercase">
                                 <asp:Label CssClass="in-column" ID="Label67" runat="server" Text="Monotonía del trabajo "></asp:Label>
                             </asp:TableCell>
-                            <asp:TableCell style="background-color: #cdfecc; font-size:15px">
+                            <asp:TableCell style="background-color: #cdfecc; font-size: 15px; text-transform: uppercase">
                                 <asp:Label CssClass="in-column" ID="Label68" runat="server" Text="Sobrecarga laboral"></asp:Label>
                             </asp:TableCell>
-                            <asp:TableCell style="background-color: #cdfecc; font-size:15px">
+                            <asp:TableCell style="background-color: #cdfecc; font-size: 15px; text-transform: uppercase">
                                 <asp:Label CssClass="in-column" ID="Label69" runat="server" Text="Minuciosidad de la tarea "></asp:Label>
                             </asp:TableCell>
-                            <asp:TableCell style="background-color: #cdfecc; font-size:15px">
+                            <asp:TableCell style="background-color: #cdfecc; font-size: 15px; text-transform: uppercase">
                                 <asp:Label CssClass="in-column" ID="Label70" runat="server" Text="Alta responsabilidad"></asp:Label>
                             </asp:TableCell>
-                            <asp:TableCell style="background-color: #cdfecc; font-size:15px">
+                            <asp:TableCell style="background-color: #cdfecc; font-size: 15px; text-transform: uppercase">
                                 <asp:Label CssClass="in-column" ID="Label71" runat="server" Text="Autonomía  en la toma de decisiones"></asp:Label>
                             </asp:TableCell>
-                            <asp:TableCell style="background-color: #cdfecc; font-size:15px">
+                            <asp:TableCell style="background-color: #cdfecc; font-size: 15px; text-transform: uppercase">
                                 <asp:Label CssClass="in-column" ID="Label72" runat="server" Text="Supervisión y estilos de dirección deficiente"></asp:Label>
                             </asp:TableCell>
-                            <asp:TableCell style="background-color: #cdfecc; font-size:15px">
+                            <asp:TableCell style="background-color: #cdfecc; font-size: 15px; text-transform: uppercase">
                                 <asp:Label CssClass="in-column" ID="Label73" runat="server" Text="Conflicto de rol"></asp:Label>
                             </asp:TableCell>
-                            <asp:TableCell style="background-color: #cdfecc; font-size:15px">
+                            <asp:TableCell style="background-color: #cdfecc; font-size: 15px; text-transform: uppercase">
                                 <asp:Label CssClass="in-column" ID="Label74" runat="server" Text="Falta de Claridad en las funciones"></asp:Label>
                             </asp:TableCell>
-                            <asp:TableCell style="background-color: #cdfecc; font-size:15px">
+                            <asp:TableCell style="background-color: #cdfecc; font-size: 15px; text-transform: uppercase">
                                 <asp:Label CssClass="in-column" ID="Label75" runat="server" Text="Incorrecta distribución del trabajo"></asp:Label>
                             </asp:TableCell>
-                            <asp:TableCell style="background-color: #cdfecc; font-size:15px">
+                            <asp:TableCell style="background-color: #cdfecc; font-size: 15px; text-transform: uppercase">
                                 <asp:Label CssClass="in-column" ID="Label76" runat="server" Text="Turnos rotativos"></asp:Label>
                             </asp:TableCell>
-                            <asp:TableCell style="background-color: #cdfecc; font-size:15px">
+                            <asp:TableCell style="background-color: #cdfecc; font-size: 15px; text-transform: uppercase">
                                 <asp:Label CssClass="in-column" ID="Label77" runat="server" Text="Relaciones interpersonales"></asp:Label>
                             </asp:TableCell>
-                            <asp:TableCell style="background-color: #cdfecc; font-size:15px">
+                            <asp:TableCell style="background-color: #cdfecc; font-size: 15px; text-transform: uppercase">
                                 <asp:Label CssClass="in-column" ID="Label78" runat="server" Text="Inestabilidad laboral"></asp:Label>
                             </asp:TableCell>
-                            <asp:TableCell style="background-color: #cdfecc; font-size:15px">
+                            <asp:TableCell style="background-color: #cdfecc; font-size: 15px; text-transform: uppercase">
                                 <asp:Label CssClass="in-column" ID="Label79" runat="server" Text="Otros __________"></asp:Label>
                             </asp:TableCell>
                         </asp:TableRow>
@@ -2479,250 +2479,250 @@
                                 <asp:TableCell Text="REGIONES" Style="width: 1400px; text-align: left; background-color: #cdfecc; font-size:15px" ColumnSpan="15"></asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
-                                <asp:TableCell RowSpan="3" style="width: 65px; background-color: #ccffff; font-size:15px">
+                                <asp:TableCell RowSpan="3" style="width: 65px; background-color: #ccffff; font-size: 13px; text-transform: uppercase">
                                     <asp:Label CssClass="REI-COLUMN" ID="Label80" runat="server" Text="1. Piel"></asp:Label>
                                 </asp:TableCell>
-                                <asp:TableCell CssClass="REI-CONTENT" style="width: 120px; background-color: #ccffff; font-size:15px">a. Cicatrices</asp:TableCell>
+                                <asp:TableCell CssClass="REI-CONTENT" style="width: 120px; background-color: #ccffff; font-size: 13px; text-transform: uppercase">a. Cicatrices</asp:TableCell>
                                 <asp:TableCell CssClass="REI-BOX" style="width: 60px; background-color: white; font-size: 14px">
                                     <asp:CheckBox ID="ckb_cicatrices" Checked="false" runat="server" />
                                      <%--<asp:TextBox runat="server" ID="ckb_cicatrices" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>--%>
                                 </asp:TableCell>
-                                <asp:TableCell RowSpan="3" style="width: 65px; background-color: #ccffff; font-size:15px">
+                                <asp:TableCell RowSpan="3" style="width: 65px; background-color: #ccffff; font-size: 13px; text-transform: uppercase">
                                     <asp:Label CssClass="REI-COLUMN" ID="Label81" runat="server" Text="3. Oído"></asp:Label>
                                 </asp:TableCell>
-                                <asp:TableCell CssClass="REI-CONTENT" style="width: 120px; background-color: #ccffff; font-size:15px">a. C. auditivo externo</asp:TableCell>
+                                <asp:TableCell CssClass="REI-CONTENT" style="width: 120px; background-color: #ccffff; font-size: 13px; text-transform: uppercase">a. C. auditivo externo</asp:TableCell>
                                 <asp:TableCell CssClass="REI-BOX" style="width: 60px; background-color: white; font-size: 14px">
                                     <asp:CheckBox ID="ckb_auditivoexterno" Checked="false" runat="server" />
                                      <%--<asp:TextBox runat="server" ID="ckb_auditivoexterno" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>--%>
                                 </asp:TableCell>
-                                <asp:TableCell RowSpan="4" style="width: 65px ;background-color: #ccffff; font-size:15px">
+                                <asp:TableCell RowSpan="4" style="width: 65px ;background-color: #ccffff; font-size: 13px; text-transform: uppercase">
                                     <asp:Label CssClass="REI-COLUMN" ID="Label82" runat="server" Text="5. Nariz"></asp:Label>
                                 </asp:TableCell>
-                                <asp:TableCell CssClass="REI-CONTENT" style="width: 120px; background-color: #ccffff; font-size:15px">a. Tabique</asp:TableCell>
+                                <asp:TableCell CssClass="REI-CONTENT" style="width: 120px; background-color: #ccffff; font-size: 13px; text-transform: uppercase">a. Tabique</asp:TableCell>
                                 <asp:TableCell CssClass="REI-BOX" style="width: 60px; background-color: white; font-size: 14px">
                                     <asp:CheckBox ID="ckb_tabique" Checked="false" runat="server" />
                                      <%--<asp:TextBox runat="server" ID="ckb_tabique" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>--%>
                                 </asp:TableCell>
-                                <asp:TableCell RowSpan="2" style="width: 65px; background-color: #ccffff; font-size:15px">
+                                <asp:TableCell RowSpan="2" style="width: 65px; background-color: #ccffff; font-size: 13px; text-transform: uppercase">
                                     <asp:Label CssClass="REI-COLUMN" ID="Label83" runat="server" Text="8. Tórax"></asp:Label>
                                 </asp:TableCell>
-                                <asp:TableCell CssClass="REI-CONTENT" style="width: 120px; background-color: #ccffff; font-size:15px">a. Pulmones</asp:TableCell>
+                                <asp:TableCell CssClass="REI-CONTENT" style="width: 120px; background-color: #ccffff; font-size: 13px; text-transform: uppercase">a. Pulmones</asp:TableCell>
                                 <asp:TableCell CssClass="REI-BOX" style="width: 60px; background-color: white; font-size: 14px">
                                     <asp:CheckBox ID="ckb_pulmones" Checked="false" runat="server" />
                                      <%--<asp:TextBox runat="server" ID="ckb_pulmones" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>--%>
                                 </asp:TableCell>
-                                <asp:TableCell RowSpan="2" style="width: 65px; background-color: #ccffff; font-size:15px">
+                                <asp:TableCell RowSpan="2" style="width: 65px; background-color: #ccffff; font-size: 13px; text-transform: uppercase">
                                     <asp:Label CssClass="REI-COLUMN" ID="Label84" runat="server" Text="11. Pelvis"></asp:Label>
                                 </asp:TableCell>
-                                <asp:TableCell CssClass="REI-CONTENT" style="width: 120px; background-color: #ccffff; font-size:15px">a. Pelvis</asp:TableCell>
+                                <asp:TableCell CssClass="REI-CONTENT" style="width: 120px; background-color: #ccffff; font-size: 13px; text-transform: uppercase">a. Pelvis</asp:TableCell>
                                 <asp:TableCell CssClass="REI-BOX" style="width: 60px; background-color: white; font-size: 14px">
                                     <asp:CheckBox ID="ckb_pelvis" Checked="false" runat="server" />
                                      <%--<asp:TextBox runat="server" ID="ckb_pelvis" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>--%>
                                 </asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
-                                <asp:TableCell CssClass="REI-CONTENT" style="background-color: #ccffff; font-size:15px">b. Tatuajes</asp:TableCell>
+                                <asp:TableCell CssClass="REI-CONTENT" style="background-color: #ccffff; font-size: 13px; text-transform: uppercase">b. Tatuajes</asp:TableCell>
                                 <asp:TableCell CssClass="REI-BOX" style="background-color: white; font-size: 14px">
                                     <asp:CheckBox ID="ckb_tatuajes" Checked="false" runat="server" />
                                       <%--<asp:TextBox runat="server" ID="ckb_tatuajes" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>--%>
                                 </asp:TableCell>
-                                <asp:TableCell CssClass="REI-CONTENT" style="background-color: #ccffff; font-size:15px">b. Pabellón</asp:TableCell>
+                                <asp:TableCell CssClass="REI-CONTENT" style="background-color: #ccffff; font-size: 13px; text-transform: uppercase">b. Pabellón</asp:TableCell>
                                 <asp:TableCell CssClass="REI-BOX" style="background-color: white; font-size: 14px">
                                     <asp:CheckBox ID="ckb_pabellon" Checked="false" runat="server" />
                                      <%--<asp:TextBox runat="server" ID="ckb_pabellon" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>--%>
                                 </asp:TableCell>
-                                <asp:TableCell CssClass="REI-CONTENT" style="background-color: #ccffff; font-size:15px">b. Cornetes</asp:TableCell>
+                                <asp:TableCell CssClass="REI-CONTENT" style="background-color: #ccffff; font-size: 13px; text-transform: uppercase">b. Cornetes</asp:TableCell>
                                 <asp:TableCell CssClass="REI-BOX" style="background-color: white; font-size: 14px">
                                     <asp:CheckBox ID="ckb_cornetes" Checked="false" runat="server" />
                                      <%--<asp:TextBox runat="server" ID="ckb_cornetes" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>--%>
                                 </asp:TableCell>
-                                <asp:TableCell CssClass="REI-CONTENT" style="background-color: #ccffff; font-size:15px">b. Parrilla Costal</asp:TableCell>
+                                <asp:TableCell CssClass="REI-CONTENT" style="background-color: #ccffff; font-size: 13px; text-transform: uppercase">b. Parrilla Costal</asp:TableCell>
                                 <asp:TableCell CssClass="REI-BOX" style="background-color: white; font-size: 14px">
                                     <asp:CheckBox ID="ckb_parrillacostal" Checked="false" runat="server" />
                                      <%--<asp:TextBox runat="server" ID="ckb_parrillacostal" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>--%>
                                 </asp:TableCell>
-                                <asp:TableCell CssClass="REI-CONTENT" style="background-color: #ccffff; font-size:15px">b. Genitales</asp:TableCell>
+                                <asp:TableCell CssClass="REI-CONTENT" style="background-color: #ccffff; font-size: 13px; text-transform: uppercase">b. Genitales</asp:TableCell>
                                 <asp:TableCell CssClass="REI-BOX" style="background-color: white; font-size: 14px">
                                     <asp:CheckBox ID="ckb_genitales" Checked="false" runat="server" />
                                      <%--<asp:TextBox runat="server" ID="ckb_genitales" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>--%>
                                 </asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
-                                <asp:TableCell CssClass="REI-CONTENT" style="background-color: #ccffff; font-size:15px">c. Piel  y Faneras</asp:TableCell>
+                                <asp:TableCell CssClass="REI-CONTENT" style="background-color: #ccffff; font-size: 13px; text-transform: uppercase">c. Piel  y Faneras</asp:TableCell>
                                 <asp:TableCell CssClass="REI-BOX" style="background-color: white; font-size: 14px">
                                     <asp:CheckBox ID="ckb_pielyfaneras" Checked="false" runat="server" />
                                      <%--<asp:TextBox runat="server" ID="ckb_pielyfaneras" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>--%>
                                 </asp:TableCell>
-                                <asp:TableCell CssClass="REI-CONTENT" style="background-color: #ccffff; font-size:15px">c. Tímpanos</asp:TableCell>
+                                <asp:TableCell CssClass="REI-CONTENT" style="background-color: #ccffff; font-size: 13px; text-transform: uppercase">c. Tímpanos</asp:TableCell>
                                 <asp:TableCell CssClass="REI-BOX" style="background-color: white; font-size: 14px">
                                     <asp:CheckBox ID="ckb_timpanos" Checked="false" runat="server" />
                                      <%--<asp:TextBox runat="server" ID="ckb_timpanos" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>--%>
                                 </asp:TableCell>
-                                <asp:TableCell CssClass="REI-CONTENT" style="background-color: #ccffff; font-size:15px">c. Mucosas</asp:TableCell>
+                                <asp:TableCell CssClass="REI-CONTENT" style="background-color: #ccffff; font-size: 13px; text-transform: uppercase">c. Mucosas</asp:TableCell>
                                 <asp:TableCell CssClass="REI-BOX" style="background-color: white; font-size: 14px">
                                     <asp:CheckBox ID="ckb_mucosa" Checked="false" runat="server" />
                                      <%--<asp:TextBox runat="server" ID="ckb_mucosa" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>--%>
                                 </asp:TableCell>
-                                <asp:TableCell RowSpan="2" style="background-color: #ccffff; font-size:15px">
+                                <asp:TableCell RowSpan="2" style="background-color: #ccffff; font-size: 13px; text-transform: uppercase">
                                     <asp:Label CssClass="REI-COLUMN" ID="Label85" runat="server" Text="9. Abdomen"></asp:Label>
                                 </asp:TableCell>
-                                <asp:TableCell CssClass="REI-CONTENT" style="background-color: #ccffff; font-size:15px">a. Vísceras</asp:TableCell>
+                                <asp:TableCell CssClass="REI-CONTENT" style="background-color: #ccffff; font-size: 13px; text-transform: uppercase">a. Vísceras</asp:TableCell>
                                 <asp:TableCell CssClass="REI-BOX" style="background-color: white; font-size: 14px">
                                     <asp:CheckBox ID="ckb_visceras" Checked="false" runat="server" />
                                      <%--<asp:TextBox runat="server" ID="ckb_visceras" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>--%>
                                 </asp:TableCell>
-                                <asp:TableCell RowSpan="3" style="background-color: #ccffff; font-size:15px">
+                                <asp:TableCell RowSpan="3" style="background-color: #ccffff; font-size: 13px; text-transform: uppercase">
                                     <asp:Label CssClass="REI-COLUMN" ID="Label86" runat="server" Text="12. Extremidades"></asp:Label>
                                 </asp:TableCell>
-                                <asp:TableCell CssClass="REI-CONTENT" style="background-color: #ccffff; font-size:15px">a. Vascular</asp:TableCell>
+                                <asp:TableCell CssClass="REI-CONTENT" style="background-color: #ccffff; font-size: 13px; text-transform: uppercase">a. Vascular</asp:TableCell>
                                 <asp:TableCell CssClass="REI-BOX" style="background-color: white; font-size: 14px">
                                     <asp:CheckBox ID="ckb_vascular" Checked="false" runat="server" />
                                      <%--<asp:TextBox runat="server" ID="ckb_vascular" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>--%>
                                 </asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
-                                <asp:TableCell RowSpan="5" style="background-color: #ccffff; font-size:15px">
+                                <asp:TableCell RowSpan="5" style="background-color: #ccffff; font-size: 13px; text-transform: uppercase">
                                     <asp:Label CssClass="REI-COLUMN" ID="Label87" runat="server" Text="2. Ojos"></asp:Label>
                                 </asp:TableCell>
-                                <asp:TableCell CssClass="REI-CONTENT" style="background-color: #ccffff; font-size:15px">a. Párpados</asp:TableCell>
+                                <asp:TableCell CssClass="REI-CONTENT" style="background-color: #ccffff; font-size: 13px; text-transform: uppercase">a. Párpados</asp:TableCell>
                                 <asp:TableCell CssClass="REI-BOX" style="background-color: white; font-size: 14px">
                                     <asp:CheckBox ID="ckb_parpados" Checked="false" runat="server" />
                                      <%--<asp:TextBox runat="server" ID="ckb_parpados" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>--%>
                                 </asp:TableCell>
-                                <asp:TableCell RowSpan="5" style="background-color: #ccffff; font-size:15px">
+                                <asp:TableCell RowSpan="5" style="background-color: #ccffff; font-size: 13px; text-transform: uppercase">
                                     <asp:Label CssClass="REI-COLUMN" ID="Label88" runat="server" Text="4. Oro faringe"></asp:Label>
                                 </asp:TableCell>
-                                <asp:TableCell CssClass="REI-CONTENT" style="background-color: #ccffff; font-size:15px">a. Labios</asp:TableCell>
+                                <asp:TableCell CssClass="REI-CONTENT" style="background-color: #ccffff; font-size: 13px; text-transform: uppercase">a. Labios</asp:TableCell>
                                 <asp:TableCell CssClass="REI-BOX" style="background-color: white; font-size: 14px">
                                     <asp:CheckBox ID="ckb_labios" Checked="false" runat="server" />
                                      <%--<asp:TextBox runat="server" ID="ckb_labios" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>--%>
                                 </asp:TableCell>
-                                <asp:TableCell CssClass="REI-CONTENT" style="background-color: #ccffff; font-size:15px">d. Senos paranasales</asp:TableCell>
+                                <asp:TableCell CssClass="REI-CONTENT" style="background-color: #ccffff; font-size: 13px; text-transform: uppercase">d. Senos paranasales</asp:TableCell>
                                 <asp:TableCell CssClass="REI-BOX" style="background-color: white; font-size: 14px">
                                     <asp:CheckBox ID="ckb_senosparanasales" Checked="false" runat="server" />
                                      <%--<asp:TextBox runat="server" ID="ckb_senosparanasales" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>--%>
                                 </asp:TableCell>
-                                <asp:TableCell CssClass="REI-CONTENT" style="background-color: #ccffff; font-size:15px">b. Pared abdominal</asp:TableCell>
+                                <asp:TableCell CssClass="REI-CONTENT" style="background-color: #ccffff; font-size: 13px; text-transform: uppercase">b. Pared abdominal</asp:TableCell>
                                 <asp:TableCell CssClass="REI-BOX" style="background-color: white; font-size: 14px">
                                     <asp:CheckBox ID="ckb_paredabdominal" Checked="false" runat="server" />
                                      <%--<asp:TextBox runat="server" ID="ckb_paredabdominal" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>--%>
                                 </asp:TableCell>
-                                <asp:TableCell CssClass="REI-CONTENT" style="background-color: #ccffff; font-size:15px">b. Miembros superiores</asp:TableCell>
+                                <asp:TableCell CssClass="REI-CONTENT" style="background-color: #ccffff; font-size: 13px; text-transform: uppercase">b. Miembros superiores</asp:TableCell>
                                 <asp:TableCell CssClass="REI-BOX" style="background-color: white; font-size: 14px">
                                     <asp:CheckBox ID="ckb_miembrosuperiores" Checked="false" runat="server" />
                                      <%--<asp:TextBox runat="server" ID="ckb_miembrosuperiores" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>--%>
                                 </asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
-                                <asp:TableCell CssClass="REI-CONTENT" style="background-color: #ccffff; font-size:15px">b. Conjuntivas</asp:TableCell>
+                                <asp:TableCell CssClass="REI-CONTENT" style="background-color: #ccffff; font-size: 13px; text-transform: uppercase">b. Conjuntivas</asp:TableCell>
                                 <asp:TableCell CssClass="REI-BOX" style="background-color: white; font-size: 14px">
                                     <asp:CheckBox ID="ckb_conjuntivas" Checked="false" runat="server" />
                                      <%--<asp:TextBox runat="server" ID="ckb_conjuntivas" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>--%>
                                 </asp:TableCell>
-                                <asp:TableCell CssClass="REI-CONTENT" style="background-color: #ccffff; font-size:15px">b. Lengua</asp:TableCell>
+                                <asp:TableCell CssClass="REI-CONTENT" style="background-color: #ccffff; font-size: 13px; text-transform: uppercase">b. Lengua</asp:TableCell>
                                 <asp:TableCell CssClass="REI-BOX" style="background-color: white; font-size: 14px">
                                     <asp:CheckBox ID="ckb_lengua" Checked="false" runat="server" />
                                      <%--<asp:TextBox runat="server" ID="ckb_lengua" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>--%>
                                 </asp:TableCell>
-                                <asp:TableCell RowSpan="2" style="background-color: #ccffff; font-size:15px">
+                                <asp:TableCell RowSpan="2" style="background-color: #ccffff; font-size: 13px; text-transform: uppercase">
                                     <asp:Label CssClass="REI-COLUMN" ID="Label89" runat="server" Text="6. Cuello"></asp:Label>
                                 </asp:TableCell>
-                                <asp:TableCell CssClass="REI-CONTENT" style="background-color: #ccffff; font-size:15px">a. Tiroides / masas</asp:TableCell>
+                                <asp:TableCell CssClass="REI-CONTENT" style="background-color: #ccffff; font-size: 13px; text-transform: uppercase">a. Tiroides / masas</asp:TableCell>
                                 <asp:TableCell CssClass="REI-BOX" style="background-color: white; font-size: 14px">
                                     <asp:CheckBox ID="ckb_tiroides" Checked="false" runat="server" />
                                      <%--<asp:TextBox runat="server" ID="ckb_tiroides" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>--%>
                                 </asp:TableCell>
-                                <asp:TableCell RowSpan="4" style="background-color: #ccffff; font-size:15px">
+                                <asp:TableCell RowSpan="4" style="background-color: #ccffff; font-size: 13px; text-transform: uppercase">
                                     <asp:Label CssClass="REI-COLUMN" ID="Label90" runat="server" Text="10. Columna"></asp:Label>
                                 </asp:TableCell>
-                                <asp:TableCell CssClass="REI-CONTENT" style="background-color: #ccffff; font-size:15px">a. Flexibilidad</asp:TableCell>
+                                <asp:TableCell CssClass="REI-CONTENT" style="background-color: #ccffff; font-size: 13px; text-transform: uppercase">a. Flexibilidad</asp:TableCell>
                                 <asp:TableCell CssClass="REI-BOX" style="background-color: white; font-size: 14px">
                                     <asp:CheckBox ID="ckb_flexibilidad" Checked="false" runat="server" />
                                      <%--<asp:TextBox runat="server" ID="ckb_flexibilidad" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>--%>
                                 </asp:TableCell>
-                                <asp:TableCell CssClass="REI-CONTENT" style="background-color: #ccffff; font-size:15px">c. Miembros inferiores</asp:TableCell>
+                                <asp:TableCell CssClass="REI-CONTENT" style="background-color: #ccffff; font-size: 13px; text-transform: uppercase">c. Miembros inferiores</asp:TableCell>
                                 <asp:TableCell CssClass="REI-BOX" style="background-color: white; font-size: 14px">
                                     <asp:CheckBox ID="ckb_miembrosinferiores" Checked="false" runat="server" />
                                      <%--<asp:TextBox runat="server" ID="ckb_miembrosinferiores" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>--%>
                                 </asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
-                                <asp:TableCell CssClass="REI-CONTENT" style="background-color: #ccffff; font-size:15px">c. Pupilas</asp:TableCell>
+                                <asp:TableCell CssClass="REI-CONTENT" style="background-color: #ccffff; font-size: 13px; text-transform: uppercase">c. Pupilas</asp:TableCell>
                                 <asp:TableCell CssClass="REI-BOX" style="background-color: white; font-size: 14px">
                                     <asp:CheckBox ID="ckb_pupilas" Checked="false" runat="server" />
                                      <%--<asp:TextBox runat="server" ID="ckb_pupilas" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>--%>
                                 </asp:TableCell>
-                                <asp:TableCell CssClass="REI-CONTENT" style="background-color: #ccffff; font-size:15px">c. Faringe</asp:TableCell>
+                                <asp:TableCell CssClass="REI-CONTENT" style="background-color: #ccffff; font-size: 13px; text-transform: uppercase">c. Faringe</asp:TableCell>
                                 <asp:TableCell CssClass="REI-BOX" style="background-color: white; font-size: 14px">
                                     <asp:CheckBox ID="ckb_faringe" Checked="false" runat="server" />
                                      <%--<asp:TextBox runat="server" ID="ckb_faringe" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>--%>
                                 </asp:TableCell>
-                                <asp:TableCell CssClass="REI-CONTENT" style="background-color: #ccffff; font-size:15px">b. Movilidad</asp:TableCell>
+                                <asp:TableCell CssClass="REI-CONTENT" style="background-color: #ccffff; font-size: 13px; text-transform: uppercase">b. Movilidad</asp:TableCell>
                                 <asp:TableCell CssClass="REI-BOX" style="background-color: white; font-size: 14px">
                                     <asp:CheckBox ID="ckb_movilidad" Checked="false" runat="server" />
                                      <%--<asp:TextBox runat="server" ID="ckb_movilidad" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>--%>
                                 </asp:TableCell>
-                                <asp:TableCell CssClass="REI-CONTENT" RowSpan="2" style="background-color: #ccffff; font-size:15px">b. Desviación</asp:TableCell>
+                                <asp:TableCell CssClass="REI-CONTENT" RowSpan="2" style="background-color: #ccffff; font-size: 13px; text-transform: uppercase">b. Desviación</asp:TableCell>
                                 <asp:TableCell CssClass="REI-BOX" RowSpan="2" style="background-color: white; font-size: 14px">
                                     <asp:CheckBox ID="ckb_desviacion" Checked="false" runat="server" />
                                      <%--<asp:TextBox runat="server" ID="ckb_desviacion" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>--%>
                                 </asp:TableCell>
-                                <asp:TableCell RowSpan="4" style="background-color: #ccffff; font-size:15px">
+                                <asp:TableCell RowSpan="4" style="background-color: #ccffff; font-size: 13px; text-transform: uppercase">
                                     <asp:Label CssClass="REI-COLUMN" ID="Label91" runat="server" Text="13. Neurológico"></asp:Label>
                                 </asp:TableCell>
-                                <asp:TableCell CssClass="REI-CONTENT" style="background-color: #ccffff; font-size:15px">a. Fuerza</asp:TableCell>
+                                <asp:TableCell CssClass="REI-CONTENT" style="background-color: #ccffff; font-size: 13px; text-transform: uppercase">a. Fuerza</asp:TableCell>
                                 <asp:TableCell CssClass="REI-BOX" style="background-color: white; font-size: 14px">
                                     <asp:CheckBox ID="ckb_fuerza" Checked="false" runat="server" />
                                      <%--<asp:TextBox runat="server" ID="ckb_fuerza" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>--%>
                                 </asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
-                                <asp:TableCell CssClass="REI-CONTENT" style="background-color: #ccffff; font-size:15px">d. Córnea</asp:TableCell>
+                                <asp:TableCell CssClass="REI-CONTENT" style="background-color: #ccffff; font-size: 13px; text-transform: uppercase">d. Córnea</asp:TableCell>
                                 <asp:TableCell CssClass="REI-BOX" style="background-color: white; font-size: 14px">
                                     <asp:CheckBox ID="ckb_cornea" Checked="false" runat="server" />
                                      <%--<asp:TextBox runat="server" ID="ckb_cornea" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>--%>
                                 </asp:TableCell>
-                                <asp:TableCell CssClass="REI-CONTENT" style="background-color: #ccffff; font-size:15px">d. Amígdalas</asp:TableCell>
+                                <asp:TableCell CssClass="REI-CONTENT" style="background-color: #ccffff; font-size: 13px; text-transform: uppercase">d. Amígdalas</asp:TableCell>
                                 <asp:TableCell CssClass="REI-BOX" style="background-color: white; font-size: 14px">
                                     <asp:CheckBox ID="ckb_amigdalas" Checked="false" runat="server" />
                                      <%--<asp:TextBox runat="server" ID="ckb_amigdalas" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>--%>
                                 </asp:TableCell>
-                                <asp:TableCell RowSpan="2" style="background-color: #ccffff; font-size:15px">
+                                <asp:TableCell RowSpan="2" style="background-color: #ccffff; font-size: 13px; text-transform: uppercase">
                                     <asp:Label CssClass="REI-COLUMN" ID="Label92" runat="server" Text="7. Tórax"></asp:Label>
                                 </asp:TableCell>
-                                <asp:TableCell CssClass="REI-CONTENT" style="background-color: #ccffff; font-size:15px">a. Mamas</asp:TableCell>
+                                <asp:TableCell CssClass="REI-CONTENT" style="background-color: #ccffff; font-size: 13px; text-transform: uppercase">a. Mamas</asp:TableCell>
                                 <asp:TableCell CssClass="REI-BOX" style="background-color: white; font-size: 14px">
                                     <asp:CheckBox ID="ckb_mamas" Checked="false" runat="server" />
                                      <%--<asp:TextBox runat="server" ID="ckb_mamas" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>--%>
                                 </asp:TableCell>
-                                <asp:TableCell CssClass="REI-CONTENT" style="background-color: #ccffff; font-size:15px">b. Sensibilidad</asp:TableCell>
+                                <asp:TableCell CssClass="REI-CONTENT" style="background-color: #ccffff; font-size: 13px; text-transform: uppercase">b. Sensibilidad</asp:TableCell>
                                 <asp:TableCell CssClass="REI-BOX" style="background-color: white; font-size: 14px">
                                     <asp:CheckBox ID="ckb_sensibilidad" Checked="false" runat="server" />
                                      <%--<asp:TextBox runat="server" ID="ckb_sensibilidad" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>--%>
                                 </asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
-                                <asp:TableCell CssClass="REI-CONTENT" style="background-color: #ccffff; font-size:15px">e. Motilidad</asp:TableCell>
+                                <asp:TableCell CssClass="REI-CONTENT" style="background-color: #ccffff; font-size: 13px; text-transform: uppercase">e. Motilidad</asp:TableCell>
                                 <asp:TableCell CssClass="REI-BOX" style="background-color: white; font-size: 14px">
                                     <asp:CheckBox ID="ckb_motilidad" Checked="false" runat="server" />
                                      <%--<asp:TextBox runat="server" ID="ckb_motilidad" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>--%>
                                 </asp:TableCell>
-                                <asp:TableCell CssClass="REI-CONTENT" style="background-color: #ccffff; font-size:15px">e. Dentadura</asp:TableCell>
+                                <asp:TableCell CssClass="REI-CONTENT" style="background-color: #ccffff; font-size: 13px; text-transform: uppercase">e. Dentadura</asp:TableCell>
                                 <asp:TableCell CssClass="REI-BOX" style="background-color: white; font-size: 14px">
                                     <asp:CheckBox ID="ckb_dentadura" Checked="false" runat="server" />
                                      <%--<asp:TextBox runat="server" ID="ckb_dentadura" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>--%>
                                 </asp:TableCell>
-                                <asp:TableCell CssClass="REI-CONTENT" style="background-color: #ccffff; font-size:15px">b. Corazón</asp:TableCell>
+                                <asp:TableCell CssClass="REI-CONTENT" style="background-color: #ccffff; font-size: 13px; text-transform: uppercase">b. Corazón</asp:TableCell>
                                 <asp:TableCell CssClass="REI-BOX" style="background-color: white; font-size: 14px">
                                     <asp:CheckBox ID="ckb_corazon" Checked="false" runat="server" />
                                      <%--<asp:TextBox runat="server" ID="ckb_corazon" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>--%>
                                 </asp:TableCell>
-                                <asp:TableCell CssClass="REI-CONTENT" style="background-color: #ccffff; font-size:15px">c. Dolor</asp:TableCell>
+                                <asp:TableCell CssClass="REI-CONTENT" style="background-color: #ccffff; font-size: 13px; text-transform: uppercase">c. Dolor</asp:TableCell>
                                 <asp:TableCell CssClass="REI-BOX" style="background-color: white; font-size: 14px">
                                     <asp:CheckBox ID="ckb_dolor" Checked="false" runat="server" />
                                      <%--<asp:TextBox runat="server" ID="ckb_dolor" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>--%>
                                 </asp:TableCell>
-                                <asp:TableCell CssClass="REI-CONTENT" style="background-color: #ccffff; font-size:15px">c. Marcha</asp:TableCell>
+                                <asp:TableCell CssClass="REI-CONTENT" style="background-color: #ccffff; font-size: 13px; text-transform: uppercase">c. Marcha</asp:TableCell>
                                 <asp:TableCell CssClass="REI-BOX" style="background-color: white; font-size: 14px">
                                     <asp:CheckBox ID="ckb_marcha" Checked="false" runat="server" />
                                      <%--<asp:TextBox runat="server" ID="ckb_marcha" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>--%>
@@ -2730,7 +2730,7 @@
                             </asp:TableRow>
                             <asp:TableRow>
                                 <asp:TableCell Style="text-align: left; background-color: white; font-size:12px" ColumnSpan="12">SI EXISTE EVIDENCIA DE PATOLOGÍA MARCAR CON "X" Y DESCRIBIR EN LA SIGUIENTE SECCIÓN COLOCANDO EL NUMERAL</asp:TableCell>
-                                <asp:TableCell CssClass="REI-CONTENT" style="background-color: #ccffff; font-size:15px">d. Reflejos</asp:TableCell>
+                                <asp:TableCell CssClass="REI-CONTENT" style="background-color: #ccffff; font-size: 13px; text-transform: uppercase">d. Reflejos</asp:TableCell>
                                 <asp:TableCell CssClass="REI-BOX" style="background-color: white; font-size: 14px">
                                     <asp:CheckBox ID="ckb_reflejos" Checked="false" runat="server" />
                                     <%--<asp:TextBox runat="server" ID="ckb_reflejos" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center"></asp:TextBox>--%>
@@ -2970,7 +2970,7 @@
                                     <asp:TextBox runat="server" BorderStyle="None" ID="txt_fechahora" Style="background-color: transparent; width: 100%; text-align: center; text-transform:uppercase" TextMode="DateTimeLocal"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="width: 100px; background-color: #cdfecc; font-size:15px">NOMBRES Y APELLIDOS</asp:TableCell>
-                                <asp:TableCell Style="width: 300px; background-color: white; font-size: 14px">
+                                <asp:TableCell Style="width: 375px; background-color: white; font-size: 14px">
                                     <asp:DropDownList ID="ddl_profesional" CssClass="form-check" Style="width: 100%; border: none; background-color: transparent; text-align:center; text-transform:uppercase" runat="server"></asp:DropDownList>
                                     <asp:RequiredFieldValidator ID="rfv_profesional" runat="server" ForeColor="Red" InitialValue="0" ControlToValidate="ddl_profesional" ErrorMessage="CAMPO OBLIGATORIO"></asp:RequiredFieldValidator>
                                 </asp:TableCell>
@@ -2979,7 +2979,7 @@
                                     <asp:TextBox runat="server" BorderStyle="None" ID="txt_codigoDatProf" Style="background-color: transparent; width: 100%; text-align: center; text-transform:uppercase"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="width: 100px; background-color: #cdfecc; font-size:15px">FIRMA Y SELLO</asp:TableCell>
-                                <asp:TableCell Style="width: 175px; background-color: white; font-size: 14px">
+                                <asp:TableCell Style="width: 100px; background-color: white; font-size: 14px">
                                 </asp:TableCell>
                             </asp:TableRow>
                         </asp:Table>

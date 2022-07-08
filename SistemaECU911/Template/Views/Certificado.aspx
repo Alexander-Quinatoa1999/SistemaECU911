@@ -293,14 +293,14 @@
                     </div>
                 </div>
                 <br />
-                <div class="container" style="text-align:center; text-transform:uppercase">
+                <div class="container" style="font-family: Arial; text-align:center; text-transform:uppercase">
                     <p align="center">
                         <strong>"Con este documento certifico que el trabajador se ha sometido a la evaluación médica requerida para 
                             (el ingreso /la ejecución/ el reintegro y retiro) al puesto laboral y se ha informado sobre los riesgos relacionados 
                             con el trabajo emitiendo recomendaciones relacionadas con su estado de salud."</strong>
                     </p>
                 </div>
-                <div>
+                <div style="font-family: Arial; text-transform:uppercase">
                     <p align="left">
                         <strong>La presente certificación se expide con base en la historia ocupacional del usuario (a), la cual tiene carácter 
                             de confidencial.</strong>

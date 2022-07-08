@@ -818,6 +818,38 @@ namespace SistemaECU911.Template.Views
                         else
                         {
                             ckb_tempaltas.Checked = true;
+                        }
+                        if (inicial.inicial_temAltasFis2 == null)
+                        {
+                            ckb_tempaltas2.Checked = false;
+                        }
+                        else
+                        {
+                            ckb_tempaltas2.Checked = true;
+                        }
+                        if (inicial.inicial_temAltasFis3 == null)
+                        {
+                            ckb_tempaltas3.Checked = false;
+                        }
+                        else
+                        {
+                            ckb_tempaltas3.Checked = true;
+                        }
+                        if (inicial.inicial_temAltasFis4 == null)
+                        {
+                            ckb_tempaltas4.Checked = false;
+                        }
+                        else
+                        {
+                            ckb_tempaltas4.Checked = true;
+                        }
+                        if (inicial.inicial_temBajasFis == null)
+                        {
+                            ckb_tempbajas.Checked = false;
+                        }
+                        else
+                        {
+                            ckb_tempbajas.Checked = true;
 
                         }
                         if (inicial.inicial_temBajasFis2 == null)
@@ -827,7 +859,6 @@ namespace SistemaECU911.Template.Views
                         else
                         {
                             ckb_tempbajas2.Checked = true;
-
                         }
                         if (inicial.inicial_temBajasFis3 == null)
                         {
@@ -2297,17 +2328,7 @@ namespace SistemaECU911.Template.Views
                         else
                         {
                             ckb_movrepetitivo.Checked = true;
-
-                        }
-                        if (inicial.inicial_movRepeErg == null)
-                        {
-                            ckb_movrepetitivo.Checked = false;
-                        }
-                        else
-                        {
-                            ckb_movrepetitivo.Checked = true;
-
-                        }
+                        }                        
                         if (inicial.inicial_movRepeErg2 == null)
                         {
                             ckb_movrepetitivo2.Checked = false;
@@ -2315,6 +2336,39 @@ namespace SistemaECU911.Template.Views
                         else
                         {
                             ckb_movrepetitivo2.Checked = true;
+                        }
+                        if (inicial.inicial_movRepeErg3 == null)
+                        {
+                            ckb_movrepetitivo3.Checked = false;
+                        }
+                        else
+                        {
+                            ckb_movrepetitivo3.Checked = true;
+                        }
+                        if (inicial.inicial_movRepeErg4 == null)
+                        {
+                            ckb_movrepetitivo4.Checked = false;
+                        }
+                        else
+                        {
+                            ckb_movrepetitivo4.Checked = true;
+                        }
+                        if (inicial.inicial_posForzaErg == null)
+                        {
+                            ckb_postforzadas.Checked = false;
+                        }
+                        else
+                        {
+                            ckb_postforzadas.Checked = true;
+
+                        }
+                        if (inicial.inicial_posForzaErg2 == null)
+                        {
+                            ckb_postforzadas2.Checked = false;
+                        }
+                        else
+                        {
+                            ckb_postforzadas2.Checked = true;
 
                         }
                         if (inicial.inicial_posForzaErg3 == null)
@@ -3896,7 +3950,7 @@ namespace SistemaECU911.Template.Views
         {
             try
             {
-                per = CN_HistorialMedico.ObtenerIdPersonasxCedula(Convert.ToInt32(txt_numHClinica.Text));
+                per = CN_HistorialMedico.ObtenerIdPersonasxCedula(txt_numHClinica.Text);
 
                 int perso = Convert.ToInt32(per.Per_id.ToString());
 
@@ -3908,1507 +3962,1509 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_evangelica.Checked == true)
                 {
-                    inicial.inicial_evangelicaRel = "Si";
+                    inicial.inicial_evangelicaRel = "SI";
                 }
                 if (ckb_testigo.Checked == true)
                 {
-                    inicial.inicial_testJehovaRel = "Si";
+                    inicial.inicial_testJehovaRel = "SI";
                 }
                 if (ckb_mormona.Checked == true)
                 {
-                    inicial.inicial_mormonaRel = "Si";
+                    inicial.inicial_mormonaRel = "SI";
                 }
                 if (ckb_otrareligion.Checked == true)
                 {
-                    inicial.inicial_otrasRel = "Si";
+                    inicial.inicial_otrasRel = "SI";
                 }
                 if (cbk_gay.Checked == true)
                 {
-                    inicial.inicial_gayOriSex = "Si";
+                    inicial.inicial_gayOriSex = "SI";
                 }
                 if (cbk_lesbiana.Checked == true)
                 {
-                    inicial.inicial__lesbianaOriSex = "Si";
+                    inicial.inicial__lesbianaOriSex = "SI";
                 }
                 if (cbk_bisexual.Checked == true)
                 {
-                    inicial.inicial_bisexualOriSex = "Si";
+                    inicial.inicial_bisexualOriSex = "SI";
                 }
                 if (cbk_heterosexual.Checked == true)
                 {
-                    inicial.inicial_heterosexualOriSex = "Si";
+                    inicial.inicial_heterosexualOriSex = "SI";
                 }
                 if (cbk_noRespondeOriSex.Checked == true)
                 {
-                    inicial.inicial_norespondeOriSex = "Si";
-                }
+                    inicial.inicial_norespondeOriSex = "SI";
+                }   
                 if (cbk_femenino.Checked == true)
                 {
-                    inicial.inicial_femeninoIdenGen = "Si";
+                    inicial.inicial_femeninoIdenGen = "SI";
                 }
                 if (cbk_masculino.Checked == true)
                 {
-                    inicial.inicial_masculinoIdenGen = "Si";
+                    inicial.inicial_masculinoIdenGen = "SI";
                 }
                 if (cbk_transfemenino.Checked == true)
                 {
-                    inicial.inicial_transFemeninoIdenGen = "Si";
+                    inicial.inicial_transFemeninoIdenGen = "SI";
                 }
                 if (cbk_transmasculino.Checked == true)
                 {
-                    inicial.inicial_transMasculinoIdenGen = "Si";
+                    inicial.inicial_transMasculinoIdenGen = "SI";
                 }
                 if (cbk_noRespondeIdeGen.Checked == true)
                 {
-                    inicial.inicial_norespondeIdenGen = "Si";
+                    inicial.inicial_norespondeIdenGen = "SI";
                 }
                 if (cbk_sidiscapacidad.Checked == true)
                 {
-                    inicial.inicial_siDis = "Si";
+                    inicial.inicial_siDis = "SI";
                 }
                 if (cbk_nodiscapacidad.Checked == true)
                 {
-                    inicial.inicial_noDis = "Si";
+                    inicial.inicial_noDis = "SI";
                 }
                 if (ckb_siVidSexAntGinObste.Checked == true)
                 {
-                    inicial.inicial_siVidaSexActiva = "Si";
+                    inicial.inicial_siVidaSexActiva = "SI";
                 }
                 if (ckb_noVidSexAntGinObste.Checked == true)
                 {
-                    inicial.inicial_noVidaSexActiva = "Si";
+                    inicial.inicial_noVidaSexActiva = "SI";
                 }
                 if (ckb_siMetPlaniAntGinObste.Checked == true)
                 {
-                    inicial.inicial_siMetPlanifiFamiliar = "Si";
+                    inicial.inicial_siMetPlanifiFamiliar = "SI";
                 }
                 if (ckb_noMetPlaniAntGinObste.Checked == true)
                 {
-                    inicial.inicial_noMetPlanifiFamiliar = "Si";
+                    inicial.inicial_noMetPlanifiFamiliar = "SI";
                 }
                 if (ckb_siPapaniAntGinObste.Checked == true)
                 {
-                    inicial.inicial_siExaRealiPapanicolaou = "Si";
+                    inicial.inicial_siExaRealiPapanicolaou = "SI";
                 }
                 if (ckb_noPapaniAntGinObste.Checked == true)
                 {
-                    inicial.inicial_noExaRealiPapanicolaou = "Si";
+                    inicial.inicial_noExaRealiPapanicolaou = "SI";
                 }
                 if (ckb_siEcoMamaAntGinObste.Checked == true)
                 {
-                    inicial.inicial_siExaRealiEcoMamario = "Si";
+                    inicial.inicial_siExaRealiEcoMamario = "SI";
                 }
                 if (ckb_noEcoMamaAntGinObste.Checked == true)
                 {
-                    inicial.inicial_noExaRealiEcoMamario = "Si";
+                    inicial.inicial_noExaRealiEcoMamario = "SI";
                 }
                 if (ckb_siColposAntGinObste.Checked == true)
                 {
-                    inicial.inicial_siExaRealiColposcopia = "Si";
+                    inicial.inicial_siExaRealiColposcopia = "SI";
                 }
                 if (ckb_noColposAntGinObste.Checked == true)
                 {
-                    inicial.inicial_noExaRealiColposcopia = "Si";
+                    inicial.inicial_noExaRealiColposcopia = "SI";
                 }
                 if (ckb_siMamograAntGinObste.Checked == true)
                 {
-                    inicial.inicial_siExaRealiMamografia = "Si";
+                    inicial.inicial_siExaRealiMamografia = "SI";
                 }
                 if (ckb_noMamograAntGinObste.Checked == true)
                 {
-                    inicial.inicial_noExaRealiMamografia = "Si";
+                    inicial.inicial_noExaRealiMamografia = "SI";
                 }
                 if (ckb_siExaRealiAntProstaAntReproMascu.Checked == true)
                 {
-                    inicial.inicial_siExaRealiAntiProstatico = "Si";
+                    inicial.inicial_siExaRealiAntiProstatico = "SI";
                 }
                 if (ckb_noExaRealiAntProstaAntReproMascu.Checked == true)
                 {
-                    inicial.inicial_noExaRealiAntiProstatico = "Si";
+                    inicial.inicial_noExaRealiAntiProstatico = "SI";
                 }
                 if (ckb_siMetPlaniAntReproMascu.Checked == true)
                 {
-                    inicial.inicial_siMetPlanifiFamiAntReproMascu = "Si";
+                    inicial.inicial_siMetPlanifiFamiAntReproMascu = "SI";
                 }
                 if (ckb_noMetPlaniAntReproMascu.Checked == true)
                 {
-                    inicial.inicial_noMetPlanifiFamiAntReproMascu = "Si";
+                    inicial.inicial_noMetPlanifiFamiAntReproMascu = "SI";
                 }
                 if (ckb_siExaRealiEcoProstaAntReproMascu.Checked == true)
                 {
-                    inicial.inicial_siExaRealiEcoProstatico = "Si";
+                    inicial.inicial_siExaRealiEcoProstatico = "SI";
                 }
                 if (ckb_noExaRealiEcoProstaAntReproMascu.Checked == true)
                 {
-                    inicial.inicial_noExaRealiEcoProstatico = "Si";
+                    inicial.inicial_noExaRealiEcoProstatico = "SI";
                 }
                 if (ckb_siConsuNociTabaHabToxi.Checked == true)
                 {
-                    inicial.inicial_siConsuNocivosTabaco = "Si";
+                    inicial.inicial_siConsuNocivosTabaco = "SI";
                 }
                 if (ckb_noConsuNociTabaHabToxi.Checked == true)
                 {
-                    inicial.inicial_noConsuNocivosTabaco = "Si";
+                    inicial.inicial_noConsuNocivosTabaco = "SI";
                 }
                 if (ckb_siConsuNociAlcoHabToxi.Checked == true)
                 {
-                    inicial.inicial_siConsuNocivosAlcohol = "Si";
+                    inicial.inicial_siConsuNocivosAlcohol = "SI";
                 }
                 if (ckb_noConsuNociAlcoHabToxi.Checked == true)
                 {
-                    inicial.inicial_noConsuNocivosAlcohol = "Si";
+                    inicial.inicial_noConsuNocivosAlcohol = "SI";
                 }
                 if (ckb_siConsuNociOtrasDroHabToxi.Checked == true)
                 {
-                    inicial.inicial_siConsuNocivosOtrasDrogas = "Si";
+                    inicial.inicial_siConsuNocivosOtrasDrogas = "SI";
                 }
                 if (ckb_noConsuNociOtrasDroHabToxi.Checked == true)
                 {
-                    inicial.inicial_noConsuNocivosOtrasDrogas = "Si";
+                    inicial.inicial_noConsuNocivosOtrasDrogas = "SI";
                 }
                 if (ckb_siEstVidaActFisiEstVida.Checked == true)
                 {
-                    inicial.inicial_siEstiVidaActFisica = "Si";
+                    inicial.inicial_siEstiVidaActFisica = "SI";
                 }
                 if (ckb_noEstVidaActFisiEstVida.Checked == true)
                 {
-                    inicial.inicial_noEstiVidaActFisica = "Si";
+                    inicial.inicial_noEstiVidaActFisica = "SI";
                 }
                 if (ckb_siEstVidaMedHabiEstVida.Checked == true)
                 {
-                    inicial.inicial_siEstiVidaMediHabitual = "Si";
+                    inicial.inicial_siEstiVidaMediHabitual = "SI";
                 }
                 if (ckb_noEstVidaMedHabiEstVida.Checked == true)
                 {
-                    inicial.inicial_noEstiVidaMediHabitual = "Si";
+                    inicial.inicial_noEstiVidaMediHabitual = "SI";
                 }
                 if (ckb_fisico.Checked == true)
                 {
-                    inicial.inicial_fisicoRies = "Si";
+                    inicial.inicial_fisicoRies = "SI";
                 }
                 if (ckb_mecanico.Checked == true)
                 {
-                    inicial.inicial_mecanicoRies = "Si";
+                    inicial.inicial_mecanicoRies = "SI";
                 }
                 if (ckb_quimico.Checked == true)
                 {
-                    inicial.inicial_quimicoRies = "Si";
+                    inicial.inicial_quimicoRies = "SI";
                 }
                 if (ckb_biologico.Checked == true)
                 {
-                    inicial.inicial_biologicoRies = "Si";
+                    inicial.inicial_biologicoRies = "SI";
                 }
                 if (ckb_ergonomico.Checked == true)
                 {
-                    inicial.inicial_ergonomicoRies = "Si";
+                    inicial.inicial_ergonomicoRies = "SI";
                 }
                 if (ckb_psicosocial.Checked == true)
                 {
-                    inicial.inicial_psicosocial = "Si";
+                    inicial.inicial_psicosocial = "SI";
                 }
                 if (ckb_fisico2.Checked == true)
                 {
-                    inicial.inicial_fisicoRies2 = "Si";
+                    inicial.inicial_fisicoRies2 = "SI";
                 }
                 if (ckb_mecanico2.Checked == true)
                 {
-                    inicial.inicial_mecanicoRies2 = "Si";
+                    inicial.inicial_mecanicoRies2 = "SI";
                 }
                 if (ckb_quimico2.Checked == true)
                 {
-                    inicial.inicial_quimicoRies2 = "Si";
+                    inicial.inicial_quimicoRies2 = "SI";
                 }
                 if (ckb_biologico2.Checked == true)
                 {
-                    inicial.inicial_biologicoRies2 = "Si";
+                    inicial.inicial_biologicoRies2 = "SI";
                 }
                 if (ckb_ergonomico2.Checked == true)
                 {
-                    inicial.inicial_ergonomicoRies2 = "Si";
+                    inicial.inicial_ergonomicoRies2 = "SI";
                 }
                 if (ckb_psicosocial2.Checked == true)
                 {
-                    inicial.inicial_psicosocial2 = "Si";
+                    inicial.inicial_psicosocial2 = "SI";
                 }
                 if (ckb_fisico3.Checked == true)
                 {
-                    inicial.inicial_fisicoRies3 = "Si";
+                    inicial.inicial_fisicoRies3 = "SI";
                 }
                 if (ckb_mecanico3.Checked == true)
                 {
-                    inicial.inicial_mecanicoRies3 = "Si";
+                    inicial.inicial_mecanicoRies3 = "SI";
                 }
                 if (ckb_quimico3.Checked == true)
                 {
-                    inicial.inicial_quimicoRies3 = "Si";
+                    inicial.inicial_quimicoRies3 = "SI";
                 }
                 if (ckb_biologico3.Checked == true)
                 {
-                    inicial.inicial_biologicoRies3 = "Si";
+                    inicial.inicial_biologicoRies3 = "SI";
                 }
                 if (ckb_ergonomico3.Checked == true)
                 {
-                    inicial.inicial_ergonomicoRies3 = "Si";
+                    inicial.inicial_ergonomicoRies3 = "SI";
                 }
                 if (ckb_psicosocial3.Checked == true)
                 {
-                    inicial.inicial_psicosocial3 = "Si";
+                    inicial.inicial_psicosocial3 = "SI";
                 }
                 if (ckb_fisico4.Checked == true)
                 {
-                    inicial.inicial_fisicoRies4 = "Si";
+                    inicial.inicial_fisicoRies4 = "SI";
                 }
                 if (ckb_mecanico4.Checked == true)
                 {
-                    inicial.inicial_mecanicoRies4 = "Si";
+                    inicial.inicial_mecanicoRies4 = "SI";
                 }
                 if (ckb_quimico4.Checked == true)
                 {
-                    inicial.inicial_quimicoRies4 = "Si";
+                    inicial.inicial_quimicoRies4 = "SI";
                 }
                 if (ckb_biologico4.Checked == true)
                 {
-                    inicial.inicial_biologicoRies4 = "Si";
+                    inicial.inicial_biologicoRies4 = "SI";
                 }
                 if (ckb_ergonomico4.Checked == true)
                 {
-                    inicial.inicial_ergonomicoRies4 = "Si";
+                    inicial.inicial_ergonomicoRies4 = "SI";
                 }
                 if (ckb_psicosocial4.Checked == true)
                 {
-                    inicial.inicial_psicosocial4 = "Si";
+                    inicial.inicial_psicosocial4 = "SI";
                 }
                 if (ckb_siAccTrabDescrip.Checked == true)
                 {
-                    inicial.inicial_siCalificadoIESSAcciTrabajo = "Si";
+                    inicial.inicial_siCalificadoIESSAcciTrabajo = "SI";
                 }
                 if (ckb_noAccTrabDescrip.Checked == true)
                 {
-                    inicial.inicial_noCalificadoIESSAcciTrabajo = "Si";
+                    inicial.inicial_noCalificadoIESSAcciTrabajo = "SI";
                 }
                 if (ckb_siprofesional.Checked == true)
                 {
-                    inicial.inicial_siCalificadoIESSEnfProfesionales = "Si";
+                    inicial.inicial_siCalificadoIESSEnfProfesionales = "SI";
                 }
                 if (ckb_noprofesional.Checked == true)
                 {
-                    inicial.inicial_noCalificadoIESSEnfProfesionales = "Si";
+                    inicial.inicial_noCalificadoIESSEnfProfesionales = "SI";
                 }
                 if (ckb_enfermedadcardiovascular.Checked == true)
                 {
-                    inicial.inicial_enfCarVasAnteFamiliares = "Si";
+                    inicial.inicial_enfCarVasAnteFamiliares = "SI";
                 }
                 if (ckb_enfermedadmetabolica.Checked == true)
                 {
-                    inicial.inicial_enfMetaAnteFamiliares = "Si";
+                    inicial.inicial_enfMetaAnteFamiliares = "SI";
                 }
                 if (ckb_enfermedadneurologica.Checked == true)
                 {
-                    inicial.inicial_enfNeuroAnteFamiliares = "Si";
+                    inicial.inicial_enfNeuroAnteFamiliares = "SI";
                 }
                 if (ckb_enfermedadoncologica.Checked == true)
                 {
-                    inicial.inicial_enfOncoAnteFamiliares = "Si";
+                    inicial.inicial_enfOncoAnteFamiliares = "SI";
                 }
                 if (ckb_enfermedadinfecciosa.Checked == true)
                 {
-                    inicial.inicial_enfInfeAnteFamiliares = "Si";
+                    inicial.inicial_enfInfeAnteFamiliares = "SI";
                 }
                 if (ckb_enfermedadhereditaria.Checked == true)
                 {
-                    inicial.inicial_enfHereCongeAnteFamiliares = "Si";
+                    inicial.inicial_enfHereCongeAnteFamiliares = "SI";
                 }
                 if (ckb_discapacidades.Checked == true)
                 {
-                    inicial.inicial_discapaAnteFamiliares = "Si";
+                    inicial.inicial_discapaAnteFamiliares = "SI";
                 }
                 if (ckb_otrosenfer.Checked == true)
                 {
-                    inicial.inicial_otrosAnteFamiliares = "Si";
+                    inicial.inicial_otrosAnteFamiliares = "SI";
                 }
+
                 if (ckb_tempaltas.Checked == true)
                 {
-                    inicial.inicial_temAltasFis = "Si";
+                    inicial.inicial_temAltasFis = "SI";
                 }
                 if (ckb_tempbajas.Checked == true)
                 {
-                    inicial.inicial_temBajasFis = "Si";
+                    inicial.inicial_temBajasFis = "SI";
                 }
                 if (ckb_radiacion.Checked == true)
                 {
-                    inicial.inicial_radIonizanteFis = "Si";
+                    inicial.inicial_radIonizanteFis = "SI";
                 }
                 if (ckb_noradiacion.Checked == true)
                 {
-                    inicial.inicial_radNoIonizanteFis = "Si";
+                    inicial.inicial_radNoIonizanteFis = "SI";
                 }
                 if (ckb_ruido.Checked == true)
                 {
-                    inicial.inicial_ruidoFis = "Si";
+                    inicial.inicial_ruidoFis = "SI";
                 }
                 if (ckb_vibracion.Checked == true)
                 {
-                    inicial.inicial_vibracionFis = "Si";
+                    inicial.inicial_vibracionFis = "SI";
                 }
                 if (ckb_iluminacion.Checked == true)
                 {
-                    inicial.inicial_iluminacionFis = "Si";
+                    inicial.inicial_iluminacionFis = "SI";
                 }
                 if (ckb_ventilacion.Checked == true)
                 {
-                    inicial.inicial_ventilacionFis = "Si";
+                    inicial.inicial_ventilacionFis = "SI";
                 }
                 if (ckb_fluidoelectrico.Checked == true)
                 {
-                    inicial.inicial_fluElectricoFis = "Si";
+                    inicial.inicial_fluElectricoFis = "SI";
                 }
                 if (ckb_otrosFisico.Checked == true)
                 {
-                    inicial.inicial_otrosFis = "Si";
+                    inicial.inicial_otrosFis = "SI";
                 }
+
                 if (ckb_tempaltas2.Checked == true)
                 {
-                    inicial.inicial_temAltasFis2 = "Si";
+                    inicial.inicial_temAltasFis2 = "SI";
                 }
                 if (ckb_tempbajas2.Checked == true)
                 {
-                    inicial.inicial_temBajasFis2 = "Si";
+                    inicial.inicial_temBajasFis2 = "SI";
                 }
                 if (ckb_radiacion2.Checked == true)
                 {
-                    inicial.inicial_radIonizanteFis2 = "Si";
+                    inicial.inicial_radIonizanteFis2 = "SI";
                 }
                 if (ckb_noradiacion2.Checked == true)
                 {
-                    inicial.inicial_radNoIonizanteFis2 = "Si";
+                    inicial.inicial_radNoIonizanteFis2 = "SI";
                 }
                 if (ckb_ruido2.Checked == true)
                 {
-                    inicial.inicial_ruidoFis2 = "Si";
+                    inicial.inicial_ruidoFis2 = "SI";
                 }
                 if (ckb_vibracion2.Checked == true)
                 {
-                    inicial.inicial_vibracionFis2 = "Si";
+                    inicial.inicial_vibracionFis2 = "SI";
                 }
                 if (ckb_iluminacion2.Checked == true)
                 {
-                    inicial.inicial_iluminacionFis2 = "Si";
+                    inicial.inicial_iluminacionFis2 = "SI";
                 }
                 if (ckb_ventilacion2.Checked == true)
                 {
-                    inicial.inicial_ventilacionFis2 = "Si";
+                    inicial.inicial_ventilacionFis2 = "SI";
                 }
                 if (ckb_fluidoelectrico2.Checked == true)
                 {
-                    inicial.inicial_fluElectricoFis2 = "Si";
+                    inicial.inicial_fluElectricoFis2 = "SI";
                 }
                 if (ckb_otrosFisico2.Checked == true)
                 {
-                    inicial.inicial_otrosFis2 = "Si";
+                    inicial.inicial_otrosFis2 = "SI";
                 }
                 if (ckb_tempaltas3.Checked == true)
                 {
-                    inicial.inicial_temAltasFis3 = "Si";
+                    inicial.inicial_temAltasFis3 = "SI";
                 }
                 if (ckb_tempbajas3.Checked == true)
                 {
-                    inicial.inicial_temBajasFis3 = "Si";
+                    inicial.inicial_temBajasFis3 = "SI";
                 }
                 if (ckb_radiacion3.Checked == true)
                 {
-                    inicial.inicial_radIonizanteFis3 = "Si";
+                    inicial.inicial_radIonizanteFis3 = "SI";
                 }
                 if (ckb_noradiacion3.Checked == true)
                 {
-                    inicial.inicial_radNoIonizanteFis3 = "Si";
+                    inicial.inicial_radNoIonizanteFis3 = "SI";
                 }
                 if (ckb_ruido3.Checked == true)
                 {
-                    inicial.inicial_ruidoFis3 = "Si";
+                    inicial.inicial_ruidoFis3 = "SI";
                 }
                 if (ckb_vibracion3.Checked == true)
                 {
-                    inicial.inicial_vibracionFis3 = "Si";
+                    inicial.inicial_vibracionFis3 = "SI";
                 }
                 if (ckb_iluminacion3.Checked == true)
                 {
-                    inicial.inicial_iluminacionFis3 = "Si";
+                    inicial.inicial_iluminacionFis3 = "SI";
                 }
                 if (ckb_ventilacion3.Checked == true)
                 {
-                    inicial.inicial_ventilacionFis3 = "Si";
+                    inicial.inicial_ventilacionFis3 = "SI";
                 }
                 if (ckb_fluidoelectrico3.Checked == true)
                 {
-                    inicial.inicial_fluElectricoFis3 = "Si";
+                    inicial.inicial_fluElectricoFis3 = "SI";
                 }
                 if (ckb_otrosFisico3.Checked == true)
                 {
-                    inicial.inicial_otrosFis3 = "Si";
+                    inicial.inicial_otrosFis3 = "SI";
                 }
                 if (ckb_tempaltas4.Checked == true)
                 {
-                    inicial.inicial_temAltasFis4 = "Si";
+                    inicial.inicial_temAltasFis4 = "SI";
                 }
                 if (ckb_tempbajas4.Checked == true)
                 {
-                    inicial.inicial_temBajasFis4 = "Si";
+                    inicial.inicial_temBajasFis4 = "SI";
                 }
                 if (ckb_radiacion4.Checked == true)
                 {
-                    inicial.inicial_radIonizanteFis4 = "Si";
+                    inicial.inicial_radIonizanteFis4 = "SI";
                 }
                 if (ckb_noradiacion4.Checked == true)
                 {
-                    inicial.inicial_radNoIonizanteFis4 = "Si";
+                    inicial.inicial_radNoIonizanteFis4 = "SI";
                 }
                 if (ckb_ruido4.Checked == true)
                 {
-                    inicial.inicial_ruidoFis4 = "Si";
+                    inicial.inicial_ruidoFis4 = "SI";
                 }
                 if (ckb_vibracion4.Checked == true)
                 {
-                    inicial.inicial_vibracionFis4 = "Si";
+                    inicial.inicial_vibracionFis4 = "SI";
                 }
                 if (ckb_iluminacion4.Checked == true)
                 {
-                    inicial.inicial_iluminacionFis4 = "Si";
+                    inicial.inicial_iluminacionFis4 = "SI";
                 }
                 if (ckb_ventilacion4.Checked == true)
                 {
-                    inicial.inicial_ventilacionFis4 = "Si";
+                    inicial.inicial_ventilacionFis4 = "SI";
                 }
                 if (ckb_fluidoelectrico4.Checked == true)
                 {
-                    inicial.inicial_fluElectricoFis4 = "Si";
+                    inicial.inicial_fluElectricoFis4 = "SI";
                 }
                 if (ckb_otrosFisico4.Checked == true)
                 {
-                    inicial.inicial_otrosFis4 = "Si";
+                    inicial.inicial_otrosFis4 = "SI";
                 }
                 if (ckb_atrapmaquinas.Checked == true)
                 {
-                    inicial.inicial_atraMaquinasMec = "Si";
+                    inicial.inicial_atraMaquinasMec = "SI";
                 }
                 if (ckb_atrapsuperficie.Checked == true)
                 {
-                    inicial.inicial_atraSuperfiiesMec = "Si";
+                    inicial.inicial_atraSuperfiiesMec = "SI";
                 }
                 if (ckb_atrapobjetos.Checked == true)
                 {
-                    inicial.inicial_atraObjetosMec = "Si";
+                    inicial.inicial_atraObjetosMec = "SI";
                 }
                 if (ckb_caidaobjetos.Checked == true)
                 {
-                    inicial.inicial_caidaObjetosMec = "Si";
+                    inicial.inicial_caidaObjetosMec = "SI";
                 }
                 if (ckb_caidamisnivel.Checked == true)
                 {
-                    inicial.inicial_caidaMisNivelMec = "Si";
+                    inicial.inicial_caidaMisNivelMec = "SI";
                 }
                 if (ckb_caidadifnivel.Checked == true)
                 {
-                    inicial.inicial_caidaDifNivelMec = "Si";
+                    inicial.inicial_caidaDifNivelMec = "SI";
                 }
                 if (ckb_contaelectrico.Checked == true)
                 {
-                    inicial.inicial_contactoElecMec = "Si";
+                    inicial.inicial_contactoElecMec = "SI";
                 }
                 if (ckb_contasuptrabajo.Checked == true)
                 {
-                    inicial.inicial_conSuperTrabaMec = "Si";
+                    inicial.inicial_conSuperTrabaMec = "SI";
                 }
                 if (ckb_proyparticulas.Checked == true)
                 {
-                    inicial.inicial_proPartiFragMec = "Si";
+                    inicial.inicial_proPartiFragMec = "SI";
                 }
                 if (ckb_proyefluidos.Checked == true)
                 {
-                    inicial.inicial_proFluidosMec = "Si";
+                    inicial.inicial_proFluidosMec = "SI";
                 }
                 if (ckb_pinchazos.Checked == true)
                 {
-                    inicial.inicial_pinchazosMec = "Si";
+                    inicial.inicial_pinchazosMec = "SI";
                 }
                 if (ckb_cortes.Checked == true)
                 {
-                    inicial.inicial_cortesMec = "Si";
+                    inicial.inicial_cortesMec = "SI";
                 }
                 if (ckb_atroporvehiculos.Checked == true)
                 {
-                    inicial.inicial_atropeVehiMec = "Si";
+                    inicial.inicial_atropeVehiMec = "SI";
                 }
                 if (ckb_choques.Checked == true)
                 {
-                    inicial.inicial_coliVehiMec = "Si";
+                    inicial.inicial_coliVehiMec = "SI";
                 }
                 if (ckb_otrosMecanico.Checked == true)
                 {
-                    inicial.inicial_otrosMec = "Si";
+                    inicial.inicial_otrosMec = "SI";
                 }
                 if (ckb_solidos.Checked == true)
                 {
-                    inicial.inicial_solidosQui = "Si";
+                    inicial.inicial_solidosQui = "SI";
                 }
                 if (ckb_polvos.Checked == true)
                 {
-                    inicial.inicial_polvosQui = "Si";
+                    inicial.inicial_polvosQui = "SI";
                 }
                 if (ckb_humos.Checked == true)
                 {
-                    inicial.inicial_humosQui = "Si";
+                    inicial.inicial_humosQui = "SI";
                 }
                 if (ckb_liquidos.Checked == true)
                 {
-                    inicial.inicial_liquidosQui = "Si";
+                    inicial.inicial_liquidosQui = "SI";
                 }
                 if (ckb_vapores.Checked == true)
                 {
-                    inicial.inicial_vaporesQui = "Si";
+                    inicial.inicial_vaporesQui = "SI";
                 }
                 if (ckb_aerosoles.Checked == true)
                 {
-                    inicial.inicial_aerosolesQui = "Si";
+                    inicial.inicial_aerosolesQui = "SI";
                 }
                 if (ckb_neblinas.Checked == true)
                 {
-                    inicial.inicial_neblinasQui = "Si";
+                    inicial.inicial_neblinasQui = "SI";
                 }
                 if (ckb_gaseosos.Checked == true)
                 {
-                    inicial.inicial_gaseososQui = "Si";
+                    inicial.inicial_gaseososQui = "SI";
                 }
                 if (ckb_otrosQuimico.Checked == true)
                 {
-                    inicial.inicial_otrosQui = "Si";
+                    inicial.inicial_otrosQui = "SI";
                 }
                 if (ckb_atrapmaquinas2.Checked == true)
                 {
-                    inicial.inicial_atraMaquinasMec2 = "Si";
+                    inicial.inicial_atraMaquinasMec2 = "SI";
                 }
                 if (ckb_atrapsuperficie2.Checked == true)
                 {
-                    inicial.inicial_atraSuperfiiesMec2 = "Si";
+                    inicial.inicial_atraSuperfiiesMec2 = "SI";
                 }
                 if (ckb_atrapobjetos2.Checked == true)
                 {
-                    inicial.inicial_atraObjetosMec2 = "Si";
+                    inicial.inicial_atraObjetosMec2 = "SI";
                 }
                 if (ckb_caidaobjetos2.Checked == true)
                 {
-                    inicial.inicial_caidaObjetosMec2 = "Si";
+                    inicial.inicial_caidaObjetosMec2 = "SI";
                 }
                 if (ckb_caidamisnivel2.Checked == true)
                 {
-                    inicial.inicial_caidaMisNivelMec2 = "Si";
+                    inicial.inicial_caidaMisNivelMec2 = "SI";
                 }
                 if (ckb_caidadifnivel2.Checked == true)
                 {
-                    inicial.inicial_caidaDifNivelMec2 = "Si";
+                    inicial.inicial_caidaDifNivelMec2 = "SI";
                 }
                 if (ckb_contaelectrico2.Checked == true)
                 {
-                    inicial.inicial_contactoElecMec2 = "Si";
+                    inicial.inicial_contactoElecMec2 = "SI";
                 }
                 if (ckb_contasuptrabajo2.Checked == true)
                 {
-                    inicial.inicial_conSuperTrabaMec2 = "Si";
+                    inicial.inicial_conSuperTrabaMec2 = "SI";
                 }
                 if (ckb_proyparticulas2.Checked == true)
                 {
-                    inicial.inicial_proPartiFragMec2 = "Si";
+                    inicial.inicial_proPartiFragMec2 = "SI";
                 }
                 if (ckb_proyefluidos2.Checked == true)
                 {
-                    inicial.inicial_proFluidosMec2 = "Si";
+                    inicial.inicial_proFluidosMec2 = "SI";
                 }
                 if (ckb_pinchazos2.Checked == true)
                 {
-                    inicial.inicial_pinchazosMec2 = "Si";
+                    inicial.inicial_pinchazosMec2 = "SI";
                 }
                 if (ckb_cortes2.Checked == true)
                 {
-                    inicial.inicial_cortesMec2 = "Si";
+                    inicial.inicial_cortesMec2 = "SI";
                 }
                 if (ckb_atroporvehiculos2.Checked == true)
                 {
-                    inicial.inicial_atropeVehiMec2 = "Si";
+                    inicial.inicial_atropeVehiMec2 = "SI";
                 }
                 if (ckb_choques2.Checked == true)
                 {
-                    inicial.inicial_coliVehiMec2 = "Si";
+                    inicial.inicial_coliVehiMec2 = "SI";
                 }
                 if (ckb_otrosMecanico2.Checked == true)
                 {
-                    inicial.inicial_otrosMec2 = "Si";
+                    inicial.inicial_otrosMec2 = "SI";
                 }
                 if (ckb_solidos2.Checked == true)
                 {
-                    inicial.inicial_solidosQui2 = "Si";
+                    inicial.inicial_solidosQui2 = "SI";
                 }
                 if (ckb_polvos2.Checked == true)
                 {
-                    inicial.inicial_polvosQui2 = "Si";
+                    inicial.inicial_polvosQui2 = "SI";
                 }
                 if (ckb_humos2.Checked == true)
                 {
-                    inicial.inicial_humosQui2 = "Si";
+                    inicial.inicial_humosQui2 = "SI";
                 }
                 if (ckb_liquidos2.Checked == true)
                 {
-                    inicial.inicial_liquidosQui2 = "Si";
+                    inicial.inicial_liquidosQui2 = "SI";
                 }
                 if (ckb_vapores2.Checked == true)
                 {
-                    inicial.inicial_vaporesQui2 = "Si";
+                    inicial.inicial_vaporesQui2 = "SI";
                 }
                 if (ckb_aerosoles2.Checked == true)
                 {
-                    inicial.inicial_aerosolesQui2 = "Si";
+                    inicial.inicial_aerosolesQui2 = "SI";
                 }
                 if (ckb_neblinas2.Checked == true)
                 {
-                    inicial.inicial_neblinasQui2 = "Si";
+                    inicial.inicial_neblinasQui2 = "SI";
                 }
                 if (ckb_gaseosos2.Checked == true)
                 {
-                    inicial.inicial_gaseososQui2 = "Si";
+                    inicial.inicial_gaseososQui2 = "SI";
                 }
                 if (ckb_otrosQuimico2.Checked == true)
                 {
-                    inicial.inicial_otrosQui2 = "Si";
+                    inicial.inicial_otrosQui2 = "SI";
                 }
                 if (ckb_atrapmaquinas3.Checked == true)
                 {
-                    inicial.inicial_atraMaquinasMec3 = "Si";
+                    inicial.inicial_atraMaquinasMec3 = "SI";
                 }
                 if (ckb_atrapsuperficie3.Checked == true)
                 {
-                    inicial.inicial_atraSuperfiiesMec3 = "Si";
+                    inicial.inicial_atraSuperfiiesMec3 = "SI";
                 }
                 if (ckb_atrapobjetos3.Checked == true)
                 {
-                    inicial.inicial_atraObjetosMec3 = "Si";
+                    inicial.inicial_atraObjetosMec3 = "SI";
                 }
                 if (ckb_caidaobjetos3.Checked == true)
                 {
-                    inicial.inicial_caidaObjetosMec3 = "Si";
+                    inicial.inicial_caidaObjetosMec3 = "SI";
                 }
                 if (ckb_caidamisnivel3.Checked == true)
                 {
-                    inicial.inicial_caidaMisNivelMec3 = "Si";
+                    inicial.inicial_caidaMisNivelMec3 = "SI";
                 }
                 if (ckb_caidadifnivel3.Checked == true)
                 {
-                    inicial.inicial_caidaDifNivelMec3 = "Si";
+                    inicial.inicial_caidaDifNivelMec3 = "SI";
                 }
                 if (ckb_contaelectrico3.Checked == true)
                 {
-                    inicial.inicial_contactoElecMec3 = "Si";
+                    inicial.inicial_contactoElecMec3 = "SI";
                 }
                 if (ckb_contasuptrabajo3.Checked == true)
                 {
-                    inicial.inicial_conSuperTrabaMec3 = "Si";
+                    inicial.inicial_conSuperTrabaMec3 = "SI";
                 }
                 if (ckb_proyparticulas3.Checked == true)
                 {
-                    inicial.inicial_proPartiFragMec3 = "Si";
+                    inicial.inicial_proPartiFragMec3 = "SI";
                 }
                 if (ckb_proyefluidos3.Checked == true)
                 {
-                    inicial.inicial_proFluidosMec3 = "Si";
+                    inicial.inicial_proFluidosMec3 = "SI";
                 }
                 if (ckb_pinchazos3.Checked == true)
                 {
-                    inicial.inicial_pinchazosMec3 = "Si";
+                    inicial.inicial_pinchazosMec3 = "SI";
                 }
                 if (ckb_cortes3.Checked == true)
                 {
-                    inicial.inicial_cortesMec3 = "Si";
+                    inicial.inicial_cortesMec3 = "SI";
                 }
                 if (ckb_atroporvehiculos3.Checked == true)
                 {
-                    inicial.inicial_atropeVehiMec3 = "Si";
+                    inicial.inicial_atropeVehiMec3 = "SI";
                 }
                 if (ckb_choques3.Checked == true)
                 {
-                    inicial.inicial_coliVehiMec3 = "Si";
+                    inicial.inicial_coliVehiMec3 = "SI";
                 }
                 if (ckb_otrosMecanico3.Checked == true)
                 {
-                    inicial.inicial_otrosMec3 = "Si";
+                    inicial.inicial_otrosMec3 = "SI";
                 }
                 if (ckb_solidos3.Checked == true)
                 {
-                    inicial.inicial_solidosQui3 = "Si";
+                    inicial.inicial_solidosQui3 = "SI";
                 }
                 if (ckb_polvos3.Checked == true)
                 {
-                    inicial.inicial_polvosQui3 = "Si";
+                    inicial.inicial_polvosQui3 = "SI";
                 }
                 if (ckb_humos3.Checked == true)
                 {
-                    inicial.inicial_humosQui3 = "Si";
+                    inicial.inicial_humosQui3 = "SI";
                 }
                 if (ckb_liquidos3.Checked == true)
                 {
-                    inicial.inicial_liquidosQui3 = "Si";
+                    inicial.inicial_liquidosQui3 = "SI";
                 }
                 if (ckb_vapores3.Checked == true)
                 {
-                    inicial.inicial_vaporesQui3 = "Si";
+                    inicial.inicial_vaporesQui3 = "SI";
                 }
                 if (ckb_aerosoles3.Checked == true)
                 {
-                    inicial.inicial_aerosolesQui3 = "Si";
+                    inicial.inicial_aerosolesQui3 = "SI";
                 }
                 if (ckb_neblinas3.Checked == true)
                 {
-                    inicial.inicial_neblinasQui3 = "Si";
+                    inicial.inicial_neblinasQui3 = "SI";
                 }
                 if (ckb_gaseosos3.Checked == true)
                 {
-                    inicial.inicial_gaseososQui3 = "Si";
+                    inicial.inicial_gaseososQui3 = "SI";
                 }
                 if (ckb_otrosQuimico3.Checked == true)
                 {
-                    inicial.inicial_otrosQui3 = "Si";
+                    inicial.inicial_otrosQui3 = "SI";
                 }
                 if (ckb_atrapmaquinas4.Checked == true)
                 {
-                    inicial.inicial_atraMaquinasMec4 = "Si";
+                    inicial.inicial_atraMaquinasMec4 = "SI";
                 }
                 if (ckb_atrapsuperficie4.Checked == true)
                 {
-                    inicial.inicial_atraSuperfiiesMec4 = "Si";
+                    inicial.inicial_atraSuperfiiesMec4 = "SI";
                 }
                 if (ckb_atrapobjetos4.Checked == true)
                 {
-                    inicial.inicial_atraObjetosMec4 = "Si";
+                    inicial.inicial_atraObjetosMec4 = "SI";
                 }
                 if (ckb_caidaobjetos4.Checked == true)
                 {
-                    inicial.inicial_caidaObjetosMec4 = "Si";
+                    inicial.inicial_caidaObjetosMec4 = "SI";
                 }
                 if (ckb_caidamisnivel4.Checked == true)
                 {
-                    inicial.inicial_caidaMisNivelMec4 = "Si";
+                    inicial.inicial_caidaMisNivelMec4 = "SI";
                 }
                 if (ckb_caidadifnivel4.Checked == true)
                 {
-                    inicial.inicial_caidaDifNivelMec4 = "Si";
+                    inicial.inicial_caidaDifNivelMec4 = "SI";
                 }
                 if (ckb_contaelectrico4.Checked == true)
                 {
-                    inicial.inicial_contactoElecMec4 = "Si";
+                    inicial.inicial_contactoElecMec4 = "SI";
                 }
                 if (ckb_contasuptrabajo4.Checked == true)
                 {
-                    inicial.inicial_conSuperTrabaMec4 = "Si";
+                    inicial.inicial_conSuperTrabaMec4 = "SI";
                 }
                 if (ckb_proyparticulas4.Checked == true)
                 {
-                    inicial.inicial_proPartiFragMec4 = "Si";
+                    inicial.inicial_proPartiFragMec4 = "SI";
                 }
                 if (ckb_proyefluidos4.Checked == true)
                 {
-                    inicial.inicial_proFluidosMec4 = "Si";
+                    inicial.inicial_proFluidosMec4 = "SI";
                 }
                 if (ckb_pinchazos4.Checked == true)
                 {
-                    inicial.inicial_pinchazosMec4 = "Si";
+                    inicial.inicial_pinchazosMec4 = "SI";
                 }
                 if (ckb_cortes4.Checked == true)
                 {
-                    inicial.inicial_cortesMec4 = "Si";
+                    inicial.inicial_cortesMec4 = "SI";
                 }
                 if (ckb_atroporvehiculos4.Checked == true)
                 {
-                    inicial.inicial_atropeVehiMec4 = "Si";
+                    inicial.inicial_atropeVehiMec4 = "SI";
                 }
                 if (ckb_choques4.Checked == true)
                 {
-                    inicial.inicial_coliVehiMec4 = "Si";
+                    inicial.inicial_coliVehiMec4 = "SI";
                 }
                 if (ckb_otrosMecanico4.Checked == true)
                 {
-                    inicial.inicial_otrosMec4 = "Si";
+                    inicial.inicial_otrosMec4 = "SI";
                 }
                 if (ckb_solidos4.Checked == true)
                 {
-                    inicial.inicial_solidosQui4 = "Si";
+                    inicial.inicial_solidosQui4 = "SI";
                 }
                 if (ckb_polvos4.Checked == true)
                 {
-                    inicial.inicial_polvosQui4 = "Si";
+                    inicial.inicial_polvosQui4 = "SI";
                 }
                 if (ckb_humos4.Checked == true)
                 {
-                    inicial.inicial_humosQui4 = "Si";
+                    inicial.inicial_humosQui4 = "SI";
                 }
                 if (ckb_liquidos4.Checked == true)
                 {
-                    inicial.inicial_liquidosQui4 = "Si";
+                    inicial.inicial_liquidosQui4 = "SI";
                 }
                 if (ckb_vapores4.Checked == true)
                 {
-                    inicial.inicial_vaporesQui4 = "Si";
+                    inicial.inicial_vaporesQui4 = "SI";
                 }
                 if (ckb_aerosoles4.Checked == true)
                 {
-                    inicial.inicial_aerosolesQui4 = "Si";
+                    inicial.inicial_aerosolesQui4 = "SI";
                 }
                 if (ckb_neblinas4.Checked == true)
                 {
-                    inicial.inicial_neblinasQui4 = "Si";
+                    inicial.inicial_neblinasQui4 = "SI";
                 }
                 if (ckb_gaseosos4.Checked == true)
                 {
-                    inicial.inicial_gaseososQui4 = "Si";
+                    inicial.inicial_gaseososQui4 = "SI";
                 }
                 if (ckb_otrosQuimico4.Checked == true)
                 {
-                    inicial.inicial_otrosQui4 = "Si";
+                    inicial.inicial_otrosQui4 = "SI";
                 }
                 if (ckb_virus.Checked == true)
                 {
-                    inicial.inicial_virusBio = "Si";
+                    inicial.inicial_virusBio = "SI";
                 }
                 if (ckb_hongos.Checked == true)
                 {
-                    inicial.inicial_hongosBio = "Si";
+                    inicial.inicial_hongosBio = "SI";
                 }
                 if (ckb_bacterias.Checked == true)
                 {
-                    inicial.inicial_bacteriasBio = "Si";
+                    inicial.inicial_bacteriasBio = "SI";
                 }
                 if (ckb_parasitos.Checked == true)
                 {
-                    inicial.inicial_parasitosBio = "Si";
+                    inicial.inicial_parasitosBio = "SI";
                 }
                 if (ckb_expoavectores.Checked == true)
                 {
-                    inicial.inicial_expVectBio = "Si";
+                    inicial.inicial_expVectBio = "SI";
                 }
                 if (ckb_expoanimselvaticos.Checked == true)
                 {
-                    inicial.inicial_expAniSelvaBio = "Si";
+                    inicial.inicial_expAniSelvaBio = "SI";
                 }
                 if (ckb_otrosBiologico.Checked == true)
                 {
-                    inicial.inicial_otrosBio = "Si";
+                    inicial.inicial_otrosBio = "SI";
                 }
                 if (ckb_manmanualcargas.Checked == true)
                 {
-                    inicial.inicial_maneManCarErg = "Si";
+                    inicial.inicial_maneManCarErg = "SI";
                 }
                 if (ckb_movrepetitivo.Checked == true)
                 {
-                    inicial.inicial_movRepeErg = "Si";
+                    inicial.inicial_movRepeErg = "SI";
                 }
                 if (ckb_postforzadas.Checked == true)
                 {
-                    inicial.inicial_posForzaErg = "Si";
+                    inicial.inicial_posForzaErg = "SI";
                 }
                 if (ckb_trabajopvd.Checked == true)
                 {
-                    inicial.inicial_trabPvdErg = "Si";
+                    inicial.inicial_trabPvdErg = "SI";
                 }
                 if (ckb_otrosErgonomico.Checked == true)
                 {
-                    inicial.inicial_otrosErg = "Si";
+                    inicial.inicial_otrosErg = "SI";
                 }
                 if (ckb_virus2.Checked == true)
                 {
-                    inicial.inicial_virusBio2 = "Si";
+                    inicial.inicial_virusBio2 = "SI";
                 }
                 if (ckb_hongos2.Checked == true)
                 {
-                    inicial.inicial_hongosBio2 = "Si";
+                    inicial.inicial_hongosBio2 = "SI";
                 }
                 if (ckb_bacterias2.Checked == true)
                 {
-                    inicial.inicial_bacteriasBio2 = "Si";
+                    inicial.inicial_bacteriasBio2 = "SI";
                 }
                 if (ckb_parasitos2.Checked == true)
                 {
-                    inicial.inicial_parasitosBio2 = "Si";
+                    inicial.inicial_parasitosBio2 = "SI";
                 }
                 if (ckb_expoavectores2.Checked == true)
                 {
-                    inicial.inicial_expVectBio2 = "Si";
+                    inicial.inicial_expVectBio2 = "SI";
                 }
                 if (ckb_expoanimselvaticos2.Checked == true)
                 {
-                    inicial.inicial_expAniSelvaBio2 = "Si";
+                    inicial.inicial_expAniSelvaBio2 = "SI";
                 }
                 if (ckb_otrosBiologico2.Checked == true)
                 {
-                    inicial.inicial_otrosBio2 = "Si";
+                    inicial.inicial_otrosBio2 = "SI";
                 }
                 if (ckb_manmanualcargas2.Checked == true)
                 {
-                    inicial.inicial_maneManCarErg2 = "Si";
+                    inicial.inicial_maneManCarErg2 = "SI";
                 }
                 if (ckb_movrepetitivo2.Checked == true)
                 {
-                    inicial.inicial_movRepeErg2 = "Si";
+                    inicial.inicial_movRepeErg2 = "SI";
                 }
                 if (ckb_postforzadas2.Checked == true)
                 {
-                    inicial.inicial_posForzaErg2 = "Si";
+                    inicial.inicial_posForzaErg2 = "SI";
                 }
                 if (ckb_trabajopvd2.Checked == true)
                 {
-                    inicial.inicial_trabPvdErg2 = "Si";
+                    inicial.inicial_trabPvdErg2 = "SI";
                 }
                 if (ckb_otrosErgonomico2.Checked == true)
                 {
-                    inicial.inicial_otrosErg2 = "Si";
+                    inicial.inicial_otrosErg2 = "SI";
                 }
                 if (ckb_virus3.Checked == true)
                 {
-                    inicial.inicial_virusBio3 = "Si";
+                    inicial.inicial_virusBio3 = "SI";
                 }
                 if (ckb_hongos3.Checked == true)
                 {
-                    inicial.inicial_hongosBio3 = "Si";
+                    inicial.inicial_hongosBio3 = "SI";
                 }
                 if (ckb_bacterias3.Checked == true)
                 {
-                    inicial.inicial_bacteriasBio3 = "Si";
+                    inicial.inicial_bacteriasBio3 = "SI";
                 }
                 if (ckb_parasitos3.Checked == true)
                 {
-                    inicial.inicial_parasitosBio3 = "Si";
+                    inicial.inicial_parasitosBio3 = "SI";
                 }
                 if (ckb_expoavectores3.Checked == true)
                 {
-                    inicial.inicial_expVectBio3 = "Si";
+                    inicial.inicial_expVectBio3 = "SI";
                 }
                 if (ckb_expoanimselvaticos3.Checked == true)
                 {
-                    inicial.inicial_expAniSelvaBio3 = "Si";
+                    inicial.inicial_expAniSelvaBio3 = "SI";
                 }
                 if (ckb_otrosBiologico3.Checked == true)
                 {
-                    inicial.inicial_otrosBio3 = "Si";
+                    inicial.inicial_otrosBio3 = "SI";
                 }
                 if (ckb_manmanualcargas3.Checked == true)
                 {
-                    inicial.inicial_maneManCarErg3 = "Si";
+                    inicial.inicial_maneManCarErg3 = "SI";
                 }
                 if (ckb_movrepetitivo3.Checked == true)
                 {
-                    inicial.inicial_movRepeErg3 = "Si";
+                    inicial.inicial_movRepeErg3 = "SI";
                 }
                 if (ckb_postforzadas3.Checked == true)
                 {
-                    inicial.inicial_posForzaErg3 = "Si";
+                    inicial.inicial_posForzaErg3 = "SI";
                 }
                 if (ckb_trabajopvd3.Checked == true)
                 {
-                    inicial.inicial_trabPvdErg3 = "Si";
+                    inicial.inicial_trabPvdErg3 = "SI";
                 }
                 if (ckb_otrosErgonomico3.Checked == true)
                 {
-                    inicial.inicial_otrosErg3 = "Si";
+                    inicial.inicial_otrosErg3 = "SI";
                 }
                 if (ckb_virus4.Checked == true)
                 {
-                    inicial.inicial_virusBio4 = "Si";
+                    inicial.inicial_virusBio4 = "SI";
                 }
                 if (ckb_hongos4.Checked == true)
                 {
-                    inicial.inicial_hongosBio4 = "Si";
+                    inicial.inicial_hongosBio4 = "SI";
                 }
                 if (ckb_bacterias4.Checked == true)
                 {
-                    inicial.inicial_bacteriasBio4 = "Si";
+                    inicial.inicial_bacteriasBio4 = "SI";
                 }
                 if (ckb_parasitos4.Checked == true)
                 {
-                    inicial.inicial_parasitosBio4 = "Si";
+                    inicial.inicial_parasitosBio4 = "SI";
                 }
                 if (ckb_expoavectores4.Checked == true)
                 {
-                    inicial.inicial_expVectBio4 = "Si";
+                    inicial.inicial_expVectBio4 = "SI";
                 }
                 if (ckb_expoanimselvaticos4.Checked == true)
                 {
-                    inicial.inicial_expAniSelvaBio4 = "Si";
+                    inicial.inicial_expAniSelvaBio4 = "SI";
                 }
                 if (ckb_otrosBiologico4.Checked == true)
                 {
-                    inicial.inicial_otrosBio4 = "Si";
+                    inicial.inicial_otrosBio4 = "SI";
                 }
                 if (ckb_manmanualcargas4.Checked == true)
                 {
-                    inicial.inicial_maneManCarErg4 = "Si";
+                    inicial.inicial_maneManCarErg4 = "SI";
                 }
                 if (ckb_movrepetitivo4.Checked == true)
                 {
-                    inicial.inicial_movRepeErg4 = "Si";
+                    inicial.inicial_movRepeErg4 = "SI";
                 }
                 if (ckb_postforzadas4.Checked == true)
                 {
-                    inicial.inicial_posForzaErg4 = "Si";
+                    inicial.inicial_posForzaErg4 = "SI";
                 }
                 if (ckb_trabajopvd4.Checked == true)
                 {
-                    inicial.inicial_trabPvdErg4 = "Si";
+                    inicial.inicial_trabPvdErg4 = "SI";
                 }
                 if (ckb_otrosErgonomico4.Checked == true)
                 {
-                    inicial.inicial_otrosErg4 = "Si";
+                    inicial.inicial_otrosErg4 = "SI";
                 }
                 if (ckb_montrabajo.Checked == true)
                 {
-                    inicial.inicial_monoTrabPsi = "Si";
+                    inicial.inicial_monoTrabPsi = "SI";
                 }
                 if (ckb_sobrecargalaboral.Checked == true)
                 {
-                    inicial.inicial_sobrecarLabPsi = "Si";
+                    inicial.inicial_sobrecarLabPsi = "SI";
                 }
                 if (ckb_minustarea.Checked == true)
                 {
-                    inicial.inicial_minuTareaPsi = "Si";
+                    inicial.inicial_minuTareaPsi = "SI";
                 }
                 if (ckb_altarespon.Checked == true)
                 {
-                    inicial.inicial_altaResponPsi = "Si";
+                    inicial.inicial_altaResponPsi = "SI";
                 }
                 if (ckb_automadesiciones.Checked == true)
                 {
-                    inicial.inicial_autoTomaDesiPsi = "Si";
+                    inicial.inicial_autoTomaDesiPsi = "SI";
                 }
                 if (ckb_supyestdireficiente.Checked == true)
                 {
-                    inicial.inicial_supEstDirecDefiPsi = "Si";
+                    inicial.inicial_supEstDirecDefiPsi = "SI";
                 }
                 if (ckb_conflictorol.Checked == true)
                 {
-                    inicial.inicial_conflicRolPsi = "Si";
+                    inicial.inicial_conflicRolPsi = "SI";
                 }
                 if (ckb_faltaclarfunciones.Checked == true)
                 {
-                    inicial.inicial_falClariFunPsi = "Si";
+                    inicial.inicial_falClariFunPsi = "SI";
                 }
                 if (ckb_incorrdistrabajo.Checked == true)
                 {
-                    inicial.inicial_incoDistriTrabPsi = "Si";
+                    inicial.inicial_incoDistriTrabPsi = "SI";
                 }
                 if (ckb_turnorotat.Checked == true)
                 {
-                    inicial.inicial_turnosRotaPsi = "Si";
+                    inicial.inicial_turnosRotaPsi = "SI";
                 }
                 if (ckb_relacinterpersonales.Checked == true)
                 {
-                    inicial.inicial_relInterperPsi = "Si";
+                    inicial.inicial_relInterperPsi = "SI";
                 }
                 if (ckb_inestalaboral.Checked == true)
                 {
-                    inicial.inicial_inesLabPsi = "Si";
+                    inicial.inicial_inesLabPsi = "SI";
                 }
                 if (ckb_otrosPsicosocial.Checked == true)
                 {
-                    inicial.inicial_otrosPsi = "Si";
+                    inicial.inicial_otrosPsi = "SI";
                 }
                 if (ckb_montrabajo2.Checked == true)
                 {
-                    inicial.inicial_monoTrabPsi2 = "Si";
+                    inicial.inicial_monoTrabPsi2 = "SI";
                 }
                 if (ckb_sobrecargalaboral2.Checked == true)
                 {
-                    inicial.inicial_sobrecarLabPsi2 = "Si";
+                    inicial.inicial_sobrecarLabPsi2 = "SI";
                 }
                 if (ckb_minustarea2.Checked == true)
                 {
-                    inicial.inicial_minuTareaPsi2 = "Si";
+                    inicial.inicial_minuTareaPsi2 = "SI";
                 }
                 if (ckb_altarespon2.Checked == true)
                 {
-                    inicial.inicial_altaResponPsi2 = "Si";
+                    inicial.inicial_altaResponPsi2 = "SI";
                 }
                 if (ckb_automadesiciones2.Checked == true)
                 {
-                    inicial.inicial_autoTomaDesiPsi2 = "Si";
+                    inicial.inicial_autoTomaDesiPsi2 = "SI";
                 }
                 if (ckb_supyestdireficiente2.Checked == true)
                 {
-                    inicial.inicial_supEstDirecDefiPsi2 = "Si";
+                    inicial.inicial_supEstDirecDefiPsi2 = "SI";
                 }
                 if (ckb_conflictorol2.Checked == true)
                 {
-                    inicial.inicial_conflicRolPsi2 = "Si";
+                    inicial.inicial_conflicRolPsi2 = "SI";
                 }
                 if (ckb_faltaclarfunciones2.Checked == true)
                 {
-                    inicial.inicial_falClariFunPsi2 = "Si";
+                    inicial.inicial_falClariFunPsi2 = "SI";
                 }
                 if (ckb_incorrdistrabajo2.Checked == true)
                 {
-                    inicial.inicial_incoDistriTrabPsi2 = "Si";
+                    inicial.inicial_incoDistriTrabPsi2 = "SI";
                 }
                 if (ckb_turnorotat2.Checked == true)
                 {
-                    inicial.inicial_turnosRotaPsi2 = "Si";
+                    inicial.inicial_turnosRotaPsi2 = "SI";
                 }
                 if (ckb_relacinterpersonales2.Checked == true)
                 {
-                    inicial.inicial_relInterperPsi2 = "Si";
+                    inicial.inicial_relInterperPsi2 = "SI";
                 }
                 if (ckb_inestalaboral2.Checked == true)
                 {
-                    inicial.inicial_inesLabPsi2 = "Si";
+                    inicial.inicial_inesLabPsi2 = "SI";
                 }
                 if (ckb_otrosPsicosocial2.Checked == true)
                 {
-                    inicial.inicial_otrosPsi2 = "Si";
+                    inicial.inicial_otrosPsi2 = "SI";
                 }
                 if (ckb_montrabajo3.Checked == true)
                 {
-                    inicial.inicial_monoTrabPsi3 = "Si";
+                    inicial.inicial_monoTrabPsi3 = "SI";
                 }
                 if (ckb_sobrecargalaboral3.Checked == true)
                 {
-                    inicial.inicial_sobrecarLabPsi3 = "Si";
+                    inicial.inicial_sobrecarLabPsi3 = "SI";
                 }
                 if (ckb_minustarea3.Checked == true)
                 {
-                    inicial.inicial_minuTareaPsi3 = "Si";
+                    inicial.inicial_minuTareaPsi3 = "SI";
                 }
                 if (ckb_altarespon3.Checked == true)
                 {
-                    inicial.inicial_altaResponPsi3 = "Si";
+                    inicial.inicial_altaResponPsi3 = "SI";
                 }
                 if (ckb_automadesiciones3.Checked == true)
                 {
-                    inicial.inicial_autoTomaDesiPsi3 = "Si";
+                    inicial.inicial_autoTomaDesiPsi3 = "SI";
                 }
                 if (ckb_supyestdireficiente3.Checked == true)
                 {
-                    inicial.inicial_supEstDirecDefiPsi3 = "Si";
+                    inicial.inicial_supEstDirecDefiPsi3 = "SI";
                 }
                 if (ckb_conflictorol3.Checked == true)
                 {
-                    inicial.inicial_conflicRolPsi3 = "Si";
+                    inicial.inicial_conflicRolPsi3 = "SI";
                 }
                 if (ckb_faltaclarfunciones3.Checked == true)
                 {
-                    inicial.inicial_falClariFunPsi3 = "Si";
+                    inicial.inicial_falClariFunPsi3 = "SI";
                 }
                 if (ckb_incorrdistrabajo3.Checked == true)
                 {
-                    inicial.inicial_incoDistriTrabPsi3 = "Si";
+                    inicial.inicial_incoDistriTrabPsi3 = "SI";
                 }
                 if (ckb_turnorotat3.Checked == true)
                 {
-                    inicial.inicial_turnosRotaPsi3 = "Si";
+                    inicial.inicial_turnosRotaPsi3 = "SI";
                 }
                 if (ckb_relacinterpersonales3.Checked == true)
                 {
-                    inicial.inicial_relInterperPsi3 = "Si";
+                    inicial.inicial_relInterperPsi3 = "SI";
                 }
                 if (ckb_inestalaboral3.Checked == true)
                 {
-                    inicial.inicial_inesLabPsi3 = "Si";
+                    inicial.inicial_inesLabPsi3 = "SI";
                 }
                 if (ckb_otrosPsicosocial3.Checked == true)
                 {
-                    inicial.inicial_otrosPsi3 = "Si";
+                    inicial.inicial_otrosPsi3 = "SI";
                 }
                 if (ckb_montrabajo4.Checked == true)
                 {
-                    inicial.inicial_monoTrabPsi4 = "Si";
+                    inicial.inicial_monoTrabPsi4 = "SI";
                 }
                 if (ckb_sobrecargalaboral4.Checked == true)
                 {
-                    inicial.inicial_sobrecarLabPsi4 = "Si";
+                    inicial.inicial_sobrecarLabPsi4 = "SI";
                 }
                 if (ckb_minustarea4.Checked == true)
                 {
-                    inicial.inicial_minuTareaPsi4 = "Si";
+                    inicial.inicial_minuTareaPsi4 = "SI";
                 }
                 if (ckb_altarespon4.Checked == true)
                 {
-                    inicial.inicial_altaResponPsi4 = "Si";
+                    inicial.inicial_altaResponPsi4 = "SI";
                 }
                 if (ckb_automadesiciones4.Checked == true)
                 {
-                    inicial.inicial_autoTomaDesiPsi4 = "Si";
+                    inicial.inicial_autoTomaDesiPsi4 = "SI";
                 }
                 if (ckb_supyestdireficiente4.Checked == true)
                 {
-                    inicial.inicial_supEstDirecDefiPsi4 = "Si";
+                    inicial.inicial_supEstDirecDefiPsi4 = "SI";
                 }
                 if (ckb_conflictorol4.Checked == true)
                 {
-                    inicial.inicial_conflicRolPsi4 = "Si";
+                    inicial.inicial_conflicRolPsi4 = "SI";
                 }
                 if (ckb_faltaclarfunciones4.Checked == true)
                 {
-                    inicial.inicial_falClariFunPsi4 = "Si";
+                    inicial.inicial_falClariFunPsi4 = "SI";
                 }
                 if (ckb_incorrdistrabajo4.Checked == true)
                 {
-                    inicial.inicial_incoDistriTrabPsi4 = "Si";
+                    inicial.inicial_incoDistriTrabPsi4 = "SI";
                 }
                 if (ckb_turnorotat4.Checked == true)
                 {
-                    inicial.inicial_turnosRotaPsi4 = "Si";
+                    inicial.inicial_turnosRotaPsi4 = "SI";
                 }
                 if (ckb_relacinterpersonales4.Checked == true)
                 {
-                    inicial.inicial_relInterperPsi4 = "Si";
+                    inicial.inicial_relInterperPsi4 = "SI";
                 }
                 if (ckb_inestalaboral4.Checked == true)
                 {
-                    inicial.inicial_inesLabPsi4 = "Si";
+                    inicial.inicial_inesLabPsi4 = "SI";
                 }
                 if (ckb_otrosPsicosocial4.Checked == true)
                 {
-                    inicial.inicial_otrosPsi4 = "Si";
+                    inicial.inicial_otrosPsi4 = "SI";
                 }
                 if (ckb_pielanexos.Checked == true)
                 {
-                    inicial.inicial_pielAnexos = "Si";
+                    inicial.inicial_pielAnexos = "SI";
                 }
                 if (ckb_respiratorio.Checked == true)
                 {
-                    inicial.inicial_respiratorio = "Si";
+                    inicial.inicial_respiratorio = "SI";
                 }
                 if (ckb_digestivo.Checked == true)
                 {
-                    inicial.inicial_digestivo = "Si";
+                    inicial.inicial_digestivo = "SI";
                 }
                 if (ckb_musculosesqueleticos.Checked == true)
                 {
-                    inicial.inicial_muscEsqueletico = "Si";
+                    inicial.inicial_muscEsqueletico = "SI";
                 }
                 if (ckb_hemolinfatico.Checked == true)
                 {
-                    inicial.inicial_hemoLimfa = "Si";
+                    inicial.inicial_hemoLimfa = "SI";
                 }
                 if (ckb_organossentidos.Checked == true)
                 {
-                    inicial.inicial_orgSentidos = "Si";
+                    inicial.inicial_orgSentidos = "SI";
                 }
                 if (ckb_cardiovascular.Checked == true)
                 {
-                    inicial.inicial_cardVascular = "Si";
+                    inicial.inicial_cardVascular = "SI";
                 }
                 if (ckb_genitourinario.Checked == true)
                 {
-                    inicial.inicial_genUrinario = "Si";
+                    inicial.inicial_genUrinario = "SI";
                 }
                 if (ckb_endocrino.Checked == true)
                 {
-                    inicial.inicial_endocrino = "Si";
+                    inicial.inicial_endocrino = "SI";
                 }
                 if (ckb_nervioso.Checked == true)
                 {
-                    inicial.inicial_nervioso = "Si";
+                    inicial.inicial_nervioso = "SI";
                 }
                 if (ckb_cicatrices.Checked == true)
                 {
-                    inicial.inicial_cicatricesPiel = "Si";
+                    inicial.inicial_cicatricesPiel = "SI";
                 }
                 if (ckb_auditivoexterno.Checked == true)
                 {
-                    inicial.inicial_cAudiExtreOido = "Si";
+                    inicial.inicial_cAudiExtreOido = "SI";
                 }
                 if (ckb_tabique.Checked == true)
                 {
-                    inicial.inicial_tabiqueNariz = "Si";
+                    inicial.inicial_tabiqueNariz = "SI";
                 }
                 if (ckb_pulmones.Checked == true)
                 {
-                    inicial.inicial_pulmonesTorax2 = "Si";
+                    inicial.inicial_pulmonesTorax2 = "SI";
                 }
                 if (ckb_pelvis.Checked == true)
                 {
-                    inicial.inicial_pelvisPelvis = "Si";
+                    inicial.inicial_pelvisPelvis = "SI";
                 }
                 if (ckb_tatuajes.Checked == true)
                 {
-                    inicial.inicial_tatuajesPiel = "Si";
+                    inicial.inicial_tatuajesPiel = "SI";
                 }
                 if (ckb_pabellon.Checked == true)
                 {
-                    inicial.inicial_pabellonOido = "Si";
+                    inicial.inicial_pabellonOido = "SI";
                 }
                 if (ckb_cornetes.Checked == true)
                 {
-                    inicial.inicial_cornetesNariz = "Si";
+                    inicial.inicial_cornetesNariz = "SI";
                 }
                 if (ckb_parrillacostal.Checked == true)
                 {
-                    inicial.inicial_parriCostalTorax2 = "Si";
+                    inicial.inicial_parriCostalTorax2 = "SI";
                 }
                 if (ckb_genitales.Checked == true)
                 {
-                    inicial.inicial_genitalesPelvis = "Si";
+                    inicial.inicial_genitalesPelvis = "SI";
                 }
                 if (ckb_pielyfaneras.Checked == true)
                 {
-                    inicial.inicial_pielFacerasPiel = "Si";
+                    inicial.inicial_pielFacerasPiel = "SI";
                 }
                 if (ckb_timpanos.Checked == true)
                 {
-                    inicial.inicial_timpanosOido = "Si";
+                    inicial.inicial_timpanosOido = "SI";
                 }
                 if (ckb_mucosa.Checked == true)
                 {
-                    inicial.inicial_mucosasNariz = "Si";
+                    inicial.inicial_mucosasNariz = "SI";
                 }
                 if (ckb_visceras.Checked == true)
                 {
-                    inicial.inicial_viscerasAbdomen = "Si";
+                    inicial.inicial_viscerasAbdomen = "SI";
                 }
                 if (ckb_vascular.Checked == true)
                 {
-                    inicial.inicial_vascularExtre = "Si";
+                    inicial.inicial_vascularExtre = "SI";
                 }
                 if (ckb_parpados.Checked == true)
                 {
-                    inicial.inicial_parpadosOjos = "Si";
+                    inicial.inicial_parpadosOjos = "SI";
                 }
                 if (ckb_labios.Checked == true)
                 {
-                    inicial.inicial_labiosOroFa = "Si";
+                    inicial.inicial_labiosOroFa = "SI";
                 }
                 if (ckb_senosparanasales.Checked == true)
                 {
-                    inicial.inicial_senosParanaNariz = "Si";
+                    inicial.inicial_senosParanaNariz = "SI";
                 }
                 if (ckb_paredabdominal.Checked == true)
                 {
-                    inicial.inicial_paredAbdomiAbdomen = "Si";
+                    inicial.inicial_paredAbdomiAbdomen = "SI";
                 }
                 if (ckb_miembrosuperiores.Checked == true)
                 {
-                    inicial.inicial_miemSupeExtre = "Si";
+                    inicial.inicial_miemSupeExtre = "SI";
                 }
                 if (ckb_conjuntivas.Checked == true)
                 {
-                    inicial.inicial_conjuntuvasOjos = "Si";
+                    inicial.inicial_conjuntuvasOjos = "SI";
                 }
                 if (ckb_lengua.Checked == true)
                 {
-                    inicial.inicial_lenguaOroFa = "Si";
+                    inicial.inicial_lenguaOroFa = "SI";
                 }
                 if (ckb_tiroides.Checked == true)
                 {
-                    inicial.inicial_tiroiMasasCuello = "Si";
+                    inicial.inicial_tiroiMasasCuello = "SI";
                 }
                 if (ckb_flexibilidad.Checked == true)
                 {
-                    inicial.inicial_flexibilidadColumna = "Si";
+                    inicial.inicial_flexibilidadColumna = "SI";
                 }
                 if (ckb_miembrosinferiores.Checked == true)
                 {
-                    inicial.inicial_miemInfeExtre = "Si";
+                    inicial.inicial_miemInfeExtre = "SI";
                 }
                 if (ckb_pupilas.Checked == true)
                 {
-                    inicial.inicial_pupilasOjos = "Si";
+                    inicial.inicial_pupilasOjos = "SI";
                 }
                 if (ckb_faringe.Checked == true)
                 {
-                    inicial.inicial_faringeOroFa = "Si";
+                    inicial.inicial_faringeOroFa = "SI";
                 }
                 if (ckb_movilidad.Checked == true)
                 {
-                    inicial.inicial_movilidadCuello = "Si";
+                    inicial.inicial_movilidadCuello = "SI";
                 }
                 if (ckb_desviacion.Checked == true)
                 {
-                    inicial.inicial_desviacionColumna = "Si";
+                    inicial.inicial_desviacionColumna = "SI";
                 }
                 if (ckb_fuerza.Checked == true)
                 {
-                    inicial.inicial_fuerzaNeuro = "Si";
+                    inicial.inicial_fuerzaNeuro = "SI";
                 }
                 if (ckb_cornea.Checked == true)
                 {
-                    inicial.inicial_corneaOjos = "Si";
+                    inicial.inicial_corneaOjos = "SI";
                 }
                 if (ckb_amigdalas.Checked == true)
                 {
-                    inicial.inicial_amigdalasOroFa = "Si";
+                    inicial.inicial_amigdalasOroFa = "SI";
                 }
                 if (ckb_mamas.Checked == true)
                 {
-                    inicial.inicial_mamasTorax = "Si";
+                    inicial.inicial_mamasTorax = "SI";
                 }
                 if (ckb_sensibilidad.Checked == true)
                 {
-                    inicial.inicial_sensibiNeuro = "Si";
+                    inicial.inicial_sensibiNeuro = "SI";
                 }
                 if (ckb_motilidad.Checked == true)
                 {
-                    inicial.inicial_motilidadOjos = "Si";
+                    inicial.inicial_motilidadOjos = "SI";
                 }
                 if (ckb_dentadura.Checked == true)
                 {
-                    inicial.inicial_dentaduraOroFa = "Si";
+                    inicial.inicial_dentaduraOroFa = "SI";
                 }
                 if (ckb_corazon.Checked == true)
                 {
-                    inicial.inicial_corazonTorax = "Si";
+                    inicial.inicial_corazonTorax = "SI";
                 }
                 if (ckb_dolor.Checked == true)
                 {
-                    inicial.inicial_dolorColumna = "Si";
+                    inicial.inicial_dolorColumna = "SI";
                 }
                 if (ckb_marcha.Checked == true)
                 {
-                    inicial.inicial_marchaNeuro = "Si";
+                    inicial.inicial_marchaNeuro = "SI";
                 }
                 if (ckb_reflejos.Checked == true)
                 {
-                    inicial.inicial_refleNeuro = "Si";
+                    inicial.inicial_refleNeuro = "SI";
                 }
                 if (ckb_pre.Checked == true)
                 {
-                    inicial.inicial_pre = "Si";
+                    inicial.inicial_pre = "SI";
                 }
                 if (ckb_def.Checked == true)
                 {
-                    inicial.inicial_def = "Si";
+                    inicial.inicial_def = "SI";
                 }
                 if (ckb_pre2.Checked == true)
                 {
-                    inicial.inicial_pre2 = "Si";
+                    inicial.inicial_pre2 = "SI";
                 }
                 if (ckb_def2.Checked == true)
                 {
-                    inicial.inicial_def2 = "Si";
+                    inicial.inicial_def2 = "SI";
                 }
                 if (ckb_pre3.Checked == true)
                 {
-                    inicial.inicial_pre3 = "Si";
+                    inicial.inicial_pre3 = "SI";
                 }
                 if (ckb_def3.Checked == true)
                 {
-                    inicial.inicial_def3 = "Si";
+                    inicial.inicial_def3 = "SI";
                 }
                 if (ckb_apto.Checked == true)
                 {
-                    inicial.inicial_apto = "Si";
+                    inicial.inicial_apto = "SI";
                 }
                 if (ckb_aptoobservacion.Checked == true)
                 {
-                    inicial.inicial_aptoObserva = "Si";
+                    inicial.inicial_aptoObserva = "SI";
                 }
                 if (ckb_aptolimitacion.Checked == true)
                 {
-                    inicial.inicial_aptoLimi = "Si";
+                    inicial.inicial_aptoLimi = "SI";
                 }
                 if (ckb_noapto.Checked == true)
                 {
-                    inicial.inicial_NoApto = "Si";
+                    inicial.inicial_NoApto = "SI";
                 }
 
                 //A
@@ -5606,7 +5662,7 @@ namespace SistemaECU911.Template.Views
             {
                 if (ckb_catolica.Checked == true)
                 {
-                    inicial.inicial_catolicaRel = "Si";
+                    inicial.inicial_catolicaRel = "SI";
                 }
                 else
                 {
@@ -5614,7 +5670,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_evangelica.Checked == true)
                 {
-                    inicial.inicial_evangelicaRel = "Si";
+                    inicial.inicial_evangelicaRel = "SI";
                 }
                 else
                 {
@@ -5622,7 +5678,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_testigo.Checked == true)
                 {
-                    inicial.inicial_testJehovaRel = "Si";
+                    inicial.inicial_testJehovaRel = "SI";
                 }
                 else
                 {
@@ -5630,7 +5686,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_mormona.Checked == true)
                 {
-                    inicial.inicial_mormonaRel = "Si";
+                    inicial.inicial_mormonaRel = "SI";
                 }
                 else
                 {
@@ -5638,7 +5694,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_otrareligion.Checked == true)
                 {
-                    inicial.inicial_otrasRel = "Si";
+                    inicial.inicial_otrasRel = "SI";
                 }
                 else
                 {
@@ -5646,7 +5702,7 @@ namespace SistemaECU911.Template.Views
                 }                
                 if (cbk_gay.Checked == true)
                 {
-                    inicial.inicial_gayOriSex = "Si";
+                    inicial.inicial_gayOriSex = "SI";
                 }
                 else
                 {
@@ -5654,7 +5710,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (cbk_lesbiana.Checked == true)
                 {
-                    inicial.inicial__lesbianaOriSex = "Si";
+                    inicial.inicial__lesbianaOriSex = "SI";
                 }
                 else
                 {
@@ -5662,7 +5718,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (cbk_bisexual.Checked == true)
                 {
-                    inicial.inicial_bisexualOriSex = "Si";
+                    inicial.inicial_bisexualOriSex = "SI";
                 }
                 else
                 {
@@ -5670,7 +5726,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (cbk_heterosexual.Checked == true)
                 {
-                    inicial.inicial_heterosexualOriSex = "Si";
+                    inicial.inicial_heterosexualOriSex = "SI";
                 }
                 else
                 {
@@ -5678,7 +5734,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (cbk_noRespondeOriSex.Checked == true)
                 {
-                    inicial.inicial_norespondeOriSex = "Si";
+                    inicial.inicial_norespondeOriSex = "SI";
                 }
                 else
                 {
@@ -5686,7 +5742,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (cbk_femenino.Checked == true)
                 {
-                    inicial.inicial_femeninoIdenGen = "Si";
+                    inicial.inicial_femeninoIdenGen = "SI";
                 }
                 else
                 {
@@ -5694,7 +5750,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (cbk_masculino.Checked == true)
                 {
-                    inicial.inicial_masculinoIdenGen = "Si";
+                    inicial.inicial_masculinoIdenGen = "SI";
                 }
                 else
                 {
@@ -5702,7 +5758,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (cbk_transfemenino.Checked == true)
                 {
-                    inicial.inicial_transFemeninoIdenGen = "Si";
+                    inicial.inicial_transFemeninoIdenGen = "SI";
                 }
                 else
                 {
@@ -5710,7 +5766,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (cbk_transmasculino.Checked == true)
                 {
-                    inicial.inicial_transMasculinoIdenGen = "Si";
+                    inicial.inicial_transMasculinoIdenGen = "SI";
                 }
                 else
                 {
@@ -5718,7 +5774,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (cbk_noRespondeIdeGen.Checked == true)
                 {
-                    inicial.inicial_norespondeIdenGen = "Si";
+                    inicial.inicial_norespondeIdenGen = "SI";
                 }
                 else
                 {
@@ -5726,15 +5782,15 @@ namespace SistemaECU911.Template.Views
                 }
                 if (cbk_sidiscapacidad.Checked == true)
                 {
-                    inicial.inicial_siDis = "Si";
+                    inicial.inicial_siDis = "SI";
                 }
                 else
                 {
-                    inicial.inicial_norespondeIdenGen = null;
+                    inicial.inicial_siDis = null;
                 }
                 if (cbk_nodiscapacidad.Checked == true)
                 {
-                    inicial.inicial_noDis = "Si";
+                    inicial.inicial_noDis = "SI";
                 }
                 else
                 {
@@ -5742,7 +5798,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_siVidSexAntGinObste.Checked == true)
                 {
-                    inicial.inicial_siVidaSexActiva = "Si";
+                    inicial.inicial_siVidaSexActiva = "SI";
                 }
                 else
                 {
@@ -5750,7 +5806,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_noVidSexAntGinObste.Checked == true)
                 {
-                    inicial.inicial_noVidaSexActiva = "Si";
+                    inicial.inicial_noVidaSexActiva = "SI";
                 }
                 else
                 {
@@ -5758,7 +5814,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_siMetPlaniAntGinObste.Checked == true)
                 {
-                    inicial.inicial_siMetPlanifiFamiliar = "Si";
+                    inicial.inicial_siMetPlanifiFamiliar = "SI";
                 }
                 else
                 {
@@ -5766,7 +5822,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_noMetPlaniAntGinObste.Checked == true)
                 {
-                    inicial.inicial_noMetPlanifiFamiliar = "Si";
+                    inicial.inicial_noMetPlanifiFamiliar = "SI";
                 }
                 else
                 {
@@ -5774,7 +5830,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_siPapaniAntGinObste.Checked == true)
                 {
-                    inicial.inicial_siExaRealiPapanicolaou = "Si";
+                    inicial.inicial_siExaRealiPapanicolaou = "SI";
                 }
                 else
                 {
@@ -5782,7 +5838,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_noPapaniAntGinObste.Checked == true)
                 {
-                    inicial.inicial_noExaRealiPapanicolaou = "Si";
+                    inicial.inicial_noExaRealiPapanicolaou = "SI";
                 }
                 else
                 {
@@ -5790,7 +5846,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_siEcoMamaAntGinObste.Checked == true)
                 {
-                    inicial.inicial_siExaRealiEcoMamario = "Si";
+                    inicial.inicial_siExaRealiEcoMamario = "SI";
                 }
                 else
                 {
@@ -5798,7 +5854,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_noEcoMamaAntGinObste.Checked == true)
                 {
-                    inicial.inicial_noExaRealiEcoMamario = "Si";
+                    inicial.inicial_noExaRealiEcoMamario = "SI";
                 }
                 else
                 {
@@ -5806,7 +5862,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_siColposAntGinObste.Checked == true)
                 {
-                    inicial.inicial_siExaRealiColposcopia = "Si";
+                    inicial.inicial_siExaRealiColposcopia = "SI";
                 }
                 else
                 {
@@ -5814,7 +5870,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_noColposAntGinObste.Checked == true)
                 {
-                    inicial.inicial_noExaRealiColposcopia = "Si";
+                    inicial.inicial_noExaRealiColposcopia = "SI";
                 }
                 else
                 {
@@ -5822,7 +5878,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_siMamograAntGinObste.Checked == true)
                 {
-                    inicial.inicial_siExaRealiMamografia = "Si";
+                    inicial.inicial_siExaRealiMamografia = "SI";
                 }
                 else
                 {
@@ -5830,7 +5886,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_noMamograAntGinObste.Checked == true)
                 {
-                    inicial.inicial_noExaRealiMamografia = "Si";
+                    inicial.inicial_noExaRealiMamografia = "SI";
                 }
                 else
                 {
@@ -5838,7 +5894,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_siExaRealiAntProstaAntReproMascu.Checked == true)
                 {
-                    inicial.inicial_siExaRealiAntiProstatico = "Si";
+                    inicial.inicial_siExaRealiAntiProstatico = "SI";
                 }
                 else
                 {
@@ -5846,7 +5902,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_noExaRealiAntProstaAntReproMascu.Checked == true)
                 {
-                    inicial.inicial_noExaRealiAntiProstatico = "Si";
+                    inicial.inicial_noExaRealiAntiProstatico = "SI";
                 }
                 else
                 {
@@ -5854,7 +5910,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_siMetPlaniAntReproMascu.Checked == true)
                 {
-                    inicial.inicial_siMetPlanifiFamiAntReproMascu = "Si";
+                    inicial.inicial_siMetPlanifiFamiAntReproMascu = "SI";
                 }
                 else
                 {
@@ -5862,7 +5918,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_noMetPlaniAntReproMascu.Checked == true)
                 {
-                    inicial.inicial_noMetPlanifiFamiAntReproMascu = "Si";
+                    inicial.inicial_noMetPlanifiFamiAntReproMascu = "SI";
                 }
                 else
                 {
@@ -5870,7 +5926,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_siExaRealiEcoProstaAntReproMascu.Checked == true)
                 {
-                    inicial.inicial_siExaRealiEcoProstatico = "Si";
+                    inicial.inicial_siExaRealiEcoProstatico = "SI";
                 }
                 else
                 {
@@ -5878,7 +5934,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_noExaRealiEcoProstaAntReproMascu.Checked == true)
                 {
-                    inicial.inicial_noExaRealiEcoProstatico = "Si";
+                    inicial.inicial_noExaRealiEcoProstatico = "SI";
                 }
                 else
                 {
@@ -5886,7 +5942,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_siConsuNociTabaHabToxi.Checked == true)
                 {
-                    inicial.inicial_siConsuNocivosTabaco = "Si";
+                    inicial.inicial_siConsuNocivosTabaco = "SI";
                 }
                 else
                 {
@@ -5894,7 +5950,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_noConsuNociTabaHabToxi.Checked == true)
                 {
-                    inicial.inicial_noConsuNocivosTabaco = "Si";
+                    inicial.inicial_noConsuNocivosTabaco = "SI";
                 }
                 else
                 {
@@ -5902,7 +5958,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_siConsuNociAlcoHabToxi.Checked == true)
                 {
-                    inicial.inicial_siConsuNocivosAlcohol = "Si";
+                    inicial.inicial_siConsuNocivosAlcohol = "SI";
                 }
                 else
                 {
@@ -5910,7 +5966,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_noConsuNociAlcoHabToxi.Checked == true)
                 {
-                    inicial.inicial_noConsuNocivosAlcohol = "Si";
+                    inicial.inicial_noConsuNocivosAlcohol = "SI";
                 }
                 else
                 {
@@ -5918,7 +5974,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_siConsuNociOtrasDroHabToxi.Checked == true)
                 {
-                    inicial.inicial_siConsuNocivosOtrasDrogas = "Si";
+                    inicial.inicial_siConsuNocivosOtrasDrogas = "SI";
                 }
                 else
                 {
@@ -5926,7 +5982,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_noConsuNociOtrasDroHabToxi.Checked == true)
                 {
-                    inicial.inicial_noConsuNocivosOtrasDrogas = "Si";
+                    inicial.inicial_noConsuNocivosOtrasDrogas = "SI";
                 }
                 else
                 {
@@ -5934,7 +5990,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_siEstVidaActFisiEstVida.Checked == true)
                 {
-                    inicial.inicial_siEstiVidaActFisica = "Si";
+                    inicial.inicial_siEstiVidaActFisica = "SI";
                 }
                 else
                 {
@@ -5942,7 +5998,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_noEstVidaActFisiEstVida.Checked == true)
                 {
-                    inicial.inicial_noEstiVidaActFisica = "Si";
+                    inicial.inicial_noEstiVidaActFisica = "SI";
                 }
                 else
                 {
@@ -5950,7 +6006,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_siEstVidaMedHabiEstVida.Checked == true)
                 {
-                    inicial.inicial_siEstiVidaMediHabitual = "Si";
+                    inicial.inicial_siEstiVidaMediHabitual = "SI";
                 }
                 else
                 {
@@ -5958,7 +6014,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_noEstVidaMedHabiEstVida.Checked == true)
                 {
-                    inicial.inicial_noEstiVidaMediHabitual = "Si";
+                    inicial.inicial_noEstiVidaMediHabitual = "SI";
                 }
                 else
                 {
@@ -5966,7 +6022,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_fisico.Checked == true)
                 {
-                    inicial.inicial_fisicoRies = "Si";
+                    inicial.inicial_fisicoRies = "SI";
                 }
                 else
                 {
@@ -5974,7 +6030,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_mecanico.Checked == true)
                 {
-                    inicial.inicial_mecanicoRies = "Si";
+                    inicial.inicial_mecanicoRies = "SI";
                 }
                 else
                 {
@@ -5982,7 +6038,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_quimico.Checked == true)
                 {
-                    inicial.inicial_quimicoRies = "Si";
+                    inicial.inicial_quimicoRies = "SI";
                 }
                 else
                 {
@@ -5990,7 +6046,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_biologico.Checked == true)
                 {
-                    inicial.inicial_biologicoRies = "Si";
+                    inicial.inicial_biologicoRies = "SI";
                 }
                 else
                 {
@@ -5998,7 +6054,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_ergonomico.Checked == true)
                 {
-                    inicial.inicial_ergonomicoRies = "Si";
+                    inicial.inicial_ergonomicoRies = "SI";
                 }
                 else
                 {
@@ -6006,7 +6062,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_psicosocial.Checked == true)
                 {
-                    inicial.inicial_psicosocial = "Si";
+                    inicial.inicial_psicosocial = "SI";
                 }
                 else
                 {
@@ -6014,7 +6070,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_fisico2.Checked == true)
                 {
-                    inicial.inicial_fisicoRies2 = "Si";
+                    inicial.inicial_fisicoRies2 = "SI";
                 }
                 else
                 {
@@ -6022,7 +6078,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_mecanico2.Checked == true)
                 {
-                    inicial.inicial_mecanicoRies2 = "Si";
+                    inicial.inicial_mecanicoRies2 = "SI";
                 }
                 else
                 {
@@ -6030,7 +6086,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_quimico2.Checked == true)
                 {
-                    inicial.inicial_quimicoRies2 = "Si";
+                    inicial.inicial_quimicoRies2 = "SI";
                 }
                 else
                 {
@@ -6038,7 +6094,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_biologico2.Checked == true)
                 {
-                    inicial.inicial_biologicoRies2 = "Si";
+                    inicial.inicial_biologicoRies2 = "SI";
                 }
                 else
                 {
@@ -6046,7 +6102,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_ergonomico2.Checked == true)
                 {
-                    inicial.inicial_ergonomicoRies2 = "Si";
+                    inicial.inicial_ergonomicoRies2 = "SI";
                 }
                 else
                 {
@@ -6054,7 +6110,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_psicosocial2.Checked == true)
                 {
-                    inicial.inicial_psicosocial2 = "Si";
+                    inicial.inicial_psicosocial2 = "SI";
                 }
                 else
                 {
@@ -6062,7 +6118,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_fisico3.Checked == true)
                 {
-                    inicial.inicial_fisicoRies3 = "Si";
+                    inicial.inicial_fisicoRies3 = "SI";
                 }
                 else
                 {
@@ -6070,7 +6126,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_mecanico3.Checked == true)
                 {
-                    inicial.inicial_mecanicoRies3 = "Si";
+                    inicial.inicial_mecanicoRies3 = "SI";
                 }
                 else
                 {
@@ -6078,7 +6134,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_quimico3.Checked == true)
                 {
-                    inicial.inicial_quimicoRies3 = "Si";
+                    inicial.inicial_quimicoRies3 = "SI";
                 }
                 else
                 {
@@ -6086,7 +6142,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_biologico3.Checked == true)
                 {
-                    inicial.inicial_biologicoRies3 = "Si";
+                    inicial.inicial_biologicoRies3 = "SI";
                 }
                 else
                 {
@@ -6094,7 +6150,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_ergonomico3.Checked == true)
                 {
-                    inicial.inicial_ergonomicoRies3 = "Si";
+                    inicial.inicial_ergonomicoRies3 = "SI";
                 }
                 else
                 {
@@ -6102,7 +6158,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_psicosocial3.Checked == true)
                 {
-                    inicial.inicial_psicosocial3 = "Si";
+                    inicial.inicial_psicosocial3 = "SI";
                 }
                 else
                 {
@@ -6110,7 +6166,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_fisico4.Checked == true)
                 {
-                    inicial.inicial_fisicoRies4 = "Si";
+                    inicial.inicial_fisicoRies4 = "SI";
                 }
                 else
                 {
@@ -6118,7 +6174,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_mecanico4.Checked == true)
                 {
-                    inicial.inicial_mecanicoRies4 = "Si";
+                    inicial.inicial_mecanicoRies4 = "SI";
                 }
                 else
                 {
@@ -6126,7 +6182,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_quimico4.Checked == true)
                 {
-                    inicial.inicial_quimicoRies4 = "Si";
+                    inicial.inicial_quimicoRies4 = "SI";
                 }
                 else
                 {
@@ -6134,7 +6190,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_biologico4.Checked == true)
                 {
-                    inicial.inicial_biologicoRies4 = "Si";
+                    inicial.inicial_biologicoRies4 = "SI";
                 }
                 else
                 {
@@ -6142,7 +6198,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_ergonomico4.Checked == true)
                 {
-                    inicial.inicial_ergonomicoRies4 = "Si";
+                    inicial.inicial_ergonomicoRies4 = "SI";
                 }
                 else
                 {
@@ -6150,7 +6206,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_psicosocial4.Checked == true)
                 {
-                    inicial.inicial_psicosocial4 = "Si";
+                    inicial.inicial_psicosocial4 = "SI";
                 }
                 else
                 {
@@ -6158,7 +6214,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_siAccTrabDescrip.Checked == true)
                 {
-                    inicial.inicial_siCalificadoIESSAcciTrabajo = "Si";
+                    inicial.inicial_siCalificadoIESSAcciTrabajo = "SI";
                 }
                 else
                 {
@@ -6166,7 +6222,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_siprofesional.Checked == true)
                 {
-                    inicial.inicial_siCalificadoIESSEnfProfesionales = "Si";
+                    inicial.inicial_siCalificadoIESSEnfProfesionales = "SI";
                 }
                 else
                 {
@@ -6174,7 +6230,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_noprofesional.Checked == true)
                 {
-                    inicial.inicial_noCalificadoIESSEnfProfesionales = "Si";
+                    inicial.inicial_noCalificadoIESSEnfProfesionales = "SI";
                 }
                 else
                 {
@@ -6182,7 +6238,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_enfermedadcardiovascular.Checked == true)
                 {
-                    inicial.inicial_enfCarVasAnteFamiliares = "Si";
+                    inicial.inicial_enfCarVasAnteFamiliares = "SI";
                 }
                 else
                 {
@@ -6190,7 +6246,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_enfermedadmetabolica.Checked == true)
                 {
-                    inicial.inicial_enfMetaAnteFamiliares = "Si";
+                    inicial.inicial_enfMetaAnteFamiliares = "SI";
                 }
                 else
                 {
@@ -6198,7 +6254,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_enfermedadneurologica.Checked == true)
                 {
-                    inicial.inicial_enfNeuroAnteFamiliares = "Si";
+                    inicial.inicial_enfNeuroAnteFamiliares = "SI";
                 }
                 else
                 {
@@ -6206,7 +6262,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_enfermedadoncologica.Checked == true)
                 {
-                    inicial.inicial_enfOncoAnteFamiliares = "Si";
+                    inicial.inicial_enfOncoAnteFamiliares = "SI";
                 }
                 else
                 {
@@ -6214,7 +6270,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_enfermedadinfecciosa.Checked == true)
                 {
-                    inicial.inicial_enfInfeAnteFamiliares = "Si";
+                    inicial.inicial_enfInfeAnteFamiliares = "SI";
                 }
                 else
                 {
@@ -6222,7 +6278,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_enfermedadhereditaria.Checked == true)
                 {
-                    inicial.inicial_enfHereCongeAnteFamiliares = "Si";
+                    inicial.inicial_enfHereCongeAnteFamiliares = "SI";
                 }
                 else
                 {
@@ -6230,7 +6286,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_discapacidades.Checked == true)
                 {
-                    inicial.inicial_discapaAnteFamiliares = "Si";
+                    inicial.inicial_discapaAnteFamiliares = "SI";
                 }
                 else
                 {
@@ -6238,7 +6294,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_otrosenfer.Checked == true)
                 {
-                    inicial.inicial_otrosAnteFamiliares = "Si";
+                    inicial.inicial_otrosAnteFamiliares = "SI";
                 }
                 else
                 {
@@ -6246,7 +6302,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_tempaltas.Checked == true)
                 {
-                    inicial.inicial_temAltasFis = "Si";
+                    inicial.inicial_temAltasFis = "SI";
                 }
                 else
                 {
@@ -6254,7 +6310,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_tempbajas.Checked == true)
                 {
-                    inicial.inicial_temBajasFis = "Si";
+                    inicial.inicial_temBajasFis = "SI";
                 }
                 else
                 {
@@ -6262,7 +6318,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_radiacion.Checked == true)
                 {
-                    inicial.inicial_radIonizanteFis = "Si";
+                    inicial.inicial_radIonizanteFis = "SI";
                 }
                 else
                 {
@@ -6270,7 +6326,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_noradiacion.Checked == true)
                 {
-                    inicial.inicial_radNoIonizanteFis = "Si";
+                    inicial.inicial_radNoIonizanteFis = "SI";
                 }
                 else
                 {
@@ -6278,7 +6334,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_ruido.Checked == true)
                 {
-                    inicial.inicial_ruidoFis = "Si";
+                    inicial.inicial_ruidoFis = "SI";
                 }
                 else
                 {
@@ -6286,7 +6342,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_vibracion.Checked == true)
                 {
-                    inicial.inicial_vibracionFis = "Si";
+                    inicial.inicial_vibracionFis = "SI";
                 }
                 else
                 {
@@ -6294,7 +6350,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_iluminacion.Checked == true)
                 {
-                    inicial.inicial_iluminacionFis = "Si";
+                    inicial.inicial_iluminacionFis = "SI";
                 }
                 else
                 {
@@ -6302,7 +6358,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_ventilacion.Checked == true)
                 {
-                    inicial.inicial_ventilacionFis = "Si";
+                    inicial.inicial_ventilacionFis = "SI";
                 }
                 else
                 {
@@ -6310,7 +6366,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_fluidoelectrico.Checked == true)
                 {
-                    inicial.inicial_fluElectricoFis = "Si";
+                    inicial.inicial_fluElectricoFis = "SI";
                 }
                 else
                 {
@@ -6318,7 +6374,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_otrosFisico.Checked == true)
                 {
-                    inicial.inicial_otrosFis = "Si";
+                    inicial.inicial_otrosFis = "SI";
                 }
                 else
                 {
@@ -6326,7 +6382,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_tempaltas2.Checked == true)
                 {
-                    inicial.inicial_temAltasFis2 = "Si";
+                    inicial.inicial_temAltasFis2 = "SI";
                 }
                 else
                 {
@@ -6334,7 +6390,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_tempbajas2.Checked == true)
                 {
-                    inicial.inicial_temBajasFis2 = "Si";
+                    inicial.inicial_temBajasFis2 = "SI";
                 }
                 else
                 {
@@ -6342,7 +6398,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_radiacion2.Checked == true)
                 {
-                    inicial.inicial_radIonizanteFis2 = "Si";
+                    inicial.inicial_radIonizanteFis2 = "SI";
                 }
                 else
                 {
@@ -6350,7 +6406,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_noradiacion2.Checked == true)
                 {
-                    inicial.inicial_radNoIonizanteFis2 = "Si";
+                    inicial.inicial_radNoIonizanteFis2 = "SI";
                 }
                 else
                 {
@@ -6358,7 +6414,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_ruido2.Checked == true)
                 {
-                    inicial.inicial_ruidoFis2 = "Si";
+                    inicial.inicial_ruidoFis2 = "SI";
                 }
                 else
                 {
@@ -6366,7 +6422,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_vibracion2.Checked == true)
                 {
-                    inicial.inicial_vibracionFis2 = "Si";
+                    inicial.inicial_vibracionFis2 = "SI";
                 }
                 else
                 {
@@ -6374,7 +6430,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_iluminacion2.Checked == true)
                 {
-                    inicial.inicial_iluminacionFis2 = "Si";
+                    inicial.inicial_iluminacionFis2 = "SI";
                 }
                 else
                 {
@@ -6382,7 +6438,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_ventilacion2.Checked == true)
                 {
-                    inicial.inicial_ventilacionFis2 = "Si";
+                    inicial.inicial_ventilacionFis2 = "SI";
                 }
                 else
                 {
@@ -6390,7 +6446,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_fluidoelectrico2.Checked == true)
                 {
-                    inicial.inicial_fluElectricoFis2 = "Si";
+                    inicial.inicial_fluElectricoFis2 = "SI";
                 }
                 else
                 {
@@ -6398,7 +6454,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_otrosFisico2.Checked == true)
                 {
-                    inicial.inicial_otrosFis2 = "Si";
+                    inicial.inicial_otrosFis2 = "SI";
                 }
                 else
                 {
@@ -6406,7 +6462,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_tempaltas3.Checked == true)
                 {
-                    inicial.inicial_temAltasFis3 = "Si";
+                    inicial.inicial_temAltasFis3 = "SI";
                 }
                 else
                 {
@@ -6414,7 +6470,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_tempbajas3.Checked == true)
                 {
-                    inicial.inicial_temBajasFis3 = "Si";
+                    inicial.inicial_temBajasFis3 = "SI";
                 }
                 else
                 {
@@ -6422,7 +6478,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_radiacion3.Checked == true)
                 {
-                    inicial.inicial_radIonizanteFis3 = "Si";
+                    inicial.inicial_radIonizanteFis3 = "SI";
                 }
                 else
                 {
@@ -6430,7 +6486,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_noradiacion3.Checked == true)
                 {
-                    inicial.inicial_radNoIonizanteFis3 = "Si";
+                    inicial.inicial_radNoIonizanteFis3 = "SI";
                 }
                 else
                 {
@@ -6438,7 +6494,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_ruido3.Checked == true)
                 {
-                    inicial.inicial_ruidoFis3 = "Si";
+                    inicial.inicial_ruidoFis3 = "SI";
                 }
                 else
                 {
@@ -6446,7 +6502,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_vibracion3.Checked == true)
                 {
-                    inicial.inicial_vibracionFis3 = "Si";
+                    inicial.inicial_vibracionFis3 = "SI";
                 }
                 else
                 {
@@ -6454,7 +6510,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_iluminacion3.Checked == true)
                 {
-                    inicial.inicial_iluminacionFis3 = "Si";
+                    inicial.inicial_iluminacionFis3 = "SI";
                 }
                 else
                 {
@@ -6462,7 +6518,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_ventilacion3.Checked == true)
                 {
-                    inicial.inicial_ventilacionFis3 = "Si";
+                    inicial.inicial_ventilacionFis3 = "SI";
                 }
                 else
                 {
@@ -6470,7 +6526,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_fluidoelectrico3.Checked == true)
                 {
-                    inicial.inicial_fluElectricoFis3 = "Si";
+                    inicial.inicial_fluElectricoFis3 = "SI";
                 }
                 else
                 {
@@ -6478,7 +6534,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_otrosFisico3.Checked == true)
                 {
-                    inicial.inicial_otrosFis3 = "Si";
+                    inicial.inicial_otrosFis3 = "SI";
                 }
                 else
                 {
@@ -6486,7 +6542,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_tempaltas4.Checked == true)
                 {
-                    inicial.inicial_temAltasFis4 = "Si";
+                    inicial.inicial_temAltasFis4 = "SI";
                 }
                 else
                 {
@@ -6494,7 +6550,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_tempbajas4.Checked == true)
                 {
-                    inicial.inicial_temBajasFis4 = "Si";
+                    inicial.inicial_temBajasFis4 = "SI";
                 }
                 else
                 {
@@ -6502,7 +6558,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_radiacion4.Checked == true)
                 {
-                    inicial.inicial_radIonizanteFis4 = "Si";
+                    inicial.inicial_radIonizanteFis4 = "SI";
                 }
                 else
                 {
@@ -6510,7 +6566,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_noradiacion4.Checked == true)
                 {
-                    inicial.inicial_radNoIonizanteFis4 = "Si";
+                    inicial.inicial_radNoIonizanteFis4 = "SI";
                 }
                 else
                 {
@@ -6518,7 +6574,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_ruido4.Checked == true)
                 {
-                    inicial.inicial_ruidoFis4 = "Si";
+                    inicial.inicial_ruidoFis4 = "SI";
                 }
                 else
                 {
@@ -6526,7 +6582,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_vibracion4.Checked == true)
                 {
-                    inicial.inicial_vibracionFis4 = "Si";
+                    inicial.inicial_vibracionFis4 = "SI";
                 }
                 else
                 {
@@ -6534,7 +6590,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_iluminacion4.Checked == true)
                 {
-                    inicial.inicial_iluminacionFis4 = "Si";
+                    inicial.inicial_iluminacionFis4 = "SI";
                 }
                 else
                 {
@@ -6542,7 +6598,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_ventilacion4.Checked == true)
                 {
-                    inicial.inicial_ventilacionFis4 = "Si";
+                    inicial.inicial_ventilacionFis4 = "SI";
                 }
                 else
                 {
@@ -6550,7 +6606,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_fluidoelectrico4.Checked == true)
                 {
-                    inicial.inicial_fluElectricoFis4 = "Si";
+                    inicial.inicial_fluElectricoFis4 = "SI";
                 }
                 else
                 {
@@ -6558,7 +6614,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_otrosFisico4.Checked == true)
                 {
-                    inicial.inicial_otrosFis4 = "Si";
+                    inicial.inicial_otrosFis4 = "SI";
                 }
                 else
                 {
@@ -6567,7 +6623,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_atrapmaquinas.Checked == true)
                 {
-                    inicial.inicial_atraMaquinasMec = "Si";
+                    inicial.inicial_atraMaquinasMec = "SI";
                 }
                 else
                 {
@@ -6575,7 +6631,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_atrapsuperficie.Checked == true)
                 {
-                    inicial.inicial_atraSuperfiiesMec = "Si";
+                    inicial.inicial_atraSuperfiiesMec = "SI";
                 }
                 else
                 {
@@ -6583,7 +6639,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_atrapobjetos.Checked == true)
                 {
-                    inicial.inicial_atraObjetosMec = "Si";
+                    inicial.inicial_atraObjetosMec = "SI";
                 }
                 else
                 {
@@ -6591,7 +6647,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_caidaobjetos.Checked == true)
                 {
-                    inicial.inicial_caidaObjetosMec = "Si";
+                    inicial.inicial_caidaObjetosMec = "SI";
                 }
                 else
                 {
@@ -6599,7 +6655,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_caidamisnivel.Checked == true)
                 {
-                    inicial.inicial_caidaMisNivelMec = "Si";
+                    inicial.inicial_caidaMisNivelMec = "SI";
                 }
                 else
                 {
@@ -6607,7 +6663,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_caidadifnivel.Checked == true)
                 {
-                    inicial.inicial_caidaDifNivelMec = "Si";
+                    inicial.inicial_caidaDifNivelMec = "SI";
                 }
                 else
                 {
@@ -6615,7 +6671,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_contaelectrico.Checked == true)
                 {
-                    inicial.inicial_contactoElecMec = "Si";
+                    inicial.inicial_contactoElecMec = "SI";
                 }
                 else
                 {
@@ -6623,7 +6679,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_contasuptrabajo.Checked == true)
                 {
-                    inicial.inicial_conSuperTrabaMec = "Si";
+                    inicial.inicial_conSuperTrabaMec = "SI";
                 }
                 else
                 {
@@ -6631,7 +6687,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_proyparticulas.Checked == true)
                 {
-                    inicial.inicial_proPartiFragMec = "Si";
+                    inicial.inicial_proPartiFragMec = "SI";
                 }
                 else
                 {
@@ -6639,7 +6695,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_proyefluidos.Checked == true)
                 {
-                    inicial.inicial_proFluidosMec = "Si";
+                    inicial.inicial_proFluidosMec = "SI";
                 }
                 else
                 {
@@ -6647,7 +6703,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_pinchazos.Checked == true)
                 {
-                    inicial.inicial_pinchazosMec = "Si";
+                    inicial.inicial_pinchazosMec = "SI";
                 }
                 else
                 {
@@ -6655,7 +6711,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_cortes.Checked == true)
                 {
-                    inicial.inicial_cortesMec = "Si";
+                    inicial.inicial_cortesMec = "SI";
                 }
                 else
                 {
@@ -6663,7 +6719,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_atroporvehiculos.Checked == true)
                 {
-                    inicial.inicial_atropeVehiMec = "Si";
+                    inicial.inicial_atropeVehiMec = "SI";
                 }
                 else
                 {
@@ -6671,7 +6727,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_choques.Checked == true)
                 {
-                    inicial.inicial_coliVehiMec = "Si";
+                    inicial.inicial_coliVehiMec = "SI";
                 }
                 else
                 {
@@ -6679,7 +6735,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_otrosMecanico.Checked == true)
                 {
-                    inicial.inicial_otrosMec = "Si";
+                    inicial.inicial_otrosMec = "SI";
                 }
                 else
                 {
@@ -6687,7 +6743,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_solidos.Checked == true)
                 {
-                    inicial.inicial_solidosQui = "Si";
+                    inicial.inicial_solidosQui = "SI";
                 }
                 else
                 {
@@ -6695,7 +6751,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_polvos.Checked == true)
                 {
-                    inicial.inicial_polvosQui = "Si";
+                    inicial.inicial_polvosQui = "SI";
                 }
                 else
                 {
@@ -6703,7 +6759,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_humos.Checked == true)
                 {
-                    inicial.inicial_humosQui = "Si";
+                    inicial.inicial_humosQui = "SI";
                 }
                 else
                 {
@@ -6711,7 +6767,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_liquidos.Checked == true)
                 {
-                    inicial.inicial_liquidosQui = "Si";
+                    inicial.inicial_liquidosQui = "SI";
                 }
                 else
                 {
@@ -6719,7 +6775,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_vapores.Checked == true)
                 {
-                    inicial.inicial_vaporesQui = "Si";
+                    inicial.inicial_vaporesQui = "SI";
                 }
                 else
                 {
@@ -6727,7 +6783,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_aerosoles.Checked == true)
                 {
-                    inicial.inicial_aerosolesQui = "Si";
+                    inicial.inicial_aerosolesQui = "SI";
                 }
                 else
                 {
@@ -6735,7 +6791,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_neblinas.Checked == true)
                 {
-                    inicial.inicial_neblinasQui = "Si";
+                    inicial.inicial_neblinasQui = "SI";
                 }
                 else
                 {
@@ -6743,7 +6799,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_gaseosos.Checked == true)
                 {
-                    inicial.inicial_gaseososQui = "Si";
+                    inicial.inicial_gaseososQui = "SI";
                 }
                 else
                 {
@@ -6751,7 +6807,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_otrosQuimico.Checked == true)
                 {
-                    inicial.inicial_otrosQui = "Si";
+                    inicial.inicial_otrosQui = "SI";
                 }
                 else
                 {
@@ -6759,7 +6815,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_atrapmaquinas2.Checked == true)
                 {
-                    inicial.inicial_atraMaquinasMec2 = "Si";
+                    inicial.inicial_atraMaquinasMec2 = "SI";
                 }
                 else
                 {
@@ -6767,7 +6823,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_atrapsuperficie2.Checked == true)
                 {
-                    inicial.inicial_atraSuperfiiesMec2 = "Si";
+                    inicial.inicial_atraSuperfiiesMec2 = "SI";
                 }
                 else
                 {
@@ -6775,7 +6831,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_atrapobjetos2.Checked == true)
                 {
-                    inicial.inicial_atraObjetosMec2 = "Si";
+                    inicial.inicial_atraObjetosMec2 = "SI";
                 }
                 else
                 {
@@ -6783,7 +6839,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_caidaobjetos2.Checked == true)
                 {
-                    inicial.inicial_caidaObjetosMec2 = "Si";
+                    inicial.inicial_caidaObjetosMec2 = "SI";
                 }
                 else
                 {
@@ -6791,7 +6847,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_caidamisnivel2.Checked == true)
                 {
-                    inicial.inicial_caidaMisNivelMec2 = "Si";
+                    inicial.inicial_caidaMisNivelMec2 = "SI";
                 }
                 else
                 {
@@ -6800,7 +6856,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_caidadifnivel2.Checked == true)
                 {
-                    inicial.inicial_caidaDifNivelMec2 = "Si";
+                    inicial.inicial_caidaDifNivelMec2 = "SI";
                 }
                 else
                 {
@@ -6808,7 +6864,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_contaelectrico2.Checked == true)
                 {
-                    inicial.inicial_contactoElecMec2 = "Si";
+                    inicial.inicial_contactoElecMec2 = "SI";
                 }
                 else
                 {
@@ -6816,7 +6872,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_contasuptrabajo2.Checked == true)
                 {
-                    inicial.inicial_conSuperTrabaMec2 = "Si";
+                    inicial.inicial_conSuperTrabaMec2 = "SI";
                 }
                 else
                 {
@@ -6824,7 +6880,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_proyparticulas2.Checked == true)
                 {
-                    inicial.inicial_proPartiFragMec2 = "Si";
+                    inicial.inicial_proPartiFragMec2 = "SI";
                 }
                 else
                 {
@@ -6832,7 +6888,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_proyefluidos2.Checked == true)
                 {
-                    inicial.inicial_proFluidosMec2 = "Si";
+                    inicial.inicial_proFluidosMec2 = "SI";
                 }
                 else
                 {
@@ -6840,7 +6896,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_pinchazos2.Checked == true)
                 {
-                    inicial.inicial_pinchazosMec2 = "Si";
+                    inicial.inicial_pinchazosMec2 = "SI";
                 }
                 else
                 {
@@ -6848,7 +6904,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_cortes2.Checked == true)
                 {
-                    inicial.inicial_cortesMec2 = "Si";
+                    inicial.inicial_cortesMec2 = "SI";
                 }
                 else
                 {
@@ -6856,7 +6912,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_atroporvehiculos2.Checked == true)
                 {
-                    inicial.inicial_atropeVehiMec2 = "Si";
+                    inicial.inicial_atropeVehiMec2 = "SI";
                 }
                 else
                 {
@@ -6864,7 +6920,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_choques2.Checked == true)
                 {
-                    inicial.inicial_coliVehiMec2 = "Si";
+                    inicial.inicial_coliVehiMec2 = "SI";
                 }
                 else
                 {
@@ -6872,7 +6928,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_otrosMecanico2.Checked == true)
                 {
-                    inicial.inicial_otrosMec2 = "Si";
+                    inicial.inicial_otrosMec2 = "SI";
                 }
                 else
                 {
@@ -6880,7 +6936,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_solidos2.Checked == true)
                 {
-                    inicial.inicial_solidosQui2 = "Si";
+                    inicial.inicial_solidosQui2 = "SI";
                 }
                 else
                 {
@@ -6888,7 +6944,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_polvos2.Checked == true)
                 {
-                    inicial.inicial_polvosQui2 = "Si";
+                    inicial.inicial_polvosQui2 = "SI";
                 }
                 else
                 {
@@ -6896,7 +6952,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_humos2.Checked == true)
                 {
-                    inicial.inicial_humosQui2 = "Si";
+                    inicial.inicial_humosQui2 = "SI";
                 }
                 else
                 {
@@ -6904,7 +6960,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_liquidos2.Checked == true)
                 {
-                    inicial.inicial_liquidosQui2 = "Si";
+                    inicial.inicial_liquidosQui2 = "SI";
                 }
                 else
                 {
@@ -6912,7 +6968,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_vapores2.Checked == true)
                 {
-                    inicial.inicial_vaporesQui2 = "Si";
+                    inicial.inicial_vaporesQui2 = "SI";
                 }
                 else
                 {
@@ -6920,7 +6976,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_aerosoles2.Checked == true)
                 {
-                    inicial.inicial_aerosolesQui2 = "Si";
+                    inicial.inicial_aerosolesQui2 = "SI";
                 }
                 else
                 {
@@ -6928,7 +6984,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_neblinas2.Checked == true)
                 {
-                    inicial.inicial_neblinasQui2 = "Si";
+                    inicial.inicial_neblinasQui2 = "SI";
                 }
                 else
                 {
@@ -6936,7 +6992,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_gaseosos2.Checked == true)
                 {
-                    inicial.inicial_gaseososQui2 = "Si";
+                    inicial.inicial_gaseososQui2 = "SI";
                 }
                 else
                 {
@@ -6944,7 +7000,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_otrosQuimico2.Checked == true)
                 {
-                    inicial.inicial_otrosQui2 = "Si";
+                    inicial.inicial_otrosQui2 = "SI";
                 }
                 else
                 {
@@ -6952,7 +7008,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_atrapmaquinas3.Checked == true)
                 {
-                    inicial.inicial_atraMaquinasMec3 = "Si";
+                    inicial.inicial_atraMaquinasMec3 = "SI";
                 }
                 else
                 {
@@ -6960,7 +7016,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_atrapsuperficie3.Checked == true)
                 {
-                    inicial.inicial_atraSuperfiiesMec3 = "Si";
+                    inicial.inicial_atraSuperfiiesMec3 = "SI";
                 }
                 else
                 {
@@ -6968,7 +7024,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_atrapobjetos3.Checked == true)
                 {
-                    inicial.inicial_atraObjetosMec3 = "Si";
+                    inicial.inicial_atraObjetosMec3 = "SI";
                 }
                 else
                 {
@@ -6976,7 +7032,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_caidaobjetos3.Checked == true)
                 {
-                    inicial.inicial_caidaObjetosMec3 = "Si";
+                    inicial.inicial_caidaObjetosMec3 = "SI";
                 }
                 else
                 {
@@ -6984,7 +7040,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_caidamisnivel3.Checked == true)
                 {
-                    inicial.inicial_caidaMisNivelMec3 = "Si";
+                    inicial.inicial_caidaMisNivelMec3 = "SI";
                 }
                 else
                 {
@@ -6992,7 +7048,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_caidadifnivel3.Checked == true)
                 {
-                    inicial.inicial_caidaDifNivelMec3 = "Si";
+                    inicial.inicial_caidaDifNivelMec3 = "SI";
                 }
                 else
                 {
@@ -7000,7 +7056,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_contaelectrico3.Checked == true)
                 {
-                    inicial.inicial_contactoElecMec3 = "Si";
+                    inicial.inicial_contactoElecMec3 = "SI";
                 }
                 else
                 {
@@ -7008,7 +7064,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_contasuptrabajo3.Checked == true)
                 {
-                    inicial.inicial_conSuperTrabaMec3 = "Si";
+                    inicial.inicial_conSuperTrabaMec3 = "SI";
                 }
                 else
                 {
@@ -7016,7 +7072,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_proyparticulas3.Checked == true)
                 {
-                    inicial.inicial_proPartiFragMec3 = "Si";
+                    inicial.inicial_proPartiFragMec3 = "SI";
                 }
                 else
                 {
@@ -7024,7 +7080,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_proyefluidos3.Checked == true)
                 {
-                    inicial.inicial_proFluidosMec3 = "Si";
+                    inicial.inicial_proFluidosMec3 = "SI";
                 }
                 else
                 {
@@ -7032,7 +7088,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_pinchazos3.Checked == true)
                 {
-                    inicial.inicial_pinchazosMec3 = "Si";
+                    inicial.inicial_pinchazosMec3 = "SI";
                 }
                 else
                 {
@@ -7040,7 +7096,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_cortes3.Checked == true)
                 {
-                    inicial.inicial_cortesMec3 = "Si";
+                    inicial.inicial_cortesMec3 = "SI";
                 }
                 else
                 {
@@ -7048,7 +7104,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_atroporvehiculos3.Checked == true)
                 {
-                    inicial.inicial_atropeVehiMec3 = "Si";
+                    inicial.inicial_atropeVehiMec3 = "SI";
                 }
                 else
                 {
@@ -7056,7 +7112,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_choques3.Checked == true)
                 {
-                    inicial.inicial_coliVehiMec3 = "Si";
+                    inicial.inicial_coliVehiMec3 = "SI";
                 }
                 else
                 {
@@ -7064,7 +7120,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_otrosMecanico3.Checked == true)
                 {
-                    inicial.inicial_otrosMec3 = "Si";
+                    inicial.inicial_otrosMec3 = "SI";
                 }
                 else
                 {
@@ -7072,7 +7128,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_solidos3.Checked == true)
                 {
-                    inicial.inicial_solidosQui3 = "Si";
+                    inicial.inicial_solidosQui3 = "SI";
                 }
                 else
                 {
@@ -7080,7 +7136,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_polvos3.Checked == true)
                 {
-                    inicial.inicial_polvosQui3 = "Si";
+                    inicial.inicial_polvosQui3 = "SI";
                 }
                 else
                 {
@@ -7088,7 +7144,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_humos3.Checked == true)
                 {
-                    inicial.inicial_humosQui3 = "Si";
+                    inicial.inicial_humosQui3 = "SI";
                 }
                 else
                 {
@@ -7096,7 +7152,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_liquidos3.Checked == true)
                 {
-                    inicial.inicial_liquidosQui3 = "Si";
+                    inicial.inicial_liquidosQui3 = "SI";
                 }
                 else
                 {
@@ -7104,7 +7160,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_vapores3.Checked == true)
                 {
-                    inicial.inicial_vaporesQui3 = "Si";
+                    inicial.inicial_vaporesQui3 = "SI";
                 }
                 else
                 {
@@ -7112,7 +7168,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_aerosoles3.Checked == true)
                 {
-                    inicial.inicial_aerosolesQui3 = "Si";
+                    inicial.inicial_aerosolesQui3 = "SI";
                 }
                 else
                 {
@@ -7120,7 +7176,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_neblinas3.Checked == true)
                 {
-                    inicial.inicial_neblinasQui3 = "Si";
+                    inicial.inicial_neblinasQui3 = "SI";
                 }
                 else
                 {
@@ -7128,7 +7184,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_gaseosos3.Checked == true)
                 {
-                    inicial.inicial_gaseososQui3 = "Si";
+                    inicial.inicial_gaseososQui3 = "SI";
                 }
                 else
                 {
@@ -7136,7 +7192,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_otrosQuimico3.Checked == true)
                 {
-                    inicial.inicial_otrosQui3 = "Si";
+                    inicial.inicial_otrosQui3 = "SI";
                 }
                 else
                 {
@@ -7144,7 +7200,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_atrapmaquinas4.Checked == true)
                 {
-                    inicial.inicial_atraMaquinasMec4 = "Si";
+                    inicial.inicial_atraMaquinasMec4 = "SI";
                 }
                 else
                 {
@@ -7152,7 +7208,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_atrapsuperficie4.Checked == true)
                 {
-                    inicial.inicial_atraSuperfiiesMec4 = "Si";
+                    inicial.inicial_atraSuperfiiesMec4 = "SI";
                 }
                 else
                 {
@@ -7160,7 +7216,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_atrapobjetos4.Checked == true)
                 {
-                    inicial.inicial_atraObjetosMec4 = "Si";
+                    inicial.inicial_atraObjetosMec4 = "SI";
                 }
                 else
                 {
@@ -7168,7 +7224,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_caidaobjetos4.Checked == true)
                 {
-                    inicial.inicial_caidaObjetosMec4 = "Si";
+                    inicial.inicial_caidaObjetosMec4 = "SI";
                 }
                 else
                 {
@@ -7176,7 +7232,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_caidamisnivel4.Checked == true)
                 {
-                    inicial.inicial_caidaMisNivelMec4 = "Si";
+                    inicial.inicial_caidaMisNivelMec4 = "SI";
                 }
                 else
                 {
@@ -7184,7 +7240,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_caidadifnivel4.Checked == true)
                 {
-                    inicial.inicial_caidaDifNivelMec4 = "Si";
+                    inicial.inicial_caidaDifNivelMec4 = "SI";
                 }
                 else
                 {
@@ -7192,7 +7248,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_contaelectrico4.Checked == true)
                 {
-                    inicial.inicial_contactoElecMec4 = "Si";
+                    inicial.inicial_contactoElecMec4 = "SI";
                 }
                 else
                 {
@@ -7200,7 +7256,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_contasuptrabajo4.Checked == true)
                 {
-                    inicial.inicial_conSuperTrabaMec4 = "Si";
+                    inicial.inicial_conSuperTrabaMec4 = "SI";
                 }
                 else
                 {
@@ -7208,7 +7264,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_proyparticulas4.Checked == true)
                 {
-                    inicial.inicial_proPartiFragMec4 = "Si";
+                    inicial.inicial_proPartiFragMec4 = "SI";
                 }
                 else
                 {
@@ -7216,7 +7272,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_proyefluidos4.Checked == true)
                 {
-                    inicial.inicial_proFluidosMec4 = "Si";
+                    inicial.inicial_proFluidosMec4 = "SI";
                 }
                 else
                 {
@@ -7224,7 +7280,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_pinchazos4.Checked == true)
                 {
-                    inicial.inicial_pinchazosMec4 = "Si";
+                    inicial.inicial_pinchazosMec4 = "SI";
                 }
                 else
                 {
@@ -7232,7 +7288,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_cortes4.Checked == true)
                 {
-                    inicial.inicial_cortesMec4 = "Si";
+                    inicial.inicial_cortesMec4 = "SI";
                 }
                 else
                 {
@@ -7240,7 +7296,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_atroporvehiculos4.Checked == true)
                 {
-                    inicial.inicial_atropeVehiMec4 = "Si";
+                    inicial.inicial_atropeVehiMec4 = "SI";
                 }
                 else
                 {
@@ -7248,7 +7304,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_choques4.Checked == true)
                 {
-                    inicial.inicial_coliVehiMec4 = "Si";
+                    inicial.inicial_coliVehiMec4 = "SI";
                 }
                 else
                 {
@@ -7256,7 +7312,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_otrosMecanico4.Checked == true)
                 {
-                    inicial.inicial_otrosMec4 = "Si";
+                    inicial.inicial_otrosMec4 = "SI";
                 }
                 else
                 {
@@ -7264,7 +7320,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_solidos4.Checked == true)
                 {
-                    inicial.inicial_solidosQui4 = "Si";
+                    inicial.inicial_solidosQui4 = "SI";
                 }
                 else
                 {
@@ -7272,7 +7328,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_polvos4.Checked == true)
                 {
-                    inicial.inicial_polvosQui4 = "Si";
+                    inicial.inicial_polvosQui4 = "SI";
                 }
                 else
                 {
@@ -7280,7 +7336,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_humos4.Checked == true)
                 {
-                    inicial.inicial_humosQui4 = "Si";
+                    inicial.inicial_humosQui4 = "SI";
                 }
                 else
                 {
@@ -7288,7 +7344,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_liquidos4.Checked == true)
                 {
-                    inicial.inicial_liquidosQui4 = "Si";
+                    inicial.inicial_liquidosQui4 = "SI";
                 }
                 else
                 {
@@ -7296,7 +7352,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_vapores4.Checked == true)
                 {
-                    inicial.inicial_vaporesQui4 = "Si";
+                    inicial.inicial_vaporesQui4 = "SI";
                 }
                 else
                 {
@@ -7304,7 +7360,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_aerosoles4.Checked == true)
                 {
-                    inicial.inicial_aerosolesQui4 = "Si";
+                    inicial.inicial_aerosolesQui4 = "SI";
                 }
                 else
                 {
@@ -7312,7 +7368,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_neblinas4.Checked == true)
                 {
-                    inicial.inicial_neblinasQui4 = "Si";
+                    inicial.inicial_neblinasQui4 = "SI";
                 }
                 else
                 {
@@ -7320,7 +7376,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_gaseosos4.Checked == true)
                 {
-                    inicial.inicial_gaseososQui4 = "Si";
+                    inicial.inicial_gaseososQui4 = "SI";
                 }
                 else
                 {
@@ -7328,7 +7384,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_otrosQuimico4.Checked == true)
                 {
-                    inicial.inicial_otrosQui4 = "Si";
+                    inicial.inicial_otrosQui4 = "SI";
                 }
                 else
                 {
@@ -7336,7 +7392,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_virus.Checked == true)
                 {
-                    inicial.inicial_virusBio = "Si";
+                    inicial.inicial_virusBio = "SI";
                 }
                 else
                 {
@@ -7344,7 +7400,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_hongos.Checked == true)
                 {
-                    inicial.inicial_hongosBio = "Si";
+                    inicial.inicial_hongosBio = "SI";
                 }
                 else
                 {
@@ -7352,7 +7408,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_bacterias.Checked == true)
                 {
-                    inicial.inicial_bacteriasBio = "Si";
+                    inicial.inicial_bacteriasBio = "SI";
                 }
                 else
                 {
@@ -7360,7 +7416,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_parasitos.Checked == true)
                 {
-                    inicial.inicial_parasitosBio = "Si";
+                    inicial.inicial_parasitosBio = "SI";
                 }
                 else
                 {
@@ -7368,7 +7424,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_expoavectores.Checked == true)
                 {
-                    inicial.inicial_expVectBio = "Si";
+                    inicial.inicial_expVectBio = "SI";
                 }
                 else
                 {
@@ -7376,7 +7432,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_expoanimselvaticos.Checked == true)
                 {
-                    inicial.inicial_expAniSelvaBio = "Si";
+                    inicial.inicial_expAniSelvaBio = "SI";
                 }
                 else
                 {
@@ -7384,7 +7440,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_otrosBiologico.Checked == true)
                 {
-                    inicial.inicial_otrosBio = "Si";
+                    inicial.inicial_otrosBio = "SI";
                 }
                 else
                 {
@@ -7392,7 +7448,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_manmanualcargas.Checked == true)
                 {
-                    inicial.inicial_maneManCarErg = "Si";
+                    inicial.inicial_maneManCarErg = "SI";
                 }
                 else
                 {
@@ -7400,7 +7456,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_movrepetitivo.Checked == true)
                 {
-                    inicial.inicial_movRepeErg = "Si";
+                    inicial.inicial_movRepeErg = "SI";
                 }
                 else
                 {
@@ -7408,7 +7464,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_postforzadas.Checked == true)
                 {
-                    inicial.inicial_posForzaErg = "Si";
+                    inicial.inicial_posForzaErg = "SI";
                 }
                 else
                 {
@@ -7416,7 +7472,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_trabajopvd.Checked == true)
                 {
-                    inicial.inicial_trabPvdErg = "Si";
+                    inicial.inicial_trabPvdErg = "SI";
                 }
                 else
                 {
@@ -7424,7 +7480,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_otrosErgonomico.Checked == true)
                 {
-                    inicial.inicial_otrosErg = "Si";
+                    inicial.inicial_otrosErg = "SI";
                 }
                 else
                 {
@@ -7432,7 +7488,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_virus2.Checked == true)
                 {
-                    inicial.inicial_virusBio2 = "Si";
+                    inicial.inicial_virusBio2 = "SI";
                 }
                 else
                 {
@@ -7440,7 +7496,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_hongos2.Checked == true)
                 {
-                    inicial.inicial_hongosBio2 = "Si";
+                    inicial.inicial_hongosBio2 = "SI";
                 }
                 else
                 {
@@ -7448,7 +7504,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_bacterias2.Checked == true)
                 {
-                    inicial.inicial_bacteriasBio2 = "Si";
+                    inicial.inicial_bacteriasBio2 = "SI";
                 }
                 else
                 {
@@ -7456,7 +7512,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_parasitos2.Checked == true)
                 {
-                    inicial.inicial_parasitosBio2 = "Si";
+                    inicial.inicial_parasitosBio2 = "SI";
                 }
                 else
                 {
@@ -7464,7 +7520,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_expoavectores2.Checked == true)
                 {
-                    inicial.inicial_expVectBio2 = "Si";
+                    inicial.inicial_expVectBio2 = "SI";
                 }
                 else
                 {
@@ -7472,7 +7528,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_expoanimselvaticos2.Checked == true)
                 {
-                    inicial.inicial_expAniSelvaBio2 = "Si";
+                    inicial.inicial_expAniSelvaBio2 = "SI";
                 }
                 else
                 {
@@ -7480,7 +7536,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_otrosBiologico2.Checked == true)
                 {
-                    inicial.inicial_otrosBio2 = "Si";
+                    inicial.inicial_otrosBio2 = "SI";
                 }
                 else
                 {
@@ -7488,7 +7544,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_manmanualcargas2.Checked == true)
                 {
-                    inicial.inicial_maneManCarErg2 = "Si";
+                    inicial.inicial_maneManCarErg2 = "SI";
                 }
                 else
                 {
@@ -7496,7 +7552,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_movrepetitivo2.Checked == true)
                 {
-                    inicial.inicial_movRepeErg2 = "Si";
+                    inicial.inicial_movRepeErg2 = "SI";
                 }
                 else
                 {
@@ -7504,7 +7560,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_postforzadas2.Checked == true)
                 {
-                    inicial.inicial_posForzaErg2 = "Si";
+                    inicial.inicial_posForzaErg2 = "SI";
                 }
                 else
                 {
@@ -7512,7 +7568,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_trabajopvd2.Checked == true)
                 {
-                    inicial.inicial_trabPvdErg2 = "Si";
+                    inicial.inicial_trabPvdErg2 = "SI";
                 }
                 else
                 {
@@ -7520,7 +7576,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_otrosErgonomico2.Checked == true)
                 {
-                    inicial.inicial_otrosErg2 = "Si";
+                    inicial.inicial_otrosErg2 = "SI";
                 }
                 else
                 {
@@ -7528,7 +7584,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_virus3.Checked == true)
                 {
-                    inicial.inicial_virusBio3 = "Si";
+                    inicial.inicial_virusBio3 = "SI";
                 }
                 else
                 {
@@ -7536,7 +7592,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_hongos3.Checked == true)
                 {
-                    inicial.inicial_hongosBio3 = "Si";
+                    inicial.inicial_hongosBio3 = "SI";
                 }
                 else
                 {
@@ -7544,7 +7600,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_bacterias3.Checked == true)
                 {
-                    inicial.inicial_bacteriasBio3 = "Si";
+                    inicial.inicial_bacteriasBio3 = "SI";
                 }
                 else
                 {
@@ -7552,7 +7608,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_parasitos3.Checked == true)
                 {
-                    inicial.inicial_parasitosBio3 = "Si";
+                    inicial.inicial_parasitosBio3 = "SI";
                 }
                 else
                 {
@@ -7560,7 +7616,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_expoavectores3.Checked == true)
                 {
-                    inicial.inicial_expVectBio3 = "Si";
+                    inicial.inicial_expVectBio3 = "SI";
                 }
                 else
                 {
@@ -7568,7 +7624,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_expoanimselvaticos3.Checked == true)
                 {
-                    inicial.inicial_expAniSelvaBio3 = "Si";
+                    inicial.inicial_expAniSelvaBio3 = "SI";
                 }
                 else
                 {
@@ -7576,7 +7632,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_otrosBiologico3.Checked == true)
                 {
-                    inicial.inicial_otrosBio3 = "Si";
+                    inicial.inicial_otrosBio3 = "SI";
                 }
                 else
                 {
@@ -7584,7 +7640,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_manmanualcargas3.Checked == true)
                 {
-                    inicial.inicial_maneManCarErg3 = "Si";
+                    inicial.inicial_maneManCarErg3 = "SI";
                 }
                 else
                 {
@@ -7592,7 +7648,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_movrepetitivo3.Checked == true)
                 {
-                    inicial.inicial_movRepeErg3 = "Si";
+                    inicial.inicial_movRepeErg3 = "SI";
                 }
                 else
                 {
@@ -7600,7 +7656,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_postforzadas3.Checked == true)
                 {
-                    inicial.inicial_posForzaErg3 = "Si";
+                    inicial.inicial_posForzaErg3 = "SI";
                 }
                 else
                 {
@@ -7608,7 +7664,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_trabajopvd3.Checked == true)
                 {
-                    inicial.inicial_trabPvdErg3 = "Si";
+                    inicial.inicial_trabPvdErg3 = "SI";
                 }
                 else
                 {
@@ -7616,7 +7672,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_otrosErgonomico3.Checked == true)
                 {
-                    inicial.inicial_otrosErg3 = "Si";
+                    inicial.inicial_otrosErg3 = "SI";
                 }
                 else
                 {
@@ -7624,7 +7680,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_virus4.Checked == true)
                 {
-                    inicial.inicial_virusBio4 = "Si";
+                    inicial.inicial_virusBio4 = "SI";
                 }
                 else
                 {
@@ -7632,7 +7688,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_hongos4.Checked == true)
                 {
-                    inicial.inicial_hongosBio4 = "Si";
+                    inicial.inicial_hongosBio4 = "SI";
                 }
                 else
                 {
@@ -7640,7 +7696,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_bacterias4.Checked == true)
                 {
-                    inicial.inicial_bacteriasBio4 = "Si";
+                    inicial.inicial_bacteriasBio4 = "SI";
                 }
                 else
                 {
@@ -7648,7 +7704,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_parasitos4.Checked == true)
                 {
-                    inicial.inicial_parasitosBio4 = "Si";
+                    inicial.inicial_parasitosBio4 = "SI";
                 }
                 else
                 {
@@ -7656,7 +7712,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_expoavectores4.Checked == true)
                 {
-                    inicial.inicial_expVectBio4 = "Si";
+                    inicial.inicial_expVectBio4 = "SI";
                 }
                 else
                 {
@@ -7664,7 +7720,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_expoanimselvaticos4.Checked == true)
                 {
-                    inicial.inicial_expAniSelvaBio4 = "Si";
+                    inicial.inicial_expAniSelvaBio4 = "SI";
                 }
                 else
                 {
@@ -7672,7 +7728,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_otrosBiologico4.Checked == true)
                 {
-                    inicial.inicial_otrosBio4 = "Si";
+                    inicial.inicial_otrosBio4 = "SI";
                 }
                 else
                 {
@@ -7680,7 +7736,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_manmanualcargas4.Checked == true)
                 {
-                    inicial.inicial_maneManCarErg4 = "Si";
+                    inicial.inicial_maneManCarErg4 = "SI";
                 }
                 else
                 {
@@ -7688,7 +7744,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_movrepetitivo4.Checked == true)
                 {
-                    inicial.inicial_movRepeErg4 = "Si";
+                    inicial.inicial_movRepeErg4 = "SI";
                 }
                 else
                 {
@@ -7696,7 +7752,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_postforzadas4.Checked == true)
                 {
-                    inicial.inicial_posForzaErg4 = "Si";
+                    inicial.inicial_posForzaErg4 = "SI";
                 }
                 else
                 {
@@ -7704,7 +7760,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_trabajopvd4.Checked == true)
                 {
-                    inicial.inicial_trabPvdErg4 = "Si";
+                    inicial.inicial_trabPvdErg4 = "SI";
                 }
                 else
                 {
@@ -7712,7 +7768,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_otrosErgonomico4.Checked == true)
                 {
-                    inicial.inicial_otrosErg4 = "Si";
+                    inicial.inicial_otrosErg4 = "SI";
                 }
                 else
                 {
@@ -7720,7 +7776,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_montrabajo.Checked == true)
                 {
-                    inicial.inicial_monoTrabPsi = "Si";
+                    inicial.inicial_monoTrabPsi = "SI";
                 }
                 else
                 {
@@ -7728,7 +7784,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_sobrecargalaboral.Checked == true)
                 {
-                    inicial.inicial_sobrecarLabPsi = "Si";
+                    inicial.inicial_sobrecarLabPsi = "SI";
                 }
                 else
                 {
@@ -7736,7 +7792,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_minustarea.Checked == true)
                 {
-                    inicial.inicial_minuTareaPsi = "Si";
+                    inicial.inicial_minuTareaPsi = "SI";
                 }
                 else
                 {
@@ -7744,7 +7800,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_altarespon.Checked == true)
                 {
-                    inicial.inicial_altaResponPsi = "Si";
+                    inicial.inicial_altaResponPsi = "SI";
                 }
                 else
                 {
@@ -7752,7 +7808,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_automadesiciones.Checked == true)
                 {
-                    inicial.inicial_autoTomaDesiPsi = "Si";
+                    inicial.inicial_autoTomaDesiPsi = "SI";
                 }
                 else
                 {
@@ -7760,7 +7816,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_supyestdireficiente.Checked == true)
                 {
-                    inicial.inicial_supEstDirecDefiPsi = "Si";
+                    inicial.inicial_supEstDirecDefiPsi = "SI";
                 }
                 else
                 {
@@ -7768,7 +7824,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_conflictorol.Checked == true)
                 {
-                    inicial.inicial_conflicRolPsi = "Si";
+                    inicial.inicial_conflicRolPsi = "SI";
                 }
                 else
                 {
@@ -7776,7 +7832,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_faltaclarfunciones.Checked == true)
                 {
-                    inicial.inicial_falClariFunPsi = "Si";
+                    inicial.inicial_falClariFunPsi = "SI";
                 }
                 else
                 {
@@ -7784,7 +7840,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_incorrdistrabajo.Checked == true)
                 {
-                    inicial.inicial_incoDistriTrabPsi = "Si";
+                    inicial.inicial_incoDistriTrabPsi = "SI";
                 }
                 else
                 {
@@ -7792,7 +7848,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_turnorotat.Checked == true)
                 {
-                    inicial.inicial_turnosRotaPsi = "Si";
+                    inicial.inicial_turnosRotaPsi = "SI";
                 }
                 else
                 {
@@ -7800,7 +7856,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_relacinterpersonales.Checked == true)
                 {
-                    inicial.inicial_relInterperPsi = "Si";
+                    inicial.inicial_relInterperPsi = "SI";
                 }
                 else
                 {
@@ -7808,7 +7864,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_inestalaboral.Checked == true)
                 {
-                    inicial.inicial_inesLabPsi = "Si";
+                    inicial.inicial_inesLabPsi = "SI";
                 }
                 else
                 {
@@ -7816,7 +7872,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_otrosPsicosocial.Checked == true)
                 {
-                    inicial.inicial_otrosPsi = "Si";
+                    inicial.inicial_otrosPsi = "SI";
                 }
                 else
                 {
@@ -7824,7 +7880,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_montrabajo2.Checked == true)
                 {
-                    inicial.inicial_monoTrabPsi2 = "Si";
+                    inicial.inicial_monoTrabPsi2 = "SI";
                 }
                 else
                 {
@@ -7832,7 +7888,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_sobrecargalaboral2.Checked == true)
                 {
-                    inicial.inicial_sobrecarLabPsi2 = "Si";
+                    inicial.inicial_sobrecarLabPsi2 = "SI";
                 }
                 else
                 {
@@ -7840,7 +7896,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_minustarea2.Checked == true)
                 {
-                    inicial.inicial_minuTareaPsi2 = "Si";
+                    inicial.inicial_minuTareaPsi2 = "SI";
                 }
                 else
                 {
@@ -7848,7 +7904,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_altarespon2.Checked == true)
                 {
-                    inicial.inicial_altaResponPsi2 = "Si";
+                    inicial.inicial_altaResponPsi2 = "SI";
                 }
                 else
                 {
@@ -7856,7 +7912,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_automadesiciones2.Checked == true)
                 {
-                    inicial.inicial_autoTomaDesiPsi2 = "Si";
+                    inicial.inicial_autoTomaDesiPsi2 = "SI";
                 }
                 else
                 {
@@ -7864,7 +7920,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_supyestdireficiente2.Checked == true)
                 {
-                    inicial.inicial_supEstDirecDefiPsi2 = "Si";
+                    inicial.inicial_supEstDirecDefiPsi2 = "SI";
                 }
                 else
                 {
@@ -7872,7 +7928,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_conflictorol2.Checked == true)
                 {
-                    inicial.inicial_conflicRolPsi2 = "Si";
+                    inicial.inicial_conflicRolPsi2 = "SI";
                 }
                 else
                 {
@@ -7880,7 +7936,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_faltaclarfunciones2.Checked == true)
                 {
-                    inicial.inicial_falClariFunPsi2 = "Si";
+                    inicial.inicial_falClariFunPsi2 = "SI";
                 }
                 else
                 {
@@ -7888,7 +7944,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_incorrdistrabajo2.Checked == true)
                 {
-                    inicial.inicial_incoDistriTrabPsi2 = "Si";
+                    inicial.inicial_incoDistriTrabPsi2 = "SI";
                 }
                 else
                 {
@@ -7896,7 +7952,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_turnorotat2.Checked == true)
                 {
-                    inicial.inicial_turnosRotaPsi2 = "Si";
+                    inicial.inicial_turnosRotaPsi2 = "SI";
                 }
                 else
                 {
@@ -7904,7 +7960,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_relacinterpersonales2.Checked == true)
                 {
-                    inicial.inicial_relInterperPsi2 = "Si";
+                    inicial.inicial_relInterperPsi2 = "SI";
                 }
                 else
                 {
@@ -7912,7 +7968,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_inestalaboral2.Checked == true)
                 {
-                    inicial.inicial_inesLabPsi2 = "Si";
+                    inicial.inicial_inesLabPsi2 = "SI";
                 }
                 else
                 {
@@ -7920,7 +7976,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_otrosPsicosocial2.Checked == true)
                 {
-                    inicial.inicial_otrosPsi2 = "Si";
+                    inicial.inicial_otrosPsi2 = "SI";
                 }
                 else
                 {
@@ -7928,7 +7984,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_montrabajo3.Checked == true)
                 {
-                    inicial.inicial_monoTrabPsi3 = "Si";
+                    inicial.inicial_monoTrabPsi3 = "SI";
                 }
                 else
                 {
@@ -7936,7 +7992,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_sobrecargalaboral3.Checked == true)
                 {
-                    inicial.inicial_sobrecarLabPsi3 = "Si";
+                    inicial.inicial_sobrecarLabPsi3 = "SI";
                 }
                 else
                 {
@@ -7944,7 +8000,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_minustarea3.Checked == true)
                 {
-                    inicial.inicial_minuTareaPsi3 = "Si";
+                    inicial.inicial_minuTareaPsi3 = "SI";
                 }
                 else
                 {
@@ -7952,7 +8008,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_altarespon3.Checked == true)
                 {
-                    inicial.inicial_altaResponPsi3 = "Si";
+                    inicial.inicial_altaResponPsi3 = "SI";
                 }
                 else
                 {
@@ -7960,7 +8016,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_automadesiciones3.Checked == true)
                 {
-                    inicial.inicial_autoTomaDesiPsi3 = "Si";
+                    inicial.inicial_autoTomaDesiPsi3 = "SI";
                 }
                 else
                 {
@@ -7968,7 +8024,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_supyestdireficiente3.Checked == true)
                 {
-                    inicial.inicial_supEstDirecDefiPsi3 = "Si";
+                    inicial.inicial_supEstDirecDefiPsi3 = "SI";
                 }
                 else
                 {
@@ -7976,7 +8032,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_conflictorol3.Checked == true)
                 {
-                    inicial.inicial_conflicRolPsi3 = "Si";
+                    inicial.inicial_conflicRolPsi3 = "SI";
                 }
                 else
                 {
@@ -7984,7 +8040,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_faltaclarfunciones3.Checked == true)
                 {
-                    inicial.inicial_falClariFunPsi3 = "Si";
+                    inicial.inicial_falClariFunPsi3 = "SI";
                 }
                 else
                 {
@@ -7992,7 +8048,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_incorrdistrabajo3.Checked == true)
                 {
-                    inicial.inicial_incoDistriTrabPsi3 = "Si";
+                    inicial.inicial_incoDistriTrabPsi3 = "SI";
                 }
                 else
                 {
@@ -8000,7 +8056,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_turnorotat3.Checked == true)
                 {
-                    inicial.inicial_turnosRotaPsi3 = "Si";
+                    inicial.inicial_turnosRotaPsi3 = "SI";
                 }
                 else
                 {
@@ -8008,7 +8064,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_relacinterpersonales3.Checked == true)
                 {
-                    inicial.inicial_relInterperPsi3 = "Si";
+                    inicial.inicial_relInterperPsi3 = "SI";
                 }
                 else
                 {
@@ -8016,7 +8072,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_inestalaboral3.Checked == true)
                 {
-                    inicial.inicial_inesLabPsi3 = "Si";
+                    inicial.inicial_inesLabPsi3 = "SI";
                 }
                 else
                 {
@@ -8024,7 +8080,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_otrosPsicosocial3.Checked == true)
                 {
-                    inicial.inicial_otrosPsi3 = "Si";
+                    inicial.inicial_otrosPsi3 = "SI";
                 }
                 else
                 {
@@ -8032,7 +8088,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_montrabajo4.Checked == true)
                 {
-                    inicial.inicial_monoTrabPsi4 = "Si";
+                    inicial.inicial_monoTrabPsi4 = "SI";
                 }
                 else
                 {
@@ -8040,7 +8096,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_sobrecargalaboral4.Checked == true)
                 {
-                    inicial.inicial_sobrecarLabPsi4 = "Si";
+                    inicial.inicial_sobrecarLabPsi4 = "SI";
                 }
                 else
                 {
@@ -8048,7 +8104,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_minustarea4.Checked == true)
                 {
-                    inicial.inicial_minuTareaPsi4 = "Si";
+                    inicial.inicial_minuTareaPsi4 = "SI";
                 }
                 else
                 {
@@ -8056,7 +8112,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_altarespon4.Checked == true)
                 {
-                    inicial.inicial_altaResponPsi4 = "Si";
+                    inicial.inicial_altaResponPsi4 = "SI";
                 }
                 else
                 {
@@ -8064,7 +8120,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_automadesiciones4.Checked == true)
                 {
-                    inicial.inicial_autoTomaDesiPsi4 = "Si";
+                    inicial.inicial_autoTomaDesiPsi4 = "SI";
                 }
                 else
                 {
@@ -8072,7 +8128,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_supyestdireficiente4.Checked == true)
                 {
-                    inicial.inicial_supEstDirecDefiPsi4 = "Si";
+                    inicial.inicial_supEstDirecDefiPsi4 = "SI";
                 }
                 else
                 {
@@ -8080,7 +8136,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_conflictorol4.Checked == true)
                 {
-                    inicial.inicial_conflicRolPsi4 = "Si";
+                    inicial.inicial_conflicRolPsi4 = "SI";
                 }
                 else
                 {
@@ -8088,7 +8144,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_faltaclarfunciones4.Checked == true)
                 {
-                    inicial.inicial_falClariFunPsi4 = "Si";
+                    inicial.inicial_falClariFunPsi4 = "SI";
                 }
                 else
                 {
@@ -8096,7 +8152,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_incorrdistrabajo4.Checked == true)
                 {
-                    inicial.inicial_incoDistriTrabPsi4 = "Si";
+                    inicial.inicial_incoDistriTrabPsi4 = "SI";
                 }
                 else
                 {
@@ -8104,7 +8160,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_turnorotat4.Checked == true)
                 {
-                    inicial.inicial_turnosRotaPsi4 = "Si";
+                    inicial.inicial_turnosRotaPsi4 = "SI";
                 }
                 else
                 {
@@ -8112,7 +8168,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_relacinterpersonales4.Checked == true)
                 {
-                    inicial.inicial_relInterperPsi4 = "Si";
+                    inicial.inicial_relInterperPsi4 = "SI";
                 }
                 else
                 {
@@ -8120,7 +8176,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_inestalaboral4.Checked == true)
                 {
-                    inicial.inicial_inesLabPsi4 = "Si";
+                    inicial.inicial_inesLabPsi4 = "SI";
                 }
                 else
                 {
@@ -8128,7 +8184,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_otrosPsicosocial4.Checked == true)
                 {
-                    inicial.inicial_otrosPsi4 = "Si";
+                    inicial.inicial_otrosPsi4 = "SI";
                 }
                 else
                 {
@@ -8136,7 +8192,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_pielanexos.Checked == true)
                 {
-                    inicial.inicial_pielAnexos = "Si";
+                    inicial.inicial_pielAnexos = "SI";
                 }
                 else
                 {
@@ -8144,7 +8200,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_respiratorio.Checked == true)
                 {
-                    inicial.inicial_respiratorio = "Si";
+                    inicial.inicial_respiratorio = "SI";
                 }
                 else
                 {
@@ -8152,7 +8208,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_digestivo.Checked == true)
                 {
-                    inicial.inicial_digestivo = "Si";
+                    inicial.inicial_digestivo = "SI";
                 }
                 else
                 {
@@ -8160,7 +8216,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_musculosesqueleticos.Checked == true)
                 {
-                    inicial.inicial_muscEsqueletico = "Si";
+                    inicial.inicial_muscEsqueletico = "SI";
                 }
                 else
                 {
@@ -8168,7 +8224,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_hemolinfatico.Checked == true)
                 {
-                    inicial.inicial_hemoLimfa = "Si";
+                    inicial.inicial_hemoLimfa = "SI";
                 }
                 else
                 {
@@ -8176,7 +8232,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_organossentidos.Checked == true)
                 {
-                    inicial.inicial_orgSentidos = "Si";
+                    inicial.inicial_orgSentidos = "SI";
                 }
                 else
                 {
@@ -8184,7 +8240,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_cardiovascular.Checked == true)
                 {
-                    inicial.inicial_cardVascular = "Si";
+                    inicial.inicial_cardVascular = "SI";
                 }
                 else
                 {
@@ -8192,7 +8248,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_genitourinario.Checked == true)
                 {
-                    inicial.inicial_genUrinario = "Si";
+                    inicial.inicial_genUrinario = "SI";
                 }
                 else
                 {
@@ -8200,7 +8256,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_endocrino.Checked == true)
                 {
-                    inicial.inicial_endocrino = "Si";
+                    inicial.inicial_endocrino = "SI";
                 }
                 else
                 {
@@ -8208,7 +8264,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_nervioso.Checked == true)
                 {
-                    inicial.inicial_nervioso = "Si";
+                    inicial.inicial_nervioso = "SI";
                 }
                 else
                 {
@@ -8216,7 +8272,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_cicatrices.Checked == true)
                 {
-                    inicial.inicial_cicatricesPiel = "Si";
+                    inicial.inicial_cicatricesPiel = "SI";
                 }
                 else
                 {
@@ -8224,7 +8280,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_auditivoexterno.Checked == true)
                 {
-                    inicial.inicial_cAudiExtreOido = "Si";
+                    inicial.inicial_cAudiExtreOido = "SI";
                 }
                 else
                 {
@@ -8232,7 +8288,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_tabique.Checked == true)
                 {
-                    inicial.inicial_tabiqueNariz = "Si";
+                    inicial.inicial_tabiqueNariz = "SI";
                 }
                 else
                 {
@@ -8240,7 +8296,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_pulmones.Checked == true)
                 {
-                    inicial.inicial_pulmonesTorax2 = "Si";
+                    inicial.inicial_pulmonesTorax2 = "SI";
                 }
                 else
                 {
@@ -8248,7 +8304,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_pelvis.Checked == true)
                 {
-                    inicial.inicial_pelvisPelvis = "Si";
+                    inicial.inicial_pelvisPelvis = "SI";
                 }
                 else
                 {
@@ -8256,7 +8312,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_tatuajes.Checked == true)
                 {
-                    inicial.inicial_tatuajesPiel = "Si";
+                    inicial.inicial_tatuajesPiel = "SI";
                 }
                 else
                 {
@@ -8264,7 +8320,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_pabellon.Checked == true)
                 {
-                    inicial.inicial_pabellonOido = "Si";
+                    inicial.inicial_pabellonOido = "SI";
                 }
                 else
                 {
@@ -8272,7 +8328,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_cornetes.Checked == true)
                 {
-                    inicial.inicial_cornetesNariz = "Si";
+                    inicial.inicial_cornetesNariz = "SI";
                 }
                 else
                 {
@@ -8280,7 +8336,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_parrillacostal.Checked == true)
                 {
-                    inicial.inicial_parriCostalTorax2 = "Si";
+                    inicial.inicial_parriCostalTorax2 = "SI";
                 }
                 else
                 {
@@ -8288,7 +8344,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_genitales.Checked == true)
                 {
-                    inicial.inicial_genitalesPelvis = "Si";
+                    inicial.inicial_genitalesPelvis = "SI";
                 }
                 else
                 {
@@ -8296,7 +8352,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_pielyfaneras.Checked == true)
                 {
-                    inicial.inicial_pielFacerasPiel = "Si";
+                    inicial.inicial_pielFacerasPiel = "SI";
                 }
                 else
                 {
@@ -8304,7 +8360,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_timpanos.Checked == true)
                 {
-                    inicial.inicial_timpanosOido = "Si";
+                    inicial.inicial_timpanosOido = "SI";
                 }
                 else
                 {
@@ -8312,7 +8368,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_mucosa.Checked == true)
                 {
-                    inicial.inicial_mucosasNariz = "Si";
+                    inicial.inicial_mucosasNariz = "SI";
                 }
                 else
                 {
@@ -8320,7 +8376,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_visceras.Checked == true)
                 {
-                    inicial.inicial_viscerasAbdomen = "Si";
+                    inicial.inicial_viscerasAbdomen = "SI";
                 }
                 else
                 {
@@ -8328,7 +8384,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_vascular.Checked == true)
                 {
-                    inicial.inicial_vascularExtre = "Si";
+                    inicial.inicial_vascularExtre = "SI";
                 }
                 else
                 {
@@ -8336,7 +8392,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_parpados.Checked == true)
                 {
-                    inicial.inicial_parpadosOjos = "Si";
+                    inicial.inicial_parpadosOjos = "SI";
                 }
                 else
                 {
@@ -8344,7 +8400,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_labios.Checked == true)
                 {
-                    inicial.inicial_labiosOroFa = "Si";
+                    inicial.inicial_labiosOroFa = "SI";
                 }
                 else
                 {
@@ -8352,7 +8408,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_senosparanasales.Checked == true)
                 {
-                    inicial.inicial_senosParanaNariz = "Si";
+                    inicial.inicial_senosParanaNariz = "SI";
                 }
                 else
                 {
@@ -8360,7 +8416,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_paredabdominal.Checked == true)
                 {
-                    inicial.inicial_paredAbdomiAbdomen = "Si";
+                    inicial.inicial_paredAbdomiAbdomen = "SI";
                 }
                 else
                 {
@@ -8368,7 +8424,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_miembrosuperiores.Checked == true)
                 {
-                    inicial.inicial_miemSupeExtre = "Si";
+                    inicial.inicial_miemSupeExtre = "SI";
                 }
                 else
                 {
@@ -8376,7 +8432,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_conjuntivas.Checked == true)
                 {
-                    inicial.inicial_conjuntuvasOjos = "Si";
+                    inicial.inicial_conjuntuvasOjos = "SI";
                 }
                 else
                 {
@@ -8384,7 +8440,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_lengua.Checked == true)
                 {
-                    inicial.inicial_lenguaOroFa = "Si";
+                    inicial.inicial_lenguaOroFa = "SI";
                 }
                 else
                 {
@@ -8392,7 +8448,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_tiroides.Checked == true)
                 {
-                    inicial.inicial_tiroiMasasCuello = "Si";
+                    inicial.inicial_tiroiMasasCuello = "SI";
                 }
                 else
                 {
@@ -8400,7 +8456,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_flexibilidad.Checked == true)
                 {
-                    inicial.inicial_flexibilidadColumna = "Si";
+                    inicial.inicial_flexibilidadColumna = "SI";
                 }
                 else
                 {
@@ -8408,7 +8464,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_miembrosinferiores.Checked == true)
                 {
-                    inicial.inicial_miemInfeExtre = "Si";
+                    inicial.inicial_miemInfeExtre = "SI";
                 }
                 else
                 {
@@ -8416,7 +8472,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_pupilas.Checked == true)
                 {
-                    inicial.inicial_pupilasOjos = "Si";
+                    inicial.inicial_pupilasOjos = "SI";
                 }
                 else
                 {
@@ -8424,7 +8480,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_faringe.Checked == true)
                 {
-                    inicial.inicial_faringeOroFa = "Si";
+                    inicial.inicial_faringeOroFa = "SI";
                 }
                 else
                 {
@@ -8432,7 +8488,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_movilidad.Checked == true)
                 {
-                    inicial.inicial_movilidadCuello = "Si";
+                    inicial.inicial_movilidadCuello = "SI";
                 }
                 else
                 {
@@ -8440,7 +8496,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_desviacion.Checked == true)
                 {
-                    inicial.inicial_desviacionColumna = "Si";
+                    inicial.inicial_desviacionColumna = "SI";
                 }
                 else
                 {
@@ -8448,7 +8504,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_fuerza.Checked == true)
                 {
-                    inicial.inicial_fuerzaNeuro = "Si";
+                    inicial.inicial_fuerzaNeuro = "SI";
                 }
                 else
                 {
@@ -8456,7 +8512,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_cornea.Checked == true)
                 {
-                    inicial.inicial_corneaOjos = "Si";
+                    inicial.inicial_corneaOjos = "SI";
                 }
                 else
                 {
@@ -8464,7 +8520,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_amigdalas.Checked == true)
                 {
-                    inicial.inicial_amigdalasOroFa = "Si";
+                    inicial.inicial_amigdalasOroFa = "SI";
                 }
                 else
                 {
@@ -8472,7 +8528,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_mamas.Checked == true)
                 {
-                    inicial.inicial_mamasTorax = "Si";
+                    inicial.inicial_mamasTorax = "SI";
                 }
                 else
                 {
@@ -8480,7 +8536,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_sensibilidad.Checked == true)
                 {
-                    inicial.inicial_sensibiNeuro = "Si";
+                    inicial.inicial_sensibiNeuro = "SI";
                 }
                 else
                 {
@@ -8488,7 +8544,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_motilidad.Checked == true)
                 {
-                    inicial.inicial_motilidadOjos = "Si";
+                    inicial.inicial_motilidadOjos = "SI";
                 }
                 else
                 {
@@ -8496,7 +8552,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_dentadura.Checked == true)
                 {
-                    inicial.inicial_dentaduraOroFa = "Si";
+                    inicial.inicial_dentaduraOroFa = "SI";
                 }
                 else
                 {
@@ -8504,7 +8560,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_corazon.Checked == true)
                 {
-                    inicial.inicial_corazonTorax = "Si";
+                    inicial.inicial_corazonTorax = "SI";
                 }
                 else
                 {
@@ -8512,7 +8568,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_dolor.Checked == true)
                 {
-                    inicial.inicial_dolorColumna = "Si";
+                    inicial.inicial_dolorColumna = "SI";
                 }
                 else
                 {
@@ -8520,7 +8576,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_marcha.Checked == true)
                 {
-                    inicial.inicial_marchaNeuro = "Si";
+                    inicial.inicial_marchaNeuro = "SI";
                 }
                 else
                 {
@@ -8528,7 +8584,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_reflejos.Checked == true)
                 {
-                    inicial.inicial_refleNeuro = "Si";
+                    inicial.inicial_refleNeuro = "SI";
                 }
                 else
                 {
@@ -8536,7 +8592,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_pre.Checked == true)
                 {
-                    inicial.inicial_pre = "Si";
+                    inicial.inicial_pre = "SI";
                 }
                 else
                 {
@@ -8544,7 +8600,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_def.Checked == true)
                 {
-                    inicial.inicial_def = "Si";
+                    inicial.inicial_def = "SI";
                 }
                 else
                 {
@@ -8552,7 +8608,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_pre2.Checked == true)
                 {
-                    inicial.inicial_pre2 = "Si";
+                    inicial.inicial_pre2 = "SI";
                 }
                 else
                 {
@@ -8560,7 +8616,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_def2.Checked == true)
                 {
-                    inicial.inicial_def2 = "Si";
+                    inicial.inicial_def2 = "SI";
                 }
                 else
                 {
@@ -8568,7 +8624,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_pre3.Checked == true)
                 {
-                    inicial.inicial_pre3 = "Si";
+                    inicial.inicial_pre3 = "SI";
                 }
                 else
                 {
@@ -8576,7 +8632,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_def3.Checked == true)
                 {
-                    inicial.inicial_def3 = "Si";
+                    inicial.inicial_def3 = "SI";
                 }
                 else
                 {
@@ -8584,7 +8640,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_apto.Checked == true)
                 {
-                    inicial.inicial_apto = "Si";
+                    inicial.inicial_apto = "SI";
                 }
                 else
                 {
@@ -8592,7 +8648,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_aptoobservacion.Checked == true)
                 {
-                    inicial.inicial_aptoObserva = "Si";
+                    inicial.inicial_aptoObserva = "SI";
                 }
                 else
                 {
@@ -8600,7 +8656,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_aptolimitacion.Checked == true)
                 {
-                    inicial.inicial_NoApto = "Si";
+                    inicial.inicial_NoApto = "SI";
                 }
                 else
                 {
@@ -8608,7 +8664,7 @@ namespace SistemaECU911.Template.Views
                 }
                 if (ckb_noapto.Checked == true)
                 {
-                    inicial.inicial_NoApto = "Si";
+                    inicial.inicial_NoApto = "SI";
                 }
                 else
                 {
@@ -9101,7 +9157,9 @@ namespace SistemaECU911.Template.Views
             {
                 cbk_sidiscapacidad.Checked = false;
                 txt_tipodiscapacidad.Enabled = false;
+                txt_tipodiscapacidad.Text = "";
                 txt_porcentajediscapacidad.Enabled = false;
+                txt_porcentajediscapacidad.Text = "";
             }
         }
 
@@ -9136,6 +9194,7 @@ namespace SistemaECU911.Template.Views
             {
                 ckb_siMetPlaniAntGinObste.Checked = false;
                 txt_tipoMetPlaniAntGinObste.Enabled = false;
+                txt_tipoMetPlaniAntGinObste.Text = "";
             }
         }
 
@@ -9155,7 +9214,9 @@ namespace SistemaECU911.Template.Views
             {
                 ckb_siPapaniAntGinObste.Checked = false;
                 txt_tiempoPapaniAntGinObste.Enabled = false;
+                txt_tiempoPapaniAntGinObste.Text = "";
                 txt_resultadoPapaniAntGinObste.Enabled = false;
+                txt_resultadoPapaniAntGinObste.Text = "";
             }
         }
 
@@ -9175,7 +9236,9 @@ namespace SistemaECU911.Template.Views
             {
                 ckb_siEcoMamaAntGinObste.Checked = false;
                 txt_tiempoEcoMamaAntGinObste.Enabled = false;
+                txt_tiempoEcoMamaAntGinObste.Text = "";
                 txt_resultadoEcoMamaAntGinObste.Enabled = false;
+                txt_resultadoEcoMamaAntGinObste.Text = "";
             }
         }
 
@@ -9195,7 +9258,9 @@ namespace SistemaECU911.Template.Views
             {
                 ckb_siColposAntGinObste.Checked = false;
                 txt_tiempoColposAntGinObste.Enabled = false;
+                txt_tiempoColposAntGinObste.Text = "";
                 txt_resultadoColposAntGinObste.Enabled = false;
+                txt_resultadoColposAntGinObste.Text = "";
             }
         }
 
@@ -9215,7 +9280,9 @@ namespace SistemaECU911.Template.Views
             {
                 ckb_siMamograAntGinObste.Checked = false;
                 txt_tiempoMamograAntGinObste.Enabled = false;
+                txt_tiempoMamograAntGinObste.Text = "";
                 txt_resultadoMamograAntGinObste.Enabled = false;
+                txt_resultadoMamograAntGinObste.Text = "";
             }
         }
 
@@ -9235,7 +9302,9 @@ namespace SistemaECU911.Template.Views
             {
                 ckb_siExaRealiAntProstaAntReproMascu.Checked = false;
                 txt_tiempoExaRealiAntProstaAntReproMascu.Enabled = false;
+                txt_tiempoExaRealiAntProstaAntReproMascu.Text = "";
                 txt_resultadoExaRealiAntProstaAntReproMascu.Enabled = false;
+                txt_resultadoExaRealiAntProstaAntReproMascu.Text = "";
             }
         }
 
@@ -9255,7 +9324,9 @@ namespace SistemaECU911.Template.Views
             {
                 ckb_siMetPlaniAntReproMascu.Checked = false;
                 txt_tipo1MetPlaniAntReproMascu.Enabled = false;
+                txt_tipo1MetPlaniAntReproMascu.Text = "";
                 txt_tipo2MetPlaniAntReproMascu.Enabled = false;
+                txt_tipo2MetPlaniAntReproMascu.Text = "";
             }
         }
 
@@ -9276,8 +9347,11 @@ namespace SistemaECU911.Template.Views
             {
                 ckb_siExaRealiEcoProstaAntReproMascu.Checked = false;
                 txt_tiempoExaRealiEcoProstaAntReproMascu.Enabled = false;
+                txt_tiempoExaRealiEcoProstaAntReproMascu.Text = "";
                 txt_resultadoExaRealiEcoProstaAntReproMascu.Enabled = false;
+                txt_resultadoExaRealiEcoProstaAntReproMascu.Text = "";
                 txt_tipo2MetPlaniAntReproMascu.Enabled = false;
+                txt_tipo2MetPlaniAntReproMascu.Text = "";
             }
         }
 
@@ -9289,14 +9363,6 @@ namespace SistemaECU911.Template.Views
                 txt_cantiConsuNociTabaHabToxi.Enabled = true;
                 txt_exConsumiConsuNociTabaHabToxi.Enabled = true;
                 txt_tiemAbstiConsuNociTabaHabToxi.Enabled = true;
-                ckb_noConsuNociTabaHabToxi.Checked = false;
-            }
-            else
-            {
-                txt_tiemConConsuNociTabaHabToxi.Enabled = false;
-                txt_cantiConsuNociTabaHabToxi.Enabled = false;
-                txt_exConsumiConsuNociTabaHabToxi.Enabled = false;
-                txt_tiemAbstiConsuNociTabaHabToxi.Enabled = false;
                 ckb_noConsuNociTabaHabToxi.Checked = false;
             }
         }
@@ -9325,14 +9391,6 @@ namespace SistemaECU911.Template.Views
                 txt_cantiConsuNociAlcoHabToxi.Enabled = true;
                 txt_exConsumiConsuNociAlcoHabToxi.Enabled = true;
                 txt_tiemAbstiConsuNociAlcoHabToxi.Enabled = true;
-                ckb_noConsuNociAlcoHabToxi.Checked = false;
-            }
-            else
-            {
-                txt_tiemConConsuNociAlcoHabToxi.Enabled = false;
-                txt_cantiConsuNociAlcoHabToxi.Enabled = false;
-                txt_exConsumiConsuNociAlcoHabToxi.Enabled = false;
-                txt_tiemAbstiConsuNociAlcoHabToxi.Enabled = false;
                 ckb_noConsuNociAlcoHabToxi.Checked = false;
             }
         }
@@ -9366,19 +9424,6 @@ namespace SistemaECU911.Template.Views
                 txt_canti2ConsuNociOtrasDroHabToxi.Enabled = true;
                 txt_exConsumi2ConsuNociOtrasDroHabToxi.Enabled = true;
                 txt_tiemAbsti2ConsuNociOtrasDroHabToxi.Enabled = true;
-                ckb_noConsuNociOtrasDroHabToxi.Checked = false;
-            }
-            else
-            {
-                txt_tiemCon1ConsuNociOtrasDroHabToxi.Enabled = false;
-                txt_canti1ConsuNociOtrasDroHabToxi.Enabled = false;
-                txt_exConsumi1ConsuNociOtrasDroHabToxi.Enabled = false;
-                txt_tiemAbsti1ConsuNociOtrasDroHabToxi.Enabled = false;
-                txt_otrasConsuNociOtrasDroHabToxi.Enabled = false;
-                txt_tiemCon2ConsuNociOtrasDroHabToxi.Enabled = false;
-                txt_canti2ConsuNociOtrasDroHabToxi.Enabled = false;
-                txt_exConsumi2ConsuNociOtrasDroHabToxi.Enabled = false;
-                txt_tiemAbsti2ConsuNociOtrasDroHabToxi.Enabled = false;
                 ckb_noConsuNociOtrasDroHabToxi.Checked = false;
             }
         }
@@ -9417,12 +9462,6 @@ namespace SistemaECU911.Template.Views
                 txt_tiemCanEstVidaActFisiEstVida.Enabled = true;
                 ckb_noEstVidaActFisiEstVida.Checked = false;
             }
-            else
-            {
-                txt_cualEstVidaActFisiEstVida.Enabled = false;
-                txt_tiemCanEstVidaActFisiEstVida.Enabled = false;
-                ckb_noEstVidaActFisiEstVida.Checked = false;
-            }
         }
 
         protected void ckb_noEstVidaActFisiEstVida_CheckedChanged(object sender, EventArgs e)
@@ -9448,17 +9487,6 @@ namespace SistemaECU911.Template.Views
                 txt_cual3EstVidaMedHabiEstVida.Enabled = true;
                 txt_tiemCan3EstVidaMedHabiEstVida.Enabled = true;
                 ckb_noEstVidaMedHabiEstVida.Checked = false;
-            }
-            else
-            {
-                txt_cual1EstVidaMedHabiEstVida.Enabled = false;
-                txt_tiemCan1EstVidaMedHabiEstVida.Enabled = false;
-                txt_cual2EstVidaMedHabiEstVida.Enabled = false;
-                txt_tiemCan2EstVidaMedHabiEstVida.Enabled = false;
-                txt_cual3EstVidaMedHabiEstVida.Enabled = false;
-                txt_tiemCan3EstVidaMedHabiEstVida.Enabled = false;
-                ckb_noEstVidaMedHabiEstVida.Checked = false;
-
             }
         }
 
@@ -9781,13 +9809,6 @@ namespace SistemaECU911.Template.Views
                 txt_observaciones2.Enabled = true;
                 ckb_noAccTrabDescrip.Checked = false;
             }
-            else
-            {
-                txt_especificar.Enabled = false;
-                txt_fecha.Enabled = false;
-                txt_observaciones2.Enabled = false;
-                ckb_noAccTrabDescrip.Checked = false;
-            }
         }
 
         protected void ckb_noAccTrabDescrip_CheckedChanged(object sender, EventArgs e)
@@ -9811,13 +9832,6 @@ namespace SistemaECU911.Template.Views
                 txt_espeprofesional.Enabled = true;
                 txt_fechaprofesional.Enabled = true;
                 txt_observaciones3.Enabled = true;
-                ckb_noprofesional.Checked = false;
-            }
-            else
-            {
-                txt_espeprofesional.Enabled = false;
-                txt_fechaprofesional.Enabled = false;
-                txt_observaciones3.Enabled = false;
                 ckb_noprofesional.Checked = false;
             }
         }

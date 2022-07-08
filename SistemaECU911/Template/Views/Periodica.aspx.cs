@@ -243,7 +243,30 @@ namespace SistemaECU911.Template.Views
                         else
                         {
                             ckb_tempaltas.Checked = true;
-
+                        }
+                        if (perio.perio_temAltasFis2 == null)
+                        {
+                            ckb_tempaltas2.Checked = false;
+                        }
+                        else
+                        {
+                            ckb_tempaltas2.Checked = true;
+                        }
+                        if (perio.perio_temAltasFis3 == null)
+                        {
+                            ckb_tempaltas3.Checked = false;
+                        }
+                        else
+                        {
+                            ckb_tempaltas3.Checked = true;
+                        }
+                        if (perio.perio_temBajasFis == null)
+                        {
+                            ckb_tempbajas.Checked = false;
+                        }
+                        else
+                        {
+                            ckb_tempbajas.Checked = true;
                         }
                         if (perio.perio_temBajasFis2 == null)
                         {
@@ -252,7 +275,6 @@ namespace SistemaECU911.Template.Views
                         else
                         {
                             ckb_tempbajas2.Checked = true;
-
                         }
                         if (perio.perio_temBajasFis3 == null)
                         {
@@ -261,7 +283,6 @@ namespace SistemaECU911.Template.Views
                         else
                         {
                             ckb_tempbajas3.Checked = true;
-
                         }
                         if (perio.perio_radIonizanteFis == null)
                         {
@@ -1354,17 +1375,7 @@ namespace SistemaECU911.Template.Views
                         else
                         {
                             ckb_movrepetitivo.Checked = true;
-
-                        }
-                        if (perio.perio_movRepeErg == null)
-                        {
-                            ckb_movrepetitivo.Checked = false;
-                        }
-                        else
-                        {
-                            ckb_movrepetitivo.Checked = true;
-
-                        }
+                        }                        
                         if (perio.perio_movRepeErg2 == null)
                         {
                             ckb_movrepetitivo2.Checked = false;
@@ -1372,7 +1383,30 @@ namespace SistemaECU911.Template.Views
                         else
                         {
                             ckb_movrepetitivo2.Checked = true;
-
+                        }
+                        if (perio.perio_movRepeErg3 == null)
+                        {
+                            ckb_movrepetitivo3.Checked = false;
+                        }
+                        else
+                        {
+                            ckb_movrepetitivo3.Checked = true;
+                        }
+                        if (perio.perio_posForzaErg == null)
+                        {
+                            ckb_postforzadas.Checked = false;
+                        }
+                        else
+                        {
+                            ckb_postforzadas.Checked = true;
+                        }
+                        if (perio.perio_posForzaErg2 == null)
+                        {
+                            ckb_postforzadas2.Checked = false;
+                        }
+                        else
+                        {
+                            ckb_postforzadas2.Checked = true;
                         }
                         if (perio.perio_posForzaErg3 == null)
                         {
@@ -1381,7 +1415,6 @@ namespace SistemaECU911.Template.Views
                         else
                         {
                             ckb_postforzadas3.Checked = true;
-
                         }
                         if (perio.perio_trabPvdErg == null)
                         {
@@ -2669,7 +2702,7 @@ namespace SistemaECU911.Template.Views
 
             try
             {
-                per = CN_HistorialMedico.ObtenerIdPersonasxCedula(Convert.ToInt32(txt_numHClinica.Text));
+                per = CN_HistorialMedico.ObtenerIdPersonasxCedula(txt_numHClinica.Text);
 
                 int perso = Convert.ToInt32(per.Per_id.ToString());
 
@@ -2778,6 +2811,18 @@ namespace SistemaECU911.Template.Views
                 if (ckb_tempaltas.Checked == true)
                 {
                     perio.perio_temAltasFis = "SI";
+                }
+                if (ckb_tempaltas2.Checked == true)
+                {
+                    perio.perio_temAltasFis2 = "SI";
+                }
+                if (ckb_tempaltas3.Checked == true)
+                {
+                    perio.perio_temAltasFis3 = "SI";
+                }
+                if (ckb_tempbajas.Checked == true)
+                {
+                    perio.perio_temBajasFis = "SI";
                 }
                 if (ckb_tempbajas2.Checked == true)
                 {
@@ -3275,13 +3320,21 @@ namespace SistemaECU911.Template.Views
                 {
                     perio.perio_movRepeErg = "SI";
                 }
-                if (ckb_movrepetitivo.Checked == true)
-                {
-                    perio.perio_movRepeErg = "SI";
-                }
                 if (ckb_movrepetitivo2.Checked == true)
                 {
                     perio.perio_movRepeErg2 = "SI";
+                }
+                if (ckb_movrepetitivo3.Checked == true)
+                {
+                    perio.perio_movRepeErg3 = "SI";
+                }                
+                if (ckb_postforzadas.Checked == true)
+                {
+                    perio.perio_posForzaErg = "SI";
+                }
+                if (ckb_postforzadas2.Checked == true)
+                {
+                    perio.perio_posForzaErg2 = "SI";
                 }
                 if (ckb_postforzadas3.Checked == true)
                 {
@@ -4037,6 +4090,30 @@ namespace SistemaECU911.Template.Views
                 else
                 {
                     perio.perio_temAltasFis = null;
+                }
+                if (ckb_tempaltas2.Checked == true)
+                {
+                    perio.perio_temAltasFis2 = "SI";
+                }
+                else
+                {
+                    perio.perio_temAltasFis2 = null;
+                }
+                if (ckb_tempaltas3.Checked == true)
+                {
+                    perio.perio_temAltasFis3 = "SI";
+                }
+                else
+                {
+                    perio.perio_temAltasFis3 = null;
+                }
+                if (ckb_tempbajas.Checked == true)
+                {
+                    perio.perio_temBajasFis = "SI";
+                }
+                else
+                {
+                    perio.perio_temBajasFis = null;
                 }
                 if (ckb_tempbajas2.Checked == true)
                 {
@@ -5026,14 +5103,6 @@ namespace SistemaECU911.Template.Views
                 {
                     perio.perio_movRepeErg = null;
                 }
-                if (ckb_movrepetitivo.Checked == true)
-                {
-                    perio.perio_movRepeErg = "SI";
-                }
-                else
-                {
-                    perio.perio_movRepeErg = null;
-                }
                 if (ckb_movrepetitivo2.Checked == true)
                 {
                     perio.perio_movRepeErg2 = "SI";
@@ -5041,6 +5110,30 @@ namespace SistemaECU911.Template.Views
                 else
                 {
                     perio.perio_movRepeErg2 = null;
+                }
+                if (ckb_movrepetitivo3.Checked == true)
+                {
+                    perio.perio_movRepeErg3 = "SI";
+                }
+                else
+                {
+                    perio.perio_movRepeErg3 = null;
+                }                
+                if (ckb_postforzadas.Checked == true)
+                {
+                    perio.perio_posForzaErg = "SI";
+                }
+                else
+                {
+                    perio.perio_posForzaErg = null;
+                }
+                if (ckb_postforzadas2.Checked == true)
+                {
+                    perio.perio_posForzaErg2 = "SI";
+                }
+                else
+                {
+                    perio.perio_posForzaErg2 = null;
                 }
                 if (ckb_postforzadas3.Checked == true)
                 {

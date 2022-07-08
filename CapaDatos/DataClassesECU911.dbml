@@ -4,7 +4,6 @@
     <Type Name="cie10">
       <Column Name="id10" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="dec10" Type="System.String" DbType="VarChar(400)" CanBeNull="true" />
-      <Column Name="grp10" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.Tbl_Usuario" Member="Tbl_Usuario">
@@ -1431,18 +1430,18 @@
   <Table Name="dbo.Tbl_Personas" Member="Tbl_Personas">
     <Type Name="Tbl_Personas">
       <Column Name="Per_id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Per_cedula" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Per_cedula" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Column Name="Per_priApellido" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
       <Column Name="Per_segApellido" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
       <Column Name="Per_priNombre" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
       <Column Name="Per_segNombre" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
-      <Column Name="Per_fechaNacimiento" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="Per_genero" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="Per_fechaNacimiento" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Per_genero" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
       <Column Name="Emp_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Per_puestoTrabajo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="Per_cargoOcupacion" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="Per_areaTrabajo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="Per_fechInicioTrabajo" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Per_fechInicioTrabajo" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Column Name="Per_estado" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
       <Association Name="Tbl_Personas_Tbl_Certificado" Member="Tbl_Certificado" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Certificado" />
       <Association Name="Tbl_Personas_Tbl_Evolucion" Member="Tbl_Evolucion" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Evolucion" />

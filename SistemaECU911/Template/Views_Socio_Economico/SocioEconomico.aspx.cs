@@ -1632,7 +1632,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             try
             {
-                per = CN_HistorialMedico.ObtenerIdPersonasxCedula(Convert.ToInt32(txt_cedula.Text));
+                //per = CN_HistorialMedico.ObtenerIdPersonasxCedula(Convert.ToInt32(txt_cedula.Text));
 
                 int perso = Convert.ToInt32(per.Per_id.ToString());
 

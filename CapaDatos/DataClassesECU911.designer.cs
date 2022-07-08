@@ -271,8 +271,6 @@ namespace CapaDatos
 		
 		private string _dec10;
 		
-		private string _grp10;
-		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -281,8 +279,6 @@ namespace CapaDatos
     partial void Onid10Changed();
     partial void Ondec10Changing(string value);
     partial void Ondec10Changed();
-    partial void Ongrp10Changing(string value);
-    partial void Ongrp10Changed();
     #endregion
 		
 		public cie10()
@@ -326,26 +322,6 @@ namespace CapaDatos
 					this._dec10 = value;
 					this.SendPropertyChanged("dec10");
 					this.Ondec10Changed();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_grp10", DbType="VarChar(200)")]
-		public string grp10
-		{
-			get
-			{
-				return this._grp10;
-			}
-			set
-			{
-				if ((this._grp10 != value))
-				{
-					this.Ongrp10Changing(value);
-					this.SendPropertyChanging();
-					this._grp10 = value;
-					this.SendPropertyChanged("grp10");
-					this.Ongrp10Changed();
 				}
 			}
 		}
@@ -34171,7 +34147,7 @@ namespace CapaDatos
 		
 		private string _Per_segNombre;
 		
-		private System.Nullable<System.DateTime> _Per_fechaNacimiento;
+		private string _Per_fechaNacimiento;
 		
 		private string _Per_genero;
 		
@@ -34183,7 +34159,7 @@ namespace CapaDatos
 		
 		private string _Per_areaTrabajo;
 		
-		private System.Nullable<System.DateTime> _Per_fechInicioTrabajo;
+		private string _Per_fechInicioTrabajo;
 		
 		private string _Per_estado;
 		
@@ -34225,7 +34201,7 @@ namespace CapaDatos
     partial void OnPer_priNombreChanged();
     partial void OnPer_segNombreChanging(string value);
     partial void OnPer_segNombreChanged();
-    partial void OnPer_fechaNacimientoChanging(System.Nullable<System.DateTime> value);
+    partial void OnPer_fechaNacimientoChanging(string value);
     partial void OnPer_fechaNacimientoChanged();
     partial void OnPer_generoChanging(string value);
     partial void OnPer_generoChanged();
@@ -34237,7 +34213,7 @@ namespace CapaDatos
     partial void OnPer_cargoOcupacionChanged();
     partial void OnPer_areaTrabajoChanging(string value);
     partial void OnPer_areaTrabajoChanged();
-    partial void OnPer_fechInicioTrabajoChanging(System.Nullable<System.DateTime> value);
+    partial void OnPer_fechInicioTrabajoChanging(string value);
     partial void OnPer_fechInicioTrabajoChanged();
     partial void OnPer_estadoChanging(string value);
     partial void OnPer_estadoChanged();
@@ -34279,7 +34255,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_cedula", DbType="VarChar(50)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_cedula", DbType="VarChar(10)")]
 		public string Per_cedula
 		{
 			get
@@ -34379,8 +34355,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_fechaNacimiento", DbType="Date")]
-		public System.Nullable<System.DateTime> Per_fechaNacimiento
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_fechaNacimiento", DbType="VarChar(10)")]
+		public string Per_fechaNacimiento
 		{
 			get
 			{
@@ -34399,7 +34375,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_genero", DbType="VarChar(2)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_genero", DbType="VarChar(1)")]
 		public string Per_genero
 		{
 			get
@@ -34503,8 +34479,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_fechInicioTrabajo", DbType="Date")]
-		public System.Nullable<System.DateTime> Per_fechInicioTrabajo
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_fechInicioTrabajo", DbType="VarChar(10)")]
+		public string Per_fechInicioTrabajo
 		{
 			get
 			{

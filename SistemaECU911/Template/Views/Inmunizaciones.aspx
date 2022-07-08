@@ -146,7 +146,11 @@
                             <asp:TableCell Text="DOSIS" Style="width: 50px; background-color: #cdfecc; font-size: 15px; text-transform: uppercase"></asp:TableCell>
                             <asp:TableCell Text="FECHA" Style="width: 100px; background-color: #cdfecc; font-size: 15px; text-transform: uppercase"></asp:TableCell>
                             <asp:TableCell Text="LOTE" Style="width: 100px; background-color: #cdfecc; font-size: 15px; text-transform: uppercase"></asp:TableCell>
+<<<<<<< Updated upstream
                             <asp:TableCell Text="ESQUEMA COMPLETO (marcar X)" Style="width: 100px; background-color: #cdfecc; font-size: 15px; text-transform: uppercase"></asp:TableCell>
+=======
+                            <asp:TableCell Text="ESQUEMA COMPLETO (marcar X)" Style="width: 110px; background-color: #cdfecc; font-size: 15px; text-transform: uppercase"></asp:TableCell>
+>>>>>>> Stashed changes
                             <asp:TableCell Text="NOMBRES COMPLETOS DEL RESPONSABLE DE LA VACUNACIÓN" Style="width: 175px; background-color: #cdfecc; font-size: 15px; text-transform: uppercase"></asp:TableCell>
                             <asp:TableCell Text="ESTABLACIMIENTO DE SALUD DONDE SE COLOCÓ LA VACUNA" Style="width: 175px; background-color: #cdfecc; font-size: 15px; text-transform: uppercase"></asp:TableCell>
                             <asp:TableCell Text="OBSERVACIONES" Style="width: 375px; background-color: #cdfecc; font-size: 15px; text-transform: uppercase"></asp:TableCell>
@@ -474,7 +478,7 @@
                         </asp:TableRow>
                         <asp:TableRow>
                             <asp:TableCell ColumnSpan="8" Style="background-color: white; font-size: 13px; text-align: left">
-                    <asp:Label  runat="server" Text="INMUNIZACIONES DE ACUERDO AL TIPO DE EMPRESA Y RIESGO" style="text-align:left"></asp:Label>
+                                <asp:Label  runat="server" Text="INMUNIZACIONES DE ACUERDO AL TIPO DE EMPRESA Y RIESGO" style="text-align:left; text-transform: uppercase"></asp:Label>
                             </asp:TableCell>
                         </asp:TableRow>
                         <asp:TableRow>
@@ -911,7 +915,7 @@
                         </asp:TableRow>
                         <asp:TableRow>
                             <asp:TableCell ColumnSpan="8" Style="background-color: white; font-size: 13px; text-align: left">
-                    <asp:Label  runat="server" Text="La vacuna de la Fiebre Amarilla es obligatoria para quien viva o se desplace en la Región Amazónica, su aplicación es hasta los 59 años de edad" style="text-align:left"></asp:Label>
+                    <asp:Label  runat="server" Text="La vacuna de la Fiebre Amarilla es obligatoria para quien viva o se desplace en la Región Amazónica, su aplicación es hasta los 59 años de edad" style="text-align:left; text-transform:uppercase"></asp:Label>
                             </asp:TableCell>
                         </asp:TableRow>
                     </asp:Table>
