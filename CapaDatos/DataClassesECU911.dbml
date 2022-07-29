@@ -8,7 +8,7 @@
   </Table>
   <Table Name="dbo.Tbl_Usuario" Member="Tbl_Usuario">
     <Type Name="Tbl_Usuario">
-      <Column Name="usu_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="usu_id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="usu_nombre" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
       <Column Name="usu_apellido" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
       <Column Name="usu_cedula" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
@@ -18,14 +18,15 @@
       <Column Name="usu_pass" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
       <Column Name="usu_correo" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
       <Column Name="usu_fechacreacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="usu_estado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
-      <Column Name="tusu_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="usu_estado" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="tusu_id" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
       <Association Name="Tbl_TipoUsuario_Tbl_Usuario" Member="Tbl_TipoUsuario" ThisKey="tusu_id" OtherKey="tusu_id" Type="Tbl_TipoUsuario" IsForeignKey="true" DeleteRule="CASCADE" />
     </Type>
   </Table>
   <Table Name="dbo.Tbl_Certificado" Member="Tbl_Certificado">
     <Type Name="Tbl_Certificado">
       <Column Name="certi_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="certi_ciiu" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
       <Column Name="certi_numArchivo" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
       <Column Name="certi_fechEmision" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Column Name="certi_ingreso" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
@@ -81,6 +82,7 @@
   <Table Name="dbo.Tbl_Evolucion" Member="Tbl_Evolucion">
     <Type Name="Tbl_Evolucion">
       <Column Name="evo_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="evo_ciiu" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
       <Column Name="evo_numArchivo" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
       <Column Name="evo_fecha1" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Column Name="evo_hora1" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
@@ -235,9 +237,17 @@
       <Association Name="Tbl_Profesional_Tbl_FichasMedicas" Member="Tbl_Profesional" ThisKey="prof_id" OtherKey="prof_id" Type="Tbl_Profesional" IsForeignKey="true" />
     </Type>
   </Table>
+  <Table Name="dbo.Tbl_Image" Member="Tbl_Image">
+    <Type Name="Tbl_Image">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Image" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Titulo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.Tbl_Inicial" Member="Tbl_Inicial">
     <Type Name="Tbl_Inicial">
       <Column Name="inicial_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="inicial_ciiu" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
       <Column Name="inicial_numArchivo" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
       <Column Name="inicial_catolicaRel" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
       <Column Name="inicial_evangelicaRel" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
@@ -761,6 +771,7 @@
   <Table Name="dbo.Tbl_Inmunizaciones" Member="Tbl_Inmunizaciones">
     <Type Name="Tbl_Inmunizaciones">
       <Column Name="inmu_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="inmu_ciiu" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
       <Column Name="inmu_numArchivo" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
       <Column Name="inmu_fechaTetanos1" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Column Name="inmu_loteTetanos1" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
@@ -852,6 +863,7 @@
       <Column Name="inmu_nomCompleResponVacuSarampion2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="inmu_estaSaludColocoVacuSarampion2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="inmu_observaSarampion2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="inmu_descripInmunizaciones" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_1fechaInmuAcuerTipoEmpRies1" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Column Name="inmu_1loteInmuAcuerTipoEmpRies1" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
       <Column Name="inmu_1esqueCompleInmuAcuerTipoEmpRies1" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
@@ -882,6 +894,7 @@
       <Column Name="inmu_1nomCompleResponVacuInmuAcuerTipoEmpRies5" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="inmu_1estaSaludColocoVacuInmuAcuerTipoEmpRies5" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="inmu_1observaInmuAcuerTipoEmpRies5" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="inmu_descripInmunizaciones2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_2fechaInmuAcuerTipoEmpRies1" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Column Name="inmu_2loteInmuAcuerTipoEmpRies1" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
       <Column Name="inmu_2esqueCompleInmuAcuerTipoEmpRies1" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
@@ -912,6 +925,68 @@
       <Column Name="inmu_2nomCompleResponVacuInmuAcuerTipoEmpRies5" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="inmu_2estaSaludColocoVacuInmuAcuerTipoEmpRies5" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="inmu_2observaInmuAcuerTipoEmpRies5" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="inmu_descripInmunizaciones3" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="inmu_3fechaInmuAcuerTipoEmpRies1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="inmu_3loteInmuAcuerTipoEmpRies1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="inmu_3esqueCompleInmuAcuerTipoEmpRies1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="inmu_3nomCompleResponVacuInmuAcuerTipoEmpRies1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="inmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="inmu_3observaInmuAcuerTipoEmpRies1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="inmu_3fechaInmuAcuerTipoEmpRies2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="inmu_3loteInmuAcuerTipoEmpRies2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="inmu_3esqueCompleInmuAcuerTipoEmpRies2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="inmu_3nomCompleResponVacuInmuAcuerTipoEmpRies2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="inmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="inmu_3observaInmuAcuerTipoEmpRies2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="inmu_3fechaInmuAcuerTipoEmpRies3" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="inmu_3loteInmuAcuerTipoEmpRies3" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="inmu_3esqueCompleInmuAcuerTipoEmpRies3" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="inmu_3nomCompleResponVacuInmuAcuerTipoEmpRies3" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="inmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies3" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="inmu_3observaInmuAcuerTipoEmpRies3" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="inmu_3fechaInmuAcuerTipoEmpRies4" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="inmu_3loteInmuAcuerTipoEmpRies4" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="inmu_3esqueCompleInmuAcuerTipoEmpRies4" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="inmu_3nomCompleResponVacuInmuAcuerTipoEmpRies4" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="inmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies4" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="inmu_3observaInmuAcuerTipoEmpRies4" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="inmu_3fechaInmuAcuerTipoEmpRies5" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="inmu_3loteInmuAcuerTipoEmpRies5" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="inmu_3esqueCompleInmuAcuerTipoEmpRies5" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="inmu_3nomCompleResponVacuInmuAcuerTipoEmpRies5" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="inmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies5" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="inmu_3observaInmuAcuerTipoEmpRies5" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="inmu_descripInmunizaciones4" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="inmu_4fechaInmuAcuerTipoEmpRies1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="inmu_4loteInmuAcuerTipoEmpRies1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="inmu_4esqueCompleInmuAcuerTipoEmpRies1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="inmu_4nomCompleResponVacuInmuAcuerTipoEmpRies1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="inmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="inmu_4observaInmuAcuerTipoEmpRies1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="inmu_4fechaInmuAcuerTipoEmpRies2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="inmu_4loteInmuAcuerTipoEmpRies2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="inmu_4esqueCompleInmuAcuerTipoEmpRies2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="inmu_4nomCompleResponVacuInmuAcuerTipoEmpRies2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="inmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="inmu_4observaInmuAcuerTipoEmpRies2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="inmu_4fechaInmuAcuerTipoEmpRies3" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="inmu_4loteInmuAcuerTipoEmpRies3" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="inmu_4esqueCompleInmuAcuerTipoEmpRies3" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="inmu_4nomCompleResponVacuInmuAcuerTipoEmpRies3" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="inmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies3" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="inmu_4observaInmuAcuerTipoEmpRies3" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="inmu_4fechaInmuAcuerTipoEmpRies4" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="inmu_4loteInmuAcuerTipoEmpRies4" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="inmu_4esqueCompleInmuAcuerTipoEmpRies4" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="inmu_4nomCompleResponVacuInmuAcuerTipoEmpRies4" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="inmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies4" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="inmu_4observaInmuAcuerTipoEmpRies4" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="inmu_4fechaInmuAcuerTipoEmpRies5" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="inmu_4loteInmuAcuerTipoEmpRies5" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="inmu_4esqueCompleInmuAcuerTipoEmpRies5" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="inmu_4nomCompleResponVacuInmuAcuerTipoEmpRies5" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="inmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies5" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="inmu_4observaInmuAcuerTipoEmpRies5" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="Per_id" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
       <Column Name="inmu_fechaHoraGuardado" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="inmu_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
@@ -921,6 +996,7 @@
   <Table Name="dbo.Tbl_PedidoExamenes" Member="Tbl_PedidoExamenes">
     <Type Name="Tbl_PedidoExamenes">
       <Column Name="pedExa_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="pedExa_ciiu" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
       <Column Name="pedExa_numArchivo" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
       <Column Name="pedExa_bioHematicaHema" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
       <Column Name="pedExa_hematocritoHema" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
@@ -1080,6 +1156,7 @@
   <Table Name="dbo.Tbl_Periodica" Member="Tbl_Periodica">
     <Type Name="Tbl_Periodica">
       <Column Name="perio_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="perio_ciiu" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
       <Column Name="perio_numArchivo" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
       <Column Name="perio_descripMotiConsulta" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="perio_descripcionAntCliQuirurgicos" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
@@ -1472,6 +1549,7 @@
   <Table Name="dbo.Tbl_Reintegro" Member="Tbl_Reintegro">
     <Type Name="Tbl_Reintegro">
       <Column Name="rein_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="rein_ciiu" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
       <Column Name="rein_numArchivo" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
       <Column Name="rein__fechUltDiaLaboral" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Column Name="rein_fechReingreso" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
@@ -1574,6 +1652,7 @@
   <Table Name="dbo.Tbl_Retiro" Member="Tbl_Retiro">
     <Type Name="Tbl_Retiro">
       <Column Name="ret_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ret_ciiu" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
       <Column Name="ret_numArchivo" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
       <Column Name="ret_fechIniLaboral" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Column Name="ret_fechSalida" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
@@ -1962,6 +2041,7 @@
       <Column Name="Socio_economico_informacion_adicional" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="Socio_economico_informacion_general_real_si" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
       <Column Name="Socio_economico_informacion_general_real_no" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="Socio_economico_imagen_geolocalizacion" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
       <Column Name="Socio_economico_fechaHora" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
       <Column Name="Per_id" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
       <Column Name="Socio_economico_fechaHoraGuardado" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
@@ -1978,9 +2058,9 @@
   </Table>
   <Table Name="dbo.Tbl_TipoUsuario" Member="Tbl_TipoUsuario">
     <Type Name="Tbl_TipoUsuario">
-      <Column Name="tusu_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="tusu_id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="tusu_nombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="tusu_estado" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="tusu_estado" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Association Name="Tbl_TipoUsuario_Tbl_Usuario" Member="Tbl_Usuario" ThisKey="tusu_id" OtherKey="tusu_id" Type="Tbl_Usuario" />
     </Type>
   </Table>

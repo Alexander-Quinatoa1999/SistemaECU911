@@ -969,6 +969,15 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_observaSarampion2;
 
         /// <summary>
+        /// Control txt_descripInmunizaciones.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_descripInmunizaciones;
+
+        /// <summary>
         /// Control txt_1fechaInmuAcuerTipoEmpRies1.
         /// </summary>
         /// <remarks>
@@ -1239,6 +1248,15 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_1observaInmuAcuerTipoEmpRies5;
 
         /// <summary>
+        /// Control txt_descripInmunizaciones2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_descripInmunizaciones2;
+
+        /// <summary>
         /// Control txt_2fechaInmuAcuerTipoEmpRies1.
         /// </summary>
         /// <remarks>
@@ -1507,6 +1525,564 @@ namespace SistemaECU911.Template.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_2observaInmuAcuerTipoEmpRies5;
+
+        /// <summary>
+        /// Control txt_descripInmunizaciones3.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_descripInmunizaciones3;
+
+        /// <summary>
+        /// Control txt_3fechaInmuAcuerTipoEmpRies1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_3fechaInmuAcuerTipoEmpRies1;
+
+        /// <summary>
+        /// Control txt_3loteInmuAcuerTipoEmpRies1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_3loteInmuAcuerTipoEmpRies1;
+
+        /// <summary>
+        /// Control txt_3esqueCompleInmuAcuerTipoEmpRies1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_3esqueCompleInmuAcuerTipoEmpRies1;
+
+        /// <summary>
+        /// Control txt_3nomCompleResponVacuInmuAcuerTipoEmpRies1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_3nomCompleResponVacuInmuAcuerTipoEmpRies1;
+
+        /// <summary>
+        /// Control txt_3estaSaludColocoVacuInmuAcuerTipoEmpRies1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_3estaSaludColocoVacuInmuAcuerTipoEmpRies1;
+
+        /// <summary>
+        /// Control txt_3observaInmuAcuerTipoEmpRies1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_3observaInmuAcuerTipoEmpRies1;
+
+        /// <summary>
+        /// Control txt_3fechaInmuAcuerTipoEmpRies2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_3fechaInmuAcuerTipoEmpRies2;
+
+        /// <summary>
+        /// Control txt_3loteInmuAcuerTipoEmpRies2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_3loteInmuAcuerTipoEmpRies2;
+
+        /// <summary>
+        /// Control txt_3esqueCompleInmuAcuerTipoEmpRies2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_3esqueCompleInmuAcuerTipoEmpRies2;
+
+        /// <summary>
+        /// Control txt_3nomCompleResponVacuInmuAcuerTipoEmpRies2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_3nomCompleResponVacuInmuAcuerTipoEmpRies2;
+
+        /// <summary>
+        /// Control txt_3estaSaludColocoVacuInmuAcuerTipoEmpRies2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_3estaSaludColocoVacuInmuAcuerTipoEmpRies2;
+
+        /// <summary>
+        /// Control txt_3observaInmuAcuerTipoEmpRies2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_3observaInmuAcuerTipoEmpRies2;
+
+        /// <summary>
+        /// Control txt_3fechaInmuAcuerTipoEmpRies3.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_3fechaInmuAcuerTipoEmpRies3;
+
+        /// <summary>
+        /// Control txt_3loteInmuAcuerTipoEmpRies3.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_3loteInmuAcuerTipoEmpRies3;
+
+        /// <summary>
+        /// Control txt_3esqueCompleInmuAcuerTipoEmpRies3.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_3esqueCompleInmuAcuerTipoEmpRies3;
+
+        /// <summary>
+        /// Control txt_3nomCompleResponVacuInmuAcuerTipoEmpRies3.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_3nomCompleResponVacuInmuAcuerTipoEmpRies3;
+
+        /// <summary>
+        /// Control txt_3estaSaludColocoVacuInmuAcuerTipoEmpRies3.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_3estaSaludColocoVacuInmuAcuerTipoEmpRies3;
+
+        /// <summary>
+        /// Control txt_3observaInmuAcuerTipoEmpRies3.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_3observaInmuAcuerTipoEmpRies3;
+
+        /// <summary>
+        /// Control txt_3fechaInmuAcuerTipoEmpRies4.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_3fechaInmuAcuerTipoEmpRies4;
+
+        /// <summary>
+        /// Control txt_3loteInmuAcuerTipoEmpRies4.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_3loteInmuAcuerTipoEmpRies4;
+
+        /// <summary>
+        /// Control txt_3esqueCompleInmuAcuerTipoEmpRies4.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_3esqueCompleInmuAcuerTipoEmpRies4;
+
+        /// <summary>
+        /// Control txt_3nomCompleResponVacuInmuAcuerTipoEmpRies4.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_3nomCompleResponVacuInmuAcuerTipoEmpRies4;
+
+        /// <summary>
+        /// Control txt_3estaSaludColocoVacuInmuAcuerTipoEmpRies4.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_3estaSaludColocoVacuInmuAcuerTipoEmpRies4;
+
+        /// <summary>
+        /// Control txt_3observaInmuAcuerTipoEmpRies4.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_3observaInmuAcuerTipoEmpRies4;
+
+        /// <summary>
+        /// Control txt_3fechaInmuAcuerTipoEmpRies5.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_3fechaInmuAcuerTipoEmpRies5;
+
+        /// <summary>
+        /// Control txt_3loteInmuAcuerTipoEmpRies5.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_3loteInmuAcuerTipoEmpRies5;
+
+        /// <summary>
+        /// Control txt_3esqueCompleInmuAcuerTipoEmpRies5.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_3esqueCompleInmuAcuerTipoEmpRies5;
+
+        /// <summary>
+        /// Control txt_3nomCompleResponVacuInmuAcuerTipoEmpRies5.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_3nomCompleResponVacuInmuAcuerTipoEmpRies5;
+
+        /// <summary>
+        /// Control txt_3estaSaludColocoVacuInmuAcuerTipoEmpRies5.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_3estaSaludColocoVacuInmuAcuerTipoEmpRies5;
+
+        /// <summary>
+        /// Control txt_3observaInmuAcuerTipoEmpRies5.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_3observaInmuAcuerTipoEmpRies5;
+
+        /// <summary>
+        /// Control txt_descripInmunizaciones4.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_descripInmunizaciones4;
+
+        /// <summary>
+        /// Control txt_4fechaInmuAcuerTipoEmpRies1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_4fechaInmuAcuerTipoEmpRies1;
+
+        /// <summary>
+        /// Control txt_4loteInmuAcuerTipoEmpRies1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_4loteInmuAcuerTipoEmpRies1;
+
+        /// <summary>
+        /// Control txt_4esqueCompleInmuAcuerTipoEmpRies1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_4esqueCompleInmuAcuerTipoEmpRies1;
+
+        /// <summary>
+        /// Control txt_4nomCompleResponVacuInmuAcuerTipoEmpRies1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_4nomCompleResponVacuInmuAcuerTipoEmpRies1;
+
+        /// <summary>
+        /// Control txt_4estaSaludColocoVacuInmuAcuerTipoEmpRies1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_4estaSaludColocoVacuInmuAcuerTipoEmpRies1;
+
+        /// <summary>
+        /// Control txt_4observaInmuAcuerTipoEmpRies1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_4observaInmuAcuerTipoEmpRies1;
+
+        /// <summary>
+        /// Control txt_4fechaInmuAcuerTipoEmpRies2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_4fechaInmuAcuerTipoEmpRies2;
+
+        /// <summary>
+        /// Control txt_4loteInmuAcuerTipoEmpRies2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_4loteInmuAcuerTipoEmpRies2;
+
+        /// <summary>
+        /// Control txt_4esqueCompleInmuAcuerTipoEmpRies2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_4esqueCompleInmuAcuerTipoEmpRies2;
+
+        /// <summary>
+        /// Control txt_4nomCompleResponVacuInmuAcuerTipoEmpRies2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_4nomCompleResponVacuInmuAcuerTipoEmpRies2;
+
+        /// <summary>
+        /// Control txt_4estaSaludColocoVacuInmuAcuerTipoEmpRies2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_4estaSaludColocoVacuInmuAcuerTipoEmpRies2;
+
+        /// <summary>
+        /// Control txt_4observaInmuAcuerTipoEmpRies2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_4observaInmuAcuerTipoEmpRies2;
+
+        /// <summary>
+        /// Control txt_4fechaInmuAcuerTipoEmpRies3.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_4fechaInmuAcuerTipoEmpRies3;
+
+        /// <summary>
+        /// Control txt_4loteInmuAcuerTipoEmpRies3.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_4loteInmuAcuerTipoEmpRies3;
+
+        /// <summary>
+        /// Control txt_4esqueCompleInmuAcuerTipoEmpRies3.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_4esqueCompleInmuAcuerTipoEmpRies3;
+
+        /// <summary>
+        /// Control txt_4nomCompleResponVacuInmuAcuerTipoEmpRies3.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_4nomCompleResponVacuInmuAcuerTipoEmpRies3;
+
+        /// <summary>
+        /// Control txt_4estaSaludColocoVacuInmuAcuerTipoEmpRies3.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_4estaSaludColocoVacuInmuAcuerTipoEmpRies3;
+
+        /// <summary>
+        /// Control txt_4observaInmuAcuerTipoEmpRies3.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_4observaInmuAcuerTipoEmpRies3;
+
+        /// <summary>
+        /// Control txt_4fechaInmuAcuerTipoEmpRies4.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_4fechaInmuAcuerTipoEmpRies4;
+
+        /// <summary>
+        /// Control txt_4loteInmuAcuerTipoEmpRies4.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_4loteInmuAcuerTipoEmpRies4;
+
+        /// <summary>
+        /// Control txt_4esqueCompleInmuAcuerTipoEmpRies4.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_4esqueCompleInmuAcuerTipoEmpRies4;
+
+        /// <summary>
+        /// Control txt_4nomCompleResponVacuInmuAcuerTipoEmpRies4.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_4nomCompleResponVacuInmuAcuerTipoEmpRies4;
+
+        /// <summary>
+        /// Control txt_4estaSaludColocoVacuInmuAcuerTipoEmpRies4.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_4estaSaludColocoVacuInmuAcuerTipoEmpRies4;
+
+        /// <summary>
+        /// Control txt_4observaInmuAcuerTipoEmpRies4.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_4observaInmuAcuerTipoEmpRies4;
+
+        /// <summary>
+        /// Control txt_4fechaInmuAcuerTipoEmpRies5.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_4fechaInmuAcuerTipoEmpRies5;
+
+        /// <summary>
+        /// Control txt_4loteInmuAcuerTipoEmpRies5.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_4loteInmuAcuerTipoEmpRies5;
+
+        /// <summary>
+        /// Control txt_4esqueCompleInmuAcuerTipoEmpRies5.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_4esqueCompleInmuAcuerTipoEmpRies5;
+
+        /// <summary>
+        /// Control txt_4nomCompleResponVacuInmuAcuerTipoEmpRies5.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_4nomCompleResponVacuInmuAcuerTipoEmpRies5;
+
+        /// <summary>
+        /// Control txt_4estaSaludColocoVacuInmuAcuerTipoEmpRies5.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_4estaSaludColocoVacuInmuAcuerTipoEmpRies5;
+
+        /// <summary>
+        /// Control txt_4observaInmuAcuerTipoEmpRies5.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_4observaInmuAcuerTipoEmpRies5;
 
         /// <summary>
         /// Control btn_guardar.

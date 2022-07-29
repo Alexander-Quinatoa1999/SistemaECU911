@@ -310,7 +310,7 @@
                                         <asp:TextBox runat="server" ID="txt_talla" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center; text-transform:uppercase" OnTextChanged="txt_talla_TextChanged" AutoPostBack="true"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white; font-size: 14px">
-                                        <asp:TextBox runat="server" ID="txt_indMasCorporal" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center; text-transform:uppercase"></asp:TextBox>
+                                        <asp:TextBox runat="server" ID="txt_indMasCorporal" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center; text-transform:uppercase" ReadOnly="true"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white; font-size: 14px">
                                         <asp:TextBox runat="server" ID="txt_perAbdominal" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center; text-transform:uppercase"></asp:TextBox>

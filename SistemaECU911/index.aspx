@@ -7,10 +7,15 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>ECU 911</title>
-    <link rel="stylesheet" href="Template/Template Principal/vendors/iconfonts/font-awesome/css/all.min.css" />
-    <link rel="stylesheet" href="Template/Template Principal/vendors/css/vendor.bundle.base.css" />
-    <link rel="stylesheet" href="Template/Template Principal/vendors/css/vendor.bundle.addons.css" />
-    <link rel="stylesheet" href="Template/Template Principal/css/style.css" />
+    <link rel="stylesheet" href="../Template/Template Principal/vendors/iconfonts/font-awesome/css/all.min.css" />
+    <link rel="stylesheet" href="../Template/Template Principal/vendors/iconfonts/font-awesome-6.1.1/css/all.min.css" />
+    <link rel="stylesheet" href="../Template/Template Principal/vendors/css/vendor.bundle.base.css" />
+    <link rel="stylesheet" href="../Template/Template Principal/vendors/css/vendor.bundle.addons.css" />
+    <link rel="stylesheet" href="../Template/Template Principal/css/style.css" />
+    <link rel="stylesheet" href="../Template/Template Principal/css/Style_Prueba.css" />
+    <link rel="stylesheet" href="../Template/Template Principal/css/style-andres.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="http://www.urbanui.com/" />
 </head>
 <body>
     <div class="container-scroller">
@@ -34,7 +39,7 @@
                                             <div class="input-group">
                                                 <div class="input-group-prepend bg-transparent">
                                                     <span class="input-group-text bg-transparent border-right-0">
-                                                        <i class="fa fa-user text-primary"></i>
+                                                        <i class="fa fa-user text-secondary"></i>
                                                     </span>
                                                 </div>
                                                 <asp:TextBox ID="txt_user" type="text" class="form-control form-control-lg border-left-0" placeholder="Nombre de usuario" runat="server"></asp:TextBox>
@@ -45,17 +50,17 @@
                                             <div class="input-group">
                                                 <div class="input-group-prepend bg-transparent">
                                                     <span class="input-group-text bg-transparent border-right-0">
-                                                        <i class="fa fa-lock text-primary"></i>
+                                                        <i class="fa fa-lock text-secondary"></i>
                                                     </span>
                                                 </div>
                                                 <asp:TextBox ID="txt_pass" type="password" class="form-control form-control-lg border-left-0" placeholder="Contraseña" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
                                         <div class="my-2 d-flex justify-content-between align-items-center">
-                                            <a href="#" class="auth-link text-black">Olvidaste tu contraseña?</a>
+                                            <a href="/Autentificacion/Recuperar.aspx" class="auth-link text-black">Olvidaste tu contraseña?</a>
                                         </div>
                                         <div class="my-3">
-                                            <asp:Button ID="btn_ingresar" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" type="submit" runat="server" Text="INGRESAR" OnClick="btn_ingresar_Click" />
+                                            <asp:Button ID="btn_ingresar" style="background-color: lightskyblue" class="btn btn-block btn-lg font-weight-medium auth-form-btn" type="submit" runat="server" Text="INGRESAR" OnClick="btn_ingresar_Click" />
                                         </div>
                                     </ContentTemplate>
                                 </asp:UpdatePanel>

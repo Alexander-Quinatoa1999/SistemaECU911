@@ -53,6 +53,7 @@ namespace SistemaECU911.Template.Views
                         {
 
                             //Datos Establecimiento
+                            txt_ciiu.Text = pedexa.pedExa_ciiu.ToString();
                             txt_numArchivo.Text = pedexa.pedExa_numArchivo.ToString();
 
                             //Hematologia
@@ -1989,6 +1990,7 @@ namespace SistemaECU911.Template.Views
                 }
 
                 //A.
+                pedexa.pedExa_ciiu = txt_ciiu.Text;
                 pedexa.pedExa_numArchivo = txt_numArchivo.Text;
 
                 pedexa.Per_id = perso;
@@ -3207,6 +3209,7 @@ namespace SistemaECU911.Template.Views
                 }
 
                 //A.
+                pedexa.pedExa_ciiu = txt_ciiu.Text;
                 pedexa.pedExa_numArchivo = txt_numArchivo.Text;
 
                 CN_PedidoExamenes.ModificarPedidoExamenes(pedexa);

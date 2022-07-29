@@ -56,7 +56,7 @@
             <div class="container" style="background-color: white; font-family: Arial">
                 <br />
                 <div class="container">
-                    <div class="text-center" style="font-size: 25px; font-weight:bold; font-family:Arial">
+                    <div class="text-center" style="font-size: 25px; font-weight: bold; font-family: Arial">
                         HISTORIA CLÍNICA OCUPACIONAL - PEDIDO EXAMENES
                     </div>
                 </div>
@@ -68,28 +68,28 @@
                     <div class="list-group list-group-flush">
                         <asp:Table class="table table-bordered table-light table-responsive text-center" runat="server">
                             <asp:TableRow>
-                                <asp:TableCell Text="INSTITUCIÓN DEL SISTEMA O NOMBRE DE LA EMPRESA" Style="width: 375px; background-color: #cdfecc; font-size: 15px; text-transform:uppercase"></asp:TableCell>
-                                <asp:TableCell Text="RUC" Style="width: 150px; background-color: #cdfecc; font-size: 15px; text-transform:uppercase"></asp:TableCell>
-                                <asp:TableCell Text="CIIU" Style="width: 150px; background-color: #cdfecc; font-size: 15px; text-transform:uppercase"></asp:TableCell>
-                                <asp:TableCell Text="ESTABLECIMIENTO DE SALUD" Style="width: 250px; background-color: #cdfecc; font-size: 15px; text-transform:uppercase"></asp:TableCell>
-                                <asp:TableCell Text="NÚMERO DE HISTORIA CLÍNICA" Style="width: 200px; background-color: #cdfecc; font-size: 15px; text-transform:uppercase"></asp:TableCell>
-                                <asp:TableCell Text="NÚMERO DE ARCHIVO" Style="width: 200px; background-color: #cdfecc; font-size: 15px; text-transform:uppercase"></asp:TableCell>
+                                <asp:TableCell Text="INSTITUCIÓN DEL SISTEMA O NOMBRE DE LA EMPRESA" Style="width: 375px; background-color: #cdfecc; font-size: 15px; text-transform: uppercase"></asp:TableCell>
+                                <asp:TableCell Text="RUC" Style="width: 150px; background-color: #cdfecc; font-size: 15px; text-transform: uppercase"></asp:TableCell>
+                                <asp:TableCell Text="CIIU" Style="width: 150px; background-color: #cdfecc; font-size: 15px; text-transform: uppercase"></asp:TableCell>
+                                <asp:TableCell Text="ESTABLECIMIENTO DE SALUD" Style="width: 250px; background-color: #cdfecc; font-size: 15px; text-transform: uppercase"></asp:TableCell>
+                                <asp:TableCell Text="NÚMERO DE HISTORIA CLÍNICA" Style="width: 200px; background-color: #cdfecc; font-size: 15px; text-transform: uppercase"></asp:TableCell>
+                                <asp:TableCell Text="NÚMERO DE ARCHIVO" Style="width: 200px; background-color: #cdfecc; font-size: 15px; text-transform: uppercase"></asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
                                 <asp:TableCell Style="background-color: white; font-size: 14px">
-                            <asp:TextBox runat="server" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center; text-transform:uppercase"></asp:TextBox>
+                            <asp:TextBox runat="server" ID="txt_nombreEmp" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center; text-transform:uppercase"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white; font-size: 14px">
-                            <asp:TextBox runat="server" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center; text-transform:uppercase"></asp:TextBox>
+                            <asp:TextBox runat="server" ID="txt_rucEmp" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center; text-transform:uppercase"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white; font-size: 14px">
-                            <asp:TextBox runat="server" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center; text-transform:uppercase"></asp:TextBox>
+                            <asp:TextBox runat="server" ID="txt_ciiu" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center; text-transform:uppercase"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white; font-size: 14px">
-                            <asp:TextBox runat="server" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center; text-transform:uppercase"></asp:TextBox>
+                            <asp:TextBox runat="server" ID="txt_estSalud" BorderStyle="None" style="background-color: transparent; width: 100%; text-align: center; text-transform:uppercase"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white; font-size: 14px">
-                                    <asp:TextBox runat="server" BorderStyle="None" ID="txt_numHClinica" Style="background-color: transparent; width: 100%; text-align: center; text-transform:uppercase" OnTextChanged="txt_numHClinica_TextChanged" AutoPostBack="true"></asp:TextBox>
+                                    <asp:TextBox runat="server" BorderStyle="None" ID="txt_numHClinica" Style="background-color: transparent; width: 100%; text-align: center; text-transform: uppercase" OnTextChanged="txt_numHClinica_TextChanged" AutoPostBack="true"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="rfv_numHClinica" runat="server" ForeColor="Red" ControlToValidate="txt_numHClinica" ErrorMessage="CAMPO OBLIGATORIO"></asp:RequiredFieldValidator>
                                     <ajaxToolkit:AutoCompleteExtender ID="AutoCompleteExtender2" runat="server" CompletionInterval="10" DelimiterCharacters="" Enabled="True"
                                         MinimumPrefixLength="1" ServiceMethod="ObtenerNumHClinica"
@@ -99,33 +99,33 @@
                                     </ajaxToolkit:AutoCompleteExtender>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white; font-size: 14px">
-                            <asp:TextBox runat="server" BorderStyle="None" ID="txt_numArchivo" style="background-color: transparent; width: 100%; text-align: center; text-transform:uppercase"></asp:TextBox>
+                                    <asp:TextBox runat="server" BorderStyle="None" ID="txt_numArchivo" Style="background-color: transparent; width: 100%; text-align: center; text-transform: uppercase"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                         </asp:Table>
                         <asp:Table class="table table-bordered table-light table-responsive text-center" runat="server">
                             <asp:TableRow>
-                                <asp:TableCell Text="PRIMER APELLIDO" Style="width: 300px; background-color: #cdfecc; font-size: 15px; text-transform:uppercase"></asp:TableCell>
-                                <asp:TableCell Text="SEGUNDO APELLIDO" Style="width: 300px; background-color: #cdfecc; font-size: 15px; text-transform:uppercase"></asp:TableCell>
-                                <asp:TableCell Text="PRIMER NOMBRE" Style="width: 300px; background-color: #cdfecc; font-size: 15px; text-transform:uppercase"></asp:TableCell>
-                                <asp:TableCell Text="SEGUNDO NOMBRE" Style="width: 300px; background-color: #cdfecc; font-size: 15px; text-transform:uppercase"></asp:TableCell>
-                                <asp:TableCell Text="EDAD" Style="width: 100px; background-color: #cdfecc; font-size: 15px; text-transform:uppercase"></asp:TableCell>
+                                <asp:TableCell Text="PRIMER APELLIDO" Style="width: 300px; background-color: #cdfecc; font-size: 15px; text-transform: uppercase"></asp:TableCell>
+                                <asp:TableCell Text="SEGUNDO APELLIDO" Style="width: 300px; background-color: #cdfecc; font-size: 15px; text-transform: uppercase"></asp:TableCell>
+                                <asp:TableCell Text="PRIMER NOMBRE" Style="width: 300px; background-color: #cdfecc; font-size: 15px; text-transform: uppercase"></asp:TableCell>
+                                <asp:TableCell Text="SEGUNDO NOMBRE" Style="width: 300px; background-color: #cdfecc; font-size: 15px; text-transform: uppercase"></asp:TableCell>
+                                <asp:TableCell Text="EDAD" Style="width: 100px; background-color: #cdfecc; font-size: 15px; text-transform: uppercase"></asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
                                 <asp:TableCell Style="background-color: white; font-size: 14px">
-                                    <asp:TextBox runat="server" ID="txt_priApellido" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform:uppercase"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_priApellido" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform: uppercase"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white; font-size: 14px">
-                                    <asp:TextBox runat="server" ID="txt_segApellido" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform:uppercase"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_segApellido" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform: uppercase"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white; font-size: 14px">
-                                    <asp:TextBox runat="server" ID="txt_priNombre" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform:uppercase"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_priNombre" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform: uppercase"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white; font-size: 14px">
-                                    <asp:TextBox runat="server" ID="txt_segNombre" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform:uppercase"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_segNombre" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform: uppercase"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white; font-size: 14px; width: 155px">
-                                    <asp:TextBox runat="server" ID="txt_edad" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform:uppercase"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_edad" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform: uppercase"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                         </asp:Table>
@@ -544,13 +544,13 @@
 
                                 <div class="form-check col">
                                     <asp:CheckBox ID="ckb_clamyTrachomatis" Text="&nbsp; &nbsp; Clamydia Trachomatis" TextAlign="Right" Style="text-transform: uppercase; font-size: 14px" Checked="false" runat="server" />
-                                        <asp:CheckBox ID="ckb_clamyTrachomatisIgG" Text="&nbsp; IgG" TextAlign="Right" Checked="false" runat="server" Style="margin-left: 0.5rem" />
-                                        <asp:CheckBox ID="ckb_clamyTrachomatisIgM" Text="&nbsp; IgM" TextAlign="Right" Checked="false" runat="server" Style="margin-left: 0rem" />
+                                    <asp:CheckBox ID="ckb_clamyTrachomatisIgG" Text="&nbsp; IgG" TextAlign="Right" Checked="false" runat="server" Style="margin-left: 0.5rem" />
+                                    <asp:CheckBox ID="ckb_clamyTrachomatisIgM" Text="&nbsp; IgM" TextAlign="Right" Checked="false" runat="server" Style="margin-left: 0rem" />
                                 </div>
                                 <div class="form-check col">
                                     <asp:CheckBox ID="ckb_hav" Text="&nbsp; &nbsp; HAV" TextAlign="Right" Style="text-transform: uppercase" Checked="false" runat="server" />
-                                        <asp:CheckBox ID="ckb_havIiG" Text="&nbsp; IgG" TextAlign="Right" Checked="false" runat="server" Style="margin-left: 9.3rem"/>
-                                        <asp:CheckBox ID="ckb_havIiM" Text="&nbsp; IgM" TextAlign="Right" Checked="false" runat="server" Style="margin-left: 0rem"/>
+                                    <asp:CheckBox ID="ckb_havIiG" Text="&nbsp; IgG" TextAlign="Right" Checked="false" runat="server" Style="margin-left: 9.3rem" />
+                                    <asp:CheckBox ID="ckb_havIiM" Text="&nbsp; IgM" TextAlign="Right" Checked="false" runat="server" Style="margin-left: 0rem" />
                                 </div>
                                 <div class="form-check col">
                                     <asp:CheckBox ID="ckb_vih" Text="&nbsp; &nbsp; VIH" TextAlign="Right" Style="text-transform: uppercase" Checked="false" runat="server" />

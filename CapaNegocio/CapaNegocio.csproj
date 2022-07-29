@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CN_Certificado.cs" />
+    <Compile Include="CN_Email.cs" />
     <Compile Include="CN_Evolucion.cs" />
     <Compile Include="CN_HistorialMedico.cs" />
     <Compile Include="CN_Inicial.cs" />

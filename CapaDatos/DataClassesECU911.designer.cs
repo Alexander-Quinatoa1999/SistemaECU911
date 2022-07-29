@@ -51,6 +51,9 @@ namespace CapaDatos
     partial void InsertTbl_FichasMedicas(Tbl_FichasMedicas instance);
     partial void UpdateTbl_FichasMedicas(Tbl_FichasMedicas instance);
     partial void DeleteTbl_FichasMedicas(Tbl_FichasMedicas instance);
+    partial void InsertTbl_Image(Tbl_Image instance);
+    partial void UpdateTbl_Image(Tbl_Image instance);
+    partial void DeleteTbl_Image(Tbl_Image instance);
     partial void InsertTbl_Inicial(Tbl_Inicial instance);
     partial void UpdateTbl_Inicial(Tbl_Inicial instance);
     partial void DeleteTbl_Inicial(Tbl_Inicial instance);
@@ -169,6 +172,14 @@ namespace CapaDatos
 			get
 			{
 				return this.GetTable<Tbl_FichasMedicas>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Tbl_Image> Tbl_Image
+		{
+			get
+			{
+				return this.GetTable<Tbl_Image>();
 			}
 		}
 		
@@ -353,7 +364,7 @@ namespace CapaDatos
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _usu_id;
+		private long _usu_id;
 		
 		private string _usu_nombre;
 		
@@ -373,9 +384,9 @@ namespace CapaDatos
 		
 		private System.Nullable<System.DateTime> _usu_fechacreacion;
 		
-		private System.Nullable<char> _usu_estado;
+		private string _usu_estado;
 		
-		private System.Nullable<int> _tusu_id;
+		private System.Nullable<long> _tusu_id;
 		
 		private EntityRef<Tbl_TipoUsuario> _Tbl_TipoUsuario;
 		
@@ -383,7 +394,7 @@ namespace CapaDatos
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void Onusu_idChanging(int value);
+    partial void Onusu_idChanging(long value);
     partial void Onusu_idChanged();
     partial void Onusu_nombreChanging(string value);
     partial void Onusu_nombreChanged();
@@ -403,9 +414,9 @@ namespace CapaDatos
     partial void Onusu_correoChanged();
     partial void Onusu_fechacreacionChanging(System.Nullable<System.DateTime> value);
     partial void Onusu_fechacreacionChanged();
-    partial void Onusu_estadoChanging(System.Nullable<char> value);
+    partial void Onusu_estadoChanging(string value);
     partial void Onusu_estadoChanged();
-    partial void Ontusu_idChanging(System.Nullable<int> value);
+    partial void Ontusu_idChanging(System.Nullable<long> value);
     partial void Ontusu_idChanged();
     #endregion
 		
@@ -415,8 +426,8 @@ namespace CapaDatos
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int usu_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_id", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public long usu_id
 		{
 			get
 			{
@@ -615,8 +626,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_estado", DbType="Char(1)")]
-		public System.Nullable<char> usu_estado
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_estado", DbType="VarChar(50)")]
+		public string usu_estado
 		{
 			get
 			{
@@ -635,8 +646,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tusu_id", DbType="Int")]
-		public System.Nullable<int> tusu_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tusu_id", DbType="BigInt")]
+		public System.Nullable<long> tusu_id
 		{
 			get
 			{
@@ -686,7 +697,7 @@ namespace CapaDatos
 					}
 					else
 					{
-						this._tusu_id = default(Nullable<int>);
+						this._tusu_id = default(Nullable<long>);
 					}
 					this.SendPropertyChanged("Tbl_TipoUsuario");
 				}
@@ -721,6 +732,8 @@ namespace CapaDatos
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _certi_id;
+		
+		private string _certi_ciiu;
 		
 		private string _certi_numArchivo;
 		
@@ -784,6 +797,8 @@ namespace CapaDatos
     partial void OnCreated();
     partial void Oncerti_idChanging(int value);
     partial void Oncerti_idChanged();
+    partial void Oncerti_ciiuChanging(string value);
+    partial void Oncerti_ciiuChanged();
     partial void Oncerti_numArchivoChanging(string value);
     partial void Oncerti_numArchivoChanged();
     partial void Oncerti_fechEmisionChanging(string value);
@@ -861,6 +876,26 @@ namespace CapaDatos
 					this._certi_id = value;
 					this.SendPropertyChanged("certi_id");
 					this.Oncerti_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_certi_ciiu", DbType="VarChar(25)")]
+		public string certi_ciiu
+		{
+			get
+			{
+				return this._certi_ciiu;
+			}
+			set
+			{
+				if ((this._certi_ciiu != value))
+				{
+					this.Oncerti_ciiuChanging(value);
+					this.SendPropertyChanging();
+					this._certi_ciiu = value;
+					this.SendPropertyChanged("certi_ciiu");
+					this.Oncerti_ciiuChanged();
 				}
 			}
 		}
@@ -1922,6 +1957,8 @@ namespace CapaDatos
 		
 		private int _evo_id;
 		
+		private string _evo_ciiu;
+		
 		private string _evo_numArchivo;
 		
 		private string _evo_fecha1;
@@ -2088,6 +2125,8 @@ namespace CapaDatos
     partial void OnCreated();
     partial void Onevo_idChanging(int value);
     partial void Onevo_idChanged();
+    partial void Onevo_ciiuChanging(string value);
+    partial void Onevo_ciiuChanged();
     partial void Onevo_numArchivoChanging(string value);
     partial void Onevo_numArchivoChanged();
     partial void Onevo_fecha1Changing(string value);
@@ -2270,6 +2309,26 @@ namespace CapaDatos
 					this._evo_id = value;
 					this.SendPropertyChanged("evo_id");
 					this.Onevo_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_evo_ciiu", DbType="VarChar(25)")]
+		public string evo_ciiu
+		{
+			get
+			{
+				return this._evo_ciiu;
+			}
+			set
+			{
+				if ((this._evo_ciiu != value))
+				{
+					this.Onevo_ciiuChanging(value);
+					this.SendPropertyChanging();
+					this._evo_ciiu = value;
+					this.SendPropertyChanged("evo_ciiu");
+					this.Onevo_ciiuChanged();
 				}
 			}
 		}
@@ -5634,6 +5693,116 @@ namespace CapaDatos
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_Image")]
+	public partial class Tbl_Image : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private System.Data.Linq.Binary _Image;
+		
+		private string _Titulo;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnImageChanging(System.Data.Linq.Binary value);
+    partial void OnImageChanged();
+    partial void OnTituloChanging(string value);
+    partial void OnTituloChanged();
+    #endregion
+		
+		public Tbl_Image()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Image", DbType="Image", UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary Image
+		{
+			get
+			{
+				return this._Image;
+			}
+			set
+			{
+				if ((this._Image != value))
+				{
+					this.OnImageChanging(value);
+					this.SendPropertyChanging();
+					this._Image = value;
+					this.SendPropertyChanged("Image");
+					this.OnImageChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Titulo", DbType="VarChar(MAX)")]
+		public string Titulo
+		{
+			get
+			{
+				return this._Titulo;
+			}
+			set
+			{
+				if ((this._Titulo != value))
+				{
+					this.OnTituloChanging(value);
+					this.SendPropertyChanging();
+					this._Titulo = value;
+					this.SendPropertyChanged("Titulo");
+					this.OnTituloChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_Inicial")]
 	public partial class Tbl_Inicial : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -5641,6 +5810,8 @@ namespace CapaDatos
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _inicial_id;
+		
+		private string _inicial_ciiu;
 		
 		private string _inicial_numArchivo;
 		
@@ -6684,6 +6855,8 @@ namespace CapaDatos
     partial void OnCreated();
     partial void Oninicial_idChanging(int value);
     partial void Oninicial_idChanged();
+    partial void Oninicial_ciiuChanging(string value);
+    partial void Oninicial_ciiuChanged();
     partial void Oninicial_numArchivoChanging(string value);
     partial void Oninicial_numArchivoChanged();
     partial void Oninicial_catolicaRelChanging(string value);
@@ -7741,6 +7914,26 @@ namespace CapaDatos
 					this._inicial_id = value;
 					this.SendPropertyChanged("inicial_id");
 					this.Oninicial_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_ciiu", DbType="VarChar(25)")]
+		public string inicial_ciiu
+		{
+			get
+			{
+				return this._inicial_ciiu;
+			}
+			set
+			{
+				if ((this._inicial_ciiu != value))
+				{
+					this.Oninicial_ciiuChanging(value);
+					this.SendPropertyChanging();
+					this._inicial_ciiu = value;
+					this.SendPropertyChanged("inicial_ciiu");
+					this.Oninicial_ciiuChanged();
 				}
 			}
 		}
@@ -18170,6 +18363,8 @@ namespace CapaDatos
 		
 		private int _inmu_id;
 		
+		private string _inmu_ciiu;
+		
 		private string _inmu_numArchivo;
 		
 		private string _inmu_fechaTetanos1;
@@ -18352,6 +18547,8 @@ namespace CapaDatos
 		
 		private string _inmu_observaSarampion2;
 		
+		private string _inmu_descripInmunizaciones;
+		
 		private string _inmu_1fechaInmuAcuerTipoEmpRies1;
 		
 		private string _inmu_1loteInmuAcuerTipoEmpRies1;
@@ -18411,6 +18608,8 @@ namespace CapaDatos
 		private string _inmu_1estaSaludColocoVacuInmuAcuerTipoEmpRies5;
 		
 		private string _inmu_1observaInmuAcuerTipoEmpRies5;
+		
+		private string _inmu_descripInmunizaciones2;
 		
 		private string _inmu_2fechaInmuAcuerTipoEmpRies1;
 		
@@ -18472,6 +18671,130 @@ namespace CapaDatos
 		
 		private string _inmu_2observaInmuAcuerTipoEmpRies5;
 		
+		private string _inmu_descripInmunizaciones3;
+		
+		private string _inmu_3fechaInmuAcuerTipoEmpRies1;
+		
+		private string _inmu_3loteInmuAcuerTipoEmpRies1;
+		
+		private string _inmu_3esqueCompleInmuAcuerTipoEmpRies1;
+		
+		private string _inmu_3nomCompleResponVacuInmuAcuerTipoEmpRies1;
+		
+		private string _inmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies1;
+		
+		private string _inmu_3observaInmuAcuerTipoEmpRies1;
+		
+		private string _inmu_3fechaInmuAcuerTipoEmpRies2;
+		
+		private string _inmu_3loteInmuAcuerTipoEmpRies2;
+		
+		private string _inmu_3esqueCompleInmuAcuerTipoEmpRies2;
+		
+		private string _inmu_3nomCompleResponVacuInmuAcuerTipoEmpRies2;
+		
+		private string _inmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies2;
+		
+		private string _inmu_3observaInmuAcuerTipoEmpRies2;
+		
+		private string _inmu_3fechaInmuAcuerTipoEmpRies3;
+		
+		private string _inmu_3loteInmuAcuerTipoEmpRies3;
+		
+		private string _inmu_3esqueCompleInmuAcuerTipoEmpRies3;
+		
+		private string _inmu_3nomCompleResponVacuInmuAcuerTipoEmpRies3;
+		
+		private string _inmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies3;
+		
+		private string _inmu_3observaInmuAcuerTipoEmpRies3;
+		
+		private string _inmu_3fechaInmuAcuerTipoEmpRies4;
+		
+		private string _inmu_3loteInmuAcuerTipoEmpRies4;
+		
+		private string _inmu_3esqueCompleInmuAcuerTipoEmpRies4;
+		
+		private string _inmu_3nomCompleResponVacuInmuAcuerTipoEmpRies4;
+		
+		private string _inmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies4;
+		
+		private string _inmu_3observaInmuAcuerTipoEmpRies4;
+		
+		private string _inmu_3fechaInmuAcuerTipoEmpRies5;
+		
+		private string _inmu_3loteInmuAcuerTipoEmpRies5;
+		
+		private string _inmu_3esqueCompleInmuAcuerTipoEmpRies5;
+		
+		private string _inmu_3nomCompleResponVacuInmuAcuerTipoEmpRies5;
+		
+		private string _inmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies5;
+		
+		private string _inmu_3observaInmuAcuerTipoEmpRies5;
+		
+		private string _inmu_descripInmunizaciones4;
+		
+		private string _inmu_4fechaInmuAcuerTipoEmpRies1;
+		
+		private string _inmu_4loteInmuAcuerTipoEmpRies1;
+		
+		private string _inmu_4esqueCompleInmuAcuerTipoEmpRies1;
+		
+		private string _inmu_4nomCompleResponVacuInmuAcuerTipoEmpRies1;
+		
+		private string _inmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies1;
+		
+		private string _inmu_4observaInmuAcuerTipoEmpRies1;
+		
+		private string _inmu_4fechaInmuAcuerTipoEmpRies2;
+		
+		private string _inmu_4loteInmuAcuerTipoEmpRies2;
+		
+		private string _inmu_4esqueCompleInmuAcuerTipoEmpRies2;
+		
+		private string _inmu_4nomCompleResponVacuInmuAcuerTipoEmpRies2;
+		
+		private string _inmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies2;
+		
+		private string _inmu_4observaInmuAcuerTipoEmpRies2;
+		
+		private string _inmu_4fechaInmuAcuerTipoEmpRies3;
+		
+		private string _inmu_4loteInmuAcuerTipoEmpRies3;
+		
+		private string _inmu_4esqueCompleInmuAcuerTipoEmpRies3;
+		
+		private string _inmu_4nomCompleResponVacuInmuAcuerTipoEmpRies3;
+		
+		private string _inmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies3;
+		
+		private string _inmu_4observaInmuAcuerTipoEmpRies3;
+		
+		private string _inmu_4fechaInmuAcuerTipoEmpRies4;
+		
+		private string _inmu_4loteInmuAcuerTipoEmpRies4;
+		
+		private string _inmu_4esqueCompleInmuAcuerTipoEmpRies4;
+		
+		private string _inmu_4nomCompleResponVacuInmuAcuerTipoEmpRies4;
+		
+		private string _inmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies4;
+		
+		private string _inmu_4observaInmuAcuerTipoEmpRies4;
+		
+		private string _inmu_4fechaInmuAcuerTipoEmpRies5;
+		
+		private string _inmu_4loteInmuAcuerTipoEmpRies5;
+		
+		private string _inmu_4esqueCompleInmuAcuerTipoEmpRies5;
+		
+		private string _inmu_4nomCompleResponVacuInmuAcuerTipoEmpRies5;
+		
+		private string _inmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies5;
+		
+		private string _inmu_4observaInmuAcuerTipoEmpRies5;
+		
 		private System.Nullable<long> _Per_id;
 		
 		private System.Nullable<System.DateTime> _inmu_fechaHoraGuardado;
@@ -18486,6 +18809,8 @@ namespace CapaDatos
     partial void OnCreated();
     partial void Oninmu_idChanging(int value);
     partial void Oninmu_idChanged();
+    partial void Oninmu_ciiuChanging(string value);
+    partial void Oninmu_ciiuChanged();
     partial void Oninmu_numArchivoChanging(string value);
     partial void Oninmu_numArchivoChanged();
     partial void Oninmu_fechaTetanos1Changing(string value);
@@ -18668,6 +18993,8 @@ namespace CapaDatos
     partial void Oninmu_estaSaludColocoVacuSarampion2Changed();
     partial void Oninmu_observaSarampion2Changing(string value);
     partial void Oninmu_observaSarampion2Changed();
+    partial void Oninmu_descripInmunizacionesChanging(string value);
+    partial void Oninmu_descripInmunizacionesChanged();
     partial void Oninmu_1fechaInmuAcuerTipoEmpRies1Changing(string value);
     partial void Oninmu_1fechaInmuAcuerTipoEmpRies1Changed();
     partial void Oninmu_1loteInmuAcuerTipoEmpRies1Changing(string value);
@@ -18728,6 +19055,8 @@ namespace CapaDatos
     partial void Oninmu_1estaSaludColocoVacuInmuAcuerTipoEmpRies5Changed();
     partial void Oninmu_1observaInmuAcuerTipoEmpRies5Changing(string value);
     partial void Oninmu_1observaInmuAcuerTipoEmpRies5Changed();
+    partial void Oninmu_descripInmunizaciones2Changing(string value);
+    partial void Oninmu_descripInmunizaciones2Changed();
     partial void Oninmu_2fechaInmuAcuerTipoEmpRies1Changing(string value);
     partial void Oninmu_2fechaInmuAcuerTipoEmpRies1Changed();
     partial void Oninmu_2loteInmuAcuerTipoEmpRies1Changing(string value);
@@ -18788,6 +19117,130 @@ namespace CapaDatos
     partial void Oninmu_2estaSaludColocoVacuInmuAcuerTipoEmpRies5Changed();
     partial void Oninmu_2observaInmuAcuerTipoEmpRies5Changing(string value);
     partial void Oninmu_2observaInmuAcuerTipoEmpRies5Changed();
+    partial void Oninmu_descripInmunizaciones3Changing(string value);
+    partial void Oninmu_descripInmunizaciones3Changed();
+    partial void Oninmu_3fechaInmuAcuerTipoEmpRies1Changing(string value);
+    partial void Oninmu_3fechaInmuAcuerTipoEmpRies1Changed();
+    partial void Oninmu_3loteInmuAcuerTipoEmpRies1Changing(string value);
+    partial void Oninmu_3loteInmuAcuerTipoEmpRies1Changed();
+    partial void Oninmu_3esqueCompleInmuAcuerTipoEmpRies1Changing(string value);
+    partial void Oninmu_3esqueCompleInmuAcuerTipoEmpRies1Changed();
+    partial void Oninmu_3nomCompleResponVacuInmuAcuerTipoEmpRies1Changing(string value);
+    partial void Oninmu_3nomCompleResponVacuInmuAcuerTipoEmpRies1Changed();
+    partial void Oninmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies1Changing(string value);
+    partial void Oninmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies1Changed();
+    partial void Oninmu_3observaInmuAcuerTipoEmpRies1Changing(string value);
+    partial void Oninmu_3observaInmuAcuerTipoEmpRies1Changed();
+    partial void Oninmu_3fechaInmuAcuerTipoEmpRies2Changing(string value);
+    partial void Oninmu_3fechaInmuAcuerTipoEmpRies2Changed();
+    partial void Oninmu_3loteInmuAcuerTipoEmpRies2Changing(string value);
+    partial void Oninmu_3loteInmuAcuerTipoEmpRies2Changed();
+    partial void Oninmu_3esqueCompleInmuAcuerTipoEmpRies2Changing(string value);
+    partial void Oninmu_3esqueCompleInmuAcuerTipoEmpRies2Changed();
+    partial void Oninmu_3nomCompleResponVacuInmuAcuerTipoEmpRies2Changing(string value);
+    partial void Oninmu_3nomCompleResponVacuInmuAcuerTipoEmpRies2Changed();
+    partial void Oninmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies2Changing(string value);
+    partial void Oninmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies2Changed();
+    partial void Oninmu_3observaInmuAcuerTipoEmpRies2Changing(string value);
+    partial void Oninmu_3observaInmuAcuerTipoEmpRies2Changed();
+    partial void Oninmu_3fechaInmuAcuerTipoEmpRies3Changing(string value);
+    partial void Oninmu_3fechaInmuAcuerTipoEmpRies3Changed();
+    partial void Oninmu_3loteInmuAcuerTipoEmpRies3Changing(string value);
+    partial void Oninmu_3loteInmuAcuerTipoEmpRies3Changed();
+    partial void Oninmu_3esqueCompleInmuAcuerTipoEmpRies3Changing(string value);
+    partial void Oninmu_3esqueCompleInmuAcuerTipoEmpRies3Changed();
+    partial void Oninmu_3nomCompleResponVacuInmuAcuerTipoEmpRies3Changing(string value);
+    partial void Oninmu_3nomCompleResponVacuInmuAcuerTipoEmpRies3Changed();
+    partial void Oninmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies3Changing(string value);
+    partial void Oninmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies3Changed();
+    partial void Oninmu_3observaInmuAcuerTipoEmpRies3Changing(string value);
+    partial void Oninmu_3observaInmuAcuerTipoEmpRies3Changed();
+    partial void Oninmu_3fechaInmuAcuerTipoEmpRies4Changing(string value);
+    partial void Oninmu_3fechaInmuAcuerTipoEmpRies4Changed();
+    partial void Oninmu_3loteInmuAcuerTipoEmpRies4Changing(string value);
+    partial void Oninmu_3loteInmuAcuerTipoEmpRies4Changed();
+    partial void Oninmu_3esqueCompleInmuAcuerTipoEmpRies4Changing(string value);
+    partial void Oninmu_3esqueCompleInmuAcuerTipoEmpRies4Changed();
+    partial void Oninmu_3nomCompleResponVacuInmuAcuerTipoEmpRies4Changing(string value);
+    partial void Oninmu_3nomCompleResponVacuInmuAcuerTipoEmpRies4Changed();
+    partial void Oninmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies4Changing(string value);
+    partial void Oninmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies4Changed();
+    partial void Oninmu_3observaInmuAcuerTipoEmpRies4Changing(string value);
+    partial void Oninmu_3observaInmuAcuerTipoEmpRies4Changed();
+    partial void Oninmu_3fechaInmuAcuerTipoEmpRies5Changing(string value);
+    partial void Oninmu_3fechaInmuAcuerTipoEmpRies5Changed();
+    partial void Oninmu_3loteInmuAcuerTipoEmpRies5Changing(string value);
+    partial void Oninmu_3loteInmuAcuerTipoEmpRies5Changed();
+    partial void Oninmu_3esqueCompleInmuAcuerTipoEmpRies5Changing(string value);
+    partial void Oninmu_3esqueCompleInmuAcuerTipoEmpRies5Changed();
+    partial void Oninmu_3nomCompleResponVacuInmuAcuerTipoEmpRies5Changing(string value);
+    partial void Oninmu_3nomCompleResponVacuInmuAcuerTipoEmpRies5Changed();
+    partial void Oninmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies5Changing(string value);
+    partial void Oninmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies5Changed();
+    partial void Oninmu_3observaInmuAcuerTipoEmpRies5Changing(string value);
+    partial void Oninmu_3observaInmuAcuerTipoEmpRies5Changed();
+    partial void Oninmu_descripInmunizaciones4Changing(string value);
+    partial void Oninmu_descripInmunizaciones4Changed();
+    partial void Oninmu_4fechaInmuAcuerTipoEmpRies1Changing(string value);
+    partial void Oninmu_4fechaInmuAcuerTipoEmpRies1Changed();
+    partial void Oninmu_4loteInmuAcuerTipoEmpRies1Changing(string value);
+    partial void Oninmu_4loteInmuAcuerTipoEmpRies1Changed();
+    partial void Oninmu_4esqueCompleInmuAcuerTipoEmpRies1Changing(string value);
+    partial void Oninmu_4esqueCompleInmuAcuerTipoEmpRies1Changed();
+    partial void Oninmu_4nomCompleResponVacuInmuAcuerTipoEmpRies1Changing(string value);
+    partial void Oninmu_4nomCompleResponVacuInmuAcuerTipoEmpRies1Changed();
+    partial void Oninmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies1Changing(string value);
+    partial void Oninmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies1Changed();
+    partial void Oninmu_4observaInmuAcuerTipoEmpRies1Changing(string value);
+    partial void Oninmu_4observaInmuAcuerTipoEmpRies1Changed();
+    partial void Oninmu_4fechaInmuAcuerTipoEmpRies2Changing(string value);
+    partial void Oninmu_4fechaInmuAcuerTipoEmpRies2Changed();
+    partial void Oninmu_4loteInmuAcuerTipoEmpRies2Changing(string value);
+    partial void Oninmu_4loteInmuAcuerTipoEmpRies2Changed();
+    partial void Oninmu_4esqueCompleInmuAcuerTipoEmpRies2Changing(string value);
+    partial void Oninmu_4esqueCompleInmuAcuerTipoEmpRies2Changed();
+    partial void Oninmu_4nomCompleResponVacuInmuAcuerTipoEmpRies2Changing(string value);
+    partial void Oninmu_4nomCompleResponVacuInmuAcuerTipoEmpRies2Changed();
+    partial void Oninmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies2Changing(string value);
+    partial void Oninmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies2Changed();
+    partial void Oninmu_4observaInmuAcuerTipoEmpRies2Changing(string value);
+    partial void Oninmu_4observaInmuAcuerTipoEmpRies2Changed();
+    partial void Oninmu_4fechaInmuAcuerTipoEmpRies3Changing(string value);
+    partial void Oninmu_4fechaInmuAcuerTipoEmpRies3Changed();
+    partial void Oninmu_4loteInmuAcuerTipoEmpRies3Changing(string value);
+    partial void Oninmu_4loteInmuAcuerTipoEmpRies3Changed();
+    partial void Oninmu_4esqueCompleInmuAcuerTipoEmpRies3Changing(string value);
+    partial void Oninmu_4esqueCompleInmuAcuerTipoEmpRies3Changed();
+    partial void Oninmu_4nomCompleResponVacuInmuAcuerTipoEmpRies3Changing(string value);
+    partial void Oninmu_4nomCompleResponVacuInmuAcuerTipoEmpRies3Changed();
+    partial void Oninmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies3Changing(string value);
+    partial void Oninmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies3Changed();
+    partial void Oninmu_4observaInmuAcuerTipoEmpRies3Changing(string value);
+    partial void Oninmu_4observaInmuAcuerTipoEmpRies3Changed();
+    partial void Oninmu_4fechaInmuAcuerTipoEmpRies4Changing(string value);
+    partial void Oninmu_4fechaInmuAcuerTipoEmpRies4Changed();
+    partial void Oninmu_4loteInmuAcuerTipoEmpRies4Changing(string value);
+    partial void Oninmu_4loteInmuAcuerTipoEmpRies4Changed();
+    partial void Oninmu_4esqueCompleInmuAcuerTipoEmpRies4Changing(string value);
+    partial void Oninmu_4esqueCompleInmuAcuerTipoEmpRies4Changed();
+    partial void Oninmu_4nomCompleResponVacuInmuAcuerTipoEmpRies4Changing(string value);
+    partial void Oninmu_4nomCompleResponVacuInmuAcuerTipoEmpRies4Changed();
+    partial void Oninmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies4Changing(string value);
+    partial void Oninmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies4Changed();
+    partial void Oninmu_4observaInmuAcuerTipoEmpRies4Changing(string value);
+    partial void Oninmu_4observaInmuAcuerTipoEmpRies4Changed();
+    partial void Oninmu_4fechaInmuAcuerTipoEmpRies5Changing(string value);
+    partial void Oninmu_4fechaInmuAcuerTipoEmpRies5Changed();
+    partial void Oninmu_4loteInmuAcuerTipoEmpRies5Changing(string value);
+    partial void Oninmu_4loteInmuAcuerTipoEmpRies5Changed();
+    partial void Oninmu_4esqueCompleInmuAcuerTipoEmpRies5Changing(string value);
+    partial void Oninmu_4esqueCompleInmuAcuerTipoEmpRies5Changed();
+    partial void Oninmu_4nomCompleResponVacuInmuAcuerTipoEmpRies5Changing(string value);
+    partial void Oninmu_4nomCompleResponVacuInmuAcuerTipoEmpRies5Changed();
+    partial void Oninmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies5Changing(string value);
+    partial void Oninmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies5Changed();
+    partial void Oninmu_4observaInmuAcuerTipoEmpRies5Changing(string value);
+    partial void Oninmu_4observaInmuAcuerTipoEmpRies5Changed();
     partial void OnPer_idChanging(System.Nullable<long> value);
     partial void OnPer_idChanged();
     partial void Oninmu_fechaHoraGuardadoChanging(System.Nullable<System.DateTime> value);
@@ -18818,6 +19271,26 @@ namespace CapaDatos
 					this._inmu_id = value;
 					this.SendPropertyChanged("inmu_id");
 					this.Oninmu_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_ciiu", DbType="VarChar(25)")]
+		public string inmu_ciiu
+		{
+			get
+			{
+				return this._inmu_ciiu;
+			}
+			set
+			{
+				if ((this._inmu_ciiu != value))
+				{
+					this.Oninmu_ciiuChanging(value);
+					this.SendPropertyChanging();
+					this._inmu_ciiu = value;
+					this.SendPropertyChanged("inmu_ciiu");
+					this.Oninmu_ciiuChanged();
 				}
 			}
 		}
@@ -20642,6 +21115,26 @@ namespace CapaDatos
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_descripInmunizaciones", DbType="VarChar(MAX)")]
+		public string inmu_descripInmunizaciones
+		{
+			get
+			{
+				return this._inmu_descripInmunizaciones;
+			}
+			set
+			{
+				if ((this._inmu_descripInmunizaciones != value))
+				{
+					this.Oninmu_descripInmunizacionesChanging(value);
+					this.SendPropertyChanging();
+					this._inmu_descripInmunizaciones = value;
+					this.SendPropertyChanged("inmu_descripInmunizaciones");
+					this.Oninmu_descripInmunizacionesChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_1fechaInmuAcuerTipoEmpRies1", DbType="VarChar(10)")]
 		public string inmu_1fechaInmuAcuerTipoEmpRies1
 		{
@@ -21238,6 +21731,26 @@ namespace CapaDatos
 					this._inmu_1observaInmuAcuerTipoEmpRies5 = value;
 					this.SendPropertyChanged("inmu_1observaInmuAcuerTipoEmpRies5");
 					this.Oninmu_1observaInmuAcuerTipoEmpRies5Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_descripInmunizaciones2", DbType="VarChar(MAX)")]
+		public string inmu_descripInmunizaciones2
+		{
+			get
+			{
+				return this._inmu_descripInmunizaciones2;
+			}
+			set
+			{
+				if ((this._inmu_descripInmunizaciones2 != value))
+				{
+					this.Oninmu_descripInmunizaciones2Changing(value);
+					this.SendPropertyChanging();
+					this._inmu_descripInmunizaciones2 = value;
+					this.SendPropertyChanged("inmu_descripInmunizaciones2");
+					this.Oninmu_descripInmunizaciones2Changed();
 				}
 			}
 		}
@@ -21842,6 +22355,1246 @@ namespace CapaDatos
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_descripInmunizaciones3", DbType="VarChar(MAX)")]
+		public string inmu_descripInmunizaciones3
+		{
+			get
+			{
+				return this._inmu_descripInmunizaciones3;
+			}
+			set
+			{
+				if ((this._inmu_descripInmunizaciones3 != value))
+				{
+					this.Oninmu_descripInmunizaciones3Changing(value);
+					this.SendPropertyChanging();
+					this._inmu_descripInmunizaciones3 = value;
+					this.SendPropertyChanged("inmu_descripInmunizaciones3");
+					this.Oninmu_descripInmunizaciones3Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_3fechaInmuAcuerTipoEmpRies1", DbType="VarChar(50)")]
+		public string inmu_3fechaInmuAcuerTipoEmpRies1
+		{
+			get
+			{
+				return this._inmu_3fechaInmuAcuerTipoEmpRies1;
+			}
+			set
+			{
+				if ((this._inmu_3fechaInmuAcuerTipoEmpRies1 != value))
+				{
+					this.Oninmu_3fechaInmuAcuerTipoEmpRies1Changing(value);
+					this.SendPropertyChanging();
+					this._inmu_3fechaInmuAcuerTipoEmpRies1 = value;
+					this.SendPropertyChanged("inmu_3fechaInmuAcuerTipoEmpRies1");
+					this.Oninmu_3fechaInmuAcuerTipoEmpRies1Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_3loteInmuAcuerTipoEmpRies1", DbType="VarChar(50)")]
+		public string inmu_3loteInmuAcuerTipoEmpRies1
+		{
+			get
+			{
+				return this._inmu_3loteInmuAcuerTipoEmpRies1;
+			}
+			set
+			{
+				if ((this._inmu_3loteInmuAcuerTipoEmpRies1 != value))
+				{
+					this.Oninmu_3loteInmuAcuerTipoEmpRies1Changing(value);
+					this.SendPropertyChanging();
+					this._inmu_3loteInmuAcuerTipoEmpRies1 = value;
+					this.SendPropertyChanged("inmu_3loteInmuAcuerTipoEmpRies1");
+					this.Oninmu_3loteInmuAcuerTipoEmpRies1Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_3esqueCompleInmuAcuerTipoEmpRies1", DbType="VarChar(50)")]
+		public string inmu_3esqueCompleInmuAcuerTipoEmpRies1
+		{
+			get
+			{
+				return this._inmu_3esqueCompleInmuAcuerTipoEmpRies1;
+			}
+			set
+			{
+				if ((this._inmu_3esqueCompleInmuAcuerTipoEmpRies1 != value))
+				{
+					this.Oninmu_3esqueCompleInmuAcuerTipoEmpRies1Changing(value);
+					this.SendPropertyChanging();
+					this._inmu_3esqueCompleInmuAcuerTipoEmpRies1 = value;
+					this.SendPropertyChanged("inmu_3esqueCompleInmuAcuerTipoEmpRies1");
+					this.Oninmu_3esqueCompleInmuAcuerTipoEmpRies1Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_3nomCompleResponVacuInmuAcuerTipoEmpRies1", DbType="VarChar(50)")]
+		public string inmu_3nomCompleResponVacuInmuAcuerTipoEmpRies1
+		{
+			get
+			{
+				return this._inmu_3nomCompleResponVacuInmuAcuerTipoEmpRies1;
+			}
+			set
+			{
+				if ((this._inmu_3nomCompleResponVacuInmuAcuerTipoEmpRies1 != value))
+				{
+					this.Oninmu_3nomCompleResponVacuInmuAcuerTipoEmpRies1Changing(value);
+					this.SendPropertyChanging();
+					this._inmu_3nomCompleResponVacuInmuAcuerTipoEmpRies1 = value;
+					this.SendPropertyChanged("inmu_3nomCompleResponVacuInmuAcuerTipoEmpRies1");
+					this.Oninmu_3nomCompleResponVacuInmuAcuerTipoEmpRies1Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies1", DbType="VarChar(50)")]
+		public string inmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies1
+		{
+			get
+			{
+				return this._inmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies1;
+			}
+			set
+			{
+				if ((this._inmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies1 != value))
+				{
+					this.Oninmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies1Changing(value);
+					this.SendPropertyChanging();
+					this._inmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies1 = value;
+					this.SendPropertyChanged("inmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies1");
+					this.Oninmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies1Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_3observaInmuAcuerTipoEmpRies1", DbType="VarChar(MAX)")]
+		public string inmu_3observaInmuAcuerTipoEmpRies1
+		{
+			get
+			{
+				return this._inmu_3observaInmuAcuerTipoEmpRies1;
+			}
+			set
+			{
+				if ((this._inmu_3observaInmuAcuerTipoEmpRies1 != value))
+				{
+					this.Oninmu_3observaInmuAcuerTipoEmpRies1Changing(value);
+					this.SendPropertyChanging();
+					this._inmu_3observaInmuAcuerTipoEmpRies1 = value;
+					this.SendPropertyChanged("inmu_3observaInmuAcuerTipoEmpRies1");
+					this.Oninmu_3observaInmuAcuerTipoEmpRies1Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_3fechaInmuAcuerTipoEmpRies2", DbType="VarChar(50)")]
+		public string inmu_3fechaInmuAcuerTipoEmpRies2
+		{
+			get
+			{
+				return this._inmu_3fechaInmuAcuerTipoEmpRies2;
+			}
+			set
+			{
+				if ((this._inmu_3fechaInmuAcuerTipoEmpRies2 != value))
+				{
+					this.Oninmu_3fechaInmuAcuerTipoEmpRies2Changing(value);
+					this.SendPropertyChanging();
+					this._inmu_3fechaInmuAcuerTipoEmpRies2 = value;
+					this.SendPropertyChanged("inmu_3fechaInmuAcuerTipoEmpRies2");
+					this.Oninmu_3fechaInmuAcuerTipoEmpRies2Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_3loteInmuAcuerTipoEmpRies2", DbType="VarChar(50)")]
+		public string inmu_3loteInmuAcuerTipoEmpRies2
+		{
+			get
+			{
+				return this._inmu_3loteInmuAcuerTipoEmpRies2;
+			}
+			set
+			{
+				if ((this._inmu_3loteInmuAcuerTipoEmpRies2 != value))
+				{
+					this.Oninmu_3loteInmuAcuerTipoEmpRies2Changing(value);
+					this.SendPropertyChanging();
+					this._inmu_3loteInmuAcuerTipoEmpRies2 = value;
+					this.SendPropertyChanged("inmu_3loteInmuAcuerTipoEmpRies2");
+					this.Oninmu_3loteInmuAcuerTipoEmpRies2Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_3esqueCompleInmuAcuerTipoEmpRies2", DbType="VarChar(50)")]
+		public string inmu_3esqueCompleInmuAcuerTipoEmpRies2
+		{
+			get
+			{
+				return this._inmu_3esqueCompleInmuAcuerTipoEmpRies2;
+			}
+			set
+			{
+				if ((this._inmu_3esqueCompleInmuAcuerTipoEmpRies2 != value))
+				{
+					this.Oninmu_3esqueCompleInmuAcuerTipoEmpRies2Changing(value);
+					this.SendPropertyChanging();
+					this._inmu_3esqueCompleInmuAcuerTipoEmpRies2 = value;
+					this.SendPropertyChanged("inmu_3esqueCompleInmuAcuerTipoEmpRies2");
+					this.Oninmu_3esqueCompleInmuAcuerTipoEmpRies2Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_3nomCompleResponVacuInmuAcuerTipoEmpRies2", DbType="VarChar(50)")]
+		public string inmu_3nomCompleResponVacuInmuAcuerTipoEmpRies2
+		{
+			get
+			{
+				return this._inmu_3nomCompleResponVacuInmuAcuerTipoEmpRies2;
+			}
+			set
+			{
+				if ((this._inmu_3nomCompleResponVacuInmuAcuerTipoEmpRies2 != value))
+				{
+					this.Oninmu_3nomCompleResponVacuInmuAcuerTipoEmpRies2Changing(value);
+					this.SendPropertyChanging();
+					this._inmu_3nomCompleResponVacuInmuAcuerTipoEmpRies2 = value;
+					this.SendPropertyChanged("inmu_3nomCompleResponVacuInmuAcuerTipoEmpRies2");
+					this.Oninmu_3nomCompleResponVacuInmuAcuerTipoEmpRies2Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies2", DbType="VarChar(50)")]
+		public string inmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies2
+		{
+			get
+			{
+				return this._inmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies2;
+			}
+			set
+			{
+				if ((this._inmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies2 != value))
+				{
+					this.Oninmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies2Changing(value);
+					this.SendPropertyChanging();
+					this._inmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies2 = value;
+					this.SendPropertyChanged("inmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies2");
+					this.Oninmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies2Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_3observaInmuAcuerTipoEmpRies2", DbType="VarChar(MAX)")]
+		public string inmu_3observaInmuAcuerTipoEmpRies2
+		{
+			get
+			{
+				return this._inmu_3observaInmuAcuerTipoEmpRies2;
+			}
+			set
+			{
+				if ((this._inmu_3observaInmuAcuerTipoEmpRies2 != value))
+				{
+					this.Oninmu_3observaInmuAcuerTipoEmpRies2Changing(value);
+					this.SendPropertyChanging();
+					this._inmu_3observaInmuAcuerTipoEmpRies2 = value;
+					this.SendPropertyChanged("inmu_3observaInmuAcuerTipoEmpRies2");
+					this.Oninmu_3observaInmuAcuerTipoEmpRies2Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_3fechaInmuAcuerTipoEmpRies3", DbType="VarChar(50)")]
+		public string inmu_3fechaInmuAcuerTipoEmpRies3
+		{
+			get
+			{
+				return this._inmu_3fechaInmuAcuerTipoEmpRies3;
+			}
+			set
+			{
+				if ((this._inmu_3fechaInmuAcuerTipoEmpRies3 != value))
+				{
+					this.Oninmu_3fechaInmuAcuerTipoEmpRies3Changing(value);
+					this.SendPropertyChanging();
+					this._inmu_3fechaInmuAcuerTipoEmpRies3 = value;
+					this.SendPropertyChanged("inmu_3fechaInmuAcuerTipoEmpRies3");
+					this.Oninmu_3fechaInmuAcuerTipoEmpRies3Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_3loteInmuAcuerTipoEmpRies3", DbType="VarChar(50)")]
+		public string inmu_3loteInmuAcuerTipoEmpRies3
+		{
+			get
+			{
+				return this._inmu_3loteInmuAcuerTipoEmpRies3;
+			}
+			set
+			{
+				if ((this._inmu_3loteInmuAcuerTipoEmpRies3 != value))
+				{
+					this.Oninmu_3loteInmuAcuerTipoEmpRies3Changing(value);
+					this.SendPropertyChanging();
+					this._inmu_3loteInmuAcuerTipoEmpRies3 = value;
+					this.SendPropertyChanged("inmu_3loteInmuAcuerTipoEmpRies3");
+					this.Oninmu_3loteInmuAcuerTipoEmpRies3Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_3esqueCompleInmuAcuerTipoEmpRies3", DbType="VarChar(50)")]
+		public string inmu_3esqueCompleInmuAcuerTipoEmpRies3
+		{
+			get
+			{
+				return this._inmu_3esqueCompleInmuAcuerTipoEmpRies3;
+			}
+			set
+			{
+				if ((this._inmu_3esqueCompleInmuAcuerTipoEmpRies3 != value))
+				{
+					this.Oninmu_3esqueCompleInmuAcuerTipoEmpRies3Changing(value);
+					this.SendPropertyChanging();
+					this._inmu_3esqueCompleInmuAcuerTipoEmpRies3 = value;
+					this.SendPropertyChanged("inmu_3esqueCompleInmuAcuerTipoEmpRies3");
+					this.Oninmu_3esqueCompleInmuAcuerTipoEmpRies3Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_3nomCompleResponVacuInmuAcuerTipoEmpRies3", DbType="VarChar(50)")]
+		public string inmu_3nomCompleResponVacuInmuAcuerTipoEmpRies3
+		{
+			get
+			{
+				return this._inmu_3nomCompleResponVacuInmuAcuerTipoEmpRies3;
+			}
+			set
+			{
+				if ((this._inmu_3nomCompleResponVacuInmuAcuerTipoEmpRies3 != value))
+				{
+					this.Oninmu_3nomCompleResponVacuInmuAcuerTipoEmpRies3Changing(value);
+					this.SendPropertyChanging();
+					this._inmu_3nomCompleResponVacuInmuAcuerTipoEmpRies3 = value;
+					this.SendPropertyChanged("inmu_3nomCompleResponVacuInmuAcuerTipoEmpRies3");
+					this.Oninmu_3nomCompleResponVacuInmuAcuerTipoEmpRies3Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies3", DbType="VarChar(50)")]
+		public string inmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies3
+		{
+			get
+			{
+				return this._inmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies3;
+			}
+			set
+			{
+				if ((this._inmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies3 != value))
+				{
+					this.Oninmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies3Changing(value);
+					this.SendPropertyChanging();
+					this._inmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies3 = value;
+					this.SendPropertyChanged("inmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies3");
+					this.Oninmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies3Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_3observaInmuAcuerTipoEmpRies3", DbType="VarChar(MAX)")]
+		public string inmu_3observaInmuAcuerTipoEmpRies3
+		{
+			get
+			{
+				return this._inmu_3observaInmuAcuerTipoEmpRies3;
+			}
+			set
+			{
+				if ((this._inmu_3observaInmuAcuerTipoEmpRies3 != value))
+				{
+					this.Oninmu_3observaInmuAcuerTipoEmpRies3Changing(value);
+					this.SendPropertyChanging();
+					this._inmu_3observaInmuAcuerTipoEmpRies3 = value;
+					this.SendPropertyChanged("inmu_3observaInmuAcuerTipoEmpRies3");
+					this.Oninmu_3observaInmuAcuerTipoEmpRies3Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_3fechaInmuAcuerTipoEmpRies4", DbType="VarChar(50)")]
+		public string inmu_3fechaInmuAcuerTipoEmpRies4
+		{
+			get
+			{
+				return this._inmu_3fechaInmuAcuerTipoEmpRies4;
+			}
+			set
+			{
+				if ((this._inmu_3fechaInmuAcuerTipoEmpRies4 != value))
+				{
+					this.Oninmu_3fechaInmuAcuerTipoEmpRies4Changing(value);
+					this.SendPropertyChanging();
+					this._inmu_3fechaInmuAcuerTipoEmpRies4 = value;
+					this.SendPropertyChanged("inmu_3fechaInmuAcuerTipoEmpRies4");
+					this.Oninmu_3fechaInmuAcuerTipoEmpRies4Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_3loteInmuAcuerTipoEmpRies4", DbType="VarChar(50)")]
+		public string inmu_3loteInmuAcuerTipoEmpRies4
+		{
+			get
+			{
+				return this._inmu_3loteInmuAcuerTipoEmpRies4;
+			}
+			set
+			{
+				if ((this._inmu_3loteInmuAcuerTipoEmpRies4 != value))
+				{
+					this.Oninmu_3loteInmuAcuerTipoEmpRies4Changing(value);
+					this.SendPropertyChanging();
+					this._inmu_3loteInmuAcuerTipoEmpRies4 = value;
+					this.SendPropertyChanged("inmu_3loteInmuAcuerTipoEmpRies4");
+					this.Oninmu_3loteInmuAcuerTipoEmpRies4Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_3esqueCompleInmuAcuerTipoEmpRies4", DbType="VarChar(50)")]
+		public string inmu_3esqueCompleInmuAcuerTipoEmpRies4
+		{
+			get
+			{
+				return this._inmu_3esqueCompleInmuAcuerTipoEmpRies4;
+			}
+			set
+			{
+				if ((this._inmu_3esqueCompleInmuAcuerTipoEmpRies4 != value))
+				{
+					this.Oninmu_3esqueCompleInmuAcuerTipoEmpRies4Changing(value);
+					this.SendPropertyChanging();
+					this._inmu_3esqueCompleInmuAcuerTipoEmpRies4 = value;
+					this.SendPropertyChanged("inmu_3esqueCompleInmuAcuerTipoEmpRies4");
+					this.Oninmu_3esqueCompleInmuAcuerTipoEmpRies4Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_3nomCompleResponVacuInmuAcuerTipoEmpRies4", DbType="VarChar(50)")]
+		public string inmu_3nomCompleResponVacuInmuAcuerTipoEmpRies4
+		{
+			get
+			{
+				return this._inmu_3nomCompleResponVacuInmuAcuerTipoEmpRies4;
+			}
+			set
+			{
+				if ((this._inmu_3nomCompleResponVacuInmuAcuerTipoEmpRies4 != value))
+				{
+					this.Oninmu_3nomCompleResponVacuInmuAcuerTipoEmpRies4Changing(value);
+					this.SendPropertyChanging();
+					this._inmu_3nomCompleResponVacuInmuAcuerTipoEmpRies4 = value;
+					this.SendPropertyChanged("inmu_3nomCompleResponVacuInmuAcuerTipoEmpRies4");
+					this.Oninmu_3nomCompleResponVacuInmuAcuerTipoEmpRies4Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies4", DbType="VarChar(50)")]
+		public string inmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies4
+		{
+			get
+			{
+				return this._inmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies4;
+			}
+			set
+			{
+				if ((this._inmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies4 != value))
+				{
+					this.Oninmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies4Changing(value);
+					this.SendPropertyChanging();
+					this._inmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies4 = value;
+					this.SendPropertyChanged("inmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies4");
+					this.Oninmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies4Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_3observaInmuAcuerTipoEmpRies4", DbType="VarChar(MAX)")]
+		public string inmu_3observaInmuAcuerTipoEmpRies4
+		{
+			get
+			{
+				return this._inmu_3observaInmuAcuerTipoEmpRies4;
+			}
+			set
+			{
+				if ((this._inmu_3observaInmuAcuerTipoEmpRies4 != value))
+				{
+					this.Oninmu_3observaInmuAcuerTipoEmpRies4Changing(value);
+					this.SendPropertyChanging();
+					this._inmu_3observaInmuAcuerTipoEmpRies4 = value;
+					this.SendPropertyChanged("inmu_3observaInmuAcuerTipoEmpRies4");
+					this.Oninmu_3observaInmuAcuerTipoEmpRies4Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_3fechaInmuAcuerTipoEmpRies5", DbType="VarChar(50)")]
+		public string inmu_3fechaInmuAcuerTipoEmpRies5
+		{
+			get
+			{
+				return this._inmu_3fechaInmuAcuerTipoEmpRies5;
+			}
+			set
+			{
+				if ((this._inmu_3fechaInmuAcuerTipoEmpRies5 != value))
+				{
+					this.Oninmu_3fechaInmuAcuerTipoEmpRies5Changing(value);
+					this.SendPropertyChanging();
+					this._inmu_3fechaInmuAcuerTipoEmpRies5 = value;
+					this.SendPropertyChanged("inmu_3fechaInmuAcuerTipoEmpRies5");
+					this.Oninmu_3fechaInmuAcuerTipoEmpRies5Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_3loteInmuAcuerTipoEmpRies5", DbType="VarChar(50)")]
+		public string inmu_3loteInmuAcuerTipoEmpRies5
+		{
+			get
+			{
+				return this._inmu_3loteInmuAcuerTipoEmpRies5;
+			}
+			set
+			{
+				if ((this._inmu_3loteInmuAcuerTipoEmpRies5 != value))
+				{
+					this.Oninmu_3loteInmuAcuerTipoEmpRies5Changing(value);
+					this.SendPropertyChanging();
+					this._inmu_3loteInmuAcuerTipoEmpRies5 = value;
+					this.SendPropertyChanged("inmu_3loteInmuAcuerTipoEmpRies5");
+					this.Oninmu_3loteInmuAcuerTipoEmpRies5Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_3esqueCompleInmuAcuerTipoEmpRies5", DbType="VarChar(50)")]
+		public string inmu_3esqueCompleInmuAcuerTipoEmpRies5
+		{
+			get
+			{
+				return this._inmu_3esqueCompleInmuAcuerTipoEmpRies5;
+			}
+			set
+			{
+				if ((this._inmu_3esqueCompleInmuAcuerTipoEmpRies5 != value))
+				{
+					this.Oninmu_3esqueCompleInmuAcuerTipoEmpRies5Changing(value);
+					this.SendPropertyChanging();
+					this._inmu_3esqueCompleInmuAcuerTipoEmpRies5 = value;
+					this.SendPropertyChanged("inmu_3esqueCompleInmuAcuerTipoEmpRies5");
+					this.Oninmu_3esqueCompleInmuAcuerTipoEmpRies5Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_3nomCompleResponVacuInmuAcuerTipoEmpRies5", DbType="VarChar(50)")]
+		public string inmu_3nomCompleResponVacuInmuAcuerTipoEmpRies5
+		{
+			get
+			{
+				return this._inmu_3nomCompleResponVacuInmuAcuerTipoEmpRies5;
+			}
+			set
+			{
+				if ((this._inmu_3nomCompleResponVacuInmuAcuerTipoEmpRies5 != value))
+				{
+					this.Oninmu_3nomCompleResponVacuInmuAcuerTipoEmpRies5Changing(value);
+					this.SendPropertyChanging();
+					this._inmu_3nomCompleResponVacuInmuAcuerTipoEmpRies5 = value;
+					this.SendPropertyChanged("inmu_3nomCompleResponVacuInmuAcuerTipoEmpRies5");
+					this.Oninmu_3nomCompleResponVacuInmuAcuerTipoEmpRies5Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies5", DbType="VarChar(50)")]
+		public string inmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies5
+		{
+			get
+			{
+				return this._inmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies5;
+			}
+			set
+			{
+				if ((this._inmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies5 != value))
+				{
+					this.Oninmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies5Changing(value);
+					this.SendPropertyChanging();
+					this._inmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies5 = value;
+					this.SendPropertyChanged("inmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies5");
+					this.Oninmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies5Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_3observaInmuAcuerTipoEmpRies5", DbType="VarChar(MAX)")]
+		public string inmu_3observaInmuAcuerTipoEmpRies5
+		{
+			get
+			{
+				return this._inmu_3observaInmuAcuerTipoEmpRies5;
+			}
+			set
+			{
+				if ((this._inmu_3observaInmuAcuerTipoEmpRies5 != value))
+				{
+					this.Oninmu_3observaInmuAcuerTipoEmpRies5Changing(value);
+					this.SendPropertyChanging();
+					this._inmu_3observaInmuAcuerTipoEmpRies5 = value;
+					this.SendPropertyChanged("inmu_3observaInmuAcuerTipoEmpRies5");
+					this.Oninmu_3observaInmuAcuerTipoEmpRies5Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_descripInmunizaciones4", DbType="VarChar(MAX)")]
+		public string inmu_descripInmunizaciones4
+		{
+			get
+			{
+				return this._inmu_descripInmunizaciones4;
+			}
+			set
+			{
+				if ((this._inmu_descripInmunizaciones4 != value))
+				{
+					this.Oninmu_descripInmunizaciones4Changing(value);
+					this.SendPropertyChanging();
+					this._inmu_descripInmunizaciones4 = value;
+					this.SendPropertyChanged("inmu_descripInmunizaciones4");
+					this.Oninmu_descripInmunizaciones4Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_4fechaInmuAcuerTipoEmpRies1", DbType="VarChar(50)")]
+		public string inmu_4fechaInmuAcuerTipoEmpRies1
+		{
+			get
+			{
+				return this._inmu_4fechaInmuAcuerTipoEmpRies1;
+			}
+			set
+			{
+				if ((this._inmu_4fechaInmuAcuerTipoEmpRies1 != value))
+				{
+					this.Oninmu_4fechaInmuAcuerTipoEmpRies1Changing(value);
+					this.SendPropertyChanging();
+					this._inmu_4fechaInmuAcuerTipoEmpRies1 = value;
+					this.SendPropertyChanged("inmu_4fechaInmuAcuerTipoEmpRies1");
+					this.Oninmu_4fechaInmuAcuerTipoEmpRies1Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_4loteInmuAcuerTipoEmpRies1", DbType="VarChar(50)")]
+		public string inmu_4loteInmuAcuerTipoEmpRies1
+		{
+			get
+			{
+				return this._inmu_4loteInmuAcuerTipoEmpRies1;
+			}
+			set
+			{
+				if ((this._inmu_4loteInmuAcuerTipoEmpRies1 != value))
+				{
+					this.Oninmu_4loteInmuAcuerTipoEmpRies1Changing(value);
+					this.SendPropertyChanging();
+					this._inmu_4loteInmuAcuerTipoEmpRies1 = value;
+					this.SendPropertyChanged("inmu_4loteInmuAcuerTipoEmpRies1");
+					this.Oninmu_4loteInmuAcuerTipoEmpRies1Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_4esqueCompleInmuAcuerTipoEmpRies1", DbType="VarChar(50)")]
+		public string inmu_4esqueCompleInmuAcuerTipoEmpRies1
+		{
+			get
+			{
+				return this._inmu_4esqueCompleInmuAcuerTipoEmpRies1;
+			}
+			set
+			{
+				if ((this._inmu_4esqueCompleInmuAcuerTipoEmpRies1 != value))
+				{
+					this.Oninmu_4esqueCompleInmuAcuerTipoEmpRies1Changing(value);
+					this.SendPropertyChanging();
+					this._inmu_4esqueCompleInmuAcuerTipoEmpRies1 = value;
+					this.SendPropertyChanged("inmu_4esqueCompleInmuAcuerTipoEmpRies1");
+					this.Oninmu_4esqueCompleInmuAcuerTipoEmpRies1Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_4nomCompleResponVacuInmuAcuerTipoEmpRies1", DbType="VarChar(50)")]
+		public string inmu_4nomCompleResponVacuInmuAcuerTipoEmpRies1
+		{
+			get
+			{
+				return this._inmu_4nomCompleResponVacuInmuAcuerTipoEmpRies1;
+			}
+			set
+			{
+				if ((this._inmu_4nomCompleResponVacuInmuAcuerTipoEmpRies1 != value))
+				{
+					this.Oninmu_4nomCompleResponVacuInmuAcuerTipoEmpRies1Changing(value);
+					this.SendPropertyChanging();
+					this._inmu_4nomCompleResponVacuInmuAcuerTipoEmpRies1 = value;
+					this.SendPropertyChanged("inmu_4nomCompleResponVacuInmuAcuerTipoEmpRies1");
+					this.Oninmu_4nomCompleResponVacuInmuAcuerTipoEmpRies1Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies1", DbType="VarChar(50)")]
+		public string inmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies1
+		{
+			get
+			{
+				return this._inmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies1;
+			}
+			set
+			{
+				if ((this._inmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies1 != value))
+				{
+					this.Oninmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies1Changing(value);
+					this.SendPropertyChanging();
+					this._inmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies1 = value;
+					this.SendPropertyChanged("inmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies1");
+					this.Oninmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies1Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_4observaInmuAcuerTipoEmpRies1", DbType="VarChar(MAX)")]
+		public string inmu_4observaInmuAcuerTipoEmpRies1
+		{
+			get
+			{
+				return this._inmu_4observaInmuAcuerTipoEmpRies1;
+			}
+			set
+			{
+				if ((this._inmu_4observaInmuAcuerTipoEmpRies1 != value))
+				{
+					this.Oninmu_4observaInmuAcuerTipoEmpRies1Changing(value);
+					this.SendPropertyChanging();
+					this._inmu_4observaInmuAcuerTipoEmpRies1 = value;
+					this.SendPropertyChanged("inmu_4observaInmuAcuerTipoEmpRies1");
+					this.Oninmu_4observaInmuAcuerTipoEmpRies1Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_4fechaInmuAcuerTipoEmpRies2", DbType="VarChar(50)")]
+		public string inmu_4fechaInmuAcuerTipoEmpRies2
+		{
+			get
+			{
+				return this._inmu_4fechaInmuAcuerTipoEmpRies2;
+			}
+			set
+			{
+				if ((this._inmu_4fechaInmuAcuerTipoEmpRies2 != value))
+				{
+					this.Oninmu_4fechaInmuAcuerTipoEmpRies2Changing(value);
+					this.SendPropertyChanging();
+					this._inmu_4fechaInmuAcuerTipoEmpRies2 = value;
+					this.SendPropertyChanged("inmu_4fechaInmuAcuerTipoEmpRies2");
+					this.Oninmu_4fechaInmuAcuerTipoEmpRies2Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_4loteInmuAcuerTipoEmpRies2", DbType="VarChar(50)")]
+		public string inmu_4loteInmuAcuerTipoEmpRies2
+		{
+			get
+			{
+				return this._inmu_4loteInmuAcuerTipoEmpRies2;
+			}
+			set
+			{
+				if ((this._inmu_4loteInmuAcuerTipoEmpRies2 != value))
+				{
+					this.Oninmu_4loteInmuAcuerTipoEmpRies2Changing(value);
+					this.SendPropertyChanging();
+					this._inmu_4loteInmuAcuerTipoEmpRies2 = value;
+					this.SendPropertyChanged("inmu_4loteInmuAcuerTipoEmpRies2");
+					this.Oninmu_4loteInmuAcuerTipoEmpRies2Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_4esqueCompleInmuAcuerTipoEmpRies2", DbType="VarChar(50)")]
+		public string inmu_4esqueCompleInmuAcuerTipoEmpRies2
+		{
+			get
+			{
+				return this._inmu_4esqueCompleInmuAcuerTipoEmpRies2;
+			}
+			set
+			{
+				if ((this._inmu_4esqueCompleInmuAcuerTipoEmpRies2 != value))
+				{
+					this.Oninmu_4esqueCompleInmuAcuerTipoEmpRies2Changing(value);
+					this.SendPropertyChanging();
+					this._inmu_4esqueCompleInmuAcuerTipoEmpRies2 = value;
+					this.SendPropertyChanged("inmu_4esqueCompleInmuAcuerTipoEmpRies2");
+					this.Oninmu_4esqueCompleInmuAcuerTipoEmpRies2Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_4nomCompleResponVacuInmuAcuerTipoEmpRies2", DbType="VarChar(50)")]
+		public string inmu_4nomCompleResponVacuInmuAcuerTipoEmpRies2
+		{
+			get
+			{
+				return this._inmu_4nomCompleResponVacuInmuAcuerTipoEmpRies2;
+			}
+			set
+			{
+				if ((this._inmu_4nomCompleResponVacuInmuAcuerTipoEmpRies2 != value))
+				{
+					this.Oninmu_4nomCompleResponVacuInmuAcuerTipoEmpRies2Changing(value);
+					this.SendPropertyChanging();
+					this._inmu_4nomCompleResponVacuInmuAcuerTipoEmpRies2 = value;
+					this.SendPropertyChanged("inmu_4nomCompleResponVacuInmuAcuerTipoEmpRies2");
+					this.Oninmu_4nomCompleResponVacuInmuAcuerTipoEmpRies2Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies2", DbType="VarChar(50)")]
+		public string inmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies2
+		{
+			get
+			{
+				return this._inmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies2;
+			}
+			set
+			{
+				if ((this._inmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies2 != value))
+				{
+					this.Oninmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies2Changing(value);
+					this.SendPropertyChanging();
+					this._inmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies2 = value;
+					this.SendPropertyChanged("inmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies2");
+					this.Oninmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies2Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_4observaInmuAcuerTipoEmpRies2", DbType="VarChar(MAX)")]
+		public string inmu_4observaInmuAcuerTipoEmpRies2
+		{
+			get
+			{
+				return this._inmu_4observaInmuAcuerTipoEmpRies2;
+			}
+			set
+			{
+				if ((this._inmu_4observaInmuAcuerTipoEmpRies2 != value))
+				{
+					this.Oninmu_4observaInmuAcuerTipoEmpRies2Changing(value);
+					this.SendPropertyChanging();
+					this._inmu_4observaInmuAcuerTipoEmpRies2 = value;
+					this.SendPropertyChanged("inmu_4observaInmuAcuerTipoEmpRies2");
+					this.Oninmu_4observaInmuAcuerTipoEmpRies2Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_4fechaInmuAcuerTipoEmpRies3", DbType="VarChar(50)")]
+		public string inmu_4fechaInmuAcuerTipoEmpRies3
+		{
+			get
+			{
+				return this._inmu_4fechaInmuAcuerTipoEmpRies3;
+			}
+			set
+			{
+				if ((this._inmu_4fechaInmuAcuerTipoEmpRies3 != value))
+				{
+					this.Oninmu_4fechaInmuAcuerTipoEmpRies3Changing(value);
+					this.SendPropertyChanging();
+					this._inmu_4fechaInmuAcuerTipoEmpRies3 = value;
+					this.SendPropertyChanged("inmu_4fechaInmuAcuerTipoEmpRies3");
+					this.Oninmu_4fechaInmuAcuerTipoEmpRies3Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_4loteInmuAcuerTipoEmpRies3", DbType="VarChar(50)")]
+		public string inmu_4loteInmuAcuerTipoEmpRies3
+		{
+			get
+			{
+				return this._inmu_4loteInmuAcuerTipoEmpRies3;
+			}
+			set
+			{
+				if ((this._inmu_4loteInmuAcuerTipoEmpRies3 != value))
+				{
+					this.Oninmu_4loteInmuAcuerTipoEmpRies3Changing(value);
+					this.SendPropertyChanging();
+					this._inmu_4loteInmuAcuerTipoEmpRies3 = value;
+					this.SendPropertyChanged("inmu_4loteInmuAcuerTipoEmpRies3");
+					this.Oninmu_4loteInmuAcuerTipoEmpRies3Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_4esqueCompleInmuAcuerTipoEmpRies3", DbType="VarChar(50)")]
+		public string inmu_4esqueCompleInmuAcuerTipoEmpRies3
+		{
+			get
+			{
+				return this._inmu_4esqueCompleInmuAcuerTipoEmpRies3;
+			}
+			set
+			{
+				if ((this._inmu_4esqueCompleInmuAcuerTipoEmpRies3 != value))
+				{
+					this.Oninmu_4esqueCompleInmuAcuerTipoEmpRies3Changing(value);
+					this.SendPropertyChanging();
+					this._inmu_4esqueCompleInmuAcuerTipoEmpRies3 = value;
+					this.SendPropertyChanged("inmu_4esqueCompleInmuAcuerTipoEmpRies3");
+					this.Oninmu_4esqueCompleInmuAcuerTipoEmpRies3Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_4nomCompleResponVacuInmuAcuerTipoEmpRies3", DbType="VarChar(50)")]
+		public string inmu_4nomCompleResponVacuInmuAcuerTipoEmpRies3
+		{
+			get
+			{
+				return this._inmu_4nomCompleResponVacuInmuAcuerTipoEmpRies3;
+			}
+			set
+			{
+				if ((this._inmu_4nomCompleResponVacuInmuAcuerTipoEmpRies3 != value))
+				{
+					this.Oninmu_4nomCompleResponVacuInmuAcuerTipoEmpRies3Changing(value);
+					this.SendPropertyChanging();
+					this._inmu_4nomCompleResponVacuInmuAcuerTipoEmpRies3 = value;
+					this.SendPropertyChanged("inmu_4nomCompleResponVacuInmuAcuerTipoEmpRies3");
+					this.Oninmu_4nomCompleResponVacuInmuAcuerTipoEmpRies3Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies3", DbType="VarChar(50)")]
+		public string inmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies3
+		{
+			get
+			{
+				return this._inmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies3;
+			}
+			set
+			{
+				if ((this._inmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies3 != value))
+				{
+					this.Oninmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies3Changing(value);
+					this.SendPropertyChanging();
+					this._inmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies3 = value;
+					this.SendPropertyChanged("inmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies3");
+					this.Oninmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies3Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_4observaInmuAcuerTipoEmpRies3", DbType="VarChar(MAX)")]
+		public string inmu_4observaInmuAcuerTipoEmpRies3
+		{
+			get
+			{
+				return this._inmu_4observaInmuAcuerTipoEmpRies3;
+			}
+			set
+			{
+				if ((this._inmu_4observaInmuAcuerTipoEmpRies3 != value))
+				{
+					this.Oninmu_4observaInmuAcuerTipoEmpRies3Changing(value);
+					this.SendPropertyChanging();
+					this._inmu_4observaInmuAcuerTipoEmpRies3 = value;
+					this.SendPropertyChanged("inmu_4observaInmuAcuerTipoEmpRies3");
+					this.Oninmu_4observaInmuAcuerTipoEmpRies3Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_4fechaInmuAcuerTipoEmpRies4", DbType="VarChar(50)")]
+		public string inmu_4fechaInmuAcuerTipoEmpRies4
+		{
+			get
+			{
+				return this._inmu_4fechaInmuAcuerTipoEmpRies4;
+			}
+			set
+			{
+				if ((this._inmu_4fechaInmuAcuerTipoEmpRies4 != value))
+				{
+					this.Oninmu_4fechaInmuAcuerTipoEmpRies4Changing(value);
+					this.SendPropertyChanging();
+					this._inmu_4fechaInmuAcuerTipoEmpRies4 = value;
+					this.SendPropertyChanged("inmu_4fechaInmuAcuerTipoEmpRies4");
+					this.Oninmu_4fechaInmuAcuerTipoEmpRies4Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_4loteInmuAcuerTipoEmpRies4", DbType="VarChar(50)")]
+		public string inmu_4loteInmuAcuerTipoEmpRies4
+		{
+			get
+			{
+				return this._inmu_4loteInmuAcuerTipoEmpRies4;
+			}
+			set
+			{
+				if ((this._inmu_4loteInmuAcuerTipoEmpRies4 != value))
+				{
+					this.Oninmu_4loteInmuAcuerTipoEmpRies4Changing(value);
+					this.SendPropertyChanging();
+					this._inmu_4loteInmuAcuerTipoEmpRies4 = value;
+					this.SendPropertyChanged("inmu_4loteInmuAcuerTipoEmpRies4");
+					this.Oninmu_4loteInmuAcuerTipoEmpRies4Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_4esqueCompleInmuAcuerTipoEmpRies4", DbType="VarChar(50)")]
+		public string inmu_4esqueCompleInmuAcuerTipoEmpRies4
+		{
+			get
+			{
+				return this._inmu_4esqueCompleInmuAcuerTipoEmpRies4;
+			}
+			set
+			{
+				if ((this._inmu_4esqueCompleInmuAcuerTipoEmpRies4 != value))
+				{
+					this.Oninmu_4esqueCompleInmuAcuerTipoEmpRies4Changing(value);
+					this.SendPropertyChanging();
+					this._inmu_4esqueCompleInmuAcuerTipoEmpRies4 = value;
+					this.SendPropertyChanged("inmu_4esqueCompleInmuAcuerTipoEmpRies4");
+					this.Oninmu_4esqueCompleInmuAcuerTipoEmpRies4Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_4nomCompleResponVacuInmuAcuerTipoEmpRies4", DbType="VarChar(50)")]
+		public string inmu_4nomCompleResponVacuInmuAcuerTipoEmpRies4
+		{
+			get
+			{
+				return this._inmu_4nomCompleResponVacuInmuAcuerTipoEmpRies4;
+			}
+			set
+			{
+				if ((this._inmu_4nomCompleResponVacuInmuAcuerTipoEmpRies4 != value))
+				{
+					this.Oninmu_4nomCompleResponVacuInmuAcuerTipoEmpRies4Changing(value);
+					this.SendPropertyChanging();
+					this._inmu_4nomCompleResponVacuInmuAcuerTipoEmpRies4 = value;
+					this.SendPropertyChanged("inmu_4nomCompleResponVacuInmuAcuerTipoEmpRies4");
+					this.Oninmu_4nomCompleResponVacuInmuAcuerTipoEmpRies4Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies4", DbType="VarChar(50)")]
+		public string inmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies4
+		{
+			get
+			{
+				return this._inmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies4;
+			}
+			set
+			{
+				if ((this._inmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies4 != value))
+				{
+					this.Oninmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies4Changing(value);
+					this.SendPropertyChanging();
+					this._inmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies4 = value;
+					this.SendPropertyChanged("inmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies4");
+					this.Oninmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies4Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_4observaInmuAcuerTipoEmpRies4", DbType="VarChar(MAX)")]
+		public string inmu_4observaInmuAcuerTipoEmpRies4
+		{
+			get
+			{
+				return this._inmu_4observaInmuAcuerTipoEmpRies4;
+			}
+			set
+			{
+				if ((this._inmu_4observaInmuAcuerTipoEmpRies4 != value))
+				{
+					this.Oninmu_4observaInmuAcuerTipoEmpRies4Changing(value);
+					this.SendPropertyChanging();
+					this._inmu_4observaInmuAcuerTipoEmpRies4 = value;
+					this.SendPropertyChanged("inmu_4observaInmuAcuerTipoEmpRies4");
+					this.Oninmu_4observaInmuAcuerTipoEmpRies4Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_4fechaInmuAcuerTipoEmpRies5", DbType="VarChar(50)")]
+		public string inmu_4fechaInmuAcuerTipoEmpRies5
+		{
+			get
+			{
+				return this._inmu_4fechaInmuAcuerTipoEmpRies5;
+			}
+			set
+			{
+				if ((this._inmu_4fechaInmuAcuerTipoEmpRies5 != value))
+				{
+					this.Oninmu_4fechaInmuAcuerTipoEmpRies5Changing(value);
+					this.SendPropertyChanging();
+					this._inmu_4fechaInmuAcuerTipoEmpRies5 = value;
+					this.SendPropertyChanged("inmu_4fechaInmuAcuerTipoEmpRies5");
+					this.Oninmu_4fechaInmuAcuerTipoEmpRies5Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_4loteInmuAcuerTipoEmpRies5", DbType="VarChar(50)")]
+		public string inmu_4loteInmuAcuerTipoEmpRies5
+		{
+			get
+			{
+				return this._inmu_4loteInmuAcuerTipoEmpRies5;
+			}
+			set
+			{
+				if ((this._inmu_4loteInmuAcuerTipoEmpRies5 != value))
+				{
+					this.Oninmu_4loteInmuAcuerTipoEmpRies5Changing(value);
+					this.SendPropertyChanging();
+					this._inmu_4loteInmuAcuerTipoEmpRies5 = value;
+					this.SendPropertyChanged("inmu_4loteInmuAcuerTipoEmpRies5");
+					this.Oninmu_4loteInmuAcuerTipoEmpRies5Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_4esqueCompleInmuAcuerTipoEmpRies5", DbType="VarChar(50)")]
+		public string inmu_4esqueCompleInmuAcuerTipoEmpRies5
+		{
+			get
+			{
+				return this._inmu_4esqueCompleInmuAcuerTipoEmpRies5;
+			}
+			set
+			{
+				if ((this._inmu_4esqueCompleInmuAcuerTipoEmpRies5 != value))
+				{
+					this.Oninmu_4esqueCompleInmuAcuerTipoEmpRies5Changing(value);
+					this.SendPropertyChanging();
+					this._inmu_4esqueCompleInmuAcuerTipoEmpRies5 = value;
+					this.SendPropertyChanged("inmu_4esqueCompleInmuAcuerTipoEmpRies5");
+					this.Oninmu_4esqueCompleInmuAcuerTipoEmpRies5Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_4nomCompleResponVacuInmuAcuerTipoEmpRies5", DbType="VarChar(50)")]
+		public string inmu_4nomCompleResponVacuInmuAcuerTipoEmpRies5
+		{
+			get
+			{
+				return this._inmu_4nomCompleResponVacuInmuAcuerTipoEmpRies5;
+			}
+			set
+			{
+				if ((this._inmu_4nomCompleResponVacuInmuAcuerTipoEmpRies5 != value))
+				{
+					this.Oninmu_4nomCompleResponVacuInmuAcuerTipoEmpRies5Changing(value);
+					this.SendPropertyChanging();
+					this._inmu_4nomCompleResponVacuInmuAcuerTipoEmpRies5 = value;
+					this.SendPropertyChanged("inmu_4nomCompleResponVacuInmuAcuerTipoEmpRies5");
+					this.Oninmu_4nomCompleResponVacuInmuAcuerTipoEmpRies5Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies5", DbType="VarChar(50)")]
+		public string inmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies5
+		{
+			get
+			{
+				return this._inmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies5;
+			}
+			set
+			{
+				if ((this._inmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies5 != value))
+				{
+					this.Oninmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies5Changing(value);
+					this.SendPropertyChanging();
+					this._inmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies5 = value;
+					this.SendPropertyChanged("inmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies5");
+					this.Oninmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies5Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_4observaInmuAcuerTipoEmpRies5", DbType="VarChar(MAX)")]
+		public string inmu_4observaInmuAcuerTipoEmpRies5
+		{
+			get
+			{
+				return this._inmu_4observaInmuAcuerTipoEmpRies5;
+			}
+			set
+			{
+				if ((this._inmu_4observaInmuAcuerTipoEmpRies5 != value))
+				{
+					this.Oninmu_4observaInmuAcuerTipoEmpRies5Changing(value);
+					this.SendPropertyChanging();
+					this._inmu_4observaInmuAcuerTipoEmpRies5 = value;
+					this.SendPropertyChanged("inmu_4observaInmuAcuerTipoEmpRies5");
+					this.Oninmu_4observaInmuAcuerTipoEmpRies5Changed();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_id", DbType="BigInt")]
 		public System.Nullable<long> Per_id
 		{
@@ -21968,6 +23721,8 @@ namespace CapaDatos
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _pedExa_id;
+		
+		private string _pedExa_ciiu;
 		
 		private string _pedExa_numArchivo;
 		
@@ -22283,6 +24038,8 @@ namespace CapaDatos
     partial void OnCreated();
     partial void OnpedExa_idChanging(int value);
     partial void OnpedExa_idChanged();
+    partial void OnpedExa_ciiuChanging(string value);
+    partial void OnpedExa_ciiuChanged();
     partial void OnpedExa_numArchivoChanging(string value);
     partial void OnpedExa_numArchivoChanged();
     partial void OnpedExa_bioHematicaHemaChanging(string value);
@@ -22613,6 +24370,26 @@ namespace CapaDatos
 					this._pedExa_id = value;
 					this.SendPropertyChanged("pedExa_id");
 					this.OnpedExa_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_ciiu", DbType="VarChar(25)")]
+		public string pedExa_ciiu
+		{
+			get
+			{
+				return this._pedExa_ciiu;
+			}
+			set
+			{
+				if ((this._pedExa_ciiu != value))
+				{
+					this.OnpedExa_ciiuChanging(value);
+					this.SendPropertyChanging();
+					this._pedExa_ciiu = value;
+					this.SendPropertyChanged("pedExa_ciiu");
+					this.OnpedExa_ciiuChanged();
 				}
 			}
 		}
@@ -25744,6 +27521,8 @@ namespace CapaDatos
 		
 		private int _perio_id;
 		
+		private string _perio_ciiu;
+		
 		private string _perio_numArchivo;
 		
 		private string _perio_descripMotiConsulta;
@@ -26440,6 +28219,8 @@ namespace CapaDatos
     partial void OnCreated();
     partial void Onperio_idChanging(int value);
     partial void Onperio_idChanged();
+    partial void Onperio_ciiuChanging(string value);
+    partial void Onperio_ciiuChanged();
     partial void Onperio_numArchivoChanging(string value);
     partial void Onperio_numArchivoChanged();
     partial void Onperio_descripMotiConsultaChanging(string value);
@@ -27150,6 +28931,26 @@ namespace CapaDatos
 					this._perio_id = value;
 					this.SendPropertyChanged("perio_id");
 					this.Onperio_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_ciiu", DbType="VarChar(25)")]
+		public string perio_ciiu
+		{
+			get
+			{
+				return this._perio_ciiu;
+			}
+			set
+			{
+				if ((this._perio_ciiu != value))
+				{
+					this.Onperio_ciiuChanging(value);
+					this.SendPropertyChanging();
+					this._perio_ciiu = value;
+					this.SendPropertyChanged("perio_ciiu");
+					this.Onperio_ciiuChanged();
 				}
 			}
 		}
@@ -35110,6 +36911,8 @@ namespace CapaDatos
 		
 		private int _rein_id;
 		
+		private string _rein_ciiu;
+		
 		private string _rein_numArchivo;
 		
 		private string _rein__fechUltDiaLaboral;
@@ -35310,6 +37113,8 @@ namespace CapaDatos
     partial void OnCreated();
     partial void Onrein_idChanging(int value);
     partial void Onrein_idChanged();
+    partial void Onrein_ciiuChanging(string value);
+    partial void Onrein_ciiuChanged();
     partial void Onrein_numArchivoChanging(string value);
     partial void Onrein_numArchivoChanged();
     partial void Onrein__fechUltDiaLaboralChanging(string value);
@@ -35524,6 +37329,26 @@ namespace CapaDatos
 					this._rein_id = value;
 					this.SendPropertyChanged("rein_id");
 					this.Onrein_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_ciiu", DbType="VarChar(25)")]
+		public string rein_ciiu
+		{
+			get
+			{
+				return this._rein_ciiu;
+			}
+			set
+			{
+				if ((this._rein_ciiu != value))
+				{
+					this.Onrein_ciiuChanging(value);
+					this.SendPropertyChanging();
+					this._rein_ciiu = value;
+					this.SendPropertyChanged("rein_ciiu");
+					this.Onrein_ciiuChanged();
 				}
 			}
 		}
@@ -37551,6 +39376,8 @@ namespace CapaDatos
 		
 		private int _ret_id;
 		
+		private string _ret_ciiu;
+		
 		private string _ret_numArchivo;
 		
 		private string _ret_fechIniLaboral;
@@ -37769,6 +39596,8 @@ namespace CapaDatos
     partial void OnCreated();
     partial void Onret_idChanging(int value);
     partial void Onret_idChanged();
+    partial void Onret_ciiuChanging(string value);
+    partial void Onret_ciiuChanged();
     partial void Onret_numArchivoChanging(string value);
     partial void Onret_numArchivoChanged();
     partial void Onret_fechIniLaboralChanging(string value);
@@ -38001,6 +39830,26 @@ namespace CapaDatos
 					this._ret_id = value;
 					this.SendPropertyChanged("ret_id");
 					this.Onret_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_ciiu", DbType="VarChar(25)")]
+		public string ret_ciiu
+		{
+			get
+			{
+				return this._ret_ciiu;
+			}
+			set
+			{
+				if ((this._ret_ciiu != value))
+				{
+					this.Onret_ciiuChanging(value);
+					this.SendPropertyChanging();
+					this._ret_ciiu = value;
+					this.SendPropertyChanged("ret_ciiu");
+					this.Onret_ciiuChanged();
 				}
 			}
 		}
@@ -40762,6 +42611,8 @@ namespace CapaDatos
 		
 		private string _Socio_economico_informacion_general_real_no;
 		
+		private System.Data.Linq.Binary _Socio_economico_imagen_geolocalizacion;
+		
 		private string _Socio_economico_fechaHora;
 		
 		private System.Nullable<long> _Per_id;
@@ -41332,6 +43183,8 @@ namespace CapaDatos
     partial void OnSocio_economico_informacion_general_real_siChanged();
     partial void OnSocio_economico_informacion_general_real_noChanging(string value);
     partial void OnSocio_economico_informacion_general_real_noChanged();
+    partial void OnSocio_economico_imagen_geolocalizacionChanging(System.Data.Linq.Binary value);
+    partial void OnSocio_economico_imagen_geolocalizacionChanged();
     partial void OnSocio_economico_fechaHoraChanging(string value);
     partial void OnSocio_economico_fechaHoraChanged();
     partial void OnPer_idChanging(System.Nullable<long> value);
@@ -46908,6 +48761,26 @@ namespace CapaDatos
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_imagen_geolocalizacion", DbType="Image", UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary Socio_economico_imagen_geolocalizacion
+		{
+			get
+			{
+				return this._Socio_economico_imagen_geolocalizacion;
+			}
+			set
+			{
+				if ((this._Socio_economico_imagen_geolocalizacion != value))
+				{
+					this.OnSocio_economico_imagen_geolocalizacionChanging(value);
+					this.SendPropertyChanging();
+					this._Socio_economico_imagen_geolocalizacion = value;
+					this.SendPropertyChanged("Socio_economico_imagen_geolocalizacion");
+					this.OnSocio_economico_imagen_geolocalizacionChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_fechaHora", DbType="VarChar(25)")]
 		public string Socio_economico_fechaHora
 		{
@@ -47163,11 +49036,11 @@ namespace CapaDatos
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _tusu_id;
+		private long _tusu_id;
 		
 		private string _tusu_nombre;
 		
-		private System.Nullable<char> _tusu_estado;
+		private string _tusu_estado;
 		
 		private EntitySet<Tbl_Usuario> _Tbl_Usuario;
 		
@@ -47175,11 +49048,11 @@ namespace CapaDatos
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void Ontusu_idChanging(int value);
+    partial void Ontusu_idChanging(long value);
     partial void Ontusu_idChanged();
     partial void Ontusu_nombreChanging(string value);
     partial void Ontusu_nombreChanged();
-    partial void Ontusu_estadoChanging(System.Nullable<char> value);
+    partial void Ontusu_estadoChanging(string value);
     partial void Ontusu_estadoChanged();
     #endregion
 		
@@ -47189,8 +49062,8 @@ namespace CapaDatos
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tusu_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int tusu_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tusu_id", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public long tusu_id
 		{
 			get
 			{
@@ -47229,8 +49102,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tusu_estado", DbType="Char(1)")]
-		public System.Nullable<char> tusu_estado
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tusu_estado", DbType="VarChar(50)")]
+		public string tusu_estado
 		{
 			get
 			{

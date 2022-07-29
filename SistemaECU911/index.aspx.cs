@@ -75,7 +75,7 @@ namespace SistemaECU911
                         Session["Conantiguo"] = intentos.ToString();
                         ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", "swal('Error!', 'Credenciales Incorrectas! Intento #" + intentos + "', 'error')", true);
                         txt_pass.Text = "";
-                        if (Convert.ToInt32(intentos) == 2)
+                        if (Convert.ToInt32(intentos) == 3)
                         {
                             ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", "swal('Error!', 'A superado el limite de intentos.', 'error')", true);
                             btn_ingresar.Visible = false;
@@ -112,7 +112,7 @@ namespace SistemaECU911
 
         protected void Timer1_Tick(object sender, EventArgs e)
         {
-
+            Response.Redirect("Autentificacion/Recuperar.aspx");
         }
     }
 }

@@ -78,16 +78,16 @@
                             </asp:TableRow>
                             <asp:TableRow>
                                 <asp:TableCell Style="background-color: white; font-size: 14px">
-                                        <asp:TextBox ID="txt_nomEmpresa" runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center; text-transform:uppercase; text-transform:uppercase" ReadOnly="true"></asp:TextBox>
+                                    <asp:TextBox ID="txt_nomEmpresa" runat="server" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform: uppercase; text-transform: uppercase" ReadOnly="true"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white; font-size: 14px">
-                                        <asp:TextBox ID="txt_rucEmp" runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center; text-transform:uppercase" ReadOnly="true"></asp:TextBox>
+                                    <asp:TextBox ID="txt_rucEmp" runat="server" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform: uppercase" ReadOnly="true"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white; font-size: 14px">
-                                        <asp:TextBox ID="txt_ciiu" runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center; text-transform:uppercase"></asp:TextBox>
+                                    <asp:TextBox ID="txt_ciiu" runat="server" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform: uppercase"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white; font-size: 14px">
-                                        <asp:TextBox ID="txt_estableSalud" runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center; text-transform:uppercase" ReadOnly="true"></asp:TextBox>
+                                    <asp:TextBox ID="txt_estableSalud" runat="server" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform: uppercase" ReadOnly="true"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="background-color: white; font-size: 14px">
                                     <asp:TextBox runat="server" ID="txt_numHClinica" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center" OnTextChanged="txt_numHClinica_TextChanged" AutoPostBack="true"></asp:TextBox>
@@ -146,11 +146,7 @@
                             <asp:TableCell Text="DOSIS" Style="width: 50px; background-color: #cdfecc; font-size: 15px; text-transform: uppercase"></asp:TableCell>
                             <asp:TableCell Text="FECHA" Style="width: 100px; background-color: #cdfecc; font-size: 15px; text-transform: uppercase"></asp:TableCell>
                             <asp:TableCell Text="LOTE" Style="width: 100px; background-color: #cdfecc; font-size: 15px; text-transform: uppercase"></asp:TableCell>
-
                             <asp:TableCell Text="ESQUEMA COMPLETO (marcar X)" Style="width: 100px; background-color: #cdfecc; font-size: 15px; text-transform: uppercase"></asp:TableCell>
-
-                            <asp:TableCell Text="ESQUEMA COMPLETO (marcar X)" Style="width: 110px; background-color: #cdfecc; font-size: 15px; text-transform: uppercase"></asp:TableCell>
-
                             <asp:TableCell Text="NOMBRES COMPLETOS DEL RESPONSABLE DE LA VACUNACIÓN" Style="width: 175px; background-color: #cdfecc; font-size: 15px; text-transform: uppercase"></asp:TableCell>
                             <asp:TableCell Text="ESTABLACIMIENTO DE SALUD DONDE SE COLOCÓ LA VACUNA" Style="width: 175px; background-color: #cdfecc; font-size: 15px; text-transform: uppercase"></asp:TableCell>
                             <asp:TableCell Text="OBSERVACIONES" Style="width: 375px; background-color: #cdfecc; font-size: 15px; text-transform: uppercase"></asp:TableCell>
@@ -483,7 +479,7 @@
                         </asp:TableRow>
                         <asp:TableRow>
                             <asp:TableCell RowSpan="5" Style="background-color: #ccffff; font-size: 15px; text-transform: uppercase">
-                                <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center; text-transform:uppercase"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_descripInmunizaciones" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform: uppercase; vertical-align: middle" TextMode="MultiLine" Rows="11"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: #ccffff; font-size: 15px; text-transform: uppercase">1º</asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
@@ -591,7 +587,7 @@
                         </asp:TableRow>
                         <asp:TableRow>
                             <asp:TableCell RowSpan="5" Style="background-color: #ccffff; font-size: 15px; text-transform: uppercase">
-                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center; text-transform:uppercase"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_descripInmunizaciones2" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform: uppercase; vertical-align: middle" TextMode="MultiLine" Rows="11"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: #ccffff; font-size: 15px; text-transform: uppercase">1º</asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
@@ -699,218 +695,218 @@
                         </asp:TableRow>
                         <asp:TableRow>
                             <asp:TableCell RowSpan="5" Style="background-color: #ccffff; font-size: 15px; text-transform: uppercase">
-                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center; text-transform:uppercase"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_descripInmunizaciones3" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform: uppercase; vertical-align: middle" TextMode="MultiLine" Rows="11"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: #ccffff; font-size: 15px; text-transform: uppercase">1º</asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center; text-transform:uppercase" TextMode="Date"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_3fechaInmuAcuerTipoEmpRies1" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform: uppercase" TextMode="Date"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center; text-transform:uppercase"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_3loteInmuAcuerTipoEmpRies1" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform: uppercase"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center; text-transform:uppercase"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_3esqueCompleInmuAcuerTipoEmpRies1" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform: uppercase"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center; text-transform:uppercase"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_3nomCompleResponVacuInmuAcuerTipoEmpRies1" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform: uppercase"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center; text-transform:uppercase"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_3estaSaludColocoVacuInmuAcuerTipoEmpRies1" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform: uppercase"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center; text-transform:uppercase"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_3observaInmuAcuerTipoEmpRies1" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform: uppercase"></asp:TextBox>
                             </asp:TableCell>
                         </asp:TableRow>
                         <asp:TableRow>
                             <asp:TableCell Style="background-color: #ccffff; font-size: 15px; text-transform: uppercase">2º</asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center; text-transform:uppercase" TextMode="Date"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_3fechaInmuAcuerTipoEmpRies2" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform: uppercase" TextMode="Date"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center; text-transform:uppercase"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_3loteInmuAcuerTipoEmpRies2" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform: uppercase"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center; text-transform:uppercase"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_3esqueCompleInmuAcuerTipoEmpRies2" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform: uppercase"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center; text-transform:uppercase"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_3nomCompleResponVacuInmuAcuerTipoEmpRies2" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform: uppercase"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center; text-transform:uppercase"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_3estaSaludColocoVacuInmuAcuerTipoEmpRies2" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform: uppercase"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center; text-transform:uppercase"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_3observaInmuAcuerTipoEmpRies2" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform: uppercase"></asp:TextBox>
                             </asp:TableCell>
                         </asp:TableRow>
                         <asp:TableRow>
                             <asp:TableCell Style="background-color: #ccffff; font-size: 15px; text-transform: uppercase">3º</asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center; text-transform:uppercase" TextMode="Date"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_3fechaInmuAcuerTipoEmpRies3" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform: uppercase" TextMode="Date"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center; text-transform:uppercase"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_3loteInmuAcuerTipoEmpRies3" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform: uppercase"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center; text-transform:uppercase"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_3esqueCompleInmuAcuerTipoEmpRies3" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform: uppercase"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center; text-transform:uppercase"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_3nomCompleResponVacuInmuAcuerTipoEmpRies3" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform: uppercase"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center; text-transform:uppercase"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_3estaSaludColocoVacuInmuAcuerTipoEmpRies3" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform: uppercase"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center; text-transform:uppercase"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_3observaInmuAcuerTipoEmpRies3" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform: uppercase"></asp:TextBox>
                             </asp:TableCell>
                         </asp:TableRow>
                         <asp:TableRow>
                             <asp:TableCell Style="background-color: #ccffff; font-size: 15px; text-transform: uppercase">4º</asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center; text-transform:uppercase" TextMode="Date"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_3fechaInmuAcuerTipoEmpRies4" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform: uppercase" TextMode="Date"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center; text-transform:uppercase"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_3loteInmuAcuerTipoEmpRies4" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform: uppercase"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center; text-transform:uppercase"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_3esqueCompleInmuAcuerTipoEmpRies4" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform: uppercase"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center; text-transform:uppercase"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_3nomCompleResponVacuInmuAcuerTipoEmpRies4" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform: uppercase"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center; text-transform:uppercase"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_3estaSaludColocoVacuInmuAcuerTipoEmpRies4" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform: uppercase"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center; text-transform:uppercase"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_3observaInmuAcuerTipoEmpRies4" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform: uppercase"></asp:TextBox>
                             </asp:TableCell>
                         </asp:TableRow>
                         <asp:TableRow>
                             <asp:TableCell Style="background-color: #ccffff; font-size: 15px; text-transform: uppercase">5º</asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center; text-transform:uppercase" TextMode="Date"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_3fechaInmuAcuerTipoEmpRies5" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform: uppercase" TextMode="Date"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center; text-transform:uppercase"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_3loteInmuAcuerTipoEmpRies5" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform: uppercase"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center; text-transform:uppercase"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_3esqueCompleInmuAcuerTipoEmpRies5" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform: uppercase"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center; text-transform:uppercase"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_3nomCompleResponVacuInmuAcuerTipoEmpRies5" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform: uppercase"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center; text-transform:uppercase"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_3estaSaludColocoVacuInmuAcuerTipoEmpRies5" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform: uppercase"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center; text-transform:uppercase"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_3observaInmuAcuerTipoEmpRies5" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform: uppercase"></asp:TextBox>
                             </asp:TableCell>
                         </asp:TableRow>
                         <asp:TableRow>
                             <asp:TableCell RowSpan="5" Style="background-color: #ccffff; font-size: 15px; text-transform: uppercase">
-                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center; text-transform:uppercase"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_descripInmunizaciones4" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform: uppercase; vertical-align: middle" TextMode="MultiLine" Rows="11"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: #ccffff; font-size: 15px; text-transform: uppercase">1º</asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center; text-transform:uppercase" TextMode="Date"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_4fechaInmuAcuerTipoEmpRies1" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform: uppercase" TextMode="Date"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center; text-transform:uppercase"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_4loteInmuAcuerTipoEmpRies1" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform: uppercase"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center; text-transform:uppercase"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_4esqueCompleInmuAcuerTipoEmpRies1" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform: uppercase"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center; text-transform:uppercase"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_4nomCompleResponVacuInmuAcuerTipoEmpRies1" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform: uppercase"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center; text-transform:uppercase"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_4estaSaludColocoVacuInmuAcuerTipoEmpRies1" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform: uppercase"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center; text-transform:uppercase"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_4observaInmuAcuerTipoEmpRies1" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform: uppercase"></asp:TextBox>
                             </asp:TableCell>
                         </asp:TableRow>
                         <asp:TableRow>
                             <asp:TableCell Style="background-color: #ccffff; font-size: 15px; text-transform: uppercase">2º</asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center; text-transform:uppercase" TextMode="Date"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_4fechaInmuAcuerTipoEmpRies2" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform: uppercase" TextMode="Date"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center; text-transform:uppercase"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_4loteInmuAcuerTipoEmpRies2" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform: uppercase"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center; text-transform:uppercase"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_4esqueCompleInmuAcuerTipoEmpRies2" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform: uppercase"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center; text-transform:uppercase"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_4nomCompleResponVacuInmuAcuerTipoEmpRies2" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform: uppercase"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center; text-transform:uppercase"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_4estaSaludColocoVacuInmuAcuerTipoEmpRies2" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform: uppercase"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center; text-transform:uppercase"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_4observaInmuAcuerTipoEmpRies2" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform: uppercase"></asp:TextBox>
                             </asp:TableCell>
                         </asp:TableRow>
                         <asp:TableRow>
                             <asp:TableCell Style="background-color: #ccffff; font-size: 15px; text-transform: uppercase">3º</asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center; text-transform:uppercase" TextMode="Date"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_4fechaInmuAcuerTipoEmpRies3" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform: uppercase" TextMode="Date"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center; text-transform:uppercase"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_4loteInmuAcuerTipoEmpRies3" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform: uppercase"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center; text-transform:uppercase"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_4esqueCompleInmuAcuerTipoEmpRies3" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform: uppercase"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center; text-transform:uppercase"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_4nomCompleResponVacuInmuAcuerTipoEmpRies3" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform: uppercase"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center; text-transform:uppercase"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_4estaSaludColocoVacuInmuAcuerTipoEmpRies3" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform: uppercase"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center; text-transform:uppercase"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_4observaInmuAcuerTipoEmpRies3" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform: uppercase"></asp:TextBox>
                             </asp:TableCell>
                         </asp:TableRow>
                         <asp:TableRow>
                             <asp:TableCell Style="background-color: #ccffff; font-size: 15px; text-transform: uppercase">4º</asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center; text-transform:uppercase" TextMode="Date"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_4fechaInmuAcuerTipoEmpRies4" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform: uppercase" TextMode="Date"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center; text-transform:uppercase"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_4loteInmuAcuerTipoEmpRies4" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform: uppercase"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center; text-transform:uppercase"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_4esqueCompleInmuAcuerTipoEmpRies4" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform: uppercase"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center; text-transform:uppercase"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_4nomCompleResponVacuInmuAcuerTipoEmpRies4" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform: uppercase"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center; text-transform:uppercase"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_4estaSaludColocoVacuInmuAcuerTipoEmpRies4" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform: uppercase"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center; text-transform:uppercase"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_4observaInmuAcuerTipoEmpRies4" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform: uppercase"></asp:TextBox>
                             </asp:TableCell>
                         </asp:TableRow>
                         <asp:TableRow>
                             <asp:TableCell Style="background-color: #ccffff; font-size: 15px; text-transform: uppercase">5º</asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center; text-transform:uppercase" TextMode="Date"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_4fechaInmuAcuerTipoEmpRies5" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform: uppercase" TextMode="Date"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center; text-transform:uppercase"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_4loteInmuAcuerTipoEmpRies5" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform: uppercase"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center; text-transform:uppercase"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_4esqueCompleInmuAcuerTipoEmpRies5" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform: uppercase"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center; text-transform:uppercase"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_4nomCompleResponVacuInmuAcuerTipoEmpRies5" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform: uppercase"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center; text-transform:uppercase"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_4estaSaludColocoVacuInmuAcuerTipoEmpRies5" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform: uppercase"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                        <asp:TextBox runat="server" BorderStyle="None" style="background-color:transparent; width:100%; text-align:center; text-transform:uppercase"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_4observaInmuAcuerTipoEmpRies5" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform: uppercase"></asp:TextBox>
                             </asp:TableCell>
                         </asp:TableRow>
                         <asp:TableRow>

@@ -53,6 +53,7 @@ namespace SistemaECU911.Template.Views
                         if (inmu != null)
                         {
                             //A
+                            txt_ciiu.Text = inmu.inmu_ciiu.ToString();
                             txt_numArchivo.Text = inmu.inmu_numArchivo.ToString();
 
                             //B
@@ -257,6 +258,8 @@ namespace SistemaECU911.Template.Views
                             txt_estaSaludColocoVacuSarampion2.Text = inmu.inmu_estaSaludColocoVacuSarampion2.ToString();
                             txt_observaSarampion2.Text = inmu.inmu_observaSarampion2.ToString();
 
+                            //*******************************************************
+                            txt_descripInmunizaciones.Text = inmu.inmu_descripInmunizaciones.ToString();
                             if (inmu.inmu_1fechaInmuAcuerTipoEmpRies1 == "")
                             {
                                 txt_1fechaInmuAcuerTipoEmpRies1.Text = inmu.inmu_1fechaInmuAcuerTipoEmpRies1.ToString();
@@ -322,6 +325,9 @@ namespace SistemaECU911.Template.Views
                             txt_1nomCompleResponVacuInmuAcuerTipoEmpRies5.Text = inmu.inmu_1nomCompleResponVacuInmuAcuerTipoEmpRies5.ToString();
                             txt_1estaSaludColocoVacuInmuAcuerTipoEmpRies5.Text = inmu.inmu_1estaSaludColocoVacuInmuAcuerTipoEmpRies1.ToString();
                             txt_1observaInmuAcuerTipoEmpRies5.Text = inmu.inmu_1observaInmuAcuerTipoEmpRies5.ToString();
+
+                            //********************************************************************
+                            txt_descripInmunizaciones2.Text = inmu.inmu_descripInmunizaciones2.ToString();
                             if (inmu.inmu_2fechaInmuAcuerTipoEmpRies1 == "")
                             {
                                 txt_2fechaInmuAcuerTipoEmpRies1.Text = inmu.inmu_2fechaInmuAcuerTipoEmpRies1.ToString();
@@ -387,6 +393,143 @@ namespace SistemaECU911.Template.Views
                             txt_2nomCompleResponVacuInmuAcuerTipoEmpRies5.Text = inmu.inmu_2nomCompleResponVacuInmuAcuerTipoEmpRies5.ToString();
                             txt_2estaSaludColocoVacuInmuAcuerTipoEmpRies5.Text = inmu.inmu_2estaSaludColocoVacuInmuAcuerTipoEmpRies1.ToString();
                             txt_2observaInmuAcuerTipoEmpRies5.Text = inmu.inmu_2observaInmuAcuerTipoEmpRies5.ToString();
+
+                            //************************************************************
+                            txt_descripInmunizaciones3.Text = inmu.inmu_descripInmunizaciones3.ToString();
+                            if (inmu.inmu_3fechaInmuAcuerTipoEmpRies1 == "")
+                            {
+                                txt_3fechaInmuAcuerTipoEmpRies1.Text = inmu.inmu_3fechaInmuAcuerTipoEmpRies1.ToString();
+                            }
+                            else
+                            {
+                                txt_3fechaInmuAcuerTipoEmpRies1.Text = Convert.ToDateTime(inmu.inmu_3fechaInmuAcuerTipoEmpRies1).ToString("yyyy-MM-dd");
+                            }
+                            txt_3loteInmuAcuerTipoEmpRies1.Text = inmu.inmu_3loteInmuAcuerTipoEmpRies1.ToString();
+                            txt_3esqueCompleInmuAcuerTipoEmpRies1.Text = inmu.inmu_3esqueCompleInmuAcuerTipoEmpRies1.ToString();
+                            txt_3nomCompleResponVacuInmuAcuerTipoEmpRies1.Text = inmu.inmu_3nomCompleResponVacuInmuAcuerTipoEmpRies1.ToString();
+                            txt_3estaSaludColocoVacuInmuAcuerTipoEmpRies1.Text = inmu.inmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies1.ToString();
+                            txt_3observaInmuAcuerTipoEmpRies1.Text = inmu.inmu_3observaInmuAcuerTipoEmpRies1.ToString();
+                            if (inmu.inmu_3fechaInmuAcuerTipoEmpRies2 == "")
+                            {
+                                txt_3fechaInmuAcuerTipoEmpRies2.Text = inmu.inmu_3fechaInmuAcuerTipoEmpRies2.ToString();
+                            }
+                            else
+                            {
+                                txt_3fechaInmuAcuerTipoEmpRies2.Text = Convert.ToDateTime(inmu.inmu_3fechaInmuAcuerTipoEmpRies2).ToString("yyyy-MM-dd");
+                            }
+                            txt_3loteInmuAcuerTipoEmpRies2.Text = inmu.inmu_3loteInmuAcuerTipoEmpRies2.ToString();
+                            txt_3esqueCompleInmuAcuerTipoEmpRies2.Text = inmu.inmu_3esqueCompleInmuAcuerTipoEmpRies2.ToString();
+                            txt_3nomCompleResponVacuInmuAcuerTipoEmpRies2.Text = inmu.inmu_3nomCompleResponVacuInmuAcuerTipoEmpRies2.ToString();
+                            txt_3estaSaludColocoVacuInmuAcuerTipoEmpRies2.Text = inmu.inmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies2.ToString();
+                            txt_3observaInmuAcuerTipoEmpRies1.Text = inmu.inmu_3observaInmuAcuerTipoEmpRies2.ToString();
+                            if (inmu.inmu_3fechaInmuAcuerTipoEmpRies3 == "")
+                            {
+                                txt_3fechaInmuAcuerTipoEmpRies3.Text = inmu.inmu_3fechaInmuAcuerTipoEmpRies3.ToString();
+                            }
+                            else
+                            {
+                                txt_3fechaInmuAcuerTipoEmpRies3.Text = Convert.ToDateTime(inmu.inmu_3fechaInmuAcuerTipoEmpRies3).ToString("yyyy-MM-dd");
+                            }
+                            txt_3loteInmuAcuerTipoEmpRies3.Text = inmu.inmu_3loteInmuAcuerTipoEmpRies3.ToString();
+                            txt_3esqueCompleInmuAcuerTipoEmpRies3.Text = inmu.inmu_3esqueCompleInmuAcuerTipoEmpRies3.ToString();
+                            txt_3nomCompleResponVacuInmuAcuerTipoEmpRies3.Text = inmu.inmu_3nomCompleResponVacuInmuAcuerTipoEmpRies3.ToString();
+                            txt_3estaSaludColocoVacuInmuAcuerTipoEmpRies3.Text = inmu.inmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies3.ToString();
+                            txt_3observaInmuAcuerTipoEmpRies3.Text = inmu.inmu_3observaInmuAcuerTipoEmpRies3.ToString();
+                            if (inmu.inmu_3fechaInmuAcuerTipoEmpRies4 == "")
+                            {
+                                txt_3fechaInmuAcuerTipoEmpRies4.Text = inmu.inmu_3fechaInmuAcuerTipoEmpRies4.ToString();
+                            }
+                            else
+                            {
+                                txt_3fechaInmuAcuerTipoEmpRies4.Text = Convert.ToDateTime(inmu.inmu_3fechaInmuAcuerTipoEmpRies4).ToString("yyyy-MM-dd");
+                            }
+                            txt_3loteInmuAcuerTipoEmpRies4.Text = inmu.inmu_3loteInmuAcuerTipoEmpRies4.ToString();
+                            txt_3esqueCompleInmuAcuerTipoEmpRies4.Text = inmu.inmu_3esqueCompleInmuAcuerTipoEmpRies4.ToString();
+                            txt_3nomCompleResponVacuInmuAcuerTipoEmpRies4.Text = inmu.inmu_3nomCompleResponVacuInmuAcuerTipoEmpRies4.ToString();
+                            txt_3estaSaludColocoVacuInmuAcuerTipoEmpRies4.Text = inmu.inmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies4.ToString();
+                            txt_3observaInmuAcuerTipoEmpRies4.Text = inmu.inmu_3observaInmuAcuerTipoEmpRies4.ToString();
+                            if (inmu.inmu_3fechaInmuAcuerTipoEmpRies5 == "")
+                            {
+                                txt_3fechaInmuAcuerTipoEmpRies5.Text = inmu.inmu_3fechaInmuAcuerTipoEmpRies5.ToString();
+                            }
+                            else
+                            {
+                                txt_3fechaInmuAcuerTipoEmpRies5.Text = Convert.ToDateTime(inmu.inmu_3fechaInmuAcuerTipoEmpRies5).ToString("yyyy-MM-dd");
+                            }
+                            txt_3loteInmuAcuerTipoEmpRies5.Text = inmu.inmu_3loteInmuAcuerTipoEmpRies5.ToString();
+                            txt_3esqueCompleInmuAcuerTipoEmpRies5.Text = inmu.inmu_3esqueCompleInmuAcuerTipoEmpRies5.ToString();
+                            txt_3nomCompleResponVacuInmuAcuerTipoEmpRies5.Text = inmu.inmu_3nomCompleResponVacuInmuAcuerTipoEmpRies5.ToString();
+                            txt_3estaSaludColocoVacuInmuAcuerTipoEmpRies5.Text = inmu.inmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies1.ToString();
+                            txt_3observaInmuAcuerTipoEmpRies5.Text = inmu.inmu_3observaInmuAcuerTipoEmpRies5.ToString();
+
+                            //************************************************************
+                            txt_descripInmunizaciones4.Text = inmu.inmu_descripInmunizaciones4.ToString();
+                            if (inmu.inmu_4fechaInmuAcuerTipoEmpRies1 == "")
+                            {
+                                txt_4fechaInmuAcuerTipoEmpRies1.Text = inmu.inmu_4fechaInmuAcuerTipoEmpRies1.ToString();
+                            }
+                            else
+                            {
+                                txt_4fechaInmuAcuerTipoEmpRies1.Text = Convert.ToDateTime(inmu.inmu_4fechaInmuAcuerTipoEmpRies1).ToString("yyyy-MM-dd");
+                            }
+                            txt_4loteInmuAcuerTipoEmpRies1.Text = inmu.inmu_4loteInmuAcuerTipoEmpRies1.ToString();
+                            txt_4esqueCompleInmuAcuerTipoEmpRies1.Text = inmu.inmu_4esqueCompleInmuAcuerTipoEmpRies1.ToString();
+                            txt_4nomCompleResponVacuInmuAcuerTipoEmpRies1.Text = inmu.inmu_4nomCompleResponVacuInmuAcuerTipoEmpRies1.ToString();
+                            txt_4estaSaludColocoVacuInmuAcuerTipoEmpRies1.Text = inmu.inmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies1.ToString();
+                            txt_4observaInmuAcuerTipoEmpRies1.Text = inmu.inmu_4observaInmuAcuerTipoEmpRies1.ToString();
+                            if (inmu.inmu_4fechaInmuAcuerTipoEmpRies2 == "")
+                            {
+                                txt_4fechaInmuAcuerTipoEmpRies2.Text = inmu.inmu_4fechaInmuAcuerTipoEmpRies2.ToString();
+                            }
+                            else
+                            {
+                                txt_4fechaInmuAcuerTipoEmpRies2.Text = Convert.ToDateTime(inmu.inmu_4fechaInmuAcuerTipoEmpRies2).ToString("yyyy-MM-dd");
+                            }
+                            txt_4loteInmuAcuerTipoEmpRies2.Text = inmu.inmu_4loteInmuAcuerTipoEmpRies2.ToString();
+                            txt_4esqueCompleInmuAcuerTipoEmpRies2.Text = inmu.inmu_4esqueCompleInmuAcuerTipoEmpRies2.ToString();
+                            txt_4nomCompleResponVacuInmuAcuerTipoEmpRies2.Text = inmu.inmu_4nomCompleResponVacuInmuAcuerTipoEmpRies2.ToString();
+                            txt_4estaSaludColocoVacuInmuAcuerTipoEmpRies2.Text = inmu.inmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies2.ToString();
+                            txt_4observaInmuAcuerTipoEmpRies1.Text = inmu.inmu_4observaInmuAcuerTipoEmpRies2.ToString();
+                            if (inmu.inmu_4fechaInmuAcuerTipoEmpRies3 == "")
+                            {
+                                txt_4fechaInmuAcuerTipoEmpRies3.Text = inmu.inmu_4fechaInmuAcuerTipoEmpRies3.ToString();
+                            }
+                            else
+                            {
+                                txt_4fechaInmuAcuerTipoEmpRies3.Text = Convert.ToDateTime(inmu.inmu_4fechaInmuAcuerTipoEmpRies3).ToString("yyyy-MM-dd");
+                            }
+                            txt_4loteInmuAcuerTipoEmpRies3.Text = inmu.inmu_4loteInmuAcuerTipoEmpRies3.ToString();
+                            txt_4esqueCompleInmuAcuerTipoEmpRies3.Text = inmu.inmu_4esqueCompleInmuAcuerTipoEmpRies3.ToString();
+                            txt_4nomCompleResponVacuInmuAcuerTipoEmpRies3.Text = inmu.inmu_4nomCompleResponVacuInmuAcuerTipoEmpRies3.ToString();
+                            txt_4estaSaludColocoVacuInmuAcuerTipoEmpRies3.Text = inmu.inmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies3.ToString();
+                            txt_4observaInmuAcuerTipoEmpRies3.Text = inmu.inmu_4observaInmuAcuerTipoEmpRies3.ToString();
+                            if (inmu.inmu_4fechaInmuAcuerTipoEmpRies4 == "")
+                            {
+                                txt_4fechaInmuAcuerTipoEmpRies4.Text = inmu.inmu_4fechaInmuAcuerTipoEmpRies4.ToString();
+                            }
+                            else
+                            {
+                                txt_4fechaInmuAcuerTipoEmpRies4.Text = Convert.ToDateTime(inmu.inmu_4fechaInmuAcuerTipoEmpRies4).ToString("yyyy-MM-dd");
+                            }
+                            txt_4loteInmuAcuerTipoEmpRies4.Text = inmu.inmu_4loteInmuAcuerTipoEmpRies4.ToString();
+                            txt_4esqueCompleInmuAcuerTipoEmpRies4.Text = inmu.inmu_4esqueCompleInmuAcuerTipoEmpRies4.ToString();
+                            txt_4nomCompleResponVacuInmuAcuerTipoEmpRies4.Text = inmu.inmu_4nomCompleResponVacuInmuAcuerTipoEmpRies4.ToString();
+                            txt_4estaSaludColocoVacuInmuAcuerTipoEmpRies4.Text = inmu.inmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies4.ToString();
+                            txt_4observaInmuAcuerTipoEmpRies4.Text = inmu.inmu_4observaInmuAcuerTipoEmpRies4.ToString();
+                            if (inmu.inmu_4fechaInmuAcuerTipoEmpRies5 == "")
+                            {
+                                txt_4fechaInmuAcuerTipoEmpRies5.Text = inmu.inmu_4fechaInmuAcuerTipoEmpRies5.ToString();
+                            }
+                            else
+                            {
+                                txt_4fechaInmuAcuerTipoEmpRies5.Text = Convert.ToDateTime(inmu.inmu_4fechaInmuAcuerTipoEmpRies5).ToString("yyyy-MM-dd");
+                            }
+                            txt_4loteInmuAcuerTipoEmpRies5.Text = inmu.inmu_4loteInmuAcuerTipoEmpRies5.ToString();
+                            txt_4esqueCompleInmuAcuerTipoEmpRies5.Text = inmu.inmu_4esqueCompleInmuAcuerTipoEmpRies5.ToString();
+                            txt_4nomCompleResponVacuInmuAcuerTipoEmpRies5.Text = inmu.inmu_4nomCompleResponVacuInmuAcuerTipoEmpRies5.ToString();
+                            txt_4estaSaludColocoVacuInmuAcuerTipoEmpRies5.Text = inmu.inmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies1.ToString();
+                            txt_4observaInmuAcuerTipoEmpRies5.Text = inmu.inmu_4observaInmuAcuerTipoEmpRies5.ToString();
+
                         } 
 
                     }
@@ -473,6 +616,7 @@ namespace SistemaECU911.Template.Views
                 inmu = new Tbl_Inmunizaciones();
 
                 //A. Captura de datos Establecimiento
+                inmu.inmu_ciiu = txt_ciiu.Text;
                 inmu.inmu_numArchivo = txt_numArchivo.Text;
 
                 //B. Captura de datos Inmunizaciones
@@ -572,6 +716,7 @@ namespace SistemaECU911.Template.Views
                 inmu.inmu_estaSaludColocoVacuSarampion2 = txt_estaSaludColocoVacuSarampion2.Text;
                 inmu.inmu_observaSarampion2 = txt_observaSarampion2.Text;
 
+                inmu.inmu_descripInmunizaciones = txt_descripInmunizaciones.Text;
                 inmu.inmu_1fechaInmuAcuerTipoEmpRies1 = txt_1fechaInmuAcuerTipoEmpRies1.Text;
                 inmu.inmu_1loteInmuAcuerTipoEmpRies1 = txt_1loteInmuAcuerTipoEmpRies1.Text;
                 inmu.inmu_1esqueCompleInmuAcuerTipoEmpRies1 = txt_1esqueCompleInmuAcuerTipoEmpRies1.Text;
@@ -603,6 +748,7 @@ namespace SistemaECU911.Template.Views
                 inmu.inmu_1estaSaludColocoVacuInmuAcuerTipoEmpRies5 = txt_1estaSaludColocoVacuInmuAcuerTipoEmpRies5.Text;
                 inmu.inmu_1observaInmuAcuerTipoEmpRies5 = txt_1observaInmuAcuerTipoEmpRies5.Text;
 
+                inmu.inmu_descripInmunizaciones2 = txt_descripInmunizaciones2.Text;
                 inmu.inmu_2fechaInmuAcuerTipoEmpRies1 = txt_2fechaInmuAcuerTipoEmpRies1.Text;
                 inmu.inmu_2loteInmuAcuerTipoEmpRies1 = txt_2loteInmuAcuerTipoEmpRies1.Text;
                 inmu.inmu_2esqueCompleInmuAcuerTipoEmpRies1 = txt_2esqueCompleInmuAcuerTipoEmpRies1.Text;
@@ -633,6 +779,70 @@ namespace SistemaECU911.Template.Views
                 inmu.inmu_2nomCompleResponVacuInmuAcuerTipoEmpRies5 = txt_2nomCompleResponVacuInmuAcuerTipoEmpRies5.Text;
                 inmu.inmu_2estaSaludColocoVacuInmuAcuerTipoEmpRies5 = txt_2estaSaludColocoVacuInmuAcuerTipoEmpRies5.Text;
                 inmu.inmu_2observaInmuAcuerTipoEmpRies5 = txt_2observaInmuAcuerTipoEmpRies5.Text;
+
+                inmu.inmu_descripInmunizaciones3 = txt_descripInmunizaciones3.Text;
+                inmu.inmu_3fechaInmuAcuerTipoEmpRies1 = txt_3fechaInmuAcuerTipoEmpRies1.Text;
+                inmu.inmu_3loteInmuAcuerTipoEmpRies1 = txt_3loteInmuAcuerTipoEmpRies1.Text;
+                inmu.inmu_3esqueCompleInmuAcuerTipoEmpRies1 = txt_3esqueCompleInmuAcuerTipoEmpRies1.Text;
+                inmu.inmu_3nomCompleResponVacuInmuAcuerTipoEmpRies1 = txt_3nomCompleResponVacuInmuAcuerTipoEmpRies1.Text;
+                inmu.inmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies1 = txt_3estaSaludColocoVacuInmuAcuerTipoEmpRies1.Text;
+                inmu.inmu_3observaInmuAcuerTipoEmpRies1 = txt_3observaInmuAcuerTipoEmpRies1.Text;
+                inmu.inmu_3fechaInmuAcuerTipoEmpRies2 = txt_3fechaInmuAcuerTipoEmpRies2.Text;
+                inmu.inmu_3loteInmuAcuerTipoEmpRies2 = txt_3loteInmuAcuerTipoEmpRies2.Text;
+                inmu.inmu_3esqueCompleInmuAcuerTipoEmpRies2 = txt_3esqueCompleInmuAcuerTipoEmpRies2.Text;
+                inmu.inmu_3nomCompleResponVacuInmuAcuerTipoEmpRies2 = txt_3nomCompleResponVacuInmuAcuerTipoEmpRies2.Text;
+                inmu.inmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies2 = txt_3estaSaludColocoVacuInmuAcuerTipoEmpRies2.Text;
+                inmu.inmu_3observaInmuAcuerTipoEmpRies2 = txt_3observaInmuAcuerTipoEmpRies2.Text;
+                inmu.inmu_3fechaInmuAcuerTipoEmpRies3 = txt_3fechaInmuAcuerTipoEmpRies3.Text;
+                inmu.inmu_3loteInmuAcuerTipoEmpRies3 = txt_3loteInmuAcuerTipoEmpRies3.Text;
+                inmu.inmu_3esqueCompleInmuAcuerTipoEmpRies3 = txt_3esqueCompleInmuAcuerTipoEmpRies3.Text;
+                inmu.inmu_3nomCompleResponVacuInmuAcuerTipoEmpRies3 = txt_3nomCompleResponVacuInmuAcuerTipoEmpRies3.Text;
+                inmu.inmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies3 = txt_3estaSaludColocoVacuInmuAcuerTipoEmpRies3.Text;
+                inmu.inmu_3observaInmuAcuerTipoEmpRies3 = txt_3observaInmuAcuerTipoEmpRies3.Text;
+                inmu.inmu_3fechaInmuAcuerTipoEmpRies4 = txt_3fechaInmuAcuerTipoEmpRies4.Text;
+                inmu.inmu_3loteInmuAcuerTipoEmpRies4 = txt_3loteInmuAcuerTipoEmpRies4.Text;
+                inmu.inmu_3esqueCompleInmuAcuerTipoEmpRies4 = txt_3esqueCompleInmuAcuerTipoEmpRies4.Text;
+                inmu.inmu_3nomCompleResponVacuInmuAcuerTipoEmpRies4 = txt_3nomCompleResponVacuInmuAcuerTipoEmpRies4.Text;
+                inmu.inmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies4 = txt_3estaSaludColocoVacuInmuAcuerTipoEmpRies4.Text;
+                inmu.inmu_3observaInmuAcuerTipoEmpRies4 = txt_3observaInmuAcuerTipoEmpRies4.Text;
+                inmu.inmu_3fechaInmuAcuerTipoEmpRies5 = txt_3fechaInmuAcuerTipoEmpRies5.Text;
+                inmu.inmu_3loteInmuAcuerTipoEmpRies5 = txt_3loteInmuAcuerTipoEmpRies5.Text;
+                inmu.inmu_3esqueCompleInmuAcuerTipoEmpRies5 = txt_3esqueCompleInmuAcuerTipoEmpRies5.Text;
+                inmu.inmu_3nomCompleResponVacuInmuAcuerTipoEmpRies5 = txt_3nomCompleResponVacuInmuAcuerTipoEmpRies5.Text;
+                inmu.inmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies5 = txt_3estaSaludColocoVacuInmuAcuerTipoEmpRies5.Text;
+                inmu.inmu_3observaInmuAcuerTipoEmpRies5 = txt_3observaInmuAcuerTipoEmpRies5.Text;
+
+                inmu.inmu_descripInmunizaciones4 = txt_descripInmunizaciones4.Text;
+                inmu.inmu_4fechaInmuAcuerTipoEmpRies1 = txt_4fechaInmuAcuerTipoEmpRies1.Text;
+                inmu.inmu_4loteInmuAcuerTipoEmpRies1 = txt_4loteInmuAcuerTipoEmpRies1.Text;
+                inmu.inmu_4esqueCompleInmuAcuerTipoEmpRies1 = txt_4esqueCompleInmuAcuerTipoEmpRies1.Text;
+                inmu.inmu_4nomCompleResponVacuInmuAcuerTipoEmpRies1 = txt_4nomCompleResponVacuInmuAcuerTipoEmpRies1.Text;
+                inmu.inmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies1 = txt_4estaSaludColocoVacuInmuAcuerTipoEmpRies1.Text;
+                inmu.inmu_4observaInmuAcuerTipoEmpRies1 = txt_4observaInmuAcuerTipoEmpRies1.Text;
+                inmu.inmu_4fechaInmuAcuerTipoEmpRies2 = txt_4fechaInmuAcuerTipoEmpRies2.Text;
+                inmu.inmu_4loteInmuAcuerTipoEmpRies2 = txt_4loteInmuAcuerTipoEmpRies2.Text;
+                inmu.inmu_4esqueCompleInmuAcuerTipoEmpRies2 = txt_4esqueCompleInmuAcuerTipoEmpRies2.Text;
+                inmu.inmu_4nomCompleResponVacuInmuAcuerTipoEmpRies2 = txt_4nomCompleResponVacuInmuAcuerTipoEmpRies2.Text;
+                inmu.inmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies2 = txt_4estaSaludColocoVacuInmuAcuerTipoEmpRies2.Text;
+                inmu.inmu_4observaInmuAcuerTipoEmpRies2 = txt_4observaInmuAcuerTipoEmpRies2.Text;
+                inmu.inmu_4fechaInmuAcuerTipoEmpRies3 = txt_4fechaInmuAcuerTipoEmpRies3.Text;
+                inmu.inmu_4loteInmuAcuerTipoEmpRies3 = txt_4loteInmuAcuerTipoEmpRies3.Text;
+                inmu.inmu_4esqueCompleInmuAcuerTipoEmpRies3 = txt_4esqueCompleInmuAcuerTipoEmpRies3.Text;
+                inmu.inmu_4nomCompleResponVacuInmuAcuerTipoEmpRies3 = txt_4nomCompleResponVacuInmuAcuerTipoEmpRies3.Text;
+                inmu.inmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies3 = txt_4estaSaludColocoVacuInmuAcuerTipoEmpRies3.Text;
+                inmu.inmu_4observaInmuAcuerTipoEmpRies3 = txt_4observaInmuAcuerTipoEmpRies3.Text;
+                inmu.inmu_4fechaInmuAcuerTipoEmpRies4 = txt_4fechaInmuAcuerTipoEmpRies4.Text;
+                inmu.inmu_4loteInmuAcuerTipoEmpRies4 = txt_4loteInmuAcuerTipoEmpRies4.Text;
+                inmu.inmu_4esqueCompleInmuAcuerTipoEmpRies4 = txt_4esqueCompleInmuAcuerTipoEmpRies4.Text;
+                inmu.inmu_4nomCompleResponVacuInmuAcuerTipoEmpRies4 = txt_4nomCompleResponVacuInmuAcuerTipoEmpRies4.Text;
+                inmu.inmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies4 = txt_4estaSaludColocoVacuInmuAcuerTipoEmpRies4.Text;
+                inmu.inmu_4observaInmuAcuerTipoEmpRies4 = txt_4observaInmuAcuerTipoEmpRies4.Text;
+                inmu.inmu_4fechaInmuAcuerTipoEmpRies5 = txt_4fechaInmuAcuerTipoEmpRies5.Text;
+                inmu.inmu_4loteInmuAcuerTipoEmpRies5 = txt_4loteInmuAcuerTipoEmpRies5.Text;
+                inmu.inmu_4esqueCompleInmuAcuerTipoEmpRies5 = txt_4esqueCompleInmuAcuerTipoEmpRies5.Text;
+                inmu.inmu_4nomCompleResponVacuInmuAcuerTipoEmpRies5 = txt_4nomCompleResponVacuInmuAcuerTipoEmpRies5.Text;
+                inmu.inmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies5 = txt_4estaSaludColocoVacuInmuAcuerTipoEmpRies5.Text;
+                inmu.inmu_4observaInmuAcuerTipoEmpRies5 = txt_4observaInmuAcuerTipoEmpRies5.Text;
 
                 inmu.Per_id = perso;
                 
@@ -656,6 +866,7 @@ namespace SistemaECU911.Template.Views
             try
             {
                 //A. Captura de datos Establecimiento
+                inmu.inmu_ciiu = txt_ciiu.Text;
                 inmu.inmu_numArchivo = txt_numArchivo.Text;
 
                 //B. Captura de datos Inmunizaciones
@@ -816,6 +1027,70 @@ namespace SistemaECU911.Template.Views
                 inmu.inmu_2nomCompleResponVacuInmuAcuerTipoEmpRies5 = txt_2nomCompleResponVacuInmuAcuerTipoEmpRies5.Text;
                 inmu.inmu_2estaSaludColocoVacuInmuAcuerTipoEmpRies5 = txt_2estaSaludColocoVacuInmuAcuerTipoEmpRies5.Text;
                 inmu.inmu_2observaInmuAcuerTipoEmpRies5 = txt_2observaInmuAcuerTipoEmpRies5.Text;
+
+                inmu.inmu_descripInmunizaciones3 = txt_descripInmunizaciones3.Text;
+                inmu.inmu_3fechaInmuAcuerTipoEmpRies1 = txt_3fechaInmuAcuerTipoEmpRies1.Text;
+                inmu.inmu_3loteInmuAcuerTipoEmpRies1 = txt_3loteInmuAcuerTipoEmpRies1.Text;
+                inmu.inmu_3esqueCompleInmuAcuerTipoEmpRies1 = txt_3esqueCompleInmuAcuerTipoEmpRies1.Text;
+                inmu.inmu_3nomCompleResponVacuInmuAcuerTipoEmpRies1 = txt_3nomCompleResponVacuInmuAcuerTipoEmpRies1.Text;
+                inmu.inmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies1 = txt_3estaSaludColocoVacuInmuAcuerTipoEmpRies1.Text;
+                inmu.inmu_3observaInmuAcuerTipoEmpRies1 = txt_3observaInmuAcuerTipoEmpRies1.Text;
+                inmu.inmu_3fechaInmuAcuerTipoEmpRies2 = txt_3fechaInmuAcuerTipoEmpRies2.Text;
+                inmu.inmu_3loteInmuAcuerTipoEmpRies2 = txt_3loteInmuAcuerTipoEmpRies2.Text;
+                inmu.inmu_3esqueCompleInmuAcuerTipoEmpRies2 = txt_3esqueCompleInmuAcuerTipoEmpRies2.Text;
+                inmu.inmu_3nomCompleResponVacuInmuAcuerTipoEmpRies2 = txt_3nomCompleResponVacuInmuAcuerTipoEmpRies2.Text;
+                inmu.inmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies2 = txt_3estaSaludColocoVacuInmuAcuerTipoEmpRies2.Text;
+                inmu.inmu_3observaInmuAcuerTipoEmpRies2 = txt_3observaInmuAcuerTipoEmpRies2.Text;
+                inmu.inmu_3fechaInmuAcuerTipoEmpRies3 = txt_3fechaInmuAcuerTipoEmpRies3.Text;
+                inmu.inmu_3loteInmuAcuerTipoEmpRies3 = txt_3loteInmuAcuerTipoEmpRies3.Text;
+                inmu.inmu_3esqueCompleInmuAcuerTipoEmpRies3 = txt_3esqueCompleInmuAcuerTipoEmpRies3.Text;
+                inmu.inmu_3nomCompleResponVacuInmuAcuerTipoEmpRies3 = txt_3nomCompleResponVacuInmuAcuerTipoEmpRies3.Text;
+                inmu.inmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies3 = txt_3estaSaludColocoVacuInmuAcuerTipoEmpRies3.Text;
+                inmu.inmu_3observaInmuAcuerTipoEmpRies3 = txt_3observaInmuAcuerTipoEmpRies3.Text;
+                inmu.inmu_3fechaInmuAcuerTipoEmpRies4 = txt_3fechaInmuAcuerTipoEmpRies4.Text;
+                inmu.inmu_3loteInmuAcuerTipoEmpRies4 = txt_3loteInmuAcuerTipoEmpRies4.Text;
+                inmu.inmu_3esqueCompleInmuAcuerTipoEmpRies4 = txt_3esqueCompleInmuAcuerTipoEmpRies4.Text;
+                inmu.inmu_3nomCompleResponVacuInmuAcuerTipoEmpRies4 = txt_3nomCompleResponVacuInmuAcuerTipoEmpRies4.Text;
+                inmu.inmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies4 = txt_3estaSaludColocoVacuInmuAcuerTipoEmpRies4.Text;
+                inmu.inmu_3observaInmuAcuerTipoEmpRies4 = txt_3observaInmuAcuerTipoEmpRies4.Text;
+                inmu.inmu_3fechaInmuAcuerTipoEmpRies5 = txt_3fechaInmuAcuerTipoEmpRies5.Text;
+                inmu.inmu_3loteInmuAcuerTipoEmpRies5 = txt_3loteInmuAcuerTipoEmpRies5.Text;
+                inmu.inmu_3esqueCompleInmuAcuerTipoEmpRies5 = txt_3esqueCompleInmuAcuerTipoEmpRies5.Text;
+                inmu.inmu_3nomCompleResponVacuInmuAcuerTipoEmpRies5 = txt_3nomCompleResponVacuInmuAcuerTipoEmpRies5.Text;
+                inmu.inmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies5 = txt_3estaSaludColocoVacuInmuAcuerTipoEmpRies5.Text;
+                inmu.inmu_3observaInmuAcuerTipoEmpRies5 = txt_3observaInmuAcuerTipoEmpRies5.Text;
+
+                inmu.inmu_descripInmunizaciones4 = txt_descripInmunizaciones4.Text;
+                inmu.inmu_4fechaInmuAcuerTipoEmpRies1 = txt_4fechaInmuAcuerTipoEmpRies1.Text;
+                inmu.inmu_4loteInmuAcuerTipoEmpRies1 = txt_4loteInmuAcuerTipoEmpRies1.Text;
+                inmu.inmu_4esqueCompleInmuAcuerTipoEmpRies1 = txt_4esqueCompleInmuAcuerTipoEmpRies1.Text;
+                inmu.inmu_4nomCompleResponVacuInmuAcuerTipoEmpRies1 = txt_4nomCompleResponVacuInmuAcuerTipoEmpRies1.Text;
+                inmu.inmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies1 = txt_4estaSaludColocoVacuInmuAcuerTipoEmpRies1.Text;
+                inmu.inmu_4observaInmuAcuerTipoEmpRies1 = txt_4observaInmuAcuerTipoEmpRies1.Text;
+                inmu.inmu_4fechaInmuAcuerTipoEmpRies2 = txt_4fechaInmuAcuerTipoEmpRies2.Text;
+                inmu.inmu_4loteInmuAcuerTipoEmpRies2 = txt_4loteInmuAcuerTipoEmpRies2.Text;
+                inmu.inmu_4esqueCompleInmuAcuerTipoEmpRies2 = txt_4esqueCompleInmuAcuerTipoEmpRies2.Text;
+                inmu.inmu_4nomCompleResponVacuInmuAcuerTipoEmpRies2 = txt_4nomCompleResponVacuInmuAcuerTipoEmpRies2.Text;
+                inmu.inmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies2 = txt_4estaSaludColocoVacuInmuAcuerTipoEmpRies2.Text;
+                inmu.inmu_4observaInmuAcuerTipoEmpRies2 = txt_4observaInmuAcuerTipoEmpRies2.Text;
+                inmu.inmu_4fechaInmuAcuerTipoEmpRies3 = txt_4fechaInmuAcuerTipoEmpRies3.Text;
+                inmu.inmu_4loteInmuAcuerTipoEmpRies3 = txt_4loteInmuAcuerTipoEmpRies3.Text;
+                inmu.inmu_4esqueCompleInmuAcuerTipoEmpRies3 = txt_4esqueCompleInmuAcuerTipoEmpRies3.Text;
+                inmu.inmu_4nomCompleResponVacuInmuAcuerTipoEmpRies3 = txt_4nomCompleResponVacuInmuAcuerTipoEmpRies3.Text;
+                inmu.inmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies3 = txt_4estaSaludColocoVacuInmuAcuerTipoEmpRies3.Text;
+                inmu.inmu_4observaInmuAcuerTipoEmpRies3 = txt_4observaInmuAcuerTipoEmpRies3.Text;
+                inmu.inmu_4fechaInmuAcuerTipoEmpRies4 = txt_4fechaInmuAcuerTipoEmpRies4.Text;
+                inmu.inmu_4loteInmuAcuerTipoEmpRies4 = txt_4loteInmuAcuerTipoEmpRies4.Text;
+                inmu.inmu_4esqueCompleInmuAcuerTipoEmpRies4 = txt_4esqueCompleInmuAcuerTipoEmpRies4.Text;
+                inmu.inmu_4nomCompleResponVacuInmuAcuerTipoEmpRies4 = txt_4nomCompleResponVacuInmuAcuerTipoEmpRies4.Text;
+                inmu.inmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies4 = txt_4estaSaludColocoVacuInmuAcuerTipoEmpRies4.Text;
+                inmu.inmu_4observaInmuAcuerTipoEmpRies4 = txt_4observaInmuAcuerTipoEmpRies4.Text;
+                inmu.inmu_4fechaInmuAcuerTipoEmpRies5 = txt_4fechaInmuAcuerTipoEmpRies5.Text;
+                inmu.inmu_4loteInmuAcuerTipoEmpRies5 = txt_4loteInmuAcuerTipoEmpRies5.Text;
+                inmu.inmu_4esqueCompleInmuAcuerTipoEmpRies5 = txt_4esqueCompleInmuAcuerTipoEmpRies5.Text;
+                inmu.inmu_4nomCompleResponVacuInmuAcuerTipoEmpRies5 = txt_4nomCompleResponVacuInmuAcuerTipoEmpRies5.Text;
+                inmu.inmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies5 = txt_4estaSaludColocoVacuInmuAcuerTipoEmpRies5.Text;
+                inmu.inmu_4observaInmuAcuerTipoEmpRies5 = txt_4observaInmuAcuerTipoEmpRies5.Text;
 
                 CN_Inmunizaciones.ModificarInmunizaciones(inmu);
 
@@ -1061,7 +1336,7 @@ namespace SistemaECU911.Template.Views
             tblerDatos.AddCell(new PdfPCell(new Paragraph("INMUNIZACIONES DE ACUERDO AL TIPO DE EMPRESA Y RIESGO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
             pdfDoc.Add(tblerDatos);
             var tbler1Datos = new PdfPTable(new float[] { 30f, 20f, 20f, 20f, 30f, 40f, 50f, 80f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
-            tbler1Datos.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(204, 255, 255), HorizontalAlignment = Element.ALIGN_CENTER, VerticalAlignment = Element.ALIGN_MIDDLE, Rowspan = 5 });
+            tbler1Datos.AddCell(new PdfPCell(new Paragraph(txt_descripInmunizaciones.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(204, 255, 255), HorizontalAlignment = Element.ALIGN_CENTER, VerticalAlignment = Element.ALIGN_MIDDLE, Rowspan = 5 });
             tbler1Datos.AddCell(new PdfPCell(new Paragraph("1º", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(204, 255, 255), HorizontalAlignment = Element.ALIGN_CENTER, VerticalAlignment = Element.ALIGN_MIDDLE });
             tbler1Datos.AddCell(new PdfPCell(new Paragraph(txt_1fechaInmuAcuerTipoEmpRies1.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
             tbler1Datos.AddCell(new PdfPCell(new Paragraph(txt_1loteInmuAcuerTipoEmpRies1.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
@@ -1103,7 +1378,7 @@ namespace SistemaECU911.Template.Views
             tbler1Datos.AddCell(new PdfPCell(new Paragraph(txt_1observaInmuAcuerTipoEmpRies5.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
             pdfDoc.Add(tbler1Datos);
             var tbler2Datos = new PdfPTable(new float[] { 30f, 20f, 20f, 20f, 30f, 40f, 50f, 80f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
-            tbler2Datos.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(204, 255, 255), HorizontalAlignment = Element.ALIGN_CENTER, VerticalAlignment = Element.ALIGN_MIDDLE, Rowspan = 5 });
+            tbler2Datos.AddCell(new PdfPCell(new Paragraph(txt_descripInmunizaciones.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(204, 255, 255), HorizontalAlignment = Element.ALIGN_CENTER, VerticalAlignment = Element.ALIGN_MIDDLE, Rowspan = 5 });
             tbler2Datos.AddCell(new PdfPCell(new Paragraph("1º", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(204, 255, 255), HorizontalAlignment = Element.ALIGN_CENTER, VerticalAlignment = Element.ALIGN_MIDDLE });
             tbler2Datos.AddCell(new PdfPCell(new Paragraph(txt_2fechaInmuAcuerTipoEmpRies1.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
             tbler2Datos.AddCell(new PdfPCell(new Paragraph(txt_2loteInmuAcuerTipoEmpRies1.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
@@ -1145,88 +1420,88 @@ namespace SistemaECU911.Template.Views
             tbler2Datos.AddCell(new PdfPCell(new Paragraph(txt_2observaInmuAcuerTipoEmpRies5.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
             pdfDoc.Add(tbler2Datos);
             var tbler3Datos = new PdfPTable(new float[] { 30f, 20f, 20f, 20f, 30f, 40f, 50f, 80f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
-            tbler3Datos.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(204, 255, 255), HorizontalAlignment = Element.ALIGN_CENTER, VerticalAlignment = Element.ALIGN_MIDDLE, Rowspan = 5 });
+            tbler3Datos.AddCell(new PdfPCell(new Paragraph(txt_descripInmunizaciones3.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(204, 255, 255), HorizontalAlignment = Element.ALIGN_CENTER, VerticalAlignment = Element.ALIGN_MIDDLE, Rowspan = 5 });
             tbler3Datos.AddCell(new PdfPCell(new Paragraph("1º", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(204, 255, 255), HorizontalAlignment = Element.ALIGN_CENTER, VerticalAlignment = Element.ALIGN_MIDDLE });
-            tbler3Datos.AddCell(new PdfPCell(new Paragraph(txt_1fechaInmuAcuerTipoEmpRies1.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
-            tbler3Datos.AddCell(new PdfPCell(new Paragraph(txt_1loteInmuAcuerTipoEmpRies1.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
-            tbler3Datos.AddCell(new PdfPCell(new Paragraph(txt_1esqueCompleInmuAcuerTipoEmpRies1.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
-            tbler3Datos.AddCell(new PdfPCell(new Paragraph(txt_1nomCompleResponVacuInmuAcuerTipoEmpRies1.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
-            tbler3Datos.AddCell(new PdfPCell(new Paragraph(txt_1estaSaludColocoVacuInmuAcuerTipoEmpRies1.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
-            tbler3Datos.AddCell(new PdfPCell(new Paragraph(txt_1observaInmuAcuerTipoEmpRies1.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tbler3Datos.AddCell(new PdfPCell(new Paragraph(txt_3fechaInmuAcuerTipoEmpRies1.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tbler3Datos.AddCell(new PdfPCell(new Paragraph(txt_3loteInmuAcuerTipoEmpRies1.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tbler3Datos.AddCell(new PdfPCell(new Paragraph(txt_3esqueCompleInmuAcuerTipoEmpRies1.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tbler3Datos.AddCell(new PdfPCell(new Paragraph(txt_3nomCompleResponVacuInmuAcuerTipoEmpRies1.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tbler3Datos.AddCell(new PdfPCell(new Paragraph(txt_3estaSaludColocoVacuInmuAcuerTipoEmpRies1.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tbler3Datos.AddCell(new PdfPCell(new Paragraph(txt_3observaInmuAcuerTipoEmpRies1.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
 
             tbler3Datos.AddCell(new PdfPCell(new Paragraph("2º", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(204, 255, 255), HorizontalAlignment = Element.ALIGN_CENTER, VerticalAlignment = Element.ALIGN_MIDDLE });
-            tbler3Datos.AddCell(new PdfPCell(new Paragraph(txt_1fechaInmuAcuerTipoEmpRies2.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
-            tbler3Datos.AddCell(new PdfPCell(new Paragraph(txt_1loteInmuAcuerTipoEmpRies2.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
-            tbler3Datos.AddCell(new PdfPCell(new Paragraph(txt_1esqueCompleInmuAcuerTipoEmpRies2.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
-            tbler3Datos.AddCell(new PdfPCell(new Paragraph(txt_1nomCompleResponVacuInmuAcuerTipoEmpRies2.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
-            tbler3Datos.AddCell(new PdfPCell(new Paragraph(txt_1estaSaludColocoVacuInmuAcuerTipoEmpRies2.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
-            tbler3Datos.AddCell(new PdfPCell(new Paragraph(txt_1observaInmuAcuerTipoEmpRies2.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tbler3Datos.AddCell(new PdfPCell(new Paragraph(txt_3fechaInmuAcuerTipoEmpRies2.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tbler3Datos.AddCell(new PdfPCell(new Paragraph(txt_3loteInmuAcuerTipoEmpRies2.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tbler3Datos.AddCell(new PdfPCell(new Paragraph(txt_3esqueCompleInmuAcuerTipoEmpRies2.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tbler3Datos.AddCell(new PdfPCell(new Paragraph(txt_3nomCompleResponVacuInmuAcuerTipoEmpRies2.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tbler3Datos.AddCell(new PdfPCell(new Paragraph(txt_3estaSaludColocoVacuInmuAcuerTipoEmpRies2.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tbler3Datos.AddCell(new PdfPCell(new Paragraph(txt_3observaInmuAcuerTipoEmpRies2.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
 
             tbler3Datos.AddCell(new PdfPCell(new Paragraph("3º", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(204, 255, 255), HorizontalAlignment = Element.ALIGN_CENTER, VerticalAlignment = Element.ALIGN_MIDDLE });
-            tbler3Datos.AddCell(new PdfPCell(new Paragraph(txt_1fechaInmuAcuerTipoEmpRies3.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
-            tbler3Datos.AddCell(new PdfPCell(new Paragraph(txt_1loteInmuAcuerTipoEmpRies3.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
-            tbler3Datos.AddCell(new PdfPCell(new Paragraph(txt_1esqueCompleInmuAcuerTipoEmpRies3.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
-            tbler3Datos.AddCell(new PdfPCell(new Paragraph(txt_1nomCompleResponVacuInmuAcuerTipoEmpRies3.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
-            tbler3Datos.AddCell(new PdfPCell(new Paragraph(txt_1estaSaludColocoVacuInmuAcuerTipoEmpRies3.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
-            tbler3Datos.AddCell(new PdfPCell(new Paragraph(txt_1observaInmuAcuerTipoEmpRies3.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tbler3Datos.AddCell(new PdfPCell(new Paragraph(txt_3fechaInmuAcuerTipoEmpRies3.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tbler3Datos.AddCell(new PdfPCell(new Paragraph(txt_3loteInmuAcuerTipoEmpRies3.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tbler3Datos.AddCell(new PdfPCell(new Paragraph(txt_3esqueCompleInmuAcuerTipoEmpRies3.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tbler3Datos.AddCell(new PdfPCell(new Paragraph(txt_3nomCompleResponVacuInmuAcuerTipoEmpRies3.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tbler3Datos.AddCell(new PdfPCell(new Paragraph(txt_3estaSaludColocoVacuInmuAcuerTipoEmpRies3.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tbler3Datos.AddCell(new PdfPCell(new Paragraph(txt_3observaInmuAcuerTipoEmpRies3.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
 
             tbler3Datos.AddCell(new PdfPCell(new Paragraph("4º", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(204, 255, 255), HorizontalAlignment = Element.ALIGN_CENTER, VerticalAlignment = Element.ALIGN_MIDDLE });
-            tbler3Datos.AddCell(new PdfPCell(new Paragraph(txt_1fechaInmuAcuerTipoEmpRies4.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
-            tbler3Datos.AddCell(new PdfPCell(new Paragraph(txt_1loteInmuAcuerTipoEmpRies4.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
-            tbler3Datos.AddCell(new PdfPCell(new Paragraph(txt_1esqueCompleInmuAcuerTipoEmpRies4.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
-            tbler3Datos.AddCell(new PdfPCell(new Paragraph(txt_1nomCompleResponVacuInmuAcuerTipoEmpRies4.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
-            tbler3Datos.AddCell(new PdfPCell(new Paragraph(txt_1estaSaludColocoVacuInmuAcuerTipoEmpRies4.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
-            tbler3Datos.AddCell(new PdfPCell(new Paragraph(txt_1observaInmuAcuerTipoEmpRies4.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tbler3Datos.AddCell(new PdfPCell(new Paragraph(txt_3fechaInmuAcuerTipoEmpRies4.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tbler3Datos.AddCell(new PdfPCell(new Paragraph(txt_3loteInmuAcuerTipoEmpRies4.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tbler3Datos.AddCell(new PdfPCell(new Paragraph(txt_3esqueCompleInmuAcuerTipoEmpRies4.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tbler3Datos.AddCell(new PdfPCell(new Paragraph(txt_3nomCompleResponVacuInmuAcuerTipoEmpRies4.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tbler3Datos.AddCell(new PdfPCell(new Paragraph(txt_3estaSaludColocoVacuInmuAcuerTipoEmpRies4.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tbler3Datos.AddCell(new PdfPCell(new Paragraph(txt_3observaInmuAcuerTipoEmpRies4.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
 
             tbler3Datos.AddCell(new PdfPCell(new Paragraph("5º", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(204, 255, 255), HorizontalAlignment = Element.ALIGN_CENTER, VerticalAlignment = Element.ALIGN_MIDDLE });
-            tbler3Datos.AddCell(new PdfPCell(new Paragraph(txt_1fechaInmuAcuerTipoEmpRies5.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
-            tbler3Datos.AddCell(new PdfPCell(new Paragraph(txt_1loteInmuAcuerTipoEmpRies5.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
-            tbler3Datos.AddCell(new PdfPCell(new Paragraph(txt_1esqueCompleInmuAcuerTipoEmpRies5.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
-            tbler3Datos.AddCell(new PdfPCell(new Paragraph(txt_1nomCompleResponVacuInmuAcuerTipoEmpRies5.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
-            tbler3Datos.AddCell(new PdfPCell(new Paragraph(txt_1estaSaludColocoVacuInmuAcuerTipoEmpRies5.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
-            tbler3Datos.AddCell(new PdfPCell(new Paragraph(txt_1observaInmuAcuerTipoEmpRies5.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tbler3Datos.AddCell(new PdfPCell(new Paragraph(txt_3fechaInmuAcuerTipoEmpRies5.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tbler3Datos.AddCell(new PdfPCell(new Paragraph(txt_3loteInmuAcuerTipoEmpRies5.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tbler3Datos.AddCell(new PdfPCell(new Paragraph(txt_3esqueCompleInmuAcuerTipoEmpRies5.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tbler3Datos.AddCell(new PdfPCell(new Paragraph(txt_3nomCompleResponVacuInmuAcuerTipoEmpRies5.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tbler3Datos.AddCell(new PdfPCell(new Paragraph(txt_3estaSaludColocoVacuInmuAcuerTipoEmpRies5.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tbler3Datos.AddCell(new PdfPCell(new Paragraph(txt_3observaInmuAcuerTipoEmpRies5.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
             pdfDoc.Add(tbler3Datos);
             var tbler4Datos = new PdfPTable(new float[] { 30f, 20f, 20f, 20f, 30f, 40f, 50f, 80f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
-            tbler4Datos.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(204, 255, 255), HorizontalAlignment = Element.ALIGN_CENTER, VerticalAlignment = Element.ALIGN_MIDDLE, Rowspan = 5 });
+            tbler4Datos.AddCell(new PdfPCell(new Paragraph(txt_descripInmunizaciones4.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(204, 255, 255), HorizontalAlignment = Element.ALIGN_CENTER, VerticalAlignment = Element.ALIGN_MIDDLE, Rowspan = 5 });
             tbler4Datos.AddCell(new PdfPCell(new Paragraph("1º", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(204, 255, 255), HorizontalAlignment = Element.ALIGN_CENTER, VerticalAlignment = Element.ALIGN_MIDDLE });
-            tbler4Datos.AddCell(new PdfPCell(new Paragraph(txt_2fechaInmuAcuerTipoEmpRies1.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
-            tbler4Datos.AddCell(new PdfPCell(new Paragraph(txt_2loteInmuAcuerTipoEmpRies1.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
-            tbler4Datos.AddCell(new PdfPCell(new Paragraph(txt_2esqueCompleInmuAcuerTipoEmpRies1.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
-            tbler4Datos.AddCell(new PdfPCell(new Paragraph(txt_2nomCompleResponVacuInmuAcuerTipoEmpRies1.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
-            tbler4Datos.AddCell(new PdfPCell(new Paragraph(txt_2estaSaludColocoVacuInmuAcuerTipoEmpRies1.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
-            tbler4Datos.AddCell(new PdfPCell(new Paragraph(txt_2observaInmuAcuerTipoEmpRies1.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tbler4Datos.AddCell(new PdfPCell(new Paragraph(txt_4fechaInmuAcuerTipoEmpRies1.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tbler4Datos.AddCell(new PdfPCell(new Paragraph(txt_4loteInmuAcuerTipoEmpRies1.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tbler4Datos.AddCell(new PdfPCell(new Paragraph(txt_4esqueCompleInmuAcuerTipoEmpRies1.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tbler4Datos.AddCell(new PdfPCell(new Paragraph(txt_4nomCompleResponVacuInmuAcuerTipoEmpRies1.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tbler4Datos.AddCell(new PdfPCell(new Paragraph(txt_4estaSaludColocoVacuInmuAcuerTipoEmpRies1.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tbler4Datos.AddCell(new PdfPCell(new Paragraph(txt_4observaInmuAcuerTipoEmpRies1.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
 
             tbler4Datos.AddCell(new PdfPCell(new Paragraph("2º", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(204, 255, 255), HorizontalAlignment = Element.ALIGN_CENTER, VerticalAlignment = Element.ALIGN_MIDDLE });
-            tbler4Datos.AddCell(new PdfPCell(new Paragraph(txt_2fechaInmuAcuerTipoEmpRies2.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
-            tbler4Datos.AddCell(new PdfPCell(new Paragraph(txt_2loteInmuAcuerTipoEmpRies2.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
-            tbler4Datos.AddCell(new PdfPCell(new Paragraph(txt_2esqueCompleInmuAcuerTipoEmpRies2.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
-            tbler4Datos.AddCell(new PdfPCell(new Paragraph(txt_2nomCompleResponVacuInmuAcuerTipoEmpRies2.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
-            tbler4Datos.AddCell(new PdfPCell(new Paragraph(txt_2estaSaludColocoVacuInmuAcuerTipoEmpRies2.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
-            tbler4Datos.AddCell(new PdfPCell(new Paragraph(txt_2observaInmuAcuerTipoEmpRies2.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tbler4Datos.AddCell(new PdfPCell(new Paragraph(txt_4fechaInmuAcuerTipoEmpRies2.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tbler4Datos.AddCell(new PdfPCell(new Paragraph(txt_4loteInmuAcuerTipoEmpRies2.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tbler4Datos.AddCell(new PdfPCell(new Paragraph(txt_4esqueCompleInmuAcuerTipoEmpRies2.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tbler4Datos.AddCell(new PdfPCell(new Paragraph(txt_4nomCompleResponVacuInmuAcuerTipoEmpRies2.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tbler4Datos.AddCell(new PdfPCell(new Paragraph(txt_4estaSaludColocoVacuInmuAcuerTipoEmpRies2.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tbler4Datos.AddCell(new PdfPCell(new Paragraph(txt_4observaInmuAcuerTipoEmpRies2.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
 
             tbler4Datos.AddCell(new PdfPCell(new Paragraph("3º", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(204, 255, 255), HorizontalAlignment = Element.ALIGN_CENTER, VerticalAlignment = Element.ALIGN_MIDDLE });
-            tbler4Datos.AddCell(new PdfPCell(new Paragraph(txt_2fechaInmuAcuerTipoEmpRies3.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
-            tbler4Datos.AddCell(new PdfPCell(new Paragraph(txt_2loteInmuAcuerTipoEmpRies3.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
-            tbler4Datos.AddCell(new PdfPCell(new Paragraph(txt_2esqueCompleInmuAcuerTipoEmpRies3.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
-            tbler4Datos.AddCell(new PdfPCell(new Paragraph(txt_2nomCompleResponVacuInmuAcuerTipoEmpRies3.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
-            tbler4Datos.AddCell(new PdfPCell(new Paragraph(txt_2estaSaludColocoVacuInmuAcuerTipoEmpRies3.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
-            tbler4Datos.AddCell(new PdfPCell(new Paragraph(txt_2observaInmuAcuerTipoEmpRies3.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tbler4Datos.AddCell(new PdfPCell(new Paragraph(txt_4fechaInmuAcuerTipoEmpRies3.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tbler4Datos.AddCell(new PdfPCell(new Paragraph(txt_4loteInmuAcuerTipoEmpRies3.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tbler4Datos.AddCell(new PdfPCell(new Paragraph(txt_4esqueCompleInmuAcuerTipoEmpRies3.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tbler4Datos.AddCell(new PdfPCell(new Paragraph(txt_4nomCompleResponVacuInmuAcuerTipoEmpRies3.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tbler4Datos.AddCell(new PdfPCell(new Paragraph(txt_4estaSaludColocoVacuInmuAcuerTipoEmpRies3.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tbler4Datos.AddCell(new PdfPCell(new Paragraph(txt_4observaInmuAcuerTipoEmpRies3.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
 
             tbler4Datos.AddCell(new PdfPCell(new Paragraph("4º", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(204, 255, 255), HorizontalAlignment = Element.ALIGN_CENTER, VerticalAlignment = Element.ALIGN_MIDDLE });
-            tbler4Datos.AddCell(new PdfPCell(new Paragraph(txt_2fechaInmuAcuerTipoEmpRies4.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
-            tbler4Datos.AddCell(new PdfPCell(new Paragraph(txt_2loteInmuAcuerTipoEmpRies4.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
-            tbler4Datos.AddCell(new PdfPCell(new Paragraph(txt_2esqueCompleInmuAcuerTipoEmpRies4.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
-            tbler4Datos.AddCell(new PdfPCell(new Paragraph(txt_2nomCompleResponVacuInmuAcuerTipoEmpRies4.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
-            tbler4Datos.AddCell(new PdfPCell(new Paragraph(txt_2estaSaludColocoVacuInmuAcuerTipoEmpRies4.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
-            tbler4Datos.AddCell(new PdfPCell(new Paragraph(txt_2observaInmuAcuerTipoEmpRies4.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tbler4Datos.AddCell(new PdfPCell(new Paragraph(txt_4fechaInmuAcuerTipoEmpRies4.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tbler4Datos.AddCell(new PdfPCell(new Paragraph(txt_4loteInmuAcuerTipoEmpRies4.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tbler4Datos.AddCell(new PdfPCell(new Paragraph(txt_4esqueCompleInmuAcuerTipoEmpRies4.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tbler4Datos.AddCell(new PdfPCell(new Paragraph(txt_4nomCompleResponVacuInmuAcuerTipoEmpRies4.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tbler4Datos.AddCell(new PdfPCell(new Paragraph(txt_4estaSaludColocoVacuInmuAcuerTipoEmpRies4.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tbler4Datos.AddCell(new PdfPCell(new Paragraph(txt_4observaInmuAcuerTipoEmpRies4.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
 
             tbler4Datos.AddCell(new PdfPCell(new Paragraph("5º", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(204, 255, 255), HorizontalAlignment = Element.ALIGN_CENTER, VerticalAlignment = Element.ALIGN_MIDDLE });
-            tbler4Datos.AddCell(new PdfPCell(new Paragraph(txt_2fechaInmuAcuerTipoEmpRies5.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
-            tbler4Datos.AddCell(new PdfPCell(new Paragraph(txt_2loteInmuAcuerTipoEmpRies5.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
-            tbler4Datos.AddCell(new PdfPCell(new Paragraph(txt_2esqueCompleInmuAcuerTipoEmpRies5.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
-            tbler4Datos.AddCell(new PdfPCell(new Paragraph(txt_2nomCompleResponVacuInmuAcuerTipoEmpRies5.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
-            tbler4Datos.AddCell(new PdfPCell(new Paragraph(txt_2estaSaludColocoVacuInmuAcuerTipoEmpRies5.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
-            tbler4Datos.AddCell(new PdfPCell(new Paragraph(txt_2observaInmuAcuerTipoEmpRies5.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tbler4Datos.AddCell(new PdfPCell(new Paragraph(txt_4fechaInmuAcuerTipoEmpRies5.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tbler4Datos.AddCell(new PdfPCell(new Paragraph(txt_4loteInmuAcuerTipoEmpRies5.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tbler4Datos.AddCell(new PdfPCell(new Paragraph(txt_4esqueCompleInmuAcuerTipoEmpRies5.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tbler4Datos.AddCell(new PdfPCell(new Paragraph(txt_4nomCompleResponVacuInmuAcuerTipoEmpRies5.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tbler4Datos.AddCell(new PdfPCell(new Paragraph(txt_4estaSaludColocoVacuInmuAcuerTipoEmpRies5.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tbler4Datos.AddCell(new PdfPCell(new Paragraph(txt_4observaInmuAcuerTipoEmpRies5.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
             pdfDoc.Add(tbler4Datos);
             var tbllvDatos = new PdfPTable(new float[] { 100f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
             tbllvDatos.AddCell(new PdfPCell(new Paragraph("La vacuna de la Fiebre Amarilla es obligatoria para quien viva o se desplace en la Región Amazónica, su aplicación es hasta los 59 años de edad", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });

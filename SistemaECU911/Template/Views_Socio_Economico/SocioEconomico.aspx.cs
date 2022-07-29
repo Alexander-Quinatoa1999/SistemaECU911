@@ -98,7 +98,6 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                             txt_tipodiscapacidad.Text = sso.Socio_economico_discapacidad_tipo.ToString();
                             txt_porcentajediscapacidad.Text = sso.Socio_economico_discapacidad_porcentaje.ToString();
                             txt_numcarnetconadis.Text = sso.Socio_economico_discapacidad_carnet_conadis.ToString();
-                            //txt_fechacaducidadcarnet.Text = sso.Socio_economico_discapacidad_fecha_caducidad_carnet.ToString();
                             if (sso.Socio_economico_discapacidad_fecha_caducidad_carnet == "")
                             {
                                 txt_fechacaducidadcarnet.Text = sso.Socio_economico_discapacidad_fecha_caducidad_carnet.ToString();
@@ -109,7 +108,6 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                             }
 
                             txt_gestacióntiempo.Text = sso.Socio_economico_estado_gestacion_tiempo.ToString();
-                            //txt_fechatentativaparto.Text = sso.Socio_economico_fecha_tentativa_parto.ToString();
                             if (sso.Socio_economico_fecha_tentativa_parto == "")
                             {
                                 txt_fechatentativaparto.Text = sso.Socio_economico_fecha_tentativa_parto.ToString();
@@ -118,7 +116,6 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                             {
                                 txt_fechatentativaparto.Text = Convert.ToDateTime(sso.Socio_economico_fecha_tentativa_parto).ToString("yyyy-MM-dd");
                             }
-                            //txt_fechaculmicacionlactancia.Text = sso.Socio_economico_periodo_lactancia_fecha_culminacion.ToString();
                             if (sso.Socio_economico_periodo_lactancia_fecha_culminacion == "")
                             {
                                 txt_fechaculmicacionlactancia.Text = sso.Socio_economico_periodo_lactancia_fecha_culminacion.ToString();
@@ -197,7 +194,6 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                             //Información Familiar
                             txt_nomapellidos1.Text = sso.Socio_economico_nombres_apellidos_familiar1.ToString();
                             txt_parentesco1.Text = sso.Socio_economico_parentesco_familiar1.ToString();
-                            //txt_fechanacimiento1.Text = sso.Socio_economico_fecha_nacimiento_familiar1.ToString();
                             if (sso.Socio_economico_fecha_nacimiento_familiar1 == "")
                             {
                                 txt_fechanacimiento1.Text = sso.Socio_economico_fecha_nacimiento_familiar1.ToString();
@@ -210,7 +206,6 @@ namespace SistemaECU911.Template.Views_Socio_Economico
 
                             txt_nomapellidos2.Text = sso.Socio_economico_nombres_apellidos_familiar2.ToString();
                             txt_parentesco2.Text = sso.Socio_economico_parentesco_familiar2.ToString();
-                            //txt_fechanacimiento2.Text = sso.Socio_economico_fecha_nacimiento_familiar2.ToString();
                             if (sso.Socio_economico_fecha_nacimiento_familiar2 == "")
                             {
                                 txt_fechanacimiento2.Text = sso.Socio_economico_fecha_nacimiento_familiar2.ToString();
@@ -223,7 +218,6 @@ namespace SistemaECU911.Template.Views_Socio_Economico
 
                             txt_nomapellidos3.Text = sso.Socio_economico_nombres_apellidos_familiar3.ToString();
                             txt_parentesco3.Text = sso.Socio_economico_parentesco_familiar3.ToString();
-                            //txt_fechanacimiento3.Text = sso.Socio_economico_fecha_nacimiento_familiar3.ToString();
                             if (sso.Socio_economico_fecha_nacimiento_familiar3 == "")
                             {
                                 txt_fechanacimiento3.Text = sso.Socio_economico_fecha_nacimiento_familiar3.ToString();
@@ -236,7 +230,6 @@ namespace SistemaECU911.Template.Views_Socio_Economico
 
                             txt_nomapellidos4.Text = sso.Socio_economico_nombres_apellidos_familiar4.ToString();
                             txt_parentesco4.Text = sso.Socio_economico_parentesco_familiar4.ToString();
-                            //txt_fechanacimiento4.Text = sso.Socio_economico_fecha_nacimiento_familiar4.ToString();
                             if (sso.Socio_economico_fecha_nacimiento_familiar4 == "")
                             {
                                 txt_fechanacimiento4.Text = sso.Socio_economico_fecha_nacimiento_familiar4.ToString();
@@ -249,7 +242,6 @@ namespace SistemaECU911.Template.Views_Socio_Economico
 
                             txt_nomapellidos5.Text = sso.Socio_economico_nombres_apellidos_familiar5.ToString();
                             txt_parentesco5.Text = sso.Socio_economico_parentesco_familiar5.ToString();
-                            //txt_fechanacimiento5.Text = sso.Socio_economico_fecha_nacimiento_familiar5.ToString();
                             if (sso.Socio_economico_fecha_nacimiento_familiar5 == "")
                             {
                                 txt_fechanacimiento5.Text = sso.Socio_economico_fecha_nacimiento_familiar5.ToString();
@@ -261,7 +253,6 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                             txt_edad5.Text = sso.Socio_economico_edad_familiar5.ToString();
 
                             txt_familiardiscapacitadonomape1.Text = sso.Socio_economico_nombres_apellidos_familiar_discapacidad1.ToString();
-                            //txt_familiardiscapacitadofechacaducidadcarnet1.Text = sso.Socio_economico_fecha_caducidad_carnet_familiar_discapacidad1.ToString();
                             if (sso.Socio_economico_fecha_caducidad_carnet_familiar_discapacidad1 == "")
                             {
                                 txt_familiardiscapacitadofechacaducidadcarnet1.Text = sso.Socio_economico_fecha_caducidad_carnet_familiar_discapacidad1.ToString();
@@ -273,7 +264,6 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                             txt_familiardiscapacitadotipodiscapacidad1.Text = sso.Socio_economico_familiar_discapacidad_tipo1.ToString();
                             txt_familiardiscapacitadoporcentajediscapacidad1.Text = sso.Socio_economico_familiar_discapacidad_porcentaje1.ToString();
                             txt_familiardiscapacitadoparentesco1.Text = sso.Socio_economico_familiar_discapacidad_parentesco1.ToString();
-                            //txt_familiardiscapacitadofechanacimiento1.Text = sso.Socio_economico_familiar_discapacidad_fecha_nacimiento1.ToString();
                             if (sso.Socio_economico_familiar_discapacidad_fecha_nacimiento1 == "")
                             {
                                 txt_familiardiscapacitadofechanacimiento1.Text = sso.Socio_economico_familiar_discapacidad_fecha_nacimiento1.ToString();
@@ -284,7 +274,6 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                             }
 
                             txt_familiardiscapacitadonomape2.Text = sso.Socio_economico_nombres_apellidos_familiar_discapacidad2.ToString();
-                            //txt_familiardiscapacitadofechacaducidadcarnet2.Text = sso.Socio_economico_fecha_caducidad_carnet_familiar_discapacidad2.ToString();
                             if (sso.Socio_economico_fecha_caducidad_carnet_familiar_discapacidad2 == "")
                             {
                                 txt_familiardiscapacitadofechacaducidadcarnet2.Text = sso.Socio_economico_fecha_caducidad_carnet_familiar_discapacidad2.ToString();
@@ -296,7 +285,6 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                             txt_familiardiscapacitadotipodiscapacidad2.Text = sso.Socio_economico_familiar_discapacidad_tipo2.ToString();
                             txt_familiardiscapacitadoporcentajediscapacidad2.Text = sso.Socio_economico_familiar_discapacidad_porcentaje2.ToString();
                             txt_familiardiscapacitadoparentesco2.Text = sso.Socio_economico_familiar_discapacidad_parentesco2.ToString();
-                            //txt_familiardiscapacitadofechanacimiento2.Text = sso.Socio_economico_familiar_discapacidad_fecha_nacimiento2.ToString();
                             if (sso.Socio_economico_familiar_discapacidad_fecha_nacimiento2 == "")
                             {
                                 txt_familiardiscapacitadofechanacimiento2.Text = sso.Socio_economico_familiar_discapacidad_fecha_nacimiento2.ToString();
@@ -330,6 +318,22 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                             txt_nivelsaludfamiliarporque.Text = sso.Socio_economico_nivel_salud_familia_porque.ToString();
                             txt_observacionesgenerales.Text = sso.Socio_economico_familia_observaciones.ToString();
                             txt_informacionadicional.Text = sso.Socio_economico_informacion_adicional.ToString();
+
+                            //Obtener datos de la imagen
+
+                            //string img = sso.Socio_economico_imagen_geolocalizacion.ToString();
+
+                            //string ImagenDataURL64 = "data:image/jpg;base64," + Convert.ToBase64String(img);
+                            //Image1.ImageUrl = ImagenDataURL64;
+
+                            //byte ImagenOriginal = Convert.ToByte(sso.Socio_economico_imagen_geolocalizacion.ToString());
+                            //string img = Convert.ToString(ImagenOriginal);
+                            //string ImagenDataURL64 = img;
+                            //Image1.ImageUrl = ImagenDataURL64;
+
+                            //Image1.ImageUrl = sso.Socio_economico_imagen_geolocalizacion.ToString();
+
+
 
                             //DATOS GENERALES
                             //Modalidad de Trabajo
@@ -1529,7 +1533,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             mes = Math.DivRem(r, 30, out r);
             dia = r;
 
-            txt_edad.Text = año + " Años, " + mes + " Meses, " + dia + " Días";
+            txt_edad.Text = año + " AÑOS, " + mes + " MESES, " + dia + " DIAS";
         }
 
         //Metodo obtener cedula por numero de Socio Economico
@@ -2432,6 +2436,21 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                 sso.Socio_economico_familia_observaciones = txt_observacionesgenerales.Text;
                 sso.Socio_economico_informacion_adicional = txt_informacionadicional.Text;
 
+                //Obtener datos de la imagen
+                //Devolver el tamaño de la imagen que se esta enviando
+                int tamanio = FileUploadImageGeo.PostedFile.ContentLength;
+                byte[] ImagenOriginal = new byte[tamanio];
+                //Lee la imagen original apartir del FileUpload
+                FileUploadImageGeo.PostedFile.InputStream.Read(ImagenOriginal, 0, tamanio);
+                //Bitmap ImagenOriginalBinaria = new Bitmap(FileUploadImageGeo.PostedFile.InputStream);
+                System.Drawing.Bitmap ImagenOriginalBinaria = new System.Drawing.Bitmap(FileUploadImageGeo.PostedFile.InputStream);
+                //Muestra la imagen en binario sin tenerla fisicamente
+                string ImagenDataURL64 = "data:image/jpg;base64," + Convert.ToBase64String(ImagenOriginal);
+                //Muestra la imagen cargada
+                Image1.ImageUrl = ImagenDataURL64;
+
+                sso.Socio_economico_imagen_geolocalizacion = ImagenOriginal;
+
                 sso.Per_id = perso;
 
                 CN_SocioEconomico.GuardarSocioEconomico(sso);
@@ -2632,6 +2651,12 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                 sso.Socio_economico_nivel_salud_familia_porque = txt_nivelsaludfamiliarporque.Text;
                 sso.Socio_economico_familia_observaciones = txt_observacionesgenerales.Text;
                 sso.Socio_economico_informacion_adicional = txt_informacionadicional.Text;
+
+                //if (!string.IsNullOrEmpty(FileUpload1.FileName))
+                //{
+                //    FileUpload1.SaveAs(Server.MapPath("/Template/Images/") + FileUpload1.FileName);
+                //}
+                //sso.Socio_economico_imagen_geolocalizacion = FileUpload1.FileName;
 
                 //DATOS GENERALES
                 //Modalidad de Trabajo
@@ -5212,6 +5237,53 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             if (cb_certificono.Checked == true)
             {
                 cb_certificosi.Checked = false;
+
+            }
+        }
+
+        protected void FileUploadImageGeo_Load(object sender, EventArgs e)
+        {
+            //try
+            //{
+            //    if (FileUploadImageGeo.FileContent != null)
+            //    {
+            //        //Obtener datos de la iagen
+            //        int tamanio = FileUploadImageGeo.PostedFile.ContentLength;
+            //        byte[] ImagenOriginal = new byte[tamanio];
+            //        FileUploadImageGeo.PostedFile.InputStream.Read(ImagenOriginal, 0, tamanio);
+            //        System.Drawing.Bitmap ImagenOriginalBinaria = new System.Drawing.Bitmap(FileUploadImageGeo.PostedFile.InputStream);
+
+            //        string ImagenDataURL64 = "data:image/jpg;base64," + Convert.ToBase64String(ImagenOriginal);
+            //        Image1.ImageUrl = ImagenDataURL64;
+            //    }
+            //    else
+            //    {
+            //        ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Por favor, cargue su imagen')", true);
+            //    }
+
+            //}
+            //catch (Exception)
+            //{
+            //    ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Por favor, cargue su imagen')", true);
+            //}
+        }
+
+        protected void btn_mostrarimagen_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //Obtener datos de la iagen
+                int tamanio = FileUploadImageGeo.PostedFile.ContentLength;
+                byte[] ImagenOriginal = new byte[tamanio];
+                FileUploadImageGeo.PostedFile.InputStream.Read(ImagenOriginal, 0, tamanio);
+                System.Drawing.Bitmap ImagenOriginalBinaria = new System.Drawing.Bitmap(FileUploadImageGeo.PostedFile.InputStream);
+
+                string ImagenDataURL64 = "data:image/jpg;base64," + Convert.ToBase64String(ImagenOriginal);
+                Image1.ImageUrl = ImagenDataURL64;
+            }
+            catch (Exception)
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Por favor, cargue su imagen')", true);
             }
         }
 
@@ -5219,35 +5291,37 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             HtmlNode.ElementsFlags["img"] = HtmlElementFlag.Closed;
             HtmlNode.ElementsFlags["br"] = HtmlElementFlag.Closed;
-            Document pdfDoc = new Document(PageSize.A4, 15f, 15f, 15f, 15f);
+            Document pdfDoc = new Document(PageSize.A4, 20F, 20F, 20F, 20F);
             PdfWriter writer = PdfWriter.GetInstance(pdfDoc, Response.OutputStream);
-            BaseFont fuente = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, true);
-            Font titulo = new Font(fuente, 10f, Font.BOLD, new BaseColor(0, 0, 0));
-            BaseFont fuente2 = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, true);
-            Font parrafo = new Font(fuente2, 12f, Font.NORMAL, new BaseColor(0, 0, 0));
+            BaseFont fuente = BaseFont.CreateFont(BaseFont.HELVETICA, BaseFont.CP1252, true);
+            Font titulo = new Font(fuente, 8f, Font.BOLD, new BaseColor(0, 0, 0));
+            BaseFont fuente2 = BaseFont.CreateFont(BaseFont.TIMES_ITALIC, BaseFont.CP1252, true);
+            Font certificacion = new Font(fuente2, 8f, Font.BOLD, new BaseColor(0, 0, 0));
             BaseFont fuente3 = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, true);
-            Font cuadro = new Font(fuente3, 10f, Font.NORMAL, new BaseColor(0, 0, 0));
+            Font cuadro = new Font(fuente3, 8f, Font.NORMAL, new BaseColor(0, 0, 0));
+            BaseFont fuente4 = BaseFont.CreateFont(BaseFont.TIMES_ITALIC, BaseFont.CP1252, true);
+            Font informacion = new Font(fuente4, 8f, Font.NORMAL, new BaseColor(0, 0, 0));
 
             pdfDoc.Open();
 
             //IMAGEN ENCABEZADO
             string imageURL = Server.MapPath("../Template Principal/images") + "/ecu911.jpg";
             iTextSharp.text.Image fotologo = iTextSharp.text.Image.GetInstance(imageURL);
-            fotologo.ScalePercent(37f);
+            fotologo.ScalePercent(40f);
 
             //ENCABEZADO
             var tblEncabezado = new PdfPTable(new float[] { 150f, 125f, 125f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
             var c1 = new PdfPCell(fotologo) { HorizontalAlignment = Element.ALIGN_CENTER, Rowspan = 5, Padding = 2 };
-            var c2 = new PdfPCell(new Phrase("GESTIÓN DEL TALENTO HUMANO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Colspan = 2, Padding = 3 };
+            var c2 = new PdfPCell(new Phrase("GESTION DEL TALENTO HUMANO", titulo)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Colspan = 2, Padding = 3 };
             c1.Border = 0;
             tblEncabezado.AddCell(c1);
             tblEncabezado.AddCell(c2);
-            c2.Phrase = new Phrase("GESTIÓN DE BIENESTAR LABORAL Y SALUD OCUPACIONAL", cuadro);
+            c2.Phrase = new Phrase("GESTION DE BIENESTAR LABORAL Y SALUD OCUPACIONAL", titulo);
             tblEncabezado.AddCell(c2);
-            c2.Phrase = new Phrase("FICHA SOCIOECONÓMICA", cuadro);
+            c2.Phrase = new Phrase("FICHA SOCIOECONOMICA", titulo);
             tblEncabezado.AddCell(c2);
-            var c3 = new PdfPCell(new Phrase("Código", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 };
-            var c4 = new PdfPCell(new Phrase("Versión", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 };
+            var c3 = new PdfPCell(new Phrase("CODIGO", titulo)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 };
+            var c4 = new PdfPCell(new Phrase("VERSION", titulo)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 };
             tblEncabezado.AddCell(c3);
             tblEncabezado.AddCell(c4);
             c3.Phrase = new Phrase("GTH_FOR_21", cuadro);
@@ -5259,39 +5333,39 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             //FECHA DE REGISTRO
             pdfDoc.Add(new Paragraph(" "));
             var tblfechaInicio = new PdfPTable(new float[] { 325f, 75f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
-            tblfechaInicio.AddCell(new PdfPCell(new Paragraph("Fecha de registro:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_RIGHT, Padding = 3 });
+            tblfechaInicio.AddCell(new PdfPCell(new Paragraph("FECHA DE REGISTRO:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_RIGHT, Padding = 3 });
             tblfechaInicio.AddCell(new PdfPCell(new Paragraph(txt_fecharegistro.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             pdfDoc.Add(tblfechaInicio);
             pdfDoc.Add(new Paragraph(" "));
 
             //I.DATOS PERSONALES DEL SERVIDOR/ A
             var tbldatospersonales = new PdfPTable(new float[] { 70f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
-            tbldatospersonales.AddCell(new PdfPCell(new Paragraph("I. DATOS PERSONALES DEL SERVIDOR/A", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(204, 205, 254), HorizontalAlignment = Element.ALIGN_LEFT, Padding = 3 });
+            tbldatospersonales.AddCell(new PdfPCell(new Paragraph("I. DATOS PERSONALES DEL SERVIDOR/A", titulo)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(204, 205, 254), HorizontalAlignment = Element.ALIGN_LEFT, Padding = 3 });
             pdfDoc.Add(tbldatospersonales);
             pdfDoc.Add(new Paragraph(" "));
             var tbldpTitulo = new PdfPTable(new float[] { 100f, 50f, 50f, 50f, 50f, 50f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
-            tbldpTitulo.AddCell(new PdfPCell(new Paragraph("Nombres y Apellidos:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tbldpTitulo.AddCell(new PdfPCell(new Paragraph("NOMBRES Y APELLIDOS:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             tbldpTitulo.AddCell(new PdfPCell(new Paragraph(txt_prinombre.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             tbldpTitulo.AddCell(new PdfPCell(new Paragraph(txt_segnombre.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             tbldpTitulo.AddCell(new PdfPCell(new Paragraph(txt_priapellido.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             tbldpTitulo.AddCell(new PdfPCell(new Paragraph(txt_segapellido.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
-            tbldpTitulo.AddCell(new PdfPCell(new Paragraph("Cédula:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tbldpTitulo.AddCell(new PdfPCell(new Paragraph("CEDULA:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             tbldpTitulo.AddCell(new PdfPCell(new Paragraph(txt_cedula.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             pdfDoc.Add(tbldpTitulo);
             pdfDoc.Add(new Paragraph(" "));
             var tbldaTitulo = new PdfPTable(new float[] { 100f, 200f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
-            tbldaTitulo.AddCell(new PdfPCell(new Paragraph("Área a la que pertenece:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tbldaTitulo.AddCell(new PdfPCell(new Paragraph("AREA A LA QUE PERTENECE:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             tbldaTitulo.AddCell(new PdfPCell(new Paragraph(txt_areatrabajo.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             pdfDoc.Add(tbldaTitulo);
             pdfDoc.Add(new Paragraph(" "));
             var tblciTitulo = new PdfPTable(new float[] { 100f, 250f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
-            tblciTitulo.AddCell(new PdfPCell(new Paragraph("Cargo Institucional:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblciTitulo.AddCell(new PdfPCell(new Paragraph("CARGO INSTITUCIONAL:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             tblciTitulo.AddCell(new PdfPCell(new Paragraph(txt_cargoinstitucional.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             pdfDoc.Add(tblciTitulo);
             pdfDoc.Add(new Paragraph(" "));
-            var tblmvTitulo = new PdfPTable(new float[] { 70f, 70f, 15f, 60f, 15f, 60f, 35f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
-            tblmvTitulo.AddCell(new PdfPCell(new Paragraph("Modalidad de vinculación:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
-            tblmvTitulo.AddCell(new PdfPCell(new Paragraph("Ley Organica del Sector Público (LOSEP)", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            var tblmvTitulo = new PdfPTable(new float[] { 70f, 70f, 6f, 60f, 6f, 60f, 35f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblmvTitulo.AddCell(new PdfPCell(new Paragraph("MODALIDAD DE VINCULACION:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblmvTitulo.AddCell(new PdfPCell(new Paragraph("LEY ORGANICA DEL SECTOR PUBLICO (LOSEP)", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             if (cb_modalidadvinculacionlosep.Checked == true)
             {
                 tblmvTitulo.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
@@ -5300,7 +5374,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             {
                 tblmvTitulo.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             }
-            tblmvTitulo.AddCell(new PdfPCell(new Paragraph("Código de trabajo", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblmvTitulo.AddCell(new PdfPCell(new Paragraph("CODIGO DE TRABAJO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             if (cb_modalidadvinculacioncodigotrabajo.Checked == true)
             {
                 tblmvTitulo.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
@@ -5309,13 +5383,13 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             {
                 tblmvTitulo.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             }
-            tblmvTitulo.AddCell(new PdfPCell(new Paragraph("Fecha ingreso al ECU", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblmvTitulo.AddCell(new PdfPCell(new Paragraph("FECHA DE INGRESO AL ECU:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             tblmvTitulo.AddCell(new PdfPCell(new Paragraph(txt_fechaingresoalsisecu.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             pdfDoc.Add(tblmvTitulo);
             pdfDoc.Add(new Paragraph(" "));
-            var tblecTitulo = new PdfPTable(new float[] { 40f, 40f, 15f, 40f, 15f, 40f, 15f, 40f, 15f, 40f, 15f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
-            tblecTitulo.AddCell(new PdfPCell(new Paragraph("Estado Civil:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
-            tblecTitulo.AddCell(new PdfPCell(new Paragraph("Soltero", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            var tblecTitulo = new PdfPTable(new float[] { 40f, 40f, 6f, 40f, 6f, 40f, 6f, 40f, 6f, 40f, 6f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblecTitulo.AddCell(new PdfPCell(new Paragraph("ESTADO CIVIL:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblecTitulo.AddCell(new PdfPCell(new Paragraph("SOLTERO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             if (cb_soltero.Checked == true)
             {
                 tblecTitulo.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
@@ -5324,7 +5398,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             {
                 tblecTitulo.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             }
-            tblecTitulo.AddCell(new PdfPCell(new Paragraph("Casado", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblecTitulo.AddCell(new PdfPCell(new Paragraph("CASADO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             if (cb_casado.Checked == true)
             {
                 tblecTitulo.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
@@ -5333,7 +5407,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             {
                 tblecTitulo.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             }
-            tblecTitulo.AddCell(new PdfPCell(new Paragraph("Viudo", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblecTitulo.AddCell(new PdfPCell(new Paragraph("VIUDO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             if (cb_viudo.Checked == true)
             {
                 tblecTitulo.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
@@ -5342,7 +5416,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             {
                 tblecTitulo.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             }
-            tblecTitulo.AddCell(new PdfPCell(new Paragraph("Unión Libre", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblecTitulo.AddCell(new PdfPCell(new Paragraph("UNION LIBRE", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             if (cb_unionlibre.Checked == true)
             {
                 tblecTitulo.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
@@ -5351,7 +5425,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             {
                 tblecTitulo.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             }
-            tblecTitulo.AddCell(new PdfPCell(new Paragraph("Divorciado", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblecTitulo.AddCell(new PdfPCell(new Paragraph("DIVORCIADO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             if (cb_divorciado.Checked == true)
             {
                 tblecTitulo.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
@@ -5362,9 +5436,9 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             }
             pdfDoc.Add(tblecTitulo);
             pdfDoc.Add(new Paragraph(" "));
-            var tblgTitulo = new PdfPTable(new float[] { 30f, 30f, 15f, 30f, 15f, 40f, 30f, 40f, 15f, 15f, 15f, 15f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
-            tblgTitulo.AddCell(new PdfPCell(new Paragraph("Género:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
-            tblgTitulo.AddCell(new PdfPCell(new Paragraph("Masculino", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            var tblgTitulo = new PdfPTable(new float[] { 30f, 30f, 6f, 30f, 6f, 40f, 10f, 30f, 10f, 6f, 10f, 6f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblgTitulo.AddCell(new PdfPCell(new Paragraph("GENERO:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblgTitulo.AddCell(new PdfPCell(new Paragraph("MASCULINO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             if (cb_genmasculino.Checked == true)
             {
                 tblgTitulo.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
@@ -5373,7 +5447,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             {
                 tblgTitulo.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             }
-            tblgTitulo.AddCell(new PdfPCell(new Paragraph("Femenino", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblgTitulo.AddCell(new PdfPCell(new Paragraph("FEMENINO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             if (cb_genfemenino.Checked == true)
             {
                 tblgTitulo.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
@@ -5382,10 +5456,10 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             {
                 tblgTitulo.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             }
-            tblgTitulo.AddCell(new PdfPCell(new Paragraph("Tipo de Sangre:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblgTitulo.AddCell(new PdfPCell(new Paragraph("TIPO DE SANGRE:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             tblgTitulo.AddCell(new PdfPCell(new Paragraph(txt_tipodesangre.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
-            tblgTitulo.AddCell(new PdfPCell(new Paragraph("¿Es donante?", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
-            tblgTitulo.AddCell(new PdfPCell(new Paragraph("Si", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblgTitulo.AddCell(new PdfPCell(new Paragraph("¿ES DONANTE?", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblgTitulo.AddCell(new PdfPCell(new Paragraph("SI", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             if (cb_donantesi.Checked == true)
             {
                 tblgTitulo.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
@@ -5394,7 +5468,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             {
                 tblgTitulo.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             }
-            tblgTitulo.AddCell(new PdfPCell(new Paragraph("No", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblgTitulo.AddCell(new PdfPCell(new Paragraph("NO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             if (cb_donanteno.Checked == true)
             {
                 tblgTitulo.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
@@ -5406,26 +5480,26 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             pdfDoc.Add(tblgTitulo);
             pdfDoc.Add(new Paragraph(" "));
             var tbltelfTitulo = new PdfPTable(new float[] { 150f, 75f, 100f, 75f, 50f, 150f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
-            tbltelfTitulo.AddCell(new PdfPCell(new Paragraph("Teléfono Convencional:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tbltelfTitulo.AddCell(new PdfPCell(new Paragraph("TELEFONO CONVENCIONAL:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             tbltelfTitulo.AddCell(new PdfPCell(new Paragraph(txt_telconvecional.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
-            tbltelfTitulo.AddCell(new PdfPCell(new Paragraph("Teléfono Celular:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tbltelfTitulo.AddCell(new PdfPCell(new Paragraph("TELEFONO CELULAR:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             tbltelfTitulo.AddCell(new PdfPCell(new Paragraph(txt_telcelular.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
-            tbltelfTitulo.AddCell(new PdfPCell(new Paragraph("Email:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tbltelfTitulo.AddCell(new PdfPCell(new Paragraph("EMAIL:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             tbltelfTitulo.AddCell(new PdfPCell(new Paragraph(txt_email.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             pdfDoc.Add(tbltelfTitulo);
             pdfDoc.Add(new Paragraph(" "));
             var tbllnTitulo = new PdfPTable(new float[] { 150f, 100f, 150f, 100f, 50, 150f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
-            tbllnTitulo.AddCell(new PdfPCell(new Paragraph("Lugar de Nacimiento:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tbllnTitulo.AddCell(new PdfPCell(new Paragraph("LUGAR DE NACIMIENTO:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             tbllnTitulo.AddCell(new PdfPCell(new Paragraph(txt_lugarnacimiento.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
-            tbllnTitulo.AddCell(new PdfPCell(new Paragraph("Fecha de Nacimiento:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tbllnTitulo.AddCell(new PdfPCell(new Paragraph("FECHA DE NACIMIENTO:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             tbllnTitulo.AddCell(new PdfPCell(new Paragraph(txt_fechanacimiento.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
-            tbllnTitulo.AddCell(new PdfPCell(new Paragraph("Edad:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tbllnTitulo.AddCell(new PdfPCell(new Paragraph("EDAD:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             tbllnTitulo.AddCell(new PdfPCell(new Paragraph(txt_edad.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             pdfDoc.Add(tbllnTitulo);
             pdfDoc.Add(new Paragraph(" "));
-            var tblneTitulo = new PdfPTable(new float[] { 40f, 30f, 15f, 30f, 15f, 25f, 15f, 40f, 15f, 30f, 15f, 25f, 15f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
-            tblneTitulo.AddCell(new PdfPCell(new Paragraph("Nivel de Educación:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
-            tblneTitulo.AddCell(new PdfPCell(new Paragraph("Primaria", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            var tblneTitulo = new PdfPTable(new float[] { 40f, 30f, 6f, 30f, 6f, 25f, 6f, 40f, 6f, 30f, 6f, 25f, 6f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblneTitulo.AddCell(new PdfPCell(new Paragraph("NIVEL DE EDUCACION:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblneTitulo.AddCell(new PdfPCell(new Paragraph("PRIMARIA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             if (cb_primaria.Checked == true)
             {
                 tblneTitulo.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
@@ -5434,7 +5508,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             {
                 tblneTitulo.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             }
-            tblneTitulo.AddCell(new PdfPCell(new Paragraph("Secundaria", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblneTitulo.AddCell(new PdfPCell(new Paragraph("SECUNDARIA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             if (cb_secundaria.Checked == true)
             {
                 tblneTitulo.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
@@ -5443,7 +5517,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             {
                 tblneTitulo.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             }
-            tblneTitulo.AddCell(new PdfPCell(new Paragraph("Superior", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblneTitulo.AddCell(new PdfPCell(new Paragraph("SUPERIOR", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             if (cb_superior.Checked == true)
             {
                 tblneTitulo.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
@@ -5452,7 +5526,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             {
                 tblneTitulo.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             }
-            tblneTitulo.AddCell(new PdfPCell(new Paragraph("Especialización", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblneTitulo.AddCell(new PdfPCell(new Paragraph("ESPECIALIZACION", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             if (cb_especializacion.Checked == true)
             {
                 tblneTitulo.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
@@ -5461,7 +5535,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             {
                 tblneTitulo.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             }
-            tblneTitulo.AddCell(new PdfPCell(new Paragraph("Diplomado", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblneTitulo.AddCell(new PdfPCell(new Paragraph("DIPLOMADO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             if (cb_diplomado.Checked == true)
             {
                 tblneTitulo.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
@@ -5470,7 +5544,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             {
                 tblneTitulo.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             }
-            tblneTitulo.AddCell(new PdfPCell(new Paragraph("Maestría", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblneTitulo.AddCell(new PdfPCell(new Paragraph("MAESTRIA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             if (cb_maestria.Checked == true)
             {
                 tblneTitulo.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
@@ -5481,9 +5555,9 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             }
             pdfDoc.Add(tblneTitulo);
             pdfDoc.Add(new Paragraph(" "));
-            var tblaiTitulo = new PdfPTable(new float[] { 45f, 30f, 15f, 30f, 15f, 50f, 15f, 30f, 15f, 30f, 15f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
-            tblaiTitulo.AddCell(new PdfPCell(new Paragraph("Autoidentificación Étnica:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
-            tblaiTitulo.AddCell(new PdfPCell(new Paragraph("Blanco", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            var tblaiTitulo = new PdfPTable(new float[] { 45f, 30f, 6f, 30f, 6f, 50f, 6f, 30f, 6f, 30f, 6f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblaiTitulo.AddCell(new PdfPCell(new Paragraph("AUTOIDENTIFICACION ETNICA:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblaiTitulo.AddCell(new PdfPCell(new Paragraph("BLANCO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             if (cb_blanco.Checked == true)
             {
                 tblaiTitulo.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
@@ -5492,7 +5566,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             {
                 tblaiTitulo.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             }
-            tblaiTitulo.AddCell(new PdfPCell(new Paragraph("Mestizo", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblaiTitulo.AddCell(new PdfPCell(new Paragraph("MESTIZO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             if (cb_mestizo.Checked == true)
             {
                 tblaiTitulo.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
@@ -5501,7 +5575,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             {
                 tblaiTitulo.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             }
-            tblaiTitulo.AddCell(new PdfPCell(new Paragraph("Afrodescendiente", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblaiTitulo.AddCell(new PdfPCell(new Paragraph("AFRODESCENDIENTE", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             if (cb_afro.Checked == true)
             {
                 tblaiTitulo.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
@@ -5510,7 +5584,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             {
                 tblaiTitulo.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             }
-            tblaiTitulo.AddCell(new PdfPCell(new Paragraph("Indígena", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblaiTitulo.AddCell(new PdfPCell(new Paragraph("INDIGENA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             if (cb_indigena.Checked == true)
             {
                 tblaiTitulo.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
@@ -5519,7 +5593,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             {
                 tblaiTitulo.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             }
-            tblaiTitulo.AddCell(new PdfPCell(new Paragraph("Montubio", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblaiTitulo.AddCell(new PdfPCell(new Paragraph("MONTUBIO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             if (cb_montubio.Checked == true)
             {
                 tblaiTitulo.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
@@ -5531,31 +5605,31 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             pdfDoc.Add(tblaiTitulo);
             pdfDoc.Add(new Paragraph(" "));
             var tblddTitulo = new PdfPTable(new float[] { 150f, 100f, 100f, 75f, 100f, 100f, 100f, 75f, 125f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
-            tblddTitulo.AddCell(new PdfPCell(new Paragraph("Dirección del domicilio:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
-            tblddTitulo.AddCell(new PdfPCell(new Paragraph("Provincia:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblddTitulo.AddCell(new PdfPCell(new Paragraph("DIRECCION DEL DOMICILIO:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblddTitulo.AddCell(new PdfPCell(new Paragraph("PROVINCIA:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             tblddTitulo.AddCell(new PdfPCell(new Paragraph(txt_provincia.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
-            tblddTitulo.AddCell(new PdfPCell(new Paragraph("Canton:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblddTitulo.AddCell(new PdfPCell(new Paragraph("CANTON:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             tblddTitulo.AddCell(new PdfPCell(new Paragraph(txt_canton.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
-            tblddTitulo.AddCell(new PdfPCell(new Paragraph("Parroquia:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblddTitulo.AddCell(new PdfPCell(new Paragraph("PARROQUIA:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             tblddTitulo.AddCell(new PdfPCell(new Paragraph(txt_parroquia.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
-            tblddTitulo.AddCell(new PdfPCell(new Paragraph("Barrio:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblddTitulo.AddCell(new PdfPCell(new Paragraph("BARRIO:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             tblddTitulo.AddCell(new PdfPCell(new Paragraph(txt_barrio.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             pdfDoc.Add(tblddTitulo);
             pdfDoc.Add(new Paragraph(" "));
-            var tblccTitulo = new PdfPTable(new float[] { 150f, 150f, 50f, 100f, 150f, 150f, 100f, 150f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
-            tblccTitulo.AddCell(new PdfPCell(new Paragraph("Calle principal:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            var tblccTitulo = new PdfPTable(new float[] { 150f, 150f, 50f, 75f, 150f, 150f, 100f, 150f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblccTitulo.AddCell(new PdfPCell(new Paragraph("CALLE PRINCIPAL:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             tblccTitulo.AddCell(new PdfPCell(new Paragraph(txt_calleprincipal.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             tblccTitulo.AddCell(new PdfPCell(new Paragraph("N:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             tblccTitulo.AddCell(new PdfPCell(new Paragraph(txt_mumerodecasa.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
-            tblccTitulo.AddCell(new PdfPCell(new Paragraph("Calle secundaria:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblccTitulo.AddCell(new PdfPCell(new Paragraph("CALLE SECUNDARIA:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             tblccTitulo.AddCell(new PdfPCell(new Paragraph(txt_callesecundaria.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
-            tblccTitulo.AddCell(new PdfPCell(new Paragraph("Referencia:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblccTitulo.AddCell(new PdfPCell(new Paragraph("REFERENCIA:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             tblccTitulo.AddCell(new PdfPCell(new Paragraph(txt_refubicardomicilio.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             pdfDoc.Add(tblccTitulo);
             pdfDoc.Add(new Paragraph(" "));
-            var tblSectorVive = new PdfPTable(new float[] { 100f, 30f, 15f, 30f, 15f, 30f, 15f, 30f, 15f, 60f, 15f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
-            tblSectorVive.AddCell(new PdfPCell(new Paragraph("Sector donde vive:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
-            tblSectorVive.AddCell(new PdfPCell(new Paragraph("Norte", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            var tblSectorVive = new PdfPTable(new float[] { 100f, 30f, 6f, 30f, 6f, 30f, 6f, 30f, 6f, 60f, 6f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblSectorVive.AddCell(new PdfPCell(new Paragraph("SECTOR DONDE VIVE:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblSectorVive.AddCell(new PdfPCell(new Paragraph("NORTE", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             if (cb_norte.Checked == true)
             {
                 tblSectorVive.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
@@ -5564,7 +5638,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             {
                 tblSectorVive.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             }
-            tblSectorVive.AddCell(new PdfPCell(new Paragraph("Centro", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblSectorVive.AddCell(new PdfPCell(new Paragraph("CENTRO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             if (cb_centro.Checked == true)
             {
                 tblSectorVive.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
@@ -5573,7 +5647,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             {
                 tblSectorVive.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             }
-            tblSectorVive.AddCell(new PdfPCell(new Paragraph("Sur", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblSectorVive.AddCell(new PdfPCell(new Paragraph("SUR", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             if (cb_sur.Checked == true)
             {
                 tblSectorVive.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
@@ -5582,7 +5656,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             {
                 tblSectorVive.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             }
-            tblSectorVive.AddCell(new PdfPCell(new Paragraph("Valle", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblSectorVive.AddCell(new PdfPCell(new Paragraph("VALLE", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             if (cb_valle.Checked == true)
             {
                 tblSectorVive.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
@@ -5591,7 +5665,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             {
                 tblSectorVive.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             }
-            tblSectorVive.AddCell(new PdfPCell(new Paragraph("Valle de los chillos", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblSectorVive.AddCell(new PdfPCell(new Paragraph("VALLE DE LOS CHILLOS", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             if (cb_valledeloschillos.Checked == true)
             {
                 tblSectorVive.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
@@ -5602,9 +5676,9 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             }
             pdfDoc.Add(tblSectorVive);
             pdfDoc.Add(new Paragraph(" "));
-            var tblTipoVivienda = new PdfPTable(new float[] { 75f, 30f, 15f, 70f, 15f, 50f, 30f, 100f, 30f, 15f, 30f, 15f, 30f, 15f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
-            tblTipoVivienda.AddCell(new PdfPCell(new Paragraph("Tipo de vivienda:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
-            tblTipoVivienda.AddCell(new PdfPCell(new Paragraph("Casa", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            var tblTipoVivienda = new PdfPTable(new float[] { 40f, 30f, 6f, 50f, 6f, 30f, 30f, 50f, 30f, 6f, 30f, 6f, 30f, 6f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblTipoVivienda.AddCell(new PdfPCell(new Paragraph("TIPO DE VIVIENDA:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblTipoVivienda.AddCell(new PdfPCell(new Paragraph("CASA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             if (cb_casa.Checked == true)
             {
                 tblTipoVivienda.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
@@ -5613,7 +5687,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             {
                 tblTipoVivienda.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             }
-            tblTipoVivienda.AddCell(new PdfPCell(new Paragraph("Departamento", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblTipoVivienda.AddCell(new PdfPCell(new Paragraph("DEPARTAMENTO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             if (cb_departamento.Checked == true)
             {
                 tblTipoVivienda.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
@@ -5622,10 +5696,10 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             {
                 tblTipoVivienda.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             }
-            tblTipoVivienda.AddCell(new PdfPCell(new Paragraph("Otro", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblTipoVivienda.AddCell(new PdfPCell(new Paragraph("OTRO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             tblTipoVivienda.AddCell(new PdfPCell(new Paragraph(txt_tipoviviendaotro.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
-            tblTipoVivienda.AddCell(new PdfPCell(new Paragraph("Riesgo Delincuencial:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
-            tblTipoVivienda.AddCell(new PdfPCell(new Paragraph("Alto", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblTipoVivienda.AddCell(new PdfPCell(new Paragraph("RIESGO DELINCUENCIAL:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblTipoVivienda.AddCell(new PdfPCell(new Paragraph("ALTO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             if (cb_riesgoalto.Checked == true)
             {
                 tblTipoVivienda.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
@@ -5634,7 +5708,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             {
                 tblTipoVivienda.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             }
-            tblTipoVivienda.AddCell(new PdfPCell(new Paragraph("Medio", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblTipoVivienda.AddCell(new PdfPCell(new Paragraph("MEDIO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             if (cb_riesgomedio.Checked == true)
             {
                 tblTipoVivienda.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
@@ -5643,7 +5717,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             {
                 tblTipoVivienda.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             }
-            tblTipoVivienda.AddCell(new PdfPCell(new Paragraph("Bajo", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblTipoVivienda.AddCell(new PdfPCell(new Paragraph("BAJO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             if (cb_riesgobajo.Checked == true)
             {
                 tblTipoVivienda.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
@@ -5655,38 +5729,38 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             pdfDoc.Add(tblTipoVivienda);
             pdfDoc.Add(new Paragraph(" "));
             var tblContacEmergencia = new PdfPTable(new float[] { 100f, 75f, 100f, 50f, 50f, 50f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
-            tblContacEmergencia.AddCell(new PdfPCell(new Paragraph("Contacto de emergencia:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
-            tblContacEmergencia.AddCell(new PdfPCell(new Paragraph("Nombre y apellido:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblContacEmergencia.AddCell(new PdfPCell(new Paragraph("CONTACTO DE EMERGENCIA:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblContacEmergencia.AddCell(new PdfPCell(new Paragraph("NOMBRE Y APELLIDO:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             tblContacEmergencia.AddCell(new PdfPCell(new Paragraph(txt_emernomyape.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
-            tblContacEmergencia.AddCell(new PdfPCell(new Paragraph("Parentesco:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblContacEmergencia.AddCell(new PdfPCell(new Paragraph("PARENTESCO:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             tblContacEmergencia.AddCell(new PdfPCell(new Paragraph(txt_emeparentesco.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
-            tblContacEmergencia.AddCell(new PdfPCell(new Paragraph("Telefono:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblContacEmergencia.AddCell(new PdfPCell(new Paragraph("TELF:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             tblContacEmergencia.AddCell(new PdfPCell(new Paragraph(txt_emetelefono.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             pdfDoc.Add(tblContacEmergencia);
             pdfDoc.Add(new Paragraph(" "));
             var tblDatosEmergencia = new PdfPTable(new float[] { 150f, 150f, 150f, 150f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
-            tblDatosEmergencia.AddCell(new PdfPCell(new Paragraph("Calle principal:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblDatosEmergencia.AddCell(new PdfPCell(new Paragraph("CALLE PRINCIPAL:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             tblDatosEmergencia.AddCell(new PdfPCell(new Paragraph(txt_emecalleprincipal.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
-            tblDatosEmergencia.AddCell(new PdfPCell(new Paragraph("Nº del domicilio:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblDatosEmergencia.AddCell(new PdfPCell(new Paragraph("Nº DEL DOMICILIO:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             tblDatosEmergencia.AddCell(new PdfPCell(new Paragraph(txt_emenumdomicilio.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             pdfDoc.Add(tblDatosEmergencia);
             pdfDoc.Add(new Paragraph(" "));
             var tblDatoEmergencia = new PdfPTable(new float[] { 150f, 150f, 150f, 150f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
-            tblDatoEmergencia.AddCell(new PdfPCell(new Paragraph("Calle secundaria:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblDatoEmergencia.AddCell(new PdfPCell(new Paragraph("CALLE SECUNDARIA:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             tblDatoEmergencia.AddCell(new PdfPCell(new Paragraph(txt_emecallesecun.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
-            tblDatoEmergencia.AddCell(new PdfPCell(new Paragraph("Referencia para ubicar el domicilio:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblDatoEmergencia.AddCell(new PdfPCell(new Paragraph("REFERENCIA DEL DOMICILIO:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             tblDatoEmergencia.AddCell(new PdfPCell(new Paragraph(txt_emerefubicardomicilio.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             pdfDoc.Add(tblDatoEmergencia);
             pdfDoc.Add(new Paragraph(" "));
 
             //II. SITUACIÓN MÉDICA Y DE SALUD DEL SERVIDOR/A
             var tbldatosmedicos = new PdfPTable(new float[] { 70f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
-            tbldatosmedicos.AddCell(new PdfPCell(new Paragraph("II. SITUACIÓN MÉDICA Y DE SALUD DEL SERVIDOR/A", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(204, 205, 254), HorizontalAlignment = Element.ALIGN_LEFT, Padding = 3 });
+            tbldatosmedicos.AddCell(new PdfPCell(new Paragraph("II. SITUACIÓN MÉDICA Y DE SALUD DEL SERVIDOR/A", titulo)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(204, 205, 254), HorizontalAlignment = Element.ALIGN_LEFT, Padding = 3 });
             pdfDoc.Add(tbldatosmedicos);
             pdfDoc.Add(new Paragraph(" "));
-            var tblenferprexistente = new PdfPTable(new float[] { 100f, 15f, 15f, 15f, 15f, 50f, 100f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
-            tblenferprexistente.AddCell(new PdfPCell(new Paragraph("¿Posee alguna enfermedad pre-existente?", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
-            tblenferprexistente.AddCell(new PdfPCell(new Paragraph("Si", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            var tblenferprexistente = new PdfPTable(new float[] { 100f, 10f, 6f, 10f, 6f, 25f, 100f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblenferprexistente.AddCell(new PdfPCell(new Paragraph("¿POSEE ALGUNA ENFERMEDAD PRE-EXISTENTE?", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblenferprexistente.AddCell(new PdfPCell(new Paragraph("SI", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             if (cb_sienfermedad.Checked == true)
             {
                 tblenferprexistente.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
@@ -5695,7 +5769,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             {
                 tblenferprexistente.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             }
-            tblenferprexistente.AddCell(new PdfPCell(new Paragraph("No", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblenferprexistente.AddCell(new PdfPCell(new Paragraph("NO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             if (cb_noenfermedad.Checked == true)
             {
                 tblenferprexistente.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
@@ -5704,13 +5778,13 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             {
                 tblenferprexistente.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             }
-            tblenferprexistente.AddCell(new PdfPCell(new Paragraph("Indique:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblenferprexistente.AddCell(new PdfPCell(new Paragraph("INDIQUE:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             tblenferprexistente.AddCell(new PdfPCell(new Paragraph(txt_poseeenfermedadprexistente.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             pdfDoc.Add(tblenferprexistente);
             pdfDoc.Add(new Paragraph(" "));
-            var tbldiscapacidad = new PdfPTable(new float[] { 75f, 15f, 15f, 15f, 15f, 50f, 100f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
-            tbldiscapacidad.AddCell(new PdfPCell(new Paragraph("¿Posee alguna discapacidad?", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
-            tbldiscapacidad.AddCell(new PdfPCell(new Paragraph("Si", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            var tbldiscapacidad = new PdfPTable(new float[] { 75f, 10f, 6f, 10f, 6f, 75f, 100f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tbldiscapacidad.AddCell(new PdfPCell(new Paragraph("¿POSEE ALGUNA DISCAPACIDAD?", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tbldiscapacidad.AddCell(new PdfPCell(new Paragraph("SI", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             if (cb_discapacidadsi.Checked == true)
             {
                 tbldiscapacidad.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
@@ -5719,8 +5793,8 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             {
                 tbldiscapacidad.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             }
-            tbldiscapacidad.AddCell(new PdfPCell(new Paragraph("No", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
-            if (cb_discapacidadsi.Checked == true)
+            tbldiscapacidad.AddCell(new PdfPCell(new Paragraph("NO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_discapacidadno.Checked == true)
             {
                 tbldiscapacidad.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             }
@@ -5728,22 +5802,22 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             {
                 tbldiscapacidad.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             }
-            tbldiscapacidad.AddCell(new PdfPCell(new Paragraph("Tipo de discapacidad:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tbldiscapacidad.AddCell(new PdfPCell(new Paragraph("TIPO DE DISCAPACIDAD:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             tbldiscapacidad.AddCell(new PdfPCell(new Paragraph(txt_tipodiscapacidad.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             pdfDoc.Add(tbldiscapacidad);
             pdfDoc.Add(new Paragraph(" "));
             var tblDatosDiscapacidad = new PdfPTable(new float[] { 125f, 50f, 175f, 75f, 175, 75f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
-            tblDatosDiscapacidad.AddCell(new PdfPCell(new Paragraph("Porcentaje de discapacidad:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblDatosDiscapacidad.AddCell(new PdfPCell(new Paragraph("PORCENTAJE DE DISCAPACIDAD:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             tblDatosDiscapacidad.AddCell(new PdfPCell(new Paragraph(txt_porcentajediscapacidad.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
-            tblDatosDiscapacidad.AddCell(new PdfPCell(new Paragraph("Nº de Carnet otorgado por el MSP o CONADIS:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblDatosDiscapacidad.AddCell(new PdfPCell(new Paragraph("Nº DE CARNET OTORGADO POR MSP o CONADIS:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             tblDatosDiscapacidad.AddCell(new PdfPCell(new Paragraph(txt_numcarnetconadis.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
-            tblDatosDiscapacidad.AddCell(new PdfPCell(new Paragraph("Fecha de caducidad del carnét:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblDatosDiscapacidad.AddCell(new PdfPCell(new Paragraph("FECHA CADUCIDAD DEL CARNET:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             tblDatosDiscapacidad.AddCell(new PdfPCell(new Paragraph(txt_fechacaducidadcarnet.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             pdfDoc.Add(tblDatosDiscapacidad);
             pdfDoc.Add(new Paragraph(" "));
-            var tblGestacion = new PdfPTable(new float[] { 150f, 15f, 15f, 15f, 15f, 50f, 50f, 75f, 75f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
-            tblGestacion.AddCell(new PdfPCell(new Paragraph("¿Se encuentra en estado de gestación? (Adjuntar certificado médico)", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
-            tblGestacion.AddCell(new PdfPCell(new Paragraph("Si", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            var tblGestacion = new PdfPTable(new float[] { 100f, 10f, 6f, 15f, 6f, 50f, 50f, 75f, 40f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblGestacion.AddCell(new PdfPCell(new Paragraph("¿SE ENCUENTRA EN ESTADO DE GESTACION? (ADJUNTAR CERTIFICADO MEDICO)", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblGestacion.AddCell(new PdfPCell(new Paragraph("SI", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             if (cb_gestaciónsi.Checked == true)
             {
                 tblGestacion.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
@@ -5752,7 +5826,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             {
                 tblGestacion.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             }
-            tblGestacion.AddCell(new PdfPCell(new Paragraph("No", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblGestacion.AddCell(new PdfPCell(new Paragraph("NO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             if (cb_gestaciónno.Checked == true)
             {
                 tblGestacion.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
@@ -5761,15 +5835,15 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             {
                 tblGestacion.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             }
-            tblGestacion.AddCell(new PdfPCell(new Paragraph("Tiempo de gestación:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblGestacion.AddCell(new PdfPCell(new Paragraph("TIEMPO DE GESTACION:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             tblGestacion.AddCell(new PdfPCell(new Paragraph(txt_gestacióntiempo.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
-            tblGestacion.AddCell(new PdfPCell(new Paragraph("Fecha tentativa de parto:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblGestacion.AddCell(new PdfPCell(new Paragraph("FECHA TENTATIVA DE PARTO:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             tblGestacion.AddCell(new PdfPCell(new Paragraph(txt_fechatentativaparto.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             pdfDoc.Add(tblGestacion);
             pdfDoc.Add(new Paragraph(" "));
-            var tblLactancia = new PdfPTable(new float[] { 100f, 15f, 15f, 15f, 15f, 150f, 75f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
-            tblLactancia.AddCell(new PdfPCell(new Paragraph("¿Se encuentra en periodo de lactancia?", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
-            tblLactancia.AddCell(new PdfPCell(new Paragraph("Si", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            var tblLactancia = new PdfPTable(new float[] { 100f, 10f, 6f, 10f, 6f, 125f, 40f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblLactancia.AddCell(new PdfPCell(new Paragraph("¿SE ENCUENTRA EN PERIODO DE LACTANCIA?", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblLactancia.AddCell(new PdfPCell(new Paragraph("SI", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             if (cb_lactaciasi.Checked == true)
             {
                 tblLactancia.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
@@ -5778,7 +5852,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             {
                 tblLactancia.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             }
-            tblLactancia.AddCell(new PdfPCell(new Paragraph("No", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblLactancia.AddCell(new PdfPCell(new Paragraph("NO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             if (cb_lactaciano.Checked == true)
             {
                 tblLactancia.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
@@ -5787,13 +5861,13 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             {
                 tblLactancia.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             }
-            tblLactancia.AddCell(new PdfPCell(new Paragraph("Fecha de culminación del periodo de lactancia", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblLactancia.AddCell(new PdfPCell(new Paragraph("FECHA DE CULMINACION DE PERIODO DE LACTANCIA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             tblLactancia.AddCell(new PdfPCell(new Paragraph(txt_fechaculmicacionlactancia.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             pdfDoc.Add(tblLactancia);
             pdfDoc.Add(new Paragraph(" "));
-            var tblCatastrofica = new PdfPTable(new float[] { 200f, 15f, 15f, 15f, 15f, 100f, 100f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
-            tblCatastrofica.AddCell(new PdfPCell(new Paragraph("¿Posee alguna enfermedad crónica y/o catastrófica? (Adjuntar certificado médico)", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
-            tblCatastrofica.AddCell(new PdfPCell(new Paragraph("Si", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            var tblCatastrofica = new PdfPTable(new float[] { 150f, 10f, 6f, 10f, 6f, 50f, 75f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblCatastrofica.AddCell(new PdfPCell(new Paragraph("¿POSEE ALGUNA ENFERMEDAD CRONICA Y/O CATASTROFICA? (ADJUNTAR CERTIFICADO MEDICO)", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblCatastrofica.AddCell(new PdfPCell(new Paragraph("SI", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             if (cb_catastroficasi.Checked == true)
             {
                 tblCatastrofica.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
@@ -5802,7 +5876,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             {
                 tblCatastrofica.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             }
-            tblCatastrofica.AddCell(new PdfPCell(new Paragraph("No", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblCatastrofica.AddCell(new PdfPCell(new Paragraph("NO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             if (cb_catastroficano.Checked == true)
             {
                 tblCatastrofica.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
@@ -5811,13 +5885,13 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             {
                 tblCatastrofica.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             }
-            tblCatastrofica.AddCell(new PdfPCell(new Paragraph("Nombre de la enfermedad:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblCatastrofica.AddCell(new PdfPCell(new Paragraph("NOMBRE DE LA ENFERMEDAD:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             tblCatastrofica.AddCell(new PdfPCell(new Paragraph(txt_cualcatastrofica.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             pdfDoc.Add(tblCatastrofica);
             pdfDoc.Add(new Paragraph(" "));
-            var tblHuerfana = new PdfPTable(new float[] { 200f, 15f, 15f, 15f, 15f, 100f, 100f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
-            tblHuerfana.AddCell(new PdfPCell(new Paragraph("¿Posee alguna enfermedad rara o húerfana, según el Ente Rector que lo determine? (Adjuntar certificado médico)", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
-            tblHuerfana.AddCell(new PdfPCell(new Paragraph("Si", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            var tblHuerfana = new PdfPTable(new float[] { 150f, 10f, 6f, 10f, 6f, 50f, 75f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblHuerfana.AddCell(new PdfPCell(new Paragraph("¿POSEE ALGUNA ENFERMEDAD RARA O HUERFANA, SEGUN EL ENTE RECTOR QUE LO DETERMINE? (ADJUNTAR CERTIFICADO MEDICO)", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblHuerfana.AddCell(new PdfPCell(new Paragraph("SI", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             if (cb_enfermedadrarasi.Checked == true)
             {
                 tblHuerfana.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
@@ -5826,7 +5900,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             {
                 tblHuerfana.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             }
-            tblHuerfana.AddCell(new PdfPCell(new Paragraph("No", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblHuerfana.AddCell(new PdfPCell(new Paragraph("NO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             if (cb_enfermedadrarano.Checked == true)
             {
                 tblHuerfana.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
@@ -5835,13 +5909,13 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             {
                 tblHuerfana.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             }
-            tblHuerfana.AddCell(new PdfPCell(new Paragraph("Nombre de la enfermedad:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblHuerfana.AddCell(new PdfPCell(new Paragraph("NOMBRE DE LA ENFERMEDAD:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             tblHuerfana.AddCell(new PdfPCell(new Paragraph(txt_enfermedadraracual.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             pdfDoc.Add(tblHuerfana);
             pdfDoc.Add(new Paragraph(" "));
-            var tblAlcohol = new PdfPTable(new float[] { 75f, 15f, 15f, 15f, 15f, 50f, 100f, 100f, 75f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
-            tblAlcohol.AddCell(new PdfPCell(new Paragraph("¿Consume alcohol?", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
-            tblAlcohol.AddCell(new PdfPCell(new Paragraph("Si", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            var tblAlcohol = new PdfPTable(new float[] { 40f, 10f, 6f, 10f, 6f, 40f, 75f, 75f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblAlcohol.AddCell(new PdfPCell(new Paragraph("¿CONSUME ALCOHOL?", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblAlcohol.AddCell(new PdfPCell(new Paragraph("SI", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             if (cb_alcoholsi.Checked == true)
             {
                 tblAlcohol.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
@@ -5850,7 +5924,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             {
                 tblAlcohol.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             }
-            tblAlcohol.AddCell(new PdfPCell(new Paragraph("No", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblAlcohol.AddCell(new PdfPCell(new Paragraph("NO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             if (cb_alcoholno.Checked == true)
             {
                 tblAlcohol.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
@@ -5859,15 +5933,15 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             {
                 tblAlcohol.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             }
-            tblAlcohol.AddCell(new PdfPCell(new Paragraph("Frecuencia:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblAlcohol.AddCell(new PdfPCell(new Paragraph("FRECUENCIA:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             tblAlcohol.AddCell(new PdfPCell(new Paragraph(txt_causaconsumoalcohol.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
-            tblAlcohol.AddCell(new PdfPCell(new Paragraph("¿Hace cuanto tiempo consume?", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblAlcohol.AddCell(new PdfPCell(new Paragraph("¿HACE CUANTO TIEMPO CONSUME?", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             tblAlcohol.AddCell(new PdfPCell(new Paragraph(txt_tiempoconsumoalcohol.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             pdfDoc.Add(tblAlcohol);
             pdfDoc.Add(new Paragraph(" "));
-            var tblTabaco = new PdfPTable(new float[] { 75f, 15f, 15f, 15f, 15f, 50f, 100f, 100f, 75f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
-            tblTabaco.AddCell(new PdfPCell(new Paragraph("¿Consume tabaco?", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
-            tblTabaco.AddCell(new PdfPCell(new Paragraph("Si", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            var tblTabaco = new PdfPTable(new float[] { 40f, 10f, 6f, 10f, 6f, 40f, 75f, 75f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblTabaco.AddCell(new PdfPCell(new Paragraph("¿CONSUME TABACO?", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblTabaco.AddCell(new PdfPCell(new Paragraph("SI", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             if (cb_tabacosi.Checked == true)
             {
                 tblTabaco.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
@@ -5876,7 +5950,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             {
                 tblTabaco.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             }
-            tblTabaco.AddCell(new PdfPCell(new Paragraph("No", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblTabaco.AddCell(new PdfPCell(new Paragraph("NO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             if (cb_tabacono.Checked == true)
             {
                 tblTabaco.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
@@ -5885,15 +5959,15 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             {
                 tblTabaco.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             }
-            tblTabaco.AddCell(new PdfPCell(new Paragraph("Frecuencia:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblTabaco.AddCell(new PdfPCell(new Paragraph("FRECUENCIA:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             tblTabaco.AddCell(new PdfPCell(new Paragraph(txt_frecuenciaconsumotabaco.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
-            tblTabaco.AddCell(new PdfPCell(new Paragraph("¿Hace cuanto tiempo consume?", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblTabaco.AddCell(new PdfPCell(new Paragraph("¿HACE CUANTO TIEMPO CONSUME?", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             tblTabaco.AddCell(new PdfPCell(new Paragraph(txt_tiempoconsumotabaco.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             pdfDoc.Add(tblTabaco);
             pdfDoc.Add(new Paragraph(" "));
-            var tblSustancia = new PdfPTable(new float[] { 100f, 15f, 15f, 15f, 15f, 75f, 75f, 75f, 75f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
-            tblSustancia.AddCell(new PdfPCell(new Paragraph("¿Consume usted alguna sustancia psicotrópica?", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
-            tblSustancia.AddCell(new PdfPCell(new Paragraph("Si", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            var tblSustancia = new PdfPTable(new float[] { 65f, 10f, 6f, 10f, 6f, 40f, 50f, 50f, 75f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblSustancia.AddCell(new PdfPCell(new Paragraph("¿CONSUME ALGUNA SUSTANCIA PSICOTROPICA?", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblSustancia.AddCell(new PdfPCell(new Paragraph("SI", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             if (cb_sustanciapsicotropicasi.Checked == true)
             {
                 tblSustancia.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
@@ -5902,7 +5976,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             {
                 tblSustancia.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             }
-            tblSustancia.AddCell(new PdfPCell(new Paragraph("No", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblSustancia.AddCell(new PdfPCell(new Paragraph("NO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             if (cb_sustanciapsicotropicano.Checked == true)
             {
                 tblSustancia.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
@@ -5911,15 +5985,15 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             {
                 tblSustancia.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             }
-            tblSustancia.AddCell(new PdfPCell(new Paragraph("Tipo de sustancia:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblSustancia.AddCell(new PdfPCell(new Paragraph("TIPO DE SUSTANCIA:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             tblSustancia.AddCell(new PdfPCell(new Paragraph(txt_sustanciapsicotropicatipo.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
-            tblSustancia.AddCell(new PdfPCell(new Paragraph("Frecuencia", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblSustancia.AddCell(new PdfPCell(new Paragraph("FRECUENCIA:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             tblSustancia.AddCell(new PdfPCell(new Paragraph(txt_sustanciapsicotropicafrecuencia.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             pdfDoc.Add(tblSustancia);
             pdfDoc.Add(new Paragraph(" "));
-            var tblproblemas = new PdfPTable(new float[] { 125f, 40f, 15f, 40f, 15f, 40f, 15f, 40f, 15f, 40f, 15f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
-            tblproblemas.AddCell(new PdfPCell(new Paragraph("Problemas relacionados con el consumo", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
-            tblproblemas.AddCell(new PdfPCell(new Paragraph("Familiares", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            var tblproblemas = new PdfPTable(new float[] { 100f, 40f, 6f, 40f, 6f, 40f, 6f, 40f, 6f, 40f, 6f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblproblemas.AddCell(new PdfPCell(new Paragraph("PROBLEMAS RELACIONADOS CON EL CONSUMO:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblproblemas.AddCell(new PdfPCell(new Paragraph("FAMILIARES", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             if (cb_familiares.Checked == true)
             {
                 tblproblemas.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
@@ -5928,7 +6002,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             {
                 tblproblemas.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             }
-            tblproblemas.AddCell(new PdfPCell(new Paragraph("Laborales", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblproblemas.AddCell(new PdfPCell(new Paragraph("LABORALES", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             if (cb_familiares.Checked == true)
             {
                 tblproblemas.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
@@ -5937,7 +6011,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             {
                 tblproblemas.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             }
-            tblproblemas.AddCell(new PdfPCell(new Paragraph("Económicos", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblproblemas.AddCell(new PdfPCell(new Paragraph("ECONOMICOS", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             if (cb_economicos.Checked == true)
             {
                 tblproblemas.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
@@ -5946,7 +6020,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             {
                 tblproblemas.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             }
-            tblproblemas.AddCell(new PdfPCell(new Paragraph("Salud", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblproblemas.AddCell(new PdfPCell(new Paragraph("SALUD", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             if (cb_salud.Checked == true)
             {
                 tblproblemas.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
@@ -5955,7 +6029,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             {
                 tblproblemas.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             }
-            tblproblemas.AddCell(new PdfPCell(new Paragraph("Legal", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblproblemas.AddCell(new PdfPCell(new Paragraph("LEGAL", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             if (cb_legales.Checked == true)
             {
                 tblproblemas.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
@@ -5969,121 +6043,117 @@ namespace SistemaECU911.Template.Views_Socio_Economico
 
             //III. SITUACIÓN ECONÓMICA DEL SERVIDOR/A
             var tbldatoseconomicos = new PdfPTable(new float[] { 70f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
-            tbldatoseconomicos.AddCell(new PdfPCell(new Paragraph("III. SITUACIÓN ECONÓMICA DEL SERVIDOR/A", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(204, 205, 254), HorizontalAlignment = Element.ALIGN_LEFT, Padding = 3 });
+            tbldatoseconomicos.AddCell(new PdfPCell(new Paragraph("III. SITUACIÓN ECONÓMICA DEL SERVIDOR/A", titulo)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(204, 205, 254), HorizontalAlignment = Element.ALIGN_LEFT, Padding = 3 });
             pdfDoc.Add(tbldatoseconomicos);
             pdfDoc.Add(new Paragraph(" "));
             var tblmiembrosactivos = new PdfPTable(new float[] { 200f, 100f, 150f, 150f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
-            tblmiembrosactivos.AddCell(new PdfPCell(new Paragraph("Número de miembros economicamente activos con los que vive:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblmiembrosactivos.AddCell(new PdfPCell(new Paragraph("NUMERO DE MIEMBROS ECONOMICAMENTE ACTIVOS CON LOS QUE VIVE:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             tblmiembrosactivos.AddCell(new PdfPCell(new Paragraph(txt_miembroactivoseconomicamente.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
-            tblmiembrosactivos.AddCell(new PdfPCell(new Paragraph("Situación laboral del cónyuge:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblmiembrosactivos.AddCell(new PdfPCell(new Paragraph("SITUACION LABOAL DEL CONYUGE:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             tblmiembrosactivos.AddCell(new PdfPCell(new Paragraph(txt_situacionlaboralconyugue.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             pdfDoc.Add(tblmiembrosactivos);
             pdfDoc.Add(new Paragraph(" "));
             var tblencabezadodatos = new PdfPTable(new float[] { 200f, 50f, 50f, 75f, 75f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
-            tblencabezadodatos.AddCell(new PdfPCell(new Paragraph("Total ingresos mensuales proyectados", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
-            tblencabezadodatos.AddCell(new PdfPCell(new Paragraph("Ayuda", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
-            tblencabezadodatos.AddCell(new PdfPCell(new Paragraph("Otros", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
-            tblencabezadodatos.AddCell(new PdfPCell(new Paragraph("Total egresos", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3, Colspan = 2 });
+            tblencabezadodatos.AddCell(new PdfPCell(new Paragraph("TOTAL DE INGRESOS MENSUALES PROYECTADOS", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblencabezadodatos.AddCell(new PdfPCell(new Paragraph("AYUDA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblencabezadodatos.AddCell(new PdfPCell(new Paragraph("OTROS", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblencabezadodatos.AddCell(new PdfPCell(new Paragraph("TOTAL EGRESOS", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3, Colspan = 2 });
             tblencabezadodatos.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             pdfDoc.Add(tblencabezadodatos);
             var tblvalores1 = new PdfPTable(new float[] { 200f, 50f, 50f, 75f, 75f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
             tblvalores1.AddCell(new PdfPCell(new Paragraph(txt_totalingresos1.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             tblvalores1.AddCell(new PdfPCell(new Paragraph(txt_ayuda1.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             tblvalores1.AddCell(new PdfPCell(new Paragraph(txt_otros1.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
-            tblvalores1.AddCell(new PdfPCell(new Paragraph("Alimentación", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblvalores1.AddCell(new PdfPCell(new Paragraph("ALIMENTACION", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             tblvalores1.AddCell(new PdfPCell(new Paragraph(txt_alimentación.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             pdfDoc.Add(tblvalores1);
             var tblvalores2 = new PdfPTable(new float[] { 200f, 50f, 50f, 75f, 75f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
             tblvalores2.AddCell(new PdfPCell(new Paragraph(txt_totalingresos2.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             tblvalores2.AddCell(new PdfPCell(new Paragraph(txt_ayuda2.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             tblvalores2.AddCell(new PdfPCell(new Paragraph(txt_otros2.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
-            tblvalores2.AddCell(new PdfPCell(new Paragraph("Vivienda", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblvalores2.AddCell(new PdfPCell(new Paragraph("VIVIENDA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             tblvalores2.AddCell(new PdfPCell(new Paragraph(txt_vivienda.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             pdfDoc.Add(tblvalores2);
             var tblvalores3 = new PdfPTable(new float[] { 200f, 50f, 50f, 75f, 75f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
             tblvalores3.AddCell(new PdfPCell(new Paragraph(txt_totalingresos3.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             tblvalores3.AddCell(new PdfPCell(new Paragraph(txt_ayuda3.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             tblvalores3.AddCell(new PdfPCell(new Paragraph(txt_otros3.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
-            tblvalores3.AddCell(new PdfPCell(new Paragraph("Educación", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblvalores3.AddCell(new PdfPCell(new Paragraph("EDUCACION", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             tblvalores3.AddCell(new PdfPCell(new Paragraph(txt_educación.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             pdfDoc.Add(tblvalores3);
             var tblvalores4 = new PdfPTable(new float[] { 200f, 50f, 50f, 75f, 75f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
             tblvalores4.AddCell(new PdfPCell(new Paragraph(txt_totalingresos4.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             tblvalores4.AddCell(new PdfPCell(new Paragraph(txt_ayuda4.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             tblvalores4.AddCell(new PdfPCell(new Paragraph(txt_otros4.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
-            tblvalores4.AddCell(new PdfPCell(new Paragraph("Servicios Básicos", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblvalores4.AddCell(new PdfPCell(new Paragraph("SERVICIOS BASICOS", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             tblvalores4.AddCell(new PdfPCell(new Paragraph(txt_serviciosbasicos.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             pdfDoc.Add(tblvalores4);
             var tblvalores5 = new PdfPTable(new float[] { 200f, 50f, 50f, 75f, 75f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
             tblvalores5.AddCell(new PdfPCell(new Paragraph(txt_totalingresos5.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             tblvalores5.AddCell(new PdfPCell(new Paragraph(txt_ayuda5.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             tblvalores5.AddCell(new PdfPCell(new Paragraph(txt_otros5.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
-            tblvalores5.AddCell(new PdfPCell(new Paragraph("Salud", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblvalores5.AddCell(new PdfPCell(new Paragraph("SALUD", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             tblvalores5.AddCell(new PdfPCell(new Paragraph(txt_salud.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             pdfDoc.Add(tblvalores5);
             var tblvalores6 = new PdfPTable(new float[] { 200f, 50f, 50f, 75f, 75f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
             tblvalores6.AddCell(new PdfPCell(new Paragraph(txt_totalingresos6.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             tblvalores6.AddCell(new PdfPCell(new Paragraph(txt_ayuda6.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             tblvalores6.AddCell(new PdfPCell(new Paragraph(txt_otros6.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
-            tblvalores6.AddCell(new PdfPCell(new Paragraph("Movilización", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblvalores6.AddCell(new PdfPCell(new Paragraph("MOVILIZACION", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             tblvalores6.AddCell(new PdfPCell(new Paragraph(txt_movilización.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             pdfDoc.Add(tblvalores6);
             var tblvalores7 = new PdfPTable(new float[] { 200f, 50f, 50f, 75f, 75f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
             tblvalores7.AddCell(new PdfPCell(new Paragraph(txt_totalingresos7.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             tblvalores7.AddCell(new PdfPCell(new Paragraph(txt_ayuda7.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             tblvalores7.AddCell(new PdfPCell(new Paragraph(txt_otros7.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
-            tblvalores7.AddCell(new PdfPCell(new Paragraph("Deudas", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblvalores7.AddCell(new PdfPCell(new Paragraph("DEUDAS", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             tblvalores7.AddCell(new PdfPCell(new Paragraph(txt_deudas.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             pdfDoc.Add(tblvalores7);
             var tblvalores8 = new PdfPTable(new float[] { 200f, 50f, 50f, 75f, 75f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
             tblvalores8.AddCell(new PdfPCell(new Paragraph(txt_totalingresos8.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             tblvalores8.AddCell(new PdfPCell(new Paragraph(txt_ayuda8.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             tblvalores8.AddCell(new PdfPCell(new Paragraph(txt_otros8.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
-            tblvalores8.AddCell(new PdfPCell(new Paragraph("Otros", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblvalores8.AddCell(new PdfPCell(new Paragraph("OTROS", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             tblvalores8.AddCell(new PdfPCell(new Paragraph(txt_otrospensiones.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             pdfDoc.Add(tblvalores8);
             pdfDoc.Add(new Paragraph(" "));
-            pdfDoc.Add(new Paragraph(" "));
-            pdfDoc.Add(new Paragraph(" "));
-            pdfDoc.Add(new Paragraph(" "));
-            pdfDoc.Add(new Paragraph(" "));
             var tblencabezadodescripcion = new PdfPTable(new float[] { 75f, 75f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
-            tblencabezadodescripcion.AddCell(new PdfPCell(new Paragraph("Descripción de los Bienes", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3, Colspan = 2 });
+            tblencabezadodescripcion.AddCell(new PdfPCell(new Paragraph("DESCRIPCION DE LOS BIENES", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3, Colspan = 2 });
             tblencabezadodescripcion.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             pdfDoc.Add(tblencabezadodescripcion);
             var tblencabezadobienvalor = new PdfPTable(new float[] { 75f, 75f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
-            tblencabezadobienvalor.AddCell(new PdfPCell(new Paragraph("Bien", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
-            tblencabezadobienvalor.AddCell(new PdfPCell(new Paragraph("Valor", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblencabezadobienvalor.AddCell(new PdfPCell(new Paragraph("BIEN", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblencabezadobienvalor.AddCell(new PdfPCell(new Paragraph("VALOR", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             pdfDoc.Add(tblencabezadobienvalor);
             var tblcasa = new PdfPTable(new float[] { 75f, 75f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
-            tblcasa.AddCell(new PdfPCell(new Paragraph("Casa", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblcasa.AddCell(new PdfPCell(new Paragraph("CASA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             tblcasa.AddCell(new PdfPCell(new Paragraph(txt_biencasa.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             pdfDoc.Add(tblcasa);
             var tbldepa = new PdfPTable(new float[] { 75f, 75f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
-            tbldepa.AddCell(new PdfPCell(new Paragraph("Departamento", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tbldepa.AddCell(new PdfPCell(new Paragraph("DEPARTAMENTO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             tbldepa.AddCell(new PdfPCell(new Paragraph(txt_biendepartamento.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             pdfDoc.Add(tbldepa);
             var tblvehi = new PdfPTable(new float[] { 75f, 75f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
-            tblvehi.AddCell(new PdfPCell(new Paragraph("Vehículo", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblvehi.AddCell(new PdfPCell(new Paragraph("VEHICULO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             tblvehi.AddCell(new PdfPCell(new Paragraph(txt_bienvehiculo.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             pdfDoc.Add(tblvehi);
             var tblterre = new PdfPTable(new float[] { 75f, 75f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
-            tblterre.AddCell(new PdfPCell(new Paragraph("Terreno", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblterre.AddCell(new PdfPCell(new Paragraph("TERRENO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             tblterre.AddCell(new PdfPCell(new Paragraph(txt_bienterreno.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             pdfDoc.Add(tblterre);
             var tblnego = new PdfPTable(new float[] { 75f, 75f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
-            tblnego.AddCell(new PdfPCell(new Paragraph("Negocio", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblnego.AddCell(new PdfPCell(new Paragraph("NEGOCIO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             tblnego.AddCell(new PdfPCell(new Paragraph(txt_bienegocio.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             pdfDoc.Add(tblnego);
             var tblmueble = new PdfPTable(new float[] { 75f, 75f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
-            tblmueble.AddCell(new PdfPCell(new Paragraph("Muebles y enseres", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblmueble.AddCell(new PdfPCell(new Paragraph("MUEBLES Y ENSERES", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             tblmueble.AddCell(new PdfPCell(new Paragraph(txt_bienmueblesyenseres.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             pdfDoc.Add(tblmueble);
             pdfDoc.Add(new Paragraph(" "));
 
-            var tbldineroahorro = new PdfPTable(new float[] { 150f, 15f, 15f, 15f, 15f, 150f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
-            tbldineroahorro.AddCell(new PdfPCell(new Paragraph("¿Destina algún dinero para el ahorro?", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
-            tbldineroahorro.AddCell(new PdfPCell(new Paragraph("Si", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            var tbldineroahorro = new PdfPTable(new float[] { 150f, 10f, 6f, 10f, 6f, 100f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tbldineroahorro.AddCell(new PdfPCell(new Paragraph("¿DESTINA ALGUN DINERO PARA EL AHORRO?", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tbldineroahorro.AddCell(new PdfPCell(new Paragraph("SI", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             if (cb_dineroahorrosi.Checked == true)
             {
                 tbldineroahorro.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
@@ -6092,7 +6162,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             {
                 tbldineroahorro.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             }
-            tbldineroahorro.AddCell(new PdfPCell(new Paragraph("No", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tbldineroahorro.AddCell(new PdfPCell(new Paragraph("NO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             if (cb_dineroahorrono.Checked == true)
             {
                 tbldineroahorro.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
@@ -6106,12 +6176,12 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             pdfDoc.Add(new Paragraph(" "));
 
             var tblCaracteristicasvivienda = new PdfPTable(new float[] { 150f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
-            tblCaracteristicasvivienda.AddCell(new PdfPCell(new Paragraph("Caracteristicas de la vivienda", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblCaracteristicasvivienda.AddCell(new PdfPCell(new Paragraph("CARACTERISTICAS DE LA VIVIENDA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             pdfDoc.Add(tblCaracteristicasvivienda);
             pdfDoc.Add(new Paragraph(" "));
-            var tblFamiliar = new PdfPTable(new float[] { 50f, 50f, 15f, 50f, 15f, 100f, 75f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
-            tblFamiliar.AddCell(new PdfPCell(new Paragraph("Descripción", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
-            tblFamiliar.AddCell(new PdfPCell(new Paragraph("Unifamiliar", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            var tblFamiliar = new PdfPTable(new float[] { 50f, 50f, 6f, 50f, 6f, 50f, 75f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblFamiliar.AddCell(new PdfPCell(new Paragraph("DESCRIPCION:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblFamiliar.AddCell(new PdfPCell(new Paragraph("UNIFAMILIAR", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             if (cb_unifamiliar.Checked == true)
             {
                 tblFamiliar.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
@@ -6120,7 +6190,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             {
                 tblFamiliar.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             }
-            tblFamiliar.AddCell(new PdfPCell(new Paragraph("Multifamiliar", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblFamiliar.AddCell(new PdfPCell(new Paragraph("MULTIFAMILIAR", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             if (cb_multifamiliar.Checked == true)
             {
                 tblFamiliar.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
@@ -6129,13 +6199,13 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             {
                 tblFamiliar.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             }
-            tblFamiliar.AddCell(new PdfPCell(new Paragraph("Otro especifique", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblFamiliar.AddCell(new PdfPCell(new Paragraph("OTRO ESPECIFIQUE", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             tblFamiliar.AddCell(new PdfPCell(new Paragraph(txt_otrodescripcionviviendafamilia.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             pdfDoc.Add(tblFamiliar);
             pdfDoc.Add(new Paragraph(" "));
-            var tblTenencia = new PdfPTable(new float[] { 50f, 75f, 15f, 50f, 15f, 50f, 15f, 75f, 100f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
-            tblTenencia.AddCell(new PdfPCell(new Paragraph("Tenencia", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
-            tblTenencia.AddCell(new PdfPCell(new Paragraph("Propia sin deuda", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            var tblTenencia = new PdfPTable(new float[] { 50f, 60f, 6f, 40f, 6f, 40f, 6f, 40f, 6f, 40F, 6f, 40f, 6f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblTenencia.AddCell(new PdfPCell(new Paragraph("TENENCIA:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblTenencia.AddCell(new PdfPCell(new Paragraph("PROPIA SIN DEUDA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             if (cb_propiasindeuda.Checked == true)
             {
                 tblTenencia.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
@@ -6144,7 +6214,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             {
                 tblTenencia.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             }
-            tblTenencia.AddCell(new PdfPCell(new Paragraph("Arrendada", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblTenencia.AddCell(new PdfPCell(new Paragraph("ARRENDADA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             if (cb_arrendada.Checked == true)
             {
                 tblTenencia.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
@@ -6153,7 +6223,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             {
                 tblTenencia.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             }
-            tblTenencia.AddCell(new PdfPCell(new Paragraph("De familia", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblTenencia.AddCell(new PdfPCell(new Paragraph("DE FAMILIA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             if (cb_defamilia.Checked == true)
             {
                 tblTenencia.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
@@ -6162,43 +6232,984 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             {
                 tblTenencia.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             }
-            tblTenencia.AddCell(new PdfPCell(new Paragraph("Otro especifique", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
-            tblTenencia.AddCell(new PdfPCell(new Paragraph(txt_otratenencia.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3, Rowspan = 2 });
-            pdfDoc.Add(tblTenencia);
-            var tblTenencia2 = new PdfPTable(new float[] { 50f, 75f, 15f, 50f, 15f, 50f, 15f, 75f, 100f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
-            tblTenencia2.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
-            tblTenencia2.AddCell(new PdfPCell(new Paragraph("Hipotecada", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblTenencia.AddCell(new PdfPCell(new Paragraph("HIPOTECADA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             if (cb_hipotecada.Checked == true)
             {
-                tblTenencia2.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+                tblTenencia.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             }
             else
             {
-                tblTenencia2.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+                tblTenencia.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             }
-            tblTenencia2.AddCell(new PdfPCell(new Paragraph("Prestada", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblTenencia.AddCell(new PdfPCell(new Paragraph("PRESTADA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             if (cb_prestada.Checked == true)
             {
-                tblTenencia2.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+                tblTenencia.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             }
             else
             {
-                tblTenencia2.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+                tblTenencia.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             }
-            tblTenencia2.AddCell(new PdfPCell(new Paragraph("Anticreces", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblTenencia.AddCell(new PdfPCell(new Paragraph("ANTICRESIS", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             if (cb_anticreces.Checked == true)
             {
-                tblTenencia2.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+                tblTenencia.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             }
             else
             {
-                tblTenencia2.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+                tblTenencia.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
             }
-            tblTenencia2.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
-            tblTenencia2.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            pdfDoc.Add(tblTenencia);
+            var tblTenencia2 = new PdfPTable(new float[] { 40f, 100f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblTenencia2.AddCell(new PdfPCell(new Paragraph("OTRO ESPECIFIQUE", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblTenencia2.AddCell(new PdfPCell(new Paragraph(txt_otratenencia.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3, Rowspan = 2 });
             pdfDoc.Add(tblTenencia2);
             pdfDoc.Add(new Paragraph(" "));
 
+            var tblTipoHogar = new PdfPTable(new float[] { 20f, 20f, 6f, 20f, 6f, 30f, 6f, 40f, 6f, 20F, 6f, 40f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblTipoHogar.AddCell(new PdfPCell(new Paragraph("TIPO:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblTipoHogar.AddCell(new PdfPCell(new Paragraph("CASA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_tipocasa.Checked == true)
+            {
+                tblTipoHogar.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblTipoHogar.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblTipoHogar.AddCell(new PdfPCell(new Paragraph("SUIT", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_tiposuit.Checked == true)
+            {
+                tblTipoHogar.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblTipoHogar.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblTipoHogar.AddCell(new PdfPCell(new Paragraph("MEDIAGUA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_tipomediagua.Checked == true)
+            {
+                tblTipoHogar.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblTipoHogar.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblTipoHogar.AddCell(new PdfPCell(new Paragraph("DEPARTAMENTO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_tipodepartamento.Checked == true)
+            {
+                tblTipoHogar.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblTipoHogar.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblTipoHogar.AddCell(new PdfPCell(new Paragraph("PIEZA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_tipopieza.Checked == true)
+            {
+                tblTipoHogar.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblTipoHogar.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblTipoHogar.AddCell(new PdfPCell(new Paragraph("OTRO ESPECIFIQUE", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblTipoHogar.AddCell(new PdfPCell(new Paragraph(txt_otrotipodecasa.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3, Rowspan = 2 });
+            pdfDoc.Add(tblTipoHogar);
+            pdfDoc.Add(new Paragraph(" "));
+
+            var tblDistribucion = new PdfPTable(new float[] { 40f, 30f, 6f, 15f, 6f, 15f, 6f, 25f, 6f, 25F, 6f, 20f, 6f, 15f, 6f, 25f, 6f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblDistribucion.AddCell(new PdfPCell(new Paragraph("DISTRIBUCION:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblDistribucion.AddCell(new PdfPCell(new Paragraph("HABITACION", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_habitacion.Checked == true)
+            {
+                tblDistribucion.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblDistribucion.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblDistribucion.AddCell(new PdfPCell(new Paragraph("SALA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_sala.Checked == true)
+            {
+                tblDistribucion.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblDistribucion.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblDistribucion.AddCell(new PdfPCell(new Paragraph("BAÑO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_baño.Checked == true)
+            {
+                tblDistribucion.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblDistribucion.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblDistribucion.AddCell(new PdfPCell(new Paragraph("GARAGE", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_garage.Checked == true)
+            {
+                tblDistribucion.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblDistribucion.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblDistribucion.AddCell(new PdfPCell(new Paragraph("COMEDOR", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_comedor.Checked == true)
+            {
+                tblDistribucion.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblDistribucion.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblDistribucion.AddCell(new PdfPCell(new Paragraph("COCINA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_cocina.Checked == true)
+            {
+                tblDistribucion.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblDistribucion.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblDistribucion.AddCell(new PdfPCell(new Paragraph("PATIO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_patio.Checked == true)
+            {
+                tblDistribucion.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblDistribucion.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblDistribucion.AddCell(new PdfPCell(new Paragraph("BODEGA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_bodega.Checked == true)
+            {
+                tblDistribucion.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblDistribucion.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            pdfDoc.Add(tblDistribucion);
+            var tblDistribucion2 = new PdfPTable(new float[] { 40f, 100f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblDistribucion2.AddCell(new PdfPCell(new Paragraph("OTRO ESPECIFIQUE", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblDistribucion2.AddCell(new PdfPCell(new Paragraph(txt_otradistribucioncasa.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3, Rowspan = 2 });
+            pdfDoc.Add(tblDistribucion2);
+            pdfDoc.Add(new Paragraph(" "));
+
+            var tblVehiculo = new PdfPTable(new float[] { 50f, 10f, 6f, 10f, 6f, 100f, 10f, 6f, 10f, 6f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblVehiculo.AddCell(new PdfPCell(new Paragraph("¿DISPONE VEHICULO?", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblVehiculo.AddCell(new PdfPCell(new Paragraph("SI", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_vehiculosi.Checked == true)
+            {
+                tblVehiculo.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblVehiculo.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblVehiculo.AddCell(new PdfPCell(new Paragraph("NO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_vehiculono.Checked == true)
+            {
+                tblVehiculo.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblVehiculo.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblVehiculo.AddCell(new PdfPCell(new Paragraph("¿HACE USO DEL RECORRIDO INSTITUCIONAL?", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblVehiculo.AddCell(new PdfPCell(new Paragraph("SI", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_recorridosi.Checked == true)
+            {
+                tblVehiculo.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblVehiculo.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblVehiculo.AddCell(new PdfPCell(new Paragraph("NO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_recorridono.Checked == true)
+            {
+                tblVehiculo.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblVehiculo.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            pdfDoc.Add(tblVehiculo);
+            pdfDoc.Add(new Paragraph(" "));
+
+            var tblinfogeneral = new PdfPTable(new float[] { 70f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblinfogeneral.AddCell(new PdfPCell(new Paragraph("IV. INFORMACION GENERAL DEL SERVIDOR/A", titulo)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(204, 205, 254), HorizontalAlignment = Element.ALIGN_LEFT, Padding = 3 });
+            pdfDoc.Add(tblinfogeneral);
+            pdfDoc.Add(new Paragraph(" "));
+            var tblComposicionFamiliar = new PdfPTable(new float[] { 250f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblComposicionFamiliar.AddCell(new PdfPCell(new Paragraph("COMPOSICIÓN FAMILIAR DEL SERVIDOR/A, TRABAJADOR/A CON LOS QUE CONVIVE DE FORMA PERMANENTE EN EL MISMO LUGAR", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            pdfDoc.Add(tblComposicionFamiliar);
+            pdfDoc.Add(new Paragraph(" "));
+
+            var tblComposicionFamiliarDatos = new PdfPTable(new float[] { 200f, 100f, 100f, 100f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblComposicionFamiliarDatos.AddCell(new PdfPCell(new Paragraph("APELLIDOS Y NOMBRES", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblComposicionFamiliarDatos.AddCell(new PdfPCell(new Paragraph("PARENTESCO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblComposicionFamiliarDatos.AddCell(new PdfPCell(new Paragraph("FECHA DE NACIMIENTO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblComposicionFamiliarDatos.AddCell(new PdfPCell(new Paragraph("EDAD", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3, Colspan = 2 });
+            pdfDoc.Add(tblComposicionFamiliarDatos);
+            var tblComposicionFamiliarDatos1 = new PdfPTable(new float[] { 200f, 100f, 100f, 100f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblComposicionFamiliarDatos1.AddCell(new PdfPCell(new Paragraph(txt_nomapellidos1.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblComposicionFamiliarDatos1.AddCell(new PdfPCell(new Paragraph(txt_parentesco1.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblComposicionFamiliarDatos1.AddCell(new PdfPCell(new Paragraph(txt_fechanacimiento1.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblComposicionFamiliarDatos1.AddCell(new PdfPCell(new Paragraph(txt_edad1.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            pdfDoc.Add(tblComposicionFamiliarDatos1);
+            var tblComposicionFamiliarDatos2 = new PdfPTable(new float[] { 200f, 100f, 100f, 100f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblComposicionFamiliarDatos2.AddCell(new PdfPCell(new Paragraph(txt_nomapellidos2.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblComposicionFamiliarDatos2.AddCell(new PdfPCell(new Paragraph(txt_parentesco2.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblComposicionFamiliarDatos2.AddCell(new PdfPCell(new Paragraph(txt_fechanacimiento2.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblComposicionFamiliarDatos2.AddCell(new PdfPCell(new Paragraph(txt_edad2.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            pdfDoc.Add(tblComposicionFamiliarDatos2);
+            var tblComposicionFamiliarDatos3 = new PdfPTable(new float[] { 200f, 100f, 100f, 100f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblComposicionFamiliarDatos3.AddCell(new PdfPCell(new Paragraph(txt_nomapellidos3.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblComposicionFamiliarDatos3.AddCell(new PdfPCell(new Paragraph(txt_parentesco3.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblComposicionFamiliarDatos3.AddCell(new PdfPCell(new Paragraph(txt_fechanacimiento3.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblComposicionFamiliarDatos3.AddCell(new PdfPCell(new Paragraph(txt_edad3.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            pdfDoc.Add(tblComposicionFamiliarDatos3);
+            var tblComposicionFamiliarDatos4 = new PdfPTable(new float[] { 200f, 100f, 100f, 100f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblComposicionFamiliarDatos4.AddCell(new PdfPCell(new Paragraph(txt_nomapellidos4.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblComposicionFamiliarDatos4.AddCell(new PdfPCell(new Paragraph(txt_parentesco4.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblComposicionFamiliarDatos4.AddCell(new PdfPCell(new Paragraph(txt_fechanacimiento4.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblComposicionFamiliarDatos4.AddCell(new PdfPCell(new Paragraph(txt_edad4.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            pdfDoc.Add(tblComposicionFamiliarDatos4);
+            var tblComposicionFamiliarDatos5 = new PdfPTable(new float[] { 200f, 100f, 100f, 100f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblComposicionFamiliarDatos5.AddCell(new PdfPCell(new Paragraph(txt_nomapellidos5.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblComposicionFamiliarDatos5.AddCell(new PdfPCell(new Paragraph(txt_parentesco5.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblComposicionFamiliarDatos5.AddCell(new PdfPCell(new Paragraph(txt_fechanacimiento5.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblComposicionFamiliarDatos5.AddCell(new PdfPCell(new Paragraph(txt_edad5.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            pdfDoc.Add(tblComposicionFamiliarDatos5);
+            pdfDoc.Add(new Paragraph(" "));
+
+            var tblPersonaDiscapacidad = new PdfPTable(new float[] { 100f, 10f, 6f, 10f, 6f, 100f, 10f, 6f, 10f, 6f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblPersonaDiscapacidad.AddCell(new PdfPCell(new Paragraph("¿TIENE EN SU NUCLEO FAMILIAR UNA PERSONA CON DISCAPACIDAD?", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblPersonaDiscapacidad.AddCell(new PdfPCell(new Paragraph("SI", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_nucleodiscapacidadsi.Checked == true)
+            {
+                tblPersonaDiscapacidad.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblPersonaDiscapacidad.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblPersonaDiscapacidad.AddCell(new PdfPCell(new Paragraph("NO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_nucleodiscapacidadno.Checked == true)
+            {
+                tblPersonaDiscapacidad.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblPersonaDiscapacidad.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblPersonaDiscapacidad.AddCell(new PdfPCell(new Paragraph("¿SE ENCUENTRA A CARGO DE ESTA PERSONA CON DISPACIDAD? CALIFICADA POR EL MSP O CONADIS", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblPersonaDiscapacidad.AddCell(new PdfPCell(new Paragraph("SI", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_acargofamiliardiacapacitadosi.Checked == true)
+            {
+                tblPersonaDiscapacidad.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblPersonaDiscapacidad.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblPersonaDiscapacidad.AddCell(new PdfPCell(new Paragraph("NO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_acargofamiliardiacapacitadono.Checked == true)
+            {
+                tblPersonaDiscapacidad.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblPersonaDiscapacidad.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            pdfDoc.Add(tblPersonaDiscapacidad);
+            pdfDoc.Add(new Paragraph(" "));
+
+            var tblDatosPersonaD = new PdfPTable(new float[] { 125f, 75f, 50f, 50f, 50f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblDatosPersonaD.AddCell(new PdfPCell(new Paragraph("APELLIDOS Y NOMBRES", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblDatosPersonaD.AddCell(new PdfPCell(new Paragraph("FECHA CADUCIDAD CARNET", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblDatosPersonaD.AddCell(new PdfPCell(new Paragraph("TIPO DE DISCAPACIDAD", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblDatosPersonaD.AddCell(new PdfPCell(new Paragraph("PORCENTAJE", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblDatosPersonaD.AddCell(new PdfPCell(new Paragraph("PARENTESCO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblDatosPersonaD.AddCell(new PdfPCell(new Paragraph("FECHA DE NACIMIENTO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            pdfDoc.Add(tblDatosPersonaD);
+            var tblDatosPersonaDis1 = new PdfPTable(new float[] { 125f, 75f, 50f, 50f, 50f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblDatosPersonaDis1.AddCell(new PdfPCell(new Paragraph(txt_familiardiscapacitadonomape1.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblDatosPersonaDis1.AddCell(new PdfPCell(new Paragraph(txt_familiardiscapacitadofechacaducidadcarnet1.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblDatosPersonaDis1.AddCell(new PdfPCell(new Paragraph(txt_familiardiscapacitadotipodiscapacidad1.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblDatosPersonaDis1.AddCell(new PdfPCell(new Paragraph(txt_familiardiscapacitadoporcentajediscapacidad1.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblDatosPersonaDis1.AddCell(new PdfPCell(new Paragraph(txt_familiardiscapacitadoparentesco1.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblDatosPersonaDis1.AddCell(new PdfPCell(new Paragraph(txt_familiardiscapacitadofechanacimiento1.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            pdfDoc.Add(tblDatosPersonaDis1);
+            var tblDatosPersonaDis2 = new PdfPTable(new float[] { 125f, 75f, 50f, 50f, 50f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblDatosPersonaDis2.AddCell(new PdfPCell(new Paragraph(txt_familiardiscapacitadonomape2.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblDatosPersonaDis2.AddCell(new PdfPCell(new Paragraph(txt_familiardiscapacitadofechacaducidadcarnet2.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblDatosPersonaDis2.AddCell(new PdfPCell(new Paragraph(txt_familiardiscapacitadotipodiscapacidad2.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblDatosPersonaDis2.AddCell(new PdfPCell(new Paragraph(txt_familiardiscapacitadoporcentajediscapacidad2.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblDatosPersonaDis2.AddCell(new PdfPCell(new Paragraph(txt_familiardiscapacitadoparentesco2.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblDatosPersonaDis2.AddCell(new PdfPCell(new Paragraph(txt_familiardiscapacitadofechanacimiento2.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            pdfDoc.Add(tblDatosPersonaDis2);
+            pdfDoc.Add(new Paragraph(" "));
+
+            var tblRegistroFamiliar = new PdfPTable(new float[] { 100f, 10f, 6f, 10f, 6f, 30f, 30f, 50f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblRegistroFamiliar.AddCell(new PdfPCell(new Paragraph("¿SE ENCUENTRA REGISTRADA LA DEPENDENCIA FAMILIAR EN EL MINISTERIO DE TRABAJO?", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblRegistroFamiliar.AddCell(new PdfPCell(new Paragraph("SI", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_dependenciaministeriotrabajosi.Checked == true)
+            {
+                tblRegistroFamiliar.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblRegistroFamiliar.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblRegistroFamiliar.AddCell(new PdfPCell(new Paragraph("NO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_dependenciaministeriotrabajono.Checked == true)
+            {
+                tblRegistroFamiliar.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblRegistroFamiliar.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblRegistroFamiliar.AddCell(new PdfPCell(new Paragraph("TIEMPO:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblRegistroFamiliar.AddCell(new PdfPCell(new Paragraph(txt_dependenciaministeriotrabajotiempo.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblRegistroFamiliar.AddCell(new PdfPCell(new Paragraph("Nº DE CARNET DEL MINISTERIO DE TRABAJO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblRegistroFamiliar.AddCell(new PdfPCell(new Paragraph(txt_numcarnetMSP.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            pdfDoc.Add(tblRegistroFamiliar);
+            pdfDoc.Add(new Paragraph(" "));
+
+            var tblRegistroFamiliar2 = new PdfPTable(new float[] { 100f, 10f, 6f, 10f, 6f, 30f, 30f, 50f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblRegistroFamiliar2.AddCell(new PdfPCell(new Paragraph("¿SE ENCUENTRA A CARGO DE UN FAMILIAR CON ENFERMEDAD CATASTROFICA O RARA?", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblRegistroFamiliar2.AddCell(new PdfPCell(new Paragraph("SI", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_acargofamiliarenfermedadrarasi.Checked == true)
+            {
+                tblRegistroFamiliar2.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblRegistroFamiliar2.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblRegistroFamiliar2.AddCell(new PdfPCell(new Paragraph("NO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_acargofamiliarenfermedadrarano.Checked == true)
+            {
+                tblRegistroFamiliar2.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblRegistroFamiliar2.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblRegistroFamiliar2.AddCell(new PdfPCell(new Paragraph("TIEMPO:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblRegistroFamiliar2.AddCell(new PdfPCell(new Paragraph(txt_acargofamiliarenfermedadraratiempo.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblRegistroFamiliar2.AddCell(new PdfPCell(new Paragraph("TIPO DE ENFERMEDAD", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblRegistroFamiliar2.AddCell(new PdfPCell(new Paragraph(txt_familiarenfermedadraratipo.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            pdfDoc.Add(tblRegistroFamiliar2);
+            pdfDoc.Add(new Paragraph(" "));
+
+            var tblActLibre = new PdfPTable(new float[] { 70f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblActLibre.AddCell(new PdfPCell(new Paragraph("V. ACTIVIDADES QUE REALIZA EN TIEMPO LIBRE EL SERVIDOR/A", titulo)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(204, 205, 254), HorizontalAlignment = Element.ALIGN_LEFT, Padding = 3 });
+            pdfDoc.Add(tblActLibre);
+            pdfDoc.Add(new Paragraph(" "));
+
+            var tblActividades = new PdfPTable(new float[] { 25f, 6f, 50f, 6f, 25f, 6f, 50f, 6f, 25f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblActividades.AddCell(new PdfPCell(new Paragraph("HOGAR", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_hogar.Checked == true)
+            {
+                tblActividades.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblActividades.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblActividades.AddCell(new PdfPCell(new Paragraph("PASEOS FAMILIARES", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_paseosfamiliares.Checked == true)
+            {
+                tblActividades.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblActividades.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblActividades.AddCell(new PdfPCell(new Paragraph("ESTUDIOS", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_estudios.Checked == true)
+            {
+                tblActividades.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblActividades.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblActividades.AddCell(new PdfPCell(new Paragraph("ACTIVIDADES ARTISTICAS", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_actividadesartisticas.Checked == true)
+            {
+                tblActividades.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblActividades.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblActividades.AddCell(new PdfPCell(new Paragraph("OTROS", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblActividades.AddCell(new PdfPCell(new Paragraph(txt_otraactividad.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            pdfDoc.Add(tblActividades);
+            pdfDoc.Add(new Paragraph(" "));
+
+            var tblActEconomica = new PdfPTable(new float[] { 100f, 10f, 6f, 10f, 6f, 100f, 75f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblActEconomica.AddCell(new PdfPCell(new Paragraph("¿REALIZA ALGUNA ACTIVIDAD ECONOMICA ADICIONAL?", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblActEconomica.AddCell(new PdfPCell(new Paragraph("SI", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_actividadeconomicasi.Checked == true)
+            {
+                tblActEconomica.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblActEconomica.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblActEconomica.AddCell(new PdfPCell(new Paragraph("NO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_actividadeconomicano.Checked == true)
+            {
+                tblActEconomica.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblActEconomica.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblActEconomica.AddCell(new PdfPCell(new Paragraph("DETALLE LA ACTIVIDAD QUE REALIZA:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblActEconomica.AddCell(new PdfPCell(new Paragraph(txt_actividadeconomicadetalle.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            pdfDoc.Add(tblActEconomica);
+            var tblActEconomica2 = new PdfPTable(new float[] { 66f, 65.5f, 100f, 75f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblActEconomica2.AddCell(new PdfPCell(new Paragraph("TIEMPO QUE DESTINA A LA ACTIVIDAD:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblActEconomica2.AddCell(new PdfPCell(new Paragraph(txt_actividadeconomicatiempodestina.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblActEconomica2.AddCell(new PdfPCell(new Paragraph("¿HACE CUANTO TIEMPO REALIZA LA ACTIVIDAD?", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblActEconomica2.AddCell(new PdfPCell(new Paragraph(txt_actividadeconomicatiemporealiza.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            pdfDoc.Add(tblActEconomica2);
+            pdfDoc.Add(new Paragraph(" "));
+
+            var tblActDeportiva = new PdfPTable(new float[] { 100f, 10f, 6f, 10f, 6f, 100f, 75f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblActDeportiva.AddCell(new PdfPCell(new Paragraph("¿REALIZA ALGUNA ACTIVIDAD DEPORTIVA?", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblActDeportiva.AddCell(new PdfPCell(new Paragraph("SI", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_deportesi.Checked == true)
+            {
+                tblActDeportiva.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblActDeportiva.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblActDeportiva.AddCell(new PdfPCell(new Paragraph("NO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_deporteno.Checked == true)
+            {
+                tblActDeportiva.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblActDeportiva.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblActDeportiva.AddCell(new PdfPCell(new Paragraph("DETALLE LA ACTIVIDAD QUE REALIZA:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblActDeportiva.AddCell(new PdfPCell(new Paragraph(txt_especifiquedeporte.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            pdfDoc.Add(tblActDeportiva);
+            var tblActDeportiva2 = new PdfPTable(new float[] { 66f, 65.5f, 100f, 75f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblActDeportiva2.AddCell(new PdfPCell(new Paragraph("FRECUENCIA:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblActDeportiva2.AddCell(new PdfPCell(new Paragraph(txt_frecuenciadeporte.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblActDeportiva2.AddCell(new PdfPCell(new Paragraph("¿DESDE QUE EDAD PRACTICA ESTA ACTIVIDAD?", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblActDeportiva2.AddCell(new PdfPCell(new Paragraph(txt_edadpracticadeporte.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            pdfDoc.Add(tblActDeportiva2);
+            pdfDoc.Add(new Paragraph(" "));
+
+            var tblLesion = new PdfPTable(new float[] { 100f, 10f, 6f, 10f, 6f, 75f, 100f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblLesion.AddCell(new PdfPCell(new Paragraph("¿HA SUFRIDO ALGUNA LESION?", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblLesion.AddCell(new PdfPCell(new Paragraph("SI", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_lesionsi.Checked == true)
+            {
+                tblLesion.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblLesion.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblLesion.AddCell(new PdfPCell(new Paragraph("NO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_lesionno.Checked == true)
+            {
+                tblLesion.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblLesion.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblLesion.AddCell(new PdfPCell(new Paragraph("TIPO DE LESION:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblLesion.AddCell(new PdfPCell(new Paragraph(txt_tipolesion.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            pdfDoc.Add(tblLesion);
+            var tblLesion2 = new PdfPTable(new float[] { 66f, 65.5f, 75f, 10f, 6f, 10f, 6f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblLesion2.AddCell(new PdfPCell(new Paragraph("EDAD A LA QUE SUFRIO LA LESION:", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblLesion2.AddCell(new PdfPCell(new Paragraph(txt_edadlesion.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblLesion2.AddCell(new PdfPCell(new Paragraph("¿RECIBIO ALGUN TRATAMIENTO O REHABILITACION?", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblLesion2.AddCell(new PdfPCell(new Paragraph("SI", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_tratamientosi.Checked == true)
+            {
+                tblLesion2.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblLesion2.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblLesion2.AddCell(new PdfPCell(new Paragraph("NO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_tratamientono.Checked == true)
+            {
+                tblLesion2.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblLesion2.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            pdfDoc.Add(tblLesion2);
+            pdfDoc.Add(new Paragraph(" "));
+
+            var tblInfoLaboral = new PdfPTable(new float[] { 70f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblInfoLaboral.AddCell(new PdfPCell(new Paragraph("VI. INFORMACIÓN PARA USO DE BIENESTAR LABORAL DEL SERVIDOR/A", titulo)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(204, 205, 254), HorizontalAlignment = Element.ALIGN_LEFT, Padding = 3 });
+            pdfDoc.Add(tblInfoLaboral);
+            pdfDoc.Add(new Paragraph(" "));
+
+            var tblTipoFamilia = new PdfPTable(new float[] { 50f, 25f, 6f, 25f, 6f, 50f, 6f, 25f, 6f, 25f, 6f, 50f, 6f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblTipoFamilia.AddCell(new PdfPCell(new Paragraph("TIPO DE FAMILIA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblTipoFamilia.AddCell(new PdfPCell(new Paragraph("NUCLEAR", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_nuclear.Checked == true)
+            {
+                tblTipoFamilia.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblTipoFamilia.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblTipoFamilia.AddCell(new PdfPCell(new Paragraph("AMPLIADA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_ampliada.Checked == true)
+            {
+                tblTipoFamilia.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblTipoFamilia.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblTipoFamilia.AddCell(new PdfPCell(new Paragraph("MONOPARENTAL", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_monoparental.Checked == true)
+            {
+                tblTipoFamilia.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblTipoFamilia.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblTipoFamilia.AddCell(new PdfPCell(new Paragraph("VIVE SOLO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_vivesolo.Checked == true)
+            {
+                tblTipoFamilia.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblTipoFamilia.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblTipoFamilia.AddCell(new PdfPCell(new Paragraph("VIVE CON AMIGOS", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_viveconamigos.Checked == true)
+            {
+                tblTipoFamilia.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblTipoFamilia.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblTipoFamilia.AddCell(new PdfPCell(new Paragraph("FAMILIA SIN HIJOS", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_familiasinhijos.Checked == true)
+            {
+                tblTipoFamilia.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblTipoFamilia.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            pdfDoc.Add(tblTipoFamilia);
+            pdfDoc.Add(new Paragraph(" "));
+
+            var tblrelacion = new PdfPTable(new float[] { 50f, 25f, 6f, 20f, 6f, 20f, 6f, 20f, 6f, 25f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblrelacion.AddCell(new PdfPCell(new Paragraph("EVALUACION DEL NIVEL DE RELACION FAMILIAR", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblrelacion.AddCell(new PdfPCell(new Paragraph("MUY BUENA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_relacionfamiliarmuybuena.Checked == true)
+            {
+                tblrelacion.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblrelacion.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblrelacion.AddCell(new PdfPCell(new Paragraph("BUENA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_relacionfamiliarbuena.Checked == true)
+            {
+                tblrelacion.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblrelacion.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblrelacion.AddCell(new PdfPCell(new Paragraph("REGULAR", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_relacionfamiliarregular.Checked == true)
+            {
+                tblrelacion.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblrelacion.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblrelacion.AddCell(new PdfPCell(new Paragraph("MALA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_relacionparejamala.Checked == true)
+            {
+                tblrelacion.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblrelacion.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblrelacion.AddCell(new PdfPCell(new Paragraph("¿POR QUE?", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblrelacion.AddCell(new PdfPCell(new Paragraph(txt_relacionfamiliarporque.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            pdfDoc.Add(tblrelacion);
+            pdfDoc.Add(new Paragraph(" "));
+
+            var tblrelacionpareja = new PdfPTable(new float[] { 50f, 25f, 6f, 20f, 6f, 20f, 6f, 20f, 6f, 25f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblrelacionpareja.AddCell(new PdfPCell(new Paragraph("EVALUACION DEL NIVEL DE RELACION DE PAREJA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblrelacionpareja.AddCell(new PdfPCell(new Paragraph("MUY BUENA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_relacionparejamuybuena.Checked == true)
+            {
+                tblrelacionpareja.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblrelacionpareja.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblrelacionpareja.AddCell(new PdfPCell(new Paragraph("BUENA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_relacionparejabuena.Checked == true)
+            {
+                tblrelacionpareja.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblrelacionpareja.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblrelacionpareja.AddCell(new PdfPCell(new Paragraph("REGULAR", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_relacionparejaregular.Checked == true)
+            {
+                tblrelacionpareja.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblrelacionpareja.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblrelacionpareja.AddCell(new PdfPCell(new Paragraph("MALA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_relacionparejamala.Checked == true)
+            {
+                tblrelacionpareja.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblrelacionpareja.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblrelacionpareja.AddCell(new PdfPCell(new Paragraph("¿POR QUE?", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblrelacionpareja.AddCell(new PdfPCell(new Paragraph(txt_relacionparejaporque.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            pdfDoc.Add(tblrelacionpareja);
+            pdfDoc.Add(new Paragraph(" "));
+
+            var tblrelacionhijos = new PdfPTable(new float[] { 50f, 25f, 6f, 20f, 6f, 20f, 6f, 20f, 6f, 25f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblrelacionhijos.AddCell(new PdfPCell(new Paragraph("EVALUACION DEL NIVEL DE RELACION CON LOS HIJOS", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblrelacionhijos.AddCell(new PdfPCell(new Paragraph("MUY BUENA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_relacionconhijosmuybuena.Checked == true)
+            {
+                tblrelacionhijos.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblrelacionhijos.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblrelacionhijos.AddCell(new PdfPCell(new Paragraph("BUENA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_relacionconhijosbuena.Checked == true)
+            {
+                tblrelacionhijos.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblrelacionhijos.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblrelacionhijos.AddCell(new PdfPCell(new Paragraph("REGULAR", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_relacionconhijosregular.Checked == true)
+            {
+                tblrelacionhijos.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblrelacionhijos.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblrelacionhijos.AddCell(new PdfPCell(new Paragraph("MALA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_relacionconhijosmala.Checked == true)
+            {
+                tblrelacionhijos.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblrelacionhijos.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblrelacionhijos.AddCell(new PdfPCell(new Paragraph("¿POR QUE?", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblrelacionhijos.AddCell(new PdfPCell(new Paragraph(txt_relacionconhijosporque.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            pdfDoc.Add(tblrelacionhijos);
+            pdfDoc.Add(new Paragraph(" "));
+
+            var tblProblemasFam = new PdfPTable(new float[] { 50f, 25f, 6f, 30f, 6f, 25f, 6f, 25f, 6f, 25f, 6f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblProblemasFam.AddCell(new PdfPCell(new Paragraph("PROBLEMAS FAMILIARES", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblProblemasFam.AddCell(new PdfPCell(new Paragraph("ECONOMICOS", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_economico.Checked == true)
+            {
+                tblProblemasFam.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblProblemasFam.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblProblemasFam.AddCell(new PdfPCell(new Paragraph("COMUNICACION", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_comunicacion.Checked == true)
+            {
+                tblProblemasFam.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblProblemasFam.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblProblemasFam.AddCell(new PdfPCell(new Paragraph("CONYUGALES", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_conyugales.Checked == true)
+            {
+                tblProblemasFam.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblProblemasFam.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblProblemasFam.AddCell(new PdfPCell(new Paragraph("CRIANZA DE HIJOS", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_crianzadehijos.Checked == true)
+            {
+                tblProblemasFam.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblProblemasFam.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblProblemasFam.AddCell(new PdfPCell(new Paragraph("ADICCIONES", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_adicciones.Checked == true)
+            {
+                tblProblemasFam.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblProblemasFam.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            pdfDoc.Add(tblProblemasFam);
+            var tblViolencia = new PdfPTable(new float[] { 46.5f, 6f, 46.5f, 6f, 46.5f, 6f, 46.5f, 6f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblViolencia.AddCell(new PdfPCell(new Paragraph("VIOLENCIA FISICA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_fisica.Checked == true)
+            {
+                tblViolencia.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblViolencia.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblViolencia.AddCell(new PdfPCell(new Paragraph("VIOLENCIA PSICOLOGICA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_psicologica.Checked == true)
+            {
+                tblViolencia.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblViolencia.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblViolencia.AddCell(new PdfPCell(new Paragraph("VIOLENCIA VERBAL", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_verbal.Checked == true)
+            {
+                tblViolencia.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblViolencia.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblViolencia.AddCell(new PdfPCell(new Paragraph("VIOLENCIA SEXUAL", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_sexual.Checked == true)
+            {
+                tblViolencia.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblViolencia.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            pdfDoc.Add(tblViolencia);
+            pdfDoc.Add(new Paragraph(" "));
+
+            var tblObservaciones = new PdfPTable(new float[] { 150f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblObservaciones.AddCell(new PdfPCell(new Paragraph("OBSERVACIONES", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            pdfDoc.Add(tblObservaciones);
+            var tblObservaciones1 = new PdfPTable(new float[] { 150f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblObservaciones1.AddCell(new PdfPCell(new Paragraph(txt_observacionesfamiliares.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            pdfDoc.Add(tblObservaciones1);
+            pdfDoc.Add(new Paragraph(" "));
+
+            var tblMiembroRol = new PdfPTable(new float[] { 150f, 10f, 6f, 10f, 6f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblMiembroRol.AddCell(new PdfPCell(new Paragraph("¿CADA MIEMBRO CUMPLE CON SU ROL?", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblMiembroRol.AddCell(new PdfPCell(new Paragraph("SI", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_rolfamiliarsi.Checked == true)
+            {
+                tblMiembroRol.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblMiembroRol.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblMiembroRol.AddCell(new PdfPCell(new Paragraph("NO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_rolfamiliarno.Checked == true)
+            {
+                tblMiembroRol.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblMiembroRol.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            pdfDoc.Add(tblMiembroRol);
+            pdfDoc.Add(new Paragraph(" "));
+
+            var tblSaludFamilia = new PdfPTable(new float[] { 50f, 25f, 6f, 20f, 6f, 20f, 6f, 20f, 6f, 25f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblSaludFamilia.AddCell(new PdfPCell(new Paragraph("NIVEL DE SALUD DE LA FAMILIA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblSaludFamilia.AddCell(new PdfPCell(new Paragraph("MUY BUENA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_nivelsaludfamiliarmuybuena.Checked == true)
+            {
+                tblSaludFamilia.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblSaludFamilia.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblSaludFamilia.AddCell(new PdfPCell(new Paragraph("BUENA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_nivelsaludfamiliarbuena.Checked == true)
+            {
+                tblSaludFamilia.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblSaludFamilia.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblSaludFamilia.AddCell(new PdfPCell(new Paragraph("REGULAR", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_nivelsaludfamiliarregular.Checked == true)
+            {
+                tblSaludFamilia.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblSaludFamilia.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblSaludFamilia.AddCell(new PdfPCell(new Paragraph("MALA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_nivelsaludfamiliarmala.Checked == true)
+            {
+                tblSaludFamilia.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblSaludFamilia.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblSaludFamilia.AddCell(new PdfPCell(new Paragraph("¿POR QUE?", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblSaludFamilia.AddCell(new PdfPCell(new Paragraph(txt_nivelsaludfamiliarporque.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            pdfDoc.Add(tblSaludFamilia);
+            pdfDoc.Add(new Paragraph(" "));
+
+            var tblFamiliaes = new PdfPTable(new float[] { 150f, 25f, 6f, 25f, 6f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblFamiliaes.AddCell(new PdfPCell(new Paragraph("¿CONSIDERA QUE SU FAMILIA ES?", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            tblFamiliaes.AddCell(new PdfPCell(new Paragraph("FUNCIONAL", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_funcional.Checked == true)
+            {
+                tblFamiliaes.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblFamiliaes.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblFamiliaes.AddCell(new PdfPCell(new Paragraph("DISFUNCIONAL", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_disfuncional.Checked == true)
+            {
+                tblFamiliaes.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblFamiliaes.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            pdfDoc.Add(tblFamiliaes);
+            pdfDoc.Add(new Paragraph(" "));
+
+            var tblObservacionesSalud = new PdfPTable(new float[] { 150f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblObservacionesSalud.AddCell(new PdfPCell(new Paragraph("OBSERVACIONES", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            pdfDoc.Add(tblObservacionesSalud);
+            var tblObservacionesSalud1 = new PdfPTable(new float[] { 150f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblObservacionesSalud1.AddCell(new PdfPCell(new Paragraph(txt_observacionesgenerales.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            pdfDoc.Add(tblObservacionesSalud1);
+            pdfDoc.Add(new Paragraph(" "));
+
+            var tblObservacionesAdicional = new PdfPTable(new float[] { 150f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblObservacionesAdicional.AddCell(new PdfPCell(new Paragraph("ALGUNA INFORMACION ADICIONAL QUE LA INSTITUCION DEBA CONOCER", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            pdfDoc.Add(tblObservacionesAdicional);
+            var tblObservacionesAdicional1 = new PdfPTable(new float[] { 150f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblObservacionesAdicional1.AddCell(new PdfPCell(new Paragraph(txt_informacionadicional.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            pdfDoc.Add(tblObservacionesAdicional1);
+            pdfDoc.Add(new Paragraph(" "));
+
+            var tblCertifico = new PdfPTable(new float[] { 250f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblCertifico.AddCell(new PdfPCell(new Paragraph("CERTIFICO QUE LA INFORMACION AQUI SUMINISTRADA ES VERAZ, REAL, COMPLETA Y PODRA SER VERIFICADA EN EL MOMENTO QUE LA INSTITUCION CREA NECESARIO", certificacion)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            pdfDoc.Add(tblCertifico);
+            pdfDoc.Add(new Paragraph(" "));
+            var tblcertificoOpciones = new PdfPTable(new float[] { 10f, 6f, 10f, 6f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblcertificoOpciones.AddCell(new PdfPCell(new Paragraph("SI", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_certificosi.Checked == true)
+            {
+                tblcertificoOpciones.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblcertificoOpciones.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            tblcertificoOpciones.AddCell(new PdfPCell(new Paragraph("NO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            if (cb_certificono.Checked == true)
+            {
+                tblcertificoOpciones.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            else
+            {
+                tblcertificoOpciones.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            }
+            pdfDoc.Add(tblcertificoOpciones);
+            pdfDoc.Add(new Paragraph(" "));
+
+            var tblInfo = new PdfPTable(new float[] { 250f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblInfo.AddCell(new PdfPCell(new Paragraph("ESTA INFORMACION ES SOLICITADA CON EL FIN DE ACTUALIZAR NUESTROS REGISTROS SOCIOECONOMICOS Y DE BIENESTAR LABORAL DE LOS SERVIDORES DEL SERVICIO INTEGRADO DE SEGURIDAD ECU 911.", informacion)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            pdfDoc.Add(tblInfo);
+            pdfDoc.Add(new Paragraph(" "));
+
+            var tblAgradecimiento = new PdfPTable(new float[] { 250f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblAgradecimiento.AddCell(new PdfPCell(new Paragraph("GRACIAS POR SU COLABORACIÓN", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            pdfDoc.Add(tblAgradecimiento);
+            pdfDoc.Add(new Paragraph(" "));
+
+            var tblFirma = new PdfPTable(new float[] { 250f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblFirma.AddCell(new PdfPCell(new Paragraph("FIRMA DEL SERVIDOR", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            pdfDoc.Add(tblFirma);
+            pdfDoc.Add(new Paragraph(" "));
+            pdfDoc.Add(new Paragraph(" "));
+            pdfDoc.Add(new Paragraph(" "));
+
+            var tblGeoReferencia = new PdfPTable(new float[] { 250f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblGeoReferencia.AddCell(new PdfPCell(new Paragraph("GEOREFERENCIA DE LA VIVIENDA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            pdfDoc.Add(tblGeoReferencia);
+            var tblGeoReferencia1 = new PdfPTable(new float[] { 250f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblGeoReferencia1.AddCell(new PdfPCell(new Paragraph("", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 3 });
+            pdfDoc.Add(tblGeoReferencia1);
 
             pdfDoc.Close();
             Response.ContentType = "application/pdf";
@@ -6207,6 +7218,6 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             Response.Write(pdfDoc);
             Response.End();
         }
-
+        
     }
 }

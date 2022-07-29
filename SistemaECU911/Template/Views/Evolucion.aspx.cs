@@ -52,12 +52,13 @@ namespace SistemaECU911.Template.Views
                         if (evo != null)
                         {
                             //A
+                            txt_ciiu.Text = evo.evo_ciiu.ToString();
                             txt_numArchivo.Text = evo.evo_numArchivo.ToString();
 
                             //B
                             if (evo.evo_fecha1 == "")
                             {
-                                txt_fecha1.Text = Convert.ToDateTime(evo.evo_fecha1).ToString("yyyy-MM-dd");
+                                txt_fecha1.Text = evo.evo_fecha1.ToString();
                             }
                             else
                             {
@@ -67,7 +68,7 @@ namespace SistemaECU911.Template.Views
                             txt_notas1.Text = evo.evo_notasEvolucion1.ToString();
                             if (evo.evo_fecha2 == "")
                             {
-                                txt_fecha2.Text = Convert.ToDateTime(evo.evo_fecha2).ToString("yyyy-MM-dd");
+                                txt_fecha2.Text = evo.evo_fecha2.ToString();
                             }
                             else
                             {
@@ -77,7 +78,7 @@ namespace SistemaECU911.Template.Views
                             txt_notas2.Text = evo.evo_notasEvolucion2.ToString();
                             if (evo.evo_fecha3 == "")
                             {
-                                txt_fecha3.Text = Convert.ToDateTime(evo.evo_fecha3).ToString("yyyy-MM-dd");
+                                txt_fecha3.Text = evo.evo_fecha3.ToString();
                             }
                             else
                             {
@@ -87,7 +88,7 @@ namespace SistemaECU911.Template.Views
                             txt_notas3.Text = evo.evo_notasEvolucion3.ToString();
                             if (evo.evo_fecha4 == "")
                             {
-                                txt_fecha4.Text = Convert.ToDateTime(evo.evo_fecha4).ToString("yyyy-MM-dd");
+                                txt_fecha4.Text = evo.evo_fecha4.ToString();
                             }
                             else
                             {
@@ -97,7 +98,7 @@ namespace SistemaECU911.Template.Views
                             txt_notas4.Text = evo.evo_notasEvolucion4.ToString();
                             if (evo.evo_fecha5 == "")
                             {
-                                txt_fecha5.Text = Convert.ToDateTime(evo.evo_fecha5).ToString("yyyy-MM-dd");
+                                txt_fecha5.Text = evo.evo_fecha5.ToString();
                             }
                             else
                             {
@@ -107,7 +108,7 @@ namespace SistemaECU911.Template.Views
                             txt_notas5.Text = evo.evo_notasEvolucion5.ToString();
                             if (evo.evo_fecha6 == "")
                             {
-                                txt_fecha6.Text = Convert.ToDateTime(evo.evo_fecha6).ToString("yyyy-MM-dd");
+                                txt_fecha6.Text = evo.evo_fecha6.ToString();
                             }
                             else
                             {
@@ -117,7 +118,7 @@ namespace SistemaECU911.Template.Views
                             txt_notas6.Text = evo.evo_notasEvolucion6.ToString();
                             if (evo.evo_fecha7 == "")
                             {
-                                txt_fecha7.Text = Convert.ToDateTime(evo.evo_fecha7).ToString("yyyy-MM-dd");
+                                txt_fecha7.Text = evo.evo_fecha7.ToString();
                             }
                             else
                             {
@@ -127,7 +128,7 @@ namespace SistemaECU911.Template.Views
                             txt_notas7.Text = evo.evo_notasEvolucion7.ToString();
                             if (evo.evo_fecha8 == "")
                             {
-                                txt_fecha8.Text = Convert.ToDateTime(evo.evo_fecha8).ToString("yyyy-MM-dd");
+                                txt_fecha8.Text = evo.evo_fecha8.ToString();
                             }
                             else
                             {
@@ -137,7 +138,7 @@ namespace SistemaECU911.Template.Views
                             txt_notas8.Text = evo.evo_notasEvolucion8.ToString();
                             if (evo.evo_fecha9 == "")
                             {
-                                txt_fecha9.Text = Convert.ToDateTime(evo.evo_fecha9).ToString("yyyy-MM-dd");
+                                txt_fecha9.Text = evo.evo_fecha9.ToString();
                             }
                             else
                             {
@@ -147,7 +148,7 @@ namespace SistemaECU911.Template.Views
                             txt_notas9.Text = evo.evo_notasEvolucion9.ToString();
                             if (evo.evo_fecha10 == "")
                             {
-                                txt_fecha10.Text = Convert.ToDateTime(evo.evo_fecha10).ToString("yyyy-MM-dd");
+                                txt_fecha10.Text = evo.evo_fecha10.ToString();
                             }
                             else
                             {
@@ -157,7 +158,7 @@ namespace SistemaECU911.Template.Views
                             txt_notas10.Text = evo.evo_notasEvolucion10.ToString();
                             if (evo.evo_fecha11 == "")
                             {
-                                txt_fecha11.Text = Convert.ToDateTime(evo.evo_fecha11).ToString("yyyy-MM-dd");
+                                txt_fecha11.Text = evo.evo_fecha11.ToString();
                             }
                             else
                             {
@@ -167,7 +168,7 @@ namespace SistemaECU911.Template.Views
                             txt_notas11.Text = evo.evo_notasEvolucion11.ToString();
                             if (evo.evo_fecha12 == "")
                             {
-                                txt_fecha12.Text = Convert.ToDateTime(evo.evo_fecha12).ToString("yyyy-MM-dd");
+                                txt_fecha12.Text = evo.evo_fecha12.ToString();
                             }
                             else
                             {
@@ -177,7 +178,7 @@ namespace SistemaECU911.Template.Views
                             txt_notas12.Text = evo.evo_notasEvolucion12.ToString();
                             if (evo.evo_fecha13 == "")
                             {
-                                txt_fecha13.Text = Convert.ToDateTime(evo.evo_fecha13).ToString("yyyy-MM-dd");
+                                txt_fecha13.Text = evo.evo_fecha13.ToString();
                             }
                             else
                             {
@@ -187,7 +188,7 @@ namespace SistemaECU911.Template.Views
                             txt_notas13.Text = evo.evo_notasEvolucion13.ToString();
                             if (evo.evo_fecha14 == "")
                             {
-                                txt_fecha14.Text = Convert.ToDateTime(evo.evo_fecha14).ToString("yyyy-MM-dd");
+                                txt_fecha14.Text = evo.evo_fecha14.ToString();
                             }
                             else
                             {
@@ -197,7 +198,7 @@ namespace SistemaECU911.Template.Views
                             txt_notas14.Text = evo.evo_notasEvolucion14.ToString();
                             if (evo.evo_fecha15 == "")
                             {
-                                txt_fecha15.Text = Convert.ToDateTime(evo.evo_fecha15).ToString("yyyy-MM-dd");
+                                txt_fecha15.Text = evo.evo_fecha15.ToString();
                             }
                             else
                             {
@@ -323,6 +324,7 @@ namespace SistemaECU911.Template.Views
                 evo = new Tbl_Evolucion();
 
                 //A Captura de datos Establecimiento
+                evo.evo_ciiu = txt_ciiu.Text;
                 evo.evo_numArchivo = txt_numArchivo.Text;
 
                 //B. Captura de datos Evolucion
@@ -424,6 +426,7 @@ namespace SistemaECU911.Template.Views
             try
             {
                 //A Captura de datos Establecimiento
+                evo.evo_ciiu = txt_ciiu.Text;
                 evo.evo_numArchivo = txt_numArchivo.Text;
 
                 //B. Captura de datos Evolucion

@@ -16,7 +16,7 @@ namespace CapaNegocio
         //Metodo para obtener responsables por usuario
         public static Tbl_TipoUsuario obtenerTusuarioxUsuario(int id)
         {
-            var tpuid = dc.Tbl_TipoUsuario.FirstOrDefault(tip => tip.tusu_id.Equals(id) && tip.tusu_estado == 'A');
+            var tpuid = dc.Tbl_TipoUsuario.FirstOrDefault(tip => tip.tusu_id.Equals(id) && tip.tusu_estado == "A");
             return tpuid;
         }
 

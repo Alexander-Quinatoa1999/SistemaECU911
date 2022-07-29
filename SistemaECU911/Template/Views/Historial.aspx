@@ -110,6 +110,7 @@
                                     </asp:TableCell>
                                     <asp:TableCell Style="background-color: white; font-size: 14px">
                                         <asp:TextBox runat="server" ID="txt_numHClinica" BorderStyle="None" Style="width: 100%; text-transform:uppercase; text-align: center" required="true" OnTextChanged="txt_numHClinica_TextChanged" AutoPostBack="true"></asp:TextBox>
+                                        <asp:RequiredFieldValidator ID="rfv_numHClinica" runat="server" ForeColor="Red" ControlToValidate="txt_numHClinica" ErrorMessage="CAMPO OBLIGATORIO"></asp:RequiredFieldValidator>
                                         <ajaxToolkit:AutoCompleteExtender ID="AutoCompleteExtender2" runat="server" CompletionInterval="10" DelimiterCharacters="" Enabled="True"
                                         MinimumPrefixLength="1" ServiceMethod="ObtenerNumHClinica"
                                         TargetControlID="txt_numHClinica" CompletionListCssClass="CompletionList"
@@ -595,9 +596,11 @@
                                 </asp:TableCell>
                                 <asp:TableCell Style="width: 400px; background-color: white; font-size: 14px">
                                     <asp:DropDownList ID="ddl_especialidad" CssClass="form-check" Style="width: 100%; text-transform:uppercase; border: none" runat="server"></asp:DropDownList>
+                                    <asp:RequiredFieldValidator ID="rfv_profesional" runat="server" ForeColor="Red" InitialValue="0" ControlToValidate="ddl_especialidad" ErrorMessage="CAMPO OBLIGATORIO"></asp:RequiredFieldValidator>
                                 </asp:TableCell>
                                 <asp:TableCell Style="width: 400px; background-color: white; font-size: 14px">
                                     <asp:DropDownList ID="ddl_profesional" CssClass="form-check" Style="width: 100%; text-transform:uppercase; border: none" runat="server"></asp:DropDownList>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ForeColor="Red" InitialValue="0" ControlToValidate="ddl_profesional" ErrorMessage="CAMPO OBLIGATORIO"></asp:RequiredFieldValidator>
                                 </asp:TableCell>
                                 <asp:TableCell Style="width: 200px; background-color: white; font-size: 14px">
                                     <asp:TextBox ID="txt_codigo" runat="server" BorderStyle="None" Style="width: 100%; text-transform:uppercase; text-align: center"></asp:TextBox>

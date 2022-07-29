@@ -10,6 +10,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using CapaDatos;
 using CapaNegocio;
+using HtmlAgilityPack;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
 
 namespace SistemaECU911.Template.Views
 {
@@ -2382,8 +2385,8 @@ namespace SistemaECU911.Template.Views
 
                         if (perio != null)
                         {
-
                             //A
+                            txt_ciiu.Text = perio.perio_ciiu.ToString();
                             txt_numArchivo.Text = perio.perio_numArchivo.ToString();
 
                             //B
@@ -2449,6 +2452,15 @@ namespace SistemaECU911.Template.Views
                             txt_descripcionantefamiliares.Text = perio.perio_descripcionAntFamiliares.ToString();
 
                             //E
+                            txt_puestotrabajo.Text = perio.perio_area.ToString();
+                            txt_puestotrabajo2.Text = perio.perio_area2.ToString();
+                            txt_puestotrabajo3.Text = perio.perio_area3.ToString();
+                            txt_act.Text = perio.perio_actividades.ToString();
+                            txt_act2.Text = perio.perio_actividades2.ToString();
+                            txt_act3.Text = perio.perio_actividades3.ToString();
+                            txt_tiempotrabajo.Text = perio.perio_tiemTrabajo.ToString();
+                            txt_tiempotrabajo2.Text = perio.perio_tiemTrabajo2.ToString();
+                            txt_tiempotrabajo3.Text = perio.perio_tiemTrabajo3.ToString();
                             txt_medpreventivas.Text = perio.perio_medPreventivas.ToString();
                             txt_medpreventivas2.Text = perio.perio_medPreventivas2.ToString();
                             txt_medpreventivas3.Text = perio.perio_medPreventivas3.ToString();
@@ -3771,6 +3783,7 @@ namespace SistemaECU911.Template.Views
                 }
 
                 //A
+                perio.perio_ciiu = txt_ciiu.Text;
                 perio.perio_numArchivo = txt_numArchivo.Text;
 
                 //B.
@@ -3823,6 +3836,15 @@ namespace SistemaECU911.Template.Views
                 perio.perio_descripcionAntFamiliares = txt_descripcionantefamiliares.Text;
 
                 //E.
+                perio.perio_area = txt_puestotrabajo.Text;
+                perio.perio_area2 = txt_puestotrabajo2.Text;
+                perio.perio_area3 = txt_puestotrabajo3.Text;
+                perio.perio_actividades = txt_act.Text;
+                perio.perio_actividades2 = txt_act2.Text;
+                perio.perio_actividades3 = txt_act3.Text;
+                perio.perio_tiemTrabajo = txt_tiempotrabajo.Text;
+                perio.perio_tiemTrabajo2 = txt_tiempotrabajo2.Text;
+                perio.perio_tiemTrabajo3 = txt_tiempotrabajo3.Text;
                 perio.perio_medPreventivas = txt_medpreventivas.Text;
                 perio.perio_medPreventivas2 = txt_medpreventivas2.Text;
                 perio.perio_medPreventivas3 = txt_medpreventivas3.Text;
@@ -5994,6 +6016,7 @@ namespace SistemaECU911.Template.Views
                 }
 
                 //A
+                perio.perio_ciiu = txt_ciiu.Text;
                 perio.perio_numArchivo = txt_numArchivo.Text;
 
                 //B.
@@ -6046,6 +6069,15 @@ namespace SistemaECU911.Template.Views
                 perio.perio_descripcionAntFamiliares = txt_descripcionantefamiliares.Text;
 
                 //E.
+                perio.perio_area = txt_puestotrabajo.Text;
+                perio.perio_area2 = txt_puestotrabajo2.Text;
+                perio.perio_area3 = txt_puestotrabajo3.Text;
+                perio.perio_actividades = txt_act.Text;
+                perio.perio_actividades2 = txt_act2.Text;
+                perio.perio_actividades3 = txt_act3.Text;
+                perio.perio_tiemTrabajo = txt_tiempotrabajo.Text;
+                perio.perio_tiemTrabajo2 = txt_tiempotrabajo2.Text;
+                perio.perio_tiemTrabajo3 = txt_tiempotrabajo3.Text;
                 perio.perio_medPreventivas = txt_medpreventivas.Text;
                 perio.perio_medPreventivas2 = txt_medpreventivas2.Text;
                 perio.perio_medPreventivas3 = txt_medpreventivas3.Text;
@@ -6125,16 +6157,6 @@ namespace SistemaECU911.Template.Views
                     ModificarPeriodica(perio);
                 }
             }
-        }
-
-        protected void btn_guardar_Click(object sender, EventArgs e)
-        {
-            guardar_modificar_datos(Convert.ToInt32(Request["cod"]));
-        }
-
-        protected void btn_cancelar_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("~/Template/Views/Inicio.aspx");
         }
 
         private void cargarProfesional()
@@ -6223,14 +6245,6 @@ namespace SistemaECU911.Template.Views
                 txt_tiemAbstiConsuNociTabaHabToxi.Enabled = true;
                 ckb_noConsuNociTabaHabToxi.Checked = false;
             }
-            else
-            {
-                txt_tiemConConsuNociTabaHabToxi.Enabled = false;
-                txt_cantiConsuNociTabaHabToxi.Enabled = false;
-                txt_exConsumiConsuNociTabaHabToxi.Enabled = false;
-                txt_tiemAbstiConsuNociTabaHabToxi.Enabled = false;
-                ckb_noConsuNociTabaHabToxi.Checked = false;
-            }
         }
 
         protected void ckb_noConsuNociTabaHabToxi_CheckedChanged(object sender, EventArgs e)
@@ -6257,14 +6271,6 @@ namespace SistemaECU911.Template.Views
                 txt_cantiConsuNociAlcoHabToxi.Enabled = true;
                 txt_exConsumiConsuNociAlcoHabToxi.Enabled = true;
                 txt_tiemAbstiConsuNociAlcoHabToxi.Enabled = true;
-                ckb_noConsuNociAlcoHabToxi.Checked = false;
-            }
-            else
-            {
-                txt_tiemConConsuNociAlcoHabToxi.Enabled = false;
-                txt_cantiConsuNociAlcoHabToxi.Enabled = false;
-                txt_exConsumiConsuNociAlcoHabToxi.Enabled = false;
-                txt_tiemAbstiConsuNociAlcoHabToxi.Enabled = false;
                 ckb_noConsuNociAlcoHabToxi.Checked = false;
             }
         }
@@ -6298,19 +6304,6 @@ namespace SistemaECU911.Template.Views
                 txt_canti2ConsuNociOtrasDroHabToxi.Enabled = true;
                 txt_exConsumi2ConsuNociOtrasDroHabToxi.Enabled = true;
                 txt_tiemAbsti2ConsuNociOtrasDroHabToxi.Enabled = true;
-                ckb_noConsuNociOtrasDroHabToxi.Checked = false;
-            }
-            else
-            {
-                txt_tiemCon1ConsuNociOtrasDroHabToxi.Enabled = false;
-                txt_canti1ConsuNociOtrasDroHabToxi.Enabled = false;
-                txt_exConsumi1ConsuNociOtrasDroHabToxi.Enabled = false;
-                txt_tiemAbsti1ConsuNociOtrasDroHabToxi.Enabled = false;
-                txt_otrasConsuNociOtrasDroHabToxi.Enabled = false;
-                txt_tiemCon2ConsuNociOtrasDroHabToxi.Enabled = false;
-                txt_canti2ConsuNociOtrasDroHabToxi.Enabled = false;
-                txt_exConsumi2ConsuNociOtrasDroHabToxi.Enabled = false;
-                txt_tiemAbsti2ConsuNociOtrasDroHabToxi.Enabled = false;
                 ckb_noConsuNociOtrasDroHabToxi.Checked = false;
             }
         }
@@ -6349,12 +6342,6 @@ namespace SistemaECU911.Template.Views
                 txt_tiemCanEstVidaActFisiEstVida.Enabled = true;
                 ckb_noEstVidaActFisiEstVida.Checked = false;
             }
-            else
-            {
-                txt_cualEstVidaActFisiEstVida.Enabled = false;
-                txt_tiemCanEstVidaActFisiEstVida.Enabled = false;
-                ckb_noEstVidaActFisiEstVida.Checked = false;
-            }
         }
 
         protected void ckb_noEstVidaActFisiEstVida_CheckedChanged(object sender, EventArgs e)
@@ -6380,17 +6367,6 @@ namespace SistemaECU911.Template.Views
                 txt_cual3EstVidaMedHabiEstVida.Enabled = true;
                 txt_tiemCan3EstVidaMedHabiEstVida.Enabled = true;
                 ckb_noEstVidaMedHabiEstVida.Checked = false;
-            }
-            else
-            {
-                txt_cual1EstVidaMedHabiEstVida.Enabled = false;
-                txt_tiemCan1EstVidaMedHabiEstVida.Enabled = false;
-                txt_cual2EstVidaMedHabiEstVida.Enabled = false;
-                txt_tiemCan2EstVidaMedHabiEstVida.Enabled = false;
-                txt_cual3EstVidaMedHabiEstVida.Enabled = false;
-                txt_tiemCan3EstVidaMedHabiEstVida.Enabled = false;
-                ckb_noEstVidaMedHabiEstVida.Checked = false;
-
             }
         }
 
@@ -6423,13 +6399,6 @@ namespace SistemaECU911.Template.Views
                 txt_obsercalificadotrabajo.Enabled = true;
                 ckb_nocalificadotrabajo.Checked = false;
             }
-            else
-            {
-                txt_especificarcalificadotrabajo.Enabled = false;
-                txt_fechacalificadotrabajo.Enabled = false;
-                txt_obsercalificadotrabajo.Enabled = false;
-                ckb_nocalificadotrabajo.Checked = false;
-            }
         }
 
         protected void ckb_nocalificadotrabajo_CheckedChanged(object sender, EventArgs e)
@@ -6455,13 +6424,6 @@ namespace SistemaECU911.Template.Views
                 txt_fechacalificadoprofesional.Enabled = true;
                 txt_obsercalificadoprofesional.Enabled = true;
             }
-            else
-            {
-                txt_especificarcalificadoprofesional.Enabled = false;
-                ckb_nocalificadoprofesional.Checked = false;
-                txt_fechacalificadoprofesional.Enabled = false;
-                txt_obsercalificadoprofesional.Enabled = false;
-            }
         }
 
         protected void ckb_nocalificadoprofesional_CheckedChanged(object sender, EventArgs e)
@@ -6484,10 +6446,6 @@ namespace SistemaECU911.Template.Views
             {
                 ckb_def.Checked = false;
             }
-            else
-            {
-                ckb_def.Checked = false;
-            }
         }
 
         protected void ckb_def_CheckedChanged(object sender, EventArgs e)
@@ -6501,10 +6459,6 @@ namespace SistemaECU911.Template.Views
         protected void ckb_pre2_CheckedChanged(object sender, EventArgs e)
         {
             if (ckb_pre2.Checked == true)
-            {
-                ckb_def2.Checked = false;
-            }
-            else
             {
                 ckb_def2.Checked = false;
             }
@@ -6524,10 +6478,6 @@ namespace SistemaECU911.Template.Views
             {
                 ckb_def3.Checked = false;
             }
-            else
-            {
-                ckb_def3.Checked = false;
-            }
         }
 
         protected void ckb_def3_CheckedChanged(object sender, EventArgs e)
@@ -6536,6 +6486,191 @@ namespace SistemaECU911.Template.Views
             {
                 ckb_pre3.Checked = false;
             }
+        }
+
+        protected void btn_guardar_Click(object sender, EventArgs e)
+        {
+            guardar_modificar_datos(Convert.ToInt32(Request["cod"]));
+        }
+
+        protected void btn_cancelar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Template/Views/Inicio.aspx");
+        }
+
+        protected void btn_imprimir_Click(object sender, EventArgs e)
+        {
+            HtmlNode.ElementsFlags["img"] = HtmlElementFlag.Closed;
+            HtmlNode.ElementsFlags["br"] = HtmlElementFlag.Closed;
+            Document pdfDoc = new Document(PageSize.A4, 20f, 20f, 20f, 20f);
+            PdfWriter writer = PdfWriter.GetInstance(pdfDoc, Response.OutputStream);
+            BaseFont fuente = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, true);
+            Font titulo = new Font(fuente, 18f, Font.BOLD, new BaseColor(0, 0, 0));
+            BaseFont fuente2 = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, true);
+            Font parrafo = new Font(fuente2, 12f, Font.NORMAL, new BaseColor(0, 0, 0));
+            BaseFont fuente3 = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, true);
+            Font cuadro = new Font(fuente3, 10f, Font.NORMAL, new BaseColor(0, 0, 0));
+
+            pdfDoc.Open();
+            pdfDoc.Add(new Paragraph("GESTIÓN DE SEGURIDAD Y SALUD OCUPACIONAL", titulo) { Alignment = Element.ALIGN_CENTER });
+            pdfDoc.Add(new Paragraph("HISTORIA CLÍNICA OCUPACIONAL - PERIODICA", titulo) { Alignment = Element.ALIGN_CENTER });
+            pdfDoc.Add(new Chunk(Chunk.NEWLINE));
+
+            //A. DATOS DEL ESTABLECIMIENTO - EMPRESA Y USUARIO
+            var tblinf = new PdfPTable(new float[] { 70f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblinf.AddCell(new PdfPCell(new Paragraph("A. DATOS DEL ESTABLECIMIENTO - EMPRESA Y USUARIO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(204, 205, 254), HorizontalAlignment = Element.ALIGN_LEFT });
+            pdfDoc.Add(tblinf);
+            var tblinfTitulo = new PdfPTable(new float[] { 80f, 40f, 40f, 60f, 50f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblinfTitulo.AddCell(new PdfPCell(new Paragraph("INSTITUCIÓN DEL SISTEMA O NOMBRE DE LA EMPRESA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblinfTitulo.AddCell(new PdfPCell(new Paragraph("RUC", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblinfTitulo.AddCell(new PdfPCell(new Paragraph("CIIU", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblinfTitulo.AddCell(new PdfPCell(new Paragraph("ESTABLECIMIENTO DE SALUD", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblinfTitulo.AddCell(new PdfPCell(new Paragraph("NÚMERO DE HISTORIA CLÍNICA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblinfTitulo.AddCell(new PdfPCell(new Paragraph("NÚMERO DE ARCHIVO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            pdfDoc.Add(tblinfTitulo);
+            var tblinfDatos = new PdfPTable(new float[] { 80f, 40f, 40f, 60f, 50f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblinfDatos.AddCell(new PdfPCell(new Paragraph(txt_nomEmpresa.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tblinfDatos.AddCell(new PdfPCell(new Paragraph(txt_rucEmp.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tblinfDatos.AddCell(new PdfPCell(new Paragraph(txt_ciiu.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tblinfDatos.AddCell(new PdfPCell(new Paragraph(txt_estableSalud.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tblinfDatos.AddCell(new PdfPCell(new Paragraph(txt_numHClinica.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tblinfDatos.AddCell(new PdfPCell(new Paragraph(txt_numArchivo.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            pdfDoc.Add(tblinfDatos);
+            pdfDoc.Add(new Paragraph(" "));
+            var tblTitulo = new PdfPTable(new float[] { 25f, 25f, 25f, 25f, 10f, 60f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblTitulo.AddCell(new PdfPCell(new Paragraph("PRIMER APELLIDO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblTitulo.AddCell(new PdfPCell(new Paragraph("SEGUNDO APELLIDO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblTitulo.AddCell(new PdfPCell(new Paragraph("PRIMER NOMBRE", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblTitulo.AddCell(new PdfPCell(new Paragraph("SEGUNDO NOMBRE", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });            
+            tblTitulo.AddCell(new PdfPCell(new Paragraph("SEXO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblTitulo.AddCell(new PdfPCell(new Paragraph("PUESTO DE TRABAJO (CIUO)", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            pdfDoc.Add(tblTitulo);
+            var tblDatos = new PdfPTable(new float[] { 25f, 25f, 25f, 25f, 10f, 60f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblDatos.AddCell(new PdfPCell(new Paragraph(txt_priApellido.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblDatos.AddCell(new PdfPCell(new Paragraph(txt_segApellido.Text, cuadro)) { BorderColor = new BaseColor(0238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblDatos.AddCell(new PdfPCell(new Paragraph(txt_priNombre.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblDatos.AddCell(new PdfPCell(new Paragraph(txt_segNombre.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });            
+            tblDatos.AddCell(new PdfPCell(new Paragraph(txt_sexo.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblDatos.AddCell(new PdfPCell(new Paragraph(txt_puestodetrabajoperiodica.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            pdfDoc.Add(tblDatos);
+
+            //B. MOTIVO DE CONSULTA
+            pdfDoc.Add(new Paragraph(" "));
+            var tblMotCon = new PdfPTable(new float[] { 300f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblMotCon.AddCell(new PdfPCell(new Paragraph("B. MOTIVO DE CONSULTA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(204, 205, 254), HorizontalAlignment = Element.ALIGN_LEFT });
+            pdfDoc.Add(tblMotCon);
+            var tblMconsul = new PdfPTable(new float[] { 300f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblMconsul.AddCell(new PdfPCell(new Paragraph(txt_motivoconsultaperiodica.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            pdfDoc.Add(tblMconsul);
+
+            //C. ANTECEDENTES PERSONALES
+            pdfDoc.Add(new Paragraph(" "));
+            var tblAntPerso = new PdfPTable(new float[] { 300f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblAntPerso.AddCell(new PdfPCell(new Paragraph("C. ANTECEDENTES PERSONALES", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(204, 205, 254), HorizontalAlignment = Element.ALIGN_LEFT });
+            pdfDoc.Add(tblAntPerso);
+            var tblacqTitulo = new PdfPTable(new float[] { 300f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblacqTitulo.AddCell(new PdfPCell(new Paragraph("ANTECEDENTES CLÍNICOS Y QUIRÚRGICOS", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            pdfDoc.Add(tblacqTitulo);
+            var tblacqDatos = new PdfPTable(new float[] { 300f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblacqDatos.AddCell(new PdfPCell(new Paragraph(txt_antCliQuiDescripcion.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            pdfDoc.Add(tblacqDatos);
+
+            var tblhtTitulo = new PdfPTable(new float[] { 300f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblacqTitulo.AddCell(new PdfPCell(new Paragraph("HÁBITOS TÓXICOS ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            pdfDoc.Add(tblacqTitulo);
+            var tblhtTitulo2 = new PdfPTable(new float[] { 100f, 20f, 20f, 50f, 60f, 60f, 60f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblhtTitulo2.AddCell(new PdfPCell(new Paragraph("CONSUMOS NOCIVOS", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(204, 205, 254), HorizontalAlignment = Element.ALIGN_LEFT });
+            tblhtTitulo2.AddCell(new PdfPCell(new Paragraph("SI", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(204, 205, 254), HorizontalAlignment = Element.ALIGN_LEFT });
+            tblhtTitulo2.AddCell(new PdfPCell(new Paragraph("NO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(204, 205, 254), HorizontalAlignment = Element.ALIGN_LEFT });
+            tblhtTitulo2.AddCell(new PdfPCell(new Paragraph("TIEMPO DE CONSUMO (MESES)", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(204, 205, 254), HorizontalAlignment = Element.ALIGN_LEFT });
+            tblhtTitulo2.AddCell(new PdfPCell(new Paragraph("CANTIDAD", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(204, 205, 254), HorizontalAlignment = Element.ALIGN_LEFT });
+            tblhtTitulo2.AddCell(new PdfPCell(new Paragraph("EX CONSUMIDOR", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(204, 205, 254), HorizontalAlignment = Element.ALIGN_LEFT });
+            tblhtTitulo2.AddCell(new PdfPCell(new Paragraph("TIEMPO DE ABSTINENCIA (MESES)", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(204, 205, 254), HorizontalAlignment = Element.ALIGN_LEFT });
+            pdfDoc.Add(tblhtTitulo2);
+            var tblhtDatos = new PdfPTable(new float[] { 100f, 20f, 20f, 50f, 60f, 60f, 60f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblhtDatos.AddCell(new PdfPCell(new Paragraph("TABACO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            if (ckb_siConsuNociTabaHabToxi.Checked == true)
+            {
+                tblhtDatos.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            }
+            else
+            {
+                tblhtDatos.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            }
+            if (ckb_noConsuNociTabaHabToxi.Checked == true)
+            {
+                tblhtDatos.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            }
+            else
+            {
+                tblhtDatos.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            }
+            tblhtDatos.AddCell(new PdfPCell(new Paragraph(txt_tiemConConsuNociTabaHabToxi.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblhtDatos.AddCell(new PdfPCell(new Paragraph(txt_cantiConsuNociTabaHabToxi.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblhtDatos.AddCell(new PdfPCell(new Paragraph(txt_exConsumiConsuNociTabaHabToxi.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblhtDatos.AddCell(new PdfPCell(new Paragraph(txt_tiemAbstiConsuNociTabaHabToxi.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            pdfDoc.Add(tblhtDatos);
+            var tblhtDatos2 = new PdfPTable(new float[] { 100f, 20f, 20f, 50f, 60f, 60f, 60f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblhtDatos2.AddCell(new PdfPCell(new Paragraph("ALCOHOL", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            if (ckb_siConsuNociAlcoHabToxi.Checked == true)
+            {
+                tblhtDatos2.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            }
+            else
+            {
+                tblhtDatos2.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            }
+            if (ckb_noConsuNociAlcoHabToxi.Checked == true)
+            {
+                tblhtDatos2.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            }
+            else
+            {
+                tblhtDatos2.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            }
+            tblhtDatos2.AddCell(new PdfPCell(new Paragraph(txt_tiemConConsuNociAlcoHabToxi.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblhtDatos2.AddCell(new PdfPCell(new Paragraph(txt_cantiConsuNociAlcoHabToxi.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblhtDatos2.AddCell(new PdfPCell(new Paragraph(txt_exConsumiConsuNociAlcoHabToxi.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblhtDatos2.AddCell(new PdfPCell(new Paragraph(txt_tiemAbstiConsuNociAlcoHabToxi.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            pdfDoc.Add(tblhtDatos2);
+            var tblhtDatos3 = new PdfPTable(new float[] { 100f, 20f, 20f, 50f, 60f, 60f, 60f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblhtDatos3.AddCell(new PdfPCell(new Paragraph("OTRAS DROGAS", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            if (ckb_siConsuNociOtrasDroHabToxi.Checked == true)
+            {
+                tblhtDatos3.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Rowspan = 2 });
+            }
+            else
+            {
+                tblhtDatos3.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Rowspan = 2 });
+            }
+            if (ckb_noConsuNociOtrasDroHabToxi.Checked == true)
+            {
+                tblhtDatos3.AddCell(new PdfPCell(new Paragraph("X", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Rowspan = 2 });
+            }
+            else
+            {
+                tblhtDatos3.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Rowspan = 2 });
+            }
+            tblhtDatos3.AddCell(new PdfPCell(new Paragraph(txt_tiemCon1ConsuNociOtrasDroHabToxi.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblhtDatos3.AddCell(new PdfPCell(new Paragraph(txt_canti1ConsuNociOtrasDroHabToxi.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblhtDatos3.AddCell(new PdfPCell(new Paragraph(txt_exConsumi1ConsuNociOtrasDroHabToxi.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblhtDatos3.AddCell(new PdfPCell(new Paragraph(txt_tiemAbsti1ConsuNociOtrasDroHabToxi.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            pdfDoc.Add(tblhtDatos3);
+
+            var tblhtDatos4 = new PdfPTable(new float[] { 100f, 50f, 60f, 60f, 60f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblhtDatos4.AddCell(new PdfPCell(new Paragraph(txt_otrasConsuNociOtrasDroHabToxi.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblhtDatos4.AddCell(new PdfPCell(new Paragraph(txt_otrasConsuNociOtrasDroHabToxi.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblhtDatos4.AddCell(new PdfPCell(new Paragraph(txt_canti2ConsuNociOtrasDroHabToxi.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblhtDatos4.AddCell(new PdfPCell(new Paragraph(txt_exConsumi2ConsuNociOtrasDroHabToxi.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblhtDatos4.AddCell(new PdfPCell(new Paragraph(txt_tiemAbsti2ConsuNociOtrasDroHabToxi.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            pdfDoc.Add(tblhtDatos4);
+
+            pdfDoc.Close();
+            Response.ContentType = "application/pdf";
+            Response.AddHeader("content-disposition", "attachment;filename=Periodica_" + txt_numHClinica.Text + "_" + DateTime.Now.ToLocalTime().ToString("yyyy-MM-ddTHH:mm") + ".pdf");
+            Response.Cache.SetCacheability(HttpCacheability.NoCache);
+            Response.Write(pdfDoc);
+            Response.End();
         }
     }
 }
