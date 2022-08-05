@@ -227,6 +227,11 @@ namespace SistemaECU911.Template.Views
             }
         }
 
+        protected void timerFechaHora_Tick(object sender, EventArgs e)
+        {
+            this.txt_fechahora.Text = DateTime.Now.ToLocalTime().ToString("yyyy-MM-ddTHH:mm");
+        }
+
         //Metodo obtener cedula por numero de historia clinica
         [WebMethod]
         [ScriptMethod]
@@ -305,6 +310,9 @@ namespace SistemaECU911.Template.Views
                 int perso = Convert.ToInt32(per.Per_id.ToString());
 
                 certi = new Tbl_Certificado();
+
+                //Fecha y Hora
+                certi.certi_fecha_hora = txt_fechahora.Text;
 
                 //Datos Generales
                 if (ckb_ingreso.Checked == true)
@@ -416,6 +424,8 @@ namespace SistemaECU911.Template.Views
         {
             try
             {
+                //Fecha y Hora
+                certi.certi_fecha_hora = txt_fechahora.Text;
 
                 //Datos Generales
                 if (ckb_ingreso.Checked == true)
@@ -965,7 +975,7 @@ namespace SistemaECU911.Template.Views
             Response.Cache.SetCacheability(HttpCacheability.NoCache);
             Response.Write(pdfDoc);
             Response.End();
-        }
+        } 
     }
    
 }

@@ -2967,7 +2967,8 @@
                             <asp:TableRow>
                                 <asp:TableCell Style="width: 100px; background-color: #cdfecc; font-size:15px">FECHA Y HORA</asp:TableCell>
                                 <asp:TableCell Style="width: 150px; background-color: white; font-size: 14px">
-                                    <asp:TextBox runat="server" BorderStyle="None" ID="txt_fechahora" Style="background-color: transparent; width: 100%; text-align: center; text-transform:uppercase" TextMode="DateTimeLocal"></asp:TextBox>
+                                    <asp:Timer ID="timerFechaHora"  OnTick="timerFechaHora_Tick" runat="server" Interval="15000"></asp:Timer>
+                                    <asp:TextBox runat="server" BorderStyle="None" ID="txt_fechahora" Style="background-color: transparent; width: 100%; text-align: center; text-transform:uppercase" TextMode="DateTimeLocal" ReadOnly="true"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="width: 100px; background-color: #cdfecc; font-size:15px">NOMBRES Y APELLIDOS</asp:TableCell>
                                 <asp:TableCell Style="width: 375px; background-color: white; font-size: 14px">

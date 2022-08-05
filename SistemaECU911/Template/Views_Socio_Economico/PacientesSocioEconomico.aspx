@@ -23,24 +23,29 @@
                                 <div class="col-auto">
                                     <asp:GridView ID="grvPacientesSocioEconomico" OnRowCommand="grvPacientesSocioEconomico_RowCommand" AutoGenerateColumns="false" Width="100%" CssClass="table table-hover text-center table-responsive" GridLines="None" runat="server" Style="margin-right: 0px">
                                         <Columns>
-                                            <asp:TemplateField HeaderText="Cédula">
+                                            <asp:TemplateField HeaderText="CEDULA">
                                                 <ItemTemplate>
                                                     <asp:Label ID="Per_cedula" runat="server" Text='<%#Eval("Per_cedula")%>'></asp:Label>
                                                 </ItemTemplate>
                                             </asp:TemplateField>
-                                            <asp:TemplateField HeaderText="Nombre">
+                                            <asp:TemplateField HeaderText="NOMBRE">
                                                 <ItemTemplate>
                                                     <asp:Label ID="Per_priNombre" runat="server" Text='<%#Eval("Per_priNombre")%>'></asp:Label>
                                                 </ItemTemplate>
                                             </asp:TemplateField>
-                                            <asp:TemplateField HeaderText="Apellido">
+                                            <asp:TemplateField HeaderText="APELLIDO">
                                                 <ItemTemplate>
                                                     <asp:Label ID="Per_priApellido" runat="server" Text='<%#Eval("Per_priApellido")%>'></asp:Label>
                                                 </ItemTemplate>
                                             </asp:TemplateField>
-                                            <asp:TemplateField HeaderText="Fecha y Hora">
+                                            <asp:TemplateField HeaderText="FECHA GUARDADO">
                                                 <ItemTemplate>
                                                     <asp:Label ID="Socio_economico_fechaHoraGuardado" runat="server" Text='<%#Eval("Socio_economico_fechaHoraGuardado")%>'></asp:Label>
+                                                </ItemTemplate>
+                                            </asp:TemplateField>
+                                            <asp:TemplateField HeaderText="FECHA MODIFICACION">
+                                                <ItemTemplate>
+                                                    <asp:Label ID="Socio_economico_fechaHora" runat="server" Text='<%#Eval("Socio_economico_fechaHora")%>'></asp:Label>
                                                 </ItemTemplate>
                                             </asp:TemplateField>
                                             <asp:TemplateField ItemStyle-Width="17" HeaderStyle-Width="17" HeaderText="">

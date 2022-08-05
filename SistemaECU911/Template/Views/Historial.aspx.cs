@@ -114,23 +114,21 @@ namespace SistemaECU911.Template.Views
                             txt_descripcionDiagnostico.Text = fichasmedicas.descripcionDiag.ToString();
                             txt_tratamiento.Text = fichasmedicas.planTratamiento.ToString();
                             txt_evolucion.Text = fichasmedicas.evolucion.ToString();
-                            txt_prescipciones.Text = fichasmedicas.prescripciones.ToString();
-                            txt_fechahora.Text = Convert.ToDateTime(fichasmedicas.fechaHora).ToString("yyyy-MM-ddTHH:mm");                           
+                            txt_prescipciones.Text = fichasmedicas.prescripciones.ToString();                           
                             ddl_especialidad.SelectedValue = fichasmedicas.espec_id.ToString();
                             ddl_profesional.SelectedValue = fichasmedicas.prof_id.ToString();
                             txt_codigo.Text = fichasmedicas.codigoPro.ToString();
                         }
                     }
                 }
-                if (fichasmedicas.fechaHora == null)
-                {
-                    txt_fechahora.Text = DateTime.Now.ToLocalTime().ToString("yyyy-MM-ddTHH:mm");
-                }
                 cargarEspecialidad();
                 cargarProfesional();
             }            
         }
-
+        protected void timerFechaHora_Tick(object sender, EventArgs e)
+        {
+            this.txt_fechahora.Text = DateTime.Now.ToLocalTime().ToString("yyyy-MM-ddTHH:mm");
+        }
         public void Calculo(DateTime nac, DateTime actual)
         {
             int año = nac.Year;

@@ -48,6 +48,7 @@
       <Column Name="certi_noCondiSalud" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
       <Column Name="certi_noAplicaCondiSalud" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
       <Column Name="certi_descripcionRecomendaciones" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="certi_fecha_hora" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
       <Column Name="prof_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="certi_cod" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
       <Column Name="Per_id" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
@@ -159,6 +160,7 @@
       <Column Name="evo_adminisFarmacos14" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="evo_farmacoIndicaciones15" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="evo_adminisFarmacos15" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="evo_fecha_hora" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
       <Column Name="Per_id" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
       <Column Name="evo_fechaHoraGuardado" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="evo_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
@@ -987,6 +989,7 @@
       <Column Name="inmu_4nomCompleResponVacuInmuAcuerTipoEmpRies5" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="inmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies5" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="inmu_4observaInmuAcuerTipoEmpRies5" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="inmu_fecha_hora" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
       <Column Name="Per_id" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
       <Column Name="inmu_fechaHoraGuardado" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="inmu_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
@@ -1147,6 +1150,7 @@
       <Column Name="pedExa_descripOtros2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="pedExa_Otros3" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
       <Column Name="pedExa_descripOtros3" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="pedExa_fecha_hora" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
       <Column Name="Per_id" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
       <Column Name="pedExa_fechaHoraGuardado" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="pedExa_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />

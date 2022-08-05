@@ -49,7 +49,7 @@
                     <ul class="navbar-nav navbar-nav-right">
                         <li class="nav-item d-none d-lg-flex">
                             <a class="nav-link" href="Personas.aspx">
-                                <span class="btn btn-primary">+ Nuevo Paciente </span>
+                                <span class="btn btn-primary">+ NUEVA PACIENTE</span>
                             </a>
                         </li>
                         <li class="nav-item nav-profile dropdown">
@@ -103,7 +103,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="WebForm2.aspx">
                                 <i class="fab fa-wpforms menu-icon"></i>
-                                <span class="menu-title">Crud Certificado</span>
+                                <span class="menu-title">Generar Certificado</span>
                             </a>
                         </li>
                         <li class="nav-item">

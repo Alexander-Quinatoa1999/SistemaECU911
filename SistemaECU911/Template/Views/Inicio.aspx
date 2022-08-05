@@ -8,7 +8,7 @@
         <ContentTemplate>
             <div class="main-panel" style="width: auto">
                 <div class="content-wrapper">
-                    <div class="page-header">
+                    <%--<div class="page-header">
                         <h3 class="page-title">Dashboard</h3>
                     </div>
                     <div class="row grid-margin">
@@ -182,7 +182,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div>--%>
                     <div class="row">
                         <div class="col-12 grid-margin">
                             <div class="card">
@@ -355,7 +355,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
+                    <%--<div class="row">
                         <div class="col-md-8 grid-margin stretch-card">
                             <div class="card">
                                 <div class="card-body">
@@ -616,7 +616,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div>--%>
                 </div>
             </div>
         </ContentTemplate>

@@ -602,28 +602,22 @@ namespace SistemaECU911.Template.Views
                             //I
                             txt_descripciontratamientoreintegro.Text = reinte.rein_descripcionRecoTratamiento.ToString();
 
-                            //J
-                            if (reinte.rein_fecha_hora == "")
-                            {
-                                txt_fechahora.Text = reinte.rein_fecha_hora.ToString(); 
-                            }
-                            else
-                            {
-                                txt_fechahora.Text = Convert.ToDateTime(reinte.rein_fecha_hora).ToString("yyyy-MM-ddTHH:mm");
-                            }                            
+                            //J                           
                             ddl_profesional.SelectedValue = reinte.prof_id.ToString();
                             txt_codigoDatProf.Text = reinte.rein_cod.ToString();
                         }
                     }                    
                 }
-
-                if (reinte.rein_fecha_hora == null)
-                {
-                    txt_fechahora.Text = DateTime.Now.ToLocalTime().ToString("yyyy-MM-ddTHH:mm");
-                }
-
                 cargarProfesional();
                 //defaultValidaciones();
+            }
+        }
+
+        protected void timerFechaHora_Tick(object sender, EventArgs e)
+        {
+            if (reinte.rein_fecha_hora == null)
+            {
+                txt_fechahora.Text = DateTime.Now.ToLocalTime().ToString("yyyy-MM-ddTHH:mm");
             }
         }
 

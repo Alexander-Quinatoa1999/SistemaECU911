@@ -35,7 +35,8 @@ namespace SistemaECU911.Template.Views
                             p.Per_priNombre,
                             p.Per_priApellido,
                             pro.prof_NomApe,
-                            c.certi_fechaHoraGuardado
+                            c.certi_fechaHoraGuardado,
+                            c.certi_fecha_hora
                         };
 
             grvPacientesCertificado.DataSource = query.ToList();

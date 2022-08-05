@@ -46,8 +46,8 @@
                     </ul>
                     <ul class="navbar-nav navbar-nav-right">
                         <li class="nav-item d-none d-lg-flex">
-                            <a class="nav-link" href="#">
-                                <span class="btn btn-primary">Agregar Usuario</span>
+                            <a class="nav-link" href="Personas.aspx">
+                                <span class="btn btn-primary">+ NUEVA PERSONA</span>
                             </a>
                         </li>
                         <li class="nav-item nav-profile dropdown">

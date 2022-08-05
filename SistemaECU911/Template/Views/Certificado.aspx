@@ -66,6 +66,18 @@
                     </div>
                 </div>
                 <br />
+                <div class="list-group list-group-flush">
+                    <asp:Table class="table table-bordered table-light" runat="server">
+                        <asp:TableRow>
+                            <asp:TableCell Style="text-align: right; font-family: Arial; background-color: #cccdfe; font-size:15px">FECHA Y HORA</asp:TableCell>
+                            <asp:TableCell Style="width: 100px; background-color: white">
+                                <asp:Timer ID="timerFechaHora"  OnTick="timerFechaHora_Tick" runat="server" Interval="15000"></asp:Timer>
+                                <asp:TextBox runat="server" ID="txt_fechahora" BorderStyle="None" Style="background-color: transparent; width: 100%; font-family: Arial; font-size: 15px; text-align:center; text-transform:uppercase" TextMode="DateTimeLocal" ReadOnly="true"></asp:TextBox>
+                            </asp:TableCell>
+                        </asp:TableRow>
+                    </asp:Table>
+                </div>
+                <br />
                 <div class="card" style="width: auto;">
                     <div class="card-header" style="background-color: #cccdfe; font-size:15px; font-weight:bold">
                         A. DATOS DEL ESTABLECIMIENTO - EMPRESA Y USUARIO

@@ -3722,30 +3722,24 @@ namespace SistemaECU911.Template.Views
                             //O
                             txt_descripciontratamiento.Text = inicial.inicial_descripcionRecTra.ToString();
 
-                            //P
-                            if (inicial.inicial_fecha_hora == "")
-                            {
-                                txt_fechahora.Text = inicial.inicial_fecha_hora.ToString();
-                            }
-                            else
-                            {
-                                txt_fechahora.Text = Convert.ToDateTime(inicial.inicial_fecha_hora).ToString("yyyy-MM-ddTHH:mm");
-                            }
+                            //P                            
                             ddl_profesional.SelectedValue = inicial.prof_id.ToString();
                             txt_codigoDatProf.Text = inicial.inicial_cod.ToString();
                         }
                     }
                 }
-
-                if (inicial.inicial_fecha_hora == null)
-                {
-                    txt_fechahora.Text = DateTime.Now.ToLocalTime().ToString("yyyy-MM-ddTHH:mm");
-                }
-                
                 cargarProfesional();
                 defaultValidaciones();
             }
 		}
+
+        protected void timerFechaHora_Tick(object sender, EventArgs e)
+        {
+            if (inicial.inicial_fecha_hora == null)
+            {
+                txt_fechahora.Text = DateTime.Now.ToLocalTime().ToString("yyyy-MM-ddTHH:mm");
+            }
+        }
 
         public void Calculo(DateTime nac, DateTime actual)
         {

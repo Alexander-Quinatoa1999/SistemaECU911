@@ -33,7 +33,8 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                             p.Per_cedula,
                             p.Per_priNombre,
                             p.Per_priApellido,
-                            r.Socio_economico_fechaHoraGuardado
+                            r.Socio_economico_fechaHoraGuardado,
+                            r.Socio_economico_fechaHora
                         };
 
             grvPacientesSocioEconomico.DataSource = query.ToList();

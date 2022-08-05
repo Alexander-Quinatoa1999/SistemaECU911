@@ -629,28 +629,22 @@ namespace SistemaECU911.Template.Views
                             //H
                             txt_descripciontratamientoretiro.Text = reti.ret_descripcionRecoTratamiento.ToString();
 
-                            //I
-                            if (reti.ret_fecha_hora == "")
-                            {
-                                txt_fechahora.Text = reti.ret_fecha_hora.ToString();
-                            }
-                            else
-                            {
-                                txt_fechahora.Text = Convert.ToDateTime(reti.ret_fecha_hora).ToString("yyyy-MM-ddTHH:mm");
-                            }                            
+                            //I                           
                             ddl_profesional.SelectedValue = reti.prof_id.ToString();
                             txt_codigoDatProf.Text = reti.ret_cod.ToString();
                         }
                     }
                 }
-
-                if (reti.ret_fecha_hora == null)
-                {
-                    txt_fechahora.Text = DateTime.Now.ToLocalTime().ToString("yyyy-MM-ddTHH:mm");
-                }
-
                 cargarProfesional();
                 defaultValidaciones();
+            }
+        }
+
+        protected void timerFechaHora_Tick(object sender, EventArgs e)
+        {
+            if (reti.ret_fecha_hora == null)
+            {
+                txt_fechahora.Text = DateTime.Now.ToLocalTime().ToString("yyyy-MM-ddTHH:mm");
             }
         }
 

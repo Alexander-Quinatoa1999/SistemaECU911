@@ -2523,28 +2523,22 @@ namespace SistemaECU911.Template.Views
                             //M
                             txt_descripciontratamientoperiodica.Text = perio.perio_descripcionRecoTratamiento.ToString();
 
-                            //N
-                            if (perio.perio_fecha_hora == "")
-                            {
-                                txt_fechahora.Text = perio.perio_fecha_hora.ToString();
-                            }
-                            else
-                            {
-                                txt_fechahora.Text = Convert.ToDateTime(perio.perio_fecha_hora).ToString("yyyy-MM-ddTHH:mm");
-                            }                            
+                            //N                           
                             ddl_profesional.SelectedValue = perio.prof_id.ToString();
                             txt_codigoDatProf.Text = perio.perio_cod.ToString();
                         }
                     }
                 }
-
-                if (perio.perio_fecha_hora == null)
-                {
-                    txt_fechahora.Text = DateTime.Now.ToLocalTime().ToString("yyyy-MM-ddTHH:mm");
-                }
-
                 cargarProfesional();
                 defaultValidaciones();
+            }
+        }
+
+        protected void timerFechaHora_Tick(object sender, EventArgs e)
+        {
+            if (perio.perio_fecha_hora == null)
+            {
+                txt_fechahora.Text = DateTime.Now.ToLocalTime().ToString("yyyy-MM-ddTHH:mm");
             }
         }
 

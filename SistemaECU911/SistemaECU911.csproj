@@ -2833,6 +2833,7 @@
     <Content Include="Template\Views_Pacientes\SSO.aspx" />
     <Content Include="Template\Views_Socio_Economico\Inicio.aspx" />
     <Content Include="Template\Views_Socio_Economico\PacientesSocioEconomico.aspx" />
+    <Content Include="Template\Views_Socio_Economico\Personas.aspx" />
     <Content Include="Template\Views_Socio_Economico\SocioEconomico.aspx" />
     <Content Include="Template\Views\Certificado.aspx" />
     <Content Include="Template\Views\Certificado_Reporte.aspx" />
@@ -2849,7 +2850,6 @@
     <Content Include="Template\Views\PacientesPeriodica.aspx" />
     <Content Include="Template\Views\PacientesReintegro.aspx" />
     <Content Include="Template\Views\PacientesRetiro.aspx" />
-    <Content Include="Template\Views\PacientesSocioEconomico.aspx" />
     <Content Include="Template\Views\PedidoExamenes.aspx" />
     <Content Include="Template\Views\Periodica.aspx" />
     <Content Include="Template\Views\Reintegro.aspx" />
@@ -2964,6 +2964,13 @@
     </Compile>
     <Compile Include="Template\Views_Socio_Economico\PacientesSocioEconomico.aspx.designer.cs">
       <DependentUpon>PacientesSocioEconomico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Template\Views_Socio_Economico\Personas.aspx.cs">
+      <DependentUpon>Personas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Template\Views_Socio_Economico\Personas.aspx.designer.cs">
+      <DependentUpon>Personas.aspx</DependentUpon>
     </Compile>
     <Compile Include="Template\Views_Socio_Economico\PrincipalSSO.Master.cs">
       <DependentUpon>PrincipalSSO.Master</DependentUpon>
@@ -3083,13 +3090,6 @@
     </Compile>
     <Compile Include="Template\Views\PacientesRetiro.aspx.designer.cs">
       <DependentUpon>PacientesRetiro.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Template\Views\PacientesSocioEconomico.aspx.cs">
-      <DependentUpon>PacientesSocioEconomico.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Template\Views\PacientesSocioEconomico.aspx.designer.cs">
-      <DependentUpon>PacientesSocioEconomico.aspx</DependentUpon>
     </Compile>
     <Compile Include="Template\Views\PedidoExamenes.aspx.cs">
       <DependentUpon>PedidoExamenes.aspx</DependentUpon>

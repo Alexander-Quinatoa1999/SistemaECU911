@@ -244,6 +244,11 @@ namespace SistemaECU911.Template.Views
             }
         }
 
+        protected void timerFechaHora_Tick(object sender, EventArgs e)
+        {
+            this.txt_fechahora.Text = DateTime.Now.ToLocalTime().ToString("yyyy-MM-ddTHH:mm");
+        }
+
         //Metodo obtener cedula por numero de HC EVOLUCION
         [WebMethod]
         [ScriptMethod]
@@ -322,6 +327,9 @@ namespace SistemaECU911.Template.Views
                 int perso = Convert.ToInt32(per.Per_id.ToString());
 
                 evo = new Tbl_Evolucion();
+
+                //Fecha y Hora
+                evo.evo_fecha_hora = txt_fechahora.Text;
 
                 //A Captura de datos Establecimiento
                 evo.evo_ciiu = txt_ciiu.Text;
@@ -425,6 +433,9 @@ namespace SistemaECU911.Template.Views
         {
             try
             {
+                //Fecha y Hora
+                evo.evo_fecha_hora = txt_fechahora.Text;
+
                 //A Captura de datos Establecimiento
                 evo.evo_ciiu = txt_ciiu.Text;
                 evo.evo_numArchivo = txt_numArchivo.Text;
@@ -724,5 +735,6 @@ namespace SistemaECU911.Template.Views
             Response.Write(pdfDoc);
             Response.End();
         }
+
     }
 }

@@ -19,6 +19,7 @@ namespace SistemaECU911.Template.Views
             {
                 cargarPaciente();
                 //grvPacientes.VirtualItemCount = Count();
+
             }
         }
 
@@ -26,7 +27,6 @@ namespace SistemaECU911.Template.Views
         {
             var query = from hm in dc.Tbl_FichasMedicas
                         join p in dc.Tbl_Personas on hm.Per_id equals p.Per_id
-                        join e in dc.Tbl_Especialidad on hm.espec_id equals e.espec_id
                         join pro in dc.Tbl_Profesional on hm.prof_id equals pro.prof_id
                         orderby hm.fechaHoraGuardado descending
                         select new
@@ -35,9 +35,9 @@ namespace SistemaECU911.Template.Views
                             p.Per_cedula,
                             p.Per_priNombre,
                             p.Per_priApellido,
-                            e.espec_nombre,
                             pro.prof_NomApe,
-                            hm.fechaHoraGuardado
+                            hm.fechaHoraGuardado,
+                            hm.fechaHora
                         };
 
             grvPacientes.DataSource = query.ToList();
@@ -53,6 +53,5 @@ namespace SistemaECU911.Template.Views
             }            
         }
 
-        
     }
 }

@@ -777,6 +777,8 @@ namespace CapaDatos
 		
 		private string _certi_descripcionRecomendaciones;
 		
+		private string _certi_fecha_hora;
+		
 		private System.Nullable<int> _prof_id;
 		
 		private string _certi_cod;
@@ -841,6 +843,8 @@ namespace CapaDatos
     partial void Oncerti_noAplicaCondiSaludChanged();
     partial void Oncerti_descripcionRecomendacionesChanging(string value);
     partial void Oncerti_descripcionRecomendacionesChanged();
+    partial void Oncerti_fecha_horaChanging(string value);
+    partial void Oncerti_fecha_horaChanged();
     partial void Onprof_idChanging(System.Nullable<int> value);
     partial void Onprof_idChanged();
     partial void Oncerti_codChanging(string value);
@@ -1316,6 +1320,26 @@ namespace CapaDatos
 					this._certi_descripcionRecomendaciones = value;
 					this.SendPropertyChanged("certi_descripcionRecomendaciones");
 					this.Oncerti_descripcionRecomendacionesChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_certi_fecha_hora", DbType="VarChar(25)")]
+		public string certi_fecha_hora
+		{
+			get
+			{
+				return this._certi_fecha_hora;
+			}
+			set
+			{
+				if ((this._certi_fecha_hora != value))
+				{
+					this.Oncerti_fecha_horaChanging(value);
+					this.SendPropertyChanging();
+					this._certi_fecha_hora = value;
+					this.SendPropertyChanged("certi_fecha_hora");
+					this.Oncerti_fecha_horaChanged();
 				}
 			}
 		}
@@ -2111,6 +2135,8 @@ namespace CapaDatos
 		
 		private string _evo_adminisFarmacos15;
 		
+		private string _evo_fecha_hora;
+		
 		private System.Nullable<long> _Per_id;
 		
 		private System.Nullable<System.DateTime> _evo_fechaHoraGuardado;
@@ -2279,6 +2305,8 @@ namespace CapaDatos
     partial void Onevo_farmacoIndicaciones15Changed();
     partial void Onevo_adminisFarmacos15Changing(string value);
     partial void Onevo_adminisFarmacos15Changed();
+    partial void Onevo_fecha_horaChanging(string value);
+    partial void Onevo_fecha_horaChanged();
     partial void OnPer_idChanging(System.Nullable<long> value);
     partial void OnPer_idChanged();
     partial void Onevo_fechaHoraGuardadoChanging(System.Nullable<System.DateTime> value);
@@ -3849,6 +3877,26 @@ namespace CapaDatos
 					this._evo_adminisFarmacos15 = value;
 					this.SendPropertyChanged("evo_adminisFarmacos15");
 					this.Onevo_adminisFarmacos15Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_evo_fecha_hora", DbType="VarChar(25)")]
+		public string evo_fecha_hora
+		{
+			get
+			{
+				return this._evo_fecha_hora;
+			}
+			set
+			{
+				if ((this._evo_fecha_hora != value))
+				{
+					this.Onevo_fecha_horaChanging(value);
+					this.SendPropertyChanging();
+					this._evo_fecha_hora = value;
+					this.SendPropertyChanged("evo_fecha_hora");
+					this.Onevo_fecha_horaChanged();
 				}
 			}
 		}
@@ -18795,6 +18843,8 @@ namespace CapaDatos
 		
 		private string _inmu_4observaInmuAcuerTipoEmpRies5;
 		
+		private string _inmu_fecha_hora;
+		
 		private System.Nullable<long> _Per_id;
 		
 		private System.Nullable<System.DateTime> _inmu_fechaHoraGuardado;
@@ -19241,6 +19291,8 @@ namespace CapaDatos
     partial void Oninmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies5Changed();
     partial void Oninmu_4observaInmuAcuerTipoEmpRies5Changing(string value);
     partial void Oninmu_4observaInmuAcuerTipoEmpRies5Changed();
+    partial void Oninmu_fecha_horaChanging(string value);
+    partial void Oninmu_fecha_horaChanged();
     partial void OnPer_idChanging(System.Nullable<long> value);
     partial void OnPer_idChanged();
     partial void Oninmu_fechaHoraGuardadoChanging(System.Nullable<System.DateTime> value);
@@ -23595,6 +23647,26 @@ namespace CapaDatos
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_fecha_hora", DbType="VarChar(25)")]
+		public string inmu_fecha_hora
+		{
+			get
+			{
+				return this._inmu_fecha_hora;
+			}
+			set
+			{
+				if ((this._inmu_fecha_hora != value))
+				{
+					this.Oninmu_fecha_horaChanging(value);
+					this.SendPropertyChanging();
+					this._inmu_fecha_hora = value;
+					this.SendPropertyChanged("inmu_fecha_hora");
+					this.Oninmu_fecha_horaChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_id", DbType="BigInt")]
 		public System.Nullable<long> Per_id
 		{
@@ -24024,6 +24096,8 @@ namespace CapaDatos
 		
 		private string _pedExa_descripOtros3;
 		
+		private string _pedExa_fecha_hora;
+		
 		private System.Nullable<long> _Per_id;
 		
 		private System.Nullable<System.DateTime> _pedExa_fechaHoraGuardado;
@@ -24340,6 +24414,8 @@ namespace CapaDatos
     partial void OnpedExa_Otros3Changed();
     partial void OnpedExa_descripOtros3Changing(string value);
     partial void OnpedExa_descripOtros3Changed();
+    partial void OnpedExa_fecha_horaChanging(string value);
+    partial void OnpedExa_fecha_horaChanged();
     partial void OnPer_idChanging(System.Nullable<long> value);
     partial void OnPer_idChanged();
     partial void OnpedExa_fechaHoraGuardadoChanging(System.Nullable<System.DateTime> value);
@@ -27390,6 +27466,26 @@ namespace CapaDatos
 					this._pedExa_descripOtros3 = value;
 					this.SendPropertyChanged("pedExa_descripOtros3");
 					this.OnpedExa_descripOtros3Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_fecha_hora", DbType="VarChar(25)")]
+		public string pedExa_fecha_hora
+		{
+			get
+			{
+				return this._pedExa_fecha_hora;
+			}
+			set
+			{
+				if ((this._pedExa_fecha_hora != value))
+				{
+					this.OnpedExa_fecha_horaChanging(value);
+					this.SendPropertyChanging();
+					this._pedExa_fecha_hora = value;
+					this.SendPropertyChanged("pedExa_fecha_hora");
+					this.OnpedExa_fecha_horaChanged();
 				}
 			}
 		}

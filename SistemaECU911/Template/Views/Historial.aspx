@@ -583,8 +583,8 @@
                 <div class="card" style="width: auto;">
                     <div class="list-group list-group-flush" style="padding: 10px">
                         <asp:Table class="table table-bordered table-responsive text-center" Style="text-align: center" runat="server">
-                            <asp:TableRow>
-                                <asp:TableCell Text="FECHA y HORA" Style="background-color: #cdfecc; font-size: 15px; font-family:Arial"></asp:TableCell>
+                            <asp:TableRow>                                
+                                <asp:TableCell Text="FECHA Y HORA" Style="background-color: #cdfecc; font-size: 15px; font-family:Arial"></asp:TableCell>
                                 <asp:TableCell Text="ESPECIALIDAD" Style="background-color: #cdfecc; font-size: 15px; font-family:Arial"></asp:TableCell>
                                 <asp:TableCell Text="NOMBRE DEL PROFESIONAL" Style="background-color: #cdfecc; font-size: 15px; font-family:Arial"></asp:TableCell>
                                 <asp:TableCell Text="CÓDIGO" Style="background-color: #cdfecc; font-size: 15px; font-family:Arial"></asp:TableCell>
@@ -592,7 +592,8 @@
                             </asp:TableRow>
                             <asp:TableRow>
                                 <asp:TableCell Style="width: 200px; background-color: white; font-size: 14px">
-                                    <asp:TextBox runat="server" ID="txt_fechahora" BorderStyle="None" Style="width: 100%; text-transform:uppercase; text-align: center" TextMode="DateTimeLocal"></asp:TextBox>
+                                    <asp:Timer ID="timerFechaHora"  OnTick="timerFechaHora_Tick" runat="server" Interval="1000"></asp:Timer>
+                                    <asp:TextBox runat="server" ID="txt_fechahora" BorderStyle="None" Style="width: 100%; text-transform:uppercase; text-align: center" TextMode="DateTimeLocal" ReadOnly="true"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="width: 400px; background-color: white; font-size: 14px">
                                     <asp:DropDownList ID="ddl_especialidad" CssClass="form-check" Style="width: 100%; text-transform:uppercase; border: none" runat="server"></asp:DropDownList>
@@ -621,6 +622,7 @@
         </ContentTemplate>
         <Triggers>
             <asp:PostBackTrigger ControlID="btn_imprimir"/>
+            <asp:PostBackTrigger ControlID="timerFechaHora"/>
         </Triggers>
     </asp:UpdatePanel>
 </asp:Content>

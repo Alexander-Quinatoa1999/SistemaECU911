@@ -1509,6 +1509,11 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             }
         }
 
+        protected void timerFechaHora_Tick(object sender, EventArgs e)
+        {
+            this.txt_fecharegistro.Text = DateTime.Now.ToLocalTime().ToString("yyyy-MM-dd");
+        }
+
         public void Calculo(DateTime nac, DateTime actual)
         {
             int año = nac.Year;
@@ -7218,6 +7223,5 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             Response.Write(pdfDoc);
             Response.End();
         }
-        
     }
 }
