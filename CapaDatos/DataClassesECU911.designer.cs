@@ -90,7 +90,7 @@ namespace CapaDatos
     #endregion
 		
 		public DataClassesECU911DataContext() : 
-				base(global::CapaDatos.Properties.Settings.Default.SistemaECU911ConnectionString4, mappingSource)
+				base(global::CapaDatos.Properties.Settings.Default.SistemaECU911ConnectionString5, mappingSource)
 		{
 			OnCreated();
 		}
@@ -36058,6 +36058,8 @@ namespace CapaDatos
 		
 		private string _Per_fechInicioTrabajo;
 		
+		private System.Data.Linq.Binary _Per_imagen;
+		
 		private string _Per_estado;
 		
 		private EntitySet<Tbl_Certificado> _Tbl_Certificado;
@@ -36112,6 +36114,8 @@ namespace CapaDatos
     partial void OnPer_areaTrabajoChanged();
     partial void OnPer_fechInicioTrabajoChanging(string value);
     partial void OnPer_fechInicioTrabajoChanged();
+    partial void OnPer_imagenChanging(System.Data.Linq.Binary value);
+    partial void OnPer_imagenChanged();
     partial void OnPer_estadoChanging(string value);
     partial void OnPer_estadoChanged();
     #endregion
@@ -36392,6 +36396,26 @@ namespace CapaDatos
 					this._Per_fechInicioTrabajo = value;
 					this.SendPropertyChanged("Per_fechInicioTrabajo");
 					this.OnPer_fechInicioTrabajoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_imagen", DbType="Image", UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary Per_imagen
+		{
+			get
+			{
+				return this._Per_imagen;
+			}
+			set
+			{
+				if ((this._Per_imagen != value))
+				{
+					this.OnPer_imagenChanging(value);
+					this.SendPropertyChanging();
+					this._Per_imagen = value;
+					this.SendPropertyChanged("Per_imagen");
+					this.OnPer_imagenChanged();
 				}
 			}
 		}

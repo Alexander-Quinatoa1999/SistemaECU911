@@ -10014,16 +10014,31 @@ namespace SistemaECU911.Template.Views
             Document pdfDoc = new Document(PageSize.A4, 20f, 20f, 20f, 20f);
             PdfWriter writer = PdfWriter.GetInstance(pdfDoc, Response.OutputStream);
             BaseFont fuente = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, true);
-            Font titulo = new Font(fuente, 18f, Font.BOLD, new BaseColor(0, 0, 0));
-            BaseFont fuente2 = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, true);
-            Font parrafo = new Font(fuente2, 12f, Font.NORMAL, new BaseColor(0, 0, 0));
+            Font titulo = new Font(fuente, 12f, Font.BOLD, new BaseColor(0, 0, 0));
             BaseFont fuente3 = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, true);
             Font cuadro = new Font(fuente3, 10f, Font.NORMAL, new BaseColor(0, 0, 0));
 
             pdfDoc.Open();
-            pdfDoc.Add(new Paragraph("GESTIÓN DE SEGURIDAD Y SALUD OCUPACIONAL", titulo) { Alignment = Element.ALIGN_CENTER });
-            pdfDoc.Add(new Paragraph("HISTORIA CLÍNICA OCUPACIONAL - INICIAL", titulo) { Alignment = Element.ALIGN_CENTER });
-            pdfDoc.Add(new Chunk(Chunk.NEWLINE));
+
+            //IMAGEN ENCABEZADO
+            string imageURL = Server.MapPath("../Template Principal/images") + "/ecu911.jpg";
+            iTextSharp.text.Image fotologo = iTextSharp.text.Image.GetInstance(imageURL);
+            fotologo.ScalePercent(30f);
+
+            //ENCABEZADO
+            var tblEncabezado = new PdfPTable(new float[] { 100f, 200f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            var c1 = new PdfPCell(fotologo) { HorizontalAlignment = Element.ALIGN_CENTER, Rowspan = 5, Padding = 2 };
+            var c2 = new PdfPCell(new Phrase("SERVICIO INTEGRADO DE SEGURIDAD SIS ECU 911", titulo)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER, Padding = 2 };
+            c1.Border = 0;
+            tblEncabezado.AddCell(c1);
+            tblEncabezado.AddCell(c2);
+            c2.Phrase = new Phrase("GESTIÓN DE SEGURIDAD Y SALUD OCUPACIONAL", titulo);
+            tblEncabezado.AddCell(c2);
+            c2.Phrase = new Phrase("HISTORIA CLÍNICA OCUPACIONAL - INICIAL", titulo);
+            tblEncabezado.AddCell(c2);
+            pdfDoc.Add(tblEncabezado);
+            pdfDoc.Add(new Paragraph(" "));
+
             var tblinf = new PdfPTable(new float[] { 70f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
             tblinf.AddCell(new PdfPCell(new Paragraph("A. DATOS DEL ESTABLECIMIENTO - EMPRESA Y USUARIO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(204, 205, 254), HorizontalAlignment = Element.ALIGN_LEFT });
             pdfDoc.Add(tblinf);

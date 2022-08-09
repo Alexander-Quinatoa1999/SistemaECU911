@@ -55,12 +55,23 @@
         <ContentTemplate>
             <div class="container" style="background-color: white; font-family: Arial">
                 <br />
-                <div class="container">
-                    <div class="text-center" style="font-size: 25px; font-weight: bold; font-family: Arial">
-                        GESTIÓN DE SEGURIDAD Y SALUD OCUPACIONAL<br />
-                        HOJA DE EVOLUCIÓN
-                    </div>
-                </div>
+                <%--Título--%>
+                <asp:Table class="table table-bordered text-center" runat="server">
+                    <asp:TableRow>
+                        <asp:TableCell Style="font-family: Arial; width:400px" RowSpan="4">
+                                    <img src="../Template Principal/images/ecu911.jpg" Style="width:50%; height:35%" runat="server"/>
+                        </asp:TableCell>
+                    </asp:TableRow>
+                    <asp:TableRow>
+                        <asp:TableCell Style="font-family: Arial; font-weight: bold; font-size: 20px" ColumnSpan="2">SERVICIO INTEGRADO DE SEGURIDAD SIS ECU 911</asp:TableCell>
+                    </asp:TableRow>
+                    <asp:TableRow>
+                        <asp:TableCell Style="font-family: Arial; font-weight: bold; font-size: 15px" ColumnSpan="2">GESTIÓN DE SEGURIDAD Y SALUD OCUPACIONAL</asp:TableCell>
+                    </asp:TableRow>
+                    <asp:TableRow>
+                        <asp:TableCell Style="font-family: Arial; font-weight: bold; font-size: 15px" ColumnSpan="2">HOJA DE EVOLUCION</asp:TableCell>
+                    </asp:TableRow>
+                </asp:Table>
                 <br />
                 <div class="list-group list-group-flush">
                     <asp:Table class="table table-bordered table-light" runat="server">
