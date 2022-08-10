@@ -592,7 +592,7 @@
                             </asp:TableRow>
                             <asp:TableRow>
                                 <asp:TableCell Style="width: 200px; background-color: white; font-size: 14px">
-                                    <asp:Timer ID="timerFechaHora"  OnTick="timerFechaHora_Tick" runat="server" Interval="1000"></asp:Timer>
+                                    <asp:Timer ID="timerFechaHora"  OnTick="timerFechaHora_Tick" runat="server" Interval="15000"></asp:Timer>
                                     <asp:TextBox runat="server" ID="txt_fechahora" BorderStyle="None" Style="width: 100%; text-transform:uppercase; text-align: center" TextMode="DateTimeLocal" ReadOnly="true"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="width: 400px; background-color: white; font-size: 14px">

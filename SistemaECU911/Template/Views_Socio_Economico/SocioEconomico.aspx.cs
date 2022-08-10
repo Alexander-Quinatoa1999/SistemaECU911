@@ -7218,7 +7218,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
 
             pdfDoc.Close();
             Response.ContentType = "application/pdf";
-            Response.AddHeader("content-disposition", "attachment;filename=Ficha_Socio_Económica.pdf");
+            Response.AddHeader("content-disposition", "attachment;filename=Ficha_Socio_Económica" + txt_cedula.Text + "_" + DateTime.Now.ToString("dd/MM/yy_hh:mm") + ".pdf"); ;
             Response.Cache.SetCacheability(HttpCacheability.NoCache);
             Response.Write(pdfDoc);
             Response.End();
