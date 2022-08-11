@@ -1509,10 +1509,10 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             }
         }
 
-        protected void timerFechaHora_Tick(object sender, EventArgs e)
-        {
-            this.txt_fecharegistro.Text = DateTime.Now.ToLocalTime().ToString("yyyy-MM-dd");
-        }
+        //protected void timerFechaHora_Tick(object sender, EventArgs e)
+        //{
+        //    this.txt_fecharegistro.Text = DateTime.Now.ToLocalTime().ToString("yyyy-MM-dd");
+        //}
 
         public void Calculo(DateTime nac, DateTime actual)
         {
@@ -2441,20 +2441,20 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                 sso.Socio_economico_familia_observaciones = txt_observacionesgenerales.Text;
                 sso.Socio_economico_informacion_adicional = txt_informacionadicional.Text;
 
-                //Obtener datos de la imagen
-                //Devolver el tamaño de la imagen que se esta enviando
-                int tamanio = FileUploadImageGeo.PostedFile.ContentLength;
-                byte[] ImagenOriginal = new byte[tamanio];
-                //Lee la imagen original apartir del FileUpload
-                FileUploadImageGeo.PostedFile.InputStream.Read(ImagenOriginal, 0, tamanio);
-                //Bitmap ImagenOriginalBinaria = new Bitmap(FileUploadImageGeo.PostedFile.InputStream);
-                System.Drawing.Bitmap ImagenOriginalBinaria = new System.Drawing.Bitmap(FileUploadImageGeo.PostedFile.InputStream);
-                //Muestra la imagen en binario sin tenerla fisicamente
-                string ImagenDataURL64 = "data:image/jpg;base64," + Convert.ToBase64String(ImagenOriginal);
+                ////Obtener datos de la imagen
+                ////Devolver el tamaño de la imagen que se esta enviando
+                //int tamanio = FileUploadImageGeo.PostedFile.ContentLength;
+                //byte[] ImagenOriginal = new byte[tamanio];
+                ////Lee la imagen original apartir del FileUpload
+                //FileUploadImageGeo.PostedFile.InputStream.Read(ImagenOriginal, 0, tamanio);
+                ////Bitmap ImagenOriginalBinaria = new Bitmap(FileUploadImageGeo.PostedFile.InputStream);
+                //System.Drawing.Bitmap ImagenOriginalBinaria = new System.Drawing.Bitmap(FileUploadImageGeo.PostedFile.InputStream);
+                ////Muestra la imagen en binario sin tenerla fisicamente
+                //string ImagenDataURL64 = "data:image/jpg;base64," + Convert.ToBase64String(ImagenOriginal);
                 //Muestra la imagen cargada
-                Image1.ImageUrl = ImagenDataURL64;
+                //Image1.ImageUrl = ImagenDataURL64;
 
-                sso.Socio_economico_imagen_geolocalizacion = ImagenOriginal;
+                //sso.Socio_economico_imagen_geolocalizacion = ImagenOriginal;
 
                 sso.Per_id = perso;
 
@@ -5273,24 +5273,24 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             //}
         }
 
-        protected void btn_mostrarimagen_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                //Obtener datos de la iagen
-                int tamanio = FileUploadImageGeo.PostedFile.ContentLength;
-                byte[] ImagenOriginal = new byte[tamanio];
-                FileUploadImageGeo.PostedFile.InputStream.Read(ImagenOriginal, 0, tamanio);
-                System.Drawing.Bitmap ImagenOriginalBinaria = new System.Drawing.Bitmap(FileUploadImageGeo.PostedFile.InputStream);
+        //protected void btn_mostrarimagen_Click(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        //Obtener datos de la iagen
+        //        int tamanio = FileUploadImageGeo.PostedFile.ContentLength;
+        //        byte[] ImagenOriginal = new byte[tamanio];
+        //        FileUploadImageGeo.PostedFile.InputStream.Read(ImagenOriginal, 0, tamanio);
+        //        System.Drawing.Bitmap ImagenOriginalBinaria = new System.Drawing.Bitmap(FileUploadImageGeo.PostedFile.InputStream);
 
-                string ImagenDataURL64 = "data:image/jpg;base64," + Convert.ToBase64String(ImagenOriginal);
-                Image1.ImageUrl = ImagenDataURL64;
-            }
-            catch (Exception)
-            {
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Por favor, cargue su imagen')", true);
-            }
-        }
+        //        string ImagenDataURL64 = "data:image/jpg;base64," + Convert.ToBase64String(ImagenOriginal);
+        //        Image1.ImageUrl = ImagenDataURL64;
+        //    }
+        //    catch (Exception)
+        //    {
+        //        ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Por favor, cargue su imagen')", true);
+        //    }
+        //}
 
         protected void btn_imprimir_Click(object sender, EventArgs e)
         {

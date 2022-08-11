@@ -635,18 +635,22 @@ namespace SistemaECU911.Template.Views
                         }
                     }
                 }
+
                 cargarProfesional();
                 defaultValidaciones();
+
+                txt_fechahora.Text = DateTime.Now.ToLocalTime().ToString("yyyy-MM-ddTHH:mm");
+
             }
         }
 
-        protected void timerFechaHora_Tick(object sender, EventArgs e)
-        {
-            if (reti.ret_fecha_hora == null)
-            {
-                txt_fechahora.Text = DateTime.Now.ToLocalTime().ToString("yyyy-MM-ddTHH:mm");
-            }
-        }
+        //protected void timerFechaHora_Tick(object sender, EventArgs e)
+        //{
+        //    if (reti.ret_fecha_hora == null)
+        //    {
+        //        txt_fechahora.Text = DateTime.Now.ToLocalTime().ToString("yyyy-MM-ddTHH:mm");
+        //    }
+        //}
 
         //Metodo obtener cedula por numero de HC RETIRO
         [WebMethod]
@@ -656,7 +660,7 @@ namespace SistemaECU911.Template.Views
             List<string> lista = new List<string>();
             try
             {
-                string oConn = @"Data Source=.;Initial Catalog=SistemaECU911;Integrated Security=True";
+                string oConn = @"Data Source=sql8004.site4now.net;Initial Catalog=db_a8b7d4_sistemaecu911;Persist Security Info=True;User ID=db_a8b7d4_sistemaecu911_admin;Password=SistemaECU911";
 
                 SqlConnection con = new SqlConnection(oConn);
                 con.Open();
@@ -691,11 +695,31 @@ namespace SistemaECU911.Template.Views
             string cedula = txt_numHClinica.Text;
 
             var lista = from c in dc.Tbl_Personas
+                        join e in dc.Tbl_Empresa on c.Emp_id equals e.Emp_id
                         where c.Per_cedula == cedula
-                        select c;
+                        select new
+                        {
+                            e.Emp_nombre,
+                            e.Emp_RUC,
+                            c.Per_priNombre,
+                            c.Per_segNombre,
+                            c.Per_priApellido,
+                            c.Per_segApellido,
+                            c.Per_genero,
+                            c.Per_fechaNacimiento,
+                            c.Per_fechInicioTrabajo,
+                            c.Per_puestoTrabajo,
+                            c.Per_areaTrabajo
+                        };
 
             foreach (var item in lista)
             {
+                string nomEmpresa = item.Emp_nombre;
+                txt_nomEmpresa.Text = nomEmpresa;
+
+                string rucEmpresa = item.Emp_RUC;
+                txt_rucEmp.Text = rucEmpresa;
+
                 string priNombre = item.Per_priNombre;
                 txt_priNombre.Text = priNombre;
 
@@ -724,7 +748,7 @@ namespace SistemaECU911.Template.Views
             List<string> lista = new List<string>();
             try
             {
-                string oConn = @"Data Source=.;Initial Catalog=SistemaECU911;Integrated Security=True";
+                string oConn = @"Data Source=sql8004.site4now.net;Initial Catalog=db_a8b7d4_sistemaecu911;Persist Security Info=True;User ID=db_a8b7d4_sistemaecu911_admin;Password=SistemaECU911";
 
                 SqlConnection con = new SqlConnection(oConn);
                 con.Open();

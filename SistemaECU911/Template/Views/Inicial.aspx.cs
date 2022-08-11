@@ -3730,16 +3730,18 @@ namespace SistemaECU911.Template.Views
                 }
                 cargarProfesional();
                 defaultValidaciones();
+
+                txt_fechahora.Text = DateTime.Now.ToLocalTime().ToString("yyyy-MM-ddTHH:mm");
             }
 		}
 
-        protected void timerFechaHora_Tick(object sender, EventArgs e)
-        {
-            if (inicial.inicial_fecha_hora == null)
-            {
-                txt_fechahora.Text = DateTime.Now.ToLocalTime().ToString("yyyy-MM-ddTHH:mm");
-            }
-        }
+        //protected void timerFechaHora_Tick(object sender, EventArgs e)
+        //{
+        //    if (inicial.inicial_fecha_hora == null)
+        //    {
+        //        txt_fechahora.Text = DateTime.Now.ToLocalTime().ToString("yyyy-MM-ddTHH:mm");
+        //    }
+        //}
 
         public void Calculo(DateTime nac, DateTime actual)
         {
@@ -3776,7 +3778,7 @@ namespace SistemaECU911.Template.Views
             List<string> lista = new List<string>();
             try
             {
-                string oConn = @"Data Source=.;Initial Catalog=SistemaECU911;Integrated Security=True";
+                string oConn = @"Data Source=sql8004.site4now.net;Initial Catalog=db_a8b7d4_sistemaecu911;Persist Security Info=True;User ID=db_a8b7d4_sistemaecu911_admin;Password=SistemaECU911";
 
                 SqlConnection con = new SqlConnection(oConn);
                 con.Open();
@@ -3811,11 +3813,31 @@ namespace SistemaECU911.Template.Views
             string cedula = txt_numHClinica.Text;
 
             var lista = from c in dc.Tbl_Personas
+                        join e in dc.Tbl_Empresa on c.Emp_id equals e.Emp_id
                         where c.Per_cedula == cedula
-                        select c;
+                        select new
+                        {
+                            e.Emp_nombre,
+                            e.Emp_RUC,
+                            c.Per_priNombre,
+                            c.Per_segNombre,
+                            c.Per_priApellido,
+                            c.Per_segApellido,
+                            c.Per_genero,
+                            c.Per_fechaNacimiento,
+                            c.Per_fechInicioTrabajo,
+                            c.Per_puestoTrabajo,
+                            c.Per_areaTrabajo
+                        };
 
             foreach (var item in lista)
             {
+                string nomEmpresa = item.Emp_nombre;
+                txt_nomEmpresa.Text = nomEmpresa;
+
+                string rucEmpresa = item.Emp_RUC;
+                txt_rucEmp.Text = rucEmpresa;
+
                 string priNombre = item.Per_priNombre;
                 txt_priNombre.Text = priNombre;
 
@@ -3857,7 +3879,7 @@ namespace SistemaECU911.Template.Views
             List<string> lista = new List<string>();
             try
             {
-                string oConn = @"Data Source=.;Initial Catalog=SistemaECU911;Integrated Security=True";
+                string oConn = @"Data Source=sql8004.site4now.net;Initial Catalog=db_a8b7d4_sistemaecu911;Persist Security Info=True;User ID=db_a8b7d4_sistemaecu911_admin;Password=SistemaECU911";
 
                 SqlConnection con = new SqlConnection(oConn);
                 con.Open();
@@ -10034,7 +10056,7 @@ namespace SistemaECU911.Template.Views
             tblEncabezado.AddCell(c2);
             c2.Phrase = new Phrase("GESTIÓN DE SEGURIDAD Y SALUD OCUPACIONAL", titulo);
             tblEncabezado.AddCell(c2);
-            c2.Phrase = new Phrase("HISTORIA CLÍNICA OCUPACIONAL - INICIAL", titulo);
+            c2.Phrase = new Phrase("HISTORIA CLÍNICA OCUPACIONAL - PERIODICA", titulo);
             tblEncabezado.AddCell(c2);
             pdfDoc.Add(tblEncabezado);
             pdfDoc.Add(new Paragraph(" "));
@@ -10966,6 +10988,7 @@ namespace SistemaECU911.Template.Views
             var tblefDatos1 = new PdfPTable(new float[] { 70f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
             tblefDatos1.AddCell(new PdfPCell(new Paragraph(txt_observaciones3.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
             pdfDoc.Add(tblefDatos1);
+
             pdfDoc.Add(new Paragraph(" "));
             var tblaf = new PdfPTable(new float[] { 50f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
             tblaf.AddCell(new PdfPCell(new Paragraph("E. ANTECEDENTES FAMILIARES (DETALLAR EL PARENTESCO)", cuadro)) { BorderColor = new BaseColor(204, 205, 254), BackgroundColor = new BaseColor(204, 205, 254), HorizontalAlignment = Element.ALIGN_LEFT });
@@ -11050,6 +11073,7 @@ namespace SistemaECU911.Template.Views
             var tblafTitulo2 = new PdfPTable(new float[] { 70f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
             tblafTitulo2.AddCell(new PdfPCell(new Paragraph(txt_descripcionantefamiliares.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT }); ;
             pdfDoc.Add(tblafTitulo2);
+
             pdfDoc.Add(new Paragraph(" "));
             var tblfr = new PdfPTable(new float[] { 70f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
             tblfr.AddCell(new PdfPCell(new Paragraph("F. FACTORES DE RIESGOS DEL PUESTO DE TRABAJO ACTUAL", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(204, 205, 254), HorizontalAlignment = Element.ALIGN_LEFT });
@@ -13226,6 +13250,7 @@ namespace SistemaECU911.Template.Views
             tblcvaDatos.AddCell(new PdfPCell(new Paragraph(txt_indMasCorporal.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
             tblcvaDatos.AddCell(new PdfPCell(new Paragraph(txt_perAbdominal.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
             pdfDoc.Add(tblcvaDatos);
+
             pdfDoc.Add(new Paragraph(" "));
             var tblefr = new PdfPTable(new float[] { 70f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
             tblefr.AddCell(new PdfPCell(new Paragraph("K. EXAMEN FÍSICO REGIONAL", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(204, 205, 254), HorizontalAlignment = Element.ALIGN_LEFT });
@@ -13612,6 +13637,7 @@ namespace SistemaECU911.Template.Views
             var tblrgDatos1 = new PdfPTable(new float[] { 70f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
             tblrgDatos1.AddCell(new PdfPCell(new Paragraph(txt_obervexamenfisicoregional.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
             pdfDoc.Add(tblrgDatos1);
+
             pdfDoc.Add(new Paragraph(" "));
             var tbleg = new PdfPTable(new float[] { 70f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
             tbleg.AddCell(new PdfPCell(new Paragraph("L. RESULTADOS DE EXÁMENES GENERALES Y ESPECÍFICOS DE ACUERDO AL RIESGO Y PUESTO DE TRABAJO (IMAGEN, LABORATORIO Y OTROS)", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(204, 205, 254), HorizontalAlignment = Element.ALIGN_LEFT });
@@ -13634,6 +13660,7 @@ namespace SistemaECU911.Template.Views
             var tblegDatos2 = new PdfPTable(new float[] { 70f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
             tblegDatos2.AddCell(new PdfPCell(new Paragraph(txt_observacionexamen.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
             pdfDoc.Add(tblegDatos2);
+
             pdfDoc.Add(new Paragraph(" "));
             var tbldg = new PdfPTable(new float[] { 70f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
             tbldg.AddCell(new PdfPCell(new Paragraph("M. DIAGNÓSTICO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(204, 205, 254), HorizontalAlignment = Element.ALIGN_LEFT });
@@ -13708,6 +13735,7 @@ namespace SistemaECU911.Template.Views
                 tbldgDatos2.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
             }
             pdfDoc.Add(tbldgDatos2);
+
             pdfDoc.Add(new Paragraph(" "));
             var tblaml = new PdfPTable(new float[] { 70f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
             tblaml.AddCell(new PdfPCell(new Paragraph("N. APTITUD MÉDICA PARA EL TRABAJO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(204, 205, 254), HorizontalAlignment = Element.ALIGN_LEFT });
@@ -13758,6 +13786,7 @@ namespace SistemaECU911.Template.Views
             tblaptDatos1.AddCell(new PdfPCell(new Paragraph("Limitación", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(204, 255, 255), HorizontalAlignment = Element.ALIGN_CENTER });
             tblaptDatos1.AddCell(new PdfPCell(new Paragraph(txt_limitacionaptitud.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
             pdfDoc.Add(tblaptDatos1);
+
             pdfDoc.Add(new Paragraph(" "));
             var tblryt = new PdfPTable(new float[] { 70f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
             tblryt.AddCell(new PdfPCell(new Paragraph("O. RECOMENDACIONES Y/O TRATAMIENTO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(204, 205, 254), HorizontalAlignment = Element.ALIGN_LEFT });
@@ -13765,10 +13794,12 @@ namespace SistemaECU911.Template.Views
             var tblrytDatos = new PdfPTable(new float[] { 70f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
             tblrytDatos.AddCell(new PdfPCell(new Paragraph(txt_descripciontratamiento.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
             pdfDoc.Add(tblrytDatos);
+
             pdfDoc.Add(new Paragraph(" "));
             var tblcm = new PdfPTable(new float[] { 70f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
             tblcm.AddCell(new PdfPCell(new Paragraph("CERTIFICO QUE LO ANTERIORMENTE EXPRESADO EN RELACIÓN A MI ESTADO DE SALUD ES VERDAD.SE ME HA INFORMADO LAS MEDIDAS PREVENTIVAS A TOMAR PARA DISMINUIR O MITIGAR LOS RIESGOS RELACIONADOS CON MI ACTIVIDAD LABORAL.", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
             pdfDoc.Add(tblcm);
+
             pdfDoc.Add(new Paragraph(" "));
             var tbldps = new PdfPTable(new float[] { 70f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
             tbldps.AddCell(new PdfPCell(new Paragraph("P. DATOS DEL PROFESIONAL DE SALUD", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(204, 205, 254), HorizontalAlignment = Element.ALIGN_LEFT });
@@ -13783,6 +13814,7 @@ namespace SistemaECU911.Template.Views
             tbldpsdatos.AddCell(new PdfPCell(new Paragraph("FIRMA Y SELLO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
             tbldpsdatos.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
             pdfDoc.Add(tbldpsdatos);
+
             pdfDoc.Add(new Paragraph(" "));
             var tblfrm = new PdfPTable(new float[] { 70f }) { WidthPercentage = 50, HorizontalAlignment = Element.ALIGN_CENTER };
             tblfrm.AddCell(new PdfPCell(new Paragraph("Q. FIRMA DEL USUARIO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(204, 205, 254), HorizontalAlignment = Element.ALIGN_LEFT });
@@ -13790,6 +13822,7 @@ namespace SistemaECU911.Template.Views
             var tblfrmDatos = new PdfPTable(new float[] { 70f }) { WidthPercentage = 50, HorizontalAlignment = Element.ALIGN_CENTER };
             tblfrmDatos.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
             pdfDoc.Add(tblfrmDatos);
+
             pdfDoc.Close();
             Response.ContentType = "application/pdf";
             Response.AddHeader("content-disposition", "attachment;filename=Inicial_" + txt_numHClinica.Text + "_" + DateTime.Today + ".pdf");

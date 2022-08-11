@@ -2,6 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    
     <style type="text/css">
         .CompletionList {
             padding: 5px 0;
@@ -47,6 +48,7 @@
             background-image: linear-gradient(to bottom, #0088cc, #0077b3);
         }
     </style>
+    
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
@@ -93,7 +95,7 @@
                         <asp:TableRow>
                             <asp:TableCell Style="text-align: right; font-family: Arial; background-color: white; font-size: 12px">FECHA DE INGRESO:</asp:TableCell>
                             <asp:TableCell Style="width: 100px; background-color: white">
-                                <asp:Timer ID="timerFechaHora"  OnTick="timerFechaHora_Tick" runat="server" Interval="15000"></asp:Timer>
+                                <%--<asp:Timer ID="timerFechaHora"  OnTick="timerFechaHora_Tick" runat="server" Interval="15000"></asp:Timer>--%>
                                 <asp:TextBox runat="server" ID="txt_fecharegistro" BorderStyle="None" Style="width: 100%; font-family: Arial; font-size: 12px" TextMode="Date" ReadOnly="true"></asp:TextBox>
                             </asp:TableCell>
                         </asp:TableRow>
@@ -1631,7 +1633,7 @@
                                 </asp:TableCell>
                             </asp:TableRow>
                         </asp:Table>
-                        <asp:Table class="table table-bordered text-center" runat="server">
+                        <%--<%--<%--<%--<asp:Table class="table table-bordered text-center" runat="server">
                             <asp:TableRow>
                                 <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; font-size: 12px"> <strong>GEOREFERECIA DE LA VIVIENDA</strong> </asp:TableCell>
                             </asp:TableRow>
@@ -1649,10 +1651,10 @@
                             <asp:TableRow>
                                 <asp:TableCell Style="background-color: white">
                                     <asp:Image ID="Image1" runat="server" Style="width:500px; height:500px" />
-                                    <%--<asp:Image ID="imagen" runat="server" ImageUrl='<%# "~/Template/Images/" + Eval("Socio_economico_imagen_geolocalizacion") %>' />--%>
+                                    <%--<asp:Image ID="imagen" runat="server" ImageUrl='<%# "~/Template/Images/" + Eval("Socio_economico_imagen_geolocalizacion") %>' />
                                 </asp:TableCell>
                             </asp:TableRow>
-                        </asp:Table>
+                        </asp:Table>--%>
 
                         <div class="container" align="center">
                             <asp:Button CssClass="btn btn-success" ID="btn_guardar" OnClick="btn_guardar_Click" runat="server" Text="GUARDAR" Style="font-family: Arial; font-size: 12px" UseSubmitBehavior="False" ValidationGroup="GroupValidation"/>

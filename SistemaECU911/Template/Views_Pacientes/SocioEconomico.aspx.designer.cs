@@ -114,6 +114,15 @@ namespace SistemaECU911.Template.Views_Pacientes
         protected global::AjaxControlToolkit.AutoCompleteExtender AutoCompleteExtender1;
 
         /// <summary>
+        /// Control RequiredFieldValidator_txtcedula.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator_txtcedula;
+
+        /// <summary>
         /// Control txt_areatrabajo.
         /// </summary>
         /// <remarks>
@@ -438,13 +447,22 @@ namespace SistemaECU911.Template.Views_Pacientes
         protected global::System.Web.UI.WebControls.TextBox txt_barrio;
 
         /// <summary>
-        /// Control txt_calleubicada.
+        /// Control txt_calleprincipal.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_calleubicada;
+        protected global::System.Web.UI.WebControls.TextBox txt_calleprincipal;
+
+        /// <summary>
+        /// Control txt_mumerodecasa.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_mumerodecasa;
 
         /// <summary>
         /// Control txt_callesecundaria.
@@ -526,24 +544,6 @@ namespace SistemaECU911.Template.Views_Pacientes
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox cb_departamento;
-
-        /// <summary>
-        /// Control tbc_otro.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TableCell tbc_otro;
-
-        /// <summary>
-        /// Control tbc_otravivienda.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TableCell tbc_otravivienda;
 
         /// <summary>
         /// Control txt_tipoviviendaotro.
@@ -645,67 +645,22 @@ namespace SistemaECU911.Template.Views_Pacientes
         protected global::System.Web.UI.WebControls.TextBox txt_emerefubicardomicilio;
 
         /// <summary>
-        /// Control cb_dineroahorrosi.
+        /// Control cb_sienfermedad.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox cb_dineroahorrosi;
+        protected global::System.Web.UI.WebControls.CheckBox cb_sienfermedad;
 
         /// <summary>
-        /// Control cb_dineroahorrono.
+        /// Control cb_noenfermedad.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox cb_dineroahorrono;
-
-        /// <summary>
-        /// Control cb_vehiculosi.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox cb_vehiculosi;
-
-        /// <summary>
-        /// Control cb_vehiculono.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox cb_vehiculono;
-
-        /// <summary>
-        /// Control cb_recorridosi.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox cb_recorridosi;
-
-        /// <summary>
-        /// Control cb_recorridono.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox cb_recorridono;
-
-        /// <summary>
-        /// Control txt_movilizatrabajoovivienda.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_movilizatrabajoovivienda;
+        protected global::System.Web.UI.WebControls.CheckBox cb_noenfermedad;
 
         /// <summary>
         /// Control txt_poseeenfermedadprexistente.
@@ -735,24 +690,6 @@ namespace SistemaECU911.Template.Views_Pacientes
         protected global::System.Web.UI.WebControls.CheckBox cb_discapacidadno;
 
         /// <summary>
-        /// Control tbc_tipodiscapacidad.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TableCell tbc_tipodiscapacidad;
-
-        /// <summary>
-        /// Control tbc_txtdiscapacidad.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TableCell tbc_txtdiscapacidad;
-
-        /// <summary>
         /// Control txt_tipodiscapacidad.
         /// </summary>
         /// <remarks>
@@ -760,15 +697,6 @@ namespace SistemaECU911.Template.Views_Pacientes
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_tipodiscapacidad;
-
-        /// <summary>
-        /// Control tabladatosdiscapacidad.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Table tabladatosdiscapacidad;
 
         /// <summary>
         /// Control txt_porcentajediscapacidad.
@@ -816,15 +744,6 @@ namespace SistemaECU911.Template.Views_Pacientes
         protected global::System.Web.UI.WebControls.CheckBox cb_gestaciónno;
 
         /// <summary>
-        /// Control tbl_estadogestacion.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Table tbl_estadogestacion;
-
-        /// <summary>
         /// Control txt_gestacióntiempo.
         /// </summary>
         /// <remarks>
@@ -861,24 +780,6 @@ namespace SistemaECU911.Template.Views_Pacientes
         protected global::System.Web.UI.WebControls.CheckBox cb_lactaciano;
 
         /// <summary>
-        /// Control txt_fechaculminacion.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TableCell txt_fechaculminacion;
-
-        /// <summary>
-        /// Control fechacumlimnacion.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TableCell fechacumlimnacion;
-
-        /// <summary>
         /// Control txt_fechaculmicacionlactancia.
         /// </summary>
         /// <remarks>
@@ -913,15 +814,6 @@ namespace SistemaECU911.Template.Views_Pacientes
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_cualcatastrofica;
-
-        /// <summary>
-        /// Control txt_otrasenfermedadescat.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_otrasenfermedadescat;
 
         /// <summary>
         /// Control cb_enfermedadrarasi.
@@ -996,60 +888,6 @@ namespace SistemaECU911.Template.Views_Pacientes
         protected global::System.Web.UI.WebControls.TextBox txt_causaconsumoalcohol;
 
         /// <summary>
-        /// Control tablafrecuenciaalcohol.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Table tablafrecuenciaalcohol;
-
-        /// <summary>
-        /// Control cb_consumoalcoholdiario.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox cb_consumoalcoholdiario;
-
-        /// <summary>
-        /// Control cb_consumoalcoholsemanal.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox cb_consumoalcoholsemanal;
-
-        /// <summary>
-        /// Control cb_consumoalcoholquincenal.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox cb_consumoalcoholquincenal;
-
-        /// <summary>
-        /// Control cb_consumoalcoholmensual.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox cb_consumoalcoholmensual;
-
-        /// <summary>
-        /// Control cb_consumoalcoholreuniones.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox cb_consumoalcoholreuniones;
-
-        /// <summary>
         /// Control txt_tiempoconsumoalcohol.
         /// </summary>
         /// <remarks>
@@ -1077,24 +915,6 @@ namespace SistemaECU911.Template.Views_Pacientes
         protected global::System.Web.UI.WebControls.CheckBox cb_tabacono;
 
         /// <summary>
-        /// Control tbc_frecuenciatabaco.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TableCell tbc_frecuenciatabaco;
-
-        /// <summary>
-        /// Control txt_frecuenciatabaco.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TableCell txt_frecuenciatabaco;
-
-        /// <summary>
         /// Control txt_frecuenciaconsumotabaco.
         /// </summary>
         /// <remarks>
@@ -1102,24 +922,6 @@ namespace SistemaECU911.Template.Views_Pacientes
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_frecuenciaconsumotabaco;
-
-        /// <summary>
-        /// Control tbc_tiempotabaco.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TableCell tbc_tiempotabaco;
-
-        /// <summary>
-        /// Control txt_tiempotabaco.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TableCell txt_tiempotabaco;
 
         /// <summary>
         /// Control txt_tiempoconsumotabaco.
@@ -1219,6 +1021,15 @@ namespace SistemaECU911.Template.Views_Pacientes
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_miembroactivoseconomicamente;
+
+        /// <summary>
+        /// Control txt_situacionlaboralconyugue.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_situacionlaboralconyugue;
 
         /// <summary>
         /// Control txt_totalingresos1.
@@ -1509,33 +1320,6 @@ namespace SistemaECU911.Template.Views_Pacientes
         protected global::System.Web.UI.WebControls.TextBox txt_otrospensiones;
 
         /// <summary>
-        /// Control txt_totalingresos9.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_totalingresos9;
-
-        /// <summary>
-        /// Control txt_totalayudayotros9.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_totalayudayotros9;
-
-        /// <summary>
-        /// Control txt_totalegresos.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_totalegresos;
-
-        /// <summary>
         /// Control txt_biencasa.
         /// </summary>
         /// <remarks>
@@ -1588,6 +1372,24 @@ namespace SistemaECU911.Template.Views_Pacientes
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_bienmueblesyenseres;
+
+        /// <summary>
+        /// Control cb_dineroahorrosi.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_dineroahorrosi;
+
+        /// <summary>
+        /// Control cb_dineroahorrono.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_dineroahorrono;
 
         /// <summary>
         /// Control cb_unifamiliar.
@@ -1815,13 +1617,40 @@ namespace SistemaECU911.Template.Views_Pacientes
         protected global::System.Web.UI.WebControls.CheckBox cb_bodega;
 
         /// <summary>
-        /// Control txt_otrainformacioncasa.
+        /// Control cb_vehiculosi.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_otrainformacioncasa;
+        protected global::System.Web.UI.WebControls.CheckBox cb_vehiculosi;
+
+        /// <summary>
+        /// Control cb_vehiculono.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_vehiculono;
+
+        /// <summary>
+        /// Control cb_recorridosi.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_recorridosi;
+
+        /// <summary>
+        /// Control cb_recorridono.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cb_recorridono;
 
         /// <summary>
         /// Control txt_nomapellidos1.
@@ -2040,15 +1869,6 @@ namespace SistemaECU911.Template.Views_Pacientes
         protected global::System.Web.UI.WebControls.CheckBox cb_acargofamiliardiacapacitadono;
 
         /// <summary>
-        /// Control tabladiscapacidad.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Table tabladiscapacidad;
-
-        /// <summary>
         /// Control txt_familiardiscapacitadonomape1.
         /// </summary>
         /// <remarks>
@@ -2157,15 +1977,6 @@ namespace SistemaECU911.Template.Views_Pacientes
         protected global::System.Web.UI.WebControls.TextBox txt_familiardiscapacitadofechanacimiento2;
 
         /// <summary>
-        /// Control tabladependencia.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Table tabladependencia;
-
-        /// <summary>
         /// Control cb_dependenciaministeriotrabajosi.
         /// </summary>
         /// <remarks>
@@ -2200,15 +2011,6 @@ namespace SistemaECU911.Template.Views_Pacientes
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_numcarnetMSP;
-
-        /// <summary>
-        /// Control tablaacargofamiliar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Table tablaacargofamiliar;
 
         /// <summary>
         /// Control cb_acargofamiliarenfermedadrarasi.
@@ -2317,15 +2119,6 @@ namespace SistemaECU911.Template.Views_Pacientes
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_actividadeconomicadetalle;
-
-        /// <summary>
-        /// Control tabla_actividadeconomica.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Table tabla_actividadeconomica;
 
         /// <summary>
         /// Control txt_actividadeconomicatiempodestina.
@@ -2866,5 +2659,14 @@ namespace SistemaECU911.Template.Views_Pacientes
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btn_cancelar;
+
+        /// <summary>
+        /// Control btn_imprimir.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_imprimir;
     }
 }

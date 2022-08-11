@@ -83,21 +83,21 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <label>Primer Nombre</label>
-                                        <asp:TextBox CssClass="required form-control" ID="txt_priNombre" runat="server"></asp:TextBox>
+                                        <asp:TextBox CssClass="required form-control" ID="txt_priNombre" runat="server" ReadOnly="true"></asp:TextBox>
                                     </div>
                                     <div class="col-md-6">
                                         <label>Segundo Nombre</label>
-                                        <asp:TextBox CssClass="required form-control" ID="txt_segNombre" runat="server"></asp:TextBox>
+                                        <asp:TextBox CssClass="required form-control" ID="txt_segNombre" runat="server" ReadOnly="true"></asp:TextBox>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <label>Primer Apellido</label>
-                                        <asp:TextBox CssClass="required form-control" ID="txt_priApellido" runat="server"></asp:TextBox>
+                                        <asp:TextBox CssClass="required form-control" ID="txt_priApellido" runat="server" ReadOnly="true"></asp:TextBox>
                                     </div>
                                     <div class="col-md-6">
                                         <label>Segundo Apellido</label>
-                                        <asp:TextBox CssClass="required form-control" ID="txt_segApellido" runat="server"></asp:TextBox>
+                                        <asp:TextBox CssClass="required form-control" ID="txt_segApellido" runat="server" ReadOnly="true"></asp:TextBox>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -163,13 +163,14 @@
                             </section>
                         </div>
                     </div>
-                    <asp:Button ID="btnCertificado" OnClick="btnCertificado_Click" CssClass="btn btn-info" runat="server" Text="Generar Certificado" />
+                    <asp:Button ID="btnCertificado" OnClick="btnCertificado_Click" CssClass="btn btn-light" BorderColor="#1B4F72" runat="server" Text="Generar Certificado" />
                 </div>
             </div>
         </div>
     </div>
     <%--</ContentTemplate>
         <Triggers>
+            <asp:AsyncPostBackTrigger ControlID="AutoCompleteExtender2"/>
             <asp:PostBackTrigger ControlID="btnCertificado"/>
         </Triggers>
     </asp:UpdatePanel>--%>

@@ -5712,15 +5712,6 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.TextBox txt_descripciontratamiento;
 
         /// <summary>
-        /// Control timerFechaHora.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.Timer timerFechaHora;
-
-        /// <summary>
         /// Control txt_fechahora.
         /// </summary>
         /// <remarks>
