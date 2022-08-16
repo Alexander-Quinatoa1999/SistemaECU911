@@ -18,6 +18,7 @@ namespace SistemaECU911.Template.Views_Pacientes
 {
     public partial class SocioEconomico : System.Web.UI.Page
     {
+
         DataClassesECU911DataContext dc = new DataClassesECU911DataContext();
 
         private Tbl_Personas per = new Tbl_Personas();
@@ -1548,7 +1549,7 @@ namespace SistemaECU911.Template.Views_Pacientes
             List<string> lista = new List<string>();
             try
             {
-                string oConn = @"Data Source=.;Initial Catalog=SistemaECU911;Integrated Security=True";
+                string oConn = @"Data Source=sql8004.site4now.net;Initial Catalog=db_a8b7d4_sistemaecu911;Persist Security Info=True;User ID=db_a8b7d4_sistemaecu911_admin;Password=SistemaECU911";
 
                 SqlConnection con = new SqlConnection(oConn);
                 con.Open();
@@ -5245,32 +5246,32 @@ namespace SistemaECU911.Template.Views_Pacientes
             }
         }
 
-        protected void FileUploadImageGeo_Load(object sender, EventArgs e)
-        {
-            //try
-            //{
-            //    if (FileUploadImageGeo.FileContent != null)
-            //    {
-            //        //Obtener datos de la iagen
-            //        int tamanio = FileUploadImageGeo.PostedFile.ContentLength;
-            //        byte[] ImagenOriginal = new byte[tamanio];
-            //        FileUploadImageGeo.PostedFile.InputStream.Read(ImagenOriginal, 0, tamanio);
-            //        System.Drawing.Bitmap ImagenOriginalBinaria = new System.Drawing.Bitmap(FileUploadImageGeo.PostedFile.InputStream);
+        //protected void FileUploadImageGeo_Load(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        if (FileUploadImageGeo.FileContent != null)
+        //        {
+        //            //Obtener datos de la iagen
+        //            int tamanio = FileUploadImageGeo.PostedFile.ContentLength;
+        //            byte[] ImagenOriginal = new byte[tamanio];
+        //            FileUploadImageGeo.PostedFile.InputStream.Read(ImagenOriginal, 0, tamanio);
+        //            System.Drawing.Bitmap ImagenOriginalBinaria = new System.Drawing.Bitmap(FileUploadImageGeo.PostedFile.InputStream);
 
-            //        string ImagenDataURL64 = "data:image/jpg;base64," + Convert.ToBase64String(ImagenOriginal);
-            //        Image1.ImageUrl = ImagenDataURL64;
-            //    }
-            //    else
-            //    {
-            //        ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Por favor, cargue su imagen')", true);
-            //    }
+        //            string ImagenDataURL64 = "data:image/jpg;base64," + Convert.ToBase64String(ImagenOriginal);
+        //            Image1.ImageUrl = ImagenDataURL64;
+        //        }
+        //        else
+        //        {
+        //            ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Por favor, cargue su imagen')", true);
+        //        }
 
-            //}
-            //catch (Exception)
-            //{
-            //    ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Por favor, cargue su imagen')", true);
-            //}
-        }
+        //    }
+        //    catch (Exception)
+        //    {
+        //        ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Por favor, cargue su imagen')", true);
+        //    }
+        //}
 
         //protected void btn_mostrarimagen_Click(object sender, EventArgs e)
         //{

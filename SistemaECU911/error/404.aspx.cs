@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Ecu911Pasantes.error
+namespace SistemaECU911.error
 {
     public partial class _404 : System.Web.UI.Page
     {
@@ -16,7 +16,7 @@ namespace Ecu911Pasantes.error
 
         protected void lbl404_Click(object sender, EventArgs e)
         {
-            Response.Redirect("../views/admin/inicio.aspx");
+            Response.Redirect("../index.aspx");
         }
     }
 }

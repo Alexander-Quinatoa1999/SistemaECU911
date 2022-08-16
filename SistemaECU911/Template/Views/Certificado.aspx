@@ -239,7 +239,7 @@
                             </asp:TableRow>
                             <asp:TableRow>
                                 <asp:TableCell ColumnSpan="8" Style="background-color: white">
-                                    <asp:TextBox runat="server" ID="txt_detaObservaAptiMedLaboral" BorderStyle="None" Style="background-color: transparent; width: 100%; text-transform:uppercase" TextMode="MultiLine" Rows="4" placeholder="Detalle de Observaciones:"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_detaObservaAptiMedLaboral" BorderStyle="None" Style="background-color: transparent; width: 100%; text-transform:uppercase" TextMode="MultiLine" Rows="4" Text="DETALLE DE OBSERVACIONES:"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                         </asp:Table>
@@ -312,7 +312,7 @@
                         E. RECOMENDACIONES 
                     </div>
                     <div class="list-group list-group-flush">
-                        <asp:TextBox runat="server" ID="txt_descripRecomendaciones" BorderStyle="None" Style="width: 100%; text-transform:uppercase" TextMode="MultiLine" Rows="3" placeholder="Descripción"></asp:TextBox>
+                        <asp:TextBox runat="server" ID="txt_descripRecomendaciones" BorderStyle="None" Style="width: 100%; text-transform:uppercase" TextMode="MultiLine" Rows="3" Text="DESCRIPCION:"></asp:TextBox>
                     </div>
                 </div>
                 <br />

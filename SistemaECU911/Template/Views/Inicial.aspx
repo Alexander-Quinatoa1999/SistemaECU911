@@ -329,7 +329,7 @@
                         </div>
                     </div>
                     <div class="list-group list-group-flush">
-                        <asp:TextBox ID="txt_motivoconsultainicial" runat="server" BorderStyle="None" Style="background-color: transparent; width: 100%; text-transform:uppercase" placeholder="Descripción:" TextMode="MultiLine" Rows="3"></asp:TextBox>
+                        <asp:TextBox ID="txt_motivoconsultainicial" runat="server" BorderStyle="None" Style="background-color: transparent; width: 100%; text-transform:uppercase" Text="DESCRIPCION:" TextMode="MultiLine" Rows="3"></asp:TextBox>
                     </div>
                 </div>
                 <br />
@@ -341,7 +341,7 @@
                         ANTECEDENTES CLÍNICOS Y QUIRÚRGICOS
                     </div>
                     <div class="list-group list-group-flush">
-                        <asp:TextBox runat="server" ID="txt_antCliQuiDescripcion" BorderStyle="None" Style="width: 100%; text-transform:uppercase" TextMode="MultiLine" Rows="3" placeholder="Descripción:"></asp:TextBox>
+                        <asp:TextBox runat="server" ID="txt_antCliQuiDescripcion" BorderStyle="None" Style="width: 100%; text-transform:uppercase" TextMode="MultiLine" Rows="3" Text="DESCRIPCION:" ></asp:TextBox>
                     </div>
                     <div class="card" style="width: auto;">
                         <div class="card-header" style="background-color:#cdfecc; font-size: 15px">
@@ -972,7 +972,7 @@
                         </asp:TableRow>
                         <asp:TableRow>
                             <asp:TableCell ColumnSpan="9" style="background-color: white; font-size: 14px">
-                                <asp:TextBox ID="txt_observaciones2" BorderStyle="None" Style="background-color: transparent; width: 100%; text-transform:uppercase" placeholder="Observaciones:" TextMode="MultiLine" Rows="3" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txt_observaciones2" BorderStyle="None" Style="background-color: transparent; width: 100%; text-transform:uppercase" Text="OBSERVACIONES:" TextMode="MultiLine" Rows="3" runat="server"></asp:TextBox>
                             </asp:TableCell>
                         </asp:TableRow>
                     </asp:Table>
@@ -1005,7 +1005,7 @@
                         </asp:TableRow>
                         <asp:TableRow>
                             <asp:TableCell ColumnSpan="9" style="background-color: white; font-size: 14px">
-                                <asp:TextBox ID="txt_observaciones3" BorderStyle="None" Style="background-color: transparent; width: 100%; text-transform:uppercase" placeholder="Observaciones:" TextMode="MultiLine" Rows="3" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txt_observaciones3" BorderStyle="None" Style="background-color: transparent; width: 100%; text-transform:uppercase" Text="OBSERVACIONES:" TextMode="MultiLine" Rows="3" runat="server"></asp:TextBox>
                             </asp:TableCell>
                         </asp:TableRow>
                     </asp:Table>
@@ -1067,7 +1067,7 @@
                         </asp:TableRow>
                         <asp:TableRow>
                             <asp:TableCell ColumnSpan="8" style="background-color: white; font-size: 14px">
-                                <asp:TextBox ID="txt_descripcionantefamiliares" BorderStyle="None" Style="background-color: transparent; width: 100%; text-transform:uppercase" runat="server" placeholder="Descripción:" TextMode="MultiLine" Rows="6"></asp:TextBox>
+                                <asp:TextBox ID="txt_descripcionantefamiliares" BorderStyle="None" Style="background-color: transparent; width: 100%; text-transform:uppercase" runat="server" Text="DESCRIPCION:" TextMode="MultiLine" Rows="6"></asp:TextBox>
                             </asp:TableCell>
                         </asp:TableRow>
                     </asp:Table>
@@ -2345,7 +2345,7 @@
                         G. ACTIVIDADES EXTRA LABORALES                                            
                     </div>
                     <div class="list-group list-group-flush">
-                        <asp:TextBox ID="txt_descrextralaborales" BorderStyle="None" Style="background-color: transparent; width: 100%; text-transform:uppercase" runat="server" placeholder="Descripción: " TextMode="MultiLine" Rows="3"></asp:TextBox>
+                        <asp:TextBox ID="txt_descrextralaborales" BorderStyle="None" Style="background-color: transparent; width: 100%; text-transform:uppercase" runat="server" Text="DESCRIPCION:" TextMode="MultiLine" Rows="3"></asp:TextBox>
                     </div>
                 </div>
                 <br />
@@ -2354,7 +2354,7 @@
                         H. ENFERMEDAD ACTUAL                                           
                     </div>
                     <div class="list-group list-group-flush">
-                        <asp:TextBox ID="txt_enfermedadactualinicial" runat="server" BorderStyle="None" Style="background-color: transparent; width: 100%; text-transform:uppercase" placeholder="Descripción: " TextMode="MultiLine" Rows="3"></asp:TextBox>
+                        <asp:TextBox ID="txt_enfermedadactualinicial" runat="server" BorderStyle="None" Style="background-color: transparent; width: 100%; text-transform:uppercase" Text="DESCRIPCION:" TextMode="MultiLine" Rows="3"></asp:TextBox>
                     </div>
                 </div>
                 <br />
@@ -2424,7 +2424,7 @@
                         </asp:TableRow>
                         <asp:TableRow>
                             <asp:TableCell ColumnSpan="10" style="background-color: white; font-size: 14px">
-                                <asp:TextBox ID="txt_descrorganosysistemas" BorderStyle="None" Style="background-color: transparent; width: 100%; text-transform:uppercase" runat="server" placeholder="Descripción:" TextMode="MultiLine" Rows="6"></asp:TextBox>
+                                <asp:TextBox ID="txt_descrorganosysistemas" BorderStyle="None" Style="background-color: transparent; width: 100%; text-transform:uppercase" runat="server" Text="DESCRIPCION:" TextMode="MultiLine" Rows="6"></asp:TextBox>
                             </asp:TableCell>
                         </asp:TableRow>
                     </asp:Table>
@@ -2749,7 +2749,7 @@
                             </asp:TableRow>
                             <asp:TableRow>
                                 <asp:TableCell ColumnSpan="15" style="background-color: white">
-                                    <asp:TextBox ID="txt_obervexamenfisicoregional" BorderStyle="None" Style="background-color: transparent; width: 100%; text-transform:uppercase" runat="server" placeholder="Observaciones:" TextMode="MultiLine" Rows="5"></asp:TextBox>
+                                    <asp:TextBox ID="txt_obervexamenfisicoregional" BorderStyle="None" Style="background-color: transparent; width: 100%; text-transform:uppercase" runat="server" Text="OBSERVACIONES:" TextMode="MultiLine" Rows="5"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                         </asp:Table>
@@ -2817,7 +2817,7 @@
 
                             <asp:TableRow>
                                 <asp:TableCell ColumnSpan="15" style="background-color: white; font-size: 14px">
-                                    <asp:TextBox ID="txt_observacionexamen" BorderStyle="None" Style="background-color: transparent; width: 100%; text-transform:uppercase" runat="server" placeholder="Observaciones:" TextMode="MultiLine" Rows="2"></asp:TextBox>
+                                    <asp:TextBox ID="txt_observacionexamen" BorderStyle="None" Style="background-color: transparent; width: 100%; text-transform:uppercase" runat="server" Text="OBSERVACIONES:" TextMode="MultiLine" Rows="2"></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                         </asp:Table>
@@ -2839,7 +2839,7 @@
                             <asp:TableRow>
                                 <asp:TableCell style="width: 50px; background-color: #cdfecc; font-size:15px" Text="1"></asp:TableCell>
                                 <asp:TableCell style="width: 1000px; background-color: white; font-size: 14px">
-                                    <asp:TextBox runat="server" ID="txt_descripdiagnostico" BorderStyle="None" Style="background-color: transparent; width: 100%; text-transform:uppercase" placeholder="Descripción" OnTextChanged="txt_descripdiagnostico_TextChanged" AutoPostBack="true"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_descripdiagnostico" BorderStyle="None" Style="background-color: transparent; width: 100%; text-transform:uppercase" placeholder="DESCRIPCION" OnTextChanged="txt_descripdiagnostico_TextChanged" AutoPostBack="true"></asp:TextBox>
                                     <ajaxToolkit:AutoCompleteExtender ID="AutoCompleteExtender1" runat="server" CompletionInterval="10" DelimiterCharacters="" Enabled="True"
                                         MinimumPrefixLength="1" ServiceMethod="ObtenerCie10"
                                         TargetControlID="txt_descripdiagnostico" CompletionListCssClass="CompletionList"
@@ -2848,7 +2848,7 @@
                                     </ajaxToolkit:AutoCompleteExtender>
                                 </asp:TableCell>
                                 <asp:TableCell style="background-color: white; font-size: 14px">
-                                    <asp:TextBox runat="server" ID="txt_cie" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform:uppercase" placeholder="-"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_cie" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform:uppercase" ></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell style="background-color: white; font-size: 14px">
                                     <asp:CheckBox ID="ckb_pre" Checked="false" OnCheckedChanged="ckb_pre_CheckedChanged" AutoPostBack="true" runat="server" />
@@ -2862,7 +2862,7 @@
                             <asp:TableRow>
                                 <asp:TableCell style="width: 50px; background-color: #cdfecc; font-size:15px" Text="2"></asp:TableCell>
                                 <asp:TableCell style="width: 1000px; background-color: white; font-size: 14px">
-                                    <asp:TextBox runat="server" ID="txt_descripdiagnostico2" BorderStyle="None" Style="background-color: transparent; width: 100%; text-transform:uppercase" placeholder="Descripción" OnTextChanged="txt_descripdiagnostico2_TextChanged" AutoPostBack="true"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_descripdiagnostico2" BorderStyle="None" Style="background-color: transparent; width: 100%; text-transform:uppercase" placeholder="DESCRIPCION" OnTextChanged="txt_descripdiagnostico2_TextChanged" AutoPostBack="true"></asp:TextBox>
                                     <ajaxToolkit:AutoCompleteExtender ID="AutoCompleteExtender3" runat="server" CompletionInterval="10" DelimiterCharacters="" Enabled="True"
                                         MinimumPrefixLength="1" ServiceMethod="ObtenerCie10"
                                         TargetControlID="txt_descripdiagnostico2" CompletionListCssClass="CompletionList"
@@ -2871,7 +2871,7 @@
                                         </ajaxToolkit:AutoCompleteExtender>
                                 </asp:TableCell>
                                 <asp:TableCell style="background-color: white; font-size: 14px">
-                                    <asp:TextBox runat="server" ID="txt_cie2" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform:uppercase" placeholder="-"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_cie2" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform:uppercase" ></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell style="background-color: white; font-size: 14px">
                                     <asp:CheckBox ID="ckb_pre2" Checked="false" OnCheckedChanged="ckb_pre2_CheckedChanged" AutoPostBack="true" runat="server" />
@@ -2885,7 +2885,7 @@
                             <asp:TableRow>
                                 <asp:TableCell style="width: 50px; background-color: #cdfecc; font-size:15px" Text="3"></asp:TableCell>
                                 <asp:TableCell style="width: 1000px; background-color: white; font-size: 14px">
-                                    <asp:TextBox runat="server" ID="txt_descripdiagnostico3" BorderStyle="None" Style="background-color: transparent; width: 100%; text-transform:uppercase" placeholder="Descripción" OnTextChanged="txt_descripdiagnostico3_TextChanged" AutoPostBack="true"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_descripdiagnostico3" BorderStyle="None" Style="background-color: transparent; width: 100%; text-transform:uppercase" placeholder="DESCRIPCION" OnTextChanged="txt_descripdiagnostico3_TextChanged" AutoPostBack="true"></asp:TextBox>
                                     <ajaxToolkit:AutoCompleteExtender ID="AutoCompleteExtender4" runat="server" CompletionInterval="10" DelimiterCharacters="" Enabled="True"
                                         MinimumPrefixLength="1" ServiceMethod="ObtenerCie10"
                                         TargetControlID="txt_descripdiagnostico3" CompletionListCssClass="CompletionList"
@@ -2894,7 +2894,7 @@
                                         </ajaxToolkit:AutoCompleteExtender>
                                 </asp:TableCell>
                                 <asp:TableCell style="background-color: white; font-size: 14px">
-                                    <asp:TextBox runat="server" ID="txt_cie3" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform:uppercase" placeholder="-"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_cie3" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform:uppercase" ></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell style="background-color: white; font-size: 14px">
                                     <asp:CheckBox ID="ckb_pre3" Checked="false" OnCheckedChanged="ckb_pre3_CheckedChanged" AutoPostBack="true" runat="server" />
@@ -2940,13 +2940,13 @@
                             <asp:TableRow>
                                 <asp:TableCell style="background-color: #ccffff; font-size:15px">Observación</asp:TableCell>
                                 <asp:TableCell ColumnSpan="7" style="background-color: white; font-size: 14px">
-                                    <asp:TextBox runat="server" ID="txt_observacionaptitud" BorderStyle="None" Style="background-color: transparent; width: 100%; text-transform:uppercase" placeholder="-"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_observacionaptitud" BorderStyle="None" Style="background-color: transparent; width: 100%; text-transform:uppercase" ></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
                                 <asp:TableCell style="background-color: #ccffff; font-size:15px">Limitación</asp:TableCell>
                                 <asp:TableCell ColumnSpan="7" style="background-color: white; font-size: 14px">
-                                    <asp:TextBox runat="server" ID="txt_limitacionaptitud" BorderStyle="None" Style="background-color: transparent; width: 100%; text-transform:uppercase" placeholder="-"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_limitacionaptitud" BorderStyle="None" Style="background-color: transparent; width: 100%; text-transform:uppercase" ></asp:TextBox>
                                 </asp:TableCell>
                             </asp:TableRow>
                         </asp:Table>
@@ -2958,7 +2958,7 @@
                         O. RECOMENDACIONES Y/O TRATAMIENTO
                     </div>
                     <div class="list-group list-group-flush">
-                        <asp:TextBox ID="txt_descripciontratamiento" BorderStyle="None" Style="background-color: transparent; width: 100%; text-transform:uppercase" runat="server" placeholder="Descripción:" TextMode="MultiLine" Rows="3"></asp:TextBox>
+                        <asp:TextBox ID="txt_descripciontratamiento" BorderStyle="None" Style="background-color: transparent; width: 100%; text-transform:uppercase" runat="server" Text="DESCRIPCION:" TextMode="MultiLine" Rows="3"></asp:TextBox>
                     </div>
                 </div>
                 <br />

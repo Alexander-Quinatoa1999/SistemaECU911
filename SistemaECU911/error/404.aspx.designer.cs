@@ -7,7 +7,7 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace Ecu911Pasantes.error
+namespace SistemaECU911.error
 {
 
 

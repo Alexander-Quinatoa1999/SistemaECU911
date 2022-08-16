@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-
+    
     <style type="text/css">
         .CompletionList {
             padding: 5px 0;
@@ -48,6 +48,7 @@
             background-image: linear-gradient(to bottom, #0088cc, #0077b3);
         }
     </style>
+    
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
@@ -1632,7 +1633,7 @@
                                 </asp:TableCell>
                             </asp:TableRow>
                         </asp:Table>
-                        <%--<%--<%--<%--<asp:Table class="table table-bordered text-center" runat="server">
+                        <%--<asp:Table class="table table-bordered text-center" runat="server">
                             <asp:TableRow>
                                 <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; font-size: 12px"> <strong>GEOREFERECIA DE LA VIVIENDA</strong> </asp:TableCell>
                             </asp:TableRow>
@@ -1668,7 +1669,7 @@
         <Triggers>
             <asp:PostBackTrigger ControlID="btn_imprimir"/>
             <asp:PostBackTrigger ControlID="btn_guardar"/>
-            <asp:PostBackTrigger ControlID="btn_mostrarimagen"/>
+            <%--<asp:PostBackTrigger ControlID="btn_mostrarimagen"/>--%>
         </Triggers>
     </asp:UpdatePanel>
 </asp:Content>

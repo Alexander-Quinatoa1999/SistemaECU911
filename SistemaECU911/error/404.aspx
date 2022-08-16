@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="404.aspx.cs" Inherits="Ecu911Pasantes.error._404" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="404.aspx.cs" Inherits="SistemaECU911.error._404" %>
 
 <!DOCTYPE html>
 
@@ -7,13 +7,13 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
     <title>Error 404</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="../resources/vendors/images/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="../resources/vendors/images/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="../resources/vendors/images/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../Template/Template Principal/vendors/images/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../Template/Template Principal/vendors/images/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../Template/Template Principal/vendors/images/favicon-16x16.png" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="../resources/vendors/styles/core.css" />
-    <link rel="stylesheet" type="text/css" href="../resources/vendors/styles/icon-font.min.css" />
-    <link rel="stylesheet" type="text/css" href="../resources/vendors/styles/style.css" />
+    <link rel="stylesheet" type="text/css" href="../Template/Template Principal/vendors/css/core.css" />
+    <link rel="stylesheet" type="text/css" href="../Template/Template Principal/vendors/css/icon-font.min.css" />
+    <link rel="stylesheet" type="text/css" href="../Template/Template Principal/vendors/css/style.css" />
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119386393-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -38,10 +38,9 @@
             </div>
         </div>
     </form>
-    <script src="../resources/vendors/scripts/core.js"></script>
-    <script src="../resources/vendors/scripts/script.min.js"></script>
-    <script src="../resources/vendors/scripts/process.js"></script>
-    <script src="../resources/vendors/scripts/layout-settings.js"></script>
+    <script src="../Template/Template Principal/vendors/js/core.js"></script>
+    <script src="../Template/Template Principal/vendors/js/script.min.js"></script>
+    <script src="../Template/Template Principal/vendors/js/process.js"></script>
+    <script src="../Template/Template Principal/vendors/js/layout-settings.js"></script>
 </body>
 </html>
-

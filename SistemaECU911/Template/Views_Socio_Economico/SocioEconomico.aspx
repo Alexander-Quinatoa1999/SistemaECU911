@@ -1633,7 +1633,7 @@
                                 </asp:TableCell>
                             </asp:TableRow>
                         </asp:Table>
-                        <%--<%--<%--<%--<asp:Table class="table table-bordered text-center" runat="server">
+                        <%--<asp:Table class="table table-bordered text-center" runat="server">
                             <asp:TableRow>
                                 <asp:TableCell Style="background-color: #cdfecc; color: black; font-family: Arial; font-size: 12px"> <strong>GEOREFERECIA DE LA VIVIENDA</strong> </asp:TableCell>
                             </asp:TableRow>
@@ -1669,7 +1669,7 @@
         <Triggers>
             <asp:PostBackTrigger ControlID="btn_imprimir"/>
             <asp:PostBackTrigger ControlID="btn_guardar"/>
-            <asp:PostBackTrigger ControlID="btn_mostrarimagen"/>
+            <%--<asp:PostBackTrigger ControlID="btn_mostrarimagen"/>--%>
         </Triggers>
     </asp:UpdatePanel>
 </asp:Content>
