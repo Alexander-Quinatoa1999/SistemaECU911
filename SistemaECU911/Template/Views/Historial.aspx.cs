@@ -168,7 +168,7 @@ namespace SistemaECU911.Template.Views
             List<string> lista = new List<string>();
             try
             {
-                string oConn = @"Data Source=.;Initial Catalog=SistemaECU911;Integrated Security=True";
+                string oConn = @"Data Source=sql8004.site4now.net;Initial Catalog=db_a8b7d4_sistemaecu911;Persist Security Info=True;User ID=db_a8b7d4_sistemaecu911_admin;Password=SistemaECU911";
 
                 SqlConnection con = new SqlConnection(oConn);
                 con.Open();
