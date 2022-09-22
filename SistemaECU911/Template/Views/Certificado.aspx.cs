@@ -5,6 +5,7 @@ using iTextSharp.text;
 using iTextSharp.text.pdf;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -22,6 +23,7 @@ namespace SistemaECU911.Template.Views
         private readonly DataClassesECU911DataContext dc = new DataClassesECU911DataContext();
 
         private Tbl_Personas per = new Tbl_Personas();
+        private Tbl_Empresa emp = new Tbl_Empresa();
         private Tbl_Certificado certi = new Tbl_Certificado();
 
         protected void Page_Load(object sender, EventArgs e)
@@ -34,11 +36,15 @@ namespace SistemaECU911.Template.Views
                     certi = CN_Certificado.ObtenerCertificadoPorId(codigo);
                     int personasid = Convert.ToInt32(certi.Per_id.ToString());
                     per = CN_HistorialMedico.ObtenerPersonasxId(personasid);
-                    
+                    int empresaid = Convert.ToInt32(certi.Emp_id.ToString());
+                    emp = CN_HistorialMedico.ObtenerEmpresaxId(empresaid);
+
                     btn_guardar.Text = "Actualizar";
 
-                    if (per != null)
+                    if (per != null || emp != null)
                     {
+
+                        txt_numHClinica.ReadOnly = true;
 
                         //Datos Generales
                         if (certi.certi_ingreso == null)
@@ -185,6 +191,8 @@ namespace SistemaECU911.Template.Views
                             ckb_noAplicaCondiSalud.Checked = true;
                         }
 
+                        txt_nomEmpresa.Text = emp.Emp_nombre.ToString();
+                        txt_rucEmp.Text = emp.Emp_RUC.ToString();
                         txt_priNombre.Text = per.Per_priNombre.ToString();
                         txt_segNombre.Text = per.Per_segNombre.ToString();
                         txt_priApellido.Text = per.Per_priApellido.ToString();
@@ -223,10 +231,9 @@ namespace SistemaECU911.Template.Views
                         }
                     }
                 }
-
+                Timer1.Enabled = false;
                 cargarProfesional();
-
-                txt_fechahora.Text = DateTime.Now.ToLocalTime().ToString("yyyy-MM-ddTHH:mm");
+                txt_fechahora.Text = DateTime.Now.ToLocalTime().ToString("yyyy-MM-ddTHH:mm");                
             }
         }
 
@@ -243,9 +250,7 @@ namespace SistemaECU911.Template.Views
             List<string> lista = new List<string>();
             try
             {
-                string oConn = @"Data Source=sql8004.site4now.net;Initial Catalog=db_a8b7d4_sistemaecu911;Persist Security Info=True;User ID=db_a8b7d4_sistemaecu911_admin;Password=SistemaECU911";
-
-                SqlConnection con = new SqlConnection(oConn);
+                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ToString());
                 con.Open();
                 SqlCommand cmd = new SqlCommand("select top(10) Per_Cedula from Tbl_Personas where Per_Cedula LIKE + @Cedula + '%'", con);
                 cmd.Parameters.AddWithValue("@Cedula", prefixText);
@@ -329,13 +334,15 @@ namespace SistemaECU911.Template.Views
             try
             {
                 per = CN_HistorialMedico.ObtenerIdPersonasxCedula(txt_numHClinica.Text);
-
                 int perso = Convert.ToInt32(per.Per_id.ToString());
+
+                per = CN_HistorialMedico.ObtenerIdEmpresaxCedula(txt_numHClinica.Text);
+                int empre = Convert.ToInt32(per.Emp_id.ToString());
 
                 certi = new Tbl_Certificado();
 
                 //Fecha y Hora
-                certi.certi_fecha_hora = txt_fechahora.Text;
+                certi.certi_fechaHoraGuardado = Convert.ToDateTime(txt_fechahora.Text);
 
                 //Datos Generales
                 if (ckb_ingreso.Checked == true)
@@ -412,34 +419,34 @@ namespace SistemaECU911.Template.Views
                 }
 
                 //A
-                certi.certi_ciiu = txt_ciiu.Text;
-                certi.certi_numArchivo = txt_numArchivo.Text;
+                certi.certi_ciiu = txt_ciiu.Text.ToUpper();
+                certi.certi_numArchivo = txt_numArchivo.Text.ToUpper();
 
                 //B.
-                certi.certi_fechEmision = txt_fechaEmision.Text;
+                certi.certi_fechEmision = txt_fechaEmision.Text.ToUpper();
 
                 //C.
-                certi.certi_calificada = txt_valoraMedicaOcupacional.Text;
-                certi.certi_ObservAptiMedLaboral = txt_detaObservaAptiMedLaboral.Text;
+                certi.certi_calificada = txt_valoraMedicaOcupacional.Text.ToUpper();
+                certi.certi_ObservAptiMedLaboral = txt_detaObservaAptiMedLaboral.Text.ToUpper();
 
                 //E.
-                certi.certi_descripcionRecomendaciones = txt_descripRecomendaciones.Text;
+                certi.certi_descripcionRecomendaciones = txt_descripRecomendaciones.Text.ToUpper();
 
                 //F.
                 certi.prof_id = Convert.ToInt32(ddl_profesional.SelectedValue);
-                certi.certi_cod = txt_codigo.Text;
+                certi.certi_cod = txt_codigo.Text.ToUpper();
                 certi.Per_id = perso;
+                certi.Emp_id = empre;
 
                 CN_Certificado.GuardarCertificado(certi);
 
                 //Mensaje de confirmacion
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos Guardados Exitosamente')", true);
-
-                Response.Redirect("~/Template/Views/PacientesCertificado.aspx");
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", "swal('Exito!', 'Datos Guardados Exitosamente', 'success')", true);
+                Timer1.Enabled = true;
             }
             catch(Exception)
             {
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos No Guardados')", true);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", "swal('Error!', 'Datos No Guardados', 'error')", true);
             }
         }
 
@@ -448,7 +455,7 @@ namespace SistemaECU911.Template.Views
             try
             {
                 //Fecha y Hora
-                certi.certi_fecha_hora = txt_fechahora.Text;
+                certi.certi_fecha_horaModificacion = Convert.ToDateTime(txt_fechahora.Text.ToUpper());
 
                 //Datos Generales
                 if (ckb_ingreso.Checked == true)
@@ -586,31 +593,31 @@ namespace SistemaECU911.Template.Views
                 }
 
                 //A
-                certi.certi_ciiu = txt_ciiu.Text;
-                certi.certi_numArchivo = txt_numArchivo.Text;
+                certi.certi_ciiu = txt_ciiu.Text.ToUpper();
+                certi.certi_numArchivo = txt_numArchivo.Text.ToUpper();
 
                 //B.
-                certi.certi_fechEmision = txt_fechaEmision.Text;
+                certi.certi_fechEmision = txt_fechaEmision.Text.ToUpper();
 
                 //C.
-                certi.certi_calificada = txt_valoraMedicaOcupacional.Text;
-                certi.certi_ObservAptiMedLaboral = txt_detaObservaAptiMedLaboral.Text;
+                certi.certi_calificada = txt_valoraMedicaOcupacional.Text.ToUpper();
+                certi.certi_ObservAptiMedLaboral = txt_detaObservaAptiMedLaboral.Text.ToUpper();
 
                 //E.
-                certi.certi_descripcionRecomendaciones = txt_descripRecomendaciones.Text;
+                certi.certi_descripcionRecomendaciones = txt_descripRecomendaciones.Text.ToUpper();
 
                 //F.
                 certi.prof_id = Convert.ToInt32(ddl_profesional.SelectedValue);
-                certi.certi_cod = txt_codigo.Text;
+                certi.certi_cod = txt_codigo.Text.ToUpper();
 
                 CN_Certificado.ModificarCertificado(certi);
 
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos Modificados Exitosamente')", true);
-                Response.Redirect("~/Template/Views/PacientesCertificado.aspx");
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", "swal('Exito!', 'Datos Modificados Exitosamente', 'success')", true);
+                Timer1.Enabled = true;
             }
             catch (Exception)
             {
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos No Modificados')", true);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", "swal('Error!', 'Datos No Modificados', 'error')", true);
             }
         }
 
@@ -641,6 +648,11 @@ namespace SistemaECU911.Template.Views
         }
 
         protected void btn_cancelacertificado_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Template/Views/Inicio.aspx");
+        }
+
+        protected void Timer1_Tick(object sender, EventArgs e)
         {
             Response.Redirect("~/Template/Views/Inicio.aspx");
         }
@@ -1012,7 +1024,8 @@ namespace SistemaECU911.Template.Views
             Response.Cache.SetCacheability(HttpCacheability.NoCache);
             Response.Write(pdfDoc);
             Response.End();
-        } 
+        }
+        
     }
    
 }

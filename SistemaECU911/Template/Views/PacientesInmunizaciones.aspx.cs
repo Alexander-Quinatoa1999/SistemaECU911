@@ -34,7 +34,7 @@ namespace SistemaECU911.Template.Views
                             p.Per_priNombre,
                             p.Per_priApellido,
                             i.inmu_fechaHoraGuardado,
-                            i.inmu_fecha_hora
+                            i.inmu_fecha_horaModificacion
                         };
 
             grvPacientesInmunizaciones.DataSource = query.ToList();

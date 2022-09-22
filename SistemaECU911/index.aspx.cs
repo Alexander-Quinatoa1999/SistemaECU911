@@ -53,6 +53,7 @@ namespace SistemaECU911
                         else if(tusuario == 2) 
                         {
                             Session["Paciente"] = usuario.usu_id.ToString();
+                            Session["Cedula"] = usuario.usu_cedula.ToString();
                             Session["nombre"] = usuario.usu_nombre.ToString();
                             Session["apellido"] = usuario.usu_apellido.ToString();
                             Session["rol"] = tusu.tusu_nombre.ToString();
@@ -77,7 +78,7 @@ namespace SistemaECU911
                         txt_pass.Text = "";
                         if (Convert.ToInt32(intentos) == 3)
                         {
-                            ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", "swal('Error!', 'A superado el limite de intentos.', 'error')", true);
+                            ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", "swal('Error!', 'A superado el limite de intentos', 'error')", true);
                             btn_ingresar.Visible = false;
                             Session.RemoveAll();
                             Timer1.Enabled = true;
@@ -86,7 +87,7 @@ namespace SistemaECU911
                 }
                 else
                 {
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", "swal('Error!', 'El usuario no existe.', 'error')", true);
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", "swal('Error!', 'El usuario no existe', 'error')", true);
                     limpiar();
                 }
             }

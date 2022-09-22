@@ -1,6 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Template/Views/Principal.Master" AutoEventWireup="true" CodeBehind="Inicial.aspx.cs" Inherits="SistemaECU911.Template.Views.Inicial" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+<asp:Content ID="Content1" ContentPlaceHolderID="Title" runat="server">
+    HCL Inicial | Sistema Médico
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="Head" runat="server">
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 
     <style type="text/css">
@@ -53,8 +56,11 @@
         }
     </style>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+<asp:Content ID="Content3" ContentPlaceHolderID="Message" runat="server">
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+    <asp:Timer ID="Timer1" runat="server" Interval="2000" OnTick="Timer1_Tick"></asp:Timer>
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="Content" runat="server">
     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>
             <div class="container" style="background-color: white; font-family: Arial">
@@ -2979,7 +2985,7 @@
                                 <asp:TableCell Style="width: 100px; background-color: #cdfecc; font-size:15px">FECHA Y HORA</asp:TableCell>
                                 <asp:TableCell Style="width: 150px; background-color: white; font-size: 14px">
                                     <%--<asp:Timer ID="timerFechaHora"  OnTick="timerFechaHora_Tick" runat="server" Interval="15000"></asp:Timer>--%>
-                                    <asp:TextBox runat="server" BorderStyle="None" ID="txt_fechahora" Style="background-color: transparent; width: 100%; text-align: center; text-transform:uppercase" TextMode="DateTimeLocal" ReadOnly="true"></asp:TextBox>
+                                    <asp:TextBox runat="server" BorderStyle="None" ID="txt_fechahora" Style="background-color: transparent; width: 100%; text-align: center; text-transform:uppercase" TextMode="DateTimeLocal"></asp:TextBox>
                                 </asp:TableCell>
                                 <asp:TableCell Style="width: 100px; background-color: #cdfecc; font-size:15px">NOMBRES Y APELLIDOS</asp:TableCell>
                                 <asp:TableCell Style="width: 375px; background-color: white; font-size: 14px">
@@ -3022,5 +3028,5 @@
         </Triggers>
     </asp:UpdatePanel>
 </asp:Content>
-<asp:Content ID="Content3" ContentPlaceHolderID="footer" runat="server">
+<asp:Content ID="Content5" ContentPlaceHolderID="Footer" runat="server">
 </asp:Content>

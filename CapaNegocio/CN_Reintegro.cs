@@ -44,7 +44,6 @@ namespace CapaNegocio
             try
             {
                 reintegro.rein_estado = "A";
-                reintegro.rein_fechaHoraGuardado = DateTime.Now;
                 dc.Tbl_Reintegro.InsertOnSubmit(reintegro);
                 dc.SubmitChanges();
             }

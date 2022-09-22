@@ -114,6 +114,15 @@ namespace SistemaECU911.Template.Views_Pacientes
         protected global::System.Web.UI.WebControls.TextBox txt_moConsulta;
 
         /// <summary>
+        /// Control txt_segAcompa.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_segAcompa;
+
+        /// <summary>
         /// Control ddl_tipoAntPer.
         /// </summary>
         /// <remarks>
@@ -474,22 +483,22 @@ namespace SistemaECU911.Template.Views_Pacientes
         protected global::System.Web.UI.WebControls.TextBox txt_perAbdominal;
 
         /// <summary>
-        /// Control ddl_region.
+        /// Control txt_region.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddl_region;
+        protected global::System.Web.UI.WebControls.TextBox txt_region;
 
         /// <summary>
-        /// Control ddl_tipoRegion.
+        /// Control txt_tipoRegion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddl_tipoRegion;
+        protected global::System.Web.UI.WebControls.TextBox txt_tipoRegion;
 
         /// <summary>
         /// Control txt_exafisdescripcion.
@@ -501,6 +510,33 @@ namespace SistemaECU911.Template.Views_Pacientes
         protected global::System.Web.UI.WebControls.TextBox txt_exafisdescripcion;
 
         /// <summary>
+        /// Control txt_region2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_region2;
+
+        /// <summary>
+        /// Control txt_tipoRegion2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_tipoRegion2;
+
+        /// <summary>
+        /// Control txt_exafisdescripcion2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_exafisdescripcion2;
+
+        /// <summary>
         /// Control txt_diagnosticosDiagnostico.
         /// </summary>
         /// <remarks>
@@ -508,15 +544,6 @@ namespace SistemaECU911.Template.Views_Pacientes
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_diagnosticosDiagnostico;
-
-        /// <summary>
-        /// Control AutoCompleteExtender1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::AjaxControlToolkit.AutoCompleteExtender AutoCompleteExtender1;
 
         /// <summary>
         /// Control txt_codigoDiagnostico.
@@ -625,6 +652,15 @@ namespace SistemaECU911.Template.Views_Pacientes
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_codigo;
+
+        /// <summary>
+        /// Control btn_imprimir.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_imprimir;
 
         /// <summary>
         /// Control btn_cancelar.

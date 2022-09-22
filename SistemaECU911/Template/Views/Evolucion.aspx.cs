@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -22,7 +23,7 @@ namespace SistemaECU911.Template.Views
         DataClassesECU911DataContext dc = new DataClassesECU911DataContext();
 
         private Tbl_Personas per = new Tbl_Personas();
-
+        private Tbl_Empresa emp = new Tbl_Empresa();
         private Tbl_Evolucion evo = new Tbl_Evolucion();
 
         protected void Page_Load(object sender, EventArgs e)
@@ -35,12 +36,18 @@ namespace SistemaECU911.Template.Views
                     evo = CN_Evolucion.ObtenerEvolucionPorId(codigo);
                     int personasid = Convert.ToInt32(evo.Per_id.ToString());
                     per = CN_HistorialMedico.ObtenerPersonasxId(personasid);
+                    int empresaid = Convert.ToInt32(evo.Emp_id.ToString());
+                    emp = CN_HistorialMedico.ObtenerEmpresaxId(empresaid);
 
                     btn_guardar.Text = "Actualizar";
 
-                    if (per != null)
+                    if (per != null || emp != null)
                     {
+                        txt_numHClinica.ReadOnly = true;
+
                         //A
+                        txt_nomEmpresa.Text = emp.Emp_nombre.ToString();
+                        txt_rucEmp.Text = emp.Emp_RUC.ToString();
                         txt_priNombre.Text = per.Per_priNombre.ToString();
                         txt_segNombre.Text = per.Per_segNombre.ToString();
                         txt_priApellido.Text = per.Per_priApellido.ToString();
@@ -241,7 +248,7 @@ namespace SistemaECU911.Template.Views
                         }
                     }
                 }
-
+                Timer1.Enabled = false;
                 txt_fechahora.Text = DateTime.Now.ToLocalTime().ToString("yyyy-MM-ddTHH:mm");
 
             }
@@ -260,9 +267,7 @@ namespace SistemaECU911.Template.Views
             List<string> lista = new List<string>();
             try
             {
-                string oConn = @"Data Source=sql8004.site4now.net;Initial Catalog=db_a8b7d4_sistemaecu911;Persist Security Info=True;User ID=db_a8b7d4_sistemaecu911_admin;Password=SistemaECU911";
-
-                SqlConnection con = new SqlConnection(oConn);
+                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ToString());
                 con.Open();
                 SqlCommand cmd = new SqlCommand("select top(10) Per_Cedula from Tbl_Personas where Per_Cedula LIKE + @Cedula + '%'", con);
                 cmd.Parameters.AddWithValue("@Cedula", prefixText);
@@ -346,109 +351,112 @@ namespace SistemaECU911.Template.Views
             try
             {
                 per = CN_HistorialMedico.ObtenerIdPersonasxCedula(txt_numHClinica.Text);
-
                 int perso = Convert.ToInt32(per.Per_id.ToString());
+
+                per = CN_HistorialMedico.ObtenerIdEmpresaxCedula(txt_numHClinica.Text);
+                int empre = Convert.ToInt32(per.Emp_id.ToString());
 
                 evo = new Tbl_Evolucion();
 
                 //Fecha y Hora
-                evo.evo_fecha_hora = txt_fechahora.Text;
+                evo.evo_fechaHoraGuardado = Convert.ToDateTime(txt_fechahora.Text);
 
                 //A Captura de datos Establecimiento
-                evo.evo_ciiu = txt_ciiu.Text;
-                evo.evo_numArchivo = txt_numArchivo.Text;
+                evo.evo_ciiu = txt_ciiu.Text.ToUpper();
+                evo.evo_numArchivo = txt_numArchivo.Text.ToUpper();
 
                 //B. Captura de datos Evolucion
-                evo.evo_fecha1 = txt_fecha1.Text;
-                evo.evo_hora1 = txt_hora1.Text;
-                evo.evo_notasEvolucion1 = txt_notas1.Text;
-                evo.evo_fecha2 = txt_fecha2.Text;
-                evo.evo_hora2 = txt_hora2.Text;
-                evo.evo_notasEvolucion2 = txt_notas2.Text;
-                evo.evo_fecha3 = txt_fecha3.Text;
-                evo.evo_hora3 = txt_hora3.Text;
-                evo.evo_notasEvolucion3 = txt_notas3.Text;
-                evo.evo_fecha4 = txt_fecha4.Text;
-                evo.evo_hora4 = txt_hora4.Text;
-                evo.evo_notasEvolucion4 = txt_notas4.Text;
-                evo.evo_fecha5 = txt_fecha5.Text;
-                evo.evo_hora5 = txt_hora5.Text;
-                evo.evo_notasEvolucion5 = txt_notas5.Text;
-                evo.evo_fecha6 = txt_fecha6.Text;
-                evo.evo_hora6 = txt_hora6.Text;
-                evo.evo_notasEvolucion6 = txt_notas6.Text;
-                evo.evo_fecha7 = txt_fecha7.Text;
-                evo.evo_hora7 = txt_hora7.Text;
-                evo.evo_notasEvolucion7 = txt_notas7.Text;
-                evo.evo_fecha8 = txt_fecha8.Text;
-                evo.evo_hora8 = txt_hora8.Text;
-                evo.evo_notasEvolucion8 = txt_notas8.Text;
-                evo.evo_fecha9 = txt_fecha9.Text;
-                evo.evo_hora9 = txt_hora9.Text;
-                evo.evo_notasEvolucion9 = txt_notas9.Text;
-                evo.evo_fecha10 = txt_fecha10.Text;
-                evo.evo_hora10 = txt_hora10.Text;
-                evo.evo_notasEvolucion10 = txt_notas10.Text;
-                evo.evo_fecha11 = txt_fecha11.Text;
-                evo.evo_hora11 = txt_hora11.Text;
-                evo.evo_notasEvolucion11 = txt_notas11.Text;
-                evo.evo_fecha12 = txt_fecha12.Text;
-                evo.evo_hora12 = txt_hora12.Text;
-                evo.evo_notasEvolucion12 = txt_notas12.Text;
-                evo.evo_fecha13 = txt_fecha13.Text;
-                evo.evo_hora13 = txt_hora13.Text;
-                evo.evo_notasEvolucion13 = txt_notas13.Text;
-                evo.evo_fecha14 = txt_fecha14.Text;
-                evo.evo_hora14 = txt_hora14.Text;
-                evo.evo_notasEvolucion14 = txt_notas14.Text;
-                evo.evo_fecha15 = txt_fecha15.Text;
-                evo.evo_hora15 = txt_hora15.Text;
-                evo.evo_notasEvolucion15 = txt_notas15.Text;
+                evo.evo_fecha1 = txt_fecha1.Text.ToUpper();
+                evo.evo_hora1 = txt_hora1.Text.ToUpper();
+                evo.evo_notasEvolucion1 = txt_notas1.Text.ToUpper();
+                evo.evo_fecha2 = txt_fecha2.Text.ToUpper();
+                evo.evo_hora2 = txt_hora2.Text.ToUpper();
+                evo.evo_notasEvolucion2 = txt_notas2.Text.ToUpper();
+                evo.evo_fecha3 = txt_fecha3.Text.ToUpper();
+                evo.evo_hora3 = txt_hora3.Text.ToUpper();
+                evo.evo_notasEvolucion3 = txt_notas3.Text.ToUpper();
+                evo.evo_fecha4 = txt_fecha4.Text.ToUpper();
+                evo.evo_hora4 = txt_hora4.Text.ToUpper();
+                evo.evo_notasEvolucion4 = txt_notas4.Text.ToUpper();
+                evo.evo_fecha5 = txt_fecha5.Text.ToUpper();
+                evo.evo_hora5 = txt_hora5.Text.ToUpper();
+                evo.evo_notasEvolucion5 = txt_notas5.Text.ToUpper();
+                evo.evo_fecha6 = txt_fecha6.Text.ToUpper();
+                evo.evo_hora6 = txt_hora6.Text.ToUpper();
+                evo.evo_notasEvolucion6 = txt_notas6.Text.ToUpper();
+                evo.evo_fecha7 = txt_fecha7.Text.ToUpper();
+                evo.evo_hora7 = txt_hora7.Text.ToUpper();
+                evo.evo_notasEvolucion7 = txt_notas7.Text.ToUpper();
+                evo.evo_fecha8 = txt_fecha8.Text.ToUpper();
+                evo.evo_hora8 = txt_hora8.Text.ToUpper();
+                evo.evo_notasEvolucion8 = txt_notas8.Text.ToUpper();
+                evo.evo_fecha9 = txt_fecha9.Text.ToUpper();
+                evo.evo_hora9 = txt_hora9.Text.ToUpper();
+                evo.evo_notasEvolucion9 = txt_notas9.Text.ToUpper();
+                evo.evo_fecha10 = txt_fecha10.Text.ToUpper();
+                evo.evo_hora10 = txt_hora10.Text.ToUpper();
+                evo.evo_notasEvolucion10 = txt_notas10.Text.ToUpper();
+                evo.evo_fecha11 = txt_fecha11.Text.ToUpper();
+                evo.evo_hora11 = txt_hora11.Text.ToUpper();
+                evo.evo_notasEvolucion11 = txt_notas11.Text.ToUpper();
+                evo.evo_fecha12 = txt_fecha12.Text.ToUpper();
+                evo.evo_hora12 = txt_hora12.Text.ToUpper();
+                evo.evo_notasEvolucion12 = txt_notas12.Text.ToUpper();
+                evo.evo_fecha13 = txt_fecha13.Text.ToUpper();
+                evo.evo_hora13 = txt_hora13.Text.ToUpper();
+                evo.evo_notasEvolucion13 = txt_notas13.Text.ToUpper();
+                evo.evo_fecha14 = txt_fecha14.Text.ToUpper();
+                evo.evo_hora14 = txt_hora14.Text.ToUpper();
+                evo.evo_notasEvolucion14 = txt_notas14.Text.ToUpper();
+                evo.evo_fecha15 = txt_fecha15.Text.ToUpper();
+                evo.evo_hora15 = txt_hora15.Text.ToUpper();
+                evo.evo_notasEvolucion15 = txt_notas15.Text.ToUpper();
 
                 //C. Captura de Datos Prescripcion
-                evo.evo_farmacoIndicaciones1 = txt_farmacoterapia1.Text;
-                evo.evo_adminisFarmacos1 = txt_administracion1.Text;
-                evo.evo_farmacoIndicaciones2 = txt_farmacoterapia2.Text;
-                evo.evo_adminisFarmacos2 = txt_administracion2.Text;
-                evo.evo_farmacoIndicaciones3 = txt_farmacoterapia3.Text;
-                evo.evo_adminisFarmacos3 = txt_administracion3.Text;
-                evo.evo_farmacoIndicaciones4 = txt_farmacoterapia4.Text;
-                evo.evo_adminisFarmacos4 = txt_administracion4.Text;
-                evo.evo_farmacoIndicaciones5 = txt_farmacoterapia5.Text;
-                evo.evo_adminisFarmacos5 = txt_administracion5.Text;
-                evo.evo_farmacoIndicaciones6 = txt_farmacoterapia6.Text;
-                evo.evo_adminisFarmacos6 = txt_administracion6.Text;
-                evo.evo_farmacoIndicaciones7 = txt_farmacoterapia7.Text;
-                evo.evo_adminisFarmacos7 = txt_administracion7.Text;
-                evo.evo_farmacoIndicaciones8 = txt_farmacoterapia8.Text;
-                evo.evo_adminisFarmacos8 = txt_administracion8.Text;
-                evo.evo_farmacoIndicaciones9 = txt_farmacoterapia9.Text;
-                evo.evo_adminisFarmacos9 = txt_administracion9.Text;
-                evo.evo_farmacoIndicaciones10 = txt_farmacoterapia10.Text;
-                evo.evo_adminisFarmacos10 = txt_administracion10.Text;
-                evo.evo_farmacoIndicaciones11 = txt_farmacoterapia11.Text;
-                evo.evo_adminisFarmacos11 = txt_administracion11.Text;
-                evo.evo_farmacoIndicaciones12 = txt_farmacoterapia12.Text;
-                evo.evo_adminisFarmacos12 = txt_administracion12.Text;
-                evo.evo_farmacoIndicaciones13 = txt_farmacoterapia13.Text;
-                evo.evo_adminisFarmacos13 = txt_administracion13.Text;
-                evo.evo_farmacoIndicaciones14 = txt_farmacoterapia14.Text;
-                evo.evo_adminisFarmacos14 = txt_administracion14.Text;
-                evo.evo_farmacoIndicaciones15 = txt_farmacoterapia15.Text;
-                evo.evo_adminisFarmacos15 = txt_administracion15.Text;
+                evo.evo_farmacoIndicaciones1 = txt_farmacoterapia1.Text.ToUpper();
+                evo.evo_adminisFarmacos1 = txt_administracion1.Text.ToUpper();
+                evo.evo_farmacoIndicaciones2 = txt_farmacoterapia2.Text.ToUpper();
+                evo.evo_adminisFarmacos2 = txt_administracion2.Text.ToUpper();
+                evo.evo_farmacoIndicaciones3 = txt_farmacoterapia3.Text.ToUpper();
+                evo.evo_adminisFarmacos3 = txt_administracion3.Text.ToUpper();
+                evo.evo_farmacoIndicaciones4 = txt_farmacoterapia4.Text.ToUpper();
+                evo.evo_adminisFarmacos4 = txt_administracion4.Text.ToUpper();
+                evo.evo_farmacoIndicaciones5 = txt_farmacoterapia5.Text.ToUpper();
+                evo.evo_adminisFarmacos5 = txt_administracion5.Text.ToUpper();
+                evo.evo_farmacoIndicaciones6 = txt_farmacoterapia6.Text.ToUpper();
+                evo.evo_adminisFarmacos6 = txt_administracion6.Text.ToUpper();
+                evo.evo_farmacoIndicaciones7 = txt_farmacoterapia7.Text.ToUpper();
+                evo.evo_adminisFarmacos7 = txt_administracion7.Text.ToUpper();
+                evo.evo_farmacoIndicaciones8 = txt_farmacoterapia8.Text.ToUpper();
+                evo.evo_adminisFarmacos8 = txt_administracion8.Text.ToUpper();
+                evo.evo_farmacoIndicaciones9 = txt_farmacoterapia9.Text.ToUpper();
+                evo.evo_adminisFarmacos9 = txt_administracion9.Text.ToUpper();
+                evo.evo_farmacoIndicaciones10 = txt_farmacoterapia10.Text.ToUpper();
+                evo.evo_adminisFarmacos10 = txt_administracion10.Text.ToUpper();
+                evo.evo_farmacoIndicaciones11 = txt_farmacoterapia11.Text.ToUpper();
+                evo.evo_adminisFarmacos11 = txt_administracion11.Text.ToUpper();
+                evo.evo_farmacoIndicaciones12 = txt_farmacoterapia12.Text.ToUpper();
+                evo.evo_adminisFarmacos12 = txt_administracion12.Text.ToUpper();
+                evo.evo_farmacoIndicaciones13 = txt_farmacoterapia13.Text.ToUpper();
+                evo.evo_adminisFarmacos13 = txt_administracion13.Text.ToUpper();
+                evo.evo_farmacoIndicaciones14 = txt_farmacoterapia14.Text.ToUpper();
+                evo.evo_adminisFarmacos14 = txt_administracion14.Text.ToUpper();
+                evo.evo_farmacoIndicaciones15 = txt_farmacoterapia15.Text.ToUpper();
+                evo.evo_adminisFarmacos15 = txt_administracion15.Text.ToUpper();
                 evo.Per_id = perso;
+                evo.Emp_id = empre;
 
                 CN_Evolucion.GuardarEvolucion(evo);
 
                 //Mensaje de confirmacion
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos Guardados Exitosamente')", true);
-
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", "swal('Exito!', 'Datos Guardados Exitosamente', 'success')", true);
+                Timer1.Enabled = true;
                 Response.Redirect("~/Template/Views/PacientesEvolucion.aspx");
 
             }
             catch (Exception)
             {
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos No Guardados')", true);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", "swal('Error!', 'Datos No Guardados', 'error')", true);
             }
         }
 
@@ -457,99 +465,100 @@ namespace SistemaECU911.Template.Views
             try
             {
                 //Fecha y Hora
-                evo.evo_fecha_hora = txt_fechahora.Text;
+                evo.evo_fecha_horaModificacion = Convert.ToDateTime(txt_fechahora.Text);
 
                 //A Captura de datos Establecimiento
-                evo.evo_ciiu = txt_ciiu.Text;
-                evo.evo_numArchivo = txt_numArchivo.Text;
+                evo.evo_ciiu = txt_ciiu.Text.ToUpper();
+                evo.evo_numArchivo = txt_numArchivo.Text.ToUpper();
 
                 //B. Captura de datos Evolucion
-                evo.evo_fecha1 = txt_fecha1.Text;
-                evo.evo_hora1 = txt_hora1.Text;
-                evo.evo_notasEvolucion1 = txt_notas1.Text;
-                evo.evo_fecha2 = txt_fecha2.Text;
-                evo.evo_hora2 = txt_hora2.Text;
-                evo.evo_notasEvolucion2 = txt_notas2.Text;
-                evo.evo_fecha3 = txt_fecha3.Text;
-                evo.evo_hora3 = txt_hora3.Text;
-                evo.evo_notasEvolucion3 = txt_notas3.Text;
-                evo.evo_fecha4 = txt_fecha4.Text;
-                evo.evo_hora4 = txt_hora4.Text;
-                evo.evo_notasEvolucion4 = txt_notas4.Text;
-                evo.evo_fecha5 = txt_fecha5.Text;
-                evo.evo_hora5 = txt_hora5.Text;
-                evo.evo_notasEvolucion5 = txt_notas5.Text;
-                evo.evo_fecha6 = txt_fecha6.Text;
-                evo.evo_hora6 = txt_hora6.Text;
-                evo.evo_notasEvolucion6 = txt_notas6.Text;
-                evo.evo_fecha7 = txt_fecha7.Text;
-                evo.evo_hora7 = txt_hora7.Text;
-                evo.evo_notasEvolucion7 = txt_notas7.Text;
-                evo.evo_fecha8 = txt_fecha8.Text;
-                evo.evo_hora8 = txt_hora8.Text;
-                evo.evo_notasEvolucion8 = txt_notas8.Text;
-                evo.evo_fecha9 = txt_fecha9.Text;
-                evo.evo_hora9 = txt_hora9.Text;
-                evo.evo_notasEvolucion9 = txt_notas9.Text;
-                evo.evo_fecha10 = txt_fecha10.Text;
-                evo.evo_hora10 = txt_hora10.Text;
-                evo.evo_notasEvolucion10 = txt_notas10.Text;
-                evo.evo_fecha11 = txt_fecha11.Text;
-                evo.evo_hora11 = txt_hora11.Text;
-                evo.evo_notasEvolucion11 = txt_notas11.Text;
-                evo.evo_fecha12 = txt_fecha12.Text;
-                evo.evo_hora12 = txt_hora12.Text;
-                evo.evo_notasEvolucion12 = txt_notas12.Text;
-                evo.evo_fecha13 = txt_fecha13.Text;
-                evo.evo_hora13 = txt_hora13.Text;
-                evo.evo_notasEvolucion13 = txt_notas13.Text;
-                evo.evo_fecha14 = txt_fecha14.Text;
-                evo.evo_hora14 = txt_hora14.Text;
-                evo.evo_notasEvolucion14 = txt_notas14.Text;
-                evo.evo_fecha15 = txt_fecha15.Text;
-                evo.evo_hora15 = txt_hora15.Text;
-                evo.evo_notasEvolucion15 = txt_notas15.Text;
+                evo.evo_fecha1 = txt_fecha1.Text.ToUpper();
+                evo.evo_hora1 = txt_hora1.Text.ToUpper();
+                evo.evo_notasEvolucion1 = txt_notas1.Text.ToUpper();
+                evo.evo_fecha2 = txt_fecha2.Text.ToUpper();
+                evo.evo_hora2 = txt_hora2.Text.ToUpper();
+                evo.evo_notasEvolucion2 = txt_notas2.Text.ToUpper();
+                evo.evo_fecha3 = txt_fecha3.Text.ToUpper();
+                evo.evo_hora3 = txt_hora3.Text.ToUpper();
+                evo.evo_notasEvolucion3 = txt_notas3.Text.ToUpper();
+                evo.evo_fecha4 = txt_fecha4.Text.ToUpper();
+                evo.evo_hora4 = txt_hora4.Text.ToUpper();
+                evo.evo_notasEvolucion4 = txt_notas4.Text.ToUpper();
+                evo.evo_fecha5 = txt_fecha5.Text.ToUpper();
+                evo.evo_hora5 = txt_hora5.Text.ToUpper();
+                evo.evo_notasEvolucion5 = txt_notas5.Text.ToUpper();
+                evo.evo_fecha6 = txt_fecha6.Text.ToUpper();
+                evo.evo_hora6 = txt_hora6.Text.ToUpper();
+                evo.evo_notasEvolucion6 = txt_notas6.Text.ToUpper();
+                evo.evo_fecha7 = txt_fecha7.Text.ToUpper();
+                evo.evo_hora7 = txt_hora7.Text.ToUpper();
+                evo.evo_notasEvolucion7 = txt_notas7.Text.ToUpper();
+                evo.evo_fecha8 = txt_fecha8.Text.ToUpper();
+                evo.evo_hora8 = txt_hora8.Text.ToUpper();
+                evo.evo_notasEvolucion8 = txt_notas8.Text.ToUpper();
+                evo.evo_fecha9 = txt_fecha9.Text.ToUpper();
+                evo.evo_hora9 = txt_hora9.Text.ToUpper();
+                evo.evo_notasEvolucion9 = txt_notas9.Text.ToUpper();
+                evo.evo_fecha10 = txt_fecha10.Text.ToUpper();
+                evo.evo_hora10 = txt_hora10.Text.ToUpper();
+                evo.evo_notasEvolucion10 = txt_notas10.Text.ToUpper();
+                evo.evo_fecha11 = txt_fecha11.Text.ToUpper();
+                evo.evo_hora11 = txt_hora11.Text.ToUpper();
+                evo.evo_notasEvolucion11 = txt_notas11.Text.ToUpper();
+                evo.evo_fecha12 = txt_fecha12.Text.ToUpper();
+                evo.evo_hora12 = txt_hora12.Text.ToUpper();
+                evo.evo_notasEvolucion12 = txt_notas12.Text.ToUpper();
+                evo.evo_fecha13 = txt_fecha13.Text.ToUpper();
+                evo.evo_hora13 = txt_hora13.Text.ToUpper();
+                evo.evo_notasEvolucion13 = txt_notas13.Text.ToUpper();
+                evo.evo_fecha14 = txt_fecha14.Text.ToUpper();
+                evo.evo_hora14 = txt_hora14.Text.ToUpper();
+                evo.evo_notasEvolucion14 = txt_notas14.Text.ToUpper();
+                evo.evo_fecha15 = txt_fecha15.Text.ToUpper();
+                evo.evo_hora15 = txt_hora15.Text.ToUpper();
+                evo.evo_notasEvolucion15 = txt_notas15.Text.ToUpper();
 
                 //C. Captura de Datos Prescripcion
-                evo.evo_farmacoIndicaciones1 = txt_farmacoterapia1.Text;
-                evo.evo_adminisFarmacos1 = txt_administracion1.Text;
-                evo.evo_farmacoIndicaciones2 = txt_farmacoterapia2.Text;
-                evo.evo_adminisFarmacos2 = txt_administracion2.Text;
-                evo.evo_farmacoIndicaciones3 = txt_farmacoterapia3.Text;
-                evo.evo_adminisFarmacos3 = txt_administracion3.Text;
-                evo.evo_farmacoIndicaciones4 = txt_farmacoterapia4.Text;
-                evo.evo_adminisFarmacos4 = txt_administracion4.Text;
-                evo.evo_farmacoIndicaciones5 = txt_farmacoterapia5.Text;
-                evo.evo_adminisFarmacos5 = txt_administracion5.Text;
-                evo.evo_farmacoIndicaciones6 = txt_farmacoterapia6.Text;
-                evo.evo_adminisFarmacos6 = txt_administracion6.Text;
-                evo.evo_farmacoIndicaciones7 = txt_farmacoterapia7.Text;
-                evo.evo_adminisFarmacos7 = txt_administracion7.Text;
-                evo.evo_farmacoIndicaciones8 = txt_farmacoterapia8.Text;
-                evo.evo_adminisFarmacos8 = txt_administracion8.Text;
-                evo.evo_farmacoIndicaciones9 = txt_farmacoterapia9.Text;
-                evo.evo_adminisFarmacos9 = txt_administracion9.Text;
-                evo.evo_farmacoIndicaciones10 = txt_farmacoterapia10.Text;
-                evo.evo_adminisFarmacos10 = txt_administracion10.Text;
-                evo.evo_farmacoIndicaciones11 = txt_farmacoterapia11.Text;
-                evo.evo_adminisFarmacos11 = txt_administracion11.Text;
-                evo.evo_farmacoIndicaciones12 = txt_farmacoterapia12.Text;
-                evo.evo_adminisFarmacos12 = txt_administracion12.Text;
-                evo.evo_farmacoIndicaciones13 = txt_farmacoterapia13.Text;
-                evo.evo_adminisFarmacos13 = txt_administracion13.Text;
-                evo.evo_farmacoIndicaciones14 = txt_farmacoterapia14.Text;
-                evo.evo_adminisFarmacos14 = txt_administracion14.Text;
-                evo.evo_farmacoIndicaciones15 = txt_farmacoterapia15.Text;
-                evo.evo_adminisFarmacos15 = txt_administracion15.Text;
+                evo.evo_farmacoIndicaciones1 = txt_farmacoterapia1.Text.ToUpper();
+                evo.evo_adminisFarmacos1 = txt_administracion1.Text.ToUpper();
+                evo.evo_farmacoIndicaciones2 = txt_farmacoterapia2.Text.ToUpper();
+                evo.evo_adminisFarmacos2 = txt_administracion2.Text.ToUpper();
+                evo.evo_farmacoIndicaciones3 = txt_farmacoterapia3.Text.ToUpper();
+                evo.evo_adminisFarmacos3 = txt_administracion3.Text.ToUpper();
+                evo.evo_farmacoIndicaciones4 = txt_farmacoterapia4.Text.ToUpper();
+                evo.evo_adminisFarmacos4 = txt_administracion4.Text.ToUpper();
+                evo.evo_farmacoIndicaciones5 = txt_farmacoterapia5.Text.ToUpper();
+                evo.evo_adminisFarmacos5 = txt_administracion5.Text.ToUpper();
+                evo.evo_farmacoIndicaciones6 = txt_farmacoterapia6.Text.ToUpper();
+                evo.evo_adminisFarmacos6 = txt_administracion6.Text.ToUpper();
+                evo.evo_farmacoIndicaciones7 = txt_farmacoterapia7.Text.ToUpper();
+                evo.evo_adminisFarmacos7 = txt_administracion7.Text.ToUpper();
+                evo.evo_farmacoIndicaciones8 = txt_farmacoterapia8.Text.ToUpper();
+                evo.evo_adminisFarmacos8 = txt_administracion8.Text.ToUpper();
+                evo.evo_farmacoIndicaciones9 = txt_farmacoterapia9.Text.ToUpper();
+                evo.evo_adminisFarmacos9 = txt_administracion9.Text.ToUpper();
+                evo.evo_farmacoIndicaciones10 = txt_farmacoterapia10.Text.ToUpper();
+                evo.evo_adminisFarmacos10 = txt_administracion10.Text.ToUpper();
+                evo.evo_farmacoIndicaciones11 = txt_farmacoterapia11.Text.ToUpper();
+                evo.evo_adminisFarmacos11 = txt_administracion11.Text.ToUpper();
+                evo.evo_farmacoIndicaciones12 = txt_farmacoterapia12.Text.ToUpper();
+                evo.evo_adminisFarmacos12 = txt_administracion12.Text.ToUpper();
+                evo.evo_farmacoIndicaciones13 = txt_farmacoterapia13.Text.ToUpper();
+                evo.evo_adminisFarmacos13 = txt_administracion13.Text.ToUpper();
+                evo.evo_farmacoIndicaciones14 = txt_farmacoterapia14.Text.ToUpper();
+                evo.evo_adminisFarmacos14 = txt_administracion14.Text.ToUpper();
+                evo.evo_farmacoIndicaciones15 = txt_farmacoterapia15.Text.ToUpper();
+                evo.evo_adminisFarmacos15 = txt_administracion15.Text.ToUpper();
 
                 CN_Evolucion.ModificarEvolucion(evo);
 
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos Modificados Exitosamente')", true);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", "swal('Exito!', 'Datos Modifcados Exitosamente', 'success')", true);
+                Timer1.Enabled = true;
                 Response.Redirect("~/Template/Views/PacientesEvolucion.aspx");
             }
             catch (Exception)
             {
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos No Modificados')", true);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", "swal('Error!', 'Datos No Modificados', 'error')", true);
             }
         }
 
@@ -577,6 +586,11 @@ namespace SistemaECU911.Template.Views
         }
 
         protected void btn_cancelar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Template/Views/Inicio.aspx");
+        }
+
+        protected void Timer1_Tick(object sender, EventArgs e)
         {
             Response.Redirect("~/Template/Views/Inicio.aspx");
         }

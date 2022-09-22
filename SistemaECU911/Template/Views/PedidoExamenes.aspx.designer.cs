@@ -24,6 +24,15 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.ScriptManager ScriptManager1;
 
         /// <summary>
+        /// Control Timer1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.Timer Timer1;
+
+        /// <summary>
         /// Control UpdatePanel1.
         /// </summary>
         /// <remarks>
@@ -1239,13 +1248,13 @@ namespace SistemaECU911.Template.Views
         protected global::System.Web.UI.WebControls.CheckBox ckb_fosfaAcidaTotal;
 
         /// <summary>
-        /// Control fosfaAcidaProstatica.
+        /// Control ckb_fosfaAcidaProstatica.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox fosfaAcidaProstatica;
+        protected global::System.Web.UI.WebControls.CheckBox ckb_fosfaAcidaProstatica;
 
         /// <summary>
         /// Control ckb_torch.
@@ -1516,5 +1525,14 @@ namespace SistemaECU911.Template.Views
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btn_cancelar;
+
+        /// <summary>
+        /// Control btn_imprimir.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_imprimir;
     }
 }

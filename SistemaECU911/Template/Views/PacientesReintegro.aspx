@@ -1,8 +1,14 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Template/Views/Principal.Master" AutoEventWireup="true" CodeBehind="PacientesReintegro.aspx.cs" Inherits="SistemaECU911.Template.Views.PacientesReintegro" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+
+<asp:Content ID="Content1" ContentPlaceHolderID="Title" runat="server">
+    Pacientes HCL Reintegro | Sistema Médico
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="Head" runat="server">
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="Message" runat="server">
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="Content" runat="server">
     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>
             <div class="container" style="background-color: white">
@@ -49,7 +55,7 @@
                                             </asp:TemplateField>
                                             <asp:TemplateField HeaderText="FECHA MODIFICACION">
                                                 <ItemTemplate>
-                                                    <asp:Label ID="rein_fecha_hora" runat="server" Text='<%#Eval("rein_fecha_hora")%>'></asp:Label>
+                                                    <asp:Label ID="rein_fecha_hora" runat="server" Text='<%#Eval("rein_fecha_horaModificacion")%>'></asp:Label>
                                                 </ItemTemplate>
                                             </asp:TemplateField>
                                             <asp:TemplateField ItemStyle-Width="17" HeaderStyle-Width="17" HeaderText="">
@@ -71,7 +77,7 @@
         </ContentTemplate>
     </asp:UpdatePanel>
 </asp:Content>
-<asp:Content ID="Content3" ContentPlaceHolderID="footer" runat="server">
+<asp:Content ID="Content5" ContentPlaceHolderID="Footer" runat="server">
     <script>
         $('document').ready(function () {
         $('#<%=grvPacientesReintegro.ClientID%>').prepend($("<thead></thead>").append($(this).find("tr:first"))).DataTable({

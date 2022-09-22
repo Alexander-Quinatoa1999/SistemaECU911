@@ -5,6 +5,7 @@ using iTextSharp.text;
 using iTextSharp.text.pdf;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -21,7 +22,7 @@ namespace SistemaECU911.Template.Views
         DataClassesECU911DataContext dc = new DataClassesECU911DataContext();
 
         private Tbl_Personas per = new Tbl_Personas();
-
+        private Tbl_Empresa emp = new Tbl_Empresa();
         private Tbl_Retiro reti = new Tbl_Retiro();
 
         protected void Page_Load(object sender, EventArgs e)
@@ -34,12 +35,16 @@ namespace SistemaECU911.Template.Views
                     reti = CN_Retiro.ObtenerRetiroPorId(codigo);
                     int personasid = Convert.ToInt32(reti.Per_id.ToString());
                     per = CN_HistorialMedico.ObtenerPersonasxId(personasid);
-                    
+                    int empresaid = Convert.ToInt32(reti.Emp_id.ToString());
+                    emp = CN_HistorialMedico.ObtenerEmpresaxId(empresaid);
+
 
                     btn_guardar.Text = "Actualizar";
 
-                    if (per != null)
+                    if (per != null || emp != null)
                     {
+
+                        txt_numHClinica.ReadOnly = true;
 
                         //ANTECEDENTES PERSONALES
                         //----------- ACCIDENTES DE TRABAJO ( DESCRIPCIÓN) -----------
@@ -514,6 +519,8 @@ namespace SistemaECU911.Template.Views
                         }
 
                         //A
+                        txt_nomEmpresa.Text = emp.Emp_nombre.ToString();
+                        txt_rucEmp.Text = emp.Emp_RUC.ToString();
                         txt_priNombre.Text = per.Per_priNombre.ToString();
                         txt_segNombre.Text = per.Per_segNombre.ToString();
                         txt_priApellido.Text = per.Per_priApellido.ToString();
@@ -635,7 +642,7 @@ namespace SistemaECU911.Template.Views
                         }
                     }
                 }
-
+                Timer1.Enabled = false;
                 cargarProfesional();
                 defaultValidaciones();
 
@@ -660,9 +667,7 @@ namespace SistemaECU911.Template.Views
             List<string> lista = new List<string>();
             try
             {
-                string oConn = @"Data Source=sql8004.site4now.net;Initial Catalog=db_a8b7d4_sistemaecu911;Persist Security Info=True;User ID=db_a8b7d4_sistemaecu911_admin;Password=SistemaECU911";
-
-                SqlConnection con = new SqlConnection(oConn);
+                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ToString());
                 con.Open();
                 SqlCommand cmd = new SqlCommand("select top(10) Per_Cedula from Tbl_Personas where Per_Cedula LIKE + @Cedula + '%'", con);
                 cmd.Parameters.AddWithValue("@Cedula", prefixText);
@@ -748,9 +753,7 @@ namespace SistemaECU911.Template.Views
             List<string> lista = new List<string>();
             try
             {
-                string oConn = @"Data Source=sql8004.site4now.net;Initial Catalog=db_a8b7d4_sistemaecu911;Persist Security Info=True;User ID=db_a8b7d4_sistemaecu911_admin;Password=SistemaECU911";
-
-                SqlConnection con = new SqlConnection(oConn);
+                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ToString());
                 con.Open();
                 SqlCommand cmd = new SqlCommand("select top(10) dec10 from cie10 where dec10 LIKE + @Name + '%'", con);
                 cmd.Parameters.AddWithValue("@Name", prefixText);
@@ -838,8 +841,10 @@ namespace SistemaECU911.Template.Views
             try
             {
                 per = CN_HistorialMedico.ObtenerIdPersonasxCedula(txt_numHClinica.Text);
-
                 int perso = Convert.ToInt32(per.Per_id.ToString());
+
+                per = CN_HistorialMedico.ObtenerIdEmpresaxCedula(txt_numHClinica.Text);
+                int empre = Convert.ToInt32(per.Emp_id.ToString());
 
                 reti = new Tbl_Retiro();
 
@@ -1063,84 +1068,84 @@ namespace SistemaECU911.Template.Views
                 }
 
                 //A.
-                reti.ret_ciiu = txt_ciiu.Text;
-                reti.ret_numArchivo = txt_numArchivo.Text;
-                reti.ret_fechSalida = txt_fechaSalida.Text;
-                reti.ret_fechIniLaboral = txt_fechaIniLabores.Text;
-                reti.ret_tiempo = txt_tiempo.Text;
-                reti.ret_actividades = txt_actividades1.Text;
-                reti.ret_facRiesgo = txt_facRiesgo1.Text;
-                reti.ret_actividades2 = txt_actividades2.Text;
-                reti.ret_facRiesgo2 = txt_facRiesgo2.Text;
-                reti.ret_actividades3 = txt_actividades3.Text;
-                reti.ret_facRiesgo3 = txt_facRiesgo3.Text;
+                reti.ret_ciiu = txt_ciiu.Text.ToUpper();
+                reti.ret_numArchivo = txt_numArchivo.Text.ToUpper();
+                reti.ret_fechSalida = txt_fechaSalida.Text.ToUpper();
+                reti.ret_fechIniLaboral = txt_fechaIniLabores.Text.ToUpper();
+                reti.ret_tiempo = txt_tiempo.Text.ToUpper();
+                reti.ret_actividades = txt_actividades1.Text.ToUpper();
+                reti.ret_facRiesgo = txt_facRiesgo1.Text.ToUpper();
+                reti.ret_actividades2 = txt_actividades2.Text.ToUpper();
+                reti.ret_facRiesgo2 = txt_facRiesgo2.Text.ToUpper();
+                reti.ret_actividades3 = txt_actividades3.Text.ToUpper();
+                reti.ret_facRiesgo3 = txt_facRiesgo3.Text.ToUpper();
 
                 //B.
-                reti.ret_descripAntCliQuiru = txt_descripcionantiqui.Text;
-                reti.ret_EspecifiCalificadoIESSAcciTrabajo = txt_EspecifiCalificadoIESSAcciTrabajo.Text;
-                reti.ret_fechaCalificadoIESSAcciTrabajo = txt_fechaCalificadoIESSAcciTrabajo.Text;
-                reti.ret_observacionesAcciTrabajo = txt_observacionesAcciTrabajo.Text;
-                reti.ret_detalleAcciTrabajo = txt_detalleAcciTrabajo.Text;
+                reti.ret_descripAntCliQuiru = txt_descripcionantiqui.Text.ToUpper();
+                reti.ret_EspecifiCalificadoIESSAcciTrabajo = txt_EspecifiCalificadoIESSAcciTrabajo.Text.ToUpper();
+                reti.ret_fechaCalificadoIESSAcciTrabajo = txt_fechaCalificadoIESSAcciTrabajo.Text.ToUpper();
+                reti.ret_observacionesAcciTrabajo = txt_observacionesAcciTrabajo.Text.ToUpper();
+                reti.ret_detalleAcciTrabajo = txt_detalleAcciTrabajo.Text.ToUpper();
 
-                reti.ret_EspecifiCalificadoIESSEnferProfesionales = txt_EspecifiCalificadoIESSEnferProfesionales.Text;
-                reti.ret_fechaCalificadoIESSEnferProfesionales = txt_fechaCalificadoIESSEnferProfesionales.Text;
-                reti.ret_observacionesEnferProfesionales = txt_observacionesEnferProfesionales.Text;
-                reti.ret_detalleEnferProfesionales = txt_detalleEnferProfesionales.Text;
+                reti.ret_EspecifiCalificadoIESSEnferProfesionales = txt_EspecifiCalificadoIESSEnferProfesionales.Text.ToUpper();
+                reti.ret_fechaCalificadoIESSEnferProfesionales = txt_fechaCalificadoIESSEnferProfesionales.Text.ToUpper();
+                reti.ret_observacionesEnferProfesionales = txt_observacionesEnferProfesionales.Text.ToUpper();
+                reti.ret_detalleEnferProfesionales = txt_detalleEnferProfesionales.Text.ToUpper();
 
                 //C
-                reti.ret_preArterial = txt_preArterial.Text;
-                reti.ret_temperatura = txt_temperatura.Text;
-                reti.ret_frecCardiacan = txt_freCardica.Text;
-                reti.ret_satOxigenon = txt_satOxigeno.Text;
-                reti.ret_frecRespiratorian = txt_freRespiratoria.Text;
-                reti.ret_peson = txt_peso.Text;
-                reti.ret_tallan = txt_talla.Text;
-                reti.ret_indMasCorporaln = txt_indMasCorporal.Text;
-                reti.ret_perAbdominaln = txt_perAbdominal.Text;
+                reti.ret_preArterial = txt_preArterial.Text.ToUpper();
+                reti.ret_temperatura = txt_temperatura.Text.ToUpper();
+                reti.ret_frecCardiacan = txt_freCardica.Text.ToUpper();
+                reti.ret_satOxigenon = txt_satOxigeno.Text.ToUpper();
+                reti.ret_frecRespiratorian = txt_freRespiratoria.Text.ToUpper();
+                reti.ret_peson = txt_peso.Text.ToUpper();
+                reti.ret_tallan = txt_talla.Text.ToUpper();
+                reti.ret_indMasCorporaln = txt_indMasCorporal.Text.ToUpper();
+                reti.ret_perAbdominaln = txt_perAbdominal.Text.ToUpper();
 
                 //D.                    
-                reti.ret_observaExaFisRegional = txt_obervexamenfisicoregional.Text;
+                reti.ret_observaExaFisRegional = txt_obervexamenfisicoregional.Text.ToUpper();
 
                 //E.
-                reti.ret_examen = txt_examen.Text;
-                reti.ret_fecha = txt_fechaexamen.Text;
-                reti.ret_resultados = txt_resultadoexamen.Text;
-                reti.ret_examen2 = txt_examen2.Text;
-                reti.ret_fecha2 = txt_fechaexamen2.Text;
-                reti.ret_resultados2 = txt_resultadoexamen2.Text;
-                reti.ret_observacionesResExaGenEspRiesTrabajo = txt_observacionexamen.Text;
+                reti.ret_examen = txt_examen.Text.ToUpper();
+                reti.ret_fecha = txt_fechaexamen.Text.ToUpper();
+                reti.ret_resultados = txt_resultadoexamen.Text.ToUpper();
+                reti.ret_examen2 = txt_examen2.Text.ToUpper();
+                reti.ret_fecha2 = txt_fechaexamen2.Text.ToUpper();
+                reti.ret_resultados2 = txt_resultadoexamen2.Text.ToUpper();
+                reti.ret_observacionesResExaGenEspRiesTrabajo = txt_observacionexamen.Text.ToUpper();
 
                 //F
-                reti.ret_descripcionDiagnostico = txt_descripdiagnostico.Text;
-                reti.ret_cie = txt_cie.Text;
-                reti.ret_descripcionDiagnostico2 = txt_descripdiagnostico2.Text;
-                reti.ret_cie2 = txt_cie2.Text;
-                reti.ret_descripcionDiagnostico3 = txt_descripdiagnostico3.Text;
-                reti.ret_cie3 = txt_cie3.Text;
+                reti.ret_descripcionDiagnostico = txt_descripdiagnostico.Text.ToUpper();
+                reti.ret_cie = txt_cie.Text.ToUpper();
+                reti.ret_descripcionDiagnostico2 = txt_descripdiagnostico2.Text.ToUpper();
+                reti.ret_cie2 = txt_cie2.Text.ToUpper();
+                reti.ret_descripcionDiagnostico3 = txt_descripdiagnostico3.Text.ToUpper();
+                reti.ret_cie3 = txt_cie3.Text.ToUpper();
 
                 //G
-                reti.ret_observacionesEvaMedRetiro = txt_obserevamed.Text;
+                reti.ret_observacionesEvaMedRetiro = txt_obserevamed.Text.ToUpper();
 
                 //H.
-                reti.ret_descripcionRecoTratamiento = txt_descripciontratamientoretiro.Text;
+                reti.ret_descripcionRecoTratamiento = txt_descripciontratamientoretiro.Text.ToUpper();
 
                 //I.
-                reti.ret_fecha_hora = txt_fechahora.Text;
+                reti.ret_fechaHoraGuardado = Convert.ToDateTime(txt_fechahora.Text.ToUpper());
                 reti.prof_id = Convert.ToInt32(ddl_profesional.SelectedValue);
-                reti.ret_cod = txt_codigoDatProf.Text;
+                reti.ret_cod = txt_codigoDatProf.Text.ToUpper();
                 reti.Per_id = perso;
+                reti.Emp_id = empre;
 
                 CN_Retiro.GuardarrRetiro(reti);
 
                 //Mensaje de confirmacion
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos Guardados Exitosamente')", true);
-
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", "swal('Exito!', 'Datos Guardados Exitosamente', 'success')", true);
                 Response.Redirect("~/Template/Views/PacientesRetiro.aspx");
 
             }
             catch (Exception)
             {
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos No Guardados')", true);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", "swal('Error!', 'Datos No Guardados', 'error')", true);
             }
 
         }
@@ -1577,81 +1582,81 @@ namespace SistemaECU911.Template.Views
                 }
 
                 //A.
-                reti.ret_ciiu = txt_ciiu.Text;
-                reti.ret_numArchivo = txt_numArchivo.Text;
-                reti.ret_fechSalida = txt_fechaSalida.Text;
-                reti.ret_fechIniLaboral = txt_fechaIniLabores.Text;
-                reti.ret_tiempo = txt_tiempo.Text;
-                reti.ret_actividades = txt_actividades1.Text;
-                reti.ret_facRiesgo = txt_facRiesgo1.Text;
-                reti.ret_actividades2 = txt_actividades2.Text;
-                reti.ret_facRiesgo2 = txt_facRiesgo2.Text;
-                reti.ret_actividades3 = txt_actividades3.Text;
-                reti.ret_facRiesgo3 = txt_facRiesgo3.Text;
+                reti.ret_ciiu = txt_ciiu.Text.ToUpper();
+                reti.ret_numArchivo = txt_numArchivo.Text.ToUpper();
+                reti.ret_fechSalida = txt_fechaSalida.Text.ToUpper();
+                reti.ret_fechIniLaboral = txt_fechaIniLabores.Text.ToUpper();
+                reti.ret_tiempo = txt_tiempo.Text.ToUpper();
+                reti.ret_actividades = txt_actividades1.Text.ToUpper();
+                reti.ret_facRiesgo = txt_facRiesgo1.Text.ToUpper();
+                reti.ret_actividades2 = txt_actividades2.Text.ToUpper();
+                reti.ret_facRiesgo2 = txt_facRiesgo2.Text.ToUpper();
+                reti.ret_actividades3 = txt_actividades3.Text.ToUpper();
+                reti.ret_facRiesgo3 = txt_facRiesgo3.Text.ToUpper();
 
                 //B.
-                reti.ret_descripAntCliQuiru = txt_descripcionantiqui.Text;
-                reti.ret_EspecifiCalificadoIESSAcciTrabajo = txt_EspecifiCalificadoIESSAcciTrabajo.Text;
-                reti.ret_fechaCalificadoIESSAcciTrabajo = txt_fechaCalificadoIESSAcciTrabajo.Text;
-                reti.ret_observacionesAcciTrabajo = txt_observacionesAcciTrabajo.Text;
-                reti.ret_detalleAcciTrabajo = txt_detalleAcciTrabajo.Text;
+                reti.ret_descripAntCliQuiru = txt_descripcionantiqui.Text.ToUpper();
+                reti.ret_EspecifiCalificadoIESSAcciTrabajo = txt_EspecifiCalificadoIESSAcciTrabajo.Text.ToUpper();
+                reti.ret_fechaCalificadoIESSAcciTrabajo = txt_fechaCalificadoIESSAcciTrabajo.Text.ToUpper();
+                reti.ret_observacionesAcciTrabajo = txt_observacionesAcciTrabajo.Text.ToUpper();
+                reti.ret_detalleAcciTrabajo = txt_detalleAcciTrabajo.Text.ToUpper();
 
-                reti.ret_EspecifiCalificadoIESSEnferProfesionales = txt_EspecifiCalificadoIESSEnferProfesionales.Text;
-                reti.ret_fechaCalificadoIESSEnferProfesionales = txt_fechaCalificadoIESSEnferProfesionales.Text;
-                reti.ret_observacionesEnferProfesionales = txt_observacionesEnferProfesionales.Text;
-                reti.ret_detalleEnferProfesionales = txt_detalleEnferProfesionales.Text;
+                reti.ret_EspecifiCalificadoIESSEnferProfesionales = txt_EspecifiCalificadoIESSEnferProfesionales.Text.ToUpper();
+                reti.ret_fechaCalificadoIESSEnferProfesionales = txt_fechaCalificadoIESSEnferProfesionales.Text.ToUpper();
+                reti.ret_observacionesEnferProfesionales = txt_observacionesEnferProfesionales.Text.ToUpper();
+                reti.ret_detalleEnferProfesionales = txt_detalleEnferProfesionales.Text.ToUpper();
 
                 //C
-                reti.ret_preArterial = txt_preArterial.Text;
-                reti.ret_temperatura = txt_temperatura.Text;
-                reti.ret_frecCardiacan = txt_freCardica.Text;
-                reti.ret_satOxigenon = txt_satOxigeno.Text;
-                reti.ret_frecRespiratorian = txt_freRespiratoria.Text;
-                reti.ret_peson = txt_peso.Text;
-                reti.ret_tallan = txt_talla.Text;
-                reti.ret_indMasCorporaln = txt_indMasCorporal.Text;
-                reti.ret_perAbdominaln = txt_perAbdominal.Text;
+                reti.ret_preArterial = txt_preArterial.Text.ToUpper();
+                reti.ret_temperatura = txt_temperatura.Text.ToUpper();
+                reti.ret_frecCardiacan = txt_freCardica.Text.ToUpper();
+                reti.ret_satOxigenon = txt_satOxigeno.Text.ToUpper();
+                reti.ret_frecRespiratorian = txt_freRespiratoria.Text.ToUpper();
+                reti.ret_peson = txt_peso.Text.ToUpper();
+                reti.ret_tallan = txt_talla.Text.ToUpper();
+                reti.ret_indMasCorporaln = txt_indMasCorporal.Text.ToUpper();
+                reti.ret_perAbdominaln = txt_perAbdominal.Text.ToUpper();
 
                 //D.                    
-                reti.ret_observaExaFisRegional = txt_obervexamenfisicoregional.Text;
+                reti.ret_observaExaFisRegional = txt_obervexamenfisicoregional.Text.ToUpper();
 
                 //E.
-                reti.ret_examen = txt_examen.Text;
-                reti.ret_fecha = txt_fechaexamen.Text;
-                reti.ret_resultados = txt_resultadoexamen.Text;
-                reti.ret_examen2 = txt_examen2.Text;
-                reti.ret_fecha2 = txt_fechaexamen2.Text;
-                reti.ret_resultados2 = txt_resultadoexamen2.Text;
-                reti.ret_observacionesResExaGenEspRiesTrabajo = txt_observacionexamen.Text;
+                reti.ret_examen = txt_examen.Text.ToUpper();
+                reti.ret_fecha = txt_fechaexamen.Text.ToUpper();
+                reti.ret_resultados = txt_resultadoexamen.Text.ToUpper();
+                reti.ret_examen2 = txt_examen2.Text.ToUpper();
+                reti.ret_fecha2 = txt_fechaexamen2.Text.ToUpper();
+                reti.ret_resultados2 = txt_resultadoexamen2.Text.ToUpper();
+                reti.ret_observacionesResExaGenEspRiesTrabajo = txt_observacionexamen.Text.ToUpper();
 
                 //F
-                reti.ret_descripcionDiagnostico = txt_descripdiagnostico.Text;
-                reti.ret_cie = txt_cie.Text;
-                reti.ret_descripcionDiagnostico2 = txt_descripdiagnostico2.Text;
-                reti.ret_cie2 = txt_cie2.Text;
-                reti.ret_descripcionDiagnostico3 = txt_descripdiagnostico3.Text;
-                reti.ret_cie3 = txt_cie3.Text;
+                reti.ret_descripcionDiagnostico = txt_descripdiagnostico.Text.ToUpper();
+                reti.ret_cie = txt_cie.Text.ToUpper();
+                reti.ret_descripcionDiagnostico2 = txt_descripdiagnostico2.Text.ToUpper();
+                reti.ret_cie2 = txt_cie2.Text.ToUpper();
+                reti.ret_descripcionDiagnostico3 = txt_descripdiagnostico3.Text.ToUpper();
+                reti.ret_cie3 = txt_cie3.Text.ToUpper();
 
                 //G
-                reti.ret_observacionesEvaMedRetiro = txt_obserevamed.Text;
+                reti.ret_observacionesEvaMedRetiro = txt_obserevamed.Text.ToUpper();
 
                 //H.
-                reti.ret_descripcionRecoTratamiento = txt_descripciontratamientoretiro.Text;
+                reti.ret_descripcionRecoTratamiento = txt_descripciontratamientoretiro.Text.ToUpper();
 
                 //I.
-                reti.ret_fecha_hora = txt_fechahora.Text;
+                reti.ret_fecha_horaModificacion = Convert.ToDateTime(txt_fechahora.Text.ToUpper());
                 reti.prof_id = Convert.ToInt32(ddl_profesional.SelectedValue);
-                reti.ret_cod = txt_codigoDatProf.Text;
+                reti.ret_cod = txt_codigoDatProf.Text.ToUpper();
 
                 CN_Retiro.ModificarRetiro(reti);
 
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos Modificados Exitosamente')", true);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", "swal('Exito!', 'Datos Modificados Exitosamente', 'success')", true);
                 Response.Redirect("~/Template/Views/PacientesRetiro.aspx");
 
             }
             catch (Exception)
             {
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos No Modificados')", true);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", "swal('Error!', 'Datos No Modificados', 'error')", true);
             }
         }
 
@@ -1679,6 +1684,11 @@ namespace SistemaECU911.Template.Views
         }
 
         protected void btn_cancelar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Template/Views/Inicio.aspx");
+        }
+
+        protected void Timer1_Tick(object sender, EventArgs e)
         {
             Response.Redirect("~/Template/Views/Inicio.aspx");
         }

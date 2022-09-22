@@ -34,7 +34,7 @@ namespace SistemaECU911.Template.Views
                             p.Per_priNombre,
                             p.Per_priApellido,
                             ped.pedExa_fechaHoraGuardado,
-                            ped.pedExa_fecha_hora
+                            ped.pedExa_fecha_horaModificacion
                         };
 
             grvPacientesPedidoExamenes.DataSource = query.ToList();

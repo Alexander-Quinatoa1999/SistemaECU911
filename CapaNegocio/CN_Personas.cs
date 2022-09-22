@@ -14,7 +14,7 @@ namespace CapaNegocio
         private static DataClassesECU911DataContext dc = new DataClassesECU911DataContext();
 
         //metodo traer para todos los usuarios x ID
-        public static Tbl_Personas obtenerPersonasxCedula(int ced)
+        public static Tbl_Personas obtenerPersonasxCedula(string ced)
         {
             var perid = dc.Tbl_Personas.FirstOrDefault(per => per.Per_cedula.Equals(ced) && per.Per_estado == "A");
             return perid;
@@ -31,6 +31,13 @@ namespace CapaNegocio
         {
             var lista = dc.Tbl_Empresa.Where(prof => prof.Emp_estado == "A");
             return lista.ToList();
+        }
+
+        //metodo para verificar si existe la cedula
+        public static bool autentificarxCedula(string cedula)
+        {
+            var cedu = dc.Tbl_Personas.Any(ced => ced.Per_estado == "A" && ced.Per_cedula.Equals(cedula));
+            return cedu;
         }
 
         // Metodo para guardar datos de las persona

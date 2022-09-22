@@ -54,8 +54,22 @@ namespace CapaNegocio
             return perid;
         }
 
+        //metodo traer para todos las empresas x ID
+        public static Tbl_Empresa ObtenerEmpresaxId(int empresaid)
+        {
+            var empid = dc.Tbl_Empresa.FirstOrDefault(emp => emp.Emp_id.Equals(empresaid) && emp.Emp_estado == "A");
+            return empid;
+        }
+
         //metodo traer para todos los ID personas x cedula
         public static Tbl_Personas ObtenerIdPersonasxCedula(string perced)
+        {
+            var perid = dc.Tbl_Personas.FirstOrDefault(per => per.Per_cedula.Equals(perced) && per.Per_estado == "A");
+            return perid;
+        }
+
+        //metodo traer para todos el ID de la empresa x cedula
+        public static Tbl_Personas ObtenerIdEmpresaxCedula(string perced)
         {
             var perid = dc.Tbl_Personas.FirstOrDefault(per => per.Per_cedula.Equals(perced) && per.Per_estado == "A");
             return perid;
@@ -88,7 +102,6 @@ namespace CapaNegocio
             try
             {
                 fichasmedicas.estado = "A";
-                fichasmedicas.fechaHoraGuardado = DateTime.Now;
                 dc.Tbl_FichasMedicas.InsertOnSubmit(fichasmedicas);
                 dc.SubmitChanges();
             }

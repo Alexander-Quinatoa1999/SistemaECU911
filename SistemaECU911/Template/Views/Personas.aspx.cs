@@ -54,12 +54,13 @@ namespace SistemaECU911.Template.Views
                         {
                             txt_fechaIngresoTrabajo.Text = Convert.ToDateTime(per.Per_fechInicioTrabajo).ToString("yyyy-MM-dd");
                         }
-                        txt_puestoTrabajo.Text = per.Per_puestoTrabajo.ToString();                        
-                        txt_cargo.Text = per.Per_cargoOcupacion.ToString();
-                        txt_area.Text = per.Per_areaTrabajo.ToString();
+                        ddl_puestoTrabajo.Text = per.Per_puestoTrabajo.ToString();                        
+                        ddl_cargo.Text = per.Per_cargoOcupacion.ToString();
+                        ddl_area.Text = per.Per_areaTrabajo.ToString();
                         ddl_estado.Text = per.Per_estado.ToString();
                     }
                 }
+                Timer1.Enabled = false;
                 CargarZonales();
                 Validaciones();
             }
@@ -73,34 +74,43 @@ namespace SistemaECU911.Template.Views
         private void GuardarPersona()
         {
             try
-            {
-                per = new Tbl_Personas();
+            {   
+                bool existeCedula = CN_Personas.autentificarxCedula(txt_cedula.Text);
 
-                per.Per_priNombre = txt_priNombre.Text;
-                per.Per_segNombre = txt_segNombre.Text;
-                per.Per_priApellido = txt_priApellido.Text;
-                per.Per_segApellido = txt_segApellido.Text;
-                per.Per_cedula = txt_cedula.Text;
-                per.Per_fechaNacimiento = txt_fechaNacimiento.Text;
-                per.Per_genero = ddl_genero.Text;
-                per.Emp_id = Convert.ToInt32(ddl_zonal.Text);
-                per.Per_fechInicioTrabajo = txt_fechaIngresoTrabajo.Text;
-                per.Per_puestoTrabajo = txt_puestoTrabajo.Text;                
-                per.Per_cargoOcupacion = txt_cargo.Text;
-                per.Per_areaTrabajo = txt_area.Text;
-                per.Per_estado = ddl_estado.Text;
+                if (existeCedula)
+                {
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", "swal('Error!','El paciente ya existe !! Verifique el número de cedula', 'error')", true);
+                }
+                else
+                {
+                    per = new Tbl_Personas();
 
-                CN_Personas.GuardarPersona(per);
+                    per.Per_priNombre = txt_priNombre.Text.ToUpper();
+                    per.Per_segNombre = txt_segNombre.Text.ToUpper();
+                    per.Per_priApellido = txt_priApellido.Text.ToUpper();
+                    per.Per_segApellido = txt_segApellido.Text.ToUpper();
+                    per.Per_cedula = txt_cedula.Text.ToUpper();
+                    per.Per_fechaNacimiento = txt_fechaNacimiento.Text.ToUpper();
+                    per.Per_genero = ddl_genero.Text.ToUpper();
+                    per.Emp_id = Convert.ToInt32(ddl_zonal.Text.ToUpper());
+                    per.Per_fechInicioTrabajo = txt_fechaIngresoTrabajo.Text.ToUpper();
+                    per.Per_puestoTrabajo = ddl_puestoTrabajo.Text.ToUpper();
+                    per.Per_cargoOcupacion = ddl_cargo.Text.ToUpper();
+                    per.Per_areaTrabajo = ddl_area.Text.ToUpper();
+                    per.Per_estado = ddl_estado.Text.ToUpper();
 
-                //Mensaje de confirmacion
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos Guardados Exitosamente')", true);
+                    CN_Personas.GuardarPersona(per);
 
-                Response.Redirect("~/Template/Views/Inicio.aspx");
+                    //Mensaje de confirmacion
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", "swal('Exito!', 'Paciente Registrado Exitosamente', 'success')", true);
+
+                    Response.Redirect("~/Template/Views/Inicio.aspx");
+                }
 
             }
             catch (Exception)
             {
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos No Guardados')", true);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", "swal('Error!', 'El Paciente No Fue Registrado', 'error')", true);
             }
         }
 
@@ -108,28 +118,28 @@ namespace SistemaECU911.Template.Views
         {
             try
             {
-                per.Per_priNombre = txt_priNombre.Text;
-                per.Per_segNombre = txt_segNombre.Text;
-                per.Per_priApellido = txt_priApellido.Text;
-                per.Per_segApellido = txt_segApellido.Text;
-                per.Per_cedula = txt_cedula.Text;
-                per.Per_fechaNacimiento = txt_fechaNacimiento.Text;
-                per.Per_genero = ddl_genero.Text;
+                per.Per_priNombre = txt_priNombre.Text.ToUpper();
+                per.Per_segNombre = txt_segNombre.Text.ToUpper();
+                per.Per_priApellido = txt_priApellido.Text.ToUpper();
+                per.Per_segApellido = txt_segApellido.Text.ToUpper();
+                per.Per_cedula = txt_cedula.Text.ToUpper();
+                per.Per_fechaNacimiento = txt_fechaNacimiento.Text.ToUpper();
+                per.Per_genero = ddl_genero.Text.ToUpper();
                 per.Emp_id = Convert.ToInt32(ddl_zonal.SelectedValue);
-                per.Per_fechInicioTrabajo = txt_fechaIngresoTrabajo.Text;
-                per.Per_puestoTrabajo = txt_puestoTrabajo.Text;
-                per.Per_cargoOcupacion = txt_cargo.Text;
-                per.Per_areaTrabajo = txt_area.Text;
+                per.Per_fechInicioTrabajo = txt_fechaIngresoTrabajo.Text.ToUpper();
+                per.Per_puestoTrabajo = ddl_puestoTrabajo.Text.ToUpper();
+                per.Per_cargoOcupacion = ddl_cargo.Text.ToUpper();
+                per.Per_areaTrabajo = ddl_area.Text.ToUpper();
                 per.Per_estado = ddl_estado.SelectedValue;
 
                 CN_Personas.ModificarPersona(per);
 
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos Modificados Exitosamente')", true);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", "swal('Exito!', 'Datos Modificados Exitosamente', 'success')", true);
                 Response.Redirect("~/Template/Views/Inicio.aspx");
             }
             catch (Exception)
             {
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos No Modificados')", true);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", "swal('Error!', 'Datos No Modificados', 'error')", true);
             }
         }
 
@@ -156,6 +166,11 @@ namespace SistemaECU911.Template.Views
         }
 
         protected void btn_cancelar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Template/Views/Inicio.aspx");
+        }
+
+        protected void Timer1_Tick(object sender, EventArgs e)
         {
             Response.Redirect("~/Template/Views/Inicio.aspx");
         }

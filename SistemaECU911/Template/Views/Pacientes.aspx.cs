@@ -37,7 +37,7 @@ namespace SistemaECU911.Template.Views
                             p.Per_priApellido,
                             pro.prof_NomApe,
                             hm.fechaHoraGuardado,
-                            hm.fechaHora
+                            hm.fechaHoraModificacion
                         };
 
             grvPacientes.DataSource = query.ToList();

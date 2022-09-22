@@ -58,8 +58,6 @@ namespace SistemaECU911.Template.Views_Socio_Economico
 
                         if (sso != null)
                         {
-                            txt_fecharegistro.Text = sso.Socio_economico_fechaHora.ToString();
-
                             //Datos código y versión
                             txt_codigoinicio.Text = sso.Socio_economico_codigo_inicial.ToString();
                             txt_version.Text = sso.Socio_economico_version.ToString();
@@ -1619,24 +1617,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                 DateTime actual = DateTime.Now;
                 Calculo(naci, actual);
             }
-        }
-
-        private void Guardar_modificar_datos(int socioEconomico)
-        {
-            if (socioEconomico == 0)
-            {
-                GuardarSocioEconomico();
-            }
-            else
-            {
-                sso = CN_SocioEconomico.ObtenerSocioEconomicoPorId(socioEconomico);
-
-                if (sso != null)
-                {
-                    ModificarSocioEconomico(sso);
-                }
-            }
-        }
+        }        
 
         private void GuardarSocioEconomico()
         {
@@ -2260,186 +2241,186 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                     sso.Socio_economico_informacion_general_real_no = "SI";
                 }
 
-                sso.Socio_economico_fechaHora = txt_fecharegistro.Text;
+                sso.Socio_economico_fechaHoraGuardado = Convert.ToDateTime(txt_fecharegistro.Text.ToUpper());
 
                 //Datos código y versión
-                sso.Socio_economico_codigo_inicial = txt_codigoinicio.Text;
-                sso.Socio_economico_version = txt_version.Text;
+                sso.Socio_economico_codigo_inicial = txt_codigoinicio.Text.ToUpper();
+                sso.Socio_economico_version = txt_version.Text.ToUpper();
 
                 //Datos Generales
-                sso.Socio_economico_tipo_de_sangre = txt_tipodesangre.Text;
+                sso.Socio_economico_tipo_de_sangre = txt_tipodesangre.Text.ToUpper();
 
-                sso.Socio_economico_telefono_convencional = txt_telconvecional.Text;
-                sso.Socio_economico_telefono_celular = txt_telcelular.Text;
-                sso.Socio_economico_email = txt_email.Text;
+                sso.Socio_economico_telefono_convencional = txt_telconvecional.Text.ToUpper();
+                sso.Socio_economico_telefono_celular = txt_telcelular.Text.ToUpper();
+                sso.Socio_economico_email = txt_email.Text.ToUpper();
 
-                sso.Socio_economico_lugar_nacimiento = txt_lugarnacimiento.Text;
+                sso.Socio_economico_lugar_nacimiento = txt_lugarnacimiento.Text.ToUpper();
 
-                sso.Socio_economico_direcciondomicilio_provincia = txt_provincia.Text;
-                sso.Socio_economico_direcciondomicilio_canton = txt_canton.Text;
-                sso.Socio_economico_direcciondomicilio_parroquia = txt_parroquia.Text;
-                sso.Socio_economico_direcciondomicilio_barrio = txt_barrio.Text;
+                sso.Socio_economico_direcciondomicilio_provincia = txt_provincia.Text.ToUpper();
+                sso.Socio_economico_direcciondomicilio_canton = txt_canton.Text.ToUpper();
+                sso.Socio_economico_direcciondomicilio_parroquia = txt_parroquia.Text.ToUpper();
+                sso.Socio_economico_direcciondomicilio_barrio = txt_barrio.Text.ToUpper();
 
-                sso.Socio_economico_direcciondomicilio_calle_principal = txt_calleprincipal.Text;
-                sso.Socio_economico_direcciondomicilio_numero = txt_mumerodecasa.Text;
-                sso.Socio_economico_direcciondomicilio_calle_secundaria = txt_callesecundaria.Text;
-                sso.Socio_economico_direcciondomicilio_referencia = txt_refubicardomicilio.Text;
+                sso.Socio_economico_direcciondomicilio_calle_principal = txt_calleprincipal.Text.ToUpper();
+                sso.Socio_economico_direcciondomicilio_numero = txt_mumerodecasa.Text.ToUpper();
+                sso.Socio_economico_direcciondomicilio_calle_secundaria = txt_callesecundaria.Text.ToUpper();
+                sso.Socio_economico_direcciondomicilio_referencia = txt_refubicardomicilio.Text.ToUpper();
 
-                sso.Socio_economico_tipovivienda_otro_indique = txt_tipoviviendaotro.Text;
+                sso.Socio_economico_tipovivienda_otro_indique = txt_tipoviviendaotro.Text.ToUpper();
 
-                sso.Socio_economico_contacto_emergencia_nombres_apellidos = txt_emernomyape.Text;
-                sso.Socio_economico_contacto_emergencia_parentesco = txt_emeparentesco.Text;
-                sso.Socio_economico_contacto_emergencia_telefono = txt_emetelefono.Text;
-                sso.Socio_economico_contacto_emergencia_calle_principal = txt_emecalleprincipal.Text;
-                sso.Socio_economico_contacto_emergencia_numero_domicilio = txt_emenumdomicilio.Text;
-                sso.Socio_economico_contacto_emergencia_calle_secundaria = txt_emecallesecun.Text;
-                sso.Socio_economico_contacto_emergencia_referencia_domicilio = txt_emerefubicardomicilio.Text;
+                sso.Socio_economico_contacto_emergencia_nombres_apellidos = txt_emernomyape.Text.ToUpper();
+                sso.Socio_economico_contacto_emergencia_parentesco = txt_emeparentesco.Text.ToUpper();
+                sso.Socio_economico_contacto_emergencia_telefono = txt_emetelefono.Text.ToUpper();
+                sso.Socio_economico_contacto_emergencia_calle_principal = txt_emecalleprincipal.Text.ToUpper();
+                sso.Socio_economico_contacto_emergencia_numero_domicilio = txt_emenumdomicilio.Text.ToUpper();
+                sso.Socio_economico_contacto_emergencia_calle_secundaria = txt_emecallesecun.Text.ToUpper();
+                sso.Socio_economico_contacto_emergencia_referencia_domicilio = txt_emerefubicardomicilio.Text.ToUpper();
 
                 //Salud
-                sso.Socio_economico_posee_enfermedad = txt_poseeenfermedadprexistente.Text;
-                sso.Socio_economico_discapacidad_tipo = txt_tipodiscapacidad.Text;
-                sso.Socio_economico_discapacidad_porcentaje = txt_porcentajediscapacidad.Text;
-                sso.Socio_economico_discapacidad_carnet_conadis = txt_numcarnetconadis.Text;
-                sso.Socio_economico_discapacidad_fecha_caducidad_carnet = txt_fechacaducidadcarnet.Text;
+                sso.Socio_economico_posee_enfermedad = txt_poseeenfermedadprexistente.Text.ToUpper();
+                sso.Socio_economico_discapacidad_tipo = txt_tipodiscapacidad.Text.ToUpper();
+                sso.Socio_economico_discapacidad_porcentaje = txt_porcentajediscapacidad.Text.ToUpper();
+                sso.Socio_economico_discapacidad_carnet_conadis = txt_numcarnetconadis.Text.ToUpper();
+                sso.Socio_economico_discapacidad_fecha_caducidad_carnet = txt_fechacaducidadcarnet.Text.ToUpper();
 
-                sso.Socio_economico_estado_gestacion_tiempo = txt_gestacióntiempo.Text;
-                sso.Socio_economico_fecha_tentativa_parto = txt_fechatentativaparto.Text;
+                sso.Socio_economico_estado_gestacion_tiempo = txt_gestacióntiempo.Text.ToUpper();
+                sso.Socio_economico_fecha_tentativa_parto = txt_fechatentativaparto.Text.ToUpper();
 
-                sso.Socio_economico_periodo_lactancia_fecha_culminacion = txt_fechaculmicacionlactancia.Text;
+                sso.Socio_economico_periodo_lactancia_fecha_culminacion = txt_fechaculmicacionlactancia.Text.ToUpper();
 
-                sso.Socio_economico_enfermedad_cronica_cual = txt_cualcatastrofica.Text;
+                sso.Socio_economico_enfermedad_cronica_cual = txt_cualcatastrofica.Text.ToUpper();
 
-                sso.Socio_economico_enfermedad_rara_cual = txt_enfermedadraracual.Text;
+                sso.Socio_economico_enfermedad_rara_cual = txt_enfermedadraracual.Text.ToUpper();
 
-                sso.Socio_economico_consume_alcohol_frecuencia = txt_causaconsumoalcohol.Text;
-                sso.Socio_economico_consume_alcohol_tiempo_consumo = txt_tiempoconsumoalcohol.Text;
+                sso.Socio_economico_consume_alcohol_frecuencia = txt_causaconsumoalcohol.Text.ToUpper();
+                sso.Socio_economico_consume_alcohol_tiempo_consumo = txt_tiempoconsumoalcohol.Text.ToUpper();
 
-                sso.Socio_economico_consume_tabaco_frecuencia_consumo = txt_frecuenciaconsumotabaco.Text;
-                sso.Socio_economico_consume_tabaco_tiempo_consumo = txt_tiempoconsumotabaco.Text;
+                sso.Socio_economico_consume_tabaco_frecuencia_consumo = txt_frecuenciaconsumotabaco.Text.ToUpper();
+                sso.Socio_economico_consume_tabaco_tiempo_consumo = txt_tiempoconsumotabaco.Text.ToUpper();
 
-                sso.Socio_economico_consume_sustancia_psicotropica_tipo = txt_sustanciapsicotropicatipo.Text;
-                sso.Socio_economico_consume_sustancia_psicotropica_frecuencia_consumo = txt_sustanciapsicotropicafrecuencia.Text;
+                sso.Socio_economico_consume_sustancia_psicotropica_tipo = txt_sustanciapsicotropicatipo.Text.ToUpper();
+                sso.Socio_economico_consume_sustancia_psicotropica_frecuencia_consumo = txt_sustanciapsicotropicafrecuencia.Text.ToUpper();
 
                 //Situacion económica del servidor
-                sso.Socio_economico_numero_miembro_economicamente_activos = txt_miembroactivoseconomicamente.Text;
-                sso.Socio_economico_situación_laboral_del_conyugue = txt_situacionlaboralconyugue.Text;
+                sso.Socio_economico_numero_miembro_economicamente_activos = txt_miembroactivoseconomicamente.Text.ToUpper();
+                sso.Socio_economico_situación_laboral_del_conyugue = txt_situacionlaboralconyugue.Text.ToUpper();
 
-                sso.Socio_economico_total_ingresos_mensuales_proyectados_1 = txt_totalingresos1.Text;
-                sso.Socio_economico_ayuda1 = txt_ayuda1.Text;
-                sso.Socio_economico_otros1 = txt_otros1.Text;
-                sso.Socio_economico_total_egresos_alimentacion = txt_alimentación.Text;
+                sso.Socio_economico_total_ingresos_mensuales_proyectados_1 = txt_totalingresos1.Text.ToUpper();
+                sso.Socio_economico_ayuda1 = txt_ayuda1.Text.ToUpper();
+                sso.Socio_economico_otros1 = txt_otros1.Text.ToUpper();
+                sso.Socio_economico_total_egresos_alimentacion = txt_alimentación.Text.ToUpper();
 
-                sso.Socio_economico_total_ingresos_mensuales_proyectados_2 = txt_totalingresos2.Text;
-                sso.Socio_economico_ayuda2 = txt_ayuda2.Text;
-                sso.Socio_economico_otros2 = txt_otros2.Text;
-                sso.Socio_economico_total_egresos_vivienda = txt_vivienda.Text;
+                sso.Socio_economico_total_ingresos_mensuales_proyectados_2 = txt_totalingresos2.Text.ToUpper();
+                sso.Socio_economico_ayuda2 = txt_ayuda2.Text.ToUpper();
+                sso.Socio_economico_otros2 = txt_otros2.Text.ToUpper();
+                sso.Socio_economico_total_egresos_vivienda = txt_vivienda.Text.ToUpper();
 
-                sso.Socio_economico_total_ingresos_mensuales_proyectados_3 = txt_totalingresos3.Text;
-                sso.Socio_economico_ayuda3 = txt_ayuda3.Text;
-                sso.Socio_economico_otros3 = txt_otros3.Text;
-                sso.Socio_economico_total_egresos_educacion = txt_educación.Text;
+                sso.Socio_economico_total_ingresos_mensuales_proyectados_3 = txt_totalingresos3.Text.ToUpper();
+                sso.Socio_economico_ayuda3 = txt_ayuda3.Text.ToUpper();
+                sso.Socio_economico_otros3 = txt_otros3.Text.ToUpper();
+                sso.Socio_economico_total_egresos_educacion = txt_educación.Text.ToUpper();
 
-                sso.Socio_economico_total_ingresos_mensuales_proyectados_4 = txt_totalingresos4.Text;
-                sso.Socio_economico_ayuda4 = txt_ayuda4.Text;
-                sso.Socio_economico_otros4 = txt_otros4.Text;
-                sso.Socio_economico_total_egresos_servicios_basicos = txt_serviciosbasicos.Text;
+                sso.Socio_economico_total_ingresos_mensuales_proyectados_4 = txt_totalingresos4.Text.ToUpper();
+                sso.Socio_economico_ayuda4 = txt_ayuda4.Text.ToUpper();
+                sso.Socio_economico_otros4 = txt_otros4.Text.ToUpper();
+                sso.Socio_economico_total_egresos_servicios_basicos = txt_serviciosbasicos.Text.ToUpper();
 
-                sso.Socio_economico_total_ingresos_mensuales_proyectados_5 = txt_totalingresos5.Text;
-                sso.Socio_economico_ayuda5 = txt_ayuda5.Text;
-                sso.Socio_economico_otros5 = txt_otros5.Text;
-                sso.Socio_economico_total_egresos_salud = txt_salud.Text;
+                sso.Socio_economico_total_ingresos_mensuales_proyectados_5 = txt_totalingresos5.Text.ToUpper();
+                sso.Socio_economico_ayuda5 = txt_ayuda5.Text.ToUpper();
+                sso.Socio_economico_otros5 = txt_otros5.Text.ToUpper();
+                sso.Socio_economico_total_egresos_salud = txt_salud.Text.ToUpper();
 
-                sso.Socio_economico_total_ingresos_mensuales_proyectados_6 = txt_totalingresos6.Text;
-                sso.Socio_economico_ayuda6 = txt_ayuda6.Text;
-                sso.Socio_economico_otros6 = txt_otros6.Text;
-                sso.Socio_economico_total_egresos_movilizacion = txt_movilización.Text;
+                sso.Socio_economico_total_ingresos_mensuales_proyectados_6 = txt_totalingresos6.Text.ToUpper();
+                sso.Socio_economico_ayuda6 = txt_ayuda6.Text.ToUpper();
+                sso.Socio_economico_otros6 = txt_otros6.Text.ToUpper();
+                sso.Socio_economico_total_egresos_movilizacion = txt_movilización.Text.ToUpper();
 
-                sso.Socio_economico_total_ingresos_mensuales_proyectados_7 = txt_totalingresos7.Text;
-                sso.Socio_economico_ayuda7 = txt_ayuda7.Text;
-                sso.Socio_economico_otros7 = txt_otros7.Text;
-                sso.Socio_economico_total_egresos_deudas = txt_deudas.Text;
+                sso.Socio_economico_total_ingresos_mensuales_proyectados_7 = txt_totalingresos7.Text.ToUpper();
+                sso.Socio_economico_ayuda7 = txt_ayuda7.Text.ToUpper();
+                sso.Socio_economico_otros7 = txt_otros7.Text.ToUpper();
+                sso.Socio_economico_total_egresos_deudas = txt_deudas.Text.ToUpper();
 
-                sso.Socio_economico_total_ingresos_mensuales_proyectados_8 = txt_totalingresos8.Text;
-                sso.Socio_economico_ayuda8 = txt_ayuda8.Text;
-                sso.Socio_economico_otros8 = txt_otros8.Text;
-                sso.Socio_economico_total_egresos_pensiones_otros = txt_otrospensiones.Text;
+                sso.Socio_economico_total_ingresos_mensuales_proyectados_8 = txt_totalingresos8.Text.ToUpper();
+                sso.Socio_economico_ayuda8 = txt_ayuda8.Text.ToUpper();
+                sso.Socio_economico_otros8 = txt_otros8.Text.ToUpper();
+                sso.Socio_economico_total_egresos_pensiones_otros = txt_otrospensiones.Text.ToUpper();
 
-                sso.Socio_economico_descripcion_mueble_valor_casa = txt_biencasa.Text;
-                sso.Socio_economico_descripcion_mueble_valor_departamento = txt_biendepartamento.Text;
-                sso.Socio_economico_descripcion_mueble_valor_vehiculo = txt_bienvehiculo.Text;
-                sso.Socio_economico_descripcion_mueble_valor_terreno = txt_bienterreno.Text;
-                sso.Socio_economico_descripcion_mueble_valor_negocio = txt_bienegocio.Text;
-                sso.Socio_economico_descripcion_mueble_valor_muebles_enseres = txt_bienmueblesyenseres.Text;
+                sso.Socio_economico_descripcion_mueble_valor_casa = txt_biencasa.Text.ToUpper();
+                sso.Socio_economico_descripcion_mueble_valor_departamento = txt_biendepartamento.Text.ToUpper();
+                sso.Socio_economico_descripcion_mueble_valor_vehiculo = txt_bienvehiculo.Text.ToUpper();
+                sso.Socio_economico_descripcion_mueble_valor_terreno = txt_bienterreno.Text.ToUpper();
+                sso.Socio_economico_descripcion_mueble_valor_negocio = txt_bienegocio.Text.ToUpper();
+                sso.Socio_economico_descripcion_mueble_valor_muebles_enseres = txt_bienmueblesyenseres.Text.ToUpper();
 
-                sso.Socio_economico_caracteristica_vivienda_descripcion_otra_especifique = txt_otrodescripcionviviendafamilia.Text;
-                sso.Socio_economico_caracteristica_vivienda_tenencia_otra_especifique = txt_otratenencia.Text;
-                sso.Socio_economico_caracteristica_vivienda_tipo_otro_especifique = txt_otrotipodecasa.Text;
-                sso.Socio_economico_caracteristica_vivienda_distribucion_otro_especifique = txt_otradistribucioncasa.Text;
+                sso.Socio_economico_caracteristica_vivienda_descripcion_otra_especifique = txt_otrodescripcionviviendafamilia.Text.ToUpper();
+                sso.Socio_economico_caracteristica_vivienda_tenencia_otra_especifique = txt_otratenencia.Text.ToUpper();
+                sso.Socio_economico_caracteristica_vivienda_tipo_otro_especifique = txt_otrotipodecasa.Text.ToUpper();
+                sso.Socio_economico_caracteristica_vivienda_distribucion_otro_especifique = txt_otradistribucioncasa.Text.ToUpper();
 
                 //Información Familiar
-                sso.Socio_economico_nombres_apellidos_familiar1 = txt_nomapellidos1.Text;
-                sso.Socio_economico_parentesco_familiar1 = txt_parentesco1.Text;
-                sso.Socio_economico_fecha_nacimiento_familiar1 = txt_fechanacimiento1.Text;
-                sso.Socio_economico_edad_familiar1 = txt_edad1.Text;
+                sso.Socio_economico_nombres_apellidos_familiar1 = txt_nomapellidos1.Text.ToUpper();
+                sso.Socio_economico_parentesco_familiar1 = txt_parentesco1.Text.ToUpper();
+                sso.Socio_economico_fecha_nacimiento_familiar1 = txt_fechanacimiento1.Text.ToUpper();
+                sso.Socio_economico_edad_familiar1 = txt_edad1.Text.ToUpper();
 
-                sso.Socio_economico_nombres_apellidos_familiar2 = txt_nomapellidos2.Text;
-                sso.Socio_economico_parentesco_familiar2 = txt_parentesco2.Text;
-                sso.Socio_economico_fecha_nacimiento_familiar2 = txt_fechanacimiento2.Text;
-                sso.Socio_economico_edad_familiar2 = txt_edad2.Text;
+                sso.Socio_economico_nombres_apellidos_familiar2 = txt_nomapellidos2.Text.ToUpper();
+                sso.Socio_economico_parentesco_familiar2 = txt_parentesco2.Text.ToUpper();
+                sso.Socio_economico_fecha_nacimiento_familiar2 = txt_fechanacimiento2.Text.ToUpper();
+                sso.Socio_economico_edad_familiar2 = txt_edad2.Text.ToUpper();
 
-                sso.Socio_economico_nombres_apellidos_familiar3 = txt_nomapellidos3.Text;
-                sso.Socio_economico_parentesco_familiar3 = txt_parentesco3.Text;
-                sso.Socio_economico_fecha_nacimiento_familiar3 = txt_fechanacimiento3.Text;
-                sso.Socio_economico_edad_familiar3 = txt_edad3.Text;
+                sso.Socio_economico_nombres_apellidos_familiar3 = txt_nomapellidos3.Text.ToUpper();
+                sso.Socio_economico_parentesco_familiar3 = txt_parentesco3.Text.ToUpper();
+                sso.Socio_economico_fecha_nacimiento_familiar3 = txt_fechanacimiento3.Text.ToUpper();
+                sso.Socio_economico_edad_familiar3 = txt_edad3.Text.ToUpper();
 
-                sso.Socio_economico_nombres_apellidos_familiar4 = txt_nomapellidos4.Text;
-                sso.Socio_economico_parentesco_familiar4 = txt_parentesco4.Text;
-                sso.Socio_economico_fecha_nacimiento_familiar4 = txt_fechanacimiento4.Text;
-                sso.Socio_economico_edad_familiar4 = txt_edad4.Text;
+                sso.Socio_economico_nombres_apellidos_familiar4 = txt_nomapellidos4.Text.ToUpper();
+                sso.Socio_economico_parentesco_familiar4 = txt_parentesco4.Text.ToUpper();
+                sso.Socio_economico_fecha_nacimiento_familiar4 = txt_fechanacimiento4.Text.ToUpper();
+                sso.Socio_economico_edad_familiar4 = txt_edad4.Text.ToUpper();
 
-                sso.Socio_economico_nombres_apellidos_familiar5 = txt_nomapellidos5.Text;
-                sso.Socio_economico_parentesco_familiar5 = txt_parentesco5.Text;
-                sso.Socio_economico_fecha_nacimiento_familiar5 = txt_fechanacimiento5.Text;
-                sso.Socio_economico_edad_familiar5 = txt_edad5.Text;
+                sso.Socio_economico_nombres_apellidos_familiar5 = txt_nomapellidos5.Text.ToUpper();
+                sso.Socio_economico_parentesco_familiar5 = txt_parentesco5.Text.ToUpper();
+                sso.Socio_economico_fecha_nacimiento_familiar5 = txt_fechanacimiento5.Text.ToUpper();
+                sso.Socio_economico_edad_familiar5 = txt_edad5.Text.ToUpper();
 
-                sso.Socio_economico_nombres_apellidos_familiar_discapacidad1 = txt_familiardiscapacitadonomape1.Text;
-                sso.Socio_economico_fecha_caducidad_carnet_familiar_discapacidad1 = txt_familiardiscapacitadofechacaducidadcarnet1.Text;
-                sso.Socio_economico_familiar_discapacidad_tipo1 = txt_familiardiscapacitadotipodiscapacidad1.Text;
-                sso.Socio_economico_familiar_discapacidad_porcentaje1 = txt_familiardiscapacitadoporcentajediscapacidad1.Text;
-                sso.Socio_economico_familiar_discapacidad_parentesco1 = txt_familiardiscapacitadoparentesco1.Text;
-                sso.Socio_economico_familiar_discapacidad_fecha_nacimiento1 = txt_familiardiscapacitadofechanacimiento1.Text;
+                sso.Socio_economico_nombres_apellidos_familiar_discapacidad1 = txt_familiardiscapacitadonomape1.Text.ToUpper();
+                sso.Socio_economico_fecha_caducidad_carnet_familiar_discapacidad1 = txt_familiardiscapacitadofechacaducidadcarnet1.Text.ToUpper();
+                sso.Socio_economico_familiar_discapacidad_tipo1 = txt_familiardiscapacitadotipodiscapacidad1.Text.ToUpper();
+                sso.Socio_economico_familiar_discapacidad_porcentaje1 = txt_familiardiscapacitadoporcentajediscapacidad1.Text.ToUpper();
+                sso.Socio_economico_familiar_discapacidad_parentesco1 = txt_familiardiscapacitadoparentesco1.Text.ToUpper();
+                sso.Socio_economico_familiar_discapacidad_fecha_nacimiento1 = txt_familiardiscapacitadofechanacimiento1.Text.ToUpper();
 
-                sso.Socio_economico_nombres_apellidos_familiar_discapacidad2 = txt_familiardiscapacitadonomape2.Text;
-                sso.Socio_economico_fecha_caducidad_carnet_familiar_discapacidad2 = txt_familiardiscapacitadofechacaducidadcarnet2.Text;
-                sso.Socio_economico_familiar_discapacidad_tipo2 = txt_familiardiscapacitadotipodiscapacidad2.Text;
-                sso.Socio_economico_familiar_discapacidad_porcentaje2 = txt_familiardiscapacitadoporcentajediscapacidad2.Text;
-                sso.Socio_economico_familiar_discapacidad_parentesco2 = txt_familiardiscapacitadoparentesco2.Text;
-                sso.Socio_economico_familiar_discapacidad_fecha_nacimiento2 = txt_familiardiscapacitadofechanacimiento2.Text;
+                sso.Socio_economico_nombres_apellidos_familiar_discapacidad2 = txt_familiardiscapacitadonomape2.Text.ToUpper();
+                sso.Socio_economico_fecha_caducidad_carnet_familiar_discapacidad2 = txt_familiardiscapacitadofechacaducidadcarnet2.Text.ToUpper();
+                sso.Socio_economico_familiar_discapacidad_tipo2 = txt_familiardiscapacitadotipodiscapacidad2.Text.ToUpper();
+                sso.Socio_economico_familiar_discapacidad_porcentaje2 = txt_familiardiscapacitadoporcentajediscapacidad2.Text.ToUpper();
+                sso.Socio_economico_familiar_discapacidad_parentesco2 = txt_familiardiscapacitadoparentesco2.Text.ToUpper();
+                sso.Socio_economico_familiar_discapacidad_fecha_nacimiento2 = txt_familiardiscapacitadofechanacimiento2.Text.ToUpper();
 
-                sso.Socio_economico_registrar_dependencia_familiar_MT_tiempo = txt_dependenciaministeriotrabajotiempo.Text;
-                sso.Socio_economico_registrar_dependencia_familiar_MT_numero_carnetMSP = txt_numcarnetMSP.Text;
-                sso.Socio_economico_a_cargo_familiar_enfermedad_catastrofica_rara_tiempo = txt_acargofamiliarenfermedadraratiempo.Text;
-                sso.Socio_economico_a_cargo_familiar_enfermedad_catastrofica_rara_tipoenfermedad = txt_familiarenfermedadraratipo.Text;
+                sso.Socio_economico_registrar_dependencia_familiar_MT_tiempo = txt_dependenciaministeriotrabajotiempo.Text.ToUpper();
+                sso.Socio_economico_registrar_dependencia_familiar_MT_numero_carnetMSP = txt_numcarnetMSP.Text.ToUpper();
+                sso.Socio_economico_a_cargo_familiar_enfermedad_catastrofica_rara_tiempo = txt_acargofamiliarenfermedadraratiempo.Text.ToUpper();
+                sso.Socio_economico_a_cargo_familiar_enfermedad_catastrofica_rara_tipoenfermedad = txt_familiarenfermedadraratipo.Text.ToUpper();
 
                 //Actividad tiempo libre
-                sso.Socio_economico_otro_especifique = txt_otraactividad.Text;
-                sso.Socio_economico_actividad_economica_adicional_detalle = txt_actividadeconomicadetalle.Text;
-                sso.Socio_economico_actividad_economica_adicional_tiempo_destina = txt_actividadeconomicatiempodestina.Text;
-                sso.Socio_economico_actividad_economica_adicional_hace_tiempo = txt_actividadeconomicatiemporealiza.Text;
-                sso.Socio_economico_actividad_deportiva_especificar = txt_especifiquedeporte.Text;
-                sso.Socio_economico_actividad_deportiva_frecuencia = txt_frecuenciadeporte.Text;
-                sso.Socio_economico_actividad_deportiva_edad = txt_edadpracticadeporte.Text;
-                sso.Socio_economico_lesion_tipo = txt_tipolesion.Text;
-                sso.Socio_economico_lesion_edad = txt_edadlesion.Text;
+                sso.Socio_economico_otro_especifique = txt_otraactividad.Text.ToUpper();
+                sso.Socio_economico_actividad_economica_adicional_detalle = txt_actividadeconomicadetalle.Text.ToUpper();
+                sso.Socio_economico_actividad_economica_adicional_tiempo_destina = txt_actividadeconomicatiempodestina.Text.ToUpper();
+                sso.Socio_economico_actividad_economica_adicional_hace_tiempo = txt_actividadeconomicatiemporealiza.Text.ToUpper();
+                sso.Socio_economico_actividad_deportiva_especificar = txt_especifiquedeporte.Text.ToUpper();
+                sso.Socio_economico_actividad_deportiva_frecuencia = txt_frecuenciadeporte.Text.ToUpper();
+                sso.Socio_economico_actividad_deportiva_edad = txt_edadpracticadeporte.Text.ToUpper();
+                sso.Socio_economico_lesion_tipo = txt_tipolesion.Text.ToUpper();
+                sso.Socio_economico_lesion_edad = txt_edadlesion.Text.ToUpper();
 
                 //Informacion para uso de bienestar familiar
-                sso.Socio_economico_evaluacion_relacion_familiar_porque = txt_relacionfamiliarporque.Text;
-                sso.Socio_economico_evaluacion_relacion_pareja_porque = txt_relacionparejaporque.Text;
-                sso.Socio_economico_evaluacion_relacion_hijos_porque = txt_relacionconhijosporque.Text;
-                sso.Socio_economico_problemas_familiares_observaciones = txt_observacionesfamiliares.Text;
-                sso.Socio_economico_nivel_salud_familia_porque = txt_nivelsaludfamiliarporque.Text;
-                sso.Socio_economico_familia_observaciones = txt_observacionesgenerales.Text;
-                sso.Socio_economico_informacion_adicional = txt_informacionadicional.Text;
+                sso.Socio_economico_evaluacion_relacion_familiar_porque = txt_relacionfamiliarporque.Text.ToUpper();
+                sso.Socio_economico_evaluacion_relacion_pareja_porque = txt_relacionparejaporque.Text.ToUpper();
+                sso.Socio_economico_evaluacion_relacion_hijos_porque = txt_relacionconhijosporque.Text.ToUpper();
+                sso.Socio_economico_problemas_familiares_observaciones = txt_observacionesfamiliares.Text.ToUpper();
+                sso.Socio_economico_nivel_salud_familia_porque = txt_nivelsaludfamiliarporque.Text.ToUpper();
+                sso.Socio_economico_familia_observaciones = txt_observacionesgenerales.Text.ToUpper();
+                sso.Socio_economico_informacion_adicional = txt_informacionadicional.Text.ToUpper();
 
                 ////Obtener datos de la imagen
                 ////Devolver el tamaño de la imagen que se esta enviando
@@ -2461,14 +2442,14 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                 CN_SocioEconomico.GuardarSocioEconomico(sso);
 
                 //Mensaje de confirmacion
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos Guardados Exitosamente')", true);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", "swal('Exito!', 'Datos Guardados Exitosamente', 'success')", true);
 
                 Response.Redirect("~/Template/Views_Socio_Economico/PacientesSocioEconomico.aspx");
 
             }
             catch (Exception)
             {
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos No Guardados')", true);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", "swal('Error!', 'Datos No Guardados', 'error')", true);
             }
         }
 
@@ -2476,186 +2457,186 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         {
             try
             {
-                sso.Socio_economico_fechaHora = txt_fecharegistro.Text;
+                sso.Socio_economico_fechaHoraModificacion = Convert.ToDateTime(txt_fecharegistro.Text.ToUpper());
 
                 //Datos código y versión
-                sso.Socio_economico_codigo_inicial = txt_codigoinicio.Text;
-                sso.Socio_economico_version = txt_version.Text;
+                sso.Socio_economico_codigo_inicial = txt_codigoinicio.Text.ToUpper();
+                sso.Socio_economico_version = txt_version.Text.ToUpper();
 
                 //Datos Generales
-                sso.Socio_economico_tipo_de_sangre = txt_tipodesangre.Text;
+                sso.Socio_economico_tipo_de_sangre = txt_tipodesangre.Text.ToUpper();
 
-                sso.Socio_economico_telefono_convencional = txt_telconvecional.Text;
-                sso.Socio_economico_telefono_celular = txt_telcelular.Text;
-                sso.Socio_economico_email = txt_email.Text;
+                sso.Socio_economico_telefono_convencional = txt_telconvecional.Text.ToUpper();
+                sso.Socio_economico_telefono_celular = txt_telcelular.Text.ToUpper();
+                sso.Socio_economico_email = txt_email.Text.ToUpper();
 
-                sso.Socio_economico_lugar_nacimiento = txt_lugarnacimiento.Text;
+                sso.Socio_economico_lugar_nacimiento = txt_lugarnacimiento.Text.ToUpper();
 
-                sso.Socio_economico_direcciondomicilio_provincia = txt_provincia.Text;
-                sso.Socio_economico_direcciondomicilio_canton = txt_canton.Text;
-                sso.Socio_economico_direcciondomicilio_parroquia = txt_parroquia.Text;
-                sso.Socio_economico_direcciondomicilio_barrio = txt_barrio.Text;
+                sso.Socio_economico_direcciondomicilio_provincia = txt_provincia.Text.ToUpper();
+                sso.Socio_economico_direcciondomicilio_canton = txt_canton.Text.ToUpper();
+                sso.Socio_economico_direcciondomicilio_parroquia = txt_parroquia.Text.ToUpper();
+                sso.Socio_economico_direcciondomicilio_barrio = txt_barrio.Text.ToUpper();
 
-                sso.Socio_economico_direcciondomicilio_calle_principal = txt_calleprincipal.Text;
-                sso.Socio_economico_direcciondomicilio_numero = txt_mumerodecasa.Text;
-                sso.Socio_economico_direcciondomicilio_calle_secundaria = txt_callesecundaria.Text;
-                sso.Socio_economico_direcciondomicilio_referencia = txt_refubicardomicilio.Text;
+                sso.Socio_economico_direcciondomicilio_calle_principal = txt_calleprincipal.Text.ToUpper();
+                sso.Socio_economico_direcciondomicilio_numero = txt_mumerodecasa.Text.ToUpper();
+                sso.Socio_economico_direcciondomicilio_calle_secundaria = txt_callesecundaria.Text.ToUpper();
+                sso.Socio_economico_direcciondomicilio_referencia = txt_refubicardomicilio.Text.ToUpper();
 
-                sso.Socio_economico_tipovivienda_otro_indique = txt_tipoviviendaotro.Text;
+                sso.Socio_economico_tipovivienda_otro_indique = txt_tipoviviendaotro.Text.ToUpper();
 
-                sso.Socio_economico_contacto_emergencia_nombres_apellidos = txt_emernomyape.Text;
-                sso.Socio_economico_contacto_emergencia_parentesco = txt_emeparentesco.Text;
-                sso.Socio_economico_contacto_emergencia_telefono = txt_emetelefono.Text;
-                sso.Socio_economico_contacto_emergencia_calle_principal = txt_emecalleprincipal.Text;
-                sso.Socio_economico_contacto_emergencia_numero_domicilio = txt_emenumdomicilio.Text;
-                sso.Socio_economico_contacto_emergencia_calle_secundaria = txt_emecallesecun.Text;
-                sso.Socio_economico_contacto_emergencia_referencia_domicilio = txt_emerefubicardomicilio.Text;
+                sso.Socio_economico_contacto_emergencia_nombres_apellidos = txt_emernomyape.Text.ToUpper();
+                sso.Socio_economico_contacto_emergencia_parentesco = txt_emeparentesco.Text.ToUpper();
+                sso.Socio_economico_contacto_emergencia_telefono = txt_emetelefono.Text.ToUpper();
+                sso.Socio_economico_contacto_emergencia_calle_principal = txt_emecalleprincipal.Text.ToUpper();
+                sso.Socio_economico_contacto_emergencia_numero_domicilio = txt_emenumdomicilio.Text.ToUpper();
+                sso.Socio_economico_contacto_emergencia_calle_secundaria = txt_emecallesecun.Text.ToUpper();
+                sso.Socio_economico_contacto_emergencia_referencia_domicilio = txt_emerefubicardomicilio.Text.ToUpper();
 
                 //Salud
-                sso.Socio_economico_posee_enfermedad = txt_poseeenfermedadprexistente.Text;
-                sso.Socio_economico_discapacidad_tipo = txt_tipodiscapacidad.Text;
-                sso.Socio_economico_discapacidad_porcentaje = txt_porcentajediscapacidad.Text;
-                sso.Socio_economico_discapacidad_carnet_conadis = txt_numcarnetconadis.Text;
-                sso.Socio_economico_discapacidad_fecha_caducidad_carnet = txt_fechacaducidadcarnet.Text;
+                sso.Socio_economico_posee_enfermedad = txt_poseeenfermedadprexistente.Text.ToUpper();
+                sso.Socio_economico_discapacidad_tipo = txt_tipodiscapacidad.Text.ToUpper();
+                sso.Socio_economico_discapacidad_porcentaje = txt_porcentajediscapacidad.Text.ToUpper();
+                sso.Socio_economico_discapacidad_carnet_conadis = txt_numcarnetconadis.Text.ToUpper();
+                sso.Socio_economico_discapacidad_fecha_caducidad_carnet = txt_fechacaducidadcarnet.Text.ToUpper();
 
-                sso.Socio_economico_estado_gestacion_tiempo = txt_gestacióntiempo.Text;
-                sso.Socio_economico_fecha_tentativa_parto = txt_fechatentativaparto.Text;
+                sso.Socio_economico_estado_gestacion_tiempo = txt_gestacióntiempo.Text.ToUpper();
+                sso.Socio_economico_fecha_tentativa_parto = txt_fechatentativaparto.Text.ToUpper();
 
-                sso.Socio_economico_periodo_lactancia_fecha_culminacion = txt_fechaculmicacionlactancia.Text;
+                sso.Socio_economico_periodo_lactancia_fecha_culminacion = txt_fechaculmicacionlactancia.Text.ToUpper();
 
-                sso.Socio_economico_enfermedad_cronica_cual = txt_cualcatastrofica.Text;
+                sso.Socio_economico_enfermedad_cronica_cual = txt_cualcatastrofica.Text.ToUpper();
 
-                sso.Socio_economico_enfermedad_rara_cual = txt_enfermedadraracual.Text;
+                sso.Socio_economico_enfermedad_rara_cual = txt_enfermedadraracual.Text.ToUpper();
 
-                sso.Socio_economico_consume_alcohol_frecuencia = txt_causaconsumoalcohol.Text;
-                sso.Socio_economico_consume_alcohol_tiempo_consumo = txt_tiempoconsumoalcohol.Text;
+                sso.Socio_economico_consume_alcohol_frecuencia = txt_causaconsumoalcohol.Text.ToUpper();
+                sso.Socio_economico_consume_alcohol_tiempo_consumo = txt_tiempoconsumoalcohol.Text.ToUpper();
 
-                sso.Socio_economico_consume_tabaco_frecuencia_consumo = txt_frecuenciaconsumotabaco.Text;
-                sso.Socio_economico_consume_tabaco_tiempo_consumo = txt_tiempoconsumotabaco.Text;
+                sso.Socio_economico_consume_tabaco_frecuencia_consumo = txt_frecuenciaconsumotabaco.Text.ToUpper();
+                sso.Socio_economico_consume_tabaco_tiempo_consumo = txt_tiempoconsumotabaco.Text.ToUpper();
 
-                sso.Socio_economico_consume_sustancia_psicotropica_tipo = txt_sustanciapsicotropicatipo.Text;
-                sso.Socio_economico_consume_sustancia_psicotropica_frecuencia_consumo = txt_sustanciapsicotropicafrecuencia.Text;
+                sso.Socio_economico_consume_sustancia_psicotropica_tipo = txt_sustanciapsicotropicatipo.Text.ToUpper();
+                sso.Socio_economico_consume_sustancia_psicotropica_frecuencia_consumo = txt_sustanciapsicotropicafrecuencia.Text.ToUpper();
 
                 //Situacion económica del servidor
-                sso.Socio_economico_numero_miembro_economicamente_activos = txt_miembroactivoseconomicamente.Text;
-                sso.Socio_economico_situación_laboral_del_conyugue = txt_situacionlaboralconyugue.Text;
+                sso.Socio_economico_numero_miembro_economicamente_activos = txt_miembroactivoseconomicamente.Text.ToUpper();
+                sso.Socio_economico_situación_laboral_del_conyugue = txt_situacionlaboralconyugue.Text.ToUpper();
 
-                sso.Socio_economico_total_ingresos_mensuales_proyectados_1 = txt_totalingresos1.Text;
-                sso.Socio_economico_ayuda1 = txt_ayuda1.Text;
-                sso.Socio_economico_otros1 = txt_otros1.Text;
-                sso.Socio_economico_total_egresos_alimentacion = txt_alimentación.Text;
+                sso.Socio_economico_total_ingresos_mensuales_proyectados_1 = txt_totalingresos1.Text.ToUpper();
+                sso.Socio_economico_ayuda1 = txt_ayuda1.Text.ToUpper();
+                sso.Socio_economico_otros1 = txt_otros1.Text.ToUpper();
+                sso.Socio_economico_total_egresos_alimentacion = txt_alimentación.Text.ToUpper();
 
-                sso.Socio_economico_total_ingresos_mensuales_proyectados_2 = txt_totalingresos2.Text;
-                sso.Socio_economico_ayuda2 = txt_ayuda2.Text;
-                sso.Socio_economico_otros2 = txt_otros2.Text;
-                sso.Socio_economico_total_egresos_vivienda = txt_vivienda.Text;
+                sso.Socio_economico_total_ingresos_mensuales_proyectados_2 = txt_totalingresos2.Text.ToUpper();
+                sso.Socio_economico_ayuda2 = txt_ayuda2.Text.ToUpper();
+                sso.Socio_economico_otros2 = txt_otros2.Text.ToUpper();
+                sso.Socio_economico_total_egresos_vivienda = txt_vivienda.Text.ToUpper();
 
-                sso.Socio_economico_total_ingresos_mensuales_proyectados_3 = txt_totalingresos3.Text;
-                sso.Socio_economico_ayuda3 = txt_ayuda3.Text;
-                sso.Socio_economico_otros3 = txt_otros3.Text;
-                sso.Socio_economico_total_egresos_educacion = txt_educación.Text;
+                sso.Socio_economico_total_ingresos_mensuales_proyectados_3 = txt_totalingresos3.Text.ToUpper();
+                sso.Socio_economico_ayuda3 = txt_ayuda3.Text.ToUpper();
+                sso.Socio_economico_otros3 = txt_otros3.Text.ToUpper();
+                sso.Socio_economico_total_egresos_educacion = txt_educación.Text.ToUpper();
 
-                sso.Socio_economico_total_ingresos_mensuales_proyectados_4 = txt_totalingresos4.Text;
-                sso.Socio_economico_ayuda4 = txt_ayuda4.Text;
-                sso.Socio_economico_otros4 = txt_otros4.Text;
-                sso.Socio_economico_total_egresos_servicios_basicos = txt_serviciosbasicos.Text;
+                sso.Socio_economico_total_ingresos_mensuales_proyectados_4 = txt_totalingresos4.Text.ToUpper();
+                sso.Socio_economico_ayuda4 = txt_ayuda4.Text.ToUpper();
+                sso.Socio_economico_otros4 = txt_otros4.Text.ToUpper();
+                sso.Socio_economico_total_egresos_servicios_basicos = txt_serviciosbasicos.Text.ToUpper();
 
-                sso.Socio_economico_total_ingresos_mensuales_proyectados_5 = txt_totalingresos5.Text;
-                sso.Socio_economico_ayuda5 = txt_ayuda5.Text;
-                sso.Socio_economico_otros5 = txt_otros5.Text;
-                sso.Socio_economico_total_egresos_salud = txt_salud.Text;
+                sso.Socio_economico_total_ingresos_mensuales_proyectados_5 = txt_totalingresos5.Text.ToUpper();
+                sso.Socio_economico_ayuda5 = txt_ayuda5.Text.ToUpper();
+                sso.Socio_economico_otros5 = txt_otros5.Text.ToUpper();
+                sso.Socio_economico_total_egresos_salud = txt_salud.Text.ToUpper();
 
-                sso.Socio_economico_total_ingresos_mensuales_proyectados_6 = txt_totalingresos6.Text;
-                sso.Socio_economico_ayuda6 = txt_ayuda6.Text;
-                sso.Socio_economico_otros6 = txt_otros6.Text;
-                sso.Socio_economico_total_egresos_movilizacion = txt_movilización.Text;
+                sso.Socio_economico_total_ingresos_mensuales_proyectados_6 = txt_totalingresos6.Text.ToUpper();
+                sso.Socio_economico_ayuda6 = txt_ayuda6.Text.ToUpper();
+                sso.Socio_economico_otros6 = txt_otros6.Text.ToUpper();
+                sso.Socio_economico_total_egresos_movilizacion = txt_movilización.Text.ToUpper();
 
-                sso.Socio_economico_total_ingresos_mensuales_proyectados_7 = txt_totalingresos7.Text;
-                sso.Socio_economico_ayuda7 = txt_ayuda7.Text;
-                sso.Socio_economico_otros7 = txt_otros7.Text;
-                sso.Socio_economico_total_egresos_deudas = txt_deudas.Text;
+                sso.Socio_economico_total_ingresos_mensuales_proyectados_7 = txt_totalingresos7.Text.ToUpper();
+                sso.Socio_economico_ayuda7 = txt_ayuda7.Text.ToUpper();
+                sso.Socio_economico_otros7 = txt_otros7.Text.ToUpper();
+                sso.Socio_economico_total_egresos_deudas = txt_deudas.Text.ToUpper();
 
-                sso.Socio_economico_total_ingresos_mensuales_proyectados_8 = txt_totalingresos8.Text;
-                sso.Socio_economico_ayuda8 = txt_ayuda8.Text;
-                sso.Socio_economico_otros8 = txt_otros8.Text;
-                sso.Socio_economico_total_egresos_pensiones_otros = txt_otrospensiones.Text;
+                sso.Socio_economico_total_ingresos_mensuales_proyectados_8 = txt_totalingresos8.Text.ToUpper();
+                sso.Socio_economico_ayuda8 = txt_ayuda8.Text.ToUpper();
+                sso.Socio_economico_otros8 = txt_otros8.Text.ToUpper();
+                sso.Socio_economico_total_egresos_pensiones_otros = txt_otrospensiones.Text.ToUpper();
 
-                sso.Socio_economico_descripcion_mueble_valor_casa = txt_biencasa.Text;
-                sso.Socio_economico_descripcion_mueble_valor_departamento = txt_biendepartamento.Text;
-                sso.Socio_economico_descripcion_mueble_valor_vehiculo = txt_bienvehiculo.Text;
-                sso.Socio_economico_descripcion_mueble_valor_terreno = txt_bienterreno.Text;
-                sso.Socio_economico_descripcion_mueble_valor_negocio = txt_bienegocio.Text;
-                sso.Socio_economico_descripcion_mueble_valor_muebles_enseres = txt_bienmueblesyenseres.Text;
+                sso.Socio_economico_descripcion_mueble_valor_casa = txt_biencasa.Text.ToUpper();
+                sso.Socio_economico_descripcion_mueble_valor_departamento = txt_biendepartamento.Text.ToUpper();
+                sso.Socio_economico_descripcion_mueble_valor_vehiculo = txt_bienvehiculo.Text.ToUpper();
+                sso.Socio_economico_descripcion_mueble_valor_terreno = txt_bienterreno.Text.ToUpper();
+                sso.Socio_economico_descripcion_mueble_valor_negocio = txt_bienegocio.Text.ToUpper();
+                sso.Socio_economico_descripcion_mueble_valor_muebles_enseres = txt_bienmueblesyenseres.Text.ToUpper();
 
-                sso.Socio_economico_caracteristica_vivienda_descripcion_otra_especifique = txt_otrodescripcionviviendafamilia.Text;
-                sso.Socio_economico_caracteristica_vivienda_tenencia_otra_especifique = txt_otratenencia.Text;
-                sso.Socio_economico_caracteristica_vivienda_tipo_otro_especifique = txt_otrotipodecasa.Text;
-                sso.Socio_economico_caracteristica_vivienda_distribucion_otro_especifique = txt_otradistribucioncasa.Text;
+                sso.Socio_economico_caracteristica_vivienda_descripcion_otra_especifique = txt_otrodescripcionviviendafamilia.Text.ToUpper();
+                sso.Socio_economico_caracteristica_vivienda_tenencia_otra_especifique = txt_otratenencia.Text.ToUpper();
+                sso.Socio_economico_caracteristica_vivienda_tipo_otro_especifique = txt_otrotipodecasa.Text.ToUpper();
+                sso.Socio_economico_caracteristica_vivienda_distribucion_otro_especifique = txt_otradistribucioncasa.Text.ToUpper();
 
                 //Información Familiar
-                sso.Socio_economico_nombres_apellidos_familiar1 = txt_nomapellidos1.Text;
-                sso.Socio_economico_parentesco_familiar1 = txt_parentesco1.Text;
-                sso.Socio_economico_fecha_nacimiento_familiar1 = txt_fechanacimiento1.Text;
-                sso.Socio_economico_edad_familiar1 = txt_edad1.Text;
+                sso.Socio_economico_nombres_apellidos_familiar1 = txt_nomapellidos1.Text.ToUpper();
+                sso.Socio_economico_parentesco_familiar1 = txt_parentesco1.Text.ToUpper();
+                sso.Socio_economico_fecha_nacimiento_familiar1 = txt_fechanacimiento1.Text.ToUpper();
+                sso.Socio_economico_edad_familiar1 = txt_edad1.Text.ToUpper();
 
-                sso.Socio_economico_nombres_apellidos_familiar2 = txt_nomapellidos2.Text;
-                sso.Socio_economico_parentesco_familiar2 = txt_parentesco2.Text;
-                sso.Socio_economico_fecha_nacimiento_familiar2 = txt_fechanacimiento2.Text;
-                sso.Socio_economico_edad_familiar2 = txt_edad2.Text;
+                sso.Socio_economico_nombres_apellidos_familiar2 = txt_nomapellidos2.Text.ToUpper();
+                sso.Socio_economico_parentesco_familiar2 = txt_parentesco2.Text.ToUpper();
+                sso.Socio_economico_fecha_nacimiento_familiar2 = txt_fechanacimiento2.Text.ToUpper();
+                sso.Socio_economico_edad_familiar2 = txt_edad2.Text.ToUpper();
 
-                sso.Socio_economico_nombres_apellidos_familiar3 = txt_nomapellidos3.Text;
-                sso.Socio_economico_parentesco_familiar3 = txt_parentesco3.Text;
-                sso.Socio_economico_fecha_nacimiento_familiar3 = txt_fechanacimiento3.Text;
-                sso.Socio_economico_edad_familiar3 = txt_edad3.Text;
+                sso.Socio_economico_nombres_apellidos_familiar3 = txt_nomapellidos3.Text.ToUpper();
+                sso.Socio_economico_parentesco_familiar3 = txt_parentesco3.Text.ToUpper();
+                sso.Socio_economico_fecha_nacimiento_familiar3 = txt_fechanacimiento3.Text.ToUpper();
+                sso.Socio_economico_edad_familiar3 = txt_edad3.Text.ToUpper();
 
-                sso.Socio_economico_nombres_apellidos_familiar4 = txt_nomapellidos4.Text;
-                sso.Socio_economico_parentesco_familiar4 = txt_parentesco4.Text;
-                sso.Socio_economico_fecha_nacimiento_familiar4 = txt_fechanacimiento4.Text;
-                sso.Socio_economico_edad_familiar4 = txt_edad4.Text;
+                sso.Socio_economico_nombres_apellidos_familiar4 = txt_nomapellidos4.Text.ToUpper();
+                sso.Socio_economico_parentesco_familiar4 = txt_parentesco4.Text.ToUpper();
+                sso.Socio_economico_fecha_nacimiento_familiar4 = txt_fechanacimiento4.Text.ToUpper();
+                sso.Socio_economico_edad_familiar4 = txt_edad4.Text.ToUpper();
 
-                sso.Socio_economico_nombres_apellidos_familiar5 = txt_nomapellidos5.Text;
-                sso.Socio_economico_parentesco_familiar5 = txt_parentesco5.Text;
-                sso.Socio_economico_fecha_nacimiento_familiar5 = txt_fechanacimiento5.Text;
-                sso.Socio_economico_edad_familiar5 = txt_edad5.Text;
+                sso.Socio_economico_nombres_apellidos_familiar5 = txt_nomapellidos5.Text.ToUpper();
+                sso.Socio_economico_parentesco_familiar5 = txt_parentesco5.Text.ToUpper();
+                sso.Socio_economico_fecha_nacimiento_familiar5 = txt_fechanacimiento5.Text.ToUpper();
+                sso.Socio_economico_edad_familiar5 = txt_edad5.Text.ToUpper();
 
-                sso.Socio_economico_nombres_apellidos_familiar_discapacidad1 = txt_familiardiscapacitadonomape1.Text;
-                sso.Socio_economico_fecha_caducidad_carnet_familiar_discapacidad1 = txt_familiardiscapacitadofechacaducidadcarnet1.Text;
-                sso.Socio_economico_familiar_discapacidad_tipo1 = txt_familiardiscapacitadotipodiscapacidad1.Text;
-                sso.Socio_economico_familiar_discapacidad_porcentaje1 = txt_familiardiscapacitadoporcentajediscapacidad1.Text;
-                sso.Socio_economico_familiar_discapacidad_parentesco1 = txt_familiardiscapacitadoparentesco1.Text;
-                sso.Socio_economico_familiar_discapacidad_fecha_nacimiento1 = txt_familiardiscapacitadofechanacimiento1.Text;
+                sso.Socio_economico_nombres_apellidos_familiar_discapacidad1 = txt_familiardiscapacitadonomape1.Text.ToUpper();
+                sso.Socio_economico_fecha_caducidad_carnet_familiar_discapacidad1 = txt_familiardiscapacitadofechacaducidadcarnet1.Text.ToUpper();
+                sso.Socio_economico_familiar_discapacidad_tipo1 = txt_familiardiscapacitadotipodiscapacidad1.Text.ToUpper();
+                sso.Socio_economico_familiar_discapacidad_porcentaje1 = txt_familiardiscapacitadoporcentajediscapacidad1.Text.ToUpper();
+                sso.Socio_economico_familiar_discapacidad_parentesco1 = txt_familiardiscapacitadoparentesco1.Text.ToUpper();
+                sso.Socio_economico_familiar_discapacidad_fecha_nacimiento1 = txt_familiardiscapacitadofechanacimiento1.Text.ToUpper();
 
-                sso.Socio_economico_nombres_apellidos_familiar_discapacidad2 = txt_familiardiscapacitadonomape2.Text;
-                sso.Socio_economico_fecha_caducidad_carnet_familiar_discapacidad2 = txt_familiardiscapacitadofechacaducidadcarnet2.Text;
-                sso.Socio_economico_familiar_discapacidad_tipo2 = txt_familiardiscapacitadotipodiscapacidad2.Text;
-                sso.Socio_economico_familiar_discapacidad_porcentaje2 = txt_familiardiscapacitadoporcentajediscapacidad2.Text;
-                sso.Socio_economico_familiar_discapacidad_parentesco2 = txt_familiardiscapacitadoparentesco2.Text;
-                sso.Socio_economico_familiar_discapacidad_fecha_nacimiento2 = txt_familiardiscapacitadofechanacimiento2.Text;
+                sso.Socio_economico_nombres_apellidos_familiar_discapacidad2 = txt_familiardiscapacitadonomape2.Text.ToUpper();
+                sso.Socio_economico_fecha_caducidad_carnet_familiar_discapacidad2 = txt_familiardiscapacitadofechacaducidadcarnet2.Text.ToUpper();
+                sso.Socio_economico_familiar_discapacidad_tipo2 = txt_familiardiscapacitadotipodiscapacidad2.Text.ToUpper();
+                sso.Socio_economico_familiar_discapacidad_porcentaje2 = txt_familiardiscapacitadoporcentajediscapacidad2.Text.ToUpper();
+                sso.Socio_economico_familiar_discapacidad_parentesco2 = txt_familiardiscapacitadoparentesco2.Text.ToUpper();
+                sso.Socio_economico_familiar_discapacidad_fecha_nacimiento2 = txt_familiardiscapacitadofechanacimiento2.Text.ToUpper();
 
-                sso.Socio_economico_registrar_dependencia_familiar_MT_tiempo = txt_dependenciaministeriotrabajotiempo.Text;
-                sso.Socio_economico_registrar_dependencia_familiar_MT_numero_carnetMSP = txt_numcarnetMSP.Text;
-                sso.Socio_economico_a_cargo_familiar_enfermedad_catastrofica_rara_tiempo = txt_acargofamiliarenfermedadraratiempo.Text;
-                sso.Socio_economico_a_cargo_familiar_enfermedad_catastrofica_rara_tipoenfermedad = txt_familiarenfermedadraratipo.Text;
+                sso.Socio_economico_registrar_dependencia_familiar_MT_tiempo = txt_dependenciaministeriotrabajotiempo.Text.ToUpper();
+                sso.Socio_economico_registrar_dependencia_familiar_MT_numero_carnetMSP = txt_numcarnetMSP.Text.ToUpper();
+                sso.Socio_economico_a_cargo_familiar_enfermedad_catastrofica_rara_tiempo = txt_acargofamiliarenfermedadraratiempo.Text.ToUpper();
+                sso.Socio_economico_a_cargo_familiar_enfermedad_catastrofica_rara_tipoenfermedad = txt_familiarenfermedadraratipo.Text.ToUpper();
 
                 //Actividad tiempo libre
-                sso.Socio_economico_otro_especifique = txt_otraactividad.Text;
-                sso.Socio_economico_actividad_economica_adicional_detalle = txt_actividadeconomicadetalle.Text;
-                sso.Socio_economico_actividad_economica_adicional_tiempo_destina = txt_actividadeconomicatiempodestina.Text;
-                sso.Socio_economico_actividad_economica_adicional_hace_tiempo = txt_actividadeconomicatiemporealiza.Text;
-                sso.Socio_economico_actividad_deportiva_especificar = txt_especifiquedeporte.Text;
-                sso.Socio_economico_actividad_deportiva_frecuencia = txt_frecuenciadeporte.Text;
-                sso.Socio_economico_actividad_deportiva_edad = txt_edadpracticadeporte.Text;
-                sso.Socio_economico_lesion_tipo = txt_tipolesion.Text;
-                sso.Socio_economico_lesion_edad = txt_edadlesion.Text;
+                sso.Socio_economico_otro_especifique = txt_otraactividad.Text.ToUpper();
+                sso.Socio_economico_actividad_economica_adicional_detalle = txt_actividadeconomicadetalle.Text.ToUpper();
+                sso.Socio_economico_actividad_economica_adicional_tiempo_destina = txt_actividadeconomicatiempodestina.Text.ToUpper();
+                sso.Socio_economico_actividad_economica_adicional_hace_tiempo = txt_actividadeconomicatiemporealiza.Text.ToUpper();
+                sso.Socio_economico_actividad_deportiva_especificar = txt_especifiquedeporte.Text.ToUpper();
+                sso.Socio_economico_actividad_deportiva_frecuencia = txt_frecuenciadeporte.Text.ToUpper();
+                sso.Socio_economico_actividad_deportiva_edad = txt_edadpracticadeporte.Text.ToUpper();
+                sso.Socio_economico_lesion_tipo = txt_tipolesion.Text.ToUpper();
+                sso.Socio_economico_lesion_edad = txt_edadlesion.Text.ToUpper();
 
                 //Informacion para uso de bienestar familiar
-                sso.Socio_economico_evaluacion_relacion_familiar_porque = txt_relacionfamiliarporque.Text;
-                sso.Socio_economico_evaluacion_relacion_pareja_porque = txt_relacionparejaporque.Text;
-                sso.Socio_economico_evaluacion_relacion_hijos_porque = txt_relacionconhijosporque.Text;
-                sso.Socio_economico_problemas_familiares_observaciones = txt_observacionesfamiliares.Text;
-                sso.Socio_economico_nivel_salud_familia_porque = txt_nivelsaludfamiliarporque.Text;
-                sso.Socio_economico_familia_observaciones = txt_observacionesgenerales.Text;
-                sso.Socio_economico_informacion_adicional = txt_informacionadicional.Text;
+                sso.Socio_economico_evaluacion_relacion_familiar_porque = txt_relacionfamiliarporque.Text.ToUpper();
+                sso.Socio_economico_evaluacion_relacion_pareja_porque = txt_relacionparejaporque.Text.ToUpper();
+                sso.Socio_economico_evaluacion_relacion_hijos_porque = txt_relacionconhijosporque.Text.ToUpper();
+                sso.Socio_economico_problemas_familiares_observaciones = txt_observacionesfamiliares.Text.ToUpper();
+                sso.Socio_economico_nivel_salud_familia_porque = txt_nivelsaludfamiliarporque.Text.ToUpper();
+                sso.Socio_economico_familia_observaciones = txt_observacionesgenerales.Text.ToUpper();
+                sso.Socio_economico_informacion_adicional = txt_informacionadicional.Text.ToUpper();
 
                 //if (!string.IsNullOrEmpty(FileUpload1.FileName))
                 //{
@@ -3833,12 +3814,29 @@ namespace SistemaECU911.Template.Views_Socio_Economico
 
                 CN_SocioEconomico.ModificarSocioEconomico(sso);
 
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos Modificados Exitosamente')", true);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", "swal('Exito!', 'Datos Modificados Exitosamente', 'success')", true);
                 Response.Redirect("~/Template/Views_Socio_Economico/PacientesSocioEconomico.aspx");
             }
             catch (Exception)
             {
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos No Modificados')", true);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", "swal('Error!', 'Datos No Modificados', 'error')", true);
+            }
+        }
+
+        private void Guardar_modificar_datos(int socioEconomico)
+        {
+            if (socioEconomico == 0)
+            {
+                GuardarSocioEconomico();
+            }
+            else
+            {
+                sso = CN_SocioEconomico.ObtenerSocioEconomicoPorId(socioEconomico);
+
+                if (sso != null)
+                {
+                    ModificarSocioEconomico(sso);
+                }
             }
         }
 
@@ -3851,7 +3849,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             }
             else
             {
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Por favor, marque la casilla SI, para validar que la información suministrada es real')", true);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", "swal('Error!', 'Por favor, marque la casilla SI, para validar que la información suministrada es real', 'error')", true);
             }
         }
 

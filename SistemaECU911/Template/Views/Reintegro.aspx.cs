@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -20,7 +21,7 @@ namespace SistemaECU911.Template.Views
         DataClassesECU911DataContext dc = new DataClassesECU911DataContext();
 
         private Tbl_Personas per = new Tbl_Personas();
-
+        private Tbl_Empresa emp = new Tbl_Empresa();
         private Tbl_Reintegro reinte = new Tbl_Reintegro();
 
         protected void Page_Load(object sender, EventArgs e)
@@ -33,12 +34,16 @@ namespace SistemaECU911.Template.Views
                     reinte = CN_Reintegro.ObtenerReintegroPorId(codigo);
                     int personasid = Convert.ToInt32(reinte.Per_id.ToString());
                     per = CN_HistorialMedico.ObtenerPersonasxId(personasid);
-                    
+                    int empresaid = Convert.ToInt32(reinte.Emp_id.ToString());
+                    emp = CN_HistorialMedico.ObtenerEmpresaxId(empresaid);
+
 
                     btn_guardar.Text = "Actualizar";
 
-                    if (per != null)
+                    if (per != null || emp != null)
                     {
+
+                        txt_numHClinica.ReadOnly = true;
 
                         //Regiones
                         if (reinte.rein_cicatricesPiel == null)
@@ -497,6 +502,8 @@ namespace SistemaECU911.Template.Views
                         }
 
                         //A
+                        txt_nomEmpresa.Text = emp.Emp_nombre.ToString();
+                        txt_rucEmp.Text = emp.Emp_RUC.ToString();
                         txt_priNombre.Text = per.Per_priNombre.ToString();
                         txt_segNombre.Text = per.Per_segNombre.ToString();
                         txt_priApellido.Text = per.Per_priApellido.ToString();
@@ -608,7 +615,7 @@ namespace SistemaECU911.Template.Views
                         }
                     }                    
                 }
-
+                Timer1.Enabled = false;
                 cargarProfesional();
                 //defaultValidaciones();
 
@@ -659,9 +666,7 @@ namespace SistemaECU911.Template.Views
             List<string> lista = new List<string>();
             try
             {
-                string oConn = @"Data Source=sql8004.site4now.net;Initial Catalog=db_a8b7d4_sistemaecu911;Persist Security Info=True;User ID=db_a8b7d4_sistemaecu911_admin;Password=SistemaECU911";
-
-                SqlConnection con = new SqlConnection(oConn);
+                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ToString());
                 con.Open();
                 SqlCommand cmd = new SqlCommand("select top(10) Per_Cedula from Tbl_Personas where Per_Cedula LIKE + @Cedula + '%'", con);
                 cmd.Parameters.AddWithValue("@Cedula", prefixText);
@@ -754,9 +759,7 @@ namespace SistemaECU911.Template.Views
             List<string> lista = new List<string>();
             try
             {
-                string oConn = @"Data Source=sql8004.site4now.net;Initial Catalog=db_a8b7d4_sistemaecu911;Persist Security Info=True;User ID=db_a8b7d4_sistemaecu911_admin;Password=SistemaECU911";
-
-                SqlConnection con = new SqlConnection(oConn);
+                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ToString());
                 con.Open();
                 SqlCommand cmd = new SqlCommand("select top(10) dec10 from cie10 where dec10 LIKE + @Name + '%'", con);
                 cmd.Parameters.AddWithValue("@Name", prefixText);
@@ -844,8 +847,10 @@ namespace SistemaECU911.Template.Views
             try
             {
                 per = CN_HistorialMedico.ObtenerIdPersonasxCedula(txt_numHClinica.Text);
-
                 int perso = Convert.ToInt32(per.Per_id.ToString());
+
+                per = CN_HistorialMedico.ObtenerIdEmpresaxCedula(txt_numHClinica.Text);
+                int empre = Convert.ToInt32(per.Emp_id.ToString());
 
                 reinte = new Tbl_Reintegro();
 
@@ -1056,78 +1061,79 @@ namespace SistemaECU911.Template.Views
                 }
 
                 //A
-                reinte.rein_ciiu = txt_ciiu.Text;
-                reinte.rein_numArchivo = txt_numArchivo.Text;
-                reinte.rein__fechUltDiaLaboral = txt_fechaUltiDiaLaboral.Text;
-                reinte.rein_fechReingreso = txt_fechaReingreso.Text;
-                reinte.rein_total = txt_total.Text;
-                reinte.rein_causaSalida = txt_causaSalida.Text;
+                reinte.rein_ciiu = txt_ciiu.Text.ToUpper();
+                reinte.rein_numArchivo = txt_numArchivo.Text.ToUpper();
+                reinte.rein__fechUltDiaLaboral = txt_fechaUltiDiaLaboral.Text.ToUpper();
+                reinte.rein_fechReingreso = txt_fechaReingreso.Text.ToUpper();
+                reinte.rein_total = txt_total.Text.ToUpper();
+                reinte.rein_causaSalida = txt_causaSalida.Text.ToUpper();
 
                 //B.
-                reinte.rein_descripmotCon = txt_motivoconsultareintegro.Text;
+                reinte.rein_descripmotCon = txt_motivoconsultareintegro.Text.ToUpper();
 
                 //C.
-                reinte.rein_descripenfActual = txt_enfermedadactualreintegro.Text;
+                reinte.rein_descripenfActual = txt_enfermedadactualreintegro.Text.ToUpper();
 
                 //D
-                reinte.rein_preArterial = txt_preArterial.Text;
-                reinte.rein_temperatura = txt_temperatura.Text;
-                reinte.rein_frecCardiacan = txt_freCardica.Text;
-                reinte.rein_satOxigenon = txt_satOxigeno.Text;
-                reinte.rein_frecRespiratorian = txt_freRespiratoria.Text;
-                reinte.rein_peson = txt_peso.Text;
-                reinte.rein_tallan = txt_talla.Text;
-                reinte.rein_indMasCorporaln = txt_indMasCorporal.Text;
-                reinte.rein_perAbdominaln = txt_perAbdominal.Text;
+                reinte.rein_preArterial = txt_preArterial.Text.ToUpper();
+                reinte.rein_temperatura = txt_temperatura.Text.ToUpper();
+                reinte.rein_frecCardiacan = txt_freCardica.Text.ToUpper();
+                reinte.rein_satOxigenon = txt_satOxigeno.Text.ToUpper();
+                reinte.rein_frecRespiratorian = txt_freRespiratoria.Text.ToUpper();
+                reinte.rein_peson = txt_peso.Text.ToUpper();
+                reinte.rein_tallan = txt_talla.Text.ToUpper();
+                reinte.rein_indMasCorporaln = txt_indMasCorporal.Text.ToUpper();
+                reinte.rein_perAbdominaln = txt_perAbdominal.Text.ToUpper();
 
                 //E.                    
-                reinte.rein_observaexaFisRegional = txt_observexamenfisicoregional.Text;
+                reinte.rein_observaexaFisRegional = txt_observexamenfisicoregional.Text.ToUpper();
 
                 //F.
-                reinte.rein_examen = txt_examen.Text;
-                reinte.rein_fecha = txt_fechaexamen.Text;
-                reinte.rein_resultados = txt_resultadoexamen.Text;
-                reinte.rein_examen2 = txt_examen2.Text;
-                reinte.rein_fecha2 = txt_fechaexamen2.Text;
-                reinte.rein_resultados2 = txt_resultadoexamen2.Text;
-                reinte.rein_examen3 = txt_examen3.Text;
-                reinte.rein_fecha3 = txt_fechaexamen3.Text;
-                reinte.rein_resultados3 = txt_resultadoexamen3.Text;
-                reinte.rein_observacionesResExaGenEspRiesTrabajo = txt_observacionexamen.Text;
+                reinte.rein_examen = txt_examen.Text.ToUpper();
+                reinte.rein_fecha = txt_fechaexamen.Text.ToUpper();
+                reinte.rein_resultados = txt_resultadoexamen.Text.ToUpper();
+                reinte.rein_examen2 = txt_examen2.Text.ToUpper();
+                reinte.rein_fecha2 = txt_fechaexamen2.Text.ToUpper();
+                reinte.rein_resultados2 = txt_resultadoexamen2.Text.ToUpper();
+                reinte.rein_examen3 = txt_examen3.Text.ToUpper();
+                reinte.rein_fecha3 = txt_fechaexamen3.Text.ToUpper();
+                reinte.rein_resultados3 = txt_resultadoexamen3.Text.ToUpper();
+                reinte.rein_observacionesResExaGenEspRiesTrabajo = txt_observacionexamen.Text.ToUpper();
 
                 //G.
-                reinte.rein_descripcionDiagnostico = txt_descripdiagnostico.Text;
-                reinte.rein_cie = txt_cie.Text;
-                reinte.rein_descripcionDiagnostico2 = txt_descripdiagnostico2.Text;
-                reinte.rein_cie2 = txt_cie2.Text;
-                reinte.rein_descripcionDiagnostico3 = txt_descripdiagnostico3.Text;
-                reinte.rein_cie3 = txt_cie3.Text;
+                reinte.rein_descripcionDiagnostico = txt_descripdiagnostico.Text.ToUpper();
+                reinte.rein_cie = txt_cie.Text.ToUpper();
+                reinte.rein_descripcionDiagnostico2 = txt_descripdiagnostico2.Text.ToUpper();
+                reinte.rein_cie2 = txt_cie2.Text.ToUpper();
+                reinte.rein_descripcionDiagnostico3 = txt_descripdiagnostico3.Text.ToUpper();
+                reinte.rein_cie3 = txt_cie3.Text.ToUpper();
 
                 //H.
-                reinte.rein_ObservAptMedica = txt_observacionaptitud.Text;
-                reinte.rein_LimitAptMedica = txt_limitacionaptitud.Text;
-                reinte.rein_ReubicaAptMedica = txt_reubicacionaptitud.Text;
+                reinte.rein_ObservAptMedica = txt_observacionaptitud.Text.ToUpper();
+                reinte.rein_LimitAptMedica = txt_limitacionaptitud.Text.ToUpper();
+                reinte.rein_ReubicaAptMedica = txt_reubicacionaptitud.Text.ToUpper();
 
                 //I.
-                reinte.rein_descripcionRecoTratamiento = txt_descripciontratamientoreintegro.Text;
+                reinte.rein_descripcionRecoTratamiento = txt_descripciontratamientoreintegro.Text.ToUpper();
 
                 //J.
-                reinte.rein_fecha_hora = txt_fechahora.Text;
+                reinte.rein_fechaHoraGuardado = Convert.ToDateTime(txt_fechahora.Text.ToUpper());
                 reinte.prof_id = Convert.ToInt32(ddl_profesional.SelectedValue);
-                reinte.rein_cod = txt_codigoDatProf.Text;
+                reinte.rein_cod = txt_codigoDatProf.Text.ToUpper();
                 reinte.Per_id = perso;
+                reinte.Emp_id = empre;
 
                 CN_Reintegro.GuardarReintegro(reinte);
 
                 //Mensaje de confirmacion
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos Guardados Exitosamente')", true);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", "swal('Exito!', 'Datos Guardados Exitosamente', 'success')", true);
 
                 Response.Redirect("~/Template/Views/PacientesReintegro.aspx");
 
             }
             catch (Exception)
             {
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos No Guardados')", true);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", "swal('Error!', 'Datos No Guardados', 'error')", true);
             }
 
         }
@@ -1543,76 +1549,76 @@ namespace SistemaECU911.Template.Views
                 }
 
                 //A
-                reinte.rein_ciiu = txt_ciiu.Text;
-                reinte.rein_numArchivo = txt_numArchivo.Text;
-                reinte.rein__fechUltDiaLaboral = txt_fechaUltiDiaLaboral.Text;
-                reinte.rein_fechReingreso = txt_fechaReingreso.Text;
-                reinte.rein_total = txt_total.Text;
-                reinte.rein_causaSalida = txt_causaSalida.Text;
+                reinte.rein_ciiu = txt_ciiu.Text.ToUpper();
+                reinte.rein_numArchivo = txt_numArchivo.Text.ToUpper();
+                reinte.rein__fechUltDiaLaboral = txt_fechaUltiDiaLaboral.Text.ToUpper();
+                reinte.rein_fechReingreso = txt_fechaReingreso.Text.ToUpper();
+                reinte.rein_total = txt_total.Text.ToUpper();
+                reinte.rein_causaSalida = txt_causaSalida.Text.ToUpper();
 
                 //B.
-                reinte.rein_descripmotCon = txt_motivoconsultareintegro.Text;
+                reinte.rein_descripmotCon = txt_motivoconsultareintegro.Text.ToUpper();
 
                 //C.
-                reinte.rein_descripenfActual = txt_enfermedadactualreintegro.Text;
+                reinte.rein_descripenfActual = txt_enfermedadactualreintegro.Text.ToUpper();
 
                 //D
-                reinte.rein_preArterial = txt_preArterial.Text;
-                reinte.rein_temperatura = txt_temperatura.Text;
-                reinte.rein_frecCardiacan = txt_freCardica.Text;
-                reinte.rein_satOxigenon = txt_satOxigeno.Text;
-                reinte.rein_frecRespiratorian = txt_freRespiratoria.Text;
-                reinte.rein_peson = txt_peso.Text;
-                reinte.rein_tallan = txt_talla.Text;
-                reinte.rein_indMasCorporaln = txt_indMasCorporal.Text;
-                reinte.rein_perAbdominaln = txt_perAbdominal.Text;
+                reinte.rein_preArterial = txt_preArterial.Text.ToUpper();
+                reinte.rein_temperatura = txt_temperatura.Text.ToUpper();
+                reinte.rein_frecCardiacan = txt_freCardica.Text.ToUpper();
+                reinte.rein_satOxigenon = txt_satOxigeno.Text.ToUpper();
+                reinte.rein_frecRespiratorian = txt_freRespiratoria.Text.ToUpper();
+                reinte.rein_peson = txt_peso.Text.ToUpper();
+                reinte.rein_tallan = txt_talla.Text.ToUpper();
+                reinte.rein_indMasCorporaln = txt_indMasCorporal.Text.ToUpper();
+                reinte.rein_perAbdominaln = txt_perAbdominal.Text.ToUpper();
 
                 //E.                    
-                reinte.rein_observaexaFisRegional = txt_observexamenfisicoregional.Text;
+                reinte.rein_observaexaFisRegional = txt_observexamenfisicoregional.Text.ToUpper();
 
                 //F.
-                reinte.rein_examen = txt_examen.Text;
-                reinte.rein_fecha = txt_fechaexamen.Text;
-                reinte.rein_resultados = txt_resultadoexamen.Text;
-                reinte.rein_examen2 = txt_examen2.Text;
-                reinte.rein_fecha2 = txt_fechaexamen2.Text;
-                reinte.rein_resultados2 = txt_resultadoexamen2.Text;
-                reinte.rein_examen3 = txt_examen3.Text;
-                reinte.rein_fecha3 = txt_fechaexamen3.Text;
-                reinte.rein_resultados3 = txt_resultadoexamen3.Text;
-                reinte.rein_observacionesResExaGenEspRiesTrabajo = txt_observacionexamen.Text;
+                reinte.rein_examen = txt_examen.Text.ToUpper();
+                reinte.rein_fecha = txt_fechaexamen.Text.ToUpper();
+                reinte.rein_resultados = txt_resultadoexamen.Text.ToUpper();
+                reinte.rein_examen2 = txt_examen2.Text.ToUpper();
+                reinte.rein_fecha2 = txt_fechaexamen2.Text.ToUpper();
+                reinte.rein_resultados2 = txt_resultadoexamen2.Text.ToUpper();
+                reinte.rein_examen3 = txt_examen3.Text.ToUpper();
+                reinte.rein_fecha3 = txt_fechaexamen3.Text.ToUpper();
+                reinte.rein_resultados3 = txt_resultadoexamen3.Text.ToUpper();
+                reinte.rein_observacionesResExaGenEspRiesTrabajo = txt_observacionexamen.Text.ToUpper();
 
                 //G.
-                reinte.rein_descripcionDiagnostico = txt_descripdiagnostico.Text;
-                reinte.rein_cie = txt_cie.Text;
-                reinte.rein_descripcionDiagnostico2 = txt_descripdiagnostico2.Text;
-                reinte.rein_cie2 = txt_cie2.Text;
-                reinte.rein_descripcionDiagnostico3 = txt_descripdiagnostico3.Text;
-                reinte.rein_cie3 = txt_cie3.Text;
+                reinte.rein_descripcionDiagnostico = txt_descripdiagnostico.Text.ToUpper();
+                reinte.rein_cie = txt_cie.Text.ToUpper();
+                reinte.rein_descripcionDiagnostico2 = txt_descripdiagnostico2.Text.ToUpper();
+                reinte.rein_cie2 = txt_cie2.Text.ToUpper();
+                reinte.rein_descripcionDiagnostico3 = txt_descripdiagnostico3.Text.ToUpper();
+                reinte.rein_cie3 = txt_cie3.Text.ToUpper();
 
                 //H.
-                reinte.rein_ObservAptMedica = txt_observacionaptitud.Text;
-                reinte.rein_LimitAptMedica = txt_limitacionaptitud.Text;
-                reinte.rein_ReubicaAptMedica = txt_reubicacionaptitud.Text;
+                reinte.rein_ObservAptMedica = txt_observacionaptitud.Text.ToUpper();
+                reinte.rein_LimitAptMedica = txt_limitacionaptitud.Text.ToUpper();
+                reinte.rein_ReubicaAptMedica = txt_reubicacionaptitud.Text.ToUpper();
 
                 //I.
-                reinte.rein_descripcionRecoTratamiento = txt_descripciontratamientoreintegro.Text;
+                reinte.rein_descripcionRecoTratamiento = txt_descripciontratamientoreintegro.Text.ToUpper();
 
                 //J.
-                reinte.rein_fecha_hora = txt_fechahora.Text;
+                reinte.rein_fecha_horaModificacion =  Convert.ToDateTime(txt_fechahora.Text.ToUpper());
                 reinte.prof_id = Convert.ToInt32(ddl_profesional.SelectedValue);
-                reinte.rein_cod = txt_codigoDatProf.Text;
+                reinte.rein_cod = txt_codigoDatProf.Text.ToUpper();
 
                 CN_Reintegro.ModificarReintegro(reinte);
 
                 //Mensaje de confirmacion
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos Modificados Exitosamente')", true);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", "swal('Exito!', 'Datos Modificados Exitosamente', 'success')", true);
 
                 Response.Redirect("~/Template/Views/PacientesReintegro.aspx");
             }
             catch (Exception)
             {
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos No Modificados')", true);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", "swal('Error!', 'Datos No Modificados', 'error')", true);
             }
         }
 
@@ -1729,6 +1735,11 @@ namespace SistemaECU911.Template.Views
         }
 
         protected void btn_cancelar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Template/Views/Inicio.aspx");
+        }
+
+        protected void Timer1_Tick(object sender, EventArgs e)
         {
             Response.Redirect("~/Template/Views/Inicio.aspx");
         }

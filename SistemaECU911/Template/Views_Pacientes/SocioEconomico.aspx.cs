@@ -58,8 +58,6 @@ namespace SistemaECU911.Template.Views_Pacientes
 
                         if (sso != null)
                         {
-                            txt_fecharegistro.Text = sso.Socio_economico_fechaHora.ToString();
-
                             //Datos código y versión
                             txt_codigoinicio.Text = sso.Socio_economico_codigo_inicial.ToString();
                             txt_version.Text = sso.Socio_economico_version.ToString();
@@ -2260,7 +2258,7 @@ namespace SistemaECU911.Template.Views_Pacientes
                     sso.Socio_economico_informacion_general_real_no = "SI";
                 }
 
-                sso.Socio_economico_fechaHora = txt_fecharegistro.Text;
+                sso.Socio_economico_fechaHoraGuardado = Convert.ToDateTime(txt_fecharegistro.Text);
 
                 //Datos código y versión
                 sso.Socio_economico_codigo_inicial = txt_codigoinicio.Text;
@@ -2476,7 +2474,7 @@ namespace SistemaECU911.Template.Views_Pacientes
         {
             try
             {
-                sso.Socio_economico_fechaHora = txt_fecharegistro.Text;
+                sso.Socio_economico_fechaHoraModificacion = Convert.ToDateTime(txt_fecharegistro.Text);
 
                 //Datos código y versión
                 sso.Socio_economico_codigo_inicial = txt_codigoinicio.Text;

@@ -22,7 +22,7 @@ namespace CapaDatos
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="db_a8b7d4_sistemaecu911")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="SistemaECU911")]
 	public partial class DataClassesECU911DataContext : System.Data.Linq.DataContext
 	{
 		
@@ -90,7 +90,7 @@ namespace CapaDatos
     #endregion
 		
 		public DataClassesECU911DataContext() : 
-				base(global::CapaDatos.Properties.Settings.Default.db_a8b7d4_sistemaecu911ConnectionString, mappingSource)
+				base(global::CapaDatos.Properties.Settings.Default.SistemaECU911ConnectionString4, mappingSource)
 		{
 			OnCreated();
 		}
@@ -270,6 +270,13 @@ namespace CapaDatos
 				return this.GetTable<Tbl_TipoUsuario>();
 			}
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ObtenerPaciente")]
+		public ISingleResult<ObtenerPacienteResult> ObtenerPaciente([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Cedula", DbType="VarChar(10)")] string cedula)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cedula);
+			return ((ISingleResult<ObtenerPacienteResult>)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.cie10")]
@@ -370,7 +377,7 @@ namespace CapaDatos
 		
 		private string _usu_apellido;
 		
-		private System.Nullable<long> _usu_cedula;
+		private string _usu_cedula;
 		
 		private string _usu_direccion;
 		
@@ -384,9 +391,9 @@ namespace CapaDatos
 		
 		private System.Nullable<System.DateTime> _usu_fechacreacion;
 		
-		private string _usu_estado;
-		
 		private System.Nullable<long> _tusu_id;
+		
+		private string _usu_estado;
 		
 		private EntityRef<Tbl_TipoUsuario> _Tbl_TipoUsuario;
 		
@@ -400,7 +407,7 @@ namespace CapaDatos
     partial void Onusu_nombreChanged();
     partial void Onusu_apellidoChanging(string value);
     partial void Onusu_apellidoChanged();
-    partial void Onusu_cedulaChanging(System.Nullable<long> value);
+    partial void Onusu_cedulaChanging(string value);
     partial void Onusu_cedulaChanged();
     partial void Onusu_direccionChanging(string value);
     partial void Onusu_direccionChanged();
@@ -414,10 +421,10 @@ namespace CapaDatos
     partial void Onusu_correoChanged();
     partial void Onusu_fechacreacionChanging(System.Nullable<System.DateTime> value);
     partial void Onusu_fechacreacionChanged();
-    partial void Onusu_estadoChanging(string value);
-    partial void Onusu_estadoChanged();
     partial void Ontusu_idChanging(System.Nullable<long> value);
     partial void Ontusu_idChanged();
+    partial void Onusu_estadoChanging(string value);
+    partial void Onusu_estadoChanged();
     #endregion
 		
 		public Tbl_Usuario()
@@ -446,7 +453,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_nombre", DbType="VarChar(150)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_nombre", DbType="VarChar(25)")]
 		public string usu_nombre
 		{
 			get
@@ -466,7 +473,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_apellido", DbType="VarChar(150)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_apellido", DbType="VarChar(25)")]
 		public string usu_apellido
 		{
 			get
@@ -486,8 +493,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_cedula", DbType="BigInt")]
-		public System.Nullable<long> usu_cedula
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_cedula", DbType="VarChar(10)")]
+		public string usu_cedula
 		{
 			get
 			{
@@ -506,7 +513,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_direccion", DbType="VarChar(250)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_direccion", DbType="VarChar(100)")]
 		public string usu_direccion
 		{
 			get
@@ -546,7 +553,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_nomlogin", DbType="VarChar(100)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_nomlogin", DbType="VarChar(10)")]
 		public string usu_nomlogin
 		{
 			get
@@ -566,7 +573,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_pass", DbType="VarChar(100)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_pass", DbType="VarChar(10)")]
 		public string usu_pass
 		{
 			get
@@ -586,7 +593,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_correo", DbType="VarChar(250)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_correo", DbType="VarChar(25)")]
 		public string usu_correo
 		{
 			get
@@ -626,26 +633,6 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_estado", DbType="VarChar(50)")]
-		public string usu_estado
-		{
-			get
-			{
-				return this._usu_estado;
-			}
-			set
-			{
-				if ((this._usu_estado != value))
-				{
-					this.Onusu_estadoChanging(value);
-					this.SendPropertyChanging();
-					this._usu_estado = value;
-					this.SendPropertyChanged("usu_estado");
-					this.Onusu_estadoChanged();
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tusu_id", DbType="BigInt")]
 		public System.Nullable<long> tusu_id
 		{
@@ -666,6 +653,26 @@ namespace CapaDatos
 					this._tusu_id = value;
 					this.SendPropertyChanged("tusu_id");
 					this.Ontusu_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_estado", DbType="VarChar(1)")]
+		public string usu_estado
+		{
+			get
+			{
+				return this._usu_estado;
+			}
+			set
+			{
+				if ((this._usu_estado != value))
+				{
+					this.Onusu_estadoChanging(value);
+					this.SendPropertyChanging();
+					this._usu_estado = value;
+					this.SendPropertyChanged("usu_estado");
+					this.Onusu_estadoChanged();
 				}
 			}
 		}
@@ -777,7 +784,7 @@ namespace CapaDatos
 		
 		private string _certi_descripcionRecomendaciones;
 		
-		private string _certi_fecha_hora;
+		private System.Nullable<System.DateTime> _certi_fecha_horaModificacion;
 		
 		private System.Nullable<int> _prof_id;
 		
@@ -785,9 +792,13 @@ namespace CapaDatos
 		
 		private System.Nullable<long> _Per_id;
 		
+		private System.Nullable<long> _Emp_id;
+		
 		private System.Nullable<System.DateTime> _certi_fechaHoraGuardado;
 		
 		private string _certi_estado;
+		
+		private EntityRef<Tbl_Empresa> _Tbl_Empresa;
 		
 		private EntityRef<Tbl_Personas> _Tbl_Personas;
 		
@@ -843,14 +854,16 @@ namespace CapaDatos
     partial void Oncerti_noAplicaCondiSaludChanged();
     partial void Oncerti_descripcionRecomendacionesChanging(string value);
     partial void Oncerti_descripcionRecomendacionesChanged();
-    partial void Oncerti_fecha_horaChanging(string value);
-    partial void Oncerti_fecha_horaChanged();
+    partial void Oncerti_fecha_horaModificacionChanging(System.Nullable<System.DateTime> value);
+    partial void Oncerti_fecha_horaModificacionChanged();
     partial void Onprof_idChanging(System.Nullable<int> value);
     partial void Onprof_idChanged();
     partial void Oncerti_codChanging(string value);
     partial void Oncerti_codChanged();
     partial void OnPer_idChanging(System.Nullable<long> value);
     partial void OnPer_idChanged();
+    partial void OnEmp_idChanging(System.Nullable<long> value);
+    partial void OnEmp_idChanged();
     partial void Oncerti_fechaHoraGuardadoChanging(System.Nullable<System.DateTime> value);
     partial void Oncerti_fechaHoraGuardadoChanged();
     partial void Oncerti_estadoChanging(string value);
@@ -859,6 +872,7 @@ namespace CapaDatos
 		
 		public Tbl_Certificado()
 		{
+			this._Tbl_Empresa = default(EntityRef<Tbl_Empresa>);
 			this._Tbl_Personas = default(EntityRef<Tbl_Personas>);
 			this._Tbl_Profesional = default(EntityRef<Tbl_Profesional>);
 			OnCreated();
@@ -1324,22 +1338,22 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_certi_fecha_hora", DbType="VarChar(25)")]
-		public string certi_fecha_hora
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_certi_fecha_horaModificacion", DbType="DateTime")]
+		public System.Nullable<System.DateTime> certi_fecha_horaModificacion
 		{
 			get
 			{
-				return this._certi_fecha_hora;
+				return this._certi_fecha_horaModificacion;
 			}
 			set
 			{
-				if ((this._certi_fecha_hora != value))
+				if ((this._certi_fecha_horaModificacion != value))
 				{
-					this.Oncerti_fecha_horaChanging(value);
+					this.Oncerti_fecha_horaModificacionChanging(value);
 					this.SendPropertyChanging();
-					this._certi_fecha_hora = value;
-					this.SendPropertyChanged("certi_fecha_hora");
-					this.Oncerti_fecha_horaChanged();
+					this._certi_fecha_horaModificacion = value;
+					this.SendPropertyChanged("certi_fecha_horaModificacion");
+					this.Oncerti_fecha_horaModificacionChanged();
 				}
 			}
 		}
@@ -1412,6 +1426,30 @@ namespace CapaDatos
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Emp_id", DbType="BigInt")]
+		public System.Nullable<long> Emp_id
+		{
+			get
+			{
+				return this._Emp_id;
+			}
+			set
+			{
+				if ((this._Emp_id != value))
+				{
+					if (this._Tbl_Empresa.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnEmp_idChanging(value);
+					this.SendPropertyChanging();
+					this._Emp_id = value;
+					this.SendPropertyChanged("Emp_id");
+					this.OnEmp_idChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_certi_fechaHoraGuardado", DbType="DateTime")]
 		public System.Nullable<System.DateTime> certi_fechaHoraGuardado
 		{
@@ -1448,6 +1486,40 @@ namespace CapaDatos
 					this._certi_estado = value;
 					this.SendPropertyChanged("certi_estado");
 					this.Oncerti_estadoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Empresa_Tbl_Certificado", Storage="_Tbl_Empresa", ThisKey="Emp_id", OtherKey="Emp_id", IsForeignKey=true)]
+		public Tbl_Empresa Tbl_Empresa
+		{
+			get
+			{
+				return this._Tbl_Empresa.Entity;
+			}
+			set
+			{
+				Tbl_Empresa previousValue = this._Tbl_Empresa.Entity;
+				if (((previousValue != value) 
+							|| (this._Tbl_Empresa.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Tbl_Empresa.Entity = null;
+						previousValue.Tbl_Certificado.Remove(this);
+					}
+					this._Tbl_Empresa.Entity = value;
+					if ((value != null))
+					{
+						value.Tbl_Certificado.Add(this);
+						this._Emp_id = value.Emp_id;
+					}
+					else
+					{
+						this._Emp_id = default(Nullable<long>);
+					}
+					this.SendPropertyChanged("Tbl_Empresa");
 				}
 			}
 		}
@@ -1547,7 +1619,7 @@ namespace CapaDatos
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _Emp_id;
+		private long _Emp_id;
 		
 		private string _Emp_nombre;
 		
@@ -1559,13 +1631,33 @@ namespace CapaDatos
 		
 		private string _Emp_estado;
 		
+		private EntitySet<Tbl_Certificado> _Tbl_Certificado;
+		
+		private EntitySet<Tbl_Evolucion> _Tbl_Evolucion;
+		
+		private EntitySet<Tbl_FichasMedicas> _Tbl_FichasMedicas;
+		
+		private EntitySet<Tbl_Inicial> _Tbl_Inicial;
+		
+		private EntitySet<Tbl_Inmunizaciones> _Tbl_Inmunizaciones;
+		
+		private EntitySet<Tbl_PedidoExamenes> _Tbl_PedidoExamenes;
+		
+		private EntitySet<Tbl_Periodica> _Tbl_Periodica;
+		
 		private EntitySet<Tbl_Personas> _Tbl_Personas;
+		
+		private EntitySet<Tbl_Reintegro> _Tbl_Reintegro;
+		
+		private EntitySet<Tbl_Retiro> _Tbl_Retiro;
+		
+		private EntitySet<Tbl_SocioEconomico> _Tbl_SocioEconomico;
 		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnEmp_idChanging(int value);
+    partial void OnEmp_idChanging(long value);
     partial void OnEmp_idChanged();
     partial void OnEmp_nombreChanging(string value);
     partial void OnEmp_nombreChanged();
@@ -1581,12 +1673,22 @@ namespace CapaDatos
 		
 		public Tbl_Empresa()
 		{
+			this._Tbl_Certificado = new EntitySet<Tbl_Certificado>(new Action<Tbl_Certificado>(this.attach_Tbl_Certificado), new Action<Tbl_Certificado>(this.detach_Tbl_Certificado));
+			this._Tbl_Evolucion = new EntitySet<Tbl_Evolucion>(new Action<Tbl_Evolucion>(this.attach_Tbl_Evolucion), new Action<Tbl_Evolucion>(this.detach_Tbl_Evolucion));
+			this._Tbl_FichasMedicas = new EntitySet<Tbl_FichasMedicas>(new Action<Tbl_FichasMedicas>(this.attach_Tbl_FichasMedicas), new Action<Tbl_FichasMedicas>(this.detach_Tbl_FichasMedicas));
+			this._Tbl_Inicial = new EntitySet<Tbl_Inicial>(new Action<Tbl_Inicial>(this.attach_Tbl_Inicial), new Action<Tbl_Inicial>(this.detach_Tbl_Inicial));
+			this._Tbl_Inmunizaciones = new EntitySet<Tbl_Inmunizaciones>(new Action<Tbl_Inmunizaciones>(this.attach_Tbl_Inmunizaciones), new Action<Tbl_Inmunizaciones>(this.detach_Tbl_Inmunizaciones));
+			this._Tbl_PedidoExamenes = new EntitySet<Tbl_PedidoExamenes>(new Action<Tbl_PedidoExamenes>(this.attach_Tbl_PedidoExamenes), new Action<Tbl_PedidoExamenes>(this.detach_Tbl_PedidoExamenes));
+			this._Tbl_Periodica = new EntitySet<Tbl_Periodica>(new Action<Tbl_Periodica>(this.attach_Tbl_Periodica), new Action<Tbl_Periodica>(this.detach_Tbl_Periodica));
 			this._Tbl_Personas = new EntitySet<Tbl_Personas>(new Action<Tbl_Personas>(this.attach_Tbl_Personas), new Action<Tbl_Personas>(this.detach_Tbl_Personas));
+			this._Tbl_Reintegro = new EntitySet<Tbl_Reintegro>(new Action<Tbl_Reintegro>(this.attach_Tbl_Reintegro), new Action<Tbl_Reintegro>(this.detach_Tbl_Reintegro));
+			this._Tbl_Retiro = new EntitySet<Tbl_Retiro>(new Action<Tbl_Retiro>(this.attach_Tbl_Retiro), new Action<Tbl_Retiro>(this.detach_Tbl_Retiro));
+			this._Tbl_SocioEconomico = new EntitySet<Tbl_SocioEconomico>(new Action<Tbl_SocioEconomico>(this.attach_Tbl_SocioEconomico), new Action<Tbl_SocioEconomico>(this.detach_Tbl_SocioEconomico));
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Emp_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int Emp_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Emp_id", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public long Emp_id
 		{
 			get
 			{
@@ -1705,6 +1807,97 @@ namespace CapaDatos
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Empresa_Tbl_Certificado", Storage="_Tbl_Certificado", ThisKey="Emp_id", OtherKey="Emp_id")]
+		public EntitySet<Tbl_Certificado> Tbl_Certificado
+		{
+			get
+			{
+				return this._Tbl_Certificado;
+			}
+			set
+			{
+				this._Tbl_Certificado.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Empresa_Tbl_Evolucion", Storage="_Tbl_Evolucion", ThisKey="Emp_id", OtherKey="Emp_id")]
+		public EntitySet<Tbl_Evolucion> Tbl_Evolucion
+		{
+			get
+			{
+				return this._Tbl_Evolucion;
+			}
+			set
+			{
+				this._Tbl_Evolucion.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Empresa_Tbl_FichasMedicas", Storage="_Tbl_FichasMedicas", ThisKey="Emp_id", OtherKey="Emp_id")]
+		public EntitySet<Tbl_FichasMedicas> Tbl_FichasMedicas
+		{
+			get
+			{
+				return this._Tbl_FichasMedicas;
+			}
+			set
+			{
+				this._Tbl_FichasMedicas.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Empresa_Tbl_Inicial", Storage="_Tbl_Inicial", ThisKey="Emp_id", OtherKey="Emp_id")]
+		public EntitySet<Tbl_Inicial> Tbl_Inicial
+		{
+			get
+			{
+				return this._Tbl_Inicial;
+			}
+			set
+			{
+				this._Tbl_Inicial.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Empresa_Tbl_Inmunizaciones", Storage="_Tbl_Inmunizaciones", ThisKey="Emp_id", OtherKey="Emp_id")]
+		public EntitySet<Tbl_Inmunizaciones> Tbl_Inmunizaciones
+		{
+			get
+			{
+				return this._Tbl_Inmunizaciones;
+			}
+			set
+			{
+				this._Tbl_Inmunizaciones.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Empresa_Tbl_PedidoExamenes", Storage="_Tbl_PedidoExamenes", ThisKey="Emp_id", OtherKey="Emp_id")]
+		public EntitySet<Tbl_PedidoExamenes> Tbl_PedidoExamenes
+		{
+			get
+			{
+				return this._Tbl_PedidoExamenes;
+			}
+			set
+			{
+				this._Tbl_PedidoExamenes.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Empresa_Tbl_Periodica", Storage="_Tbl_Periodica", ThisKey="Emp_id", OtherKey="Emp_id")]
+		public EntitySet<Tbl_Periodica> Tbl_Periodica
+		{
+			get
+			{
+				return this._Tbl_Periodica;
+			}
+			set
+			{
+				this._Tbl_Periodica.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Empresa_Tbl_Personas", Storage="_Tbl_Personas", ThisKey="Emp_id", OtherKey="Emp_id")]
 		public EntitySet<Tbl_Personas> Tbl_Personas
 		{
@@ -1715,6 +1908,45 @@ namespace CapaDatos
 			set
 			{
 				this._Tbl_Personas.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Empresa_Tbl_Reintegro", Storage="_Tbl_Reintegro", ThisKey="Emp_id", OtherKey="Emp_id")]
+		public EntitySet<Tbl_Reintegro> Tbl_Reintegro
+		{
+			get
+			{
+				return this._Tbl_Reintegro;
+			}
+			set
+			{
+				this._Tbl_Reintegro.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Empresa_Tbl_Retiro", Storage="_Tbl_Retiro", ThisKey="Emp_id", OtherKey="Emp_id")]
+		public EntitySet<Tbl_Retiro> Tbl_Retiro
+		{
+			get
+			{
+				return this._Tbl_Retiro;
+			}
+			set
+			{
+				this._Tbl_Retiro.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Empresa_Tbl_SocioEconomico", Storage="_Tbl_SocioEconomico", ThisKey="Emp_id", OtherKey="Emp_id")]
+		public EntitySet<Tbl_SocioEconomico> Tbl_SocioEconomico
+		{
+			get
+			{
+				return this._Tbl_SocioEconomico;
+			}
+			set
+			{
+				this._Tbl_SocioEconomico.Assign(value);
 			}
 		}
 		
@@ -1738,6 +1970,90 @@ namespace CapaDatos
 			}
 		}
 		
+		private void attach_Tbl_Certificado(Tbl_Certificado entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Empresa = this;
+		}
+		
+		private void detach_Tbl_Certificado(Tbl_Certificado entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Empresa = null;
+		}
+		
+		private void attach_Tbl_Evolucion(Tbl_Evolucion entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Empresa = this;
+		}
+		
+		private void detach_Tbl_Evolucion(Tbl_Evolucion entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Empresa = null;
+		}
+		
+		private void attach_Tbl_FichasMedicas(Tbl_FichasMedicas entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Empresa = this;
+		}
+		
+		private void detach_Tbl_FichasMedicas(Tbl_FichasMedicas entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Empresa = null;
+		}
+		
+		private void attach_Tbl_Inicial(Tbl_Inicial entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Empresa = this;
+		}
+		
+		private void detach_Tbl_Inicial(Tbl_Inicial entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Empresa = null;
+		}
+		
+		private void attach_Tbl_Inmunizaciones(Tbl_Inmunizaciones entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Empresa = this;
+		}
+		
+		private void detach_Tbl_Inmunizaciones(Tbl_Inmunizaciones entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Empresa = null;
+		}
+		
+		private void attach_Tbl_PedidoExamenes(Tbl_PedidoExamenes entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Empresa = this;
+		}
+		
+		private void detach_Tbl_PedidoExamenes(Tbl_PedidoExamenes entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Empresa = null;
+		}
+		
+		private void attach_Tbl_Periodica(Tbl_Periodica entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Empresa = this;
+		}
+		
+		private void detach_Tbl_Periodica(Tbl_Periodica entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Empresa = null;
+		}
+		
 		private void attach_Tbl_Personas(Tbl_Personas entity)
 		{
 			this.SendPropertyChanging();
@@ -1745,6 +2061,42 @@ namespace CapaDatos
 		}
 		
 		private void detach_Tbl_Personas(Tbl_Personas entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Empresa = null;
+		}
+		
+		private void attach_Tbl_Reintegro(Tbl_Reintegro entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Empresa = this;
+		}
+		
+		private void detach_Tbl_Reintegro(Tbl_Reintegro entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Empresa = null;
+		}
+		
+		private void attach_Tbl_Retiro(Tbl_Retiro entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Empresa = this;
+		}
+		
+		private void detach_Tbl_Retiro(Tbl_Retiro entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Empresa = null;
+		}
+		
+		private void attach_Tbl_SocioEconomico(Tbl_SocioEconomico entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_Empresa = this;
+		}
+		
+		private void detach_Tbl_SocioEconomico(Tbl_SocioEconomico entity)
 		{
 			this.SendPropertyChanging();
 			entity.Tbl_Empresa = null;
@@ -2135,13 +2487,17 @@ namespace CapaDatos
 		
 		private string _evo_adminisFarmacos15;
 		
-		private string _evo_fecha_hora;
+		private System.Nullable<System.DateTime> _evo_fecha_horaModificacion;
 		
 		private System.Nullable<long> _Per_id;
+		
+		private System.Nullable<long> _Emp_id;
 		
 		private System.Nullable<System.DateTime> _evo_fechaHoraGuardado;
 		
 		private string _evo_estado;
+		
+		private EntityRef<Tbl_Empresa> _Tbl_Empresa;
 		
 		private EntityRef<Tbl_Personas> _Tbl_Personas;
 		
@@ -2305,10 +2661,12 @@ namespace CapaDatos
     partial void Onevo_farmacoIndicaciones15Changed();
     partial void Onevo_adminisFarmacos15Changing(string value);
     partial void Onevo_adminisFarmacos15Changed();
-    partial void Onevo_fecha_horaChanging(string value);
-    partial void Onevo_fecha_horaChanged();
+    partial void Onevo_fecha_horaModificacionChanging(System.Nullable<System.DateTime> value);
+    partial void Onevo_fecha_horaModificacionChanged();
     partial void OnPer_idChanging(System.Nullable<long> value);
     partial void OnPer_idChanged();
+    partial void OnEmp_idChanging(System.Nullable<long> value);
+    partial void OnEmp_idChanged();
     partial void Onevo_fechaHoraGuardadoChanging(System.Nullable<System.DateTime> value);
     partial void Onevo_fechaHoraGuardadoChanged();
     partial void Onevo_estadoChanging(string value);
@@ -2317,6 +2675,7 @@ namespace CapaDatos
 		
 		public Tbl_Evolucion()
 		{
+			this._Tbl_Empresa = default(EntityRef<Tbl_Empresa>);
 			this._Tbl_Personas = default(EntityRef<Tbl_Personas>);
 			OnCreated();
 		}
@@ -3881,22 +4240,22 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_evo_fecha_hora", DbType="VarChar(25)")]
-		public string evo_fecha_hora
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_evo_fecha_horaModificacion", DbType="DateTime")]
+		public System.Nullable<System.DateTime> evo_fecha_horaModificacion
 		{
 			get
 			{
-				return this._evo_fecha_hora;
+				return this._evo_fecha_horaModificacion;
 			}
 			set
 			{
-				if ((this._evo_fecha_hora != value))
+				if ((this._evo_fecha_horaModificacion != value))
 				{
-					this.Onevo_fecha_horaChanging(value);
+					this.Onevo_fecha_horaModificacionChanging(value);
 					this.SendPropertyChanging();
-					this._evo_fecha_hora = value;
-					this.SendPropertyChanged("evo_fecha_hora");
-					this.Onevo_fecha_horaChanged();
+					this._evo_fecha_horaModificacion = value;
+					this.SendPropertyChanged("evo_fecha_horaModificacion");
+					this.Onevo_fecha_horaModificacionChanged();
 				}
 			}
 		}
@@ -3921,6 +4280,30 @@ namespace CapaDatos
 					this._Per_id = value;
 					this.SendPropertyChanged("Per_id");
 					this.OnPer_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Emp_id", DbType="BigInt")]
+		public System.Nullable<long> Emp_id
+		{
+			get
+			{
+				return this._Emp_id;
+			}
+			set
+			{
+				if ((this._Emp_id != value))
+				{
+					if (this._Tbl_Empresa.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnEmp_idChanging(value);
+					this.SendPropertyChanging();
+					this._Emp_id = value;
+					this.SendPropertyChanged("Emp_id");
+					this.OnEmp_idChanged();
 				}
 			}
 		}
@@ -3961,6 +4344,40 @@ namespace CapaDatos
 					this._evo_estado = value;
 					this.SendPropertyChanged("evo_estado");
 					this.Onevo_estadoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Empresa_Tbl_Evolucion", Storage="_Tbl_Empresa", ThisKey="Emp_id", OtherKey="Emp_id", IsForeignKey=true)]
+		public Tbl_Empresa Tbl_Empresa
+		{
+			get
+			{
+				return this._Tbl_Empresa.Entity;
+			}
+			set
+			{
+				Tbl_Empresa previousValue = this._Tbl_Empresa.Entity;
+				if (((previousValue != value) 
+							|| (this._Tbl_Empresa.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Tbl_Empresa.Entity = null;
+						previousValue.Tbl_Evolucion.Remove(this);
+					}
+					this._Tbl_Empresa.Entity = value;
+					if ((value != null))
+					{
+						value.Tbl_Evolucion.Add(this);
+						this._Emp_id = value.Emp_id;
+					}
+					else
+					{
+						this._Emp_id = default(Nullable<long>);
+					}
+					this.SendPropertyChanged("Tbl_Empresa");
 				}
 			}
 		}
@@ -4142,7 +4559,7 @@ namespace CapaDatos
 		
 		private string _prescripciones;
 		
-		private string _fechaHora;
+		private System.Nullable<System.DateTime> _fechaHoraModificacion;
 		
 		private System.Nullable<int> _espec_id;
 		
@@ -4152,9 +4569,13 @@ namespace CapaDatos
 		
 		private System.Nullable<long> _Per_id;
 		
+		private System.Nullable<long> _Emp_id;
+		
 		private System.Nullable<System.DateTime> _fechaHoraGuardado;
 		
 		private string _estado;
+		
+		private EntityRef<Tbl_Empresa> _Tbl_Empresa;
 		
 		private EntityRef<Tbl_Especialidad> _Tbl_Especialidad;
 		
@@ -4282,8 +4703,8 @@ namespace CapaDatos
     partial void OnevolucionChanged();
     partial void OnprescripcionesChanging(string value);
     partial void OnprescripcionesChanged();
-    partial void OnfechaHoraChanging(string value);
-    partial void OnfechaHoraChanged();
+    partial void OnfechaHoraModificacionChanging(System.Nullable<System.DateTime> value);
+    partial void OnfechaHoraModificacionChanged();
     partial void Onespec_idChanging(System.Nullable<int> value);
     partial void Onespec_idChanged();
     partial void Onprof_idChanging(System.Nullable<int> value);
@@ -4292,6 +4713,8 @@ namespace CapaDatos
     partial void OncodigoProChanged();
     partial void OnPer_idChanging(System.Nullable<long> value);
     partial void OnPer_idChanged();
+    partial void OnEmp_idChanging(System.Nullable<long> value);
+    partial void OnEmp_idChanged();
     partial void OnfechaHoraGuardadoChanging(System.Nullable<System.DateTime> value);
     partial void OnfechaHoraGuardadoChanged();
     partial void OnestadoChanging(string value);
@@ -4300,6 +4723,7 @@ namespace CapaDatos
 		
 		public Tbl_FichasMedicas()
 		{
+			this._Tbl_Empresa = default(EntityRef<Tbl_Empresa>);
 			this._Tbl_Especialidad = default(EntityRef<Tbl_Especialidad>);
 			this._Tbl_Personas = default(EntityRef<Tbl_Personas>);
 			this._Tbl_Profesional = default(EntityRef<Tbl_Profesional>);
@@ -5466,22 +5890,22 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fechaHora", DbType="VarChar(25)")]
-		public string fechaHora
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fechaHoraModificacion", DbType="DateTime")]
+		public System.Nullable<System.DateTime> fechaHoraModificacion
 		{
 			get
 			{
-				return this._fechaHora;
+				return this._fechaHoraModificacion;
 			}
 			set
 			{
-				if ((this._fechaHora != value))
+				if ((this._fechaHoraModificacion != value))
 				{
-					this.OnfechaHoraChanging(value);
+					this.OnfechaHoraModificacionChanging(value);
 					this.SendPropertyChanging();
-					this._fechaHora = value;
-					this.SendPropertyChanged("fechaHora");
-					this.OnfechaHoraChanged();
+					this._fechaHoraModificacion = value;
+					this.SendPropertyChanged("fechaHoraModificacion");
+					this.OnfechaHoraModificacionChanged();
 				}
 			}
 		}
@@ -5578,6 +6002,30 @@ namespace CapaDatos
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Emp_id", DbType="BigInt")]
+		public System.Nullable<long> Emp_id
+		{
+			get
+			{
+				return this._Emp_id;
+			}
+			set
+			{
+				if ((this._Emp_id != value))
+				{
+					if (this._Tbl_Empresa.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnEmp_idChanging(value);
+					this.SendPropertyChanging();
+					this._Emp_id = value;
+					this.SendPropertyChanged("Emp_id");
+					this.OnEmp_idChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fechaHoraGuardado", DbType="DateTime")]
 		public System.Nullable<System.DateTime> fechaHoraGuardado
 		{
@@ -5614,6 +6062,40 @@ namespace CapaDatos
 					this._estado = value;
 					this.SendPropertyChanged("estado");
 					this.OnestadoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Empresa_Tbl_FichasMedicas", Storage="_Tbl_Empresa", ThisKey="Emp_id", OtherKey="Emp_id", IsForeignKey=true)]
+		public Tbl_Empresa Tbl_Empresa
+		{
+			get
+			{
+				return this._Tbl_Empresa.Entity;
+			}
+			set
+			{
+				Tbl_Empresa previousValue = this._Tbl_Empresa.Entity;
+				if (((previousValue != value) 
+							|| (this._Tbl_Empresa.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Tbl_Empresa.Entity = null;
+						previousValue.Tbl_FichasMedicas.Remove(this);
+					}
+					this._Tbl_Empresa.Entity = value;
+					if ((value != null))
+					{
+						value.Tbl_FichasMedicas.Add(this);
+						this._Emp_id = value.Emp_id;
+					}
+					else
+					{
+						this._Emp_id = default(Nullable<long>);
+					}
+					this.SendPropertyChanged("Tbl_Empresa");
 				}
 			}
 		}
@@ -6881,7 +7363,7 @@ namespace CapaDatos
 		
 		private string _inicial_descripcionRecTra;
 		
-		private string _inicial_fecha_hora;
+		private System.Nullable<System.DateTime> _inicial_fecha_horaModificacion;
 		
 		private System.Nullable<int> _prof_id;
 		
@@ -6889,9 +7371,13 @@ namespace CapaDatos
 		
 		private System.Nullable<long> _Per_id;
 		
+		private System.Nullable<long> _Emp_id;
+		
 		private System.Nullable<System.DateTime> _inicial_fechaHoraGuardado;
 		
 		private string _inicial_estado;
+		
+		private EntityRef<Tbl_Empresa> _Tbl_Empresa;
 		
 		private EntityRef<Tbl_Personas> _Tbl_Personas;
 		
@@ -7925,14 +8411,16 @@ namespace CapaDatos
     partial void Oninicial_LimitAptMedChanged();
     partial void Oninicial_descripcionRecTraChanging(string value);
     partial void Oninicial_descripcionRecTraChanged();
-    partial void Oninicial_fecha_horaChanging(string value);
-    partial void Oninicial_fecha_horaChanged();
+    partial void Oninicial_fecha_horaModificacionChanging(System.Nullable<System.DateTime> value);
+    partial void Oninicial_fecha_horaModificacionChanged();
     partial void Onprof_idChanging(System.Nullable<int> value);
     partial void Onprof_idChanged();
     partial void Oninicial_codChanging(string value);
     partial void Oninicial_codChanged();
     partial void OnPer_idChanging(System.Nullable<long> value);
     partial void OnPer_idChanged();
+    partial void OnEmp_idChanging(System.Nullable<long> value);
+    partial void OnEmp_idChanged();
     partial void Oninicial_fechaHoraGuardadoChanging(System.Nullable<System.DateTime> value);
     partial void Oninicial_fechaHoraGuardadoChanged();
     partial void Oninicial_estadoChanging(string value);
@@ -7941,6 +8429,7 @@ namespace CapaDatos
 		
 		public Tbl_Inicial()
 		{
+			this._Tbl_Empresa = default(EntityRef<Tbl_Empresa>);
 			this._Tbl_Personas = default(EntityRef<Tbl_Personas>);
 			this._Tbl_Profesional = default(EntityRef<Tbl_Profesional>);
 			OnCreated();
@@ -18186,22 +18675,22 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_fecha_hora", DbType="VarChar(25)")]
-		public string inicial_fecha_hora
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_fecha_horaModificacion", DbType="DateTime")]
+		public System.Nullable<System.DateTime> inicial_fecha_horaModificacion
 		{
 			get
 			{
-				return this._inicial_fecha_hora;
+				return this._inicial_fecha_horaModificacion;
 			}
 			set
 			{
-				if ((this._inicial_fecha_hora != value))
+				if ((this._inicial_fecha_horaModificacion != value))
 				{
-					this.Oninicial_fecha_horaChanging(value);
+					this.Oninicial_fecha_horaModificacionChanging(value);
 					this.SendPropertyChanging();
-					this._inicial_fecha_hora = value;
-					this.SendPropertyChanged("inicial_fecha_hora");
-					this.Oninicial_fecha_horaChanged();
+					this._inicial_fecha_horaModificacion = value;
+					this.SendPropertyChanged("inicial_fecha_horaModificacion");
+					this.Oninicial_fecha_horaModificacionChanged();
 				}
 			}
 		}
@@ -18274,6 +18763,30 @@ namespace CapaDatos
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Emp_id", DbType="BigInt")]
+		public System.Nullable<long> Emp_id
+		{
+			get
+			{
+				return this._Emp_id;
+			}
+			set
+			{
+				if ((this._Emp_id != value))
+				{
+					if (this._Tbl_Empresa.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnEmp_idChanging(value);
+					this.SendPropertyChanging();
+					this._Emp_id = value;
+					this.SendPropertyChanged("Emp_id");
+					this.OnEmp_idChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_fechaHoraGuardado", DbType="DateTime")]
 		public System.Nullable<System.DateTime> inicial_fechaHoraGuardado
 		{
@@ -18310,6 +18823,40 @@ namespace CapaDatos
 					this._inicial_estado = value;
 					this.SendPropertyChanged("inicial_estado");
 					this.Oninicial_estadoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Empresa_Tbl_Inicial", Storage="_Tbl_Empresa", ThisKey="Emp_id", OtherKey="Emp_id", IsForeignKey=true)]
+		public Tbl_Empresa Tbl_Empresa
+		{
+			get
+			{
+				return this._Tbl_Empresa.Entity;
+			}
+			set
+			{
+				Tbl_Empresa previousValue = this._Tbl_Empresa.Entity;
+				if (((previousValue != value) 
+							|| (this._Tbl_Empresa.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Tbl_Empresa.Entity = null;
+						previousValue.Tbl_Inicial.Remove(this);
+					}
+					this._Tbl_Empresa.Entity = value;
+					if ((value != null))
+					{
+						value.Tbl_Inicial.Add(this);
+						this._Emp_id = value.Emp_id;
+					}
+					else
+					{
+						this._Emp_id = default(Nullable<long>);
+					}
+					this.SendPropertyChanged("Tbl_Empresa");
 				}
 			}
 		}
@@ -18843,13 +19390,17 @@ namespace CapaDatos
 		
 		private string _inmu_4observaInmuAcuerTipoEmpRies5;
 		
-		private string _inmu_fecha_hora;
+		private System.Nullable<System.DateTime> _inmu_fecha_horaModificacion;
 		
 		private System.Nullable<long> _Per_id;
+		
+		private System.Nullable<long> _Emp_id;
 		
 		private System.Nullable<System.DateTime> _inmu_fechaHoraGuardado;
 		
 		private string _inmu_estado;
+		
+		private EntityRef<Tbl_Empresa> _Tbl_Empresa;
 		
 		private EntityRef<Tbl_Personas> _Tbl_Personas;
 		
@@ -19291,10 +19842,12 @@ namespace CapaDatos
     partial void Oninmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies5Changed();
     partial void Oninmu_4observaInmuAcuerTipoEmpRies5Changing(string value);
     partial void Oninmu_4observaInmuAcuerTipoEmpRies5Changed();
-    partial void Oninmu_fecha_horaChanging(string value);
-    partial void Oninmu_fecha_horaChanged();
+    partial void Oninmu_fecha_horaModificacionChanging(System.Nullable<System.DateTime> value);
+    partial void Oninmu_fecha_horaModificacionChanged();
     partial void OnPer_idChanging(System.Nullable<long> value);
     partial void OnPer_idChanged();
+    partial void OnEmp_idChanging(System.Nullable<long> value);
+    partial void OnEmp_idChanged();
     partial void Oninmu_fechaHoraGuardadoChanging(System.Nullable<System.DateTime> value);
     partial void Oninmu_fechaHoraGuardadoChanged();
     partial void Oninmu_estadoChanging(string value);
@@ -19303,6 +19856,7 @@ namespace CapaDatos
 		
 		public Tbl_Inmunizaciones()
 		{
+			this._Tbl_Empresa = default(EntityRef<Tbl_Empresa>);
 			this._Tbl_Personas = default(EntityRef<Tbl_Personas>);
 			OnCreated();
 		}
@@ -23647,22 +24201,22 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_fecha_hora", DbType="VarChar(25)")]
-		public string inmu_fecha_hora
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_fecha_horaModificacion", DbType="DateTime")]
+		public System.Nullable<System.DateTime> inmu_fecha_horaModificacion
 		{
 			get
 			{
-				return this._inmu_fecha_hora;
+				return this._inmu_fecha_horaModificacion;
 			}
 			set
 			{
-				if ((this._inmu_fecha_hora != value))
+				if ((this._inmu_fecha_horaModificacion != value))
 				{
-					this.Oninmu_fecha_horaChanging(value);
+					this.Oninmu_fecha_horaModificacionChanging(value);
 					this.SendPropertyChanging();
-					this._inmu_fecha_hora = value;
-					this.SendPropertyChanged("inmu_fecha_hora");
-					this.Oninmu_fecha_horaChanged();
+					this._inmu_fecha_horaModificacion = value;
+					this.SendPropertyChanged("inmu_fecha_horaModificacion");
+					this.Oninmu_fecha_horaModificacionChanged();
 				}
 			}
 		}
@@ -23687,6 +24241,30 @@ namespace CapaDatos
 					this._Per_id = value;
 					this.SendPropertyChanged("Per_id");
 					this.OnPer_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Emp_id", DbType="BigInt")]
+		public System.Nullable<long> Emp_id
+		{
+			get
+			{
+				return this._Emp_id;
+			}
+			set
+			{
+				if ((this._Emp_id != value))
+				{
+					if (this._Tbl_Empresa.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnEmp_idChanging(value);
+					this.SendPropertyChanging();
+					this._Emp_id = value;
+					this.SendPropertyChanged("Emp_id");
+					this.OnEmp_idChanged();
 				}
 			}
 		}
@@ -23727,6 +24305,40 @@ namespace CapaDatos
 					this._inmu_estado = value;
 					this.SendPropertyChanged("inmu_estado");
 					this.Oninmu_estadoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Empresa_Tbl_Inmunizaciones", Storage="_Tbl_Empresa", ThisKey="Emp_id", OtherKey="Emp_id", IsForeignKey=true)]
+		public Tbl_Empresa Tbl_Empresa
+		{
+			get
+			{
+				return this._Tbl_Empresa.Entity;
+			}
+			set
+			{
+				Tbl_Empresa previousValue = this._Tbl_Empresa.Entity;
+				if (((previousValue != value) 
+							|| (this._Tbl_Empresa.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Tbl_Empresa.Entity = null;
+						previousValue.Tbl_Inmunizaciones.Remove(this);
+					}
+					this._Tbl_Empresa.Entity = value;
+					if ((value != null))
+					{
+						value.Tbl_Inmunizaciones.Add(this);
+						this._Emp_id = value.Emp_id;
+					}
+					else
+					{
+						this._Emp_id = default(Nullable<long>);
+					}
+					this.SendPropertyChanged("Tbl_Empresa");
 				}
 			}
 		}
@@ -23792,7 +24404,7 @@ namespace CapaDatos
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _pedExa_id;
+		private long _pedExa_id;
 		
 		private string _pedExa_ciiu;
 		
@@ -24096,13 +24708,17 @@ namespace CapaDatos
 		
 		private string _pedExa_descripOtros3;
 		
-		private string _pedExa_fecha_hora;
+		private System.Nullable<System.DateTime> _pedExa_fecha_horaModificacion;
 		
 		private System.Nullable<long> _Per_id;
+		
+		private System.Nullable<long> _Emp_id;
 		
 		private System.Nullable<System.DateTime> _pedExa_fechaHoraGuardado;
 		
 		private string _pedExa_estado;
+		
+		private EntityRef<Tbl_Empresa> _Tbl_Empresa;
 		
 		private EntityRef<Tbl_Personas> _Tbl_Personas;
 		
@@ -24110,7 +24726,7 @@ namespace CapaDatos
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnpedExa_idChanging(int value);
+    partial void OnpedExa_idChanging(long value);
     partial void OnpedExa_idChanged();
     partial void OnpedExa_ciiuChanging(string value);
     partial void OnpedExa_ciiuChanged();
@@ -24414,10 +25030,12 @@ namespace CapaDatos
     partial void OnpedExa_Otros3Changed();
     partial void OnpedExa_descripOtros3Changing(string value);
     partial void OnpedExa_descripOtros3Changed();
-    partial void OnpedExa_fecha_horaChanging(string value);
-    partial void OnpedExa_fecha_horaChanged();
+    partial void OnpedExa_fecha_horaModificacionChanging(System.Nullable<System.DateTime> value);
+    partial void OnpedExa_fecha_horaModificacionChanged();
     partial void OnPer_idChanging(System.Nullable<long> value);
     partial void OnPer_idChanged();
+    partial void OnEmp_idChanging(System.Nullable<long> value);
+    partial void OnEmp_idChanged();
     partial void OnpedExa_fechaHoraGuardadoChanging(System.Nullable<System.DateTime> value);
     partial void OnpedExa_fechaHoraGuardadoChanged();
     partial void OnpedExa_estadoChanging(string value);
@@ -24426,12 +25044,13 @@ namespace CapaDatos
 		
 		public Tbl_PedidoExamenes()
 		{
+			this._Tbl_Empresa = default(EntityRef<Tbl_Empresa>);
 			this._Tbl_Personas = default(EntityRef<Tbl_Personas>);
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int pedExa_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_id", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public long pedExa_id
 		{
 			get
 			{
@@ -27470,22 +28089,22 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_fecha_hora", DbType="VarChar(25)")]
-		public string pedExa_fecha_hora
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_fecha_horaModificacion", DbType="DateTime")]
+		public System.Nullable<System.DateTime> pedExa_fecha_horaModificacion
 		{
 			get
 			{
-				return this._pedExa_fecha_hora;
+				return this._pedExa_fecha_horaModificacion;
 			}
 			set
 			{
-				if ((this._pedExa_fecha_hora != value))
+				if ((this._pedExa_fecha_horaModificacion != value))
 				{
-					this.OnpedExa_fecha_horaChanging(value);
+					this.OnpedExa_fecha_horaModificacionChanging(value);
 					this.SendPropertyChanging();
-					this._pedExa_fecha_hora = value;
-					this.SendPropertyChanged("pedExa_fecha_hora");
-					this.OnpedExa_fecha_horaChanged();
+					this._pedExa_fecha_horaModificacion = value;
+					this.SendPropertyChanged("pedExa_fecha_horaModificacion");
+					this.OnpedExa_fecha_horaModificacionChanged();
 				}
 			}
 		}
@@ -27510,6 +28129,30 @@ namespace CapaDatos
 					this._Per_id = value;
 					this.SendPropertyChanged("Per_id");
 					this.OnPer_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Emp_id", DbType="BigInt")]
+		public System.Nullable<long> Emp_id
+		{
+			get
+			{
+				return this._Emp_id;
+			}
+			set
+			{
+				if ((this._Emp_id != value))
+				{
+					if (this._Tbl_Empresa.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnEmp_idChanging(value);
+					this.SendPropertyChanging();
+					this._Emp_id = value;
+					this.SendPropertyChanged("Emp_id");
+					this.OnEmp_idChanged();
 				}
 			}
 		}
@@ -27550,6 +28193,40 @@ namespace CapaDatos
 					this._pedExa_estado = value;
 					this.SendPropertyChanged("pedExa_estado");
 					this.OnpedExa_estadoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Empresa_Tbl_PedidoExamenes", Storage="_Tbl_Empresa", ThisKey="Emp_id", OtherKey="Emp_id", IsForeignKey=true)]
+		public Tbl_Empresa Tbl_Empresa
+		{
+			get
+			{
+				return this._Tbl_Empresa.Entity;
+			}
+			set
+			{
+				Tbl_Empresa previousValue = this._Tbl_Empresa.Entity;
+				if (((previousValue != value) 
+							|| (this._Tbl_Empresa.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Tbl_Empresa.Entity = null;
+						previousValue.Tbl_PedidoExamenes.Remove(this);
+					}
+					this._Tbl_Empresa.Entity = value;
+					if ((value != null))
+					{
+						value.Tbl_PedidoExamenes.Add(this);
+						this._Emp_id = value.Emp_id;
+					}
+					else
+					{
+						this._Emp_id = default(Nullable<long>);
+					}
+					this.SendPropertyChanged("Tbl_Empresa");
 				}
 			}
 		}
@@ -28289,7 +28966,7 @@ namespace CapaDatos
 		
 		private string _perio_descripcionRecoTratamiento;
 		
-		private string _perio_fecha_hora;
+		private System.Nullable<System.DateTime> _perio_fecha_horaModificacion;
 		
 		private System.Nullable<int> _prof_id;
 		
@@ -28299,11 +28976,15 @@ namespace CapaDatos
 		
 		private System.Nullable<long> _Per_id;
 		
+		private System.Nullable<long> _Emp_id;
+		
 		private System.Nullable<System.DateTime> _perio_fechaHoraGuardado;
 		
 		private string _perio_estado;
 		
 		private EntityRef<Tbl_Especialidad> _Tbl_Especialidad;
+		
+		private EntityRef<Tbl_Empresa> _Tbl_Empresa;
 		
 		private EntityRef<Tbl_Personas> _Tbl_Personas;
 		
@@ -28987,8 +29668,8 @@ namespace CapaDatos
     partial void Onperio_LimitAptMedTrabajoChanged();
     partial void Onperio_descripcionRecoTratamientoChanging(string value);
     partial void Onperio_descripcionRecoTratamientoChanged();
-    partial void Onperio_fecha_horaChanging(string value);
-    partial void Onperio_fecha_horaChanged();
+    partial void Onperio_fecha_horaModificacionChanging(System.Nullable<System.DateTime> value);
+    partial void Onperio_fecha_horaModificacionChanged();
     partial void Onprof_idChanging(System.Nullable<int> value);
     partial void Onprof_idChanged();
     partial void Onespec_idChanging(System.Nullable<int> value);
@@ -28997,6 +29678,8 @@ namespace CapaDatos
     partial void Onperio_codChanged();
     partial void OnPer_idChanging(System.Nullable<long> value);
     partial void OnPer_idChanged();
+    partial void OnEmp_idChanging(System.Nullable<long> value);
+    partial void OnEmp_idChanged();
     partial void Onperio_fechaHoraGuardadoChanging(System.Nullable<System.DateTime> value);
     partial void Onperio_fechaHoraGuardadoChanged();
     partial void Onperio_estadoChanging(string value);
@@ -29006,6 +29689,7 @@ namespace CapaDatos
 		public Tbl_Periodica()
 		{
 			this._Tbl_Especialidad = default(EntityRef<Tbl_Especialidad>);
+			this._Tbl_Empresa = default(EntityRef<Tbl_Empresa>);
 			this._Tbl_Personas = default(EntityRef<Tbl_Personas>);
 			this._Tbl_Profesional = default(EntityRef<Tbl_Profesional>);
 			OnCreated();
@@ -35751,22 +36435,22 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_fecha_hora", DbType="VarChar(25)")]
-		public string perio_fecha_hora
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_fecha_horaModificacion", DbType="DateTime")]
+		public System.Nullable<System.DateTime> perio_fecha_horaModificacion
 		{
 			get
 			{
-				return this._perio_fecha_hora;
+				return this._perio_fecha_horaModificacion;
 			}
 			set
 			{
-				if ((this._perio_fecha_hora != value))
+				if ((this._perio_fecha_horaModificacion != value))
 				{
-					this.Onperio_fecha_horaChanging(value);
+					this.Onperio_fecha_horaModificacionChanging(value);
 					this.SendPropertyChanging();
-					this._perio_fecha_hora = value;
-					this.SendPropertyChanged("perio_fecha_hora");
-					this.Onperio_fecha_horaChanged();
+					this._perio_fecha_horaModificacion = value;
+					this.SendPropertyChanged("perio_fecha_horaModificacion");
+					this.Onperio_fecha_horaModificacionChanged();
 				}
 			}
 		}
@@ -35863,6 +36547,30 @@ namespace CapaDatos
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Emp_id", DbType="BigInt")]
+		public System.Nullable<long> Emp_id
+		{
+			get
+			{
+				return this._Emp_id;
+			}
+			set
+			{
+				if ((this._Emp_id != value))
+				{
+					if (this._Tbl_Empresa.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnEmp_idChanging(value);
+					this.SendPropertyChanging();
+					this._Emp_id = value;
+					this.SendPropertyChanged("Emp_id");
+					this.OnEmp_idChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_fechaHoraGuardado", DbType="DateTime")]
 		public System.Nullable<System.DateTime> perio_fechaHoraGuardado
 		{
@@ -35933,6 +36641,40 @@ namespace CapaDatos
 						this._espec_id = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("Tbl_Especialidad");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Empresa_Tbl_Periodica", Storage="_Tbl_Empresa", ThisKey="Emp_id", OtherKey="Emp_id", IsForeignKey=true)]
+		public Tbl_Empresa Tbl_Empresa
+		{
+			get
+			{
+				return this._Tbl_Empresa.Entity;
+			}
+			set
+			{
+				Tbl_Empresa previousValue = this._Tbl_Empresa.Entity;
+				if (((previousValue != value) 
+							|| (this._Tbl_Empresa.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Tbl_Empresa.Entity = null;
+						previousValue.Tbl_Periodica.Remove(this);
+					}
+					this._Tbl_Empresa.Entity = value;
+					if ((value != null))
+					{
+						value.Tbl_Periodica.Add(this);
+						this._Emp_id = value.Emp_id;
+					}
+					else
+					{
+						this._Emp_id = default(Nullable<long>);
+					}
+					this.SendPropertyChanged("Tbl_Empresa");
 				}
 			}
 		}
@@ -36048,7 +36790,7 @@ namespace CapaDatos
 		
 		private string _Per_genero;
 		
-		private System.Nullable<int> _Emp_id;
+		private System.Nullable<long> _Emp_id;
 		
 		private string _Per_puestoTrabajo;
 		
@@ -36104,7 +36846,7 @@ namespace CapaDatos
     partial void OnPer_fechaNacimientoChanged();
     partial void OnPer_generoChanging(string value);
     partial void OnPer_generoChanged();
-    partial void OnEmp_idChanging(System.Nullable<int> value);
+    partial void OnEmp_idChanging(System.Nullable<long> value);
     partial void OnEmp_idChanged();
     partial void OnPer_puestoTrabajoChanging(string value);
     partial void OnPer_puestoTrabajoChanged();
@@ -36296,8 +37038,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Emp_id", DbType="Int")]
-		public System.Nullable<int> Emp_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Emp_id", DbType="BigInt")]
+		public System.Nullable<long> Emp_id
 		{
 			get
 			{
@@ -36597,7 +37339,7 @@ namespace CapaDatos
 					}
 					else
 					{
-						this._Emp_id = default(Nullable<int>);
+						this._Emp_id = default(Nullable<long>);
 					}
 					this.SendPropertyChanged("Tbl_Empresa");
 				}
@@ -37207,7 +37949,7 @@ namespace CapaDatos
 		
 		private string _rein_descripcionRecoTratamiento;
 		
-		private string _rein_fecha_hora;
+		private System.Nullable<System.DateTime> _rein_fecha_horaModificacion;
 		
 		private System.Nullable<int> _prof_id;
 		
@@ -37217,6 +37959,8 @@ namespace CapaDatos
 		
 		private System.Nullable<long> _Per_id;
 		
+		private System.Nullable<long> _Emp_id;
+		
 		private System.Nullable<System.DateTime> _rein_fechaHoraGuardado;
 		
 		private string _rein_estado;
@@ -37224,6 +37968,8 @@ namespace CapaDatos
 		private EntityRef<Tbl_Especialidad> _Tbl_Especialidad;
 		
 		private EntityRef<Tbl_Profesional> _Tbl_Profesional;
+		
+		private EntityRef<Tbl_Empresa> _Tbl_Empresa;
 		
 		private EntityRef<Tbl_Personas> _Tbl_Personas;
 		
@@ -37409,8 +38155,8 @@ namespace CapaDatos
     partial void Onrein_ReubicaAptMedicaChanged();
     partial void Onrein_descripcionRecoTratamientoChanging(string value);
     partial void Onrein_descripcionRecoTratamientoChanged();
-    partial void Onrein_fecha_horaChanging(string value);
-    partial void Onrein_fecha_horaChanged();
+    partial void Onrein_fecha_horaModificacionChanging(System.Nullable<System.DateTime> value);
+    partial void Onrein_fecha_horaModificacionChanged();
     partial void Onprof_idChanging(System.Nullable<int> value);
     partial void Onprof_idChanged();
     partial void Onespec_idChanging(System.Nullable<int> value);
@@ -37419,6 +38165,8 @@ namespace CapaDatos
     partial void Onrein_codChanged();
     partial void OnPer_idChanging(System.Nullable<long> value);
     partial void OnPer_idChanged();
+    partial void OnEmp_idChanging(System.Nullable<long> value);
+    partial void OnEmp_idChanged();
     partial void Onrein_fechaHoraGuardadoChanging(System.Nullable<System.DateTime> value);
     partial void Onrein_fechaHoraGuardadoChanged();
     partial void Onrein_estadoChanging(string value);
@@ -37429,6 +38177,7 @@ namespace CapaDatos
 		{
 			this._Tbl_Especialidad = default(EntityRef<Tbl_Especialidad>);
 			this._Tbl_Profesional = default(EntityRef<Tbl_Profesional>);
+			this._Tbl_Empresa = default(EntityRef<Tbl_Empresa>);
 			this._Tbl_Personas = default(EntityRef<Tbl_Personas>);
 			OnCreated();
 		}
@@ -39213,22 +39962,22 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_fecha_hora", DbType="VarChar(25)")]
-		public string rein_fecha_hora
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_fecha_horaModificacion", DbType="DateTime")]
+		public System.Nullable<System.DateTime> rein_fecha_horaModificacion
 		{
 			get
 			{
-				return this._rein_fecha_hora;
+				return this._rein_fecha_horaModificacion;
 			}
 			set
 			{
-				if ((this._rein_fecha_hora != value))
+				if ((this._rein_fecha_horaModificacion != value))
 				{
-					this.Onrein_fecha_horaChanging(value);
+					this.Onrein_fecha_horaModificacionChanging(value);
 					this.SendPropertyChanging();
-					this._rein_fecha_hora = value;
-					this.SendPropertyChanged("rein_fecha_hora");
-					this.Onrein_fecha_horaChanged();
+					this._rein_fecha_horaModificacion = value;
+					this.SendPropertyChanged("rein_fecha_horaModificacion");
+					this.Onrein_fecha_horaModificacionChanged();
 				}
 			}
 		}
@@ -39321,6 +40070,30 @@ namespace CapaDatos
 					this._Per_id = value;
 					this.SendPropertyChanged("Per_id");
 					this.OnPer_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Emp_id", DbType="BigInt")]
+		public System.Nullable<long> Emp_id
+		{
+			get
+			{
+				return this._Emp_id;
+			}
+			set
+			{
+				if ((this._Emp_id != value))
+				{
+					if (this._Tbl_Empresa.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnEmp_idChanging(value);
+					this.SendPropertyChanging();
+					this._Emp_id = value;
+					this.SendPropertyChanged("Emp_id");
+					this.OnEmp_idChanged();
 				}
 			}
 		}
@@ -39429,6 +40202,40 @@ namespace CapaDatos
 						this._prof_id = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("Tbl_Profesional");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Empresa_Tbl_Reintegro", Storage="_Tbl_Empresa", ThisKey="Emp_id", OtherKey="Emp_id", IsForeignKey=true)]
+		public Tbl_Empresa Tbl_Empresa
+		{
+			get
+			{
+				return this._Tbl_Empresa.Entity;
+			}
+			set
+			{
+				Tbl_Empresa previousValue = this._Tbl_Empresa.Entity;
+				if (((previousValue != value) 
+							|| (this._Tbl_Empresa.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Tbl_Empresa.Entity = null;
+						previousValue.Tbl_Reintegro.Remove(this);
+					}
+					this._Tbl_Empresa.Entity = value;
+					if ((value != null))
+					{
+						value.Tbl_Reintegro.Add(this);
+						this._Emp_id = value.Emp_id;
+					}
+					else
+					{
+						this._Emp_id = default(Nullable<long>);
+					}
+					this.SendPropertyChanged("Tbl_Empresa");
 				}
 			}
 		}
@@ -39690,7 +40497,7 @@ namespace CapaDatos
 		
 		private string _ret_descripcionRecoTratamiento;
 		
-		private string _ret_fecha_hora;
+		private System.Nullable<System.DateTime> _ret_fecha_horaModificacion;
 		
 		private System.Nullable<int> _prof_id;
 		
@@ -39700,6 +40507,8 @@ namespace CapaDatos
 		
 		private System.Nullable<long> _Per_id;
 		
+		private System.Nullable<long> _Emp_id;
+		
 		private System.Nullable<System.DateTime> _ret_fechaHoraGuardado;
 		
 		private string _ret_estado;
@@ -39707,6 +40516,8 @@ namespace CapaDatos
 		private EntityRef<Tbl_Especialidad> _Tbl_Especialidad;
 		
 		private EntityRef<Tbl_Profesional> _Tbl_Profesional;
+		
+		private EntityRef<Tbl_Empresa> _Tbl_Empresa;
 		
 		private EntityRef<Tbl_Personas> _Tbl_Personas;
 		
@@ -39910,8 +40721,8 @@ namespace CapaDatos
     partial void Onret_observacionesEvaMedRetiroChanged();
     partial void Onret_descripcionRecoTratamientoChanging(string value);
     partial void Onret_descripcionRecoTratamientoChanged();
-    partial void Onret_fecha_horaChanging(string value);
-    partial void Onret_fecha_horaChanged();
+    partial void Onret_fecha_horaModificacionChanging(System.Nullable<System.DateTime> value);
+    partial void Onret_fecha_horaModificacionChanged();
     partial void Onprof_idChanging(System.Nullable<int> value);
     partial void Onprof_idChanged();
     partial void Onespec_idChanging(System.Nullable<int> value);
@@ -39920,6 +40731,8 @@ namespace CapaDatos
     partial void Onret_codChanged();
     partial void OnPer_idChanging(System.Nullable<long> value);
     partial void OnPer_idChanged();
+    partial void OnEmp_idChanging(System.Nullable<long> value);
+    partial void OnEmp_idChanged();
     partial void Onret_fechaHoraGuardadoChanging(System.Nullable<System.DateTime> value);
     partial void Onret_fechaHoraGuardadoChanged();
     partial void Onret_estadoChanging(string value);
@@ -39930,6 +40743,7 @@ namespace CapaDatos
 		{
 			this._Tbl_Especialidad = default(EntityRef<Tbl_Especialidad>);
 			this._Tbl_Profesional = default(EntityRef<Tbl_Profesional>);
+			this._Tbl_Empresa = default(EntityRef<Tbl_Empresa>);
 			this._Tbl_Personas = default(EntityRef<Tbl_Personas>);
 			OnCreated();
 		}
@@ -41894,22 +42708,22 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_fecha_hora", DbType="VarChar(25)")]
-		public string ret_fecha_hora
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_fecha_horaModificacion", DbType="DateTime")]
+		public System.Nullable<System.DateTime> ret_fecha_horaModificacion
 		{
 			get
 			{
-				return this._ret_fecha_hora;
+				return this._ret_fecha_horaModificacion;
 			}
 			set
 			{
-				if ((this._ret_fecha_hora != value))
+				if ((this._ret_fecha_horaModificacion != value))
 				{
-					this.Onret_fecha_horaChanging(value);
+					this.Onret_fecha_horaModificacionChanging(value);
 					this.SendPropertyChanging();
-					this._ret_fecha_hora = value;
-					this.SendPropertyChanged("ret_fecha_hora");
-					this.Onret_fecha_horaChanged();
+					this._ret_fecha_horaModificacion = value;
+					this.SendPropertyChanged("ret_fecha_horaModificacion");
+					this.Onret_fecha_horaModificacionChanged();
 				}
 			}
 		}
@@ -42002,6 +42816,30 @@ namespace CapaDatos
 					this._Per_id = value;
 					this.SendPropertyChanged("Per_id");
 					this.OnPer_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Emp_id", DbType="BigInt")]
+		public System.Nullable<long> Emp_id
+		{
+			get
+			{
+				return this._Emp_id;
+			}
+			set
+			{
+				if ((this._Emp_id != value))
+				{
+					if (this._Tbl_Empresa.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnEmp_idChanging(value);
+					this.SendPropertyChanging();
+					this._Emp_id = value;
+					this.SendPropertyChanged("Emp_id");
+					this.OnEmp_idChanged();
 				}
 			}
 		}
@@ -42110,6 +42948,40 @@ namespace CapaDatos
 						this._prof_id = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("Tbl_Profesional");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Empresa_Tbl_Retiro", Storage="_Tbl_Empresa", ThisKey="Emp_id", OtherKey="Emp_id", IsForeignKey=true)]
+		public Tbl_Empresa Tbl_Empresa
+		{
+			get
+			{
+				return this._Tbl_Empresa.Entity;
+			}
+			set
+			{
+				Tbl_Empresa previousValue = this._Tbl_Empresa.Entity;
+				if (((previousValue != value) 
+							|| (this._Tbl_Empresa.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Tbl_Empresa.Entity = null;
+						previousValue.Tbl_Retiro.Remove(this);
+					}
+					this._Tbl_Empresa.Entity = value;
+					if ((value != null))
+					{
+						value.Tbl_Retiro.Add(this);
+						this._Emp_id = value.Emp_id;
+					}
+					else
+					{
+						this._Emp_id = default(Nullable<long>);
+					}
+					this.SendPropertyChanged("Tbl_Empresa");
 				}
 			}
 		}
@@ -42733,13 +43605,17 @@ namespace CapaDatos
 		
 		private System.Data.Linq.Binary _Socio_economico_imagen_geolocalizacion;
 		
-		private string _Socio_economico_fechaHora;
+		private System.Nullable<System.DateTime> _Socio_economico_fechaHoraModificacion;
 		
 		private System.Nullable<long> _Per_id;
+		
+		private System.Nullable<long> _Emp_id;
 		
 		private System.Nullable<System.DateTime> _Socio_economico_fechaHoraGuardado;
 		
 		private string _Socio_economico__estado;
+		
+		private EntityRef<Tbl_Empresa> _Tbl_Empresa;
 		
 		private EntityRef<Tbl_Personas> _Tbl_Personas;
 		
@@ -43305,10 +44181,12 @@ namespace CapaDatos
     partial void OnSocio_economico_informacion_general_real_noChanged();
     partial void OnSocio_economico_imagen_geolocalizacionChanging(System.Data.Linq.Binary value);
     partial void OnSocio_economico_imagen_geolocalizacionChanged();
-    partial void OnSocio_economico_fechaHoraChanging(string value);
-    partial void OnSocio_economico_fechaHoraChanged();
+    partial void OnSocio_economico_fechaHoraModificacionChanging(System.Nullable<System.DateTime> value);
+    partial void OnSocio_economico_fechaHoraModificacionChanged();
     partial void OnPer_idChanging(System.Nullable<long> value);
     partial void OnPer_idChanged();
+    partial void OnEmp_idChanging(System.Nullable<long> value);
+    partial void OnEmp_idChanged();
     partial void OnSocio_economico_fechaHoraGuardadoChanging(System.Nullable<System.DateTime> value);
     partial void OnSocio_economico_fechaHoraGuardadoChanged();
     partial void OnSocio_economico__estadoChanging(string value);
@@ -43317,6 +44195,7 @@ namespace CapaDatos
 		
 		public Tbl_SocioEconomico()
 		{
+			this._Tbl_Empresa = default(EntityRef<Tbl_Empresa>);
 			this._Tbl_Personas = default(EntityRef<Tbl_Personas>);
 			OnCreated();
 		}
@@ -48901,22 +49780,22 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_fechaHora", DbType="VarChar(25)")]
-		public string Socio_economico_fechaHora
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_fechaHoraModificacion", DbType="DateTime")]
+		public System.Nullable<System.DateTime> Socio_economico_fechaHoraModificacion
 		{
 			get
 			{
-				return this._Socio_economico_fechaHora;
+				return this._Socio_economico_fechaHoraModificacion;
 			}
 			set
 			{
-				if ((this._Socio_economico_fechaHora != value))
+				if ((this._Socio_economico_fechaHoraModificacion != value))
 				{
-					this.OnSocio_economico_fechaHoraChanging(value);
+					this.OnSocio_economico_fechaHoraModificacionChanging(value);
 					this.SendPropertyChanging();
-					this._Socio_economico_fechaHora = value;
-					this.SendPropertyChanged("Socio_economico_fechaHora");
-					this.OnSocio_economico_fechaHoraChanged();
+					this._Socio_economico_fechaHoraModificacion = value;
+					this.SendPropertyChanged("Socio_economico_fechaHoraModificacion");
+					this.OnSocio_economico_fechaHoraModificacionChanged();
 				}
 			}
 		}
@@ -48941,6 +49820,30 @@ namespace CapaDatos
 					this._Per_id = value;
 					this.SendPropertyChanged("Per_id");
 					this.OnPer_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Emp_id", DbType="BigInt")]
+		public System.Nullable<long> Emp_id
+		{
+			get
+			{
+				return this._Emp_id;
+			}
+			set
+			{
+				if ((this._Emp_id != value))
+				{
+					if (this._Tbl_Empresa.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnEmp_idChanging(value);
+					this.SendPropertyChanging();
+					this._Emp_id = value;
+					this.SendPropertyChanged("Emp_id");
+					this.OnEmp_idChanged();
 				}
 			}
 		}
@@ -48981,6 +49884,40 @@ namespace CapaDatos
 					this._Socio_economico__estado = value;
 					this.SendPropertyChanged("Socio_economico__estado");
 					this.OnSocio_economico__estadoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Empresa_Tbl_SocioEconomico", Storage="_Tbl_Empresa", ThisKey="Emp_id", OtherKey="Emp_id", IsForeignKey=true)]
+		public Tbl_Empresa Tbl_Empresa
+		{
+			get
+			{
+				return this._Tbl_Empresa.Entity;
+			}
+			set
+			{
+				Tbl_Empresa previousValue = this._Tbl_Empresa.Entity;
+				if (((previousValue != value) 
+							|| (this._Tbl_Empresa.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Tbl_Empresa.Entity = null;
+						previousValue.Tbl_SocioEconomico.Remove(this);
+					}
+					this._Tbl_Empresa.Entity = value;
+					if ((value != null))
+					{
+						value.Tbl_SocioEconomico.Add(this);
+						this._Emp_id = value.Emp_id;
+					}
+					else
+					{
+						this._Emp_id = default(Nullable<long>);
+					}
+					this.SendPropertyChanged("Tbl_Empresa");
 				}
 			}
 		}
@@ -49285,6 +50222,86 @@ namespace CapaDatos
 		{
 			this.SendPropertyChanging();
 			entity.Tbl_TipoUsuario = null;
+		}
+	}
+	
+	public partial class ObtenerPacienteResult
+	{
+		
+		private int _idFichaMedica;
+		
+		private string _Per_cedula;
+		
+		private string _prof_NomApe;
+		
+		private System.Nullable<System.DateTime> _fechaHoraGuardado;
+		
+		public ObtenerPacienteResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idFichaMedica", DbType="Int NOT NULL")]
+		public int idFichaMedica
+		{
+			get
+			{
+				return this._idFichaMedica;
+			}
+			set
+			{
+				if ((this._idFichaMedica != value))
+				{
+					this._idFichaMedica = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_cedula", DbType="VarChar(10)")]
+		public string Per_cedula
+		{
+			get
+			{
+				return this._Per_cedula;
+			}
+			set
+			{
+				if ((this._Per_cedula != value))
+				{
+					this._Per_cedula = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_prof_NomApe", DbType="VarChar(100)")]
+		public string prof_NomApe
+		{
+			get
+			{
+				return this._prof_NomApe;
+			}
+			set
+			{
+				if ((this._prof_NomApe != value))
+				{
+					this._prof_NomApe = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fechaHoraGuardado", DbType="DateTime")]
+		public System.Nullable<System.DateTime> fechaHoraGuardado
+		{
+			get
+			{
+				return this._fechaHoraGuardado;
+			}
+			set
+			{
+				if ((this._fechaHoraGuardado != value))
+				{
+					this._fechaHoraGuardado = value;
+				}
+			}
 		}
 	}
 }

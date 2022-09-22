@@ -14,6 +14,7 @@ namespace SistemaECU911.Template.Views_Pacientes
             if (Session["Paciente"] != null)
             {
                 string usulogeado = Session["Paciente"].ToString();
+                string cedula = Session["Cedula"].ToString();
                 string resNom = Session["nombre"].ToString();
                 string resApe = Session["apellido"].ToString();
                 string resRol = Session["rol"].ToString();

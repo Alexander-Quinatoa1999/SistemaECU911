@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -22,7 +23,7 @@ namespace SistemaECU911.Template.Views
         DataClassesECU911DataContext dc = new DataClassesECU911DataContext();
 
         private Tbl_Personas per = new Tbl_Personas();
-
+        private Tbl_Empresa emp = new Tbl_Empresa();
         private Tbl_Periodica perio = new Tbl_Periodica();
 
         protected void Page_Load(object sender, EventArgs e)
@@ -35,10 +36,12 @@ namespace SistemaECU911.Template.Views
                     perio = CN_Periodica.ObtenerPeriodicaPorId(codigo);
                     int personasid = Convert.ToInt32(perio.Per_id.ToString());
                     per = CN_HistorialMedico.ObtenerPersonasxId(personasid);
+                    int empresaid = Convert.ToInt32(perio.Emp_id.ToString());
+                    emp = CN_HistorialMedico.ObtenerEmpresaxId(empresaid);
 
                     btn_guardar.Text = "Actualizar";
 
-                    if (per != null)
+                    if (per != null || emp != null)
                     {
                         txt_numHClinica.ReadOnly = true;
 
@@ -2375,6 +2378,8 @@ namespace SistemaECU911.Template.Views
                         }
 
                         //A
+                        txt_nomEmpresa.Text = emp.Emp_nombre.ToString();
+                        txt_rucEmp.Text = emp.Emp_RUC.ToString();
                         txt_priNombre.Text = per.Per_priNombre.ToString();
                         txt_segNombre.Text = per.Per_segNombre.ToString();
                         txt_priApellido.Text = per.Per_priApellido.ToString();
@@ -2529,7 +2534,7 @@ namespace SistemaECU911.Template.Views
                         }
                     }
                 }
-
+                Timer1.Enabled = false;
                 cargarProfesional();
                 defaultValidaciones();
 
@@ -2554,9 +2559,7 @@ namespace SistemaECU911.Template.Views
             List<string> lista = new List<string>();
             try
             {
-                string oConn = @"Data Source=sql8004.site4now.net;Initial Catalog=db_a8b7d4_sistemaecu911;Persist Security Info=True;User ID=db_a8b7d4_sistemaecu911_admin;Password=SistemaECU911";
-
-                SqlConnection con = new SqlConnection(oConn);
+                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ToString());
                 con.Open();
                 SqlCommand cmd = new SqlCommand("select top(10) Per_Cedula from Tbl_Personas where Per_Cedula LIKE + @Cedula + '%'", con);
                 cmd.Parameters.AddWithValue("@Cedula", prefixText);
@@ -2642,9 +2645,7 @@ namespace SistemaECU911.Template.Views
             List<string> lista = new List<string>();
             try
             {
-                string oConn = @"Data Source=sql8004.site4now.net;Initial Catalog=db_a8b7d4_sistemaecu911;Persist Security Info=True;User ID=db_a8b7d4_sistemaecu911_admin;Password=SistemaECU911";
-
-                SqlConnection con = new SqlConnection(oConn);
+                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ToString());
                 con.Open();
                 SqlCommand cmd = new SqlCommand("select top(10) dec10 from cie10 where dec10 LIKE + @Name + '%'", con);
                 cmd.Parameters.AddWithValue("@Name", prefixText);
@@ -2733,8 +2734,10 @@ namespace SistemaECU911.Template.Views
             try
             {
                 per = CN_HistorialMedico.ObtenerIdPersonasxCedula(txt_numHClinica.Text);
-
                 int perso = Convert.ToInt32(per.Per_id.ToString());
+
+                per = CN_HistorialMedico.ObtenerIdEmpresaxCedula(txt_numHClinica.Text);
+                int empre = Convert.ToInt32(per.Emp_id.ToString());
 
                 perio = new Tbl_Periodica();
 
@@ -3801,133 +3804,133 @@ namespace SistemaECU911.Template.Views
                 }
 
                 //A
-                perio.perio_ciiu = txt_ciiu.Text;
-                perio.perio_numArchivo = txt_numArchivo.Text;
+                perio.perio_ciiu = txt_ciiu.Text.ToUpper();
+                perio.perio_numArchivo = txt_numArchivo.Text.ToUpper();
 
                 //B.
-                perio.perio_descripMotiConsulta = txt_motivoconsultaperiodica.Text;
+                perio.perio_descripMotiConsulta = txt_motivoconsultaperiodica.Text.ToUpper();
 
                 //C.
-                perio.perio_descripcionAntCliQuirurgicos = txt_antCliQuiDescripcion.Text;
+                perio.perio_descripcionAntCliQuirurgicos = txt_antCliQuiDescripcion.Text.ToUpper();
 
-                perio.perio_tiempoConsuConsuNocivosTabaco = txt_tiemConConsuNociTabaHabToxi.Text;
-                perio.perio_cantidadConsuNocivosTabaco = txt_cantiConsuNociTabaHabToxi.Text;
-                perio.perio_exConsumiConsuNocivosTabaco = txt_exConsumiConsuNociTabaHabToxi.Text;
-                perio.perio_tiempoAbstiConsuNocivosTabaco = txt_tiemAbstiConsuNociTabaHabToxi.Text;
+                perio.perio_tiempoConsuConsuNocivosTabaco = txt_tiemConConsuNociTabaHabToxi.Text.ToUpper();
+                perio.perio_cantidadConsuNocivosTabaco = txt_cantiConsuNociTabaHabToxi.Text.ToUpper();
+                perio.perio_exConsumiConsuNocivosTabaco = txt_exConsumiConsuNociTabaHabToxi.Text.ToUpper();
+                perio.perio_tiempoAbstiConsuNocivosTabaco = txt_tiemAbstiConsuNociTabaHabToxi.Text.ToUpper();
 
-                perio.perio_tiempoConsuConsuNocivosAlcohol = txt_tiemConConsuNociAlcoHabToxi.Text;
-                perio.perio_cantidadConsuNocivosAlcohol = txt_cantiConsuNociAlcoHabToxi.Text;
-                perio.perio_exConsumiConsuNocivosAlcohol = txt_exConsumiConsuNociAlcoHabToxi.Text;
-                perio.perio_tiempoAbstiConsuNocivosAlcohol = txt_tiemAbstiConsuNociAlcoHabToxi.Text;
+                perio.perio_tiempoConsuConsuNocivosAlcohol = txt_tiemConConsuNociAlcoHabToxi.Text.ToUpper();
+                perio.perio_cantidadConsuNocivosAlcohol = txt_cantiConsuNociAlcoHabToxi.Text.ToUpper();
+                perio.perio_exConsumiConsuNocivosAlcohol = txt_exConsumiConsuNociAlcoHabToxi.Text.ToUpper();
+                perio.perio_tiempoAbstiConsuNocivosAlcohol = txt_tiemAbstiConsuNociAlcoHabToxi.Text.ToUpper();
 
-                perio.perio_tiempoConsu1ConsuNocivosOtrasDrogas = txt_tiemCon1ConsuNociOtrasDroHabToxi.Text;
-                perio.perio_cantidad1ConsuNocivosOtrasDrogas = txt_canti1ConsuNociOtrasDroHabToxi.Text;
-                perio.perio_exConsumi1ConsuNocivosOtrasDrogas = txt_exConsumi1ConsuNociOtrasDroHabToxi.Text;
-                perio.perio_tiempoAbsti1ConsuNocivosOtrasDrogas = txt_tiemAbsti1ConsuNociOtrasDroHabToxi.Text;
-                perio.perio_otrasConsuNocivos = txt_otrasConsuNociOtrasDroHabToxi.Text;
-                perio.perio_tiempoConsu2ConsuNocivosOtrasDrogas = txt_tiemCon2ConsuNociOtrasDroHabToxi.Text;
-                perio.perio_cantidad2ConsuNocivosOtrasDrogas = txt_canti2ConsuNociOtrasDroHabToxi.Text;
-                perio.perio_exConsumi2ConsuNocivosOtrasDrogas = txt_exConsumi2ConsuNociOtrasDroHabToxi.Text;
-                perio.perio_tiempoAbsti2ConsuNocivosOtrasDrogas = txt_tiemAbsti2ConsuNociOtrasDroHabToxi.Text;
+                perio.perio_tiempoConsu1ConsuNocivosOtrasDrogas = txt_tiemCon1ConsuNociOtrasDroHabToxi.Text.ToUpper();
+                perio.perio_cantidad1ConsuNocivosOtrasDrogas = txt_canti1ConsuNociOtrasDroHabToxi.Text.ToUpper();
+                perio.perio_exConsumi1ConsuNocivosOtrasDrogas = txt_exConsumi1ConsuNociOtrasDroHabToxi.Text.ToUpper();
+                perio.perio_tiempoAbsti1ConsuNocivosOtrasDrogas = txt_tiemAbsti1ConsuNociOtrasDroHabToxi.Text.ToUpper();
+                perio.perio_otrasConsuNocivos = txt_otrasConsuNociOtrasDroHabToxi.Text.ToUpper();
+                perio.perio_tiempoConsu2ConsuNocivosOtrasDrogas = txt_tiemCon2ConsuNociOtrasDroHabToxi.Text.ToUpper();
+                perio.perio_cantidad2ConsuNocivosOtrasDrogas = txt_canti2ConsuNociOtrasDroHabToxi.Text.ToUpper();
+                perio.perio_exConsumi2ConsuNocivosOtrasDrogas = txt_exConsumi2ConsuNociOtrasDroHabToxi.Text.ToUpper();
+                perio.perio_tiempoAbsti2ConsuNocivosOtrasDrogas = txt_tiemAbsti2ConsuNociOtrasDroHabToxi.Text.ToUpper();
 
-                perio.perio_cualEstiVidaActFisica = txt_cualEstVidaActFisiEstVida.Text;
-                perio.perio_tiem_cantEstiVidaActFisica = txt_tiemCanEstVidaActFisiEstVida.Text;
+                perio.perio_cualEstiVidaActFisica = txt_cualEstVidaActFisiEstVida.Text.ToUpper();
+                perio.perio_tiem_cantEstiVidaActFisica = txt_tiemCanEstVidaActFisiEstVida.Text.ToUpper();
 
-                perio.perio_cual1EstiVidaMediHabitual = txt_cual1EstVidaMedHabiEstVida.Text;
-                perio.perio_tiem_cant1EstiVidaMediHabitual = txt_tiemCan1EstVidaMedHabiEstVida.Text;
-                perio.perio_cual2EstiVidaMediHabitual = txt_cual2EstVidaMedHabiEstVida.Text;
-                perio.perio_tiem_cant2EstiVidaMediHabitual = txt_tiemCan2EstVidaMedHabiEstVida.Text;
-                perio.perio_cual3EstiVidaMediHabitual = txt_cual3EstVidaMedHabiEstVida.Text;
-                perio.perio_tiem_cant3EstiVidaMediHabitual = txt_tiemCan3EstVidaMedHabiEstVida.Text;
+                perio.perio_cual1EstiVidaMediHabitual = txt_cual1EstVidaMedHabiEstVida.Text.ToUpper();
+                perio.perio_tiem_cant1EstiVidaMediHabitual = txt_tiemCan1EstVidaMedHabiEstVida.Text.ToUpper();
+                perio.perio_cual2EstiVidaMediHabitual = txt_cual2EstVidaMedHabiEstVida.Text.ToUpper();
+                perio.perio_tiem_cant2EstiVidaMediHabitual = txt_tiemCan2EstVidaMedHabiEstVida.Text.ToUpper();
+                perio.perio_cual3EstiVidaMediHabitual = txt_cual3EstVidaMedHabiEstVida.Text.ToUpper();
+                perio.perio_tiem_cant3EstiVidaMediHabitual = txt_tiemCan3EstVidaMedHabiEstVida.Text.ToUpper();
 
-                perio.perio_descripIncidentes = txt_incidentesperiodica.Text;
+                perio.perio_descripIncidentes = txt_incidentesperiodica.Text.ToUpper();
 
-                perio.perio_EspecifiCalificadoIESSAcciTrabajo = txt_especificarcalificadotrabajo.Text;
-                perio.perio_fechaCalificadoIESSAcciTrabajo = txt_fechacalificadotrabajo.Text;
-                perio.perio_observacionesAcciTrabajo = txt_obsercalificadotrabajo.Text;
+                perio.perio_EspecifiCalificadoIESSAcciTrabajo = txt_especificarcalificadotrabajo.Text.ToUpper();
+                perio.perio_fechaCalificadoIESSAcciTrabajo = txt_fechacalificadotrabajo.Text.ToUpper();
+                perio.perio_observacionesAcciTrabajo = txt_obsercalificadotrabajo.Text.ToUpper();
 
-                perio.perio_EspecifiCalificadoIESSEnferProfesionales = txt_especificarcalificadoprofesional.Text;
-                perio.perio_fechaCalificadoIESSEnferProfesionales = txt_fechacalificadoprofesional.Text;
-                perio.perio_observacionesEnferProfesionales = txt_obsercalificadoprofesional.Text;
+                perio.perio_EspecifiCalificadoIESSEnferProfesionales = txt_especificarcalificadoprofesional.Text.ToUpper();
+                perio.perio_fechaCalificadoIESSEnferProfesionales = txt_fechacalificadoprofesional.Text.ToUpper();
+                perio.perio_observacionesEnferProfesionales = txt_obsercalificadoprofesional.Text.ToUpper();
 
                 //D.
-                perio.perio_descripcionAntFamiliares = txt_descripcionantefamiliares.Text;
+                perio.perio_descripcionAntFamiliares = txt_descripcionantefamiliares.Text.ToUpper();
 
                 //E.
-                perio.perio_area = txt_puestotrabajo.Text;
-                perio.perio_area2 = txt_puestotrabajo2.Text;
-                perio.perio_area3 = txt_puestotrabajo3.Text;
-                perio.perio_actividades = txt_act.Text;
-                perio.perio_actividades2 = txt_act2.Text;
-                perio.perio_actividades3 = txt_act3.Text;
-                perio.perio_tiemTrabajo = txt_tiempotrabajo.Text;
-                perio.perio_tiemTrabajo2 = txt_tiempotrabajo2.Text;
-                perio.perio_tiemTrabajo3 = txt_tiempotrabajo3.Text;
-                perio.perio_medPreventivas = txt_medpreventivas.Text;
-                perio.perio_medPreventivas2 = txt_medpreventivas2.Text;
-                perio.perio_medPreventivas3 = txt_medpreventivas3.Text;
+                perio.perio_area = txt_puestotrabajo.Text.ToUpper();
+                perio.perio_area2 = txt_puestotrabajo2.Text.ToUpper();
+                perio.perio_area3 = txt_puestotrabajo3.Text.ToUpper();
+                perio.perio_actividades = txt_act.Text.ToUpper();
+                perio.perio_actividades2 = txt_act2.Text.ToUpper();
+                perio.perio_actividades3 = txt_act3.Text.ToUpper();
+                perio.perio_tiemTrabajo = txt_tiempotrabajo.Text.ToUpper();
+                perio.perio_tiemTrabajo2 = txt_tiempotrabajo2.Text.ToUpper();
+                perio.perio_tiemTrabajo3 = txt_tiempotrabajo3.Text.ToUpper();
+                perio.perio_medPreventivas = txt_medpreventivas.Text.ToUpper();
+                perio.perio_medPreventivas2 = txt_medpreventivas2.Text.ToUpper();
+                perio.perio_medPreventivas3 = txt_medpreventivas3.Text.ToUpper();
 
                 //F.
-                perio.perio_descripEnfActual = txt_enfermedadactualperiodica.Text;
+                perio.perio_descripEnfActual = txt_enfermedadactualperiodica.Text.ToUpper();
 
                 //G.
-                perio.perio_descripRevOrgaSistemas = txt_descrorganosysistemasperiodica.Text;
+                perio.perio_descripRevOrgaSistemas = txt_descrorganosysistemasperiodica.Text.ToUpper();
 
                 //H.
-                perio.perio_preArterial = txt_preArterial.Text;
-                perio.perio_temperatura = txt_temperatura.Text;
-                perio.perio_frecCardiacan = txt_freCardica.Text;
-                perio.perio_satOxigenon = txt_satOxigeno.Text;
-                perio.perio_frecRespiratorian = txt_freRespiratoria.Text;
-                perio.perio_peson = txt_peso.Text;
-                perio.perio_tallan = txt_talla.Text;
-                perio.perio_indMasCorporaln = txt_indMasCorporal.Text;
-                perio.perio_perAbdominaln = txt_perAbdominal.Text;
+                perio.perio_preArterial = txt_preArterial.Text.ToUpper();
+                perio.perio_temperatura = txt_temperatura.Text.ToUpper();
+                perio.perio_frecCardiacan = txt_freCardica.Text.ToUpper();
+                perio.perio_satOxigenon = txt_satOxigeno.Text.ToUpper();
+                perio.perio_frecRespiratorian = txt_freRespiratoria.Text.ToUpper();
+                perio.perio_peson = txt_peso.Text.ToUpper();
+                perio.perio_tallan = txt_talla.Text.ToUpper();
+                perio.perio_indMasCorporaln = txt_indMasCorporal.Text.ToUpper();
+                perio.perio_perAbdominaln = txt_perAbdominal.Text.ToUpper();
 
                 //I.
-                perio.perio_observaExaFisRegional = txt_observexamenfisicoregional.Text;
+                perio.perio_observaExaFisRegional = txt_observexamenfisicoregional.Text.ToUpper();
 
                 //J.
-                perio.perio_examen = txt_examen.Text;
-                perio.perio_examen2 = txt_examen2.Text;
-                perio.perio_fecha = txt_fechaexamen.Text;
-                perio.perio_fecha2 = txt_fechaexamen2.Text;
-                perio.perio_resultado = txt_resultadoexamen.Text;
-                perio.perio_resultado2 = txt_resultadoexamen2.Text;
-                perio.perio_observacionesResExaGenEspPuesTrabajo = txt_observacionexamen.Text;
+                perio.perio_examen = txt_examen.Text.ToUpper();
+                perio.perio_examen2 = txt_examen2.Text.ToUpper();
+                perio.perio_fecha = txt_fechaexamen.Text.ToUpper();
+                perio.perio_fecha2 = txt_fechaexamen2.Text.ToUpper();
+                perio.perio_resultado = txt_resultadoexamen.Text.ToUpper();
+                perio.perio_resultado2 = txt_resultadoexamen2.Text.ToUpper();
+                perio.perio_observacionesResExaGenEspPuesTrabajo = txt_observacionexamen.Text.ToUpper();
 
                 //K.
-                perio.perio_descripcionDiagnostico = txt_descripdiagnostico.Text;
-                perio.perio_descripcionDiagnostico2 = txt_descripdiagnostico2.Text;
-                perio.perio_descripcionDiagnostico3 = txt_descripdiagnostico3.Text;
-                perio.perio_cie = txt_cie.Text;
-                perio.perio_cie2 = txt_cie2.Text;
-                perio.perio_cie3 = txt_cie3.Text;
+                perio.perio_descripcionDiagnostico = txt_descripdiagnostico.Text.ToUpper();
+                perio.perio_descripcionDiagnostico2 = txt_descripdiagnostico2.Text.ToUpper();
+                perio.perio_descripcionDiagnostico3 = txt_descripdiagnostico3.Text.ToUpper();
+                perio.perio_cie = txt_cie.Text.ToUpper();
+                perio.perio_cie2 = txt_cie2.Text.ToUpper();
+                perio.perio_cie3 = txt_cie3.Text.ToUpper();
 
                 //L.
-                perio.perio_ObservAptMedTrabajo = txt_observacionaptitud.Text;
-                perio.perio_LimitAptMedTrabajo = txt_limitacionaptitud.Text;
+                perio.perio_ObservAptMedTrabajo = txt_observacionaptitud.Text.ToUpper();
+                perio.perio_LimitAptMedTrabajo = txt_limitacionaptitud.Text.ToUpper();
 
                 //M.
-                perio.perio_descripcionRecoTratamiento = txt_descripciontratamientoperiodica.Text;
+                perio.perio_descripcionRecoTratamiento = txt_descripciontratamientoperiodica.Text.ToUpper();
 
                 //N.
-                perio.perio_fecha_hora = txt_fechahora.Text;
+                perio.perio_fechaHoraGuardado = Convert.ToDateTime(txt_fechahora.Text.ToUpper());
                 perio.prof_id = Convert.ToInt32(ddl_profesional.SelectedValue);
-                perio.perio_cod = txt_codigoDatProf.Text;
+                perio.perio_cod = txt_codigoDatProf.Text.ToUpper();
                 perio.Per_id = perso;
+                perio.Emp_id = empre;
 
                 CN_Periodica.GuardarPeriodica(perio);
 
                 //Mensaje de confirmacion
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos Guardados Exitosamente')", true);
-
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", "swal('Exito!', 'Datos Guardados Exitosamente', 'success')", true);
                 Response.Redirect("~/Template/Views/PacientesPeriodica.aspx");
 
             }
             catch (Exception)
             {
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos No Guardados')", true);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", "swal('Error!', 'Datos No Guardados', 'error')", true);
             }
         }
 
@@ -6034,129 +6037,129 @@ namespace SistemaECU911.Template.Views
                 }
 
                 //A
-                perio.perio_ciiu = txt_ciiu.Text;
-                perio.perio_numArchivo = txt_numArchivo.Text;
+                perio.perio_ciiu = txt_ciiu.Text.ToUpper();
+                perio.perio_numArchivo = txt_numArchivo.Text.ToUpper();
 
                 //B.
-                perio.perio_descripMotiConsulta = txt_motivoconsultaperiodica.Text;
+                perio.perio_descripMotiConsulta = txt_motivoconsultaperiodica.Text.ToUpper();
 
                 //C.
-                perio.perio_descripcionAntCliQuirurgicos = txt_antCliQuiDescripcion.Text;
+                perio.perio_descripcionAntCliQuirurgicos = txt_antCliQuiDescripcion.Text.ToUpper();
 
-                perio.perio_tiempoConsuConsuNocivosTabaco = txt_tiemConConsuNociTabaHabToxi.Text;
-                perio.perio_cantidadConsuNocivosTabaco = txt_cantiConsuNociTabaHabToxi.Text;
-                perio.perio_exConsumiConsuNocivosTabaco = txt_exConsumiConsuNociTabaHabToxi.Text;
-                perio.perio_tiempoAbstiConsuNocivosTabaco = txt_tiemAbstiConsuNociTabaHabToxi.Text;
+                perio.perio_tiempoConsuConsuNocivosTabaco = txt_tiemConConsuNociTabaHabToxi.Text.ToUpper();
+                perio.perio_cantidadConsuNocivosTabaco = txt_cantiConsuNociTabaHabToxi.Text.ToUpper();
+                perio.perio_exConsumiConsuNocivosTabaco = txt_exConsumiConsuNociTabaHabToxi.Text.ToUpper();
+                perio.perio_tiempoAbstiConsuNocivosTabaco = txt_tiemAbstiConsuNociTabaHabToxi.Text.ToUpper();
 
-                perio.perio_tiempoConsuConsuNocivosAlcohol = txt_tiemConConsuNociAlcoHabToxi.Text;
-                perio.perio_cantidadConsuNocivosAlcohol = txt_cantiConsuNociAlcoHabToxi.Text;
-                perio.perio_exConsumiConsuNocivosAlcohol = txt_exConsumiConsuNociAlcoHabToxi.Text;
-                perio.perio_tiempoAbstiConsuNocivosAlcohol = txt_tiemAbstiConsuNociAlcoHabToxi.Text;
+                perio.perio_tiempoConsuConsuNocivosAlcohol = txt_tiemConConsuNociAlcoHabToxi.Text.ToUpper();
+                perio.perio_cantidadConsuNocivosAlcohol = txt_cantiConsuNociAlcoHabToxi.Text.ToUpper();
+                perio.perio_exConsumiConsuNocivosAlcohol = txt_exConsumiConsuNociAlcoHabToxi.Text.ToUpper();
+                perio.perio_tiempoAbstiConsuNocivosAlcohol = txt_tiemAbstiConsuNociAlcoHabToxi.Text.ToUpper();
 
-                perio.perio_tiempoConsu1ConsuNocivosOtrasDrogas = txt_tiemCon1ConsuNociOtrasDroHabToxi.Text;
-                perio.perio_cantidad1ConsuNocivosOtrasDrogas = txt_canti1ConsuNociOtrasDroHabToxi.Text;
-                perio.perio_exConsumi1ConsuNocivosOtrasDrogas = txt_exConsumi1ConsuNociOtrasDroHabToxi.Text;
-                perio.perio_tiempoAbsti1ConsuNocivosOtrasDrogas = txt_tiemAbsti1ConsuNociOtrasDroHabToxi.Text;
-                perio.perio_otrasConsuNocivos = txt_otrasConsuNociOtrasDroHabToxi.Text;
-                perio.perio_tiempoConsu2ConsuNocivosOtrasDrogas = txt_tiemCon2ConsuNociOtrasDroHabToxi.Text;
-                perio.perio_cantidad2ConsuNocivosOtrasDrogas = txt_canti2ConsuNociOtrasDroHabToxi.Text;
-                perio.perio_exConsumi2ConsuNocivosOtrasDrogas = txt_exConsumi2ConsuNociOtrasDroHabToxi.Text;
-                perio.perio_tiempoAbsti2ConsuNocivosOtrasDrogas = txt_tiemAbsti2ConsuNociOtrasDroHabToxi.Text;
+                perio.perio_tiempoConsu1ConsuNocivosOtrasDrogas = txt_tiemCon1ConsuNociOtrasDroHabToxi.Text.ToUpper();
+                perio.perio_cantidad1ConsuNocivosOtrasDrogas = txt_canti1ConsuNociOtrasDroHabToxi.Text.ToUpper();
+                perio.perio_exConsumi1ConsuNocivosOtrasDrogas = txt_exConsumi1ConsuNociOtrasDroHabToxi.Text.ToUpper();
+                perio.perio_tiempoAbsti1ConsuNocivosOtrasDrogas = txt_tiemAbsti1ConsuNociOtrasDroHabToxi.Text.ToUpper();
+                perio.perio_otrasConsuNocivos = txt_otrasConsuNociOtrasDroHabToxi.Text.ToUpper();
+                perio.perio_tiempoConsu2ConsuNocivosOtrasDrogas = txt_tiemCon2ConsuNociOtrasDroHabToxi.Text.ToUpper();
+                perio.perio_cantidad2ConsuNocivosOtrasDrogas = txt_canti2ConsuNociOtrasDroHabToxi.Text.ToUpper();
+                perio.perio_exConsumi2ConsuNocivosOtrasDrogas = txt_exConsumi2ConsuNociOtrasDroHabToxi.Text.ToUpper();
+                perio.perio_tiempoAbsti2ConsuNocivosOtrasDrogas = txt_tiemAbsti2ConsuNociOtrasDroHabToxi.Text.ToUpper();
 
-                perio.perio_cualEstiVidaActFisica = txt_cualEstVidaActFisiEstVida.Text;
-                perio.perio_tiem_cantEstiVidaActFisica = txt_tiemCanEstVidaActFisiEstVida.Text;
+                perio.perio_cualEstiVidaActFisica = txt_cualEstVidaActFisiEstVida.Text.ToUpper();
+                perio.perio_tiem_cantEstiVidaActFisica = txt_tiemCanEstVidaActFisiEstVida.Text.ToUpper();
 
-                perio.perio_cual1EstiVidaMediHabitual = txt_cual1EstVidaMedHabiEstVida.Text;
-                perio.perio_tiem_cant1EstiVidaMediHabitual = txt_tiemCan1EstVidaMedHabiEstVida.Text;
-                perio.perio_cual2EstiVidaMediHabitual = txt_cual2EstVidaMedHabiEstVida.Text;
-                perio.perio_tiem_cant2EstiVidaMediHabitual = txt_tiemCan2EstVidaMedHabiEstVida.Text;
-                perio.perio_cual3EstiVidaMediHabitual = txt_cual3EstVidaMedHabiEstVida.Text;
-                perio.perio_tiem_cant3EstiVidaMediHabitual = txt_tiemCan3EstVidaMedHabiEstVida.Text;
+                perio.perio_cual1EstiVidaMediHabitual = txt_cual1EstVidaMedHabiEstVida.Text.ToUpper();
+                perio.perio_tiem_cant1EstiVidaMediHabitual = txt_tiemCan1EstVidaMedHabiEstVida.Text.ToUpper();
+                perio.perio_cual2EstiVidaMediHabitual = txt_cual2EstVidaMedHabiEstVida.Text.ToUpper();
+                perio.perio_tiem_cant2EstiVidaMediHabitual = txt_tiemCan2EstVidaMedHabiEstVida.Text.ToUpper();
+                perio.perio_cual3EstiVidaMediHabitual = txt_cual3EstVidaMedHabiEstVida.Text.ToUpper();
+                perio.perio_tiem_cant3EstiVidaMediHabitual = txt_tiemCan3EstVidaMedHabiEstVida.Text.ToUpper();
 
-                perio.perio_descripIncidentes = txt_incidentesperiodica.Text;
+                perio.perio_descripIncidentes = txt_incidentesperiodica.Text.ToUpper();
 
-                perio.perio_EspecifiCalificadoIESSAcciTrabajo = txt_especificarcalificadotrabajo.Text;
-                perio.perio_fechaCalificadoIESSAcciTrabajo = txt_fechacalificadotrabajo.Text;
-                perio.perio_observacionesAcciTrabajo = txt_obsercalificadotrabajo.Text;
+                perio.perio_EspecifiCalificadoIESSAcciTrabajo = txt_especificarcalificadotrabajo.Text.ToUpper();
+                perio.perio_fechaCalificadoIESSAcciTrabajo = txt_fechacalificadotrabajo.Text.ToUpper();
+                perio.perio_observacionesAcciTrabajo = txt_obsercalificadotrabajo.Text.ToUpper();
 
-                perio.perio_EspecifiCalificadoIESSEnferProfesionales = txt_especificarcalificadoprofesional.Text;
-                perio.perio_fechaCalificadoIESSEnferProfesionales = txt_fechacalificadoprofesional.Text;
-                perio.perio_observacionesEnferProfesionales = txt_obsercalificadoprofesional.Text;
+                perio.perio_EspecifiCalificadoIESSEnferProfesionales = txt_especificarcalificadoprofesional.Text.ToUpper();
+                perio.perio_fechaCalificadoIESSEnferProfesionales = txt_fechacalificadoprofesional.Text.ToUpper();
+                perio.perio_observacionesEnferProfesionales = txt_obsercalificadoprofesional.Text.ToUpper();
 
                 //D.
-                perio.perio_descripcionAntFamiliares = txt_descripcionantefamiliares.Text;
+                perio.perio_descripcionAntFamiliares = txt_descripcionantefamiliares.Text.ToUpper();
 
                 //E.
-                perio.perio_area = txt_puestotrabajo.Text;
-                perio.perio_area2 = txt_puestotrabajo2.Text;
-                perio.perio_area3 = txt_puestotrabajo3.Text;
-                perio.perio_actividades = txt_act.Text;
-                perio.perio_actividades2 = txt_act2.Text;
-                perio.perio_actividades3 = txt_act3.Text;
-                perio.perio_tiemTrabajo = txt_tiempotrabajo.Text;
-                perio.perio_tiemTrabajo2 = txt_tiempotrabajo2.Text;
-                perio.perio_tiemTrabajo3 = txt_tiempotrabajo3.Text;
-                perio.perio_medPreventivas = txt_medpreventivas.Text;
-                perio.perio_medPreventivas2 = txt_medpreventivas2.Text;
-                perio.perio_medPreventivas3 = txt_medpreventivas3.Text;
+                perio.perio_area = txt_puestotrabajo.Text.ToUpper();
+                perio.perio_area2 = txt_puestotrabajo2.Text.ToUpper();
+                perio.perio_area3 = txt_puestotrabajo3.Text.ToUpper();
+                perio.perio_actividades = txt_act.Text.ToUpper();
+                perio.perio_actividades2 = txt_act2.Text.ToUpper();
+                perio.perio_actividades3 = txt_act3.Text.ToUpper();
+                perio.perio_tiemTrabajo = txt_tiempotrabajo.Text.ToUpper();
+                perio.perio_tiemTrabajo2 = txt_tiempotrabajo2.Text.ToUpper();
+                perio.perio_tiemTrabajo3 = txt_tiempotrabajo3.Text.ToUpper();
+                perio.perio_medPreventivas = txt_medpreventivas.Text.ToUpper();
+                perio.perio_medPreventivas2 = txt_medpreventivas2.Text.ToUpper();
+                perio.perio_medPreventivas3 = txt_medpreventivas3.Text.ToUpper();
 
                 //F.
-                perio.perio_descripEnfActual = txt_enfermedadactualperiodica.Text;
+                perio.perio_descripEnfActual = txt_enfermedadactualperiodica.Text.ToUpper();
 
                 //G.
-                perio.perio_descripRevOrgaSistemas = txt_descrorganosysistemasperiodica.Text;
+                perio.perio_descripRevOrgaSistemas = txt_descrorganosysistemasperiodica.Text.ToUpper();
 
                 //H.
-                perio.perio_preArterial = txt_preArterial.Text;
-                perio.perio_temperatura = txt_temperatura.Text;
-                perio.perio_frecCardiacan = txt_freCardica.Text;
-                perio.perio_satOxigenon = txt_satOxigeno.Text;
-                perio.perio_frecRespiratorian = txt_freRespiratoria.Text;
-                perio.perio_peson = txt_peso.Text;
-                perio.perio_tallan = txt_talla.Text;
-                perio.perio_indMasCorporaln = txt_indMasCorporal.Text;
-                perio.perio_perAbdominaln = txt_perAbdominal.Text;
+                perio.perio_preArterial = txt_preArterial.Text.ToUpper();
+                perio.perio_temperatura = txt_temperatura.Text.ToUpper();
+                perio.perio_frecCardiacan = txt_freCardica.Text.ToUpper();
+                perio.perio_satOxigenon = txt_satOxigeno.Text.ToUpper();
+                perio.perio_frecRespiratorian = txt_freRespiratoria.Text.ToUpper();
+                perio.perio_peson = txt_peso.Text.ToUpper();
+                perio.perio_tallan = txt_talla.Text.ToUpper();
+                perio.perio_indMasCorporaln = txt_indMasCorporal.Text.ToUpper();
+                perio.perio_perAbdominaln = txt_perAbdominal.Text.ToUpper();
 
                 //I.
-                perio.perio_observaExaFisRegional = txt_observexamenfisicoregional.Text;
+                perio.perio_observaExaFisRegional = txt_observexamenfisicoregional.Text.ToUpper();
 
                 //J.
-                perio.perio_examen = txt_examen.Text;
-                perio.perio_examen2 = txt_examen2.Text;
-                perio.perio_fecha = txt_fechaexamen.Text;
-                perio.perio_fecha2 = txt_fechaexamen2.Text;
-                perio.perio_resultado = txt_resultadoexamen.Text;
-                perio.perio_resultado2 = txt_resultadoexamen2.Text;
-                perio.perio_observacionesResExaGenEspPuesTrabajo = txt_observacionexamen.Text;
+                perio.perio_examen = txt_examen.Text.ToUpper();
+                perio.perio_examen2 = txt_examen2.Text.ToUpper();
+                perio.perio_fecha = txt_fechaexamen.Text.ToUpper();
+                perio.perio_fecha2 = txt_fechaexamen2.Text.ToUpper();
+                perio.perio_resultado = txt_resultadoexamen.Text.ToUpper();
+                perio.perio_resultado2 = txt_resultadoexamen2.Text.ToUpper();
+                perio.perio_observacionesResExaGenEspPuesTrabajo = txt_observacionexamen.Text.ToUpper();
 
                 //K.
-                perio.perio_descripcionDiagnostico = txt_descripdiagnostico.Text;
-                perio.perio_descripcionDiagnostico2 = txt_descripdiagnostico2.Text;
-                perio.perio_descripcionDiagnostico3 = txt_descripdiagnostico3.Text;
-                perio.perio_cie = txt_cie.Text;
-                perio.perio_cie2 = txt_cie2.Text;
-                perio.perio_cie3 = txt_cie3.Text;
+                perio.perio_descripcionDiagnostico = txt_descripdiagnostico.Text.ToUpper();
+                perio.perio_descripcionDiagnostico2 = txt_descripdiagnostico2.Text.ToUpper();
+                perio.perio_descripcionDiagnostico3 = txt_descripdiagnostico3.Text.ToUpper();
+                perio.perio_cie = txt_cie.Text.ToUpper();
+                perio.perio_cie2 = txt_cie2.Text.ToUpper();
+                perio.perio_cie3 = txt_cie3.Text.ToUpper();
 
                 //L.
-                perio.perio_ObservAptMedTrabajo = txt_observacionaptitud.Text;
-                perio.perio_LimitAptMedTrabajo = txt_limitacionaptitud.Text;
+                perio.perio_ObservAptMedTrabajo = txt_observacionaptitud.Text.ToUpper();
+                perio.perio_LimitAptMedTrabajo = txt_limitacionaptitud.Text.ToUpper();
 
                 //M.
-                perio.perio_descripcionRecoTratamiento = txt_descripciontratamientoperiodica.Text;
+                perio.perio_descripcionRecoTratamiento = txt_descripciontratamientoperiodica.Text.ToUpper();
 
                 //N.
-                perio.perio_fecha_hora = txt_fechahora.Text;
+                perio.perio_fecha_horaModificacion = Convert.ToDateTime(txt_fechahora.Text.ToUpper());
                 perio.prof_id = Convert.ToInt32(ddl_profesional.SelectedValue);
-                perio.perio_cod = txt_codigoDatProf.Text;
+                perio.perio_cod = txt_codigoDatProf.Text.ToUpper();
 
                 CN_Periodica.ModificarPeriodica(perio);
 
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos Modificados Exitosamente')", true);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", "swal('Exito!', 'Datos Modificados Exitosamente', 'success')", true);
                 Response.Redirect("~/Template/Views/PacientesPeriodica.aspx");
             }
             catch (Exception)
             {
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos No Modificados')", true);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", "swal('Error!', 'Datos No Modificados', 'error')", true);
             }
         }
 
@@ -6212,7 +6215,8 @@ namespace SistemaECU911.Template.Views
             }
             catch (Exception)
             {
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Llenar primero la talla')", true);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", "swal('Alerta!', 'Datos No Modificados', 'alrt')", true);
+                //ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Llenar primero la talla')", true);
                 txt_peso.Text = "";
                 txt_talla.Focus();
             }
@@ -6512,6 +6516,11 @@ namespace SistemaECU911.Template.Views
         }
 
         protected void btn_cancelar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Template/Views/Inicio.aspx");
+        }
+
+        protected void Timer1_Tick(object sender, EventArgs e)
         {
             Response.Redirect("~/Template/Views/Inicio.aspx");
         }

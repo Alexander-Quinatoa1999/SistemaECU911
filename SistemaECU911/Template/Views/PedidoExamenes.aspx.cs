@@ -10,6 +10,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using CapaDatos;
 using CapaNegocio;
+using HtmlAgilityPack;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
 
 namespace SistemaECU911.Template.Views
 {
@@ -19,7 +22,7 @@ namespace SistemaECU911.Template.Views
         DataClassesECU911DataContext dc = new DataClassesECU911DataContext();
 
         private Tbl_Personas per = new Tbl_Personas();
-
+        private Tbl_Empresa emp = new Tbl_Empresa();
         private Tbl_PedidoExamenes pedexa = new Tbl_PedidoExamenes();
 
 
@@ -33,12 +36,18 @@ namespace SistemaECU911.Template.Views
                     pedexa = CN_PedidoExamenes.ObtenerPedidoExamenesPorId(codigo);
                     int personasid = Convert.ToInt32(pedexa.Per_id.ToString());
                     per = CN_HistorialMedico.ObtenerPersonasxId(personasid);
+                    int empresaid = Convert.ToInt32(pedexa.Emp_id.ToString());
+                    emp = CN_HistorialMedico.ObtenerEmpresaxId(empresaid);
 
                     btn_guardar.Text = "Actualizar";
 
-                    if (per != null)
+                    if (per != null || emp != null)
                     {
+                        txt_numHClinica.ReadOnly = true;
+
                         //A
+                        txt_nombreEmp.Text = emp.Emp_nombre.ToString();
+                        txt_rucEmp.Text = emp.Emp_RUC.ToString();
                         txt_priNombre.Text = per.Per_priNombre.ToString();
                         txt_segNombre.Text = per.Per_segNombre.ToString();
                         txt_priApellido.Text = per.Per_priApellido.ToString();
@@ -59,11 +68,11 @@ namespace SistemaECU911.Template.Views
                             //Hematologia
                             if (pedexa.pedExa_bioHematicaHema == null)
                             {
-                                ckb_bioHematica.Checked = false;                                
+                                ckb_bioHematica.Checked = false;
                             }
                             else
                             {
-                                ckb_bioHematica.Checked = true;                                
+                                ckb_bioHematica.Checked = true;
                             }
                             if (pedexa.pedExa_hematocritoHema == null)
                             {
@@ -71,7 +80,7 @@ namespace SistemaECU911.Template.Views
                             }
                             else
                             {
-                                ckb_hematocrito.Checked = true;                                
+                                ckb_hematocrito.Checked = true;
                             }
                             if (pedexa.pedExa_hemoglobinaHema == null)
                             {
@@ -79,7 +88,7 @@ namespace SistemaECU911.Template.Views
                             }
                             else
                             {
-                                ckb_hemoglobina.Checked = true;                                
+                                ckb_hemoglobina.Checked = true;
                             }
                             if (pedexa.pedExa_vsgHema == null)
                             {
@@ -92,37 +101,37 @@ namespace SistemaECU911.Template.Views
 
                             //Electrolitos
                             if (pedexa.pedExa_NakClElectro == null)
-                            {                                
+                            {
                                 ckb_Na.Checked = false;
                             }
                             else
                             {
                                 ckb_Na.Checked = true;
-                                
+
                             }
                             if (pedexa.pedExa_calcioIonicoElectro == null)
                             {
-                                ckb_calIonico.Checked = false;                                
+                                ckb_calIonico.Checked = false;
                             }
                             else
                             {
-                                ckb_calIonico.Checked = true;                                
+                                ckb_calIonico.Checked = true;
                             }
                             if (pedexa.pedExa_calcioTotalElectro == null)
                             {
-                                ckb_calTotal.Checked = false;                                
+                                ckb_calTotal.Checked = false;
                             }
                             else
                             {
-                                ckb_calTotal.Checked = true;                                
+                                ckb_calTotal.Checked = true;
                             }
                             if (pedexa.pedExa_magnesioElectro == null)
                             {
-                                ckb_magnesio.Checked = false;                                
+                                ckb_magnesio.Checked = false;
                             }
                             else
                             {
-                                ckb_magnesio.Checked = true;                                
+                                ckb_magnesio.Checked = true;
                             }
                             if (pedexa.pedExa_fosforoElectro == null)
                             {
@@ -136,11 +145,11 @@ namespace SistemaECU911.Template.Views
                             //Marcadores Tumorales
                             if (pedexa.pedExa_ca125MarcaTumo == null)
                             {
-                                ckb_ca125.Checked = false;                              
+                                ckb_ca125.Checked = false;
                             }
                             else
                             {
-                                ckb_ca125.Checked = true;                                                             
+                                ckb_ca125.Checked = true;
                             }
                             if (pedexa.pedExa_he4MarcaTumo == null)
                             {
@@ -148,55 +157,55 @@ namespace SistemaECU911.Template.Views
                             }
                             else
                             {
-                                ckb_he4.Checked = true;                            
+                                ckb_he4.Checked = true;
                             }
                             if (pedexa.pedExa_indiceRomaMarcaTumo == null)
                             {
-                                ckb_indRoma.Checked = false;                                
+                                ckb_indRoma.Checked = false;
                             }
                             else
                             {
-                                ckb_indRoma.Checked = true;                                
+                                ckb_indRoma.Checked = true;
                             }
                             if (pedexa.pedExa_afpMarcaTumo == null)
                             {
-                                ckb_afp.Checked = false;                                
+                                ckb_afp.Checked = false;
                             }
                             else
                             {
-                                ckb_afp.Checked = true;                                
+                                ckb_afp.Checked = true;
                             }
                             if (pedexa.pedExa_ceaMarcaTurno == null)
                             {
-                                ckb_cea.Checked = false;                                
+                                ckb_cea.Checked = false;
                             }
                             else
                             {
-                                ckb_cea.Checked = true;                                
+                                ckb_cea.Checked = true;
                             }
                             if (pedexa.pedExa_ca156MarcaTumo == null)
                             {
-                                ckb_ca153.Checked = false;                                
+                                ckb_ca153.Checked = false;
                             }
                             else
                             {
-                                ckb_ca153.Checked = true;                                
+                                ckb_ca153.Checked = true;
                             }
                             if (pedexa.pedExa_ca159MarcaTumo == null)
                             {
-                                ckb_ca199.Checked = false;                                
+                                ckb_ca199.Checked = false;
                             }
                             else
                             {
-                                ckb_ca199.Checked = true;                                
+                                ckb_ca199.Checked = true;
                             }
                             if (pedexa.pedExa_tiroglobulinaMarcaTumo == null)
                             {
-                                ckb_tiroglobulina.Checked = false;                                
+                                ckb_tiroglobulina.Checked = false;
                             }
                             else
                             {
-                                ckb_tiroglobulina.Checked = true;                                
+                                ckb_tiroglobulina.Checked = true;
                             }
                             if (pedexa.pedExa_psaTotalMarcaTumo == null)
                             {
@@ -245,35 +254,40 @@ namespace SistemaECU911.Template.Views
                             if (pedexa.pedExa_pcrCuantitativoSero == null)
                             {
                                 ckb_pcrCuantitativo.Checked = false;
-                            }else
+                            }
+                            else
                             {
                                 ckb_pcrCuantitativo.Checked = true;
                             }
                             if (pedexa.pedExa_frLatexSero == null)
                             {
                                 ckb_frLatex.Checked = false;
-                            }else
+                            }
+                            else
                             {
                                 ckb_frLatex.Checked = true;
                             }
                             if (pedexa.pedExa_astoSero == null)
                             {
                                 ckb_asto.Checked = false;
-                            }else
+                            }
+                            else
                             {
                                 ckb_asto.Checked = true;
                             }
                             if (pedexa.pedExa_aglutinacionesFebrilesSero == null)
                             {
                                 ckb_aglutinaciones.Checked = false;
-                            }else
+                            }
+                            else
                             {
                                 ckb_aglutinaciones.Checked = true;
                             }
                             if (pedexa.pedExa_vdrlSero == null)
                             {
                                 ckb_vdrl.Checked = false;
-                            }else
+                            }
+                            else
                             {
                                 ckb_vdrl.Checked = true;
                             }
@@ -281,11 +295,11 @@ namespace SistemaECU911.Template.Views
                             //Coagulacion
                             if (pedexa.pedExa_plaquetasCoagu == null)
                             {
-                                ckb_plaquetas.Checked = false;                                
+                                ckb_plaquetas.Checked = false;
                             }
                             else
                             {
-                                ckb_plaquetas.Checked = true;                                                               
+                                ckb_plaquetas.Checked = true;
                             }
                             if (pedexa.pedExa_fibrinogenoCoagu == null)
                             {
@@ -293,7 +307,7 @@ namespace SistemaECU911.Template.Views
                             }
                             else
                             {
-                                ckb_fibrinogeno.Checked = true;                                
+                                ckb_fibrinogeno.Checked = true;
                             }
                             if (pedexa.pedExa_TpCoagu == null)
                             {
@@ -301,7 +315,7 @@ namespace SistemaECU911.Template.Views
                             }
                             else
                             {
-                                ckb_tp.Checked = true;                                
+                                ckb_tp.Checked = true;
                             }
                             if (pedexa.pedExa_TtpCoagu == null)
                             {
@@ -309,7 +323,7 @@ namespace SistemaECU911.Template.Views
                             }
                             else
                             {
-                                ckb_ttp.Checked = true;                                
+                                ckb_ttp.Checked = true;
                             }
                             if (pedexa.pedExa_InrCoagu == null)
                             {
@@ -317,7 +331,7 @@ namespace SistemaECU911.Template.Views
                             }
                             else
                             {
-                                ckb_inr.Checked = true;                                
+                                ckb_inr.Checked = true;
                             }
                             if (pedexa.pedExa_tiemCoagulacionCoagu == null)
                             {
@@ -325,7 +339,7 @@ namespace SistemaECU911.Template.Views
                             }
                             else
                             {
-                                ckb_tiempCoagulacion.Checked = true;                                
+                                ckb_tiempCoagulacion.Checked = true;
                             }
                             if (pedexa.pedExa_tiemSangriaCoagu == null)
                             {
@@ -333,7 +347,7 @@ namespace SistemaECU911.Template.Views
                             }
                             else
                             {
-                                ckb_tiempSangria.Checked = true;                                
+                                ckb_tiempSangria.Checked = true;
                             }
                             if (pedexa.pedExa_antiLupicoCoagu == null)
                             {
@@ -341,7 +355,7 @@ namespace SistemaECU911.Template.Views
                             }
                             else
                             {
-                                ckb_antiLupico.Checked = true;                                
+                                ckb_antiLupico.Checked = true;
                             }
                             if (pedexa.pedExa_dimeroDCoagu == null)
                             {
@@ -566,7 +580,7 @@ namespace SistemaECU911.Template.Views
                             }
                             else
                             {
-                                ckb_gluBasal.Checked = true;                                
+                                ckb_gluBasal.Checked = true;
                             }
                             if (pedexa.pedExa_ureaQSangui == null)
                             {
@@ -574,7 +588,7 @@ namespace SistemaECU911.Template.Views
                             }
                             else
                             {
-                                ckb_urea.Checked = true;                                
+                                ckb_urea.Checked = true;
                             }
                             if (pedexa.pedExa_bumQSangui == null)
                             {
@@ -582,7 +596,7 @@ namespace SistemaECU911.Template.Views
                             }
                             else
                             {
-                                ckb_bum.Checked = true;                                
+                                ckb_bum.Checked = true;
                             }
                             if (pedexa.pedExa_creatininaQSangui == null)
                             {
@@ -590,7 +604,7 @@ namespace SistemaECU911.Template.Views
                             }
                             else
                             {
-                                ckb_creatinina.Checked = true;                                
+                                ckb_creatinina.Checked = true;
                             }
                             if (pedexa.pedExa_acUricoQSangui == null)
                             {
@@ -598,7 +612,7 @@ namespace SistemaECU911.Template.Views
                             }
                             else
                             {
-                                ckb_acUrico.Checked = true;                                
+                                ckb_acUrico.Checked = true;
                             }
                             if (pedexa.pedExa_colesTotalQSangui == null)
                             {
@@ -606,7 +620,7 @@ namespace SistemaECU911.Template.Views
                             }
                             else
                             {
-                                ckb_colesTotal.Checked = true;                                
+                                ckb_colesTotal.Checked = true;
                             }
                             if (pedexa.pedExa_hdlcQSangui == null)
                             {
@@ -614,7 +628,7 @@ namespace SistemaECU911.Template.Views
                             }
                             else
                             {
-                                ckb_hdlc.Checked = true;                                
+                                ckb_hdlc.Checked = true;
                             }
                             if (pedexa.pedExa_ldlcQSangui == null)
                             {
@@ -622,7 +636,7 @@ namespace SistemaECU911.Template.Views
                             }
                             else
                             {
-                                ckb_ldlc.Checked = true;                                
+                                ckb_ldlc.Checked = true;
                             }
                             if (pedexa.pedExa_trigliceridosQSangui == null)
                             {
@@ -630,7 +644,7 @@ namespace SistemaECU911.Template.Views
                             }
                             else
                             {
-                                ckb_triglicerido.Checked = true;                                
+                                ckb_triglicerido.Checked = true;
                             }
                             if (pedexa.pedExa_bilirrubinaTotalQSangui == null)
                             {
@@ -638,7 +652,7 @@ namespace SistemaECU911.Template.Views
                             }
                             else
                             {
-                                ckb_biliTotal.Checked = true;                                
+                                ckb_biliTotal.Checked = true;
                             }
                             if (pedexa.pedExa_bilirrubinaDirectaQSangui == null)
                             {
@@ -646,11 +660,11 @@ namespace SistemaECU911.Template.Views
                             }
                             else
                             {
-                                ckb_biliDirecta.Checked = true;                                
+                                ckb_biliDirecta.Checked = true;
                             }
                             if (pedexa.pedExa_bilirrubinaIndirectaQSangui == null)
                             {
-                                ckb_biliindirecta.Checked = false;                                
+                                ckb_biliindirecta.Checked = false;
                             }
                             else
                             {
@@ -658,7 +672,7 @@ namespace SistemaECU911.Template.Views
                             }
                             if (pedexa.pedExa_proteTotalesQSangui == null)
                             {
-                                ckb_proTotales.Checked = false;                                
+                                ckb_proTotales.Checked = false;
                             }
                             else
                             {
@@ -666,7 +680,7 @@ namespace SistemaECU911.Template.Views
                             }
                             if (pedexa.pedExa_albuminaQSangui == null)
                             {
-                                ckb_albumina.Checked = false;                                
+                                ckb_albumina.Checked = false;
                             }
                             else
                             {
@@ -674,7 +688,7 @@ namespace SistemaECU911.Template.Views
                             }
                             if (pedexa.pedExa_globulinaQSangui == null)
                             {
-                                ckb_globulina.Checked = false;                                
+                                ckb_globulina.Checked = false;
                             }
                             else
                             {
@@ -682,7 +696,7 @@ namespace SistemaECU911.Template.Views
                             }
                             if (pedexa.pedExa_testOsullivanQSangui == null)
                             {
-                                ckb_testOsullivan.Checked = false;                                
+                                ckb_testOsullivan.Checked = false;
                             }
                             else
                             {
@@ -690,7 +704,7 @@ namespace SistemaECU911.Template.Views
                             }
                             if (pedexa.pedExa_glucosa2hppQSangui == null)
                             {
-                                ckb_glucosa2h.Checked = false;                                
+                                ckb_glucosa2h.Checked = false;
                             }
                             else
                             {
@@ -707,7 +721,7 @@ namespace SistemaECU911.Template.Views
                             }
                             if (pedexa.pedExa_hemogloGlicosiladaQSangui == null)
                             {
-                                ckb_hemoGlicosilada.Checked = false;                                
+                                ckb_hemoGlicosilada.Checked = false;
                             }
                             else
                             {
@@ -715,7 +729,7 @@ namespace SistemaECU911.Template.Views
                             }
                             if (pedexa.pedExa_hierroSericoQSangui == null)
                             {
-                                ckb_hierroSerico.Checked = false;                                
+                                ckb_hierroSerico.Checked = false;
                             }
                             else
                             {
@@ -723,7 +737,7 @@ namespace SistemaECU911.Template.Views
                             }
                             if (pedexa.pedExa_ferritinaQSangui == null)
                             {
-                                ckb_ferritina.Checked = false;                                
+                                ckb_ferritina.Checked = false;
                             }
                             else
                             {
@@ -731,7 +745,7 @@ namespace SistemaECU911.Template.Views
                             }
                             if (pedexa.pedExa_transferritinaQSangui == null)
                             {
-                                ckb_transferrina.Checked = false;                                
+                                ckb_transferrina.Checked = false;
                             }
                             else
                             {
@@ -745,7 +759,7 @@ namespace SistemaECU911.Template.Views
                             }
                             else
                             {
-                                ckb_iProlactina.Checked = true;                                
+                                ckb_iProlactina.Checked = true;
                             }
                             if (pedexa.pedExa_antiNuclearesInmu == null)
                             {
@@ -753,7 +767,7 @@ namespace SistemaECU911.Template.Views
                             }
                             else
                             {
-                                ckb_antiNucleares.Checked = true;                                
+                                ckb_antiNucleares.Checked = true;
                             }
                             if (pedexa.pedExa_antiDnaInmu == null)
                             {
@@ -761,7 +775,7 @@ namespace SistemaECU911.Template.Views
                             }
                             else
                             {
-                                ckb_antiDna.Checked = true;                                
+                                ckb_antiDna.Checked = true;
                             }
                             if (pedexa.pedExa_antiFosfolipidosInmu == null)
                             {
@@ -769,14 +783,14 @@ namespace SistemaECU911.Template.Views
                             }
                             else
                             {
-                                ckb_antiFosfolípidos.Checked = true;                                
+                                ckb_antiFosfolípidos.Checked = true;
                             }
                             if (pedexa.pedExa_lgGAntiFosfoInmu == null)
                             {
                                 ckb_iggAntiFosfolipidos.Checked = false;
                             }
                             else
-                            {                                
+                            {
                                 ckb_iggAntiFosfolipidos.Checked = true;
                             }
                             if (pedexa.pedExa_lgMAntiFosfoInmu == null)
@@ -785,7 +799,7 @@ namespace SistemaECU911.Template.Views
                             }
                             else
                             {
-                                ckb_igmAntiFosfolipidos.Checked = true;                                
+                                ckb_igmAntiFosfolipidos.Checked = true;
                             }
                             if (pedexa.pedExa_lgAAntiFosfoInmu == null)
                             {
@@ -793,7 +807,7 @@ namespace SistemaECU911.Template.Views
                             }
                             else
                             {
-                                ckb_igaAntiFosfolipidos.Checked = true;                                
+                                ckb_igaAntiFosfolipidos.Checked = true;
                             }
                             if (pedexa.pedExa_antiCardiolipinasInmu == null)
                             {
@@ -801,7 +815,7 @@ namespace SistemaECU911.Template.Views
                             }
                             else
                             {
-                                ckb_antiCardioLipinas.Checked = true;                                
+                                ckb_antiCardioLipinas.Checked = true;
                             }
                             if (pedexa.pedExa_lgGAntiCardioInmu == null)
                             {
@@ -809,7 +823,7 @@ namespace SistemaECU911.Template.Views
                             }
                             else
                             {
-                                ckb_iggAntiCardio.Checked = true;                                
+                                ckb_iggAntiCardio.Checked = true;
                             }
                             if (pedexa.pedExa_lgMAntiCardioInmu == null)
                             {
@@ -817,7 +831,7 @@ namespace SistemaECU911.Template.Views
                             }
                             else
                             {
-                                ckb_igmAntiCardio.Checked = true;                                
+                                ckb_igmAntiCardio.Checked = true;
                             }
                             if (pedexa.pedExa_lgAAntiCardioInmu == null)
                             {
@@ -825,7 +839,7 @@ namespace SistemaECU911.Template.Views
                             }
                             else
                             {
-                                ckb_igaAntiCardio.Checked = true;                                
+                                ckb_igaAntiCardio.Checked = true;
                             }
                             if (pedexa.pedExa_b2GlicoproteinaInmu == null)
                             {
@@ -833,7 +847,7 @@ namespace SistemaECU911.Template.Views
                             }
                             else
                             {
-                                ckb_b2Glicoproteína.Checked = true;                                
+                                ckb_b2Glicoproteína.Checked = true;
                             }
                             if (pedexa.pedExa_lgGB2GlicoInmu == null)
                             {
@@ -841,7 +855,7 @@ namespace SistemaECU911.Template.Views
                             }
                             else
                             {
-                                ckb_iggB2Glico.Checked = true;                                
+                                ckb_iggB2Glico.Checked = true;
                             }
                             if (pedexa.pedExa_lgMB2GlicoInmu == null)
                             {
@@ -849,7 +863,7 @@ namespace SistemaECU911.Template.Views
                             }
                             else
                             {
-                                ckb_igmB2Glico.Checked = true;                                
+                                ckb_igmB2Glico.Checked = true;
                             }
                             if (pedexa.pedExa_antiGliadinaInmu == null)
                             {
@@ -857,7 +871,7 @@ namespace SistemaECU911.Template.Views
                             }
                             else
                             {
-                                ckb_antiGliadina.Checked = true;                                
+                                ckb_antiGliadina.Checked = true;
                             }
                             if (pedexa.pedExa_lgGAntiGliaInmu == null)
                             {
@@ -865,7 +879,7 @@ namespace SistemaECU911.Template.Views
                             }
                             else
                             {
-                                ckb_iggAntiGliadina.Checked = true;                                
+                                ckb_iggAntiGliadina.Checked = true;
                             }
                             if (pedexa.pedExa_lgAAntiGliaInmu == null)
                             {
@@ -873,7 +887,7 @@ namespace SistemaECU911.Template.Views
                             }
                             else
                             {
-                                ckb_igaAntiGliadina.Checked = true;                                
+                                ckb_igaAntiGliadina.Checked = true;
                             }
                             if (pedexa.pedExa_antiAnexinaVInmu == null)
                             {
@@ -881,7 +895,7 @@ namespace SistemaECU911.Template.Views
                             }
                             else
                             {
-                                ckb_antiAnexiaV.Checked = true;                                
+                                ckb_antiAnexiaV.Checked = true;
                             }
                             if (pedexa.pedExa_lgGAntiAnexInmu == null)
                             {
@@ -889,7 +903,7 @@ namespace SistemaECU911.Template.Views
                             }
                             else
                             {
-                                ckb_iggantiAnexiaV.Checked = true;                                
+                                ckb_iggantiAnexiaV.Checked = true;
                             }
                             if (pedexa.pedExa_lgMAntiAnexInmu == null)
                             {
@@ -897,7 +911,7 @@ namespace SistemaECU911.Template.Views
                             }
                             else
                             {
-                                ckb_igmantiAnexiaV.Checked = true;                                
+                                ckb_igmantiAnexiaV.Checked = true;
                             }
                             if (pedexa.pedExa_antiTpoInmu == null)
                             {
@@ -905,7 +919,7 @@ namespace SistemaECU911.Template.Views
                             }
                             else
                             {
-                                ckb_antiTPO.Checked = true;                                
+                                ckb_antiTPO.Checked = true;
                             }
                             if (pedexa.pedExa_antiTiroglobulinaInmu == null)
                             {
@@ -913,7 +927,7 @@ namespace SistemaECU911.Template.Views
                             }
                             else
                             {
-                                ckb_antiTiroglobulina.Checked = true;                                
+                                ckb_antiTiroglobulina.Checked = true;
                             }
                             if (pedexa.pedExa_antiCcpInmu == null)
                             {
@@ -921,7 +935,7 @@ namespace SistemaECU911.Template.Views
                             }
                             else
                             {
-                                ckb_antiCCP.Checked = true;                                
+                                ckb_antiCCP.Checked = true;
                             }
 
                             //Orina
@@ -1033,11 +1047,11 @@ namespace SistemaECU911.Template.Views
                             }
                             if (pedexa.pedExa_fosfatasaAcidaProstaticaEnzi == null)
                             {
-                                fosfaAcidaProstatica.Checked = false;
+                                ckb_fosfaAcidaProstatica.Checked = false;
                             }
                             else
                             {
-                                fosfaAcidaProstatica.Checked = true;
+                                ckb_fosfaAcidaProstatica.Checked = true;
                             }
 
                             //Inmuno - Infecciosas
@@ -1245,7 +1259,7 @@ namespace SistemaECU911.Template.Views
                         }
                     }
                 }
-
+                Timer1.Enabled = false;
                 //defaultValidaciones();
             }
         }
@@ -1320,11 +1334,31 @@ namespace SistemaECU911.Template.Views
             string cedula = txt_numHClinica.Text;
 
             var lista = from c in dc.Tbl_Personas
+                        join e in dc.Tbl_Empresa on c.Emp_id equals e.Emp_id
                         where c.Per_cedula == cedula
-                        select c;
+                        select new
+                        {
+                            e.Emp_nombre,
+                            e.Emp_RUC,
+                            c.Per_priNombre,
+                            c.Per_segNombre,
+                            c.Per_priApellido,
+                            c.Per_segApellido,
+                            c.Per_genero,
+                            c.Per_fechaNacimiento,
+                            c.Per_fechInicioTrabajo,
+                            c.Per_puestoTrabajo,
+                            c.Per_areaTrabajo
+                        };
 
             foreach (var item in lista)
             {
+                string nomEmpresa = item.Emp_nombre;
+                txt_nombreEmp.Text = nomEmpresa;
+
+                string rucEmpresa = item.Emp_RUC;
+                txt_rucEmp.Text = rucEmpresa;
+
                 string priNombre = item.Per_priNombre;
                 txt_priNombre.Text = priNombre;
 
@@ -1368,8 +1402,10 @@ namespace SistemaECU911.Template.Views
             try
             {
                 per = CN_HistorialMedico.ObtenerIdPersonasxCedula(txt_numHClinica.Text);
-
                 int perso = Convert.ToInt32(per.Per_id.ToString());
+
+                per = CN_HistorialMedico.ObtenerIdEmpresaxCedula(txt_numHClinica.Text);
+                int empre = Convert.ToInt32(per.Emp_id.ToString());
 
                 pedexa = new Tbl_PedidoExamenes();
 
@@ -1604,7 +1640,7 @@ namespace SistemaECU911.Template.Views
                 if (ckb_muestra.Checked == true)
                 {
                     pedexa.pedExa_muestraDeMicro = "SI";
-                    pedexa.pedExa_muestraDeMicroDescrip = txt_muestra.Text;
+                    pedexa.pedExa_muestraDeMicroDescrip = txt_muestra.Text.ToUpper();
                 }
                 if (ckb_gram.Checked == true)
                 {
@@ -1709,7 +1745,7 @@ namespace SistemaECU911.Template.Views
                 if (ckb_curvaTolerancia.Checked == true)
                 {
                     pedexa.pedExa_curvaToleranciaQSangui = "SI";
-                    pedexa.pedExa_glucosaHorasQSangui = txt_glucosa.Text;
+                    pedexa.pedExa_glucosaHorasQSangui = txt_glucosa.Text.ToUpper();
                 }
                 if (ckb_hemoGlicosilada.Checked == true)
                 {
@@ -1877,7 +1913,7 @@ namespace SistemaECU911.Template.Views
                 {
                     pedexa.pedExa_fosfatasaAcidaTotalEnzi = "SI";
                 }
-                if (fosfaAcidaProstatica.Checked == true)
+                if (ckb_fosfaAcidaProstatica.Checked == true)
                 {
                     pedexa.pedExa_fosfatasaAcidaProstaticaEnzi = "SI";
                 }
@@ -1950,17 +1986,17 @@ namespace SistemaECU911.Template.Views
                 if (ckb_otros1.Checked == true)
                 {
                     pedexa.pedExa_Otros1 = "SI";
-                    pedexa.pedExa_descripOtros1 = txt_otros1.Text;
+                    pedexa.pedExa_descripOtros1 = txt_otros1.Text.ToUpper();
                 }
                 if (ckb_otros2.Checked == true)
                 {
                     pedexa.pedExa_Otros2 = "SI";
-                    pedexa.pedExa_descripOtros2 = txt_otros2.Text;
+                    pedexa.pedExa_descripOtros2 = txt_otros2.Text.ToUpper();
                 }
                 if (ckb_otros3.Checked == true)
                 {
                     pedexa.pedExa_Otros3 = "SI";
-                    pedexa.pedExa_descripOtros3 = txt_otros3.Text;
+                    pedexa.pedExa_descripOtros3 = txt_otros3.Text.ToUpper();
                 }
 
                 //Heces
@@ -1990,21 +2026,22 @@ namespace SistemaECU911.Template.Views
                 }
 
                 //A.
-                pedexa.pedExa_ciiu = txt_ciiu.Text;
-                pedexa.pedExa_numArchivo = txt_numArchivo.Text;
+                pedexa.pedExa_ciiu = txt_ciiu.Text.ToUpper();
+                pedexa.pedExa_numArchivo = txt_numArchivo.Text.ToUpper();
 
                 pedexa.Per_id = perso;
+                pedexa.Emp_id = empre;
 
                 CN_PedidoExamenes.GuardarPedidoExamenes(pedexa);
 
                 //Mensaje de confirmacion
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos Guardados Exitosamente')", true);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", "swal('Exito!', 'Datos Guardados Exitosamente', 'success')", true);
 
                 Response.Redirect("~/Template/Views/PacientesPedidoExamenes.aspx");
             }
             catch (Exception)
             {
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos No Guardados')", true);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", "swal('Error!', 'Datos No Guardados', 'error')", true);
             }
         }
 
@@ -2454,7 +2491,7 @@ namespace SistemaECU911.Template.Views
                 if (ckb_muestra.Checked == true)
                 {
                     pedexa.pedExa_muestraDeMicro = "SI";
-                    pedexa.pedExa_muestraDeMicroDescrip = txt_muestra.Text;
+                    pedexa.pedExa_muestraDeMicroDescrip = txt_muestra.Text.ToUpper();
                 }
                 else
                 {
@@ -2660,7 +2697,7 @@ namespace SistemaECU911.Template.Views
                 if (ckb_curvaTolerancia.Checked == true)
                 {
                     pedexa.pedExa_curvaToleranciaQSangui = "SI";
-                    pedexa.pedExa_glucosaHorasQSangui = txt_glucosa.Text;
+                    pedexa.pedExa_glucosaHorasQSangui = txt_glucosa.Text.ToUpper();
                 }
                 else
                 {
@@ -2993,7 +3030,7 @@ namespace SistemaECU911.Template.Views
                 {
                     pedexa.pedExa_fosfatasaAcidaTotalEnzi = null;
                 }
-                if (fosfaAcidaProstatica.Checked == true)
+                if (ckb_fosfaAcidaProstatica.Checked == true)
                 {
                     pedexa.pedExa_fosfatasaAcidaProstaticaEnzi = "SI";
                 }
@@ -3130,7 +3167,7 @@ namespace SistemaECU911.Template.Views
                 if (ckb_otros1.Checked == true)
                 {
                     pedexa.pedExa_Otros1 = "SI";
-                    pedexa.pedExa_descripOtros1 = txt_otros1.Text;
+                    pedexa.pedExa_descripOtros1 = txt_otros1.Text.ToUpper();
                 }
                 else
                 {
@@ -3140,7 +3177,7 @@ namespace SistemaECU911.Template.Views
                 if (ckb_otros2.Checked == true)
                 {
                     pedexa.pedExa_Otros2 = "SI";
-                    pedexa.pedExa_descripOtros2 = txt_otros2.Text;
+                    pedexa.pedExa_descripOtros2 = txt_otros2.Text.ToUpper();
                 }
                 else
                 {
@@ -3150,7 +3187,7 @@ namespace SistemaECU911.Template.Views
                 if (ckb_otros3.Checked == true)
                 {
                     pedexa.pedExa_Otros3 = "SI";
-                    pedexa.pedExa_descripOtros3 = txt_otros3.Text;
+                    pedexa.pedExa_descripOtros3 = txt_otros3.Text.ToUpper();
                 }
                 else
                 {
@@ -3209,18 +3246,18 @@ namespace SistemaECU911.Template.Views
                 }
 
                 //A.
-                pedexa.pedExa_ciiu = txt_ciiu.Text;
-                pedexa.pedExa_numArchivo = txt_numArchivo.Text;
+                pedexa.pedExa_ciiu = txt_ciiu.Text.ToUpper();
+                pedexa.pedExa_numArchivo = txt_numArchivo.Text.ToUpper();
 
                 CN_PedidoExamenes.ModificarPedidoExamenes(pedexa);
 
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos Modificados Exitosamente')", true);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", "swal('Exito!', 'Datos Modificados Exitosamente', 'success')", true);
                 Response.Redirect("~/Template/Views/PacientesPedidoExamenes.aspx");
 
             }
             catch
             {
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos No Modificados')", true);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", "swal('Error!', 'Datos No Modificados', 'error')", true);
             }
         }
 
@@ -3230,6 +3267,11 @@ namespace SistemaECU911.Template.Views
         }
 
         protected void btn_cancelar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Template/Views/Inicio.aspx");
+        }
+
+        protected void Timer1_Tick(object sender, EventArgs e)
         {
             Response.Redirect("~/Template/Views/Inicio.aspx");
         }
@@ -3297,6 +3339,1204 @@ namespace SistemaECU911.Template.Views
                 txt_otros3.Text = "";
                 txt_otros3.Enabled = false;
             }
+        }
+
+        protected void btn_imprimir_Click(object sender, EventArgs e)
+        {
+            HtmlNode.ElementsFlags["img"] = HtmlElementFlag.Closed;
+            HtmlNode.ElementsFlags["br"] = HtmlElementFlag.Closed;
+            Document pdfDoc = new Document(PageSize.A4, 20f, 20f, 20f, 20f);
+            PdfWriter writer = PdfWriter.GetInstance(pdfDoc, Response.OutputStream);
+            BaseFont fuente = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, true);
+            Font titulo = new Font(fuente, 18f, Font.BOLD, new BaseColor(0, 0, 0));
+            BaseFont fuente2 = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, true);
+            Font parrafo = new Font(fuente2, 12f, Font.NORMAL, new BaseColor(0, 0, 0));
+            BaseFont fuente3 = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, true);
+            Font cuadro = new Font(fuente3, 10f, Font.NORMAL, new BaseColor(0, 0, 0));
+            BaseFont fuente4 = BaseFont.CreateFont(BaseFont.TIMES_BOLD, BaseFont.CP1252, true);
+            Font titulos = new Font(fuente4, 10f, Font.NORMAL, new BaseColor(0, 0, 0));
+
+            pdfDoc.Open();
+            pdfDoc.Add(new Paragraph("GESTIÓN DE SEGURIDAD Y SALUD OCUPACIONAL", titulo) { Alignment = Element.ALIGN_CENTER });
+            pdfDoc.Add(new Paragraph("HISTORIA CLÍNICA OCUPACIONAL - CERTIFICADO", titulo) { Alignment = Element.ALIGN_CENTER });
+            pdfDoc.Add(new Chunk(Chunk.NEWLINE));
+            var tblinf = new PdfPTable(new float[] { 70f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblinf.AddCell(new PdfPCell(new Paragraph("A. DATOS DEL ESTABLECIMIENTO - EMPRESA Y USUARIO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(204, 205, 254), HorizontalAlignment = Element.ALIGN_LEFT });
+            pdfDoc.Add(tblinf);
+            var tblinfTitulo = new PdfPTable(new float[] { 80f, 40f, 40f, 60f, 50f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblinfTitulo.AddCell(new PdfPCell(new Paragraph("INSTITUCIÓN DEL SISTEMA O NOMBRE DE LA EMPRESA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblinfTitulo.AddCell(new PdfPCell(new Paragraph("RUC", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblinfTitulo.AddCell(new PdfPCell(new Paragraph("CIIU", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblinfTitulo.AddCell(new PdfPCell(new Paragraph("ESTABLECIMIENTO DE SALUD", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblinfTitulo.AddCell(new PdfPCell(new Paragraph("NÚMERO DE HISTORIA CLÍNICA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblinfTitulo.AddCell(new PdfPCell(new Paragraph("NÚMERO DE ARCHIVO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            pdfDoc.Add(tblinfTitulo);
+            var tblinfDatos = new PdfPTable(new float[] { 80f, 40f, 40f, 60f, 50f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblinfDatos.AddCell(new PdfPCell(new Paragraph(txt_nombreEmp.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tblinfDatos.AddCell(new PdfPCell(new Paragraph(txt_rucEmp.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tblinfDatos.AddCell(new PdfPCell(new Paragraph(txt_ciiu.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tblinfDatos.AddCell(new PdfPCell(new Paragraph(txt_estSalud.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tblinfDatos.AddCell(new PdfPCell(new Paragraph(txt_numHClinica.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tblinfDatos.AddCell(new PdfPCell(new Paragraph(txt_numArchivo.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            pdfDoc.Add(tblinfDatos);
+            pdfDoc.Add(new Paragraph(" "));
+            var tblTitulo = new PdfPTable(new float[] { 20f, 20f, 20f, 20f, 20f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblTitulo.AddCell(new PdfPCell(new Paragraph("PRIMER NOMBRE", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblTitulo.AddCell(new PdfPCell(new Paragraph("SEGUNDO NOMBRE", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblTitulo.AddCell(new PdfPCell(new Paragraph("PRIMER APELLIDO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblTitulo.AddCell(new PdfPCell(new Paragraph("SEGUNDO APELLIDO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblTitulo.AddCell(new PdfPCell(new Paragraph("EDAD", cuadro)) { BorderColor = new BaseColor(238, 240, 242), BackgroundColor = new BaseColor(205, 254, 204), HorizontalAlignment = Element.ALIGN_CENTER });
+            pdfDoc.Add(tblTitulo);
+            var tblDatos = new PdfPTable(new float[] { 20f, 20f, 20f, 20f, 20f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblDatos.AddCell(new PdfPCell(new Paragraph(txt_priNombre.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblDatos.AddCell(new PdfPCell(new Paragraph(txt_segNombre.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblDatos.AddCell(new PdfPCell(new Paragraph(txt_priApellido.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblDatos.AddCell(new PdfPCell(new Paragraph(txt_segApellido.Text, cuadro)) { BorderColor = new BaseColor(0238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            tblDatos.AddCell(new PdfPCell(new Paragraph(txt_edad.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            pdfDoc.Add(tblDatos);
+            pdfDoc.Add(new Paragraph(" "));
+            var tblpeTitulo = new PdfPTable(new float[] { 50f, 50f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblpeTitulo.AddCell(new PdfPCell(new Paragraph("HEMATOLOGIA", titulos)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tblpeTitulo.AddCell(new PdfPCell(new Paragraph("ELECTROLITOS", titulos)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tblpeTitulo.AddCell(new PdfPCell(new Paragraph("MARCADORES TUMORALES", titulos)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            pdfDoc.Add(tblpeTitulo);
+            var tblpeDatos = new PdfPTable(new float[] { 50f, 50f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            if (ckb_bioHematica.Checked == true)
+            {
+                tblpeDatos.AddCell(new PdfPCell(new Paragraph("X" + " BIOMETRICA HEMATICA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos.AddCell(new PdfPCell(new Paragraph(" " + " BIOMETRICA HEMATICA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            if (ckb_Na.Checked == true)
+            {
+                tblpeDatos.AddCell(new PdfPCell(new Paragraph("X" + " NA - K - CI", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos.AddCell(new PdfPCell(new Paragraph(" " + " NA - K - CI", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            if (ckb_ca125.Checked == true)
+            {
+                tblpeDatos.AddCell(new PdfPCell(new Paragraph("X" + " CA 125", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos.AddCell(new PdfPCell(new Paragraph(" " + " CA 125", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            pdfDoc.Add(tblpeDatos);
+            var tblpeDatos1 = new PdfPTable(new float[] { 50f, 50f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            if (ckb_hematocrito.Checked == true)
+            {
+                tblpeDatos1.AddCell(new PdfPCell(new Paragraph("X" + " HEMATOCRITO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos1.AddCell(new PdfPCell(new Paragraph(" " + " HEMATOCRITO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            if (ckb_calIonico.Checked == true)
+            {
+                tblpeDatos1.AddCell(new PdfPCell(new Paragraph("X" + " CALCIO IONICO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos1.AddCell(new PdfPCell(new Paragraph(" " + " CALCIO IONICO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            if (ckb_he4.Checked == true)
+            {
+                tblpeDatos1.AddCell(new PdfPCell(new Paragraph("X" + " HE 4", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos1.AddCell(new PdfPCell(new Paragraph(" " + " HE 4", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            pdfDoc.Add(tblpeDatos1);
+            var tblpeDatos2 = new PdfPTable(new float[] { 50f, 50f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            if (ckb_hemoglobina.Checked == true)
+            {
+                tblpeDatos2.AddCell(new PdfPCell(new Paragraph("X" + " HEMOGLOBINA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos2.AddCell(new PdfPCell(new Paragraph(" " + " HEMOGLOBINA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            if (ckb_calTotal.Checked == true)
+            {
+                tblpeDatos2.AddCell(new PdfPCell(new Paragraph("X" + " CALCIO TOTAL", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos2.AddCell(new PdfPCell(new Paragraph(" " + " CALCIO TOTAL", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            if (ckb_indRoma.Checked == true)
+            {
+                tblpeDatos2.AddCell(new PdfPCell(new Paragraph("X" + " INDICE ROMA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos2.AddCell(new PdfPCell(new Paragraph(" " + " INDICE ROMA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            pdfDoc.Add(tblpeDatos2);
+            var tblpeDatos3 = new PdfPTable(new float[] { 50f, 50f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            if (ckb_vsg.Checked == true)
+            {
+                tblpeDatos3.AddCell(new PdfPCell(new Paragraph("X" + " VSG", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos3.AddCell(new PdfPCell(new Paragraph(" " + " VSG", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            if (ckb_magnesio.Checked == true)
+            {
+                tblpeDatos3.AddCell(new PdfPCell(new Paragraph("X" + " MAGNESIO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos3.AddCell(new PdfPCell(new Paragraph(" " + " MAGNESIO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            if (ckb_afp.Checked == true)
+            {
+                tblpeDatos3.AddCell(new PdfPCell(new Paragraph("X" + " AFP", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos3.AddCell(new PdfPCell(new Paragraph(" " + " AFP", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            pdfDoc.Add(tblpeDatos3);
+            var tblpeDatos4 = new PdfPTable(new float[] { 50f, 50f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblpeDatos4.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            if (ckb_fosforo.Checked == true)
+            {
+                tblpeDatos4.AddCell(new PdfPCell(new Paragraph("X" + " FOSFORO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos4.AddCell(new PdfPCell(new Paragraph(" " + " FOSFORO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            if (ckb_cea.Checked == true)
+            {
+                tblpeDatos4.AddCell(new PdfPCell(new Paragraph("X" + " CEA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos4.AddCell(new PdfPCell(new Paragraph(" " + " CEA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            pdfDoc.Add(tblpeDatos4);
+            var tblpeDatos5 = new PdfPTable(new float[] { 50f, 50f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblpeDatos5.AddCell(new PdfPCell(new Paragraph("INMUNOHEMATOLOGIA", titulos)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tblpeDatos5.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            if (ckb_ca153.Checked == true)
+            {
+                tblpeDatos5.AddCell(new PdfPCell(new Paragraph("X" + " CA 15-3", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos5.AddCell(new PdfPCell(new Paragraph(" " + " CA 15-3", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            pdfDoc.Add(tblpeDatos5);
+            var tblpeDatos6 = new PdfPTable(new float[] { 50f, 50f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            if (ckb_cooDirecto.Checked == true)
+            {
+                tblpeDatos6.AddCell(new PdfPCell(new Paragraph("X" + " COOMBS DIRECTO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos6.AddCell(new PdfPCell(new Paragraph(" " + " COOMBS DIRECTO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            tblpeDatos6.AddCell(new PdfPCell(new Paragraph("SEROLOGIA", titulos)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            if (ckb_ca199.Checked == true)
+            {
+                tblpeDatos6.AddCell(new PdfPCell(new Paragraph("X" + " CA 19-9", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos6.AddCell(new PdfPCell(new Paragraph(" " + " CA 19-9", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            pdfDoc.Add(tblpeDatos6);
+            var tblpeDatos7 = new PdfPTable(new float[] { 50f, 50f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            if (ckb_cooIndirecto.Checked == true)
+            {
+                tblpeDatos7.AddCell(new PdfPCell(new Paragraph("X" + " COOMBS INDIRECTO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos7.AddCell(new PdfPCell(new Paragraph(" " + " COOMBS INDIRECTO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            if (ckb_pcrCuantitativo.Checked == true)
+            {
+                tblpeDatos7.AddCell(new PdfPCell(new Paragraph("X" + " PCR CUANTITATIVO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos7.AddCell(new PdfPCell(new Paragraph(" " + " PCR CUANTITATIVO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            if (ckb_tiroglobulina.Checked == true)
+            {
+                tblpeDatos7.AddCell(new PdfPCell(new Paragraph("X" + " TIROGLOBULINA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos7.AddCell(new PdfPCell(new Paragraph(" " + " TIROGLOBULINA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            pdfDoc.Add(tblpeDatos7);
+            var tblpeDatos8 = new PdfPTable(new float[] { 50f, 50f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            if (ckb_grSanguineo.Checked == true)
+            {
+                tblpeDatos8.AddCell(new PdfPCell(new Paragraph("X" + " GRUPO SANGUINEO Y FACTOR RH", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos8.AddCell(new PdfPCell(new Paragraph(" " + " GRUPO SANGUINEO Y FACTOR RH", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            if (ckb_frLatex.Checked == true)
+            {
+                tblpeDatos8.AddCell(new PdfPCell(new Paragraph("X" + " FR LATEX", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos8.AddCell(new PdfPCell(new Paragraph(" " + " FR LATEX", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            if (ckb_psa.Checked == true)
+            {
+                tblpeDatos8.AddCell(new PdfPCell(new Paragraph("X" + " PSA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos8.AddCell(new PdfPCell(new Paragraph(" " + " PSA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            pdfDoc.Add(tblpeDatos8);
+            var tblpeDatos9 = new PdfPTable(new float[] { 50f, 50f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            if (ckb_celulasLE.Checked == true)
+            {
+                tblpeDatos9.AddCell(new PdfPCell(new Paragraph("X" + " CELULAS L.E.", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos9.AddCell(new PdfPCell(new Paragraph(" " + " CELULAS L.E.", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            if (ckb_asto.Checked == true)
+            {
+                tblpeDatos9.AddCell(new PdfPCell(new Paragraph("X" + " ASTO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos9.AddCell(new PdfPCell(new Paragraph(" " + " ASTO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            tblpeDatos9.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            pdfDoc.Add(tblpeDatos9);
+            var tblpeDatos10 = new PdfPTable(new float[] { 50f, 50f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblpeDatos10.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            if (ckb_aglutinaciones.Checked == true)
+            {
+                tblpeDatos10.AddCell(new PdfPCell(new Paragraph("X" + " AGLUTINACIONES", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos10.AddCell(new PdfPCell(new Paragraph(" " + " AGLUTINACIONES", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            tblpeDatos10.AddCell(new PdfPCell(new Paragraph("MICROBIOLOGIA", titulos)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            pdfDoc.Add(tblpeDatos10);
+            var tblpeDatos11 = new PdfPTable(new float[] { 50f, 50f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblpeDatos11.AddCell(new PdfPCell(new Paragraph("COAGULACION", titulos)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            if (ckb_vdrl.Checked == true)
+            {
+                tblpeDatos11.AddCell(new PdfPCell(new Paragraph("X" + " V.D.R.L", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos11.AddCell(new PdfPCell(new Paragraph(" " + " V.D.R.L", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            if (ckb_vdrl.Checked == true)
+            {
+                tblpeDatos11.AddCell(new PdfPCell(new Paragraph("X" + " MUESTRA DE: " + txt_muestra.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos11.AddCell(new PdfPCell(new Paragraph(" " + " MUESTRA DE: " + txt_muestra.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            pdfDoc.Add(tblpeDatos11);
+            var tblpeDatos12 = new PdfPTable(new float[] { 50f, 50f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            if (ckb_plaquetas.Checked == true)
+            {
+                tblpeDatos12.AddCell(new PdfPCell(new Paragraph("X" + " PLAQUETAS", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos12.AddCell(new PdfPCell(new Paragraph(" " + " PLAQUETAS", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            tblpeDatos12.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            if (ckb_gram.Checked == true)
+            {
+                tblpeDatos12.AddCell(new PdfPCell(new Paragraph("X" + " GRAM ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos12.AddCell(new PdfPCell(new Paragraph(" " + " GRAM ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            pdfDoc.Add(tblpeDatos12);
+            var tblpeDatos13 = new PdfPTable(new float[] { 50f, 50f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            if (ckb_fibrinogeno.Checked == true)
+            {
+                tblpeDatos13.AddCell(new PdfPCell(new Paragraph("X" + " FIBRINOGENO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos13.AddCell(new PdfPCell(new Paragraph(" " + " FIBRINOGENO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            tblpeDatos13.AddCell(new PdfPCell(new Paragraph("HORMONAS", titulos)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            if (ckb_koh.Checked == true)
+            {
+                tblpeDatos13.AddCell(new PdfPCell(new Paragraph("X" + " KOH", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos13.AddCell(new PdfPCell(new Paragraph(" " + " KOH", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            pdfDoc.Add(tblpeDatos13);
+            var tblpeDatos14 = new PdfPTable(new float[] { 50f, 50f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            if (ckb_tp.Checked == true)
+            {
+                tblpeDatos14.AddCell(new PdfPCell(new Paragraph("X" + " T.P", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos14.AddCell(new PdfPCell(new Paragraph(" " + " T.P", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            if (ckb_lh.Checked == true)
+            {
+                tblpeDatos14.AddCell(new PdfPCell(new Paragraph("X" + " LH", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos14.AddCell(new PdfPCell(new Paragraph(" " + " LH", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            if (ckb_culAntibiograma.Checked == true)
+            {
+                tblpeDatos14.AddCell(new PdfPCell(new Paragraph("X" + " CULTIVO Y ANTIBIOGRAMA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos14.AddCell(new PdfPCell(new Paragraph(" " + " CULTIVO Y ANTIBIOGRAMA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            pdfDoc.Add(tblpeDatos14);
+            var tblpeDatos15 = new PdfPTable(new float[] { 50f, 50f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            if (ckb_ttp.Checked == true)
+            {
+                tblpeDatos15.AddCell(new PdfPCell(new Paragraph("X" + " T.T.P", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos15.AddCell(new PdfPCell(new Paragraph(" " + " T.T.P", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            if (ckb_fsh.Checked == true)
+            {
+                tblpeDatos15.AddCell(new PdfPCell(new Paragraph("X" + " FSH", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos15.AddCell(new PdfPCell(new Paragraph(" " + " FSH", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            tblpeDatos15.AddCell(new PdfPCell(new Paragraph(" ", titulos)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            pdfDoc.Add(tblpeDatos15);
+            var tblpeDatos16 = new PdfPTable(new float[] { 50f, 50f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            if (ckb_inr.Checked == true)
+            {
+                tblpeDatos16.AddCell(new PdfPCell(new Paragraph("X" + " I.N.R", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos16.AddCell(new PdfPCell(new Paragraph(" " + " I.N.R", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            if (ckb_estradiol.Checked == true)
+            {
+                tblpeDatos16.AddCell(new PdfPCell(new Paragraph("X" + " ESTRADIOL (E2)", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos16.AddCell(new PdfPCell(new Paragraph(" " + " ESTRADIOL (E2)", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            tblpeDatos16.AddCell(new PdfPCell(new Paragraph("ESTUDIOS ESPECIALES", titulos)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            pdfDoc.Add(tblpeDatos16);
+            var tblpeDatos17 = new PdfPTable(new float[] { 50f, 50f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            if (ckb_tiempCoagulacion.Checked == true)
+            {
+                tblpeDatos17.AddCell(new PdfPCell(new Paragraph("X" + " TIEMPO DE COAGULACION", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos17.AddCell(new PdfPCell(new Paragraph(" " + " TIEMPO DE COAGULACION", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            if (ckb_progesterona.Checked == true)
+            {
+                tblpeDatos17.AddCell(new PdfPCell(new Paragraph("X" + " PROGESTERONA (P4)", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos17.AddCell(new PdfPCell(new Paragraph(" " + " PROGESTERONA (P4)", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            if (ckb_esperCompleto.Checked == true)
+            {
+                tblpeDatos17.AddCell(new PdfPCell(new Paragraph("X" + " ESPERMATOGRAMA COMPLETO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos17.AddCell(new PdfPCell(new Paragraph(" " + " ESPERMATOGRAMA COMPLETO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            pdfDoc.Add(tblpeDatos17);
+            var tblpeDatos18 = new PdfPTable(new float[] { 50f, 50f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            if (ckb_tiempSangria.Checked == true)
+            {
+                tblpeDatos18.AddCell(new PdfPCell(new Paragraph("X" + " TIEMPO DE SANGRIA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos18.AddCell(new PdfPCell(new Paragraph(" " + " TIEMPO DE SANGRIA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            if (ckb_prolactina.Checked == true)
+            {
+                tblpeDatos18.AddCell(new PdfPCell(new Paragraph("X" + " PROLACTINA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos18.AddCell(new PdfPCell(new Paragraph(" " + " PROLACTINA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            if (ckb_cristalografia.Checked == true)
+            {
+                tblpeDatos18.AddCell(new PdfPCell(new Paragraph("X" + " CRISTALOGRAFIA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos18.AddCell(new PdfPCell(new Paragraph(" " + " CRISTALOGRAFIA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            pdfDoc.Add(tblpeDatos18);
+            var tblpeDatos19 = new PdfPTable(new float[] { 50f, 50f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            if (ckb_antiLupico.Checked == true)
+            {
+                tblpeDatos19.AddCell(new PdfPCell(new Paragraph("X" + " ANTICOAGULANTE LUPICO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos19.AddCell(new PdfPCell(new Paragraph(" " + " ANTICOAGULANTE LUPICO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            if (ckb_testosterona.Checked == true)
+            {
+                tblpeDatos19.AddCell(new PdfPCell(new Paragraph("X" + " TESTOSTERONA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos19.AddCell(new PdfPCell(new Paragraph(" " + " TESTOSTERONA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            if (ckb_screenPrenatal.Checked == true)
+            {
+                tblpeDatos19.AddCell(new PdfPCell(new Paragraph("X" + " SCREENING PRENATAL", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos19.AddCell(new PdfPCell(new Paragraph(" " + " SCREENING PRENATAL", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            pdfDoc.Add(tblpeDatos19);
+            var tblpeDatos20 = new PdfPTable(new float[] { 50f, 50f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            if (ckb_dimeroD.Checked == true)
+            {
+                tblpeDatos20.AddCell(new PdfPCell(new Paragraph("X" + " DIMERO D", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos20.AddCell(new PdfPCell(new Paragraph(" " + " DIMERO D", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            if (ckb_dheas.Checked == true)
+            {
+                tblpeDatos20.AddCell(new PdfPCell(new Paragraph("X" + " DHEAS", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos20.AddCell(new PdfPCell(new Paragraph(" " + " DHEAS", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            tblpeDatos20.AddCell(new PdfPCell(new Paragraph(" ", titulos)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            pdfDoc.Add(tblpeDatos20);
+            var tblpeDatos21 = new PdfPTable(new float[] { 50f, 50f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblpeDatos21.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            if (ckb_cortisol.Checked == true)
+            {
+                tblpeDatos21.AddCell(new PdfPCell(new Paragraph("X" + " CORTISOL", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos21.AddCell(new PdfPCell(new Paragraph(" " + " CORTISOL", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            tblpeDatos21.AddCell(new PdfPCell(new Paragraph("ORINA", titulos)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            pdfDoc.Add(tblpeDatos21);
+            var tblpeDatos22 = new PdfPTable(new float[] { 50f, 50f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblpeDatos22.AddCell(new PdfPCell(new Paragraph("QUIMICA SANGUINEA", titulos)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            if (ckb_insulina.Checked == true)
+            {
+                tblpeDatos22.AddCell(new PdfPCell(new Paragraph("X" + " INSULINA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos22.AddCell(new PdfPCell(new Paragraph(" " + " INSULINA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            if (ckb_emo.Checked == true)
+            {
+                tblpeDatos22.AddCell(new PdfPCell(new Paragraph("X" + " EMO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos22.AddCell(new PdfPCell(new Paragraph(" " + " EMO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            pdfDoc.Add(tblpeDatos22);
+            var tblpeDatos23 = new PdfPTable(new float[] { 50f, 50f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            if (ckb_gluBasal.Checked == true)
+            {
+                tblpeDatos23.AddCell(new PdfPCell(new Paragraph("X" + " GLUCOSA BASAL", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos23.AddCell(new PdfPCell(new Paragraph(" " + " GLUCOSA BASAL", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            if (ckb_peptidoC.Checked == true)
+            {
+                tblpeDatos23.AddCell(new PdfPCell(new Paragraph("X" + " PEPTIDO C", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos23.AddCell(new PdfPCell(new Paragraph(" " + " PEPTIDO C", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            if (ckb_CultAntibiograma.Checked == true)
+            {
+                tblpeDatos23.AddCell(new PdfPCell(new Paragraph("X" + " CULTIVO Y ANTIBIOGRAMA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos23.AddCell(new PdfPCell(new Paragraph(" " + " CULTIVO Y ANTIBIOGRAMA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            pdfDoc.Add(tblpeDatos23);
+            var tblpeDatos24 = new PdfPTable(new float[] { 50f, 50f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            if (ckb_urea.Checked == true)
+            {
+                tblpeDatos24.AddCell(new PdfPCell(new Paragraph("X" + " UREA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos24.AddCell(new PdfPCell(new Paragraph(" " + " UREA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            if (ckb_indHoma.Checked == true)
+            {
+                tblpeDatos24.AddCell(new PdfPCell(new Paragraph("X" + " INDICE HOMA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos24.AddCell(new PdfPCell(new Paragraph(" " + " INDICE HOMA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            if (ckb_gramGotaFres.Checked == true)
+            {
+                tblpeDatos24.AddCell(new PdfPCell(new Paragraph("X" + " GRAM GOTA FRESCA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos24.AddCell(new PdfPCell(new Paragraph(" " + " GRAM GOTA FRESCA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            pdfDoc.Add(tblpeDatos24);
+            var tblpeDatos25 = new PdfPTable(new float[] { 50f, 50f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            if (ckb_bum.Checked == true)
+            {
+                tblpeDatos25.AddCell(new PdfPCell(new Paragraph("X" + " BUM", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos25.AddCell(new PdfPCell(new Paragraph(" " + " BUM", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            if (ckb_bhcg.Checked == true)
+            {
+                tblpeDatos25.AddCell(new PdfPCell(new Paragraph("X" + " BHCG", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos25.AddCell(new PdfPCell(new Paragraph(" " + " BHCG", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            if (ckb_microalbuminuria.Checked == true)
+            {
+                tblpeDatos25.AddCell(new PdfPCell(new Paragraph("X" + " MICROALBUMINURIA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos25.AddCell(new PdfPCell(new Paragraph(" " + " MICROALBUMINURIA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            pdfDoc.Add(tblpeDatos25);
+            var tblpeDatos26 = new PdfPTable(new float[] { 50f, 50f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            if (ckb_creatinina.Checked == true)
+            {
+                tblpeDatos26.AddCell(new PdfPCell(new Paragraph("X" + " CREATININA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos26.AddCell(new PdfPCell(new Paragraph(" " + " CREATININA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            if (ckb_t3.Checked == true)
+            {
+                tblpeDatos26.AddCell(new PdfPCell(new Paragraph("X" + " T3", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos26.AddCell(new PdfPCell(new Paragraph(" " + " T3", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            tblpeDatos26.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            pdfDoc.Add(tblpeDatos26);
+            var tblpeDatos27 = new PdfPTable(new float[] { 50f, 50f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            if (ckb_acUrico.Checked == true)
+            {
+                tblpeDatos27.AddCell(new PdfPCell(new Paragraph("X" + " AC.URICO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos27.AddCell(new PdfPCell(new Paragraph(" " + " AC.URICO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            if (ckb_fT4.Checked == true)
+            {
+                tblpeDatos27.AddCell(new PdfPCell(new Paragraph("X" + " FT4", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos27.AddCell(new PdfPCell(new Paragraph(" " + " FT4", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            tblpeDatos27.AddCell(new PdfPCell(new Paragraph("HECES", titulos)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            pdfDoc.Add(tblpeDatos27);
+            var tblpeDatos28 = new PdfPTable(new float[] { 50f, 50f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            if (ckb_colesTotal.Checked == true)
+            {
+                tblpeDatos28.AddCell(new PdfPCell(new Paragraph("X" + " COLESTEROL TOTAL", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos28.AddCell(new PdfPCell(new Paragraph(" " + " COLESTEROL TOTAL", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            if (ckb_tsh.Checked == true)
+            {
+                tblpeDatos28.AddCell(new PdfPCell(new Paragraph("X" + " TSH", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos28.AddCell(new PdfPCell(new Paragraph(" " + " TSH", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            if (ckb_coproparasitario.Checked == true)
+            {
+                tblpeDatos28.AddCell(new PdfPCell(new Paragraph("X" + " COPROPARASITARIO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos28.AddCell(new PdfPCell(new Paragraph(" " + " COPROPARASITARIO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            pdfDoc.Add(tblpeDatos28);
+            var tblpeDatos29 = new PdfPTable(new float[] { 50f, 50f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            if (ckb_hdlc.Checked == true)
+            {
+                tblpeDatos29.AddCell(new PdfPCell(new Paragraph("X" + " HDLC ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos29.AddCell(new PdfPCell(new Paragraph(" " + " HDLC", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            if (ckb_17Progesterona.Checked == true)
+            {
+                tblpeDatos29.AddCell(new PdfPCell(new Paragraph("X" + " 17 OH PROGESTERONA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos29.AddCell(new PdfPCell(new Paragraph(" " + " 17 OH PROGESTERONA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            if (ckb_coproSeriado.Checked == true)
+            {
+                tblpeDatos29.AddCell(new PdfPCell(new Paragraph("X" + " COPROPARASITARIO SERIADO #", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos29.AddCell(new PdfPCell(new Paragraph(" " + " COPROPARASITARIO SERIADO #", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            pdfDoc.Add(tblpeDatos29);
+            var tblpeDatos30 = new PdfPTable(new float[] { 50f, 50f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            if (ckb_triglicerido.Checked == true)
+            {
+                tblpeDatos30.AddCell(new PdfPCell(new Paragraph("X" + " TRIGLICERIDO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos30.AddCell(new PdfPCell(new Paragraph(" " + " TRIGLICERIDO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            if (ckb_hgh.Checked == true)
+            {
+                tblpeDatos30.AddCell(new PdfPCell(new Paragraph("X" + " HGH (H. DE CRECIMIENTO)", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos30.AddCell(new PdfPCell(new Paragraph(" " + " HGH (H. DE CRECIMIENTO)", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            if (ckb_sangreOculta.Checked == true)
+            {
+                tblpeDatos30.AddCell(new PdfPCell(new Paragraph("X" + " SANGRE OCULTA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos30.AddCell(new PdfPCell(new Paragraph(" " + " SANGRE OCULTA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            pdfDoc.Add(tblpeDatos30);
+            var tblpeDatos31 = new PdfPTable(new float[] { 50f, 50f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            if (ckb_biliTotal.Checked == true)
+            {
+                tblpeDatos31.AddCell(new PdfPCell(new Paragraph("X" + " BILIRRUBINA TOTAL", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos31.AddCell(new PdfPCell(new Paragraph(" " + " BILIRRUBINA TOTAL", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            tblpeDatos31.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            if (ckb_pmn.Checked == true)
+            {
+                tblpeDatos31.AddCell(new PdfPCell(new Paragraph("X" + " PMN", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos31.AddCell(new PdfPCell(new Paragraph(" " + " PMN", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            pdfDoc.Add(tblpeDatos31);
+            var tblpeDatos32 = new PdfPTable(new float[] { 50f, 50f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            if (ckb_biliDirecta.Checked == true)
+            {
+                tblpeDatos32.AddCell(new PdfPCell(new Paragraph("X" + " BILIRRUBINA DIRECTA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos32.AddCell(new PdfPCell(new Paragraph(" " + " BILIRRUBINA DIRECTA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            tblpeDatos32.AddCell(new PdfPCell(new Paragraph("INMUNOLOGIA", titulos)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            if (ckb_rotavirus.Checked == true)
+            {
+                tblpeDatos32.AddCell(new PdfPCell(new Paragraph("X" + " ROTAVIRUS", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos32.AddCell(new PdfPCell(new Paragraph(" " + " ROTAVIRUS", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            pdfDoc.Add(tblpeDatos32);
+            var tblpeDatos33 = new PdfPTable(new float[] { 50f, 50f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            if (ckb_biliindirecta.Checked == true)
+            {
+                tblpeDatos33.AddCell(new PdfPCell(new Paragraph("X" + " BILIRRUBINA INDIRECTA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos33.AddCell(new PdfPCell(new Paragraph(" " + " BILIRRUBINA INDIRECTA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            if (ckb_iProlactina.Checked == true)
+            {
+                tblpeDatos33.AddCell(new PdfPCell(new Paragraph("X" + " PROLACTINA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos33.AddCell(new PdfPCell(new Paragraph(" " + " PROLACTINA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            if (ckb_helicoPylori.Checked == true)
+            {
+                tblpeDatos33.AddCell(new PdfPCell(new Paragraph("X" + " HELICOBACTER PYLORI (ANTIGENO)", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos33.AddCell(new PdfPCell(new Paragraph(" " + " HELICOBACTER PYLORI (ANTIGENO)", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            pdfDoc.Add(tblpeDatos33);
+            var tblpeDatos34 = new PdfPTable(new float[] { 50f, 50f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            if (ckb_proTotales.Checked == true)
+            {
+                tblpeDatos34.AddCell(new PdfPCell(new Paragraph("X" + " PROTEINAS TOTALES", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos34.AddCell(new PdfPCell(new Paragraph(" " + " PROTEINAS TOTALES", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            if (ckb_antiNucleares.Checked == true)
+            {
+                tblpeDatos34.AddCell(new PdfPCell(new Paragraph("X" + " ANTI NUCLEARES (ANA)", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos34.AddCell(new PdfPCell(new Paragraph(" " + " ANTI NUCLEARES (ANA)", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            tblpeDatos34.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            pdfDoc.Add(tblpeDatos34);
+            var tblpeDatos35 = new PdfPTable(new float[] { 50f, 50f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            if (ckb_albumina.Checked == true)
+            {
+                tblpeDatos35.AddCell(new PdfPCell(new Paragraph("X" + " ALBUMINA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos35.AddCell(new PdfPCell(new Paragraph(" " + " ALBUMINA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            if (ckb_antiDna.Checked == true)
+            {
+                tblpeDatos35.AddCell(new PdfPCell(new Paragraph("X" + " ANTI DNA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos35.AddCell(new PdfPCell(new Paragraph(" " + " ANTI DNA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            tblpeDatos35.AddCell(new PdfPCell(new Paragraph("DROGAS", titulos)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            pdfDoc.Add(tblpeDatos35);
+            var tblpeDatos36 = new PdfPTable(new float[] { 50f, 50f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            if (ckb_globulina.Checked == true)
+            {
+                tblpeDatos36.AddCell(new PdfPCell(new Paragraph("X" + " GLOBULINA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos36.AddCell(new PdfPCell(new Paragraph(" " + " GLOBULINA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            if (ckb_antiFosfolípidos.Checked == true)
+            {
+                tblpeDatos36.AddCell(new PdfPCell(new Paragraph("X" + " ANTI FOSFOLÍPIDOS", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos36.AddCell(new PdfPCell(new Paragraph(" " + " ANTI FOSFOLÍPIDOS", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            if (ckb_fenobarbital.Checked == true)
+            {
+                tblpeDatos36.AddCell(new PdfPCell(new Paragraph("X" + "FENOBARBITAL", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos36.AddCell(new PdfPCell(new Paragraph(" " + "FENOBARBITAL", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            pdfDoc.Add(tblpeDatos36);
+            var tblpeDatos37 = new PdfPTable(new float[] { 50f, 50f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            if (ckb_testOsullivan.Checked == true)
+            {
+                tblpeDatos37.AddCell(new PdfPCell(new Paragraph("X" + " TEST DE OSULLIVAN", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos37.AddCell(new PdfPCell(new Paragraph(" " + " TEST DE OSULLIVAN", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            if (ckb_antiCardioLipinas.Checked == true)
+            {
+                tblpeDatos37.AddCell(new PdfPCell(new Paragraph("X" + " ANTI CARDIOLIPINAS", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos37.AddCell(new PdfPCell(new Paragraph(" " + " ANTI CARDIOLIPINAS", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            if (ckb_teofilina.Checked == true)
+            {
+                tblpeDatos37.AddCell(new PdfPCell(new Paragraph("X" + " TEOFILINA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos37.AddCell(new PdfPCell(new Paragraph(" " + " TEOFILINA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            pdfDoc.Add(tblpeDatos37);
+            var tblpeDatos38 = new PdfPTable(new float[] { 50f, 50f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            if (ckb_glucosa2h.Checked == true)
+            {
+                tblpeDatos38.AddCell(new PdfPCell(new Paragraph("X" + " GLUCOSA 2H PP", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos38.AddCell(new PdfPCell(new Paragraph(" " + " GLUCOSA 2H PP", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            if (ckb_b2Glicoproteína.Checked == true)
+            {
+                tblpeDatos38.AddCell(new PdfPCell(new Paragraph("X" + " B2 GLICOPROTEÍNA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos38.AddCell(new PdfPCell(new Paragraph(" " + " B2 GLICOPROTEÍNA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            if (ckb_acValproico.Checked == true)
+            {
+                tblpeDatos38.AddCell(new PdfPCell(new Paragraph("X" + " AC.VALPROICO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos38.AddCell(new PdfPCell(new Paragraph(" " + " AC.VALPROICO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            pdfDoc.Add(tblpeDatos38);
+            var tblpeDatos39 = new PdfPTable(new float[] { 50f, 50f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            if (ckb_curvaTolerancia.Checked == true)
+            {
+                tblpeDatos39.AddCell(new PdfPCell(new Paragraph("X" + " CURVA DE TOLERANCIA" + "\n  Glucosa: " + txt_glucosa.Text + " Horas", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos39.AddCell(new PdfPCell(new Paragraph(" " + " CURVA DE TOLERANCIA" + "\n  Glucosa: " + "_______" + " Horas", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            if (ckb_antiGliadina.Checked == true)
+            {
+                tblpeDatos39.AddCell(new PdfPCell(new Paragraph("X" + " ANTI GLIADINA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos39.AddCell(new PdfPCell(new Paragraph(" " + " ANTI GLIADINA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            tblpeDatos39.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            pdfDoc.Add(tblpeDatos39);
+            var tblpeDatos40 = new PdfPTable(new float[] { 50f, 50f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            if (ckb_hemoGlicosilada.Checked == true)
+            {
+                tblpeDatos40.AddCell(new PdfPCell(new Paragraph("X" + " HEMOGLOBINA GLICOSILADA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos40.AddCell(new PdfPCell(new Paragraph(" " + " HEMOGLOBINA GLICOSILADA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            if (ckb_antiAnexiaV.Checked == true)
+            {
+                tblpeDatos40.AddCell(new PdfPCell(new Paragraph("X" + " ANTI ANEXINA V", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos40.AddCell(new PdfPCell(new Paragraph(" " + " ANTI ANEXINA V", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            tblpeDatos40.AddCell(new PdfPCell(new Paragraph("OTROS", titulos)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            pdfDoc.Add(tblpeDatos40);
+            var tblpeDatos41 = new PdfPTable(new float[] { 50f, 50f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            if (ckb_hierroSerico.Checked == true)
+            {
+                tblpeDatos41.AddCell(new PdfPCell(new Paragraph("X" + " HIERRO SÉRICO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos41.AddCell(new PdfPCell(new Paragraph(" " + " HIERRO SÉRICO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            if (ckb_antiTPO.Checked == true)
+            {
+                tblpeDatos41.AddCell(new PdfPCell(new Paragraph("X" + " ANTI TPO (MICROSOMALES)", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos41.AddCell(new PdfPCell(new Paragraph(" " + " ANTI TPO (MICROSOMALES)", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            if (ckb_otros1.Checked == true)
+            {
+                tblpeDatos41.AddCell(new PdfPCell(new Paragraph("X " + txt_otros1.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos41.AddCell(new PdfPCell(new Paragraph(" " + "_______________", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            pdfDoc.Add(tblpeDatos41);
+            var tblpeDatos42 = new PdfPTable(new float[] { 50f, 50f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            if (ckb_ferritina.Checked == true)
+            {
+                tblpeDatos42.AddCell(new PdfPCell(new Paragraph("X" + " FERRITINA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos42.AddCell(new PdfPCell(new Paragraph(" " + " FERRITINA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            if (ckb_antiTiroglobulina.Checked == true)
+            {
+                tblpeDatos42.AddCell(new PdfPCell(new Paragraph("X" + " ANTI TIROGLOBULINA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos42.AddCell(new PdfPCell(new Paragraph(" " + " ANTI TIROGLOBULINA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            if (ckb_otros2.Checked == true)
+            {
+                tblpeDatos42.AddCell(new PdfPCell(new Paragraph("X " + txt_otros2.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos42.AddCell(new PdfPCell(new Paragraph(" " + "_______________", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            pdfDoc.Add(tblpeDatos42);
+            var tblpeDatos43 = new PdfPTable(new float[] { 50f, 50f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            if (ckb_transferrina.Checked == true)
+            {
+                tblpeDatos43.AddCell(new PdfPCell(new Paragraph("X" + " TRANSFERRINA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos43.AddCell(new PdfPCell(new Paragraph(" " + " TRANSFERRINA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            if (ckb_antiCCP.Checked == true)
+            {
+                tblpeDatos43.AddCell(new PdfPCell(new Paragraph("X" + " ANTI CCP", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos43.AddCell(new PdfPCell(new Paragraph(" " + " ANTI CCP", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            if (ckb_otros3.Checked == true)
+            {
+                tblpeDatos43.AddCell(new PdfPCell(new Paragraph("X  " + txt_otros3.Text, cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos43.AddCell(new PdfPCell(new Paragraph(" " + "_______________", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            pdfDoc.Add(tblpeDatos43);
+            var tblpeDatos44 = new PdfPTable(new float[] { 50f, 50f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblpeDatos44.AddCell(new PdfPCell(new Paragraph(" ", titulos)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tblpeDatos44.AddCell(new PdfPCell(new Paragraph(" ", titulos)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tblpeDatos44.AddCell(new PdfPCell(new Paragraph(" ", titulos)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            pdfDoc.Add(tblpeDatos44);
+            var tblpeDatos45 = new PdfPTable(new float[] { 50f, 50f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblpeDatos45.AddCell(new PdfPCell(new Paragraph("ENZIMAS", titulos)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tblpeDatos45.AddCell(new PdfPCell(new Paragraph("INMUNO - INFECCIOSAS", titulos)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            tblpeDatos45.AddCell(new PdfPCell(new Paragraph(" ", titulos)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            pdfDoc.Add(tblpeDatos45);
+            var tblpeDatos46 = new PdfPTable(new float[] { 50f, 50f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            if (ckb_tgo.Checked == true)
+            {
+                tblpeDatos46.AddCell(new PdfPCell(new Paragraph("X" + " TGO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos46.AddCell(new PdfPCell(new Paragraph(" " + " TGO", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            if (ckb_torch.Checked == true)
+            {
+                tblpeDatos46.AddCell(new PdfPCell(new Paragraph("X" + " TORCH", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos46.AddCell(new PdfPCell(new Paragraph(" " + " TORCH", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            tblpeDatos46.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            pdfDoc.Add(tblpeDatos46);
+            var tblpeDatos47 = new PdfPTable(new float[] { 50f, 50f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            if (ckb_amilasa.Checked == true)
+            {
+                tblpeDatos47.AddCell(new PdfPCell(new Paragraph("X" + " AMILASA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos47.AddCell(new PdfPCell(new Paragraph(" " + " AMILASA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            if (ckb_toxoGondii.Checked == true)
+            {
+                tblpeDatos47.AddCell(new PdfPCell(new Paragraph("X" + " TOXOPLASMA GONDII - TEST DE AVIDEZ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos47.AddCell(new PdfPCell(new Paragraph(" " + " TOXOPLASMA GONDII - TEST DE AVIDEZ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            tblpeDatos47.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            pdfDoc.Add(tblpeDatos47);
+            var tblpeDatos48 = new PdfPTable(new float[] { 50f, 50f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            if (ckb_cpk.Checked == true)
+            {
+                tblpeDatos48.AddCell(new PdfPCell(new Paragraph("X" + " CPK", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos48.AddCell(new PdfPCell(new Paragraph(" " + " CPK", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            if (ckb_clamyTrachomatis.Checked == true)
+            {
+                tblpeDatos48.AddCell(new PdfPCell(new Paragraph("X" + " CLAMYDIA TRACHOMATIS", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos48.AddCell(new PdfPCell(new Paragraph(" " + " CLAMYDIA TRACHOMATIS", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            tblpeDatos48.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            pdfDoc.Add(tblpeDatos48);
+            var tblpeDatos49 = new PdfPTable(new float[] { 50f, 50f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            if (ckb_ldh.Checked == true)
+            {
+                tblpeDatos49.AddCell(new PdfPCell(new Paragraph("X" + " LDH", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos49.AddCell(new PdfPCell(new Paragraph(" " + " LDH", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            if (ckb_hav.Checked == true)
+            {
+                tblpeDatos49.AddCell(new PdfPCell(new Paragraph("X" + " HAV", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos49.AddCell(new PdfPCell(new Paragraph(" " + " HAV", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            tblpeDatos49.AddCell(new PdfPCell(new Paragraph("____________________", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            pdfDoc.Add(tblpeDatos49);
+            var tblpeDatos50 = new PdfPTable(new float[] { 50f, 50f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            if (ckb_fosfaAlcalina.Checked == true)
+            {
+                tblpeDatos50.AddCell(new PdfPCell(new Paragraph("X" + " FOSFATASA ALCALINA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos50.AddCell(new PdfPCell(new Paragraph(" " + " FOSFATASA ALCALINA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            if (ckb_vih.Checked == true)
+            {
+                tblpeDatos50.AddCell(new PdfPCell(new Paragraph("X" + " VIH", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos50.AddCell(new PdfPCell(new Paragraph(" " + " VIH", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            tblpeDatos50.AddCell(new PdfPCell(new Paragraph("MÉDICO", titulos)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_CENTER });
+            pdfDoc.Add(tblpeDatos50);
+            var tblpeDatos51 = new PdfPTable(new float[] { 50f, 50f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            if (ckb_fosfaAcidaTotal.Checked == true)
+            {
+                tblpeDatos51.AddCell(new PdfPCell(new Paragraph("X" + " FOSFATASA ÁCIDA TOTAL", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos51.AddCell(new PdfPCell(new Paragraph(" " + " FOSFATASA ÁCIDA TOTAL", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            if (ckb_hbsAg.Checked == true)
+            {
+                tblpeDatos51.AddCell(new PdfPCell(new Paragraph("X" + " HBSAG", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos51.AddCell(new PdfPCell(new Paragraph(" " + " HBSAG", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            tblpeDatos51.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            pdfDoc.Add(tblpeDatos51);
+            var tblpeDatos52 = new PdfPTable(new float[] { 50f, 50f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            if (ckb_fosfaAcidaProstatica.Checked == true)
+            {
+                tblpeDatos52.AddCell(new PdfPCell(new Paragraph("X" + " FOSFATASA ÁCIDA PROSTÁTICA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos52.AddCell(new PdfPCell(new Paragraph(" " + " FOSFATASA ÁCIDA PROSTÁTICA", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            if (ckb_hcv.Checked == true)
+            {
+                tblpeDatos52.AddCell(new PdfPCell(new Paragraph("X" + " HCV", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos52.AddCell(new PdfPCell(new Paragraph(" " + " HCV", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            tblpeDatos52.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            pdfDoc.Add(tblpeDatos52);
+            var tblpeDatos53 = new PdfPTable(new float[] { 50f, 50f, 50f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
+            tblpeDatos53.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            if (ckb_ftaAbs.Checked == true)
+            {
+                tblpeDatos53.AddCell(new PdfPCell(new Paragraph("X" + " FTA - ABS", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblpeDatos53.AddCell(new PdfPCell(new Paragraph(" " + " FTA - ABS", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            tblpeDatos53.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(238, 240, 242), HorizontalAlignment = Element.ALIGN_LEFT });
+            pdfDoc.Add(tblpeDatos53);
+            pdfDoc.Close();
+            Response.ContentType = "application/pdf";
+            Response.AddHeader("content-disposition", "attachment;filename=PedidoDeExamenes_" + txt_numHClinica.Text + "_" + DateTime.Now.ToString("dd/MM/yy_hh:mm") + ".pdf");
+            Response.Cache.SetCacheability(HttpCacheability.NoCache);
+            Response.Write(pdfDoc);
+            Response.End();
         }
     }
 }

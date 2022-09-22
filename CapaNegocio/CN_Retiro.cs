@@ -44,7 +44,6 @@ namespace CapaNegocio
             try
             {
                 retiro.ret_estado = "A";
-                retiro.ret_fechaHoraGuardado = DateTime.Now;
                 dc.Tbl_Retiro.InsertOnSubmit(retiro);
                 dc.SubmitChanges();
             }

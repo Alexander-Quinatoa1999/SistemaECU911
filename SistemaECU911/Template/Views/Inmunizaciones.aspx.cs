@@ -5,6 +5,7 @@ using iTextSharp.text;
 using iTextSharp.text.pdf;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -22,6 +23,7 @@ namespace SistemaECU911.Template.Views
 
         //Objeto de la tabla personas
         private Tbl_Personas per = new Tbl_Personas();
+        private Tbl_Empresa emp = new Tbl_Empresa();
 
         //Objeto de la tabla inmunizaciones
         private Tbl_Inmunizaciones inmu = new Tbl_Inmunizaciones();
@@ -36,12 +38,18 @@ namespace SistemaECU911.Template.Views
                     inmu = CN_Inmunizaciones.ObtenerInmunizacionesPorId(codigo);
                     int personasid = Convert.ToInt32(inmu.Per_id.ToString());
                     per = CN_HistorialMedico.ObtenerPersonasxId(personasid);
-                    
+                    int empresaid = Convert.ToInt32(inmu.Emp_id.ToString());
+                    emp = CN_HistorialMedico.ObtenerEmpresaxId(empresaid);
+
                     btn_guardar.Text = "Actualizar";
 
-                    if (per != null)
+                    if (per != null || emp != null)
                     {
+                        txt_numHClinica.ReadOnly = true;
+
                         //A
+                        txt_nomEmpresa.Text = emp.Emp_nombre.ToString();
+                        txt_rucEmp.Text = emp.Emp_RUC.ToString();
                         txt_priNombre.Text = per.Per_priNombre.ToString();
                         txt_segNombre.Text = per.Per_segNombre.ToString();
                         txt_priApellido.Text = per.Per_priApellido.ToString();
@@ -534,16 +542,16 @@ namespace SistemaECU911.Template.Views
 
                     }
                 }
-
+                Timer1.Enabled = false;
                 txt_fechahora.Text = DateTime.Now.ToLocalTime().ToString("yyyy-MM-ddTHH:mm");
 
             }
         }
 
-        protected void timerFechaHora_Tick(object sender, EventArgs e)
-        {
-            this.txt_fechahora.Text = DateTime.Now.ToLocalTime().ToString("yyyy-MM-ddTHH:mm");
-        }
+        //protected void timerFechaHora_Tick(object sender, EventArgs e)
+        //{
+        //    this.txt_fechahora.Text = DateTime.Now.ToLocalTime().ToString("yyyy-MM-ddTHH:mm");
+        //}
 
         //Metodo obtener cedula por numero de HC CERTIFICADO
         [WebMethod]
@@ -553,9 +561,7 @@ namespace SistemaECU911.Template.Views
             List<string> lista = new List<string>();
             try
             {
-                string oConn = @"Data Source=sql8004.site4now.net;Initial Catalog=db_a8b7d4_sistemaecu911;Persist Security Info=True;User ID=db_a8b7d4_sistemaecu911_admin;Password=SistemaECU911";
-
-                SqlConnection con = new SqlConnection(oConn);
+                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ToString());
                 con.Open();
                 SqlCommand cmd = new SqlCommand("select top(10) Per_Cedula from Tbl_Personas where Per_Cedula LIKE + @Cedula + '%'", con);
                 cmd.Parameters.AddWithValue("@Cedula", prefixText);
@@ -639,256 +645,259 @@ namespace SistemaECU911.Template.Views
             try
             {
                 per = CN_HistorialMedico.ObtenerIdPersonasxCedula(txt_numHClinica.Text);
-
                 int perso = Convert.ToInt32(per.Per_id.ToString());
+
+                per = CN_HistorialMedico.ObtenerIdEmpresaxCedula(txt_numHClinica.Text);
+                int empre = Convert.ToInt32(per.Emp_id.ToString());
 
                 inmu = new Tbl_Inmunizaciones();
 
                 //Fecha y Hora
-                inmu.inmu_fecha_hora = txt_fechahora.Text;
+                inmu.inmu_fechaHoraGuardado = Convert.ToDateTime(txt_fechahora.Text);
 
                 //A. Captura de datos Establecimiento
-                inmu.inmu_ciiu = txt_ciiu.Text;
-                inmu.inmu_numArchivo = txt_numArchivo.Text;
+                inmu.inmu_ciiu = txt_ciiu.Text.ToUpper();
+                inmu.inmu_numArchivo = txt_numArchivo.Text.ToUpper();
 
                 //B. Captura de datos Inmunizaciones
-                inmu.inmu_fechaTetanos1 = txt_fechatetanos1.Text;
-                inmu.inmu_loteTetanos1 = txt_loteTetanos1.Text;
-                inmu.inmu_esqueCompleTetanos1 = txt_esqueCompleTetanos1.Text;
-                inmu.inmu_nomCompleResponVacuTetanos1 = txt_nomCompleResponVacuTetanos1.Text;
-                inmu.inmu_estaSaludColocoVacuTetanos1 = txt_estaSaludColocoVacuTetanos1.Text;
-                inmu.inmu_observaTetanos1 = txt_observaTetanos1.Text;
-                inmu.inmu_fechaTetanos2 = txt_fechatetanos2.Text;
-                inmu.inmu_loteTetanos2 = txt_loteTetanos2.Text;
-                inmu.inmu_esqueCompleTetanos2 = txt_esqueCompleTetanos2.Text;
-                inmu.inmu_nomCompleResponVacuTetanos2 = txt_nomCompleResponVacuTetanos2.Text;
-                inmu.inmu_estaSaludColocoVacuTetanos2 = txt_estaSaludColocoVacuTetanos2.Text;
-                inmu.inmu_observaTetanos2 = txt_observaTetanos2.Text;
-                inmu.inmu_fechaTetanos3 = txt_fechatetanos2.Text;
-                inmu.inmu_loteTetanos3 = txt_loteTetanos3.Text;
-                inmu.inmu_esqueCompleTetanos3 = txt_esqueCompleTetanos3.Text;
-                inmu.inmu_nomCompleResponVacuTetanos3 = txt_nomCompleResponVacuTetanos3.Text;
-                inmu.inmu_estaSaludColocoVacuTetanos3 = txt_estaSaludColocoVacuTetanos3.Text;
-                inmu.inmu_observaTetanos3 = txt_observaTetanos3.Text;
-                inmu.inmu_fechaTetanos4 = txt_fechatetanos4.Text;
-                inmu.inmu_loteTetanos4 = txt_loteTetanos4.Text;
-                inmu.inmu_esqueCompleTetanos4 = txt_esqueCompleTetanos4.Text;
-                inmu.inmu_nomCompleResponVacuTetanos4 = txt_nomCompleResponVacuTetanos4.Text;
-                inmu.inmu_estaSaludColocoVacuTetanos4 = txt_estaSaludColocoVacuTetanos4.Text;
-                inmu.inmu_observaTetanos4 = txt_observaTetanos4.Text;
-                inmu.inmu_fechaTetanos5 = txt_fechatetanos5.Text;
-                inmu.inmu_loteTetanos5 = txt_loteTetanos5.Text;
-                inmu.inmu_esqueCompleTetanos5 = txt_esqueCompleTetanos5.Text;
-                inmu.inmu_nomCompleResponVacuTetanos5 = txt_nomCompleResponVacuTetanos5.Text;
-                inmu.inmu_estaSaludColocoVacuTetanos5 = txt_estaSaludColocoVacuTetanos5.Text;
-                inmu.inmu_observaTetanos5 = txt_observaTetanos5.Text;
+                inmu.inmu_fechaTetanos1 = txt_fechatetanos1.Text.ToUpper();
+                inmu.inmu_loteTetanos1 = txt_loteTetanos1.Text.ToUpper();
+                inmu.inmu_esqueCompleTetanos1 = txt_esqueCompleTetanos1.Text.ToUpper();
+                inmu.inmu_nomCompleResponVacuTetanos1 = txt_nomCompleResponVacuTetanos1.Text.ToUpper();
+                inmu.inmu_estaSaludColocoVacuTetanos1 = txt_estaSaludColocoVacuTetanos1.Text.ToUpper();
+                inmu.inmu_observaTetanos1 = txt_observaTetanos1.Text.ToUpper();
+                inmu.inmu_fechaTetanos2 = txt_fechatetanos2.Text.ToUpper();
+                inmu.inmu_loteTetanos2 = txt_loteTetanos2.Text.ToUpper();
+                inmu.inmu_esqueCompleTetanos2 = txt_esqueCompleTetanos2.Text.ToUpper();
+                inmu.inmu_nomCompleResponVacuTetanos2 = txt_nomCompleResponVacuTetanos2.Text.ToUpper();
+                inmu.inmu_estaSaludColocoVacuTetanos2 = txt_estaSaludColocoVacuTetanos2.Text.ToUpper();
+                inmu.inmu_observaTetanos2 = txt_observaTetanos2.Text.ToUpper();
+                inmu.inmu_fechaTetanos3 = txt_fechatetanos2.Text.ToUpper();
+                inmu.inmu_loteTetanos3 = txt_loteTetanos3.Text.ToUpper();
+                inmu.inmu_esqueCompleTetanos3 = txt_esqueCompleTetanos3.Text.ToUpper();
+                inmu.inmu_nomCompleResponVacuTetanos3 = txt_nomCompleResponVacuTetanos3.Text.ToUpper();
+                inmu.inmu_estaSaludColocoVacuTetanos3 = txt_estaSaludColocoVacuTetanos3.Text.ToUpper();
+                inmu.inmu_observaTetanos3 = txt_observaTetanos3.Text.ToUpper();
+                inmu.inmu_fechaTetanos4 = txt_fechatetanos4.Text.ToUpper();
+                inmu.inmu_loteTetanos4 = txt_loteTetanos4.Text.ToUpper();
+                inmu.inmu_esqueCompleTetanos4 = txt_esqueCompleTetanos4.Text.ToUpper();
+                inmu.inmu_nomCompleResponVacuTetanos4 = txt_nomCompleResponVacuTetanos4.Text.ToUpper();
+                inmu.inmu_estaSaludColocoVacuTetanos4 = txt_estaSaludColocoVacuTetanos4.Text.ToUpper();
+                inmu.inmu_observaTetanos4 = txt_observaTetanos4.Text.ToUpper();
+                inmu.inmu_fechaTetanos5 = txt_fechatetanos5.Text.ToUpper();
+                inmu.inmu_loteTetanos5 = txt_loteTetanos5.Text.ToUpper();
+                inmu.inmu_esqueCompleTetanos5 = txt_esqueCompleTetanos5.Text.ToUpper();
+                inmu.inmu_nomCompleResponVacuTetanos5 = txt_nomCompleResponVacuTetanos5.Text.ToUpper();
+                inmu.inmu_estaSaludColocoVacuTetanos5 = txt_estaSaludColocoVacuTetanos5.Text.ToUpper();
+                inmu.inmu_observaTetanos5 = txt_observaTetanos5.Text.ToUpper();
 
-                inmu.inmu_fechaHepatitisA1 = txt_fechaHepatitisA1.Text;
-                inmu.inmu_loteHepatitisA1 = txt_loteHepatitisA1.Text;
-                inmu.inmu_esqueCompleHepatitisA1 = txt_esqueCompleHepatitisA1.Text;
-                inmu.inmu_nomCompleResponVacuHepatitisA1 = txt_nomCompleResponVacuHepatitisA1.Text;
-                inmu.inmu_estaSaludColocoVaciHepatitisA1 = txt_estaSaludColocoVaciHepatitisA1.Text;
-                inmu.inmu_observaHepatitisA1 = txt_observaHepatitisA1.Text;
-                inmu.inmu_fechaHepatitisA2 = txt_fechaHepatitisA2.Text;
-                inmu.inmu_loteHepatitisA2 = txt_loteHepatitisA2.Text;
-                inmu.inmu_esqueCompleHepatitisA2 = txt_esqueCompleHepatitisA2.Text;
-                inmu.inmu_nomCompleResponVacuHepatitisA2 = txt_nomCompleResponVacuHepatitisA2.Text;
-                inmu.inmu_estaSaludColocoVaciHepatitisA2 = txt_estaSaludColocoVaciHepatitisA2.Text;
-                inmu.inmu_observaHepatitisA2 = txt_observaHepatitisA2.Text;
-                inmu.inmu_fechaHepatitisA3 = txt_fechaHepatitisA3.Text;
-                inmu.inmu_loteHepatitisA3 = txt_loteHepatitisA3.Text;
-                inmu.inmu_esqueCompleHepatitisA3 = txt_esqueCompleHepatitisA3.Text;
-                inmu.inmu_nomCompleResponVacuHepatitisA3 = txt_nomCompleResponVacuHepatitisA3.Text;
-                inmu.inmu_estaSaludColocoVaciHepatitisA3 = txt_estaSaludColocoVaciHepatitisA3.Text;
-                inmu.inmu_observaHepatitisA3 = txt_observaHepatitisA3.Text;
+                inmu.inmu_fechaHepatitisA1 = txt_fechaHepatitisA1.Text.ToUpper();
+                inmu.inmu_loteHepatitisA1 = txt_loteHepatitisA1.Text.ToUpper();
+                inmu.inmu_esqueCompleHepatitisA1 = txt_esqueCompleHepatitisA1.Text.ToUpper();
+                inmu.inmu_nomCompleResponVacuHepatitisA1 = txt_nomCompleResponVacuHepatitisA1.Text.ToUpper();
+                inmu.inmu_estaSaludColocoVaciHepatitisA1 = txt_estaSaludColocoVaciHepatitisA1.Text.ToUpper();
+                inmu.inmu_observaHepatitisA1 = txt_observaHepatitisA1.Text.ToUpper();
+                inmu.inmu_fechaHepatitisA2 = txt_fechaHepatitisA2.Text.ToUpper();
+                inmu.inmu_loteHepatitisA2 = txt_loteHepatitisA2.Text.ToUpper();
+                inmu.inmu_esqueCompleHepatitisA2 = txt_esqueCompleHepatitisA2.Text.ToUpper();
+                inmu.inmu_nomCompleResponVacuHepatitisA2 = txt_nomCompleResponVacuHepatitisA2.Text.ToUpper();
+                inmu.inmu_estaSaludColocoVaciHepatitisA2 = txt_estaSaludColocoVaciHepatitisA2.Text.ToUpper();
+                inmu.inmu_observaHepatitisA2 = txt_observaHepatitisA2.Text.ToUpper();
+                inmu.inmu_fechaHepatitisA3 = txt_fechaHepatitisA3.Text.ToUpper();
+                inmu.inmu_loteHepatitisA3 = txt_loteHepatitisA3.Text.ToUpper();
+                inmu.inmu_esqueCompleHepatitisA3 = txt_esqueCompleHepatitisA3.Text.ToUpper();
+                inmu.inmu_nomCompleResponVacuHepatitisA3 = txt_nomCompleResponVacuHepatitisA3.Text.ToUpper();
+                inmu.inmu_estaSaludColocoVaciHepatitisA3 = txt_estaSaludColocoVaciHepatitisA3.Text.ToUpper();
+                inmu.inmu_observaHepatitisA3 = txt_observaHepatitisA3.Text.ToUpper();
 
-                inmu.inmu_fechaHepatitisB1 = txt_fechaHepatitisB1.Text;
-                inmu.inmu_loteHepatitisB1 = txt_loteHepatitisB1.Text;
-                inmu.inmu_esqueCompleHepatitisB1 = txt_esqueCompleHepatitisB1.Text;
-                inmu.inmu_nomCompleResponVacuHepatitisB1 = txt_nomCompleResponVacuHepatitisB1.Text;
-                inmu.inmu_estaSaludColocoVaciHepatitisB1 = txt_estaSaludColocoVaciHepatitisB1.Text;
-                inmu.inmu_observaHepatitisB1 = txt_observaHepatitisB1.Text;
-                inmu.inmu_fechaHepatitisB2 = txt_fechaHepatitisB2.Text;
-                inmu.inmu_loteHepatitisB2 = txt_loteHepatitisB2.Text;
-                inmu.inmu_esqueCompleHepatitisB2 = txt_esqueCompleHepatitisB2.Text;
-                inmu.inmu_nomCompleResponVacuHepatitisB2 = txt_nomCompleResponVacuHepatitisB2.Text;
-                inmu.inmu_estaSaludColocoVaciHepatitisB2 = txt_estaSaludColocoVaciHepatitisB2.Text;
-                inmu.inmu_observaHepatitisB2 = txt_observaHepatitisB2.Text;
-                inmu.inmu_fechaHepatitisB3 = txt_fechaHepatitisB3.Text;
-                inmu.inmu_loteHepatitisB3 = txt_loteHepatitisB3.Text;
-                inmu.inmu_esqueCompleHepatitisB3 = txt_esqueCompleHepatitisB3.Text;
-                inmu.inmu_nomCompleResponVacuHepatitisB3 = txt_nomCompleResponVacuHepatitisB3.Text;
-                inmu.inmu_estaSaludColocoVaciHepatitisB3 = txt_estaSaludColocoVaciHepatitisB3.Text;
-                inmu.inmu_observaHepatitisB3 = txt_observaHepatitisB3.Text;
+                inmu.inmu_fechaHepatitisB1 = txt_fechaHepatitisB1.Text.ToUpper();
+                inmu.inmu_loteHepatitisB1 = txt_loteHepatitisB1.Text.ToUpper();
+                inmu.inmu_esqueCompleHepatitisB1 = txt_esqueCompleHepatitisB1.Text.ToUpper();
+                inmu.inmu_nomCompleResponVacuHepatitisB1 = txt_nomCompleResponVacuHepatitisB1.Text.ToUpper();
+                inmu.inmu_estaSaludColocoVaciHepatitisB1 = txt_estaSaludColocoVaciHepatitisB1.Text.ToUpper();
+                inmu.inmu_observaHepatitisB1 = txt_observaHepatitisB1.Text.ToUpper();
+                inmu.inmu_fechaHepatitisB2 = txt_fechaHepatitisB2.Text.ToUpper();
+                inmu.inmu_loteHepatitisB2 = txt_loteHepatitisB2.Text.ToUpper();
+                inmu.inmu_esqueCompleHepatitisB2 = txt_esqueCompleHepatitisB2.Text.ToUpper();
+                inmu.inmu_nomCompleResponVacuHepatitisB2 = txt_nomCompleResponVacuHepatitisB2.Text.ToUpper();
+                inmu.inmu_estaSaludColocoVaciHepatitisB2 = txt_estaSaludColocoVaciHepatitisB2.Text.ToUpper();
+                inmu.inmu_observaHepatitisB2 = txt_observaHepatitisB2.Text.ToUpper();
+                inmu.inmu_fechaHepatitisB3 = txt_fechaHepatitisB3.Text.ToUpper();
+                inmu.inmu_loteHepatitisB3 = txt_loteHepatitisB3.Text.ToUpper();
+                inmu.inmu_esqueCompleHepatitisB3 = txt_esqueCompleHepatitisB3.Text.ToUpper();
+                inmu.inmu_nomCompleResponVacuHepatitisB3 = txt_nomCompleResponVacuHepatitisB3.Text.ToUpper();
+                inmu.inmu_estaSaludColocoVaciHepatitisB3 = txt_estaSaludColocoVaciHepatitisB3.Text.ToUpper();
+                inmu.inmu_observaHepatitisB3 = txt_observaHepatitisB3.Text.ToUpper();
 
-                inmu.inmu_fechaInfluenza = txt_fechaInfluenza.Text;
-                inmu.inmu_loteInfluenza = txt_loteInfluenza.Text;
-                inmu.inmu_esqueCompleInfluenza = txt_esqueCompleInfluenza.Text;
-                inmu.inmu_nomCompleResponVacuInfluenza = txt_nomCompleResponVacuInfluenza.Text;
-                inmu.inmu_estaSaludColocoVacuInfluenza = txt_estaSaludColocoVacuInfluenza.Text;
-                inmu.inmu_observaInfluenza = txt_observaInfluenza.Text;
+                inmu.inmu_fechaInfluenza = txt_fechaInfluenza.Text.ToUpper();
+                inmu.inmu_loteInfluenza = txt_loteInfluenza.Text.ToUpper();
+                inmu.inmu_esqueCompleInfluenza = txt_esqueCompleInfluenza.Text.ToUpper();
+                inmu.inmu_nomCompleResponVacuInfluenza = txt_nomCompleResponVacuInfluenza.Text.ToUpper();
+                inmu.inmu_estaSaludColocoVacuInfluenza = txt_estaSaludColocoVacuInfluenza.Text.ToUpper();
+                inmu.inmu_observaInfluenza = txt_observaInfluenza.Text.ToUpper();
 
-                inmu.inmu_fechaFiebreAmarilla = txt_fechaFiebreAmarilla.Text;
-                inmu.inmu_loteFiebreAmarilla = txt_loteFiebreAmarilla.Text;
-                inmu.inmu_esqueCompleFiebreAmarilla = txt_esqueCompleFiebreAmarilla.Text;
-                inmu.inmu_nomCompleResponVacuFiebreAmarilla = txt_nomCompleResponVacuFiebreAmarilla.Text;
-                inmu.inmu_estaSaludColocoVacuFiebreAmarilla = txt_estaSaludColocoVacuFiebreAmarilla.Text;
-                inmu.inmu_observaFiebreAmarilla = txt_observaFiebreAmarilla.Text;
+                inmu.inmu_fechaFiebreAmarilla = txt_fechaFiebreAmarilla.Text.ToUpper();
+                inmu.inmu_loteFiebreAmarilla = txt_loteFiebreAmarilla.Text.ToUpper();
+                inmu.inmu_esqueCompleFiebreAmarilla = txt_esqueCompleFiebreAmarilla.Text.ToUpper();
+                inmu.inmu_nomCompleResponVacuFiebreAmarilla = txt_nomCompleResponVacuFiebreAmarilla.Text.ToUpper();
+                inmu.inmu_estaSaludColocoVacuFiebreAmarilla = txt_estaSaludColocoVacuFiebreAmarilla.Text.ToUpper();
+                inmu.inmu_observaFiebreAmarilla = txt_observaFiebreAmarilla.Text.ToUpper();
 
-                inmu.inmu_fechaSarampion1 = txt_fechaSarampion1.Text;
-                inmu.inmu_loteSarampion1 = txt_loteSarampion1.Text;
-                inmu.inmu_esqueCompleSarampion1 = txt_esqueCompleSarampion1.Text;
-                inmu.inmu_nomCompleResponVacuSarampion1 = txt_nomCompleResponVacuSarampion1.Text;
-                inmu.inmu_estaSaludColocoVacuSarampion1 = txt_estaSaludColocoVacuSarampion1.Text;
-                inmu.inmu_observaSarampion1 = txt_observaSarampion1.Text;
-                inmu.inmu_fechaSarampion2 = txt_fechaSarampion2.Text;
-                inmu.inmu_loteSarampion2 = txt_loteSarampion2.Text;
-                inmu.inmu_esqueCompleSarampion2 = txt_esqueCompleSarampion2.Text;
-                inmu.inmu_nomCompleResponVacuSarampion2 = txt_nomCompleResponVacuSarampion2.Text;
-                inmu.inmu_estaSaludColocoVacuSarampion2 = txt_estaSaludColocoVacuSarampion2.Text;
-                inmu.inmu_observaSarampion2 = txt_observaSarampion2.Text;
+                inmu.inmu_fechaSarampion1 = txt_fechaSarampion1.Text.ToUpper();
+                inmu.inmu_loteSarampion1 = txt_loteSarampion1.Text.ToUpper();
+                inmu.inmu_esqueCompleSarampion1 = txt_esqueCompleSarampion1.Text.ToUpper();
+                inmu.inmu_nomCompleResponVacuSarampion1 = txt_nomCompleResponVacuSarampion1.Text.ToUpper();
+                inmu.inmu_estaSaludColocoVacuSarampion1 = txt_estaSaludColocoVacuSarampion1.Text.ToUpper();
+                inmu.inmu_observaSarampion1 = txt_observaSarampion1.Text.ToUpper();
+                inmu.inmu_fechaSarampion2 = txt_fechaSarampion2.Text.ToUpper();
+                inmu.inmu_loteSarampion2 = txt_loteSarampion2.Text.ToUpper();
+                inmu.inmu_esqueCompleSarampion2 = txt_esqueCompleSarampion2.Text.ToUpper();
+                inmu.inmu_nomCompleResponVacuSarampion2 = txt_nomCompleResponVacuSarampion2.Text.ToUpper();
+                inmu.inmu_estaSaludColocoVacuSarampion2 = txt_estaSaludColocoVacuSarampion2.Text.ToUpper();
+                inmu.inmu_observaSarampion2 = txt_observaSarampion2.Text.ToUpper();
 
-                inmu.inmu_descripInmunizaciones = txt_descripInmunizaciones.Text;
-                inmu.inmu_1fechaInmuAcuerTipoEmpRies1 = txt_1fechaInmuAcuerTipoEmpRies1.Text;
-                inmu.inmu_1loteInmuAcuerTipoEmpRies1 = txt_1loteInmuAcuerTipoEmpRies1.Text;
-                inmu.inmu_1esqueCompleInmuAcuerTipoEmpRies1 = txt_1esqueCompleInmuAcuerTipoEmpRies1.Text;
-                inmu.inmu_1nomCompleResponVacuInmuAcuerTipoEmpRies1 = txt_1nomCompleResponVacuInmuAcuerTipoEmpRies1.Text;
-                inmu.inmu_1estaSaludColocoVacuInmuAcuerTipoEmpRies1 = txt_1estaSaludColocoVacuInmuAcuerTipoEmpRies1.Text;
-                inmu.inmu_1observaInmuAcuerTipoEmpRies1 = txt_1observaInmuAcuerTipoEmpRies1.Text;
-                inmu.inmu_1fechaInmuAcuerTipoEmpRies2 = txt_1fechaInmuAcuerTipoEmpRies2.Text;
-                inmu.inmu_1loteInmuAcuerTipoEmpRies2 = txt_1loteInmuAcuerTipoEmpRies2.Text;
-                inmu.inmu_1esqueCompleInmuAcuerTipoEmpRies2 = txt_1esqueCompleInmuAcuerTipoEmpRies2.Text;
-                inmu.inmu_1nomCompleResponVacuInmuAcuerTipoEmpRies2 = txt_1nomCompleResponVacuInmuAcuerTipoEmpRies2.Text;
-                inmu.inmu_1estaSaludColocoVacuInmuAcuerTipoEmpRies2 = txt_1estaSaludColocoVacuInmuAcuerTipoEmpRies2.Text;
-                inmu.inmu_1observaInmuAcuerTipoEmpRies2 = txt_1observaInmuAcuerTipoEmpRies2.Text;
-                inmu.inmu_1fechaInmuAcuerTipoEmpRies3 = txt_1fechaInmuAcuerTipoEmpRies3.Text;
-                inmu.inmu_1loteInmuAcuerTipoEmpRies3 = txt_1loteInmuAcuerTipoEmpRies3.Text;
-                inmu.inmu_1esqueCompleInmuAcuerTipoEmpRies3 = txt_1esqueCompleInmuAcuerTipoEmpRies3.Text;
-                inmu.inmu_1nomCompleResponVacuInmuAcuerTipoEmpRies3 = txt_1nomCompleResponVacuInmuAcuerTipoEmpRies3.Text;
-                inmu.inmu_1estaSaludColocoVacuInmuAcuerTipoEmpRies3 = txt_1estaSaludColocoVacuInmuAcuerTipoEmpRies3.Text;
-                inmu.inmu_1observaInmuAcuerTipoEmpRies3 = txt_1observaInmuAcuerTipoEmpRies3.Text;
-                inmu.inmu_1fechaInmuAcuerTipoEmpRies4 = txt_1fechaInmuAcuerTipoEmpRies4.Text;
-                inmu.inmu_1loteInmuAcuerTipoEmpRies4 = txt_1loteInmuAcuerTipoEmpRies4.Text;
-                inmu.inmu_1esqueCompleInmuAcuerTipoEmpRies4 = txt_1esqueCompleInmuAcuerTipoEmpRies4.Text;
-                inmu.inmu_1nomCompleResponVacuInmuAcuerTipoEmpRies4 = txt_1nomCompleResponVacuInmuAcuerTipoEmpRies4.Text;
-                inmu.inmu_1estaSaludColocoVacuInmuAcuerTipoEmpRies4 = txt_1estaSaludColocoVacuInmuAcuerTipoEmpRies4.Text;
-                inmu.inmu_1observaInmuAcuerTipoEmpRies4 = txt_1observaInmuAcuerTipoEmpRies4.Text;
-                inmu.inmu_1fechaInmuAcuerTipoEmpRies5 = txt_1fechaInmuAcuerTipoEmpRies5.Text;
-                inmu.inmu_1loteInmuAcuerTipoEmpRies5 = txt_1loteInmuAcuerTipoEmpRies5.Text;
-                inmu.inmu_1esqueCompleInmuAcuerTipoEmpRies5 = txt_1esqueCompleInmuAcuerTipoEmpRies5.Text;
-                inmu.inmu_1nomCompleResponVacuInmuAcuerTipoEmpRies5 = txt_1nomCompleResponVacuInmuAcuerTipoEmpRies5.Text;
-                inmu.inmu_1estaSaludColocoVacuInmuAcuerTipoEmpRies5 = txt_1estaSaludColocoVacuInmuAcuerTipoEmpRies5.Text;
-                inmu.inmu_1observaInmuAcuerTipoEmpRies5 = txt_1observaInmuAcuerTipoEmpRies5.Text;
+                inmu.inmu_descripInmunizaciones = txt_descripInmunizaciones.Text.ToUpper();
+                inmu.inmu_1fechaInmuAcuerTipoEmpRies1 = txt_1fechaInmuAcuerTipoEmpRies1.Text.ToUpper();
+                inmu.inmu_1loteInmuAcuerTipoEmpRies1 = txt_1loteInmuAcuerTipoEmpRies1.Text.ToUpper();
+                inmu.inmu_1esqueCompleInmuAcuerTipoEmpRies1 = txt_1esqueCompleInmuAcuerTipoEmpRies1.Text.ToUpper();
+                inmu.inmu_1nomCompleResponVacuInmuAcuerTipoEmpRies1 = txt_1nomCompleResponVacuInmuAcuerTipoEmpRies1.Text.ToUpper();
+                inmu.inmu_1estaSaludColocoVacuInmuAcuerTipoEmpRies1 = txt_1estaSaludColocoVacuInmuAcuerTipoEmpRies1.Text.ToUpper();
+                inmu.inmu_1observaInmuAcuerTipoEmpRies1 = txt_1observaInmuAcuerTipoEmpRies1.Text.ToUpper();
+                inmu.inmu_1fechaInmuAcuerTipoEmpRies2 = txt_1fechaInmuAcuerTipoEmpRies2.Text.ToUpper();
+                inmu.inmu_1loteInmuAcuerTipoEmpRies2 = txt_1loteInmuAcuerTipoEmpRies2.Text.ToUpper();
+                inmu.inmu_1esqueCompleInmuAcuerTipoEmpRies2 = txt_1esqueCompleInmuAcuerTipoEmpRies2.Text.ToUpper();
+                inmu.inmu_1nomCompleResponVacuInmuAcuerTipoEmpRies2 = txt_1nomCompleResponVacuInmuAcuerTipoEmpRies2.Text.ToUpper();
+                inmu.inmu_1estaSaludColocoVacuInmuAcuerTipoEmpRies2 = txt_1estaSaludColocoVacuInmuAcuerTipoEmpRies2.Text.ToUpper();
+                inmu.inmu_1observaInmuAcuerTipoEmpRies2 = txt_1observaInmuAcuerTipoEmpRies2.Text.ToUpper();
+                inmu.inmu_1fechaInmuAcuerTipoEmpRies3 = txt_1fechaInmuAcuerTipoEmpRies3.Text.ToUpper();
+                inmu.inmu_1loteInmuAcuerTipoEmpRies3 = txt_1loteInmuAcuerTipoEmpRies3.Text.ToUpper();
+                inmu.inmu_1esqueCompleInmuAcuerTipoEmpRies3 = txt_1esqueCompleInmuAcuerTipoEmpRies3.Text.ToUpper();
+                inmu.inmu_1nomCompleResponVacuInmuAcuerTipoEmpRies3 = txt_1nomCompleResponVacuInmuAcuerTipoEmpRies3.Text.ToUpper();
+                inmu.inmu_1estaSaludColocoVacuInmuAcuerTipoEmpRies3 = txt_1estaSaludColocoVacuInmuAcuerTipoEmpRies3.Text.ToUpper();
+                inmu.inmu_1observaInmuAcuerTipoEmpRies3 = txt_1observaInmuAcuerTipoEmpRies3.Text.ToUpper();
+                inmu.inmu_1fechaInmuAcuerTipoEmpRies4 = txt_1fechaInmuAcuerTipoEmpRies4.Text.ToUpper();
+                inmu.inmu_1loteInmuAcuerTipoEmpRies4 = txt_1loteInmuAcuerTipoEmpRies4.Text.ToUpper();
+                inmu.inmu_1esqueCompleInmuAcuerTipoEmpRies4 = txt_1esqueCompleInmuAcuerTipoEmpRies4.Text.ToUpper();
+                inmu.inmu_1nomCompleResponVacuInmuAcuerTipoEmpRies4 = txt_1nomCompleResponVacuInmuAcuerTipoEmpRies4.Text.ToUpper();
+                inmu.inmu_1estaSaludColocoVacuInmuAcuerTipoEmpRies4 = txt_1estaSaludColocoVacuInmuAcuerTipoEmpRies4.Text.ToUpper();
+                inmu.inmu_1observaInmuAcuerTipoEmpRies4 = txt_1observaInmuAcuerTipoEmpRies4.Text.ToUpper();
+                inmu.inmu_1fechaInmuAcuerTipoEmpRies5 = txt_1fechaInmuAcuerTipoEmpRies5.Text.ToUpper();
+                inmu.inmu_1loteInmuAcuerTipoEmpRies5 = txt_1loteInmuAcuerTipoEmpRies5.Text.ToUpper();
+                inmu.inmu_1esqueCompleInmuAcuerTipoEmpRies5 = txt_1esqueCompleInmuAcuerTipoEmpRies5.Text.ToUpper();
+                inmu.inmu_1nomCompleResponVacuInmuAcuerTipoEmpRies5 = txt_1nomCompleResponVacuInmuAcuerTipoEmpRies5.Text.ToUpper();
+                inmu.inmu_1estaSaludColocoVacuInmuAcuerTipoEmpRies5 = txt_1estaSaludColocoVacuInmuAcuerTipoEmpRies5.Text.ToUpper();
+                inmu.inmu_1observaInmuAcuerTipoEmpRies5 = txt_1observaInmuAcuerTipoEmpRies5.Text.ToUpper();
 
-                inmu.inmu_descripInmunizaciones2 = txt_descripInmunizaciones2.Text;
-                inmu.inmu_2fechaInmuAcuerTipoEmpRies1 = txt_2fechaInmuAcuerTipoEmpRies1.Text;
-                inmu.inmu_2loteInmuAcuerTipoEmpRies1 = txt_2loteInmuAcuerTipoEmpRies1.Text;
-                inmu.inmu_2esqueCompleInmuAcuerTipoEmpRies1 = txt_2esqueCompleInmuAcuerTipoEmpRies1.Text;
-                inmu.inmu_2nomCompleResponVacuInmuAcuerTipoEmpRies1 = txt_2nomCompleResponVacuInmuAcuerTipoEmpRies1.Text;
-                inmu.inmu_2estaSaludColocoVacuInmuAcuerTipoEmpRies1 = txt_2estaSaludColocoVacuInmuAcuerTipoEmpRies1.Text;
-                inmu.inmu_2observaInmuAcuerTipoEmpRies1 = txt_2observaInmuAcuerTipoEmpRies1.Text;
-                inmu.inmu_2fechaInmuAcuerTipoEmpRies2 = txt_2fechaInmuAcuerTipoEmpRies2.Text;
-                inmu.inmu_2loteInmuAcuerTipoEmpRies2 = txt_2loteInmuAcuerTipoEmpRies2.Text;
-                inmu.inmu_2esqueCompleInmuAcuerTipoEmpRies2 = txt_2esqueCompleInmuAcuerTipoEmpRies2.Text;
-                inmu.inmu_2nomCompleResponVacuInmuAcuerTipoEmpRies2 = txt_2nomCompleResponVacuInmuAcuerTipoEmpRies2.Text;
-                inmu.inmu_2estaSaludColocoVacuInmuAcuerTipoEmpRies2 = txt_2estaSaludColocoVacuInmuAcuerTipoEmpRies2.Text;
-                inmu.inmu_2observaInmuAcuerTipoEmpRies2 = txt_2observaInmuAcuerTipoEmpRies2.Text;
-                inmu.inmu_2fechaInmuAcuerTipoEmpRies3 = txt_2fechaInmuAcuerTipoEmpRies3.Text;
-                inmu.inmu_2loteInmuAcuerTipoEmpRies3 = txt_2loteInmuAcuerTipoEmpRies3.Text;
-                inmu.inmu_2esqueCompleInmuAcuerTipoEmpRies3 = txt_2esqueCompleInmuAcuerTipoEmpRies3.Text;
-                inmu.inmu_2nomCompleResponVacuInmuAcuerTipoEmpRies3 = txt_2nomCompleResponVacuInmuAcuerTipoEmpRies3.Text;
-                inmu.inmu_2estaSaludColocoVacuInmuAcuerTipoEmpRies3 = txt_2estaSaludColocoVacuInmuAcuerTipoEmpRies3.Text;
-                inmu.inmu_2observaInmuAcuerTipoEmpRies3 = txt_2observaInmuAcuerTipoEmpRies3.Text;
-                inmu.inmu_2fechaInmuAcuerTipoEmpRies4 = txt_2fechaInmuAcuerTipoEmpRies4.Text;
-                inmu.inmu_2loteInmuAcuerTipoEmpRies4 = txt_2loteInmuAcuerTipoEmpRies4.Text;
-                inmu.inmu_2esqueCompleInmuAcuerTipoEmpRies4 = txt_2esqueCompleInmuAcuerTipoEmpRies4.Text;
-                inmu.inmu_2nomCompleResponVacuInmuAcuerTipoEmpRies4 = txt_2nomCompleResponVacuInmuAcuerTipoEmpRies4.Text;
-                inmu.inmu_2estaSaludColocoVacuInmuAcuerTipoEmpRies4 = txt_2estaSaludColocoVacuInmuAcuerTipoEmpRies4.Text;
-                inmu.inmu_2observaInmuAcuerTipoEmpRies4 = txt_2observaInmuAcuerTipoEmpRies4.Text;
-                inmu.inmu_2fechaInmuAcuerTipoEmpRies5 = txt_2fechaInmuAcuerTipoEmpRies5.Text;
-                inmu.inmu_2loteInmuAcuerTipoEmpRies5 = txt_2loteInmuAcuerTipoEmpRies5.Text;
-                inmu.inmu_2esqueCompleInmuAcuerTipoEmpRies5 = txt_2esqueCompleInmuAcuerTipoEmpRies5.Text;
-                inmu.inmu_2nomCompleResponVacuInmuAcuerTipoEmpRies5 = txt_2nomCompleResponVacuInmuAcuerTipoEmpRies5.Text;
-                inmu.inmu_2estaSaludColocoVacuInmuAcuerTipoEmpRies5 = txt_2estaSaludColocoVacuInmuAcuerTipoEmpRies5.Text;
-                inmu.inmu_2observaInmuAcuerTipoEmpRies5 = txt_2observaInmuAcuerTipoEmpRies5.Text;
+                inmu.inmu_descripInmunizaciones2 = txt_descripInmunizaciones2.Text.ToUpper();
+                inmu.inmu_2fechaInmuAcuerTipoEmpRies1 = txt_2fechaInmuAcuerTipoEmpRies1.Text.ToUpper();
+                inmu.inmu_2loteInmuAcuerTipoEmpRies1 = txt_2loteInmuAcuerTipoEmpRies1.Text.ToUpper();
+                inmu.inmu_2esqueCompleInmuAcuerTipoEmpRies1 = txt_2esqueCompleInmuAcuerTipoEmpRies1.Text.ToUpper();
+                inmu.inmu_2nomCompleResponVacuInmuAcuerTipoEmpRies1 = txt_2nomCompleResponVacuInmuAcuerTipoEmpRies1.Text.ToUpper();
+                inmu.inmu_2estaSaludColocoVacuInmuAcuerTipoEmpRies1 = txt_2estaSaludColocoVacuInmuAcuerTipoEmpRies1.Text.ToUpper();
+                inmu.inmu_2observaInmuAcuerTipoEmpRies1 = txt_2observaInmuAcuerTipoEmpRies1.Text.ToUpper();
+                inmu.inmu_2fechaInmuAcuerTipoEmpRies2 = txt_2fechaInmuAcuerTipoEmpRies2.Text.ToUpper();
+                inmu.inmu_2loteInmuAcuerTipoEmpRies2 = txt_2loteInmuAcuerTipoEmpRies2.Text.ToUpper();
+                inmu.inmu_2esqueCompleInmuAcuerTipoEmpRies2 = txt_2esqueCompleInmuAcuerTipoEmpRies2.Text.ToUpper();
+                inmu.inmu_2nomCompleResponVacuInmuAcuerTipoEmpRies2 = txt_2nomCompleResponVacuInmuAcuerTipoEmpRies2.Text.ToUpper();
+                inmu.inmu_2estaSaludColocoVacuInmuAcuerTipoEmpRies2 = txt_2estaSaludColocoVacuInmuAcuerTipoEmpRies2.Text.ToUpper();
+                inmu.inmu_2observaInmuAcuerTipoEmpRies2 = txt_2observaInmuAcuerTipoEmpRies2.Text.ToUpper();
+                inmu.inmu_2fechaInmuAcuerTipoEmpRies3 = txt_2fechaInmuAcuerTipoEmpRies3.Text.ToUpper();
+                inmu.inmu_2loteInmuAcuerTipoEmpRies3 = txt_2loteInmuAcuerTipoEmpRies3.Text.ToUpper();
+                inmu.inmu_2esqueCompleInmuAcuerTipoEmpRies3 = txt_2esqueCompleInmuAcuerTipoEmpRies3.Text.ToUpper();
+                inmu.inmu_2nomCompleResponVacuInmuAcuerTipoEmpRies3 = txt_2nomCompleResponVacuInmuAcuerTipoEmpRies3.Text.ToUpper();
+                inmu.inmu_2estaSaludColocoVacuInmuAcuerTipoEmpRies3 = txt_2estaSaludColocoVacuInmuAcuerTipoEmpRies3.Text.ToUpper();
+                inmu.inmu_2observaInmuAcuerTipoEmpRies3 = txt_2observaInmuAcuerTipoEmpRies3.Text.ToUpper();
+                inmu.inmu_2fechaInmuAcuerTipoEmpRies4 = txt_2fechaInmuAcuerTipoEmpRies4.Text.ToUpper();
+                inmu.inmu_2loteInmuAcuerTipoEmpRies4 = txt_2loteInmuAcuerTipoEmpRies4.Text.ToUpper();
+                inmu.inmu_2esqueCompleInmuAcuerTipoEmpRies4 = txt_2esqueCompleInmuAcuerTipoEmpRies4.Text.ToUpper();
+                inmu.inmu_2nomCompleResponVacuInmuAcuerTipoEmpRies4 = txt_2nomCompleResponVacuInmuAcuerTipoEmpRies4.Text.ToUpper();
+                inmu.inmu_2estaSaludColocoVacuInmuAcuerTipoEmpRies4 = txt_2estaSaludColocoVacuInmuAcuerTipoEmpRies4.Text.ToUpper();
+                inmu.inmu_2observaInmuAcuerTipoEmpRies4 = txt_2observaInmuAcuerTipoEmpRies4.Text.ToUpper();
+                inmu.inmu_2fechaInmuAcuerTipoEmpRies5 = txt_2fechaInmuAcuerTipoEmpRies5.Text.ToUpper();
+                inmu.inmu_2loteInmuAcuerTipoEmpRies5 = txt_2loteInmuAcuerTipoEmpRies5.Text.ToUpper();
+                inmu.inmu_2esqueCompleInmuAcuerTipoEmpRies5 = txt_2esqueCompleInmuAcuerTipoEmpRies5.Text.ToUpper();
+                inmu.inmu_2nomCompleResponVacuInmuAcuerTipoEmpRies5 = txt_2nomCompleResponVacuInmuAcuerTipoEmpRies5.Text.ToUpper();
+                inmu.inmu_2estaSaludColocoVacuInmuAcuerTipoEmpRies5 = txt_2estaSaludColocoVacuInmuAcuerTipoEmpRies5.Text.ToUpper();
+                inmu.inmu_2observaInmuAcuerTipoEmpRies5 = txt_2observaInmuAcuerTipoEmpRies5.Text.ToUpper();
 
-                inmu.inmu_descripInmunizaciones3 = txt_descripInmunizaciones3.Text;
-                inmu.inmu_3fechaInmuAcuerTipoEmpRies1 = txt_3fechaInmuAcuerTipoEmpRies1.Text;
-                inmu.inmu_3loteInmuAcuerTipoEmpRies1 = txt_3loteInmuAcuerTipoEmpRies1.Text;
-                inmu.inmu_3esqueCompleInmuAcuerTipoEmpRies1 = txt_3esqueCompleInmuAcuerTipoEmpRies1.Text;
-                inmu.inmu_3nomCompleResponVacuInmuAcuerTipoEmpRies1 = txt_3nomCompleResponVacuInmuAcuerTipoEmpRies1.Text;
-                inmu.inmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies1 = txt_3estaSaludColocoVacuInmuAcuerTipoEmpRies1.Text;
-                inmu.inmu_3observaInmuAcuerTipoEmpRies1 = txt_3observaInmuAcuerTipoEmpRies1.Text;
-                inmu.inmu_3fechaInmuAcuerTipoEmpRies2 = txt_3fechaInmuAcuerTipoEmpRies2.Text;
-                inmu.inmu_3loteInmuAcuerTipoEmpRies2 = txt_3loteInmuAcuerTipoEmpRies2.Text;
-                inmu.inmu_3esqueCompleInmuAcuerTipoEmpRies2 = txt_3esqueCompleInmuAcuerTipoEmpRies2.Text;
-                inmu.inmu_3nomCompleResponVacuInmuAcuerTipoEmpRies2 = txt_3nomCompleResponVacuInmuAcuerTipoEmpRies2.Text;
-                inmu.inmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies2 = txt_3estaSaludColocoVacuInmuAcuerTipoEmpRies2.Text;
-                inmu.inmu_3observaInmuAcuerTipoEmpRies2 = txt_3observaInmuAcuerTipoEmpRies2.Text;
-                inmu.inmu_3fechaInmuAcuerTipoEmpRies3 = txt_3fechaInmuAcuerTipoEmpRies3.Text;
-                inmu.inmu_3loteInmuAcuerTipoEmpRies3 = txt_3loteInmuAcuerTipoEmpRies3.Text;
-                inmu.inmu_3esqueCompleInmuAcuerTipoEmpRies3 = txt_3esqueCompleInmuAcuerTipoEmpRies3.Text;
-                inmu.inmu_3nomCompleResponVacuInmuAcuerTipoEmpRies3 = txt_3nomCompleResponVacuInmuAcuerTipoEmpRies3.Text;
-                inmu.inmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies3 = txt_3estaSaludColocoVacuInmuAcuerTipoEmpRies3.Text;
-                inmu.inmu_3observaInmuAcuerTipoEmpRies3 = txt_3observaInmuAcuerTipoEmpRies3.Text;
-                inmu.inmu_3fechaInmuAcuerTipoEmpRies4 = txt_3fechaInmuAcuerTipoEmpRies4.Text;
-                inmu.inmu_3loteInmuAcuerTipoEmpRies4 = txt_3loteInmuAcuerTipoEmpRies4.Text;
-                inmu.inmu_3esqueCompleInmuAcuerTipoEmpRies4 = txt_3esqueCompleInmuAcuerTipoEmpRies4.Text;
-                inmu.inmu_3nomCompleResponVacuInmuAcuerTipoEmpRies4 = txt_3nomCompleResponVacuInmuAcuerTipoEmpRies4.Text;
-                inmu.inmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies4 = txt_3estaSaludColocoVacuInmuAcuerTipoEmpRies4.Text;
-                inmu.inmu_3observaInmuAcuerTipoEmpRies4 = txt_3observaInmuAcuerTipoEmpRies4.Text;
-                inmu.inmu_3fechaInmuAcuerTipoEmpRies5 = txt_3fechaInmuAcuerTipoEmpRies5.Text;
-                inmu.inmu_3loteInmuAcuerTipoEmpRies5 = txt_3loteInmuAcuerTipoEmpRies5.Text;
-                inmu.inmu_3esqueCompleInmuAcuerTipoEmpRies5 = txt_3esqueCompleInmuAcuerTipoEmpRies5.Text;
-                inmu.inmu_3nomCompleResponVacuInmuAcuerTipoEmpRies5 = txt_3nomCompleResponVacuInmuAcuerTipoEmpRies5.Text;
-                inmu.inmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies5 = txt_3estaSaludColocoVacuInmuAcuerTipoEmpRies5.Text;
-                inmu.inmu_3observaInmuAcuerTipoEmpRies5 = txt_3observaInmuAcuerTipoEmpRies5.Text;
+                inmu.inmu_descripInmunizaciones3 = txt_descripInmunizaciones3.Text.ToUpper();
+                inmu.inmu_3fechaInmuAcuerTipoEmpRies1 = txt_3fechaInmuAcuerTipoEmpRies1.Text.ToUpper();
+                inmu.inmu_3loteInmuAcuerTipoEmpRies1 = txt_3loteInmuAcuerTipoEmpRies1.Text.ToUpper();
+                inmu.inmu_3esqueCompleInmuAcuerTipoEmpRies1 = txt_3esqueCompleInmuAcuerTipoEmpRies1.Text.ToUpper();
+                inmu.inmu_3nomCompleResponVacuInmuAcuerTipoEmpRies1 = txt_3nomCompleResponVacuInmuAcuerTipoEmpRies1.Text.ToUpper();
+                inmu.inmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies1 = txt_3estaSaludColocoVacuInmuAcuerTipoEmpRies1.Text.ToUpper();
+                inmu.inmu_3observaInmuAcuerTipoEmpRies1 = txt_3observaInmuAcuerTipoEmpRies1.Text.ToUpper();
+                inmu.inmu_3fechaInmuAcuerTipoEmpRies2 = txt_3fechaInmuAcuerTipoEmpRies2.Text.ToUpper();
+                inmu.inmu_3loteInmuAcuerTipoEmpRies2 = txt_3loteInmuAcuerTipoEmpRies2.Text.ToUpper();
+                inmu.inmu_3esqueCompleInmuAcuerTipoEmpRies2 = txt_3esqueCompleInmuAcuerTipoEmpRies2.Text.ToUpper();
+                inmu.inmu_3nomCompleResponVacuInmuAcuerTipoEmpRies2 = txt_3nomCompleResponVacuInmuAcuerTipoEmpRies2.Text.ToUpper();
+                inmu.inmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies2 = txt_3estaSaludColocoVacuInmuAcuerTipoEmpRies2.Text.ToUpper();
+                inmu.inmu_3observaInmuAcuerTipoEmpRies2 = txt_3observaInmuAcuerTipoEmpRies2.Text.ToUpper();
+                inmu.inmu_3fechaInmuAcuerTipoEmpRies3 = txt_3fechaInmuAcuerTipoEmpRies3.Text.ToUpper();
+                inmu.inmu_3loteInmuAcuerTipoEmpRies3 = txt_3loteInmuAcuerTipoEmpRies3.Text.ToUpper();
+                inmu.inmu_3esqueCompleInmuAcuerTipoEmpRies3 = txt_3esqueCompleInmuAcuerTipoEmpRies3.Text.ToUpper();
+                inmu.inmu_3nomCompleResponVacuInmuAcuerTipoEmpRies3 = txt_3nomCompleResponVacuInmuAcuerTipoEmpRies3.Text.ToUpper();
+                inmu.inmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies3 = txt_3estaSaludColocoVacuInmuAcuerTipoEmpRies3.Text.ToUpper();
+                inmu.inmu_3observaInmuAcuerTipoEmpRies3 = txt_3observaInmuAcuerTipoEmpRies3.Text.ToUpper();
+                inmu.inmu_3fechaInmuAcuerTipoEmpRies4 = txt_3fechaInmuAcuerTipoEmpRies4.Text.ToUpper();
+                inmu.inmu_3loteInmuAcuerTipoEmpRies4 = txt_3loteInmuAcuerTipoEmpRies4.Text.ToUpper();
+                inmu.inmu_3esqueCompleInmuAcuerTipoEmpRies4 = txt_3esqueCompleInmuAcuerTipoEmpRies4.Text.ToUpper();
+                inmu.inmu_3nomCompleResponVacuInmuAcuerTipoEmpRies4 = txt_3nomCompleResponVacuInmuAcuerTipoEmpRies4.Text.ToUpper();
+                inmu.inmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies4 = txt_3estaSaludColocoVacuInmuAcuerTipoEmpRies4.Text.ToUpper();
+                inmu.inmu_3observaInmuAcuerTipoEmpRies4 = txt_3observaInmuAcuerTipoEmpRies4.Text.ToUpper();
+                inmu.inmu_3fechaInmuAcuerTipoEmpRies5 = txt_3fechaInmuAcuerTipoEmpRies5.Text.ToUpper();
+                inmu.inmu_3loteInmuAcuerTipoEmpRies5 = txt_3loteInmuAcuerTipoEmpRies5.Text.ToUpper();
+                inmu.inmu_3esqueCompleInmuAcuerTipoEmpRies5 = txt_3esqueCompleInmuAcuerTipoEmpRies5.Text.ToUpper();
+                inmu.inmu_3nomCompleResponVacuInmuAcuerTipoEmpRies5 = txt_3nomCompleResponVacuInmuAcuerTipoEmpRies5.Text.ToUpper();
+                inmu.inmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies5 = txt_3estaSaludColocoVacuInmuAcuerTipoEmpRies5.Text.ToUpper();
+                inmu.inmu_3observaInmuAcuerTipoEmpRies5 = txt_3observaInmuAcuerTipoEmpRies5.Text.ToUpper();
 
-                inmu.inmu_descripInmunizaciones4 = txt_descripInmunizaciones4.Text;
-                inmu.inmu_4fechaInmuAcuerTipoEmpRies1 = txt_4fechaInmuAcuerTipoEmpRies1.Text;
-                inmu.inmu_4loteInmuAcuerTipoEmpRies1 = txt_4loteInmuAcuerTipoEmpRies1.Text;
-                inmu.inmu_4esqueCompleInmuAcuerTipoEmpRies1 = txt_4esqueCompleInmuAcuerTipoEmpRies1.Text;
-                inmu.inmu_4nomCompleResponVacuInmuAcuerTipoEmpRies1 = txt_4nomCompleResponVacuInmuAcuerTipoEmpRies1.Text;
-                inmu.inmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies1 = txt_4estaSaludColocoVacuInmuAcuerTipoEmpRies1.Text;
-                inmu.inmu_4observaInmuAcuerTipoEmpRies1 = txt_4observaInmuAcuerTipoEmpRies1.Text;
-                inmu.inmu_4fechaInmuAcuerTipoEmpRies2 = txt_4fechaInmuAcuerTipoEmpRies2.Text;
-                inmu.inmu_4loteInmuAcuerTipoEmpRies2 = txt_4loteInmuAcuerTipoEmpRies2.Text;
-                inmu.inmu_4esqueCompleInmuAcuerTipoEmpRies2 = txt_4esqueCompleInmuAcuerTipoEmpRies2.Text;
-                inmu.inmu_4nomCompleResponVacuInmuAcuerTipoEmpRies2 = txt_4nomCompleResponVacuInmuAcuerTipoEmpRies2.Text;
-                inmu.inmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies2 = txt_4estaSaludColocoVacuInmuAcuerTipoEmpRies2.Text;
-                inmu.inmu_4observaInmuAcuerTipoEmpRies2 = txt_4observaInmuAcuerTipoEmpRies2.Text;
-                inmu.inmu_4fechaInmuAcuerTipoEmpRies3 = txt_4fechaInmuAcuerTipoEmpRies3.Text;
-                inmu.inmu_4loteInmuAcuerTipoEmpRies3 = txt_4loteInmuAcuerTipoEmpRies3.Text;
-                inmu.inmu_4esqueCompleInmuAcuerTipoEmpRies3 = txt_4esqueCompleInmuAcuerTipoEmpRies3.Text;
-                inmu.inmu_4nomCompleResponVacuInmuAcuerTipoEmpRies3 = txt_4nomCompleResponVacuInmuAcuerTipoEmpRies3.Text;
-                inmu.inmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies3 = txt_4estaSaludColocoVacuInmuAcuerTipoEmpRies3.Text;
-                inmu.inmu_4observaInmuAcuerTipoEmpRies3 = txt_4observaInmuAcuerTipoEmpRies3.Text;
-                inmu.inmu_4fechaInmuAcuerTipoEmpRies4 = txt_4fechaInmuAcuerTipoEmpRies4.Text;
-                inmu.inmu_4loteInmuAcuerTipoEmpRies4 = txt_4loteInmuAcuerTipoEmpRies4.Text;
-                inmu.inmu_4esqueCompleInmuAcuerTipoEmpRies4 = txt_4esqueCompleInmuAcuerTipoEmpRies4.Text;
-                inmu.inmu_4nomCompleResponVacuInmuAcuerTipoEmpRies4 = txt_4nomCompleResponVacuInmuAcuerTipoEmpRies4.Text;
-                inmu.inmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies4 = txt_4estaSaludColocoVacuInmuAcuerTipoEmpRies4.Text;
-                inmu.inmu_4observaInmuAcuerTipoEmpRies4 = txt_4observaInmuAcuerTipoEmpRies4.Text;
-                inmu.inmu_4fechaInmuAcuerTipoEmpRies5 = txt_4fechaInmuAcuerTipoEmpRies5.Text;
-                inmu.inmu_4loteInmuAcuerTipoEmpRies5 = txt_4loteInmuAcuerTipoEmpRies5.Text;
-                inmu.inmu_4esqueCompleInmuAcuerTipoEmpRies5 = txt_4esqueCompleInmuAcuerTipoEmpRies5.Text;
-                inmu.inmu_4nomCompleResponVacuInmuAcuerTipoEmpRies5 = txt_4nomCompleResponVacuInmuAcuerTipoEmpRies5.Text;
-                inmu.inmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies5 = txt_4estaSaludColocoVacuInmuAcuerTipoEmpRies5.Text;
-                inmu.inmu_4observaInmuAcuerTipoEmpRies5 = txt_4observaInmuAcuerTipoEmpRies5.Text;
+                inmu.inmu_descripInmunizaciones4 = txt_descripInmunizaciones4.Text.ToUpper();
+                inmu.inmu_4fechaInmuAcuerTipoEmpRies1 = txt_4fechaInmuAcuerTipoEmpRies1.Text.ToUpper();
+                inmu.inmu_4loteInmuAcuerTipoEmpRies1 = txt_4loteInmuAcuerTipoEmpRies1.Text.ToUpper();
+                inmu.inmu_4esqueCompleInmuAcuerTipoEmpRies1 = txt_4esqueCompleInmuAcuerTipoEmpRies1.Text.ToUpper();
+                inmu.inmu_4nomCompleResponVacuInmuAcuerTipoEmpRies1 = txt_4nomCompleResponVacuInmuAcuerTipoEmpRies1.Text.ToUpper();
+                inmu.inmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies1 = txt_4estaSaludColocoVacuInmuAcuerTipoEmpRies1.Text.ToUpper();
+                inmu.inmu_4observaInmuAcuerTipoEmpRies1 = txt_4observaInmuAcuerTipoEmpRies1.Text.ToUpper();
+                inmu.inmu_4fechaInmuAcuerTipoEmpRies2 = txt_4fechaInmuAcuerTipoEmpRies2.Text.ToUpper();
+                inmu.inmu_4loteInmuAcuerTipoEmpRies2 = txt_4loteInmuAcuerTipoEmpRies2.Text.ToUpper();
+                inmu.inmu_4esqueCompleInmuAcuerTipoEmpRies2 = txt_4esqueCompleInmuAcuerTipoEmpRies2.Text.ToUpper();
+                inmu.inmu_4nomCompleResponVacuInmuAcuerTipoEmpRies2 = txt_4nomCompleResponVacuInmuAcuerTipoEmpRies2.Text.ToUpper();
+                inmu.inmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies2 = txt_4estaSaludColocoVacuInmuAcuerTipoEmpRies2.Text.ToUpper();
+                inmu.inmu_4observaInmuAcuerTipoEmpRies2 = txt_4observaInmuAcuerTipoEmpRies2.Text.ToUpper();
+                inmu.inmu_4fechaInmuAcuerTipoEmpRies3 = txt_4fechaInmuAcuerTipoEmpRies3.Text.ToUpper();
+                inmu.inmu_4loteInmuAcuerTipoEmpRies3 = txt_4loteInmuAcuerTipoEmpRies3.Text.ToUpper();
+                inmu.inmu_4esqueCompleInmuAcuerTipoEmpRies3 = txt_4esqueCompleInmuAcuerTipoEmpRies3.Text.ToUpper();
+                inmu.inmu_4nomCompleResponVacuInmuAcuerTipoEmpRies3 = txt_4nomCompleResponVacuInmuAcuerTipoEmpRies3.Text.ToUpper();
+                inmu.inmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies3 = txt_4estaSaludColocoVacuInmuAcuerTipoEmpRies3.Text.ToUpper();
+                inmu.inmu_4observaInmuAcuerTipoEmpRies3 = txt_4observaInmuAcuerTipoEmpRies3.Text.ToUpper();
+                inmu.inmu_4fechaInmuAcuerTipoEmpRies4 = txt_4fechaInmuAcuerTipoEmpRies4.Text.ToUpper();
+                inmu.inmu_4loteInmuAcuerTipoEmpRies4 = txt_4loteInmuAcuerTipoEmpRies4.Text.ToUpper();
+                inmu.inmu_4esqueCompleInmuAcuerTipoEmpRies4 = txt_4esqueCompleInmuAcuerTipoEmpRies4.Text.ToUpper();
+                inmu.inmu_4nomCompleResponVacuInmuAcuerTipoEmpRies4 = txt_4nomCompleResponVacuInmuAcuerTipoEmpRies4.Text.ToUpper();
+                inmu.inmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies4 = txt_4estaSaludColocoVacuInmuAcuerTipoEmpRies4.Text.ToUpper();
+                inmu.inmu_4observaInmuAcuerTipoEmpRies4 = txt_4observaInmuAcuerTipoEmpRies4.Text.ToUpper();
+                inmu.inmu_4fechaInmuAcuerTipoEmpRies5 = txt_4fechaInmuAcuerTipoEmpRies5.Text.ToUpper();
+                inmu.inmu_4loteInmuAcuerTipoEmpRies5 = txt_4loteInmuAcuerTipoEmpRies5.Text.ToUpper();
+                inmu.inmu_4esqueCompleInmuAcuerTipoEmpRies5 = txt_4esqueCompleInmuAcuerTipoEmpRies5.Text.ToUpper();
+                inmu.inmu_4nomCompleResponVacuInmuAcuerTipoEmpRies5 = txt_4nomCompleResponVacuInmuAcuerTipoEmpRies5.Text.ToUpper();
+                inmu.inmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies5 = txt_4estaSaludColocoVacuInmuAcuerTipoEmpRies5.Text.ToUpper();
+                inmu.inmu_4observaInmuAcuerTipoEmpRies5 = txt_4observaInmuAcuerTipoEmpRies5.Text.ToUpper();
 
                 inmu.Per_id = perso;
+                inmu.Emp_id = empre;
                 
                 CN_Inmunizaciones.GuardarInmunizaciones(inmu);
 
                 //Mensaje de confirmacion
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos Guardados Exitosamente')", true);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", "swal('Exito!', 'Datos Guardados Exitosamente', 'success')", true);
 
                 Response.Redirect("~/Template/Views/PacientesInmunizaciones.aspx");
 
             }
             catch (Exception)
             {
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos No Guardados')", true);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", "swal('Error!', 'Datos No Guardados', 'error')", true);
             }
 
         }
@@ -898,243 +907,243 @@ namespace SistemaECU911.Template.Views
             try
             {
                 //Fecha y Hora
-                inmu.inmu_fecha_hora = txt_fechahora.Text;
+                inmu.inmu_fecha_horaModificacion = Convert.ToDateTime(txt_fechahora.Text.ToUpper());
 
                 //A. Captura de datos Establecimiento
-                inmu.inmu_ciiu = txt_ciiu.Text;
-                inmu.inmu_numArchivo = txt_numArchivo.Text;
+                inmu.inmu_ciiu = txt_ciiu.Text.ToUpper();
+                inmu.inmu_numArchivo = txt_numArchivo.Text.ToUpper();
 
                 //B. Captura de datos Inmunizaciones
-                inmu.inmu_fechaTetanos1 = txt_fechatetanos1.Text;
-                inmu.inmu_loteTetanos1 = txt_loteTetanos1.Text;
-                inmu.inmu_esqueCompleTetanos1 = txt_esqueCompleTetanos1.Text;
-                inmu.inmu_nomCompleResponVacuTetanos1 = txt_nomCompleResponVacuTetanos1.Text;
-                inmu.inmu_estaSaludColocoVacuTetanos1 = txt_estaSaludColocoVacuTetanos1.Text;
-                inmu.inmu_observaTetanos1 = txt_observaTetanos1.Text;
-                inmu.inmu_fechaTetanos2 = txt_fechatetanos2.Text;
-                inmu.inmu_loteTetanos2 = txt_loteTetanos2.Text;
-                inmu.inmu_esqueCompleTetanos2 = txt_esqueCompleTetanos2.Text;
-                inmu.inmu_nomCompleResponVacuTetanos2 = txt_nomCompleResponVacuTetanos2.Text;
-                inmu.inmu_estaSaludColocoVacuTetanos2 = txt_estaSaludColocoVacuTetanos2.Text;
-                inmu.inmu_observaTetanos2 = txt_observaTetanos2.Text;
-                inmu.inmu_fechaTetanos3 = txt_fechatetanos2.Text;
-                inmu.inmu_loteTetanos3 = txt_loteTetanos3.Text;
-                inmu.inmu_esqueCompleTetanos3 = txt_esqueCompleTetanos3.Text;
-                inmu.inmu_nomCompleResponVacuTetanos3 = txt_nomCompleResponVacuTetanos3.Text;
-                inmu.inmu_estaSaludColocoVacuTetanos3 = txt_estaSaludColocoVacuTetanos3.Text;
-                inmu.inmu_observaTetanos3 = txt_observaTetanos3.Text;
-                inmu.inmu_fechaTetanos4 = txt_fechatetanos4.Text;
-                inmu.inmu_loteTetanos4 = txt_loteTetanos4.Text;
-                inmu.inmu_esqueCompleTetanos4 = txt_esqueCompleTetanos4.Text;
-                inmu.inmu_nomCompleResponVacuTetanos4 = txt_nomCompleResponVacuTetanos4.Text;
-                inmu.inmu_estaSaludColocoVacuTetanos4 = txt_estaSaludColocoVacuTetanos4.Text;
-                inmu.inmu_observaTetanos4 = txt_observaTetanos4.Text;
-                inmu.inmu_fechaTetanos5 = txt_fechatetanos5.Text;
-                inmu.inmu_loteTetanos5 = txt_loteTetanos5.Text;
-                inmu.inmu_esqueCompleTetanos5 = txt_esqueCompleTetanos5.Text;
-                inmu.inmu_nomCompleResponVacuTetanos5 = txt_nomCompleResponVacuTetanos5.Text;
-                inmu.inmu_estaSaludColocoVacuTetanos5 = txt_estaSaludColocoVacuTetanos5.Text;
-                inmu.inmu_observaTetanos5 = txt_observaTetanos5.Text;
+                inmu.inmu_fechaTetanos1 = txt_fechatetanos1.Text.ToUpper();
+                inmu.inmu_loteTetanos1 = txt_loteTetanos1.Text.ToUpper();
+                inmu.inmu_esqueCompleTetanos1 = txt_esqueCompleTetanos1.Text.ToUpper();
+                inmu.inmu_nomCompleResponVacuTetanos1 = txt_nomCompleResponVacuTetanos1.Text.ToUpper();
+                inmu.inmu_estaSaludColocoVacuTetanos1 = txt_estaSaludColocoVacuTetanos1.Text.ToUpper();
+                inmu.inmu_observaTetanos1 = txt_observaTetanos1.Text.ToUpper();
+                inmu.inmu_fechaTetanos2 = txt_fechatetanos2.Text.ToUpper();
+                inmu.inmu_loteTetanos2 = txt_loteTetanos2.Text.ToUpper();
+                inmu.inmu_esqueCompleTetanos2 = txt_esqueCompleTetanos2.Text.ToUpper();
+                inmu.inmu_nomCompleResponVacuTetanos2 = txt_nomCompleResponVacuTetanos2.Text.ToUpper();
+                inmu.inmu_estaSaludColocoVacuTetanos2 = txt_estaSaludColocoVacuTetanos2.Text.ToUpper();
+                inmu.inmu_observaTetanos2 = txt_observaTetanos2.Text.ToUpper();
+                inmu.inmu_fechaTetanos3 = txt_fechatetanos2.Text.ToUpper();
+                inmu.inmu_loteTetanos3 = txt_loteTetanos3.Text.ToUpper();
+                inmu.inmu_esqueCompleTetanos3 = txt_esqueCompleTetanos3.Text.ToUpper();
+                inmu.inmu_nomCompleResponVacuTetanos3 = txt_nomCompleResponVacuTetanos3.Text.ToUpper();
+                inmu.inmu_estaSaludColocoVacuTetanos3 = txt_estaSaludColocoVacuTetanos3.Text.ToUpper();
+                inmu.inmu_observaTetanos3 = txt_observaTetanos3.Text.ToUpper();
+                inmu.inmu_fechaTetanos4 = txt_fechatetanos4.Text.ToUpper();
+                inmu.inmu_loteTetanos4 = txt_loteTetanos4.Text.ToUpper();
+                inmu.inmu_esqueCompleTetanos4 = txt_esqueCompleTetanos4.Text.ToUpper();
+                inmu.inmu_nomCompleResponVacuTetanos4 = txt_nomCompleResponVacuTetanos4.Text.ToUpper();
+                inmu.inmu_estaSaludColocoVacuTetanos4 = txt_estaSaludColocoVacuTetanos4.Text.ToUpper();
+                inmu.inmu_observaTetanos4 = txt_observaTetanos4.Text.ToUpper();
+                inmu.inmu_fechaTetanos5 = txt_fechatetanos5.Text.ToUpper();
+                inmu.inmu_loteTetanos5 = txt_loteTetanos5.Text.ToUpper();
+                inmu.inmu_esqueCompleTetanos5 = txt_esqueCompleTetanos5.Text.ToUpper();
+                inmu.inmu_nomCompleResponVacuTetanos5 = txt_nomCompleResponVacuTetanos5.Text.ToUpper();
+                inmu.inmu_estaSaludColocoVacuTetanos5 = txt_estaSaludColocoVacuTetanos5.Text.ToUpper();
+                inmu.inmu_observaTetanos5 = txt_observaTetanos5.Text.ToUpper();
 
-                inmu.inmu_fechaHepatitisA1 = txt_fechaHepatitisA1.Text;
-                inmu.inmu_loteHepatitisA1 = txt_loteHepatitisA1.Text;
-                inmu.inmu_esqueCompleHepatitisA1 = txt_esqueCompleHepatitisA1.Text;
-                inmu.inmu_nomCompleResponVacuHepatitisA1 = txt_nomCompleResponVacuHepatitisA1.Text;
-                inmu.inmu_estaSaludColocoVaciHepatitisA1 = txt_estaSaludColocoVaciHepatitisA1.Text;
-                inmu.inmu_observaHepatitisA1 = txt_observaHepatitisA1.Text;
-                inmu.inmu_fechaHepatitisA2 = txt_fechaHepatitisA2.Text;
-                inmu.inmu_loteHepatitisA2 = txt_loteHepatitisA2.Text;
-                inmu.inmu_esqueCompleHepatitisA2 = txt_esqueCompleHepatitisA2.Text;
-                inmu.inmu_nomCompleResponVacuHepatitisA2 = txt_nomCompleResponVacuHepatitisA2.Text;
-                inmu.inmu_estaSaludColocoVaciHepatitisA2 = txt_estaSaludColocoVaciHepatitisA2.Text;
-                inmu.inmu_observaHepatitisA2 = txt_observaHepatitisA2.Text;
-                inmu.inmu_fechaHepatitisA3 = txt_fechaHepatitisA3.Text;
-                inmu.inmu_loteHepatitisA3 = txt_loteHepatitisA3.Text;
-                inmu.inmu_esqueCompleHepatitisA3 = txt_esqueCompleHepatitisA3.Text;
-                inmu.inmu_nomCompleResponVacuHepatitisA3 = txt_nomCompleResponVacuHepatitisA3.Text;
-                inmu.inmu_estaSaludColocoVaciHepatitisA3 = txt_estaSaludColocoVaciHepatitisA3.Text;
-                inmu.inmu_observaHepatitisA3 = txt_observaHepatitisA3.Text;
+                inmu.inmu_fechaHepatitisA1 = txt_fechaHepatitisA1.Text.ToUpper();
+                inmu.inmu_loteHepatitisA1 = txt_loteHepatitisA1.Text.ToUpper();
+                inmu.inmu_esqueCompleHepatitisA1 = txt_esqueCompleHepatitisA1.Text.ToUpper();
+                inmu.inmu_nomCompleResponVacuHepatitisA1 = txt_nomCompleResponVacuHepatitisA1.Text.ToUpper();
+                inmu.inmu_estaSaludColocoVaciHepatitisA1 = txt_estaSaludColocoVaciHepatitisA1.Text.ToUpper();
+                inmu.inmu_observaHepatitisA1 = txt_observaHepatitisA1.Text.ToUpper();
+                inmu.inmu_fechaHepatitisA2 = txt_fechaHepatitisA2.Text.ToUpper();
+                inmu.inmu_loteHepatitisA2 = txt_loteHepatitisA2.Text.ToUpper();
+                inmu.inmu_esqueCompleHepatitisA2 = txt_esqueCompleHepatitisA2.Text.ToUpper();
+                inmu.inmu_nomCompleResponVacuHepatitisA2 = txt_nomCompleResponVacuHepatitisA2.Text.ToUpper();
+                inmu.inmu_estaSaludColocoVaciHepatitisA2 = txt_estaSaludColocoVaciHepatitisA2.Text.ToUpper();
+                inmu.inmu_observaHepatitisA2 = txt_observaHepatitisA2.Text.ToUpper();
+                inmu.inmu_fechaHepatitisA3 = txt_fechaHepatitisA3.Text.ToUpper();
+                inmu.inmu_loteHepatitisA3 = txt_loteHepatitisA3.Text.ToUpper();
+                inmu.inmu_esqueCompleHepatitisA3 = txt_esqueCompleHepatitisA3.Text.ToUpper();
+                inmu.inmu_nomCompleResponVacuHepatitisA3 = txt_nomCompleResponVacuHepatitisA3.Text.ToUpper();
+                inmu.inmu_estaSaludColocoVaciHepatitisA3 = txt_estaSaludColocoVaciHepatitisA3.Text.ToUpper();
+                inmu.inmu_observaHepatitisA3 = txt_observaHepatitisA3.Text.ToUpper();
 
-                inmu.inmu_fechaHepatitisB1 = txt_fechaHepatitisB1.Text;
-                inmu.inmu_loteHepatitisB1 = txt_loteHepatitisB1.Text;
-                inmu.inmu_esqueCompleHepatitisB1 = txt_esqueCompleHepatitisB1.Text;
-                inmu.inmu_nomCompleResponVacuHepatitisB1 = txt_nomCompleResponVacuHepatitisB1.Text;
-                inmu.inmu_estaSaludColocoVaciHepatitisB1 = txt_estaSaludColocoVaciHepatitisB1.Text;
-                inmu.inmu_observaHepatitisB1 = txt_observaHepatitisB1.Text;
-                inmu.inmu_fechaHepatitisB2 = txt_fechaHepatitisB2.Text;
-                inmu.inmu_loteHepatitisB2 = txt_loteHepatitisB2.Text;
-                inmu.inmu_esqueCompleHepatitisB2 = txt_esqueCompleHepatitisB2.Text;
-                inmu.inmu_nomCompleResponVacuHepatitisB2 = txt_nomCompleResponVacuHepatitisB2.Text;
-                inmu.inmu_estaSaludColocoVaciHepatitisB2 = txt_estaSaludColocoVaciHepatitisB2.Text;
-                inmu.inmu_observaHepatitisB2 = txt_observaHepatitisB2.Text;
-                inmu.inmu_fechaHepatitisB3 = txt_fechaHepatitisB3.Text;
-                inmu.inmu_loteHepatitisB3 = txt_loteHepatitisB3.Text;
-                inmu.inmu_esqueCompleHepatitisB3 = txt_esqueCompleHepatitisB3.Text;
-                inmu.inmu_nomCompleResponVacuHepatitisB3 = txt_nomCompleResponVacuHepatitisB3.Text;
-                inmu.inmu_estaSaludColocoVaciHepatitisB3 = txt_estaSaludColocoVaciHepatitisB3.Text;
-                inmu.inmu_observaHepatitisB3 = txt_observaHepatitisB3.Text;
+                inmu.inmu_fechaHepatitisB1 = txt_fechaHepatitisB1.Text.ToUpper();
+                inmu.inmu_loteHepatitisB1 = txt_loteHepatitisB1.Text.ToUpper();
+                inmu.inmu_esqueCompleHepatitisB1 = txt_esqueCompleHepatitisB1.Text.ToUpper();
+                inmu.inmu_nomCompleResponVacuHepatitisB1 = txt_nomCompleResponVacuHepatitisB1.Text.ToUpper();
+                inmu.inmu_estaSaludColocoVaciHepatitisB1 = txt_estaSaludColocoVaciHepatitisB1.Text.ToUpper();
+                inmu.inmu_observaHepatitisB1 = txt_observaHepatitisB1.Text.ToUpper();
+                inmu.inmu_fechaHepatitisB2 = txt_fechaHepatitisB2.Text.ToUpper();
+                inmu.inmu_loteHepatitisB2 = txt_loteHepatitisB2.Text.ToUpper();
+                inmu.inmu_esqueCompleHepatitisB2 = txt_esqueCompleHepatitisB2.Text.ToUpper();
+                inmu.inmu_nomCompleResponVacuHepatitisB2 = txt_nomCompleResponVacuHepatitisB2.Text.ToUpper();
+                inmu.inmu_estaSaludColocoVaciHepatitisB2 = txt_estaSaludColocoVaciHepatitisB2.Text.ToUpper();
+                inmu.inmu_observaHepatitisB2 = txt_observaHepatitisB2.Text.ToUpper();
+                inmu.inmu_fechaHepatitisB3 = txt_fechaHepatitisB3.Text.ToUpper();
+                inmu.inmu_loteHepatitisB3 = txt_loteHepatitisB3.Text.ToUpper();
+                inmu.inmu_esqueCompleHepatitisB3 = txt_esqueCompleHepatitisB3.Text.ToUpper();
+                inmu.inmu_nomCompleResponVacuHepatitisB3 = txt_nomCompleResponVacuHepatitisB3.Text.ToUpper();
+                inmu.inmu_estaSaludColocoVaciHepatitisB3 = txt_estaSaludColocoVaciHepatitisB3.Text.ToUpper();
+                inmu.inmu_observaHepatitisB3 = txt_observaHepatitisB3.Text.ToUpper();
 
-                inmu.inmu_fechaInfluenza = txt_fechaInfluenza.Text;
-                inmu.inmu_loteInfluenza = txt_loteInfluenza.Text;
-                inmu.inmu_esqueCompleInfluenza = txt_esqueCompleInfluenza.Text;
-                inmu.inmu_nomCompleResponVacuInfluenza = txt_nomCompleResponVacuInfluenza.Text;
-                inmu.inmu_estaSaludColocoVacuInfluenza = txt_estaSaludColocoVacuInfluenza.Text;
-                inmu.inmu_observaInfluenza = txt_observaInfluenza.Text;
+                inmu.inmu_fechaInfluenza = txt_fechaInfluenza.Text.ToUpper();
+                inmu.inmu_loteInfluenza = txt_loteInfluenza.Text.ToUpper();
+                inmu.inmu_esqueCompleInfluenza = txt_esqueCompleInfluenza.Text.ToUpper();
+                inmu.inmu_nomCompleResponVacuInfluenza = txt_nomCompleResponVacuInfluenza.Text.ToUpper();
+                inmu.inmu_estaSaludColocoVacuInfluenza = txt_estaSaludColocoVacuInfluenza.Text.ToUpper();
+                inmu.inmu_observaInfluenza = txt_observaInfluenza.Text.ToUpper();
 
-                inmu.inmu_fechaFiebreAmarilla = txt_fechaFiebreAmarilla.Text;
-                inmu.inmu_loteFiebreAmarilla = txt_loteFiebreAmarilla.Text;
-                inmu.inmu_esqueCompleFiebreAmarilla = txt_esqueCompleFiebreAmarilla.Text;
-                inmu.inmu_nomCompleResponVacuFiebreAmarilla = txt_nomCompleResponVacuFiebreAmarilla.Text;
-                inmu.inmu_estaSaludColocoVacuFiebreAmarilla = txt_estaSaludColocoVacuFiebreAmarilla.Text;
-                inmu.inmu_observaFiebreAmarilla = txt_observaFiebreAmarilla.Text;
+                inmu.inmu_fechaFiebreAmarilla = txt_fechaFiebreAmarilla.Text.ToUpper();
+                inmu.inmu_loteFiebreAmarilla = txt_loteFiebreAmarilla.Text.ToUpper();
+                inmu.inmu_esqueCompleFiebreAmarilla = txt_esqueCompleFiebreAmarilla.Text.ToUpper();
+                inmu.inmu_nomCompleResponVacuFiebreAmarilla = txt_nomCompleResponVacuFiebreAmarilla.Text.ToUpper();
+                inmu.inmu_estaSaludColocoVacuFiebreAmarilla = txt_estaSaludColocoVacuFiebreAmarilla.Text.ToUpper();
+                inmu.inmu_observaFiebreAmarilla = txt_observaFiebreAmarilla.Text.ToUpper();
 
-                inmu.inmu_fechaSarampion1 = txt_fechaSarampion1.Text;
-                inmu.inmu_loteSarampion1 = txt_loteSarampion1.Text;
-                inmu.inmu_esqueCompleSarampion1 = txt_esqueCompleSarampion1.Text;
-                inmu.inmu_nomCompleResponVacuSarampion1 = txt_nomCompleResponVacuSarampion1.Text;
-                inmu.inmu_estaSaludColocoVacuSarampion1 = txt_estaSaludColocoVacuSarampion1.Text;
-                inmu.inmu_observaSarampion1 = txt_observaSarampion1.Text;
-                inmu.inmu_fechaSarampion2 = txt_fechaSarampion2.Text;
-                inmu.inmu_loteSarampion2 = txt_loteSarampion2.Text;
-                inmu.inmu_esqueCompleSarampion2 = txt_esqueCompleSarampion2.Text;
-                inmu.inmu_nomCompleResponVacuSarampion2 = txt_nomCompleResponVacuSarampion2.Text;
-                inmu.inmu_estaSaludColocoVacuSarampion2 = txt_estaSaludColocoVacuSarampion2.Text;
-                inmu.inmu_observaSarampion2 = txt_observaSarampion2.Text;
+                inmu.inmu_fechaSarampion1 = txt_fechaSarampion1.Text.ToUpper();
+                inmu.inmu_loteSarampion1 = txt_loteSarampion1.Text.ToUpper();
+                inmu.inmu_esqueCompleSarampion1 = txt_esqueCompleSarampion1.Text.ToUpper();
+                inmu.inmu_nomCompleResponVacuSarampion1 = txt_nomCompleResponVacuSarampion1.Text.ToUpper();
+                inmu.inmu_estaSaludColocoVacuSarampion1 = txt_estaSaludColocoVacuSarampion1.Text.ToUpper();
+                inmu.inmu_observaSarampion1 = txt_observaSarampion1.Text.ToUpper();
+                inmu.inmu_fechaSarampion2 = txt_fechaSarampion2.Text.ToUpper();
+                inmu.inmu_loteSarampion2 = txt_loteSarampion2.Text.ToUpper();
+                inmu.inmu_esqueCompleSarampion2 = txt_esqueCompleSarampion2.Text.ToUpper();
+                inmu.inmu_nomCompleResponVacuSarampion2 = txt_nomCompleResponVacuSarampion2.Text.ToUpper();
+                inmu.inmu_estaSaludColocoVacuSarampion2 = txt_estaSaludColocoVacuSarampion2.Text.ToUpper();
+                inmu.inmu_observaSarampion2 = txt_observaSarampion2.Text.ToUpper();
 
-                inmu.inmu_1fechaInmuAcuerTipoEmpRies1 = txt_1fechaInmuAcuerTipoEmpRies1.Text;
-                inmu.inmu_1loteInmuAcuerTipoEmpRies1 = txt_1loteInmuAcuerTipoEmpRies1.Text;
-                inmu.inmu_1esqueCompleInmuAcuerTipoEmpRies1 = txt_1esqueCompleInmuAcuerTipoEmpRies1.Text;
-                inmu.inmu_1nomCompleResponVacuInmuAcuerTipoEmpRies1 = txt_1nomCompleResponVacuInmuAcuerTipoEmpRies1.Text;
-                inmu.inmu_1estaSaludColocoVacuInmuAcuerTipoEmpRies1 = txt_1estaSaludColocoVacuInmuAcuerTipoEmpRies1.Text;
-                inmu.inmu_1observaInmuAcuerTipoEmpRies1 = txt_1observaInmuAcuerTipoEmpRies1.Text;
-                inmu.inmu_1fechaInmuAcuerTipoEmpRies2 = txt_1fechaInmuAcuerTipoEmpRies2.Text;
-                inmu.inmu_1loteInmuAcuerTipoEmpRies2 = txt_1loteInmuAcuerTipoEmpRies2.Text;
-                inmu.inmu_1esqueCompleInmuAcuerTipoEmpRies2 = txt_1esqueCompleInmuAcuerTipoEmpRies2.Text;
-                inmu.inmu_1nomCompleResponVacuInmuAcuerTipoEmpRies2 = txt_1nomCompleResponVacuInmuAcuerTipoEmpRies2.Text;
-                inmu.inmu_1estaSaludColocoVacuInmuAcuerTipoEmpRies2 = txt_1estaSaludColocoVacuInmuAcuerTipoEmpRies2.Text;
-                inmu.inmu_1observaInmuAcuerTipoEmpRies2 = txt_1observaInmuAcuerTipoEmpRies2.Text;
-                inmu.inmu_1fechaInmuAcuerTipoEmpRies3 = txt_1fechaInmuAcuerTipoEmpRies3.Text;
-                inmu.inmu_1loteInmuAcuerTipoEmpRies3 = txt_1loteInmuAcuerTipoEmpRies3.Text;
-                inmu.inmu_1esqueCompleInmuAcuerTipoEmpRies3 = txt_1esqueCompleInmuAcuerTipoEmpRies3.Text;
-                inmu.inmu_1nomCompleResponVacuInmuAcuerTipoEmpRies3 = txt_1nomCompleResponVacuInmuAcuerTipoEmpRies3.Text;
-                inmu.inmu_1estaSaludColocoVacuInmuAcuerTipoEmpRies3 = txt_1estaSaludColocoVacuInmuAcuerTipoEmpRies3.Text;
-                inmu.inmu_1observaInmuAcuerTipoEmpRies3 = txt_1observaInmuAcuerTipoEmpRies3.Text;
-                inmu.inmu_1fechaInmuAcuerTipoEmpRies4 = txt_1fechaInmuAcuerTipoEmpRies4.Text;
-                inmu.inmu_1loteInmuAcuerTipoEmpRies4 = txt_1loteInmuAcuerTipoEmpRies4.Text;
-                inmu.inmu_1esqueCompleInmuAcuerTipoEmpRies4 = txt_1esqueCompleInmuAcuerTipoEmpRies4.Text;
-                inmu.inmu_1nomCompleResponVacuInmuAcuerTipoEmpRies4 = txt_1nomCompleResponVacuInmuAcuerTipoEmpRies4.Text;
-                inmu.inmu_1estaSaludColocoVacuInmuAcuerTipoEmpRies4 = txt_1estaSaludColocoVacuInmuAcuerTipoEmpRies4.Text;
-                inmu.inmu_1observaInmuAcuerTipoEmpRies4 = txt_1observaInmuAcuerTipoEmpRies4.Text;
-                inmu.inmu_1fechaInmuAcuerTipoEmpRies5 = txt_1fechaInmuAcuerTipoEmpRies5.Text;
-                inmu.inmu_1loteInmuAcuerTipoEmpRies5 = txt_1loteInmuAcuerTipoEmpRies5.Text;
-                inmu.inmu_1esqueCompleInmuAcuerTipoEmpRies5 = txt_1esqueCompleInmuAcuerTipoEmpRies5.Text;
-                inmu.inmu_1nomCompleResponVacuInmuAcuerTipoEmpRies5 = txt_1nomCompleResponVacuInmuAcuerTipoEmpRies5.Text;
-                inmu.inmu_1estaSaludColocoVacuInmuAcuerTipoEmpRies5 = txt_1estaSaludColocoVacuInmuAcuerTipoEmpRies5.Text;
-                inmu.inmu_1observaInmuAcuerTipoEmpRies5 = txt_1observaInmuAcuerTipoEmpRies5.Text;
+                inmu.inmu_1fechaInmuAcuerTipoEmpRies1 = txt_1fechaInmuAcuerTipoEmpRies1.Text.ToUpper();
+                inmu.inmu_1loteInmuAcuerTipoEmpRies1 = txt_1loteInmuAcuerTipoEmpRies1.Text.ToUpper();
+                inmu.inmu_1esqueCompleInmuAcuerTipoEmpRies1 = txt_1esqueCompleInmuAcuerTipoEmpRies1.Text.ToUpper();
+                inmu.inmu_1nomCompleResponVacuInmuAcuerTipoEmpRies1 = txt_1nomCompleResponVacuInmuAcuerTipoEmpRies1.Text.ToUpper();
+                inmu.inmu_1estaSaludColocoVacuInmuAcuerTipoEmpRies1 = txt_1estaSaludColocoVacuInmuAcuerTipoEmpRies1.Text.ToUpper();
+                inmu.inmu_1observaInmuAcuerTipoEmpRies1 = txt_1observaInmuAcuerTipoEmpRies1.Text.ToUpper();
+                inmu.inmu_1fechaInmuAcuerTipoEmpRies2 = txt_1fechaInmuAcuerTipoEmpRies2.Text.ToUpper();
+                inmu.inmu_1loteInmuAcuerTipoEmpRies2 = txt_1loteInmuAcuerTipoEmpRies2.Text.ToUpper();
+                inmu.inmu_1esqueCompleInmuAcuerTipoEmpRies2 = txt_1esqueCompleInmuAcuerTipoEmpRies2.Text.ToUpper();
+                inmu.inmu_1nomCompleResponVacuInmuAcuerTipoEmpRies2 = txt_1nomCompleResponVacuInmuAcuerTipoEmpRies2.Text.ToUpper();
+                inmu.inmu_1estaSaludColocoVacuInmuAcuerTipoEmpRies2 = txt_1estaSaludColocoVacuInmuAcuerTipoEmpRies2.Text.ToUpper();
+                inmu.inmu_1observaInmuAcuerTipoEmpRies2 = txt_1observaInmuAcuerTipoEmpRies2.Text.ToUpper();
+                inmu.inmu_1fechaInmuAcuerTipoEmpRies3 = txt_1fechaInmuAcuerTipoEmpRies3.Text.ToUpper();
+                inmu.inmu_1loteInmuAcuerTipoEmpRies3 = txt_1loteInmuAcuerTipoEmpRies3.Text.ToUpper();
+                inmu.inmu_1esqueCompleInmuAcuerTipoEmpRies3 = txt_1esqueCompleInmuAcuerTipoEmpRies3.Text.ToUpper();
+                inmu.inmu_1nomCompleResponVacuInmuAcuerTipoEmpRies3 = txt_1nomCompleResponVacuInmuAcuerTipoEmpRies3.Text.ToUpper();
+                inmu.inmu_1estaSaludColocoVacuInmuAcuerTipoEmpRies3 = txt_1estaSaludColocoVacuInmuAcuerTipoEmpRies3.Text.ToUpper();
+                inmu.inmu_1observaInmuAcuerTipoEmpRies3 = txt_1observaInmuAcuerTipoEmpRies3.Text.ToUpper();
+                inmu.inmu_1fechaInmuAcuerTipoEmpRies4 = txt_1fechaInmuAcuerTipoEmpRies4.Text.ToUpper();
+                inmu.inmu_1loteInmuAcuerTipoEmpRies4 = txt_1loteInmuAcuerTipoEmpRies4.Text.ToUpper();
+                inmu.inmu_1esqueCompleInmuAcuerTipoEmpRies4 = txt_1esqueCompleInmuAcuerTipoEmpRies4.Text.ToUpper();
+                inmu.inmu_1nomCompleResponVacuInmuAcuerTipoEmpRies4 = txt_1nomCompleResponVacuInmuAcuerTipoEmpRies4.Text.ToUpper();
+                inmu.inmu_1estaSaludColocoVacuInmuAcuerTipoEmpRies4 = txt_1estaSaludColocoVacuInmuAcuerTipoEmpRies4.Text.ToUpper();
+                inmu.inmu_1observaInmuAcuerTipoEmpRies4 = txt_1observaInmuAcuerTipoEmpRies4.Text.ToUpper();
+                inmu.inmu_1fechaInmuAcuerTipoEmpRies5 = txt_1fechaInmuAcuerTipoEmpRies5.Text.ToUpper();
+                inmu.inmu_1loteInmuAcuerTipoEmpRies5 = txt_1loteInmuAcuerTipoEmpRies5.Text.ToUpper();
+                inmu.inmu_1esqueCompleInmuAcuerTipoEmpRies5 = txt_1esqueCompleInmuAcuerTipoEmpRies5.Text.ToUpper();
+                inmu.inmu_1nomCompleResponVacuInmuAcuerTipoEmpRies5 = txt_1nomCompleResponVacuInmuAcuerTipoEmpRies5.Text.ToUpper();
+                inmu.inmu_1estaSaludColocoVacuInmuAcuerTipoEmpRies5 = txt_1estaSaludColocoVacuInmuAcuerTipoEmpRies5.Text.ToUpper();
+                inmu.inmu_1observaInmuAcuerTipoEmpRies5 = txt_1observaInmuAcuerTipoEmpRies5.Text.ToUpper();
 
-                inmu.inmu_2fechaInmuAcuerTipoEmpRies1 = txt_2fechaInmuAcuerTipoEmpRies1.Text;
-                inmu.inmu_2loteInmuAcuerTipoEmpRies1 = txt_2loteInmuAcuerTipoEmpRies1.Text;
-                inmu.inmu_2esqueCompleInmuAcuerTipoEmpRies1 = txt_2esqueCompleInmuAcuerTipoEmpRies1.Text;
-                inmu.inmu_2nomCompleResponVacuInmuAcuerTipoEmpRies1 = txt_2nomCompleResponVacuInmuAcuerTipoEmpRies1.Text;
-                inmu.inmu_2estaSaludColocoVacuInmuAcuerTipoEmpRies1 = txt_2estaSaludColocoVacuInmuAcuerTipoEmpRies1.Text;
-                inmu.inmu_2observaInmuAcuerTipoEmpRies1 = txt_2observaInmuAcuerTipoEmpRies1.Text;
-                inmu.inmu_2fechaInmuAcuerTipoEmpRies2 = txt_2fechaInmuAcuerTipoEmpRies2.Text;
-                inmu.inmu_2loteInmuAcuerTipoEmpRies2 = txt_2loteInmuAcuerTipoEmpRies2.Text;
-                inmu.inmu_2esqueCompleInmuAcuerTipoEmpRies2 = txt_2esqueCompleInmuAcuerTipoEmpRies2.Text;
-                inmu.inmu_2nomCompleResponVacuInmuAcuerTipoEmpRies2 = txt_2nomCompleResponVacuInmuAcuerTipoEmpRies2.Text;
-                inmu.inmu_2estaSaludColocoVacuInmuAcuerTipoEmpRies2 = txt_2estaSaludColocoVacuInmuAcuerTipoEmpRies2.Text;
-                inmu.inmu_2observaInmuAcuerTipoEmpRies2 = txt_2observaInmuAcuerTipoEmpRies2.Text;
-                inmu.inmu_2fechaInmuAcuerTipoEmpRies3 = txt_2fechaInmuAcuerTipoEmpRies3.Text;
-                inmu.inmu_2loteInmuAcuerTipoEmpRies3 = txt_2loteInmuAcuerTipoEmpRies3.Text;
-                inmu.inmu_2esqueCompleInmuAcuerTipoEmpRies3 = txt_2esqueCompleInmuAcuerTipoEmpRies3.Text;
-                inmu.inmu_2nomCompleResponVacuInmuAcuerTipoEmpRies3 = txt_2nomCompleResponVacuInmuAcuerTipoEmpRies3.Text;
-                inmu.inmu_2estaSaludColocoVacuInmuAcuerTipoEmpRies3 = txt_2estaSaludColocoVacuInmuAcuerTipoEmpRies3.Text;
-                inmu.inmu_2observaInmuAcuerTipoEmpRies3 = txt_2observaInmuAcuerTipoEmpRies3.Text;
-                inmu.inmu_2fechaInmuAcuerTipoEmpRies4 = txt_2fechaInmuAcuerTipoEmpRies4.Text;
-                inmu.inmu_2loteInmuAcuerTipoEmpRies4 = txt_2loteInmuAcuerTipoEmpRies4.Text;
-                inmu.inmu_2esqueCompleInmuAcuerTipoEmpRies4 = txt_2esqueCompleInmuAcuerTipoEmpRies4.Text;
-                inmu.inmu_2nomCompleResponVacuInmuAcuerTipoEmpRies4 = txt_2nomCompleResponVacuInmuAcuerTipoEmpRies4.Text;
-                inmu.inmu_2estaSaludColocoVacuInmuAcuerTipoEmpRies4 = txt_2estaSaludColocoVacuInmuAcuerTipoEmpRies4.Text;
-                inmu.inmu_2observaInmuAcuerTipoEmpRies4 = txt_2observaInmuAcuerTipoEmpRies4.Text;
-                inmu.inmu_2fechaInmuAcuerTipoEmpRies5 = txt_2fechaInmuAcuerTipoEmpRies5.Text;
-                inmu.inmu_2loteInmuAcuerTipoEmpRies5 = txt_2loteInmuAcuerTipoEmpRies5.Text;
-                inmu.inmu_2esqueCompleInmuAcuerTipoEmpRies5 = txt_2esqueCompleInmuAcuerTipoEmpRies5.Text;
-                inmu.inmu_2nomCompleResponVacuInmuAcuerTipoEmpRies5 = txt_2nomCompleResponVacuInmuAcuerTipoEmpRies5.Text;
-                inmu.inmu_2estaSaludColocoVacuInmuAcuerTipoEmpRies5 = txt_2estaSaludColocoVacuInmuAcuerTipoEmpRies5.Text;
-                inmu.inmu_2observaInmuAcuerTipoEmpRies5 = txt_2observaInmuAcuerTipoEmpRies5.Text;
+                inmu.inmu_2fechaInmuAcuerTipoEmpRies1 = txt_2fechaInmuAcuerTipoEmpRies1.Text.ToUpper();
+                inmu.inmu_2loteInmuAcuerTipoEmpRies1 = txt_2loteInmuAcuerTipoEmpRies1.Text.ToUpper();
+                inmu.inmu_2esqueCompleInmuAcuerTipoEmpRies1 = txt_2esqueCompleInmuAcuerTipoEmpRies1.Text.ToUpper();
+                inmu.inmu_2nomCompleResponVacuInmuAcuerTipoEmpRies1 = txt_2nomCompleResponVacuInmuAcuerTipoEmpRies1.Text.ToUpper();
+                inmu.inmu_2estaSaludColocoVacuInmuAcuerTipoEmpRies1 = txt_2estaSaludColocoVacuInmuAcuerTipoEmpRies1.Text.ToUpper();
+                inmu.inmu_2observaInmuAcuerTipoEmpRies1 = txt_2observaInmuAcuerTipoEmpRies1.Text.ToUpper();
+                inmu.inmu_2fechaInmuAcuerTipoEmpRies2 = txt_2fechaInmuAcuerTipoEmpRies2.Text.ToUpper();
+                inmu.inmu_2loteInmuAcuerTipoEmpRies2 = txt_2loteInmuAcuerTipoEmpRies2.Text.ToUpper();
+                inmu.inmu_2esqueCompleInmuAcuerTipoEmpRies2 = txt_2esqueCompleInmuAcuerTipoEmpRies2.Text.ToUpper();
+                inmu.inmu_2nomCompleResponVacuInmuAcuerTipoEmpRies2 = txt_2nomCompleResponVacuInmuAcuerTipoEmpRies2.Text.ToUpper();
+                inmu.inmu_2estaSaludColocoVacuInmuAcuerTipoEmpRies2 = txt_2estaSaludColocoVacuInmuAcuerTipoEmpRies2.Text.ToUpper();
+                inmu.inmu_2observaInmuAcuerTipoEmpRies2 = txt_2observaInmuAcuerTipoEmpRies2.Text.ToUpper();
+                inmu.inmu_2fechaInmuAcuerTipoEmpRies3 = txt_2fechaInmuAcuerTipoEmpRies3.Text.ToUpper();
+                inmu.inmu_2loteInmuAcuerTipoEmpRies3 = txt_2loteInmuAcuerTipoEmpRies3.Text.ToUpper();
+                inmu.inmu_2esqueCompleInmuAcuerTipoEmpRies3 = txt_2esqueCompleInmuAcuerTipoEmpRies3.Text.ToUpper();
+                inmu.inmu_2nomCompleResponVacuInmuAcuerTipoEmpRies3 = txt_2nomCompleResponVacuInmuAcuerTipoEmpRies3.Text.ToUpper();
+                inmu.inmu_2estaSaludColocoVacuInmuAcuerTipoEmpRies3 = txt_2estaSaludColocoVacuInmuAcuerTipoEmpRies3.Text.ToUpper();
+                inmu.inmu_2observaInmuAcuerTipoEmpRies3 = txt_2observaInmuAcuerTipoEmpRies3.Text.ToUpper();
+                inmu.inmu_2fechaInmuAcuerTipoEmpRies4 = txt_2fechaInmuAcuerTipoEmpRies4.Text.ToUpper();
+                inmu.inmu_2loteInmuAcuerTipoEmpRies4 = txt_2loteInmuAcuerTipoEmpRies4.Text.ToUpper();
+                inmu.inmu_2esqueCompleInmuAcuerTipoEmpRies4 = txt_2esqueCompleInmuAcuerTipoEmpRies4.Text.ToUpper();
+                inmu.inmu_2nomCompleResponVacuInmuAcuerTipoEmpRies4 = txt_2nomCompleResponVacuInmuAcuerTipoEmpRies4.Text.ToUpper();
+                inmu.inmu_2estaSaludColocoVacuInmuAcuerTipoEmpRies4 = txt_2estaSaludColocoVacuInmuAcuerTipoEmpRies4.Text.ToUpper();
+                inmu.inmu_2observaInmuAcuerTipoEmpRies4 = txt_2observaInmuAcuerTipoEmpRies4.Text.ToUpper();
+                inmu.inmu_2fechaInmuAcuerTipoEmpRies5 = txt_2fechaInmuAcuerTipoEmpRies5.Text.ToUpper();
+                inmu.inmu_2loteInmuAcuerTipoEmpRies5 = txt_2loteInmuAcuerTipoEmpRies5.Text.ToUpper();
+                inmu.inmu_2esqueCompleInmuAcuerTipoEmpRies5 = txt_2esqueCompleInmuAcuerTipoEmpRies5.Text.ToUpper();
+                inmu.inmu_2nomCompleResponVacuInmuAcuerTipoEmpRies5 = txt_2nomCompleResponVacuInmuAcuerTipoEmpRies5.Text.ToUpper();
+                inmu.inmu_2estaSaludColocoVacuInmuAcuerTipoEmpRies5 = txt_2estaSaludColocoVacuInmuAcuerTipoEmpRies5.Text.ToUpper();
+                inmu.inmu_2observaInmuAcuerTipoEmpRies5 = txt_2observaInmuAcuerTipoEmpRies5.Text.ToUpper();
 
-                inmu.inmu_descripInmunizaciones3 = txt_descripInmunizaciones3.Text;
-                inmu.inmu_3fechaInmuAcuerTipoEmpRies1 = txt_3fechaInmuAcuerTipoEmpRies1.Text;
-                inmu.inmu_3loteInmuAcuerTipoEmpRies1 = txt_3loteInmuAcuerTipoEmpRies1.Text;
-                inmu.inmu_3esqueCompleInmuAcuerTipoEmpRies1 = txt_3esqueCompleInmuAcuerTipoEmpRies1.Text;
-                inmu.inmu_3nomCompleResponVacuInmuAcuerTipoEmpRies1 = txt_3nomCompleResponVacuInmuAcuerTipoEmpRies1.Text;
-                inmu.inmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies1 = txt_3estaSaludColocoVacuInmuAcuerTipoEmpRies1.Text;
-                inmu.inmu_3observaInmuAcuerTipoEmpRies1 = txt_3observaInmuAcuerTipoEmpRies1.Text;
-                inmu.inmu_3fechaInmuAcuerTipoEmpRies2 = txt_3fechaInmuAcuerTipoEmpRies2.Text;
-                inmu.inmu_3loteInmuAcuerTipoEmpRies2 = txt_3loteInmuAcuerTipoEmpRies2.Text;
-                inmu.inmu_3esqueCompleInmuAcuerTipoEmpRies2 = txt_3esqueCompleInmuAcuerTipoEmpRies2.Text;
-                inmu.inmu_3nomCompleResponVacuInmuAcuerTipoEmpRies2 = txt_3nomCompleResponVacuInmuAcuerTipoEmpRies2.Text;
-                inmu.inmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies2 = txt_3estaSaludColocoVacuInmuAcuerTipoEmpRies2.Text;
-                inmu.inmu_3observaInmuAcuerTipoEmpRies2 = txt_3observaInmuAcuerTipoEmpRies2.Text;
-                inmu.inmu_3fechaInmuAcuerTipoEmpRies3 = txt_3fechaInmuAcuerTipoEmpRies3.Text;
-                inmu.inmu_3loteInmuAcuerTipoEmpRies3 = txt_3loteInmuAcuerTipoEmpRies3.Text;
-                inmu.inmu_3esqueCompleInmuAcuerTipoEmpRies3 = txt_3esqueCompleInmuAcuerTipoEmpRies3.Text;
-                inmu.inmu_3nomCompleResponVacuInmuAcuerTipoEmpRies3 = txt_3nomCompleResponVacuInmuAcuerTipoEmpRies3.Text;
-                inmu.inmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies3 = txt_3estaSaludColocoVacuInmuAcuerTipoEmpRies3.Text;
-                inmu.inmu_3observaInmuAcuerTipoEmpRies3 = txt_3observaInmuAcuerTipoEmpRies3.Text;
-                inmu.inmu_3fechaInmuAcuerTipoEmpRies4 = txt_3fechaInmuAcuerTipoEmpRies4.Text;
-                inmu.inmu_3loteInmuAcuerTipoEmpRies4 = txt_3loteInmuAcuerTipoEmpRies4.Text;
-                inmu.inmu_3esqueCompleInmuAcuerTipoEmpRies4 = txt_3esqueCompleInmuAcuerTipoEmpRies4.Text;
-                inmu.inmu_3nomCompleResponVacuInmuAcuerTipoEmpRies4 = txt_3nomCompleResponVacuInmuAcuerTipoEmpRies4.Text;
-                inmu.inmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies4 = txt_3estaSaludColocoVacuInmuAcuerTipoEmpRies4.Text;
-                inmu.inmu_3observaInmuAcuerTipoEmpRies4 = txt_3observaInmuAcuerTipoEmpRies4.Text;
-                inmu.inmu_3fechaInmuAcuerTipoEmpRies5 = txt_3fechaInmuAcuerTipoEmpRies5.Text;
-                inmu.inmu_3loteInmuAcuerTipoEmpRies5 = txt_3loteInmuAcuerTipoEmpRies5.Text;
-                inmu.inmu_3esqueCompleInmuAcuerTipoEmpRies5 = txt_3esqueCompleInmuAcuerTipoEmpRies5.Text;
-                inmu.inmu_3nomCompleResponVacuInmuAcuerTipoEmpRies5 = txt_3nomCompleResponVacuInmuAcuerTipoEmpRies5.Text;
-                inmu.inmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies5 = txt_3estaSaludColocoVacuInmuAcuerTipoEmpRies5.Text;
-                inmu.inmu_3observaInmuAcuerTipoEmpRies5 = txt_3observaInmuAcuerTipoEmpRies5.Text;
+                inmu.inmu_descripInmunizaciones3 = txt_descripInmunizaciones3.Text.ToUpper();
+                inmu.inmu_3fechaInmuAcuerTipoEmpRies1 = txt_3fechaInmuAcuerTipoEmpRies1.Text.ToUpper();
+                inmu.inmu_3loteInmuAcuerTipoEmpRies1 = txt_3loteInmuAcuerTipoEmpRies1.Text.ToUpper();
+                inmu.inmu_3esqueCompleInmuAcuerTipoEmpRies1 = txt_3esqueCompleInmuAcuerTipoEmpRies1.Text.ToUpper();
+                inmu.inmu_3nomCompleResponVacuInmuAcuerTipoEmpRies1 = txt_3nomCompleResponVacuInmuAcuerTipoEmpRies1.Text.ToUpper();
+                inmu.inmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies1 = txt_3estaSaludColocoVacuInmuAcuerTipoEmpRies1.Text.ToUpper();
+                inmu.inmu_3observaInmuAcuerTipoEmpRies1 = txt_3observaInmuAcuerTipoEmpRies1.Text.ToUpper();
+                inmu.inmu_3fechaInmuAcuerTipoEmpRies2 = txt_3fechaInmuAcuerTipoEmpRies2.Text.ToUpper();
+                inmu.inmu_3loteInmuAcuerTipoEmpRies2 = txt_3loteInmuAcuerTipoEmpRies2.Text.ToUpper();
+                inmu.inmu_3esqueCompleInmuAcuerTipoEmpRies2 = txt_3esqueCompleInmuAcuerTipoEmpRies2.Text.ToUpper();
+                inmu.inmu_3nomCompleResponVacuInmuAcuerTipoEmpRies2 = txt_3nomCompleResponVacuInmuAcuerTipoEmpRies2.Text.ToUpper();
+                inmu.inmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies2 = txt_3estaSaludColocoVacuInmuAcuerTipoEmpRies2.Text.ToUpper();
+                inmu.inmu_3observaInmuAcuerTipoEmpRies2 = txt_3observaInmuAcuerTipoEmpRies2.Text.ToUpper();
+                inmu.inmu_3fechaInmuAcuerTipoEmpRies3 = txt_3fechaInmuAcuerTipoEmpRies3.Text.ToUpper();
+                inmu.inmu_3loteInmuAcuerTipoEmpRies3 = txt_3loteInmuAcuerTipoEmpRies3.Text.ToUpper();
+                inmu.inmu_3esqueCompleInmuAcuerTipoEmpRies3 = txt_3esqueCompleInmuAcuerTipoEmpRies3.Text.ToUpper();
+                inmu.inmu_3nomCompleResponVacuInmuAcuerTipoEmpRies3 = txt_3nomCompleResponVacuInmuAcuerTipoEmpRies3.Text.ToUpper();
+                inmu.inmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies3 = txt_3estaSaludColocoVacuInmuAcuerTipoEmpRies3.Text.ToUpper();
+                inmu.inmu_3observaInmuAcuerTipoEmpRies3 = txt_3observaInmuAcuerTipoEmpRies3.Text.ToUpper();
+                inmu.inmu_3fechaInmuAcuerTipoEmpRies4 = txt_3fechaInmuAcuerTipoEmpRies4.Text.ToUpper();
+                inmu.inmu_3loteInmuAcuerTipoEmpRies4 = txt_3loteInmuAcuerTipoEmpRies4.Text.ToUpper();
+                inmu.inmu_3esqueCompleInmuAcuerTipoEmpRies4 = txt_3esqueCompleInmuAcuerTipoEmpRies4.Text.ToUpper();
+                inmu.inmu_3nomCompleResponVacuInmuAcuerTipoEmpRies4 = txt_3nomCompleResponVacuInmuAcuerTipoEmpRies4.Text.ToUpper();
+                inmu.inmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies4 = txt_3estaSaludColocoVacuInmuAcuerTipoEmpRies4.Text.ToUpper();
+                inmu.inmu_3observaInmuAcuerTipoEmpRies4 = txt_3observaInmuAcuerTipoEmpRies4.Text.ToUpper();
+                inmu.inmu_3fechaInmuAcuerTipoEmpRies5 = txt_3fechaInmuAcuerTipoEmpRies5.Text.ToUpper();
+                inmu.inmu_3loteInmuAcuerTipoEmpRies5 = txt_3loteInmuAcuerTipoEmpRies5.Text.ToUpper();
+                inmu.inmu_3esqueCompleInmuAcuerTipoEmpRies5 = txt_3esqueCompleInmuAcuerTipoEmpRies5.Text.ToUpper();
+                inmu.inmu_3nomCompleResponVacuInmuAcuerTipoEmpRies5 = txt_3nomCompleResponVacuInmuAcuerTipoEmpRies5.Text.ToUpper();
+                inmu.inmu_3estaSaludColocoVacuInmuAcuerTipoEmpRies5 = txt_3estaSaludColocoVacuInmuAcuerTipoEmpRies5.Text.ToUpper();
+                inmu.inmu_3observaInmuAcuerTipoEmpRies5 = txt_3observaInmuAcuerTipoEmpRies5.Text.ToUpper();
 
-                inmu.inmu_descripInmunizaciones4 = txt_descripInmunizaciones4.Text;
-                inmu.inmu_4fechaInmuAcuerTipoEmpRies1 = txt_4fechaInmuAcuerTipoEmpRies1.Text;
-                inmu.inmu_4loteInmuAcuerTipoEmpRies1 = txt_4loteInmuAcuerTipoEmpRies1.Text;
-                inmu.inmu_4esqueCompleInmuAcuerTipoEmpRies1 = txt_4esqueCompleInmuAcuerTipoEmpRies1.Text;
-                inmu.inmu_4nomCompleResponVacuInmuAcuerTipoEmpRies1 = txt_4nomCompleResponVacuInmuAcuerTipoEmpRies1.Text;
-                inmu.inmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies1 = txt_4estaSaludColocoVacuInmuAcuerTipoEmpRies1.Text;
-                inmu.inmu_4observaInmuAcuerTipoEmpRies1 = txt_4observaInmuAcuerTipoEmpRies1.Text;
-                inmu.inmu_4fechaInmuAcuerTipoEmpRies2 = txt_4fechaInmuAcuerTipoEmpRies2.Text;
-                inmu.inmu_4loteInmuAcuerTipoEmpRies2 = txt_4loteInmuAcuerTipoEmpRies2.Text;
-                inmu.inmu_4esqueCompleInmuAcuerTipoEmpRies2 = txt_4esqueCompleInmuAcuerTipoEmpRies2.Text;
-                inmu.inmu_4nomCompleResponVacuInmuAcuerTipoEmpRies2 = txt_4nomCompleResponVacuInmuAcuerTipoEmpRies2.Text;
-                inmu.inmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies2 = txt_4estaSaludColocoVacuInmuAcuerTipoEmpRies2.Text;
-                inmu.inmu_4observaInmuAcuerTipoEmpRies2 = txt_4observaInmuAcuerTipoEmpRies2.Text;
-                inmu.inmu_4fechaInmuAcuerTipoEmpRies3 = txt_4fechaInmuAcuerTipoEmpRies3.Text;
-                inmu.inmu_4loteInmuAcuerTipoEmpRies3 = txt_4loteInmuAcuerTipoEmpRies3.Text;
-                inmu.inmu_4esqueCompleInmuAcuerTipoEmpRies3 = txt_4esqueCompleInmuAcuerTipoEmpRies3.Text;
-                inmu.inmu_4nomCompleResponVacuInmuAcuerTipoEmpRies3 = txt_4nomCompleResponVacuInmuAcuerTipoEmpRies3.Text;
-                inmu.inmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies3 = txt_4estaSaludColocoVacuInmuAcuerTipoEmpRies3.Text;
-                inmu.inmu_4observaInmuAcuerTipoEmpRies3 = txt_4observaInmuAcuerTipoEmpRies3.Text;
-                inmu.inmu_4fechaInmuAcuerTipoEmpRies4 = txt_4fechaInmuAcuerTipoEmpRies4.Text;
-                inmu.inmu_4loteInmuAcuerTipoEmpRies4 = txt_4loteInmuAcuerTipoEmpRies4.Text;
-                inmu.inmu_4esqueCompleInmuAcuerTipoEmpRies4 = txt_4esqueCompleInmuAcuerTipoEmpRies4.Text;
-                inmu.inmu_4nomCompleResponVacuInmuAcuerTipoEmpRies4 = txt_4nomCompleResponVacuInmuAcuerTipoEmpRies4.Text;
-                inmu.inmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies4 = txt_4estaSaludColocoVacuInmuAcuerTipoEmpRies4.Text;
-                inmu.inmu_4observaInmuAcuerTipoEmpRies4 = txt_4observaInmuAcuerTipoEmpRies4.Text;
-                inmu.inmu_4fechaInmuAcuerTipoEmpRies5 = txt_4fechaInmuAcuerTipoEmpRies5.Text;
-                inmu.inmu_4loteInmuAcuerTipoEmpRies5 = txt_4loteInmuAcuerTipoEmpRies5.Text;
-                inmu.inmu_4esqueCompleInmuAcuerTipoEmpRies5 = txt_4esqueCompleInmuAcuerTipoEmpRies5.Text;
-                inmu.inmu_4nomCompleResponVacuInmuAcuerTipoEmpRies5 = txt_4nomCompleResponVacuInmuAcuerTipoEmpRies5.Text;
-                inmu.inmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies5 = txt_4estaSaludColocoVacuInmuAcuerTipoEmpRies5.Text;
-                inmu.inmu_4observaInmuAcuerTipoEmpRies5 = txt_4observaInmuAcuerTipoEmpRies5.Text;
+                inmu.inmu_descripInmunizaciones4 = txt_descripInmunizaciones4.Text.ToUpper();
+                inmu.inmu_4fechaInmuAcuerTipoEmpRies1 = txt_4fechaInmuAcuerTipoEmpRies1.Text.ToUpper();
+                inmu.inmu_4loteInmuAcuerTipoEmpRies1 = txt_4loteInmuAcuerTipoEmpRies1.Text.ToUpper();
+                inmu.inmu_4esqueCompleInmuAcuerTipoEmpRies1 = txt_4esqueCompleInmuAcuerTipoEmpRies1.Text.ToUpper();
+                inmu.inmu_4nomCompleResponVacuInmuAcuerTipoEmpRies1 = txt_4nomCompleResponVacuInmuAcuerTipoEmpRies1.Text.ToUpper();
+                inmu.inmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies1 = txt_4estaSaludColocoVacuInmuAcuerTipoEmpRies1.Text.ToUpper();
+                inmu.inmu_4observaInmuAcuerTipoEmpRies1 = txt_4observaInmuAcuerTipoEmpRies1.Text.ToUpper();
+                inmu.inmu_4fechaInmuAcuerTipoEmpRies2 = txt_4fechaInmuAcuerTipoEmpRies2.Text.ToUpper();
+                inmu.inmu_4loteInmuAcuerTipoEmpRies2 = txt_4loteInmuAcuerTipoEmpRies2.Text.ToUpper();
+                inmu.inmu_4esqueCompleInmuAcuerTipoEmpRies2 = txt_4esqueCompleInmuAcuerTipoEmpRies2.Text.ToUpper();
+                inmu.inmu_4nomCompleResponVacuInmuAcuerTipoEmpRies2 = txt_4nomCompleResponVacuInmuAcuerTipoEmpRies2.Text.ToUpper();
+                inmu.inmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies2 = txt_4estaSaludColocoVacuInmuAcuerTipoEmpRies2.Text.ToUpper();
+                inmu.inmu_4observaInmuAcuerTipoEmpRies2 = txt_4observaInmuAcuerTipoEmpRies2.Text.ToUpper();
+                inmu.inmu_4fechaInmuAcuerTipoEmpRies3 = txt_4fechaInmuAcuerTipoEmpRies3.Text.ToUpper();
+                inmu.inmu_4loteInmuAcuerTipoEmpRies3 = txt_4loteInmuAcuerTipoEmpRies3.Text.ToUpper();
+                inmu.inmu_4esqueCompleInmuAcuerTipoEmpRies3 = txt_4esqueCompleInmuAcuerTipoEmpRies3.Text.ToUpper();
+                inmu.inmu_4nomCompleResponVacuInmuAcuerTipoEmpRies3 = txt_4nomCompleResponVacuInmuAcuerTipoEmpRies3.Text.ToUpper();
+                inmu.inmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies3 = txt_4estaSaludColocoVacuInmuAcuerTipoEmpRies3.Text.ToUpper();
+                inmu.inmu_4observaInmuAcuerTipoEmpRies3 = txt_4observaInmuAcuerTipoEmpRies3.Text.ToUpper();
+                inmu.inmu_4fechaInmuAcuerTipoEmpRies4 = txt_4fechaInmuAcuerTipoEmpRies4.Text.ToUpper();
+                inmu.inmu_4loteInmuAcuerTipoEmpRies4 = txt_4loteInmuAcuerTipoEmpRies4.Text.ToUpper();
+                inmu.inmu_4esqueCompleInmuAcuerTipoEmpRies4 = txt_4esqueCompleInmuAcuerTipoEmpRies4.Text.ToUpper();
+                inmu.inmu_4nomCompleResponVacuInmuAcuerTipoEmpRies4 = txt_4nomCompleResponVacuInmuAcuerTipoEmpRies4.Text.ToUpper();
+                inmu.inmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies4 = txt_4estaSaludColocoVacuInmuAcuerTipoEmpRies4.Text.ToUpper();
+                inmu.inmu_4observaInmuAcuerTipoEmpRies4 = txt_4observaInmuAcuerTipoEmpRies4.Text.ToUpper();
+                inmu.inmu_4fechaInmuAcuerTipoEmpRies5 = txt_4fechaInmuAcuerTipoEmpRies5.Text.ToUpper();
+                inmu.inmu_4loteInmuAcuerTipoEmpRies5 = txt_4loteInmuAcuerTipoEmpRies5.Text.ToUpper();
+                inmu.inmu_4esqueCompleInmuAcuerTipoEmpRies5 = txt_4esqueCompleInmuAcuerTipoEmpRies5.Text.ToUpper();
+                inmu.inmu_4nomCompleResponVacuInmuAcuerTipoEmpRies5 = txt_4nomCompleResponVacuInmuAcuerTipoEmpRies5.Text.ToUpper();
+                inmu.inmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies5 = txt_4estaSaludColocoVacuInmuAcuerTipoEmpRies5.Text.ToUpper();
+                inmu.inmu_4observaInmuAcuerTipoEmpRies5 = txt_4observaInmuAcuerTipoEmpRies5.Text.ToUpper();
 
                 CN_Inmunizaciones.ModificarInmunizaciones(inmu);
 
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos Modificados Exitosamente')", true);
-                Response.Redirect("~/Template/Views/Pacientes.aspx");
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", "swal('Exito!', 'Datos Modificados Exitosamente', 'success')", true);
+                Response.Redirect("~/Template/Views/PacientesInmunizaciones.aspx");
             }
             catch (Exception)
             {
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos No Modificados')", true);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", "swal('Error!', 'Datos No Modificados', 'error')", true);
 
             }
         }
@@ -1164,6 +1173,11 @@ namespace SistemaECU911.Template.Views
         }
 
         protected void btn_cancelar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Template/Views/Inicio.aspx");
+        }
+
+        protected void Timer1_Tick(object sender, EventArgs e)
         {
             Response.Redirect("~/Template/Views/Inicio.aspx");
         }

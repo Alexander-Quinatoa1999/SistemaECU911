@@ -46,7 +46,6 @@ namespace CapaNegocio
             try
             {
                 pedexa.pedExa_estado = "A";
-                pedexa.pedExa_fechaHoraGuardado = DateTime.Now;
                 dc.Tbl_PedidoExamenes.InsertOnSubmit(pedexa);
                 dc.SubmitChanges();
             }

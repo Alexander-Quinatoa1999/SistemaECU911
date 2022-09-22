@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -22,6 +23,7 @@ namespace SistemaECU911.Template.Views
 		private readonly DataClassesECU911DataContext dc = new DataClassesECU911DataContext();
 
         private Tbl_Personas per = new Tbl_Personas();
+        private Tbl_Empresa emp = new Tbl_Empresa();
         private Tbl_Inicial inicial = new Tbl_Inicial();
        
 
@@ -35,10 +37,12 @@ namespace SistemaECU911.Template.Views
                     inicial = CN_Inicial.ObtenerInicialPorId(codigo);
                     int personasid = Convert.ToInt32(inicial.Per_id.ToString());
                     per = CN_HistorialMedico.ObtenerPersonasxId(personasid);
+                    int empresaid = Convert.ToInt32(inicial.Emp_id.ToString());
+                    emp = CN_HistorialMedico.ObtenerEmpresaxId(empresaid);
 
                     btn_guardar.Text = "Actualizar";
 
-                    if (per != null)
+                    if (per != null || emp != null)
                     {
                         txt_numHClinica.ReadOnly = true;
 
@@ -3476,9 +3480,10 @@ namespace SistemaECU911.Template.Views
                         else
                         {
                             ckb_noapto.Checked = true;
-
                         }
 
+                        txt_nomEmpresa.Text = emp.Emp_nombre.ToString();
+                        txt_rucEmp.Text = emp.Emp_RUC.ToString();
                         txt_numHClinica.Text = per.Per_cedula.ToString();
                         txt_priNombre.Text = per.Per_priNombre.ToString();
                         txt_segNombre.Text = per.Per_segNombre.ToString();
@@ -3728,6 +3733,7 @@ namespace SistemaECU911.Template.Views
                         }
                     }
                 }
+                Timer1.Enabled = false;
                 cargarProfesional();
                 defaultValidaciones();
 
@@ -3778,9 +3784,7 @@ namespace SistemaECU911.Template.Views
             List<string> lista = new List<string>();
             try
             {
-                string oConn = @"Data Source=sql8004.site4now.net;Initial Catalog=db_a8b7d4_sistemaecu911;Persist Security Info=True;User ID=db_a8b7d4_sistemaecu911_admin;Password=SistemaECU911";
-
-                SqlConnection con = new SqlConnection(oConn);
+                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ToString());
                 con.Open();
                 SqlCommand cmd = new SqlCommand("select top(10) Per_Cedula from Tbl_Personas where Per_Cedula LIKE + @Cedula + '%'", con);
                 cmd.Parameters.AddWithValue("@Cedula", prefixText);
@@ -3879,9 +3883,7 @@ namespace SistemaECU911.Template.Views
             List<string> lista = new List<string>();
             try
             {
-                string oConn = @"Data Source=sql8004.site4now.net;Initial Catalog=db_a8b7d4_sistemaecu911;Persist Security Info=True;User ID=db_a8b7d4_sistemaecu911_admin;Password=SistemaECU911";
-
-                SqlConnection con = new SqlConnection(oConn);
+                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ToString());
                 con.Open();
                 SqlCommand cmd = new SqlCommand("select top(10) dec10 from cie10 where dec10 LIKE + @Name + '%'", con);
                 cmd.Parameters.AddWithValue("@Name", prefixText);
@@ -3968,8 +3970,10 @@ namespace SistemaECU911.Template.Views
             try
             {
                 per = CN_HistorialMedico.ObtenerIdPersonasxCedula(txt_numHClinica.Text);
-
                 int perso = Convert.ToInt32(per.Per_id.ToString());
+
+                per = CN_HistorialMedico.ObtenerIdEmpresaxCedula(txt_numHClinica.Text);
+                int empre = Convert.ToInt32(per.Emp_id.ToString());
 
                 inicial = new Tbl_Inicial();
 
@@ -5485,191 +5489,192 @@ namespace SistemaECU911.Template.Views
                 }
 
                 //A
-                inicial.inicial_ciiu = txt_ciiu.Text;
-                inicial.inicial_numArchivo = txt_numArchivo.Text;  
-                inicial.inicial_groSanguineo = txt_gruposanguineo.Text;
-                inicial.inicial_lateralidad = txt_lateralidad.Text;              
-                inicial.inicial_tipoDis = txt_tipodiscapacidad.Text;
-                inicial.inicial_porcentDis = txt_porcentajediscapacidad.Text;
-                inicial.inicial_actRelePuesTrabajo = txt_actividadesrelevantes.Text;
+                inicial.inicial_ciiu = txt_ciiu.Text.ToUpper();
+                inicial.inicial_numArchivo = txt_numArchivo.Text.ToUpper();  
+                inicial.inicial_groSanguineo = txt_gruposanguineo.Text.ToUpper();
+                inicial.inicial_lateralidad = txt_lateralidad.Text.ToUpper();              
+                inicial.inicial_tipoDis = txt_tipodiscapacidad.Text.ToUpper();
+                inicial.inicial_porcentDis = txt_porcentajediscapacidad.Text.ToUpper();
+                inicial.inicial_actRelePuesTrabajo = txt_actividadesrelevantes.Text.ToUpper();
 
                 //B
-                inicial.inicial_descripcionMotivoConsulta = txt_motivoconsultainicial.Text;
+                inicial.inicial_descripcionMotivoConsulta = txt_motivoconsultainicial.Text.ToUpper();
 
                 //C
-                inicial.inicial_descripcionAnteceCliniQuirur = txt_antCliQuiDescripcion.Text;
+                inicial.inicial_descripcionAnteceCliniQuirur = txt_antCliQuiDescripcion.Text.ToUpper();
 
-                inicial.inicial_menarquia = txt_menarquiaAntGinObste.Text;
-                inicial.inicial_ciclos = txt_ciclosAntGinObste.Text;
-                inicial.inicial_fechUltiMenstrua = txt_fechUltiMensAntGinObste.Text;
-                inicial.inicial_gestas = txt_gestasAntGinObste.Text;
-                inicial.inicial_partos = txt_partosAntGinObste.Text;
-                inicial.inicial_cesareas = txt_cesareasAntGinObste.Text;
-                inicial.inicial_abortos = txt_abortosAntGinObste.Text;
-                inicial.inicial_vivosHij = txt_vivosAntGinObste.Text;
-                inicial.inicial_muertosHij = txt_muertosAntGinObste.Text;               
-                inicial.inicial_tipoMetPlanifiFamiliar = txt_tipoMetPlaniAntGinObste.Text;
+                inicial.inicial_menarquia = txt_menarquiaAntGinObste.Text.ToUpper();
+                inicial.inicial_ciclos = txt_ciclosAntGinObste.Text.ToUpper();
+                inicial.inicial_fechUltiMenstrua = txt_fechUltiMensAntGinObste.Text.ToUpper();
+                inicial.inicial_gestas = txt_gestasAntGinObste.Text.ToUpper();
+                inicial.inicial_partos = txt_partosAntGinObste.Text.ToUpper();
+                inicial.inicial_cesareas = txt_cesareasAntGinObste.Text.ToUpper();
+                inicial.inicial_abortos = txt_abortosAntGinObste.Text.ToUpper();
+                inicial.inicial_vivosHij = txt_vivosAntGinObste.Text.ToUpper();
+                inicial.inicial_muertosHij = txt_muertosAntGinObste.Text.ToUpper();               
+                inicial.inicial_tipoMetPlanifiFamiliar = txt_tipoMetPlaniAntGinObste.Text.ToUpper();
 
-                inicial.inicial_tiempoExaRealiPapanicolaou = txt_tiempoPapaniAntGinObste.Text;
-                inicial.inicial_resultadoExaRealiPapanicolaou = txt_resultadoPapaniAntGinObste.Text; 
-                inicial.inicial_tiempoExaRealiEcoMamario = txt_tiempoEcoMamaAntGinObste.Text;
-                inicial.inicial_resultadoExaRealiEcoMamario = txt_resultadoEcoMamaAntGinObste.Text;
-                inicial.inicial_tiempoExaRealiColposcopia = txt_tiempoColposAntGinObste.Text;
-                inicial.inicial_resultadoExaRealiColposcopia = txt_resultadoColposAntGinObste.Text;
-                inicial.inicial_tiempoExaRealiMamografia = txt_tiempoMamograAntGinObste.Text;
-                inicial.inicial_resultadoExaRealiMamografia = txt_resultadoMamograAntGinObste.Text;
+                inicial.inicial_tiempoExaRealiPapanicolaou = txt_tiempoPapaniAntGinObste.Text.ToUpper();
+                inicial.inicial_resultadoExaRealiPapanicolaou = txt_resultadoPapaniAntGinObste.Text.ToUpper(); 
+                inicial.inicial_tiempoExaRealiEcoMamario = txt_tiempoEcoMamaAntGinObste.Text.ToUpper();
+                inicial.inicial_resultadoExaRealiEcoMamario = txt_resultadoEcoMamaAntGinObste.Text.ToUpper();
+                inicial.inicial_tiempoExaRealiColposcopia = txt_tiempoColposAntGinObste.Text.ToUpper();
+                inicial.inicial_resultadoExaRealiColposcopia = txt_resultadoColposAntGinObste.Text.ToUpper();
+                inicial.inicial_tiempoExaRealiMamografia = txt_tiempoMamograAntGinObste.Text.ToUpper();
+                inicial.inicial_resultadoExaRealiMamografia = txt_resultadoMamograAntGinObste.Text.ToUpper();
 
-                inicial.inicial_tiempoExaRealiAntiProstatico = txt_tiempoExaRealiAntProstaAntReproMascu.Text;
-                inicial.inicial_resultadoExaRealiAntiProstatico = txt_resultadoExaRealiAntProstaAntReproMascu.Text;
-                inicial.inicial_tipo1MetPlanifiFamiAntReproMascu = txt_tipo1MetPlaniAntReproMascu.Text;
-                inicial.inicial_vivosHijAntReproMascu = txt_vivosHijosAntReproMascu.Text;
-                inicial.inicial_muertosHijAntReproMascu = txt_muertosHijosAntReproMascu.Text;
-                inicial.inicial_tiempoExaRealiEcoProstatico = txt_tiempoExaRealiEcoProstaAntReproMascu.Text;
-                inicial.inicial_resultadoExaRealiEcoProstatico = txt_resultadoExaRealiEcoProstaAntReproMascu.Text;
-                inicial.inicial_tipo2MetPlanifiFamiAntReproMascu = txt_tipo2MetPlaniAntReproMascu.Text;
+                inicial.inicial_tiempoExaRealiAntiProstatico = txt_tiempoExaRealiAntProstaAntReproMascu.Text.ToUpper();
+                inicial.inicial_resultadoExaRealiAntiProstatico = txt_resultadoExaRealiAntProstaAntReproMascu.Text.ToUpper();
+                inicial.inicial_tipo1MetPlanifiFamiAntReproMascu = txt_tipo1MetPlaniAntReproMascu.Text.ToUpper();
+                inicial.inicial_vivosHijAntReproMascu = txt_vivosHijosAntReproMascu.Text.ToUpper();
+                inicial.inicial_muertosHijAntReproMascu = txt_muertosHijosAntReproMascu.Text.ToUpper();
+                inicial.inicial_tiempoExaRealiEcoProstatico = txt_tiempoExaRealiEcoProstaAntReproMascu.Text.ToUpper();
+                inicial.inicial_resultadoExaRealiEcoProstatico = txt_resultadoExaRealiEcoProstaAntReproMascu.Text.ToUpper();
+                inicial.inicial_tipo2MetPlanifiFamiAntReproMascu = txt_tipo2MetPlaniAntReproMascu.Text.ToUpper();
 
-                inicial.inicial_tiempoConsuConsuNocivosTabaco = txt_tiemConConsuNociTabaHabToxi.Text;
-                inicial.inicial_cantidadConsuNocivosTabaco = txt_cantiConsuNociTabaHabToxi.Text;
-                inicial.inicial_exConsumiConsuNocivosTabaco = txt_exConsumiConsuNociTabaHabToxi.Text;
-                inicial.inicial_tiempoAbstiConsuNocivosTabaco = txt_tiemAbstiConsuNociTabaHabToxi.Text;
-                inicial.inicial_tiempoConsuConsuNocivosAlcohol = txt_tiemConConsuNociAlcoHabToxi.Text;
-                inicial.inicial_cantidadConsuNocivosAlcohol = txt_cantiConsuNociAlcoHabToxi.Text;
-                inicial.inicial_exConsumiConsuNocivosAlcohol = txt_exConsumiConsuNociAlcoHabToxi.Text;
-                inicial.inicial_tiempoAbstiConsuNocivosAlcohol = txt_tiemAbstiConsuNociAlcoHabToxi.Text;            
-                inicial.inicial_tiempoConsu1ConsuNocivosOtrasDrogas = txt_tiemCon1ConsuNociOtrasDroHabToxi.Text;
-                inicial.inicial_cantidad1ConsuNocivosOtrasDrogas = txt_canti1ConsuNociOtrasDroHabToxi.Text;
-                inicial.inicial_exConsumi1ConsuNocivosOtrasDrogas = txt_exConsumi1ConsuNociOtrasDroHabToxi.Text;
-                inicial.inicial_tiempoAbsti1ConsuNocivosOtrasDrogas = txt_tiemAbsti1ConsuNociOtrasDroHabToxi.Text;
-                inicial.inicial_otrasConsuNocivos = txt_otrasConsuNociOtrasDroHabToxi.Text;
-                inicial.inicial_tiempoConsu2ConsuNocivosOtrasDrogas = txt_tiemCon2ConsuNociOtrasDroHabToxi.Text;
-                inicial.inicial_cantidad2ConsuNocivosOtrasDrogas = txt_canti2ConsuNociOtrasDroHabToxi.Text;
-                inicial.inicial_exConsumi2ConsuNocivosOtrasDrogas = txt_exConsumi2ConsuNociOtrasDroHabToxi.Text;
-                inicial.inicial_tiempoAbsti2ConsuNocivosOtrasDrogas = txt_tiemAbsti2ConsuNociOtrasDroHabToxi.Text;                
-                inicial.inicial_cualEstiVidaActFisica = txt_cualEstVidaActFisiEstVida.Text;
-                inicial.inicial_tiem_cantEstiVidaActFisica = txt_tiemCanEstVidaActFisiEstVida.Text;               
-                inicial.inicial_cual2EstiVidaMediHabitual = txt_cual1EstVidaMedHabiEstVida.Text;
-                inicial.inicial_tiem_cant2EstiVidaMediHabitual = txt_tiemCan1EstVidaMedHabiEstVida.Text;
-                inicial.inicial_cual3EstiVidaMediHabitual = txt_cual2EstVidaMedHabiEstVida.Text;
-                inicial.inicial_tiem_cant3EstiVidaMediHabitual = txt_tiemCan2EstVidaMedHabiEstVida.Text;
-                inicial.inicial_cual4EstiVidaMediHabitual = txt_cual3EstVidaMedHabiEstVida.Text;
-                inicial.inicial_tiem_cant4EstiVidaMediHabitual = txt_tiemCan3EstVidaMedHabiEstVida.Text;
+                inicial.inicial_tiempoConsuConsuNocivosTabaco = txt_tiemConConsuNociTabaHabToxi.Text.ToUpper();
+                inicial.inicial_cantidadConsuNocivosTabaco = txt_cantiConsuNociTabaHabToxi.Text.ToUpper();
+                inicial.inicial_exConsumiConsuNocivosTabaco = txt_exConsumiConsuNociTabaHabToxi.Text.ToUpper();
+                inicial.inicial_tiempoAbstiConsuNocivosTabaco = txt_tiemAbstiConsuNociTabaHabToxi.Text.ToUpper();
+                inicial.inicial_tiempoConsuConsuNocivosAlcohol = txt_tiemConConsuNociAlcoHabToxi.Text.ToUpper();
+                inicial.inicial_cantidadConsuNocivosAlcohol = txt_cantiConsuNociAlcoHabToxi.Text.ToUpper();
+                inicial.inicial_exConsumiConsuNocivosAlcohol = txt_exConsumiConsuNociAlcoHabToxi.Text.ToUpper();
+                inicial.inicial_tiempoAbstiConsuNocivosAlcohol = txt_tiemAbstiConsuNociAlcoHabToxi.Text.ToUpper();            
+                inicial.inicial_tiempoConsu1ConsuNocivosOtrasDrogas = txt_tiemCon1ConsuNociOtrasDroHabToxi.Text.ToUpper();
+                inicial.inicial_cantidad1ConsuNocivosOtrasDrogas = txt_canti1ConsuNociOtrasDroHabToxi.Text.ToUpper();
+                inicial.inicial_exConsumi1ConsuNocivosOtrasDrogas = txt_exConsumi1ConsuNociOtrasDroHabToxi.Text.ToUpper();
+                inicial.inicial_tiempoAbsti1ConsuNocivosOtrasDrogas = txt_tiemAbsti1ConsuNociOtrasDroHabToxi.Text.ToUpper();
+                inicial.inicial_otrasConsuNocivos = txt_otrasConsuNociOtrasDroHabToxi.Text.ToUpper();
+                inicial.inicial_tiempoConsu2ConsuNocivosOtrasDrogas = txt_tiemCon2ConsuNociOtrasDroHabToxi.Text.ToUpper();
+                inicial.inicial_cantidad2ConsuNocivosOtrasDrogas = txt_canti2ConsuNociOtrasDroHabToxi.Text.ToUpper();
+                inicial.inicial_exConsumi2ConsuNocivosOtrasDrogas = txt_exConsumi2ConsuNociOtrasDroHabToxi.Text.ToUpper();
+                inicial.inicial_tiempoAbsti2ConsuNocivosOtrasDrogas = txt_tiemAbsti2ConsuNociOtrasDroHabToxi.Text.ToUpper();                
+                inicial.inicial_cualEstiVidaActFisica = txt_cualEstVidaActFisiEstVida.Text.ToUpper();
+                inicial.inicial_tiem_cantEstiVidaActFisica = txt_tiemCanEstVidaActFisiEstVida.Text.ToUpper();               
+                inicial.inicial_cual2EstiVidaMediHabitual = txt_cual1EstVidaMedHabiEstVida.Text.ToUpper();
+                inicial.inicial_tiem_cant2EstiVidaMediHabitual = txt_tiemCan1EstVidaMedHabiEstVida.Text.ToUpper();
+                inicial.inicial_cual3EstiVidaMediHabitual = txt_cual2EstVidaMedHabiEstVida.Text.ToUpper();
+                inicial.inicial_tiem_cant3EstiVidaMediHabitual = txt_tiemCan2EstVidaMedHabiEstVida.Text.ToUpper();
+                inicial.inicial_cual4EstiVidaMediHabitual = txt_cual3EstVidaMedHabiEstVida.Text.ToUpper();
+                inicial.inicial_tiem_cant4EstiVidaMediHabitual = txt_tiemCan3EstVidaMedHabiEstVida.Text.ToUpper();
 
                 //D
-                inicial.inicial_nomEmpresa = txt_empresa.Text;
-                inicial.inicial_puestoTrabajo = txt_puestotrabajo.Text;
-                inicial.inicial_actDesemp = txt_actdesempeña.Text;
-                inicial.inicial_tiemTrabajo = txt_tiempotrabajo.Text;             
-                inicial.inicial_observacionesAnteEmpleAnteriores = txt_obseantempleanteriores.Text;
-                inicial.inicial_nomEmpresa2 = txt_empresa2.Text;
-                inicial.inicial_puestoTrabajo2 = txt_puestotrabajo2.Text;
-                inicial.inicial_actDesemp2 = txt_actdesempeña2.Text;
-                inicial.inicial_tiemTrabajo2 = txt_tiempotrabajo2.Text;               
-                inicial.inicial_observacionesAnteEmpleAnteriores2 = txt_obseantempleanteriores2.Text;
-                inicial.inicial_nomEmpresa3 = txt_empresa3.Text;
-                inicial.inicial_puestoTrabajo3 = txt_puestotrabajo3.Text;
-                inicial.inicial_actDesemp3 = txt_actdesempeña3.Text;
-                inicial.inicial_tiemTrabajo3 = txt_tiempotrabajo3.Text;             
-                inicial.inicial_observacionesAnteEmpleAnteriores3 = txt_obseantempleanteriores3.Text;
-                inicial.inicial_nomEmpresa4 = txt_empresa4.Text;
-                inicial.inicial_puestoTrabajo4 = txt_puestotrabajo4.Text;
-                inicial.inicial_actDesemp4 = txt_actdesempeña4.Text;
-                inicial.inicial_tiemTrabajo4 = txt_tiempotrabajo4.Text;               
-                inicial.inicial_observacionesAnteEmpleAnteriores4 = txt_obseantempleanteriores4.Text;
+                inicial.inicial_nomEmpresa = txt_empresa.Text.ToUpper();
+                inicial.inicial_puestoTrabajo = txt_puestotrabajo.Text.ToUpper();
+                inicial.inicial_actDesemp = txt_actdesempeña.Text.ToUpper();
+                inicial.inicial_tiemTrabajo = txt_tiempotrabajo.Text.ToUpper();             
+                inicial.inicial_observacionesAnteEmpleAnteriores = txt_obseantempleanteriores.Text.ToUpper();
+                inicial.inicial_nomEmpresa2 = txt_empresa2.Text.ToUpper();
+                inicial.inicial_puestoTrabajo2 = txt_puestotrabajo2.Text.ToUpper();
+                inicial.inicial_actDesemp2 = txt_actdesempeña2.Text.ToUpper();
+                inicial.inicial_tiemTrabajo2 = txt_tiempotrabajo2.Text.ToUpper();               
+                inicial.inicial_observacionesAnteEmpleAnteriores2 = txt_obseantempleanteriores2.Text.ToUpper();
+                inicial.inicial_nomEmpresa3 = txt_empresa3.Text.ToUpper();
+                inicial.inicial_puestoTrabajo3 = txt_puestotrabajo3.Text.ToUpper();
+                inicial.inicial_actDesemp3 = txt_actdesempeña3.Text.ToUpper();
+                inicial.inicial_tiemTrabajo3 = txt_tiempotrabajo3.Text.ToUpper();             
+                inicial.inicial_observacionesAnteEmpleAnteriores3 = txt_obseantempleanteriores3.Text.ToUpper();
+                inicial.inicial_nomEmpresa4 = txt_empresa4.Text.ToUpper();
+                inicial.inicial_puestoTrabajo4 = txt_puestotrabajo4.Text.ToUpper();
+                inicial.inicial_actDesemp4 = txt_actdesempeña4.Text.ToUpper();
+                inicial.inicial_tiemTrabajo4 = txt_tiempotrabajo4.Text.ToUpper();               
+                inicial.inicial_observacionesAnteEmpleAnteriores4 = txt_obseantempleanteriores4.Text.ToUpper();
 
-                inicial.inicial_especificarCalificadoIESSAcciTrabajo = txt_especificar.Text;              
-                inicial.inicial_fechaCalificadoIESSAcciTrabajo = txt_fecha.Text;
-                inicial.inicial_obserAcciTrabajo = txt_observaciones2.Text;
+                inicial.inicial_especificarCalificadoIESSAcciTrabajo = txt_especificar.Text.ToUpper();              
+                inicial.inicial_fechaCalificadoIESSAcciTrabajo = txt_fecha.Text.ToUpper();
+                inicial.inicial_obserAcciTrabajo = txt_observaciones2.Text.ToUpper();
                 
-                inicial.inicial_especificarCalificadoIESSEnfProfesionales = txt_espeprofesional.Text;               
-                inicial.inicial_fechaCalificadoIESSEnfProfesionales = txt_fechaprofesional.Text;
-                inicial.inicial_obserEnfProfesionales = txt_observaciones3.Text;
+                inicial.inicial_especificarCalificadoIESSEnfProfesionales = txt_espeprofesional.Text.ToUpper();               
+                inicial.inicial_fechaCalificadoIESSEnfProfesionales = txt_fechaprofesional.Text.ToUpper();
+                inicial.inicial_obserEnfProfesionales = txt_observaciones3.Text.ToUpper();
 
                 //E
-                inicial.inicial_descripcionAnteFamiliares = txt_descripcionantefamiliares.Text;
+                inicial.inicial_descripcionAnteFamiliares = txt_descripcionantefamiliares.Text.ToUpper();
 
                 //F
-                inicial.inicial_area = txt_puestodetrabajo.Text;
-                inicial.inicial_actividades = txt_act.Text;              
-                inicial.inicial_area2 = txt_puestodetrabajo2.Text;
-                inicial.inicial_actividades2 = txt_act2.Text;                
-                inicial.inicial_area3 = txt_puestodetrabajo3.Text;
-                inicial.inicial_actividades3 = txt_act3.Text;             
-                inicial.inicial_area4 = txt_puestodetrabajo4.Text;
-                inicial.inicial_actividades4 = txt_act4.Text; 
-                inicial.inicial_medPreventivas = txt_medpreventivas.Text;                
-                inicial.inicial_medPreventivas2 = txt_medpreventivas2.Text;                
-                inicial.inicial_medPreventivas3 = txt_medpreventivas3.Text;            
-                inicial.inicial_medPreventivas4 = txt_medpreventivas4.Text;
+                inicial.inicial_area = txt_puestodetrabajo.Text.ToUpper();
+                inicial.inicial_actividades = txt_act.Text.ToUpper();              
+                inicial.inicial_area2 = txt_puestodetrabajo2.Text.ToUpper();
+                inicial.inicial_actividades2 = txt_act2.Text.ToUpper();                
+                inicial.inicial_area3 = txt_puestodetrabajo3.Text.ToUpper();
+                inicial.inicial_actividades3 = txt_act3.Text.ToUpper();             
+                inicial.inicial_area4 = txt_puestodetrabajo4.Text.ToUpper();
+                inicial.inicial_actividades4 = txt_act4.Text.ToUpper(); 
+                inicial.inicial_medPreventivas = txt_medpreventivas.Text.ToUpper();                
+                inicial.inicial_medPreventivas2 = txt_medpreventivas2.Text.ToUpper();                
+                inicial.inicial_medPreventivas3 = txt_medpreventivas3.Text.ToUpper();            
+                inicial.inicial_medPreventivas4 = txt_medpreventivas4.Text.ToUpper();
 
                 //G
-                inicial.inicial_descripActExtLab = txt_descrextralaborales.Text;
+                inicial.inicial_descripActExtLab = txt_descrextralaborales.Text.ToUpper();
 
                 //H
-                inicial.inicial_descripEnfActual = txt_enfermedadactualinicial.Text;
+                inicial.inicial_descripEnfActual = txt_enfermedadactualinicial.Text.ToUpper();
                 
                 //I
-                inicial.inicial_descripRevActOrgSis = txt_descrorganosysistemas.Text;
+                inicial.inicial_descripRevActOrgSis = txt_descrorganosysistemas.Text.ToUpper();
 
                 //J
-                inicial.inicial_preArterial = txt_preArterial.Text;
-                inicial.inicial_temperatura = txt_temperatura.Text;
-                inicial.inicial_frecCardiacan = txt_freCardica.Text;
-                inicial.inicial_satOxigenon = txt_satOxigeno.Text;
-                inicial.inicial_frecRespiratorian = txt_freRespiratoria.Text;
-                inicial.inicial_peson = txt_peso.Text;
-                inicial.inicial_tallan = txt_talla.Text;
-                inicial.inicial_indMasCorporaln = txt_indMasCorporal.Text;
-                inicial.inicial_perAbdominaln = txt_perAbdominal.Text;
+                inicial.inicial_preArterial = txt_preArterial.Text.ToUpper();
+                inicial.inicial_temperatura = txt_temperatura.Text.ToUpper();
+                inicial.inicial_frecCardiacan = txt_freCardica.Text.ToUpper();
+                inicial.inicial_satOxigenon = txt_satOxigeno.Text.ToUpper();
+                inicial.inicial_frecRespiratorian = txt_freRespiratoria.Text.ToUpper();
+                inicial.inicial_peson = txt_peso.Text.ToUpper();
+                inicial.inicial_tallan = txt_talla.Text.ToUpper();
+                inicial.inicial_indMasCorporaln = txt_indMasCorporal.Text.ToUpper();
+                inicial.inicial_perAbdominaln = txt_perAbdominal.Text.ToUpper();
 
                 //K
-                inicial.inicial_observaExaFisRegInicial = txt_obervexamenfisicoregional.Text;
+                inicial.inicial_observaExaFisRegInicial = txt_obervexamenfisicoregional.Text.ToUpper();
 
                 //L
-                inicial.inicial_examen = txt_examen.Text;
-                inicial.inicial_fecha = txt_fechaexamen.Text;
-                inicial.inicial_resultados = txt_resultadoexamen.Text;
-                inicial.inicial_examen2 = txt_examen2.Text;
-                inicial.inicial_fecha2 = txt_fechaexamen2.Text;
-                inicial.inicial_resultados2 = txt_resultadoexamen2.Text;
-                inicial.inicial_examen3 = txt_examen3.Text;
-                inicial.inicial_fecha3 = txt_fechaexamen3.Text;
-                inicial.inicial_resultados3 = txt_resultadoexamen3.Text;
-                inicial.inicial_examen4 = txt_examen4.Text;
-                inicial.inicial_fecha4 = txt_fechaexamen4.Text;
-                inicial.inicial_resultados4 = txt_resultadoexamen4.Text;
-                inicial.inicial_observacionesResExaGenEspRiesTrabajo = txt_observacionexamen.Text;
+                inicial.inicial_examen = txt_examen.Text.ToUpper();
+                inicial.inicial_fecha = txt_fechaexamen.Text.ToUpper();
+                inicial.inicial_resultados = txt_resultadoexamen.Text.ToUpper();
+                inicial.inicial_examen2 = txt_examen2.Text.ToUpper();
+                inicial.inicial_fecha2 = txt_fechaexamen2.Text.ToUpper();
+                inicial.inicial_resultados2 = txt_resultadoexamen2.Text.ToUpper();
+                inicial.inicial_examen3 = txt_examen3.Text.ToUpper();
+                inicial.inicial_fecha3 = txt_fechaexamen3.Text.ToUpper();
+                inicial.inicial_resultados3 = txt_resultadoexamen3.Text.ToUpper();
+                inicial.inicial_examen4 = txt_examen4.Text.ToUpper();
+                inicial.inicial_fecha4 = txt_fechaexamen4.Text.ToUpper();
+                inicial.inicial_resultados4 = txt_resultadoexamen4.Text.ToUpper();
+                inicial.inicial_observacionesResExaGenEspRiesTrabajo = txt_observacionexamen.Text.ToUpper();
 
                 //M
-                inicial.inicial_descripciondiagnostico = txt_descripdiagnostico.Text;
-                inicial.inicial_cie = txt_cie.Text;               
-                inicial.inicial_descripcioninicialnostico2 = txt_descripdiagnostico2.Text;
-                inicial.inicial_cie2 = txt_cie2.Text;               
-                inicial.inicial_descripcioninicialnostico3 = txt_descripdiagnostico3.Text;
-                inicial.inicial_cie3 = txt_cie3.Text;
+                inicial.inicial_descripciondiagnostico = txt_descripdiagnostico.Text.ToUpper();
+                inicial.inicial_cie = txt_cie.Text.ToUpper();               
+                inicial.inicial_descripcioninicialnostico2 = txt_descripdiagnostico2.Text.ToUpper();
+                inicial.inicial_cie2 = txt_cie2.Text.ToUpper();               
+                inicial.inicial_descripcioninicialnostico3 = txt_descripdiagnostico3.Text.ToUpper();
+                inicial.inicial_cie3 = txt_cie3.Text.ToUpper();
                 
                 //N
-                inicial.inicial_ObservAptMed = txt_observacionaptitud.Text;
-                inicial.inicial_LimitAptMed = txt_limitacionaptitud.Text;
+                inicial.inicial_ObservAptMed = txt_observacionaptitud.Text.ToUpper();
+                inicial.inicial_LimitAptMed = txt_limitacionaptitud.Text.ToUpper();
 
                 //O
-                inicial.inicial_descripcionRecTra = txt_descripciontratamiento.Text;
+                inicial.inicial_descripcionRecTra = txt_descripciontratamiento.Text.ToUpper();
 
                 //P
-                inicial.inicial_fecha_hora = txt_fechahora.Text;
+                inicial.inicial_fechaHoraGuardado = Convert.ToDateTime(txt_fechahora.Text.ToUpper());
                 inicial.prof_id = Convert.ToInt32(ddl_profesional.SelectedValue);
-                inicial.inicial_cod = txt_codigoDatProf.Text;
+                inicial.inicial_cod = txt_codigoDatProf.Text.ToUpper();
                 inicial.Per_id = perso;
+                inicial.Emp_id = empre;
 
                 CN_Inicial.GuardarInicial(inicial);
 
                 //Mensaje de confirmacion
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos Guardados Exitosamente')", true);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", "swal('Exito!', 'Datos Guardados Exitosamente', 'success')", true);
 
                 Response.Redirect("~/Template/Views/PacientesInicial.aspx");
             }
             catch (Exception)
             {
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos No Guardados Correctamente')", true);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", "swal('Error!', 'Datos No Guardados', 'error')", true);
             }
 
         }
@@ -8690,188 +8695,188 @@ namespace SistemaECU911.Template.Views
                 }
 
                 //A
-                inicial.inicial_ciiu = txt_ciiu.Text;
-                inicial.inicial_numArchivo = txt_numArchivo.Text;
-                inicial.inicial_groSanguineo = txt_gruposanguineo.Text;
-                inicial.inicial_lateralidad = txt_lateralidad.Text;
-                inicial.inicial_tipoDis = txt_tipodiscapacidad.Text;
-                inicial.inicial_porcentDis = txt_porcentajediscapacidad.Text;
-                inicial.inicial_actRelePuesTrabajo = txt_actividadesrelevantes.Text;
+                inicial.inicial_ciiu = txt_ciiu.Text.ToUpper();
+                inicial.inicial_numArchivo = txt_numArchivo.Text.ToUpper();
+                inicial.inicial_groSanguineo = txt_gruposanguineo.Text.ToUpper();
+                inicial.inicial_lateralidad = txt_lateralidad.Text.ToUpper();
+                inicial.inicial_tipoDis = txt_tipodiscapacidad.Text.ToUpper();
+                inicial.inicial_porcentDis = txt_porcentajediscapacidad.Text.ToUpper();
+                inicial.inicial_actRelePuesTrabajo = txt_actividadesrelevantes.Text.ToUpper();
 
                 //B
-                inicial.inicial_descripcionMotivoConsulta = txt_motivoconsultainicial.Text;
+                inicial.inicial_descripcionMotivoConsulta = txt_motivoconsultainicial.Text.ToUpper();
 
                 //C
-                inicial.inicial_descripcionAnteceCliniQuirur = txt_antCliQuiDescripcion.Text;
+                inicial.inicial_descripcionAnteceCliniQuirur = txt_antCliQuiDescripcion.Text.ToUpper();
 
-                inicial.inicial_menarquia = txt_menarquiaAntGinObste.Text;
-                inicial.inicial_ciclos = txt_ciclosAntGinObste.Text;
-                inicial.inicial_fechUltiMenstrua = txt_fechUltiMensAntGinObste.Text;
-                inicial.inicial_gestas = txt_gestasAntGinObste.Text;
-                inicial.inicial_partos = txt_partosAntGinObste.Text;
-                inicial.inicial_cesareas = txt_cesareasAntGinObste.Text;
-                inicial.inicial_abortos = txt_abortosAntGinObste.Text;
-                inicial.inicial_vivosHij = txt_vivosAntGinObste.Text;
-                inicial.inicial_muertosHij = txt_muertosAntGinObste.Text;
-                inicial.inicial_tipoMetPlanifiFamiliar = txt_tipoMetPlaniAntGinObste.Text;
+                inicial.inicial_menarquia = txt_menarquiaAntGinObste.Text.ToUpper();
+                inicial.inicial_ciclos = txt_ciclosAntGinObste.Text.ToUpper();
+                inicial.inicial_fechUltiMenstrua = txt_fechUltiMensAntGinObste.Text.ToUpper();
+                inicial.inicial_gestas = txt_gestasAntGinObste.Text.ToUpper();
+                inicial.inicial_partos = txt_partosAntGinObste.Text.ToUpper();
+                inicial.inicial_cesareas = txt_cesareasAntGinObste.Text.ToUpper();
+                inicial.inicial_abortos = txt_abortosAntGinObste.Text.ToUpper();
+                inicial.inicial_vivosHij = txt_vivosAntGinObste.Text.ToUpper();
+                inicial.inicial_muertosHij = txt_muertosAntGinObste.Text.ToUpper();
+                inicial.inicial_tipoMetPlanifiFamiliar = txt_tipoMetPlaniAntGinObste.Text.ToUpper();
 
-                inicial.inicial_tiempoExaRealiPapanicolaou = txt_tiempoPapaniAntGinObste.Text;
-                inicial.inicial_resultadoExaRealiPapanicolaou = txt_resultadoPapaniAntGinObste.Text;
-                inicial.inicial_tiempoExaRealiEcoMamario = txt_tiempoEcoMamaAntGinObste.Text;
-                inicial.inicial_resultadoExaRealiEcoMamario = txt_resultadoEcoMamaAntGinObste.Text;
-                inicial.inicial_tiempoExaRealiColposcopia = txt_tiempoColposAntGinObste.Text;
-                inicial.inicial_resultadoExaRealiColposcopia = txt_resultadoColposAntGinObste.Text;
-                inicial.inicial_tiempoExaRealiMamografia = txt_tiempoMamograAntGinObste.Text;
-                inicial.inicial_resultadoExaRealiMamografia = txt_resultadoMamograAntGinObste.Text;
+                inicial.inicial_tiempoExaRealiPapanicolaou = txt_tiempoPapaniAntGinObste.Text.ToUpper();
+                inicial.inicial_resultadoExaRealiPapanicolaou = txt_resultadoPapaniAntGinObste.Text.ToUpper();
+                inicial.inicial_tiempoExaRealiEcoMamario = txt_tiempoEcoMamaAntGinObste.Text.ToUpper();
+                inicial.inicial_resultadoExaRealiEcoMamario = txt_resultadoEcoMamaAntGinObste.Text.ToUpper();
+                inicial.inicial_tiempoExaRealiColposcopia = txt_tiempoColposAntGinObste.Text.ToUpper();
+                inicial.inicial_resultadoExaRealiColposcopia = txt_resultadoColposAntGinObste.Text.ToUpper();
+                inicial.inicial_tiempoExaRealiMamografia = txt_tiempoMamograAntGinObste.Text.ToUpper();
+                inicial.inicial_resultadoExaRealiMamografia = txt_resultadoMamograAntGinObste.Text.ToUpper();
 
-                inicial.inicial_tiempoExaRealiAntiProstatico = txt_tiempoExaRealiAntProstaAntReproMascu.Text;
-                inicial.inicial_resultadoExaRealiAntiProstatico = txt_resultadoExaRealiAntProstaAntReproMascu.Text;
-                inicial.inicial_tipo1MetPlanifiFamiAntReproMascu = txt_tipo1MetPlaniAntReproMascu.Text;
-                inicial.inicial_vivosHijAntReproMascu = txt_vivosHijosAntReproMascu.Text;
-                inicial.inicial_muertosHijAntReproMascu = txt_muertosHijosAntReproMascu.Text;
-                inicial.inicial_tiempoExaRealiEcoProstatico = txt_tiempoExaRealiEcoProstaAntReproMascu.Text;
-                inicial.inicial_resultadoExaRealiEcoProstatico = txt_resultadoExaRealiEcoProstaAntReproMascu.Text;
-                inicial.inicial_tipo2MetPlanifiFamiAntReproMascu = txt_tipo2MetPlaniAntReproMascu.Text;
+                inicial.inicial_tiempoExaRealiAntiProstatico = txt_tiempoExaRealiAntProstaAntReproMascu.Text.ToUpper();
+                inicial.inicial_resultadoExaRealiAntiProstatico = txt_resultadoExaRealiAntProstaAntReproMascu.Text.ToUpper();
+                inicial.inicial_tipo1MetPlanifiFamiAntReproMascu = txt_tipo1MetPlaniAntReproMascu.Text.ToUpper();
+                inicial.inicial_vivosHijAntReproMascu = txt_vivosHijosAntReproMascu.Text.ToUpper();
+                inicial.inicial_muertosHijAntReproMascu = txt_muertosHijosAntReproMascu.Text.ToUpper();
+                inicial.inicial_tiempoExaRealiEcoProstatico = txt_tiempoExaRealiEcoProstaAntReproMascu.Text.ToUpper();
+                inicial.inicial_resultadoExaRealiEcoProstatico = txt_resultadoExaRealiEcoProstaAntReproMascu.Text.ToUpper();
+                inicial.inicial_tipo2MetPlanifiFamiAntReproMascu = txt_tipo2MetPlaniAntReproMascu.Text.ToUpper();
 
-                inicial.inicial_tiempoConsuConsuNocivosTabaco = txt_tiemConConsuNociTabaHabToxi.Text;
-                inicial.inicial_cantidadConsuNocivosTabaco = txt_cantiConsuNociTabaHabToxi.Text;
-                inicial.inicial_exConsumiConsuNocivosTabaco = txt_exConsumiConsuNociTabaHabToxi.Text;
-                inicial.inicial_tiempoAbstiConsuNocivosTabaco = txt_tiemAbstiConsuNociTabaHabToxi.Text;
-                inicial.inicial_tiempoConsuConsuNocivosAlcohol = txt_tiemConConsuNociAlcoHabToxi.Text;
-                inicial.inicial_cantidadConsuNocivosAlcohol = txt_cantiConsuNociAlcoHabToxi.Text;
-                inicial.inicial_exConsumiConsuNocivosAlcohol = txt_exConsumiConsuNociAlcoHabToxi.Text;
-                inicial.inicial_tiempoAbstiConsuNocivosAlcohol = txt_tiemAbstiConsuNociAlcoHabToxi.Text;
-                inicial.inicial_tiempoConsu1ConsuNocivosOtrasDrogas = txt_tiemCon1ConsuNociOtrasDroHabToxi.Text;
-                inicial.inicial_cantidad1ConsuNocivosOtrasDrogas = txt_canti1ConsuNociOtrasDroHabToxi.Text;
-                inicial.inicial_exConsumi1ConsuNocivosOtrasDrogas = txt_exConsumi1ConsuNociOtrasDroHabToxi.Text;
-                inicial.inicial_tiempoAbsti1ConsuNocivosOtrasDrogas = txt_tiemAbsti1ConsuNociOtrasDroHabToxi.Text;
-                inicial.inicial_otrasConsuNocivos = txt_otrasConsuNociOtrasDroHabToxi.Text;
-                inicial.inicial_tiempoConsu2ConsuNocivosOtrasDrogas = txt_tiemCon2ConsuNociOtrasDroHabToxi.Text;
-                inicial.inicial_cantidad2ConsuNocivosOtrasDrogas = txt_canti2ConsuNociOtrasDroHabToxi.Text;
-                inicial.inicial_exConsumi2ConsuNocivosOtrasDrogas = txt_exConsumi2ConsuNociOtrasDroHabToxi.Text;
-                inicial.inicial_tiempoAbsti2ConsuNocivosOtrasDrogas = txt_tiemAbsti2ConsuNociOtrasDroHabToxi.Text;
-                inicial.inicial_cualEstiVidaActFisica = txt_cualEstVidaActFisiEstVida.Text;
-                inicial.inicial_tiem_cantEstiVidaActFisica = txt_tiemCanEstVidaActFisiEstVida.Text;
-                inicial.inicial_cual2EstiVidaMediHabitual = txt_cual1EstVidaMedHabiEstVida.Text;
-                inicial.inicial_tiem_cant2EstiVidaMediHabitual = txt_tiemCan1EstVidaMedHabiEstVida.Text;
-                inicial.inicial_cual3EstiVidaMediHabitual = txt_cual2EstVidaMedHabiEstVida.Text;
-                inicial.inicial_tiem_cant3EstiVidaMediHabitual = txt_tiemCan2EstVidaMedHabiEstVida.Text;
-                inicial.inicial_cual4EstiVidaMediHabitual = txt_cual3EstVidaMedHabiEstVida.Text;
-                inicial.inicial_tiem_cant4EstiVidaMediHabitual = txt_tiemCan3EstVidaMedHabiEstVida.Text;
+                inicial.inicial_tiempoConsuConsuNocivosTabaco = txt_tiemConConsuNociTabaHabToxi.Text.ToUpper();
+                inicial.inicial_cantidadConsuNocivosTabaco = txt_cantiConsuNociTabaHabToxi.Text.ToUpper();
+                inicial.inicial_exConsumiConsuNocivosTabaco = txt_exConsumiConsuNociTabaHabToxi.Text.ToUpper();
+                inicial.inicial_tiempoAbstiConsuNocivosTabaco = txt_tiemAbstiConsuNociTabaHabToxi.Text.ToUpper();
+                inicial.inicial_tiempoConsuConsuNocivosAlcohol = txt_tiemConConsuNociAlcoHabToxi.Text.ToUpper();
+                inicial.inicial_cantidadConsuNocivosAlcohol = txt_cantiConsuNociAlcoHabToxi.Text.ToUpper();
+                inicial.inicial_exConsumiConsuNocivosAlcohol = txt_exConsumiConsuNociAlcoHabToxi.Text.ToUpper();
+                inicial.inicial_tiempoAbstiConsuNocivosAlcohol = txt_tiemAbstiConsuNociAlcoHabToxi.Text.ToUpper();
+                inicial.inicial_tiempoConsu1ConsuNocivosOtrasDrogas = txt_tiemCon1ConsuNociOtrasDroHabToxi.Text.ToUpper();
+                inicial.inicial_cantidad1ConsuNocivosOtrasDrogas = txt_canti1ConsuNociOtrasDroHabToxi.Text.ToUpper();
+                inicial.inicial_exConsumi1ConsuNocivosOtrasDrogas = txt_exConsumi1ConsuNociOtrasDroHabToxi.Text.ToUpper();
+                inicial.inicial_tiempoAbsti1ConsuNocivosOtrasDrogas = txt_tiemAbsti1ConsuNociOtrasDroHabToxi.Text.ToUpper();
+                inicial.inicial_otrasConsuNocivos = txt_otrasConsuNociOtrasDroHabToxi.Text.ToUpper();
+                inicial.inicial_tiempoConsu2ConsuNocivosOtrasDrogas = txt_tiemCon2ConsuNociOtrasDroHabToxi.Text.ToUpper();
+                inicial.inicial_cantidad2ConsuNocivosOtrasDrogas = txt_canti2ConsuNociOtrasDroHabToxi.Text.ToUpper();
+                inicial.inicial_exConsumi2ConsuNocivosOtrasDrogas = txt_exConsumi2ConsuNociOtrasDroHabToxi.Text.ToUpper();
+                inicial.inicial_tiempoAbsti2ConsuNocivosOtrasDrogas = txt_tiemAbsti2ConsuNociOtrasDroHabToxi.Text.ToUpper();
+                inicial.inicial_cualEstiVidaActFisica = txt_cualEstVidaActFisiEstVida.Text.ToUpper();
+                inicial.inicial_tiem_cantEstiVidaActFisica = txt_tiemCanEstVidaActFisiEstVida.Text.ToUpper();
+                inicial.inicial_cual2EstiVidaMediHabitual = txt_cual1EstVidaMedHabiEstVida.Text.ToUpper();
+                inicial.inicial_tiem_cant2EstiVidaMediHabitual = txt_tiemCan1EstVidaMedHabiEstVida.Text.ToUpper();
+                inicial.inicial_cual3EstiVidaMediHabitual = txt_cual2EstVidaMedHabiEstVida.Text.ToUpper();
+                inicial.inicial_tiem_cant3EstiVidaMediHabitual = txt_tiemCan2EstVidaMedHabiEstVida.Text.ToUpper();
+                inicial.inicial_cual4EstiVidaMediHabitual = txt_cual3EstVidaMedHabiEstVida.Text.ToUpper();
+                inicial.inicial_tiem_cant4EstiVidaMediHabitual = txt_tiemCan3EstVidaMedHabiEstVida.Text.ToUpper();
 
                 //D
-                inicial.inicial_nomEmpresa = txt_empresa.Text;
-                inicial.inicial_puestoTrabajo = txt_puestotrabajo.Text;
-                inicial.inicial_actDesemp = txt_actdesempeña.Text;
-                inicial.inicial_tiemTrabajo = txt_tiempotrabajo.Text;
-                inicial.inicial_observacionesAnteEmpleAnteriores = txt_obseantempleanteriores.Text;
-                inicial.inicial_nomEmpresa2 = txt_empresa2.Text;
-                inicial.inicial_puestoTrabajo2 = txt_puestotrabajo2.Text;
-                inicial.inicial_actDesemp2 = txt_actdesempeña2.Text;
-                inicial.inicial_tiemTrabajo2 = txt_tiempotrabajo2.Text;
-                inicial.inicial_observacionesAnteEmpleAnteriores2 = txt_obseantempleanteriores2.Text;
-                inicial.inicial_nomEmpresa3 = txt_empresa3.Text;
-                inicial.inicial_puestoTrabajo3 = txt_puestotrabajo3.Text;
-                inicial.inicial_actDesemp3 = txt_actdesempeña3.Text;
-                inicial.inicial_tiemTrabajo3 = txt_tiempotrabajo3.Text;
-                inicial.inicial_observacionesAnteEmpleAnteriores3 = txt_obseantempleanteriores3.Text;
-                inicial.inicial_nomEmpresa4 = txt_empresa4.Text;
-                inicial.inicial_puestoTrabajo4 = txt_puestotrabajo4.Text;
-                inicial.inicial_actDesemp4 = txt_actdesempeña4.Text;
-                inicial.inicial_tiemTrabajo4 = txt_tiempotrabajo4.Text;
-                inicial.inicial_observacionesAnteEmpleAnteriores4 = txt_obseantempleanteriores4.Text;
+                inicial.inicial_nomEmpresa = txt_empresa.Text.ToUpper();
+                inicial.inicial_puestoTrabajo = txt_puestotrabajo.Text.ToUpper();
+                inicial.inicial_actDesemp = txt_actdesempeña.Text.ToUpper();
+                inicial.inicial_tiemTrabajo = txt_tiempotrabajo.Text.ToUpper();
+                inicial.inicial_observacionesAnteEmpleAnteriores = txt_obseantempleanteriores.Text.ToUpper();
+                inicial.inicial_nomEmpresa2 = txt_empresa2.Text.ToUpper();
+                inicial.inicial_puestoTrabajo2 = txt_puestotrabajo2.Text.ToUpper();
+                inicial.inicial_actDesemp2 = txt_actdesempeña2.Text.ToUpper();
+                inicial.inicial_tiemTrabajo2 = txt_tiempotrabajo2.Text.ToUpper();
+                inicial.inicial_observacionesAnteEmpleAnteriores2 = txt_obseantempleanteriores2.Text.ToUpper();
+                inicial.inicial_nomEmpresa3 = txt_empresa3.Text.ToUpper();
+                inicial.inicial_puestoTrabajo3 = txt_puestotrabajo3.Text.ToUpper();
+                inicial.inicial_actDesemp3 = txt_actdesempeña3.Text.ToUpper();
+                inicial.inicial_tiemTrabajo3 = txt_tiempotrabajo3.Text.ToUpper();
+                inicial.inicial_observacionesAnteEmpleAnteriores3 = txt_obseantempleanteriores3.Text.ToUpper();
+                inicial.inicial_nomEmpresa4 = txt_empresa4.Text.ToUpper();
+                inicial.inicial_puestoTrabajo4 = txt_puestotrabajo4.Text.ToUpper();
+                inicial.inicial_actDesemp4 = txt_actdesempeña4.Text.ToUpper();
+                inicial.inicial_tiemTrabajo4 = txt_tiempotrabajo4.Text.ToUpper();
+                inicial.inicial_observacionesAnteEmpleAnteriores4 = txt_obseantempleanteriores4.Text.ToUpper();
 
-                inicial.inicial_especificarCalificadoIESSAcciTrabajo = txt_especificar.Text;
-                inicial.inicial_fechaCalificadoIESSAcciTrabajo = txt_fecha.Text;
-                inicial.inicial_obserAcciTrabajo = txt_observaciones2.Text;
+                inicial.inicial_especificarCalificadoIESSAcciTrabajo = txt_especificar.Text.ToUpper();
+                inicial.inicial_fechaCalificadoIESSAcciTrabajo = txt_fecha.Text.ToUpper();
+                inicial.inicial_obserAcciTrabajo = txt_observaciones2.Text.ToUpper();
 
-                inicial.inicial_especificarCalificadoIESSEnfProfesionales = txt_espeprofesional.Text;
-                inicial.inicial_fechaCalificadoIESSEnfProfesionales = txt_fechaprofesional.Text;
-                inicial.inicial_obserEnfProfesionales = txt_observaciones3.Text;
+                inicial.inicial_especificarCalificadoIESSEnfProfesionales = txt_espeprofesional.Text.ToUpper();
+                inicial.inicial_fechaCalificadoIESSEnfProfesionales = txt_fechaprofesional.Text.ToUpper();
+                inicial.inicial_obserEnfProfesionales = txt_observaciones3.Text.ToUpper();
 
                 //E
-                inicial.inicial_descripcionAnteFamiliares = txt_descripcionantefamiliares.Text;
+                inicial.inicial_descripcionAnteFamiliares = txt_descripcionantefamiliares.Text.ToUpper();
 
                 //F
-                inicial.inicial_area = txt_puestodetrabajo.Text;
-                inicial.inicial_actividades = txt_act.Text;
-                inicial.inicial_area2 = txt_puestodetrabajo2.Text;
-                inicial.inicial_actividades2 = txt_act2.Text;
-                inicial.inicial_area3 = txt_puestodetrabajo3.Text;
-                inicial.inicial_actividades3 = txt_act3.Text;
-                inicial.inicial_area4 = txt_puestodetrabajo4.Text;
-                inicial.inicial_actividades4 = txt_act4.Text;
-                inicial.inicial_medPreventivas = txt_medpreventivas.Text;
-                inicial.inicial_medPreventivas2 = txt_medpreventivas2.Text;
-                inicial.inicial_medPreventivas3 = txt_medpreventivas3.Text;
-                inicial.inicial_medPreventivas4 = txt_medpreventivas4.Text;
+                inicial.inicial_area = txt_puestodetrabajo.Text.ToUpper();
+                inicial.inicial_actividades = txt_act.Text.ToUpper();
+                inicial.inicial_area2 = txt_puestodetrabajo2.Text.ToUpper();
+                inicial.inicial_actividades2 = txt_act2.Text.ToUpper();
+                inicial.inicial_area3 = txt_puestodetrabajo3.Text.ToUpper();
+                inicial.inicial_actividades3 = txt_act3.Text.ToUpper();
+                inicial.inicial_area4 = txt_puestodetrabajo4.Text.ToUpper();
+                inicial.inicial_actividades4 = txt_act4.Text.ToUpper();
+                inicial.inicial_medPreventivas = txt_medpreventivas.Text.ToUpper();
+                inicial.inicial_medPreventivas2 = txt_medpreventivas2.Text.ToUpper();
+                inicial.inicial_medPreventivas3 = txt_medpreventivas3.Text.ToUpper();
+                inicial.inicial_medPreventivas4 = txt_medpreventivas4.Text.ToUpper();
 
                 //G
-                inicial.inicial_descripActExtLab = txt_descrextralaborales.Text;
+                inicial.inicial_descripActExtLab = txt_descrextralaborales.Text.ToUpper();
 
                 //H
-                inicial.inicial_descripEnfActual = txt_enfermedadactualinicial.Text;
+                inicial.inicial_descripEnfActual = txt_enfermedadactualinicial.Text.ToUpper();
 
                 //I
-                inicial.inicial_descripRevActOrgSis = txt_descrorganosysistemas.Text;
+                inicial.inicial_descripRevActOrgSis = txt_descrorganosysistemas.Text.ToUpper();
 
                 //J
-                inicial.inicial_preArterial = txt_preArterial.Text;
-                inicial.inicial_temperatura = txt_temperatura.Text;
-                inicial.inicial_frecCardiacan = txt_freCardica.Text;
-                inicial.inicial_satOxigenon = txt_satOxigeno.Text;
-                inicial.inicial_frecRespiratorian = txt_freRespiratoria.Text;
-                inicial.inicial_peson = txt_peso.Text;
-                inicial.inicial_tallan = txt_talla.Text;
-                inicial.inicial_indMasCorporaln = txt_indMasCorporal.Text;
-                inicial.inicial_perAbdominaln = txt_perAbdominal.Text;
+                inicial.inicial_preArterial = txt_preArterial.Text.ToUpper();
+                inicial.inicial_temperatura = txt_temperatura.Text.ToUpper();
+                inicial.inicial_frecCardiacan = txt_freCardica.Text.ToUpper();
+                inicial.inicial_satOxigenon = txt_satOxigeno.Text.ToUpper();
+                inicial.inicial_frecRespiratorian = txt_freRespiratoria.Text.ToUpper();
+                inicial.inicial_peson = txt_peso.Text.ToUpper();
+                inicial.inicial_tallan = txt_talla.Text.ToUpper();
+                inicial.inicial_indMasCorporaln = txt_indMasCorporal.Text.ToUpper();
+                inicial.inicial_perAbdominaln = txt_perAbdominal.Text.ToUpper();
 
                 //K
-                inicial.inicial_observaExaFisRegInicial = txt_obervexamenfisicoregional.Text;
+                inicial.inicial_observaExaFisRegInicial = txt_obervexamenfisicoregional.Text.ToUpper();
 
                 //L
-                inicial.inicial_examen = txt_examen.Text;
-                inicial.inicial_fecha = txt_fechaexamen.Text;
-                inicial.inicial_resultados = txt_resultadoexamen.Text;
-                inicial.inicial_examen2 = txt_examen2.Text;
-                inicial.inicial_fecha2 = txt_fechaexamen2.Text;
-                inicial.inicial_resultados2 = txt_resultadoexamen2.Text;
-                inicial.inicial_examen3 = txt_examen3.Text;
-                inicial.inicial_fecha3 = txt_fechaexamen3.Text;
-                inicial.inicial_resultados3 = txt_resultadoexamen3.Text;
-                inicial.inicial_examen4 = txt_examen4.Text;
-                inicial.inicial_fecha4 = txt_fechaexamen4.Text;
-                inicial.inicial_resultados4 = txt_resultadoexamen4.Text;
-                inicial.inicial_observacionesResExaGenEspRiesTrabajo = txt_observacionexamen.Text;
+                inicial.inicial_examen = txt_examen.Text.ToUpper();
+                inicial.inicial_fecha = txt_fechaexamen.Text.ToUpper();
+                inicial.inicial_resultados = txt_resultadoexamen.Text.ToUpper();
+                inicial.inicial_examen2 = txt_examen2.Text.ToUpper();
+                inicial.inicial_fecha2 = txt_fechaexamen2.Text.ToUpper();
+                inicial.inicial_resultados2 = txt_resultadoexamen2.Text.ToUpper();
+                inicial.inicial_examen3 = txt_examen3.Text.ToUpper();
+                inicial.inicial_fecha3 = txt_fechaexamen3.Text.ToUpper();
+                inicial.inicial_resultados3 = txt_resultadoexamen3.Text.ToUpper();
+                inicial.inicial_examen4 = txt_examen4.Text.ToUpper();
+                inicial.inicial_fecha4 = txt_fechaexamen4.Text.ToUpper();
+                inicial.inicial_resultados4 = txt_resultadoexamen4.Text.ToUpper();
+                inicial.inicial_observacionesResExaGenEspRiesTrabajo = txt_observacionexamen.Text.ToUpper();
 
                 //M
-                inicial.inicial_descripciondiagnostico = txt_descripdiagnostico.Text;
-                inicial.inicial_cie = txt_cie.Text;
-                inicial.inicial_descripcioninicialnostico2 = txt_descripdiagnostico2.Text;
-                inicial.inicial_cie2 = txt_cie2.Text;
-                inicial.inicial_descripcioninicialnostico3 = txt_descripdiagnostico3.Text;
-                inicial.inicial_cie3 = txt_cie3.Text;
+                inicial.inicial_descripciondiagnostico = txt_descripdiagnostico.Text.ToUpper();
+                inicial.inicial_cie = txt_cie.Text.ToUpper();
+                inicial.inicial_descripcioninicialnostico2 = txt_descripdiagnostico2.Text.ToUpper();
+                inicial.inicial_cie2 = txt_cie2.Text.ToUpper();
+                inicial.inicial_descripcioninicialnostico3 = txt_descripdiagnostico3.Text.ToUpper();
+                inicial.inicial_cie3 = txt_cie3.Text.ToUpper();
 
                 //N
-                inicial.inicial_ObservAptMed = txt_observacionaptitud.Text;
-                inicial.inicial_LimitAptMed = txt_limitacionaptitud.Text;
+                inicial.inicial_ObservAptMed = txt_observacionaptitud.Text.ToUpper();
+                inicial.inicial_LimitAptMed = txt_limitacionaptitud.Text.ToUpper();
 
                 //O
-                inicial.inicial_descripcionRecTra = txt_descripciontratamiento.Text;
+                inicial.inicial_descripcionRecTra = txt_descripciontratamiento.Text.ToUpper();
 
                 //P
-                inicial.inicial_fecha_hora = txt_fechahora.Text;
+                inicial.inicial_fecha_horaModificacion = Convert.ToDateTime(txt_fechahora.Text.ToUpper());
                 inicial.prof_id = Convert.ToInt32(ddl_profesional.SelectedValue);
-                inicial.inicial_cod = txt_codigoDatProf.Text;
+                inicial.inicial_cod = txt_codigoDatProf.Text.ToUpper();
 
                 CN_Inicial.ModificarInicial(inicial);
-              
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos Modificados Exitosamente')", true);
+
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", "swal('Exito!', 'Datos Modificados Exitosamente', 'success')", true);
                 Response.Redirect("~/Template/Views/PacientesInicial.aspx");
             }
             catch (Exception)
             {
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Datos No Modificados')", true);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", "swal('Error!', 'Datos No Modificados', 'error')", true);
             }
             
         }
@@ -8898,6 +8903,11 @@ namespace SistemaECU911.Template.Views
         }
 
         protected void btn_cancelar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Template/Views/Inicio.aspx");
+        }
+
+        protected void Timer1_Tick(object sender, EventArgs e)
         {
             Response.Redirect("~/Template/Views/Inicio.aspx");
         }
