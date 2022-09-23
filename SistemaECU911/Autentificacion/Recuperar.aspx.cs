@@ -21,7 +21,7 @@ namespace SistemaECU911.Autenticacion
 
         private void recuperar()
         {
-            Tbl_Usuario usu = new Tbl_Usuario();
+            Tbl_Usuarios usu = new Tbl_Usuarios();
             bool existe = CN_Usuarios.autentificarxCorreo(txt_email.Text);
             {
                 if (existe)

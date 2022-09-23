@@ -15,75 +15,75 @@ namespace CapaNegocio
         //metodo para verificar credenciales
         public static bool autentificar(string usuario, string pass)
         {
-            var auto = dc.Tbl_Usuario.Any(usu => usu.usu_estado == "A" && usu.usu_nomlogin.Equals(usuario) && usu.usu_pass.Equals(pass));
+            var auto = dc.Tbl_Usuarios.Any(usu => usu.usu_estado == "A" && usu.usu_nomlogin.Equals(usuario) && usu.usu_pass.Equals(pass));
             return auto;
         }
         //metodo para verificar si existe el usuario
-        public static Tbl_Usuario obtenerUsuariosxCedula(int cedula)
+        public static Tbl_Usuarios obtenerUsuariosxCedula(int cedula)
         {
-            var usuced = dc.Tbl_Usuario.FirstOrDefault(usu => usu.usu_cedula.Equals(cedula) && usu.usu_estado == "A");
+            var usuced = dc.Tbl_Usuarios.FirstOrDefault(usu => usu.usu_cedula.Equals(cedula) && usu.usu_estado == "A");
             return usuced;
         }
         //metodo para verificar si existe el nombre
         public static bool autentificarxCedula(int cedula)
         {
-            var auto = dc.Tbl_Usuario.Any(usu => usu.usu_estado == "A" && usu.usu_cedula.Equals(cedula));
+            var auto = dc.Tbl_Usuarios.Any(usu => usu.usu_estado == "A" && usu.usu_cedula.Equals(cedula));
             return auto;
         }
         //metodo para verificar si existe el nombre de usuario
-        public static Tbl_Usuario obtenerUsuariosxNomUsuario(string usuario)
+        public static Tbl_Usuarios obtenerUsuariosxNomUsuario(string usuario)
         {
-            var usunom = dc.Tbl_Usuario.FirstOrDefault(usu => usu.usu_nomlogin.Equals(usuario) && usu.usu_estado == "A");
+            var usunom = dc.Tbl_Usuarios.FirstOrDefault(usu => usu.usu_nomlogin.Equals(usuario) && usu.usu_estado == "A");
             return usunom;
         }
         //metodo para verificar si existe el nombre
         public static bool autentificarxNomUsuario(string usuario)
         {
-            var auto = dc.Tbl_Usuario.Any(usu => usu.usu_estado == "A" && usu.usu_nomlogin.Equals(usuario));
+            var auto = dc.Tbl_Usuarios.Any(usu => usu.usu_estado == "A" && usu.usu_nomlogin.Equals(usuario));
             return auto;
         }
         //metodo para verificar si existe el nombre
         public static bool autentificarxNom(string usuario)
         {
-            var auto = dc.Tbl_Usuario.Any(usu => usu.usu_estado == "A" && usu.usu_nomlogin.Equals(usuario));
+            var auto = dc.Tbl_Usuarios.Any(usu => usu.usu_estado == "A" && usu.usu_nomlogin.Equals(usuario));
             return auto;
         }
         //metodo para traer el objeto
-        public static Tbl_Usuario autentificarxLogin(string usuario, string pass)
+        public static Tbl_Usuarios autentificarxLogin(string usuario, string pass)
         {
-            var nlogin = dc.Tbl_Usuario.Single(usu => usu.usu_estado == "A" && usu.usu_nomlogin.Equals(usuario) && usu.usu_pass.Equals(pass));
+            var nlogin = dc.Tbl_Usuarios.Single(usu => usu.usu_estado == "A" && usu.usu_nomlogin.Equals(usuario) && usu.usu_pass.Equals(pass));
             return nlogin;
         }
         //metodo para obtener los usuarios por su id
-        public static Tbl_Usuario obtenerUsuariosxId(int id)
+        public static Tbl_Usuarios obtenerUsuariosxId(int id)
         {
-            var respid = dc.Tbl_Usuario.FirstOrDefault(usu => usu.usu_id.Equals(id) && usu.usu_estado == "A");
+            var respid = dc.Tbl_Usuarios.FirstOrDefault(usu => usu.usu_id.Equals(id) && usu.usu_estado == "A");
             return respid;
         }
         //Metodo para obtener contraseña anterior
         public static bool autentificarxUsuario(int usu, string pass)
         {
-            var auto = dc.Tbl_Usuario.Any(usup => usup.usu_estado == "A" && usup.usu_id.Equals(usu) && usup.usu_pass.Equals(pass));
+            var auto = dc.Tbl_Usuarios.Any(usup => usup.usu_estado == "A" && usup.usu_id.Equals(usu) && usup.usu_pass.Equals(pass));
             return auto;
         }
         //metodo para verificar si existe el correo
         public static bool autentificarxCorreo(string correo)
         {
-            var auto = dc.Tbl_Usuario.Any(usu => usu.usu_estado == "A" && usu.usu_correo == (correo));
+            var auto = dc.Tbl_Usuarios.Any(usu => usu.usu_estado == "A" && usu.usu_correo == (correo));
             return auto;
         }
         //metodo para obtener el correo
-        public static Tbl_Usuario obtenerCorreo(string correo)
+        public static Tbl_Usuarios obtenerCorreo(string correo)
         {
-            var contra = dc.Tbl_Usuario.Single(usu => usu.usu_estado == "A" && usu.usu_correo.Equals(correo));
+            var contra = dc.Tbl_Usuarios.Single(usu => usu.usu_estado == "A" && usu.usu_correo.Equals(correo));
             return contra;
         }
-        public static void save(Tbl_Usuario usu)
+        public static void save(Tbl_Usuarios usu)
         {
             try
             {
                 usu.usu_estado = "A";
-                dc.Tbl_Usuario.InsertOnSubmit(usu);
+                dc.Tbl_Usuarios.InsertOnSubmit(usu);
                 dc.SubmitChanges();
             }
             catch (Exception ex)
@@ -91,7 +91,7 @@ namespace CapaNegocio
                 throw new ArgumentException("Los datos no han sido guardados <br/>" + ex.Message);
             }
         }
-        public static void modify(Tbl_Usuario usu)
+        public static void modify(Tbl_Usuarios usu)
         {
             try
             {
@@ -102,7 +102,7 @@ namespace CapaNegocio
                 throw new ArgumentException("Los datos no han sido modificados <br/>" + ex.Message);
             }
         }
-        public static void delete(Tbl_Usuario usu)
+        public static void delete(Tbl_Usuarios usu)
         {
             try
             {
@@ -114,7 +114,7 @@ namespace CapaNegocio
                 throw new ArgumentException("Los datos no han sido eliminados <br/>" + ex.Message);
             }
         }
-        public static void change(Tbl_Usuario usu)
+        public static void change(Tbl_Usuarios usu)
         {
             try
             {

@@ -14,11 +14,13 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             if (Session["TrabajoSocial"] != null)
             {
                 string usulogeado = Session["TrabajoSocial"].ToString();
-                string resNom = Session["nombre"].ToString();
-                string resApe = Session["apellido"].ToString();
+                string priNom = Session["prinombre"].ToString();
+                string segNom = Session["segnombre"].ToString();
+                string priApe = Session["priapellido"].ToString();
+                string segApe = Session["segapellido"].ToString();
                 string resRol = Session["rol"].ToString();
-                lbl_nombre.Text = resNom;
-                lbl_apellido.Text = resApe;
+                lbl_nombre.Text = priNom + " " + segNom;
+                lbl_apellido.Text = priApe + " " + segApe;
                 lbl_rol.Text = resRol;
             }
             else

@@ -33,9 +33,9 @@ namespace CapaDatos
     partial void Insertcie10(cie10 instance);
     partial void Updatecie10(cie10 instance);
     partial void Deletecie10(cie10 instance);
-    partial void InsertTbl_Usuario(Tbl_Usuario instance);
-    partial void UpdateTbl_Usuario(Tbl_Usuario instance);
-    partial void DeleteTbl_Usuario(Tbl_Usuario instance);
+    partial void InsertTbl_Usuarios(Tbl_Usuarios instance);
+    partial void UpdateTbl_Usuarios(Tbl_Usuarios instance);
+    partial void DeleteTbl_Usuarios(Tbl_Usuarios instance);
     partial void InsertTbl_Certificado(Tbl_Certificado instance);
     partial void UpdateTbl_Certificado(Tbl_Certificado instance);
     partial void DeleteTbl_Certificado(Tbl_Certificado instance);
@@ -127,11 +127,11 @@ namespace CapaDatos
 			}
 		}
 		
-		public System.Data.Linq.Table<Tbl_Usuario> Tbl_Usuario
+		public System.Data.Linq.Table<Tbl_Usuarios> Tbl_Usuarios
 		{
 			get
 			{
-				return this.GetTable<Tbl_Usuario>();
+				return this.GetTable<Tbl_Usuarios>();
 			}
 		}
 		
@@ -365,19 +365,23 @@ namespace CapaDatos
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_Usuario")]
-	public partial class Tbl_Usuario : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_Usuarios")]
+	public partial class Tbl_Usuarios : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private long _usu_id;
-		
-		private string _usu_nombre;
-		
-		private string _usu_apellido;
+		private int _usu_id;
 		
 		private string _usu_cedula;
+		
+		private string _usu_priApellido;
+		
+		private string _usu_segApellido;
+		
+		private string _usu_priNombre;
+		
+		private string _usu_segNombre;
 		
 		private string _usu_direccion;
 		
@@ -389,8 +393,6 @@ namespace CapaDatos
 		
 		private string _usu_correo;
 		
-		private System.Nullable<System.DateTime> _usu_fechacreacion;
-		
 		private System.Nullable<long> _tusu_id;
 		
 		private string _usu_estado;
@@ -401,14 +403,18 @@ namespace CapaDatos
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void Onusu_idChanging(long value);
+    partial void Onusu_idChanging(int value);
     partial void Onusu_idChanged();
-    partial void Onusu_nombreChanging(string value);
-    partial void Onusu_nombreChanged();
-    partial void Onusu_apellidoChanging(string value);
-    partial void Onusu_apellidoChanged();
     partial void Onusu_cedulaChanging(string value);
     partial void Onusu_cedulaChanged();
+    partial void Onusu_priApellidoChanging(string value);
+    partial void Onusu_priApellidoChanged();
+    partial void Onusu_segApellidoChanging(string value);
+    partial void Onusu_segApellidoChanged();
+    partial void Onusu_priNombreChanging(string value);
+    partial void Onusu_priNombreChanged();
+    partial void Onusu_segNombreChanging(string value);
+    partial void Onusu_segNombreChanged();
     partial void Onusu_direccionChanging(string value);
     partial void Onusu_direccionChanged();
     partial void Onusu_telefonoChanging(string value);
@@ -419,22 +425,20 @@ namespace CapaDatos
     partial void Onusu_passChanged();
     partial void Onusu_correoChanging(string value);
     partial void Onusu_correoChanged();
-    partial void Onusu_fechacreacionChanging(System.Nullable<System.DateTime> value);
-    partial void Onusu_fechacreacionChanged();
     partial void Ontusu_idChanging(System.Nullable<long> value);
     partial void Ontusu_idChanged();
     partial void Onusu_estadoChanging(string value);
     partial void Onusu_estadoChanged();
     #endregion
 		
-		public Tbl_Usuario()
+		public Tbl_Usuarios()
 		{
 			this._Tbl_TipoUsuario = default(EntityRef<Tbl_TipoUsuario>);
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_id", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public long usu_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int usu_id
 		{
 			get
 			{
@@ -453,47 +457,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_nombre", DbType="VarChar(25)")]
-		public string usu_nombre
-		{
-			get
-			{
-				return this._usu_nombre;
-			}
-			set
-			{
-				if ((this._usu_nombre != value))
-				{
-					this.Onusu_nombreChanging(value);
-					this.SendPropertyChanging();
-					this._usu_nombre = value;
-					this.SendPropertyChanged("usu_nombre");
-					this.Onusu_nombreChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_apellido", DbType="VarChar(25)")]
-		public string usu_apellido
-		{
-			get
-			{
-				return this._usu_apellido;
-			}
-			set
-			{
-				if ((this._usu_apellido != value))
-				{
-					this.Onusu_apellidoChanging(value);
-					this.SendPropertyChanging();
-					this._usu_apellido = value;
-					this.SendPropertyChanged("usu_apellido");
-					this.Onusu_apellidoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_cedula", DbType="VarChar(10)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_cedula", DbType="VarChar(50)")]
 		public string usu_cedula
 		{
 			get
@@ -513,7 +477,87 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_direccion", DbType="VarChar(100)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_priApellido", DbType="VarChar(50)")]
+		public string usu_priApellido
+		{
+			get
+			{
+				return this._usu_priApellido;
+			}
+			set
+			{
+				if ((this._usu_priApellido != value))
+				{
+					this.Onusu_priApellidoChanging(value);
+					this.SendPropertyChanging();
+					this._usu_priApellido = value;
+					this.SendPropertyChanged("usu_priApellido");
+					this.Onusu_priApellidoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_segApellido", DbType="VarChar(50)")]
+		public string usu_segApellido
+		{
+			get
+			{
+				return this._usu_segApellido;
+			}
+			set
+			{
+				if ((this._usu_segApellido != value))
+				{
+					this.Onusu_segApellidoChanging(value);
+					this.SendPropertyChanging();
+					this._usu_segApellido = value;
+					this.SendPropertyChanged("usu_segApellido");
+					this.Onusu_segApellidoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_priNombre", DbType="VarChar(50)")]
+		public string usu_priNombre
+		{
+			get
+			{
+				return this._usu_priNombre;
+			}
+			set
+			{
+				if ((this._usu_priNombre != value))
+				{
+					this.Onusu_priNombreChanging(value);
+					this.SendPropertyChanging();
+					this._usu_priNombre = value;
+					this.SendPropertyChanged("usu_priNombre");
+					this.Onusu_priNombreChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_segNombre", DbType="VarChar(50)")]
+		public string usu_segNombre
+		{
+			get
+			{
+				return this._usu_segNombre;
+			}
+			set
+			{
+				if ((this._usu_segNombre != value))
+				{
+					this.Onusu_segNombreChanging(value);
+					this.SendPropertyChanging();
+					this._usu_segNombre = value;
+					this.SendPropertyChanged("usu_segNombre");
+					this.Onusu_segNombreChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_direccion", DbType="VarChar(150)")]
 		public string usu_direccion
 		{
 			get
@@ -533,7 +577,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_telefono", DbType="VarChar(15)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_telefono", DbType="VarChar(50)")]
 		public string usu_telefono
 		{
 			get
@@ -553,7 +597,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_nomlogin", DbType="VarChar(10)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_nomlogin", DbType="VarChar(50)")]
 		public string usu_nomlogin
 		{
 			get
@@ -573,7 +617,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_pass", DbType="VarChar(10)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_pass", DbType="VarChar(150)")]
 		public string usu_pass
 		{
 			get
@@ -593,7 +637,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_correo", DbType="VarChar(25)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_correo", DbType="VarChar(50)")]
 		public string usu_correo
 		{
 			get
@@ -609,26 +653,6 @@ namespace CapaDatos
 					this._usu_correo = value;
 					this.SendPropertyChanged("usu_correo");
 					this.Onusu_correoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_fechacreacion", DbType="DateTime")]
-		public System.Nullable<System.DateTime> usu_fechacreacion
-		{
-			get
-			{
-				return this._usu_fechacreacion;
-			}
-			set
-			{
-				if ((this._usu_fechacreacion != value))
-				{
-					this.Onusu_fechacreacionChanging(value);
-					this.SendPropertyChanging();
-					this._usu_fechacreacion = value;
-					this.SendPropertyChanged("usu_fechacreacion");
-					this.Onusu_fechacreacionChanged();
 				}
 			}
 		}
@@ -657,7 +681,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_estado", DbType="VarChar(1)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_estado", DbType="VarChar(50)")]
 		public string usu_estado
 		{
 			get
@@ -677,7 +701,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_TipoUsuario_Tbl_Usuario", Storage="_Tbl_TipoUsuario", ThisKey="tusu_id", OtherKey="tusu_id", IsForeignKey=true, DeleteRule="CASCADE")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_TipoUsuario_Tbl_Usuarios", Storage="_Tbl_TipoUsuario", ThisKey="tusu_id", OtherKey="tusu_id", IsForeignKey=true)]
 		public Tbl_TipoUsuario Tbl_TipoUsuario
 		{
 			get
@@ -694,12 +718,12 @@ namespace CapaDatos
 					if ((previousValue != null))
 					{
 						this._Tbl_TipoUsuario.Entity = null;
-						previousValue.Tbl_Usuario.Remove(this);
+						previousValue.Tbl_Usuarios.Remove(this);
 					}
 					this._Tbl_TipoUsuario.Entity = value;
 					if ((value != null))
 					{
-						value.Tbl_Usuario.Add(this);
+						value.Tbl_Usuarios.Add(this);
 						this._tusu_id = value.tusu_id;
 					}
 					else
@@ -50099,7 +50123,7 @@ namespace CapaDatos
 		
 		private string _tusu_estado;
 		
-		private EntitySet<Tbl_Usuario> _Tbl_Usuario;
+		private EntitySet<Tbl_Usuarios> _Tbl_Usuarios;
 		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
@@ -50115,7 +50139,7 @@ namespace CapaDatos
 		
 		public Tbl_TipoUsuario()
 		{
-			this._Tbl_Usuario = new EntitySet<Tbl_Usuario>(new Action<Tbl_Usuario>(this.attach_Tbl_Usuario), new Action<Tbl_Usuario>(this.detach_Tbl_Usuario));
+			this._Tbl_Usuarios = new EntitySet<Tbl_Usuarios>(new Action<Tbl_Usuarios>(this.attach_Tbl_Usuarios), new Action<Tbl_Usuarios>(this.detach_Tbl_Usuarios));
 			OnCreated();
 		}
 		
@@ -50179,16 +50203,16 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_TipoUsuario_Tbl_Usuario", Storage="_Tbl_Usuario", ThisKey="tusu_id", OtherKey="tusu_id")]
-		public EntitySet<Tbl_Usuario> Tbl_Usuario
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_TipoUsuario_Tbl_Usuarios", Storage="_Tbl_Usuarios", ThisKey="tusu_id", OtherKey="tusu_id")]
+		public EntitySet<Tbl_Usuarios> Tbl_Usuarios
 		{
 			get
 			{
-				return this._Tbl_Usuario;
+				return this._Tbl_Usuarios;
 			}
 			set
 			{
-				this._Tbl_Usuario.Assign(value);
+				this._Tbl_Usuarios.Assign(value);
 			}
 		}
 		
@@ -50212,13 +50236,13 @@ namespace CapaDatos
 			}
 		}
 		
-		private void attach_Tbl_Usuario(Tbl_Usuario entity)
+		private void attach_Tbl_Usuarios(Tbl_Usuarios entity)
 		{
 			this.SendPropertyChanging();
 			entity.Tbl_TipoUsuario = this;
 		}
 		
-		private void detach_Tbl_Usuario(Tbl_Usuario entity)
+		private void detach_Tbl_Usuarios(Tbl_Usuarios entity)
 		{
 			this.SendPropertyChanging();
 			entity.Tbl_TipoUsuario = null;

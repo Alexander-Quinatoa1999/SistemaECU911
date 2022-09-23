@@ -14,12 +14,13 @@ namespace SistemaECU911.Template.Views_Pacientes
             if (Session["Paciente"] != null)
             {
                 string usulogeado = Session["Paciente"].ToString();
-                string cedula = Session["Cedula"].ToString();
-                string resNom = Session["nombre"].ToString();
-                string resApe = Session["apellido"].ToString();
+                string priNom = Session["prinombre"].ToString();
+                string segNom = Session["segnombre"].ToString();
+                string priApe = Session["priapellido"].ToString();
+                string segApe = Session["segapellido"].ToString();
                 string resRol = Session["rol"].ToString();
-                lbl_nombre.Text = resNom;
-                lbl_apellido.Text = resApe;
+                lbl_nombre.Text = priNom + " " + segNom;
+                lbl_apellido.Text = priApe + " " + segApe;
                 lbl_rol.Text = resRol;
             }
             else

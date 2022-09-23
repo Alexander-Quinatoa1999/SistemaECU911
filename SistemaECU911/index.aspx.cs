@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using AjaxControlToolkit.HtmlEditor.ToolbarButtons;
 using CapaDatos;
 using CapaNegocio;
 
@@ -29,67 +32,83 @@ namespace SistemaECU911
         private void logear()
         {
             bool existenom = CN_Usuarios.autentificarxNom(txt_user.Text);
-            bool existe = CN_Usuarios.autentificar(txt_user.Text, /*encriptar(*/txt_pass.Text)/*)*/;
+            bool existe = CN_Usuarios.autentificar(txt_user.Text, GetMD5(txt_pass.Text));
             {
-                if (existenom)
+                if (String.IsNullOrEmpty(txt_user.Text) || String.IsNullOrEmpty(txt_pass.Text))
                 {
-                    if (existe)
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", "swal('Error!', 'Complete los campos', 'error')", true);
+                }
+                else
+                {
+                    if (existenom)
                     {
-                        Tbl_Usuario usuario = new Tbl_Usuario();
-                        Tbl_TipoUsuario tusu = new Tbl_TipoUsuario();
-                        usuario = CN_Usuarios.autentificarxLogin(txt_user.Text, /*encriptar(*/txt_pass.Text)/*)*/;
-                        int rol = Convert.ToInt32(usuario.tusu_id.ToString());
-                        tusu = CN_TipoUsuario.obtenerTusuarioxUsuario(Convert.ToInt32(rol));
-                        int tusuario = Convert.ToInt32(usuario.tusu_id);
-                        if (tusuario == 1)
+                        if (existe)
                         {
-                            Session["Administrador"] = usuario.usu_id.ToString();
-                            Session["nombre"] = usuario.usu_nombre.ToString();
-                            Session["apellido"] = usuario.usu_apellido.ToString();
-                            Session["rol"] = tusu.tusu_nombre.ToString();
-                            Response.Redirect("~/Template/Views/Inicio.aspx");
-                            limpiar();
-                        }
-                        else if(tusuario == 2) 
-                        {
-                            Session["Paciente"] = usuario.usu_id.ToString();
-                            Session["Cedula"] = usuario.usu_cedula.ToString();
-                            Session["nombre"] = usuario.usu_nombre.ToString();
-                            Session["apellido"] = usuario.usu_apellido.ToString();
-                            Session["rol"] = tusu.tusu_nombre.ToString();
-                            Response.Redirect("~/Template/Views_Pacientes/Inicio.aspx");
-                            limpiar();
+                            Tbl_Usuarios usuario = new Tbl_Usuarios();
+                            Tbl_TipoUsuario tusu = new Tbl_TipoUsuario();
+
+                            usuario = CN_Usuarios.autentificarxLogin(txt_user.Text, GetMD5(txt_pass.Text));
+                            int rol = Convert.ToInt32(usuario.tusu_id.ToString());
+                            tusu = CN_TipoUsuario.obtenerTusuarioxUsuario(Convert.ToInt32(rol));
+                            int tusuario = Convert.ToInt32(usuario.tusu_id);
+                            if (tusuario == 1)
+                            {
+                                Session["Administrador"] = usuario.usu_id.ToString();
+                                Session["prinombre"] = usuario.usu_priNombre.ToString();
+                                Session["segnombre"] = usuario.usu_segNombre.ToString();
+                                Session["priapellido"] = usuario.usu_priApellido.ToString();
+                                Session["segapellido"] = usuario.usu_segApellido.ToString();
+                                Session["rol"] = tusu.tusu_nombre.ToString();
+                                Response.Redirect("~/Template/Views/Inicio.aspx");
+                                limpiar();
+                            }
+                            else if (tusuario == 2)
+                            {
+                                Session["Paciente"] = usuario.usu_id.ToString();
+                                Session["Cedula"] = usuario.usu_cedula.ToString();
+                                Session["prinombre"] = usuario.usu_priNombre.ToString();
+                                Session["segnombre"] = usuario.usu_segNombre.ToString();
+                                Session["priapellido"] = usuario.usu_priApellido.ToString();
+                                Session["segapellido"] = usuario.usu_segApellido.ToString();
+                                Session["rol"] = tusu.tusu_nombre.ToString();
+                                Response.Redirect("~/Template/Views_Pacientes/Inicio.aspx");
+                                limpiar();
+                            }
+                            else
+                            {
+                                Session["TrabajoSocial"] = usuario.usu_id.ToString();
+                                Session["prinombre"] = usuario.usu_priNombre.ToString();
+                                Session["segnombre"] = usuario.usu_segNombre.ToString();
+                                Session["priapellido"] = usuario.usu_priApellido.ToString();
+                                Session["segapellido"] = usuario.usu_segApellido.ToString();
+                                Session["rol"] = tusu.tusu_nombre.ToString();
+                                Response.Redirect("~/Template/Views_Socio_Economico/Inicio.aspx");
+                                limpiar();
+                            }
                         }
                         else
                         {
-                            Session["TrabajoSocial"] = usuario.usu_id.ToString();
-                            Session["nombre"] = usuario.usu_nombre.ToString();
-                            Session["apellido"] = usuario.usu_apellido.ToString();
-                            Session["rol"] = tusu.tusu_nombre.ToString();
-                            Response.Redirect("~/Template/Views_Socio_Economico/Inicio.aspx");
-                            limpiar();
+                            string intentos = (con + (Convert.ToInt32(Session["con"]))).ToString();
+                            Session["Conantiguo"] = intentos.ToString();
+                            ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", "swal('Error!', 'Credenciales Incorrectas! Intento #" + intentos + "', 'error')", true);
+                            txt_pass.Text = "";
+                            if (Convert.ToInt32(intentos) == 3)
+                            {
+                                ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", "swal('Error!', 'A superado el limite de intentos', 'error')", true);
+                                btn_ingresar.Visible = false;
+                                Session.RemoveAll();
+                                Timer1.Enabled = true;
+                            }
                         }
                     }
                     else
                     {
-                        string intentos = (con + (Convert.ToInt32(Session["con"]))).ToString();
-                        Session["Conantiguo"] = intentos.ToString();
-                        ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", "swal('Error!', 'Credenciales Incorrectas! Intento #" + intentos + "', 'error')", true);
-                        txt_pass.Text = "";
-                        if (Convert.ToInt32(intentos) == 3)
-                        {
-                            ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", "swal('Error!', 'A superado el limite de intentos', 'error')", true);
-                            btn_ingresar.Visible = false;
-                            Session.RemoveAll();
-                            Timer1.Enabled = true;
-                        }
+                        ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", "swal('Error!', 'El usuario no existe', 'error')", true);
+                        limpiar();
                     }
+
                 }
-                else
-                {
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", "swal('Error!', 'El usuario no existe', 'error')", true);
-                    limpiar();
-                }
+                
             }
         }
 
@@ -111,9 +130,21 @@ namespace SistemaECU911
             return resultado;
         }
 
+        public static string GetMD5(string str)
+        {
+            MD5 md5 = MD5CryptoServiceProvider.Create();
+            ASCIIEncoding encoding = new ASCIIEncoding();
+            byte[] stream = null;
+            StringBuilder sb = new StringBuilder();
+            stream = md5.ComputeHash(encoding.GetBytes(str));
+            for (int i = 0; i < stream.Length; i++) sb.AppendFormat("{0:x2}", stream[i]);
+            return sb.ToString();
+        }
+
         protected void Timer1_Tick(object sender, EventArgs e)
         {
             Response.Redirect("Autentificacion/Recuperar.aspx");
         }
+        
     }
 }
