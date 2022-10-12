@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -1299,9 +1300,7 @@ namespace SistemaECU911.Template.Views
             List<string> lista = new List<string>();
             try
             {
-                string oConn = @"Data Source=.;Initial Catalog=SistemaECU911;Integrated Security=True";
-
-                SqlConnection con = new SqlConnection(oConn);
+                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ToString());
                 con.Open();
                 SqlCommand cmd = new SqlCommand("select top(10) Per_Cedula from Tbl_Personas where Per_Cedula LIKE + @Cedula + '%'", con);
                 cmd.Parameters.AddWithValue("@Cedula", prefixText);

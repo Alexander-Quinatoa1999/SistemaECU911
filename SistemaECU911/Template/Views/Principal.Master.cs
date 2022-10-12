@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapaDatos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,8 +10,13 @@ namespace SistemaECU911.Template.Views
 {
     public partial class Principal : System.Web.UI.MasterPage
     {
+
+        private readonly DataClassesECU911DataContext dc = new DataClassesECU911DataContext();
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            int id = '1';
+
             if (Session["Administrador"] != null)
             {
                 string usulogeado = Session["Administrador"].ToString();
@@ -22,6 +28,7 @@ namespace SistemaECU911.Template.Views
                 lbl_nombre.Text = priNom + " " + segNom; 
                 lbl_apellido.Text = priApe + " " + segApe;
                 lbl_rol.Text = resRol;
+                imgPerfil2.ImageUrl = "/Template/Views/CargarImagen.aspx?id=" + id;
             }
             else
             {

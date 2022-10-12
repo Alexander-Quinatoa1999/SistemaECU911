@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -1547,9 +1548,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             List<string> lista = new List<string>();
             try
             {
-                string oConn = @"Data Source=sql8004.site4now.net;Initial Catalog=db_a8b7d4_sistemaecu911;Persist Security Info=True;User ID=db_a8b7d4_sistemaecu911_admin;Password=SistemaECU911";
-
-                SqlConnection con = new SqlConnection(oConn);
+                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ToString());
                 con.Open();
                 SqlCommand cmd = new SqlCommand("select top(10) Per_Cedula from Tbl_Personas where Per_Cedula LIKE + @Cedula + '%'", con);
                 cmd.Parameters.AddWithValue("@Cedula", prefixText);
@@ -2433,7 +2432,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                 ////Muestra la imagen en binario sin tenerla fisicamente
                 //string ImagenDataURL64 = "data:image/jpg;base64," + Convert.ToBase64String(ImagenOriginal);
                 //Muestra la imagen cargada
-                //Image1.ImageUrl = ImagenDataURL64;
+                ////Image1.ImageUrl = ImagenDataURL64;
 
                 //sso.Socio_economico_imagen_geolocalizacion = ImagenOriginal;
 

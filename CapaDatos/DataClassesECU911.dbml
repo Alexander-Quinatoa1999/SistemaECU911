@@ -258,9 +258,10 @@
   </Table>
   <Table Name="dbo.Tbl_Image" Member="Tbl_Image">
     <Type Name="Tbl_Image">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Image" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
-      <Column Name="Titulo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="img_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="img_cedula" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="img_foto" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="img_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.Tbl_Inicial" Member="Tbl_Inicial">
@@ -2100,6 +2101,12 @@
       <Association Name="Tbl_TipoUsuario_Tbl_Usuarios" Member="Tbl_Usuarios" ThisKey="tusu_id" OtherKey="tusu_id" Type="Tbl_Usuarios" />
     </Type>
   </Table>
+  <Function Name="dbo.CargarImagen" Method="CargarImagen">
+    <Parameter Name="img_id" Type="System.Int32" DbType="Int" />
+    <ElementType Name="CargarImagenResult">
+      <Column Name="img_foto" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" />
+    </ElementType>
+  </Function>
   <Function Name="dbo.ObtenerPaciente" Method="ObtenerPaciente">
     <Parameter Name="Cedula" Parameter="cedula" Type="System.String" DbType="VarChar(10)" />
     <ElementType Name="ObtenerPacienteResult">
@@ -2108,5 +2115,22 @@
       <Column Name="prof_NomApe" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
       <Column Name="fechaHoraGuardado" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
     </ElementType>
+  </Function>
+  <Function Name="dbo.InsertarPersona" Method="InsertarPersona">
+    <Parameter Name="Cedula" Parameter="cedula" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="Imagen" Parameter="imagen" Type="System.Data.Linq.Binary" DbType="Image" />
+    <Parameter Name="Estado" Parameter="estado" Type="System.String" DbType="VarChar(1)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ModificarPersona" Method="ModificarPersona">
+    <Parameter Name="Cedula" Parameter="cedula" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="Imagen" Parameter="imagen" Type="System.Data.Linq.Binary" DbType="Image" />
+    <Parameter Name="Estado" Parameter="estado" Type="System.String" DbType="VarChar(1)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.RegistrarImagen" Method="RegistrarImagen">
+    <Parameter Name="cedula" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="imagen" Type="System.Data.Linq.Binary" DbType="Image" />
+    <Return Type="System.Int32" />
   </Function>
 </Database>

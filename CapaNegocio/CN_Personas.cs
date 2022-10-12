@@ -67,5 +67,20 @@ namespace CapaNegocio
             }
         }
 
+        // Metodo para imagen
+        public static void GuardarImagen(Tbl_Image img)
+        {
+            try
+            {
+                img.img_estado = "A";
+                dc.Tbl_Image.InsertOnSubmit(img);
+                dc.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException("Verifique los datos de la imagen" + ex.Message);
+            }
+        }
+
     }
 }

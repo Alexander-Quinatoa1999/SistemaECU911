@@ -230,7 +230,7 @@
                             </div>
                         </div>
                         <div class="text-center">
-                            <asp:Button ID="btnCertificado" OnClick="btnCertificado_Click" CssClass="btn btn-light" BorderColor="#1B4F72" runat="server" Text="Generar Certificado" ValidationGroup="GroupValidation" />
+                            <asp:Button ID="btnCertificado" OnClick="btnCertificado_Click" CssClass="btn btn-light" BorderColor="#1B4F72" runat="server" Text="Generar Certificado" ValidationGroup="GroupValidation" UseSubmitBehavior="False"/>
                         </div>
                     </div>
                 </div>

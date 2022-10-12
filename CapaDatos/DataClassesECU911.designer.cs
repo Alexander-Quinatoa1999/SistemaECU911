@@ -271,11 +271,39 @@ namespace CapaDatos
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.CargarImagen")]
+		public ISingleResult<CargarImagenResult> CargarImagen([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> img_id)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), img_id);
+			return ((ISingleResult<CargarImagenResult>)(result.ReturnValue));
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ObtenerPaciente")]
 		public ISingleResult<ObtenerPacienteResult> ObtenerPaciente([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Cedula", DbType="VarChar(10)")] string cedula)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cedula);
 			return ((ISingleResult<ObtenerPacienteResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.InsertarPersona")]
+		public int InsertarPersona([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Cedula", DbType="VarChar(10)")] string cedula, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Imagen", DbType="Image")] System.Data.Linq.Binary imagen, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Estado", DbType="VarChar(1)")] string estado)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cedula, imagen, estado);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ModificarPersona")]
+		public int ModificarPersona([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Cedula", DbType="VarChar(10)")] string cedula, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Imagen", DbType="Image")] System.Data.Linq.Binary imagen, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Estado", DbType="VarChar(1)")] string estado)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cedula, imagen, estado);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.RegistrarImagen")]
+		public int RegistrarImagen([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string cedula, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Image")] System.Data.Linq.Binary imagen)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cedula, imagen);
+			return ((int)(result.ReturnValue));
 		}
 	}
 	
@@ -6253,22 +6281,26 @@ namespace CapaDatos
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _ID;
+		private int _img_id;
 		
-		private System.Data.Linq.Binary _Image;
+		private string _img_cedula;
 		
-		private string _Titulo;
+		private System.Data.Linq.Binary _img_foto;
+		
+		private string _img_estado;
 		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnIDChanging(int value);
-    partial void OnIDChanged();
-    partial void OnImageChanging(System.Data.Linq.Binary value);
-    partial void OnImageChanged();
-    partial void OnTituloChanging(string value);
-    partial void OnTituloChanged();
+    partial void Onimg_idChanging(int value);
+    partial void Onimg_idChanged();
+    partial void Onimg_cedulaChanging(string value);
+    partial void Onimg_cedulaChanged();
+    partial void Onimg_fotoChanging(System.Data.Linq.Binary value);
+    partial void Onimg_fotoChanged();
+    partial void Onimg_estadoChanging(string value);
+    partial void Onimg_estadoChanged();
     #endregion
 		
 		public Tbl_Image()
@@ -6276,62 +6308,82 @@ namespace CapaDatos
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int ID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_img_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int img_id
 		{
 			get
 			{
-				return this._ID;
+				return this._img_id;
 			}
 			set
 			{
-				if ((this._ID != value))
+				if ((this._img_id != value))
 				{
-					this.OnIDChanging(value);
+					this.Onimg_idChanging(value);
 					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
+					this._img_id = value;
+					this.SendPropertyChanged("img_id");
+					this.Onimg_idChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Image", DbType="Image", UpdateCheck=UpdateCheck.Never)]
-		public System.Data.Linq.Binary Image
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_img_cedula", DbType="VarChar(10)")]
+		public string img_cedula
 		{
 			get
 			{
-				return this._Image;
+				return this._img_cedula;
 			}
 			set
 			{
-				if ((this._Image != value))
+				if ((this._img_cedula != value))
 				{
-					this.OnImageChanging(value);
+					this.Onimg_cedulaChanging(value);
 					this.SendPropertyChanging();
-					this._Image = value;
-					this.SendPropertyChanged("Image");
-					this.OnImageChanged();
+					this._img_cedula = value;
+					this.SendPropertyChanged("img_cedula");
+					this.Onimg_cedulaChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Titulo", DbType="VarChar(MAX)")]
-		public string Titulo
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_img_foto", DbType="Image", UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary img_foto
 		{
 			get
 			{
-				return this._Titulo;
+				return this._img_foto;
 			}
 			set
 			{
-				if ((this._Titulo != value))
+				if ((this._img_foto != value))
 				{
-					this.OnTituloChanging(value);
+					this.Onimg_fotoChanging(value);
 					this.SendPropertyChanging();
-					this._Titulo = value;
-					this.SendPropertyChanged("Titulo");
-					this.OnTituloChanged();
+					this._img_foto = value;
+					this.SendPropertyChanged("img_foto");
+					this.Onimg_fotoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_img_estado", DbType="VarChar(1)")]
+		public string img_estado
+		{
+			get
+			{
+				return this._img_estado;
+			}
+			set
+			{
+				if ((this._img_estado != value))
+				{
+					this.Onimg_estadoChanging(value);
+					this.SendPropertyChanging();
+					this._img_estado = value;
+					this.SendPropertyChanged("img_estado");
+					this.Onimg_estadoChanged();
 				}
 			}
 		}
@@ -50246,6 +50298,32 @@ namespace CapaDatos
 		{
 			this.SendPropertyChanging();
 			entity.Tbl_TipoUsuario = null;
+		}
+	}
+	
+	public partial class CargarImagenResult
+	{
+		
+		private System.Data.Linq.Binary _img_foto;
+		
+		public CargarImagenResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_img_foto", DbType="Image")]
+		public System.Data.Linq.Binary img_foto
+		{
+			get
+			{
+				return this._img_foto;
+			}
+			set
+			{
+				if ((this._img_foto != value))
+				{
+					this._img_foto = value;
+				}
+			}
 		}
 	}
 	

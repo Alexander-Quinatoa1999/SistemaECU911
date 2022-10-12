@@ -798,27 +798,27 @@
                                 <asp:TextBox runat="server" ID="txt_tiempotrabajo" BorderStyle="None" TextMode="Number" Style="background-color: transparent; width: 100%; text-align: center; text-transform:uppercase" placeholder="-"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                <asp:CheckBox ID="ckb_fisico" Checked="false" OnCheckedChanged="ckb_fisico_CheckedChanged" AutoPostBack="true" runat="server" />
+                                <asp:CheckBox ID="ckb_fisico" Checked="false" runat="server" />
                                 <%--<asp:TextBox runat="server" ID="txt_fisico" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform:uppercase" placeholder="-"></asp:TextBox>--%>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                <asp:CheckBox ID="ckb_mecanico" Checked="false" OnCheckedChanged="ckb_mecanico_CheckedChanged" AutoPostBack="true" runat="server" />
+                                <asp:CheckBox ID="ckb_mecanico" Checked="false" runat="server" />
                                 <%--<asp:TextBox runat="server" ID="txt_mecanico" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform:uppercase" placeholder="-"></asp:TextBox>--%>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                <asp:CheckBox ID="ckb_quimico" Checked="false" OnCheckedChanged="ckb_quimico_CheckedChanged" AutoPostBack="true" runat="server" />
+                                <asp:CheckBox ID="ckb_quimico" Checked="false" runat="server" />
                                 <%--<asp:TextBox runat="server" ID="txt_quimico" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform:uppercase" placeholder="-"></asp:TextBox>--%>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                <asp:CheckBox ID="ckb_biologico" Checked="false" OnCheckedChanged="ckb_biologico_CheckedChanged" AutoPostBack="true" runat="server" />
+                                <asp:CheckBox ID="ckb_biologico" Checked="false" runat="server" />
                                 <%--<asp:TextBox runat="server" ID="txt_biologico" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform:uppercase" placeholder="-"></asp:TextBox>--%>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                <asp:CheckBox ID="ckb_ergonomico" Checked="false" OnCheckedChanged="ckb_ergonomico_CheckedChanged" AutoPostBack="true" runat="server" />
+                                <asp:CheckBox ID="ckb_ergonomico" Checked="false" runat="server" />
                                 <%--<asp:TextBox runat="server" ID="txt_ergonomico" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform:uppercase" placeholder="-"></asp:TextBox>--%>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                <asp:CheckBox ID="ckb_psicosocial" Checked="false" OnCheckedChanged="ckb_psicosocial_CheckedChanged" AutoPostBack="true" runat="server" />
+                                <asp:CheckBox ID="ckb_psicosocial" Checked="false" runat="server" />
                                 <%--<asp:TextBox runat="server" ID="txt_psicosocial" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform:uppercase" placeholder="-"></asp:TextBox>--%>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
@@ -839,27 +839,27 @@
                                 <asp:TextBox runat="server" ID="txt_tiempotrabajo2" BorderStyle="None" TextMode="Number" Style="background-color: transparent; width: 100%; text-align: center; text-transform:uppercase" placeholder="-"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                <asp:CheckBox ID="ckb_fisico2" Checked="false" OnCheckedChanged="ckb_fisico2_CheckedChanged" AutoPostBack="true" runat="server" />
+                                <asp:CheckBox ID="ckb_fisico2" Checked="false" runat="server" />
                                 <%--<asp:TextBox runat="server" ID="txt_fisico2" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform:uppercase" placeholder="-"></asp:TextBox>--%>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                <asp:CheckBox ID="ckb_mecanico2" Checked="false" OnCheckedChanged="ckb_mecanico2_CheckedChanged" AutoPostBack="true" runat="server" />
+                                <asp:CheckBox ID="ckb_mecanico2" Checked="false" runat="server" />
                                 <%--<asp:TextBox runat="server" ID="txt_mecanico2" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform:uppercase" placeholder="-"></asp:TextBox>--%>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                <asp:CheckBox ID="ckb_quimico2" Checked="false" OnCheckedChanged="ckb_quimico2_CheckedChanged" AutoPostBack="true" runat="server" />
+                                <asp:CheckBox ID="ckb_quimico2" Checked="false" runat="server" />
                                 <%--<asp:TextBox runat="server" ID="txt_quimico2" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform:uppercase" placeholder="-"></asp:TextBox>--%>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                <asp:CheckBox ID="ckb_biologico2" Checked="false" OnCheckedChanged="ckb_biologico2_CheckedChanged" AutoPostBack="true" runat="server" />
+                                <asp:CheckBox ID="ckb_biologico2" Checked="false" runat="server" />
                                 <%--<asp:TextBox runat="server" ID="txt_biologico2" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform:uppercase" placeholder="-"></asp:TextBox>--%>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                <asp:CheckBox ID="ckb_ergonomico2" Checked="false" OnCheckedChanged="ckb_ergonomico2_CheckedChanged" AutoPostBack="true" runat="server" />
+                                <asp:CheckBox ID="ckb_ergonomico2" Checked="false" runat="server" />
                                 <%--<asp:TextBox runat="server" ID="txt_ergonomico2" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform:uppercase" placeholder="-"></asp:TextBox>--%>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                <asp:CheckBox ID="ckb_psicosocial2" Checked="false" OnCheckedChanged="ckb_psicosocial2_CheckedChanged" AutoPostBack="true" runat="server" />
+                                <asp:CheckBox ID="ckb_psicosocial2" Checked="false" runat="server" />
                                 <%--<asp:TextBox runat="server" ID="txt_psicosocial2" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform:uppercase" placeholder="-"></asp:TextBox>--%>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
@@ -880,27 +880,27 @@
                                 <asp:TextBox runat="server" ID="txt_tiempotrabajo3" BorderStyle="None" TextMode="Number" Style="background-color: transparent; width: 100%; text-align: center; text-transform:uppercase" placeholder="-"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                <asp:CheckBox ID="ckb_fisico3" Checked="false" OnCheckedChanged="ckb_fisico3_CheckedChanged" AutoPostBack="true" runat="server" />
+                                <asp:CheckBox ID="ckb_fisico3" Checked="false" runat="server" />
                                 <%--<asp:TextBox runat="server" ID="txt_fisico3" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform:uppercase" placeholder="-"></asp:TextBox>--%>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                <asp:CheckBox ID="ckb_mecanico3" Checked="false" OnCheckedChanged="ckb_mecanico3_CheckedChanged" AutoPostBack="true" runat="server" />
+                                <asp:CheckBox ID="ckb_mecanico3" Checked="false" runat="server" />
                                 <%--<asp:TextBox runat="server" ID="txt_mecanico3" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform:uppercase" placeholder="-"></asp:TextBox>--%>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                <asp:CheckBox ID="ckb_quimico3" Checked="false" OnCheckedChanged="ckb_quimico3_CheckedChanged" AutoPostBack="true" runat="server" />
+                                <asp:CheckBox ID="ckb_quimico3" Checked="false" runat="server" />
                                 <%--<asp:TextBox runat="server" ID="txt_quimico3" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform:uppercase" placeholder="-"></asp:TextBox>--%>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                <asp:CheckBox ID="ckb_biologico3" Checked="false" OnCheckedChanged="ckb_biologico3_CheckedChanged" AutoPostBack="true" runat="server" />
+                                <asp:CheckBox ID="ckb_biologico3" Checked="false" runat="server" />
                                 <%--<asp:TextBox runat="server" ID="txt_biologico3" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform:uppercase" placeholder="-"></asp:TextBox>--%>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                <asp:CheckBox ID="ckb_ergonomico3" Checked="false" OnCheckedChanged="ckb_ergonomico3_CheckedChanged" AutoPostBack="true" runat="server" />
+                                <asp:CheckBox ID="ckb_ergonomico3" Checked="false" runat="server" />
                                 <%--<asp:TextBox runat="server" ID="txt_ergonomico3" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform:uppercase" placeholder="-"></asp:TextBox>--%>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                <asp:CheckBox ID="ckb_psicosocial3" Checked="false" OnCheckedChanged="ckb_psicosocial3_CheckedChanged" AutoPostBack="true" runat="server" />
+                                <asp:CheckBox ID="ckb_psicosocial3" Checked="false" runat="server" />
                                 <%--<asp:TextBox runat="server" ID="txt_psicosocial3" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform:uppercase" placeholder="-"></asp:TextBox>--%>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
@@ -921,27 +921,27 @@
                                 <asp:TextBox runat="server" ID="txt_tiempotrabajo4" BorderStyle="None" TextMode="Number" Style="background-color: transparent; width: 100%; text-align: center; text-transform:uppercase" placeholder="-"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                <asp:CheckBox ID="ckb_fisico4" Checked="false" OnCheckedChanged="ckb_fisico4_CheckedChanged" AutoPostBack="true" runat="server" />
+                                <asp:CheckBox ID="ckb_fisico4" Checked="false" runat="server" />
                                 <%--<asp:TextBox runat="server" ID="txt_fisico4" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform:uppercase" placeholder="-"></asp:TextBox>--%>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                <asp:CheckBox ID="ckb_mecanico4" Checked="false" OnCheckedChanged="ckb_mecanico4_CheckedChanged" AutoPostBack="true" runat="server" />
+                                <asp:CheckBox ID="ckb_mecanico4" Checked="false" runat="server" />
                                 <%--<asp:TextBox runat="server" ID="txt_mecanico4" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform:uppercase" placeholder="-"></asp:TextBox>--%>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                <asp:CheckBox ID="ckb_quimico4" Checked="false" OnCheckedChanged="ckb_quimico4_CheckedChanged" AutoPostBack="true" runat="server" />
+                                <asp:CheckBox ID="ckb_quimico4" Checked="false" runat="server" />
                                 <%--<asp:TextBox runat="server" ID="txt_quimico4" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform:uppercase" placeholder="-"></asp:TextBox>--%>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                <asp:CheckBox ID="ckb_biologico4" Checked="false" OnCheckedChanged="ckb_biologico4_CheckedChanged" AutoPostBack="true" runat="server" />
+                                <asp:CheckBox ID="ckb_biologico4" Checked="false" runat="server" />
                                 <%--<asp:TextBox runat="server" ID="txt_biologico4" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform:uppercase" placeholder="-"></asp:TextBox>--%>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                <asp:CheckBox ID="ckb_ergonomico4" Checked="false" OnCheckedChanged="ckb_ergonomico4_CheckedChanged" AutoPostBack="true" runat="server" />
+                                <asp:CheckBox ID="ckb_ergonomico4" Checked="false" runat="server" />
                                 <%--<asp:TextBox runat="server" ID="txt_ergonomico4" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform:uppercase" placeholder="-"></asp:TextBox>--%>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
-                                <asp:CheckBox ID="ckb_psicosocial4" Checked="false" OnCheckedChanged="ckb_psicosocial4_CheckedChanged" AutoPostBack="true" runat="server" />
+                                <asp:CheckBox ID="ckb_psicosocial4" Checked="false" runat="server" />
                                 <%--<asp:TextBox runat="server" ID="txt_psicosocial4" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform:uppercase" placeholder="-"></asp:TextBox>--%>
                             </asp:TableCell>
                             <asp:TableCell Style="background-color: white; font-size: 14px">
@@ -1030,44 +1030,44 @@
                         <asp:TableRow>
                             <asp:TableCell style="width:275px; background-color: #cdfecc; font-size:15px">1. ENFERMEDAD CARDIO-VASCULAR</asp:TableCell>
                             <asp:TableCell style="width:50px; background-color: white; font-size: 14px">
-                                <asp:CheckBox ID="ckb_enfermedadcardiovascular" Checked="false" OnCheckedChanged="ckb_enfermedadcardiovascular_CheckedChanged" AutoPostBack="true" runat="server" />
+                                <asp:CheckBox ID="ckb_enfermedadcardiovascular" Checked="false" runat="server" />
                                 <%--<asp:TextBox runat="server" ID="txt_enfermedadcardiovascular" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform:uppercase" placeholder="-"></asp:TextBox>--%>
                             </asp:TableCell>
                             <asp:TableCell style="width:275px; background-color: #cdfecc; font-size:15px">2. ENFERMEDAD METABÓLICA</asp:TableCell>
                             <asp:TableCell style="width:50px; background-color: white; font-size: 14px">
-                                <asp:CheckBox ID="ckb_enfermedadmetabolica" Checked="false" OnCheckedChanged="ckb_enfermedadmetabolica_CheckedChanged" AutoPostBack="true" runat="server" />
+                                <asp:CheckBox ID="ckb_enfermedadmetabolica" Checked="false" runat="server" />
                                 <%--<asp:TextBox runat="server" ID="txt_enfermedadmetabolica" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform:uppercase" placeholder="-"></asp:TextBox>--%>
                             </asp:TableCell>
                             <asp:TableCell style="width:275px; background-color: #cdfecc; font-size:15px">3. ENFERMEDAD NEUROLÓGICA</asp:TableCell>
                             <asp:TableCell style="width:50px; background-color: white; font-size: 14px">
-                                <asp:CheckBox ID="ckb_enfermedadneurologica" Checked="false" OnCheckedChanged="ckb_enfermedadneurologica_CheckedChanged" AutoPostBack="true" runat="server" />
+                                <asp:CheckBox ID="ckb_enfermedadneurologica" Checked="false" runat="server" />
                                 <%--<asp:TextBox runat="server" ID="txt_enfermedadneurologica" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform:uppercase" placeholder="-"></asp:TextBox>--%>
                             </asp:TableCell>
                             <asp:TableCell style="width:275px; background-color: #cdfecc; font-size:15px">4. ENFERMEDAD ONCOLÓGICA</asp:TableCell>
                             <asp:TableCell style="width:50px; background-color: white; font-size: 14px">
-                                <asp:CheckBox ID="ckb_enfermedadoncologica" Checked="false" OnCheckedChanged="ckb_enfermedadoncologica_CheckedChanged" AutoPostBack="true" runat="server" />
+                                <asp:CheckBox ID="ckb_enfermedadoncologica" Checked="false" runat="server" />
                                 <%--<asp:TextBox runat="server" ID="txt_enfermedadoncologica" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform:uppercase" placeholder="-"></asp:TextBox>--%>
                             </asp:TableCell>
                         </asp:TableRow>
                         <asp:TableRow>
                             <asp:TableCell style="width:275px; background-color: #cdfecc; font-size:15px">5. ENFERMEDAD INFECCIOSA</asp:TableCell>
                             <asp:TableCell style="width:50px; background-color: white; font-size: 14px">
-                                <asp:CheckBox ID="ckb_enfermedadinfecciosa" Checked="false" OnCheckedChanged="ckb_enfermedadinfecciosa_CheckedChanged" AutoPostBack="true" runat="server" />
+                                <asp:CheckBox ID="ckb_enfermedadinfecciosa" Checked="false" runat="server" />
                                 <%--<asp:TextBox runat="server" ID="txt_enfermedadinfecciosa" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform:uppercase" placeholder="-"></asp:TextBox>--%>
                             </asp:TableCell>
                             <asp:TableCell style="width:275px; background-color: #cdfecc; font-size:15px">6. ENFERMEDAD HEREDITARIA/CONGÉNITA</asp:TableCell>
                             <asp:TableCell style="width:50px; background-color: white; font-size: 14px">
-                                <asp:CheckBox ID="ckb_enfermedadhereditaria" Checked="false" OnCheckedChanged="ckb_enfermedadhereditaria_CheckedChanged" AutoPostBack="true" runat="server" />
+                                <asp:CheckBox ID="ckb_enfermedadhereditaria" Checked="false" runat="server" />
                                 <%--<asp:TextBox runat="server" ID="txt_enfermedadhereditaria" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform:uppercase" placeholder="-"></asp:TextBox>--%>
                             </asp:TableCell>
                             <asp:TableCell style="width:275px; background-color: #cdfecc; font-size:15px">7. DISCAPACIDADES</asp:TableCell>
                             <asp:TableCell style="width:50px; background-color: white; font-size: 14px">
-                                <asp:CheckBox ID="ckb_discapacidades" Checked="false" OnCheckedChanged="ckb_discapacidades_CheckedChanged" AutoPostBack="true" runat="server" />
+                                <asp:CheckBox ID="ckb_discapacidades" Checked="false" runat="server" />
                                 <%--<asp:TextBox runat="server" ID="txt_discapacidades" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform:uppercase" placeholder="-"></asp:TextBox>--%>
                             </asp:TableCell>
                             <asp:TableCell style="width:275px; background-color: #cdfecc; font-size:15px">8. OTROS</asp:TableCell>
                             <asp:TableCell style="width:50px; background-color: white; font-size: 14px">
-                                <asp:CheckBox ID="ckb_otrosenfer" Checked="false" OnCheckedChanged="ckb_otrosenfer_CheckedChanged" AutoPostBack="true" runat="server" />
+                                <asp:CheckBox ID="ckb_otrosenfer" Checked="false" runat="server" />
                                 <%--<asp:TextBox runat="server" ID="txt_otrosenfer" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform:uppercase" placeholder="-"></asp:TextBox>--%>
                             </asp:TableCell>
                         </asp:TableRow>
@@ -1087,7 +1087,7 @@
                         <asp:TableRow>
                             <asp:TableCell RowSpan="2" ColumnSpan="2" style="background-color: #cdfecc; font-size:15px">PUESTO DE TRABAJO / ÁREA</asp:TableCell>
                             <asp:TableCell style="width:400px; background-color: #cdfecc; font-size:15px" RowSpan="2">ACTIVIDADES</asp:TableCell>
-                            <asp:TableCell style="width:400px; background-color: #cdfecc; font-size:15px" ColumnSpan="10">FÍSICO</asp:TableCell>                            
+                            <asp:TableCell style="width:400px; background-color: #cdfecc; font-size:15px" ColumnSpan="11">FÍSICO</asp:TableCell>                            
                         </asp:TableRow>
                         <asp:TableRow>
                             <asp:TableCell style="background-color: #cdfecc; font-size: 15px; text-transform: uppercase">
@@ -1118,13 +1118,11 @@
                                 <asp:Label CssClass="in-column" ID="Label29" runat="server" Text="Fluido eléctrico"></asp:Label>
                             </asp:TableCell>
                             <asp:TableCell style="background-color: #cdfecc; font-size: 15px; text-transform: uppercase">
-                                <div class="col">
-                                    <asp:Label CssClass="in-column" ID="Label94" runat="server" Text="Otros"></asp:Label>
-                                </div>
-                                <div class="col">
-                                    <asp:TextBox runat="server" ID="txt_otrosFisico" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform:uppercase" placeholder="-----------"></asp:TextBox>
-                                </div>                                
-                            </asp:TableCell>                            
+                                <asp:Label CssClass="in-column" ID="Label94" runat="server" Text="Otros"></asp:Label>                              
+                            </asp:TableCell>
+                            <asp:TableCell style="background-color: #cdfecc; font-size: 15px; text-transform: uppercase">  
+                                <asp:TextBox CssClass="in-column" runat="server" ID="txt_otrosFisico" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform:uppercase" placeholder="-----------"></asp:TextBox>
+                            </asp:TableCell>
                         </asp:TableRow>
                         <asp:TableRow>
                             <asp:TableCell style="width:50px; background-color: white; font-size: 15px; text-transform: uppercase">1. </asp:TableCell>
@@ -1843,7 +1841,7 @@
                         <asp:TableRow>
                             <asp:TableCell style="width:50px; background-color: white; font-size: 15px">1. </asp:TableCell>
                             <asp:TableCell style="width:350px; background-color: white; font-size: 14px">
-                                <asp:TextBox runat="server" ID="txt_puestodetrabajo21" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform:uppercase"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_puestodetrabajo21" OnTextChanged="txt_puestodetrabajo21_TextChanged" AutoPostBack="true" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform:uppercase"></asp:TextBox>
                             </asp:TableCell>
                             <asp:TableCell style="background-color: white; font-size: 14px">
                                 <asp:TextBox runat="server" ID="txt_act21" BorderStyle="None" Style="background-color: transparent; width: 100%; text-align: center; text-transform:uppercase"></asp:TextBox>

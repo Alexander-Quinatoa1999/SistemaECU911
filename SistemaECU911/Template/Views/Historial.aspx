@@ -90,7 +90,7 @@
                                     <asp:TableCell Text="SEGUNDO APELLIDO" Style="width: 150px; background-color: #cdfecc; font-size: 15px; font-family:Arial"></asp:TableCell>
                                     <asp:TableCell Text="SEXO" Style="width: 50px; background-color: #cdfecc; font-size: 15px; font-family:Arial"></asp:TableCell>
                                     <asp:TableCell Text="EDAD" Style="width: 155px; background-color: #cdfecc; font-size: 15px; font-family:Arial"></asp:TableCell>
-                                    <asp:TableCell Text="N° HISTORIA CLÍNICA" Style="width: 160px; background-color: #cdfecc; font-size: 15px; font-family:Arial"></asp:TableCell>
+                                    <asp:TableCell Text="N° HISTORIA CLÍNICA" Style="width: 200px; background-color: #cdfecc; font-size: 15px; font-family:Arial"></asp:TableCell>
                                 </asp:TableRow>
                                 <asp:TableRow>
                                     <asp:TableCell Style="background-color: white; font-size: 14px">

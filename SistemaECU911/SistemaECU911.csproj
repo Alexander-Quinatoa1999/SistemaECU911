@@ -74,6 +74,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
@@ -2832,7 +2833,9 @@
     <Content Include="Template\Template Principal\vendors\summernote\dist\summernote-bs4.min.js" />
     <Content Include="Template\Template Principal\vendors\tinymce\themes\modern\theme.js" />
     <Content Include="Template\Template Principal\vendors\tinymce\tinymce.min.js" />
+    <Content Include="Template\Views\CargarImagen.aspx" />
     <Content Include="Template\Views\Certificado_Covid.aspx" />
+    <Content Include="Template\Views\ImagenTest.aspx" />
     <Content Include="Template\Views\PacientesPedidoExamenes.aspx" />
     <Content Include="Template\Views\Personas.aspx" />
     <Content Include="Template\Views_Pacientes\FichaMedica.aspx" />
@@ -2889,12 +2892,26 @@
       <DependentUpon>index.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Template\Views\CargarImagen.aspx.cs">
+      <DependentUpon>CargarImagen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Template\Views\CargarImagen.aspx.designer.cs">
+      <DependentUpon>CargarImagen.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Template\Views\Certificado_Covid.aspx.cs">
       <DependentUpon>Certificado_Covid.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Template\Views\Certificado_Covid.aspx.designer.cs">
       <DependentUpon>Certificado_Covid.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Template\Views\ImagenTest.aspx.cs">
+      <DependentUpon>ImagenTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Template\Views\ImagenTest.aspx.designer.cs">
+      <DependentUpon>ImagenTest.aspx</DependentUpon>
     </Compile>
     <Compile Include="Template\Views\PacientesPedidoExamenes.aspx.cs">
       <DependentUpon>PacientesPedidoExamenes.aspx</DependentUpon>

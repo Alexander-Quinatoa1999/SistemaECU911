@@ -207,7 +207,7 @@ namespace SistemaECU911.Template.Views
             pdfDoc.Add(footer);
             pdfDoc.Close();
             Response.ContentType = "application/pdf";
-            Response.AddHeader("content-disposition", "attachment;filename=Certificado_Médico.pdf");
+            Response.AddHeader("content-disposition", "attachment;filename=Certificado_Médico_" + txt_cedula.Text + "_" + DateTime.Today + ".pdf");
             Response.Cache.SetCacheability(HttpCacheability.NoCache);
             Response.Write(pdfDoc);
             Response.End();

@@ -100,8 +100,7 @@
                         <asp:TableRow>
                             <asp:TableCell Style="text-align: right; font-family: Arial; background-color: white; font-size: 12px">FECHA DE INGRESO:</asp:TableCell>
                             <asp:TableCell Style="width: 100px; background-color: white">
-                                <%--<asp:Timer ID="timerFechaHora"  OnTick="timerFechaHora_Tick" runat="server" Interval="15000"></asp:Timer>--%>
-                                <asp:TextBox runat="server" ID="txt_fecharegistro" BorderStyle="None" Style="width: 100%; font-family: Arial; font-size: 12px" TextMode="Date" ReadOnly="true"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="txt_fecharegistro" BorderStyle="None" Style="width: 100%; font-family: Arial; font-size: 12px" TextMode="Date"></asp:TextBox>
                             </asp:TableCell>
                         </asp:TableRow>
                     </asp:Table>
