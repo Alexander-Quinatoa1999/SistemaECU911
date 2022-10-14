@@ -160,5 +160,16 @@ namespace CapaDatos.Properties {
                 return ((string)(this["db_a8b7d4_sistemaecu911ConnectionString1"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=sql8001.site4now.net;Initial Catalog=db_a8e3ca_sistemaecu911;Persist " +
+            "Security Info=True;User ID=db_a8e3ca_sistemaecu911_admin;Password=SistemaECU911")]
+        public string db_a8e3ca_sistemaecu911ConnectionString {
+            get {
+                return ((string)(this["db_a8e3ca_sistemaecu911ConnectionString"]));
+            }
+        }
     }
 }

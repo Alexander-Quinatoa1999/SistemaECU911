@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SistemaECU911" Class="DataClassesECU911DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=SistemaECU911;Integrated Security=True" SettingsObjectName="CapaDatos.Properties.Settings" SettingsPropertyName="SistemaECU911ConnectionString4" Provider="System.Data.SqlClient" />
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="db_a8e3ca_sistemaecu911" Class="DataClassesECU911DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=sql8001.site4now.net;Initial Catalog=db_a8e3ca_sistemaecu911;Persist Security Info=True;User ID=db_a8e3ca_sistemaecu911_admin" SettingsObjectName="CapaDatos.Properties.Settings" SettingsPropertyName="db_a8e3ca_sistemaecu911ConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.cie10" Member="cie10">
     <Type Name="cie10">
       <Column Name="id10" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -1568,6 +1568,7 @@
     <Type Name="Tbl_Profesional">
       <Column Name="prof_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="prof_NomApe" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="prof_cedula" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Column Name="prof_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
       <Association Name="Tbl_Profesional_Tbl_Certificado" Member="Tbl_Certificado" ThisKey="prof_id" OtherKey="prof_id" Type="Tbl_Certificado" />
       <Association Name="Tbl_Profesional_Tbl_FichasMedicas" Member="Tbl_FichasMedicas" ThisKey="prof_id" OtherKey="prof_id" Type="Tbl_FichasMedicas" />
@@ -2107,14 +2108,10 @@
       <Column Name="img_foto" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.ObtenerPaciente" Method="ObtenerPaciente">
-    <Parameter Name="Cedula" Parameter="cedula" Type="System.String" DbType="VarChar(10)" />
-    <ElementType Name="ObtenerPacienteResult">
-      <Column Name="idFichaMedica" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Per_cedula" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="prof_NomApe" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="fechaHoraGuardado" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-    </ElementType>
+  <Function Name="dbo.RegistrarImagen" Method="RegistrarImagen">
+    <Parameter Name="cedula" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="imagen" Type="System.Data.Linq.Binary" DbType="Image" />
+    <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.InsertarPersona" Method="InsertarPersona">
     <Parameter Name="Cedula" Parameter="cedula" Type="System.String" DbType="VarChar(10)" />
@@ -2128,9 +2125,13 @@
     <Parameter Name="Estado" Parameter="estado" Type="System.String" DbType="VarChar(1)" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.RegistrarImagen" Method="RegistrarImagen">
-    <Parameter Name="cedula" Type="System.String" DbType="VarChar(10)" />
-    <Parameter Name="imagen" Type="System.Data.Linq.Binary" DbType="Image" />
-    <Return Type="System.Int32" />
+  <Function Name="dbo.ObtenerPaciente" Method="ObtenerPaciente">
+    <Parameter Name="Cedula" Parameter="cedula" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="ObtenerPacienteResult">
+      <Column Name="idFichaMedica" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Per_cedula" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="prof_NomApe" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="fechaHoraGuardado" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
   </Function>
 </Database>

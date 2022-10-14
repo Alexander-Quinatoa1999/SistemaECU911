@@ -22,7 +22,7 @@ namespace CapaDatos
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="SistemaECU911")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="db_a8e3ca_sistemaecu911")]
 	public partial class DataClassesECU911DataContext : System.Data.Linq.DataContext
 	{
 		
@@ -90,7 +90,7 @@ namespace CapaDatos
     #endregion
 		
 		public DataClassesECU911DataContext() : 
-				base(global::CapaDatos.Properties.Settings.Default.SistemaECU911ConnectionString4, mappingSource)
+				base(global::CapaDatos.Properties.Settings.Default.db_a8e3ca_sistemaecu911ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -278,11 +278,11 @@ namespace CapaDatos
 			return ((ISingleResult<CargarImagenResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ObtenerPaciente")]
-		public ISingleResult<ObtenerPacienteResult> ObtenerPaciente([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Cedula", DbType="VarChar(10)")] string cedula)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.RegistrarImagen")]
+		public int RegistrarImagen([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string cedula, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Image")] System.Data.Linq.Binary imagen)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cedula);
-			return ((ISingleResult<ObtenerPacienteResult>)(result.ReturnValue));
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cedula, imagen);
+			return ((int)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.InsertarPersona")]
@@ -299,11 +299,11 @@ namespace CapaDatos
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.RegistrarImagen")]
-		public int RegistrarImagen([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string cedula, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Image")] System.Data.Linq.Binary imagen)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.ObtenerPaciente")]
+		public ISingleResult<ObtenerPacienteResult> ObtenerPaciente([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Cedula", DbType="VarChar(10)")] string cedula)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cedula, imagen);
-			return ((int)(result.ReturnValue));
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cedula);
+			return ((ISingleResult<ObtenerPacienteResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -37573,6 +37573,8 @@ namespace CapaDatos
 		
 		private string _prof_NomApe;
 		
+		private string _prof_cedula;
+		
 		private string _prof_estado;
 		
 		private EntitySet<Tbl_Certificado> _Tbl_Certificado;
@@ -37595,6 +37597,8 @@ namespace CapaDatos
     partial void Onprof_idChanged();
     partial void Onprof_NomApeChanging(string value);
     partial void Onprof_NomApeChanged();
+    partial void Onprof_cedulaChanging(string value);
+    partial void Onprof_cedulaChanged();
     partial void Onprof_estadoChanging(string value);
     partial void Onprof_estadoChanged();
     #endregion
@@ -37646,6 +37650,26 @@ namespace CapaDatos
 					this._prof_NomApe = value;
 					this.SendPropertyChanged("prof_NomApe");
 					this.Onprof_NomApeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_prof_cedula", DbType="VarChar(10)")]
+		public string prof_cedula
+		{
+			get
+			{
+				return this._prof_cedula;
+			}
+			set
+			{
+				if ((this._prof_cedula != value))
+				{
+					this.Onprof_cedulaChanging(value);
+					this.SendPropertyChanging();
+					this._prof_cedula = value;
+					this.SendPropertyChanged("prof_cedula");
+					this.Onprof_cedulaChanged();
 				}
 			}
 		}

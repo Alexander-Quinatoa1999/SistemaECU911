@@ -146,7 +146,7 @@ namespace SistemaECU911.Template.Views
             }
         }
 
-        private void ImprimirCertificado()
+        protected void btnCertificado_Click(object sender, EventArgs e)
         {
             string nombre = txt_priNombre.Text + " " + txt_segNombre.Text + " " + txt_priApellido.Text + " " + txt_segApellido.Text;
             HtmlNode.ElementsFlags["img"] = HtmlElementFlag.Closed;
@@ -180,7 +180,7 @@ namespace SistemaECU911.Template.Views
                 + txt_Atencion.Text + ", el antes mencionado se desempeña como " + txt_Cargo.Text + " en " + txt_Institución.Text + ".", parrafo)
             { Alignment = Element.ALIGN_JUSTIFIED });
             pdfDoc.Add(new Chunk(Chunk.NEWLINE));
-            pdfDoc.Add(new Paragraph("Tipo de contingencia: " + ddl_tipoContingencia.SelectedItem, parrafo) { Alignment = Element.ALIGN_JUSTIFIED });           
+            pdfDoc.Add(new Paragraph("Tipo de contingencia: " + ddl_tipoContingencia.SelectedItem, parrafo) { Alignment = Element.ALIGN_JUSTIFIED });
             pdfDoc.Add(new Paragraph("Diagnóstico: " + txt_diagnostico.Text + "  " + "CIE 10: " + txt_cie.Text, parrafo) { Alignment = Element.ALIGN_JUSTIFIED });
             pdfDoc.Add(new Chunk(Chunk.NEWLINE));
             var tblopciones = new PdfPTable(new float[] { 40f, 20f, 20f, 20f, 20f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_LEFT };
@@ -270,7 +270,7 @@ namespace SistemaECU911.Template.Views
                 tblopciones4.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(255, 255, 255), HorizontalAlignment = Element.ALIGN_LEFT });
             }
             pdfDoc.Add(tblopciones4);
-            pdfDoc.Add(new Chunk(Chunk.NEWLINE));            
+            pdfDoc.Add(new Chunk(Chunk.NEWLINE));
             pdfDoc.Add(new Paragraph("Descripción de Sintomatología: " + txt_sintomatologia.Text, parrafo) { Alignment = Element.ALIGN_JUSTIFIED });
             pdfDoc.Add(new Chunk(Chunk.NEWLINE));
             pdfDoc.Add(new Paragraph("Por lo expuesto requiere:", parrafo) { Alignment = Element.ALIGN_JUSTIFIED });
@@ -300,13 +300,6 @@ namespace SistemaECU911.Template.Views
             Response.Cache.SetCacheability(HttpCacheability.NoCache);
             Response.Write(pdfDoc);
             Response.End();
-        }
-
-        protected void btnCertificado_Click(object sender, EventArgs e)
-        {
-            ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", "swal('Exito!', 'Certificado generado correctamente', 'success')", true);
-            Timer1.Enabled = true;
-            ImprimirCertificado();
         }
 
         

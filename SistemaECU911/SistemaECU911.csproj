@@ -3244,6 +3244,14 @@
     <Content Include="Template\Template Principal\vendors\iconfonts\font-awesome-6.1.1\webfonts\fa-solid-900.woff2" />
     <Content Include="Template\Template Principal\vendors\iconfonts\font-awesome-6.1.1\webfonts\fa-v4compatibility.ttf" />
     <Content Include="Template\Template Principal\vendors\iconfonts\font-awesome-6.1.1\webfonts\fa-v4compatibility.woff2" />
+    <None Include="Properties\PublishProfiles\ecu911-001-site1 - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\ecu911-001-site1 - FTP1.pubxml" />
+    <None Include="Properties\PublishProfiles\ecu911-001-site1 - FTP2.pubxml" />
+    <None Include="Properties\PublishProfiles\ecu911-001-site1 - FTP3.pubxml" />
+    <None Include="Properties\PublishProfiles\ecu911-001-site1 - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\ecu911-001-site1 - Web Deploy1.pubxml" />
+    <None Include="Properties\PublishProfiles\ecu911-001-site1 - Web Deploy2.pubxml" />
+    <None Include="Properties\PublishProfiles\ecu911-001-site1 - Web Deploy3.pubxml" />
     <None Include="Properties\PublishProfiles\IISProfile.pubxml" />
     <None Include="Properties\PublishProfiles\IISProfile1.pubxml" />
     <None Include="Properties\PublishProfiles\sistemaecu911-001-site1 - FTP.pubxml" />
