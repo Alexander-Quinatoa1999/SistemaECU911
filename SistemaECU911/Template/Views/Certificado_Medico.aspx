@@ -180,10 +180,12 @@
                     <div class="card-body">
                         <h4 class="text-center">RECOMENDACIONES</h4>
                         <br />
-                        <div class="form-group">
-                            <asp:TextBox CssClass="required form-control" ID="txt_recomendacion" TextMode="MultiLine" Rows="5" runat="server"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator12" runat="server" ForeColor="Red" ControlToValidate="txt_recomendacion" ErrorMessage="CAMPO OBLIGATORIO" ValidationGroup="GroupValidation"></asp:RequiredFieldValidator>
-                        </div>
+                        <center>
+                            <div class="form-group col-md-9">
+                                <asp:TextBox CssClass="required form-control" ID="txt_recomendacion" TextMode="MultiLine" Rows="5" runat="server"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator12" runat="server" ForeColor="Red" ControlToValidate="txt_recomendacion" ErrorMessage="CAMPO OBLIGATORIO" ValidationGroup="GroupValidation"></asp:RequiredFieldValidator>
+                            </div>
+                        </center>
                         <div class="text-center">
                             <asp:Button ID="btnCertificado" OnClick="btnCertificado_Click" CssClass="btn btn-light" BorderColor="#1B4F72" runat="server" Text="Generar Certificado" ValidationGroup="GroupValidation" />
                         </div>

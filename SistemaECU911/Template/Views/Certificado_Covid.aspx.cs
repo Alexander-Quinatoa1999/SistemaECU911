@@ -146,7 +146,7 @@ namespace SistemaECU911.Template.Views
             }
         }
 
-        protected void btnCertificado_Click(object sender, EventArgs e)
+        private void ImprimirCertificado()
         {
             string nombre = txt_priNombre.Text + " " + txt_segNombre.Text + " " + txt_priApellido.Text + " " + txt_segApellido.Text;
             HtmlNode.ElementsFlags["img"] = HtmlElementFlag.Closed;
@@ -154,9 +154,9 @@ namespace SistemaECU911.Template.Views
             Document pdfDoc = new Document(PageSize.A4, 41f, 41f, 20f, 20f);
             PdfWriter writer = PdfWriter.GetInstance(pdfDoc, Response.OutputStream);
             BaseFont fuente = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, true);
-            Font titulo = new Font(fuente, 14f, Font.BOLD, new BaseColor(0, 0, 0));
+            Font titulo = new Font(fuente, 13f, Font.BOLD, new BaseColor(0, 0, 0));
             BaseFont fuente2 = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, true);
-            Font parrafo = new Font(fuente2, 12f, Font.NORMAL, new BaseColor(0, 0, 0));
+            Font parrafo = new Font(fuente2, 11f, Font.NORMAL, new BaseColor(0, 0, 0));
             BaseFont fuente3 = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, true);
             Font cuadro = new Font(fuente3, 10f, Font.NORMAL, new BaseColor(0, 0, 0));
 
@@ -177,55 +177,101 @@ namespace SistemaECU911.Template.Views
                 + nombre + " con número de cédula " + txt_cedula.Text + ", con número de Historia Clinica "
                 + txt_cedula.Text + ", domiciliado en el sector " + txt_Domicilio.Text + ", telefono "
                 + txt_Telefono.Text + ", paciente fue atendido en el dispensario médico institucional por presentar "
-                + txt_Atencion.Text + ", el antes mencionado se desempeña como " + txt_Cargo.Text + " en " + txt_Institución.Text + "", parrafo)
+                + txt_Atencion.Text + ", el antes mencionado se desempeña como " + txt_Cargo.Text + " en " + txt_Institución.Text + ".", parrafo)
             { Alignment = Element.ALIGN_JUSTIFIED });
             pdfDoc.Add(new Chunk(Chunk.NEWLINE));
-            pdfDoc.Add(new Paragraph("Tipo de contingencia: " + ddl_tipoContingencia.SelectedItem, parrafo) { Alignment = Element.ALIGN_JUSTIFIED });
-            pdfDoc.Add(new Chunk(Chunk.NEWLINE));
+            pdfDoc.Add(new Paragraph("Tipo de contingencia: " + ddl_tipoContingencia.SelectedItem, parrafo) { Alignment = Element.ALIGN_JUSTIFIED });           
             pdfDoc.Add(new Paragraph("Diagnóstico: " + txt_diagnostico.Text + "  " + "CIE 10: " + txt_cie.Text, parrafo) { Alignment = Element.ALIGN_JUSTIFIED });
-            pdfDoc.Add(new Chunk(Chunk.NEWLINE));            
-            pdfDoc.Add(new Paragraph("(No se puede realizar teletrabajo)", parrafo) { Alignment = Element.ALIGN_JUSTIFIED });
-            var tblopciones = new PdfPTable(new float[] { 70f, 20f, 70f, 20f, 70f, 20f, 70f, 20f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_CENTER };
-            tblopciones.AddCell(new PdfPCell(new Paragraph("Teletrabajo: ", cuadro)) { BorderColor = new BaseColor(255, 255, 255), HorizontalAlignment = Element.ALIGN_CENTER });
+            pdfDoc.Add(new Chunk(Chunk.NEWLINE));
+            var tblopciones = new PdfPTable(new float[] { 40f, 20f, 20f, 20f, 20f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_LEFT };
+            tblopciones.AddCell(new PdfPCell(new Paragraph("Teletrabajo", cuadro)) { BorderColor = new BaseColor(255, 255, 255), HorizontalAlignment = Element.ALIGN_LEFT });
+            tblopciones.AddCell(new PdfPCell(new Paragraph("SI", cuadro)) { BorderColor = new BaseColor(255, 255, 255), HorizontalAlignment = Element.ALIGN_LEFT });
             if (ckb_teletrabajo.Checked == true)
             {
-                tblopciones.AddCell(new PdfPCell(new Paragraph("x", cuadro)) { BorderColor = new BaseColor(255, 255, 255), HorizontalAlignment = Element.ALIGN_CENTER });
+                tblopciones.AddCell(new PdfPCell(new Paragraph("x", cuadro)) { BorderColor = new BaseColor(255, 255, 255), HorizontalAlignment = Element.ALIGN_LEFT });
             }
             else
             {
-                tblopciones.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(255, 255, 255), HorizontalAlignment = Element.ALIGN_CENTER });
+                tblopciones.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(255, 255, 255), HorizontalAlignment = Element.ALIGN_LEFT });
             }
-
-            tblopciones.AddCell(new PdfPCell(new Paragraph("Enfermedad: ", cuadro)) { BorderColor = new BaseColor(255, 255, 255), HorizontalAlignment = Element.ALIGN_CENTER });
-            if (ckb_enfermedad.Checked == true)
+            tblopciones.AddCell(new PdfPCell(new Paragraph("NO", cuadro)) { BorderColor = new BaseColor(255, 255, 255), HorizontalAlignment = Element.ALIGN_LEFT });
+            if (ckb_teletrabajo.Checked == false)
             {
-                tblopciones.AddCell(new PdfPCell(new Paragraph("x", cuadro)) { BorderColor = new BaseColor(255, 255, 255), HorizontalAlignment = Element.ALIGN_CENTER });
-            }
-            else
-            {
-                tblopciones.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(255, 255, 255), HorizontalAlignment = Element.ALIGN_CENTER });
-            }
-            tblopciones.AddCell(new PdfPCell(new Paragraph("Reposo: ", cuadro)) { BorderColor = new BaseColor(255, 255, 255), HorizontalAlignment = Element.ALIGN_CENTER });
-            if (ckb_reposo.Checked == true)
-            {
-                tblopciones.AddCell(new PdfPCell(new Paragraph("x", cuadro)) { BorderColor = new BaseColor(255, 255, 255), HorizontalAlignment = Element.ALIGN_CENTER });
+                tblopciones.AddCell(new PdfPCell(new Paragraph("x", cuadro)) { BorderColor = new BaseColor(255, 255, 255), HorizontalAlignment = Element.ALIGN_LEFT });
             }
             else
             {
-                tblopciones.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(255, 255, 255), HorizontalAlignment = Element.ALIGN_CENTER });
-            }
-            tblopciones.AddCell(new PdfPCell(new Paragraph("Presenta Sintomas: ", cuadro)) { BorderColor = new BaseColor(255, 255, 255), HorizontalAlignment = Element.ALIGN_CENTER });
-            if (ckb_sintomas.Checked == true)
-            {
-                tblopciones.AddCell(new PdfPCell(new Paragraph("x", cuadro)) { BorderColor = new BaseColor(255, 255, 255), HorizontalAlignment = Element.ALIGN_CENTER });
-            }
-            else
-            {
-                tblopciones.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(255, 255, 255), HorizontalAlignment = Element.ALIGN_CENTER });
+                tblopciones.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(255, 255, 255), HorizontalAlignment = Element.ALIGN_LEFT });
             }
             pdfDoc.Add(tblopciones);
-            pdfDoc.Add(new Chunk(Chunk.NEWLINE));
-            pdfDoc.Add(new Paragraph("Descripción de Sintomatología: " + txt_sintomatologia.Text, parrafo) { Alignment = Element.ALIGN_LEFT });
+
+            var tblopciones2 = new PdfPTable(new float[] { 40f, 20f, 20f, 20f, 20f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_LEFT };
+            tblopciones2.AddCell(new PdfPCell(new Paragraph("Enfermedad", cuadro)) { BorderColor = new BaseColor(255, 255, 255), HorizontalAlignment = Element.ALIGN_LEFT });
+            tblopciones2.AddCell(new PdfPCell(new Paragraph("SI", cuadro)) { BorderColor = new BaseColor(255, 255, 255), HorizontalAlignment = Element.ALIGN_LEFT });
+            if (ckb_enfermedad.Checked == true)
+            {
+                tblopciones2.AddCell(new PdfPCell(new Paragraph("x", cuadro)) { BorderColor = new BaseColor(255, 255, 255), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblopciones2.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(255, 255, 255), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            tblopciones2.AddCell(new PdfPCell(new Paragraph("NO", cuadro)) { BorderColor = new BaseColor(255, 255, 255), HorizontalAlignment = Element.ALIGN_LEFT });
+            if (ckb_enfermedad.Checked == false)
+            {
+                tblopciones2.AddCell(new PdfPCell(new Paragraph("x", cuadro)) { BorderColor = new BaseColor(255, 255, 255), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblopciones2.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(255, 255, 255), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            pdfDoc.Add(tblopciones2);
+
+            var tblopciones3 = new PdfPTable(new float[] { 40f, 20f, 20f, 20f, 20f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_LEFT };
+            tblopciones3.AddCell(new PdfPCell(new Paragraph("Reposo:", cuadro)) { BorderColor = new BaseColor(255, 255, 255), HorizontalAlignment = Element.ALIGN_LEFT });
+            tblopciones3.AddCell(new PdfPCell(new Paragraph("SI", cuadro)) { BorderColor = new BaseColor(255, 255, 255), HorizontalAlignment = Element.ALIGN_LEFT });
+            if (ckb_reposo.Checked == true)
+            {
+                tblopciones3.AddCell(new PdfPCell(new Paragraph("x", cuadro)) { BorderColor = new BaseColor(255, 255, 255), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblopciones3.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(255, 255, 255), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            tblopciones3.AddCell(new PdfPCell(new Paragraph("NO", cuadro)) { BorderColor = new BaseColor(255, 255, 255), HorizontalAlignment = Element.ALIGN_LEFT });
+            if (ckb_reposo.Checked == false)
+            {
+                tblopciones3.AddCell(new PdfPCell(new Paragraph("x", cuadro)) { BorderColor = new BaseColor(255, 255, 255), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblopciones3.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(255, 255, 255), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            pdfDoc.Add(tblopciones3);
+
+            var tblopciones4 = new PdfPTable(new float[] { 40f, 20f, 20f, 20f, 20f }) { WidthPercentage = 100, HorizontalAlignment = Element.ALIGN_LEFT };
+            tblopciones4.AddCell(new PdfPCell(new Paragraph("Presenta Sintomas", cuadro)) { BorderColor = new BaseColor(255, 255, 255), HorizontalAlignment = Element.ALIGN_LEFT });
+            tblopciones4.AddCell(new PdfPCell(new Paragraph("SI", cuadro)) { BorderColor = new BaseColor(255, 255, 255), HorizontalAlignment = Element.ALIGN_LEFT });
+            if (ckb_sintomas.Checked == true)
+            {
+                tblopciones4.AddCell(new PdfPCell(new Paragraph("x", cuadro)) { BorderColor = new BaseColor(255, 255, 255), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblopciones4.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(255, 255, 255), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            tblopciones4.AddCell(new PdfPCell(new Paragraph("NO", cuadro)) { BorderColor = new BaseColor(255, 255, 255), HorizontalAlignment = Element.ALIGN_LEFT });
+            if (ckb_sintomas.Checked == false)
+            {
+                tblopciones4.AddCell(new PdfPCell(new Paragraph("x", cuadro)) { BorderColor = new BaseColor(255, 255, 255), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            else
+            {
+                tblopciones4.AddCell(new PdfPCell(new Paragraph(" ", cuadro)) { BorderColor = new BaseColor(255, 255, 255), HorizontalAlignment = Element.ALIGN_LEFT });
+            }
+            pdfDoc.Add(tblopciones4);
+            pdfDoc.Add(new Chunk(Chunk.NEWLINE));            
+            pdfDoc.Add(new Paragraph("Descripción de Sintomatología: " + txt_sintomatologia.Text, parrafo) { Alignment = Element.ALIGN_JUSTIFIED });
             pdfDoc.Add(new Chunk(Chunk.NEWLINE));
             pdfDoc.Add(new Paragraph("Por lo expuesto requiere:", parrafo) { Alignment = Element.ALIGN_JUSTIFIED });
             pdfDoc.Add(new Chunk(Chunk.NEWLINE));
@@ -236,7 +282,6 @@ namespace SistemaECU911.Template.Views
             pdfDoc.Add(new Chunk(Chunk.NEWLINE));
             pdfDoc.Add(new Chunk(Chunk.NEWLINE));
             pdfDoc.Add(new Paragraph("Atentamente,", parrafo) { Alignment = Element.ALIGN_CENTER });
-            pdfDoc.Add(new Chunk(Chunk.NEWLINE));
             pdfDoc.Add(new Chunk(Chunk.NEWLINE));
             pdfDoc.Add(new Chunk(Chunk.NEWLINE));
             pdfDoc.Add(new Chunk(Chunk.NEWLINE));
@@ -255,6 +300,13 @@ namespace SistemaECU911.Template.Views
             Response.Cache.SetCacheability(HttpCacheability.NoCache);
             Response.Write(pdfDoc);
             Response.End();
+        }
+
+        protected void btnCertificado_Click(object sender, EventArgs e)
+        {
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", "swal('Exito!', 'Certificado generado correctamente', 'success')", true);
+            Timer1.Enabled = true;
+            ImprimirCertificado();
         }
 
         

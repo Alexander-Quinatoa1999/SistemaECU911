@@ -451,7 +451,6 @@ namespace SistemaECU911.Template.Views
                 //Mensaje de confirmacion
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", "swal('Exito!', 'Datos Guardados Exitosamente', 'success')", true);
                 Timer1.Enabled = true;
-                Response.Redirect("~/Template/Views/PacientesEvolucion.aspx");
 
             }
             catch (Exception)
@@ -554,7 +553,6 @@ namespace SistemaECU911.Template.Views
 
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", "swal('Exito!', 'Datos Modifcados Exitosamente', 'success')", true);
                 Timer1.Enabled = true;
-                Response.Redirect("~/Template/Views/PacientesEvolucion.aspx");
             }
             catch (Exception)
             {

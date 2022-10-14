@@ -62,7 +62,7 @@
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     <asp:Timer ID="Timer1" runat="server" Interval="2000" OnTick="Timer1_Tick"></asp:Timer>
 </asp:Content>
-<asp:Content ID="Content4" ContentPlaceHolderID="Content" runat="server">    
+<asp:Content ID="Content4" ContentPlaceHolderID="Content" runat="server">
     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>
             <div class="container">
@@ -214,23 +214,25 @@
                         <h3 class="text-center">SINTOMAS Y RECOMENDACIONES</h3>
                         <br />
                         <div class="row">
-                            <div class="col-md-3">
-                                <label style="font-size: 13px">Descripción de Sintomatología: </label>
-                            </div>
-                            <div class="col-md-9">
-                                <asp:TextBox CssClass="required form-control" ID="txt_sintomatologia" TextMode="MultiLine" Rows="2" runat="server"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ForeColor="Red" ControlToValidate="txt_sintomatologia" ErrorMessage="CAMPO OBLIGATORIO" ValidationGroup="GroupValidation"></asp:RequiredFieldValidator>
-                            </div>
+                            <center>
+                                <div class="col-md-8">
+                                    <label style="font-size: 13px">Descripción de Sintomatología: </label>
+                                    <asp:TextBox CssClass="required form-control" ID="txt_sintomatologia" TextMode="MultiLine" Rows="2" runat="server"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ForeColor="Red" ControlToValidate="txt_sintomatologia" ErrorMessage="CAMPO OBLIGATORIO" ValidationGroup="GroupValidation"></asp:RequiredFieldValidator>
+                                </div>
+                            </center>
                         </div>
                         <div class="row">
-                            <div class="col-md-12">
-                                <label style="font-size: 13px">Recomendaciones</label>
-                                <asp:TextBox CssClass="required form-control" ID="txt_recomendacion" TextMode="MultiLine" Rows="5" runat="server"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator12" runat="server" ForeColor="Red" ControlToValidate="txt_recomendacion" ErrorMessage="CAMPO OBLIGATORIO" ValidationGroup="GroupValidation"></asp:RequiredFieldValidator>
-                            </div>
+                            <center>
+                                <div class="col-md-9">
+                                    <label style="font-size: 13px">Recomendaciones</label>
+                                    <asp:TextBox CssClass="required form-control" ID="txt_recomendacion" align="center" TextMode="MultiLine" Rows="5" runat="server"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator12" runat="server" ForeColor="Red" ControlToValidate="txt_recomendacion" ErrorMessage="CAMPO OBLIGATORIO" ValidationGroup="GroupValidation"></asp:RequiredFieldValidator>
+                                </div>
+                            </center>
                         </div>
                         <div class="text-center">
-                            <asp:Button ID="btnCertificado" OnClick="btnCertificado_Click" CssClass="btn btn-light" BorderColor="#1B4F72" runat="server" Text="Generar Certificado" ValidationGroup="GroupValidation" UseSubmitBehavior="False"/>
+                            <asp:Button ID="btnCertificado" OnClick="btnCertificado_Click" CssClass="btn btn-light" BorderColor="#1B4F72" runat="server" Text="Generar Certificado" ValidationGroup="GroupValidation" UseSubmitBehavior="False" />
                         </div>
                     </div>
                 </div>

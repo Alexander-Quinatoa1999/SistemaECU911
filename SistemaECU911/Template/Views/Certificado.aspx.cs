@@ -654,7 +654,7 @@ namespace SistemaECU911.Template.Views
 
         protected void Timer1_Tick(object sender, EventArgs e)
         {
-            Response.Redirect("Template/Views/Inicio.aspx");
+            Response.Redirect("~/Template/Views/Inicio.aspx");
         }
 
         private void cargarProfesional()

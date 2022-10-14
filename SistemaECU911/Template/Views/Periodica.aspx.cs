@@ -3925,7 +3925,7 @@ namespace SistemaECU911.Template.Views
 
                 //Mensaje de confirmacion
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", "swal('Exito!', 'Datos Guardados Exitosamente', 'success')", true);
-                Response.Redirect("~/Template/Views/PacientesPeriodica.aspx");
+                Timer1.Enabled = true;
 
             }
             catch (Exception)
@@ -6155,7 +6155,7 @@ namespace SistemaECU911.Template.Views
                 CN_Periodica.ModificarPeriodica(perio);
 
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", "swal('Exito!', 'Datos Modificados Exitosamente', 'success')", true);
-                Response.Redirect("~/Template/Views/PacientesPeriodica.aspx");
+                Timer1.Enabled = true;
             }
             catch (Exception)
             {
@@ -6178,6 +6178,21 @@ namespace SistemaECU911.Template.Views
                     ModificarPeriodica(perio);
                 }
             }
+        }
+
+        protected void btn_guardar_Click(object sender, EventArgs e)
+        {
+            guardar_modificar_datos(Convert.ToInt32(Request["cod"]));
+        }
+
+        protected void btn_cancelar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Template/Views/Inicio.aspx");
+        }
+
+        protected void Timer1_Tick(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Template/Views/Inicio.aspx");
         }
 
         private void cargarProfesional()
@@ -6508,22 +6523,7 @@ namespace SistemaECU911.Template.Views
             {
                 ckb_pre3.Checked = false;
             }
-        }
-
-        protected void btn_guardar_Click(object sender, EventArgs e)
-        {
-            guardar_modificar_datos(Convert.ToInt32(Request["cod"]));
-        }
-
-        protected void btn_cancelar_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("~/Template/Views/Inicio.aspx");
-        }
-
-        protected void Timer1_Tick(object sender, EventArgs e)
-        {
-            Response.Redirect("~/Template/Views/Inicio.aspx");
-        }
+        }        
 
         protected void btn_imprimir_Click(object sender, EventArgs e)
         {

@@ -103,8 +103,7 @@ namespace SistemaECU911.Template.Views
 
                     //Mensaje de confirmacion
                     ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", "swal('Exito!', 'Paciente Registrado Exitosamente', 'success')", true);
-
-                    Response.Redirect("~/Template/Views/Inicio.aspx");
+                    Timer1.Enabled = true;
                 }
 
             }
@@ -135,7 +134,7 @@ namespace SistemaECU911.Template.Views
                 CN_Personas.ModificarPersona(per);
 
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", "swal('Exito!', 'Datos Modificados Exitosamente', 'success')", true);
-                Response.Redirect("~/Template/Views/Inicio.aspx");
+                Timer1.Enabled = true;
             }
             catch (Exception)
             {

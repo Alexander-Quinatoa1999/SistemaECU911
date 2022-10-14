@@ -1379,23 +1379,6 @@ namespace SistemaECU911.Template.Views
             }
         }
 
-        private void guardar_modificar_datos(int pedidoexamen)
-        {
-            if (pedidoexamen == 0)
-            {
-                GuardarPedidoExamenes();
-            }
-            else
-            {
-                pedexa = CN_PedidoExamenes.ObtenerPedidoExamenesPorId(pedidoexamen);
-
-                if (pedexa != null)
-                {
-                    ModificarPedidoExamenes(pedexa);
-                }
-            }
-        }
-
         private void GuardarPedidoExamenes()
         {
             try
@@ -2035,8 +2018,7 @@ namespace SistemaECU911.Template.Views
 
                 //Mensaje de confirmacion
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", "swal('Exito!', 'Datos Guardados Exitosamente', 'success')", true);
-
-                Response.Redirect("~/Template/Views/PacientesPedidoExamenes.aspx");
+                Timer1.Enabled = true;
             }
             catch (Exception)
             {
@@ -3251,12 +3233,29 @@ namespace SistemaECU911.Template.Views
                 CN_PedidoExamenes.ModificarPedidoExamenes(pedexa);
 
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", "swal('Exito!', 'Datos Modificados Exitosamente', 'success')", true);
-                Response.Redirect("~/Template/Views/PacientesPedidoExamenes.aspx");
+                Timer1.Enabled = true;
 
             }
             catch
             {
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", "swal('Error!', 'Datos No Modificados', 'error')", true);
+            }
+        }
+
+        private void guardar_modificar_datos(int pedidoexamen)
+        {
+            if (pedidoexamen == 0)
+            {
+                GuardarPedidoExamenes();
+            }
+            else
+            {
+                pedexa = CN_PedidoExamenes.ObtenerPedidoExamenesPorId(pedidoexamen);
+
+                if (pedexa != null)
+                {
+                    ModificarPedidoExamenes(pedexa);
+                }
             }
         }
 

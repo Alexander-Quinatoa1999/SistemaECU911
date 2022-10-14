@@ -1140,7 +1140,7 @@ namespace SistemaECU911.Template.Views
 
                 //Mensaje de confirmacion
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", "swal('Exito!', 'Datos Guardados Exitosamente', 'success')", true);
-                Response.Redirect("~/Template/Views/PacientesRetiro.aspx");
+                Timer1.Enabled = true;
 
             }
             catch (Exception)
@@ -1651,7 +1651,7 @@ namespace SistemaECU911.Template.Views
                 CN_Retiro.ModificarRetiro(reti);
 
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", "swal('Exito!', 'Datos Modificados Exitosamente', 'success')", true);
-                Response.Redirect("~/Template/Views/PacientesRetiro.aspx");
+                Timer1.Enabled = true;
 
             }
             catch (Exception)

@@ -143,7 +143,7 @@ namespace SistemaECU911.Template.Views
             }
         }
 
-        protected void btnCertificado_Click(object sender, EventArgs e)
+        private void ImprimirCertificado()
         {
             string nombre = txt_priNombre.Text + " " + txt_segNombre.Text + " " + txt_priApellido.Text + " " + txt_segApellido.Text;
             HtmlNode.ElementsFlags["img"] = HtmlElementFlag.Closed;
@@ -211,6 +211,13 @@ namespace SistemaECU911.Template.Views
             Response.Cache.SetCacheability(HttpCacheability.NoCache);
             Response.Write(pdfDoc);
             Response.End();
+        }
+
+        protected void btnCertificado_Click(object sender, EventArgs e)
+        {
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", "swal('Exito!', 'Certificado generado correctamente', 'success')", true);
+            Timer1.Enabled = true;
+            ImprimirCertificado();
         }
         
     }   
