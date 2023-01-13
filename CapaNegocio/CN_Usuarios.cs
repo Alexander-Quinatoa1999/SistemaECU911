@@ -82,7 +82,6 @@ namespace CapaNegocio
         {
             try
             {
-                usu.usu_estado = "A";
                 dc.Tbl_Usuarios.InsertOnSubmit(usu);
                 dc.SubmitChanges();
             }

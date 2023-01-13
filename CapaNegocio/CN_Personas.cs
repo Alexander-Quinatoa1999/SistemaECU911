@@ -10,7 +10,6 @@ namespace CapaNegocio
     public class CN_Personas
     {
 
-        //private static DataClassesECU911DataContext dc = new DataClassesECU911DataContext();
         private static DataClassesECU911DataContext dc = new DataClassesECU911DataContext();
 
         //metodo traer para todos los usuarios x ID

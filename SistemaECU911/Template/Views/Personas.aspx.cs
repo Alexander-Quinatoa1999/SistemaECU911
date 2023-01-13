@@ -3,6 +3,8 @@ using CapaNegocio;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -15,6 +17,7 @@ namespace SistemaECU911.Template.Views
         private readonly DataClassesECU911DataContext dc = new DataClassesECU911DataContext();
 
         private Tbl_Personas per = new Tbl_Personas();
+        private Tbl_Usuarios usu = new Tbl_Usuarios();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -84,7 +87,9 @@ namespace SistemaECU911.Template.Views
                 else
                 {
                     per = new Tbl_Personas();
+                    usu = new Tbl_Usuarios();
 
+                    //Datos Tbl_Personas
                     per.Per_priNombre = txt_priNombre.Text.ToUpper();
                     per.Per_segNombre = txt_segNombre.Text.ToUpper();
                     per.Per_priApellido = txt_priApellido.Text.ToUpper();
@@ -99,7 +104,19 @@ namespace SistemaECU911.Template.Views
                     per.Per_areaTrabajo = ddl_area.Text.ToUpper();
                     per.Per_estado = ddl_estado.Text.ToUpper();
 
+                    //Datos Tbl_Usuarios
+                    usu.usu_cedula = txt_cedula.Text.ToUpper();
+                    usu.usu_priApellido = txt_priApellido.Text.ToUpper();
+                    usu.usu_segApellido = txt_segApellido.Text.ToUpper();
+                    usu.usu_priNombre = txt_priNombre.Text.ToUpper();
+                    usu.usu_segNombre = txt_segNombre.Text.ToUpper();
+                    usu.usu_nomlogin = txt_cedula.Text.ToUpper();
+                    usu.usu_pass = GetMD5(txt_cedula.Text.ToUpper());
+                    usu.tusu_id = 2;
+                    usu.usu_estado = ddl_estado.SelectedValue;
+
                     CN_Personas.GuardarPersona(per);
+                    CN_Usuarios.save(usu);
 
                     //Mensaje de confirmacion
                     ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", "swal('Exito!', 'Paciente Registrado Exitosamente', 'success')", true);
@@ -117,6 +134,7 @@ namespace SistemaECU911.Template.Views
         {
             try
             {
+                //Datos Update Tbl_Personas
                 per.Per_priNombre = txt_priNombre.Text.ToUpper();
                 per.Per_segNombre = txt_segNombre.Text.ToUpper();
                 per.Per_priApellido = txt_priApellido.Text.ToUpper();
@@ -131,7 +149,11 @@ namespace SistemaECU911.Template.Views
                 per.Per_areaTrabajo = ddl_area.Text.ToUpper();
                 per.Per_estado = ddl_estado.SelectedValue;
 
+                //Datos Update Tbl_Usuarios
+                usu.usu_estado = ddl_estado.SelectedValue;
+
                 CN_Personas.ModificarPersona(per);
+                CN_Usuarios.modify(usu);
 
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", "swal('Exito!', 'Datos Modificados Exitosamente', 'success')", true);
                 Timer1.Enabled = true;
@@ -184,6 +206,17 @@ namespace SistemaECU911.Template.Views
             ddl_zonal.DataTextField = "Emp_zonal";
             ddl_zonal.DataValueField = "Emp_id";
             ddl_zonal.DataBind();
+        }
+
+        public static string GetMD5(string str)
+        {
+            MD5 md5 = MD5CryptoServiceProvider.Create();
+            ASCIIEncoding encoding = new ASCIIEncoding();
+            byte[] stream = null;
+            StringBuilder sb = new StringBuilder();
+            stream = md5.ComputeHash(encoding.GetBytes(str));
+            for (int i = 0; i < stream.Length; i++) sb.AppendFormat("{0:x2}", stream[i]);
+            return sb.ToString();
         }
     }
 }

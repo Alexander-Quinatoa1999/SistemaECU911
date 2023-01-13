@@ -22,7 +22,7 @@ namespace CapaDatos
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="db_a8e3ca_sistemaecu911")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="SistemaECU911")]
 	public partial class DataClassesECU911DataContext : System.Data.Linq.DataContext
 	{
 		
@@ -90,7 +90,7 @@ namespace CapaDatos
     #endregion
 		
 		public DataClassesECU911DataContext() : 
-				base(global::CapaDatos.Properties.Settings.Default.db_a8e3ca_sistemaecu911ConnectionString, mappingSource)
+				base(global::CapaDatos.Properties.Settings.Default.SistemaECU911ConnectionString4, mappingSource)
 		{
 			OnCreated();
 		}
