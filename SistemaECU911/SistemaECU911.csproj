@@ -86,6 +86,7 @@
   <ItemGroup>
     <Content Include="Autentificacion\Recuperar.aspx" />
     <Content Include="error\404.aspx" />
+    <Content Include="Template\Template Principal\images\Lock.png" />
     <Content Include="Template\Template Principal\vendors\css\core.css" />
     <Content Include="Template\Template Principal\vendors\css\icon-font.min.css" />
     <Content Include="Template\Template Principal\css\style-andres.css" />
@@ -2835,6 +2836,8 @@
     <Content Include="Template\Template Principal\vendors\tinymce\tinymce.min.js" />
     <Content Include="Template\Views\CargarImagen.aspx" />
     <Content Include="Template\Views\Certificado_Covid.aspx" />
+    <Content Include="Template\Views\Configuracion.aspx" />
+    <Content Include="Template\Views\Contraseña.aspx" />
     <Content Include="Template\Views\ImagenTest.aspx" />
     <Content Include="Template\Views\PacientesPedidoExamenes.aspx" />
     <Content Include="Template\Views\Personas.aspx" />
@@ -2905,6 +2908,20 @@
     </Compile>
     <Compile Include="Template\Views\Certificado_Covid.aspx.designer.cs">
       <DependentUpon>Certificado_Covid.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Template\Views\Configuracion.aspx.cs">
+      <DependentUpon>Configuracion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Template\Views\Configuracion.aspx.designer.cs">
+      <DependentUpon>Configuracion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Template\Views\Contraseña.aspx.cs">
+      <DependentUpon>Contraseña.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Template\Views\Contraseña.aspx.designer.cs">
+      <DependentUpon>Contraseña.aspx</DependentUpon>
     </Compile>
     <Compile Include="Template\Views\ImagenTest.aspx.cs">
       <DependentUpon>ImagenTest.aspx</DependentUpon>

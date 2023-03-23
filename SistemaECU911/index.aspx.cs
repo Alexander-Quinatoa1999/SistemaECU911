@@ -57,8 +57,15 @@ namespace SistemaECU911
                                 Session["prinombre"] = usuario.usu_priNombre.ToString();
                                 Session["segnombre"] = usuario.usu_segNombre.ToString();
                                 Session["priapellido"] = usuario.usu_priApellido.ToString();
-                                Session["segapellido"] = usuario.usu_segApellido.ToString();
+                                Session["segapellido"] = usuario.usu_segApellido.ToString();                                
                                 Session["rol"] = tusu.tusu_nombre.ToString();
+
+                                //--------------------Datos Cambiar Usuario--------------------
+
+                                Session["correo"] = usuario.usu_correo.ToString();
+                                Session["telefono"] = usuario.usu_telefono.ToString();
+                                Session["direccion"] = usuario.usu_direccion.ToString();
+
                                 Response.Redirect("~/Template/Views/Inicio.aspx");
                                 limpiar();
                             }

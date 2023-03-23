@@ -116,7 +116,7 @@ namespace SistemaECU911.Template.Views
                     usu.usu_estado = ddl_estado.SelectedValue;
 
                     CN_Personas.GuardarPersona(per);
-                    CN_Usuarios.save(usu);
+                    CN_Usuarios.GuardarUsuario(usu);
 
                     //Mensaje de confirmacion
                     ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", "swal('Exito!', 'Paciente Registrado Exitosamente', 'success')", true);
@@ -153,7 +153,7 @@ namespace SistemaECU911.Template.Views
                 usu.usu_estado = ddl_estado.SelectedValue;
 
                 CN_Personas.ModificarPersona(per);
-                CN_Usuarios.modify(usu);
+                //CN_Usuarios.ModificarUsuarios(usu);
 
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", "swal('Exito!', 'Datos Modificados Exitosamente', 'success')", true);
                 Timer1.Enabled = true;

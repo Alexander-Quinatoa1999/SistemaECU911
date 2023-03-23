@@ -19,7 +19,7 @@ namespace CapaNegocio
             return auto;
         }
         //metodo para verificar si existe el usuario
-        public static Tbl_Usuarios obtenerUsuariosxCedula(int cedula)
+        public static Tbl_Usuarios obtenerUsuariosxCedula(string cedula)
         {
             var usuced = dc.Tbl_Usuarios.FirstOrDefault(usu => usu.usu_cedula.Equals(cedula) && usu.usu_estado == "A");
             return usuced;
@@ -60,6 +60,12 @@ namespace CapaNegocio
             var respid = dc.Tbl_Usuarios.FirstOrDefault(usu => usu.usu_id.Equals(id) && usu.usu_estado == "A");
             return respid;
         }
+        ////metodo para obtener los cedula por id persona
+        //public static Tbl_Personas obtenerCedulaxIdPersona(int id)
+        //{
+        //    var respid = dc.Tbl_Personas.FirstOrDefault(per => per.Per_id.Equals(id) && per.Per_estado == "A");
+        //    return respid;
+        //}
         //Metodo para obtener contraseña anterior
         public static bool autentificarxUsuario(int usu, string pass)
         {
@@ -78,7 +84,8 @@ namespace CapaNegocio
             var contra = dc.Tbl_Usuarios.Single(usu => usu.usu_estado == "A" && usu.usu_correo.Equals(correo));
             return contra;
         }
-        public static void save(Tbl_Usuarios usu)
+
+        public static void GuardarUsuario(Tbl_Usuarios usu)
         {
             try
             {
@@ -90,7 +97,7 @@ namespace CapaNegocio
                 throw new ArgumentException("Los datos no han sido guardados <br/>" + ex.Message);
             }
         }
-        public static void modify(Tbl_Usuarios usu)
+        public static void ModificarUsuarios(Tbl_Usuarios usu)
         {
             try
             {
@@ -101,29 +108,29 @@ namespace CapaNegocio
                 throw new ArgumentException("Los datos no han sido modificados <br/>" + ex.Message);
             }
         }
-        public static void delete(Tbl_Usuarios usu)
-        {
-            try
-            {
-                usu.usu_estado = "I";
-                dc.SubmitChanges();
-            }
-            catch (Exception ex)
-            {
-                throw new ArgumentException("Los datos no han sido eliminados <br/>" + ex.Message);
-            }
-        }
-        public static void change(Tbl_Usuarios usu)
-        {
-            try
-            {
-                dc.SubmitChanges();
-            }
-            catch (Exception ex)
-            {
-                throw new ArgumentException("Los datos no han sido modificados <br/>" + ex.Message);
-            }
-        }
+        //public static void delete(Tbl_Usuarios usu)
+        //{
+        //    try
+        //    {
+        //        usu.usu_estado = "I";
+        //        dc.SubmitChanges();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw new ArgumentException("Los datos no han sido eliminados <br/>" + ex.Message);
+        //    }
+        //}
+        //public static void change(Tbl_Usuarios usu)
+        //{
+        //    try
+        //    {
+        //        dc.SubmitChanges();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw new ArgumentException("Los datos no han sido modificados <br/>" + ex.Message);
+        //    }
+        //}
 
     }
 }

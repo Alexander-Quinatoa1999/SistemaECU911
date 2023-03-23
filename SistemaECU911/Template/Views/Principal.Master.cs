@@ -23,7 +23,7 @@ namespace SistemaECU911.Template.Views
                 string priNom = Session["prinombre"].ToString();
                 string segNom = Session["segnombre"].ToString();
                 string priApe = Session["priapellido"].ToString();
-                string segApe = Session["segapellido"].ToString();
+                string segApe = Session["segapellido"].ToString();                
                 string resRol = Session["rol"].ToString();
                 lbl_nombre.Text = priNom + " " + segNom; 
                 lbl_apellido.Text = priApe + " " + segApe;
@@ -41,5 +41,7 @@ namespace SistemaECU911.Template.Views
             Session.RemoveAll();
             Response.Redirect("../../index.aspx");
         }
+
+        
     }
 }

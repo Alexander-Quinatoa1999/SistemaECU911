@@ -421,11 +421,9 @@ namespace CapaDatos
 		
 		private string _usu_correo;
 		
-		private System.Nullable<long> _tusu_id;
+		private System.Nullable<int> _tusu_id;
 		
 		private string _usu_estado;
-		
-		private EntityRef<Tbl_TipoUsuario> _Tbl_TipoUsuario;
 		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
@@ -453,7 +451,7 @@ namespace CapaDatos
     partial void Onusu_passChanged();
     partial void Onusu_correoChanging(string value);
     partial void Onusu_correoChanged();
-    partial void Ontusu_idChanging(System.Nullable<long> value);
+    partial void Ontusu_idChanging(System.Nullable<int> value);
     partial void Ontusu_idChanged();
     partial void Onusu_estadoChanging(string value);
     partial void Onusu_estadoChanged();
@@ -461,7 +459,6 @@ namespace CapaDatos
 		
 		public Tbl_Usuarios()
 		{
-			this._Tbl_TipoUsuario = default(EntityRef<Tbl_TipoUsuario>);
 			OnCreated();
 		}
 		
@@ -485,7 +482,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_cedula", DbType="VarChar(50)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_cedula", DbType="VarChar(10)")]
 		public string usu_cedula
 		{
 			get
@@ -505,7 +502,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_priApellido", DbType="VarChar(50)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_priApellido", DbType="VarChar(15)")]
 		public string usu_priApellido
 		{
 			get
@@ -525,7 +522,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_segApellido", DbType="VarChar(50)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_segApellido", DbType="VarChar(15)")]
 		public string usu_segApellido
 		{
 			get
@@ -545,7 +542,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_priNombre", DbType="VarChar(50)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_priNombre", DbType="VarChar(15)")]
 		public string usu_priNombre
 		{
 			get
@@ -565,7 +562,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_segNombre", DbType="VarChar(50)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_segNombre", DbType="VarChar(15)")]
 		public string usu_segNombre
 		{
 			get
@@ -585,7 +582,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_direccion", DbType="VarChar(150)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_direccion", DbType="VarChar(100)")]
 		public string usu_direccion
 		{
 			get
@@ -605,7 +602,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_telefono", DbType="VarChar(50)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_telefono", DbType="VarChar(10)")]
 		public string usu_telefono
 		{
 			get
@@ -625,7 +622,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_nomlogin", DbType="VarChar(50)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_nomlogin", DbType="VarChar(15)")]
 		public string usu_nomlogin
 		{
 			get
@@ -645,7 +642,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_pass", DbType="VarChar(150)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_pass", DbType="VarChar(50)")]
 		public string usu_pass
 		{
 			get
@@ -665,7 +662,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_correo", DbType="VarChar(50)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_correo", DbType="VarChar(30)")]
 		public string usu_correo
 		{
 			get
@@ -685,8 +682,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tusu_id", DbType="BigInt")]
-		public System.Nullable<long> tusu_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tusu_id", DbType="Int")]
+		public System.Nullable<int> tusu_id
 		{
 			get
 			{
@@ -696,10 +693,6 @@ namespace CapaDatos
 			{
 				if ((this._tusu_id != value))
 				{
-					if (this._Tbl_TipoUsuario.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.Ontusu_idChanging(value);
 					this.SendPropertyChanging();
 					this._tusu_id = value;
@@ -709,7 +702,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_estado", DbType="VarChar(50)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_estado", DbType="VarChar(1)")]
 		public string usu_estado
 		{
 			get
@@ -725,40 +718,6 @@ namespace CapaDatos
 					this._usu_estado = value;
 					this.SendPropertyChanged("usu_estado");
 					this.Onusu_estadoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_TipoUsuario_Tbl_Usuarios", Storage="_Tbl_TipoUsuario", ThisKey="tusu_id", OtherKey="tusu_id", IsForeignKey=true)]
-		public Tbl_TipoUsuario Tbl_TipoUsuario
-		{
-			get
-			{
-				return this._Tbl_TipoUsuario.Entity;
-			}
-			set
-			{
-				Tbl_TipoUsuario previousValue = this._Tbl_TipoUsuario.Entity;
-				if (((previousValue != value) 
-							|| (this._Tbl_TipoUsuario.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Tbl_TipoUsuario.Entity = null;
-						previousValue.Tbl_Usuarios.Remove(this);
-					}
-					this._Tbl_TipoUsuario.Entity = value;
-					if ((value != null))
-					{
-						value.Tbl_Usuarios.Add(this);
-						this._tusu_id = value.tusu_id;
-					}
-					else
-					{
-						this._tusu_id = default(Nullable<long>);
-					}
-					this.SendPropertyChanged("Tbl_TipoUsuario");
 				}
 			}
 		}
@@ -50193,19 +50152,17 @@ namespace CapaDatos
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private long _tusu_id;
+		private int _tusu_id;
 		
 		private string _tusu_nombre;
 		
 		private string _tusu_estado;
 		
-		private EntitySet<Tbl_Usuarios> _Tbl_Usuarios;
-		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void Ontusu_idChanging(long value);
+    partial void Ontusu_idChanging(int value);
     partial void Ontusu_idChanged();
     partial void Ontusu_nombreChanging(string value);
     partial void Ontusu_nombreChanged();
@@ -50215,12 +50172,11 @@ namespace CapaDatos
 		
 		public Tbl_TipoUsuario()
 		{
-			this._Tbl_Usuarios = new EntitySet<Tbl_Usuarios>(new Action<Tbl_Usuarios>(this.attach_Tbl_Usuarios), new Action<Tbl_Usuarios>(this.detach_Tbl_Usuarios));
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tusu_id", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public long tusu_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tusu_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int tusu_id
 		{
 			get
 			{
@@ -50279,19 +50235,6 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_TipoUsuario_Tbl_Usuarios", Storage="_Tbl_Usuarios", ThisKey="tusu_id", OtherKey="tusu_id")]
-		public EntitySet<Tbl_Usuarios> Tbl_Usuarios
-		{
-			get
-			{
-				return this._Tbl_Usuarios;
-			}
-			set
-			{
-				this._Tbl_Usuarios.Assign(value);
-			}
-		}
-		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -50310,18 +50253,6 @@ namespace CapaDatos
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-		
-		private void attach_Tbl_Usuarios(Tbl_Usuarios entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tbl_TipoUsuario = this;
-		}
-		
-		private void detach_Tbl_Usuarios(Tbl_Usuarios entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tbl_TipoUsuario = null;
 		}
 	}
 	

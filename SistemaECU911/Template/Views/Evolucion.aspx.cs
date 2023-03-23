@@ -250,7 +250,6 @@ namespace SistemaECU911.Template.Views
                 }
                 Timer1.Enabled = false;
                 txt_fechahora.Text = DateTime.Now.ToLocalTime().ToString("yyyy-MM-ddTHH:mm");
-
             }
         }
 
