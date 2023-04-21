@@ -18,7 +18,7 @@
                 <br />
                 <div class="row">
                     <div align="center">
-                        <img src="../Template Principal/images/Foto_Perfil.png" alt="logo" style="width: 150px; height: 150px" />
+                        <img src="../Template Principal/images/User.png" alt="logo" style="width: 150px; height: 150px" />
                     </div>
                 </div>
                 <br />
@@ -27,6 +27,7 @@
                         <asp:FileUpload ID="FileUpload1" runat="server" />
                     </div>
                 </div>
+                <br />
                 <br />
                 <div class="row">
                     <div class="col-md-3">

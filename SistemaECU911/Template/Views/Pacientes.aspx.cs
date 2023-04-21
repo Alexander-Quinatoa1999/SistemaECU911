@@ -50,7 +50,7 @@ namespace SistemaECU911.Template.Views
             if (e.CommandName == "Editar")
             {
                 Response.Redirect("~/Template/Views/Historial.aspx?cod=" + codigo, true);
-            }            
+            }
         }
 
     }

@@ -18,7 +18,7 @@
                         <div class="container">
                             <div class="row align-items-center">
                                 <div class="col-md-6">
-                                    <img src="../Template Principal/images/Lock.png" style="width:550px; height:450px" alt="">                                    
+                                    <img src="../Template Principal/images/ChangePassword.png" style="width:400px; height:400px" alt="">                                    
                                 </div>
                                 <div class="col-md-6" style="padding: 30px">
                                     <h3 class="text-center cm-strong">RESTABLECER LA CONTRASEÑA</h3>
