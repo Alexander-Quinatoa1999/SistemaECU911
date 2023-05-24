@@ -14,7 +14,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
 
         private readonly DataClassesECU911DataContext dc = new DataClassesECU911DataContext();
 
-        private Tbl_Personas per = new Tbl_Personas();
+        private Tbl_Person per = new Tbl_Person();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -83,7 +83,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
                 }
                 else
                 {
-                    per = new Tbl_Personas();
+                    per = new Tbl_Person();
 
                     per.Per_priNombre = txt_priNombre.Text.ToUpper();
                     per.Per_segNombre = txt_segNombre.Text.ToUpper();
@@ -114,7 +114,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
             }
         }
 
-        private void ModificarPersona(Tbl_Personas per)
+        private void ModificarPersona(Tbl_Person per)
         {
             try
             {

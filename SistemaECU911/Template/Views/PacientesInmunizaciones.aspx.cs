@@ -25,7 +25,7 @@ namespace SistemaECU911.Template.Views
         private void cargarPaciente()
         {
             var query = from i in dc.Tbl_Inmunizaciones
-                        join p in dc.Tbl_Personas on i.Per_id equals p.Per_id
+                        join p in dc.Tbl_Person on i.Per_id equals p.Per_id
                         orderby i.inmu_fechaHoraGuardado descending
                         select new
                         {

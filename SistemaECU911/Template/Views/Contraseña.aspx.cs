@@ -14,7 +14,7 @@ namespace SistemaECU911.Template.Views
     public partial class Contraseña : System.Web.UI.Page
     {
 
-        private Tbl_Usuarios usuinfo = new Tbl_Usuarios();
+        private Tbl_Person usuinfo = new Tbl_Person();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -24,7 +24,7 @@ namespace SistemaECU911.Template.Views
             }
         }
 
-        private void cambiarClave(Tbl_Usuarios usu)
+        private void cambiarClave(Tbl_Person per)
         {
             try
             {
@@ -32,9 +32,9 @@ namespace SistemaECU911.Template.Views
                 bool existe = CN_Usuarios.autentificarxUsuario(usulogueado, GetMD5(txt_passAntigua.Text));
                 if (existe)
                 {
-                    Tbl_Usuarios usuc = new Tbl_Usuarios();
-                    usuc = CN_Usuarios.obtenerUsuariosxId(usulogueado);
-                    string anterior = usuc.usu_pass.ToString();
+                    Tbl_Person perc = new Tbl_Person();
+                    perc = CN_Usuarios.obtenerUsuariosxId(usulogueado);
+                    string anterior = perc.Per_pass.ToString();
                     if (anterior == GetMD5(txt_passNueva.Text))
                     {
                         ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", "swal('Error!', 'Su nueva clave no puede ser igual a la anterior.', 'error')", true);
@@ -43,8 +43,8 @@ namespace SistemaECU911.Template.Views
                     {
                         if (txt_passNueva.Text == txt_passNueva2.Text)
                         {
-                            usu.usu_pass = GetMD5(txt_passNueva.Text);
-                            CN_Usuarios.ModificarUsuarios(usu);
+                            per.Per_pass = GetMD5(txt_passNueva.Text);
+                            CN_Usuarios.ModificarUsuarios(per);
                             ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", "swal('Éxito!', 'Su clave a sido modificada con exito.', 'success')", true);
                             Limpiar();
                         }
@@ -84,7 +84,7 @@ namespace SistemaECU911.Template.Views
 
         protected void btn_cambiar_Click(object sender, EventArgs e)
         {
-            Tbl_Usuarios usu = new Tbl_Usuarios();
+            Tbl_Person usu = new Tbl_Person();
             int usulogeado = Convert.ToInt32(Session["Administrador"].ToString());
             usu = CN_Usuarios.obtenerUsuariosxId(usulogeado);
             if (usu != null)

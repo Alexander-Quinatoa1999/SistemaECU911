@@ -42,6 +42,42 @@ namespace SistemaECU911.views.Doctores
         protected global::System.Web.UI.HtmlControls.HtmlForm fmr;
 
         /// <summary>
+        /// Control lbl_nombre.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_nombre;
+
+        /// <summary>
+        /// Control lbl_rol.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_rol;
+
+        /// <summary>
+        /// Control lbn_configuracion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbn_configuracion;
+
+        /// <summary>
+        /// Control lnb_cerrarsesion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lnb_cerrarsesion;
+
+        /// <summary>
         /// Control Message.
         /// </summary>
         /// <remarks>

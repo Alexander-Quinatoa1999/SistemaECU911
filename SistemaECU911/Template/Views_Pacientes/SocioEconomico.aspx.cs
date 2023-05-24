@@ -22,7 +22,7 @@ namespace SistemaECU911.Template.Views_Pacientes
 
         DataClassesECU911DataContext dc = new DataClassesECU911DataContext();
 
-        private Tbl_Personas per = new Tbl_Personas();
+        private Tbl_Person per = new Tbl_Person();
 
         private Tbl_SocioEconomico sso = new Tbl_SocioEconomico();
 
@@ -1580,7 +1580,7 @@ namespace SistemaECU911.Template.Views_Pacientes
         {
             string cedula = txt_cedula.Text;
 
-            var lista = from c in dc.Tbl_Personas
+            var lista = from c in dc.Tbl_Person
                         where c.Per_cedula == cedula
                         select c;
 

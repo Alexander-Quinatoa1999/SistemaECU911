@@ -21,17 +21,17 @@ namespace SistemaECU911.autentificacion
 
         private void recuperar()
         {
-            Tbl_Usuarios usu = new Tbl_Usuarios();
+            Tbl_Person per = new Tbl_Person();
             bool existe = CN_Usuarios.autentificarxCorreo(txt_email.Text);
             {
                 if (existe)
                 {
-                    usu = CN_Usuarios.obtenerCorreo(txt_email.Text);
+                    per = CN_Usuarios.obtenerCorreo(txt_email.Text);
 
                     string from = "sistema.medico.ecu911@gmail.com";
                     string pass = "SistemaMedico911";
-                    string to = usu.usu_correo;
-                    string mensaje = "La contraseña que el olvido es: " + usu.usu_pass;
+                    string to = per.Per_correo;
+                    string mensaje = "La contraseña que el olvido es: " + per.Per_pass;
                     //string mensaje = "La contraseña que el olvido es: <strong>" +
                     //    desencriptar(usu.usu_pass) + "</strong>";
 

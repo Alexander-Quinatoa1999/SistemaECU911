@@ -5562,17 +5562,39 @@
     <Content Include="Template\Views\Retiro.aspx" />
     <Content Include="Template\Views\Secundario.aspx" />
     <Content Include="Template\Views\Certificado_Medico.aspx" />
+    <Content Include="views\Doctores\AgregarMedico.aspx" />
+    <Content Include="views\Doctores\AgregarPaciente.aspx" />
     <Content Include="views\Doctores\Certificado.aspx" />
+    <Content Include="views\Doctores\CertificadoCovid.aspx" />
+    <Content Include="views\Doctores\CertificadoMedico.aspx" />
+    <Content Include="views\Doctores\Configuracion.aspx" />
+    <Content Include="views\Doctores\Contraseña.aspx" />
     <Content Include="views\Doctores\Evolucion.aspx" />
     <Content Include="views\Doctores\FichaMedica.aspx" />
     <Content Include="views\Doctores\Inicial.aspx" />
     <Content Include="views\Doctores\Inicio.aspx" />
     <Content Include="views\Doctores\Inmunizaciones.aspx" />
+    <Content Include="views\Doctores\ListaMedicos.aspx" />
+    <Content Include="views\Doctores\ListaPacientes.aspx" />
     <Content Include="views\Doctores\PedidoExamenes.aspx" />
     <Content Include="views\Doctores\Periodica.aspx" />
+    <Content Include="views\Doctores\Profesiones.aspx" />
+    <Content Include="views\Doctores\RegistrosCertificado.aspx" />
+    <Content Include="views\Doctores\RegistrosEvolucion.aspx" />
     <Content Include="views\Doctores\RegistrosFichaMedica.aspx" />
+    <Content Include="views\Doctores\RegistrosInicial.aspx" />
+    <Content Include="views\Doctores\RegistrosInmunizaciones.aspx" />
+    <Content Include="views\Doctores\RegistrosPedidoExamenes.aspx" />
+    <Content Include="views\Doctores\RegistrosPeriodica.aspx" />
+    <Content Include="views\Doctores\RegistrosReintegro.aspx" />
+    <Content Include="views\Doctores\RegistrosRetiro.aspx" />
     <Content Include="views\Doctores\Reintegro.aspx" />
     <Content Include="views\Doctores\Retiro.aspx" />
+    <Content Include="views\Pacientes\Ficha Medica.aspx" />
+    <Content Include="views\Pacientes\Inicio.aspx" />
+    <Content Include="views\Pacientes\PacientesFichaMedica.aspx" />
+    <Content Include="views\Trabajo_Social\Inicio.aspx" />
+    <Content Include="views\Trabajo_Social\SocioEconomico.aspx" />
     <Content Include="views\WebForm1.aspx" />
     <Content Include="Web.config" />
     <Content Include="WebForm1.aspx" />
@@ -5887,12 +5909,54 @@
     <Compile Include="Template\Views\Certificado_Medico.aspx.designer.cs">
       <DependentUpon>Certificado_Medico.aspx</DependentUpon>
     </Compile>
+    <Compile Include="views\Doctores\AgregarMedico.aspx.cs">
+      <DependentUpon>AgregarMedico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="views\Doctores\AgregarMedico.aspx.designer.cs">
+      <DependentUpon>AgregarMedico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="views\Doctores\AgregarPaciente.aspx.cs">
+      <DependentUpon>AgregarPaciente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="views\Doctores\AgregarPaciente.aspx.designer.cs">
+      <DependentUpon>AgregarPaciente.aspx</DependentUpon>
+    </Compile>
     <Compile Include="views\Doctores\Certificado.aspx.cs">
       <DependentUpon>Certificado.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="views\Doctores\Certificado.aspx.designer.cs">
       <DependentUpon>Certificado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="views\Doctores\CertificadoCovid.aspx.cs">
+      <DependentUpon>CertificadoCovid.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="views\Doctores\CertificadoCovid.aspx.designer.cs">
+      <DependentUpon>CertificadoCovid.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="views\Doctores\CertificadoMedico.aspx.cs">
+      <DependentUpon>CertificadoMedico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="views\Doctores\CertificadoMedico.aspx.designer.cs">
+      <DependentUpon>CertificadoMedico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="views\Doctores\Configuracion.aspx.cs">
+      <DependentUpon>Configuracion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="views\Doctores\Configuracion.aspx.designer.cs">
+      <DependentUpon>Configuracion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="views\Doctores\Contraseña.aspx.cs">
+      <DependentUpon>Contraseña.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="views\Doctores\Contraseña.aspx.designer.cs">
+      <DependentUpon>Contraseña.aspx</DependentUpon>
     </Compile>
     <Compile Include="views\Doctores\Evolucion.aspx.cs">
       <DependentUpon>Evolucion.aspx</DependentUpon>
@@ -5929,6 +5993,20 @@
     <Compile Include="views\Doctores\Inmunizaciones.aspx.designer.cs">
       <DependentUpon>Inmunizaciones.aspx</DependentUpon>
     </Compile>
+    <Compile Include="views\Doctores\ListaMedicos.aspx.cs">
+      <DependentUpon>ListaMedicos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="views\Doctores\ListaMedicos.aspx.designer.cs">
+      <DependentUpon>ListaMedicos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="views\Doctores\ListaPacientes.aspx.cs">
+      <DependentUpon>ListaPacientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="views\Doctores\ListaPacientes.aspx.designer.cs">
+      <DependentUpon>ListaPacientes.aspx</DependentUpon>
+    </Compile>
     <Compile Include="views\Doctores\Medico.Master.cs">
       <DependentUpon>Medico.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -5950,12 +6028,75 @@
     <Compile Include="views\Doctores\Periodica.aspx.designer.cs">
       <DependentUpon>Periodica.aspx</DependentUpon>
     </Compile>
+    <Compile Include="views\Doctores\Profesiones.aspx.cs">
+      <DependentUpon>Profesiones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="views\Doctores\Profesiones.aspx.designer.cs">
+      <DependentUpon>Profesiones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="views\Doctores\RegistrosCertificado.aspx.cs">
+      <DependentUpon>RegistrosCertificado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="views\Doctores\RegistrosCertificado.aspx.designer.cs">
+      <DependentUpon>RegistrosCertificado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="views\Doctores\RegistrosEvolucion.aspx.cs">
+      <DependentUpon>RegistrosEvolucion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="views\Doctores\RegistrosEvolucion.aspx.designer.cs">
+      <DependentUpon>RegistrosEvolucion.aspx</DependentUpon>
+    </Compile>
     <Compile Include="views\Doctores\RegistrosFichaMedica.aspx.cs">
       <DependentUpon>RegistrosFichaMedica.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="views\Doctores\RegistrosFichaMedica.aspx.designer.cs">
       <DependentUpon>RegistrosFichaMedica.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="views\Doctores\RegistrosInicial.aspx.cs">
+      <DependentUpon>RegistrosInicial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="views\Doctores\RegistrosInicial.aspx.designer.cs">
+      <DependentUpon>RegistrosInicial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="views\Doctores\RegistrosInmunizaciones.aspx.cs">
+      <DependentUpon>RegistrosInmunizaciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="views\Doctores\RegistrosInmunizaciones.aspx.designer.cs">
+      <DependentUpon>RegistrosInmunizaciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="views\Doctores\RegistrosPedidoExamenes.aspx.cs">
+      <DependentUpon>RegistrosPedidoExamenes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="views\Doctores\RegistrosPedidoExamenes.aspx.designer.cs">
+      <DependentUpon>RegistrosPedidoExamenes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="views\Doctores\RegistrosPeriodica.aspx.cs">
+      <DependentUpon>RegistrosPeriodica.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="views\Doctores\RegistrosPeriodica.aspx.designer.cs">
+      <DependentUpon>RegistrosPeriodica.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="views\Doctores\RegistrosReintegro.aspx.cs">
+      <DependentUpon>RegistrosReintegro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="views\Doctores\RegistrosReintegro.aspx.designer.cs">
+      <DependentUpon>RegistrosReintegro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="views\Doctores\RegistrosRetiro.aspx.cs">
+      <DependentUpon>RegistrosRetiro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="views\Doctores\RegistrosRetiro.aspx.designer.cs">
+      <DependentUpon>RegistrosRetiro.aspx</DependentUpon>
     </Compile>
     <Compile Include="views\Doctores\Reintegro.aspx.cs">
       <DependentUpon>Reintegro.aspx</DependentUpon>
@@ -5971,12 +6112,47 @@
     <Compile Include="views\Doctores\Retiro.aspx.designer.cs">
       <DependentUpon>Retiro.aspx</DependentUpon>
     </Compile>
+    <Compile Include="views\Pacientes\Ficha Medica.aspx.cs">
+      <DependentUpon>Ficha Medica.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="views\Pacientes\Ficha Medica.aspx.designer.cs">
+      <DependentUpon>Ficha Medica.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="views\Pacientes\Inicio.aspx.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="views\Pacientes\Inicio.aspx.designer.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+    </Compile>
     <Compile Include="views\Pacientes\Pacientes.Master.cs">
       <DependentUpon>Pacientes.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="views\Pacientes\Pacientes.Master.designer.cs">
       <DependentUpon>Pacientes.Master</DependentUpon>
+    </Compile>
+    <Compile Include="views\Pacientes\PacientesFichaMedica.aspx.cs">
+      <DependentUpon>PacientesFichaMedica.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="views\Pacientes\PacientesFichaMedica.aspx.designer.cs">
+      <DependentUpon>PacientesFichaMedica.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="views\Trabajo_Social\Inicio.aspx.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="views\Trabajo_Social\Inicio.aspx.designer.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="views\Trabajo_Social\SocioEconomico.aspx.cs">
+      <DependentUpon>SocioEconomico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="views\Trabajo_Social\SocioEconomico.aspx.designer.cs">
+      <DependentUpon>SocioEconomico.aspx</DependentUpon>
     </Compile>
     <Compile Include="views\Trabajo_Social\TrabajoSocial.Master.cs">
       <DependentUpon>TrabajoSocial.Master</DependentUpon>

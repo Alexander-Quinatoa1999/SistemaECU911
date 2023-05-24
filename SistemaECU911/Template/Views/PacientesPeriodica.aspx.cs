@@ -26,7 +26,7 @@ namespace SistemaECU911.Template.Views
         private void cargarPaciente()
         {
             var query = from pe in dc.Tbl_Periodica
-                        join p in dc.Tbl_Personas on pe.Per_id equals p.Per_id
+                        join p in dc.Tbl_Person on pe.Per_id equals p.Per_id
                         join pro in dc.Tbl_Profesional on pe.prof_id equals pro.prof_id
                         orderby pe.perio_fechaHoraGuardado descending
                         select new

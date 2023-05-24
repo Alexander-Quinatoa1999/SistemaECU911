@@ -22,7 +22,7 @@ namespace SistemaECU911.Template.Views
 
         private readonly DataClassesECU911DataContext dc = new DataClassesECU911DataContext();
 
-        private Tbl_Personas per = new Tbl_Personas();
+        private Tbl_Person per = new Tbl_Person();
         private Tbl_Empresa emp = new Tbl_Empresa();
         private Tbl_Certificado certi = new Tbl_Certificado();
 
@@ -282,7 +282,7 @@ namespace SistemaECU911.Template.Views
         {
             string cedula = txt_numHClinica.Text;
 
-            var lista = from c in dc.Tbl_Personas
+            var lista = from c in dc.Tbl_Person
                         join e in dc.Tbl_Empresa on c.Emp_id equals e.Emp_id
                         where c.Per_cedula == cedula
                         select new

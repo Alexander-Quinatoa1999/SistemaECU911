@@ -16,8 +16,7 @@ namespace SistemaECU911.Template.Views
 
         private readonly DataClassesECU911DataContext dc = new DataClassesECU911DataContext();
 
-        private Tbl_Personas per = new Tbl_Personas();
-        private Tbl_Usuarios usu = new Tbl_Usuarios();
+        private Tbl_Person per = new Tbl_Person();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -86,8 +85,7 @@ namespace SistemaECU911.Template.Views
                 }
                 else
                 {
-                    per = new Tbl_Personas();
-                    usu = new Tbl_Usuarios();
+                    per = new Tbl_Person();
 
                     //Datos Tbl_Personas
                     per.Per_priNombre = txt_priNombre.Text.ToUpper();
@@ -105,18 +103,17 @@ namespace SistemaECU911.Template.Views
                     per.Per_estado = ddl_estado.Text.ToUpper();
 
                     //Datos Tbl_Usuarios
-                    usu.usu_cedula = txt_cedula.Text.ToUpper();
-                    usu.usu_priApellido = txt_priApellido.Text.ToUpper();
-                    usu.usu_segApellido = txt_segApellido.Text.ToUpper();
-                    usu.usu_priNombre = txt_priNombre.Text.ToUpper();
-                    usu.usu_segNombre = txt_segNombre.Text.ToUpper();
-                    usu.usu_nomlogin = txt_cedula.Text.ToUpper();
-                    usu.usu_pass = GetMD5(txt_cedula.Text.ToUpper());
-                    usu.tusu_id = 2;
-                    usu.usu_estado = ddl_estado.SelectedValue;
+                    per.Per_cedula = txt_cedula.Text.ToUpper();
+                    per.Per_priApellido = txt_priApellido.Text.ToUpper();
+                    per.Per_segApellido = txt_segApellido.Text.ToUpper();
+                    per.Per_priNombre = txt_priNombre.Text.ToUpper();
+                    per.Per_segNombre = txt_segNombre.Text.ToUpper();
+                    per.Per_nomlogin = txt_cedula.Text.ToUpper();
+                    per.Per_pass = GetMD5(txt_cedula.Text.ToUpper());
+                    per.tusu_id = 2;
+                    per.Per_estado = ddl_estado.SelectedValue;
 
                     CN_Personas.GuardarPersona(per);
-                    CN_Usuarios.GuardarUsuario(usu);
 
                     //Mensaje de confirmacion
                     ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", "swal('Exito!', 'Paciente Registrado Exitosamente', 'success')", true);
@@ -130,7 +127,7 @@ namespace SistemaECU911.Template.Views
             }
         }
 
-        private void ModificarPersona(Tbl_Personas per)
+        private void ModificarPersona(Tbl_Person per)
         {
             try
             {
@@ -150,7 +147,7 @@ namespace SistemaECU911.Template.Views
                 per.Per_estado = ddl_estado.SelectedValue;
 
                 //Datos Update Tbl_Usuarios
-                usu.usu_estado = ddl_estado.SelectedValue;
+                per.Per_estado = ddl_estado.SelectedValue;
 
                 CN_Personas.ModificarPersona(per);
                 //CN_Usuarios.ModificarUsuarios(usu);

@@ -23,7 +23,8 @@ namespace SistemaECU911.views.Doctores
 
         private void cargarPaciente()
         {
-            var query = from p in dc.Tbl_Personas
+            var query = from p in dc.Tbl_Person
+                        where p.Per_estado == "AP"
                         select new
                         {
                             p.Per_id,

@@ -19,7 +19,7 @@ namespace SistemaECU911.Template.Views
 
         private readonly DataClassesECU911DataContext dc = new DataClassesECU911DataContext();
 
-        private Tbl_Usuarios usu = new Tbl_Usuarios();
+        private Tbl_Person per = new Tbl_Person();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -52,15 +52,15 @@ namespace SistemaECU911.Template.Views
                 Timer1.Enabled = false;
             }
         }
-        private void ActualizarInformacionUsurio(Tbl_Usuarios usu)
+        private void ActualizarInformacionUsurio(Tbl_Person per)
         {
             try
             {
-                usu.usu_direccion = txt_direccion.Text;
-                usu.usu_telefono = txt_telefono.Text;
-                usu.usu_correo = txt_correo.Text;
+                per.Per_direccion = txt_direccion.Text;
+                per.Per_telefono = txt_telefono.Text;
+                per.Per_correo = txt_correo.Text;
 
-                CN_Usuarios.ModificarUsuarios(usu);
+                CN_Usuarios.ModificarUsuarios(per);
 
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", "swal('Exito!', 'Datos Actualizados Exitosamente', 'success')", true);
                 Timer1.Enabled = true;
@@ -73,7 +73,7 @@ namespace SistemaECU911.Template.Views
 
         protected void btn_actualizar_Click(object sender, EventArgs e)
         {
-            Tbl_Usuarios usu = new Tbl_Usuarios();
+            Tbl_Person usu = new Tbl_Person();
             int usulogueado = Convert.ToInt32(Session["Administrador"].ToString());
             usu = CN_Usuarios.obtenerUsuariosxId(usulogueado);
 

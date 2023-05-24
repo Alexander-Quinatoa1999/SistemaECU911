@@ -28,17 +28,17 @@ namespace CapaNegocio
         }
 
         //metodo traer para todos los usuarios
-        public static List<Tbl_Personas> ObtenerPersonas()
+        public static List<Tbl_Person> ObtenerPersonas()
         {
-            var listaPer = dc.Tbl_Personas.Where(per => per.Per_estado == "A");
+            var listaPer = dc.Tbl_Person.Where(per => per.Per_estado == "AP");
             return listaPer.ToList();
         }
 
         //metodo traer para todos los usuarios x ID
-        public static Tbl_Personas obtenerPersonasxCedula(int ced)
+        public static Tbl_Person obtenerPersonasxCedula(int ced)
         {
-            var perid = dc.Tbl_Personas.FirstOrDefault(per => per.Per_cedula.Equals(ced) && per.Per_estado == "A");
-            return perid;
+            var usuid = dc.Tbl_Person.FirstOrDefault(per => per.Per_cedula.Equals(ced) && per.Per_estado == "AP");
+            return usuid;
         }
 
         public static Tbl_FichasMedicas ObtenerFichasMedicasPorId(int id)
@@ -48,9 +48,9 @@ namespace CapaNegocio
         }
 
         //metodo traer para todos los usuarios x ID
-        public static Tbl_Personas ObtenerPersonasxId(int personaid)
+        public static Tbl_Person ObtenerPersonasxId(int personaid)
         {
-            var perid = dc.Tbl_Personas.FirstOrDefault(per => per.Per_id.Equals(personaid) && per.Per_estado == "A");
+            var perid = dc.Tbl_Person.FirstOrDefault(per => per.Per_id.Equals(personaid) && per.Per_estado == "AP");
             return perid;
         }
 
@@ -62,16 +62,16 @@ namespace CapaNegocio
         }
 
         //metodo traer para todos los ID personas x cedula
-        public static Tbl_Personas ObtenerIdPersonasxCedula(string perced)
+        public static Tbl_Person ObtenerIdPersonasxCedula(string perced)
         {
-            var perid = dc.Tbl_Personas.FirstOrDefault(per => per.Per_cedula.Equals(perced) && per.Per_estado == "A");
+            var perid = dc.Tbl_Person.FirstOrDefault(per => per.Per_cedula.Equals(perced) && per.Per_estado == "AP");
             return perid;
         }
 
-        //metodo traer para todos el ID de la empresa x cedula
-        public static Tbl_Personas ObtenerIdEmpresaxCedula(string perced)
+        //metodo traer para todos el ID de la empresa x usu_id (Cedula)
+        public static Tbl_Person ObtenerIdEmpresaxCedula(string perced)
         {
-            var perid = dc.Tbl_Personas.FirstOrDefault(per => per.Per_cedula.Equals(perced) && per.Per_estado == "A");
+            var perid = dc.Tbl_Person.FirstOrDefault(per => per.Per_cedula.Equals(perced) && per.Per_estado == "AP");
             return perid;
         }
 

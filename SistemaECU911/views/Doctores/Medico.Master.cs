@@ -13,5 +13,16 @@ namespace SistemaECU911.views.Doctores
         {
 
         }
+
+        protected void lbn_configuracion_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Configuracion.aspx");
+        }
+
+        protected void lnb_cerrarsesion_Click(object sender, EventArgs e)
+        {
+
+        }
+               
     }
 }

@@ -13,15 +13,15 @@ namespace CapaNegocio
         private static DataClassesECU911DataContext dc = new DataClassesECU911DataContext();
 
         //metodo traer para todos los usuarios x ID
-        public static Tbl_Personas obtenerPersonasxCedula(string ced)
+        public static Tbl_Person obtenerPersonasxCedula(string ced)
         {
-            var perid = dc.Tbl_Personas.FirstOrDefault(per => per.Per_cedula.Equals(ced) && per.Per_estado == "A");
-            return perid;
+            var usuid = dc.Tbl_Person.FirstOrDefault(per => per.Per_cedula.Equals(ced) && per.Per_estado == "AP");
+            return usuid;
         }
 
-        public static Tbl_Personas ObtenerPersonaPorId(int id)
+        public static Tbl_Person ObtenerPersonaPorId(int id)
         {
-            var perid = dc.Tbl_Personas.FirstOrDefault(per => per.Per_id.Equals(id));
+            var perid = dc.Tbl_Person.FirstOrDefault(per => per.Per_id.Equals(id));
             return perid;
         }
 
@@ -35,16 +35,16 @@ namespace CapaNegocio
         //metodo para verificar si existe la cedula
         public static bool autentificarxCedula(string cedula)
         {
-            var cedu = dc.Tbl_Personas.Any(ced => ced.Per_estado == "A" && ced.Per_cedula.Equals(cedula));
+            var cedu = dc.Tbl_Person.Any(per => per.Per_estado == "AP" && per.Per_cedula.Equals(cedula));
             return cedu;
         }
 
         // Metodo para guardar datos de las persona
-        public static void GuardarPersona(Tbl_Personas per)
+        public static void GuardarPersona(Tbl_Person per)
         {
             try
             {
-                dc.Tbl_Personas.InsertOnSubmit(per);
+                dc.Tbl_Person.InsertOnSubmit(per);
                 dc.SubmitChanges();
             }
             catch (Exception ex)
@@ -54,7 +54,7 @@ namespace CapaNegocio
         }
 
         // Metodo para modificar datos de las personas
-        public static void ModificarPersona(Tbl_Personas per)
+        public static void ModificarPersona(Tbl_Person per)
         {
             try
             {

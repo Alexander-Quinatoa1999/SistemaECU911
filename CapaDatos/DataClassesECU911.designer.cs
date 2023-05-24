@@ -33,9 +33,9 @@ namespace CapaDatos
     partial void Insertcie10(cie10 instance);
     partial void Updatecie10(cie10 instance);
     partial void Deletecie10(cie10 instance);
-    partial void InsertTbl_Usuarios(Tbl_Usuarios instance);
-    partial void UpdateTbl_Usuarios(Tbl_Usuarios instance);
-    partial void DeleteTbl_Usuarios(Tbl_Usuarios instance);
+    partial void InsertTbl_TipoUsuario(Tbl_TipoUsuario instance);
+    partial void UpdateTbl_TipoUsuario(Tbl_TipoUsuario instance);
+    partial void DeleteTbl_TipoUsuario(Tbl_TipoUsuario instance);
     partial void InsertTbl_Certificado(Tbl_Certificado instance);
     partial void UpdateTbl_Certificado(Tbl_Certificado instance);
     partial void DeleteTbl_Certificado(Tbl_Certificado instance);
@@ -66,9 +66,9 @@ namespace CapaDatos
     partial void InsertTbl_Periodica(Tbl_Periodica instance);
     partial void UpdateTbl_Periodica(Tbl_Periodica instance);
     partial void DeleteTbl_Periodica(Tbl_Periodica instance);
-    partial void InsertTbl_Personas(Tbl_Personas instance);
-    partial void UpdateTbl_Personas(Tbl_Personas instance);
-    partial void DeleteTbl_Personas(Tbl_Personas instance);
+    partial void InsertTbl_Person(Tbl_Person instance);
+    partial void UpdateTbl_Person(Tbl_Person instance);
+    partial void DeleteTbl_Person(Tbl_Person instance);
     partial void InsertTbl_Profesional(Tbl_Profesional instance);
     partial void UpdateTbl_Profesional(Tbl_Profesional instance);
     partial void DeleteTbl_Profesional(Tbl_Profesional instance);
@@ -84,9 +84,6 @@ namespace CapaDatos
     partial void InsertTbl_Tipos_de_Enfermedades(Tbl_Tipos_de_Enfermedades instance);
     partial void UpdateTbl_Tipos_de_Enfermedades(Tbl_Tipos_de_Enfermedades instance);
     partial void DeleteTbl_Tipos_de_Enfermedades(Tbl_Tipos_de_Enfermedades instance);
-    partial void InsertTbl_TipoUsuario(Tbl_TipoUsuario instance);
-    partial void UpdateTbl_TipoUsuario(Tbl_TipoUsuario instance);
-    partial void DeleteTbl_TipoUsuario(Tbl_TipoUsuario instance);
     #endregion
 		
 		public DataClassesECU911DataContext() : 
@@ -127,11 +124,11 @@ namespace CapaDatos
 			}
 		}
 		
-		public System.Data.Linq.Table<Tbl_Usuarios> Tbl_Usuarios
+		public System.Data.Linq.Table<Tbl_TipoUsuario> Tbl_TipoUsuario
 		{
 			get
 			{
-				return this.GetTable<Tbl_Usuarios>();
+				return this.GetTable<Tbl_TipoUsuario>();
 			}
 		}
 		
@@ -215,11 +212,11 @@ namespace CapaDatos
 			}
 		}
 		
-		public System.Data.Linq.Table<Tbl_Personas> Tbl_Personas
+		public System.Data.Linq.Table<Tbl_Person> Tbl_Person
 		{
 			get
 			{
-				return this.GetTable<Tbl_Personas>();
+				return this.GetTable<Tbl_Person>();
 			}
 		}
 		
@@ -263,19 +260,11 @@ namespace CapaDatos
 			}
 		}
 		
-		public System.Data.Linq.Table<Tbl_TipoUsuario> Tbl_TipoUsuario
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.AutentificarxUsuario")]
+		public ISingleResult<AutentificarxUsuarioResult> AutentificarxUsuario([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Usuario", DbType="VarChar(25)")] string usuario)
 		{
-			get
-			{
-				return this.GetTable<Tbl_TipoUsuario>();
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.CargarImagen")]
-		public ISingleResult<CargarImagenResult> CargarImagen([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> img_id)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), img_id);
-			return ((ISingleResult<CargarImagenResult>)(result.ReturnValue));
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), usuario);
+			return ((ISingleResult<AutentificarxUsuarioResult>)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.RegistrarImagen")]
@@ -283,6 +272,13 @@ namespace CapaDatos
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cedula, imagen);
 			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.CargarImagen")]
+		public ISingleResult<CargarImagenResult> CargarImagen([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> img_id)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), img_id);
+			return ((ISingleResult<CargarImagenResult>)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.InsertarPersona")]
@@ -393,300 +389,40 @@ namespace CapaDatos
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_Usuarios")]
-	public partial class Tbl_Usuarios : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_TipoUsuario")]
+	public partial class Tbl_TipoUsuario : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _usu_id;
+		private int _tusu_id;
 		
-		private string _usu_cedula;
+		private string _tusu_nombre;
 		
-		private string _usu_priApellido;
+		private string _tusu_estado;
 		
-		private string _usu_segApellido;
-		
-		private string _usu_priNombre;
-		
-		private string _usu_segNombre;
-		
-		private string _usu_direccion;
-		
-		private string _usu_telefono;
-		
-		private string _usu_nomlogin;
-		
-		private string _usu_pass;
-		
-		private string _usu_correo;
-		
-		private System.Nullable<long> _tusu_id;
-		
-		private string _usu_estado;
-		
-		private EntityRef<Tbl_TipoUsuario> _Tbl_TipoUsuario;
+		private EntitySet<Tbl_Person> _Tbl_Person;
 		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void Onusu_idChanging(int value);
-    partial void Onusu_idChanged();
-    partial void Onusu_cedulaChanging(string value);
-    partial void Onusu_cedulaChanged();
-    partial void Onusu_priApellidoChanging(string value);
-    partial void Onusu_priApellidoChanged();
-    partial void Onusu_segApellidoChanging(string value);
-    partial void Onusu_segApellidoChanged();
-    partial void Onusu_priNombreChanging(string value);
-    partial void Onusu_priNombreChanged();
-    partial void Onusu_segNombreChanging(string value);
-    partial void Onusu_segNombreChanged();
-    partial void Onusu_direccionChanging(string value);
-    partial void Onusu_direccionChanged();
-    partial void Onusu_telefonoChanging(string value);
-    partial void Onusu_telefonoChanged();
-    partial void Onusu_nomloginChanging(string value);
-    partial void Onusu_nomloginChanged();
-    partial void Onusu_passChanging(string value);
-    partial void Onusu_passChanged();
-    partial void Onusu_correoChanging(string value);
-    partial void Onusu_correoChanged();
-    partial void Ontusu_idChanging(System.Nullable<long> value);
+    partial void Ontusu_idChanging(int value);
     partial void Ontusu_idChanged();
-    partial void Onusu_estadoChanging(string value);
-    partial void Onusu_estadoChanged();
+    partial void Ontusu_nombreChanging(string value);
+    partial void Ontusu_nombreChanged();
+    partial void Ontusu_estadoChanging(string value);
+    partial void Ontusu_estadoChanged();
     #endregion
 		
-		public Tbl_Usuarios()
+		public Tbl_TipoUsuario()
 		{
-			this._Tbl_TipoUsuario = default(EntityRef<Tbl_TipoUsuario>);
+			this._Tbl_Person = new EntitySet<Tbl_Person>(new Action<Tbl_Person>(this.attach_Tbl_Person), new Action<Tbl_Person>(this.detach_Tbl_Person));
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int usu_id
-		{
-			get
-			{
-				return this._usu_id;
-			}
-			set
-			{
-				if ((this._usu_id != value))
-				{
-					this.Onusu_idChanging(value);
-					this.SendPropertyChanging();
-					this._usu_id = value;
-					this.SendPropertyChanged("usu_id");
-					this.Onusu_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_cedula", DbType="VarChar(50)")]
-		public string usu_cedula
-		{
-			get
-			{
-				return this._usu_cedula;
-			}
-			set
-			{
-				if ((this._usu_cedula != value))
-				{
-					this.Onusu_cedulaChanging(value);
-					this.SendPropertyChanging();
-					this._usu_cedula = value;
-					this.SendPropertyChanged("usu_cedula");
-					this.Onusu_cedulaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_priApellido", DbType="VarChar(50)")]
-		public string usu_priApellido
-		{
-			get
-			{
-				return this._usu_priApellido;
-			}
-			set
-			{
-				if ((this._usu_priApellido != value))
-				{
-					this.Onusu_priApellidoChanging(value);
-					this.SendPropertyChanging();
-					this._usu_priApellido = value;
-					this.SendPropertyChanged("usu_priApellido");
-					this.Onusu_priApellidoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_segApellido", DbType="VarChar(50)")]
-		public string usu_segApellido
-		{
-			get
-			{
-				return this._usu_segApellido;
-			}
-			set
-			{
-				if ((this._usu_segApellido != value))
-				{
-					this.Onusu_segApellidoChanging(value);
-					this.SendPropertyChanging();
-					this._usu_segApellido = value;
-					this.SendPropertyChanged("usu_segApellido");
-					this.Onusu_segApellidoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_priNombre", DbType="VarChar(50)")]
-		public string usu_priNombre
-		{
-			get
-			{
-				return this._usu_priNombre;
-			}
-			set
-			{
-				if ((this._usu_priNombre != value))
-				{
-					this.Onusu_priNombreChanging(value);
-					this.SendPropertyChanging();
-					this._usu_priNombre = value;
-					this.SendPropertyChanged("usu_priNombre");
-					this.Onusu_priNombreChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_segNombre", DbType="VarChar(50)")]
-		public string usu_segNombre
-		{
-			get
-			{
-				return this._usu_segNombre;
-			}
-			set
-			{
-				if ((this._usu_segNombre != value))
-				{
-					this.Onusu_segNombreChanging(value);
-					this.SendPropertyChanging();
-					this._usu_segNombre = value;
-					this.SendPropertyChanged("usu_segNombre");
-					this.Onusu_segNombreChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_direccion", DbType="VarChar(150)")]
-		public string usu_direccion
-		{
-			get
-			{
-				return this._usu_direccion;
-			}
-			set
-			{
-				if ((this._usu_direccion != value))
-				{
-					this.Onusu_direccionChanging(value);
-					this.SendPropertyChanging();
-					this._usu_direccion = value;
-					this.SendPropertyChanged("usu_direccion");
-					this.Onusu_direccionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_telefono", DbType="VarChar(50)")]
-		public string usu_telefono
-		{
-			get
-			{
-				return this._usu_telefono;
-			}
-			set
-			{
-				if ((this._usu_telefono != value))
-				{
-					this.Onusu_telefonoChanging(value);
-					this.SendPropertyChanging();
-					this._usu_telefono = value;
-					this.SendPropertyChanged("usu_telefono");
-					this.Onusu_telefonoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_nomlogin", DbType="VarChar(50)")]
-		public string usu_nomlogin
-		{
-			get
-			{
-				return this._usu_nomlogin;
-			}
-			set
-			{
-				if ((this._usu_nomlogin != value))
-				{
-					this.Onusu_nomloginChanging(value);
-					this.SendPropertyChanging();
-					this._usu_nomlogin = value;
-					this.SendPropertyChanged("usu_nomlogin");
-					this.Onusu_nomloginChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_pass", DbType="VarChar(150)")]
-		public string usu_pass
-		{
-			get
-			{
-				return this._usu_pass;
-			}
-			set
-			{
-				if ((this._usu_pass != value))
-				{
-					this.Onusu_passChanging(value);
-					this.SendPropertyChanging();
-					this._usu_pass = value;
-					this.SendPropertyChanged("usu_pass");
-					this.Onusu_passChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_correo", DbType="VarChar(50)")]
-		public string usu_correo
-		{
-			get
-			{
-				return this._usu_correo;
-			}
-			set
-			{
-				if ((this._usu_correo != value))
-				{
-					this.Onusu_correoChanging(value);
-					this.SendPropertyChanging();
-					this._usu_correo = value;
-					this.SendPropertyChanged("usu_correo");
-					this.Onusu_correoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tusu_id", DbType="BigInt")]
-		public System.Nullable<long> tusu_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tusu_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int tusu_id
 		{
 			get
 			{
@@ -696,10 +432,6 @@ namespace CapaDatos
 			{
 				if ((this._tusu_id != value))
 				{
-					if (this._Tbl_TipoUsuario.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.Ontusu_idChanging(value);
 					this.SendPropertyChanging();
 					this._tusu_id = value;
@@ -709,57 +441,56 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usu_estado", DbType="VarChar(50)")]
-		public string usu_estado
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tusu_nombre", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string tusu_nombre
 		{
 			get
 			{
-				return this._usu_estado;
+				return this._tusu_nombre;
 			}
 			set
 			{
-				if ((this._usu_estado != value))
+				if ((this._tusu_nombre != value))
 				{
-					this.Onusu_estadoChanging(value);
+					this.Ontusu_nombreChanging(value);
 					this.SendPropertyChanging();
-					this._usu_estado = value;
-					this.SendPropertyChanged("usu_estado");
-					this.Onusu_estadoChanged();
+					this._tusu_nombre = value;
+					this.SendPropertyChanged("tusu_nombre");
+					this.Ontusu_nombreChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_TipoUsuario_Tbl_Usuarios", Storage="_Tbl_TipoUsuario", ThisKey="tusu_id", OtherKey="tusu_id", IsForeignKey=true)]
-		public Tbl_TipoUsuario Tbl_TipoUsuario
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tusu_estado", DbType="VarChar(1) NOT NULL", CanBeNull=false)]
+		public string tusu_estado
 		{
 			get
 			{
-				return this._Tbl_TipoUsuario.Entity;
+				return this._tusu_estado;
 			}
 			set
 			{
-				Tbl_TipoUsuario previousValue = this._Tbl_TipoUsuario.Entity;
-				if (((previousValue != value) 
-							|| (this._Tbl_TipoUsuario.HasLoadedOrAssignedValue == false)))
+				if ((this._tusu_estado != value))
 				{
+					this.Ontusu_estadoChanging(value);
 					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Tbl_TipoUsuario.Entity = null;
-						previousValue.Tbl_Usuarios.Remove(this);
-					}
-					this._Tbl_TipoUsuario.Entity = value;
-					if ((value != null))
-					{
-						value.Tbl_Usuarios.Add(this);
-						this._tusu_id = value.tusu_id;
-					}
-					else
-					{
-						this._tusu_id = default(Nullable<long>);
-					}
-					this.SendPropertyChanged("Tbl_TipoUsuario");
+					this._tusu_estado = value;
+					this.SendPropertyChanged("tusu_estado");
+					this.Ontusu_estadoChanged();
 				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_TipoUsuario_Tbl_Person", Storage="_Tbl_Person", ThisKey="tusu_id", OtherKey="tusu_id")]
+		public EntitySet<Tbl_Person> Tbl_Person
+		{
+			get
+			{
+				return this._Tbl_Person;
+			}
+			set
+			{
+				this._Tbl_Person.Assign(value);
 			}
 		}
 		
@@ -781,6 +512,18 @@ namespace CapaDatos
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+		
+		private void attach_Tbl_Person(Tbl_Person entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_TipoUsuario = this;
+		}
+		
+		private void detach_Tbl_Person(Tbl_Person entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tbl_TipoUsuario = null;
 		}
 	}
 	
@@ -842,17 +585,17 @@ namespace CapaDatos
 		
 		private string _certi_cod;
 		
-		private System.Nullable<long> _Per_id;
+		private int _Per_id;
 		
-		private System.Nullable<long> _Emp_id;
+		private int _Emp_id;
 		
-		private System.Nullable<System.DateTime> _certi_fechaHoraGuardado;
+		private System.DateTime _certi_fechaHoraGuardado;
 		
 		private string _certi_estado;
 		
 		private EntityRef<Tbl_Empresa> _Tbl_Empresa;
 		
-		private EntityRef<Tbl_Personas> _Tbl_Personas;
+		private EntityRef<Tbl_Person> _Tbl_Person;
 		
 		private EntityRef<Tbl_Profesional> _Tbl_Profesional;
 		
@@ -912,11 +655,11 @@ namespace CapaDatos
     partial void Onprof_idChanged();
     partial void Oncerti_codChanging(string value);
     partial void Oncerti_codChanged();
-    partial void OnPer_idChanging(System.Nullable<long> value);
+    partial void OnPer_idChanging(int value);
     partial void OnPer_idChanged();
-    partial void OnEmp_idChanging(System.Nullable<long> value);
+    partial void OnEmp_idChanging(int value);
     partial void OnEmp_idChanged();
-    partial void Oncerti_fechaHoraGuardadoChanging(System.Nullable<System.DateTime> value);
+    partial void Oncerti_fechaHoraGuardadoChanging(System.DateTime value);
     partial void Oncerti_fechaHoraGuardadoChanged();
     partial void Oncerti_estadoChanging(string value);
     partial void Oncerti_estadoChanged();
@@ -925,7 +668,7 @@ namespace CapaDatos
 		public Tbl_Certificado()
 		{
 			this._Tbl_Empresa = default(EntityRef<Tbl_Empresa>);
-			this._Tbl_Personas = default(EntityRef<Tbl_Personas>);
+			this._Tbl_Person = default(EntityRef<Tbl_Person>);
 			this._Tbl_Profesional = default(EntityRef<Tbl_Profesional>);
 			OnCreated();
 		}
@@ -1454,8 +1197,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_id", DbType="BigInt")]
-		public System.Nullable<long> Per_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_id", DbType="Int NOT NULL")]
+		public int Per_id
 		{
 			get
 			{
@@ -1465,7 +1208,7 @@ namespace CapaDatos
 			{
 				if ((this._Per_id != value))
 				{
-					if (this._Tbl_Personas.HasLoadedOrAssignedValue)
+					if (this._Tbl_Person.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
@@ -1478,8 +1221,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Emp_id", DbType="BigInt")]
-		public System.Nullable<long> Emp_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Emp_id", DbType="Int NOT NULL")]
+		public int Emp_id
 		{
 			get
 			{
@@ -1502,8 +1245,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_certi_fechaHoraGuardado", DbType="DateTime")]
-		public System.Nullable<System.DateTime> certi_fechaHoraGuardado
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_certi_fechaHoraGuardado", DbType="DateTime NOT NULL")]
+		public System.DateTime certi_fechaHoraGuardado
 		{
 			get
 			{
@@ -1522,7 +1265,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_certi_estado", DbType="VarChar(1)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_certi_estado", DbType="VarChar(1) NOT NULL", CanBeNull=false)]
 		public string certi_estado
 		{
 			get
@@ -1569,33 +1312,33 @@ namespace CapaDatos
 					}
 					else
 					{
-						this._Emp_id = default(Nullable<long>);
+						this._Emp_id = default(int);
 					}
 					this.SendPropertyChanged("Tbl_Empresa");
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_Certificado", Storage="_Tbl_Personas", ThisKey="Per_id", OtherKey="Per_id", IsForeignKey=true)]
-		public Tbl_Personas Tbl_Personas
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Person_Tbl_Certificado", Storage="_Tbl_Person", ThisKey="Per_id", OtherKey="Per_id", IsForeignKey=true)]
+		public Tbl_Person Tbl_Person
 		{
 			get
 			{
-				return this._Tbl_Personas.Entity;
+				return this._Tbl_Person.Entity;
 			}
 			set
 			{
-				Tbl_Personas previousValue = this._Tbl_Personas.Entity;
+				Tbl_Person previousValue = this._Tbl_Person.Entity;
 				if (((previousValue != value) 
-							|| (this._Tbl_Personas.HasLoadedOrAssignedValue == false)))
+							|| (this._Tbl_Person.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._Tbl_Personas.Entity = null;
+						this._Tbl_Person.Entity = null;
 						previousValue.Tbl_Certificado.Remove(this);
 					}
-					this._Tbl_Personas.Entity = value;
+					this._Tbl_Person.Entity = value;
 					if ((value != null))
 					{
 						value.Tbl_Certificado.Add(this);
@@ -1603,9 +1346,9 @@ namespace CapaDatos
 					}
 					else
 					{
-						this._Per_id = default(Nullable<long>);
+						this._Per_id = default(int);
 					}
-					this.SendPropertyChanged("Tbl_Personas");
+					this.SendPropertyChanged("Tbl_Person");
 				}
 			}
 		}
@@ -1671,7 +1414,7 @@ namespace CapaDatos
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private long _Emp_id;
+		private int _Emp_id;
 		
 		private string _Emp_nombre;
 		
@@ -1697,8 +1440,6 @@ namespace CapaDatos
 		
 		private EntitySet<Tbl_Periodica> _Tbl_Periodica;
 		
-		private EntitySet<Tbl_Personas> _Tbl_Personas;
-		
 		private EntitySet<Tbl_Reintegro> _Tbl_Reintegro;
 		
 		private EntitySet<Tbl_Retiro> _Tbl_Retiro;
@@ -1709,7 +1450,7 @@ namespace CapaDatos
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnEmp_idChanging(long value);
+    partial void OnEmp_idChanging(int value);
     partial void OnEmp_idChanged();
     partial void OnEmp_nombreChanging(string value);
     partial void OnEmp_nombreChanged();
@@ -1732,15 +1473,14 @@ namespace CapaDatos
 			this._Tbl_Inmunizaciones = new EntitySet<Tbl_Inmunizaciones>(new Action<Tbl_Inmunizaciones>(this.attach_Tbl_Inmunizaciones), new Action<Tbl_Inmunizaciones>(this.detach_Tbl_Inmunizaciones));
 			this._Tbl_PedidoExamenes = new EntitySet<Tbl_PedidoExamenes>(new Action<Tbl_PedidoExamenes>(this.attach_Tbl_PedidoExamenes), new Action<Tbl_PedidoExamenes>(this.detach_Tbl_PedidoExamenes));
 			this._Tbl_Periodica = new EntitySet<Tbl_Periodica>(new Action<Tbl_Periodica>(this.attach_Tbl_Periodica), new Action<Tbl_Periodica>(this.detach_Tbl_Periodica));
-			this._Tbl_Personas = new EntitySet<Tbl_Personas>(new Action<Tbl_Personas>(this.attach_Tbl_Personas), new Action<Tbl_Personas>(this.detach_Tbl_Personas));
 			this._Tbl_Reintegro = new EntitySet<Tbl_Reintegro>(new Action<Tbl_Reintegro>(this.attach_Tbl_Reintegro), new Action<Tbl_Reintegro>(this.detach_Tbl_Reintegro));
 			this._Tbl_Retiro = new EntitySet<Tbl_Retiro>(new Action<Tbl_Retiro>(this.attach_Tbl_Retiro), new Action<Tbl_Retiro>(this.detach_Tbl_Retiro));
 			this._Tbl_SocioEconomico = new EntitySet<Tbl_SocioEconomico>(new Action<Tbl_SocioEconomico>(this.attach_Tbl_SocioEconomico), new Action<Tbl_SocioEconomico>(this.detach_Tbl_SocioEconomico));
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Emp_id", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public long Emp_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Emp_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Emp_id
 		{
 			get
 			{
@@ -1950,19 +1690,6 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Empresa_Tbl_Personas", Storage="_Tbl_Personas", ThisKey="Emp_id", OtherKey="Emp_id")]
-		public EntitySet<Tbl_Personas> Tbl_Personas
-		{
-			get
-			{
-				return this._Tbl_Personas;
-			}
-			set
-			{
-				this._Tbl_Personas.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Empresa_Tbl_Reintegro", Storage="_Tbl_Reintegro", ThisKey="Emp_id", OtherKey="Emp_id")]
 		public EntitySet<Tbl_Reintegro> Tbl_Reintegro
 		{
@@ -2106,18 +1833,6 @@ namespace CapaDatos
 			entity.Tbl_Empresa = null;
 		}
 		
-		private void attach_Tbl_Personas(Tbl_Personas entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tbl_Empresa = this;
-		}
-		
-		private void detach_Tbl_Personas(Tbl_Personas entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tbl_Empresa = null;
-		}
-		
 		private void attach_Tbl_Reintegro(Tbl_Reintegro entity)
 		{
 			this.SendPropertyChanging();
@@ -2236,7 +1951,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_espec_estado", DbType="VarChar(1)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_espec_estado", DbType="VarChar(1) NOT NULL", CanBeNull=false)]
 		public string espec_estado
 		{
 			get
@@ -2541,17 +2256,17 @@ namespace CapaDatos
 		
 		private System.Nullable<System.DateTime> _evo_fecha_horaModificacion;
 		
-		private System.Nullable<long> _Per_id;
+		private int _Per_id;
 		
-		private System.Nullable<long> _Emp_id;
+		private int _Emp_id;
 		
-		private System.Nullable<System.DateTime> _evo_fechaHoraGuardado;
+		private System.DateTime _evo_fechaHoraGuardado;
 		
 		private string _evo_estado;
 		
 		private EntityRef<Tbl_Empresa> _Tbl_Empresa;
 		
-		private EntityRef<Tbl_Personas> _Tbl_Personas;
+		private EntityRef<Tbl_Person> _Tbl_Person;
 		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
@@ -2715,11 +2430,11 @@ namespace CapaDatos
     partial void Onevo_adminisFarmacos15Changed();
     partial void Onevo_fecha_horaModificacionChanging(System.Nullable<System.DateTime> value);
     partial void Onevo_fecha_horaModificacionChanged();
-    partial void OnPer_idChanging(System.Nullable<long> value);
+    partial void OnPer_idChanging(int value);
     partial void OnPer_idChanged();
-    partial void OnEmp_idChanging(System.Nullable<long> value);
+    partial void OnEmp_idChanging(int value);
     partial void OnEmp_idChanged();
-    partial void Onevo_fechaHoraGuardadoChanging(System.Nullable<System.DateTime> value);
+    partial void Onevo_fechaHoraGuardadoChanging(System.DateTime value);
     partial void Onevo_fechaHoraGuardadoChanged();
     partial void Onevo_estadoChanging(string value);
     partial void Onevo_estadoChanged();
@@ -2728,7 +2443,7 @@ namespace CapaDatos
 		public Tbl_Evolucion()
 		{
 			this._Tbl_Empresa = default(EntityRef<Tbl_Empresa>);
-			this._Tbl_Personas = default(EntityRef<Tbl_Personas>);
+			this._Tbl_Person = default(EntityRef<Tbl_Person>);
 			OnCreated();
 		}
 		
@@ -4312,8 +4027,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_id", DbType="BigInt")]
-		public System.Nullable<long> Per_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_id", DbType="Int NOT NULL")]
+		public int Per_id
 		{
 			get
 			{
@@ -4323,7 +4038,7 @@ namespace CapaDatos
 			{
 				if ((this._Per_id != value))
 				{
-					if (this._Tbl_Personas.HasLoadedOrAssignedValue)
+					if (this._Tbl_Person.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
@@ -4336,8 +4051,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Emp_id", DbType="BigInt")]
-		public System.Nullable<long> Emp_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Emp_id", DbType="Int NOT NULL")]
+		public int Emp_id
 		{
 			get
 			{
@@ -4360,8 +4075,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_evo_fechaHoraGuardado", DbType="DateTime")]
-		public System.Nullable<System.DateTime> evo_fechaHoraGuardado
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_evo_fechaHoraGuardado", DbType="DateTime NOT NULL")]
+		public System.DateTime evo_fechaHoraGuardado
 		{
 			get
 			{
@@ -4380,7 +4095,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_evo_estado", DbType="VarChar(1)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_evo_estado", DbType="VarChar(1) NOT NULL", CanBeNull=false)]
 		public string evo_estado
 		{
 			get
@@ -4427,33 +4142,33 @@ namespace CapaDatos
 					}
 					else
 					{
-						this._Emp_id = default(Nullable<long>);
+						this._Emp_id = default(int);
 					}
 					this.SendPropertyChanged("Tbl_Empresa");
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_Evolucion", Storage="_Tbl_Personas", ThisKey="Per_id", OtherKey="Per_id", IsForeignKey=true)]
-		public Tbl_Personas Tbl_Personas
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Person_Tbl_Evolucion", Storage="_Tbl_Person", ThisKey="Per_id", OtherKey="Per_id", IsForeignKey=true)]
+		public Tbl_Person Tbl_Person
 		{
 			get
 			{
-				return this._Tbl_Personas.Entity;
+				return this._Tbl_Person.Entity;
 			}
 			set
 			{
-				Tbl_Personas previousValue = this._Tbl_Personas.Entity;
+				Tbl_Person previousValue = this._Tbl_Person.Entity;
 				if (((previousValue != value) 
-							|| (this._Tbl_Personas.HasLoadedOrAssignedValue == false)))
+							|| (this._Tbl_Person.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._Tbl_Personas.Entity = null;
+						this._Tbl_Person.Entity = null;
 						previousValue.Tbl_Evolucion.Remove(this);
 					}
-					this._Tbl_Personas.Entity = value;
+					this._Tbl_Person.Entity = value;
 					if ((value != null))
 					{
 						value.Tbl_Evolucion.Add(this);
@@ -4461,9 +4176,9 @@ namespace CapaDatos
 					}
 					else
 					{
-						this._Per_id = default(Nullable<long>);
+						this._Per_id = default(int);
 					}
-					this.SendPropertyChanged("Tbl_Personas");
+					this.SendPropertyChanged("Tbl_Person");
 				}
 			}
 		}
@@ -4613,17 +4328,17 @@ namespace CapaDatos
 		
 		private System.Nullable<System.DateTime> _fechaHoraModificacion;
 		
-		private System.Nullable<int> _espec_id;
+		private int _espec_id;
 		
-		private System.Nullable<int> _prof_id;
+		private int _prof_id;
 		
 		private string _codigoPro;
 		
-		private System.Nullable<long> _Per_id;
+		private int _Per_id;
 		
-		private System.Nullable<long> _Emp_id;
+		private int _Emp_id;
 		
-		private System.Nullable<System.DateTime> _fechaHoraGuardado;
+		private System.DateTime _fechaHoraGuardado;
 		
 		private string _estado;
 		
@@ -4631,7 +4346,7 @@ namespace CapaDatos
 		
 		private EntityRef<Tbl_Especialidad> _Tbl_Especialidad;
 		
-		private EntityRef<Tbl_Personas> _Tbl_Personas;
+		private EntityRef<Tbl_Person> _Tbl_Person;
 		
 		private EntityRef<Tbl_Profesional> _Tbl_Profesional;
 		
@@ -4757,17 +4472,17 @@ namespace CapaDatos
     partial void OnprescripcionesChanged();
     partial void OnfechaHoraModificacionChanging(System.Nullable<System.DateTime> value);
     partial void OnfechaHoraModificacionChanged();
-    partial void Onespec_idChanging(System.Nullable<int> value);
+    partial void Onespec_idChanging(int value);
     partial void Onespec_idChanged();
-    partial void Onprof_idChanging(System.Nullable<int> value);
+    partial void Onprof_idChanging(int value);
     partial void Onprof_idChanged();
     partial void OncodigoProChanging(string value);
     partial void OncodigoProChanged();
-    partial void OnPer_idChanging(System.Nullable<long> value);
+    partial void OnPer_idChanging(int value);
     partial void OnPer_idChanged();
-    partial void OnEmp_idChanging(System.Nullable<long> value);
+    partial void OnEmp_idChanging(int value);
     partial void OnEmp_idChanged();
-    partial void OnfechaHoraGuardadoChanging(System.Nullable<System.DateTime> value);
+    partial void OnfechaHoraGuardadoChanging(System.DateTime value);
     partial void OnfechaHoraGuardadoChanged();
     partial void OnestadoChanging(string value);
     partial void OnestadoChanged();
@@ -4777,7 +4492,7 @@ namespace CapaDatos
 		{
 			this._Tbl_Empresa = default(EntityRef<Tbl_Empresa>);
 			this._Tbl_Especialidad = default(EntityRef<Tbl_Especialidad>);
-			this._Tbl_Personas = default(EntityRef<Tbl_Personas>);
+			this._Tbl_Person = default(EntityRef<Tbl_Person>);
 			this._Tbl_Profesional = default(EntityRef<Tbl_Profesional>);
 			OnCreated();
 		}
@@ -5962,8 +5677,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_espec_id", DbType="Int")]
-		public System.Nullable<int> espec_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_espec_id", DbType="Int NOT NULL")]
+		public int espec_id
 		{
 			get
 			{
@@ -5986,8 +5701,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_prof_id", DbType="Int")]
-		public System.Nullable<int> prof_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_prof_id", DbType="Int NOT NULL")]
+		public int prof_id
 		{
 			get
 			{
@@ -6010,7 +5725,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_codigoPro", DbType="VarChar(25)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_codigoPro", DbType="VarChar(10)")]
 		public string codigoPro
 		{
 			get
@@ -6030,8 +5745,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_id", DbType="BigInt")]
-		public System.Nullable<long> Per_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_id", DbType="Int NOT NULL")]
+		public int Per_id
 		{
 			get
 			{
@@ -6041,7 +5756,7 @@ namespace CapaDatos
 			{
 				if ((this._Per_id != value))
 				{
-					if (this._Tbl_Personas.HasLoadedOrAssignedValue)
+					if (this._Tbl_Person.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
@@ -6054,8 +5769,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Emp_id", DbType="BigInt")]
-		public System.Nullable<long> Emp_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Emp_id", DbType="Int NOT NULL")]
+		public int Emp_id
 		{
 			get
 			{
@@ -6078,8 +5793,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fechaHoraGuardado", DbType="DateTime")]
-		public System.Nullable<System.DateTime> fechaHoraGuardado
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fechaHoraGuardado", DbType="DateTime NOT NULL")]
+		public System.DateTime fechaHoraGuardado
 		{
 			get
 			{
@@ -6098,7 +5813,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_estado", DbType="VarChar(1)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_estado", DbType="VarChar(1) NOT NULL", CanBeNull=false)]
 		public string estado
 		{
 			get
@@ -6145,7 +5860,7 @@ namespace CapaDatos
 					}
 					else
 					{
-						this._Emp_id = default(Nullable<long>);
+						this._Emp_id = default(int);
 					}
 					this.SendPropertyChanged("Tbl_Empresa");
 				}
@@ -6179,33 +5894,33 @@ namespace CapaDatos
 					}
 					else
 					{
-						this._espec_id = default(Nullable<int>);
+						this._espec_id = default(int);
 					}
 					this.SendPropertyChanged("Tbl_Especialidad");
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_FichasMedicas", Storage="_Tbl_Personas", ThisKey="Per_id", OtherKey="Per_id", IsForeignKey=true)]
-		public Tbl_Personas Tbl_Personas
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Person_Tbl_FichasMedicas", Storage="_Tbl_Person", ThisKey="Per_id", OtherKey="Per_id", IsForeignKey=true)]
+		public Tbl_Person Tbl_Person
 		{
 			get
 			{
-				return this._Tbl_Personas.Entity;
+				return this._Tbl_Person.Entity;
 			}
 			set
 			{
-				Tbl_Personas previousValue = this._Tbl_Personas.Entity;
+				Tbl_Person previousValue = this._Tbl_Person.Entity;
 				if (((previousValue != value) 
-							|| (this._Tbl_Personas.HasLoadedOrAssignedValue == false)))
+							|| (this._Tbl_Person.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._Tbl_Personas.Entity = null;
+						this._Tbl_Person.Entity = null;
 						previousValue.Tbl_FichasMedicas.Remove(this);
 					}
-					this._Tbl_Personas.Entity = value;
+					this._Tbl_Person.Entity = value;
 					if ((value != null))
 					{
 						value.Tbl_FichasMedicas.Add(this);
@@ -6213,9 +5928,9 @@ namespace CapaDatos
 					}
 					else
 					{
-						this._Per_id = default(Nullable<long>);
+						this._Per_id = default(int);
 					}
-					this.SendPropertyChanged("Tbl_Personas");
+					this.SendPropertyChanged("Tbl_Person");
 				}
 			}
 		}
@@ -6247,7 +5962,7 @@ namespace CapaDatos
 					}
 					else
 					{
-						this._prof_id = default(Nullable<int>);
+						this._prof_id = default(int);
 					}
 					this.SendPropertyChanged("Tbl_Profesional");
 				}
@@ -7441,21 +7156,21 @@ namespace CapaDatos
 		
 		private System.Nullable<System.DateTime> _inicial_fecha_horaModificacion;
 		
-		private System.Nullable<int> _prof_id;
+		private int _prof_id;
 		
 		private string _inicial_cod;
 		
-		private System.Nullable<long> _Per_id;
+		private int _Per_id;
 		
-		private System.Nullable<long> _Emp_id;
+		private int _Emp_id;
 		
-		private System.Nullable<System.DateTime> _inicial_fechaHoraGuardado;
+		private System.DateTime _inicial_fechaHoraGuardado;
 		
 		private string _inicial_estado;
 		
 		private EntityRef<Tbl_Empresa> _Tbl_Empresa;
 		
-		private EntityRef<Tbl_Personas> _Tbl_Personas;
+		private EntityRef<Tbl_Person> _Tbl_Person;
 		
 		private EntityRef<Tbl_Profesional> _Tbl_Profesional;
 		
@@ -8489,15 +8204,15 @@ namespace CapaDatos
     partial void Oninicial_descripcionRecTraChanged();
     partial void Oninicial_fecha_horaModificacionChanging(System.Nullable<System.DateTime> value);
     partial void Oninicial_fecha_horaModificacionChanged();
-    partial void Onprof_idChanging(System.Nullable<int> value);
+    partial void Onprof_idChanging(int value);
     partial void Onprof_idChanged();
     partial void Oninicial_codChanging(string value);
     partial void Oninicial_codChanged();
-    partial void OnPer_idChanging(System.Nullable<long> value);
+    partial void OnPer_idChanging(int value);
     partial void OnPer_idChanged();
-    partial void OnEmp_idChanging(System.Nullable<long> value);
+    partial void OnEmp_idChanging(int value);
     partial void OnEmp_idChanged();
-    partial void Oninicial_fechaHoraGuardadoChanging(System.Nullable<System.DateTime> value);
+    partial void Oninicial_fechaHoraGuardadoChanging(System.DateTime value);
     partial void Oninicial_fechaHoraGuardadoChanged();
     partial void Oninicial_estadoChanging(string value);
     partial void Oninicial_estadoChanged();
@@ -8506,7 +8221,7 @@ namespace CapaDatos
 		public Tbl_Inicial()
 		{
 			this._Tbl_Empresa = default(EntityRef<Tbl_Empresa>);
-			this._Tbl_Personas = default(EntityRef<Tbl_Personas>);
+			this._Tbl_Person = default(EntityRef<Tbl_Person>);
 			this._Tbl_Profesional = default(EntityRef<Tbl_Profesional>);
 			OnCreated();
 		}
@@ -18771,8 +18486,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_prof_id", DbType="Int")]
-		public System.Nullable<int> prof_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_prof_id", DbType="Int NOT NULL")]
+		public int prof_id
 		{
 			get
 			{
@@ -18815,8 +18530,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_id", DbType="BigInt")]
-		public System.Nullable<long> Per_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_id", DbType="Int NOT NULL")]
+		public int Per_id
 		{
 			get
 			{
@@ -18826,7 +18541,7 @@ namespace CapaDatos
 			{
 				if ((this._Per_id != value))
 				{
-					if (this._Tbl_Personas.HasLoadedOrAssignedValue)
+					if (this._Tbl_Person.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
@@ -18839,8 +18554,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Emp_id", DbType="BigInt")]
-		public System.Nullable<long> Emp_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Emp_id", DbType="Int NOT NULL")]
+		public int Emp_id
 		{
 			get
 			{
@@ -18863,8 +18578,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_fechaHoraGuardado", DbType="DateTime")]
-		public System.Nullable<System.DateTime> inicial_fechaHoraGuardado
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_fechaHoraGuardado", DbType="DateTime NOT NULL")]
+		public System.DateTime inicial_fechaHoraGuardado
 		{
 			get
 			{
@@ -18883,7 +18598,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_estado", DbType="VarChar(1)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inicial_estado", DbType="VarChar(1) NOT NULL", CanBeNull=false)]
 		public string inicial_estado
 		{
 			get
@@ -18930,33 +18645,33 @@ namespace CapaDatos
 					}
 					else
 					{
-						this._Emp_id = default(Nullable<long>);
+						this._Emp_id = default(int);
 					}
 					this.SendPropertyChanged("Tbl_Empresa");
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_Inicial", Storage="_Tbl_Personas", ThisKey="Per_id", OtherKey="Per_id", IsForeignKey=true)]
-		public Tbl_Personas Tbl_Personas
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Person_Tbl_Inicial", Storage="_Tbl_Person", ThisKey="Per_id", OtherKey="Per_id", IsForeignKey=true)]
+		public Tbl_Person Tbl_Person
 		{
 			get
 			{
-				return this._Tbl_Personas.Entity;
+				return this._Tbl_Person.Entity;
 			}
 			set
 			{
-				Tbl_Personas previousValue = this._Tbl_Personas.Entity;
+				Tbl_Person previousValue = this._Tbl_Person.Entity;
 				if (((previousValue != value) 
-							|| (this._Tbl_Personas.HasLoadedOrAssignedValue == false)))
+							|| (this._Tbl_Person.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._Tbl_Personas.Entity = null;
+						this._Tbl_Person.Entity = null;
 						previousValue.Tbl_Inicial.Remove(this);
 					}
-					this._Tbl_Personas.Entity = value;
+					this._Tbl_Person.Entity = value;
 					if ((value != null))
 					{
 						value.Tbl_Inicial.Add(this);
@@ -18964,9 +18679,9 @@ namespace CapaDatos
 					}
 					else
 					{
-						this._Per_id = default(Nullable<long>);
+						this._Per_id = default(int);
 					}
-					this.SendPropertyChanged("Tbl_Personas");
+					this.SendPropertyChanged("Tbl_Person");
 				}
 			}
 		}
@@ -18998,7 +18713,7 @@ namespace CapaDatos
 					}
 					else
 					{
-						this._prof_id = default(Nullable<int>);
+						this._prof_id = default(int);
 					}
 					this.SendPropertyChanged("Tbl_Profesional");
 				}
@@ -19468,17 +19183,17 @@ namespace CapaDatos
 		
 		private System.Nullable<System.DateTime> _inmu_fecha_horaModificacion;
 		
-		private System.Nullable<long> _Per_id;
+		private int _Per_id;
 		
-		private System.Nullable<long> _Emp_id;
+		private int _Emp_id;
 		
-		private System.Nullable<System.DateTime> _inmu_fechaHoraGuardado;
+		private System.DateTime _inmu_fechaHoraGuardado;
 		
 		private string _inmu_estado;
 		
 		private EntityRef<Tbl_Empresa> _Tbl_Empresa;
 		
-		private EntityRef<Tbl_Personas> _Tbl_Personas;
+		private EntityRef<Tbl_Person> _Tbl_Person;
 		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
@@ -19920,11 +19635,11 @@ namespace CapaDatos
     partial void Oninmu_4observaInmuAcuerTipoEmpRies5Changed();
     partial void Oninmu_fecha_horaModificacionChanging(System.Nullable<System.DateTime> value);
     partial void Oninmu_fecha_horaModificacionChanged();
-    partial void OnPer_idChanging(System.Nullable<long> value);
+    partial void OnPer_idChanging(int value);
     partial void OnPer_idChanged();
-    partial void OnEmp_idChanging(System.Nullable<long> value);
+    partial void OnEmp_idChanging(int value);
     partial void OnEmp_idChanged();
-    partial void Oninmu_fechaHoraGuardadoChanging(System.Nullable<System.DateTime> value);
+    partial void Oninmu_fechaHoraGuardadoChanging(System.DateTime value);
     partial void Oninmu_fechaHoraGuardadoChanged();
     partial void Oninmu_estadoChanging(string value);
     partial void Oninmu_estadoChanged();
@@ -19933,7 +19648,7 @@ namespace CapaDatos
 		public Tbl_Inmunizaciones()
 		{
 			this._Tbl_Empresa = default(EntityRef<Tbl_Empresa>);
-			this._Tbl_Personas = default(EntityRef<Tbl_Personas>);
+			this._Tbl_Person = default(EntityRef<Tbl_Person>);
 			OnCreated();
 		}
 		
@@ -24297,8 +24012,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_id", DbType="BigInt")]
-		public System.Nullable<long> Per_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_id", DbType="Int NOT NULL")]
+		public int Per_id
 		{
 			get
 			{
@@ -24308,7 +24023,7 @@ namespace CapaDatos
 			{
 				if ((this._Per_id != value))
 				{
-					if (this._Tbl_Personas.HasLoadedOrAssignedValue)
+					if (this._Tbl_Person.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
@@ -24321,8 +24036,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Emp_id", DbType="BigInt")]
-		public System.Nullable<long> Emp_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Emp_id", DbType="Int NOT NULL")]
+		public int Emp_id
 		{
 			get
 			{
@@ -24345,8 +24060,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_fechaHoraGuardado", DbType="DateTime")]
-		public System.Nullable<System.DateTime> inmu_fechaHoraGuardado
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_fechaHoraGuardado", DbType="DateTime NOT NULL")]
+		public System.DateTime inmu_fechaHoraGuardado
 		{
 			get
 			{
@@ -24365,7 +24080,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_estado", DbType="VarChar(1)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inmu_estado", DbType="VarChar(1) NOT NULL", CanBeNull=false)]
 		public string inmu_estado
 		{
 			get
@@ -24412,33 +24127,33 @@ namespace CapaDatos
 					}
 					else
 					{
-						this._Emp_id = default(Nullable<long>);
+						this._Emp_id = default(int);
 					}
 					this.SendPropertyChanged("Tbl_Empresa");
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_Inmunizaciones", Storage="_Tbl_Personas", ThisKey="Per_id", OtherKey="Per_id", IsForeignKey=true)]
-		public Tbl_Personas Tbl_Personas
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Person_Tbl_Inmunizaciones", Storage="_Tbl_Person", ThisKey="Per_id", OtherKey="Per_id", IsForeignKey=true)]
+		public Tbl_Person Tbl_Person
 		{
 			get
 			{
-				return this._Tbl_Personas.Entity;
+				return this._Tbl_Person.Entity;
 			}
 			set
 			{
-				Tbl_Personas previousValue = this._Tbl_Personas.Entity;
+				Tbl_Person previousValue = this._Tbl_Person.Entity;
 				if (((previousValue != value) 
-							|| (this._Tbl_Personas.HasLoadedOrAssignedValue == false)))
+							|| (this._Tbl_Person.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._Tbl_Personas.Entity = null;
+						this._Tbl_Person.Entity = null;
 						previousValue.Tbl_Inmunizaciones.Remove(this);
 					}
-					this._Tbl_Personas.Entity = value;
+					this._Tbl_Person.Entity = value;
 					if ((value != null))
 					{
 						value.Tbl_Inmunizaciones.Add(this);
@@ -24446,9 +24161,9 @@ namespace CapaDatos
 					}
 					else
 					{
-						this._Per_id = default(Nullable<long>);
+						this._Per_id = default(int);
 					}
-					this.SendPropertyChanged("Tbl_Personas");
+					this.SendPropertyChanged("Tbl_Person");
 				}
 			}
 		}
@@ -24480,7 +24195,7 @@ namespace CapaDatos
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private long _pedExa_id;
+		private int _pedExa_id;
 		
 		private string _pedExa_ciiu;
 		
@@ -24786,23 +24501,23 @@ namespace CapaDatos
 		
 		private System.Nullable<System.DateTime> _pedExa_fecha_horaModificacion;
 		
-		private System.Nullable<long> _Per_id;
+		private int _Per_id;
 		
-		private System.Nullable<long> _Emp_id;
+		private int _Emp_id;
 		
-		private System.Nullable<System.DateTime> _pedExa_fechaHoraGuardado;
+		private System.DateTime _pedExa_fechaHoraGuardado;
 		
 		private string _pedExa_estado;
 		
 		private EntityRef<Tbl_Empresa> _Tbl_Empresa;
 		
-		private EntityRef<Tbl_Personas> _Tbl_Personas;
+		private EntityRef<Tbl_Person> _Tbl_Person;
 		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnpedExa_idChanging(long value);
+    partial void OnpedExa_idChanging(int value);
     partial void OnpedExa_idChanged();
     partial void OnpedExa_ciiuChanging(string value);
     partial void OnpedExa_ciiuChanged();
@@ -25108,11 +24823,11 @@ namespace CapaDatos
     partial void OnpedExa_descripOtros3Changed();
     partial void OnpedExa_fecha_horaModificacionChanging(System.Nullable<System.DateTime> value);
     partial void OnpedExa_fecha_horaModificacionChanged();
-    partial void OnPer_idChanging(System.Nullable<long> value);
+    partial void OnPer_idChanging(int value);
     partial void OnPer_idChanged();
-    partial void OnEmp_idChanging(System.Nullable<long> value);
+    partial void OnEmp_idChanging(int value);
     partial void OnEmp_idChanged();
-    partial void OnpedExa_fechaHoraGuardadoChanging(System.Nullable<System.DateTime> value);
+    partial void OnpedExa_fechaHoraGuardadoChanging(System.DateTime value);
     partial void OnpedExa_fechaHoraGuardadoChanged();
     partial void OnpedExa_estadoChanging(string value);
     partial void OnpedExa_estadoChanged();
@@ -25121,12 +24836,12 @@ namespace CapaDatos
 		public Tbl_PedidoExamenes()
 		{
 			this._Tbl_Empresa = default(EntityRef<Tbl_Empresa>);
-			this._Tbl_Personas = default(EntityRef<Tbl_Personas>);
+			this._Tbl_Person = default(EntityRef<Tbl_Person>);
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_id", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public long pedExa_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int pedExa_id
 		{
 			get
 			{
@@ -28185,8 +27900,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_id", DbType="BigInt")]
-		public System.Nullable<long> Per_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_id", DbType="Int NOT NULL")]
+		public int Per_id
 		{
 			get
 			{
@@ -28196,7 +27911,7 @@ namespace CapaDatos
 			{
 				if ((this._Per_id != value))
 				{
-					if (this._Tbl_Personas.HasLoadedOrAssignedValue)
+					if (this._Tbl_Person.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
@@ -28209,8 +27924,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Emp_id", DbType="BigInt")]
-		public System.Nullable<long> Emp_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Emp_id", DbType="Int NOT NULL")]
+		public int Emp_id
 		{
 			get
 			{
@@ -28233,8 +27948,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_fechaHoraGuardado", DbType="DateTime")]
-		public System.Nullable<System.DateTime> pedExa_fechaHoraGuardado
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_fechaHoraGuardado", DbType="DateTime NOT NULL")]
+		public System.DateTime pedExa_fechaHoraGuardado
 		{
 			get
 			{
@@ -28253,7 +27968,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_estado", DbType="VarChar(1)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pedExa_estado", DbType="VarChar(1) NOT NULL", CanBeNull=false)]
 		public string pedExa_estado
 		{
 			get
@@ -28300,33 +28015,33 @@ namespace CapaDatos
 					}
 					else
 					{
-						this._Emp_id = default(Nullable<long>);
+						this._Emp_id = default(int);
 					}
 					this.SendPropertyChanged("Tbl_Empresa");
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_PedidoExamenes", Storage="_Tbl_Personas", ThisKey="Per_id", OtherKey="Per_id", IsForeignKey=true)]
-		public Tbl_Personas Tbl_Personas
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Person_Tbl_PedidoExamenes", Storage="_Tbl_Person", ThisKey="Per_id", OtherKey="Per_id", IsForeignKey=true)]
+		public Tbl_Person Tbl_Person
 		{
 			get
 			{
-				return this._Tbl_Personas.Entity;
+				return this._Tbl_Person.Entity;
 			}
 			set
 			{
-				Tbl_Personas previousValue = this._Tbl_Personas.Entity;
+				Tbl_Person previousValue = this._Tbl_Person.Entity;
 				if (((previousValue != value) 
-							|| (this._Tbl_Personas.HasLoadedOrAssignedValue == false)))
+							|| (this._Tbl_Person.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._Tbl_Personas.Entity = null;
+						this._Tbl_Person.Entity = null;
 						previousValue.Tbl_PedidoExamenes.Remove(this);
 					}
-					this._Tbl_Personas.Entity = value;
+					this._Tbl_Person.Entity = value;
 					if ((value != null))
 					{
 						value.Tbl_PedidoExamenes.Add(this);
@@ -28334,9 +28049,9 @@ namespace CapaDatos
 					}
 					else
 					{
-						this._Per_id = default(Nullable<long>);
+						this._Per_id = default(int);
 					}
-					this.SendPropertyChanged("Tbl_Personas");
+					this.SendPropertyChanged("Tbl_Person");
 				}
 			}
 		}
@@ -29044,17 +28759,17 @@ namespace CapaDatos
 		
 		private System.Nullable<System.DateTime> _perio_fecha_horaModificacion;
 		
-		private System.Nullable<int> _prof_id;
+		private int _prof_id;
 		
-		private System.Nullable<int> _espec_id;
+		private int _espec_id;
 		
 		private string _perio_cod;
 		
-		private System.Nullable<long> _Per_id;
+		private int _Per_id;
 		
-		private System.Nullable<long> _Emp_id;
+		private int _Emp_id;
 		
-		private System.Nullable<System.DateTime> _perio_fechaHoraGuardado;
+		private System.DateTime _perio_fechaHoraGuardado;
 		
 		private string _perio_estado;
 		
@@ -29062,7 +28777,7 @@ namespace CapaDatos
 		
 		private EntityRef<Tbl_Empresa> _Tbl_Empresa;
 		
-		private EntityRef<Tbl_Personas> _Tbl_Personas;
+		private EntityRef<Tbl_Person> _Tbl_Person;
 		
 		private EntityRef<Tbl_Profesional> _Tbl_Profesional;
 		
@@ -29746,17 +29461,17 @@ namespace CapaDatos
     partial void Onperio_descripcionRecoTratamientoChanged();
     partial void Onperio_fecha_horaModificacionChanging(System.Nullable<System.DateTime> value);
     partial void Onperio_fecha_horaModificacionChanged();
-    partial void Onprof_idChanging(System.Nullable<int> value);
+    partial void Onprof_idChanging(int value);
     partial void Onprof_idChanged();
-    partial void Onespec_idChanging(System.Nullable<int> value);
+    partial void Onespec_idChanging(int value);
     partial void Onespec_idChanged();
     partial void Onperio_codChanging(string value);
     partial void Onperio_codChanged();
-    partial void OnPer_idChanging(System.Nullable<long> value);
+    partial void OnPer_idChanging(int value);
     partial void OnPer_idChanged();
-    partial void OnEmp_idChanging(System.Nullable<long> value);
+    partial void OnEmp_idChanging(int value);
     partial void OnEmp_idChanged();
-    partial void Onperio_fechaHoraGuardadoChanging(System.Nullable<System.DateTime> value);
+    partial void Onperio_fechaHoraGuardadoChanging(System.DateTime value);
     partial void Onperio_fechaHoraGuardadoChanged();
     partial void Onperio_estadoChanging(string value);
     partial void Onperio_estadoChanged();
@@ -29766,7 +29481,7 @@ namespace CapaDatos
 		{
 			this._Tbl_Especialidad = default(EntityRef<Tbl_Especialidad>);
 			this._Tbl_Empresa = default(EntityRef<Tbl_Empresa>);
-			this._Tbl_Personas = default(EntityRef<Tbl_Personas>);
+			this._Tbl_Person = default(EntityRef<Tbl_Person>);
 			this._Tbl_Profesional = default(EntityRef<Tbl_Profesional>);
 			OnCreated();
 		}
@@ -36531,8 +36246,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_prof_id", DbType="Int")]
-		public System.Nullable<int> prof_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_prof_id", DbType="Int NOT NULL")]
+		public int prof_id
 		{
 			get
 			{
@@ -36555,8 +36270,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_espec_id", DbType="Int")]
-		public System.Nullable<int> espec_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_espec_id", DbType="Int NOT NULL")]
+		public int espec_id
 		{
 			get
 			{
@@ -36599,8 +36314,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_id", DbType="BigInt")]
-		public System.Nullable<long> Per_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_id", DbType="Int NOT NULL")]
+		public int Per_id
 		{
 			get
 			{
@@ -36610,7 +36325,7 @@ namespace CapaDatos
 			{
 				if ((this._Per_id != value))
 				{
-					if (this._Tbl_Personas.HasLoadedOrAssignedValue)
+					if (this._Tbl_Person.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
@@ -36623,8 +36338,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Emp_id", DbType="BigInt")]
-		public System.Nullable<long> Emp_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Emp_id", DbType="Int NOT NULL")]
+		public int Emp_id
 		{
 			get
 			{
@@ -36647,8 +36362,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_fechaHoraGuardado", DbType="DateTime")]
-		public System.Nullable<System.DateTime> perio_fechaHoraGuardado
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_fechaHoraGuardado", DbType="DateTime NOT NULL")]
+		public System.DateTime perio_fechaHoraGuardado
 		{
 			get
 			{
@@ -36667,7 +36382,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_estado", DbType="VarChar(1)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_perio_estado", DbType="VarChar(1) NOT NULL", CanBeNull=false)]
 		public string perio_estado
 		{
 			get
@@ -36714,7 +36429,7 @@ namespace CapaDatos
 					}
 					else
 					{
-						this._espec_id = default(Nullable<int>);
+						this._espec_id = default(int);
 					}
 					this.SendPropertyChanged("Tbl_Especialidad");
 				}
@@ -36748,33 +36463,33 @@ namespace CapaDatos
 					}
 					else
 					{
-						this._Emp_id = default(Nullable<long>);
+						this._Emp_id = default(int);
 					}
 					this.SendPropertyChanged("Tbl_Empresa");
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_Periodica", Storage="_Tbl_Personas", ThisKey="Per_id", OtherKey="Per_id", IsForeignKey=true)]
-		public Tbl_Personas Tbl_Personas
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Person_Tbl_Periodica", Storage="_Tbl_Person", ThisKey="Per_id", OtherKey="Per_id", IsForeignKey=true)]
+		public Tbl_Person Tbl_Person
 		{
 			get
 			{
-				return this._Tbl_Personas.Entity;
+				return this._Tbl_Person.Entity;
 			}
 			set
 			{
-				Tbl_Personas previousValue = this._Tbl_Personas.Entity;
+				Tbl_Person previousValue = this._Tbl_Person.Entity;
 				if (((previousValue != value) 
-							|| (this._Tbl_Personas.HasLoadedOrAssignedValue == false)))
+							|| (this._Tbl_Person.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._Tbl_Personas.Entity = null;
+						this._Tbl_Person.Entity = null;
 						previousValue.Tbl_Periodica.Remove(this);
 					}
-					this._Tbl_Personas.Entity = value;
+					this._Tbl_Person.Entity = value;
 					if ((value != null))
 					{
 						value.Tbl_Periodica.Add(this);
@@ -36782,9 +36497,9 @@ namespace CapaDatos
 					}
 					else
 					{
-						this._Per_id = default(Nullable<long>);
+						this._Per_id = default(int);
 					}
-					this.SendPropertyChanged("Tbl_Personas");
+					this.SendPropertyChanged("Tbl_Person");
 				}
 			}
 		}
@@ -36816,7 +36531,7 @@ namespace CapaDatos
 					}
 					else
 					{
-						this._prof_id = default(Nullable<int>);
+						this._prof_id = default(int);
 					}
 					this.SendPropertyChanged("Tbl_Profesional");
 				}
@@ -36844,13 +36559,13 @@ namespace CapaDatos
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_Personas")]
-	public partial class Tbl_Personas : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_Person")]
+	public partial class Tbl_Person : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private long _Per_id;
+		private int _Per_id;
 		
 		private string _Per_cedula;
 		
@@ -36866,8 +36581,6 @@ namespace CapaDatos
 		
 		private string _Per_genero;
 		
-		private System.Nullable<long> _Emp_id;
-		
 		private string _Per_puestoTrabajo;
 		
 		private string _Per_cargoOcupacion;
@@ -36876,7 +36589,19 @@ namespace CapaDatos
 		
 		private string _Per_fechInicioTrabajo;
 		
-		private System.Data.Linq.Binary _Per_imagen;
+		private string _Per_direccion;
+		
+		private string _Per_telefono;
+		
+		private string _Per_nomlogin;
+		
+		private string _Per_pass;
+		
+		private string _Per_correo;
+		
+		private System.Nullable<int> _Emp_id;
+		
+		private System.Nullable<int> _tusu_id;
 		
 		private string _Per_estado;
 		
@@ -36900,13 +36625,13 @@ namespace CapaDatos
 		
 		private EntitySet<Tbl_SocioEconomico> _Tbl_SocioEconomico;
 		
-		private EntityRef<Tbl_Empresa> _Tbl_Empresa;
+		private EntityRef<Tbl_TipoUsuario> _Tbl_TipoUsuario;
 		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnPer_idChanging(long value);
+    partial void OnPer_idChanging(int value);
     partial void OnPer_idChanged();
     partial void OnPer_cedulaChanging(string value);
     partial void OnPer_cedulaChanged();
@@ -36922,8 +36647,6 @@ namespace CapaDatos
     partial void OnPer_fechaNacimientoChanged();
     partial void OnPer_generoChanging(string value);
     partial void OnPer_generoChanged();
-    partial void OnEmp_idChanging(System.Nullable<long> value);
-    partial void OnEmp_idChanged();
     partial void OnPer_puestoTrabajoChanging(string value);
     partial void OnPer_puestoTrabajoChanged();
     partial void OnPer_cargoOcupacionChanging(string value);
@@ -36932,13 +36655,25 @@ namespace CapaDatos
     partial void OnPer_areaTrabajoChanged();
     partial void OnPer_fechInicioTrabajoChanging(string value);
     partial void OnPer_fechInicioTrabajoChanged();
-    partial void OnPer_imagenChanging(System.Data.Linq.Binary value);
-    partial void OnPer_imagenChanged();
+    partial void OnPer_direccionChanging(string value);
+    partial void OnPer_direccionChanged();
+    partial void OnPer_telefonoChanging(string value);
+    partial void OnPer_telefonoChanged();
+    partial void OnPer_nomloginChanging(string value);
+    partial void OnPer_nomloginChanged();
+    partial void OnPer_passChanging(string value);
+    partial void OnPer_passChanged();
+    partial void OnPer_correoChanging(string value);
+    partial void OnPer_correoChanged();
+    partial void OnEmp_idChanging(System.Nullable<int> value);
+    partial void OnEmp_idChanged();
+    partial void Ontusu_idChanging(System.Nullable<int> value);
+    partial void Ontusu_idChanged();
     partial void OnPer_estadoChanging(string value);
     partial void OnPer_estadoChanged();
     #endregion
 		
-		public Tbl_Personas()
+		public Tbl_Person()
 		{
 			this._Tbl_Certificado = new EntitySet<Tbl_Certificado>(new Action<Tbl_Certificado>(this.attach_Tbl_Certificado), new Action<Tbl_Certificado>(this.detach_Tbl_Certificado));
 			this._Tbl_Evolucion = new EntitySet<Tbl_Evolucion>(new Action<Tbl_Evolucion>(this.attach_Tbl_Evolucion), new Action<Tbl_Evolucion>(this.detach_Tbl_Evolucion));
@@ -36950,12 +36685,12 @@ namespace CapaDatos
 			this._Tbl_Reintegro = new EntitySet<Tbl_Reintegro>(new Action<Tbl_Reintegro>(this.attach_Tbl_Reintegro), new Action<Tbl_Reintegro>(this.detach_Tbl_Reintegro));
 			this._Tbl_Retiro = new EntitySet<Tbl_Retiro>(new Action<Tbl_Retiro>(this.attach_Tbl_Retiro), new Action<Tbl_Retiro>(this.detach_Tbl_Retiro));
 			this._Tbl_SocioEconomico = new EntitySet<Tbl_SocioEconomico>(new Action<Tbl_SocioEconomico>(this.attach_Tbl_SocioEconomico), new Action<Tbl_SocioEconomico>(this.detach_Tbl_SocioEconomico));
-			this._Tbl_Empresa = default(EntityRef<Tbl_Empresa>);
+			this._Tbl_TipoUsuario = default(EntityRef<Tbl_TipoUsuario>);
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_id", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public long Per_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Per_id
 		{
 			get
 			{
@@ -37114,30 +36849,6 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Emp_id", DbType="BigInt")]
-		public System.Nullable<long> Emp_id
-		{
-			get
-			{
-				return this._Emp_id;
-			}
-			set
-			{
-				if ((this._Emp_id != value))
-				{
-					if (this._Tbl_Empresa.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnEmp_idChanging(value);
-					this.SendPropertyChanging();
-					this._Emp_id = value;
-					this.SendPropertyChanged("Emp_id");
-					this.OnEmp_idChanged();
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_puestoTrabajo", DbType="VarChar(MAX)")]
 		public string Per_puestoTrabajo
 		{
@@ -37218,22 +36929,146 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_imagen", DbType="Image", UpdateCheck=UpdateCheck.Never)]
-		public System.Data.Linq.Binary Per_imagen
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_direccion", DbType="VarChar(MAX)")]
+		public string Per_direccion
 		{
 			get
 			{
-				return this._Per_imagen;
+				return this._Per_direccion;
 			}
 			set
 			{
-				if ((this._Per_imagen != value))
+				if ((this._Per_direccion != value))
 				{
-					this.OnPer_imagenChanging(value);
+					this.OnPer_direccionChanging(value);
 					this.SendPropertyChanging();
-					this._Per_imagen = value;
-					this.SendPropertyChanged("Per_imagen");
-					this.OnPer_imagenChanged();
+					this._Per_direccion = value;
+					this.SendPropertyChanged("Per_direccion");
+					this.OnPer_direccionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_telefono", DbType="VarChar(10)")]
+		public string Per_telefono
+		{
+			get
+			{
+				return this._Per_telefono;
+			}
+			set
+			{
+				if ((this._Per_telefono != value))
+				{
+					this.OnPer_telefonoChanging(value);
+					this.SendPropertyChanging();
+					this._Per_telefono = value;
+					this.SendPropertyChanged("Per_telefono");
+					this.OnPer_telefonoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_nomlogin", DbType="VarChar(25)")]
+		public string Per_nomlogin
+		{
+			get
+			{
+				return this._Per_nomlogin;
+			}
+			set
+			{
+				if ((this._Per_nomlogin != value))
+				{
+					this.OnPer_nomloginChanging(value);
+					this.SendPropertyChanging();
+					this._Per_nomlogin = value;
+					this.SendPropertyChanged("Per_nomlogin");
+					this.OnPer_nomloginChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_pass", DbType="VarChar(MAX)")]
+		public string Per_pass
+		{
+			get
+			{
+				return this._Per_pass;
+			}
+			set
+			{
+				if ((this._Per_pass != value))
+				{
+					this.OnPer_passChanging(value);
+					this.SendPropertyChanging();
+					this._Per_pass = value;
+					this.SendPropertyChanged("Per_pass");
+					this.OnPer_passChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_correo", DbType="VarChar(150)")]
+		public string Per_correo
+		{
+			get
+			{
+				return this._Per_correo;
+			}
+			set
+			{
+				if ((this._Per_correo != value))
+				{
+					this.OnPer_correoChanging(value);
+					this.SendPropertyChanging();
+					this._Per_correo = value;
+					this.SendPropertyChanged("Per_correo");
+					this.OnPer_correoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Emp_id", DbType="Int")]
+		public System.Nullable<int> Emp_id
+		{
+			get
+			{
+				return this._Emp_id;
+			}
+			set
+			{
+				if ((this._Emp_id != value))
+				{
+					this.OnEmp_idChanging(value);
+					this.SendPropertyChanging();
+					this._Emp_id = value;
+					this.SendPropertyChanged("Emp_id");
+					this.OnEmp_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tusu_id", DbType="Int")]
+		public System.Nullable<int> tusu_id
+		{
+			get
+			{
+				return this._tusu_id;
+			}
+			set
+			{
+				if ((this._tusu_id != value))
+				{
+					if (this._Tbl_TipoUsuario.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Ontusu_idChanging(value);
+					this.SendPropertyChanging();
+					this._tusu_id = value;
+					this.SendPropertyChanged("tusu_id");
+					this.Ontusu_idChanged();
 				}
 			}
 		}
@@ -37258,7 +37093,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_Certificado", Storage="_Tbl_Certificado", ThisKey="Per_id", OtherKey="Per_id")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Person_Tbl_Certificado", Storage="_Tbl_Certificado", ThisKey="Per_id", OtherKey="Per_id")]
 		public EntitySet<Tbl_Certificado> Tbl_Certificado
 		{
 			get
@@ -37271,7 +37106,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_Evolucion", Storage="_Tbl_Evolucion", ThisKey="Per_id", OtherKey="Per_id")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Person_Tbl_Evolucion", Storage="_Tbl_Evolucion", ThisKey="Per_id", OtherKey="Per_id")]
 		public EntitySet<Tbl_Evolucion> Tbl_Evolucion
 		{
 			get
@@ -37284,7 +37119,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_FichasMedicas", Storage="_Tbl_FichasMedicas", ThisKey="Per_id", OtherKey="Per_id")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Person_Tbl_FichasMedicas", Storage="_Tbl_FichasMedicas", ThisKey="Per_id", OtherKey="Per_id")]
 		public EntitySet<Tbl_FichasMedicas> Tbl_FichasMedicas
 		{
 			get
@@ -37297,7 +37132,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_Inicial", Storage="_Tbl_Inicial", ThisKey="Per_id", OtherKey="Per_id")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Person_Tbl_Inicial", Storage="_Tbl_Inicial", ThisKey="Per_id", OtherKey="Per_id")]
 		public EntitySet<Tbl_Inicial> Tbl_Inicial
 		{
 			get
@@ -37310,7 +37145,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_Inmunizaciones", Storage="_Tbl_Inmunizaciones", ThisKey="Per_id", OtherKey="Per_id")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Person_Tbl_Inmunizaciones", Storage="_Tbl_Inmunizaciones", ThisKey="Per_id", OtherKey="Per_id")]
 		public EntitySet<Tbl_Inmunizaciones> Tbl_Inmunizaciones
 		{
 			get
@@ -37323,7 +37158,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_PedidoExamenes", Storage="_Tbl_PedidoExamenes", ThisKey="Per_id", OtherKey="Per_id")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Person_Tbl_PedidoExamenes", Storage="_Tbl_PedidoExamenes", ThisKey="Per_id", OtherKey="Per_id")]
 		public EntitySet<Tbl_PedidoExamenes> Tbl_PedidoExamenes
 		{
 			get
@@ -37336,7 +37171,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_Periodica", Storage="_Tbl_Periodica", ThisKey="Per_id", OtherKey="Per_id")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Person_Tbl_Periodica", Storage="_Tbl_Periodica", ThisKey="Per_id", OtherKey="Per_id")]
 		public EntitySet<Tbl_Periodica> Tbl_Periodica
 		{
 			get
@@ -37349,7 +37184,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_Reintegro", Storage="_Tbl_Reintegro", ThisKey="Per_id", OtherKey="Per_id")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Person_Tbl_Reintegro", Storage="_Tbl_Reintegro", ThisKey="Per_id", OtherKey="Per_id")]
 		public EntitySet<Tbl_Reintegro> Tbl_Reintegro
 		{
 			get
@@ -37362,7 +37197,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_Retiro", Storage="_Tbl_Retiro", ThisKey="Per_id", OtherKey="Per_id")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Person_Tbl_Retiro", Storage="_Tbl_Retiro", ThisKey="Per_id", OtherKey="Per_id")]
 		public EntitySet<Tbl_Retiro> Tbl_Retiro
 		{
 			get
@@ -37375,7 +37210,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_SocioEconomico", Storage="_Tbl_SocioEconomico", ThisKey="Per_id", OtherKey="Per_id")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Person_Tbl_SocioEconomico", Storage="_Tbl_SocioEconomico", ThisKey="Per_id", OtherKey="Per_id")]
 		public EntitySet<Tbl_SocioEconomico> Tbl_SocioEconomico
 		{
 			get
@@ -37388,36 +37223,36 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Empresa_Tbl_Personas", Storage="_Tbl_Empresa", ThisKey="Emp_id", OtherKey="Emp_id", IsForeignKey=true)]
-		public Tbl_Empresa Tbl_Empresa
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_TipoUsuario_Tbl_Person", Storage="_Tbl_TipoUsuario", ThisKey="tusu_id", OtherKey="tusu_id", IsForeignKey=true)]
+		public Tbl_TipoUsuario Tbl_TipoUsuario
 		{
 			get
 			{
-				return this._Tbl_Empresa.Entity;
+				return this._Tbl_TipoUsuario.Entity;
 			}
 			set
 			{
-				Tbl_Empresa previousValue = this._Tbl_Empresa.Entity;
+				Tbl_TipoUsuario previousValue = this._Tbl_TipoUsuario.Entity;
 				if (((previousValue != value) 
-							|| (this._Tbl_Empresa.HasLoadedOrAssignedValue == false)))
+							|| (this._Tbl_TipoUsuario.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._Tbl_Empresa.Entity = null;
-						previousValue.Tbl_Personas.Remove(this);
+						this._Tbl_TipoUsuario.Entity = null;
+						previousValue.Tbl_Person.Remove(this);
 					}
-					this._Tbl_Empresa.Entity = value;
+					this._Tbl_TipoUsuario.Entity = value;
 					if ((value != null))
 					{
-						value.Tbl_Personas.Add(this);
-						this._Emp_id = value.Emp_id;
+						value.Tbl_Person.Add(this);
+						this._tusu_id = value.tusu_id;
 					}
 					else
 					{
-						this._Emp_id = default(Nullable<long>);
+						this._tusu_id = default(Nullable<int>);
 					}
-					this.SendPropertyChanged("Tbl_Empresa");
+					this.SendPropertyChanged("Tbl_TipoUsuario");
 				}
 			}
 		}
@@ -37445,121 +37280,121 @@ namespace CapaDatos
 		private void attach_Tbl_Certificado(Tbl_Certificado entity)
 		{
 			this.SendPropertyChanging();
-			entity.Tbl_Personas = this;
+			entity.Tbl_Person = this;
 		}
 		
 		private void detach_Tbl_Certificado(Tbl_Certificado entity)
 		{
 			this.SendPropertyChanging();
-			entity.Tbl_Personas = null;
+			entity.Tbl_Person = null;
 		}
 		
 		private void attach_Tbl_Evolucion(Tbl_Evolucion entity)
 		{
 			this.SendPropertyChanging();
-			entity.Tbl_Personas = this;
+			entity.Tbl_Person = this;
 		}
 		
 		private void detach_Tbl_Evolucion(Tbl_Evolucion entity)
 		{
 			this.SendPropertyChanging();
-			entity.Tbl_Personas = null;
+			entity.Tbl_Person = null;
 		}
 		
 		private void attach_Tbl_FichasMedicas(Tbl_FichasMedicas entity)
 		{
 			this.SendPropertyChanging();
-			entity.Tbl_Personas = this;
+			entity.Tbl_Person = this;
 		}
 		
 		private void detach_Tbl_FichasMedicas(Tbl_FichasMedicas entity)
 		{
 			this.SendPropertyChanging();
-			entity.Tbl_Personas = null;
+			entity.Tbl_Person = null;
 		}
 		
 		private void attach_Tbl_Inicial(Tbl_Inicial entity)
 		{
 			this.SendPropertyChanging();
-			entity.Tbl_Personas = this;
+			entity.Tbl_Person = this;
 		}
 		
 		private void detach_Tbl_Inicial(Tbl_Inicial entity)
 		{
 			this.SendPropertyChanging();
-			entity.Tbl_Personas = null;
+			entity.Tbl_Person = null;
 		}
 		
 		private void attach_Tbl_Inmunizaciones(Tbl_Inmunizaciones entity)
 		{
 			this.SendPropertyChanging();
-			entity.Tbl_Personas = this;
+			entity.Tbl_Person = this;
 		}
 		
 		private void detach_Tbl_Inmunizaciones(Tbl_Inmunizaciones entity)
 		{
 			this.SendPropertyChanging();
-			entity.Tbl_Personas = null;
+			entity.Tbl_Person = null;
 		}
 		
 		private void attach_Tbl_PedidoExamenes(Tbl_PedidoExamenes entity)
 		{
 			this.SendPropertyChanging();
-			entity.Tbl_Personas = this;
+			entity.Tbl_Person = this;
 		}
 		
 		private void detach_Tbl_PedidoExamenes(Tbl_PedidoExamenes entity)
 		{
 			this.SendPropertyChanging();
-			entity.Tbl_Personas = null;
+			entity.Tbl_Person = null;
 		}
 		
 		private void attach_Tbl_Periodica(Tbl_Periodica entity)
 		{
 			this.SendPropertyChanging();
-			entity.Tbl_Personas = this;
+			entity.Tbl_Person = this;
 		}
 		
 		private void detach_Tbl_Periodica(Tbl_Periodica entity)
 		{
 			this.SendPropertyChanging();
-			entity.Tbl_Personas = null;
+			entity.Tbl_Person = null;
 		}
 		
 		private void attach_Tbl_Reintegro(Tbl_Reintegro entity)
 		{
 			this.SendPropertyChanging();
-			entity.Tbl_Personas = this;
+			entity.Tbl_Person = this;
 		}
 		
 		private void detach_Tbl_Reintegro(Tbl_Reintegro entity)
 		{
 			this.SendPropertyChanging();
-			entity.Tbl_Personas = null;
+			entity.Tbl_Person = null;
 		}
 		
 		private void attach_Tbl_Retiro(Tbl_Retiro entity)
 		{
 			this.SendPropertyChanging();
-			entity.Tbl_Personas = this;
+			entity.Tbl_Person = this;
 		}
 		
 		private void detach_Tbl_Retiro(Tbl_Retiro entity)
 		{
 			this.SendPropertyChanging();
-			entity.Tbl_Personas = null;
+			entity.Tbl_Person = null;
 		}
 		
 		private void attach_Tbl_SocioEconomico(Tbl_SocioEconomico entity)
 		{
 			this.SendPropertyChanging();
-			entity.Tbl_Personas = this;
+			entity.Tbl_Person = this;
 		}
 		
 		private void detach_Tbl_SocioEconomico(Tbl_SocioEconomico entity)
 		{
 			this.SendPropertyChanging();
-			entity.Tbl_Personas = null;
+			entity.Tbl_Person = null;
 		}
 	}
 	
@@ -37674,7 +37509,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_prof_estado", DbType="VarChar(1)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_prof_estado", DbType="VarChar(1) NOT NULL", CanBeNull=false)]
 		public string prof_estado
 		{
 			get
@@ -38051,17 +37886,17 @@ namespace CapaDatos
 		
 		private System.Nullable<System.DateTime> _rein_fecha_horaModificacion;
 		
-		private System.Nullable<int> _prof_id;
+		private int _prof_id;
 		
-		private System.Nullable<int> _espec_id;
+		private int _espec_id;
 		
 		private string _rein_cod;
 		
-		private System.Nullable<long> _Per_id;
+		private int _Per_id;
 		
-		private System.Nullable<long> _Emp_id;
+		private int _Emp_id;
 		
-		private System.Nullable<System.DateTime> _rein_fechaHoraGuardado;
+		private System.DateTime _rein_fechaHoraGuardado;
 		
 		private string _rein_estado;
 		
@@ -38071,7 +37906,7 @@ namespace CapaDatos
 		
 		private EntityRef<Tbl_Empresa> _Tbl_Empresa;
 		
-		private EntityRef<Tbl_Personas> _Tbl_Personas;
+		private EntityRef<Tbl_Person> _Tbl_Person;
 		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
@@ -38257,17 +38092,17 @@ namespace CapaDatos
     partial void Onrein_descripcionRecoTratamientoChanged();
     partial void Onrein_fecha_horaModificacionChanging(System.Nullable<System.DateTime> value);
     partial void Onrein_fecha_horaModificacionChanged();
-    partial void Onprof_idChanging(System.Nullable<int> value);
+    partial void Onprof_idChanging(int value);
     partial void Onprof_idChanged();
-    partial void Onespec_idChanging(System.Nullable<int> value);
+    partial void Onespec_idChanging(int value);
     partial void Onespec_idChanged();
     partial void Onrein_codChanging(string value);
     partial void Onrein_codChanged();
-    partial void OnPer_idChanging(System.Nullable<long> value);
+    partial void OnPer_idChanging(int value);
     partial void OnPer_idChanged();
-    partial void OnEmp_idChanging(System.Nullable<long> value);
+    partial void OnEmp_idChanging(int value);
     partial void OnEmp_idChanged();
-    partial void Onrein_fechaHoraGuardadoChanging(System.Nullable<System.DateTime> value);
+    partial void Onrein_fechaHoraGuardadoChanging(System.DateTime value);
     partial void Onrein_fechaHoraGuardadoChanged();
     partial void Onrein_estadoChanging(string value);
     partial void Onrein_estadoChanged();
@@ -38278,7 +38113,7 @@ namespace CapaDatos
 			this._Tbl_Especialidad = default(EntityRef<Tbl_Especialidad>);
 			this._Tbl_Profesional = default(EntityRef<Tbl_Profesional>);
 			this._Tbl_Empresa = default(EntityRef<Tbl_Empresa>);
-			this._Tbl_Personas = default(EntityRef<Tbl_Personas>);
+			this._Tbl_Person = default(EntityRef<Tbl_Person>);
 			OnCreated();
 		}
 		
@@ -40082,8 +39917,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_prof_id", DbType="Int")]
-		public System.Nullable<int> prof_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_prof_id", DbType="Int NOT NULL")]
+		public int prof_id
 		{
 			get
 			{
@@ -40106,8 +39941,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_espec_id", DbType="Int")]
-		public System.Nullable<int> espec_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_espec_id", DbType="Int NOT NULL")]
+		public int espec_id
 		{
 			get
 			{
@@ -40150,8 +39985,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_id", DbType="BigInt")]
-		public System.Nullable<long> Per_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_id", DbType="Int NOT NULL")]
+		public int Per_id
 		{
 			get
 			{
@@ -40161,7 +39996,7 @@ namespace CapaDatos
 			{
 				if ((this._Per_id != value))
 				{
-					if (this._Tbl_Personas.HasLoadedOrAssignedValue)
+					if (this._Tbl_Person.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
@@ -40174,8 +40009,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Emp_id", DbType="BigInt")]
-		public System.Nullable<long> Emp_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Emp_id", DbType="Int NOT NULL")]
+		public int Emp_id
 		{
 			get
 			{
@@ -40198,8 +40033,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_fechaHoraGuardado", DbType="DateTime")]
-		public System.Nullable<System.DateTime> rein_fechaHoraGuardado
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_fechaHoraGuardado", DbType="DateTime NOT NULL")]
+		public System.DateTime rein_fechaHoraGuardado
 		{
 			get
 			{
@@ -40218,7 +40053,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_estado", DbType="VarChar(1)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rein_estado", DbType="VarChar(1) NOT NULL", CanBeNull=false)]
 		public string rein_estado
 		{
 			get
@@ -40265,7 +40100,7 @@ namespace CapaDatos
 					}
 					else
 					{
-						this._espec_id = default(Nullable<int>);
+						this._espec_id = default(int);
 					}
 					this.SendPropertyChanged("Tbl_Especialidad");
 				}
@@ -40299,7 +40134,7 @@ namespace CapaDatos
 					}
 					else
 					{
-						this._prof_id = default(Nullable<int>);
+						this._prof_id = default(int);
 					}
 					this.SendPropertyChanged("Tbl_Profesional");
 				}
@@ -40333,33 +40168,33 @@ namespace CapaDatos
 					}
 					else
 					{
-						this._Emp_id = default(Nullable<long>);
+						this._Emp_id = default(int);
 					}
 					this.SendPropertyChanged("Tbl_Empresa");
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_Reintegro", Storage="_Tbl_Personas", ThisKey="Per_id", OtherKey="Per_id", IsForeignKey=true)]
-		public Tbl_Personas Tbl_Personas
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Person_Tbl_Reintegro", Storage="_Tbl_Person", ThisKey="Per_id", OtherKey="Per_id", IsForeignKey=true)]
+		public Tbl_Person Tbl_Person
 		{
 			get
 			{
-				return this._Tbl_Personas.Entity;
+				return this._Tbl_Person.Entity;
 			}
 			set
 			{
-				Tbl_Personas previousValue = this._Tbl_Personas.Entity;
+				Tbl_Person previousValue = this._Tbl_Person.Entity;
 				if (((previousValue != value) 
-							|| (this._Tbl_Personas.HasLoadedOrAssignedValue == false)))
+							|| (this._Tbl_Person.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._Tbl_Personas.Entity = null;
+						this._Tbl_Person.Entity = null;
 						previousValue.Tbl_Reintegro.Remove(this);
 					}
-					this._Tbl_Personas.Entity = value;
+					this._Tbl_Person.Entity = value;
 					if ((value != null))
 					{
 						value.Tbl_Reintegro.Add(this);
@@ -40367,9 +40202,9 @@ namespace CapaDatos
 					}
 					else
 					{
-						this._Per_id = default(Nullable<long>);
+						this._Per_id = default(int);
 					}
-					this.SendPropertyChanged("Tbl_Personas");
+					this.SendPropertyChanged("Tbl_Person");
 				}
 			}
 		}
@@ -40599,17 +40434,17 @@ namespace CapaDatos
 		
 		private System.Nullable<System.DateTime> _ret_fecha_horaModificacion;
 		
-		private System.Nullable<int> _prof_id;
+		private int _prof_id;
 		
-		private System.Nullable<int> _espec_id;
+		private int _espec_id;
 		
 		private string _ret_cod;
 		
-		private System.Nullable<long> _Per_id;
+		private int _Per_id;
 		
-		private System.Nullable<long> _Emp_id;
+		private int _Emp_id;
 		
-		private System.Nullable<System.DateTime> _ret_fechaHoraGuardado;
+		private System.DateTime _ret_fechaHoraGuardado;
 		
 		private string _ret_estado;
 		
@@ -40619,7 +40454,7 @@ namespace CapaDatos
 		
 		private EntityRef<Tbl_Empresa> _Tbl_Empresa;
 		
-		private EntityRef<Tbl_Personas> _Tbl_Personas;
+		private EntityRef<Tbl_Person> _Tbl_Person;
 		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
@@ -40823,17 +40658,17 @@ namespace CapaDatos
     partial void Onret_descripcionRecoTratamientoChanged();
     partial void Onret_fecha_horaModificacionChanging(System.Nullable<System.DateTime> value);
     partial void Onret_fecha_horaModificacionChanged();
-    partial void Onprof_idChanging(System.Nullable<int> value);
+    partial void Onprof_idChanging(int value);
     partial void Onprof_idChanged();
-    partial void Onespec_idChanging(System.Nullable<int> value);
+    partial void Onespec_idChanging(int value);
     partial void Onespec_idChanged();
     partial void Onret_codChanging(string value);
     partial void Onret_codChanged();
-    partial void OnPer_idChanging(System.Nullable<long> value);
+    partial void OnPer_idChanging(int value);
     partial void OnPer_idChanged();
-    partial void OnEmp_idChanging(System.Nullable<long> value);
+    partial void OnEmp_idChanging(int value);
     partial void OnEmp_idChanged();
-    partial void Onret_fechaHoraGuardadoChanging(System.Nullable<System.DateTime> value);
+    partial void Onret_fechaHoraGuardadoChanging(System.DateTime value);
     partial void Onret_fechaHoraGuardadoChanged();
     partial void Onret_estadoChanging(string value);
     partial void Onret_estadoChanged();
@@ -40844,7 +40679,7 @@ namespace CapaDatos
 			this._Tbl_Especialidad = default(EntityRef<Tbl_Especialidad>);
 			this._Tbl_Profesional = default(EntityRef<Tbl_Profesional>);
 			this._Tbl_Empresa = default(EntityRef<Tbl_Empresa>);
-			this._Tbl_Personas = default(EntityRef<Tbl_Personas>);
+			this._Tbl_Person = default(EntityRef<Tbl_Person>);
 			OnCreated();
 		}
 		
@@ -42828,8 +42663,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_prof_id", DbType="Int")]
-		public System.Nullable<int> prof_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_prof_id", DbType="Int NOT NULL")]
+		public int prof_id
 		{
 			get
 			{
@@ -42852,8 +42687,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_espec_id", DbType="Int")]
-		public System.Nullable<int> espec_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_espec_id", DbType="Int NOT NULL")]
+		public int espec_id
 		{
 			get
 			{
@@ -42896,8 +42731,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_id", DbType="BigInt")]
-		public System.Nullable<long> Per_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_id", DbType="Int NOT NULL")]
+		public int Per_id
 		{
 			get
 			{
@@ -42907,7 +42742,7 @@ namespace CapaDatos
 			{
 				if ((this._Per_id != value))
 				{
-					if (this._Tbl_Personas.HasLoadedOrAssignedValue)
+					if (this._Tbl_Person.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
@@ -42920,8 +42755,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Emp_id", DbType="BigInt")]
-		public System.Nullable<long> Emp_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Emp_id", DbType="Int NOT NULL")]
+		public int Emp_id
 		{
 			get
 			{
@@ -42944,8 +42779,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_fechaHoraGuardado", DbType="DateTime")]
-		public System.Nullable<System.DateTime> ret_fechaHoraGuardado
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_fechaHoraGuardado", DbType="DateTime NOT NULL")]
+		public System.DateTime ret_fechaHoraGuardado
 		{
 			get
 			{
@@ -42964,7 +42799,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_estado", DbType="VarChar(1)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ret_estado", DbType="VarChar(1) NOT NULL", CanBeNull=false)]
 		public string ret_estado
 		{
 			get
@@ -43011,7 +42846,7 @@ namespace CapaDatos
 					}
 					else
 					{
-						this._espec_id = default(Nullable<int>);
+						this._espec_id = default(int);
 					}
 					this.SendPropertyChanged("Tbl_Especialidad");
 				}
@@ -43045,7 +42880,7 @@ namespace CapaDatos
 					}
 					else
 					{
-						this._prof_id = default(Nullable<int>);
+						this._prof_id = default(int);
 					}
 					this.SendPropertyChanged("Tbl_Profesional");
 				}
@@ -43079,33 +42914,33 @@ namespace CapaDatos
 					}
 					else
 					{
-						this._Emp_id = default(Nullable<long>);
+						this._Emp_id = default(int);
 					}
 					this.SendPropertyChanged("Tbl_Empresa");
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_Retiro", Storage="_Tbl_Personas", ThisKey="Per_id", OtherKey="Per_id", IsForeignKey=true)]
-		public Tbl_Personas Tbl_Personas
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Person_Tbl_Retiro", Storage="_Tbl_Person", ThisKey="Per_id", OtherKey="Per_id", IsForeignKey=true)]
+		public Tbl_Person Tbl_Person
 		{
 			get
 			{
-				return this._Tbl_Personas.Entity;
+				return this._Tbl_Person.Entity;
 			}
 			set
 			{
-				Tbl_Personas previousValue = this._Tbl_Personas.Entity;
+				Tbl_Person previousValue = this._Tbl_Person.Entity;
 				if (((previousValue != value) 
-							|| (this._Tbl_Personas.HasLoadedOrAssignedValue == false)))
+							|| (this._Tbl_Person.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._Tbl_Personas.Entity = null;
+						this._Tbl_Person.Entity = null;
 						previousValue.Tbl_Retiro.Remove(this);
 					}
-					this._Tbl_Personas.Entity = value;
+					this._Tbl_Person.Entity = value;
 					if ((value != null))
 					{
 						value.Tbl_Retiro.Add(this);
@@ -43113,9 +42948,9 @@ namespace CapaDatos
 					}
 					else
 					{
-						this._Per_id = default(Nullable<long>);
+						this._Per_id = default(int);
 					}
-					this.SendPropertyChanged("Tbl_Personas");
+					this.SendPropertyChanged("Tbl_Person");
 				}
 			}
 		}
@@ -43707,17 +43542,17 @@ namespace CapaDatos
 		
 		private System.Nullable<System.DateTime> _Socio_economico_fechaHoraModificacion;
 		
-		private System.Nullable<long> _Per_id;
+		private int _Per_id;
 		
-		private System.Nullable<long> _Emp_id;
+		private int _Emp_id;
 		
-		private System.Nullable<System.DateTime> _Socio_economico_fechaHoraGuardado;
+		private System.DateTime _Socio_economico_fechaHoraGuardado;
 		
 		private string _Socio_economico__estado;
 		
 		private EntityRef<Tbl_Empresa> _Tbl_Empresa;
 		
-		private EntityRef<Tbl_Personas> _Tbl_Personas;
+		private EntityRef<Tbl_Person> _Tbl_Person;
 		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
@@ -44283,11 +44118,11 @@ namespace CapaDatos
     partial void OnSocio_economico_imagen_geolocalizacionChanged();
     partial void OnSocio_economico_fechaHoraModificacionChanging(System.Nullable<System.DateTime> value);
     partial void OnSocio_economico_fechaHoraModificacionChanged();
-    partial void OnPer_idChanging(System.Nullable<long> value);
+    partial void OnPer_idChanging(int value);
     partial void OnPer_idChanged();
-    partial void OnEmp_idChanging(System.Nullable<long> value);
+    partial void OnEmp_idChanging(int value);
     partial void OnEmp_idChanged();
-    partial void OnSocio_economico_fechaHoraGuardadoChanging(System.Nullable<System.DateTime> value);
+    partial void OnSocio_economico_fechaHoraGuardadoChanging(System.DateTime value);
     partial void OnSocio_economico_fechaHoraGuardadoChanged();
     partial void OnSocio_economico__estadoChanging(string value);
     partial void OnSocio_economico__estadoChanged();
@@ -44296,7 +44131,7 @@ namespace CapaDatos
 		public Tbl_SocioEconomico()
 		{
 			this._Tbl_Empresa = default(EntityRef<Tbl_Empresa>);
-			this._Tbl_Personas = default(EntityRef<Tbl_Personas>);
+			this._Tbl_Person = default(EntityRef<Tbl_Person>);
 			OnCreated();
 		}
 		
@@ -49900,8 +49735,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_id", DbType="BigInt")]
-		public System.Nullable<long> Per_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_id", DbType="Int NOT NULL")]
+		public int Per_id
 		{
 			get
 			{
@@ -49911,7 +49746,7 @@ namespace CapaDatos
 			{
 				if ((this._Per_id != value))
 				{
-					if (this._Tbl_Personas.HasLoadedOrAssignedValue)
+					if (this._Tbl_Person.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
@@ -49924,8 +49759,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Emp_id", DbType="BigInt")]
-		public System.Nullable<long> Emp_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Emp_id", DbType="Int NOT NULL")]
+		public int Emp_id
 		{
 			get
 			{
@@ -49948,8 +49783,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_fechaHoraGuardado", DbType="DateTime")]
-		public System.Nullable<System.DateTime> Socio_economico_fechaHoraGuardado
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico_fechaHoraGuardado", DbType="DateTime NOT NULL")]
+		public System.DateTime Socio_economico_fechaHoraGuardado
 		{
 			get
 			{
@@ -49968,7 +49803,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico__estado", DbType="VarChar(1)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Socio_economico__estado", DbType="VarChar(1) NOT NULL", CanBeNull=false)]
 		public string Socio_economico__estado
 		{
 			get
@@ -50015,33 +49850,33 @@ namespace CapaDatos
 					}
 					else
 					{
-						this._Emp_id = default(Nullable<long>);
+						this._Emp_id = default(int);
 					}
 					this.SendPropertyChanged("Tbl_Empresa");
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Personas_Tbl_SocioEconomico", Storage="_Tbl_Personas", ThisKey="Per_id", OtherKey="Per_id", IsForeignKey=true)]
-		public Tbl_Personas Tbl_Personas
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_Person_Tbl_SocioEconomico", Storage="_Tbl_Person", ThisKey="Per_id", OtherKey="Per_id", IsForeignKey=true)]
+		public Tbl_Person Tbl_Person
 		{
 			get
 			{
-				return this._Tbl_Personas.Entity;
+				return this._Tbl_Person.Entity;
 			}
 			set
 			{
-				Tbl_Personas previousValue = this._Tbl_Personas.Entity;
+				Tbl_Person previousValue = this._Tbl_Person.Entity;
 				if (((previousValue != value) 
-							|| (this._Tbl_Personas.HasLoadedOrAssignedValue == false)))
+							|| (this._Tbl_Person.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._Tbl_Personas.Entity = null;
+						this._Tbl_Person.Entity = null;
 						previousValue.Tbl_SocioEconomico.Remove(this);
 					}
-					this._Tbl_Personas.Entity = value;
+					this._Tbl_Person.Entity = value;
 					if ((value != null))
 					{
 						value.Tbl_SocioEconomico.Add(this);
@@ -50049,9 +49884,9 @@ namespace CapaDatos
 					}
 					else
 					{
-						this._Per_id = default(Nullable<long>);
+						this._Per_id = default(int);
 					}
-					this.SendPropertyChanged("Tbl_Personas");
+					this.SendPropertyChanged("Tbl_Person");
 				}
 			}
 		}
@@ -50146,7 +49981,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TiEnf_estado", DbType="VarChar(1)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TiEnf_estado", DbType="VarChar(1) NOT NULL", CanBeNull=false)]
 		public string TiEnf_estado
 		{
 			get
@@ -50187,141 +50022,29 @@ namespace CapaDatos
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_TipoUsuario")]
-	public partial class Tbl_TipoUsuario : INotifyPropertyChanging, INotifyPropertyChanged
+	public partial class AutentificarxUsuarioResult
 	{
 		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		private string _Per_nomlogin;
 		
-		private long _tusu_id;
-		
-		private string _tusu_nombre;
-		
-		private string _tusu_estado;
-		
-		private EntitySet<Tbl_Usuarios> _Tbl_Usuarios;
-		
-    #region Definiciones de métodos de extensibilidad
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void Ontusu_idChanging(long value);
-    partial void Ontusu_idChanged();
-    partial void Ontusu_nombreChanging(string value);
-    partial void Ontusu_nombreChanged();
-    partial void Ontusu_estadoChanging(string value);
-    partial void Ontusu_estadoChanged();
-    #endregion
-		
-		public Tbl_TipoUsuario()
+		public AutentificarxUsuarioResult()
 		{
-			this._Tbl_Usuarios = new EntitySet<Tbl_Usuarios>(new Action<Tbl_Usuarios>(this.attach_Tbl_Usuarios), new Action<Tbl_Usuarios>(this.detach_Tbl_Usuarios));
-			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tusu_id", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public long tusu_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Per_nomlogin", DbType="VarChar(25)")]
+		public string Per_nomlogin
 		{
 			get
 			{
-				return this._tusu_id;
+				return this._Per_nomlogin;
 			}
 			set
 			{
-				if ((this._tusu_id != value))
+				if ((this._Per_nomlogin != value))
 				{
-					this.Ontusu_idChanging(value);
-					this.SendPropertyChanging();
-					this._tusu_id = value;
-					this.SendPropertyChanged("tusu_id");
-					this.Ontusu_idChanged();
+					this._Per_nomlogin = value;
 				}
 			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tusu_nombre", DbType="VarChar(100)")]
-		public string tusu_nombre
-		{
-			get
-			{
-				return this._tusu_nombre;
-			}
-			set
-			{
-				if ((this._tusu_nombre != value))
-				{
-					this.Ontusu_nombreChanging(value);
-					this.SendPropertyChanging();
-					this._tusu_nombre = value;
-					this.SendPropertyChanged("tusu_nombre");
-					this.Ontusu_nombreChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tusu_estado", DbType="VarChar(50)")]
-		public string tusu_estado
-		{
-			get
-			{
-				return this._tusu_estado;
-			}
-			set
-			{
-				if ((this._tusu_estado != value))
-				{
-					this.Ontusu_estadoChanging(value);
-					this.SendPropertyChanging();
-					this._tusu_estado = value;
-					this.SendPropertyChanged("tusu_estado");
-					this.Ontusu_estadoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tbl_TipoUsuario_Tbl_Usuarios", Storage="_Tbl_Usuarios", ThisKey="tusu_id", OtherKey="tusu_id")]
-		public EntitySet<Tbl_Usuarios> Tbl_Usuarios
-		{
-			get
-			{
-				return this._Tbl_Usuarios;
-			}
-			set
-			{
-				this._Tbl_Usuarios.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Tbl_Usuarios(Tbl_Usuarios entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tbl_TipoUsuario = this;
-		}
-		
-		private void detach_Tbl_Usuarios(Tbl_Usuarios entity)
-		{
-			this.SendPropertyChanging();
-			entity.Tbl_TipoUsuario = null;
 		}
 	}
 	
@@ -50360,7 +50083,7 @@ namespace CapaDatos
 		
 		private string _prof_NomApe;
 		
-		private System.Nullable<System.DateTime> _fechaHoraGuardado;
+		private System.DateTime _fechaHoraGuardado;
 		
 		public ObtenerPacienteResult()
 		{
@@ -50414,8 +50137,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fechaHoraGuardado", DbType="DateTime")]
-		public System.Nullable<System.DateTime> fechaHoraGuardado
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fechaHoraGuardado", DbType="DateTime NOT NULL")]
+		public System.DateTime fechaHoraGuardado
 		{
 			get
 			{

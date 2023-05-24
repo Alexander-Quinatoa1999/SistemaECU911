@@ -25,7 +25,7 @@ namespace SistemaECU911.Template.Views_Socio_Economico
         private void cargarPaciente()
         {
             var query = from r in dc.Tbl_SocioEconomico
-                        join p in dc.Tbl_Personas on r.Per_id equals p.Per_id
+                        join p in dc.Tbl_Person on r.Per_id equals p.Per_id
                         orderby r.Socio_economico_fechaHoraGuardado descending
                         select new
                         {

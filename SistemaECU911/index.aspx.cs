@@ -31,8 +31,8 @@ namespace SistemaECU911
 
         private void logear()
         {
-            bool existenom = CN_Usuarios.autentificarxNom(txt_user.Text);
-            bool existe = CN_Usuarios.autentificar(txt_user.Text, GetMD5(txt_pass.Text));
+            bool existeUsu = CN_Usuarios.autentificarxUsuario(txt_user.Text);
+            bool existeUsuPass = CN_Usuarios.autentificarUsuarioPassword(txt_user.Text, GetMD5(txt_pass.Text));
             {
                 if (String.IsNullOrEmpty(txt_user.Text) || String.IsNullOrEmpty(txt_pass.Text))
                 {
@@ -40,54 +40,54 @@ namespace SistemaECU911
                 }
                 else
                 {
-                    if (existenom)
+                    if (existeUsu)
                     {
-                        if (existe)
+                        if (existeUsuPass)
                         {
-                            Tbl_Usuarios usuario = new Tbl_Usuarios();
+                            Tbl_Person person = new Tbl_Person();
                             Tbl_TipoUsuario tusu = new Tbl_TipoUsuario();
 
-                            usuario = CN_Usuarios.autentificarxLogin(txt_user.Text, GetMD5(txt_pass.Text));
-                            int rol = Convert.ToInt32(usuario.tusu_id.ToString());
+                            person = CN_Usuarios.autentificarxUnicoUsuPass(txt_user.Text, GetMD5(txt_pass.Text));
+                            int rol = Convert.ToInt32(person.tusu_id.ToString());
                             tusu = CN_TipoUsuario.obtenerTusuarioxUsuario(Convert.ToInt32(rol));
-                            int tusuario = Convert.ToInt32(usuario.tusu_id);
+                            int tusuario = Convert.ToInt32(person.tusu_id);
                             if (tusuario == 1)
                             {
-                                Session["Administrador"] = usuario.usu_id.ToString();
-                                Session["prinombre"] = usuario.usu_priNombre.ToString();
-                                Session["segnombre"] = usuario.usu_segNombre.ToString();
-                                Session["priapellido"] = usuario.usu_priApellido.ToString();
-                                Session["segapellido"] = usuario.usu_segApellido.ToString();                                
+                                Session["Administrador"] = person.Per_id.ToString();
+                                Session["prinombre"] = person.Per_priNombre.ToString();
+                                Session["segnombre"] = person.Per_segNombre.ToString();
+                                Session["priapellido"] = person.Per_priApellido.ToString();
+                                Session["segapellido"] = person.Per_segApellido.ToString();                                
                                 Session["rol"] = tusu.tusu_nombre.ToString();
 
                                 //--------------------Datos Cambiar Usuario--------------------
 
-                                Session["correo"] = usuario.usu_correo.ToString();
-                                Session["telefono"] = usuario.usu_telefono.ToString();
-                                Session["direccion"] = usuario.usu_direccion.ToString();
+                                Session["correo"] = person.Per_correo.ToString();
+                                Session["telefono"] = person.Per_telefono.ToString();
+                                Session["direccion"] = person.Per_direccion.ToString();
 
                                 Response.Redirect("~/Template/Views/Inicio.aspx");
                                 limpiar();
                             }
                             else if (tusuario == 2)
                             {
-                                Session["Paciente"] = usuario.usu_id.ToString();
-                                Session["Cedula"] = usuario.usu_cedula.ToString();
-                                Session["prinombre"] = usuario.usu_priNombre.ToString();
-                                Session["segnombre"] = usuario.usu_segNombre.ToString();
-                                Session["priapellido"] = usuario.usu_priApellido.ToString();
-                                Session["segapellido"] = usuario.usu_segApellido.ToString();
+                                Session["Paciente"] = person.Per_id.ToString();
+                                Session["Cedula"] = person.Per_cedula.ToString();
+                                Session["prinombre"] = person.Per_priNombre.ToString();
+                                Session["segnombre"] = person.Per_segNombre.ToString();
+                                Session["priapellido"] = person.Per_priApellido.ToString();
+                                Session["segapellido"] = person.Per_segApellido.ToString();
                                 Session["rol"] = tusu.tusu_nombre.ToString();
                                 Response.Redirect("~/Template/Views_Pacientes/Inicio.aspx");
                                 limpiar();
                             }
                             else
                             {
-                                Session["TrabajoSocial"] = usuario.usu_id.ToString();
-                                Session["prinombre"] = usuario.usu_priNombre.ToString();
-                                Session["segnombre"] = usuario.usu_segNombre.ToString();
-                                Session["priapellido"] = usuario.usu_priApellido.ToString();
-                                Session["segapellido"] = usuario.usu_segApellido.ToString();
+                                Session["TrabajoSocial"] = person.Per_id.ToString();
+                                Session["prinombre"] = person.Per_priNombre.ToString();
+                                Session["segnombre"] = person.Per_segNombre.ToString();
+                                Session["priapellido"] = person.Per_priApellido.ToString();
+                                Session["segapellido"] = person.Per_segApellido.ToString();
                                 Session["rol"] = tusu.tusu_nombre.ToString();
                                 Response.Redirect("~/Template/Views_Socio_Economico/Inicio.aspx");
                                 limpiar();
@@ -113,7 +113,6 @@ namespace SistemaECU911
                         ScriptManager.RegisterStartupScript(this, this.GetType(), "mensaje", "swal('Error!', 'El usuario no existe', 'error')", true);
                         limpiar();
                     }
-
                 }
                 
             }

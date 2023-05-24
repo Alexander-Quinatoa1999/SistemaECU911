@@ -6,22 +6,12 @@
       <Column Name="dec10" Type="System.String" DbType="VarChar(400)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.Tbl_Usuarios" Member="Tbl_Usuarios">
-    <Type Name="Tbl_Usuarios">
-      <Column Name="usu_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="usu_cedula" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="usu_priApellido" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="usu_segApellido" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="usu_priNombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="usu_segNombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="usu_direccion" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
-      <Column Name="usu_telefono" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="usu_nomlogin" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="usu_pass" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
-      <Column Name="usu_correo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="tusu_id" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="usu_estado" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Association Name="Tbl_TipoUsuario_Tbl_Usuarios" Member="Tbl_TipoUsuario" ThisKey="tusu_id" OtherKey="tusu_id" Type="Tbl_TipoUsuario" IsForeignKey="true" />
+  <Table Name="dbo.Tbl_TipoUsuario" Member="Tbl_TipoUsuario">
+    <Type Name="Tbl_TipoUsuario">
+      <Column Name="tusu_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="tusu_nombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="tusu_estado" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Association Name="Tbl_TipoUsuario_Tbl_Person" Member="Tbl_Person" ThisKey="tusu_id" OtherKey="tusu_id" Type="Tbl_Person" />
     </Type>
   </Table>
   <Table Name="dbo.Tbl_Certificado" Member="Tbl_Certificado">
@@ -52,18 +42,18 @@
       <Column Name="certi_fecha_horaModificacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="prof_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="certi_cod" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
-      <Column Name="Per_id" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="Emp_id" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="certi_fechaHoraGuardado" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="certi_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="Per_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Emp_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="certi_fechaHoraGuardado" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="certi_estado" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
       <Association Name="Tbl_Empresa_Tbl_Certificado" Member="Tbl_Empresa" ThisKey="Emp_id" OtherKey="Emp_id" Type="Tbl_Empresa" IsForeignKey="true" />
-      <Association Name="Tbl_Personas_Tbl_Certificado" Member="Tbl_Personas" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Personas" IsForeignKey="true" />
+      <Association Name="Tbl_Person_Tbl_Certificado" Member="Tbl_Person" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Person" IsForeignKey="true" />
       <Association Name="Tbl_Profesional_Tbl_Certificado" Member="Tbl_Profesional" ThisKey="prof_id" OtherKey="prof_id" Type="Tbl_Profesional" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Tbl_Empresa" Member="Tbl_Empresa">
     <Type Name="Tbl_Empresa">
-      <Column Name="Emp_id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Emp_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Emp_nombre" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
       <Column Name="Emp_zonal" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
       <Column Name="Emp_RUC" Type="System.String" DbType="VarChar(13)" CanBeNull="true" />
@@ -76,7 +66,6 @@
       <Association Name="Tbl_Empresa_Tbl_Inmunizaciones" Member="Tbl_Inmunizaciones" ThisKey="Emp_id" OtherKey="Emp_id" Type="Tbl_Inmunizaciones" />
       <Association Name="Tbl_Empresa_Tbl_PedidoExamenes" Member="Tbl_PedidoExamenes" ThisKey="Emp_id" OtherKey="Emp_id" Type="Tbl_PedidoExamenes" />
       <Association Name="Tbl_Empresa_Tbl_Periodica" Member="Tbl_Periodica" ThisKey="Emp_id" OtherKey="Emp_id" Type="Tbl_Periodica" />
-      <Association Name="Tbl_Empresa_Tbl_Personas" Member="Tbl_Personas" ThisKey="Emp_id" OtherKey="Emp_id" Type="Tbl_Personas" />
       <Association Name="Tbl_Empresa_Tbl_Reintegro" Member="Tbl_Reintegro" ThisKey="Emp_id" OtherKey="Emp_id" Type="Tbl_Reintegro" />
       <Association Name="Tbl_Empresa_Tbl_Retiro" Member="Tbl_Retiro" ThisKey="Emp_id" OtherKey="Emp_id" Type="Tbl_Retiro" />
       <Association Name="Tbl_Empresa_Tbl_SocioEconomico" Member="Tbl_SocioEconomico" ThisKey="Emp_id" OtherKey="Emp_id" Type="Tbl_SocioEconomico" />
@@ -86,7 +75,7 @@
     <Type Name="Tbl_Especialidad">
       <Column Name="espec_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="espec_nombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="espec_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="espec_estado" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
       <Association Name="Tbl_Especialidad_Tbl_FichasMedicas" Member="Tbl_FichasMedicas" ThisKey="espec_id" OtherKey="espec_id" Type="Tbl_FichasMedicas" />
       <Association Name="Tbl_Especialidad_Tbl_Periodica" Member="Tbl_Periodica" ThisKey="espec_id" OtherKey="espec_id" Type="Tbl_Periodica" />
       <Association Name="Tbl_Especialidad_Tbl_Reintegro" Member="Tbl_Reintegro" ThisKey="espec_id" OtherKey="espec_id" Type="Tbl_Reintegro" />
@@ -174,12 +163,12 @@
       <Column Name="evo_farmacoIndicaciones15" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="evo_adminisFarmacos15" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="evo_fecha_horaModificacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="Per_id" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="Emp_id" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="evo_fechaHoraGuardado" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="evo_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="Per_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Emp_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="evo_fechaHoraGuardado" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="evo_estado" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
       <Association Name="Tbl_Empresa_Tbl_Evolucion" Member="Tbl_Empresa" ThisKey="Emp_id" OtherKey="Emp_id" Type="Tbl_Empresa" IsForeignKey="true" />
-      <Association Name="Tbl_Personas_Tbl_Evolucion" Member="Tbl_Personas" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Personas" IsForeignKey="true" />
+      <Association Name="Tbl_Person_Tbl_Evolucion" Member="Tbl_Person" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Person" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Tbl_FichasMedicas" Member="Tbl_FichasMedicas">
@@ -243,16 +232,16 @@
       <Column Name="evolucion" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="prescripciones" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="fechaHoraModificacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="espec_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="prof_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="codigoPro" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
-      <Column Name="Per_id" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="Emp_id" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="fechaHoraGuardado" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="espec_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="prof_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codigoPro" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Per_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Emp_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fechaHoraGuardado" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="estado" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
       <Association Name="Tbl_Empresa_Tbl_FichasMedicas" Member="Tbl_Empresa" ThisKey="Emp_id" OtherKey="Emp_id" Type="Tbl_Empresa" IsForeignKey="true" />
       <Association Name="Tbl_Especialidad_Tbl_FichasMedicas" Member="Tbl_Especialidad" ThisKey="espec_id" OtherKey="espec_id" Type="Tbl_Especialidad" IsForeignKey="true" />
-      <Association Name="Tbl_Personas_Tbl_FichasMedicas" Member="Tbl_Personas" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Personas" IsForeignKey="true" />
+      <Association Name="Tbl_Person_Tbl_FichasMedicas" Member="Tbl_Person" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Person" IsForeignKey="true" />
       <Association Name="Tbl_Profesional_Tbl_FichasMedicas" Member="Tbl_Profesional" ThisKey="prof_id" OtherKey="prof_id" Type="Tbl_Profesional" IsForeignKey="true" />
     </Type>
   </Table>
@@ -779,14 +768,14 @@
       <Column Name="inicial_LimitAptMed" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inicial_descripcionRecTra" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inicial_fecha_horaModificacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="prof_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="prof_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="inicial_cod" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
-      <Column Name="Per_id" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="Emp_id" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="inicial_fechaHoraGuardado" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="inicial_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="Per_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Emp_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="inicial_fechaHoraGuardado" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="inicial_estado" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
       <Association Name="Tbl_Empresa_Tbl_Inicial" Member="Tbl_Empresa" ThisKey="Emp_id" OtherKey="Emp_id" Type="Tbl_Empresa" IsForeignKey="true" />
-      <Association Name="Tbl_Personas_Tbl_Inicial" Member="Tbl_Personas" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Personas" IsForeignKey="true" />
+      <Association Name="Tbl_Person_Tbl_Inicial" Member="Tbl_Person" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Person" IsForeignKey="true" />
       <Association Name="Tbl_Profesional_Tbl_Inicial" Member="Tbl_Profesional" ThisKey="prof_id" OtherKey="prof_id" Type="Tbl_Profesional" IsForeignKey="true" />
     </Type>
   </Table>
@@ -1010,17 +999,17 @@
       <Column Name="inmu_4estaSaludColocoVacuInmuAcuerTipoEmpRies5" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="inmu_4observaInmuAcuerTipoEmpRies5" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="inmu_fecha_horaModificacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="Per_id" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="Emp_id" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="inmu_fechaHoraGuardado" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="inmu_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="Per_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Emp_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="inmu_fechaHoraGuardado" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="inmu_estado" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
       <Association Name="Tbl_Empresa_Tbl_Inmunizaciones" Member="Tbl_Empresa" ThisKey="Emp_id" OtherKey="Emp_id" Type="Tbl_Empresa" IsForeignKey="true" />
-      <Association Name="Tbl_Personas_Tbl_Inmunizaciones" Member="Tbl_Personas" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Personas" IsForeignKey="true" />
+      <Association Name="Tbl_Person_Tbl_Inmunizaciones" Member="Tbl_Person" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Person" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Tbl_PedidoExamenes" Member="Tbl_PedidoExamenes">
     <Type Name="Tbl_PedidoExamenes">
-      <Column Name="pedExa_id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="pedExa_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="pedExa_ciiu" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
       <Column Name="pedExa_numArchivo" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
       <Column Name="pedExa_bioHematicaHema" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
@@ -1173,12 +1162,12 @@
       <Column Name="pedExa_Otros3" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
       <Column Name="pedExa_descripOtros3" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="pedExa_fecha_horaModificacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="Per_id" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="Emp_id" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="pedExa_fechaHoraGuardado" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="pedExa_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="Per_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Emp_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="pedExa_fechaHoraGuardado" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="pedExa_estado" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
       <Association Name="Tbl_Empresa_Tbl_PedidoExamenes" Member="Tbl_Empresa" ThisKey="Emp_id" OtherKey="Emp_id" Type="Tbl_Empresa" IsForeignKey="true" />
-      <Association Name="Tbl_Personas_Tbl_PedidoExamenes" Member="Tbl_Personas" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Personas" IsForeignKey="true" />
+      <Association Name="Tbl_Person_Tbl_PedidoExamenes" Member="Tbl_Person" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Person" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Tbl_Periodica" Member="Tbl_Periodica">
@@ -1521,22 +1510,22 @@
       <Column Name="perio_LimitAptMedTrabajo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="perio_descripcionRecoTratamiento" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="perio_fecha_horaModificacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="prof_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="espec_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="prof_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="espec_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="perio_cod" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
-      <Column Name="Per_id" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="Emp_id" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="perio_fechaHoraGuardado" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="perio_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="Per_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Emp_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="perio_fechaHoraGuardado" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="perio_estado" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
       <Association Name="Tbl_Especialidad_Tbl_Periodica" Member="Tbl_Especialidad" ThisKey="espec_id" OtherKey="espec_id" Type="Tbl_Especialidad" IsForeignKey="true" />
       <Association Name="Tbl_Empresa_Tbl_Periodica" Member="Tbl_Empresa" ThisKey="Emp_id" OtherKey="Emp_id" Type="Tbl_Empresa" IsForeignKey="true" />
-      <Association Name="Tbl_Personas_Tbl_Periodica" Member="Tbl_Personas" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Personas" IsForeignKey="true" />
+      <Association Name="Tbl_Person_Tbl_Periodica" Member="Tbl_Person" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Person" IsForeignKey="true" />
       <Association Name="Tbl_Profesional_Tbl_Periodica" Member="Tbl_Profesional" ThisKey="prof_id" OtherKey="prof_id" Type="Tbl_Profesional" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.Tbl_Personas" Member="Tbl_Personas">
-    <Type Name="Tbl_Personas">
-      <Column Name="Per_id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+  <Table Name="dbo.Tbl_Person" Member="Tbl_Person">
+    <Type Name="Tbl_Person">
+      <Column Name="Per_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Per_cedula" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Column Name="Per_priApellido" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
       <Column Name="Per_segApellido" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
@@ -1544,24 +1533,29 @@
       <Column Name="Per_segNombre" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
       <Column Name="Per_fechaNacimiento" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Column Name="Per_genero" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-      <Column Name="Emp_id" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
       <Column Name="Per_puestoTrabajo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="Per_cargoOcupacion" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="Per_areaTrabajo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="Per_fechInicioTrabajo" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="Per_imagen" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Per_direccion" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Per_telefono" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Per_nomlogin" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="Per_pass" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Per_correo" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="Emp_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="tusu_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Per_estado" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
-      <Association Name="Tbl_Personas_Tbl_Certificado" Member="Tbl_Certificado" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Certificado" />
-      <Association Name="Tbl_Personas_Tbl_Evolucion" Member="Tbl_Evolucion" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Evolucion" />
-      <Association Name="Tbl_Personas_Tbl_FichasMedicas" Member="Tbl_FichasMedicas" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_FichasMedicas" />
-      <Association Name="Tbl_Personas_Tbl_Inicial" Member="Tbl_Inicial" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Inicial" />
-      <Association Name="Tbl_Personas_Tbl_Inmunizaciones" Member="Tbl_Inmunizaciones" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Inmunizaciones" />
-      <Association Name="Tbl_Personas_Tbl_PedidoExamenes" Member="Tbl_PedidoExamenes" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_PedidoExamenes" />
-      <Association Name="Tbl_Personas_Tbl_Periodica" Member="Tbl_Periodica" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Periodica" />
-      <Association Name="Tbl_Personas_Tbl_Reintegro" Member="Tbl_Reintegro" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Reintegro" />
-      <Association Name="Tbl_Personas_Tbl_Retiro" Member="Tbl_Retiro" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Retiro" />
-      <Association Name="Tbl_Personas_Tbl_SocioEconomico" Member="Tbl_SocioEconomico" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_SocioEconomico" />
-      <Association Name="Tbl_Empresa_Tbl_Personas" Member="Tbl_Empresa" ThisKey="Emp_id" OtherKey="Emp_id" Type="Tbl_Empresa" IsForeignKey="true" />
+      <Association Name="Tbl_Person_Tbl_Certificado" Member="Tbl_Certificado" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Certificado" />
+      <Association Name="Tbl_Person_Tbl_Evolucion" Member="Tbl_Evolucion" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Evolucion" />
+      <Association Name="Tbl_Person_Tbl_FichasMedicas" Member="Tbl_FichasMedicas" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_FichasMedicas" />
+      <Association Name="Tbl_Person_Tbl_Inicial" Member="Tbl_Inicial" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Inicial" />
+      <Association Name="Tbl_Person_Tbl_Inmunizaciones" Member="Tbl_Inmunizaciones" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Inmunizaciones" />
+      <Association Name="Tbl_Person_Tbl_PedidoExamenes" Member="Tbl_PedidoExamenes" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_PedidoExamenes" />
+      <Association Name="Tbl_Person_Tbl_Periodica" Member="Tbl_Periodica" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Periodica" />
+      <Association Name="Tbl_Person_Tbl_Reintegro" Member="Tbl_Reintegro" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Reintegro" />
+      <Association Name="Tbl_Person_Tbl_Retiro" Member="Tbl_Retiro" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Retiro" />
+      <Association Name="Tbl_Person_Tbl_SocioEconomico" Member="Tbl_SocioEconomico" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_SocioEconomico" />
+      <Association Name="Tbl_TipoUsuario_Tbl_Person" Member="Tbl_TipoUsuario" ThisKey="tusu_id" OtherKey="tusu_id" Type="Tbl_TipoUsuario" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Tbl_Profesional" Member="Tbl_Profesional">
@@ -1569,7 +1563,7 @@
       <Column Name="prof_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="prof_NomApe" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
       <Column Name="prof_cedula" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="prof_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="prof_estado" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
       <Association Name="Tbl_Profesional_Tbl_Certificado" Member="Tbl_Certificado" ThisKey="prof_id" OtherKey="prof_id" Type="Tbl_Certificado" />
       <Association Name="Tbl_Profesional_Tbl_FichasMedicas" Member="Tbl_FichasMedicas" ThisKey="prof_id" OtherKey="prof_id" Type="Tbl_FichasMedicas" />
       <Association Name="Tbl_Profesional_Tbl_Inicial" Member="Tbl_Inicial" ThisKey="prof_id" OtherKey="prof_id" Type="Tbl_Inicial" />
@@ -1670,17 +1664,17 @@
       <Column Name="rein_ReubicaAptMedica" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="rein_descripcionRecoTratamiento" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="rein_fecha_horaModificacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="prof_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="espec_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="prof_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="espec_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="rein_cod" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
-      <Column Name="Per_id" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="Emp_id" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="rein_fechaHoraGuardado" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="rein_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="Per_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Emp_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="rein_fechaHoraGuardado" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="rein_estado" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
       <Association Name="Tbl_Especialidad_Tbl_Reintegro" Member="Tbl_Especialidad" ThisKey="espec_id" OtherKey="espec_id" Type="Tbl_Especialidad" IsForeignKey="true" />
       <Association Name="Tbl_Profesional_Tbl_Reintegro" Member="Tbl_Profesional" ThisKey="prof_id" OtherKey="prof_id" Type="Tbl_Profesional" IsForeignKey="true" />
       <Association Name="Tbl_Empresa_Tbl_Reintegro" Member="Tbl_Empresa" ThisKey="Emp_id" OtherKey="Emp_id" Type="Tbl_Empresa" IsForeignKey="true" />
-      <Association Name="Tbl_Personas_Tbl_Reintegro" Member="Tbl_Personas" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Personas" IsForeignKey="true" />
+      <Association Name="Tbl_Person_Tbl_Reintegro" Member="Tbl_Person" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Person" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Tbl_Retiro" Member="Tbl_Retiro">
@@ -1784,17 +1778,17 @@
       <Column Name="ret_observacionesEvaMedRetiro" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="ret_descripcionRecoTratamiento" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="ret_fecha_horaModificacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="prof_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="espec_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="prof_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="espec_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="ret_cod" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
-      <Column Name="Per_id" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="Emp_id" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="ret_fechaHoraGuardado" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="ret_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="Per_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Emp_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ret_fechaHoraGuardado" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ret_estado" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
       <Association Name="Tbl_Especialidad_Tbl_Retiro" Member="Tbl_Especialidad" ThisKey="espec_id" OtherKey="espec_id" Type="Tbl_Especialidad" IsForeignKey="true" />
       <Association Name="Tbl_Profesional_Tbl_Retiro" Member="Tbl_Profesional" ThisKey="prof_id" OtherKey="prof_id" Type="Tbl_Profesional" IsForeignKey="true" />
       <Association Name="Tbl_Empresa_Tbl_Retiro" Member="Tbl_Empresa" ThisKey="Emp_id" OtherKey="Emp_id" Type="Tbl_Empresa" IsForeignKey="true" />
-      <Association Name="Tbl_Personas_Tbl_Retiro" Member="Tbl_Personas" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Personas" IsForeignKey="true" />
+      <Association Name="Tbl_Person_Tbl_Retiro" Member="Tbl_Person" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Person" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Tbl_SocioEconomico" Member="Tbl_SocioEconomico">
@@ -2079,39 +2073,37 @@
       <Column Name="Socio_economico_informacion_general_real_no" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
       <Column Name="Socio_economico_imagen_geolocalizacion" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
       <Column Name="Socio_economico_fechaHoraModificacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="Per_id" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="Emp_id" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="Socio_economico_fechaHoraGuardado" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="Socio_economico__estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="Per_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Emp_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Socio_economico_fechaHoraGuardado" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Socio_economico__estado" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
       <Association Name="Tbl_Empresa_Tbl_SocioEconomico" Member="Tbl_Empresa" ThisKey="Emp_id" OtherKey="Emp_id" Type="Tbl_Empresa" IsForeignKey="true" />
-      <Association Name="Tbl_Personas_Tbl_SocioEconomico" Member="Tbl_Personas" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Personas" IsForeignKey="true" />
+      <Association Name="Tbl_Person_Tbl_SocioEconomico" Member="Tbl_Person" ThisKey="Per_id" OtherKey="Per_id" Type="Tbl_Person" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Tbl_Tipos_de_Enfermedades" Member="Tbl_Tipos_de_Enfermedades">
     <Type Name="Tbl_Tipos_de_Enfermedades">
       <Column Name="TiEnf_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="TiEnf_nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="TiEnf_estado" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="TiEnf_estado" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
-  <Table Name="dbo.Tbl_TipoUsuario" Member="Tbl_TipoUsuario">
-    <Type Name="Tbl_TipoUsuario">
-      <Column Name="tusu_id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="tusu_nombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="tusu_estado" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Association Name="Tbl_TipoUsuario_Tbl_Usuarios" Member="Tbl_Usuarios" ThisKey="tusu_id" OtherKey="tusu_id" Type="Tbl_Usuarios" />
-    </Type>
-  </Table>
-  <Function Name="dbo.CargarImagen" Method="CargarImagen">
-    <Parameter Name="img_id" Type="System.Int32" DbType="Int" />
-    <ElementType Name="CargarImagenResult">
-      <Column Name="img_foto" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" />
+  <Function Name="dbo.AutentificarxUsuario" Method="AutentificarxUsuario">
+    <Parameter Name="Usuario" Parameter="usuario" Type="System.String" DbType="VarChar(25)" />
+    <ElementType Name="AutentificarxUsuarioResult">
+      <Column Name="Per_nomlogin" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
     </ElementType>
   </Function>
   <Function Name="dbo.RegistrarImagen" Method="RegistrarImagen">
     <Parameter Name="cedula" Type="System.String" DbType="VarChar(10)" />
     <Parameter Name="imagen" Type="System.Data.Linq.Binary" DbType="Image" />
     <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.CargarImagen" Method="CargarImagen">
+    <Parameter Name="img_id" Type="System.Int32" DbType="Int" />
+    <ElementType Name="CargarImagenResult">
+      <Column Name="img_foto" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" />
+    </ElementType>
   </Function>
   <Function Name="dbo.InsertarPersona" Method="InsertarPersona">
     <Parameter Name="Cedula" Parameter="cedula" Type="System.String" DbType="VarChar(10)" />
@@ -2131,7 +2123,7 @@
       <Column Name="idFichaMedica" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Per_cedula" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Column Name="prof_NomApe" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="fechaHoraGuardado" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fechaHoraGuardado" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
 </Database>

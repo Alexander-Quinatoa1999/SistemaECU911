@@ -26,7 +26,7 @@ namespace SistemaECU911.views.Doctores
         private void cargarPaciente()
         {
             var query = from hm in dc.Tbl_FichasMedicas
-                        join p in dc.Tbl_Personas on hm.Per_id equals p.Per_id
+                        join p in dc.Tbl_Person on hm.Per_id equals p.Per_id
                         join pro in dc.Tbl_Profesional on hm.prof_id equals pro.prof_id
                         orderby hm.fechaHoraGuardado descending
                         select new

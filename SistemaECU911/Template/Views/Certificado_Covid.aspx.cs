@@ -75,7 +75,7 @@ namespace SistemaECU911.Template.Views
         {
             string cedula = txt_cedula.Text;
 
-            var lista = from c in dc.Tbl_Personas
+            var lista = from c in dc.Tbl_Person
                         where c.Per_cedula == cedula
                         select c;
 
